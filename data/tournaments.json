@@ -3,7 +3,7 @@
     "accessed": "2026-11-16",
     "window": "Nov 16 – Dec 23, 2026 (dates as printed on the official schedules)",
     "scope": "Las Vegas Strip poker rooms. Off-Strip rooms are listed on the Flagged page only.",
-    "ranking_rule": "Only rows whose re-entry/add-on status is confirmed by an official structure sheet are ranked. Value ratio = official guarantee ÷ buy-in (computed, not an official figure)."
+    "ranking_rule": "No rows are ranked as single-entry until official rules explicitly confirm no re-entry/add-on. Candidate ratio is arithmetic only, not expected value."
   },
   "sources": {
     "V_SCHED": {
@@ -99,7 +99,7 @@
       "url": "https://www.caesars.com/caesars-palace/resort-fee"
     }
   },
-  "single_entry": [
+  "entry_rules_unverified": [
     {
       "day": "Wed Nov 18, 2026",
       "time": "11:10 AM",
