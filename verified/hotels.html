@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hotels · Las Vegas Strip Poker Planner</title>
+<style>
+:root{--ink:#1d2330;--mut:#5b6474;--line:#e3e7ee;--bg:#f7f9fc;--acc:#0b6e4f;--warn:#b26a00;--bad:#9b1c1c}
+*{box-sizing:border-box}body{margin:0;font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--bg)}
+header{background:#0f2b25;color:#fff;padding:14px 20px;position:sticky;top:0;z-index:5}
+header .t{font-weight:700;font-size:17px}header nav{margin-top:8px;display:flex;flex-wrap:wrap;gap:6px 14px}
+header nav a{color:#cfe9e1;text-decoration:none;font-size:13px}header nav a.on{color:#fff;font-weight:700;border-bottom:2px solid #7fd6b5}
+main{max-width:1200px;margin:0 auto;padding:22px 18px 60px}
+h1{font-size:26px;margin:4px 0 6px}h2{font-size:20px;margin:26px 0 8px;border-bottom:1px solid var(--line);padding-bottom:4px}h3{font-size:16px;margin:18px 0 6px}
+p,li{max-width:900px}.mut{color:var(--mut)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:14px 0}
+.card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px}
+.card b.n{font-size:26px;display:block}.card a{color:var(--acc);font-weight:600;text-decoration:none}
+.note{background:#fff8e6;border:1px solid #f1d58a;border-radius:8px;padding:10px 14px;margin:12px 0}
+.ok{background:#e9f7f1;border:1px solid #a7dcc4;border-radius:8px;padding:10px 14px;margin:12px 0}
+.bad{background:#fdecec;border:1px solid #f0b3b3;border-radius:8px;padding:10px 14px;margin:12px 0}
+.tbl-wrap{overflow:auto;background:#fff;border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;font-size:13.5px}
+th,td{padding:7px 9px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{background:#eef3f8;position:sticky;top:0;font-size:12.5px;text-transform:uppercase;letter-spacing:.03em;color:#33405a}
+tr:nth-child(even) td{background:#fbfcfe}
+td.num,th.num{text-align:right;white-space:nowrap}
+.unv{color:var(--warn);font-style:italic}
+a{color:#0b5fa5}
+code{background:#eef2f7;padding:1px 4px;border-radius:4px;font-size:12.5px}
+.filter{padding:8px 10px;border:1px solid var(--line);border-radius:8px;width:320px;max-width:100%;margin:8px 0}
+.pill{display:inline-block;padding:1px 8px;border-radius:999px;font-size:12px;background:#e8eef6;margin-right:4px}
+footer{max-width:1200px;margin:0 auto;padding:0 18px 30px;color:var(--mut);font-size:12.5px}
+</style></head>
+<body>
+<header><div class="t">Las Vegas Strip Poker Planner <span class="mut" style="color:#9fc7b9;font-weight:400">· verified from official sources · data as of 2026-11-16</span></div>
+<nav><a href='index.html' class=''>Home</a><a href='summary.html' class=''>Executive summary</a><a href='tournaments.html' class=''>Candidate events (rules unverified)</a><a href='reentry.html' class=''>Re-entry / add-on (separate)</a><a href='hotels.html' class='on'>Hotels</a><a href='schedule.html' class=''>Daily schedule</a><a href='questions.html' class=''>Questions &amp; info needed</a><a href='suggestions.html' class=''>Suggestions (for your decision)</a><a href='flagged.html' class=''>Flagged for Review</a><a href='sources.html' class=''>Sources</a><a href='../index.html' class=''>Original dashboard ↗</a></nav></header>
+<main>
+<h1>Hotels near the tournaments</h1>
+<p class="mut">Priority per your brief: cost and quality first, then distance (≤30 min walk). Only one value on this page is confirmed from an official page: the Venetian resort fee. Room rates, taxes, and walking times were not confirmed from official sources, so they are blank.</p>
+<div class="note"><b>True nightly cost formula:</b> (room rate + resort fee) × (1 + lodging tax), plus any parking, extra-guest and mandatory fees. Only the resort fee at The Venetian is currently verified; the other inputs are blank until confirmed.</div>
+<h2>Candidate hotels (on-site poker rooms)</h2>
+<input class='filter' placeholder='Filter rows (type any word)…' oninput="filt('tblHot',this.value)"><div class='tbl-wrap'><table id='tblHot'><thead><tr><th class=''>Property</th><th class=''>Poker room location (official)</th><th class=''>Resort fee (official)</th><th class=''>Room rate per night</th><th class=''>Tax</th><th class=''>True cost per night</th><th class=''>Walking to poker room</th><th class=''>Sources (official)</th><th class=''>Notes</th></tr></thead><tbody><tr><td class=''><b>The Venetian / The Palazzo</b></td><td class=''>Venetian poker room (official poker page).</td><td class=''>$55 + tax per night (official resort-fee page).</td><td class=''><span class='unv'>blank — unverified</span></td><td class=''><span class='unv'>blank</span></td><td class=''><span class='unv'>blank</span></td><td class=''></td><td class=''><a href='https://www.venetianlasvegas.com/resort/resort-fee.html' target='_blank' rel='noopener'>Venetian resort fee page</a><br><a href='https://www.venetianlasvegas.com/resort/casino/poker.html' target='_blank' rel='noopener'>Venetian poker room page</a></td><td class=''>Walking time from the room to the poker room not confirmed. Rates for your dates not confirmed.</td></tr><tr><td class=''><b>Wynn Las Vegas</b></td><td class=''>Wynn poker room (official poker page).</td><td class=''><span class='unv'>unverified</span></td><td class=''><span class='unv'>blank — unverified</span></td><td class=''><span class='unv'>blank</span></td><td class=''><span class='unv'>blank</span></td><td class=''></td><td class=''><a href='https://www.wynnlasvegas.com/casino/poker' target='_blank' rel='noopener'>Wynn Las Vegas poker room page</a></td><td class=''>Official resort-fee page could not be reached. Third-party figures conflict and are not used.</td></tr><tr><td class=''><b>Bellagio</b></td><td class=''>Bellagio poker room (official poker page).</td><td class=''><span class='unv'>unverified</span></td><td class=''><span class='unv'>blank — unverified</span></td><td class=''><span class='unv'>blank</span></td><td class=''><span class='unv'>blank</span></td><td class=''></td><td class=''><a href='https://bellagio.mgmresorts.com/en/casino/poker.html' target='_blank' rel='noopener'>Bellagio poker page</a><br><a href='https://bellagio.mgmresorts.com/en/hotel.html' target='_blank' rel='noopener'>Bellagio hotel rooms page</a></td><td class=''>Official resort-fee page could not be reached (404). Third-party figures conflict and are not used.</td></tr><tr><td class=''><b>Caesars Palace</b></td><td class=''>Caesars Palace poker room (official casino page).</td><td class=''><span class='unv'>unverified</span></td><td class=''><span class='unv'>blank — unverified</span></td><td class=''><span class='unv'>blank</span></td><td class=''><span class='unv'>blank</span></td><td class=''></td><td class=''><a href='https://www.caesars.com/caesars-palace/casino' target='_blank' rel='noopener'>Caesars Palace casino page (links the flyer)</a><br><a href='https://www.caesars.com/caesars-palace/resort-fee' target='_blank' rel='noopener'>Caesars Palace resort fee page (marketing; no fee text read)</a></td><td class=''>Official resort-fee page is marketing copy with no fee amount. Third-party figures conflict and are not used.</td></tr></tbody></table></div>
+<h2>Notes</h2>
+<ul>
+<li>Resort fee figures on third-party sites conflict with each other for the same property (see <a href="flagged.html">Flagged for Review</a>). They were <b>not</b> used as values.</li>
+<li>Walking distance: each candidate has its poker room inside the same resort, so the walk is internal. Exact walking time was not measured or confirmed from an official map; please confirm on the property map before booking.</li>
+<li>Venetian poker players may get reduced suite rates with a Venetian Rewards card (official page). The amounts were not confirmed, so they are not shown.</li>
+<li>Off-Strip and other poker rooms (Golden Nugget downtown, Horseshoe, Resorts World, Aria, MGM Grand, Planet Hollywood) are not shown: no verified single-entry schedule for them in this window. See <a href="flagged.html">Flagged</a>.</li>
+</ul>
+</main>
+<footer>Built from <code>data/*.json</code> by <code>build/build_site.py</code>. Blank values are unverified and were not inferred. Times and prices can change; confirm with the venue before travel. Contact details shown are copied from official pages.</footer>
+<script>
+function filt(id,q){q=q.toLowerCase();document.querySelectorAll('#'+id+' tbody tr').forEach(function(r){r.style.display=r.textContent.toLowerCase().indexOf(q)>-1?'':'none'})}
+</script>
+</body></html>

@@ -1,44 +1,27 @@
-# Vegas Field Notes
+# Poker Strip tournament & stay dashboard
 
-A static, official-source-checked dashboard for selected upcoming Las Vegas Strip poker tournaments, strict single-entry rules, prize-pool fee shares, and hotel resort fees.
+Static, source-first planning dashboard for upcoming official poker-tournament listings around the Las Vegas Strip. The data snapshot is dated **November 16, 2026 (UTC)**. It distinguishes verified facts from unknowns and does not label a tournament single-entry unless official rules say so.
 
-## Research snapshot
+## Project pages
 
-- Snapshot date: **November 16, 2026 (UTC)**.
-- Reviewed scope: selected published events and recurring-room schedules for Venetian, Wynn/WPT, Caesars Palace, Horseshoe, MGM Grand, Bellagio, ARIA, Westgate, and SAHARA; official hotel fee pages for matched properties.
-- **Strict single-entry events confirmed: 0.** An event qualifies only when current official terms explicitly limit a player to one paid entry for the entire event and disallow re-entry, rebuys, add-ons, and paid extra chips. Missing terms are marked unknown, not interpreted as a freezeout.
-- Exact hotel totals are intentionally omitted without trip dates, stay length, room type, and occupancy. Published resort fees are separated from taxes and room rates.
-- The dashboard is a researched snapshot, not a live feed or an exhaustive inventory of every Las Vegas poker room.
-
-The source register and detailed findings are in [`research/VERIFICATION.md`](research/VERIFICATION.md). The public dashboard links directly to the official event, structure, room, hotel, and fee sources used for each finding.
+- `index.html` — executive summary and key decision blockers
+- `tournaments.html` — dated tournament candidates and spending/bounty exclusions
+- `schedule.html` — practical day-planning constraints
+- `hotels.html` — official Venetian/Palazzo rates, resort-fee math, and unknown stay pricing
+- `decisions.html` — questions, missing information, and staged suggestions
+- `questions.html` — compact companion decision checklist, retained from the first integration and now source-linked row by row
+- `review.html` — flagged items and verification limitations
 
 ## Run locally
 
-No package install or build step is required. From the repository root:
+Open `index.html` directly, or serve the repository root with any static-file server. No build tooling or third-party runtime dependencies are required. The site is deployed with GitHub Pages via `.github/workflows/pages.yml`.
 
-```sh
-python3 -m http.server 4173 --bind 0.0.0.0 --directory site
-```
+## Research policy
 
-Then open `http://localhost:4173`. The dashboard loads `site/data.json` with `fetch`, so opening `index.html` as a `file://` URL will not work.
+All values shown as confirmed link to the official operator source. Unknown or ambiguous values are blank and flagged. The available official tournament schedule does not explicitly establish whether entries or re-entries are allowed for the upcoming one-day events; consequently, **there are no tournaments classified as verified single-entry**. The data is a point-in-time snapshot, not a live feed or booking quote.
 
-Validate the dataset and dashboard references with:
+## Vegas Field Notes sub-site
 
-```sh
-python3 scripts/validate_site.py
-node --check site/app.js
-```
+A separate, official-source-checked dashboard from session `arena/6313b65a-poker4` lives in [`site/`](site/). It preserves the existing root dashboard and shared Pages workflow. Once this contribution is merged and the existing Pages workflow finishes, browse the sub-site at [`/site/`](https://karagemop466-tech.github.io/Poker4/site/).
 
-## Update the research
-
-1. Use current official casino, tournament-operator, and hotel sources; record the fetch date and caveats in `research/VERIFICATION.md`.
-2. Keep entry status as `unknown` unless the event-specific official rules establish a one-entry maximum for the whole event.
-3. Add or update the sourced record in `site/data.json`; reference only source IDs in its `sources` list.
-4. Run both validation commands above and review the dashboard at desktop and mobile sizes.
-5. Update the snapshot date and release/deployment notes. Recheck schedules before any trip.
-
-`site/index.html`, `site/styles.css`, and `site/app.js` are a dependency-free static frontend. The dashboard includes an event filter/search, CSV export, print layout, source register, and responsive navigation.
-
-## GitHub Pages
-
-`.github/workflows/pages.yml` validates the files and publishes the `site/` directory to GitHub Pages whenever changes to the dashboard land on `main` (or on a manual workflow dispatch). Set the repository’s Pages source to **GitHub Actions** if it is not already enabled. Deployment becomes public only after the workflow runs successfully on `main`.
+The sub-site's dated verification report is [`research/VERIFICATION.md`](research/VERIFICATION.md). Its reviewed strict single-entry count is zero confirmed; unknown entry rules remain unknown. Local run and validation instructions are in [`site/README.md`](site/README.md).
