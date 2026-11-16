@@ -1,0 +1,350 @@
+{
+  "meta": {
+    "note": "Schedule values copied from the official schedule PDFs. Structure sheets for these rows were NOT reviewed, so re-entry/add-on status, prize splits and chip counts are UNVERIFIED. These rows are not ranked. Blank cells were not printed by the official source.",
+    "accessed": "2026-11-16"
+  },
+  "venetian": [
+    {
+      "when": "Mon Nov 16 & Tue Nov 17, 11:10 AM / 5:10 PM",
+      "event": "#1 $300 NLH 1A/1B/1C/1D",
+      "buy_in": 300,
+      "guarantee": 75000,
+      "reg_closes": "3:40 PM or 8:40 PM",
+      "source": "V_SCHED / V_PAGE",
+      "structure_status": "Not reviewed (structure sheets 9 & 10 linked on V_PAGE)",
+      "why_unverified": "Multi-flight event; re-entry/add-on rules unknown."
+    },
+    {
+      "when": "Wed Nov 18, 12:00 PM",
+      "event": "#1 $300 NLH Day 2 Restart",
+      "buy_in": 300,
+      "guarantee": null,
+      "reg_closes": null,
+      "source": "V_SCHED",
+      "structure_status": "Not reviewed",
+      "why_unverified": "Day 2 restart for flights 1A–1D."
+    },
+    {
+      "when": "Thu Nov 19 – Sat Nov 21, 10:10 AM",
+      "event": "#3/#4/#5 $200 NLH RaceDay Stack (1-Day), 'race to finish before the race'",
+      "buy_in": 200,
+      "guarantee": null,
+      "reg_closes": "12:25 PM",
+      "source": "V_SCHED / V_PAGE",
+      "structure_status": "Not reviewed (structure_18 linked)",
+      "why_unverified": "Race format; no guarantee printed; re-entry unknown."
+    },
+    {
+      "when": "Mon Nov 23, 11:10 AM (1A) and Tue Nov 24, 11:10 AM (1B); Day 2 restart Wed Nov 25",
+      "event": "#7 $400 NLH 1A/1B (flights), $75,000 GTD",
+      "buy_in": 400,
+      "guarantee": 75000,
+      "reg_closes": "5:55 PM",
+      "source": "V_SCHED",
+      "structure_status": "Not reviewed (structure_2 linked)",
+      "why_unverified": "Flight event with Day 2 restart Nov 25."
+    },
+    {
+      "when": "Mon Nov 23, 5:10 PM",
+      "event": "#8 $200 NLH PKO (1-Day)",
+      "buy_in": 200,
+      "guarantee": 8000,
+      "reg_closes": "9:40 PM",
+      "source": "V_SCHED",
+      "structure_status": "Not reviewed (structure_30 linked; not in the structure_1 event list)",
+      "why_unverified": "PKO (progressive knockout) structure not transcribed."
+    },
+    {
+      "when": "Sun Nov 29, Tue Dec 6, 5:10 PM etc. (see schedule)",
+      "event": "$300 NLH Bounty (1-Day) events #29 (Dec 6), #31 (Dec 7), #34 (Dec 8), #38 (Dec 9), #42 (Dec 10), #50 (Dec 13), #51 (Dec 14), #53 (Dec 15), #55 (Dec 16) — all 5:10 PM, $15,000 GTD",
+      "buy_in": 300,
+      "guarantee": 15000,
+      "reg_closes": "9:40 PM",
+      "source": "V_SCHED",
+      "structure_status": "Not reviewed",
+      "why_unverified": "Structure sheet for $300 bounty events not linked to a reviewed file."
+    },
+    {
+      "when": "Sat Nov 28, 11:10 AM",
+      "event": "#16 $600 NLH Bounty (1-Day), $200 bounties to start, $500 in the money",
+      "buy_in": 600,
+      "guarantee": 30000,
+      "reg_closes": "4:55 PM",
+      "source": "V_SCHED / V_PAGE",
+      "structure_status": "Not reviewed (structure_11 linked)",
+      "why_unverified": "Bounty payout mechanics; re-entry unknown."
+    },
+    {
+      "when": "Sat Nov 28, 12:10 PM",
+      "event": "#17 $400 PLO Bounty (1-Day)",
+      "buy_in": 400,
+      "guarantee": 15000,
+      "reg_closes": "4:40 PM",
+      "source": "V_SCHED",
+      "structure_status": "Not reviewed (structure_26 linked)",
+      "why_unverified": "PLO format; structure not reviewed."
+    },
+    {
+      "when": "Sat Nov 28, 5:10 PM (#18) and Sat Dec 19, 5:10 PM (#58)",
+      "event": "#18 and #58 $200 NLH PokerAtlas Valuetown Bounty (1-Day)",
+      "buy_in": 200,
+      "guarantee": 20000,
+      "reg_closes": "9:40 PM",
+      "source": "V_SCHED",
+      "structure_status": "Not reviewed",
+      "why_unverified": "Member rake discount ($20) noted on schedule; structure not reviewed."
+    },
+    {
+      "when": "Sun Nov 29, 11:10 AM / Mon Nov 30, 11:10 AM / Tue Dec 1, 11:10 AM",
+      "event": "#19 $400 NLH 1A/1B/1C",
+      "buy_in": 400,
+      "guarantee": 75000,
+      "reg_closes": "5:55 PM",
+      "source": "V_SCHED",
+      "structure_status": "Not reviewed",
+      "why_unverified": "Flight event; re-entry unknown."
+    },
+    {
+      "when": "Sun Nov 29, 12:10 PM",
+      "event": "#20 $300 PLO Double Board Bomb Pot (1-Day)",
+      "buy_in": 300,
+      "guarantee": 10000,
+      "reg_closes": "4:40 PM",
+      "source": "V_SCHED",
+      "structure_status": "Not reviewed",
+      "why_unverified": "Structure not reviewed."
+    },
+    {
+      "when": "Wed Dec 2, 10:10 AM",
+      "event": "#24 $600 NLH Seniors (1-Day), 50+ only",
+      "buy_in": 600,
+      "guarantee": 40000,
+      "reg_closes": "3:55 PM",
+      "source": "V_SCHED",
+      "structure_status": "Not reviewed",
+      "why_unverified": "Age restriction 50+; structure not reviewed."
+    },
+    {
+      "when": "Thu Dec 3 – Sat Dec 5",
+      "event": "#26 $800 NLH 1A–1F (flights; $500,000 GTD each)",
+      "buy_in": 800,
+      "guarantee": 500000,
+      "reg_closes": "3:40 PM / 8:40 PM",
+      "source": "V_SCHED",
+      "structure_status": "Not reviewed",
+      "why_unverified": "Flights and Day 2 restart; re-entry unknown."
+    },
+    {
+      "when": "Thu Dec 3, 12:10 PM",
+      "event": "#27 $600 Big O (1-Day)",
+      "buy_in": 600,
+      "guarantee": 25000,
+      "reg_closes": "4:40 PM",
+      "source": "V_SCHED",
+      "structure_status": "Not reviewed",
+      "why_unverified": "Structure not reviewed."
+    },
+    {
+      "when": "Sun Dec 6, 11:10 AM",
+      "event": "#28 $600 NLH (1-Day), $40K GTD",
+      "buy_in": 600,
+      "guarantee": 40000,
+      "reg_closes": "4:55 PM",
+      "source": "V_SCHED",
+      "structure_status": "Verified — see main tournaments table",
+      "why_unverified": "Included in main table."
+    },
+    {
+      "when": "Mon Dec 7, 11:10 AM",
+      "event": "#30 $600 NLH Bounty (1-Day), $200 bounties to start, $500 in the money",
+      "buy_in": 600,
+      "guarantee": 40000,
+      "reg_closes": "4:55 PM",
+      "source": "V_SCHED",
+      "structure_status": "Not reviewed",
+      "why_unverified": "Bounty mechanics; re-entry unknown."
+    },
+    {
+      "when": "Tue Dec 8, 10:10 AM / 11:10 AM",
+      "event": "#35 $600 NLH TAG team ($10K GTD) and #36 $800 NLH Bounty ($75K GTD)",
+      "buy_in": 800,
+      "guarantee": 75000,
+      "reg_closes": "4:55 PM",
+      "source": "V_SCHED",
+      "structure_status": "Not reviewed",
+      "why_unverified": "Team and bounty formats."
+    },
+    {
+      "when": "Wed Dec 9, 10:10 AM",
+      "event": "#39 $800 NLH LIPS Ladies (2-Day), 'women in poker'",
+      "buy_in": 800,
+      "guarantee": 40000,
+      "reg_closes": "4:55 PM",
+      "source": "V_SCHED",
+      "structure_status": "Not reviewed",
+      "why_unverified": "Two-day format."
+    },
+    {
+      "when": "Wed Dec 9, 12:10 PM / Fri Dec 11, 11:10 AM",
+      "event": "#40 $600 PLO Bounty ($25K GTD); #43 $600 NLH LIPS 'Kings and Queens' bounty ($30K GTD)",
+      "buy_in": 600,
+      "guarantee": 30000,
+      "reg_closes": "4:40 PM / 4:55 PM",
+      "source": "V_SCHED",
+      "structure_status": "Not reviewed",
+      "why_unverified": "Bounty formats."
+    },
+    {
+      "when": "Fri Dec 11 – Sat Dec 12",
+      "event": "#47 $2,200 NLH PokerAtlas Championship Title Event (1A/1B), $1,000,000 GTD",
+      "buy_in": 2200,
+      "guarantee": 1000000,
+      "reg_closes": "4:55 PM / 11:10 PM",
+      "source": "V_SCHED",
+      "structure_status": "Not reviewed",
+      "why_unverified": "High buy-in; Day 2/3 restarts; re-entry unknown."
+    },
+    {
+      "when": "Sat Dec 12 & Sun Dec 13, 10:10 AM",
+      "event": "#49 $1,100 NLH Seniors 1A/1B (50+), $300,000 GTD",
+      "buy_in": 1100,
+      "guarantee": 300000,
+      "reg_closes": "4:55 PM",
+      "source": "V_SCHED",
+      "structure_status": "Not reviewed",
+      "why_unverified": "Age restriction; structure not reviewed."
+    },
+    {
+      "when": "Tue Dec 15, 11:10 AM",
+      "event": "#52 $1,100 NLH PKO (1-Day), $75,000 GTD",
+      "buy_in": 1100,
+      "guarantee": 75000,
+      "reg_closes": "4:55 PM",
+      "source": "V_SCHED",
+      "structure_status": "Not reviewed",
+      "why_unverified": "PKO structure."
+    },
+    {
+      "when": "Wed Dec 16, 11:10 AM",
+      "event": "#54 $600 NLH Bounty (1-Day), $50,000 GTD",
+      "buy_in": 600,
+      "guarantee": 50000,
+      "reg_closes": "4:55 PM",
+      "source": "V_SCHED",
+      "structure_status": "Not reviewed",
+      "why_unverified": "Bounty mechanics."
+    },
+    {
+      "when": "Thu Dec 17 – Sat Dec 19",
+      "event": "#56 $1,100 NLH 1A–1E (flights), $500,000 GTD each",
+      "buy_in": 1100,
+      "guarantee": 500000,
+      "reg_closes": "4:55 PM / 11:10 PM",
+      "source": "V_SCHED",
+      "structure_status": "Not reviewed",
+      "why_unverified": "Flights and Day 2 restarts; re-entry unknown."
+    },
+    {
+      "when": "Thu Dec 17, 12:10 PM",
+      "event": "#57 $600 PLO Double Board Bomb Pot (1-Day), $25,000 GTD",
+      "buy_in": 600,
+      "guarantee": 25000,
+      "reg_closes": "4:40 PM",
+      "source": "V_SCHED",
+      "structure_status": "Not reviewed",
+      "why_unverified": "Structure not reviewed."
+    },
+    {
+      "when": "Sun Dec 20 – Wed Dec 23",
+      "event": "#59 $600 NLH 1A–1C (flights), $150,000 GTD; #63 $600 NLH 1-Day $30K GTD (Dec 23 — see main table)",
+      "buy_in": 600,
+      "guarantee": 150000,
+      "reg_closes": "5:55 PM",
+      "source": "V_SCHED",
+      "structure_status": "Not reviewed",
+      "why_unverified": "Flight event; re-entry unknown."
+    }
+  ],
+  "wynn_wpt": [
+    {
+      "when": "Nov 27 – Dec 21, 2026 (see schedule)",
+      "event": "WPT World Championship — $10,400 Day 1A–1C, Day 2, Final Table",
+      "buy_in": 10400,
+      "guarantee": null,
+      "reg_closes": "Registration until start of Day 2 (per schedule)",
+      "source": "W_WPT",
+      "structure_status": "Not reviewed (W_WPT_TC is the general terms; event structure sheets not transcribed)",
+      "why_unverified": "Guarantee column blank on schedule; $1,000,000 'added' by ClubWPT Gold per footnote (not available in Nevada). Re-entry status unknown."
+    },
+    {
+      "when": "Dec 5 – Dec 9, 2026",
+      "event": "WPT Prime Championship — $1,100 NLH Day 1A–1D/Day 2/Day 3, $5,000,000 GTD (schedule)",
+      "buy_in": 1100,
+      "guarantee": 5000000,
+      "reg_closes": null,
+      "source": "W_WPT",
+      "structure_status": "Not reviewed",
+      "why_unverified": "Multi-day; structure not reviewed. Some routes are satellite-based."
+    },
+    {
+      "when": "Dec 10 – Dec 13, 2026",
+      "event": "Super Gold Million Mystery Bounty — $400, $3,000,000 GTD (schedule)",
+      "buy_in": 400,
+      "guarantee": 3000000,
+      "reg_closes": null,
+      "source": "W_WPT",
+      "structure_status": "Not reviewed",
+      "why_unverified": "Multi-day; re-entry/bounty structure not reviewed."
+    },
+    {
+      "when": "Dec 13, 2026, 11:00 AM",
+      "event": "Ladies NLH Championship (2-Day) — $1,100 entry; footnote says the Ladies entry is $11,100 with a discount",
+      "buy_in": 1100,
+      "guarantee": 250000,
+      "reg_closes": null,
+      "source": "W_WPT",
+      "structure_status": "Not reviewed",
+      "why_unverified": "Schedule shows $1,100 with a footnote that the Ladies entry is $11,100 (discounted). Conflicting entry values; structure not reviewed."
+    },
+    {
+      "when": "Dec 18 – Dec 21, 2026",
+      "event": "NLH 6-Max / 8-Max events at $10,500 (schedule footnote **** attached)",
+      "buy_in": 10500,
+      "guarantee": null,
+      "reg_closes": null,
+      "source": "W_WPT",
+      "structure_status": "Not reviewed",
+      "why_unverified": "Entry footnote on schedule not reviewed; re-entry and discount terms unknown."
+    }
+  ],
+  "not_in_scope_or_not_verified": [
+    {
+      "venue": "Aria Las Vegas",
+      "reason": "Official Aria poker page returned 404 (aria.com and aria.mgmresorts.com tested). No schedule verified."
+    },
+    {
+      "venue": "MGM Grand",
+      "reason": "Official MGM Grand poker page returned 404. No schedule verified."
+    },
+    {
+      "venue": "Planet Hollywood",
+      "reason": "Official poker page fetch returned an error / unrelated content. No schedule verified."
+    },
+    {
+      "venue": "Resorts World Las Vegas",
+      "reason": "Official poker-room page fetched shows dining only; no tournament schedule verified."
+    },
+    {
+      "venue": "Horseshoe Las Vegas",
+      "reason": "Official page says 'six exciting tournament times daily' but gives no times or buy-ins. Not verified."
+    },
+    {
+      "venue": "Golden Nugget (downtown, off-Strip)",
+      "reason": "Official page confirms a daily tournaments page exists but its schedule was not fetched. Also off-Strip (downtown)."
+    },
+    {
+      "venue": "WSOP",
+      "reason": "Official WSOP schedule (Nov–Dec 2026) lists Circuit events in Canada, Illinois, Louisiana, Italy, North Carolina, and the WSOP Paradise in the Bahamas. No Las Vegas WSOP event is listed in this window."
+    }
+  ]
+}

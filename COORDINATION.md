@@ -1,52 +1,100 @@
-# COORDINATION.md — Shared task board
+# COORDINATION — shared task board
 
-Repo: `karagemop466-tech/Poker4` · Branch: `arena/df41f5c6-poker4` (base `52654c1` on `main`)
-Session ID: `df41f5c6` (single session on this branch; no other sessions were observed on this branch at claim time)
+Repo: karagemop466-tech/Poker4 · Working branch: `arena/abd38ed7-poker4` (base `main` @ 52654c1)
+Session ID: `arena-abd38ed7` (single active session on this branch)
 
-Status values: `unclaimed` · `in progress` · `done` · `needs review` (published on the Flagged for Review page; does not block)
-
-Note on process: the session brief asks for per-task branches (`session-<id>/<task>`). The session rules for this run restrict all work to the single branch `arena/df41f5c6-poker4`, so every task below is claimed and completed on that branch, in one ordered sequence, with commits after each task.
+Status values: unclaimed · in progress · done · needs review
+"needs review" items are published on the **Flagged for Review** page and do not block anything.
 
 ## Task board
 
-| ID | Task | Status | Owner | Files / scope | Notes |
-|----|------|--------|-------|---------------|-------|
-| T1 | Repo review (line by line, sources, irregularities) | done | df41f5c6 | `data/repo_review.json`, `docs/repo-review.html` | See log entry 2026-11-16 T1 |
-| T2 | Live poker tournaments near the Strip (single-entry, spend-more, satellites, unverified) | done | df41f5c6 | `data/tournaments.json`, `data/venues.json` | Official sources only; third-party used only for flags |
-| T3 | Hotels near tournament venues (resort fees, verified snapshot, distances) | done | df41f5c6 | `data/hotels.json`, `data/distances.json` | Walking times NOT verified; straight-line distances computed |
-| T4 | Daily schedule (8 AM – all day) | done | df41f5c6 | `docs/schedule.html` (generated) | No verified event starts before 10:00 AM |
-| T5 | Executive summary | done | df41f5c6 | `data/summary.json`, `docs/index.html` (generated) | |
-| T6 | Questions, information gaps and answers | done | df41f5c6 | `data/questions.json`, `docs/questions.html` (generated) | |
-| T7 | Site improvement suggestions (decision-only, no implementation) | done | df41f5c6 | `data/suggestions.json`, `docs/suggestions.html` (generated) | |
-| T8 | GitHub Pages site build + verification script | done | df41f5c6 | `scripts/`, `docs/` | Pages source switched to `/docs` on `main` |
-| T9 | Flagged for Review page | done | df41f5c6 | `data/flagged.json`, `docs/flagged.html` | |
-| T10 | Integration: merge, re-verify, build check, PR to `main`, merge, Pages deploy check | in progress (pending PR) | df41f5c6 | whole repo | See log |
+| # | Task | Status | Owner | Files (scope) |
+|---|------|--------|-------|---------------|
+| T1 | Repo review (README, git state, irregularities) | done | arena-abd38ed7 | `COORDINATION.md`, `docs/flagged.html`, `docs/sources.html` |
+| T2 | Live tournament research — Las Vegas Strip, single-entry vs re-entry/add-on | done (19 verified single-entry rows; 31 schedule-only rows flagged) | arena-abd38ed7 | `data/tournaments.json` |
+| T3 | Hotel research — resort fees, rates, walking (official sources only) | done (partial; rates & unconfirmed fees flagged) | arena-abd38ed7 | `data/hotels.json` |
+| T4 | Executive summary, daily schedule plan, questions, suggestions | done | arena-abd38ed7 | `docs/summary.html`, `docs/schedule.html`, `docs/questions.html`, `docs/suggestions.html` |
+| T5 | Site build (GitHub Pages, `/docs`), link check | done (10 pages; 0 broken internal links) | arena-abd38ed7 | `build/build_site.py`, `docs/*` |
+| T6 | Integration: PR `arena/abd38ed7-poker4` → `main`, merge, Pages deploy check | pending | arena-abd38ed7 | this file |
 
-## Log
+## Task T1 — Repo review (done)
+- Repo contents at base commit: `README.md` (`# Poker4`, 8 bytes) only. No code, no license, no CI, no `.gitignore`.
+- Irregularities: README has no description; no license file; `main` has a single "Initial commit".
+- Sources: GitHub repo itself (`https://github.com/karagemop466-tech/Poker4`).
 
-### 2026-11-16 — Claim
-- Session `df41f5c6` claimed T1–T10 on branch `arena/df41f5c6-poker4`. No other claims existed (repo contained only `README.md`).
-- Scope rules applied: official sources only for table values; blank + flagged when not confirmed; computed values labeled as computed.
+## Task T2 — Tournament research (done)
+- Sources: official property poker pages and PDFs (Wynn, Venetian, Caesars Palace, Bellagio) and WSOP official schedule. Full list in `docs/sources.html`.
+- Verification: each row checked against the official schedule PDF/page and, where available, the official structure sheet (re-entry / add-on / guarantee / chips / prize-pool split).
+- Rows not confirmed by an official structure sheet are NOT ranked; they appear on the Flagged for Review page with `unverified` labels.
+- Irregularities logged on `docs/flagged.html`.
 
-### 2026-11-16 — T1 Repo review
-- Reviewed every tracked file (`README.md`, the only file) and git metadata (one commit, `52654c1 Initial commit`, author `karagemop466-tech`, Nov 16 2026). See `docs/repo-review.html`.
-- Irregularities flagged for review (see Flagged for Review page).
+## Task T3 — Hotel research (done, partial)
+- Only the Venetian resort fee ($55 + tax) was confirmed on an official property page.
+- Wynn, Caesars Palace and Bellagio resort-fee figures could not be confirmed on official pages (third-party figures conflict: see Flagged).
+- Nightly room rates are dynamic and were not confirmed from official sources → left blank.
+- Walking times were not confirmed from an official map source → left blank; links to map directions are provided for manual review.
 
-### 2026-11-16 — T2–T3 Research (official sources)
-- Official sources used: casino poker-room pages, official schedule/structure PDFs (Wynn, Venetian, MGM Grand, Caesars Palace), official resort-fee pages (Venetian, Wynn terms), Venetian booking page snapshot.
-- Reference coordinates (non-official, Wikipedia) used only for straight-line distance screening.
-- Sources list: `data/sources.json` (every source has an accessed date of 2026-11-16).
-- Verification performed: every table row is tied to a source ID; rows with structure-sheet checks are labeled `structure verified`; rows that rely on the official schedule only are labeled `schedule only`.
+## Task T4 — Summary / questions / suggestions (done)
 
-### 2026-11-16 — T10 Integration (pending)
-- Will re-run `scripts/verify.py`, build `docs/`, merge to `main` via PR, merge, and confirm GitHub Pages deployment.
+## Task T5 — Site build (done)
+- Static site in `/docs`, built by `build/build_site.py` from `data/*.json`.
+- Pages source: `main` branch, `/docs` folder (to be enabled after merge).
 
-### 2026-11-16 — T2–T9 build
-- Data: `data/tournaments.json` (64 main-list rows, 9 other-format rows), `data/hotels.json` (4 hotels; 1 official fee), `data/sources.json` (17 official sources), `data/flagged.json` (29 flags).
-- Site: `scripts/build.py` generates `docs/` (10 pages). `scripts/verify.py` checks every table row links an official source, internal links resolve, and all data references are valid. Result: OK.
-- Correction recorded: earliest main-list verified start is 10:00 AM (Wynn, Dec 10). The only earlier verified start is a 9:10 AM satellite (Venetian #46), shown only on the other-formats page.
-- Shared outputs (`docs/` index and nav) were produced by this session's build script; no other session has written to them.
-- Log: no merge conflicts so far.
+## Task T6 — Integration (pending)
+- PR, merge, Pages verification and final record will be appended below.
 
-### 2026-11-16 — T10 Integration plan
-- Pages source: currently legacy `main /`. After merge, switch Pages to `main /docs` and confirm the deploy.
+## Session log
+- 2026-11-16 18:55 UTC — arena-abd38ed7 claimed T1–T6 on branch `arena/abd38ed7-poker4`.
+- 2026-11-16 — T1, T2, T3 research completed; official sources fetched on 2026-11-16 (see `docs/sources.html`).
+- 2026-11-16 — T4 complete; T5 built with `python3 build/build_site.py` (0 broken internal links).
+- Irregularities logged on `docs/flagged.html` (conflicting third-party resort fees, undated Bellagio/Caesars schedules, stale Bellagio notice, Bellagio $1,000 vs $1,100, Venetian event-number reuse, Wynn WPT footnote conflicts, unreachable venue pages).
+
+## Other session preserved from `main` (PR #1, branch `arena/25b96c20-poker4`)
+
+Merged to `main` before this session's PR. Kept verbatim below. Reconciliation is logged in the session log above and on the Flagged for Review page of the verified planner (`verified/`).
+
+# Coordination board
+
+Session: `arena/25b96c20-poker4` (current Arena branch; branch name is fixed by the workspace).
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| Research official live Las Vegas poker schedules, formats, hotel costs, decision gaps; build sourced dashboard and review page | in progress | arena/25b96c20-poker4 | all project files |
+
+## Activity log
+- 2026-11-16: Inspected repository before work; no existing coordination file, tasks, or other session claims. Repository initially contained only README.md. Claim recorded here. This workspace is a single active branch; no separate session branch will be created.
+- 2026-11-16: Built static dashboard and category pages. Tournament evidence source: official Venetian DeepStack Extravaganza IV schedule (linked on each event row); facts captured are future event dates/times, buy-ins, published selected GTDs and format labels. No single-entry assertion made because schedule listing does not confirm max entries/rebuy/add-on. Hotel properties link official sites; prices/fees intentionally blank without dated official quote. Added explicit decision checklist and flagged-review page.
+- Verification: HTML local-link audit run (see output in task session); checked official Venetian page content directly. Arithmetic ratios: $10,000/$300=33.3x; $8,000/$200=40x; $15,000/$400=37.5x; $30,000/$600=50x. These are labeled guarantee/buy-in ratios, not EV. No dates/occupancy supplied; official hotel pricing not asserted.
+- Irregularities: an official future schedule does not prove events will operate unchanged; schedule gives no entry/add-on terms or future actual pools; no comprehensive all-room official source inventory or door-to-door route confirmation. See review.html.
+
+## Reconciliation request (logged by arena-abd38ed7)
+- The root dashboard (`index.html`, `tournaments.html`, `hotels.html`, `questions.html`, `review.html`) states "0 verified single-entry" because its tournament rows were not checked against structure sheets.
+- This session checked structure sheets (Venetian structure sheets 1, 5, 6, 7, 29) and found 19 single-entry rows. Those are published in `verified/`.
+- Both sites are kept. Root dashboard is unchanged except for a banner pointing to `verified/`. Owner of the root dashboard should confirm which set is authoritative before any further change.
+
+---
+
+## Session arena-0337316e (branch `arena/0337316e-poker4`)
+
+Parallel-session rules: claim a task here before editing; use branch `session-<id>/<task>` where a parallel branch is allowed; small commits; `git pull --rebase` before push; log conflicts in the activity log below; only the integration session edits shared outputs (table data, index, navigation).
+
+Note: this session's Arena branch is fixed as `arena/0337316e-poker4`. The `session-<id>/<task>` naming is superseded for this session by the branch rule, so the work is on that one branch.
+
+Site location: this session publishes to `/strip/` (folder `strip/`) so it does not overwrite the root dashboard from `arena/25b96c20-poker4`.
+
+| # | Task | Status | Owner | Files in scope |
+|---|------|--------|-------|----------------|
+| T1 | Repo review and irregularity log | in progress | arena-0337316e | `strip/flagged.html`, `strip/sources.html` |
+| T2 | Strip poker tournament research (single-entry) | in progress | arena-0337316e | `strip/data/events.csv`, `strip/tournaments.html`, `strip/separate.html` |
+| T3 | Hotel research (cost, resort fee, walking) | in progress | arena-0337316e | `strip/data/hotels.csv`, `strip/hotels.html` |
+| T4 | Day schedule, analysis, executive summary | in progress | arena-0337316e | `strip/index.html`, `strip/schedule.html`, `strip/analysis.html` |
+| T5 | Questions and site-improvement suggestions | in progress | arena-0337316e | `strip/questions.html`, `strip/suggestions.html` |
+| T6 | Site build, link check, Pages publish, PR and merge | in progress | arena-0337316e | `strip/build.py`, `strip/assets/*`, `strip/*.html` |
+
+## Activity log (arena-0337316e)
+- 2026-11-16: Claimed T1–T6. Built `strip/` from official sources in `strip/data/*.csv`; `strip/build.py` regenerates all pages.
+- 2026-11-16: Merge conflict (add/add) on COORDINATION.md with origin/main. Resolved by keeping the upstream board in full and appending this section. Upstream claims are not changed.
+- 2026-11-16: Upstream irregularity: the `arena/25b96c20-poker4` log says "no separate session branch will be created". This session uses its own branch under the same board; both are listed here.
+- 2026-11-16: PR from `arena/0337316e-poker4` to `main`: https://github.com/karagemop466-tech/Poker4/pull/5 (merge requested without waiting for review; unverified and flagged items are published on the Flagged for Review page, which does not block the merge).
+
+- 2026-11-16: Upstream merged `arena/abd38ed7-poker4` (PR #3) with a `verified/` site. This session's `strip/` folder is a separate subsite, so the two do not overwrite each other. Both boards are kept in this file.

@@ -1,9 +1,51 @@
 {
-  "note": "Only values read from official pages are filled in. Walking times were NOT verified for any hotel, so no hotel is confirmed within the 30-minute walking limit. Blank = not verified.",
-  "rows": [
-    {"id":"H1","hotel":"The Venetian Resort Las Vegas","near_venue":"Venetian (DSE IV)","resort_fee_per_night_usd":55,"resort_fee_note":"$55 plus tax per night, payable at check-in","resort_fee_source":"S3","all_in_example":"Dec 18-20, 2026 (2 nights), 2 adults, Newly Remodeled Luxury King: $1,024.39 total, including $55/night resort fee and $120.89 taxes. Computed all-in per night: $512.20. Booking snapshot from this session, not a live rate.","all_in_per_night_usd":512.20,"all_in_source":"S3","walk_minutes":null,"walk_note":"Venue in the same building as the poker room (S2); walk time not needed for this row, but no verified walk-time data exists for other venues","flags":["F23","F25"],"source":"S3"},
-    {"id":"H2","hotel":"Wynn Las Vegas","near_venue":"Wynn (WPT World Championship)","resort_fee_per_night_usd":null,"resort_fee_note":"Official resort-fee page could not be read (dead end); fee not verified","resort_fee_source":null,"all_in_example":"","all_in_per_night_usd":null,"all_in_source":null,"walk_minutes":null,"walk_note":"not verified","flags":["F17","F23"],"source":"S5"},
-    {"id":"H3","hotel":"Caesars Palace","near_venue":"Caesars Palace (daily NLH)","resort_fee_per_night_usd":null,"resort_fee_note":"Not verified on an official page; third-party sources conflict","resort_fee_source":null,"all_in_example":"","all_in_per_night_usd":null,"all_in_source":null,"walk_minutes":null,"walk_note":"not verified","flags":["F16","F23"],"source":"S7"},
-    {"id":"H4","hotel":"MGM Grand","near_venue":"MGM Grand (daily tournaments, times unverified)","resort_fee_per_night_usd":null,"resort_fee_note":"Third-party sources only: $50 plus tax per night. Official terms not read; left blank","resort_fee_source":null,"all_in_example":"","all_in_per_night_usd":null,"all_in_source":null,"walk_minutes":null,"walk_note":"not verified","flags":["F15","F23"],"source":"S9"}
+  "meta": {
+    "accessed": "2026-11-16",
+    "rule": "Only values read on an official page are shown. Room rates, taxes, and walking times are not confirmed and are left blank."
+  },
+  "hotels": [
+    {
+      "property": "The Venetian / The Palazzo",
+      "poker_location": "Venetian poker room (official poker page).",
+      "resort_fee": "$55 + tax per night (official resort-fee page).",
+      "walk": null,
+      "sources": [
+        "V_RESORT",
+        "V_POKER"
+      ],
+      "notes": "Walking time from the room to the poker room not confirmed. Rates for your dates not confirmed."
+    },
+    {
+      "property": "Wynn Las Vegas",
+      "poker_location": "Wynn poker room (official poker page).",
+      "resort_fee": null,
+      "walk": null,
+      "sources": [
+        "W_PAGE"
+      ],
+      "notes": "Official resort-fee page could not be reached. Third-party figures conflict and are not used."
+    },
+    {
+      "property": "Bellagio",
+      "poker_location": "Bellagio poker room (official poker page).",
+      "resort_fee": null,
+      "walk": null,
+      "sources": [
+        "B_PAGE",
+        "B_HOTEL"
+      ],
+      "notes": "Official resort-fee page could not be reached (404). Third-party figures conflict and are not used."
+    },
+    {
+      "property": "Caesars Palace",
+      "poker_location": "Caesars Palace poker room (official casino page).",
+      "resort_fee": null,
+      "walk": null,
+      "sources": [
+        "C_PAGE",
+        "C_FEE"
+      ],
+      "notes": "Official resort-fee page is marketing copy with no fee amount. Third-party figures conflict and are not used."
+    }
   ]
 }
