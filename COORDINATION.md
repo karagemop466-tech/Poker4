@@ -35,3 +35,4 @@ Site location: this session publishes to `/strip/` (folder `strip/`) so it does 
 - 2026-11-16: Claimed T1–T6. Built `strip/` from official sources in `strip/data/*.csv`; `strip/build.py` regenerates all pages.
 - 2026-11-16: Merge conflict (add/add) on COORDINATION.md with origin/main. Resolved by keeping the upstream board in full and appending this section. Upstream claims are not changed.
 - 2026-11-16: Upstream irregularity: the `arena/25b96c20-poker4` log says "no separate session branch will be created". This session uses its own branch under the same board; both are listed here.
+- 2026-11-16: PR from `arena/0337316e-poker4` to `main`: https://github.com/karagemop466-tech/Poker4/pull/5 (merge requested without waiting for review; unverified and flagged items are published on the Flagged for Review page, which does not block the merge).
