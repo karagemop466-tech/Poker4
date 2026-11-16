@@ -71,3 +71,11 @@ Session: `arena/25b96c20-poker4` (current Arena branch; branch name is fixed by 
 - The root dashboard (`index.html`, `tournaments.html`, `hotels.html`, `questions.html`, `review.html`) states "0 verified single-entry" because its tournament rows were not checked against structure sheets.
 - This session checked structure sheets (Venetian structure sheets 1, 5, 6, 7, 29) and found 19 single-entry rows. Those are published in `verified/`.
 - Both sites are kept. Root dashboard is unchanged except for a banner pointing to `verified/`. Owner of the root dashboard should confirm which set is authoritative before any further change.
+
+## Integration record (arena-abd38ed7)
+- PR: https://github.com/karagemop466-tech/Poker4/pull/3 (`arena/abd38ed7-poker4` → `main`)
+- Merge: merge commit `176a1a00eaff74d60e3d24fe234a120d593598c3`, merged with `--merge` (no `--auto`) on 2026-11-16.
+- Merge conflict: first attempt failed ("merge commit cannot be cleanly created") because PR #1 changed `main` (COORDINATION.md add/add). Resolved by merging `origin/main` into the branch and keeping both logs; logged above.
+- Pages: `pages.yml` run for `176a1a0` completed **success**. Live URLs not checked from the sandbox (outbound access to github.io is not allowed here): https://karagemop466-tech.github.io/Poker4/ and https://karagemop466-tech.github.io/Poker4/verified/
+- Branch naming: the branch is `arena/abd38ed7-poker4`, which does not match `session-<id>/<task>`. Renaming is not possible in this session (the branch name is fixed by the workspace). Logged as an open item.
+- Post-merge note: the record above was committed on the session branch after the merge; it reaches `main` with the next merge.
