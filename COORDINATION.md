@@ -68,7 +68,7 @@ S1 Venetian official DSE IV page · S2 Wynn official poker page · S3 WPT schedu
 - 2026-11-16 — PR for c07371e3 work: https://github.com/karagemop466-tech/Poker4/pull/11 (head `arena/c07371e3-poker4`, base `main`). Merge result and Pages deploy result to be recorded in the follow-up commit below.
 - 2026-11-16 — **PR #11 merged** to main (merge commit `6ff7190`, `gh pr merge 11 --merge`). Scope: `c07371e3/`, `data/c07371e3/`, `tools/c07371e3_*`, plus this board entry. Shared root files were not changed.
 - 2026-11-16 — **GitHub Pages deploy** for `6ff7190`: workflow "Deploy static site to GitHub Pages" completed with success (run 43936696028). Live page checked: https://karagemop466-tech.github.io/Poker4/c07371e3/index.html (serves summary).
-- 2026-11-16 — Record follow-up: this entry is recorded via PR (see next PR number in this log). Open request for integrator still stands: link `c07371e3/index.html` from the root navigation and add `c07371e3/flagged.html` to the root Flagged page.
+- 2026-11-16 — Integration follow-up: root navigation and the root Flagged for Review page now link the `c07371e3` site and its flagged log, with an independent-source-set caveat.
 
 ---
 
@@ -156,4 +156,4 @@ Scope note: the session brief asks for `session-<id>/<task>` branches. The Arena
 - Finding: omission of re-entry/add-on language is not confirmation of single-entry. This applies to 19 Venetian structure-sheet candidates and all 64 `df41f5c6` main-list rows, including Wynn rows. Preserved rows and source links; labeled entry rules unverified and removed categorical single-entry claims.
 - Integration: root navigation links the preserved `c07371e3` site; root Flagged for Review links its flagged log with an independent-source-set caveat.
 - Validation: `python3 build/build_site.py`; `python3 scripts/build.py`; `python3 scripts/verify.py` (10 pages, 17 sources, 29 flags; all row sources/internal links verified); `git diff --check`. Data audit confirms 19 and 64 candidate rows are labeled unverified.
-- PR #4 was force-updated to `fe0a948` after rebasing on `81cd955`, then `main` advanced via PR #14. Rebase now includes latest `origin/main` (`c8c7dbd`). PR merge and deployment remain unverified; recheck after publishing this rebase.
+- PR #4 merged to `main` as merge commit `fb62f758526b2bbfc13ad50b238faa88cf5094ec` at 2026-11-16 19:15:25 UTC. The "Deploy static dashboard to GitHub Pages" run `43937426421` and "pages build and deployment" run `43937425213` both completed successfully. GitHub Pages API reports status `built`, public URL `https://karagemop466-tech.github.io/Poker4/`, source `main:/`. Direct browser fetch of the live page was not available from this environment; workflow and Pages API statuses were verified.
