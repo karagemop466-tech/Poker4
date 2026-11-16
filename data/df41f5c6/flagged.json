@@ -1,0 +1,239 @@
+{
+  "note": "Flagged items do not block the merge. Each item says what is unverified and how to close it.",
+  "items": [
+    {
+      "id": "F1",
+      "title": "Caesars Palace buy-in conflict",
+      "detail": "caesars.com page lists $100 for all four daily events; the official 2026 flyer lists $100 (10 AM, 6 PM) and $160 (2 PM, 9 PM). The flyer is used. Confirm at the poker room.",
+      "sources": [
+        "S7"
+      ]
+    },
+    {
+      "id": "F2",
+      "title": "MGM Grand daily tournaments: times and buy-ins",
+      "detail": "Official page lists NLH tournaments at 11 AM, 7 PM, 11 PM. A third-party source lists 11 AM, 3 PM, 7 PM, 11 PM and says tournaments were suspended until July 10, 2026. Buy-ins not on the official page. Left blank.",
+      "sources": [
+        "S9"
+      ]
+    },
+    {
+      "id": "F3",
+      "title": "Horseshoe daily tournaments: times and buy-ins",
+      "detail": "Official page confirms six daily tournament times, but the times and buy-ins are not on the page. Left blank.",
+      "sources": [
+        "S8"
+      ]
+    },
+    {
+      "id": "F4",
+      "title": "Wynn daily poster: guarantee-to-day mapping",
+      "detail": "The poster (June 2026 revision) shows Mon-Thu and Sat/Sun guarantees, but the day mapping is ambiguous and the poster was not checked against the current schedule. Daily rows have no dates.",
+      "sources": [
+        "S5"
+      ]
+    },
+    {
+      "id": "F5",
+      "title": "Wynn WPT schedule: formatting and footnotes",
+      "detail": "Rows for Dec 17-18 are out of order. The 'NIH' label on Ladies NLH is a typo, read as NLH. Footnoted events (*, **, ***, ****) need structure-sheet checks, which were not done.",
+      "sources": [
+        "S6"
+      ]
+    },
+    {
+      "id": "F6",
+      "title": "Wynn WPT World Championship eligibility",
+      "detail": "The source note lists the $10,400 events as ClubWPT Gold qualifier-style events, not Nevada entries. Confirm eligibility before entering.",
+      "sources": [
+        "S6"
+      ]
+    },
+    {
+      "id": "F7",
+      "title": "Venetian rows with missing or inferred dates",
+      "detail": "Several rows (events #47 1A, #49 1A, #58) have a tour label in the date column. Their dates were not captured and are left blank, or are inferred from block order and marked for confirmation.",
+      "sources": [
+        "S1"
+      ]
+    },
+    {
+      "id": "F8",
+      "title": "Venetian Dec 8 LIPS Ladies row",
+      "detail": "The event is listed on the Dec 8 row, but its buy-in and guarantee were not captured. Left blank.",
+      "sources": [
+        "S1"
+      ]
+    },
+    {
+      "id": "F9",
+      "title": "Venetian Dec 9 rows only partly captured",
+      "detail": "Only partial rows for Dec 9 were captured. Re-check the full schedule before using Dec 9 for planning.",
+      "sources": [
+        "S1"
+      ]
+    },
+    {
+      "id": "F10",
+      "title": "Venetian guarantees not captured",
+      "detail": "Events #3-5 RaceDay Stack and #6 ($200 NLH 1-day) show no guarantee in the captured rows. Left blank.",
+      "sources": [
+        "S1"
+      ]
+    },
+    {
+      "id": "F11",
+      "title": "Venetian later series not scheduled",
+      "detail": "DeepStack NYE (Dec 24, 2026 - Jan 10, 2027) and DeepStack Showdown (Jan 11 - Feb 14, 2027) are announced, but their event schedules were not read.",
+      "sources": [
+        "S1"
+      ]
+    },
+    {
+      "id": "F12",
+      "title": "Venetian structure sheets",
+      "detail": "Structure sheets read for $200 bounty (structure_1), $400 NLH with $75K GTD (structure_2) and $300 NLH 1-day with $10K GTD (structure_5). Event numbers were not confirmed on the sheets; the buy-in and GTD match the schedule rows for events #2 and #7.",
+      "sources": [
+        "S1"
+      ]
+    },
+    {
+      "id": "F13",
+      "title": "Venetian PKO label",
+      "detail": "Event #8 is labeled PKO on the schedule; structure_1 is a $200 bounty sheet. Format not confirmed.",
+      "sources": [
+        "S1"
+      ]
+    },
+    {
+      "id": "F14",
+      "title": "Venetian Turbo flight (1F)",
+      "detail": "The 1F Turbo flight ($800 NLH, $500K GTD, Dec 5) is part of event #26 (row V20 in tournaments.json). Its exact time was not re-checked against the PDF in this session.",
+      "sources": [
+        "S1"
+      ]
+    },
+    {
+      "id": "F15",
+      "title": "MGM Grand resort fee",
+      "detail": "Only third-party sources report $50 plus tax per night. Official MGM Grand terms not read. Left blank.",
+      "sources": [
+        "S9"
+      ]
+    },
+    {
+      "id": "F16",
+      "title": "Caesars Palace resort fee and event date range",
+      "detail": "No official resort-fee page read. The daily flyer does not give a date range in the captured text. Left blank.",
+      "sources": [
+        "S7"
+      ]
+    },
+    {
+      "id": "F17",
+      "title": "Wynn resort fee",
+      "detail": "Official resort-fee page could not be read. Left blank.",
+      "sources": [
+        "S5"
+      ]
+    },
+    {
+      "id": "F18",
+      "title": "Bellagio poker page",
+      "detail": "Official poker page returned 'Page not found'. No official current tournament data was found.",
+      "sources": [
+        "S12"
+      ]
+    },
+    {
+      "id": "F19",
+      "title": "ARIA tournaments",
+      "detail": "Official ARIA poker page has room information but no schedule or buy-in. Third-party sources mention a daily $200 NL and an Aria Poker Open. Unverified; not listed.",
+      "sources": [
+        "S10"
+      ]
+    },
+    {
+      "id": "F20",
+      "title": "Planet Hollywood poker",
+      "detail": "Official poker page returned HTTP 500. Third-party sources report the resort closed in January 2026. Not listed.",
+      "sources": [
+        "S13"
+      ]
+    },
+    {
+      "id": "F21",
+      "title": "Resorts World poker",
+      "detail": "No official tournament page found. Third-party sources conflict ($160 vs $200). Not listed.",
+      "sources": [
+        "S14"
+      ]
+    },
+    {
+      "id": "F22",
+      "title": "Golden Nugget, Orleans and South Point",
+      "detail": "Golden Nugget poker page returned empty content; Orleans poker page returned 404; South Point is in the southwest valley (off the Strip, per its home page) and its poker room page was not read. Not listed.",
+      "sources": [
+        "S11",
+        "S16",
+        "S17"
+      ]
+    },
+    {
+      "id": "F23",
+      "title": "No verified walking times",
+      "detail": "No walking-time source was read for any hotel or venue. The 30-minute walking limit is therefore unconfirmed for every hotel.",
+      "sources": [
+        "S2"
+      ]
+    },
+    {
+      "id": "F24",
+      "title": "Repo review: irregularities",
+      "detail": "Repo holds only README.md (one line) and one commit. No LICENSE, no .gitignore, no data or site files. GitHub Pages was set to a legacy build from main root, which had no site files, so the published page was empty. Fixed in this session by serving from /docs.",
+      "sources": [
+        "S15"
+      ]
+    },
+    {
+      "id": "F25",
+      "title": "Hotel snapshot is a single dated booking",
+      "detail": "The Venetian all-in figure is from one booking-page snapshot (Dec 18-20, 2026, 2 adults), not a live or confirmed rate.",
+      "sources": [
+        "S3"
+      ]
+    },
+    {
+      "id": "F26",
+      "title": "Wynn Signature Series",
+      "detail": "Jan 11-24, 2027 series is outside the current window. Its schedule PDF was not read.",
+      "sources": [
+        "S5"
+      ]
+    },
+    {
+      "id": "F27",
+      "title": "Live event timing",
+      "detail": "Venetian event #1 started Nov 16, 2026 (today). Registration close times for the Nov 16-17 flights are not captured.",
+      "sources": [
+        "S1"
+      ]
+    },
+    {
+      "id": "F28",
+      "title": "Wynn WPT structure sheets",
+      "detail": "Structure PDF was not read beyond its general terms. Blinds, levels and re-entry rules for the WPT events are unverified.",
+      "sources": [
+        "S6"
+      ]
+    },
+    {
+      "id": "F29",
+      "title": "Wynn Dec 5 label",
+      "detail": "The Dec 5 row reads 'NLH Day 2 / WPT Prime Day 1A'. The label is ambiguous; buy-in and guarantee are as shown in the official PDF.",
+      "sources": [
+        "S6"
+      ]
+    }
+  ]
+}
