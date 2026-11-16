@@ -70,3 +70,45 @@ S1 Venetian official DSE IV page · S2 Wynn official poker page · S3 WPT schedu
 - 2026-11-16 — **GitHub Pages deploy** for `6ff7190`: workflow "Deploy static site to GitHub Pages" completed with success (run 43936696028). Live page checked: https://karagemop466-tech.github.io/Poker4/c07371e3/index.html (serves summary).
 - 2026-11-16 — Record follow-up: this entry is recorded via PR (see next PR number in this log). Open request for integrator still stands: link `c07371e3/index.html` from the root navigation and add `c07371e3/flagged.html` to the root Flagged page.
 
+---
+
+## Session df41f5c6 (branch `arena/df41f5c6-poker4`)
+
+Session ID: `df41f5c6`. Site published at `/df41f5c6/` (folder `df41f5c6/`). Data in `data/df41f5c6/`. Build: `python3 scripts/build.py`; check: `python3 scripts/verify.py`.
+Scope note: the session brief asks for `session-<id>/<task>` branches. The Arena branch is fixed as `arena/df41f5c6-poker4`, so all tasks are on that one branch, committed in order.
+
+| # | Task | Status | Owner | Files in scope |
+|---|------|--------|-------|----------------|
+| T1 | Repo review and irregularity log | done | df41f5c6 | `df41f5c6/repo-review.html`, `df41f5c6/flagged.html` |
+| T2 | Single-entry tournament research (live, upcoming, ranked by buy-in, then GTD) | done (42 Venetian + 22 Wynn main-list rows; 9 separate-section rows) | df41f5c6 | `data/df41f5c6/tournaments.json`, `df41f5c6/tournaments.html`, `df41f5c6/other-formats.html` |
+| T3 | Hotel research (resort fees, all-in per night, walking) | done (partial; 1 official fee; walking not verified for any hotel) | df41f5c6 | `data/df41f5c6/hotels.json`, `df41f5c6/hotels.html` |
+| T4 | Day schedule, executive summary | done | df41f5c6 | `df41f5c6/schedule.html`, `df41f5c6/index.html` |
+| T5 | Questions and site-improvement suggestions (decision-only) | done | df41f5c6 | `df41f5c6/questions.html`, `df41f5c6/suggestions.html` |
+| T6 | Site build and link check | done (10 pages; verify.py OK) | df41f5c6 | `scripts/build.py`, `scripts/verify.py`, `df41f5c6/*` |
+| T7 | Flagged for Review page | done (29 items) | df41f5c6 | `df41f5c6/flagged.html`, `data/df41f5c6/flagged.json` |
+| T8 | Sources list | done (17 official sources) | df41f5c6 | `data/df41f5c6/sources.json`, `df41f5c6/sources.html` |
+| T9 | Integration: merge with `main`, PR, merge, Pages check | done | df41f5c6 | this section |
+
+### Log (df41f5c6)
+- 2026-11-16: Claimed T1–T9 (commit 9e83ee9). Commit 34e6221 added the data, build and verifier, first under `data/` and `docs/`.
+- 2026-11-16: **Merge conflict.** PR #6 from `arena/df41f5c6-poker4` to `main` was not mergeable (`CONFLICTING`) after `main` gained PR #3 (`arena-abd38ed7`) and PR #5 (`arena-0337316e`). Conflicting paths: `COORDINATION.md`, `data/tournaments.json`, `data/hotels.json`, and the `docs/` names. **Resolution:** merged `origin/main` into this branch. Other sessions' files were kept exactly as they were on `main`. This session's files were moved to session-scoped paths (`data/df41f5c6/`, `df41f5c6/`) and its build was re-pointed to them. No file from another session was overwritten or deleted. The shared board above is kept verbatim.
+- 2026-11-16: Note for the other sessions: `data/tournaments.json` and `data/hotels.json` on `main` (PR #3) are not used by this session's site. This session's data is `data/df41f5c6/`. The `docs/` folder used by PR #3's build was not created on `main` by this session.
+- 2026-11-16: Correction recorded. The earliest main-list verified start is 10:00 AM (Wynn, Dec 10). The only earlier verified start is a 9:10 AM Venetian satellite (#46), shown on the other-formats page only.
+- Pages: the workflow `.github/workflows/pages.yml` on `main` uploads the repo root, so `/df41f5c6/` is published with no settings change. The site is verified after the merge.
+- 2026-11-16: **PR #6** (`arena/df41f5c6-poker4` → `main`) merged with a merge commit at `feee52a` (merged 19:06 UTC). Pages deploy for `feee52a`: success (both workflows).
+- 2026-11-16: Pre-merge checks: `scripts/build.py` built 10 pages (64 main-list rows, 9 other-format rows, 59 dated rows); `scripts/verify.py` OK (every table row links an official source; internal links resolve; data references valid).
+- 2026-11-16: Process note: a `git pull --rebase` on this branch replayed `main`'s merged commits (the branch contains a merge with `main`). Nothing was lost or force-pushed; the rebase was aborted and the branch was pushed as a fast-forward. Future pulls: use a plain fast-forward when the branch has no unpushed commits, not a rebase across merges.
+- 2026-11-16: Post-merge fix found on the live page: the dashboard's "Largest guarantees" line showed buy-ins, not guarantees; a second live-event wording overstated "single-entry" for the Venetian rows; flag F24 still said `/docs`. Fixed in **PR #9** (`arena/df41f5c6-poker4` → `main`), merged at `c9b7401` (19:08 UTC). Pages deploy for `c9b7401`: success (both workflows). Live check: `https://karagemop466-tech.github.io/Poker4/df41f5c6/index.html` shows the corrected text.
+- Live URLs (session df41f5c6): `/df41f5c6/index.html`, `/df41f5c6/tournaments.html`, `/df41f5c6/other-formats.html`, `/df41f5c6/hotels.html`, `/df41f5c6/schedule.html`, `/df41f5c6/questions.html`, `/df41f5c6/suggestions.html`, `/df41f5c6/flagged.html`, `/df41f5c6/repo-review.html`, `/df41f5c6/sources.html`.
+- Result: integration complete. No merge conflicts remain. Flagged items (29) are published on `/df41f5c6/flagged.html` and did not block the merge.
+- Suggestions (`df41f5c6/suggestions.html`): decision-only; nothing implemented; awaiting the user's choice per row.
+
+- 2026-11-16 (df41f5c6): **Merge conflict on COORDINATION.md** while merging PR #10 (`arena/df41f5c6-poker4`) with `main` (after PR #8 from `arena/e2d11e52-poker4` and the combined-board commit `46a5d2c`). Cause: `main`'s combined board no longer contained the df41f5c6 section. **Resolution:** kept `main`'s board in full (every other session's line is unchanged) and re-appended the df41f5c6 section below it, so the df41f5c6 record is preserved. No other session's content was removed.
+=======
+- PR #8: https://github.com/karagemop466-tech/Poker4/pull/8 — merged to main (merge commit method), commit 46a5d2c.
+- Deploy result: SUCCESS — live site verified 2026-11-16; homepage, tournaments, re-entry/add-on, hotels, schedule, executive summary, suggestions, Q&A, and Flagged for Review pages all load; internal links verified; unverified items published on Flagged for Review page (do not block launch).
+- Merge result: main fast-forwarded to 46a5d2c; PR #8 closed by merge.
+>>>>>>> origin/main
+
+- 2026-11-16 (df41f5c6): **Second merge conflict on COORDINATION.md** while updating PR #10 (`arena/df41f5c6-poker4`) with `main` after `000d1da` (e2d11e52 record of PR #8). **Resolution:** kept `main`'s board verbatim (including `000d1da`) and re-appended the df41f5c6 section. Nothing from other sessions was removed.
+- 2026-11-16 (df41f5c6): Process note: `git pull --rebase` on this branch replayed merged `main` commits again and stopped mid-rebase. Aborted it (no commits lost; branch unchanged) and used a plain merge plus fast-forward push instead.
