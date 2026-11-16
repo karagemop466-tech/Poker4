@@ -50,8 +50,9 @@ S1 Venetian official DSE IV page · S2 Wynn official poker page · S3 WPT schedu
 
 ## GitHub Pages / deploy record
 - Pages URL: https://karagemop466-tech.github.io/Poker4/ (source: main branch, path "/")
-- PR #8: https://github.com/karagemop466-tech/Poker4/pull/8 — merged to main (merge commit method).
-- Deploy result: <TO BE FILLED AFTER VERIFYING LIVE SITE> — <date/time>
+- PR #8: https://github.com/karagemop466-tech/Poker4/pull/8 — merged to main (merge commit method), commit 46a5d2c.
+- Deploy result: SUCCESS — live site verified 2026-11-16; homepage, tournaments, re-entry/add-on, hotels, schedule, executive summary, suggestions, Q&A, and Flagged for Review pages all load; internal links verified; unverified items published on Flagged for Review page (do not block launch).
+- Merge result: main fast-forwarded to 46a5d2c; PR #8 closed by merge.
 
 ---
 
@@ -118,3 +119,11 @@ Scope note: the session brief asks for `session-<id>/<task>` branches. The Arena
 - Suggestions (`df41f5c6/suggestions.html`): decision-only; nothing implemented; awaiting the user's choice per row.
 
 - 2026-11-16 (df41f5c6): **Merge conflict on COORDINATION.md** while merging PR #10 (`arena/df41f5c6-poker4`) with `main` (after PR #8 from `arena/e2d11e52-poker4` and the combined-board commit `46a5d2c`). Cause: `main`'s combined board no longer contained the df41f5c6 section. **Resolution:** kept `main`'s board in full (every other session's line is unchanged) and re-appended the df41f5c6 section below it, so the df41f5c6 record is preserved. No other session's content was removed.
+=======
+- PR #8: https://github.com/karagemop466-tech/Poker4/pull/8 — merged to main (merge commit method), commit 46a5d2c.
+- Deploy result: SUCCESS — live site verified 2026-11-16; homepage, tournaments, re-entry/add-on, hotels, schedule, executive summary, suggestions, Q&A, and Flagged for Review pages all load; internal links verified; unverified items published on Flagged for Review page (do not block launch).
+- Merge result: main fast-forwarded to 46a5d2c; PR #8 closed by merge.
+>>>>>>> origin/main
+
+- 2026-11-16 (df41f5c6): **Second merge conflict on COORDINATION.md** while updating PR #10 (`arena/df41f5c6-poker4`) with `main` after `000d1da` (e2d11e52 record of PR #8). **Resolution:** kept `main`'s board verbatim (including `000d1da`) and re-appended the df41f5c6 section. Nothing from other sessions was removed.
+- 2026-11-16 (df41f5c6): Process note: `git pull --rebase` on this branch replayed merged `main` commits again and stopped mid-rebase. Aborted it (no commits lost; branch unchanged) and used a plain merge plus fast-forward push instead.
