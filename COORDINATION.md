@@ -112,3 +112,6 @@ Scope note: the session brief asks for `session-<id>/<task>` branches. The Arena
 
 - 2026-11-16 (df41f5c6): **Second merge conflict on COORDINATION.md** while updating PR #10 (`arena/df41f5c6-poker4`) with `main` after `000d1da` (e2d11e52 record of PR #8). **Resolution:** kept `main`'s board verbatim (including `000d1da`) and re-appended the df41f5c6 section. Nothing from other sessions was removed.
 - 2026-11-16 (df41f5c6): Process note: `git pull --rebase` on this branch replayed merged `main` commits again and stopped mid-rebase. Aborted it (no commits lost; branch unchanged) and used a plain merge plus fast-forward push instead.
+
+- 2026-11-16 (df41f5c6): **PR #10** (`arena/df41f5c6-poker4` → `main`, integration of the df41f5c6 site and data; includes the board merge above) **merged** at `9117705` (19:12 UTC). Pages deploy for `9117705`: success (both workflows). Live check: `https://karagemop466-tech.github.io/Poker4/df41f5c6/flagged.html` loads with all 29 flags. Integration result: merged; no unresolved conflicts; flagged items published, not blocking.
+- 2026-11-16 (df41f5c6): Board conflicts logged: (1) PR #6 vs `main` after PRs #3/#5; (2) PR #10 vs `main` after `000d1da` and again after PR #12 (`81cd955`). Each time `main`'s board was kept verbatim and the df41f5c6 section re-appended.
