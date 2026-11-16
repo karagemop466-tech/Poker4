@@ -52,3 +52,25 @@ S1 Venetian official DSE IV page · S2 Wynn official poker page · S3 WPT schedu
 - Pages URL: https://karagemop466-tech.github.io/Poker4/ (source: main branch, path "/")
 - PR #8: https://github.com/karagemop466-tech/Poker4/pull/8 — merged to main (merge commit method).
 - Deploy result: <TO BE FILLED AFTER VERIFYING LIVE SITE> — <date/time>
+
+---
+
+## Session session-1 (branch `arena/9ae2dbdb-poker4`, base `main` @ 52654c1)
+
+Parallel-session rules followed: this session stayed on its own branch and edited only its claimed files. The integrated site already on `main` (root dashboard + `pages/` category pages, `verified/`, `strip/`, `df41f5c6/`) is preserved; this session contributes additively: `data/tournaments.md`, `data/hotels.md`, `assets/js/app.js`, and this board section. No other session's files were overwritten or deleted.
+
+| # | Task | Status | Owner | Files |
+|---|------|--------|-------|-------|
+| 1 | Research Las Vegas Strip poker rooms & upcoming tournament schedules (official sources); single-entry only, rebuy/add-on listed separately | done | session-1 | data/tournaments.md |
+| 2 | Research hotels within 30-min walking distance of tournaments (nightly rate + resort fees + true cost) | done | session-1 | data/hotels.md |
+| 3 | Analysis: executive summary, tournament ranking by cost/prize pool, hotel true-cost ranking | done | session-1 | pages/summary.html (this session's branch; main carries the integrated `pages/executive-summary.html`) |
+| 4 | Site: landing page + category subpages, tables with source links, findings | done | session-1 | index.html (additive companion links only on branch), pages/*.html (this session's branch; main carries integrated `pages/`), assets/css/style.css, assets/js/app.js |
+| 5 | Verification: line-by-line source check, unverified items left blank + flagged | done | session-1 | pages/flagged.html (this session's branch; main carries `pages/flagged-for-review.html`, `data/flagged.json`) |
+| 6 | Suggestions section (site improvement + decision-making) and Q&A section (open questions before decisions) | done | session-1 | pages/suggestions.html, pages/qa.html (this session's branch; main carries integrated equivalents) |
+| 7 | PR to main, merge, GitHub Pages publish, confirm no broken links | in progress | session-1 | — |
+
+## Session log (session-1)
+- 2026-11-16: Repo reviewed — contained only README.md. Researched tournaments from official sources: Wynn poker page + daily poster PDF + WPT World Championship schedule PDF (wynnresorts.com CDN; WPT WC Nov 27–Dec 21, 2026); Venetian DSE IV official schedule + structure sheets (venetianlasvegas.com; 64 events Nov 16–Dec 23, 2026); Caesars Palace booking calendar + official fees page (Dec 11–13, 2026: $595/$595/$126; fee $62.30/night incl. tax). VegasPokerCalendar used for discovery only, flagged per row.
+- 2026-11-16: Built full site (landing + category subpages, executive summary, suggestions, Q&A, Flagged for Review); internal link audit 0 broken. Unverified values left blank and flagged; nothing inferred.
+- 2026-11-16: Rebased onto origin/main three times, preserving all parallel sessions' boards and files. Conflicts resolved by keeping upstream board/work in full and adding this section.
+- 2026-11-16: PR #7: https://github.com/karagemop466-tech/Poker4/pull/7 — merge requested without waiting for review. After merge: confirm GitHub Pages deploy on main, then record merge result + deploy status below.
