@@ -1,0 +1,5 @@
+schedule,time,event_name,buy_in_usd,guarantee_usd,fees_and_staff,prize_pool_usd,re_entry,rebuy_addon,registration_end,source
+Mon-Thu daily,12:00 PM,$200 No Limit Hold'em,200,10000,$26 fee + $12 staff,162,Allowed (through level 9),None stated,Level 9 (~4:30 PM),https://www.wynnlasvegas.com/casino/poker
+Fri,12:00 PM,$240 No Limit Hold'em rebuy/add-on,240,40000,$35 fee + $15 staff,,Not allowed,"Rebuy $200 for 25,000 chips when at or below 15,000; one $100 add-on for 15,000",Level 9 (~4:30 PM),https://www.wynnlasvegas.com/casino/poker
+Sat & Sun daily,12:00 PM,$200 No Limit Hold'em,200,25000,$26 fee + $12 staff,162,Allowed (through level 11),One $100 add-on,Level 11 (~5:30 PM),https://www.wynnlasvegas.com/casino/poker
+Nightly,6:00 PM,$160 No Limit Hold'em,160,10000,$20 fee + $10 staff,130,Allowed (through level 9),One $100 add-on,Level 9 (~9:00 PM),https://www.wynnlasvegas.com/casino/poker
