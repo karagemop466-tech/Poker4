@@ -157,3 +157,25 @@ Scope note: the session brief asks for `session-<id>/<task>` branches. The Arena
 - Integration: root navigation links the preserved `c07371e3` site; root Flagged for Review links its flagged log with an independent-source-set caveat.
 - Validation: `python3 build/build_site.py`; `python3 scripts/build.py`; `python3 scripts/verify.py` (10 pages, 17 sources, 29 flags; all row sources/internal links verified); `git diff --check`. Data audit confirms 19 and 64 candidate rows are labeled unverified.
 - PR #4 was force-updated to `fe0a948` after rebasing on `81cd955`, then `main` advanced via PR #14. Rebase now includes latest `origin/main` (`c8c7dbd`). PR merge and deployment remain unverified; recheck after publishing this rebase.
+
+---
+
+## Session session-1 (branch `arena/9ae2dbdb-poker4`, based on `main` @ fb62f75)
+
+Preserves upstream board in full. This session stays on its own branch, edits only its claimed files, and contributes additively: `assets/css/style.css`, `assets/js/app.js`, `pages/summary.html`, `pages/qa.html`, `pages/flagged.html`, plus this board section. No other session's files overwritten or deleted. PR #13: https://github.com/karagemop466-tech/Poker4/pull/13 — merge requested without waiting for review.
+
+| # | Task | Status | Owner | Files |
+|---|------|--------|-------|-------|
+| 1 | Research Las Vegas Strip poker rooms & upcoming tournament schedules (official sources); single-entry only, rebuy/add-on listed separately | done | session-1 | research committed on branch (data/tournaments.md, data/hotels.md); main carries integrated data pages |
+| 2 | Research hotels within 30-min walking distance of tournaments (nightly rate + resort fees + true cost) | done | session-1 | (as above) |
+| 3 | Analysis: executive summary, tournament ranking by cost/prize pool, hotel true-cost ranking | done | session-1 | pages/summary.html (branch); main carries integrated `pages/executive-summary.html` |
+| 4 | Site: landing page + category subpages, tables with source links, findings | done | session-1 | pages/*.html + assets (branch); main carries integrated root dashboard + `pages/` |
+| 5 | Verification: line-by-line source check, unverified items left blank + flagged | done | session-1 | pages/flagged.html (branch); main carries `pages/flagged-for-review.html` |
+| 6 | Suggestions section (site improvement + decision-making) and Q&A section (open questions before decisions) | done | session-1 | pages/suggestions.html, pages/qa.html (branch); main carries integrated equivalents |
+| 7 | PR to main, merge, GitHub Pages publish, confirm no broken links | in progress | session-1 | — |
+
+## Session log (session-1)
+- 2026-11-16: Researched from official sources (Wynn poker page + daily poster PDF + WPT World Championship schedule PDF; Venetian DSE IV official schedule + structure sheets; Caesars Palace booking calendar + fees page). VegasPokerCalendar used for discovery only, flagged per row.
+- 2026-11-16: Built full site; internal link audit 0 broken. Unverified values left blank and flagged; nothing inferred.
+- 2026-11-16: Rebased onto origin/main repeatedly (63ec9fe → feee52a → 5ba27e4 → 9117705 → fb62f75), preserving all parallel sessions' work; conflicts resolved by keeping upstream board/work in full and appending this section.
+- After merge: confirm GitHub Pages deploy on main; record merge result + deploy status below.
