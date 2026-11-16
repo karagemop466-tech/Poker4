@@ -50,5 +50,6 @@ S1 Venetian official DSE IV page · S2 Wynn official poker page · S3 WPT schedu
 
 ## GitHub Pages / deploy record
 - Pages URL: https://karagemop466-tech.github.io/Poker4/ (source: main branch, path "/")
-- PR #8: https://github.com/karagemop466-tech/Poker4/pull/8 — merged to main (merge commit method).
-- Deploy result: <TO BE FILLED AFTER VERIFYING LIVE SITE> — <date/time>
+- PR #8: https://github.com/karagemop466-tech/Poker4/pull/8 — merged to main (merge commit method), commit 46a5d2c.
+- Deploy result: SUCCESS — live site verified 2026-11-16; homepage, tournaments, re-entry/add-on, hotels, schedule, executive summary, suggestions, Q&A, and Flagged for Review pages all load; internal links verified; unverified items published on Flagged for Review page (do not block launch).
+- Merge result: main fast-forwarded to 46a5d2c; PR #8 closed by merge.
