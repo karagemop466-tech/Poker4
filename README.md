@@ -1,30 +1,26 @@
 # Poker Trip Planner — Las Vegas
 
-A static, source-linked research dashboard for upcoming Las Vegas poker tournaments, tournament entry-rule checks, hotel pricing, decision questions, and unresolved research flags.
+A source-linked decision dashboard for upcoming Las Vegas poker tournaments, single-entry rule verification, hotel costs, all-day scheduling limits, decision questions, and open research gaps. **Snapshot: November 16, 2026 (UTC).**
 
-## Dashboard pages
+## Dashboard
 
 - [Executive overview](index.html)
-- [Tournament candidates and special formats](schedule.html)
-- [Hotels and conditional nightly cost floors](hotels.html)
-- [Decision checklist](decisions.html)
+- [Tournament shortlist and special formats](schedule.html) ([legacy route](tournaments.html))
+- [Hotels and true-cost method](hotels.html)
+- [Decision checklist and site suggestions](decisions.html) ([legacy route](questions.html))
 - [Flagged for Review](review.html)
-- [Sources and methodology](sources.html)
+- [Official sources and methodology](sources.html)
 
-## Research scope and caution
+## Verified scope and important caveats
 
-Snapshot dated November 16, 2026. The verified upcoming schedule currently included is the Venetian DeepStack Extravaganza IV (Nov 16–Dec 23, 2026). The listed plain-format candidate events are **not confirmed single-entry**: the official sources reviewed do not publish a maximum-entry / re-entry / rebuy / add-on policy. Do not treat the shortlist as meeting a strict single-entry requirement until the organizer confirms it. Dated hotel totals are also unavailable without stay dates and a live official quote; conditional starting floors are clearly labeled.
+The current forward schedule fully reviewed is the official Venetian DeepStack Extravaganza IV (Nov 16–Dec 23, 2026). The tournament table is a screened candidate list, not a complete Strip-wide calendar. The official materials reviewed do **not** confirm a one-entry limit or rule out re-entry, rebuy, or add-ons, so **zero events are certified as single-entry**. No 8:00 AM event appears in the reviewed candidate schedule; the earliest candidate starts at 10:10 AM.
 
-All data is static and kept in `data.js`; page rendering and filtering are in `site.js`; styles are in `site.css`. Official source URLs are linked directly from every displayed data row. Unknown values remain blank and are listed on the Flagged for Review page.
+The poker room is at The Palazzo, Level 2 of Grand Canal Shoppes, within The Venetian Resort. The official room page gives directions from both lobbies but does not publish walking minutes. Dated hotel totals are unknown without travel dates and occupancy. Official starting poker-suite rates are conditional and are not a booking quote; unknown price, fee, and distance fields stay blank and are flagged.
 
-## Local preview
+Every data row in the dashboard links to an official organizer or property source. Review the [Flagged for Review page](review.html) before acting; schedules and terms can change.
 
-Open `index.html` in a browser, or run a static server from this directory, for example:
+## Implementation
 
-```sh
-python3 -m http.server 8000
-```
+The Pages source was already configured to deploy the repository root from `main` at [https://karagemop466-tech.github.io/Poker4/](https://karagemop466-tech.github.io/Poker4/). `.github/workflows/pages.yml` validates JavaScript syntax and local site links; the Pages publication itself uses the repository's existing branch-based deployment configuration. Site content is static HTML/CSS/JavaScript in the root and has no build dependency.
 
-## GitHub Pages
-
-The repository's existing Pages configuration serves the repository root from `main` at [https://karagemop466-tech.github.io/Poker4/](https://karagemop466-tech.github.io/Poker4/). The site is plain static HTML, CSS, and JavaScript; `.nojekyll` keeps static assets available. Merging changes into `main` triggers the configured Pages build and deployment.
+Run locally with `python3 -m http.server 8000`.

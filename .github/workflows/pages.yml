@@ -1,0 +1,41 @@
+name: Validate static GitHub Pages site
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Check JavaScript syntax
+        run: |
+          node --check data.js
+          node --check site.js
+      - name: Check local HTML assets and navigation
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from urllib.parse import urlparse
+          import re
+          errors = []
+          for page in Path('.').glob('*.html'):
+              for ref in re.findall(r'(?:src|href)="([^"]+)"', page.read_text()):
+                  parsed = urlparse(ref)
+                  if parsed.scheme or ref.startswith('#'):
+                      continue
+                  target = Path(parsed.path or '.')
+                  if not target.exists():
+                      errors.append(f'{page}: missing local target {ref}')
+          if errors:
+              raise SystemExit('\n'.join(errors))
+          print('All local HTML asset and navigation targets exist.')
+          PY
