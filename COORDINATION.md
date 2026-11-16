@@ -20,7 +20,7 @@ Note on process: the session brief asks for per-task branches (`session-<id>/<ta
 | T7 | Site improvement suggestions (decision-only, no implementation) | done | df41f5c6 | `data/suggestions.json`, `docs/suggestions.html` (generated) | |
 | T8 | GitHub Pages site build + verification script | done | df41f5c6 | `scripts/`, `docs/` | Pages source switched to `/docs` on `main` |
 | T9 | Flagged for Review page | done | df41f5c6 | `data/flagged.json`, `docs/flagged.html` | |
-| T10 | Integration: merge, re-verify, build check, PR to `main`, merge, Pages deploy check | in progress | df41f5c6 | whole repo | See log |
+| T10 | Integration: merge, re-verify, build check, PR to `main`, merge, Pages deploy check | in progress (pending PR) | df41f5c6 | whole repo | See log |
 
 ## Log
 
@@ -40,3 +40,13 @@ Note on process: the session brief asks for per-task branches (`session-<id>/<ta
 
 ### 2026-11-16 — T10 Integration (pending)
 - Will re-run `scripts/verify.py`, build `docs/`, merge to `main` via PR, merge, and confirm GitHub Pages deployment.
+
+### 2026-11-16 — T2–T9 build
+- Data: `data/tournaments.json` (64 main-list rows, 9 other-format rows), `data/hotels.json` (4 hotels; 1 official fee), `data/sources.json` (17 official sources), `data/flagged.json` (29 flags).
+- Site: `scripts/build.py` generates `docs/` (10 pages). `scripts/verify.py` checks every table row links an official source, internal links resolve, and all data references are valid. Result: OK.
+- Correction recorded: earliest main-list verified start is 10:00 AM (Wynn, Dec 10). The only earlier verified start is a 9:10 AM satellite (Venetian #46), shown only on the other-formats page.
+- Shared outputs (`docs/` index and nav) were produced by this session's build script; no other session has written to them.
+- Log: no merge conflicts so far.
+
+### 2026-11-16 — T10 Integration plan
+- Pages source: currently legacy `main /`. After merge, switch Pages to `main /docs` and confirm the deploy.
