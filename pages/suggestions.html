@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Suggestions | Poker4 Las Vegas Poker Planner</title>
+<meta name="description" table="Suggestions for improving the Poker4 site and decision-making process: review and choose paths before implementing changes. No changes are applied automatically.">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="bar">
+    <div>
+      <a href="../index.html" class="brand"><span class="dot"></span> Poker4</a>
+      <div class="tagline">Las Vegas Strip poker tournament planner — single-entry focus • verified from official sources</div>
+    </div>
+    <nav>
+      <a href="../index.html">Dashboard</a>
+      <a href="tournaments.html">Tournaments (single entry)</a>
+      <a href="reentry-addon.html">Re-entry / add-on (separate)</a>
+      <a href="hotels.html">Hotels &amp; true cost</a>
+      <a href="schedule.html">All-day schedule</a>
+      <a href="executive-summary.html">Executive summary</a>
+      <a href="suggestions.html" class="active">Suggestions</a>
+      <a href="questions-answers.html">Questions &amp; answers</a>
+      <a href="flagged-for-review.html">Flagged for review</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+<div class="breadcrumbs"><a href="../index.html">Dashboard</a> &gt; Suggestions — review before implementing</div>
+
+<section>
+  <h2 class="section-title"><span class="kicker">Suggestions</span><span>Site improvements and decision paths — choose before implementing</span></h2>
+  <p class="small">Nothing on this page is changed automatically. Each suggestion is a candidate path; review it and decide whether to implement. Where a suggestion depends on data we don't have, it points to the Questions &amp; answers page.</p>
+</section>
+
+<section>
+  <h2 class="section-title"><span class="kicker">A. Suggestions to improve the site (decision making)</span></h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th><th>Suggestion</th><th>Why it helps</th><th class="nowrap">Effort</th><th class="nowrap">Depends on</th><th class="nowrap">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>A1</td><td>Pull each event's structure PDF from the Venetian page (S1) and the WPT schedule PDF (S3) to confirm re-entry/add-on rules per event; flip Table A rows from "Unverified" to "Yes (single-entry)" or move them to Table B.</td><td>This is the single biggest gap: we can't honestly call anything single-entry without it.</td><td>Medium (dozens of PDFs)</td><td>None — PDFs are linked from official pages</td><td><span class="badge badge-unverified">Not done</span></td></tr>
+        <tr><td>A2</td><td>Add per-event direct links (Venetian structure PDFs, WPT PDF, Aria/Bellagio/Horseshoe room pages) so every row is one click from official confirmation.</td><td>Makes verification fast for the user and keeps the site honest.</td><td>Low</td><td>A1</td><td><span class="badge badge-unverified">Not done</span></td></tr>
+        <tr><td>A3</td><td>Add a date picker / calendar view so a traveler can filter tournaments by their actual travel dates (currently you must scan Nov 16 – Dec 23).</td><td>Turns a static list into a trip planner.</td><td>Medium</td><td>None</td><td><span class="badge badge-unverified">Not done</span></td></tr>
+        <tr><td>A4</td><td>Add hotel live-rate lookup: links to each hotel's official booking page for the traveler's dates, so true cost per night is computed with real rates, not typical ranges.</td><td>Typical ranges are flagged unverified; real rates decide the trip budget.</td><td>Medium</td><td>Hotel booking pages exist; rates not confirmed</td><td><span class="badge badge-unverified">Not done</span></td></tr>
+        <tr><td>A5</td><td>Add walking-time verification (e.g., Google Maps / official resort distances) instead of address-based estimates.</td><td>Current walking times are computed estimates, not sourced.</td><td>Low–Medium</td><td>None</td><td><span class="badge badge-unverified">Not done</span></td></tr>
+        <tr><td>A6</td><td>Add a "build my day" scheduler: pick tournaments, get conflict warnings (overlapping times), Day 2 lockout warnings, and a printable itinerary.</td><td>Directly serves the "enter as many tournaments" goal.</td><td>High</td><td>A3, verified re-entry data (A1)</td><td><span class="badge badge-unverified">Not done</span></td></tr>
+        <tr><td>A7</td><td>Add a cost calculator: hotel nights × true cost/night + tournament buy-ins = total trip budget estimate.</td><td>Answers "how much will this vacation cost?" in one number.</td><td>Low</td><td>A4 (real rates)</td><td><span class="badge badge-unverified">Not done</span></td></tr>
+        <tr><td>A8</td><td>Add sources as clickable links on every table row (done partially — complete the cover: every row must have one, including suggested new rows).</td><td>Keeps the verification standard enforceable as the site grows.</td><td>Low</td><td>None</td><td><span class="badge badge-unverified">Partial — in progress</span></td></tr>
+        <tr><td>A9</td><td>Add a "last verified on" date per data block so users know how stale the information is (schedules change constantly).</td><td>Prevents reliance on outdated guarantees/buy-ins.</td><td>Low</td><td>None</td><td><span class="badge badge-unverified">Not done</span></td></tr>
+        <tr><td>A10</td><td>Publish the raw data (data/tournaments.md, data/hotels.md) as the source of truth and keep the HTML generated from it, so updates are single-sourced.</td><td>Avoids drift between data files and pages.</td><td>Low</td><td>None</td><td><span class="badge badge-no">Done — data files exist</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <h2 class="section-title"><span class="kicker">B. Suggestions for decision-making (before booking)</span></h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th><th>Decision path</th><th>Open question it resolves</th><th class="nowrap">Info needed</th><th class="nowrap">Where tracked</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>B1</td><td>Choose single-entry only vs. accept re-entry (Horseshoe $100 dailies are cheapest but unlimited re-entry).</td><td>Is "single entry" a hard requirement or a preference?</td><td>Traveler's preference — not in our data</td><td>questions-answers.html (Q1)</td></tr>
+        <tr><td>B2</td><td>Pick dates: Nov 16 – Dec 23, 2026. Different dates = different events (DSE IV runs all window; WPT starts Nov 27).</td><td>Which dates is the traveler actually in Las Vegas?</td><td>Traveler's dates — not in our data</td><td>questions-answers.html (Q2)</td></tr>
+        <tr><td>B3</td><td>Pick a hotel base: Venetian (on-site, expensive), Park MGM (central, mid-range), Luxor/Excalibur (budget, Mandalay Bay end), or venue hotels Wynn/ARIA/Mandalay Bay/PH.</td><td>What is the nightly budget and which venues must be walkable?</td><td>Real rates for the chosen dates (A4)</td><td>pages/hotels.html</td></tr>
+        <tr><td>B4</td><td>Decide whether to play WPT multi-flight events at all (main event $10,400; Prime $1,100) given single-entry uncertainty.</td><td>Does multi-flight = multiple entries violate the traveler's rule?</td><td>Structure-sheet confirmation (A1)</td><td>pages/tournaments.html</td></tr>
+        <tr><td>B5</td><td>Confirm 8 AM start question: is the trip viable without morning tournaments? Earliest confirmed start is 10:10 AM.</td><td>Can the traveler accept a 10:10 AM earliest start?</td><td>Traveler's schedule constraint</td><td>pages/schedule.html</td></tr>
+        <tr><td>B6</td><td>Decide budget ceiling: example all-in hotel + buy-ins. A $200 Venetian event × 6 days + hotel ~$226/night = ~$2,500+ before travel/food.</td><td>Total trip affordability.</td><td>Real rates + chosen events (A7)</td><td>questions-answers.html (Q7)</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <h2 class="section-title"><span class="kicker">C. Review-and-choose rule</span></h2>
+  <div class="callout info">
+    <h4>No changes are applied without review</h4>
+    <p>Suggestions A1–A10 (site) and B1–B6 (decisions) are candidates only. Before implementing any of them: (1) check the dependent information, (2) confirm against official sources where data is involved, (3) update flagged-for-review.html with what changed and what remains unverified, and (4) re-verify any edited table row line by line.</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-header" style="background:#111; color:#fff; margin-top:40px;">
+  <div class="bar" style="flex-direction: column; gap: 12px; align-items: flex-start; text-align: center;">
+    <div style="font-weight:800; font-size:1.1rem;"><span class="dot"></span> Poker4</div>
+    <div class="tagline">Suggestions page — review before implementing. Research date 2026-11-16.</div>
+    <nav style="order:2; justify-content:center; width:100%; margin-top:6px;">
+      <a href="../index.html">Dashboard</a> ·
+      <a href="questions-answers.html">Questions &amp; answers</a> ·
+      <a href="flagged-for-review.html">Flagged for review</a> ·
+      <a href="executive-summary.html">Executive summary</a> ·
+      <a href="../data/sources.md">Sources</a>
+    </nav>
+    <div style="font-size:0.75rem; color:#9ca3af;">Not affiliated with any casino, hotel, or poker tour.</div>
+  </div>
+</footer>
+
+</body>
+</html>
