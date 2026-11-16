@@ -1,0 +1,242 @@
+date,time,venue,series,event,buyin,gtd,category,note,source
+2026-11-16,11:10,Venetian,DeepStack Extravaganza IV,$300 NLH 1A $75K GTD (Event 1),300,75000,MAIN,Multi-flight event (listing shows 1A-1D),VEN
+2026-11-16,17:10,Venetian,DeepStack Extravaganza IV,$300 NLH 1B $75K GTD (Event 1),300,75000,MAIN,Multi-flight event,VEN
+2026-11-17,11:10,Venetian,DeepStack Extravaganza IV,$300 NLH 1C $75K GTD (Event 1),300,75000,MAIN,Multi-flight event,VEN
+2026-11-17,17:10,Venetian,DeepStack Extravaganza IV,$300 NLH 1D $75K GTD (Event 1),300,75000,MAIN,Multi-flight event,VEN
+2026-11-18,11:10,Venetian,DeepStack Extravaganza IV,$300 NLH $10K GTD 1-Day (Event 2),300,10000,MAIN,Listed as 1-Day,VEN
+2026-11-19,10:10,Venetian,DeepStack Extravaganza IV,$200 NLH RaceDay Stack 1-Day (Event 3),200,,MAIN,No guarantee listed; race format per listing,VEN
+2026-11-20,10:10,Venetian,DeepStack Extravaganza IV,$200 NLH RaceDay Stack 1-Day (Event 4),200,,MAIN,No guarantee listed; race format per listing,VEN
+2026-11-21,10:10,Venetian,DeepStack Extravaganza IV,$200 NLH RaceDay Stack 1-Day (Event 5),200,,MAIN,No guarantee listed; race format per listing,VEN
+2026-11-22,11:10,Venetian,DeepStack Extravaganza IV,$200 NLH 1-Day (Event 6),200,,MAIN,No guarantee listed,VEN
+2026-11-23,11:10,Venetian,DeepStack Extravaganza IV,$400 NLH 1A $75K GTD (Event 7),400,75000,MAIN,Multi-flight event,VEN
+2026-11-23,17:10,Venetian,DeepStack Extravaganza IV,$200 NLH PKO Bounty $8K GTD 1-Day (Event 8),200,8000,MAIN,Progressive knockout bounty,VEN
+2026-11-24,11:10,Venetian,DeepStack Extravaganza IV,$400 NLH 1B $75K GTD (Event 7),400,75000,MAIN,Multi-flight event,VEN
+2026-11-24,17:10,Venetian,DeepStack Extravaganza IV,$200 NLH Bounty $8K GTD 1-Day (Event 9),200,8000,MAIN,Bounty format,VEN
+2026-11-25,11:10,Venetian,DeepStack Extravaganza IV,$400 NLH $15K GTD 1-Day (Event 10),400,15000,MAIN,Listed as 1-Day,VEN
+2026-11-25,17:10,Venetian,DeepStack Extravaganza IV,$200 NLH Bounty $8K GTD 1-Day (Event 11),200,8000,MAIN,Bounty format,VEN
+2026-11-26,11:10,Venetian,DeepStack Extravaganza IV,$300 NLH $10K GTD 1-Day (Event 12),300,10000,MAIN,Listed as 1-Day,VEN
+2026-11-26,17:10,Venetian,DeepStack Extravaganza IV,$200 NLH Bounty $8K GTD 1-Day (Event 13),200,8000,MAIN,Bounty format,VEN
+2026-11-27,11:10,Venetian,DeepStack Extravaganza IV,$600 NLH $30K GTD 1-Day (Event 14),600,30000,MAIN,Listed as 1-Day,VEN
+2026-11-27,17:10,Venetian,DeepStack Extravaganza IV,$200 NLH Bounty $8K GTD 1-Day (Event 15),200,8000,MAIN,Bounty format,VEN
+2026-11-28,11:10,Venetian,DeepStack Extravaganza IV,$600 NLH Bounty $30K GTD 1-Day (Event 16),600,30000,MAIN,$200 bounties to start and $500 in the money per listing,VEN
+2026-11-28,12:10,Venetian,DeepStack Extravaganza IV,$400 PLO Bounty $15K GTD 1-Day (Event 17),400,15000,MAIN,Bounty format,VEN
+2026-11-28,17:10,Venetian,DeepStack Extravaganza IV,$200 NLH Valuetown Bounty $20K GTD 1-Day (Event 18),200,20000,MAIN,PokerAtlas PRO member $20 rake discount per listing,VEN
+2026-11-29,11:10,Venetian,DeepStack Extravaganza IV,$400 NLH 1A $75K GTD (Event 19),400,75000,MAIN,Multi-flight event,VEN
+2026-11-29,12:10,Venetian,DeepStack Extravaganza IV,$300 PLO $10K GTD 1-Day (Event 20),300,10000,MAIN,Double board bomb pot per listing,VEN
+2026-11-29,17:10,Venetian,DeepStack Extravaganza IV,$200 NLH Bounty $8K GTD 1-Day (Event 21),200,8000,MAIN,Bounty format,VEN
+2026-11-30,11:10,Venetian,DeepStack Extravaganza IV,$400 NLH 1B $75K GTD (Event 19),400,75000,MAIN,Multi-flight event,VEN
+2026-11-30,17:10,Venetian,DeepStack Extravaganza IV,$200 NLH Bounty $8K GTD 1-Day (Event 22),200,8000,MAIN,Bounty format,VEN
+2026-12-01,11:10,Venetian,DeepStack Extravaganza IV,$400 NLH 1C $75K GTD (Event 19),400,75000,MAIN,Multi-flight event,VEN
+2026-12-01,17:10,Venetian,DeepStack Extravaganza IV,$200 NLH Bounty $8K GTD 1-Day (Event 23),200,8000,MAIN,Bounty format,VEN
+2026-12-02,10:10,Venetian,DeepStack Extravaganza IV,$600 NLH Seniors $40K GTD 1-Day (Event 24),600,40000,MAIN,Age 50+ only per listing,VEN
+2026-12-02,17:10,Venetian,DeepStack Extravaganza IV,$200 NLH Bounty $8K GTD 1-Day (Event 25),200,8000,MAIN,Bounty format,VEN
+2026-12-03,11:10,Venetian,DeepStack Extravaganza IV,$800 NLH 1A $500K GTD (Event 26),800,500000,MAIN,Multi-flight event (1A-1F),VEN
+2026-12-03,12:10,Venetian,DeepStack Extravaganza IV,$600 BIG O $25K GTD 1-Day (Event 27),600,25000,MAIN,Listed as 1-Day,VEN
+2026-12-03,17:10,Venetian,DeepStack Extravaganza IV,$800 NLH 1B $500K GTD (Event 26),800,500000,MAIN,Multi-flight event,VEN
+2026-12-04,11:10,Venetian,DeepStack Extravaganza IV,$800 NLH 1C $500K GTD (Event 26),800,500000,MAIN,Multi-flight event,VEN
+2026-12-04,17:10,Venetian,DeepStack Extravaganza IV,$800 NLH 1D $500K GTD (Event 26),800,500000,MAIN,Multi-flight event,VEN
+2026-12-05,11:10,Venetian,DeepStack Extravaganza IV,$800 NLH 1E $500K GTD (Event 26),800,500000,MAIN,Multi-flight event,VEN
+2026-12-05,17:10,Venetian,DeepStack Extravaganza IV,$800 NLH 1F Turbo $500K GTD (Event 26),800,500000,MAIN,Multi-flight event (turbo),VEN
+2026-12-06,11:10,Venetian,DeepStack Extravaganza IV,$600 NLH $40K GTD 1-Day (Event 28),600,40000,MAIN,Listed as 1-Day,VEN
+2026-12-06,17:10,Venetian,DeepStack Extravaganza IV,$300 NLH Bounty $15K GTD 1-Day (Event 29),300,15000,MAIN,Bounty format,VEN
+2026-12-07,11:10,Venetian,DeepStack Extravaganza IV,$600 NLH Bounty $40K GTD 1-Day (Event 30),600,40000,MAIN,$200 bounties to start and $500 in the money per listing,VEN
+2026-12-07,17:10,Venetian,DeepStack Extravaganza IV,$300 NLH Bounty $15K GTD 1-Day (Event 31),300,15000,MAIN,Bounty format,VEN
+2026-12-08,10:10,Venetian,DeepStack Extravaganza IV,$600 NLH Seniors $40K GTD 1-Day (Event 32),600,40000,MAIN,Age 50+ only per listing,VEN
+2026-12-08,17:10,Venetian,DeepStack Extravaganza IV,$300 NLH Bounty $15K GTD 1-Day (Event 34),300,15000,MAIN,Bounty format,VEN
+2026-12-09,10:10,Venetian,DeepStack Extravaganza IV,$600 NLH LIPS Poker Jingle Tag Team $10K GTD (Event 35),600,10000,FORMAT,Tag team format (female/female or female/male teams per listing),VEN
+2026-12-09,11:10,Venetian,DeepStack Extravaganza IV,$800 NLH Bounty $75K GTD 1-Day (Event 36),800,75000,MAIN,$200 bounties to start and $500 in the money per listing,VEN
+2026-12-09,17:10,Venetian,DeepStack Extravaganza IV,$300 NLH Bounty $15K GTD 1-Day (Event 38),300,15000,MAIN,Bounty format,VEN
+2026-12-10,10:10,Venetian,DeepStack Extravaganza IV,$800 NLH LIPS Ladies $40K GTD 2-Day (Event 39),800,40000,FORMAT,Women in Poker main event per listing; 2-Day,VEN
+2026-12-10,12:10,Venetian,DeepStack Extravaganza IV,$600 PLO Bounty $25K GTD 1-Day (Event 40),600,25000,MAIN,Double board bomb pot per listing,VEN
+2026-12-10,17:10,Venetian,DeepStack Extravaganza IV,$300 NLH Bounty $15K GTD 1-Day (Event 42),300,15000,MAIN,Bounty format,VEN
+2026-12-11,11:10,Venetian,DeepStack Extravaganza IV,$600 NLH LIPS $30K GTD 1-Day (Event 43),600,30000,MAIN,KINGS and QUEENS bounty per listing,VEN
+2026-12-12,10:10,Venetian,DeepStack Extravaganza IV,$2200 NLH 1A $1M GTD (Event 47),2200,1000000,MAIN,PokerAtlas Championship Title Event; multi-flight,VEN
+2026-12-12,18:10,Venetian,DeepStack Extravaganza IV,$2200 NLH 1B $1M GTD (Event 47),2200,1000000,MAIN,PokerAtlas Championship Title Event; multi-flight,VEN
+2026-12-13,10:10,Venetian,DeepStack Extravaganza IV,$1100 NLH Seniors 1A $300K GTD (Event 49),1100,300000,MAIN,Age 50+ only per listing,VEN
+2026-12-13,17:10,Venetian,DeepStack Extravaganza IV,$300 NLH Bounty $15K GTD 1-Day (Event 50),300,15000,MAIN,Bounty format,VEN
+2026-12-14,10:10,Venetian,DeepStack Extravaganza IV,$1100 NLH Seniors 1B $300K GTD (Event 49),1100,300000,MAIN,Age 50+ only per listing,VEN
+2026-12-14,17:10,Venetian,DeepStack Extravaganza IV,$300 NLH Bounty $15K GTD 1-Day (Event 51),300,15000,MAIN,Bounty format,VEN
+2026-12-15,11:10,Venetian,DeepStack Extravaganza IV,$1100 NLH $75K GTD 1-Day PKO (Event 52),1100,75000,MAIN,Progressive knockout bounty,VEN
+2026-12-15,17:10,Venetian,DeepStack Extravaganza IV,$300 NLH Bounty $15K GTD 1-Day (Event 53),300,15000,MAIN,Bounty format,VEN
+2026-12-16,11:10,Venetian,DeepStack Extravaganza IV,$600 NLH Bounty $50K GTD 1-Day (Event 54),600,50000,MAIN,$200 bounties to start and $500 in the money per listing,VEN
+2026-12-16,17:10,Venetian,DeepStack Extravaganza IV,$300 NLH Bounty $15K GTD 1-Day (Event 55),300,15000,MAIN,Bounty format,VEN
+2026-12-17,10:10,Venetian,DeepStack Extravaganza IV,$1100 NLH 1A $500K GTD (Event 56),1100,500000,MAIN,$40 rake discount for entries before 10:10 AM per listing; multi-flight,VEN
+2026-12-17,12:10,Venetian,DeepStack Extravaganza IV,$600 PLO $25K GTD 1-Day (Event 57),600,25000,MAIN,Double board bomb pot per listing,VEN
+2026-12-17,18:10,Venetian,DeepStack Extravaganza IV,$1100 NLH 1B $500K GTD (Event 56),1100,500000,MAIN,$40 rake discount before 6:10 PM per listing; multi-flight,VEN
+2026-12-18,10:10,Venetian,DeepStack Extravaganza IV,$1100 NLH 1C $500K GTD (Event 56),1100,500000,MAIN,Multi-flight event,VEN
+2026-12-18,18:10,Venetian,DeepStack Extravaganza IV,$1100 NLH 1D $500K GTD (Event 56),1100,500000,MAIN,Multi-flight event,VEN
+2026-12-19,10:10,Venetian,DeepStack Extravaganza IV,$1100 NLH 1E $500K GTD (Event 56),1100,500000,MAIN,Multi-flight event,VEN
+2026-12-19,17:10,Venetian,DeepStack Extravaganza IV,$200 NLH Valuetown Bounty $20K GTD 1-Day (Event 58),200,20000,MAIN,PokerAtlas PRO member $20 rake discount per listing,VEN
+2026-12-20,11:10,Venetian,DeepStack Extravaganza IV,$600 NLH 1A $150K GTD (Event 59),600,150000,MAIN,$20 rake discount before 11:10 AM per listing; multi-flight,VEN
+2026-12-20,17:10,Venetian,DeepStack Extravaganza IV,$200 NLH Bounty $8K GTD 1-Day (Event 60),200,8000,MAIN,Bounty format,VEN
+2026-12-21,11:10,Venetian,DeepStack Extravaganza IV,$600 NLH 1B $150K GTD (Event 59),600,150000,MAIN,Multi-flight event,VEN
+2026-12-21,17:10,Venetian,DeepStack Extravaganza IV,$200 NLH Bounty $8K GTD 1-Day (Event 61),200,8000,MAIN,Bounty format,VEN
+2026-12-22,11:10,Venetian,DeepStack Extravaganza IV,$600 NLH 1C $150K GTD (Event 59),600,150000,MAIN,Multi-flight event,VEN
+2026-12-22,17:10,Venetian,DeepStack Extravaganza IV,$200 NLH Bounty $8K GTD 1-Day (Event 62),200,8000,MAIN,Bounty format,VEN
+2026-12-23,11:10,Venetian,DeepStack Extravaganza IV,$600 NLH $30K GTD 1-Day (Event 63),600,30000,MAIN,Listed as 1-Day,VEN
+2026-12-23,17:10,Venetian,DeepStack Extravaganza IV,$200 NLH Bounty $8K GTD 1-Day (Event 64),200,8000,MAIN,Bounty format,VEN
+2026-12-08,16:10,Venetian,DeepStack Extravaganza IV,$100 NLH LIPS Ladies Milestone Satellite (Event 33),100,,SATELLITE,Awards direct entry to Event 39,VEN
+2026-12-09,16:10,Venetian,DeepStack Extravaganza IV,$100 NLH LIPS Ladies Milestone Satellite (Event 37),100,,SATELLITE,Awards direct entry to Event 39,VEN
+2026-12-10,16:10,Venetian,DeepStack Extravaganza IV,$260 NLH Milestone Satellite (Event 41),260,,SATELLITE,Awards direct entry to Event 47,VEN
+2026-12-11,16:10,Venetian,DeepStack Extravaganza IV,$260 NLH Milestone Satellite (Event 44),260,,SATELLITE,Awards direct entry to Event 47,VEN
+2026-12-11,20:10,Venetian,DeepStack Extravaganza IV,$260 NLH Turbo Milestone Satellite (Event 45),260,,SATELLITE,Awards direct entry to Event 47,VEN
+2026-12-12,09:10,Venetian,DeepStack Extravaganza IV,$260 NLH Turbo Milestone Satellite (Event 46),260,,SATELLITE,Awards direct entry to Event 47,VEN
+2026-12-12,12:10,Venetian,DeepStack Extravaganza IV,$260 NLH Turbo Milestone Satellite (Event 48),260,,SATELLITE,Awards direct entry to Event 47,VEN
+2026-11-27,11:00,Wynn Las Vegas (WPT),WPT World Championship,No Limit Hold'em Day 1A,600,400000,MAIN,Day 1 flight per listing,WPT
+2026-11-27,12:00,Wynn Las Vegas (WPT),WPT World Championship,TORSE,600,,MAIN,,WPT
+2026-11-27,13:00,Wynn Las Vegas (WPT),WPT World Championship,PLO,400,,MAIN,,WPT
+2026-11-27,17:00,Wynn Las Vegas (WPT),WPT World Championship,No Limit Hold'em Day 1B,600,400000,MAIN,Day 1 flight per listing,WPT
+2026-11-28,11:00,Wynn Las Vegas (WPT),WPT World Championship,No Limit Hold'em Day 1C,600,400000,MAIN,Day 1 flight per listing,WPT
+2026-11-28,12:00,Wynn Las Vegas (WPT),WPT World Championship,Mixed Triple Draw (A-5 2-7 Badugi),600,,MAIN,,WPT
+2026-11-28,17:00,Wynn Las Vegas (WPT),WPT World Championship,No Limit Hold'em Day 1D,600,400000,MAIN,Day 1 flight per listing,WPT
+2026-11-29,11:00,Wynn Las Vegas (WPT),WPT World Championship,No Limit Hold'em Day 1E,600,400000,MAIN,Day 1 flight per listing,WPT
+2026-11-29,18:00,Wynn Las Vegas (WPT),WPT World Championship,No Limit Hold'em Day 1F,600,400000,MAIN,Day 1 flight per listing,WPT
+2026-11-30,11:00,Wynn Las Vegas (WPT),WPT World Championship,No Limit Hold'em Day 1A,800,1000000,MAIN,Day 1 flight per listing,WPT
+2026-11-30,12:00,Wynn Las Vegas (WPT),WPT World Championship,Limit Omaha 8,600,,MAIN,,WPT
+2026-11-30,13:00,Wynn Las Vegas (WPT),WPT World Championship,No Limit Hold'em Day 2,800,1000000,MAIN,Listed with a buy-in; confirm whether this is a separate entry,WPT
+2026-11-30,17:00,Wynn Las Vegas (WPT),WPT World Championship,No Limit Hold'em Day 1B,800,1000000,MAIN,Day 1 flight per listing,WPT
+2026-12-01,11:00,Wynn Las Vegas (WPT),WPT World Championship,No Limit Hold'em Day 1C,800,1000000,MAIN,Day 1 flight per listing,WPT
+2026-12-01,12:00,Wynn Las Vegas (WPT),WPT World Championship,Limit Omaha 8/5/Stud 8,600,,MAIN,,WPT
+2026-12-01,13:00,Wynn Las Vegas (WPT),WPT World Championship,PLO,1100,,MAIN,,WPT
+2026-12-01,17:00,Wynn Las Vegas (WPT),WPT World Championship,No Limit Hold'em Day 1D,800,1000000,MAIN,Day 1 flight per listing,WPT
+2026-12-02,11:00,Wynn Las Vegas (WPT),WPT World Championship,No Limit Hold'em Day 1E,800,1000000,MAIN,Day 1 flight per listing,WPT
+2026-12-02,18:00,Wynn Las Vegas (WPT),WPT World Championship,No Limit Hold'em Day 1F,800,1000000,MAIN,Day 1 flight per listing,WPT
+2026-12-03,11:00,Wynn Las Vegas (WPT),WPT World Championship,No Limit Hold'em Day 1A,1600,1000000,MAIN,Day 1 flight per listing,WPT
+2026-12-03,13:00,Wynn Las Vegas (WPT),WPT World Championship,No Limit Hold'em Day 2,1600,1000000,MAIN,Listed with a buy-in; confirm whether separate entry,WPT
+2026-12-04,11:00,Wynn Las Vegas (WPT),WPT World Championship,No Limit Hold'em Day 1B,1600,1000000,MAIN,Day 1 flight per listing,WPT
+2026-12-04,12:00,Wynn Las Vegas (WPT),WPT World Championship,HORSE,600,,MAIN,,WPT
+2026-12-05,11:00,Wynn Las Vegas (WPT),WPT World Championship,No Limit Hold'em Day 2,1100,5000000,MAIN,Listed with a buy-in; confirm whether separate entry,WPT
+2026-12-05,11:00,Wynn Las Vegas (WPT),WPT World Championship,WPT Prime Championship Day 1A,1100,5000000,MAIN,Guarantee listed; Day 1 flight,WPT
+2026-12-05,21:00,Wynn Las Vegas (WPT),WPT World Championship,No Limit Hold'em Turbo,600,50000,MAIN,,WPT
+2026-12-06,11:00,Wynn Las Vegas (WPT),WPT World Championship,WPT Prime Championship Day 1B,1100,5000000,MAIN,Day 1 flight per listing,WPT
+2026-12-06,11:00,Wynn Las Vegas (WPT),WPT World Championship,PLO Mystery Bounty Day 1A,1600,500000,MAIN,Bounty format,WPT
+2026-12-06,18:00,Wynn Las Vegas (WPT),WPT World Championship,PLO Mystery Bounty Day 1B,1600,500000,MAIN,Bounty format,WPT
+2026-12-06,21:00,Wynn Las Vegas (WPT),WPT World Championship,No Limit Hold'em Turbo,600,50000,MAIN,,WPT
+2026-12-07,11:00,Wynn Las Vegas (WPT),WPT World Championship,WPT Prime Championship Day 1C,1100,5000000,MAIN,Day 1 flight per listing,WPT
+2026-12-07,11:00,Wynn Las Vegas (WPT),WPT World Championship,HORSE (2 Day),1100,,MAIN,2-Day per listing,WPT
+2026-12-07,13:00,Wynn Las Vegas (WPT),WPT World Championship,PLO $500 Bounty,1600,100000,MAIN,Bounty format,WPT
+2026-12-07,21:00,Wynn Las Vegas (WPT),WPT World Championship,No Limit Hold'em Turbo,600,50000,MAIN,,WPT
+2026-12-08,11:00,Wynn Las Vegas (WPT),WPT World Championship,WPT Prime Championship Day 1D,1100,5000000,MAIN,Day 1 flight per listing,WPT
+2026-12-08,21:00,Wynn Las Vegas (WPT),WPT World Championship,No Limit Hold'em Turbo,600,50000,MAIN,,WPT
+2026-12-09,11:00,Wynn Las Vegas (WPT),WPT World Championship,No Limit Hold'em (2 Day),1600,1000000,MAIN,2-Day per listing,WPT
+2026-12-09,13:00,Wynn Las Vegas (WPT),WPT World Championship,PLO $1000 Bounty,3000,250000,MAIN,Bounty format,WPT
+2026-12-09,13:00,Wynn Las Vegas (WPT),WPT World Championship,Limit Omaha 8,800,,MAIN,,WPT
+2026-12-09,21:00,Wynn Las Vegas (WPT),WPT World Championship,No Limit Hold'em Turbo,600,50000,MAIN,,WPT
+2026-12-10,10:00,Wynn Las Vegas (WPT),WPT World Championship,Super Gold Million Mystery Bounty Day 1A,400,3000000,MAIN,Bounty format; Day 1 flight,WPT
+2026-12-10,18:00,Wynn Las Vegas (WPT),WPT World Championship,Super Gold Million Mystery Bounty Day 1B,400,3000000,MAIN,Bounty format; Day 1 flight,WPT
+2026-12-11,10:00,Wynn Las Vegas (WPT),WPT World Championship,Super Gold Million Mystery Bounty Day 1C,400,3000000,MAIN,Bounty format; Day 1 flight,WPT
+2026-12-11,18:00,Wynn Las Vegas (WPT),WPT World Championship,Super Gold Million Mystery Bounty Day 1D,400,3000000,MAIN,Bounty format; Day 1 flight,WPT
+2026-12-12,10:00,Wynn Las Vegas (WPT),WPT World Championship,No Limit Hold'em,800,100000,MAIN,,WPT
+2026-12-12,13:00,Wynn Las Vegas (WPT),WPT World Championship,PLO,3000,250000,MAIN,,WPT
+2026-12-12,21:00,Wynn Las Vegas (WPT),WPT World Championship,No Limit Hold'em Turbo,600,50000,MAIN,,WPT
+2026-12-13,11:00,Wynn Las Vegas (WPT),WPT World Championship,WPT World Championship Day 1A ($1M added by ClubWPT Gold),10400,,MAIN,Guarantee blank; $1000000 added by ClubWPT Gold (not available in Nevada per footnote),WPT
+2026-12-13,11:00,Wynn Las Vegas (WPT),WPT World Championship,Ladies NLH Championship (2 Day),1100,250000,FORMAT,Ladies event; footnote says ladies entry is $11100 with discount; conflict,WPT
+2026-12-13,11:00,Wynn Las Vegas (WPT),WPT World Championship,No Limit Hold'em Day 1A,800,500000,MAIN,Day 1 flight per listing,WPT
+2026-12-13,12:00,Wynn Las Vegas (WPT),WPT World Championship,PLO Day 1A,1600,1000000,MAIN,Day 1 flight per listing,WPT
+2026-12-14,11:00,Wynn Las Vegas (WPT),WPT World Championship,WPT World Championship Day 1B ($1M added by ClubWPT Gold),10400,,MAIN,Guarantee blank; $1000000 added by ClubWPT Gold (not available in Nevada per footnote),WPT
+2026-12-14,11:00,Wynn Las Vegas (WPT),WPT World Championship,No Limit Hold'em Day 1B,800,500000,MAIN,Day 1 flight per listing,WPT
+2026-12-14,12:00,Wynn Las Vegas (WPT),WPT World Championship,PLO Day 1B,1600,1000000,MAIN,Day 1 flight per listing,WPT
+2026-12-14,12:00,Wynn Las Vegas (WPT),WPT World Championship,Mixed Triple Draw (2 Day),1100,,MAIN,2-Day per listing,WPT
+2026-12-14,19:00,Wynn Las Vegas (WPT),WPT World Championship,PLO Turbo,1100,100000,MAIN,,WPT
+2026-12-14,21:00,Wynn Las Vegas (WPT),WPT World Championship,NIH Turbo (as printed; likely NLH Turbo),600,50000,MAIN,Label printed as NIH in source; confirm,WPT
+2026-12-15,11:00,Wynn Las Vegas (WPT),WPT World Championship,WPT World Championship Day 1C ($1M added by ClubWPT Gold),10400,,MAIN,Guarantee blank; $1000000 added by ClubWPT Gold (not available in Nevada per footnote),WPT
+2026-12-15,12:00,Wynn Las Vegas (WPT),WPT World Championship,Big O,1100,,MAIN,,WPT
+2026-12-15,13:00,Wynn Las Vegas (WPT),WPT World Championship,PLO Progressive Bounty (PKO),3000,250000,MAIN,Bounty format,WPT
+2026-12-15,19:00,Wynn Las Vegas (WPT),WPT World Championship,NIH $500 Bounty Turbo (as printed),1600,100000,MAIN,Label printed as NIH in source; confirm,WPT
+2026-12-17,11:00,Wynn Las Vegas (WPT),WPT World Championship,Seniors NLH Championship (3 Day),1100,500000,MAIN,Age restriction not stated in source row; 3-Day,WPT
+2026-12-17,11:00,Wynn Las Vegas (WPT),WPT World Championship,Wynn Mixed Championship (2 Day),1600,,MAIN,2-Day per listing,WPT
+2026-12-17,12:00,Wynn Las Vegas (WPT),WPT World Championship,No Limit Hold'em Day 1A,3000,2000000,MAIN,Day 1 flight per listing,WPT
+2026-12-17,13:00,Wynn Las Vegas (WPT),WPT World Championship,NLH High Roller (2 Day),25800,200000,MAIN,High roller; 2-Day,WPT
+2026-12-18,11:00,Wynn Las Vegas (WPT),WPT World Championship,No Limit Hold'em Day 1A,1100,1000000,MAIN,Day 1 flight per listing,WPT
+2026-12-18,12:00,Wynn Las Vegas (WPT),WPT World Championship,PLO Double Board Bomb Pot,800,,MAIN,,WPT
+2026-12-18,12:00,Wynn Las Vegas (WPT),WPT World Championship,No Limit Hold'em,600,100000,MAIN,,WPT
+2026-12-18,12:00,Wynn Las Vegas (WPT),WPT World Championship,No Limit Hold'em Day 1B,3000,2000000,MAIN,Day 1 flight per listing,WPT
+2026-12-18,12:00,Wynn Las Vegas (WPT),WPT World Championship,Limit Omaha 8 Championship (2 Day),1600,,MAIN,2-Day per listing,WPT
+2026-12-18,13:00,Wynn Las Vegas (WPT),WPT World Championship,PLO 6-Max,10500,,MAIN,Footnote marker on source is ambiguous; confirm buy-in,WPT
+2026-12-18,13:00,Wynn Las Vegas (WPT),WPT World Championship,HORSE,800,,MAIN,,WPT
+2026-12-18,13:00,Wynn Las Vegas (WPT),WPT World Championship,NLH 6-Max,10500,,MAIN,Footnote marker on source is ambiguous; confirm buy-in,WPT
+2026-12-18,18:00,Wynn Las Vegas (WPT),WPT World Championship,No Limit Hold'em Turbo,1100,100000,MAIN,,WPT
+2026-12-18,19:00,Wynn Las Vegas (WPT),WPT World Championship,No Limit Hold'em Day 1B,1100,1000000,MAIN,Day 1 flight per listing,WPT
+2026-12-19,11:00,Wynn Las Vegas (WPT),WPT World Championship,Seniors High Roller (3 Day),5000,250000,MAIN,High roller; 3-Day; age restriction not stated in source row,WPT
+2026-12-19,11:00,Wynn Las Vegas (WPT),WPT World Championship,NLH Mystery Bounty Day 1A,1600,1000000,MAIN,Bounty format; Day 1 flight,WPT
+2026-12-19,13:00,Wynn Las Vegas (WPT),WPT World Championship,PLO,10500,,MAIN,Footnote marker on source is ambiguous; confirm buy-in,WPT
+2026-12-19,13:00,Wynn Las Vegas (WPT),WPT World Championship,NLH 6-Max,3000,500000,MAIN,,WPT
+2026-12-19,13:00,Wynn Las Vegas (WPT),WPT World Championship,TORSE Championship (2 Day),1600,,MAIN,2-Day per listing,WPT
+2026-12-19,18:00,Wynn Las Vegas (WPT),WPT World Championship,NLH 6-Max Turbo,600,50000,MAIN,,WPT
+2026-12-19,19:00,Wynn Las Vegas (WPT),WPT World Championship,NLH Mystery Bounty Day 1B,1600,1000000,MAIN,Bounty format; Day 1 flight,WPT
+2026-12-20,11:00,Wynn Las Vegas (WPT),WPT World Championship,NLH Mystery Bounty Day 1C,1600,1000000,MAIN,Bounty format; Day 1 flight,WPT
+2026-12-20,12:00,Wynn Las Vegas (WPT),WPT World Championship,No Limit Hold'em,600,50000,MAIN,,WPT
+2026-12-20,13:00,Wynn Las Vegas (WPT),WPT World Championship,NLH 8-Max,10500,,MAIN,Footnote marker on source is ambiguous; confirm buy-in,WPT
+2026-12-20,13:00,Wynn Las Vegas (WPT),WPT World Championship,Mixed Triple Draw,600,,MAIN,,WPT
+2026-12-20,18:00,Wynn Las Vegas (WPT),WPT World Championship,5-Card PLO Turbo,600,50000,MAIN,,WPT
+2026-12-20,19:00,Wynn Las Vegas (WPT),WPT World Championship,NLH Mystery Bounty Day 1D,1600,1000000,MAIN,Bounty format; Day 1 flight,WPT
+2026-12-21,12:00,Wynn Las Vegas (WPT),WPT World Championship,No Limit Hold'em,1100,100000,MAIN,,WPT
+2026-12-21,20:00,Wynn Las Vegas (WPT),WPT World Championship,No Limit Hold'em Turbo,600,50000,MAIN,,WPT
+2026-12-03,19:00,Wynn Las Vegas (WPT),WPT World Championship,Double Play Milestone Satellite (2 x $1100 ticket),400,,SATELLITE,Prize pool 25 prizes per listing,WPT
+2026-12-04,19:00,Wynn Las Vegas (WPT),WPT World Championship,Double Play Milestone Satellite (2 x $1100 ticket),400,,SATELLITE,Prize pool 25 prizes per listing,WPT
+2026-12-06,12:00,Wynn Las Vegas (WPT),WPT World Championship,Milestone Satellite to $1100 Prime Championship,200,,SATELLITE,50 seats per listing,WPT
+2026-12-06,19:00,Wynn Las Vegas (WPT),WPT World Championship,Double Play Milestone Satellite (2 x $1100 ticket),400,,SATELLITE,25 prizes per listing,WPT
+2026-12-07,19:00,Wynn Las Vegas (WPT),WPT World Championship,Milestone Satellite Package to Prime and World Championship,1600,,SATELLITE,25 prizes per listing,WPT
+2026-12-08,19:00,Wynn Las Vegas (WPT),WPT World Championship,Milestone Satellite to $10400 World Championship,1100,,SATELLITE,25 seats per listing,WPT
+2026-12-09,14:00,Wynn Las Vegas (WPT),WPT World Championship,Milestone Satellite to $10400 World Championship,1100,,SATELLITE,25 seats per listing,WPT
+2026-12-09,19:00,Wynn Las Vegas (WPT),WPT World Championship,Milestone Satellite to $10400 World Championship,1100,,SATELLITE,25 seats per listing,WPT
+2026-12-12,14:00,Wynn Las Vegas (WPT),WPT World Championship,Milestone Satellite to $10400 World Championship 1A/8,1100,,SATELLITE,75 seats per listing,WPT
+2026-12-12,16:00,Wynn Las Vegas (WPT),WPT World Championship,Milestone Satellite to $10400 Ladies NLH Championship,200,,SATELLITE,10 seats per listing,WPT
+2026-12-12,19:00,Wynn Las Vegas (WPT),WPT World Championship,Milestone Satellite to $10400 World Championship 1A/8,1100,,SATELLITE,25 seats per listing,WPT
+2026-12-13,12:00,Wynn Las Vegas (WPT),WPT World Championship,Milestone Satellite to $10400 World Championship 1B,1100,,SATELLITE,25 seats per listing,WPT
+2026-12-13,18:00,Wynn Las Vegas (WPT),WPT World Championship,Milestone Satellite to $10400 World Championship 1B/C,1100,,SATELLITE,25 seats per listing,WPT
+2026-12-14,12:00,Wynn Las Vegas (WPT),WPT World Championship,Milestone Satellite to $10400 World Championship 1C,1100,,SATELLITE,25 seats per listing,WPT
+2026-12-14,18:00,Wynn Las Vegas (WPT),WPT World Championship,Milestone Satellite to $10400 World Championship 1C,1100,,SATELLITE,25 seats per listing,WPT
+2026-12-15,11:00,Wynn Las Vegas (WPT),WPT World Championship,Milestone Satellite to $10400 World Championship 1C/Day 2,1100,,SATELLITE,10 seats per listing,WPT
+2026-12-15,18:00,Wynn Las Vegas (WPT),WPT World Championship,Milestone Satellite to $10400 World Championship Day 2,1100,,SATELLITE,10 seats per listing,WPT
+2026-12-17,14:00,Wynn Las Vegas (WPT),WPT World Championship,Milestone Satellite to $3000 NLH,400,,SATELLITE,25 seats per listing,WPT
+2026-12-17,19:00,Wynn Las Vegas (WPT),WPT World Championship,Milestone Satellite to $3000 NLH,400,,SATELLITE,25 seats per listing,WPT
+2026-12-18,10:00,Wynn Las Vegas (WPT),WPT World Championship,Milestone Satellite to $3000 NLH,400,,SATELLITE,10 seats per listing,WPT
+2026-12-18,18:00,Wynn Las Vegas (WPT),WPT World Championship,Milestone Satellite to $25K NIH High Roller,3000,,SATELLITE,High roller satellite,WPT
+2026-12-18,18:00,Wynn Las Vegas (WPT),WPT World Championship,Milestone Satellite to $3000 NLH,400,,SATELLITE,25 seats per listing,WPT
+2026-12-18,14:00,Wynn Las Vegas (WPT),WPT World Championship,Milestone Satellite to $5000 Seniors High Roller,600,,SATELLITE,10 seats per listing,WPT
+2026-12-19,12:00,Wynn Las Vegas (WPT),WPT World Championship,Milestone Satellite to $1600 Mystery Bounty,300,,SATELLITE,10 seats per listing,WPT
+2026-12-19,17:00,Wynn Las Vegas (WPT),WPT World Championship,Milestone Satellite to $1600 Mystery Bounty,300,,SATELLITE,10 seats per listing,WPT
+2027-01-11,12:00,Wynn Las Vegas (Signature),Wynn Signature Series Jan 2027,No Limit Hold'em Day 1A,400,150000,MAIN,Day 1 flight per listing,SIG
+2027-01-11,17:00,Wynn Las Vegas (Signature),Wynn Signature Series Jan 2027,No Limit Hold'em Day 1B,400,150000,MAIN,Day 1 flight per listing,SIG
+2027-01-12,12:00,Wynn Las Vegas (Signature),Wynn Signature Series Jan 2027,No Limit Hold'em Day 1C,400,150000,MAIN,Day 1 flight per listing,SIG
+2027-01-12,17:00,Wynn Las Vegas (Signature),Wynn Signature Series Jan 2027,No Limit Hold'em Day 1D,400,150000,MAIN,Day 1 flight per listing,SIG
+2027-01-13,12:00,Wynn Las Vegas (Signature),Wynn Signature Series Jan 2027,No Limit Hold'em Day 1E,400,150000,MAIN,Day 1 flight per listing,SIG
+2027-01-13,17:00,Wynn Las Vegas (Signature),Wynn Signature Series Jan 2027,No Limit Hold'em Day 1F,400,150000,MAIN,Day 1 flight per listing,SIG
+2027-01-14,11:00,Wynn Las Vegas (Signature),Wynn Signature Series Jan 2027,No Limit Hold'em Day 1A,600,250000,MAIN,Day 1 flight per listing,SIG
+2027-01-14,18:00,Wynn Las Vegas (Signature),Wynn Signature Series Jan 2027,Milestone Satellite to $600 NLH,125,,SATELLITE,10 seats per listing,SIG
+2027-01-15,11:00,Wynn Las Vegas (Signature),Wynn Signature Series Jan 2027,No Limit Hold'em Day 1B,600,250000,MAIN,Day 1 flight per listing,SIG
+2027-01-15,18:00,Wynn Las Vegas (Signature),Wynn Signature Series Jan 2027,NLH Turbo,200,10000,MAIN,,SIG
+2027-01-16,11:00,Wynn Las Vegas (Signature),Wynn Signature Series Jan 2027,No Limit Hold'em Day 1C,600,250000,MAIN,Day 1 flight per listing,SIG
+2027-01-16,18:00,Wynn Las Vegas (Signature),Wynn Signature Series Jan 2027,No Limit Hold'em Day 1D,600,250000,MAIN,Day 1 flight per listing,SIG
+2027-01-17,12:00,Wynn Las Vegas (Signature),Wynn Signature Series Jan 2027,No Limit Hold'em,400,30000,MAIN,,SIG
+2027-01-17,18:00,Wynn Las Vegas (Signature),Wynn Signature Series Jan 2027,NLH Turbo,200,10000,MAIN,Source row has a shifted column layout; guarantee and entry read as $10000 and $200; confirm,SIG
+2027-01-18,11:00,Wynn Las Vegas (Signature),Wynn Signature Series Jan 2027,No Limit Hold'em Day 1A,400,100000,MAIN,Source row has a shifted column layout; guarantee and entry read as $100000 and $400; confirm,SIG
+2027-01-18,13:00,Wynn Las Vegas (Signature),Wynn Signature Series Jan 2027,PLO,400,,MAIN,,SIG
+2027-01-18,18:00,Wynn Las Vegas (Signature),Wynn Signature Series Jan 2027,NLH Turbo,200,10000,MAIN,Source row has a shifted column layout; confirm,SIG
+2027-01-19,11:00,Wynn Las Vegas (Signature),Wynn Signature Series Jan 2027,No Limit Hold'em Day 1B,400,100000,MAIN,Source row has a shifted column layout; confirm,SIG
+2027-01-19,13:00,Wynn Las Vegas (Signature),Wynn Signature Series Jan 2027,TORSE,400,,MAIN,,SIG
+2027-01-19,18:00,Wynn Las Vegas (Signature),Wynn Signature Series Jan 2027,NLH Turbo,200,10000,MAIN,Source row has a shifted column layout; confirm,SIG
+2027-01-20,11:00,Wynn Las Vegas (Signature),Wynn Signature Series Jan 2027,No Limit Hold'em Day 1C,400,100000,MAIN,Source row has a shifted column layout; confirm,SIG
+2027-01-20,13:00,Wynn Las Vegas (Signature),Wynn Signature Series Jan 2027,Mixed Triple Draw (A-5 2-7 Badugi),400,,MAIN,,SIG
+2027-01-20,18:00,Wynn Las Vegas (Signature),Wynn Signature Series Jan 2027,NLH Turbo,200,10000,MAIN,Source row has a shifted column layout; confirm,SIG
+2027-01-21,11:00,Wynn Las Vegas (Signature),Wynn Signature Series Jan 2027,No Limit Hold'em Day 1A,800,300000,MAIN,Day 1 flight per listing,SIG
+2027-01-21,13:00,Wynn Las Vegas (Signature),Wynn Signature Series Jan 2027,TOE,400,,MAIN,,SIG
+2027-01-21,18:00,Wynn Las Vegas (Signature),Wynn Signature Series Jan 2027,Milestone Satellite to $800 NLH,160,,SATELLITE,10 seats per listing,SIG
+2027-01-22,11:00,Wynn Las Vegas (Signature),Wynn Signature Series Jan 2027,No Limit Hold'em Day 1B,800,300000,MAIN,Day 1 flight per listing,SIG
+2027-01-22,13:00,Wynn Las Vegas (Signature),Wynn Signature Series Jan 2027,BIG O,400,,MAIN,,SIG
+2027-01-22,18:00,Wynn Las Vegas (Signature),Wynn Signature Series Jan 2027,Milestone Satellite to $800 NLH,160,,SATELLITE,10 seats per listing,SIG
+2027-01-23,11:00,Wynn Las Vegas (Signature),Wynn Signature Series Jan 2027,No Limit Hold'em Day 1C,800,300000,MAIN,Day 1 flight per listing,SIG
+2027-01-23,18:00,Wynn Las Vegas (Signature),Wynn Signature Series Jan 2027,No Limit Hold'em Day 1D,800,300000,MAIN,Day 1 flight per listing,SIG
+2027-01-24,12:00,Wynn Las Vegas (Signature),Wynn Signature Series Jan 2027,Seniors NLH 50+,400,30000,MAIN,Age 50+ per event name,SIG
+2027-01-24,13:00,Wynn Las Vegas (Signature),Wynn Signature Series Jan 2027,PLO Double Board Bomb Pot,400,,MAIN,,SIG
+2027-01-24,18:00,Wynn Las Vegas (Signature),Wynn Signature Series Jan 2027,NLH Turbo,200,10000,MAIN,,SIG
+Mon-Thu,12:00,Wynn Las Vegas,Wynn Daily Tournaments,$200 NLH daily,200,10000,MAIN,Recurring; poster says daily schedule suspended during Wynn series (incl. WPT); poster file dated June 2026,WDAILY
+Fri,12:00,Wynn Las Vegas,Wynn Daily Tournaments,$240 NLH Rebuy,240,40000,SPEND,Rebuy per poster title,WDAILY
+Sat,12:00,Wynn Las Vegas,Wynn Daily Tournaments,$200 NLH,200,25000,MAIN,Recurring; poster file dated June 2026,WDAILY
+Sun,12:00,Wynn Las Vegas,Wynn Daily Tournaments,$200 NLH,200,25000,MAIN,Recurring; poster file dated June 2026,WDAILY
+Nightly,18:00,Wynn Las Vegas,Wynn Daily Tournaments,$160 NLH,160,10000,MAIN,Recurring; poster file dated June 2026,WDAILY
+Daily,10:00,Caesars Palace,Daily NLH Tournament,$100 NLH,100,1000,SPEND,Optional $50 add-on and re-entry within first break per flyer,CAES
+Daily,14:00,Caesars Palace,Daily NLH Tournament,$160 NLH,160,1000,SPEND,Optional $50 add-on and re-entry within first break per flyer,CAES
+Daily,18:00,Caesars Palace,Daily NLH Tournament,$100 NLH,100,1000,SPEND,Optional $50 add-on and re-entry within first break per flyer,CAES
+Daily,21:00,Caesars Palace,Daily NLH Tournament,$160 NLH,160,1000,SPEND,Optional $50 add-on and re-entry within first break per flyer,CAES

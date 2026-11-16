@@ -71,3 +71,30 @@ Session: `arena/25b96c20-poker4` (current Arena branch; branch name is fixed by 
 - The root dashboard (`index.html`, `tournaments.html`, `hotels.html`, `questions.html`, `review.html`) states "0 verified single-entry" because its tournament rows were not checked against structure sheets.
 - This session checked structure sheets (Venetian structure sheets 1, 5, 6, 7, 29) and found 19 single-entry rows. Those are published in `verified/`.
 - Both sites are kept. Root dashboard is unchanged except for a banner pointing to `verified/`. Owner of the root dashboard should confirm which set is authoritative before any further change.
+
+---
+
+## Session arena-0337316e (branch `arena/0337316e-poker4`)
+
+Parallel-session rules: claim a task here before editing; use branch `session-<id>/<task>` where a parallel branch is allowed; small commits; `git pull --rebase` before push; log conflicts in the activity log below; only the integration session edits shared outputs (table data, index, navigation).
+
+Note: this session's Arena branch is fixed as `arena/0337316e-poker4`. The `session-<id>/<task>` naming is superseded for this session by the branch rule, so the work is on that one branch.
+
+Site location: this session publishes to `/strip/` (folder `strip/`) so it does not overwrite the root dashboard from `arena/25b96c20-poker4`.
+
+| # | Task | Status | Owner | Files in scope |
+|---|------|--------|-------|----------------|
+| T1 | Repo review and irregularity log | in progress | arena-0337316e | `strip/flagged.html`, `strip/sources.html` |
+| T2 | Strip poker tournament research (single-entry) | in progress | arena-0337316e | `strip/data/events.csv`, `strip/tournaments.html`, `strip/separate.html` |
+| T3 | Hotel research (cost, resort fee, walking) | in progress | arena-0337316e | `strip/data/hotels.csv`, `strip/hotels.html` |
+| T4 | Day schedule, analysis, executive summary | in progress | arena-0337316e | `strip/index.html`, `strip/schedule.html`, `strip/analysis.html` |
+| T5 | Questions and site-improvement suggestions | in progress | arena-0337316e | `strip/questions.html`, `strip/suggestions.html` |
+| T6 | Site build, link check, Pages publish, PR and merge | in progress | arena-0337316e | `strip/build.py`, `strip/assets/*`, `strip/*.html` |
+
+## Activity log (arena-0337316e)
+- 2026-11-16: Claimed T1–T6. Built `strip/` from official sources in `strip/data/*.csv`; `strip/build.py` regenerates all pages.
+- 2026-11-16: Merge conflict (add/add) on COORDINATION.md with origin/main. Resolved by keeping the upstream board in full and appending this section. Upstream claims are not changed.
+- 2026-11-16: Upstream irregularity: the `arena/25b96c20-poker4` log says "no separate session branch will be created". This session uses its own branch under the same board; both are listed here.
+- 2026-11-16: PR from `arena/0337316e-poker4` to `main`: https://github.com/karagemop466-tech/Poker4/pull/5 (merge requested without waiting for review; unverified and flagged items are published on the Flagged for Review page, which does not block the merge).
+
+- 2026-11-16: Upstream merged `arena/abd38ed7-poker4` (PR #3) with a `verified/` site. This session's `strip/` folder is a separate subsite, so the two do not overwrite each other. Both boards are kept in this file.
