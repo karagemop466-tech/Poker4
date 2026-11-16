@@ -1,0 +1,59 @@
+// Facts below are transcribed from the official Venetian DeepStack Extravaganza IV schedule and linked structure sheets.
+// No event is represented as confirmed single-entry unless the organizer's rules explicitly say so; that confirmation is absent from the reviewed sheets.
+const SERIES = 'https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html';
+const STRUCT = 'https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/';
+const feeSource = 'https://www.venetianlasvegas.com/resort/resort-fee.html';
+const termsSource = 'https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html';
+const pokerRateSource = 'https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html';
+const pokerVenueSource = 'https://www.venetianlasvegas.com/resort/casino/poker.html';
+
+const cleanEvents = [
+  {date:'2026-11-18',time:'11:10 AM',event:'Event #2 — $300 No Limit Hold’em (1Day)',buyin:300,guarantee:10000,structure:'dse_nov_2026-structure_5.pdf',tag:'Core-format candidate',note:'No bounty named; one-day event. Re-entry, rebuy, add-on, and entry cap are not stated. The prior multi-flight Event #1 restarts at noon; conflict only if still in Event #1.'},
+  {date:'2026-11-19',time:'10:10 AM',event:'Event #3 — $200 NLH RaceDay Stack (1Day)',buyin:200,guarantee:null,structure:'dse_nov_2026-structure_18.pdf',tag:'Core-format candidate',note:'One-day format; guarantee not published on the linked structure. Entry/re-entry terms not stated.'},
+  {date:'2026-11-20',time:'10:10 AM',event:'Event #4 — $200 NLH RaceDay Stack (1Day)',buyin:200,guarantee:null,structure:'dse_nov_2026-structure_18.pdf',tag:'Core-format candidate',note:'One-day format; guarantee not published on the linked structure. Entry/re-entry terms not stated.'},
+  {date:'2026-11-21',time:'10:10 AM',event:'Event #5 — $200 NLH RaceDay Stack (1Day)',buyin:200,guarantee:null,structure:'dse_nov_2026-structure_18.pdf',tag:'Core-format candidate',note:'One-day format; guarantee not published on the linked structure. Entry/re-entry terms not stated.'},
+  {date:'2026-11-22',time:'11:10 AM',event:'Event #6 — $200 No Limit Hold’em (1Day)',buyin:200,guarantee:null,structure:'dse_nov_2026-structure_29.pdf',tag:'Core-format candidate',note:'One-day format; guarantee and entry/re-entry terms not stated in the reviewed materials.'},
+  {date:'2026-11-25',time:'11:10 AM',event:'Event #10 — $400 No Limit Hold’em (1Day)',buyin:400,guarantee:15000,structure:'dse_nov_2026-structure_6.pdf',tag:'Core-format candidate',note:'No bounty named; one-day event. Re-entry, rebuy, add-on, and entry cap are not stated in the reviewed official materials.'},
+  {date:'2026-11-26',time:'11:10 AM',event:'Event #12 — $300 No Limit Hold’em (1Day)',buyin:300,guarantee:10000,structure:'dse_nov_2026-structure_5.pdf',tag:'Core-format candidate',note:'No bounty named; one-day event. Re-entry, rebuy, add-on, and entry cap are not stated in the reviewed official materials.'},
+  {date:'2026-11-27',time:'11:10 AM',event:'Event #14 — $600 No Limit Hold’em (1Day)',buyin:600,guarantee:30000,structure:'dse_nov_2026-structure_7.pdf',tag:'Core-format candidate',note:'No bounty named; one-day event. Re-entry, rebuy, add-on, and entry cap are not stated in the reviewed official materials.'},
+  {date:'2026-12-03',time:'12:10 PM',event:'Event #27 — $600 BIG O (1Day)',buyin:600,guarantee:25000,structure:'dse_nov_2026-structure_28.pdf',tag:'Core-format candidate',note:'One-day Omaha variant; no bounty named. Entry/re-entry terms are not stated.'},
+  {date:'2026-12-06',time:'11:10 AM',event:'Event #28 — $600 No Limit Hold’em (1Day)',buyin:600,guarantee:40000,structure:'dse_nov_2026-structure_7.pdf',tag:'Core-format candidate',note:'No bounty named; one-day event. Entry cap / add-on terms are not stated. Event #26 Day 2 restarts at noon; conflict only if still in Event #26.'},
+  {date:'2026-12-23',time:'11:10 AM',event:'Event #63 — $600 No Limit Hold’em (1Day)',buyin:600,guarantee:30000,structure:'dse_nov_2026-structure_7.pdf',tag:'Core-format candidate',note:'No bounty named; one-day event. Entry cap / add-on terms are not stated. Event #59 Day 2 restarts at 11:00 AM; conflict only if still in Event #59.'}
+];
+
+const specialEvents = [
+  {date:'Nov 17, 2026',time:'11:10 AM / 5:10 PM',event:'Event #1 — $300 NLH flights 1C / 1D; $75K GTD',why:'Multiple Day 1 flights; the official schedule does not establish whether entering more than one flight is permitted. Not single-entry certified.',source:SERIES},
+  {date:'Nov 23–Dec 2, 2026',time:'11:10 AM',event:'Event #7 — $400 NLH flights 1A–1C; $75K GTD, followed by Day 2',why:'Multiple flights. Treat as multi-flight / entry-rule review, separate from the screened one-day schedule.',source:SERIES},
+  {date:'Nov 23, 2026',time:'5:10 PM',event:'Event #8 — $200 NLH $8K GTD, Progressive Knock-Out Bounty',why:'Bounty mechanics; separate section. Entry/re-entry policy not confirmed.',source:SERIES},
+  {date:'Nov 24–Dec 2, 2026',time:'5:10 PM',event:'Events #9, #11, #13, #15, #21–23, #25 — $200 NLH Bounty, $8K GTD (1Day)',why:'Bounty events; rewards include bounty value, so not comparable to plain prize-pool guarantees. The official structure calls $8K guarantee prize pool + total bounties.',source:SERIES},
+  {date:'Nov 29, 2026',time:'12:10 PM',event:'Event #20 — $300 Pot Limit Omaha $10K GTD (1Day), Double Board Bomb Pot',why:'Special game mechanic; kept separate pending user strategy preference. Not evidence of an add-on.',source:SERIES},
+  {date:'Nov 28, 2026',time:'11:10 AM / 12:10 PM',event:'Events #16–17 — $600 NLH Bounty / $400 PLO Bounty',why:'Bounty formats; separate from standard NLH comparison.',source:SERIES},
+  {date:'Dec 3–6, 2026',time:'11:10 AM / 5:10 PM',event:'Event #26 — $800 NLH flights 1A–1F; $500K GTD; multi-day',why:'Multiple flights and multi-day structure; not single-entry certified.',source:SERIES},
+  {date:'Dec 2 and Dec 8, 2026',time:'10:10 AM',event:'Events #24 / #32 — $600 Seniors NLH $40K GTD (1Day)',why:'50+ eligibility restriction; separate because eligibility is not established for the user.',source:SERIES},
+  {date:'Dec 8–11, 2026',time:'Various',event:'LIPS satellites, tag team, Ladies Main Event, and bounty side events',why:'Satellite, team, eligibility, or bounty mechanics; not plain single-entry individual events.',source:SERIES},
+  {date:'Dec 12–14, 2026',time:'10:10 AM / 6:10 PM',event:'Event #47 — $2,200 NLH PokerAtlas Championship, $1M GTD; 1A / 1B + Day 2 / Day 3',why:'Multiple flights, multi-day, and high buy-in. Potentially attractive guaranteed prize pool but entry rules and repeat-flight limits need confirmation.',source:SERIES},
+  {date:'Dec 13–15, 2026',time:'10:10 AM',event:'Event #49 — $1,100 Seniors NLH, $300K GTD; multi-day',why:'50+ eligibility restriction and multi-day flights.',source:SERIES},
+  {date:'Dec 15, 2026',time:'11:10 AM',event:'Event #52 — $1,100 NLH $75K GTD, Progressive Knock-Out Bounty (1Day)',why:'Bounty format; separate from plain prize-pool comparison.',source:SERIES},
+  {date:'Dec 17, 2026',time:'12:10 PM',event:'Event #57 — $600 Pot Limit Omaha, $25K GTD (1Day), Double Board Bomb Pot',why:'Special game mechanic; separate pending preference and entry-rule confirmation.',source:SERIES},
+  {date:'Dec 17–20, 2026',time:'10:10 AM / 6:10 PM',event:'Event #56 — $1,100 NLH flights 1A–1E; $500K GTD; multi-day',why:'Multiple flights and multi-day. Official schedule advertises a $40 rake discount for entries before two flight start times; discount mechanics do not make this a verified single-entry event.',source:SERIES},
+  {date:'Dec 20–23, 2026',time:'11:10 AM',event:'Event #59 — $600 NLH flights 1A–1C; $150K GTD, then Day 2',why:'Multiple flights and multi-day; entry rules not confirmed.',source:SERIES},
+  {date:'Dec 9–11 and Dec 16–22, 2026',time:'Various',event:'Remaining listed bounty / LIPS / satellite events',why:'Special or bounty structures are not included in the standard tournament comparison. See official full schedule for every listed date and structure.',source:SERIES},
+  {date:'All candidate dates',time:'Not stated',event:'Re-entry / rebuy / add-on / double-buy-in rules',why:'No reviewed schedule or structure sheet establishes that these options are allowed or prohibited. This is an unresolved cost/entry mechanic, not a claim that any specific event offers it. Keep every candidate out of the certified single-entry list until confirmed.',source:SERIES}
+];
+
+const hotels = [
+  {hotel:'The Venetian Resort',location:'Same resort complex as the poker room; official directions begin at Venetian lobby',base:'From $119/night (poker rate; Luxury King Suite; date-dependent)',resort:'$55/night + tax',tax:'13.38% room tax applies; official terms say rates exclude tax',floor:'$197.28/night indicative starting floor',quality:'Official room type: Luxury King Suite; quality not independently scored',source:pokerRateSource,fees:feeSource,terms:termsSource,venue:pokerVenueSource,walk:'Same resort; exact walk time to poker room not stated'},
+  {hotel:'The Palazzo at The Venetian Resort',location:'Poker room is at Palazzo Level 2, Grand Canal Shoppes',base:'From $209/night (poker rate; Luxury King Suite; date-dependent)',resort:'$55/night + tax',tax:'13.38% room tax applies; official terms say rates exclude tax',floor:'$299.32/night indicative starting floor',quality:'Official room type: Luxury King Suite; quality not independently scored',source:pokerRateSource,fees:feeSource,terms:termsSource,venue:pokerVenueSource,walk:'Poker room in same property; exact room-to-room walk time not stated'}
+];
+
+const sources = [
+  {name:'DeepStack Extravaganza IV official tournament schedule (Nov 16–Dec 23, 2026)',url:SERIES,scope:'Official event dates, start times, names, buy-ins, guarantees where shown, and links to structure sheets.'},
+  {name:'Official structure — $300 NLH (Events #2/#12)',url:STRUCT+'dse_nov_2026-structure_5.pdf',scope:'$300 buy-in, $10,000 guarantee, event start/registration details; no re-entry/add-on policy appears in this sheet.'},
+  {name:'Official structure — $200 RaceDay Stack (Events #3–5)',url:STRUCT+'dse_nov_2026-structure_18.pdf',scope:'$200 buy-in, 1-day label, start/late registration; no guarantee or re-entry/add-on policy appears in this sheet.'},
+  {name:'Official structure — $400 NLH Event #10',url:STRUCT+'dse_nov_2026-structure_6.pdf',scope:'$400 buy-in, $15,000 guarantee and 1-day structure.'},
+  {name:'Official structure — $600 NLH Events #14/#28/#63',url:STRUCT+'dse_nov_2026-structure_7.pdf',scope:'$600 buy-in; guarantees of $30,000 / $40,000 / $30,000 respectively.'},
+  {name:'Official Venetian Resort fee information',url:feeSource,scope:'$55 resort fee per night plus tax and included amenities.'},
+  {name:'Official Venetian hotel terms',url:termsSource,scope:'13.38% Clark County room tax; resort fee tax, rate availability, double occupancy and parking terms.'},
+  {name:'Official 2026 poker suite rates and play requirements',url:pokerRateSource,scope:'From-$119 Venetian / $209 Palazzo poker rates, $55 resort fee, occupancy, maximum 150-day rate horizon, qualifying poker play.'},
+  {name:'Official Venetian Resort poker room location and hours',url:pokerVenueSource,scope:'Poker room at Palazzo Level 2, Grand Canal Shoppes; official directions from Venetian and Palazzo lobbies. No walk-time minutes are stated.'}
+];
