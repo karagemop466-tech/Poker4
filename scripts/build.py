@@ -118,7 +118,8 @@ top_buy = main_rows[:3]
 top_gtd = sorted([r for r in main_rows if r.get("gtd")], key=lambda r: -r["gtd"])[:3]
 
 def cardline(r, amount):
-    return f'{money(amount)} {E(r["name"])} ({E(r["venue"])}, {E(r["date"] or "date unconfirmed")})'
+    name = re.sub(r'^\$[\d,]+\s*', '', r['name'])
+    return f'{money(amount)} {E(name)} ({E(r["venue"])}, {E(r["date"] or "date unconfirmed")})'
 
 dash = f"""
 <section class="cards">
