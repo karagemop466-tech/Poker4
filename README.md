@@ -27,4 +27,4 @@ python3 -m http.server 8000
 
 ## GitHub Pages
 
-The repository includes `.github/workflows/pages.yml` to deploy the root static site on pushes to `main`. In repository settings, GitHub Pages must use **GitHub Actions** as its source (the workflow may be authorized to enable this automatically depending on repository permissions).
+The repository's existing Pages configuration serves the repository root from `main` at [https://karagemop466-tech.github.io/Poker4/](https://karagemop466-tech.github.io/Poker4/). The site is plain static HTML, CSS, and JavaScript; `.nojekyll` keeps static assets available. Merging changes into `main` triggers the configured Pages build and deployment.
