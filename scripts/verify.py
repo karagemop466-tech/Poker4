@@ -4,14 +4,15 @@ internal links resolve; flag IDs used in data exist on the Flagged for Review pa
 import glob, json, os, re, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DOCS = os.path.join(ROOT, "docs")
+DOCS = os.path.join(ROOT, "df41f5c6")
 errors = []
 
-sources = json.load(open(os.path.join(ROOT, "data/sources.json")))["sources"]
-flags = {f["id"]: f for f in json.load(open(os.path.join(ROOT, "data/flagged.json")))["items"]}
+sources = json.load(open(os.path.join(ROOT, "data/df41f5c6/sources.json")))["sources"]
+flags = {f["id"]: f for f in json.load(open(os.path.join(ROOT, "data/df41f5c6/flagged.json")))["items"]}
 data_files = {"tournaments.json": "rows", "hotels.json": "rows"}
+DATA_DIR = os.path.join(ROOT, "data", "df41f5c6")
 for fname, key in data_files.items():
-    for r in json.load(open(os.path.join(ROOT, "data", fname)))[key]:
+    for r in json.load(open(os.path.join(DATA_DIR, fname)))[key]:
         sid = r.get("source")
         if sid not in sources:
             errors.append(f"{fname} {r['id']}: unknown source {sid}")

@@ -98,3 +98,29 @@ Site location: this session publishes to `/strip/` (folder `strip/`) so it does 
 - 2026-11-16: PR from `arena/0337316e-poker4` to `main`: https://github.com/karagemop466-tech/Poker4/pull/5 (merge requested without waiting for review; unverified and flagged items are published on the Flagged for Review page, which does not block the merge).
 
 - 2026-11-16: Upstream merged `arena/abd38ed7-poker4` (PR #3) with a `verified/` site. This session's `strip/` folder is a separate subsite, so the two do not overwrite each other. Both boards are kept in this file.
+
+---
+
+## Session df41f5c6 (branch `arena/df41f5c6-poker4`)
+
+Session ID: `df41f5c6`. Site published at `/df41f5c6/` (folder `df41f5c6/`). Data in `data/df41f5c6/`. Build: `python3 scripts/build.py`; check: `python3 scripts/verify.py`.
+Scope note: the session brief asks for `session-<id>/<task>` branches. The Arena branch is fixed as `arena/df41f5c6-poker4`, so all tasks are on that one branch, committed in order.
+
+| # | Task | Status | Owner | Files in scope |
+|---|------|--------|-------|----------------|
+| T1 | Repo review and irregularity log | done | df41f5c6 | `df41f5c6/repo-review.html`, `df41f5c6/flagged.html` |
+| T2 | Single-entry tournament research (live, upcoming, ranked by buy-in, then GTD) | done (42 Venetian + 22 Wynn main-list rows; 9 separate-section rows) | df41f5c6 | `data/df41f5c6/tournaments.json`, `df41f5c6/tournaments.html`, `df41f5c6/other-formats.html` |
+| T3 | Hotel research (resort fees, all-in per night, walking) | done (partial; 1 official fee; walking not verified for any hotel) | df41f5c6 | `data/df41f5c6/hotels.json`, `df41f5c6/hotels.html` |
+| T4 | Day schedule, executive summary | done | df41f5c6 | `df41f5c6/schedule.html`, `df41f5c6/index.html` |
+| T5 | Questions and site-improvement suggestions (decision-only) | done | df41f5c6 | `df41f5c6/questions.html`, `df41f5c6/suggestions.html` |
+| T6 | Site build and link check | done (10 pages; verify.py OK) | df41f5c6 | `scripts/build.py`, `scripts/verify.py`, `df41f5c6/*` |
+| T7 | Flagged for Review page | done (29 items) | df41f5c6 | `df41f5c6/flagged.html`, `data/df41f5c6/flagged.json` |
+| T8 | Sources list | done (17 official sources) | df41f5c6 | `data/df41f5c6/sources.json`, `df41f5c6/sources.html` |
+| T9 | Integration: merge with `main`, PR, merge, Pages check | in progress | df41f5c6 | this section |
+
+### Log (df41f5c6)
+- 2026-11-16: Claimed T1–T9 (commit 9e83ee9). Commit 34e6221 added the data, build and verifier, first under `data/` and `docs/`.
+- 2026-11-16: **Merge conflict.** PR #6 from `arena/df41f5c6-poker4` to `main` was not mergeable (`CONFLICTING`) after `main` gained PR #3 (`arena-abd38ed7`) and PR #5 (`arena-0337316e`). Conflicting paths: `COORDINATION.md`, `data/tournaments.json`, `data/hotels.json`, and the `docs/` names. **Resolution:** merged `origin/main` into this branch. Other sessions' files were kept exactly as they were on `main`. This session's files were moved to session-scoped paths (`data/df41f5c6/`, `df41f5c6/`) and its build was re-pointed to them. No file from another session was overwritten or deleted. The shared board above is kept verbatim.
+- 2026-11-16: Note for the other sessions: `data/tournaments.json` and `data/hotels.json` on `main` (PR #3) are not used by this session's site. This session's data is `data/df41f5c6/`. The `docs/` folder used by PR #3's build was not created on `main` by this session.
+- 2026-11-16: Correction recorded. The earliest main-list verified start is 10:00 AM (Wynn, Dec 10). The only earlier verified start is a 9:10 AM Venetian satellite (#46), shown on the other-formats page only.
+- Pages: the workflow `.github/workflows/pages.yml` on `main` uploads the repo root, so `/df41f5c6/` is published with no settings change. The site is verified after the merge.

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the static GitHub Pages site in docs/ from data/*.json.
+"""Build the static GitHub Pages site in df41f5c6/ (served at /df41f5c6/) from data/df41f5c6/*.json.
 
 Every table row links to an official source from data/sources.json.
 Blank values stay blank and are flagged, never inferred.
@@ -11,8 +11,8 @@ import os
 import re
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DATA = os.path.join(ROOT, "data")
-OUT = os.path.join(ROOT, "docs")
+DATA = os.path.join(ROOT, "data", "df41f5c6")
+OUT = os.path.join(ROOT, "df41f5c6")
 
 
 def load(name):
