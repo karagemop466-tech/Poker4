@@ -1,0 +1,90 @@
+{
+  "accessed": "2026-11-16",
+  "sources": {
+    "S1": {
+      "title": "Venetian DeepStack Extravaganza Nov 2026 event schedule (PDF)",
+      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+      "type": "official"
+    },
+    "S2": {
+      "title": "Venetian poker room",
+      "url": "https://www.venetianlasvegas.com/resort/casino/poker.html",
+      "type": "official"
+    },
+    "S3": {
+      "title": "Venetian resort fee",
+      "url": "https://www.venetianlasvegas.com/resort/resort-fee.html",
+      "type": "official"
+    },
+    "S4": {
+      "title": "Venetian hotel terms and conditions",
+      "url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+      "type": "official"
+    },
+    "S5": {
+      "title": "Wynn Las Vegas poker (daily tournament poster linked from this page)",
+      "url": "https://wynnlasvegas.com/casino/poker",
+      "type": "official"
+    },
+    "S6": {
+      "title": "Wynn WPT World Championship schedule (PDF)",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "type": "official"
+    },
+    "S7": {
+      "title": "Caesars Palace poker tournaments (page; flyer governs over this page)",
+      "url": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
+      "type": "official"
+    },
+    "S8": {
+      "title": "Horseshoe Las Vegas poker",
+      "url": "https://www.caesars.com/horseshoe-las-vegas/casino/poker",
+      "type": "official"
+    },
+    "S9": {
+      "title": "MGM Grand poker tables",
+      "url": "https://mgmgrand.mgmresorts.com/en/casino/poker-tables.html",
+      "type": "official"
+    },
+    "S10": {
+      "title": "ARIA poker",
+      "url": "https://aria.mgmresorts.com/en/casino/poker.html",
+      "type": "official"
+    },
+    "S11": {
+      "title": "South Point Hotel, Casino & Spa (home page; off-Strip)",
+      "url": "https://southpointcasino.com/",
+      "type": "official"
+    },
+    "S12": {
+      "title": "Bellagio poker page (official; returned 'Page not found')",
+      "url": "https://bellagio.mgmresorts.com/en/poker.html",
+      "type": "official"
+    },
+    "S13": {
+      "title": "Planet Hollywood poker page (official; returned HTTP 500)",
+      "url": "https://planethollywoodresort.com/casino/poker",
+      "type": "official"
+    },
+    "S14": {
+      "title": "Resorts World poker page (official; returned an email template)",
+      "url": "https://rwlasvegas.com/casino/poker",
+      "type": "official"
+    },
+    "S15": {
+      "title": "Repository under review",
+      "url": "https://github.com/karagemop466-tech/Poker4",
+      "type": "repo"
+    },
+    "S16": {
+      "title": "Golden Nugget poker page (official; returned empty content)",
+      "url": "https://www.goldennugget.com/las-vegas/casino/poker",
+      "type": "official"
+    },
+    "S17": {
+      "title": "Orleans poker page (official; returned 404)",
+      "url": "https://www.orleanscasino.com/casino/poker",
+      "type": "official"
+    }
+  }
+}

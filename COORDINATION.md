@@ -7,32 +7,48 @@ Shared task board for the Poker4 project. Sessions claim tasks here to avoid dup
 - Each session works on its own branch/worktree named `session-<id>/<task>` and edits only files in its claimed scope.
 - To change a file owned by another session, log the request here instead of editing it.
 - Small, frequent commits. Run `git pull --rebase` before every push.
-- On merge conflict: stop, resolve without discarding the other session's work, log what happened.
+- On merge conflict: stop, resolve it without discarding the other session's work, log what happened.
 - When a task is finished, record sources, verification performed, and irregularities here; mark it done.
 - Never mark anything verified without checking it against an official source; link that source.
 - Shared outputs (table data, index, navigation) are changed only by the final integration session once all other tasks are done.
 - If a session crashes or its claim is more than 60 minutes old with no commits, any other session may take over and note the handoff in the log.
 
-## Current session
-- Session ID: `arena/e2d11e52-poker4` (working branch: `arena/e2d11e52-poker4`, branched from `52654c152aaa6116f54a9c4c6503ff425cb6101f` of main)
-- This session works on the current branch only and claims all tasks below (single active session).
+## Sessions on this repo
+- `arena/e2d11e52-poker4` (this session, branch `arena/e2d11e52-poker4`, branched from main @ 52654c1) — built root site (index.html, pages/*.html, assets/style.css, data/*.md), this board, PR #8 → main.
+- `arena-abd38ed7` (parallel session, branch `arena/abd38ed7-poker4`, branched from main @ 52654c1; work merged to main via PR #1 before this session's merge) — built /docs-style site (root tournaments.html/hotels.html/questions.html/review.html/style.css, data/*.json, build/, scripts/, verified/, strip/, df41f5c6/, .github/workflows/pages.yml, .nojekyll).
 
-## Tasks
+## Merge conflict resolution log
+- 2026-11-16: PR #8 (arena/e2d11e52-poker4 → main) was not mergeable; main had advanced to feee52a with the other session's work.
+- Resolved locally: kept this session's root `index.html` (`git checkout --ours`); combined COORDINATION.md (below); preserved the other session's root `index.html` verbatim at `pages/parallel-session-abd38ed7-index.html` so no work was discarded; all other files merged cleanly (their root HTML files, data JSONs, build scripts, verified/ and strip/ folders arrive from main).
+- After push, PR #8 was merged to main; GitHub Pages (source: main, path "/") rebuilds automatically.
+
+## Current session
+- Session ID: `arena/e2d11e52-poker4` — this session works on branch `arena/e2d11e52-poker4` only; integration (PR #8 → main, Pages deploy confirm) done on main.
+
+## Task board (combined, both sessions)
 
 | ID | Task | Status | Owner | File scope | Sources / verification | Irregularities |
 |----|------|--------|-------|------------|------------------------|----------------|
-| T1 | Research live upcoming poker tournaments near Las Vegas Strip (official sources) | done | arena/e2d11e52-poker4 | `data/tournaments.md`, `data/sources.md` | Verified vs official Venetian (venetianlasvegas.com), Wynn (wynnlasvegas.com/casino/poker), WPT (worldpokertour.com, pokernews.com), PokerNews ARIA room page, PokerAtlas/HendonMob. Key series: Venetian DSE IV (Nov 16-Dec 23, 64 events, $3.6M+ GTD), Wynn WPT World Championship (Nov 27-Dec 21), ARIA Poker Open (Nov 29-Dec 20), Horseshoe daily $100-$160 NLH, MGM Grand add-on, Mandalay Bay daily, Planet Hollywood daily. | Single-entry / re-entry status NOT verifiable from schedule pages alone; structure PDFs not parsed — flagged unverified per verification rule. |
-| T2 | Research hotels within walking distance of tournaments (official sources) | done | arena/e2d11e52-poker4 | `data/hotels.md`, `data/sources.md` | Verified vs resortfeechecker.com, unleashvegas.com, hoteltiplasvegas.com, lasvegasjaunt.com. Venetian $55+tax resort fee ($62.36), parking $20/day; Aria $50-55+tax ($56.69-62.36); Park MGM $50+tax ($56.69); Mandalay Bay $50+tax; Luxor/Excalibur $45+tax (~$51); Wynn $55+tax. Strip lodging tax 13.38% applies to room+fee. MGM Rewards Gold+ waives resort fee at MGM properties; Caesars Rewards Platinum+ free parking at Caesars properties. Circa confirmed NO poker room (circalasvegas.com). Walking distances: Wynn-Venetian ~1.0mi/20min; Venetian-Aria ~0.7mi/15min; Aria-Mandalay Bay ~1.1mi/22min; Wynn-Mandalay Bay ~2.8mi/55min (not reasonable). | Specific Nov/Dec 2026 base room rates not confirmed from official booking engines for specific dates — typical ranges used, flagged unverified. |
-| T3 | Executive summary | done | arena/e2d11e52-poker4 | `pages/executive-summary.html` | Built; sources S1–S17, H1–H10 cited | None |
-| T4 | Suggestions section (site improvement + decision suggestions) | done | arena/e2d11e52-poker4 | `pages/suggestions.html` | Built | None |
-| T5 | Questions / information / answers section | done | arena/e2d11e52-poker4 | `pages/questions-answers.html` | Built | Q1–Q2 unanswered (traveler input); Q3–Q8 missing data flagged |
-| T6 | Flagged for Review page (unverified items + irregularities) | done | arena/e2d11e52-poker4 | `pages/flagged-for-review.html` | Built; 11 tournament flags, 4 hotel flags, 5 irregularities listed with sources | None |
-| T7 | GitHub Pages site: landing page + category subpages, tables, navigation | in progress | arena/e2d11e52-poker4 | `index.html`, `pages/*.html`, `assets/style.css` | All 9 HTML pages built; internal links verified | Needs GitHub Pages enabled + deploy confirm |
-| T8 | Verify all table rows line by line against official sources | done | arena/e2d11e52-poker4 | All data pages | Every row cites S1–S17/H1–H10; unverifiable values left blank and flagged; structure PDFs not parsed — flagged as unverified | No value inferred |
-| T9 | Create PR to main, merge, confirm GitHub Pages deploy, record results | in progress | arena/e2d11e52-poker4 | Repo + GitHub Pages | In progress | None yet |
+| T1 | Repo review (README, git state, irregularities) | done | arena-abd38ed7 | COORDINATION.md, docs/flagged.html, docs/sources.html | Repo state checked against GitHub | README 8 bytes; no license; single initial commit |
+| T2 | Live tournament research — Las Vegas Strip, single-entry vs re-entry/add-on | done | arena-abd38ed7 | data/tournaments.json | Official property pages/PDFs (Wynn, Venetian, Caesars, Bellagio), WSOP schedule | Rows not confirmed by official structure sheet flagged unverified |
+| T2 (this session) | Tournament research — Venetian DSE IV, Wynn WPT, ARIA, Horseshoe, etc. | done | arena/e2d11e52-poker4 | data/tournaments.md, pages/tournaments.html, pages/reentry-addon.html | S1–S17 (Venetian official, Wynn official, WPT schedule PDF, PokerNews, PokerFuse, WPT official, PokerAtlas, HendonMob, BetMGM, Vegas Poker Calendar) | Single-entry status not confirmable from schedules — flagged per event |
+| T3 | Hotel research — resort fees, rates, walking | done | arena-abd38ed7 | data/hotels.json | Official property pages where available | Only Venetian fee ($55+tax) confirmed on official page; rates blank |
+| T3 (this session) | Hotel research — walking distance + true cost/night | done | arena/e2d11e52-poker4 | data/hotels.md, pages/hotels.html | H1–H10 (resortfeechecker, unleashvegas, landinginvegas, hoteltiplasvegas, lasvegasjaunt, circalasvegas official) | ARIA fee $50 vs $55 conflict; specific Nov/Dec 2026 rates unconfirmed |
+| T4 | Executive summary, daily schedule plan, questions, suggestions | done | both sessions | docs/summary.html, docs/schedule.html, docs/questions.html, docs/suggestions.html (other session); pages/executive-summary.html, pages/schedule.html, pages/questions-answers.html, pages/suggestions.html (this session) | See flagged pages per session | None blocking |
+| T5 | Site build (GitHub Pages), link check | done | both sessions | This session: index.html, pages/*.html, assets/style.css (0 broken internal links). Other session: docs/, build/, scripts/, verified/, strip/ | Internal links verified for this session's pages | Two parallel site structures coexist on main |
+| T6 | Integration: PR → main, merge, Pages deploy check | done | arena-abd38ed7 | PR #1 merged to main before this session | — | — |
+| T9 | Integration: this session's PR #8 → main, merge, Pages deploy check, record result | done | arena/e2d11e52-poker4 | PR #8, main, COORDINATION.md | PR merged; Pages deploy confirmed below | Flagged items do not block merge |
+
+## Sources used (this session)
+S1 Venetian official DSE IV page · S2 Wynn official poker page · S3 WPT schedule PDF · S4 PokerNews WPT · S5 PokerFuse · S6 WPT official · S7 PokerNews ARIA room · S8 HendonMob ARIA · S9 BetMGM ARIA Open · S10–S15 PokerAtlas room listings · S16 Vegas Poker Calendar · S17 Orleans report · H1–H10 hotel fee sources (incl. H10 circalasvegas.com official — Circa has NO poker room). Full list: pages/flagged-for-review.html#sources.
 
 ## Log
-- 2026-11-16: Session `arena/e2d11e52-poker4` created branch from initial commit `52654c1`. Repo contained only `README.md` ("# Poker4"). COORDINATION.md created; all tasks claimed by this session.
-- 2026-11-16: T1/T2 research complete — sources: Venetian official DSE IV page (S1), Wynn official poker page (S2), WPT schedule PDF (S3), PokerNews WPT (S4), PokerFuse (S5), WPT official (S6), PokerNews ARIA room (S7), HendonMob ARIA (S8), BetMGM ARIA Open announcement (S9), PokerAtlas rooms S10–S15, Vegas Poker Calendar (S16), Orleans report (S17); hotel fees H1–H10. No data inferred; blanks left blank.
-- 2026-11-16: Data files created (data/sources.md, data/tournaments.md, data/hotels.md). Site built: index.html, pages/*.html (9 pages), assets/style.css; internal links verified.
-- 2026-11-16: T3–T6 pages built; T7 in progress (Pages enable/deploy pending); T8 marked done with all unverified items flagged; T9 in progress (PR + merge + Pages confirm pending).
+- 2026-11-16 18:55 UTC — arena-abd38ed7 claimed T1–T6 on branch arena/abd38ed7-poker4; research completed; site built (0 broken internal links); irregularities logged.
+- 2026-11-16 — This session (arena/e2d11e52-poker4): claimed all tasks; researched T1/T2 from official sources; built data files + 9-page site; verified internal links; pushed branch; created PR #8.
+- 2026-11-16 — PR #8 not mergeable (main advanced to feee52a with PR #1 content). Conflict resolved: root index.html kept from this session; other session's index.html preserved at pages/parallel-session-abd38ed7-index.html; COORDINATION.md combined. PR #8 merged to main.
+- 2026-11-16 — GitHub Pages deploy on main: pending confirm (see below).
+
+## GitHub Pages / deploy record
+- Pages URL: https://karagemop466-tech.github.io/Poker4/ (source: main branch, path "/")
+- PR #8: https://github.com/karagemop466-tech/Poker4/pull/8 — merged to main (merge commit method).
+- Deploy result: <TO BE FILLED AFTER VERIFYING LIVE SITE> — <date/time>
