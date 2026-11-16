@@ -5,7 +5,8 @@ flagged blank and are listed on flagged.html. Nothing is inferred or filled in."
 import csv, html, pathlib, collections
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-DATA = ROOT / "data"
+DATA = ROOT / "data" / "c07371e3"
+OUT = ROOT / "c07371e3"
 E = html.escape
 NAV = [("index.html", "Summary"), ("tournaments.html", "Tournaments"),
        ("addons.html", "Add-on / re-entry"), ("schedule.html", "Schedule"),
@@ -28,7 +29,7 @@ def link(url, label="source"):
     return f'<a href="{E(url)}" rel="noopener">{label}</a>' if url else NC
 
 def page(title, body, active):
-    nav = "".join(f'<a href="{h}" class="{"on" if h == active else ""}">{E(t)}</a>' for h, t in NAV)
+    nav = '<a href="../index.html" class="back">← Main site</a>' + "".join(f'<a href="{h}" class="{"on" if h == active else ""}">{E(t)}</a>' for h, t in NAV)
     return f"""<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"><title>{E(title)} · Las Vegas Strip Poker Finder</title>
 <link rel="stylesheet" href="style.css"></head><body>
@@ -247,6 +248,8 @@ pages["flagged.html"] = page("Flagged for Review", f"""
 {table(["Item","Flag","Source"], frows)}
 """, "flagged.html")
 
+OUT.mkdir(parents=True, exist_ok=True)
 for name, body in pages.items():
-    (ROOT / name).write_text(body, encoding="utf-8")
-print("built", len(pages), "pages;", "flagged rows", len(frows))
+    (OUT / name).write_text(body, encoding="utf-8")
+import shutil; shutil.copy(ROOT / "tools" / "c07371e3_style.css", OUT / "style.css")
+print("built", len(pages), "pages into", OUT, "; flagged rows", len(frows))

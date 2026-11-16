@@ -1,0 +1,140 @@
+/* Poker4 — Las Vegas Poker Tournament Planner
+   Clean dashboard UI. Single shared stylesheet for all pages. */
+:root {
+  --ink: #1f2937;
+  --muted: #6b7280;
+  --bg: #f7f5f0;
+  --card: #ffffff;
+  --border: #e5e2d8;
+  --accent: #8a332e;        /* deep poker red */
+  --accent-hover: #a63d36;
+  --green: #1e7a34;
+  --amber: #b45309;
+  --red: #b91c1c;
+  --table-head: #3f3a33;
+  --max-width: 1200px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.5;
+}
+
+a { color: var(--accent); text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 2px; }
+a:hover { color: var(--accent-hover); }
+img { max-width: 100%; display: block; }
+
+/* ---------- header ---------- */
+.site-header {
+  background: #111;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.35);
+}
+.site-header .bar {
+  display: flex; align-items: center; justify-content: space-between;
+  max-width: var(--max-width); margin: 0 auto; padding: 10px 20px;
+}
+.brand { font-weight: 800; font-size: 1.35rem; letter-spacing: 0.5px; text-decoration: none; color: #fff; display: flex; align-items: center; gap: 10px; }
+.brand .dot { width: 8px; height: 8px; background: var(--accent); border-radius: 50%; }
+.site-header .tagline { font-size: 0.85rem; color: #cbd3da; margin-top: 2px; }
+.site-header nav { display: flex; gap: 6px; flex-wrap: wrap; }
+.site-header nav a {
+  color: #e5e2d8; text-decoration: none; padding: 6px 12px; border-radius: 6px;
+  font-size: 0.9rem; border: 1px solid transparent;
+}
+.site-header nav a:hover { background: rgba(255,255,255,0.08); color: #fff; border-color: rgba(255,255,255,0.3); }
+.site-header nav a.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+/* ---------- layout ---------- */
+.wrap { max-width: var(--max-width); margin: 0 auto; padding: 0 20px 40px; }
+.section { margin-bottom: 40px; }
+.section-title { font-size: 1.5rem; margin: 0 0 10px; display: flex; align-items: center; gap: 10px; }
+.section-title .kicker { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); font-weight: 600; }
+.section-title span { color: var(--ink); }
+
+/* ---------- dashboard cards ---------- */
+.dashboard { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 16px; margin: 24px 0; }
+.card {
+  background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+  padding: 20px; display: flex; flex-direction: column; gap: 10px;
+}
+.card .label { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.6px; color: var(--muted); font-weight: 700; }
+.card .value { font-size: 1.75rem; font-weight: 800; color: var(--accent); }
+.card .sub { font-size: 0.85rem; color: var(--muted); }
+.card a.btn {
+  margin-top: 8px; align-self: flex-start; font-size: 0.85rem; font-weight: 700;
+  text-decoration: none; background: var(--accent); color: #fff; padding: 7px 14px;
+  border-radius: 8px; border: 2px solid var(--accent);
+}
+.card a.btn:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
+
+/* ---------- tables ---------- */
+.table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 10px; background: #fff; margin: 16px 0; }
+table { width: 100%; border-collapse: collapse; font-size: 0.86rem; }
+th, td { text-align: left; padding: 9px 12px; border-bottom: 1px solid #efe9dc; vertical-align: top; }
+thead th { background: var(--table-head); color: #fff; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.5px; }
+tbody tr:nth-child(even) { background: #faf8f3; }
+tbody tr:hover { background: #f3eee4; }
+td.nowrap { white-space: nowrap; }
+.source { color: var(--muted); font-size: 0.75rem; }
+.source a { color: var(--muted); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+.badge { display: inline-block; font-size: 0.72rem; font-weight: 700; padding: 2px 8px; border-radius: 10px; text-transform: uppercase; letter-spacing: 0.4px; }
+.badge-yes { background: #e7f3ea; color: var(--green); }
+.badge-no { background: #fbeaea; color: var(--red); }
+.badge-unverified { background: #fdf3e3; color: var(--amber); }
+.badge-na { background: #eef0f3; color: var(--muted); }
+
+.callout { border-left: 4px solid var(--accent); background: #fff6f2; padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 16px 0; font-size: 0.92rem; }
+.callout.info { border-left-color: #2563eb; background: #eef4fb; }
+.callout.warn { border-left-color: var(--amber); background: #fdf6e7; }
+.callout h4 { margin: 0 0 6px; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.6px; color: var(--ink); }
+
+.stat-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin: 20px 0; }
+.stat { background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 16px; text-align: center; }
+.stat .big { font-size: 1.9rem; font-weight: 800; color: var(--accent); }
+.stat .cap { font-size: 0.8rem; color: var(--muted); margin-top: 4px; }
+
+/* ---------- buttons / links ---------- */
+.btn { display: inline-block; background: var(--accent); color: #fff; text-decoration: none; padding: 8px 16px; border-radius: 8px; font-weight: 700; border: 2px solid var(--accent); }
+.btn:hover { background: var(--accent-hover); }
+.btn.secondary { background: transparent; color: var(--ink); border-color: var(--border); }
+.btn.secondary:hover { background: #f1ebe0; }
+
+/* ---------- forms / small ---------- */
+.small { font-size: 0.85rem; color: var(--muted); }
+.kicker { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.8px; color: var(--accent); font-weight: 800; }
+
+/* ---------- footer ---------- */
+.site-footer { border-top: 1px solid var(--border); margin-top: 40px; padding: 26px 0; color: var(--muted); font-size: 0.82rem; }
+.site-footer .disclaimer { max-width: var(--max-width); margin: 0 auto 14px; padding: 0 20px; border-left: 4px solid var(--amber); background: #fdf6e7; padding: 12px 16px; border-radius: 0 8px 8px 0; font-size: 0.85rem; }
+
+/* ---------- landing hero ---------- */
+.hero { background: #111; color: #fff; border-radius: 16px; padding: 40px 26px; margin: 24px 0; display: grid; grid-template-columns: 1fr 260px; gap: 30px; align-items: start; }
+.hero h1 { font-size: 2.1rem; margin: 0 0 12px; line-height: 1.15; }
+.hero p { margin: 0 0 18px; color: #d7d9de; font-size: 1.05rem; }
+.hero .aside { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; padding: 20px; font-size: 0.88rem; color: #cbd3da; }
+.hero .aside b { color: #fff; }
+.hero .aside p { margin: 8px 0; color: #cbd3da; }
+
+.grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+
+/* page header */
+.page-header { display: flex; align-items: center; gap: 14px; margin-bottom: 6px; }
+.page-header h2 { margin: 0; font-size: 1.7rem; }
+.breadcrumbs { font-size: 0.8rem; color: var(--muted); margin-bottom: 16px; }
+
+/* responsive */
+@media (max-width: 768px) {
+  .hero { grid-template-columns: 1fr; }
+  .site-header .bar { flex-wrap: wrap; gap: 10px; }
+  .site-header nav { order: 3; width: 100%; justify-content: center; margin-top: 8px; }
+}
