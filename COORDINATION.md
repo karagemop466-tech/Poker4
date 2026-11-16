@@ -66,3 +66,7 @@ S1 Venetian official DSE IV page · S2 Wynn official poker page · S3 WPT schedu
 - 2026-11-16 — Log: re-fetched the official Venetian schedule (4 chunks) and rebuilt the 94-row CSV from the page after finding that a first draft had been written without re-reading it. Draft discarded.
 - 2026-11-16 — Log: merged the newer `origin/main` (PRs #6, #8, #9) into the session branch; kept main's shared root files.
 - 2026-11-16 — PR for c07371e3 work: https://github.com/karagemop466-tech/Poker4/pull/11 (head `arena/c07371e3-poker4`, base `main`). Merge result and Pages deploy result to be recorded in the follow-up commit below.
+- 2026-11-16 — **PR #11 merged** to main (merge commit `6ff7190`, `gh pr merge 11 --merge`). Scope: `c07371e3/`, `data/c07371e3/`, `tools/c07371e3_*`, plus this board entry. Shared root files were not changed.
+- 2026-11-16 — **GitHub Pages deploy** for `6ff7190`: workflow "Deploy static site to GitHub Pages" completed with success (run 43936696028). Live page checked: https://karagemop466-tech.github.io/Poker4/c07371e3/index.html (serves summary).
+- 2026-11-16 — Record follow-up: this entry is recorded via PR (see next PR number in this log). Open request for integrator still stands: link `c07371e3/index.html` from the root navigation and add `c07371e3/flagged.html` to the root Flagged page.
+
