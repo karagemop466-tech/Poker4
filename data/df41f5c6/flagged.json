@@ -190,7 +190,7 @@
     {
       "id": "F24",
       "title": "Repo review: irregularities",
-      "detail": "Repo holds only README.md (one line) and one commit. No LICENSE, no .gitignore, no data or site files. GitHub Pages was set to a legacy build from main root, which had no site files, so the published page was empty. Fixed in this session by serving from /docs.",
+      "detail": "Repo holds only README.md (one line) and one commit. No LICENSE, no .gitignore, no data or site files. GitHub Pages was set to a legacy build from main root, which had no site files, so the published page was empty. Published at /df41f5c6/ on the existing Pages workflow, which uploads the repo root.",
       "sources": [
         "S15"
       ]
