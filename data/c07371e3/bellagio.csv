@@ -1,0 +1,4 @@
+day,event_name,buy_in_usd,guarantee_usd,house_fee_usd,optional_gratuity_usd,starting_chips,re_entry,flag,source
+Friday,$600 No Limit Hold'em,600,,50,40,15000,Through level 8,Start time and date not captured,https://bellagio.mgmresorts.com/en/casino/poker.html
+Saturday,"$1,000 or $1,100 No Limit Hold'em (conflict)",1000 or 1100,50000,50 admin,40,20000,NOT CAPTURED - unverified,"Buy-in conflict: $1,100 in PDF header vs $600 in rules; registration through level 10",https://bellagio.mgmresorts.com/en/casino/poker.html
+Sunday,$400 H.O.R.S.E.,400,,35,25,15000,Through level 8,Requires Player's Club card; start time not captured,https://bellagio.mgmresorts.com/en/casino/poker.html
