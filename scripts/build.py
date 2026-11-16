@@ -117,8 +117,9 @@ dated_main = [r for r in main_rows if r["date"]]
 top_buy = main_rows[:3]
 top_gtd = sorted([r for r in main_rows if r.get("gtd")], key=lambda r: -r["gtd"])[:3]
 
-def cardline(r):
-    return f'{money(r["buy_in"])} · {E(r["name"])} ({E(r["venue"])}, {E(r["date"] or "date unconfirmed")})'
+def cardline(r, amount):
+    name = re.sub(r'^\$[\d,]+\s*', '', r['name'])
+    return f'{money(amount)} {E(name)} ({E(r["venue"])}, {E(r["date"] or "date unconfirmed")})'
 
 dash = f"""
 <section class="cards">
@@ -130,9 +131,9 @@ dash = f"""
 </section>
 <h3>Executive summary</h3>
 <ul>
-<li><b>Live now:</b> The Venetian DeepStack IV runs Nov 16 – Dec 23, 2026 (official schedule). The Wynn WPT World Championship runs Nov 27 – Dec 21 (official PDF). Both are single-entry in their official listings.</li>
-<li><b>Highest buy-ins (main list):</b> {"; ".join(cardline(r) for r in top_buy)}.</li>
-<li><b>Largest guarantees (main list):</b> {"; ".join(cardline(r) for r in top_gtd)}.</li>
+<li><b>Live now:</b> The Venetian DeepStack IV runs Nov 16 – Dec 23, 2026 (official schedule). The Wynn WPT World Championship runs Nov 27 – Dec 21 (official PDF). The WPT schedule lists its events as single-entry. The Venetian schedule states no re-entry or add-on for its main-list rows.</li>
+<li><b>Highest buy-ins (main list):</b> {"; ".join(cardline(r, r["buy_in"]) for r in top_buy)}.</li>
+<li><b>Largest guarantees (main list):</b> {"; ".join(cardline(r, r["gtd"]) for r in top_gtd)}.</li>
 <li><b>Separate section:</b> Caesars Palace daily events use re-entry with an optional $50 add-on, so they are kept out of the main list. Wynn's Friday $240 event is a rebuy and is also separate. Venetian $260 satellites are separate.</li>
 <li><b>Hotels:</b> Only the Venetian has an official resort fee ($55 plus tax per night). Its one dated booking snapshot (Dec 18–20, 2026, 2 adults) works out to $512.20 per night all-in. No hotel is confirmed within the 30-minute walking limit because no walking times were verified.</li>
 <li><b>Schedule:</b> No verified main-list event starts before 10:00 AM. The only earlier verified start is a 9:10 AM satellite (Venetian event #46, Dec 11), which is a satellite and not a cash entry. So 8:00–10:00 AM has no verified main-list event. See the schedule page for the day-by-day list.</li>
