@@ -123,7 +123,7 @@ def cardline(r, amount):
 
 dash = f"""
 <section class="cards">
-<a class="card" href="tournaments.html"><b>{len(main_rows)}</b><span>single-entry rows (main list)</span></a>
+<a class="card" href="tournaments.html"><b>{len(main_rows)}</b><span>candidate rows (entry rules unverified)</span></a>
 <a class="card" href="other-formats.html"><b>{len(other_rows)}</b><span>re-entry, rebuy, satellite rows</span></a>
 <a class="card" href="hotels.html"><b>{len(HOTELS)}</b><span>hotels checked (1 with official fee)</span></a>
 <a class="card" href="schedule.html"><b>{len(dated_main)}</b><span>dated main-list rows in the schedule</span></a>
@@ -131,7 +131,7 @@ dash = f"""
 </section>
 <h3>Executive summary</h3>
 <ul>
-<li><b>Live now:</b> The Venetian DeepStack IV runs Nov 16 – Dec 23, 2026 (official schedule). The Wynn WPT World Championship runs Nov 27 – Dec 21 (official PDF). The WPT schedule lists its events as single-entry. The Venetian schedule states no re-entry or add-on for its main-list rows.</li>
+<li><b>Live now:</b> The Venetian DeepStack IV runs Nov 16 – Dec 23, 2026 (official schedule). The Wynn WPT World Championship runs Nov 27 – Dec 21 (official PDF). Their official listings do not establish whether re-entry/add-ons are allowed; entry status is unverified.</li>
 <li><b>Highest buy-ins (main list):</b> {"; ".join(cardline(r, r["buy_in"]) for r in top_buy)}.</li>
 <li><b>Largest guarantees (main list):</b> {"; ".join(cardline(r, r["gtd"]) for r in top_gtd)}.</li>
 <li><b>Separate section:</b> Caesars Palace daily events use re-entry with an optional $50 add-on, so they are kept out of the main list. Wynn's Friday $240 event is a rebuy and is also separate. Venetian $260 satellites are separate.</li>
@@ -151,11 +151,11 @@ for i, r in enumerate(main_rows, 1):
         flag_links(r["flags"]), src_link(r["source"]),
     ])
 tour_body = (
-    "<p>Single-entry only. Ranked by buy-in (highest first), then by guarantee. "
+    "<p>Candidate events only. The official sources reviewed do not confirm single-entry or prohibit re-entry/add-ons; do not treat this as a qualifying single-entry list. "
     "Daily rows have no dates. A blank cell means not verified.</p>"
     + table(["#", "Buy-in", "GTD", "Event", "Venue", "Date", "Time", "Entry", "Flags", "Source"], rows)
 )
-open_tour = page("Tournaments — single-entry, ranked by buy-in", tour_body, "tournaments.html")
+open_tour = page("Tournament candidates — entry rules unverified", tour_body, "tournaments.html")
 
 # ---------- Other formats ----------
 rows = []
@@ -206,7 +206,7 @@ for d in sorted(by_day):
 sched_body = """
 <p><b>How to read this:</b> Only verified start times are shown. Event lengths and registration-close times are not verified,
 so two events on the same day may overlap. Treat each day as a menu of options, not a fixed plan.</p>
-<p><b>8:00–10:00 AM:</b> no verified main-list event starts in this window. The earliest verified main-list start is 10:00 AM. A 9:10 AM satellite (Venetian #46, Dec 11) is on the Spend-more &amp; satellite page only.</p>
+<p><b>8:00–10:00 AM:</b> no verified main-list event starts in this window. The earliest listed candidate start is 10:00 AM; entry rules are unverified. A 9:10 AM satellite (Venetian #46, Dec 11) is on the Spend-more &amp; satellite page only.</p>
 <p>Rows with no date (daily Wynn and undated Venetian rows) are listed on the Tournaments page only.</p>
 """ + "".join(blocks)
 open_sched = page("Day-by-day schedule (verified start times)", sched_body, "schedule.html")

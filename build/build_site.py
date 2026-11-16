@@ -86,7 +86,7 @@ def ratio_cell(v):
 NAV = [
     ("index.html", "Home"),
     ("summary.html", "Executive summary"),
-    ("tournaments.html", "Single-entry tournaments"),
+    ("tournaments.html", "Candidate events (rules unverified)"),
     ("reentry.html", "Re-entry / add-on (separate)"),
     ("hotels.html", "Hotels"),
     ("schedule.html", "Daily schedule"),
@@ -165,11 +165,9 @@ def fmt_time_key(t):
     return (h + (12 if ap == "PM" else 0)) * 60 + mi
 
 
-SE = T["single_entry"]
+SE = T["entry_rules_unverified"]
 RE = T["reentry_or_addon"]
 DAYS_ORDER = {}
-for r in SE:
-    pass
 SE_sorted = sorted(SE, key=lambda r: (r["day"][4:9] if False else "", fmt_time_key(r["time"])))
 
 # ---------- verified count for home ----------
@@ -194,18 +192,18 @@ se_rows = [se_row(r) for r in SE]
 top = sorted([r for r in SE if r["value_ratio"]], key=lambda r: -r["value_ratio"])[:3]
 top_html = "".join(f"<li><b>{esc(r['day'])} · {esc(r['time'])} · {esc(r['name'])}</b> — buy-in ${r['buy_in']}, guarantee ${r['guarantee']:,}, ratio {r['value_ratio']}× (computed). <span class='mut'>Sources: {', '.join(esc(SRC[s]['label']) for s in r['sources'][:1])}</span></li>" for r in top)
 body = f"""
-<h1>Single-entry tournaments (verified)</h1>
-<p class="mut">Strip poker rooms. Window: Nov 16 – Dec 23, 2026. Only events whose structure sheet shows <b>no re-entry, rebuy or add-on</b> are listed here. Every row links to the official document it came from.</p>
-<div class="ok"><b>{n_se} verified rows</b> — all at The Venetian Poker Room (The Palazzo, level 2). Buy-ins $200–$600. Guarantees $8,000–$40,000 (one $200 event has no guarantee printed; left blank).</div>
-<h2>Best verified options (ranked by guarantee ÷ buy-in, computed)</h2>
+<h1>Candidate tournaments — entry rules unverified</h1>
+<p class="mut">Strip poker rooms. Window: Nov 16 – Dec 23, 2026. These structure sheets do <b>not</b> explicitly confirm single-entry or prohibit re-entry, rebuy, or add-on. Rows below are candidates only—not verified single-entry events. Every row links to official documentation.</p>
+<div class="ok"><b>{n_se} candidate rows</b> — all at The Venetian Poker Room (The Palazzo, level 2); entry rules remain unverified. Buy-ins $200–$600. Guarantees $8,000–$40,000 (one $200 event has no guarantee printed; left blank).</div>
+<h2>Candidate guarantee-to-buy-in ratios (arithmetic only; not ranked as single-entry)</h2>
 <ul>{top_html}</ul>
 <p class="mut">Ratio = official guarantee ÷ buy-in. It is a comparison aid, not an official figure. Prize-pool share and house fee are from the structure sheets where shown.</p>
-<h2>All single-entry rows</h2>
+<h2>All candidate rows (not confirmed single-entry)</h2>
 {table('tblSE', se_headers, se_rows, num_cols=(5,6,7,8,10,11))}
-<h2>Not ranked here</h2>
-<p>Schedule-only events (structure not reviewed) are on the <a href="flagged.html">Flagged for Review</a> page. Events with re-entry, rebuys or add-ons are on the <a href="reentry.html">separate re-entry page</a>.</p>
+<h2>Not included in candidate list</h2>
+<p>Schedule-only and entry-rule questions are on the <a href="flagged.html">Flagged for Review</a> page. Events explicitly allowing re-entry, rebuys or add-ons are on the <a href="reentry.html">separate page</a>.</p>
 """
-page("tournaments.html", "Single-entry tournaments", body, "tournaments.html")
+page("tournaments.html", "Candidate tournaments (entry rules unverified)", body, "tournaments.html")
 
 # ---------- 2. reentry.html ----------
 re_headers = ["Day", "Start", "Event", "Tournament", "Venue", "Buy-in", "Guarantee", "Starting chips", "Reg. closes", "Re-entry / rebuy / add-on", "Source (official)", "Notes"]
@@ -266,8 +264,8 @@ page("hotels.html", "Hotels", body, "hotels.html")
 body = """
 <h1>Daily schedule planner</h1>
 <p class="mut">Goal: play from 8:00 AM all day. The official sources do not support that yet, so this page shows what <i>is</i> verified.</p>
-<div class="bad"><b>8:00 AM start is not supported.</b> The earliest verified single-entry start is 11:10 AM (The Venetian). The official Caesars daily events start at 10:00 AM, but those have re-entry/add-ons (separate section). Official Venetian events at 10:10 AM (RaceDay, #49, #47, etc.) are not verified.</div>
-<h2>Verified days with two single-entry events at the same venue</h2>
+<div class="bad"><b>8:00 AM start is not supported.</b> The earliest listed candidate start is 11:10 AM (The Venetian); single-entry status is unverified. The official Caesars daily events start at 10:00 AM, but those have re-entry/add-ons (separate section). Official Venetian events at 10:10 AM (RaceDay, #49, #47, etc.) are not verified.</div>
+<h2>Candidate days with two listed events at the same venue (entry rules unverified)</h2>
 <div class="tbl-wrap"><table>
 <thead><tr><th>Day</th><th>Afternoon/early event</th><th>Evening event</th><th>Venue</th><th>Note</th><th>Sources</th></tr></thead>
 <tbody>
@@ -278,9 +276,9 @@ body = """
 <div class="tbl-wrap"><table>
 <thead><tr><th>Time</th><th>What is verified</th><th>Gap / to do</th></tr></thead>
 <tbody>
-<tr><td>8:00 – 10:00 AM</td><td>Nothing verified for single entry.</td><td>Confirm with the venues whether any early single-entry events exist.</td></tr>
-<tr><td>10:00 AM – 11:10 AM</td><td>Caesars daily 10:00 AM is re-entry/add-on (separate). No single-entry verified.</td><td>Use the time to walk to the poker room or register.</td></tr>
-<tr><td>11:10 AM</td><td>The Venetian single-entry start (Nov 18, 22, 25, 26, 27; Dec 6, 23).</td><td>Late registration closes ~3:40–4:55 PM depending on the event.</td></tr>
+<tr><td>8:00 – 10:00 AM</td><td>No single-entry event verified.</td><td>Confirm with venues whether any early events exist and their entry rules.</td></tr>
+<tr><td>10:00 AM – 11:10 AM</td><td>Caesars daily 10:00 AM is re-entry/add-on (separate). No single-entry event verified.</td><td>Use the time to walk to the poker room or register.</td></tr>
+<tr><td>11:10 AM</td><td>The Venetian candidate-event starts (Nov 18, 22, 25, 26, 27; Dec 6, 23); entry rules unverified.</td><td>Late registration closes ~3:40–4:55 PM depending on the event.</td></tr>
 <tr><td>5:10 PM</td><td>The Venetian $200 Bounty events (Nov 24 – Dec 23 on listed days).</td><td>Late registration closes 9:40 PM.</td></tr>
 </tbody></table></div>
 <h2>What we still need to make a full day plan</h2>
@@ -298,18 +296,18 @@ body = f"""
 <p class="mut">As of Sunday, Nov 16, 2026 (Los Angeles). Based on official schedules and structure sheets fetched on {ACCESSED}.</p>
 <h2>Key findings</h2>
 <ol>
-<li><b>Verified single-entry options are at The Venetian only.</b> {n_se} rows, Nov 18 – Dec 23, 2026, buy-ins $200–$600, guarantees $8,000–$40,000. Each has a structure sheet that shows no re-entry or add-on.</li>
-<li><b>Best verified value:</b> the Dec 6 $600 NLH with a $40,000 guarantee (#28, 66.7× buy-in, computed), followed by the $600 events with $30,000 guarantees (Nov 27, Dec 23) at 50×.</li>
-<li><b>Cheapest verified entries:</b> the $200 Bounty events at 5:10 PM with an $8,000 guarantee (includes $50 bounties per knockout). Ratio 40×.</li>
+<li><b>No single-entry event is verified by the reviewed sources.</b> {n_se} Venetian candidate rows have structure sheets, but the reviewed sheets do not explicitly confirm single-entry or prohibit additional entries/add-ons. They are listed as candidates only.</li>
+<li><b>Ratio comparisons are not recommendations:</b> guarantee ÷ buy-in is arithmetic only; entry rules and expected value are not established.</li>
+<li><b>Potential low-buy-in candidates:</b> $200 Venetian events are not ranked until entry rules are confirmed.</li>
 <li><b>Re-entry, rebuys, and add-ons are separate.</b> Caesars Palace daily ($100/$160, re-entry and add-on), Wynn daily and nightly ($160–$240, re-entry/rebuy/add-on, $10,000–$40,000 guarantees), and Bellagio weekly ($400–$1,000+). These are on the separate page and are not ranked.</li>
 <li><b>Wynn WPT World Championship (Nov 27 – Dec 21)</b> has large guarantees ($1M–$5M) and $10,400 entries. Structure sheets were not fully reviewed, so these are on Flagged and not ranked.</li>
 <li><b>Hotels:</b> The Venetian is the only candidate with an official resort-fee figure ($55 plus tax). Room rates, taxes, and other resort fees are not verified, so the true cost per night cannot yet be calculated for any hotel.</li>
-<li><b>8:00 AM all-day plan is not supported</b> by verified official schedules. The earliest verified single-entry start is 11:10 AM. The best verified day is Thu Nov 26 or Fri Nov 27 (11:10 AM + 5:10 PM at the same venue).</li>
+<li><b>8:00 AM all-day plan is not supported</b> by verified official schedules. Candidate starts are not classified as single-entry; overlapping play duration is also unknown.</li>
 <li><b>WSOP:</b> the official WSOP schedule for Nov–Dec 2026 lists no Las Vegas event (Circuit events are elsewhere).</li>
 </ol>
 <h2>What is verified vs not</h2>
 <div class="cards">
-<div class="card"><b class="n">{n_se}</b>verified single-entry rows (ranked)</div>
+<div class="card"><b class="n">0</b>verified single-entry rows</div>
 <div class="card"><b class="n">{n_re}</b>re-entry / rebuy / add-on rows (separate)</div>
 <div class="card"><b class="n">{n_unv_v + n_unv_w}</b>schedule-only rows (flagged, not ranked)</div>
 <div class="card"><b class="n">1 of 4</b>candidate hotels with an official resort fee</div>
@@ -327,7 +325,7 @@ page("summary.html", "Executive summary", body, "summary.html")
 # ---------- 6. questions.html ----------
 Q = [
     ("Q1", "Which Strip single-entry tournaments are running Nov 16 – Dec 23, 2026?", "Answered (partly)",
-     "19 verified rows at The Venetian (structure sheets confirm no re-entry/add-on). Other Venetian events are flagged as not reviewed.", "Review the flagged structure sheets (see Suggestions)."),
+     "19 Venetian candidate rows have reviewed structure sheets, but those sheets do not explicitly establish single-entry or prohibit re-entry/add-ons. Other events are flagged as not reviewed.", "Review the flagged structure sheets (see Suggestions)."),
     ("Q2", "Is the Caesars Palace daily schedule still current?", "Open",
      "The flyer is official but undated (2026). Re-entry and add-on rules are printed on it.", "Call the Caesars Palace poker room or check the live schedule on the day."),
     ("Q3", "Are the Bellagio weekly events still running?", "Open",
@@ -336,7 +334,7 @@ Q = [
     ("Q5", "Are Wynn WPT events single entry? What are their re-entry rules?", "Open",
      "Schedule and general terms are official. Event structure sheets were not transcribed.", "Review each WPT structure sheet (Wynn publishes them with the schedule)."),
     ("Q6", "Does an 8:00 AM start work anywhere?", "Open (likely no)",
-     "No verified single-entry start before 11:10 AM at The Venetian. Caesars 10:00 AM is re-entry.", "Confirm early-morning events directly with each poker room."),
+     "No single-entry start is verified. Earliest listed candidate start is 11:10 AM at The Venetian; Caesars 10:00 AM allows re-entry.", "Confirm early-morning events directly with each poker room."),
     ("Q7", "What are the true hotel costs per night?", "Open",
      "Room rates are dynamic and were not confirmed from official sources. The Venetian resort fee is $55 + tax (official).", "Pull rates for your exact dates from each official booking engine and keep a dated snapshot."),
     ("Q8", "What is the Clark County lodging tax rate used in the cost formula?", "Open",
@@ -344,8 +342,8 @@ Q = [
     ("Q9", "Which resort fee applies at Wynn, Caesars Palace and Bellagio?", "Open",
      "Official fee pages were not reachable. Third-party figures conflict (e.g. Caesars $49.95 to $62.30).", "Check each property's booking page or front desk for the fee on your dates."),
     ("Q10", "How long does each tournament take to play?", "Open", "Not in the official data reviewed.", "Ask each poker room or use the structure sheets (levels × blind durations) to estimate."),
-    ("Q11", "Are the Venetian $200 bounty events single entry?", "Answered",
-     "Structure sheet 1 shows no re-entry or add-on, late registration until level 8 break, and a $50 bounty per knockout.", "None needed beyond the flagged list."),
+    ("Q11", "Are the Venetian $200 bounty events single entry?", "Open",
+     "Structure sheet 1 describes the buy-in, late registration and bounty, but does not explicitly establish a one-entry limit or prohibit re-entry/add-ons.", "Ask the poker room to confirm the entry cap and all additional-spend mechanics."),
     ("Q12", "Do Wynn tournaments require a loyalty card?", "Answered", "Not confirmed on an official page reviewed; check before play.", "Ask the poker desk."),
     ("Q13", "Do Venetian tournaments require a loyalty card?", "Answered", "Yes: Venetian Rewards card and age 21+ (structure sheets).", "Sign up before play."),
     ("Q14", "What are your travel dates and length of stay?", "Open (needed from you)", "Not provided.", "Provide dates so the plan can be built for that window."),
@@ -410,7 +408,7 @@ flag_items = [
     ("Aria / MGM Grand / Planet Hollywood", "Official poker pages were not reachable (404 or error). No schedule verified.", "ARIA_TRY"),
     ("WSOP", "The WSOP official schedule for Nov–Dec 2026 lists no Las Vegas events in this window. Schedule page lists a 2027 Super Circuit LATAM event (not Vegas).", "WSOP_SCHED"),
     ("Third-party", "Search results included contradictory third-party guides, including a 2019 article titled '2026', and a Mandalay Bay / Caesars listing that does not match official pages. Not used for values.", None),
-    ("Reconciliation", "The original root dashboard (merged from PR #1) reports 0 verified single-entry rows because its rows were not checked against structure sheets. This site checked the Venetian structure sheets and verified 19 rows. Both are kept; the dashboard owner should confirm which is authoritative.", "V_S5"),
+    ("Entry-rule correction", "The reviewed Venetian structures do not explicitly confirm single-entry or prohibit re-entry/add-ons. All 19 rows are candidates only; none is verified single-entry. The root dashboard and this subsite are aligned on this limitation.", "V_S5"),
     ("Walking distance", "Walking times to each poker room were not confirmed from an official map source. Left blank.", None),
     ("Room rates", "Nightly room rates are dynamic; no official rate snapshot was taken for the window. Left blank.", None),
 ]
@@ -473,7 +471,7 @@ body = f"""
 <h1>Las Vegas Strip poker — verified tournaments, hotels and plan</h1>
 <p class="mut">A simple dashboard. Every number links to an official source. Blank = not verified. Data as of {ACCESSED}.</p>
 <div class="cards">
-<div class="card"><b class="n">{n_se}</b><a href="tournaments.html">Single-entry tournaments →</a><br><span class="mut">verified, ranked</span></div>
+<div class="card"><b class="n">0</b><a href="tournaments.html">Candidate tournaments →</a><br><span class="mut">single-entry status unverified</span></div>
 <div class="card"><b class="n">{n_re}</b><a href="reentry.html">Re-entry / add-on →</a><br><span class="mut">separate section</span></div>
 <div class="card"><b class="n">{n_unv_v + n_unv_w}</b><a href="flagged.html">Flagged for Review →</a><br><span class="mut">schedule-only, not ranked</span></div>
 <div class="card"><b class="n">1 of 4</b><a href="hotels.html">Hotels →</a><br><span class="mut">with an official resort fee</span></div>

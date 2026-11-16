@@ -30,7 +30,7 @@ Shared task board for the Poker4 project. Sessions claim tasks here to avoid dup
 | ID | Task | Status | Owner | File scope | Sources / verification | Irregularities |
 |----|------|--------|-------|------------|------------------------|----------------|
 | T1 | Repo review (README, git state, irregularities) | done | arena-abd38ed7 | COORDINATION.md, docs/flagged.html, docs/sources.html | Repo state checked against GitHub | README 8 bytes; no license; single initial commit |
-| T2 | Live tournament research — Las Vegas Strip, single-entry vs re-entry/add-on | done | arena-abd38ed7 | data/tournaments.json | Official property pages/PDFs (Wynn, Venetian, Caesars, Bellagio), WSOP schedule | Rows not confirmed by official structure sheet flagged unverified |
+| T2 | Live tournament research — Las Vegas Strip, single-entry vs re-entry/add-on | corrected: 0 verified single-entry; Venetian rows are candidates only | arena-abd38ed7 | data/tournaments.json | Official property pages/PDFs (Wynn, Venetian, Caesars, Bellagio), WSOP schedule | Omission of re-entry/add-on terms is not confirmation |
 | T2 (this session) | Tournament research — Venetian DSE IV, Wynn WPT, ARIA, Horseshoe, etc. | done | arena/e2d11e52-poker4 | data/tournaments.md, pages/tournaments.html, pages/reentry-addon.html | S1–S17 (Venetian official, Wynn official, WPT schedule PDF, PokerNews, PokerFuse, WPT official, PokerAtlas, HendonMob, BetMGM, Vegas Poker Calendar) | Single-entry status not confirmable from schedules — flagged per event |
 | T3 | Hotel research — resort fees, rates, walking | done | arena-abd38ed7 | data/hotels.json | Official property pages where available | Only Venetian fee ($55+tax) confirmed on official page; rates blank |
 | T3 (this session) | Hotel research — walking distance + true cost/night | done | arena/e2d11e52-poker4 | data/hotels.md, pages/hotels.html | H1–H10 (resortfeechecker, unleashvegas, landinginvegas, hoteltiplasvegas, lasvegasjaunt, circalasvegas official) | ARIA fee $50 vs $55 conflict; specific Nov/Dec 2026 rates unconfirmed |
@@ -59,7 +59,7 @@ S1 Venetian official DSE IV page · S2 Wynn official poker page · S3 WPT schedu
 
 - Session `arena/c07371e3-poker4`. Scope: `c07371e3/` (site), `data/c07371e3/` (CSV data), `tools/c07371e3_build.py`, `tools/c07371e3_style.css`, and this board (log entries only).
 - Did NOT edit shared root outputs (`index.html`, `tournaments.html`, `hotels.html`, `questions.html`, `review.html`, `style.css`, `README.md`, `addons.html`, `schedule.html`, `flagged.html`, `data/*.json`). Those belong to the integration session.
-- **REQUEST to integration session (logged, not edited):** add a link to `c07371e3/index.html` in the root navigation, and list `c07371e3/flagged.html` on the root Flagged page. This is the integration session's call.
+- **Integration update:** the current root dashboard links `c07371e3/index.html`; the root Flagged for Review page links `c07371e3/flagged.html` with an independent-snapshot caveat.
 - Conflict note: my first push on `arena/c07371e3-poker4` had root-level rewrites based on an old `main`. Before merging, I restored every shared root file to `origin/main` and moved my work into `c07371e3/` so that no other session's work is overwritten.
 - Verification: all internal links in `c07371e3/` resolve (checked with a script); every table row (76 Venetian tournaments, 3 Wynn daily, 14 WPT, 3 Bellagio, 10 questions, 12 review items, 88 flagged, hotel rows) has at least one official source link.
 - Irregularities found in the earlier pass: see `c07371e3/review.html` (R1–R12).
@@ -148,3 +148,12 @@ Scope note: the session brief asks for `session-<id>/<task>` branches. The Arena
 - Verification passed: JavaScript syntax, nested local-link audit, page-render simulation, and fee/tax arithmetic. Current-main `scripts/verify.py` passed: 10 pages, 17 sources, 29 flags, all rows with official sources and internal links resolving. Every subsite data row has an official organizer/property source. Latest upstream added CRLF CSV files that create repository-wide `git diff --check` trailing-CR warnings; those other-session files were left untouched.
 - PR #2: https://github.com/karagemop466-tech/Poker4/pull/2. Contribution remains limited to `60fb62da/` and this coordination entry. PR #10 was merged; PRs #4 and #13 remain outside this session's scope. Existing Pages deployment has succeeded after upstream merges; this session does not change the shared Pages workflow.
 >>>>>>> origin/main
+
+
+## Current integration correction — arena/2da41d2b-poker4
+
+- Owner: `arena/2da41d2b-poker4`; scope: root dashboard/review navigation, `data/tournaments.json`, `data/df41f5c6/tournaments.json`, `build/build_site.py`, `scripts/build.py`, generated `verified/` and `df41f5c6/` pages, and this record.
+- Finding: omission of re-entry/add-on language is not confirmation of single-entry. This applies to 19 Venetian structure-sheet candidates and all 64 `df41f5c6` main-list rows, including Wynn rows. Preserved rows and source links; labeled entry rules unverified and removed categorical single-entry claims.
+- Integration: root navigation links the preserved `c07371e3` site; root Flagged for Review links its flagged log with an independent-source-set caveat.
+- Validation: `python3 build/build_site.py`; `python3 scripts/build.py`; `python3 scripts/verify.py` (10 pages, 17 sources, 29 flags; all row sources/internal links verified); `git diff --check`. Data audit confirms 19 and 64 candidate rows are labeled unverified.
+- PR #4 was force-updated to `fe0a948` after rebasing on `81cd955`, then `main` advanced via PR #14. Rebase now includes latest `origin/main` (`c8c7dbd`). PR merge and deployment remain unverified; recheck after publishing this rebase.
