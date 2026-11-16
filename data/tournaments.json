@@ -1,0 +1,674 @@
+{
+  "meta": {
+    "accessed": "2026-11-16",
+    "window": "Nov 16 – Dec 23, 2026 (dates as printed on the official schedules)",
+    "scope": "Las Vegas Strip poker rooms. Off-Strip rooms are listed on the Flagged page only.",
+    "ranking_rule": "Only rows whose re-entry/add-on status is confirmed by an official structure sheet are ranked. Value ratio = official guarantee ÷ buy-in (computed, not an official figure)."
+  },
+  "sources": {
+    "V_SCHED": {
+      "label": "Venetian DeepStack Extravaganza IV schedule (PDF)",
+      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+    },
+    "V_PAGE": {
+      "label": "Venetian DSE IV series page",
+      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
+    },
+    "V_S1": {
+      "label": "Venetian structure sheet — $200 Bounty (1Day), events 9/11/13/15/21/22/23/25/60/61/62/64",
+      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+    },
+    "V_S5": {
+      "label": "Venetian structure sheet — $300 NLH (1Day), events 2 & 12",
+      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf"
+    },
+    "V_S6": {
+      "label": "Venetian structure sheet — $400 NLH (1Day), event 10",
+      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_6.pdf"
+    },
+    "V_S7": {
+      "label": "Venetian structure sheet — $600 NLH (1Day), events 14, 28, 63",
+      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf"
+    },
+    "V_S29": {
+      "label": "Venetian structure sheet — $200 NLH (1Day), event 6",
+      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_29.pdf"
+    },
+    "W_DAILY": {
+      "label": "Wynn daily tournament structures (PDF)",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf"
+    },
+    "W_POSTER": {
+      "label": "Wynn daily tournament poster (PDF)",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+    },
+    "W_WPT": {
+      "label": "Wynn WPT World Championship schedule (PDF)",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+    },
+    "W_WPT_TC": {
+      "label": "Wynn WPT World Championship structures / general terms (PDF)",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+    },
+    "W_PAGE": {
+      "label": "Wynn Las Vegas poker room page",
+      "url": "https://www.wynnlasvegas.com/casino/poker"
+    },
+    "C_FLYER": {
+      "label": "Caesars Palace daily NLH tournament schedule (PDF, undated 2026 flyer)",
+      "url": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf"
+    },
+    "C_PAGE": {
+      "label": "Caesars Palace casino page (links the flyer)",
+      "url": "https://www.caesars.com/caesars-palace/casino"
+    },
+    "B_PAGE": {
+      "label": "Bellagio poker page",
+      "url": "https://bellagio.mgmresorts.com/en/casino/poker.html"
+    },
+    "B_FRI": {
+      "label": "Bellagio Friday $600 NLH structure (PDF, undated)",
+      "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt9cf95b0e60ec253e/6af491a3a9851d75c40be840/mgm-bellagio-poker-fridays-$600-nlh.pdf"
+    },
+    "B_SAT": {
+      "label": "Bellagio Saturday NLH structure (PDF, undated; file name says $1000, header says $1100)",
+      "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt6d47974bf5a7d9b6/6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf"
+    },
+    "B_SUN": {
+      "label": "Bellagio Sunday $400 H.O.R.S.E. structure (PDF, undated)",
+      "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt07fcf1244a6da661/6af491a339e2b4f6b76a86ad/mgm-bellagio-poker-sundays-$400-horse.pdf"
+    },
+    "WSOP_SCHED": {
+      "label": "WSOP official tournament schedule",
+      "url": "https://www.wsop.com/schedule/"
+    },
+    "V_RESORT": {
+      "label": "Venetian resort fee page",
+      "url": "https://www.venetianlasvegas.com/resort/resort-fee.html"
+    },
+    "V_POKER": {
+      "label": "Venetian poker room page",
+      "url": "https://www.venetianlasvegas.com/resort/casino/poker.html"
+    },
+    "B_HOTEL": {
+      "label": "Bellagio hotel page (room list only)",
+      "url": "https://bellagio.mgmresorts.com/en/hotel.html"
+    },
+    "C_FEE": {
+      "label": "Caesars Palace resort fee page (marketing; no fee text read)",
+      "url": "https://www.caesars.com/caesars-palace/resort-fee"
+    }
+  },
+  "single_entry": [
+    {
+      "day": "Wed Nov 18, 2026",
+      "time": "11:10 AM",
+      "event": "#2",
+      "name": "$300 No-Limit Hold'em (1-Day)",
+      "venue": "The Venetian – Poker Room (The Palazzo, level 2)",
+      "buy_in": 300,
+      "guarantee": 10000,
+      "chips": 40000,
+      "reg_closes": "4:55 PM",
+      "prize_share": 242,
+      "house_fee": 58,
+      "reentry_addon": "None listed on structure sheet",
+      "value_ratio": 33.3,
+      "sources": [
+        "V_SCHED",
+        "V_S5"
+      ],
+      "notes": "Structure sheet covers events 2 and 12. Pays 12.5% of field. 21+ and Venetian Rewards card required."
+    },
+    {
+      "day": "Sun Nov 22, 2026",
+      "time": "11:10 AM",
+      "event": "#6",
+      "name": "$200 No-Limit Hold'em (1-Day)",
+      "venue": "The Venetian – Poker Room",
+      "buy_in": 200,
+      "guarantee": null,
+      "chips": 30000,
+      "reg_closes": "3:40 PM",
+      "prize_share": null,
+      "house_fee": null,
+      "reentry_addon": "None listed on structure sheet",
+      "value_ratio": null,
+      "sources": [
+        "V_SCHED",
+        "V_S29"
+      ],
+      "notes": "Guarantee not printed on the schedule or the structure sheet, so it is left blank. Prize split not on the structure sheet."
+    },
+    {
+      "day": "Tue Nov 24, 2026",
+      "time": "5:10 PM",
+      "event": "#9",
+      "name": "$200 No-Limit Hold'em Bounty (1-Day)",
+      "venue": "The Venetian – Poker Room",
+      "buy_in": 200,
+      "guarantee": 8000,
+      "chips": 25000,
+      "reg_closes": "9:40 PM",
+      "prize_share": 160,
+      "house_fee": 40,
+      "reentry_addon": "None listed on structure sheet",
+      "value_ratio": 40.0,
+      "sources": [
+        "V_SCHED",
+        "V_S1"
+      ],
+      "notes": "$50 bounty per elimination; the $8,000 guarantee includes bounties. Pays 12.5% of field."
+    },
+    {
+      "day": "Wed Nov 25, 2026",
+      "time": "11:10 AM",
+      "event": "#10",
+      "name": "$400 No-Limit Hold'em (1-Day)",
+      "venue": "The Venetian – Poker Room",
+      "buy_in": 400,
+      "guarantee": 15000,
+      "chips": 40000,
+      "reg_closes": "4:55 PM",
+      "prize_share": 335,
+      "house_fee": 65,
+      "reentry_addon": "None listed on structure sheet",
+      "value_ratio": 37.5,
+      "sources": [
+        "V_SCHED",
+        "V_S6"
+      ],
+      "notes": "Pays 12.5% of field."
+    },
+    {
+      "day": "Wed Nov 25, 2026",
+      "time": "5:10 PM",
+      "event": "#11",
+      "name": "$200 No-Limit Hold'em Bounty (1-Day)",
+      "venue": "The Venetian – Poker Room",
+      "buy_in": 200,
+      "guarantee": 8000,
+      "chips": 25000,
+      "reg_closes": "9:40 PM",
+      "prize_share": 160,
+      "house_fee": 40,
+      "reentry_addon": "None listed on structure sheet",
+      "value_ratio": 40.0,
+      "sources": [
+        "V_SCHED",
+        "V_S1"
+      ],
+      "notes": "$50 bounty per elimination; guarantee includes bounties."
+    },
+    {
+      "day": "Thu Nov 26, 2026",
+      "time": "11:10 AM",
+      "event": "#12",
+      "name": "$300 No-Limit Hold'em (1-Day)",
+      "venue": "The Venetian – Poker Room",
+      "buy_in": 300,
+      "guarantee": 10000,
+      "chips": 40000,
+      "reg_closes": "4:55 PM",
+      "prize_share": 242,
+      "house_fee": 58,
+      "reentry_addon": "None listed on structure sheet",
+      "value_ratio": 33.3,
+      "sources": [
+        "V_SCHED",
+        "V_S5"
+      ],
+      "notes": "Same structure sheet as event 2. Pays 12.5% of field."
+    },
+    {
+      "day": "Thu Nov 26, 2026",
+      "time": "5:10 PM",
+      "event": "#13",
+      "name": "$200 No-Limit Hold'em Bounty (1-Day)",
+      "venue": "The Venetian – Poker Room",
+      "buy_in": 200,
+      "guarantee": 8000,
+      "chips": 25000,
+      "reg_closes": "9:40 PM",
+      "prize_share": 160,
+      "house_fee": 40,
+      "reentry_addon": "None listed on structure sheet",
+      "value_ratio": 40.0,
+      "sources": [
+        "V_SCHED",
+        "V_S1"
+      ],
+      "notes": "$50 bounty per elimination; guarantee includes bounties."
+    },
+    {
+      "day": "Fri Nov 27, 2026",
+      "time": "11:10 AM",
+      "event": "#14",
+      "name": "$600 No-Limit Hold'em (1-Day)",
+      "venue": "The Venetian – Poker Room",
+      "buy_in": 600,
+      "guarantee": 30000,
+      "chips": 40000,
+      "reg_closes": "4:55 PM",
+      "prize_share": 510,
+      "house_fee": 90,
+      "reentry_addon": "None listed on structure sheet",
+      "value_ratio": 50.0,
+      "sources": [
+        "V_SCHED",
+        "V_S7"
+      ],
+      "notes": "Structure sheet covers events 14, 28 and 63. Pays 12.5% of field."
+    },
+    {
+      "day": "Fri Nov 27, 2026",
+      "time": "5:10 PM",
+      "event": "#15",
+      "name": "$200 No-Limit Hold'em Bounty (1-Day)",
+      "venue": "The Venetian – Poker Room",
+      "buy_in": 200,
+      "guarantee": 8000,
+      "chips": 25000,
+      "reg_closes": "9:40 PM",
+      "prize_share": 160,
+      "house_fee": 40,
+      "reentry_addon": "None listed on structure sheet",
+      "value_ratio": 40.0,
+      "sources": [
+        "V_SCHED",
+        "V_S1"
+      ],
+      "notes": "$50 bounty per elimination; guarantee includes bounties."
+    },
+    {
+      "day": "Sun Nov 29, 2026",
+      "time": "5:10 PM",
+      "event": "#21",
+      "name": "$200 No-Limit Hold'em Bounty (1-Day)",
+      "venue": "The Venetian – Poker Room",
+      "buy_in": 200,
+      "guarantee": 8000,
+      "chips": 25000,
+      "reg_closes": "9:40 PM",
+      "prize_share": 160,
+      "house_fee": 40,
+      "reentry_addon": "None listed on structure sheet",
+      "value_ratio": 40.0,
+      "sources": [
+        "V_SCHED",
+        "V_S1"
+      ],
+      "notes": "$50 bounty per elimination; guarantee includes bounties."
+    },
+    {
+      "day": "Mon Nov 30, 2026",
+      "time": "5:10 PM",
+      "event": "#22",
+      "name": "$200 No-Limit Hold'em Bounty (1-Day)",
+      "venue": "The Venetian – Poker Room",
+      "buy_in": 200,
+      "guarantee": 8000,
+      "chips": 25000,
+      "reg_closes": "9:40 PM",
+      "prize_share": 160,
+      "house_fee": 40,
+      "reentry_addon": "None listed on structure sheet",
+      "value_ratio": 40.0,
+      "sources": [
+        "V_SCHED",
+        "V_S1"
+      ],
+      "notes": "$50 bounty per elimination; guarantee includes bounties."
+    },
+    {
+      "day": "Tue Dec 1, 2026",
+      "time": "5:10 PM",
+      "event": "#23",
+      "name": "$200 No-Limit Hold'em Bounty (1-Day)",
+      "venue": "The Venetian – Poker Room",
+      "buy_in": 200,
+      "guarantee": 8000,
+      "chips": 25000,
+      "reg_closes": "9:40 PM",
+      "prize_share": 160,
+      "house_fee": 40,
+      "reentry_addon": "None listed on structure sheet",
+      "value_ratio": 40.0,
+      "sources": [
+        "V_SCHED",
+        "V_S1"
+      ],
+      "notes": "$50 bounty per elimination; guarantee includes bounties."
+    },
+    {
+      "day": "Wed Dec 2, 2026",
+      "time": "5:10 PM",
+      "event": "#25",
+      "name": "$200 No-Limit Hold'em Bounty (1-Day)",
+      "venue": "The Venetian – Poker Room",
+      "buy_in": 200,
+      "guarantee": 8000,
+      "chips": 25000,
+      "reg_closes": "9:40 PM",
+      "prize_share": 160,
+      "house_fee": 40,
+      "reentry_addon": "None listed on structure sheet",
+      "value_ratio": 40.0,
+      "sources": [
+        "V_SCHED",
+        "V_S1"
+      ],
+      "notes": "$50 bounty per elimination; guarantee includes bounties."
+    },
+    {
+      "day": "Sun Dec 6, 2026",
+      "time": "11:10 AM",
+      "event": "#28",
+      "name": "$600 No-Limit Hold'em (1-Day)",
+      "venue": "The Venetian – Poker Room",
+      "buy_in": 600,
+      "guarantee": 40000,
+      "chips": 40000,
+      "reg_closes": "4:55 PM",
+      "prize_share": 510,
+      "house_fee": 90,
+      "reentry_addon": "None listed on structure sheet",
+      "value_ratio": 66.7,
+      "sources": [
+        "V_SCHED",
+        "V_S7"
+      ],
+      "notes": "Structure sheet states the $40,000 guarantee for event 28. Highest verified guarantee-to-buy-in ratio in this window."
+    },
+    {
+      "day": "Sun Dec 20, 2026",
+      "time": "5:10 PM",
+      "event": "#60",
+      "name": "$200 No-Limit Hold'em Bounty (1-Day)",
+      "venue": "The Venetian – Poker Room",
+      "buy_in": 200,
+      "guarantee": 8000,
+      "chips": 25000,
+      "reg_closes": "9:40 PM",
+      "prize_share": 160,
+      "house_fee": 40,
+      "reentry_addon": "None listed on structure sheet",
+      "value_ratio": 40.0,
+      "sources": [
+        "V_SCHED",
+        "V_S1"
+      ],
+      "notes": "$50 bounty per elimination; guarantee includes bounties."
+    },
+    {
+      "day": "Mon Dec 21, 2026",
+      "time": "5:10 PM",
+      "event": "#61",
+      "name": "$200 No-Limit Hold'em Bounty (1-Day)",
+      "venue": "The Venetian – Poker Room",
+      "buy_in": 200,
+      "guarantee": 8000,
+      "chips": 25000,
+      "reg_closes": "9:40 PM",
+      "prize_share": 160,
+      "house_fee": 40,
+      "reentry_addon": "None listed on structure sheet",
+      "value_ratio": 40.0,
+      "sources": [
+        "V_SCHED",
+        "V_S1"
+      ],
+      "notes": "$50 bounty per elimination; guarantee includes bounties."
+    },
+    {
+      "day": "Tue Dec 22, 2026",
+      "time": "5:10 PM",
+      "event": "#62",
+      "name": "$200 No-Limit Hold'em Bounty (1-Day)",
+      "venue": "The Venetian – Poker Room",
+      "buy_in": 200,
+      "guarantee": 8000,
+      "chips": 25000,
+      "reg_closes": "9:40 PM",
+      "prize_share": 160,
+      "house_fee": 40,
+      "reentry_addon": "None listed on structure sheet",
+      "value_ratio": 40.0,
+      "sources": [
+        "V_SCHED",
+        "V_S1"
+      ],
+      "notes": "$50 bounty per elimination; guarantee includes bounties."
+    },
+    {
+      "day": "Wed Dec 23, 2026",
+      "time": "11:10 AM",
+      "event": "#63",
+      "name": "$600 No-Limit Hold'em (1-Day)",
+      "venue": "The Venetian – Poker Room",
+      "buy_in": 600,
+      "guarantee": 30000,
+      "chips": 40000,
+      "reg_closes": "4:55 PM",
+      "prize_share": 510,
+      "house_fee": 90,
+      "reentry_addon": "None listed on structure sheet",
+      "value_ratio": 50.0,
+      "sources": [
+        "V_SCHED",
+        "V_S7"
+      ],
+      "notes": "Structure sheet covers events 14, 28 and 63."
+    },
+    {
+      "day": "Wed Dec 23, 2026",
+      "time": "5:10 PM",
+      "event": "#64",
+      "name": "$200 No-Limit Hold'em Bounty (1-Day)",
+      "venue": "The Venetian – Poker Room",
+      "buy_in": 200,
+      "guarantee": 8000,
+      "chips": 25000,
+      "reg_closes": "9:40 PM",
+      "prize_share": 160,
+      "house_fee": 40,
+      "reentry_addon": "None listed on structure sheet",
+      "value_ratio": 40.0,
+      "sources": [
+        "V_SCHED",
+        "V_S1"
+      ],
+      "notes": "$50 bounty per elimination; guarantee includes bounties."
+    }
+  ],
+  "reentry_or_addon": [
+    {
+      "day": "Daily (per undated 2026 flyer)",
+      "time": "10:00 AM",
+      "event": "NLH",
+      "name": "Caesars Palace Daily NLH — $100 entry",
+      "venue": "Caesars Palace – Poker Room",
+      "buy_in": 100,
+      "guarantee": 1000,
+      "chips": 20000,
+      "reg_closes": "Start of level 7",
+      "reentry_addon": "Re-entry allowed at first break ($100); optional $50 add-on for 15,000 chips at first break",
+      "sources": [
+        "C_FLYER",
+        "C_PAGE"
+      ],
+      "notes": "Flyer: $70 of $100 to prize pool, $30 house fee. Registration closes at start of level 7."
+    },
+    {
+      "day": "Daily (per undated 2026 flyer)",
+      "time": "2:00 PM",
+      "event": "NLH",
+      "name": "Caesars Palace Daily NLH — $160 entry",
+      "venue": "Caesars Palace – Poker Room",
+      "buy_in": 160,
+      "guarantee": 1000,
+      "chips": 20000,
+      "reg_closes": "Start of level 7",
+      "reentry_addon": "Re-entry allowed at first break; optional $50 add-on for 15,000 chips",
+      "sources": [
+        "C_FLYER",
+        "C_PAGE"
+      ],
+      "notes": "Flyer: $115 of $160 to prize pool, $45 house fee."
+    },
+    {
+      "day": "Daily (per undated 2026 flyer)",
+      "time": "6:00 PM",
+      "event": "NLH",
+      "name": "Caesars Palace Daily NLH — $100 entry",
+      "venue": "Caesars Palace – Poker Room",
+      "buy_in": 100,
+      "guarantee": 1000,
+      "chips": 20000,
+      "reg_closes": "Start of level 7",
+      "reentry_addon": "Re-entry allowed at first break; optional $50 add-on for 15,000 chips",
+      "sources": [
+        "C_FLYER",
+        "C_PAGE"
+      ],
+      "notes": "Same format as 10:00 AM event."
+    },
+    {
+      "day": "Daily (per undated 2026 flyer)",
+      "time": "9:00 PM",
+      "event": "NLH",
+      "name": "Caesars Palace Daily NLH — $160 entry",
+      "venue": "Caesars Palace – Poker Room",
+      "buy_in": 160,
+      "guarantee": 1000,
+      "chips": 20000,
+      "reg_closes": "Start of level 7",
+      "reentry_addon": "Re-entry allowed at first break; optional $50 add-on for 15,000 chips",
+      "sources": [
+        "C_FLYER",
+        "C_PAGE"
+      ],
+      "notes": "Same format as 2:00 PM event."
+    },
+    {
+      "day": "Mon–Thu (Wynn daily schedule)",
+      "time": "12:00 PM",
+      "event": "NLH",
+      "name": "Wynn Daily NLH — $200 ($10,000 GTD)",
+      "venue": "Wynn Las Vegas – Poker Room",
+      "buy_in": 200,
+      "guarantee": 10000,
+      "chips": 25000,
+      "reg_closes": "Start of level 9 (~4:30 PM)",
+      "reentry_addon": "Re-entry allowed at $200 until level 9",
+      "sources": [
+        "W_DAILY",
+        "W_POSTER",
+        "W_PAGE"
+      ],
+      "notes": "Loyalty requirement not confirmed; check with the poker desk."
+    },
+    {
+      "day": "Fri (Wynn daily schedule)",
+      "time": "12:00 PM",
+      "event": "NLH Rebuy & Add-on",
+      "name": "Wynn Friday NLH Rebuy & Add-on — $240 ($40,000 GTD)",
+      "venue": "Wynn Las Vegas – Poker Room",
+      "buy_in": 240,
+      "guarantee": 40000,
+      "chips": 25000,
+      "reg_closes": "Start of level 9 (~4:30 PM)",
+      "reentry_addon": "Unlimited $200 rebuys while at ≤15,000 chips; one $100 add-on; re-entry NOT allowed",
+      "sources": [
+        "W_DAILY",
+        "W_POSTER"
+      ],
+      "notes": "Structure sheet title: 'Friday NLH Rebuy & Add on'."
+    },
+    {
+      "day": "Sat & Sun (Wynn daily schedule)",
+      "time": "12:00 PM",
+      "event": "NLH",
+      "name": "Wynn Sat/Sun NLH — $200 ($25,000 GTD)",
+      "venue": "Wynn Las Vegas – Poker Room",
+      "buy_in": 200,
+      "guarantee": 25000,
+      "chips": null,
+      "reg_closes": "Start of level 9 (~4:30 PM)",
+      "reentry_addon": "Re-entry fee $200 (per structure sheet). Starting chips and add-on terms for this event were not transcribed.",
+      "sources": [
+        "W_DAILY",
+        "W_POSTER"
+      ],
+      "notes": "Re-entry fee is stated in the terms; treat as re-entry event."
+    },
+    {
+      "day": "Nightly, Mon–Sun (Wynn daily schedule)",
+      "time": "6:00 PM",
+      "event": "NLH",
+      "name": "Wynn Nightly NLH — $160 ($10,000 GTD)",
+      "venue": "Wynn Las Vegas – Poker Room",
+      "buy_in": 160,
+      "guarantee": 10000,
+      "chips": 25000,
+      "reg_closes": "Start of level 9 (~9:00 PM)",
+      "reentry_addon": "Re-entry allowed; one $100 add-on per entry until end of registration",
+      "sources": [
+        "W_DAILY",
+        "W_POSTER"
+      ],
+      "notes": "Wynn daily poster lists the nightly event; poster asset is dated 2025, confirm current."
+    },
+    {
+      "day": "Fri (Bellagio weekly)",
+      "time": "11:00 AM",
+      "event": "NLH",
+      "name": "Bellagio Friday NLH — $600",
+      "venue": "Bellagio – Poker Room",
+      "buy_in": 600,
+      "guarantee": null,
+      "chips": 15000,
+      "reg_closes": "Through end of level 8",
+      "reentry_addon": "Re-entry through end of level 8. Base stack 15,000; the optional $40 staff gratuity adds 15,000 (30,000 total).",
+      "sources": [
+        "B_FRI",
+        "B_PAGE"
+      ],
+      "notes": "$510 to prize pool, $50 house fee, $40 optional gratuity (extra chips). Schedule PDF is undated."
+    },
+    {
+      "day": "Sat (Bellagio weekly)",
+      "time": "11:00 AM",
+      "event": "NLH",
+      "name": "Bellagio Saturday NLH — $1,000 per file name / $1,100 per PDF header",
+      "venue": "Bellagio – Poker Room",
+      "buy_in": null,
+      "guarantee": 50000,
+      "chips": 20000,
+      "reg_closes": "Until start of level 10",
+      "reentry_addon": "Re-entry through end of level 8. Base stack 20,000; the optional $40 staff gratuity adds 20,000 (40,000 total).",
+      "sources": [
+        "B_SAT",
+        "B_PAGE"
+      ],
+      "notes": "Buy-in conflicts inside the same PDF ($1,000 in file name, $1,100 in header). Combined guarantee $50,000. Left blank until resolved."
+    },
+    {
+      "day": "Sun (Bellagio weekly)",
+      "time": "11:00 AM",
+      "event": "H.O.R.S.E.",
+      "name": "Bellagio Sunday H.O.R.S.E. — $400",
+      "venue": "Bellagio – Poker Room",
+      "buy_in": 400,
+      "guarantee": null,
+      "chips": 15000,
+      "reg_closes": "Through end of level 8",
+      "reentry_addon": "Re-entry through end of level 8. Base stack 15,000; the optional $25 staff gratuity adds 15,000 (30,000 total).",
+      "sources": [
+        "B_SUN",
+        "B_PAGE"
+      ],
+      "notes": "$340 to prize pool, $35 house fee."
+    }
+  ]
+}
