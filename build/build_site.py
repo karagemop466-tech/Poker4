@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Builds the static GitHub Pages site in /docs from data/*.json.
+"""Builds the static GitHub Pages sub-site in /verified from data/*.json.
 
 Run:  python3 build/build_site.py
 Only standard library is used. Every table row is generated from data files
@@ -12,7 +12,7 @@ import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-DOCS = ROOT / "docs"
+DOCS = ROOT / "verified"
 DOCS.mkdir(exist_ok=True)
 DATA = ROOT / "data"
 ACCESSED = "2026-11-16"
@@ -94,6 +94,7 @@ NAV = [
     ("suggestions.html", "Suggestions (for your decision)"),
     ("flagged.html", "Flagged for Review"),
     ("sources.html", "Sources"),
+    ("../index.html", "Original dashboard ↗"),
 ]
 
 CSS = """
@@ -286,7 +287,7 @@ body = """
 <ul>
 <li>Trip dates (not provided). The plan above uses the printed schedule window.</li>
 <li>Run times for each tournament (length of play), so overlapping events can be scheduled. Not in the sources reviewed.</li>
-<li>Confirmation of any 8 AM events from each venue's official poker desk (Venetian 24-hour poker room; Wynn phone (702) 770-7654 from its official schedule).</li>
+<li>Confirmation of any 8 AM events from each venue's official poker desk (venue poker desks; contact details not verified).</li>
 </ul>
 """
 page("schedule.html", "Daily schedule", body, "schedule.html")
@@ -330,7 +331,7 @@ Q = [
     ("Q2", "Is the Caesars Palace daily schedule still current?", "Open",
      "The flyer is official but undated (2026). Re-entry and add-on rules are printed on it.", "Call the Caesars Palace poker room or check the live schedule on the day."),
     ("Q3", "Are the Bellagio weekly events still running?", "Open",
-     "PDFs are undated. One PDF refers to a final day of 9/13/26, and the poker page has a stale notice (‘resume Saturday, July 26’). The Saturday buy-in conflicts ($1,000 vs $1,100).", "Call the Bellagio poker host line printed on the official page: 702.693.7291."),
+     "PDFs are undated. One PDF refers to a final day of 9/13/26, and the poker page has a stale notice (‘resume Saturday, July 26’). The Saturday buy-in conflicts ($1,000 vs $1,100).", "Confirm the Bellagio poker room hours and host contact from the official page before play."),
     ("Q4", "What is the Saturday Bellagio buy-in?", "Open", "$1,000 (file name) vs $1,100 (PDF header). Left blank.", "Ask Bellagio poker room; check the live schedule."),
     ("Q5", "Are Wynn WPT events single entry? What are their re-entry rules?", "Open",
      "Schedule and general terms are official. Event structure sheets were not transcribed.", "Review each WPT structure sheet (Wynn publishes them with the schedule)."),
@@ -339,13 +340,13 @@ Q = [
     ("Q7", "What are the true hotel costs per night?", "Open",
      "Room rates are dynamic and were not confirmed from official sources. The Venetian resort fee is $55 + tax (official).", "Pull rates for your exact dates from each official booking engine and keep a dated snapshot."),
     ("Q8", "What is the Clark County lodging tax rate used in the cost formula?", "Open",
-     "Third-party sites quote 13.38%. No official government source was checked yet.", "Verify on a Clark County or Nevada Department of Taxation page before using it."),
+     "Third-party sites give a figure; it is not used here. No official government source was checked yet.", "Verify on a Clark County or Nevada Department of Taxation page before using it."),
     ("Q9", "Which resort fee applies at Wynn, Caesars Palace and Bellagio?", "Open",
      "Official fee pages were not reachable. Third-party figures conflict (e.g. Caesars $49.95 to $62.30).", "Check each property's booking page or front desk for the fee on your dates."),
     ("Q10", "How long does each tournament take to play?", "Open", "Not in the official data reviewed.", "Ask each poker room or use the structure sheets (levels × blind durations) to estimate."),
     ("Q11", "Are the Venetian $200 bounty events single entry?", "Answered",
      "Structure sheet 1 shows no re-entry or add-on, late registration until level 8 break, and a $50 bounty per knockout.", "None needed beyond the flagged list."),
-    ("Q12", "Do Wynn tournaments require a loyalty card?", "Answered", "Yes: Wynn Rewards membership is required (WPT terms and daily terms).", "Sign up at the Wynn Rewards desk before play."),
+    ("Q12", "Do Wynn tournaments require a loyalty card?", "Answered", "Not confirmed on an official page reviewed; check before play.", "Ask the poker desk."),
     ("Q13", "Do Venetian tournaments require a loyalty card?", "Answered", "Yes: Venetian Rewards card and age 21+ (structure sheets).", "Sign up before play."),
     ("Q14", "What are your travel dates and length of stay?", "Open (needed from you)", "Not provided.", "Provide dates so the plan can be built for that window."),
     ("Q15", "Are there verified Las Vegas WSOP events in this window?", "Answered (no)", "The official WSOP schedule for Nov–Dec 2026 lists no Las Vegas event.", "Check the WSOP schedule again for 2027 dates when posted."),
@@ -397,18 +398,19 @@ flag_items = [
     ("Bellagio", "Saturday PDF references a 'Combined Final Day 2 (9/13/26)' — a date that appears to be in the past relative to Nov 16, 2026, so the PDF may be outdated.", "B_SAT"),
     ("Bellagio", "Poker page notice still says 'Tournament play will resume on Saturday, July 26' — stale.", "B_PAGE"),
     ("Caesars", "Daily NLH flyer is undated (2026 in filename). Confirm it is current.", "C_FLYER"),
-    ("Wynn", "Wynn daily structure sheets say the events 'may be suspended during Seniors Events, Classic Events, or other Tournament Series' — the WPT series is not named; conflicting for Nov 27 – Dec 21.", "W_DAILY"),
+    ("Wynn", "Wynn daily structure sheets say the events 'Wynn daily structure text includes a suspension clause; exact wording not re-checked' — the WPT series is not named; conflicting for Nov 27 – Dec 21.", "W_DAILY"),
     ("Wynn", "WPT schedule footnotes conflict: $1,100 'Ladies NLH' vs '$11,100 Ladies entry (discounted)'. The '$10,500' entries carry a footnote on discounted entry that was not fully reviewed.", "W_WPT"),
     ("Wynn", "Wynn poker page FAQ entries are listed as questions with no answers in the fetched text.", "W_PAGE"),
     ("Venetian", "Event numbers are shared across different flights and dates (e.g. #19 on Nov 29 / Nov 30 / Dec 1 / Dec 2; #26 on Dec 3–6; #56 on Dec 17–19). The schedule is correct, but event-number lookups are ambiguous.", "V_SCHED"),
     ("Venetian", "Event #6 ($200 NLH, Sun Nov 22) has no guarantee printed on the schedule or structure sheet. Left blank.", "V_S29"),
     ("Venetian", "Event #8 ($200 PKO, Nov 23) is not in the structure-sheet event list linked for bounty events; its structure was not reviewed.", "V_SCHED"),
-    ("Venetian", "Venetian DSE page says the current series is WPT Fall Festival (Oct 28 – Nov 15, 2026), which has ended. Schedule page covers Nov 16 – Dec 23.", "V_PAGE"),
+    ("Venetian", "Venetian DSE page header names a different series (WPT Fall Festival, Oct 28 – Nov 15, 2026). Its status is not verified here; the DSE schedule covers Nov 16 – Dec 23.", "V_PAGE"),
     ("Horseshoe", "Official page says 'six exciting tournament times daily' with no times or buy-ins. Not verified.", "HSL"),
     ("Resorts World", "Official poker page shows poker dining only; no tournament schedule verified.", "RW"),
     ("Aria / MGM Grand / Planet Hollywood", "Official poker pages were not reachable (404 or error). No schedule verified.", "ARIA_TRY"),
     ("WSOP", "The WSOP official schedule for Nov–Dec 2026 lists no Las Vegas events in this window. Schedule page lists a 2027 Super Circuit LATAM event (not Vegas).", "WSOP_SCHED"),
     ("Third-party", "Search results included contradictory third-party guides, including a 2019 article titled '2026', and a Mandalay Bay / Caesars listing that does not match official pages. Not used for values.", None),
+    ("Reconciliation", "The original root dashboard (merged from PR #1) reports 0 verified single-entry rows because its rows were not checked against structure sheets. This site checked the Venetian structure sheets and verified 19 rows. Both are kept; the dashboard owner should confirm which is authoritative.", "V_S5"),
     ("Walking distance", "Walking times to each poker room were not confirmed from an official map source. Left blank.", None),
     ("Room rates", "Nightly room rates are dynamic; no official rate snapshot was taken for the window. Left blank.", None),
 ]
