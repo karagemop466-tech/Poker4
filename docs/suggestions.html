@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Suggestions · Las Vegas Strip Poker Planner</title>
+<style>
+:root{--ink:#1d2330;--mut:#5b6474;--line:#e3e7ee;--bg:#f7f9fc;--acc:#0b6e4f;--warn:#b26a00;--bad:#9b1c1c}
+*{box-sizing:border-box}body{margin:0;font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--bg)}
+header{background:#0f2b25;color:#fff;padding:14px 20px;position:sticky;top:0;z-index:5}
+header .t{font-weight:700;font-size:17px}header nav{margin-top:8px;display:flex;flex-wrap:wrap;gap:6px 14px}
+header nav a{color:#cfe9e1;text-decoration:none;font-size:13px}header nav a.on{color:#fff;font-weight:700;border-bottom:2px solid #7fd6b5}
+main{max-width:1200px;margin:0 auto;padding:22px 18px 60px}
+h1{font-size:26px;margin:4px 0 6px}h2{font-size:20px;margin:26px 0 8px;border-bottom:1px solid var(--line);padding-bottom:4px}h3{font-size:16px;margin:18px 0 6px}
+p,li{max-width:900px}.mut{color:var(--mut)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:14px 0}
+.card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px}
+.card b.n{font-size:26px;display:block}.card a{color:var(--acc);font-weight:600;text-decoration:none}
+.note{background:#fff8e6;border:1px solid #f1d58a;border-radius:8px;padding:10px 14px;margin:12px 0}
+.ok{background:#e9f7f1;border:1px solid #a7dcc4;border-radius:8px;padding:10px 14px;margin:12px 0}
+.bad{background:#fdecec;border:1px solid #f0b3b3;border-radius:8px;padding:10px 14px;margin:12px 0}
+.tbl-wrap{overflow:auto;background:#fff;border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;font-size:13.5px}
+th,td{padding:7px 9px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{background:#eef3f8;position:sticky;top:0;font-size:12.5px;text-transform:uppercase;letter-spacing:.03em;color:#33405a}
+tr:nth-child(even) td{background:#fbfcfe}
+td.num,th.num{text-align:right;white-space:nowrap}
+.unv{color:var(--warn);font-style:italic}
+a{color:#0b5fa5}
+code{background:#eef2f7;padding:1px 4px;border-radius:4px;font-size:12.5px}
+.filter{padding:8px 10px;border:1px solid var(--line);border-radius:8px;width:320px;max-width:100%;margin:8px 0}
+.pill{display:inline-block;padding:1px 8px;border-radius:999px;font-size:12px;background:#e8eef6;margin-right:4px}
+footer{max-width:1200px;margin:0 auto;padding:0 18px 30px;color:var(--mut);font-size:12.5px}
+</style></head>
+<body>
+<header><div class="t">Las Vegas Strip Poker Planner <span class="mut" style="color:#9fc7b9;font-weight:400">· verified from official sources · data as of 2026-11-16</span></div>
+<nav><a href='index.html' class=''>Home</a><a href='summary.html' class=''>Executive summary</a><a href='tournaments.html' class=''>Single-entry tournaments</a><a href='reentry.html' class=''>Re-entry / add-on (separate)</a><a href='hotels.html' class=''>Hotels</a><a href='schedule.html' class=''>Daily schedule</a><a href='questions.html' class=''>Questions &amp; info needed</a><a href='suggestions.html' class='on'>Suggestions (for your decision)</a><a href='flagged.html' class=''>Flagged for Review</a><a href='sources.html' class=''>Sources</a></nav></header>
+<main>
+<h1>Suggestions for improving the site (for your decision)</h1>
+<p class="mut">Nothing on this list has been implemented. Choose the items you want; we will implement only the approved ones.</p>
+<div class="note"><b>Your choice:</b> reply with the IDs you approve (e.g. "S1, S3, S5") or "none".</div>
+<div class="tbl-wrap"><table>
+<thead><tr><th>ID</th><th>Suggestion</th><th>Why</th><th>Effort</th></tr></thead>
+<tbody>
+<tr><td>S1</td><td>Structure-sheet review for all flagged Venetian rows, with a re-entry/add-on column filled in per row.</td><td>Would move dozens of rows into the ranked list or the separate section.</td><td>Medium</td></tr>
+<tr><td>S2</td><td>Add a "last verified" date and source per row, and a status icon (verified / unverified / conflict).</td><td>Makes it obvious what is confirmed.</td><td>Low</td></tr>
+<tr><td>S3</td><td>Trip-date input: filter the schedule to your dates and show what is open on each day.</td><td>Needed for a real planner.</td><td>Medium</td></tr>
+<tr><td>S4</td><td>Dated room-rate snapshots from each official booking engine (e.g. weekly pulls).</td><td>Room rate is the biggest missing input for the true-cost calculation.</td><td>Medium–High</td></tr>
+<tr><td>S5</td><td>Clark County / Nevada tax rate page as a cited input.</td><td>Needed for the true cost formula.</td><td>Low</td></tr>
+<tr><td>S6</td><td>Walking-time checks from an official property map (or a map-service API) for each hotel-to-room pair.</td><td>Distance rule is ≤30 min walk; this is currently unverified.</td><td>Low–Medium</td></tr>
+<tr><td>S7</td><td>Add a calendar (.ics) export of the approved events.</td><td>Helps plan a full day.</td><td>Low</td></tr>
+<tr><td>S8</td><td>Add off-Strip venues (Golden Nugget, Horseshoe, Resorts World, Aria, MGM Grand, Planet Hollywood) once their official schedules are verified.</td><td>Broader choice; currently not verifiable from the sources reached.</td><td>Medium</td></tr>
+<tr><td>S9</td><td>Automated re-check of official sources on a schedule, with a diff log.</td><td>Schedules change; this catches changes quickly.</td><td>Medium–High</td></tr>
+<tr><td>S10</td><td>Separate "Bounty" flag and "Age 50+" flag in the table.</td><td>Relevant to eligibility and format.</td><td>Low</td></tr>
+</tbody></table></div>
+<h2>Three paths to choose from</h2>
+<ul>
+<li><b>Path A — minimal:</b> keep the current site; approve S2 and S5 only.</li>
+<li><b>Path B — planner:</b> approve S1, S2, S3, S5, S6 (complete verification plus a trip-date planner).</li>
+<li><b>Path C — full:</b> approve everything (S1–S10).</li>
+</ul>
+</main>
+<footer>Built from <code>data/*.json</code> by <code>build/build_site.py</code>. Blank values are unverified and were not inferred. Times and prices can change; confirm with the venue before travel. Contact details shown are copied from official pages.</footer>
+<script>
+function filt(id,q){q=q.toLowerCase();document.querySelectorAll('#'+id+' tbody tr').forEach(function(r){r.style.display=r.textContent.toLowerCase().indexOf(q)>-1?'':'none'})}
+</script>
+</body></html>

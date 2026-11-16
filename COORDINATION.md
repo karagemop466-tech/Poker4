@@ -11,10 +11,10 @@ Status values: unclaimed · in progress · done · needs review
 | # | Task | Status | Owner | Files (scope) |
 |---|------|--------|-------|---------------|
 | T1 | Repo review (README, git state, irregularities) | done | arena-abd38ed7 | `COORDINATION.md`, `docs/flagged.html`, `docs/sources.html` |
-| T2 | Live tournament research — Las Vegas Strip, single-entry vs re-entry/add-on | done (verified rows; unverified rows flagged) | arena-abd38ed7 | `data/tournaments.json` |
+| T2 | Live tournament research — Las Vegas Strip, single-entry vs re-entry/add-on | done (19 verified single-entry rows; 31 schedule-only rows flagged) | arena-abd38ed7 | `data/tournaments.json` |
 | T3 | Hotel research — resort fees, rates, walking (official sources only) | done (partial; rates & unconfirmed fees flagged) | arena-abd38ed7 | `data/hotels.json` |
 | T4 | Executive summary, daily schedule plan, questions, suggestions | done | arena-abd38ed7 | `docs/summary.html`, `docs/schedule.html`, `docs/questions.html`, `docs/suggestions.html` |
-| T5 | Site build (GitHub Pages, `/docs`), link check | in progress | arena-abd38ed7 | `build/build_site.py`, `docs/*` |
+| T5 | Site build (GitHub Pages, `/docs`), link check | done (10 pages; 0 broken internal links) | arena-abd38ed7 | `build/build_site.py`, `docs/*` |
 | T6 | Integration: PR `arena/abd38ed7-poker4` → `main`, merge, Pages deploy check | pending | arena-abd38ed7 | this file |
 
 ## Task T1 — Repo review (done)
@@ -36,7 +36,7 @@ Status values: unclaimed · in progress · done · needs review
 
 ## Task T4 — Summary / questions / suggestions (done)
 
-## Task T5 — Site build (in progress)
+## Task T5 — Site build (done)
 - Static site in `/docs`, built by `build/build_site.py` from `data/*.json`.
 - Pages source: `main` branch, `/docs` folder (to be enabled after merge).
 
@@ -46,3 +46,5 @@ Status values: unclaimed · in progress · done · needs review
 ## Session log
 - 2026-11-16 18:55 UTC — arena-abd38ed7 claimed T1–T6 on branch `arena/abd38ed7-poker4`.
 - 2026-11-16 — T1, T2, T3 research completed; official sources fetched on 2026-11-16 (see `docs/sources.html`).
+- 2026-11-16 — T4 complete; T5 built with `python3 build/build_site.py` (0 broken internal links).
+- Irregularities logged on `docs/flagged.html` (conflicting third-party resort fees, undated Bellagio/Caesars schedules, stale Bellagio notice, Bellagio $1,000 vs $1,100, Venetian event-number reuse, Wynn WPT footnote conflicts, unreachable venue pages).
