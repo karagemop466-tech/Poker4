@@ -116,7 +116,7 @@ Scope note: the session brief asks for `session-<id>/<task>` branches. The Arena
 | T6 | Site build and link check | done (10 pages; verify.py OK) | df41f5c6 | `scripts/build.py`, `scripts/verify.py`, `df41f5c6/*` |
 | T7 | Flagged for Review page | done (29 items) | df41f5c6 | `df41f5c6/flagged.html`, `data/df41f5c6/flagged.json` |
 | T8 | Sources list | done (17 official sources) | df41f5c6 | `data/df41f5c6/sources.json`, `df41f5c6/sources.html` |
-| T9 | Integration: merge with `main`, PR, merge, Pages check | in progress | df41f5c6 | this section |
+| T9 | Integration: merge with `main`, PR, merge, Pages check | done | df41f5c6 | this section |
 
 ### Log (df41f5c6)
 - 2026-11-16: Claimed T1–T9 (commit 9e83ee9). Commit 34e6221 added the data, build and verifier, first under `data/` and `docs/`.
@@ -124,3 +124,10 @@ Scope note: the session brief asks for `session-<id>/<task>` branches. The Arena
 - 2026-11-16: Note for the other sessions: `data/tournaments.json` and `data/hotels.json` on `main` (PR #3) are not used by this session's site. This session's data is `data/df41f5c6/`. The `docs/` folder used by PR #3's build was not created on `main` by this session.
 - 2026-11-16: Correction recorded. The earliest main-list verified start is 10:00 AM (Wynn, Dec 10). The only earlier verified start is a 9:10 AM Venetian satellite (#46), shown on the other-formats page only.
 - Pages: the workflow `.github/workflows/pages.yml` on `main` uploads the repo root, so `/df41f5c6/` is published with no settings change. The site is verified after the merge.
+- 2026-11-16: **PR #6** (`arena/df41f5c6-poker4` → `main`) merged with a merge commit at `feee52a` (merged 19:06 UTC). Pages deploy for `feee52a`: success (both workflows).
+- 2026-11-16: Pre-merge checks: `scripts/build.py` built 10 pages (64 main-list rows, 9 other-format rows, 59 dated rows); `scripts/verify.py` OK (every table row links an official source; internal links resolve; data references valid).
+- 2026-11-16: Process note: a `git pull --rebase` on this branch replayed `main`'s merged commits (the branch contains a merge with `main`). Nothing was lost or force-pushed; the rebase was aborted and the branch was pushed as a fast-forward. Future pulls: use a plain fast-forward when the branch has no unpushed commits, not a rebase across merges.
+- 2026-11-16: Post-merge fix found on the live page: the dashboard's "Largest guarantees" line showed buy-ins, not guarantees; a second live-event wording overstated "single-entry" for the Venetian rows; flag F24 still said `/docs`. Fixed in **PR #9** (`arena/df41f5c6-poker4` → `main`), merged at `c9b7401` (19:08 UTC). Pages deploy for `c9b7401`: success (both workflows). Live check: `https://karagemop466-tech.github.io/Poker4/df41f5c6/index.html` shows the corrected text.
+- Live URLs (session df41f5c6): `/df41f5c6/index.html`, `/df41f5c6/tournaments.html`, `/df41f5c6/other-formats.html`, `/df41f5c6/hotels.html`, `/df41f5c6/schedule.html`, `/df41f5c6/questions.html`, `/df41f5c6/suggestions.html`, `/df41f5c6/flagged.html`, `/df41f5c6/repo-review.html`, `/df41f5c6/sources.html`.
+- Result: integration complete. No merge conflicts remain. Flagged items (29) are published on `/df41f5c6/flagged.html` and did not block the merge.
+- Suggestions (`df41f5c6/suggestions.html`): decision-only; nothing implemented; awaiting the user's choice per row.
