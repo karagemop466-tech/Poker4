@@ -1,0 +1,9 @@
+property,resort_fee_per_night,status,source,note
+Wynn Las Vegas,$55 + tax,VERIFIED (official terms),https://www.wynnlasvegas.com/terms-and-conditions/850257,"For bookings on or after Jan 15, 2025"
+Treasure Island,$49.95 + tax,VERIFIED (official page),https://treasureisland.com/hotel/deluxe-rooms,Optional only for listed qualifying bookings
+Venetian,,UNVERIFIED,https://www.venetianlasvegas.com/venetian-rewards/terms-and-conditions.html,Rewards members get one complimentary suite resort fee per stay when booked directly; amount not confirmed
+Caesars Palace,,UNVERIFIED,https://www.caesars.com/caesars-palace,Secondary sources conflict ($49.95 vs $54.95); not confirmed on official page
+Bellagio,,NOT CAPTURED,https://bellagio.mgmresorts.com/en/casino/poker.html,Not checked
+Aria,,NOT CAPTURED,https://aria.mgmresorts.com/en/casino/poker.html,Not checked
+Harrah's Las Vegas,,NOT CAPTURED,https://www.caesars.com/harrahs-las-vegas,Not checked
+Horseshoe Las Vegas,,NOT CAPTURED,https://www.caesars.com/horseshoe-las-vegas,Not checked

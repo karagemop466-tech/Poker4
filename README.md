@@ -1,7 +1,22 @@
-# Vegas Poker Trip Planner
+# Las Vegas Strip Poker Finder
 
-A source-led research dashboard for upcoming Las Vegas Strip-area poker tournaments and lodging. **Research snapshot: November 16, 2026 (UTC).** Start with the [Executive Summary](index.html); see [Tournament Schedule](tournaments.html), [Stay Options](hotels.html), [Decision Checklist](questions.html), and [Flagged for Review](review.html).
+Static GitHub Pages site. Every table row cites an official source. Values that could not be confirmed are left blank and marked ⚑ and listed on `flagged.html`.
 
-Run locally with any static HTTP server. GitHub Pages deployment is configured through `.github/workflows/pages.yml`.
+## Pages
+- `index.html` — summary and headline numbers
+- `tournaments.html` — main list (Venetian DeepStack Extravaganza IV), with single-entry status shown
+- `addons.html` — Wynn daily, Wynn WPT, Bellagio: re-entry, rebuy, add-on events
+- `schedule.html` — official start times by day
+- `hotels.html` — resort fees; room rates and walk times not yet captured
+- `questions.html` — open questions and how to get each answer
+- `review.html` — repo review and irregularities
+- `flagged.html` — every unverified value
 
-All tournament schedule facts below link to the Venetian Resort's official event schedule. Important: the published schedule does not by itself confirm single-entry/no-re-entry/no-add-on rules, actual prize pools, seating availability, or that later events remain unchanged. These are explicitly flagged rather than inferred. Hotel room prices vary by dates; because no travel dates or party size were provided, nightly totals are not fabricated.
+## Data
+- `data/venetian_deepstack_iv.csv` — all 94 official schedule rows
+- `data/wynn_daily.csv`, `data/wynn_wpt.csv`, `data/bellagio.csv`, `data/resort_fees.csv`
+
+## Rebuild
+    python3 tools/build.py
+
+Pages are generated from the CSVs. Edit data, not HTML.
