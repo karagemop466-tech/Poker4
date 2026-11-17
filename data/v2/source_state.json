@@ -51,7 +51,7 @@
   },
   "https://treasureisland.com/hotel/tower-suite": {
    "last_checked": "2026-11-17",
-   "sha256": "1bc53658a29a79c4683d65c161383b199ab7f1c8eac31f95c56ac9f588a10c18",
+   "sha256": "6fe941697a1506d894f7679000f4306ca8481a1f7b57cf13980016eb92d13e37",
    "source_ids": [
     "I_FEE"
    ]
@@ -65,7 +65,7 @@
   },
   "https://www.resortfeechecker.com/140596-resort_fee_bellagio.html": {
    "last_checked": "2026-11-17",
-   "sha256": "364e41129e1ece3e48c0f6258ed23da1b0628487ec15885c325cc28bfa3b86ad",
+   "sha256": "8447156198252fa2c76bbed65db9be3ebc10ddc2f124c0b4e78364ba9d073747",
    "source_ids": [
     "M_FEES_UNVERIFIED"
    ]
@@ -366,14 +366,14 @@
   },
   "https://www.venetianlasvegas.com/resort/casino/poker.html": {
    "last_checked": "2026-11-17",
-   "sha256": "b8fca9f6bc8a59790c5787509706fcad6f2bede18b24603738e00d6d96668386",
+   "sha256": "01efec42c073ccda85d6a7a79aa8fa68e5bd91287bdbc3a967df3bd688c55c86",
    "source_ids": [
     "V_POKER"
    ]
   },
   "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament.html": {
    "last_checked": "2026-11-17",
-   "sha256": "5ececab5ffd9a58d8bf44c881f5e7ea17a59affbf9ad3f4c6462776c0e08d60c",
+   "sha256": "4695a7f4a3f3d598322b16ca21d8ba6dd4c82b5b669c26f6a9b5ce37d2e5aafe",
    "source_ids": [
     "V_SERIES"
    ]
@@ -401,14 +401,14 @@
   },
   "https://www.venetianlasvegas.com/resort/resort-fee.html": {
    "last_checked": "2026-11-17",
-   "sha256": "31972e843db4bc23c9b1e0795bf5fd4f465702e95e81e3dc62fcc6e5488bae3b",
+   "sha256": "3320b7588dd9517f9259dcbf5b71020a3d762e0d262842851062e4beb9717c6b",
    "source_ids": [
     "V_FEE"
    ]
   },
   "https://www.worldpokertour.com/article/wpt-world-championship-at-wynn-las-vegas-set-for-season-24-finale-with-over-85-events-and-20m-in-gte": {
    "last_checked": "2026-11-17",
-   "sha256": "bee383bbfe9f2f892a509ba9c0440ed30a4eaa3da686395e4fa62a5a257f8d7d",
+   "sha256": "b216d72179a0e3804e2a6a65895d23547e9c81b0ae1b76f0261c05ff6728e688",
    "source_ids": [
     "W_WPT_PR"
    ]
@@ -422,7 +422,7 @@
   },
   "https://www.wynnlasvegas.com/terms-and-conditions/850257": {
    "last_checked": "2026-11-17",
-   "sha256": "213f7af0f2f91779870849eb74105f8ae3305c4eefaabbc6d49d85b33e553f49",
+   "sha256": "328b99a8f23253dcf076649fbbd6eafe20ecb3c18698dbe56f39956499630677",
    "source_ids": [
     "W_TC_FEE"
    ]
