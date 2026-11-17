@@ -1,0 +1,37 @@
+name: Source re-check (b6421d6a) & daily schedule feed
+
+on:
+  schedule:
+    - cron: "0 14 * * *"   # 14:00 UTC ≈ 6–7 AM PT — every morning Las Vegas time
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Re-check official URLs and refresh schedule feed
+        run: python3 tools/monitor_sources.py
+
+      - name: Commit updated snapshots and change log
+        run: |
+          git config user.name "poker4-monitor"
+          git config user.email "poker4-monitor@users.noreply.github.com"
+          git add data/source_snapshots.json data/change_log.json data/feeds || true
+          if git diff --cached --quiet; then
+            echo "No source changes detected."
+          else
+            git commit -m "source-recheck: daily official-URL re-check ($(date -u +%F))"
+            git pull --rebase origin main || true
+            git push origin main
+          fi

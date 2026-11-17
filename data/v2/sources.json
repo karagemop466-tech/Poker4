@@ -1,232 +1,134 @@
 {
- "meta": {
-  "generated": "2026-11-17",
-  "policy": "Official operator sources only; each row's values link these keys."
- },
- "sources": {
-  "V_PAGE": {
-   "label": "Venetian DeepStack Extravaganza IV official series page (schedule)",
-   "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
+  "meta": {
+    "retrieved": "2026-11-17",
+    "rule": "A value is only shown on the site when a session runner read it on the page listed here. Every entry carries the retrieval date and a verbatim excerpt. Values that could not be read on an official page are left blank and listed on the Flagged for Review page.",
+    "tiers": {
+      "official": "Published by the casino/hotel operator or the tournament organiser (e.g. venetianlasvegas.com, wynnlasvegas.com, caesars.com, mgmresorts.com, worldpokertour.com).",
+      "official_map_data": "OpenStreetMap / OSRM open data used only for walking distance & duration. NOT a casino source and NOT Google/Apple turn-by-turn; labelled as such everywhere it appears.",
+      "third_party_reference": "Used only as a lead. Never used for a displayed fact unless an official source confirms it."
+    }
   },
-  "V_SCHED": {
-   "label": "Venetian DSE IV schedule PDF (official)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
-  },
-  "V_POKER": {
-   "label": "Venetian Poker Room official page (room at The Palazzo, Level 2)",
-   "url": "https://www.venetianlasvegas.com/resort/casino/poker.html"
-  },
-  "V_RATES": {
-   "label": "Venetian 2026 Poker Suite Rates official page",
-   "url": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html"
-  },
-  "V_RESORT": {
-   "label": "Venetian Resort Fee official page",
-   "url": "https://www.venetianlasvegas.com/resort/resort-fee.html"
-  },
-  "V_TERMS": {
-   "label": "Venetian Hotel Terms & Conditions (tax, parking, cancellation)",
-   "url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html"
-  },
-  "W_PAGE": {
-   "label": "Wynn Las Vegas Poker Room official page",
-   "url": "https://www.wynnlasvegas.com/casino/poker"
-  },
-  "W_DAILY": {
-   "label": "Wynn Daily Tournament Structures + General Terms PDF (official)",
-   "url": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf"
-  },
-  "W_WPT": {
-   "label": "Wynn WPT World Championship 2026 schedule PDF (official)",
-   "url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
-  },
-  "W_WPT_TC": {
-   "label": "WPT World Championship General Terms + event structures PDF (official)",
-   "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
-  },
-  "W_TERMS": {
-   "label": "Wynn Las Vegas Terms & Conditions (resort fee, parking, deposit)",
-   "url": "https://www.wynnlasvegas.com/terms-and-conditions/850257"
-  },
-  "B_PAGE": {
-   "label": "Bellagio Poker Room official page",
-   "url": "https://bellagio.mgmresorts.com/en/casino/poker.html"
-  },
-  "B_FRI": {
-   "label": "Bellagio Friday $600 NLH structure PDF (official)",
-   "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt9cf95b0e60ec253e/6af491a3a9851d75c40be840/mgm-bellagio-poker-fridays-$600-nlh.pdf"
-  },
-  "B_SAT": {
-   "label": "Bellagio Saturday NLH structure PDF (official; buy-in conflict inside)",
-   "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt6d47974bf5a7d9b6/6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf"
-  },
-  "B_SUN": {
-   "label": "Bellagio Sunday $400 H.O.R.S.E. structure PDF (official)",
-   "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt07fcf1244a6da661/6af491a339e2b4f6b76a86ad/mgm-bellagio-poker-sundays-$400-horse.pdf"
-  },
-  "C_FLYER": {
-   "label": "Caesars Palace Daily NLH tournament flyer PDF (official)",
-   "url": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf"
-  },
-  "C_PAGE": {
-   "label": "Caesars Palace casino page (links the flyer)",
-   "url": "https://www.caesars.com/caesars-palace/casino"
-  },
-  "TI_FEE": {
-   "label": "Treasure Island resort-fee section (Tower Suite page, official)",
-   "url": "https://treasureisland.com/hotel/tower-suite"
-  },
-  "GM": {
-   "label": "Google Maps walking directions (mode=walking, retrieved per row)",
-   "url": "https://www.google.com/maps"
-  },
-  "V_S1": {
-   "label": "Venetian DSE IV structure sheet #1 (official PDF)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
-  },
-  "V_S2": {
-   "label": "Venetian DSE IV structure sheet #2 (official PDF)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_2.pdf"
-  },
-  "V_S3": {
-   "label": "Venetian DSE IV structure sheet #3 (official PDF)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_3.pdf"
-  },
-  "V_S4": {
-   "label": "Venetian DSE IV structure sheet #4 (official PDF)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf"
-  },
-  "V_S5": {
-   "label": "Venetian DSE IV structure sheet #5 (official PDF)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf"
-  },
-  "V_S6": {
-   "label": "Venetian DSE IV structure sheet #6 (official PDF)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_6.pdf"
-  },
-  "V_S7": {
-   "label": "Venetian DSE IV structure sheet #7 (official PDF)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf"
-  },
-  "V_S8": {
-   "label": "Venetian DSE IV structure sheet #8 (official PDF)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_8.pdf"
-  },
-  "V_S9": {
-   "label": "Venetian DSE IV structure sheet #9 (official PDF)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_9.pdf"
-  },
-  "V_S10": {
-   "label": "Venetian DSE IV structure sheet #10 (official PDF)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf"
-  },
-  "V_S11": {
-   "label": "Venetian DSE IV structure sheet #11 (official PDF)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf"
-  },
-  "V_S12": {
-   "label": "Venetian DSE IV structure sheet #12 (official PDF)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf"
-  },
-  "V_S13": {
-   "label": "Venetian DSE IV structure sheet #13 (official PDF)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_13.pdf"
-  },
-  "V_S14": {
-   "label": "Venetian DSE IV structure sheet #14 (official PDF)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_14.pdf"
-  },
-  "V_S15": {
-   "label": "Venetian DSE IV structure sheet #15 (official PDF)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
-  },
-  "V_S16": {
-   "label": "Venetian DSE IV structure sheet #16 (official PDF)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_16.pdf"
-  },
-  "V_S17": {
-   "label": "Venetian DSE IV structure sheet #17 (official PDF)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_17.pdf"
-  },
-  "V_S18": {
-   "label": "Venetian DSE IV structure sheet #18 (official PDF)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf"
-  },
-  "V_S19": {
-   "label": "Venetian DSE IV structure sheet #19 (official PDF)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_19.pdf"
-  },
-  "V_S20": {
-   "label": "Venetian DSE IV structure sheet #20 (official PDF)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_20.pdf"
-  },
-  "V_S21": {
-   "label": "Venetian DSE IV structure sheet #21 (official PDF)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf"
-  },
-  "V_S22": {
-   "label": "Venetian DSE IV structure sheet #22 (official PDF)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_22.pdf"
-  },
-  "V_S23": {
-   "label": "Venetian DSE IV structure sheet #23 (official PDF)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_23.pdf"
-  },
-  "V_S24": {
-   "label": "Venetian DSE IV structure sheet #24 (official PDF)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_24.pdf"
-  },
-  "V_S25": {
-   "label": "Venetian DSE IV structure sheet #25 (official PDF)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_25.pdf"
-  },
-  "V_S26": {
-   "label": "Venetian DSE IV structure sheet #26 (official PDF)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_26.pdf"
-  },
-  "V_S27": {
-   "label": "Venetian DSE IV structure sheet #27 (official PDF)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_27.pdf"
-  },
-  "V_S28": {
-   "label": "Venetian DSE IV structure sheet #28 (official PDF)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_28.pdf"
-  },
-  "V_S29": {
-   "label": "Venetian DSE IV structure sheet #29 (official PDF)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_29.pdf"
-  },
-  "V_S30": {
-   "label": "Venetian DSE IV structure sheet #30 (official PDF)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_30.pdf"
-  },
-  "V_S31": {
-   "label": "Venetian DSE IV structure sheet #31 (official PDF)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_31.pdf"
-  },
-  "V_S32": {
-   "label": "Venetian DSE IV structure sheet #32 (official PDF)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_32.pdf"
-  },
-  "V_S33": {
-   "label": "Venetian DSE IV structure sheet #33 (official PDF)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_33.pdf"
-  },
-  "V_S34": {
-   "label": "Venetian DSE IV structure sheet #34 (official PDF)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_34.pdf"
-  },
-  "V_S35": {
-   "label": "Venetian DSE IV structure sheet #35 (official PDF)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf"
-  },
-  "V_S36": {
-   "label": "Venetian DSE IV structure sheet #36 (official PDF)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_36.pdf"
-  },
-  "V_S37": {
-   "label": "Venetian DSE IV structure sheet #37 (official PDF)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_37.pdf"
+  "sources": {
+    "V_CAL": {
+      "tier": "official",
+      "publisher": "The Venetian Resort Las Vegas",
+      "title": "DeepStack Extravaganza IV schedule page (Nov 16 – Dec 23, 2026)",
+      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+      "retrieved": "2026-11-17",
+      "excerpt": "DeepStack Extravaganza IV — November 16 – December 23, 2026 — More than $3.6 Million in guaranteed tournament prize pools. [94-row schedule table: Date | Time | Event # | Event Name | Structures | Results]",
+      "used_for": "Every Venetian event row: date, start time, event number, printed event name, structure sheet link."
+    },
+    "V_SERIES": {
+      "tier": "official",
+      "publisher": "The Venetian Resort Las Vegas",
+      "title": "DeepStack Poker Series hub — series dates and headline events",
+      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament.html",
+      "retrieved": "2026-11-17",
+      "excerpt": "Next Series: DeepStack Extravaganza IV November 16 – December 23, 2026 — More than $3.6 Million in guaranteed tournament prize pools — $800 NLH $500K GTD Dec 3-6; $2,200 NLH $1 Mill GTD Dec 12-14 PokerAtlas Championship Title Event; $1,100 NLH Seniors $300K GTD Dec 13-15; $1,100 NLH $500K GTD Dec 17-20; $600 NLH $150K GTD Dec 20-23.",
+      "used_for": "Series window and the headline guarantees cross-check."
+    },
+    "V_SCHED_PDF": {
+      "tier": "official",
+      "publisher": "The Venetian Resort Las Vegas",
+      "title": "DeepStack Extravaganza IV printed schedule (PDF)",
+      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+      "retrieved": "2026-11-17",
+      "excerpt": "Linked from the official series hub as 'View Poker Tournament Schedule' for DeepStack Extravaganza IV.",
+      "used_for": "Cross-reference link only. The HTML calendar (V_CAL) was the source actually transcribed; the PDF was not parsed row-by-row, so no row depends on it."
+    },
+    "V_S01": {
+      "tier": "official",
+      "publisher": "The Venetian Resort Las Vegas",
+      "title": "Structure sheet 1 — $200 No Limit Hold'em Bounty (1Day), events 09/11/13/15/21/22/23/25/60/61/62/64",
+      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
+      "retrieved": "2026-11-17",
+      "excerpt": "**Late Registration:** 8 levels + Break (9:40 PM) … **Guarantee:** $8,000 (prize pool + total bounties) … 06. $40 of the $200 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $160 of every $200 Buy In.",
+      "flags_absent_terms": "No occurrence of 're-entry', 'reentry', 'rebuy', 'freezeout' or 'single entry'."
+    },
+    "V_S02": {"tier": "official", "publisher": "The Venetian Resort Las Vegas", "title": "Structure sheet 2 — $400 NLH Day A+B, event 07", "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_2.pdf", "retrieved": "2026-11-17", "excerpt": "**Late Registration:** 9 levels + Break (5:55 PM) … **Guarantee:** $75,000 … 07. $70 of the $400 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $330 of every $400 Buy In.", "flags_absent_terms": "No re-entry/rebuy/add-on language."},
+    "V_S03": {"tier": "official", "publisher": "The Venetian Resort Las Vegas", "title": "Structure sheet 3 — $400 NLH Day A+B+C, event 19", "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_3.pdf", "retrieved": "2026-11-17", "excerpt": "**Late Registration:** 9 levels + Break (5:55 PM) … **Guarantee:** $75,000 … 07. $70 of the $400 Buy-In is withheld for house fees.", "flags_absent_terms": "No re-entry/rebuy/add-on language."},
+    "V_S04": {"tier": "official", "publisher": "The Venetian Resort Las Vegas", "title": "Structure sheet 4 — $600 NLH Day A+B+C, event 59", "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf", "retrieved": "2026-11-17", "excerpt": "**Late Registration:** 9 levels + Break (5:55 PM) … **Guarantee:** $150,000 … 07. $95 of the $600 Buy-In is withheld … On Day 1A only, players who register before the start of the event (11:10 a.m.), will receive a $20 discount on house fees for a total buy in of $580 instead of $600.", "flags_absent_terms": "No re-entry/rebuy/add-on language."},
+    "V_S05": {"tier": "official", "publisher": "The Venetian Resort Las Vegas", "title": "Structure sheet 5 — $300 NLH (1Day), events 02 and 12", "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf", "retrieved": "2026-11-17", "excerpt": "**Late Registration:** 10 levels + Break (~ 4:55 PM) … **Guarantee:** $10,000 … 6. $58 of the $300 Buy-In is withheld for house fees (Rake - Staff). The prize pool consists of $242 of every $300 Buy In. … 7. This event pays 12.5% of the field", "flags_absent_terms": "No re-entry/rebuy/add-on language."},
+    "V_S06": {"tier": "official", "publisher": "The Venetian Resort Las Vegas", "title": "Structure sheet 6 — $400 NLH (1Day), event 10", "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_6.pdf", "retrieved": "2026-11-17", "excerpt": "**Late Registration:** 10 levels + Break (~ 4:55 PM) … **Guarantee:** $15,000 … 6. $65 of the $400 Buy-In is withheld for house fees.", "flags_absent_terms": "No re-entry/rebuy/add-on language."},
+    "V_S07": {"tier": "official", "publisher": "The Venetian Resort Las Vegas", "title": "Structure sheet 7 — $600 NLH (1Day), events 14, 28, 63", "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf", "retrieved": "2026-11-17", "excerpt": "**Late Registration:** 10 levels + Break (~ 4:55 PM) … **Guarantee:** $30,000 for Event #14 and #63 … **Guarantee:** $40,000 for Event #28 … 6. $90 of the $600 Buy-In is withheld for house fees.", "flags_absent_terms": "No re-entry/rebuy/add-on language."},
+    "V_S08": {"tier": "official", "publisher": "The Venetian Resort Las Vegas", "title": "Structure sheet 8 — $200 NLH Valuetown Bounty (1Day), events 18 and 58", "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_8.pdf", "retrieved": "2026-11-17", "excerpt": "**Late Registration:** 8 levels + Break (9:40 PM) … **Guarantee:** $20,000 (prize pool + total bounties) … 07. PokerAtlas PRO players will receive a twenty ($20) rake discount on their initial $200 buy in only … All subsequent buy in's after the initial buy in will be $200.", "flags_absent_terms": "No explicit re-entry right; mentions 'subsequent buy in's' without defining them."},
+    "V_S09": {"tier": "official", "publisher": "The Venetian Resort Las Vegas", "title": "Structure sheet 9 — $300 NLH Day B+D, event 01", "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_9.pdf", "retrieved": "2026-11-17", "excerpt": "**Late Registration:** 6 levels + Break (~ 8:40 PM) … Guarantee: $75,000 … 07. $60 of the $300 Buy-In is withheld for house fees.", "flags_absent_terms": "No re-entry/rebuy/add-on language."},
+    "V_S10": {"tier": "official", "publisher": "The Venetian Resort Las Vegas", "title": "Structure sheet 10 — $300 NLH Day A+C, event 01", "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf", "retrieved": "2026-11-17", "excerpt": "**Late Registration:** 6 levels + Break (~ 3:40 PM) … Guarantee: $75,000 … 07. $60 of the $300 Buy-In is withheld for house fees.", "flags_absent_terms": "No re-entry/rebuy/add-on language."},
+    "V_S11": {"tier": "official", "publisher": "The Venetian Resort Las Vegas", "title": "Structure sheet 11 — $600 NLH Bounty (1Day), events 16, 30, 54", "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf", "retrieved": "2026-11-17", "excerpt": "**Late Registration:** 10 levels + Break (4:55 PM) … Guarantee: $30,000 (Event #16) / $40,000 (Event #30) / $50,000 (Event #54) prize pool + total bounties … 06. $90 of the $600 Buy-In is withheld for house fees.", "flags_absent_terms": "No re-entry/rebuy/add-on language."},
+    "V_S12": {"tier": "official", "publisher": "The Venetian Resort Las Vegas", "title": "Structure sheet 12 — $800 NLH Day A+C+E, event 26", "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf", "retrieved": "2026-11-17", "excerpt": "**Late Registration:** 6 levels + Break (~ 3:40 PM) … Guarantee: $500,000 … 07. $110 of the $800 Buy-In is withheld for house fees.", "flags_absent_terms": "No re-entry/rebuy/add-on language."},
+    "V_S13": {"tier": "official", "publisher": "The Venetian Resort Las Vegas", "title": "Structure sheet 13 — $800 NLH Day B+D, event 26", "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_13.pdf", "retrieved": "2026-11-17", "excerpt": "**Late Registration:** 6 levels + Break (~ 8:40 PM) … Guarantee: $500,000 … 07. $110 of the $800 Buy-In is withheld for house fees.", "flags_absent_terms": "No re-entry/rebuy/add-on language."},
+    "V_S14": {"tier": "official", "publisher": "The Venetian Resort Las Vegas", "title": "Structure sheet 14 — $800 NLH Day F (Turbo), event 26", "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_14.pdf", "retrieved": "2026-11-17", "excerpt": "Day F (Turbo) @ 5:10 PM … **Late Registration:** 6 levels + Break (~ 7:25 PM) … Guarantee: $500,000 … 07. $110 of the $800 Buy-In is withheld for house fees.", "flags_absent_terms": "No re-entry/rebuy/add-on language."},
+    "V_S15": {"tier": "official", "publisher": "The Venetian Resort Las Vegas", "title": "Structure sheet 15 — $300 NLH Bounty (1Day), events 29/31/34/38/42/50/51/53/55", "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf", "retrieved": "2026-11-17", "excerpt": "**Late Registration:** 8 levels + Break (9:40 PM) … Guarantee: $15,000 (prize pool + total bounties) … 06. $50 of the $300 Buy-In is withheld for house fees … 09. Players receive $100 bounty for each player they eliminate.", "flags_absent_terms": "No re-entry/rebuy/add-on language."},
+    "V_S16": {"tier": "official", "publisher": "The Venetian Resort Las Vegas", "title": "Structure sheet 16 — $800 NLH Bounty (1Day), event 36", "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_16.pdf", "retrieved": "2026-11-17", "excerpt": "**Late Registration:** 10 levels + Break (4:55 PM) … Guarantee: $75,000 (prize pool + total bounties) … 06. $100 of the $800 Buy-In is withheld for house fees.", "flags_absent_terms": "No re-entry/rebuy/add-on language."},
+    "V_S17": {"tier": "official", "publisher": "The Venetian Resort Las Vegas", "title": "Structure sheet 17 — $600 NLH Seniors (1Day), events 24 and 32", "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_17.pdf", "retrieved": "2026-11-17", "excerpt": "MUST BE 50+ YEARS OF AGE TO PARTICPATE … **Late Registration:** 10 levels + Break (~ 3:55 PM) … Guarantee: $40,000 … 07. This event pays 15% of the field", "flags_absent_terms": "No re-entry/rebuy/add-on language."},
+    "V_S18": {"tier": "official", "publisher": "The Venetian Resort Las Vegas", "title": "Structure sheet 18 — $200 NLH RaceDay Stack (1Day), events 03/04/05", "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf", "retrieved": "2026-11-17", "excerpt": "**Late Registration:** 6 levels + Break (~ 12:25 PM) … 6. $35 of the $200 Buy-In is withheld for house fees … 7. This event pays 12.5% of the field. [No guarantee line printed.]", "flags_absent_terms": "No guarantee, no re-entry/rebuy/add-on language."},
+    "V_S19": {"tier": "official", "publisher": "The Venetian Resort Las Vegas", "title": "Structure sheet 19 — $100 NLH LIPS Ladies Milestone Satellite (1Day), events 33 and 37", "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_19.pdf", "retrieved": "2026-11-17", "excerpt": "Milestone Satellite to $800 No Limit Hold'em LIPS Ladies Event #39 … **Late Registration:** 6 levels + Break (~6:25 PM) … Guarantee: 2 Seats … 2. Open to Female players who must 21+ years of age.", "flags_absent_terms": "No re-entry/rebuy/add-on language."},
+    "V_S20": {"tier": "official", "publisher": "The Venetian Resort Las Vegas", "title": "Structure sheet 20 — $1,100 NLH Seniors Day A+B, event 49", "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_20.pdf", "retrieved": "2026-11-17", "excerpt": "**Late Registration:** 9 levels + Break (~ 4:55 PM) … Guarantee: $300,000 … 07. $140 of the $1,100 Buy-In is withheld for house fees.", "flags_absent_terms": "No re-entry/rebuy/add-on language."},
+    "V_S21": {"tier": "official", "publisher": "The Venetian Resort Las Vegas", "title": "Structure sheet 21 — $2,200 NLH PokerAtlas Championship Title Event Day 1A, event 47", "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf", "retrieved": "2026-11-17", "excerpt": "Day 1A @ 10:10 AM w/ Day 2 @ 1:00 PM @ Day 3 @ 11:00 AM … **Late Registration:** 9 levels + Break (~ 4:55 PM) … Guarantee: $1,000,000 … 7. $225 of the $2,200 Buy-In is withheld for house fees … 8. Any player who bags chips for Day 2 may not play a subsequent flight.", "flags_absent_terms": "No 're-entry' wording; flight exclusivity only after bagging."},
+    "V_S22": {"tier": "official", "publisher": "The Venetian Resort Las Vegas", "title": "Structure sheet 22 — $300 PLO Double Board Bomb Pot (1Day), event 20", "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_22.pdf", "retrieved": "2026-11-17", "excerpt": "**Late Registration:** 8 levels + break (~ 4:40 PM) … Guarantee: $10,000 … 06. $58 of the $300 Buy-In is withheld for house fees.", "flags_absent_terms": "No re-entry/rebuy/add-on language."},
+    "V_S23": {"tier": "official", "publisher": "The Venetian Resort Las Vegas", "title": "Structure sheet 23 — $600 PLO Double Board Bomb Pot (1Day), event 57", "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_23.pdf", "retrieved": "2026-11-17", "excerpt": "**Late Registration:** 8 levels + break (~ 4:40 PM) … Guarantee: $25,000 … 06. $90 of the $600 Buy-In is withheld for house fees.", "flags_absent_terms": "No re-entry/rebuy/add-on language."},
+    "V_S24": {"tier": "official", "publisher": "The Venetian Resort Las Vegas", "title": "Structure sheet 24 — $260 NLH Milestone Satellite (1Day), events 41 and 44", "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_24.pdf", "retrieved": "2026-11-17", "excerpt": "Milestone Satellite to $2,200 NLH PokerAtlas Championship Title Event #47 … **Late Registration:** 6 levels + Break (~6:25 PM) … Guarantee: 2 Seats … 06. $40 of the $260 Buy-In is withheld for house fees.", "flags_absent_terms": "No re-entry/rebuy/add-on language."},
+    "V_S25": {"tier": "official", "publisher": "The Venetian Resort Las Vegas", "title": "Structure sheet 25 — $260 NLH Turbo Milestone Satellite (1Day), events 45/46/48", "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_25.pdf", "retrieved": "2026-11-17",
+      "excerpt": "Event # 45 Start Time: 8:10 PM / Event # 46 Start Time: 9:10 AM / Event # 48 Start Time: 12:10 PM … **Late Registration:** 6 levels … Guarantee: 2 Seats … 06. $35 of the $260 Buy-In is withheld for house fees.", "flags_absent_terms": "No clock time given for late registration; no re-entry/rebuy/add-on language."},
+    "V_S26": {"tier": "official", "publisher": "The Venetian Resort Las Vegas", "title": "Structure sheet 26 — $400 PLO Bounty (1Day), event 17", "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_26.pdf", "retrieved": "2026-11-17", "excerpt": "**Late Registration:** 8 levels + break (~ 4:40 PM) … Guarantee: $15,000 (prize pool + total bounties) … 06. $60 of the $400 Buy-In is withheld for house fees.", "flags_absent_terms": "No re-entry/rebuy/add-on language."},
+    "V_S27": {"tier": "official", "publisher": "The Venetian Resort Las Vegas", "title": "Structure sheet 27 — $600 PLO Bounty (1Day), event 40", "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_27.pdf", "retrieved": "2026-11-17", "excerpt": "**Late Registration:** 8 levels + break (~ 4:40 PM) … Guarantee: $25,000 (prize pool + total bounties) … 06. $90 of the $600 Buy-In is withheld for house fees.", "flags_absent_terms": "No re-entry/rebuy/add-on language."},
+    "V_S28": {"tier": "official", "publisher": "The Venetian Resort Las Vegas", "title": "Structure sheet 28 — $600 BIG O (1Day), event 27", "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_28.pdf", "retrieved": "2026-11-17", "excerpt": "**Late Registration:** 8 levels + break (~ 4:40 PM) … Guarantee: $25,000 … 06. $90 of the $600 Buy-In is withheld for house fees (Rake + Staff).", "flags_absent_terms": "No re-entry/rebuy/add-on language."},
+    "V_S29": {"tier": "official", "publisher": "The Venetian Resort Las Vegas", "title": "Structure sheet 29 — $200 NLH (1Day), event 06", "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_29.pdf", "retrieved": "2026-11-17", "excerpt": "**Late Registration:** 8 levels + Break (~ 3:40 PM) … 6. $40 of the $200 Buy-In is withheld for house fees … 7. This event pays 12.5% of the field. [No guarantee line printed.]", "flags_absent_terms": "No guarantee, no re-entry/rebuy/add-on language."},
+    "V_S30": {"tier": "official", "publisher": "The Venetian Resort Las Vegas", "title": "Structure sheet 30 — $200 NLH PKO Bounty (1Day), event 08", "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_30.pdf", "retrieved": "2026-11-17", "excerpt": "**Late Registration:** 8 levels + Break (9:40 PM) … Guarantee: $8,000 (prize pool + total bounties) … 06. $40 of the $200 Buy-In is withheld for house fees.", "flags_absent_terms": "No re-entry/rebuy/add-on language."},
+    "V_S31": {"tier": "official", "publisher": "The Venetian Resort Las Vegas", "title": "Structure sheet 31 — $600 NLH LIPS Poker Jingle Tag Team (1Day), event 35", "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_31.pdf", "retrieved": "2026-11-17", "excerpt": "LIPS Poker Jingle Tag Team Event … **Late Registration:** 8 levels + Break (~ 2:40 PM) … Guarantee: $10,000 … 06. $80 of the $600 Buy-In is withheld … $10 of the $600 Buy In will be withheld as a flat fee for … (LIPS). Prize pool consists of $510 of every $600 Buy In.", "flags_absent_terms": "No re-entry/rebuy/add-on language."},
+    "V_S32": {"tier": "official", "publisher": "The Venetian Resort Las Vegas", "title": "Structure sheet 32 — $800 NLH LIPS Ladies 2Day, event 39", "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_32.pdf", "retrieved": "2026-11-17", "excerpt": "Day 1 Dec 10 @ 10:10 AM with Day 2 Dec 11 @ 10:00 AM … **Late Registration:** 9 levels + Break (~ 4:55 PM) … Guarantee: $40,000 … 07. $90 of the $800 Buy-In is withheld … $20 … flat fee for … (LIPS).", "flags_absent_terms": "No re-entry/rebuy/add-on language."},
+    "V_S33": {"tier": "official", "publisher": "The Venetian Resort Las Vegas", "title": "Structure sheet 33 — $600 NLH LIPS Kings and Queens Bounty (1Day), event 43", "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_33.pdf", "retrieved": "2026-11-17", "excerpt": "Kings and Queens Bounty – Open to all Players … **Late Registration:** 10 levels + Break (4:55 PM) … Guarantee: $30,000 (prize pool + total bounties) … 06. $80 of the $600 Buy-In is withheld.", "flags_absent_terms": "No re-entry/rebuy/add-on language."},
+    "V_S34": {"tier": "official", "publisher": "The Venetian Resort Las Vegas", "title": "Structure sheet 34 — $1,100 NLH PKO Bounty (1Day), event 52", "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_34.pdf", "retrieved": "2026-11-17", "excerpt": "**Late Registration:** 10 levels + Break (4:55 PM) … Guarantee: $75,000 (prize pool + total bounties) … 06. $130 of the $1,100 Buy-In is withheld for house fees.", "flags_absent_terms": "No re-entry/rebuy/add-on language."},
+    "V_S35": {"tier": "official", "publisher": "The Venetian Resort Las Vegas", "title": "Structure sheet 35 — $1,100 NLH Day A+C+E, event 56", "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf", "retrieved": "2026-11-17", "excerpt": "**Late Registration:** 9 levels + Break (~ 4:55 PM) … Guarantee: $500,000 … 07. $140 of the $1,100 Buy-In is withheld … On Day 1A, players who register before the start of the event (10:10 a.m.) will receive a forty ($40) discount on house fees for a total buy in of $1,060 instead of $1,100.", "flags_absent_terms": "No re-entry/rebuy/add-on language."},
+    "V_S36": {"tier": "official", "publisher": "The Venetian Resort Las Vegas", "title": "Structure sheet 36 — $1,100 NLH Day B+D, event 56", "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_36.pdf", "retrieved": "2026-11-17", "excerpt": "**Late Registration:** 9 levels + Break (~ 11:10 PM) … Guarantee: $500,000 … 07. $140 of the $1,100 Buy-In is withheld … On Day 1B, players who register before the start of the event (6:10 PM.) will receive a forty ($40) discount.", "flags_absent_terms": "No re-entry/rebuy/add-on language."},
+    "V_S37": {"tier": "official", "publisher": "The Venetian Resort Las Vegas", "title": "Structure sheet 37 — $2,200 NLH PokerAtlas Championship Title Event Day 1B, event 47", "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_37.pdf", "retrieved": "2026-11-17", "excerpt": "Day 1B @ 6:10 PM w/ Day 2 @ 1:00 PM @ Day 3 @ 11:00 AM … **Late Registration:** 9 levels + Break (~ 11:10 PM) … Guarantee: $1,000,000 … 07. $225 of the $2,200 Buy-In is withheld for house fees.", "flags_absent_terms": "No re-entry wording."},
+    "V_OLD_2024_1": {
+      "tier": "official",
+      "publisher": "The Venetian Resort Las Vegas",
+      "title": "PRIOR-SEASON sheet (2024) that DOES state re-entry — used as the comparison that makes the 2026 silence non-proof",
+      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2024/structures/dss_jan_2024-structure_9.pdf",
+      "retrieved": "2026-11-17",
+      "excerpt": "10. Registration and Re-Entry is allowed for ten (10) levels.",
+      "used_for": "Shows that this poker room prints re-entry terms when they intend to allow them."
+    },
+    "V_OLD_2023_1": {
+      "tier": "official",
+      "publisher": "The Venetian Resort Las Vegas",
+      "title": "PRIOR-SEASON sheet (2023) with explicit re-entry language",
+      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2023/structures/dss_aug_2023-structure_4.pdf",
+      "retrieved": "2026-11-17",
+      "excerpt": "10. Registration and Re-Entry is allowed for nine (9) levels and through the break.",
+      "used_for": "Second independent precedent for explicit re-entry wording from the same room."
+    },
+    "V_POKER": {"tier": "official", "publisher": "The Venetian Resort Las Vegas", "title": "Poker room page — location and hours", "url": "https://www.venetianlasvegas.com/resort/casino/poker.html", "retrieved": "2026-11-17", "excerpt": "LOCATION: The Palazzo, level 2, Grand Canal Shoppes. HOURS: Open 24 Hours. From The Venetian Lobby: Proceed across The Venetian casino floor, to Restaurant Row. Enter the Waterfall Atrium… Take the escalator up to level 2 … From The Palazzo Lobby: Proceed across The Palazzo Casino Floor to the self-parking elevators. Take the elevator up to level 2, Grand Canal Shoppes…", "used_for": "Venue location, official walking directions, 24-hour operation."},
+    "V_RATES": {"tier": "official", "publisher": "The Venetian Resort Las Vegas", "title": "2026 Special Suite Rates for poker players", "url": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html", "retrieved": "2026-11-17", "excerpt": "These rates will start as low as $119 and $209 and can be higher. Future rates are only provided out to a maximum of 150 days from the current date. Rates are subject to qualifying poker play and availability based on hotel occupancy. … There is a $55 resort fee per night stayed. … During your stay, you will be required to play six hours of active live cash gameplay or buy in to a $300 or higher tournament for each night stayed.", "used_for": "'From' poker rate, the play requirement, and the fee statement. NOT a date-specific quote."},
+    "V_FEE": {"tier": "official", "publisher": "The Venetian Resort Las Vegas", "title": "Resort Fee page", "url": "https://www.venetianlasvegas.com/resort/resort-fee.html", "retrieved": "2026-11-17", "excerpt": "Rates include a daily Resort Fee of $55 plus tax per night, payable upon check-in.", "used_for": "Resort fee amount."},
+    "V_TERMS": {"tier": "official", "publisher": "The Venetian Resort Las Vegas", "title": "Hotel Terms and Conditions", "url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html", "retrieved": "2026-11-17", "excerpt": "Daily rates do not include the applicable Clark County Room Tax of 13.38%. … The Venetian Resort has a standard Las Vegas Resort Fee of $55 plus applicable tax per night, payable upon check-in. … Check-out time is 11:00 a.m. … A credit card incidental deposit of $150 per night is required upon check-in … Check-out prior to your scheduled departure date will result in an additional charge of $100 plus tax.", "used_for": "Tax rate, incidental hold, checkout time."},
+    "V_PARK": {"tier": "official", "publisher": "The Venetian Resort Las Vegas", "title": "Poker room self-parking info", "url": "https://www.venetianlasvegas.com/resort/casino/poker/player-parking.html", "retrieved": "2026-11-17", "excerpt": "The daily fee for registered hotel guests is $20/day, seven days a week. … Valet parking is $40/day. … Players in the poker room who play three hours or more in tournament or cash games will receive complimentary self-parking for the day.", "used_for": "Parking cost and the poker-play parking waiver."},
+    "V_BOOK": {"tier": "official", "publisher": "The Venetian Resort Las Vegas", "title": "Booking engine (rate calendar, dynamic)", "url": "https://www.venetianlasvegas.com/booking", "retrieved": "2026-11-17", "excerpt": "Pricing shown is best available suite and rate, includes daily resort fee, excludes taxes. [Calendar returned placeholder '$XXX' to the session runner — no date-specific amount could be read.]", "used_for": "Official booking entry point linked for the user's own date check. No rate was transcribed because none was readable."},
+    "W_POKER": {"tier": "official", "publisher": "Wynn Las Vegas", "title": "Poker room page", "url": "https://www.wynnlasvegas.com/casino/poker", "retrieved": "2026-11-17", "excerpt": "Our popular slate of daily tournaments runs twice a day during non-event timeframes, offering a total of $200,000 in guaranteed prize pools weekly. Tournaments include the $40,000 guaranteed NLH Rebuy on Friday and a $10,000 guaranteed event every evening at 6 p.m. … The Wynn Poker room is located in Encore.",
+      "used_for": "Venue, daily-tournament existence, and the announcement that dailies are suspended during series."},
+    "W_DAILY": {"tier": "official", "publisher": "Wynn Las Vegas", "title": "Daily tournament structures + terms (PDF)", "url": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf", "retrieved": "2026-11-17",
+      "excerpt": "Mon–Thu $200 NLH $10,000 GTE, 12 p.m. … 3. The Tournament entry fee, as well as the re-entry fee, is $200 … 4. Registration and re-entries will be available until the start of level 9 (approximately 4:30 p.m.). / Friday $240 NLH Rebuy & Add on $40,000 GTE … 4. Registration, rebuys and add-ons will be available until the start of level 9 … Re-entry is NOT allowed. … Unlimited $200 rebuys for 25,000 tournament chips are available any time a player is at 15,000 chips or less. One (1) $100 add-on … / Saturday & Sunday $200 NLH $25,000 GTE, 12 p.m.",
+      "used_for": "Wynn daily schedule, fee splits, explicit re-entry on Mon–Thu and Sat–Sun, explicit no re-entry but rebuys + add-on on Fridays."},
+    "W_POSTER": {"tier": "official", "publisher": "Wynn Las Vegas", "title": "Daily tournament poster (PDF)", "url": "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf", "retrieved": "2026-11-17", "excerpt": "Monday–Thursday • $200 NLH • 12 p.m. [$10,000 Guarantee]; Friday • $240 NLH Rebuy • 12 p.m. [$40,000 Guarantee]; Saturday • $200 NLH • 12 p.m. [$25,000 Guarantee]; Sunday • $200 NLH • 12 p.m. [$25,000 Guarantee]; NIGHTLY $10,000 Guarantee • $160 NLH • 6 p.m.", "used_for": "Daily poster cross-check."},
+    "W_WPT": {"tier": "official", "publisher": "Wynn Las Vegas", "title": "WPT World Championship schedule poster (PDF), Nov 27 – Dec 21, 2026", "url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf", "retrieved": "2026-11-17",
+      "excerpt": "Nov. 27 Friday 11 a.m. No Limit Hold'em Day 1A $600 $400,000 40,000 30/40 … Dec. 10 Thursday 10 a.m. Super Gold Million Mystery Bounty Day 1A $400 $3,000,000 30,000 30/40 … Dec. 13 Sunday 11 a.m. WPT World Championship Day 1A $1,000,000 Added*** $10,400 100,000 60/90 … For a complete listing of house and staff fees, visit wynnpoker.com or see the event structure sheets.",
+      "used_for": "Every Wynn WPT row: date, time, event, buy-in, guarantee, chips, level minutes. NOTE: the poster does not print house/staff fees per event."},
+    "W_WPT_TC": {"tier": "official", "publisher": "Wynn Las Vegas", "title": "WPT World Championship general terms (PDF)", "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf", "retrieved": "2026-11-17", "excerpt": "WPT World Championship General Terms and Conditions November 27 – December 21, 2026 … 3. Registration for each Event will open four (4) hours prior to the scheduled start of play. … 9. Tournament chip stacks will be put into play at the start of the event … 17. Wynn Las Vegas standard poker rules … and current standard TDA rules … apply.", "used_for": "Registration opening time and general rules. Contains no per-event re-entry clause and no fee split."},
+    "W_WPT_PR": {"tier": "official", "publisher": "World Poker Tour (the organiser of the event)", "title": "WPT World Championship at Wynn press release, Sep 14 2026", "url": "https://www.worldpokertour.com/article/wpt-world-championship-at-wynn-las-vegas-set-for-season-24-finale-with-over-85-events-and-20m-in-gte", "retrieved": "2026-11-17", "excerpt": "The $10,400 buy-in WPT World Championship event … will offer three starting flights, with players allowed a single entry per starting flight with the final opportunity to enter being prior to the start of Day 2. … the Super Gold Million … $400 buy-in … will offer four starting flights and unlimited re-entry.",
+      "used_for": "Entry rules for Event 47's Wynn analogue: $10,400 Championship = single entry per flight; Super Gold Million = unlimited re-entry."},
+    "W_TC_FEE": {"tier": "official", "publisher": "Wynn Las Vegas", "title": "Wynn terms & conditions page stating the resort fee", "url": "https://www.wynnlasvegas.com/terms-and-conditions/850257", "retrieved": "2026-11-17", "excerpt": "A daily resort fee of $55 plus tax will be added to your room account for each room night … This Resort Fee is only applicable to reservations for the following room types: Wynn Resort King and Wynn Resort Two Queens. … The Tower Suite Resort Fee is only applicable to reservations for the following room types: Wynn Tower Suite King …", "used_for": "Wynn resort fee amount. Tax rate is not printed on this page."},
+    "C_FLYER": {"tier": "official", "publisher": "Caesars Palace (Caesars Entertainment)", "title": "Daily No-Limit Texas Hold'em tournament flyer 2026 (PDF)", "url": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf", "retrieved": "2026-11-17",
+      "excerpt": "10 AM $100 [$50 add-on] 20,000 20 Minutes $1,000 … 2 PM $160 … 6 PM $100 … 9 PM $160 … All Tournaments feature a $50 add-on for 15,000 tournament chips that can only be taken at the first break. Registration will close at the start of level seven. … 3. Participants may only register themselves, but may re-enter, by paying the entry fee, upon elimination within the first break of play. … 6. Of the $100 buy in, $70 goes to the prize pool and $30 is held by Caesars Palace as a maintenance fee. 7. Of the $160 buy in, $115 goes to the prize pool and $45 … 8. Of the $50 add-on, $45 goes to the prize pool and $5 …",
+      "used_for": "Caesars daily events (explicit re-entry + add-on => separate section); fee splits; late-reg cutoff. Flyer is undated for a specific day; no day-of-week qualifier."},
+    "C_FEES": {"tier": "third_party_reference", "publisher": "Travelocity listing", "title": "Caesars Palace — property fees", "url": "https://www.travelocity.com/Las-Vegas-Hotels-Caesars-Palace-Resort-Casino.h41245.Hotel-Information", "retrieved": "2026-11-17", "excerpt": "Resort fee: USD 62.30 per accommodation, per night [tax-inclusive figure shown on a third-party listing]", "used_for": "Lead only. Not displayed as a fact; Caesars' own page did not state a fee to the session runner."},
+    "B_POKER": {"tier": "official", "publisher": "Bellagio (MGM Resorts)", "title": "Bellagio poker room page", "url": "https://bellagio.mgmresorts.com/en/casino/poker.html", "retrieved": "2026-11-17", "excerpt": "Location: Northside of Casino, next to Sportsbook … FRIDAYS | $600 NLH ; SATURDAYS | $1,000 NLH ; SUNDAYS | $400 H.O.R.S.E [links to the three structure PDFs]", "used_for": "Bellagio venue and the three weekly tournaments."},
+    "B_FRI": {"tier": "official", "publisher": "Bellagio (MGM Resorts)", "title": "Bellagio Fridays $600 NLH structure (PDF)", "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt9cf95b0e60ec253e/6af491a3a9851d75c40be840/mgm-bellagio-poker-fridays-$600-nlh.pdf", "retrieved": "2026-11-17", "excerpt": "NLH $600 BUY-IN Fridays | 11:00 a.m. … 03. Players may buy-in and re-enter through the end of level 8 (Including Break). … 05. The $600 Buy-In is allocated as follows: $510 to Prize Pool; $50 House Fee; $40 Voluntary Staff Gratuity. … 07. The voluntary staff gratuity will grant players an extra 15,000 chips.", "used_for": "Bellagio Friday event; explicit re-entry; add-on-by-gratuity structure."},
+    "B_SAT": {"tier": "official", "publisher": "Bellagio (MGM Resorts)", "title": "Bellagio Saturdays $1,100 NLH structure (PDF)", "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt6d47974bf5a7d9b6/6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf", "retrieved": "2026-11-17", "excerpt": "NLH $1100 BUY-IN Saturdays | 11:00 a.m. … 07. Of the $600 Buy-in, $510 goes to the Prize Pool, $50 is Admin Fees and $40 is optional staff gratuity. 08. Bellagio guarantees that the total Combined Prize Pool will be at least $50,000. 09. … voluntary staff gratuity of $40 … will grant players an extra 20,000 chips.", "used_for": "Bellagio Saturday event. The sheet filename says $1,000 and the heading says $1,100, while its own fee rule describes a $600 buy-in — an internal contradiction, flagged."},
+    "M_FEES_UNVERIFIED": {"tier": "third_party_reference", "publisher": "Multiple (resortfeechecker, Hotel Tip Las Vegas, travel reseller feeds)", "title": "Bellagio resort fee — third-party reporting", "url": "https://www.resortfeechecker.com/140596-resort_fee_bellagio.html", "retrieved": "2026-11-17", "excerpt": "$62.36 resort fee per night (third-party); Hotel Tip Las Vegas reports $55 + tax and cites MGM reservation terms updated Aug 26, 2026.", "used_for": "Lead only. MGM's own resort-fee page returned 404 to the session runner, so the official figure could not be read and no Bellagio fee is displayed."},
+    "I_FEE": {"tier": "official", "publisher": "Treasure Island Las Vegas", "title": "Tower Suite page — resort fees", "url": "https://treasureisland.com/hotel/tower-suite", "retrieved": "2026-11-17", "excerpt": "The $49.95 + tax daily resort fee at TI Las Vegas provides hotel guests with several of the most commonly requested additional services at a package price. … Always Free Valet Parking & Self Park Garage", "used_for": "Treasure Island resort fee and free parking."},
+    "MAP_NOMINATIM": {"tier": "official_map_data", "publisher": "OpenStreetMap Nominatim", "title": "Geocoding queries for each property", "url": "https://nominatim.openstreetmap.org/", "retrieved": "2026-11-17", "excerpt": "The Venetian Las Vegas 36.1217073,-115.1693352; The Palazzo 36.1241843,-115.1682710; Wynn Las Vegas 36.1266219,-115.1654043; Encore Casino at Wynn 36.1289345,-115.1653620; Treasure Island tram stop 36.1245303,-115.1729076; Harrah's Las Vegas 36.1193033,-115.1711625; Caesars Palace 36.1166277,-115.1767568; Bellagio Las Vegas 36.1131149,-115.1770065.", "used_for": "Start/end points for walking estimates only. Coordinates are property centroids, not poker-room doors."},
+    "MAP_OSRM": {"tier": "official_map_data", "publisher": "OSRM public foot-routing server (project-osrm.org) on OpenStreetMap data", "title": "Walking duration matrix", "url": "https://router.project-osrm.org/", "retrieved": "2026-11-17", "excerpt": "foot profile, /table service. Example: The Palazzo → Wynn Las Vegas = 925.9 m / 142.8 s; The Palazzo → Venetian = 142.8 s; The Palazzo → Encore = 146.0 s; The Palazzo → Treasure Island = 261.2 s; The Palazzo → Harrah's = 291.0 s; The Palazzo → Caesars Palace = 324.3 s; The Palazzo → Bellagio = 309.3 s (single-pair route showed 142.8 s Palazzo→Wynn).", "used_for": "Distance & duration for each hotel→venue pair. NOT a casino publication, NOT Google/Apple Maps, and does not model indoor casino corridors."}
   }
- }
 }

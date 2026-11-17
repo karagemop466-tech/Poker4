@@ -17,7 +17,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-MON = ROOT / "data" / "v2" / "monitor"
+MON = ROOT / "data" / "0f6c627b" / "monitor"
 SNAP = MON / "snapshots"
 UA = {"User-Agent": "Mozilla/5.0 (Poker4 daily schedule capture; +github.com/karagemop466-tech/Poker4)"}
 

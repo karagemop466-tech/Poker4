@@ -15,7 +15,7 @@ from datetime import date, datetime, timedelta
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-D = ROOT / "data" / "v2"
+D = ROOT / "data" / "0f6c627b"
 OUT = ROOT
 (OUT / "venues").mkdir(exist_ok=True)
 
@@ -150,7 +150,7 @@ function bindHotelCalcs(){
 }
 function monitorRefresh(){
   const el=document.getElementById('monitor-live'); if(!el) return;
-  fetch('data/v2/monitor/status.json',{cache:'no-store'}).then(r=>r.json()).then(j=>{
+  fetch('data/0f6c627b/monitor/status.json',{cache:'no-store'}).then(r=>r.json()).then(j=>{
     if(j && j.last_run){el.textContent='Live monitor file last run: '+j.last_run+' ('+(j.entries||[]).length+' URLs tracked). Any row marked "changed" below needs review.';}
   }).catch(()=>{el.textContent='Live monitor file not reachable (offline view) — showing the built snapshot.';});
 }
@@ -624,7 +624,7 @@ refreshes <b>last-checked</b> dates, and marks rows whose source changed since t
 <div class="callout"><b>How to read this:</b> "changed" means the official page text or PDF bytes differ from the previous check — not necessarily that
 a value you care about changed. Open the source link, compare against the row, update the row (and its last-checked date) if needed.</div>
 <table><thead><tr><th>URL group</th><th>What is monitored</th><th>Where results land</th><th>Schedule</th></tr></thead><tbody>
-<tr><td>Venetian DSE IV page + schedule PDF + 37 structure sheets</td><td>schedule rows, buy-ins, guarantees, rule text</td><td class="small">data/v2/monitor/status.json + Flagged page</td><td>daily, ~06:00 UTC (recheck.yml)</td></tr>
+<tr><td>Venetian DSE IV page + schedule PDF + 37 structure sheets</td><td>schedule rows, buy-ins, guarantees, rule text</td><td class="small">data/0f6c627b/monitor/status.json + Flagged page</td><td>daily, ~06:00 UTC (recheck.yml)</td></tr>
 <tr><td>Wynn poker page + daily structures + WPT PDFs</td><td>daily/weekly tournament terms, WPT schedule</td><td class="small">same</td><td>daily</td></tr>
 <tr><td>Bellagio poker page + 3 structure PDFs; Caesars flyer</td><td>weekly events and rule text</td><td class="small">same</td><td>daily</td></tr>
 <tr><td>Hotel terms: Venetian fee/terms/rates, Wynn terms, TI fee</td><td>fees, tax, parking, cancellation text</td><td class="small">same</td><td>daily</td></tr>
@@ -795,11 +795,16 @@ re-entry, rebuy or add-on — those are quarantined in their own section. Get a 
 <li><b>Reconfirm official schedules, rates and policies</b> right before any nonrefundable payment — the daily source monitor flags changes.</li></ol>
 
 <h2>Preserved independent research sets</h2>
-<p class="mut">Earlier sessions' dashboards survive untouched for comparison. They use their own snapshots and classifications; this integrated
-dashboard supersedes them and does not treat them as confirmation:</p>
-<p class="small"><a href="c07371e3/index.html">c07371e3 research ↗</a> · <a href="df41f5c6/index.html">df41f5c6 research ↗</a> ·
-<a href="60fb62da/index.html">60fb62da research ↗</a> · <a href="verified/index.html">verified candidates ↗</a> ·
-<a href="strip/index.html">strip-wide review ↗</a> · <a href="pages/executive-summary.html">first integration pages ↗</a></p>
+<p class="mut">Parallel sessions' dashboards survive untouched for comparison. They use their own snapshots and classifications; this integrated
+dashboard supersedes them at the root and does not treat them as confirmation:</p>
+<p class="small"><a href="planner/index.html">planner/ (98e4cb1c) ↗</a> · <a href="poker4/index.html">poker4/ (98e4cb1c, CI-gated) ↗</a> ·
+<a href="v2/index.html">v2/ (data/v2 lane + monitor) ↗</a> · <a href="c07371e3/index.html">c07371e3 research ↗</a> ·
+<a href="df41f5c6/index.html">df41f5c6 research ↗</a> · <a href="60fb62da/index.html">60fb62da research ↗</a> ·
+<a href="verified/index.html">verified candidates ↗</a> · <a href="strip/index.html">strip-wide review ↗</a> ·
+<a href="pages/executive-summary.html">first integration pages ↗</a> ·
+<a href="prior_root_dashboard/index.html">prior root dashboard (snapshot) ↗</a> ·
+<a href="venues.html">prior root venue page ↗</a> · <a href="ratelog.html">prior root rate log ↗</a> ·
+<a href="change-monitor.html">prior root change monitor ↗</a></p>
 """
 page("index.html", "Executive summary", body, "index.html")
 

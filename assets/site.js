@@ -50,7 +50,7 @@ function bindHotelCalcs(){
 }
 function monitorRefresh(){
   const el=document.getElementById('monitor-live'); if(!el) return;
-  fetch('data/v2/monitor/status.json',{cache:'no-store'}).then(r=>r.json()).then(j=>{
+  fetch('data/0f6c627b/monitor/status.json',{cache:'no-store'}).then(r=>r.json()).then(j=>{
     if(j && j.last_run){el.textContent='Live monitor file last run: '+j.last_run+' ('+(j.entries||[]).length+' URLs tracked). Any row marked "changed" below needs review.';}
   }).catch(()=>{el.textContent='Live monitor file not reachable (offline view) — showing the built snapshot.';});
 }

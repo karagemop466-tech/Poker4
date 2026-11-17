@@ -1,90 +1,280 @@
 {
-  "accessed": "2026-11-16",
-  "sources": {
-    "S1": {
-      "title": "Venetian DeepStack Extravaganza Nov 2026 event schedule (PDF)",
-      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-      "type": "official"
-    },
-    "S2": {
-      "title": "Venetian poker room",
-      "url": "https://www.venetianlasvegas.com/resort/casino/poker.html",
-      "type": "official"
-    },
-    "S3": {
-      "title": "Venetian resort fee",
-      "url": "https://www.venetianlasvegas.com/resort/resort-fee.html",
-      "type": "official"
-    },
-    "S4": {
-      "title": "Venetian hotel terms and conditions",
-      "url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
-      "type": "official"
-    },
-    "S5": {
-      "title": "Wynn Las Vegas poker (daily tournament poster linked from this page)",
-      "url": "https://wynnlasvegas.com/casino/poker",
-      "type": "official"
-    },
-    "S6": {
-      "title": "Wynn WPT World Championship schedule (PDF)",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
-      "type": "official"
-    },
-    "S7": {
-      "title": "Caesars Palace poker tournaments (page; flyer governs over this page)",
-      "url": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
-      "type": "official"
-    },
-    "S8": {
-      "title": "Horseshoe Las Vegas poker",
-      "url": "https://www.caesars.com/horseshoe-las-vegas/casino/poker",
-      "type": "official"
-    },
-    "S9": {
-      "title": "MGM Grand poker tables",
-      "url": "https://mgmgrand.mgmresorts.com/en/casino/poker-tables.html",
-      "type": "official"
-    },
-    "S10": {
-      "title": "ARIA poker",
-      "url": "https://aria.mgmresorts.com/en/casino/poker.html",
-      "type": "official"
-    },
-    "S11": {
-      "title": "South Point Hotel, Casino & Spa (home page; off-Strip)",
-      "url": "https://southpointcasino.com/",
-      "type": "official"
-    },
-    "S12": {
-      "title": "Bellagio poker page (official; returned 'Page not found')",
-      "url": "https://bellagio.mgmresorts.com/en/poker.html",
-      "type": "official"
-    },
-    "S13": {
-      "title": "Planet Hollywood poker page (official; returned HTTP 500)",
-      "url": "https://planethollywoodresort.com/casino/poker",
-      "type": "official"
-    },
-    "S14": {
-      "title": "Resorts World poker page (official; returned an email template)",
-      "url": "https://rwlasvegas.com/casino/poker",
-      "type": "official"
-    },
-    "S15": {
-      "title": "Repository under review",
-      "url": "https://github.com/karagemop466-tech/Poker4",
-      "type": "repo"
-    },
-    "S16": {
-      "title": "Golden Nugget poker page (official; returned empty content)",
-      "url": "https://www.goldennugget.com/las-vegas/casino/poker",
-      "type": "official"
-    },
-    "S17": {
-      "title": "Orleans poker page (official; returned 404)",
-      "url": "https://www.orleanscasino.com/casino/poker",
-      "type": "official"
-    }
+ "generated": "2026-11-17",
+ "sources": [
+  {
+   "id": "V_PAGE",
+   "label": "Venetian DeepStack Extravaganza IV official series page",
+   "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "last_checked": "2026-11-17"
+  },
+  {
+   "id": "V_SCHED",
+   "label": "Venetian DSE IV schedule (PDF)",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+   "last_checked": "2026-11-17"
+  },
+  {
+   "id": "V_FEE",
+   "label": "Venetian resort fee page",
+   "url": "https://www.venetianlasvegas.com/resort/resort-fee.html",
+   "last_checked": "2026-11-17"
+  },
+  {
+   "id": "V_TERMS",
+   "label": "Venetian hotel terms and conditions (tax 13.38%, parking, cancellation)",
+   "url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+   "last_checked": "2026-11-17"
+  },
+  {
+   "id": "V_POKER_RATE",
+   "label": "Venetian 2026 poker suite rates and play requirements",
+   "url": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
+   "last_checked": "2026-11-17"
+  },
+  {
+   "id": "V_POKER",
+   "label": "Venetian poker room page (room location)",
+   "url": "https://www.venetianlasvegas.com/resort/casino/poker.html",
+   "last_checked": "2026-11-17"
+  },
+  {
+   "id": "W_PAGE",
+   "label": "Wynn Las Vegas poker room page",
+   "url": "https://www.wynnlasvegas.com/casino/poker",
+   "last_checked": "2026-11-17"
+  },
+  {
+   "id": "W_DAILY",
+   "label": "Wynn daily tournament structures / terms (PDF)",
+   "url": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+   "last_checked": "2026-11-17"
+  },
+  {
+   "id": "W_WPT_TC",
+   "label": "Wynn WPT World Championship structures / terms (PDF)",
+   "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "last_checked": "2026-11-17"
+  },
+  {
+   "id": "W_WPT_SCHED",
+   "label": "Wynn WPT World Championship schedule (PDF)",
+   "url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+   "last_checked": "2026-11-17"
+  },
+  {
+   "id": "W_TERMS",
+   "label": "Wynn Las Vegas terms and conditions (resort fee $55 + tax)",
+   "url": "https://www.wynnlasvegas.com/terms-and-conditions/850257",
+   "last_checked": "2026-11-17"
+  },
+  {
+   "id": "B_PAGE",
+   "label": "Bellagio poker page",
+   "url": "https://bellagio.mgmresorts.com/en/casino/poker.html",
+   "last_checked": "2026-11-17"
+  },
+  {
+   "id": "B_FRI",
+   "label": "Bellagio Friday $600 NLH structure (PDF)",
+   "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt9cf95b0e60ec253e/6af491a3a9851d75c40be840/mgm-bellagio-poker-fridays-$600-nlh.pdf",
+   "last_checked": "2026-11-17"
+  },
+  {
+   "id": "B_SAT",
+   "label": "Bellagio Saturday NLH structure (PDF, undated; buy-in conflict in sheet)",
+   "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt6d47974bf5a7d9b6/6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf",
+   "last_checked": "2026-11-17"
+  },
+  {
+   "id": "B_SUN",
+   "label": "Bellagio Sunday $400 H.O.R.S.E. structure (PDF)",
+   "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt07fcf1244a6da661/6af491a339e2b4f6b76a86ad/mgm-bellagio-poker-sundays-$400-horse.pdf",
+   "last_checked": "2026-11-17"
+  },
+  {
+   "id": "B_TERMS",
+   "label": "Bellagio hotel reservation terms (resort fee $55 + tax, 72h cancellation)",
+   "url": "https://bellagio.mgmresorts.com/en/terms-and-conditions.html",
+   "last_checked": "2026-11-17"
+  },
+  {
+   "id": "C_FLYER",
+   "label": "Caesars Palace daily NLH tournament flyer (PDF, 2026)",
+   "url": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+   "last_checked": "2026-11-17"
+  },
+  {
+   "id": "C_PAGE",
+   "label": "Caesars Palace casino page",
+   "url": "https://www.caesars.com/caesars-palace/casino",
+   "last_checked": "2026-11-17"
+  },
+  {
+   "id": "C_HOME",
+   "label": "Caesars Palace official homepage (published rate lead, cancellation banner)",
+   "url": "https://www.caesars.com/caesars-palace",
+   "last_checked": "2026-11-17"
+  },
+  {
+   "id": "A_TERMS",
+   "label": "ARIA hotel reservation terms (resort fee $55 + tax, 72h cancellation)",
+   "url": "https://aria.mgmresorts.com/en/terms-and-conditions.html",
+   "last_checked": "2026-11-17"
+  },
+  {
+   "id": "A_PAGE",
+   "label": "ARIA poker page",
+   "url": "https://aria.mgmresorts.com/en/casino/poker.html",
+   "last_checked": "2026-11-17"
+  },
+  {
+   "id": "MGM_PARK",
+   "label": "MGM Resorts official parking rates page",
+   "url": "https://www.mgmresorts.com/en/things-to-do/parking.html",
+   "last_checked": "2026-11-17"
+  },
+  {
+   "id": "TI_ROOMS",
+   "label": "Treasure Island deluxe rooms page (resort fee $49.95 + tax, free parking)",
+   "url": "https://treasureisland.com/hotel/deluxe-rooms",
+   "last_checked": "2026-11-17"
+  },
+  {
+   "id": "TI_OFFERS",
+   "label": "Treasure Island offer terms",
+   "url": "https://treasureisland.com/deals-offers/buy-1-get-1-bogo-free-fine-print",
+   "last_checked": "2026-11-17"
+  },
+  {
+   "id": "HP_PAGE",
+   "label": "Harrah's Las Vegas official page",
+   "url": "https://www.caesars.com/harrahs-las-vegas",
+   "last_checked": "2026-11-17"
+  },
+  {
+   "id": "HS_PAGE",
+   "label": "Horseshoe Las Vegas official page",
+   "url": "https://www.caesars.com/horseshoe-las-vegas",
+   "last_checked": "2026-11-17"
+  },
+  {
+   "id": "S1",
+   "label": "S1",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+   "last_checked": "2026-11-16",
+   "merged_from": "session v2/planner sources.json"
+  },
+  {
+   "id": "S2",
+   "label": "S2",
+   "url": "https://www.venetianlasvegas.com/resort/casino/poker.html",
+   "last_checked": "2026-11-16",
+   "merged_from": "session v2/planner sources.json"
+  },
+  {
+   "id": "S3",
+   "label": "S3",
+   "url": "https://www.venetianlasvegas.com/resort/resort-fee.html",
+   "last_checked": "2026-11-16",
+   "merged_from": "session v2/planner sources.json"
+  },
+  {
+   "id": "S4",
+   "label": "S4",
+   "url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+   "last_checked": "2026-11-16",
+   "merged_from": "session v2/planner sources.json"
+  },
+  {
+   "id": "S5",
+   "label": "S5",
+   "url": "https://wynnlasvegas.com/casino/poker",
+   "last_checked": "2026-11-16",
+   "merged_from": "session v2/planner sources.json"
+  },
+  {
+   "id": "S6",
+   "label": "S6",
+   "url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+   "last_checked": "2026-11-16",
+   "merged_from": "session v2/planner sources.json"
+  },
+  {
+   "id": "S7",
+   "label": "S7",
+   "url": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
+   "last_checked": "2026-11-16",
+   "merged_from": "session v2/planner sources.json"
+  },
+  {
+   "id": "S8",
+   "label": "S8",
+   "url": "https://www.caesars.com/horseshoe-las-vegas/casino/poker",
+   "last_checked": "2026-11-16",
+   "merged_from": "session v2/planner sources.json"
+  },
+  {
+   "id": "S9",
+   "label": "S9",
+   "url": "https://mgmgrand.mgmresorts.com/en/casino/poker-tables.html",
+   "last_checked": "2026-11-16",
+   "merged_from": "session v2/planner sources.json"
+  },
+  {
+   "id": "S10",
+   "label": "S10",
+   "url": "https://aria.mgmresorts.com/en/casino/poker.html",
+   "last_checked": "2026-11-16",
+   "merged_from": "session v2/planner sources.json"
+  },
+  {
+   "id": "S11",
+   "label": "S11",
+   "url": "https://southpointcasino.com/",
+   "last_checked": "2026-11-16",
+   "merged_from": "session v2/planner sources.json"
+  },
+  {
+   "id": "S12",
+   "label": "S12",
+   "url": "https://bellagio.mgmresorts.com/en/poker.html",
+   "last_checked": "2026-11-16",
+   "merged_from": "session v2/planner sources.json"
+  },
+  {
+   "id": "S13",
+   "label": "S13",
+   "url": "https://planethollywoodresort.com/casino/poker",
+   "last_checked": "2026-11-16",
+   "merged_from": "session v2/planner sources.json"
+  },
+  {
+   "id": "S14",
+   "label": "S14",
+   "url": "https://rwlasvegas.com/casino/poker",
+   "last_checked": "2026-11-16",
+   "merged_from": "session v2/planner sources.json"
+  },
+  {
+   "id": "S15",
+   "label": "S15",
+   "url": "https://github.com/karagemop466-tech/Poker4",
+   "last_checked": "2026-11-16",
+   "merged_from": "session v2/planner sources.json"
+  },
+  {
+   "id": "S16",
+   "label": "S16",
+   "url": "https://www.goldennugget.com/las-vegas/casino/poker",
+   "last_checked": "2026-11-16",
+   "merged_from": "session v2/planner sources.json"
+  },
+  {
+   "id": "S17",
+   "label": "S17",
+   "url": "https://www.orleanscasino.com/casino/poker",
+   "last_checked": "2026-11-16",
+   "merged_from": "session v2/planner sources.json"
   }
+ ]
 }

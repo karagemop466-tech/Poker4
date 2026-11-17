@@ -21,7 +21,7 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-OUT = ROOT / "data" / "v2"
+OUT = ROOT / "data" / "0f6c627b"
 OUT.mkdir(parents=True, exist_ok=True)
 (OUT / "monitor").mkdir(exist_ok=True)
 

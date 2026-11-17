@@ -1,338 +1,317 @@
 {
  "meta": {
-  "generated": "2026-11-17",
-  "policy": "Flagged items do not block publication; they are review work."
+  "retrieved": "2026-11-17",
+  "note": "Every item names the action that settles it. Severity blocking = a requested decision cannot be made correctly until resolved."
  },
  "items": [
   {
-   "id": "F-01",
-   "severity": "decision-blocking",
-   "topic": "Entry rules",
-   "detail": "After reading all 37 Venetian DSE IV structure sheets in full (2026-11-17), none states a re-entry, rebuy, add-on, freezeout or single-entry policy. Silence is not confirmation: NO Venetian event can be labeled 'single-entry confirmed'. The 'Single-entry / freezeout confirmed' toggle therefore shows 0 matching rows until the poker room confirms in writing.",
+   "id": "F1",
+   "category": "Entry rules",
+   "severity": "blocking",
+   "title": "No Venetian 2026 structure sheet states whether re-entry is allowed",
+   "detail": "All 37 DeepStack Extravaganza IV structure sheets were fetched and read in full. They state a late-registration window and nothing else about entry; none contains 're-entry', 'rebuy', 'freezeout' or 'single entry'. Prior Venetian sheets (2023, 2024) do print 'Registration and Re-Entry is allowed for nine (9) levels', which proves the silence is not a house formatting convention.",
+   "how_to_settle": "Ask the Venetian Poker Room for the entry rule of the specific event numbers, in writing, and record the reply with its date. The contact details on the official poker page are the ones to use; this session did not verify a phone number or email address, so none is printed here.",
    "sources": [
-    "V_PAGE",
-    "V_S1",
-    "V_S5",
-    "V_S29"
+    "V_S05",
+    "V_OLD_2023_1",
+    "V_OLD_2024_1",
+    "V_POKER"
    ]
   },
   {
-   "id": "F-02",
-   "severity": "irregularity",
-   "topic": "Bellagio Saturday buy-in conflict",
-   "detail": "The official Bellagio Saturday PDF is internally inconsistent: filename says $1000, header says '$1100 BUY-IN', rule 07 allocates 'the $600 Buy-in' ($510/$50/$40). It also describes flights (1A–1D) with a combined Day 2 '9/13/26'. Buy-in left blank; verify with the Bellagio poker room before planning.",
+   "id": "F2",
+   "category": "Entry rules",
+   "severity": "blocking",
+   "title": "Zero Strip tournaments pass a strict single-entry filter",
+   "detail": "Only the WPT $10,400 World Championship has an official single-entry statement, and it is per starting flight (three flights) \u2014 so it also fails a strict whole-event single-entry test. Consequence: the single-entry shortlist is empty on current evidence.",
+   "how_to_settle": "Settle F1 first. If the Venetian confirms one entry per event for named event numbers, those rows enter the shortlist.",
    "sources": [
-    "B_SAT"
+    "W_WPT_PR",
+    "V_S05"
    ]
   },
   {
-   "id": "F-03",
-   "severity": "irregularity",
-   "topic": "Wynn WPT schedule date labels",
-   "detail": "The official WPT schedule PDF prints two rows as 'Dec. 18 Wednesday' and one as 'Dec. 18 Friday'; in 2026 Dec 18 is a Friday and Dec 16 is the Wednesday. The Wednesday rows may belong to Dec 16. Dates left as printed and flagged; verify with the Wynn poker room.",
+   "id": "F3",
+   "category": "Entry rules",
+   "severity": "material",
+   "title": "Structure 8's 'subsequent buy in's' wording is the closest thing to a published entry rule \u2014 and it is ambiguous",
+   "detail": "Sheet 8 (events #18 and #58, Valuetown Bounty) rule 07 gives PokerAtlas PRO members a $20 discount on the initial $200 buy-in and then says: 'All subsequent buy in's after the initial buy in will be $200.' A parallel session's planner describes this as explicitly permitting further buy-ins. That is a fair reading, but the sentence sits in a paragraph about a discount and a price, not in a registration clause: it sets the price of a later buy-in without granting a right to one, and without stating a window or a re-entry condition. This site therefore records the quote verbatim and classifies the row 'not published' rather than 're-entry allowed'. Note the practical point both readings share: these two events are the strongest candidates for NOT being single-entry.",
+   "how_to_settle": "Ask the poker room directly whether a 'subsequent buy in' is available to any eliminated player, and if so through which level. One answer resolves both this item and F1 for these two events.",
    "sources": [
-    "W_WPT"
+    "V_S08"
    ]
   },
   {
-   "id": "F-04",
-   "severity": "decision-blocking",
-   "topic": "No 8:00 AM start exists",
-   "detail": "The earliest verified start anywhere in the official schedules read is 9:10 AM (Venetian satellite #46) and 10:10 AM for open tournaments (Seniors/RaceDay). A strict 8 AM–onward tournament day is not achievable in this snapshot; the day plan starts at 9:10/10:10 AM and says so.",
+   "id": "F4",
+   "category": "Entry rules",
+   "severity": "material",
+   "title": "Bellagio Saturday sheet contradicts itself on the buy-in",
+   "detail": "Linked PDF file name: 'mgm-bellagio-poker-saturdays-$1000-nlh.pdf'. Heading inside: 'NLH $1100 BUY-IN'. Rule 07 inside: 'Of the $600 Buy-in, $510 goes to the Prize Pool'. Three different numbers in one document.",
+   "how_to_settle": "Call Bellagio poker (702.693.7291) to confirm the Saturday buy-in, or wait for MGM to correct the PDF.",
    "sources": [
-    "V_PAGE",
-    "V_SCHED"
+    "B_SAT",
+    "B_POKER"
    ]
   },
   {
-   "id": "F-05",
-   "severity": "needs-info",
-   "topic": "Date-specific hotel totals",
-   "detail": "Official sites publish no scraped date-specific totals (checkout total / nightly average) outside their booking engines. The rate log keeps dated, timestamped published rates and fees; the Hotels page links the official booking engine per date and provides a true-cost calculator. Occupancy + exact dates are required before any like-for-like comparison.",
+   "id": "F5",
+   "category": "Entry rules",
+   "severity": "material",
+   "title": "Wynn WPT festival fees are not on the poster",
+   "detail": "The official poster states: 'For a complete listing of house and staff fees, visit wynnpoker.com or see the event structure sheets.' The per-event structure sheets were not read in this session, so all 134 WPT rows have a buy-in but no confirmed house fee.",
+   "how_to_settle": "Fetch https://cdn.wynnresorts.com/.../WPT_World_Championship_Structures.pdf per event, or wynnpoker.com's per-event structure pages, and record each fee split.",
    "sources": [
-    "V_RATES",
-    "W_TERMS",
-    "TI_FEE"
-   ]
-  },
-  {
-   "id": "F-06",
-   "severity": "needs-info",
-   "topic": "Bellagio & Caesars resort fees",
-   "detail": "Bellagio's official fee page returned 404 and Caesars Palace's fee page carries no amount (both checked 2026-11-16). Third-party figures conflict and are not used. Fee fields left blank and flagged.",
-   "sources": [
-    "B_PAGE",
-    "C_PAGE"
-   ]
-  },
-  {
-   "id": "F-07",
-   "severity": "irregularity",
-   "topic": "Venetian schedule labels vs structure sheets",
-   "detail": "The official schedule page marks some events '$20 rake disc' / '$40 rake disc' (e.g. #16/#36/#59/#56); the discount wording actually appears on structure sheets 4, 8, 35, 36 only. Sheet 11/16 contain no discount clause. Discounts verified only where the sheet states them.",
-   "sources": [
-    "V_PAGE",
-    "V_S4",
-    "V_S8",
-    "V_S11",
-    "V_S16"
-   ]
-  },
-  {
-   "id": "F-08",
-   "severity": "needs-info",
-   "topic": "Event finish times",
-   "detail": "No official source publishes event end times. Overlap flags use start time + late-registration cutoff + a documented plausible-duration heuristic (see Schedule page). Once real finish times are observed, replace the heuristic and re-check overlaps.",
-   "sources": [
-    "V_SCHED",
-    "W_DAILY"
-   ]
-  },
-  {
-   "id": "F-09",
-   "severity": "irregularity",
-   "topic": "Multi-flight 're-entry' semantics",
-   "detail": "Venetian multi-flight events (sheets 2/3/4/9/10/12/13/14/20/21/35/36/37) only state 'Any player who bags chips for Day 2 may not play a subsequent flight' — implying repeat buy-ins via new flights are possible unless bagged. Within-flight re-entry remains unverified. WPT events explicitly allow unlimited re-entry per flight (confirmed).",
-   "sources": [
-    "V_S2",
-    "V_S12",
+    "W_WPT",
     "W_WPT_TC"
    ]
   },
   {
-   "id": "F-10",
-   "severity": "irregularity",
-   "topic": "Venetian Valuetown bounty 'subsequent buy ins'",
-   "detail": "Structure sheet 8 rule 07 says 'All subsequent buy in's after the initial buy in will be $200', implying multiple buy-ins are possible, but no re-entry policy clause exists. Not single-entry-confirmed.",
+   "id": "F6",
+   "category": "Rates",
+   "severity": "blocking",
+   "title": "No date-specific hotel quote could be read",
+   "detail": "The Venetian booking calendar returned the literal placeholder '$XXX' for every night to this session. No other property's booking engine exposed a read amount either. Every hotel number on the site is therefore a published floor or a fee, never a checkout total for real dates.",
+   "how_to_settle": "Open each property's booking link for the actual travel dates and record the checkout total, nightly average, fee and tax separately, with the timestamp.",
    "sources": [
-    "V_S8"
+    "V_BOOK",
+    "V_RATES"
    ]
+  },
+  {
+   "id": "F7",
+   "category": "Rates",
+   "severity": "material",
+   "title": "Caesars Palace and Bellagio resort fees could not be read on an official page",
+   "detail": "caesars.com/caesars-palace, /hotel, /hotel-policies and /HotelTerms printed no resort-fee amount. mgmresorts.com resort-fee and Bellagio reservation-policy URLs both returned 404. Third-party listings quote $54.95, $55, $62.30 and $62.36 for the same two hotels, which is exactly why none is displayed.",
+   "how_to_settle": "Capture the fee from the property's own booking checkout, or from MGM's live resort-fee page once its URL is known.",
+   "sources": [
+    "C_FEES",
+    "M_FEES_UNVERIFIED"
+   ]
+  },
+  {
+   "id": "F8",
+   "category": "Rates",
+   "severity": "material",
+   "title": "13.38% tax is not printed by Wynn, TI, Caesars or Bellagio",
+   "detail": "Only The Venetian's hotel terms state 'Clark County Room Tax of 13.38%'. For the other properties the rate is a county-level assumption, labelled with an asterisk wherever it appears.",
+   "how_to_settle": "Confirm on each property's booking checkout, where tax is itemised.",
+   "sources": [
+    "V_TERMS",
+    "W_TC_FEE"
+   ]
+  },
+  {
+   "id": "F9",
+   "category": "Rates",
+   "severity": "material",
+   "title": "Venetian poker rate is conditional and can be revoked at checkout",
+   "detail": "The $119/$209 rates require booking by phone (code EPOKR25) and then 6 hours of active cash play or a $300+ tournament buy-in for each night stayed; otherwise the nightly rate reverts to the prevailing rate. Blackout dates apply and rates are only quoted 150 days ahead.",
+   "how_to_settle": "Confirm the qualification tracking at check-in and keep a record of tournament buy-ins during the stay.",
+   "sources": [
+    "V_RATES"
+   ]
+  },
+  {
+   "id": "F10",
+   "category": "Rates",
+   "severity": "material",
+   "title": "No cancellation deadline printed for the Venetian poker rate",
+   "detail": "The generic hotel terms describe a deposit at booking and non-refundable prepaid offers, but the poker-rate page does not print a cancellation deadline. Caesars advertises free 48-hour cancellation; Wynn offer pages vary between 48 hours and non-cancellable.",
+   "how_to_settle": "Record the cancellation terms shown in the booking flow for the chosen rate code.",
+   "sources": [
+    "V_TERMS",
+    "W_TC_FEE"
+   ]
+  },
+  {
+   "id": "F11",
+   "category": "Walking",
+   "severity": "material",
+   "title": "No official walking time exists for any hotel \u2192 poker-room pair",
+   "detail": "No casino publishes walking minutes. Figures here come from a labelled OSRM 8x8 distance matrix on OpenStreetMap, converted with one formula and a 25% buffer. The router does not model indoor casino corridors, the Venetian poker room on level 2 of the Grand Canal Shoppes, or Wynn's room being in the Encore tower. Reciprocal routes disagree by up to 62% (Venetian tower <-> Palazzo), so those rows carry an asymmetry tag instead of a quietly chosen number.",
+   "how_to_settle": "Walk the route once on arrival and record the actual door-to-table time; or check Google/Apple Maps for the specific entrance, which this sandbox could not access.",
+   "sources": [
+    "MAP_OSRM",
+    "MAP_NOMINATIM",
+    "V_POKER",
+    "W_POKER"
+   ]
+  },
+  {
+   "id": "F12",
+   "category": "Walking",
+   "severity": "material",
+   "title": "The 30-minute walking rule excludes six hotel\u2013venue pairs",
+   "detail": "Using one labelled OSRM matrix and a single conversion (metres / 4.8 km/h * 60 * 1.25), six pairs exceed 30 minutes: Wynn<->Caesars (42.4 min one way, 42.9 the other), Wynn<->Bellagio (39.4/43.6), Treasure Island<->Bellagio (33.5), Harrah's<->Bellagio (34.9). Every hotel is still within 30 minutes of at least one poker room, so no property is disqualified outright.",
+   "how_to_settle": "Walk the route once, or check Google/Apple Maps for the specific casino entrance; both are inaccessible to this sandbox.",
+   "sources": [
+    "MAP_OSRM"
+   ]
+  },
+  {
+   "id": "F13",
+   "category": "Schedule",
+   "severity": "material",
+   "title": "No official event publishes a finish time",
+   "detail": "The day plans use a heuristic derived from each event's own structure (late-registration window doubled, plus an hour of breaks) to decide whether two events can be played in sequence. It is an estimate, clearly labelled, not an official finish time.",
+   "how_to_settle": "Record actual finishes from results pages for the same events in the previous series and replace the heuristic with observed duration.",
+   "sources": [
+    "V_CAL",
+    "V_S05"
+   ]
+  },
+  {
+   "id": "F14",
+   "category": "Schedule",
+   "severity": "material",
+   "title": "No tournament on any official Strip schedule starts at 08:00",
+   "detail": "Earliest verified start: 9:10 AM (Venetian satellite #46, Dec 12). Earliest main-event start: 10:10 AM. Wynn's earliest is 10:00 AM on Dec 10 (Super Gold Million) and 11:00 AM otherwise. An 8 AM start exists nowhere in this dataset.",
+   "how_to_settle": "If an 8 AM start is essential, it must come from a room outside this set (e.g. an off-Strip room) or from a series not yet published.",
+   "sources": [
+    "V_CAL",
+    "W_WPT"
+   ]
+  },
+  {
+   "id": "F15",
+   "category": "Schedule",
+   "severity": "material",
+   "title": "Venetian 10:10 AM events are mostly restricted by age, sex or team composition",
+   "detail": "Of the 10:10 AM starts: Nov 19\u201321 $200 RaceDay are open; Dec 2 and Dec 8 are Seniors (50+); Dec 9 #35 is a women/women or women/men tag team; Dec 10 is LIPS Ladies (female only); Dec 13\u201314 are Seniors; Dec 17\u201319 #56 are open $1,100 flights. For a male player under 50 the open morning starts are Nov 19\u201321, Dec 12 (9:10 satellite / 10:10 #47) and Dec 17\u201319.",
+   "how_to_settle": "Confirm the travel party's eligibility before selecting a morning event.",
+   "sources": [
+    "V_S17",
+    "V_S19",
+    "V_S31",
+    "V_S32",
+    "V_S20"
+   ]
+  },
+  {
+   "id": "F16",
+   "category": "Coverage",
+   "severity": "material",
+   "title": "Strip coverage is not complete",
+   "detail": "Confirmed official schedules were read for Venetian, Wynn/Encore, Caesars Palace and Bellagio. Harrah's, Horseshoe, Paris, Planet Hollywood, Flamingo, The Linq, MGM Grand, ARIA, Mandalay Bay, Park MGM, New York-New York, Luxor, Excalibur and Treasure Island were NOT checked for tournaments in this session.",
+   "how_to_settle": "Fetch each room's official poker/tournament page and record its schedule the same way, or ask the poker desks for their current flyer.",
+   "sources": [
+    "V_CAL",
+    "W_WPT",
+    "C_FLYER",
+    "B_POKER"
+   ]
+  },
+  {
+   "id": "F17",
+   "category": "Coverage",
+   "severity": "material",
+   "title": "Wynn nightly $160 terms not published in the document read",
+   "detail": "The nightly is advertised on the official poster and poker page, but the structures PDF only prints terms for the Mon\u2013Thu, Friday and weekend events. Fee, chips, level length and entry rules are therefore unknown.",
+   "how_to_settle": "Call the Wynn poker room on the number printed on the official tournament poster, (702) 770-7654, and ask for the nightly structure sheet. That number is transcribed from the poster itself (W_WPT), so it is verified.",
+   "sources": [
+    "W_POSTER",
+    "W_DAILY"
+   ]
+  },
+  {
+   "id": "F18",
+   "category": "Guarantees",
+   "severity": "material",
+   "title": "Some Venetian guarantees include bounties",
+   "detail": "Sheets 1, 8, 11, 15, 16, 26, 27, 30, 33 and 34 print the guarantee as 'prize pool + total bounties'. Comparing those to a pure pool guarantee overstates their value. Three rows (#3, #4, #5, #6) print no guarantee at all.",
+   "how_to_settle": "Nothing to settle \u2014 recorded as guarantee_basis and tagged 'incl. bounties' in the ratio column.",
+   "sources": [
+    "V_S01",
+    "V_S18",
+    "V_S29"
+   ]
+  },
+  {
+   "id": "F19",
+   "category": "Guarantees",
+   "severity": "material",
+   "title": "Caesars flyer has no date or day-of-week",
+   "detail": "The 2026 daily NLH flyer lists 10 AM / 2 PM / 6 PM / 9 PM events but is not tied to a specific date, and does not state whether all four run every day of the week.",
+   "how_to_settle": "Call Caesars poker to confirm which days each tier runs.",
+   "sources": [
+    "C_FLYER"
+   ]
+  },
+  {
+   "id": "F20",
+   "category": "Guarantees",
+   "severity": "material",
+   "title": "Ratios are arithmetic, not expected value",
+   "detail": "Guarantee \u00f7 buy-in says nothing about field size, payout structure, rake or your edge. It is displayed as a descriptive screening number only, and bounty-inclusive guarantees are tagged.",
+   "how_to_settle": "No action; documented so the number is not misread.",
+   "sources": [
+    "V_S05"
+   ]
+  },
+  {
+   "id": "F21",
+   "category": "Repo",
+   "severity": "material",
+   "title": "Residual merge-conflict markers were present in COORDINATION.md",
+   "detail": "A '=======' line and a '>>>>>>> origin/main' line survived a merged PR, duplicating the 60fb62da session block.",
+   "how_to_settle": "Removed the delimiter lines only; both blocks kept verbatim. Recorded in COORDINATION.md.",
+   "sources": [],
+   "repo_link": "https://github.com/karagemop466-tech/Poker4/blob/main/COORDINATION.md"
+  },
+  {
+   "id": "F22",
+   "category": "Repo",
+   "severity": "material",
+   "title": "Six parallel sites with competing claims on the same repo",
+   "detail": "c07371e3/, 60fb62da/, strip/, verified/, df41f5c6/ and pages/ each carry their own snapshot and classification, with different data schemas. Some older dashboards used 'single entry' labels that later sessions corrected.",
+   "how_to_settle": "Decide which snapshot is canonical. This build treats data/v2/ as current and links the rest as historical.",
+   "sources": [],
+   "repo_link": "https://github.com/karagemop466-tech/Poker4/tree/main"
+  },
+  {
+   "id": "F23",
+   "category": "Repo",
+   "severity": "material",
+   "title": "Earlier snapshots were built without a retrieval date on every row",
+   "detail": "Several earlier pages show values without a per-value date stamp, which makes it impossible to tell whether a value is current.",
+   "how_to_settle": "This build stamps the retrieval date on every source row in data/v2/sources.json and shows it in the source table on the Method page.",
+   "sources": [],
+   "repo_link": "https://github.com/karagemop466-tech/Poker4/tree/main/data"
+  },
+  {
+   "id": "F24",
+   "category": "Reproduction",
+   "severity": "resolved",
+   "title": "Monitor script was executed and worked \u2014 61 of 64 sources reached",
+   "detail": "Shell network is blocked in the authoring sandbox (every curl returns HTTP 000), so the script could not be smoke-tested there. It was then run by GitHub Actions on a real runner: 'checked: 61 changed: 0 unreachable: 3'. The three failures are one 429 rate-limit (travelocity, a lead-only third party), one timeout (bellagio MGM poker PDF host) and one 400 (the bare router.project-osrm.org root URL, which is not a page).",
+   "how_to_settle": "Resolved. Baseline committed at data/v2/source_state.json (61 URLs).",
+   "sources": [],
+   "repo_link": "https://github.com/karagemop466-tech/Poker4/blob/main/tools/v2_check_sources.py"
+  },
+  {
+   "id": "F25",
+   "category": "Reproduction",
+   "severity": "resolved",
+   "title": "Monitor produced its first baseline; 0 changes on day one",
+   "detail": "data/v2/source_state.json now holds 61 URL hashes and data/v2/snapshots/check-2026-11-17.txt records the first run. Change detection is therefore proven to execute but has not yet observed a real change \u2014 day one and the retrieval day are the same day.",
+   "how_to_settle": "Resolved for execution. The first genuinely useful run is the next scheduled one.",
+   "sources": [],
+   "repo_link": "https://github.com/karagemop466-tech/Poker4/blob/main/.github/workflows/v2-monitor.yml"
+  },
+  {
+   "id": "F26",
+   "category": "Monitoring",
+   "severity": "material",
+   "title": "The monitor's first real detection was churn, not a fact change \u2014 and that is the point",
+   "detail": "On its second scheduled run the monitor reported 'checked: 61, changed: 3'. All three were re-read by hand: W_TC_FEE still states a $55 plus tax daily resort fee (the page changed only because a new Concours package offer was inserted above it); W_POKER redirected to the Wynn homepage with its dining and show promos (no poker fact changed); M_FEES_UNVERIFIED is a third-party page that is never used for a displayed value. No published number on this site needed to move.",
+   "how_to_settle": "Nothing to fix \u2014 this is the designed behaviour. It also calibrates expectations: these pages carry rotating marketing content, so a non-zero 'changed' count will be common and each hit still needs a human read. Adding per-page content selectors would cut the noise if that ever becomes annoying.",
+   "sources": [
+    "W_TC_FEE",
+    "W_POKER",
+    "M_FEES_UNVERIFIED"
+   ],
+   "repo_link": "https://github.com/karagemop466-tech/Poker4/blob/main/data/v2/snapshots/check-43993946834.txt"
   }
- ],
- "sources": {
-  "V_PAGE": {
-   "label": "Venetian DeepStack Extravaganza IV official series page (schedule)",
-   "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
-  },
-  "V_SCHED": {
-   "label": "Venetian DSE IV schedule PDF (official)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
-  },
-  "V_POKER": {
-   "label": "Venetian Poker Room official page (room at The Palazzo, Level 2)",
-   "url": "https://www.venetianlasvegas.com/resort/casino/poker.html"
-  },
-  "V_RATES": {
-   "label": "Venetian 2026 Poker Suite Rates official page",
-   "url": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html"
-  },
-  "V_RESORT": {
-   "label": "Venetian Resort Fee official page",
-   "url": "https://www.venetianlasvegas.com/resort/resort-fee.html"
-  },
-  "V_TERMS": {
-   "label": "Venetian Hotel Terms & Conditions (tax, parking, cancellation)",
-   "url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html"
-  },
-  "W_PAGE": {
-   "label": "Wynn Las Vegas Poker Room official page",
-   "url": "https://www.wynnlasvegas.com/casino/poker"
-  },
-  "W_DAILY": {
-   "label": "Wynn Daily Tournament Structures + General Terms PDF (official)",
-   "url": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf"
-  },
-  "W_WPT": {
-   "label": "Wynn WPT World Championship 2026 schedule PDF (official)",
-   "url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
-  },
-  "W_WPT_TC": {
-   "label": "WPT World Championship General Terms + event structures PDF (official)",
-   "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
-  },
-  "W_TERMS": {
-   "label": "Wynn Las Vegas Terms & Conditions (resort fee, parking, deposit)",
-   "url": "https://www.wynnlasvegas.com/terms-and-conditions/850257"
-  },
-  "B_PAGE": {
-   "label": "Bellagio Poker Room official page",
-   "url": "https://bellagio.mgmresorts.com/en/casino/poker.html"
-  },
-  "B_FRI": {
-   "label": "Bellagio Friday $600 NLH structure PDF (official)",
-   "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt9cf95b0e60ec253e/6af491a3a9851d75c40be840/mgm-bellagio-poker-fridays-$600-nlh.pdf"
-  },
-  "B_SAT": {
-   "label": "Bellagio Saturday NLH structure PDF (official; buy-in conflict inside)",
-   "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt6d47974bf5a7d9b6/6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf"
-  },
-  "B_SUN": {
-   "label": "Bellagio Sunday $400 H.O.R.S.E. structure PDF (official)",
-   "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt07fcf1244a6da661/6af491a339e2b4f6b76a86ad/mgm-bellagio-poker-sundays-$400-horse.pdf"
-  },
-  "C_FLYER": {
-   "label": "Caesars Palace Daily NLH tournament flyer PDF (official)",
-   "url": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf"
-  },
-  "C_PAGE": {
-   "label": "Caesars Palace casino page (links the flyer)",
-   "url": "https://www.caesars.com/caesars-palace/casino"
-  },
-  "TI_FEE": {
-   "label": "Treasure Island resort-fee section (Tower Suite page, official)",
-   "url": "https://treasureisland.com/hotel/tower-suite"
-  },
-  "GM": {
-   "label": "Google Maps walking directions (mode=walking, retrieved per row)",
-   "url": "https://www.google.com/maps"
-  },
-  "V_S1": {
-   "label": "Venetian DSE IV structure sheet #1 (official PDF)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
-  },
-  "V_S2": {
-   "label": "Venetian DSE IV structure sheet #2 (official PDF)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_2.pdf"
-  },
-  "V_S3": {
-   "label": "Venetian DSE IV structure sheet #3 (official PDF)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_3.pdf"
-  },
-  "V_S4": {
-   "label": "Venetian DSE IV structure sheet #4 (official PDF)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf"
-  },
-  "V_S5": {
-   "label": "Venetian DSE IV structure sheet #5 (official PDF)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf"
-  },
-  "V_S6": {
-   "label": "Venetian DSE IV structure sheet #6 (official PDF)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_6.pdf"
-  },
-  "V_S7": {
-   "label": "Venetian DSE IV structure sheet #7 (official PDF)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf"
-  },
-  "V_S8": {
-   "label": "Venetian DSE IV structure sheet #8 (official PDF)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_8.pdf"
-  },
-  "V_S9": {
-   "label": "Venetian DSE IV structure sheet #9 (official PDF)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_9.pdf"
-  },
-  "V_S10": {
-   "label": "Venetian DSE IV structure sheet #10 (official PDF)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf"
-  },
-  "V_S11": {
-   "label": "Venetian DSE IV structure sheet #11 (official PDF)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf"
-  },
-  "V_S12": {
-   "label": "Venetian DSE IV structure sheet #12 (official PDF)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf"
-  },
-  "V_S13": {
-   "label": "Venetian DSE IV structure sheet #13 (official PDF)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_13.pdf"
-  },
-  "V_S14": {
-   "label": "Venetian DSE IV structure sheet #14 (official PDF)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_14.pdf"
-  },
-  "V_S15": {
-   "label": "Venetian DSE IV structure sheet #15 (official PDF)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
-  },
-  "V_S16": {
-   "label": "Venetian DSE IV structure sheet #16 (official PDF)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_16.pdf"
-  },
-  "V_S17": {
-   "label": "Venetian DSE IV structure sheet #17 (official PDF)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_17.pdf"
-  },
-  "V_S18": {
-   "label": "Venetian DSE IV structure sheet #18 (official PDF)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf"
-  },
-  "V_S19": {
-   "label": "Venetian DSE IV structure sheet #19 (official PDF)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_19.pdf"
-  },
-  "V_S20": {
-   "label": "Venetian DSE IV structure sheet #20 (official PDF)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_20.pdf"
-  },
-  "V_S21": {
-   "label": "Venetian DSE IV structure sheet #21 (official PDF)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf"
-  },
-  "V_S22": {
-   "label": "Venetian DSE IV structure sheet #22 (official PDF)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_22.pdf"
-  },
-  "V_S23": {
-   "label": "Venetian DSE IV structure sheet #23 (official PDF)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_23.pdf"
-  },
-  "V_S24": {
-   "label": "Venetian DSE IV structure sheet #24 (official PDF)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_24.pdf"
-  },
-  "V_S25": {
-   "label": "Venetian DSE IV structure sheet #25 (official PDF)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_25.pdf"
-  },
-  "V_S26": {
-   "label": "Venetian DSE IV structure sheet #26 (official PDF)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_26.pdf"
-  },
-  "V_S27": {
-   "label": "Venetian DSE IV structure sheet #27 (official PDF)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_27.pdf"
-  },
-  "V_S28": {
-   "label": "Venetian DSE IV structure sheet #28 (official PDF)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_28.pdf"
-  },
-  "V_S29": {
-   "label": "Venetian DSE IV structure sheet #29 (official PDF)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_29.pdf"
-  },
-  "V_S30": {
-   "label": "Venetian DSE IV structure sheet #30 (official PDF)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_30.pdf"
-  },
-  "V_S31": {
-   "label": "Venetian DSE IV structure sheet #31 (official PDF)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_31.pdf"
-  },
-  "V_S32": {
-   "label": "Venetian DSE IV structure sheet #32 (official PDF)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_32.pdf"
-  },
-  "V_S33": {
-   "label": "Venetian DSE IV structure sheet #33 (official PDF)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_33.pdf"
-  },
-  "V_S34": {
-   "label": "Venetian DSE IV structure sheet #34 (official PDF)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_34.pdf"
-  },
-  "V_S35": {
-   "label": "Venetian DSE IV structure sheet #35 (official PDF)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf"
-  },
-  "V_S36": {
-   "label": "Venetian DSE IV structure sheet #36 (official PDF)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_36.pdf"
-  },
-  "V_S37": {
-   "label": "Venetian DSE IV structure sheet #37 (official PDF)",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_37.pdf"
-  }
- }
+ ]
 }

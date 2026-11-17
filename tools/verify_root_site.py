@@ -17,15 +17,30 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-D = ROOT / "data" / "v2"
+D = ROOT / "data" / "0f6c627b"
 errors, warnings, checked = [], [], 0
 
 EV = json.loads((D / "events.json").read_text(encoding="utf-8"))
 SRC = EV["sources"]
 
-pages = [p for p in ROOT.glob("*.html")] + sorted((ROOT / "venues").glob("*.html"))
+pages = [ROOT / n for n in ("index.html", "tournaments.html", "schedule.html", "hotels.html",
+                            "trip-calculator.html", "rate-log.html", "monitor.html", "questions.html",
+                            "suggestions.html", "flagged.html", "sources.html")]
+pages += [ROOT / "venues" / n for n in ("venetian.html", "wynn.html", "bellagio.html", "caesars.html", "others.html")]
+pages = [p for p in pages if p.exists()]
 if not pages:
     sys.exit("no pages found — run tools/build_root_site.py first")
+
+# warn-level file-link scan for preserved parallel pages (not this session's output)
+for p in ROOT.glob("*.html"):
+    if p in pages:
+        continue
+    t = p.read_text(encoding="utf-8")
+    for href in re.findall(r'href="([^"#$]+\.html?)"', t):
+        if href.startswith(("http", "${")) or "{{" in href:
+            continue
+        if not (p.parent / href.split("#")[0]).exists():
+            warn(f"preserved page {p.name}: file link not found -> {href}")
 
 def err(m):
     errors.append(m)

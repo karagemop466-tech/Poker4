@@ -19,7 +19,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-D = ROOT / "data" / "v2"
+D = ROOT / "data" / "0f6c627b"
 MON = D / "monitor"
 MON.mkdir(parents=True, exist_ok=True)
 STATUS = MON / "status.json"
