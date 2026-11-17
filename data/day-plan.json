@@ -3894,7 +3894,7 @@
     ]
    },
    "restarts": [
-    "$2,200 Nlh Pokeratlas Championship Title Event Day 2 Restart - Play Down To Final 7, Streamed Final Table (Pokergo)"
+    "$2,200 Nlh Pokeratlas Championship Title Event Day 2 Restart"
    ],
    "overlap_notes": [],
    "entries_usd": 1400,
@@ -4920,7 +4920,7 @@
     "guarantee_usd": 150000,
     "guarantee_printed": true,
     "starting_chips": null,
-    "level_duration": "5",
+    "level_duration": "40",
     "kind": "Tournament",
     "tags": [
      "Multi-flight"

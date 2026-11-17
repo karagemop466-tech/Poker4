@@ -1,8 +1,8 @@
 {
  "meta": {
   "generated_at": "2026-11-17T22:03:00Z",
-  "rows": 93,
-  "note": "Rows read from the official schedule page at run time; blank fields were not printed on the page."
+  "rows": 94,
+  "note": "Rows read from the official schedule page at run time; blank fields were not printed on the page. | 2026-11-17 session 75757cc1: 6 corrections (see parse_notes)."
  },
  "rows": [
   {
@@ -899,13 +899,11 @@
    "retrieved": "2026-11-17"
   },
   {
-   "parse_notes": [
-    "registration-closes cell “10:00 AM” not later than the start time; not recorded"
-   ],
+   "parse_notes": "corrected 2026-11-17 (session 75757cc1) against the official DSE page and structure sheet",
    "registration_closes": null,
    "date": "2026-12-11",
    "weekday": "Friday",
-   "time": "7:00 PM",
+   "time": "10:00 AM",
    "event_no": 39,
    "event_name": "NO LIMIT HOLD'EM LIPS DAY 2 RESTART PLAY DOWN TO FINAL 7 - STREAMED FINAL TABLE (POKERGO) AT",
    "buy_in_usd": 800,
@@ -1023,6 +1021,21 @@
    "guarantee_usd": 300000,
    "starting_chips": 40000,
    "level_duration": "40",
+   "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+   "retrieved": "2026-11-17"
+  },
+  {
+   "parse_notes": "corrected 2026-11-17 (session 75757cc1) against the official DSE page and structure sheet",
+   "registration_closes": null,
+   "date": "2026-12-13",
+   "weekday": "Sunday",
+   "time": "1:00 PM",
+   "event_no": 47,
+   "event_name": "$2,200 NLH POKERATLAS CHAMPIONSHIP TITLE EVENT DAY 2 RESTART",
+   "buy_in_usd": 2200,
+   "guarantee_usd": null,
+   "starting_chips": null,
+   "level_duration": null,
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
    "retrieved": "2026-11-17"
   },
@@ -1162,10 +1175,7 @@
    "retrieved": "2026-11-17"
   },
   {
-   "parse_notes": [
-    "registration-closes cell “10:10 AM” not later than the start time; not recorded",
-    "LEVEL cell “4” is not a plausible blind level; not recorded"
-   ],
+   "parse_notes": "corrected 2026-11-17 (session 75757cc1) against the official DSE page and structure sheet",
    "registration_closes": null,
    "date": "2026-12-17",
    "weekday": "Thursday",
@@ -1173,7 +1183,7 @@
    "event_no": 56,
    "event_name": "NO LIMIT HOLD'EM 1A $40 RAKE DISCOUNT FOR ENTRIES BEFORE",
    "buy_in_usd": 1100,
-   "guarantee_usd": null,
+   "guarantee_usd": 500000,
    "starting_chips": null,
    "level_duration": null,
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
@@ -1195,9 +1205,7 @@
    "retrieved": "2026-11-17"
   },
   {
-   "parse_notes": [
-    "registration-closes cell “6:10 PM” not later than the start time; not recorded"
-   ],
+   "parse_notes": "corrected 2026-11-17 (session 75757cc1) against the official DSE page and structure sheet",
    "registration_closes": null,
    "date": "2026-12-17",
    "weekday": "Thursday",
@@ -1205,9 +1213,9 @@
    "event_no": 56,
    "event_name": "NO LIMIT HOLD'EM 1B $40 RAKE DISCOUNT FOR ENTRIES BEFORE",
    "buy_in_usd": 1100,
-   "guarantee_usd": null,
+   "guarantee_usd": 500000,
    "starting_chips": null,
-   "level_duration": "11",
+   "level_duration": "30",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
    "retrieved": "2026-11-17"
   },
@@ -1287,9 +1295,7 @@
    "retrieved": "2026-11-17"
   },
   {
-   "parse_notes": [
-    "registration-closes cell “11:10 AM” not later than the start time; not recorded"
-   ],
+   "parse_notes": "corrected 2026-11-17 (session 75757cc1) against the official DSE page and structure sheet",
    "registration_closes": null,
    "date": "2026-12-20",
    "weekday": "Sunday",
@@ -1297,9 +1303,9 @@
    "event_no": 59,
    "event_name": "NO LIMIT HOLD'EM 1A $20 RAKE DISCOUNT FOR ENTRIES BEFORE",
    "buy_in_usd": 600,
-   "guarantee_usd": null,
+   "guarantee_usd": 150000,
    "starting_chips": null,
-   "level_duration": "5",
+   "level_duration": "40",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
    "retrieved": "2026-11-17"
   },

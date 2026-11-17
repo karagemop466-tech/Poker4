@@ -62,11 +62,24 @@ if _OVR_PATH.exists():
             _hits = [r for r in _rows if r.get("date") == _m["date"] and r.get("time") == _m["time"]
                      and r.get("event_no") == _m["event_no"]
                      and (not _m.get("name_contains") or _m["name_contains"] in (r.get("event_name") or "").upper())]
-            if len(_hits) != 1:
+            if len(_hits) == 1:
+                _hits[0].update(_op["set"])
+            elif len(_hits) == 0:
+                # Already corrected upstream (the snapshot may carry the fix): accept only if a row
+                # with the corrected values exists; otherwise the row is missing and the build stops.
+                _done = [r for r in _rows if r.get("date") == _m["date"] and r.get("event_no") == _m["event_no"]
+                         and all(r.get(k) == v for k, v in _op["set"].items())]
+                if not _done:
+                    raise SystemExit(f"venetian override matched no row and no corrected row exists: {_m}")
+            else:
                 raise SystemExit(f"venetian override matched {len(_hits)} rows (need exactly 1): {_m}")
-            _hits[0].update(_op["set"])
         elif _op["op"] == "add":
-            _rows.append(dict(_op["row"]))
+            _r = _op["row"]
+            # Skip if the same row (date, time, event number) is already present upstream.
+            if any(r.get("date") == _r.get("date") and r.get("time") == _r.get("time")
+                   and r.get("event_no") == _r.get("event_no") for r in _rows):
+                continue
+            _rows.append(dict(_r))
         else:
             raise SystemExit(f"unknown override op: {_op['op']}")
     SCHED = {**SCHED, "rows": _rows}
