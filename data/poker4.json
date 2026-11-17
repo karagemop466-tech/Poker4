@@ -32,7 +32,7 @@
    "id": "venetian",
    "name": "The Venetian Poker Room",
    "property": "The Venetian Resort (poker room is on The Palazzo level 2)",
-   "official_address": "3600 S Las Vegas Blvd, Las Vegas, NV 89109",
+   "official_address": null,
    "address_source": "https://www.venetianlasvegas.com/resort/casino/poker.html",
    "coverage": "Complete — every printed row of the series calendar and all 37 linked structure sheets were fetched and machine-read.",
    "schedule_sources": [
@@ -43,7 +43,8 @@
     "venetian",
     "palazzo"
    ],
-   "notes": "Host property for the only Strip series in the snapshot whose full structure sheets are published. The reviewed sheets print buy-in, house fee, per-entry pool contribution, guarantee, starting chips, level length and the late-registration deadline — and nothing about entries, re-entries or add-ons."
+   "notes": "Host property for the only Strip series in the snapshot whose full structure sheets are published. The reviewed sheets print buy-in, house fee, per-entry pool contribution, guarantee, starting chips, level length and the late-registration deadline — and nothing about entries, re-entries or add-ons.",
+   "address_note": "the street address previously printed here (3600 S Las Vegas Blvd) is Bellagio's — Bellagio's own poker page publishes it. No captured official Venetian page prints the resort's street address, so the value was removed rather than replaced."
   },
   {
    "id": "wynn",
@@ -314,7 +315,7 @@
     "source2": "https://www.wynnlasvegas.com/terms-and-conditions/850070",
     "status": "verified from current official terms (2 pages agree)"
    },
-    "tax": {
+   "tax": {
     "rate_pct": 13.38,
     "basis": "Clark County room tax 13.38% per Clark County letter (15 Nov 2016), which sets 13.38% for the Primary Gaming Corridor. Wynn's own offer pages say only 'plus tax'. This property's map membership is not yet checked (F27).",
     "source": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:7436500e-cac4-420a-b23a-02d3fec69900/original/as/room-tax-increase-transient-lodging-letter-111616.pdf",

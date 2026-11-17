@@ -1,26 +1,26 @@
 #!/usr/bin/env python3
-"""Verification entry point for the published root dashboard.
+"""Canonical root-site integrity gate.
 
-This tool used to assert page markers and data-file names from before the last
-site restructure (plan.html / review.html replaced schedule.html / trip-calculator.html,
-and the canonical data layer moved from ``data/0f6c627b/`` to ``data/``). Against the
-current, fully verified pages it reported 19 false errors, and because
-``.github/workflows/recheck.yml`` ran it every morning the job was permanently red.
+Delegates link/data validation to scripts/verify_root.py and the preserved
+df41f5c6 sub-site check (scripts/verify.py), then checks the current dashboard
+features without depending on page-specific editorial wording:
 
-It now delegates to the canonical verifiers that actually guard the published site:
-
-  * ``scripts/verify_root.py`` — internal links, anchors, unresolved template values,
-    balanced markup, one official-source link (or an explicit unverified marker) on every
-    event row, and agreement between the rendered rows and ``data/site-events.json``;
-  * ``scripts/verify.py`` — the preserved df41f5c6 sub-site's own check.
+  * every generated table page exists;
+  * any page with a <table> carries a search input and loads a behavior script
+    (either family is valid: the integrate_data pages use #global-search +
+    app.js; the standalone sources/monitoring pages use data-search +
+    assets/dashboard.js).
 
 Run: python3 tools/verify_root_site.py   (exit 0 = pass)
 """
+from __future__ import annotations
+
 import subprocess
 import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+errors: list[str] = []
 
 
 def run(script: str) -> int:
@@ -29,12 +29,30 @@ def run(script: str) -> int:
     return proc.returncode
 
 
-def main() -> int:
-    rc = run("verify_root.py")
-    if rc != 0:
-        return rc
-    return run("verify.py")
+if run("verify_root.py") != 0:
+    errors.append("scripts/verify_root.py failed")
+if run("verify.py") != 0:
+    errors.append("scripts/verify.py failed")
 
+# Source rows and the universal table search must be present on the generated
+# pages that actually contain data tables. Keep these checks structural.
+table_pages = ["tournaments.html", "schedule.html", "hotels.html", "venues/venetian.html",
+               "venues/wynn.html", "venues/others.html", "flagged.html", "questions.html",
+               "suggestions.html", "sources.html", "monitoring.html"]
+for rel in table_pages:
+    path = ROOT / rel
+    if not path.exists():
+        errors.append(f"{rel}: missing generated dashboard page")
+        continue
+    doc = path.read_text(encoding="utf-8")
+    if "<table" in doc and 'type="search"' not in doc:
+        errors.append(f"{rel}: table page has no search input")
+    if "<table" in doc and "app.js" not in doc and "assets/dashboard.js" not in doc:
+        errors.append(f"{rel}: table page does not load a behavior script")
 
-if __name__ == "__main__":
-    sys.exit(main())
+if errors:
+    print("ERRORS:")
+    for error in errors:
+        print(" -", error)
+    sys.exit(1)
+print("OK: canonical dashboard integrity and table-search checks passed")

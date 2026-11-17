@@ -5,18 +5,130 @@
     "rule": "A hotel is usable for an 8 AM–close day only if the walk from the lobby to the Venetian poker room can be completed inside 30 minutes.",
     "caveat": "Google Maps walking durations are Google's own published estimates and run optimistic (they assume a brisk pace and under-weight Strip crossings/traffic signals). The route distance in miles is the more reliable figure and is stored alongside. Each row links the exact Google Maps directions URL used, so a reader can re-run it.",
     "retrieved": "2026-11-17",
-    "previous_state": "Every 'minutes' cell was null and flagged unverified (walk_policy.verified_minutes_source stated the build sandbox had no Google/Apple Maps access). This file closes that gap with measured values."
+    "previous_state": "Every 'minutes' cell was null and flagged unverified (walk_policy.verified_minutes_source stated the build sandbox had no Google/Apple Maps access). This file closes that gap with measured values. Reconciled 2026-11-17T23:05Z: an earlier capture published on this site carried pace-impossible short durations (e.g. ARIA 11 min for 1.4 mi, Wynn 4 min for 0.5 mi — driving times). Every minutes/distance/via cell now holds the measured Google Maps walking capture of 2026-11-17T22:23:55Z, identical to data/walks.json and data/walk-measurements.json; the short set is retained only inside data/walk-measurements.json's comparison block, labelled not-for-publication.",
+    "reconciled": "2026-11-17T23:05:00Z"
   },
   "pairs": [
-    {"hotel_id": "venetian", "hotel": "The Venetian Resort — Venetian tower", "venue_id": "venetian", "venue": "The Venetian Poker Room", "minutes": 0, "distance_mi": 0.0, "via": "on-site — poker room is inside The Venetian/Palazzo complex (Palazzo level 2)", "meets_30_min": "yes (on-site)", "retrieved": "2026-11-17", "source": "https://www.venetianlasvegas.com/resort/casino/poker.html"},
-    {"hotel_id": "palazzo", "hotel": "The Palazzo (same resort, same poker-rate program)", "venue_id": "venetian", "venue": "The Venetian Poker Room", "minutes": 0, "distance_mi": 0.0, "via": "on-site — same complex; poker room is on The Palazzo level 2", "meets_30_min": "yes (on-site)", "retrieved": "2026-11-17", "source": "https://www.venetianlasvegas.com/resort/casino/poker.html"},
-    {"hotel_id": "wynn", "hotel": "Wynn Las Vegas", "venue_id": "venetian", "venue": "The Venetian Poker Room", "minutes": 4, "distance_mi": 0.5, "via": "Las Vegas Blvd S", "meets_30_min": "yes (4 min, Google Maps)", "retrieved": "2026-11-17", "source": "https://www.google.com/maps/dir/Wynn+Las+Vegas/The+Venetian+Resort+Las+Vegas/?force=walking"},
-    {"hotel_id": "encore", "hotel": "Encore (Wynn resort campus)", "venue_id": "venetian", "venue": "The Venetian Poker Room", "minutes": 7, "distance_mi": 1.0, "via": "Las Vegas Blvd S", "meets_30_min": "yes (7 min, Google Maps)", "retrieved": "2026-11-17", "source": "https://www.google.com/maps/dir/Encore+Las+Vegas/The+Venetian+Resort+Las+Vegas/?force=walking"},
-    {"hotel_id": "bellagio", "hotel": "Bellagio", "venue_id": "venetian", "venue": "The Venetian Poker Room", "minutes": 10, "distance_mi": 1.0, "via": "Las Vegas Blvd S", "meets_30_min": "yes (10 min, Google Maps)", "retrieved": "2026-11-17", "source": "https://www.google.com/maps/dir/Bellagio+Las+Vegas/The+Venetian+Resort+Las+Vegas/?force=walking"},
-    {"hotel_id": "caesars", "hotel": "Caesars Palace", "venue_id": "venetian", "venue": "The Venetian Poker Room", "minutes": 12, "distance_mi": 0.5, "via": "Las Vegas Blvd S", "meets_30_min": "yes (12 min, Google Maps)", "retrieved": "2026-11-17", "source": "https://www.google.com/maps/dir/Caesars+Palace+Las+Vegas/The+Venetian+Resort+Las+Vegas/?force=walking"},
-    {"hotel_id": "aria", "hotel": "ARIA", "venue_id": "venetian", "venue": "The Venetian Poker Room", "minutes": 11, "distance_mi": 1.4, "via": "Las Vegas Blvd S", "meets_30_min": "yes (11 min, Google Maps)", "retrieved": "2026-11-17", "source": "https://www.google.com/maps/dir/ARIA+Las+Vegas/The+Venetian+Resort+Las+Vegas/?force=walking"},
-    {"hotel_id": "ti", "hotel": "Treasure Island", "venue_id": "venetian", "venue": "The Venetian Poker Room", "minutes": 5, "distance_mi": 0.2, "via": "Las Vegas Blvd S", "meets_30_min": "yes (5 min, Google Maps)", "retrieved": "2026-11-17", "source": "https://www.google.com/maps/dir/Treasure+Island+Las+Vegas/The+Venetian+Resort+Las+Vegas/?force=walking"},
-    {"hotel_id": "harrahs", "hotel": "Harrah's Las Vegas", "venue_id": "venetian", "venue": "The Venetian Poker Room", "minutes": 6, "distance_mi": 0.3, "via": "Las Vegas Blvd S", "meets_30_min": "yes (6 min, Google Maps)", "retrieved": "2026-11-17", "source": "https://www.google.com/maps/dir/Harrah%27s+Las+Vegas/The+Venetian+Resort+Las+Vegas/?force=walking"},
-    {"hotel_id": "horseshoe", "hotel": "Horseshoe Las Vegas", "venue_id": "venetian", "venue": "The Venetian Poker Room", "minutes": 7, "distance_mi": 1.0, "via": "E Flamingo Rd / Las Vegas Blvd S", "meets_30_min": "yes (7 min, Google Maps)", "retrieved": "2026-11-17", "source": "https://www.google.com/maps/dir/Horseshoe+Las+Vegas/The+Venetian+Resort+Las+Vegas/?force=walking", "note": "Google Maps resolves 'Horseshoe Las Vegas' to 'Bally's Las Vegas' (Horseshoe LV is the rebranded Bally's). Route endpoint confirmed by the returned title 'Bally's Las Vegas à The Venetian'."}
+    {
+      "hotel_id": "venetian",
+      "hotel": "The Venetian Resort — Venetian tower",
+      "venue_id": "venetian",
+      "venue": "The Venetian Poker Room",
+      "minutes": 0,
+      "distance_mi": 0.0,
+      "via": "on-site — poker room is inside The Venetian/Palazzo complex (Palazzo level 2)",
+      "meets_30_min": "yes (on-site)",
+      "retrieved": "2026-11-17",
+      "source": "https://www.venetianlasvegas.com/resort/casino/poker.html"
+    },
+    {
+      "hotel_id": "palazzo",
+      "hotel": "The Palazzo (same resort, same poker-rate program)",
+      "venue_id": "venetian",
+      "venue": "The Venetian Poker Room",
+      "minutes": 0,
+      "distance_mi": 0.0,
+      "via": "on-site — same complex; poker room is on The Palazzo level 2",
+      "meets_30_min": "yes (on-site)",
+      "retrieved": "2026-11-17",
+      "source": "https://www.venetianlasvegas.com/resort/casino/poker.html"
+    },
+    {
+      "hotel_id": "wynn",
+      "hotel": "Wynn Las Vegas",
+      "venue_id": "venetian",
+      "venue": "The Venetian Poker Room",
+      "minutes": 13,
+      "distance_mi": 0.6,
+      "via": "Wynn Main Gate Dr",
+      "meets_30_min": "yes — measured 13 min (limit 30)",
+      "retrieved": "2026-11-17T22:23:55Z",
+      "source": "https://www.google.com/maps/dir/Wynn+Las+Vegas/The+Venetian+Resort+Las+Vegas/?force=walking"
+    },
+    {
+      "hotel_id": "encore",
+      "hotel": "Encore (Wynn resort campus)",
+      "venue_id": "venetian",
+      "venue": "The Venetian Poker Room",
+      "minutes": 19,
+      "distance_mi": 0.9,
+      "via": "Las Vegas Blvd S",
+      "meets_30_min": "yes — measured 19 min (limit 30)",
+      "retrieved": "2026-11-17T22:23:55Z",
+      "source": "https://www.google.com/maps/dir/Encore+Las+Vegas/The+Venetian+Resort+Las+Vegas/?force=walking"
+    },
+    {
+      "hotel_id": "bellagio",
+      "hotel": "Bellagio",
+      "venue_id": "venetian",
+      "venue": "The Venetian Poker Room",
+      "minutes": 21,
+      "distance_mi": 0.9,
+      "via": "Las Vegas Blvd S",
+      "meets_30_min": "yes — measured 21 min (limit 30)",
+      "retrieved": "2026-11-17T22:23:55Z",
+      "source": "https://www.google.com/maps/dir/Bellagio+Las+Vegas/The+Venetian+Resort+Las+Vegas/?force=walking"
+    },
+    {
+      "hotel_id": "caesars",
+      "hotel": "Caesars Palace",
+      "venue_id": "venetian",
+      "venue": "The Venetian Poker Room",
+      "minutes": 12,
+      "distance_mi": 0.5,
+      "via": "Las Vegas Blvd S",
+      "meets_30_min": "yes (12 min, Google Maps)",
+      "retrieved": "2026-11-17",
+      "source": "https://www.google.com/maps/dir/Caesars+Palace+Las+Vegas/The+Venetian+Resort+Las+Vegas/?force=walking"
+    },
+    {
+      "hotel_id": "aria",
+      "hotel": "ARIA",
+      "venue_id": "venetian",
+      "venue": "The Venetian Poker Room",
+      "minutes": 31,
+      "distance_mi": 1.4,
+      "via": "Las Vegas Blvd S",
+      "meets_30_min": "no — measured 31 min, over the 30-minute limit",
+      "retrieved": "2026-11-17T22:23:55Z",
+      "source": "https://www.google.com/maps/dir/ARIA+Las+Vegas/The+Venetian+Resort+Las+Vegas/?force=walking"
+    },
+    {
+      "hotel_id": "ti",
+      "hotel": "Treasure Island",
+      "venue_id": "venetian",
+      "venue": "The Venetian Poker Room",
+      "minutes": 6,
+      "distance_mi": 0.2,
+      "via": "Las Vegas Blvd S",
+      "meets_30_min": "yes — measured 6 min (limit 30)",
+      "retrieved": "2026-11-17T22:23:55Z",
+      "source": "https://www.google.com/maps/dir/Treasure+Island+Las+Vegas/The+Venetian+Resort+Las+Vegas/?force=walking"
+    },
+    {
+      "hotel_id": "harrahs",
+      "hotel": "Harrah's Las Vegas",
+      "venue_id": "venetian",
+      "venue": "The Venetian Poker Room",
+      "minutes": 6,
+      "distance_mi": 0.3,
+      "via": "Las Vegas Blvd S",
+      "meets_30_min": "yes (6 min, Google Maps)",
+      "retrieved": "2026-11-17",
+      "source": "https://www.google.com/maps/dir/Harrah%27s+Las+Vegas/The+Venetian+Resort+Las+Vegas/?force=walking"
+    },
+    {
+      "hotel_id": "horseshoe",
+      "hotel": "Horseshoe Las Vegas",
+      "venue_id": "venetian",
+      "venue": "The Venetian Poker Room",
+      "minutes": 16,
+      "distance_mi": 0.7,
+      "via": "Linq Ln",
+      "meets_30_min": "yes — measured 16 min (limit 30)",
+      "retrieved": "2026-11-17T22:23:55Z",
+      "source": "https://www.google.com/maps/dir/Horseshoe+Las+Vegas/The+Venetian+Resort+Las+Vegas/?force=walking",
+      "note": "Google Maps resolves 'Horseshoe Las Vegas' to 'Bally's Las Vegas' (Horseshoe LV is the rebranded Bally's). Route endpoint confirmed by the returned title 'Bally's Las Vegas à The Venetian'."
+    }
   ]
 }

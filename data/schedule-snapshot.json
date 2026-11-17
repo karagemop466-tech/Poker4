@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generated_at": "2026-11-17T23:14:18Z",
+  "generated_at": "2026-11-17T23:18:11Z",
   "rows": 94,
   "note": "Rows read from the official schedule text captured in data/raw; blank fields were not printed."
  },
@@ -767,7 +767,7 @@
    "event_name": "NLH LIPS LADIES MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #39",
    "buy_in_usd": 100,
    "guarantee_usd": null,
-   "guarantee_text": "2 seats",
+   "guarantee_text": "2 SEAT",
    "starting_chips": 20000,
    "level_duration": "20",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
@@ -831,7 +831,7 @@
    "event_name": "NLH LIPS LADIES MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #39",
    "buy_in_usd": 100,
    "guarantee_usd": null,
-   "guarantee_text": "2 seats",
+   "guarantee_text": "2 SEAT",
    "starting_chips": 20000,
    "level_duration": "20",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
@@ -895,7 +895,7 @@
    "event_name": "NLH MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47",
    "buy_in_usd": 260,
    "guarantee_usd": null,
-   "guarantee_text": "2 seats",
+   "guarantee_text": "2 SEAT",
    "starting_chips": 20000,
    "level_duration": "20",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
@@ -918,9 +918,7 @@
    "retrieved": "2026-11-17"
   },
   {
-   "parse_notes": [
-    "“7:00 PM” appears inside the event name, not in the TIME column; start time taken as 10:00 AM"
-   ],
+   "parse_notes": null,
    "registration_closes": null,
    "date": "2026-12-11",
    "weekday": "Friday",
@@ -961,7 +959,7 @@
    "event_name": "NLH MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47",
    "buy_in_usd": 260,
    "guarantee_usd": null,
-   "guarantee_text": "2 seats",
+   "guarantee_text": "2 SEAT",
    "starting_chips": 20000,
    "level_duration": "20",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
@@ -993,7 +991,7 @@
    "event_name": "NLH TURBO MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47",
    "buy_in_usd": 260,
    "guarantee_usd": null,
-   "guarantee_text": "2 seats",
+   "guarantee_text": "2 SEAT",
    "starting_chips": 20000,
    "level_duration": "15",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
@@ -1009,7 +1007,7 @@
    "event_name": "NLH TURBO MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47",
    "buy_in_usd": 260,
    "guarantee_usd": null,
-   "guarantee_text": "2 seats",
+   "guarantee_text": "2 SEAT",
    "starting_chips": 20000,
    "level_duration": "15",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
@@ -1041,7 +1039,7 @@
    "event_name": "NLH TURBO MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47",
    "buy_in_usd": 260,
    "guarantee_usd": null,
-   "guarantee_text": "2 seats",
+   "guarantee_text": "2 SEAT",
    "starting_chips": 20000,
    "level_duration": "15",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
@@ -1240,7 +1238,9 @@
    "retrieved": "2026-11-17"
   },
   {
-   "parse_notes": null,
+   "parse_notes": [
+    "a printed time “10:10 AM” inside the event name is not later than the start time; left in the name, not recorded as a registration deadline"
+   ],
    "registration_closes": "4:55 PM",
    "date": "2026-12-17",
    "weekday": "Thursday",
@@ -1281,7 +1281,9 @@
    "retrieved": "2026-11-17"
   },
   {
-   "parse_notes": null,
+   "parse_notes": [
+    "a printed time “6:10 PM” inside the event name is not later than the start time; left in the name, not recorded as a registration deadline"
+   ],
    "registration_closes": "11:10 PM",
    "date": "2026-12-17",
    "weekday": "Thursday",
@@ -1386,7 +1388,9 @@
    "retrieved": "2026-11-17"
   },
   {
-   "parse_notes": null,
+   "parse_notes": [
+    "a printed time “11:10 AM” inside the event name is not later than the start time; left in the name, not recorded as a registration deadline"
+   ],
    "registration_closes": "5:55 PM",
    "date": "2026-12-20",
    "weekday": "Sunday",

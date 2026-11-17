@@ -461,9 +461,21 @@ WYNN_DAILY = list(csv.DictReader(open(DATA / "c07371e3" / "wynn_daily.csv", newl
 WYNN_WPT = list(csv.DictReader(open(DATA / "c07371e3" / "wynn_wpt.csv", newline="", encoding="utf-8-sig")))
 BELLAGIO = list(csv.DictReader(open(DATA / "c07371e3" / "bellagio.csv", newline="", encoding="utf-8-sig")))
 
+# --- Wynn: the room's own structure PDFs, re-read 2026-11-17 -------------------
+# The c07371e3 capture of Wynn's dailies and WPT rows predates today's read of the
+# venue's published structure sheets, which print the fee split, the stack, the level
+# length, the registration cutoff and the suspension clause verbatim.  The overlay file
+# holds only those printed values, each with the sentence it came from, so a value the
+# PDF does not state stays blank and stays flagged rather than being filled in here.
+_wynn_copies = sorted(DATA.glob("wynn-official-*.json"))
+WYNN_OVERLAY = (json.loads(_wynn_copies[-1].read_text(encoding="utf-8")) if _wynn_copies
+                else load("wynn-official-2026-11-17.json") if (DATA / "wynn-official-2026-11-17.json").exists() else {})
+WYNN_VERIFIED = WYNN_OVERLAY.get("rows") or {}
+WYNN_OVERLAY_DATE = (WYNN_OVERLAY.get("meta") or {}).get("retrieved") or TODAY
+
 
 def add_room_row(venue_id, venue_name, *, when, time, name, buy, gtd, reentry, addon, fee_txt,
-                 srcs, note=None, reg_closes=None, chips=None):
+                 srcs, note=None, reg_closes=None, chips=None, overlay_key=None):
     entry = {
         # stable id: a per-process hash() would move every anchor on every rebuild
         "id": f"{venue_id}-{when}-{(time or '').replace(' ', '').lower()}-{hashlib.sha1(name.encode()).hexdigest()[:5]}",
@@ -491,9 +503,93 @@ def add_room_row(venue_id, venue_name, *, when, time, name, buy, gtd, reentry, a
         "flags": ["schedule not re-published in this snapshot's dated calendar", "single-entry excluded (entry rules allow more)"] if (reentry or addon)
                  else ["single-entry unverified"],
     }
-    if buy and gtd:
-        entry["gtd_ratio"] = round(gtd / buy, 2)
-    checked, changed = last_checked_for(srcs)
+    ver = WYNN_VERIFIED.get(overlay_key or "") or {}
+    if ver:
+        # Only what the room's own sheet prints is applied here, and each value carries the
+        # sentence it came from plus the PDF's capture hash, so a reader can re-open the sheet
+        # at the same line. A field the sheet does not state stays blank and stays flagged.
+        for field in ("guarantee_usd", "starting_chips", "pool_per_entry_usd", "fee_usd",
+                      "staff_charge_usd", "players_per_table"):
+            if ver.get(field) is not None:
+                entry[field] = ver[field]
+        entry["guarantee_printed"] = entry.get("guarantee_usd") is not None
+        if ver.get("level_minutes"):
+            entry["level_duration"] = ver["level_minutes"]
+        if ver.get("registration_end"):
+            entry["registration_closes"] = ver["registration_end"]
+        quotes = ver.get("quotes") or {}
+        vsrc = (ver.get("sources") or [None])[0]
+        vdate = ver.get("retrieved") or WYNN_OVERLAY_DATE
+        if vsrc:
+            entry["sources"] = list(dict.fromkeys([u for u in (entry["sources"] or []) + [vsrc] if u]))
+        sheet_buy = ver.get("buy_in_usd")
+        if sheet_buy and entry.get("buy_in_usd") and int(sheet_buy) != int(entry["buy_in_usd"]):
+            entry["flags"].append(f"buy-in on the room's sheet (${sheet_buy:,}) differs from the "
+                                  f"captured row (${entry['buy_in_usd']:,}); the sheet value is used")
+            entry["buy_in_usd"] = int(sheet_buy)
+        elif sheet_buy and not entry.get("buy_in_usd"):
+            entry["buy_in_usd"] = int(sheet_buy)
+        entry["rules"]["fee"] = {
+            "status": "confirmed" if ver.get("fee_text") else "unverified",
+            "value": ver.get("fee_text"), "excerpt": quotes.get("fee"),
+            "source": vsrc, "retrieved": vdate,
+        }
+        re_txt = ver.get("re_entry")
+        entry["rules"]["re_entry"] = {
+            "status": ("confirmed_limited" if ver.get("entry_limit_printed")
+                       else "confirmed_not_allowed" if re_txt and "not allowed" in re_txt.lower()
+                       else "confirmed_allowed" if re_txt else "unverified"),
+            "value": re_txt, "excerpt": quotes.get("re_entry"),
+            "source": vsrc, "retrieved": vdate,
+        }
+        entry["rules"]["add_on"] = {
+            "status": "confirmed_allowed" if ver.get("add_on") else "not_stated_in_sheet",
+            "value": ver.get("add_on"), "excerpt": quotes.get("add_on") or quotes.get("chips"),
+            "source": vsrc, "retrieved": vdate,
+        }
+        single = ver.get("single_entry_status") or "unverified"
+        entry["rules"]["single_entry"] = {
+            "status": single,
+            "value": (ver.get("entry_limit_printed") or "multiple entries allowed") if single == "no" else None,
+            "excerpt": quotes.get("re_entry"), "source": vsrc, "retrieved": vdate,
+        }
+        entry["spend_advantage"] = single == "no"
+        if single == "no":
+            # the sheet states the entry rule, so "unverified" no longer applies to this row
+            entry["flags"] = [f for f in entry["flags"] if f != "single-entry unverified"]
+        entry["sheet_guarantee_text"] = quotes.get("guarantee") or ver.get("guarantee_printed")
+        entry["guarantee_wording"] = ver.get("guarantee_printed")
+        entry["added_pool_wording"] = ver.get("added_pool_printed")
+        entry["bounty_wording"] = ver.get("bounty_note")
+        entry["entry_limit_wording"] = ver.get("entry_limit_printed")
+        entry["levels_note"] = quotes.get("levels")
+        entry["chips_note"] = quotes.get("chips")
+        entry["suspension_clause"] = quotes.get("suspension")
+        entry["verified_from_sheet"] = vdate
+        entry["sheet_capture"] = {"sha256": (ver.get("captured_at") or "")[:0] or None,
+                                  "captured_at": ver.get("captured_at"), "line": ver.get("sheet_line"),
+                                  "title": ver.get("sheet_title_printed")}
+        if ver.get("dates_printed"):
+            entry["printed_flights"] = ver["dates_printed"]
+        if entry["spend_advantage"] and "single-entry excluded (entry rules allow more)" not in entry["flags"]:
+            entry["flags"].append("single-entry excluded (the sheet allows more than one buy-in)")
+    if entry.get("buy_in_usd") and entry.get("guarantee_usd"):
+        entry["gtd_ratio"] = round(entry["guarantee_usd"] / entry["buy_in_usd"], 2)
+        if entry.get("pool_per_entry_usd"):
+            entry["gtd_over_pool_contribution"] = round(
+                entry["guarantee_usd"] / entry["pool_per_entry_usd"], 2)
+    if ver:
+        # with the fee split and the guarantee both read from the room's own sheet, the row
+        # meets the same ranking rule the Venetian rows are held to
+        entry["rankable"] = bool(entry.get("buy_in_usd") and entry.get("guarantee_usd")
+                                 and entry["rules"]["fee"]["status"] == "confirmed")
+        entry["flags"] = [f for f in entry["flags"] if not f.startswith("schedule not re-published")]
+        entry["flags"].insert(0, f"fee split read from the room's own structure sheet on {WYNN_OVERLAY_DATE}")
+        if not entry.get("guarantee_usd"):
+            entry["flags"].append("no guarantee printed on the sheet — not ranked")
+        if entry.get("suspension_clause"):
+            entry["flags"].append("may be suspended during a tournament series — see the sheet clause")
+    checked, changed = last_checked_for(entry.get("sources") or srcs)
     entry["last_checked"] = checked
     entry["source_changed"] = changed
     events.append(entry)
@@ -506,6 +602,7 @@ for r in ([] if ROOM_FACTS else WYNN_DAILY):
                  reentry=None if r["re_entry"].lower().startswith("not") else r["re_entry"],
                  addon=None if r["rebuy_addon"].lower().startswith("none") else r["rebuy_addon"],
                  fee_txt=r["fees_and_staff"] or None, reg_closes=r.get("registration_end"),
+                 overlay_key=f"{r['schedule']}|{r['time']}",
                  srcs=[r["source"],
                        "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf"],
                  note=r.get("flag") or None)
@@ -515,6 +612,7 @@ for r in ([] if ROOM_FACTS else WYNN_WPT):
                  gtd=int(r["guarantee_usd"]) if r["guarantee_usd"] else None,
                  reentry=None if "NOT CAPTURED" in r["re_entry"].upper() else r["re_entry"],
                  addon=None, fee_txt=None,
+                 overlay_key=f"{r['dates']}|{r['event_name']}",
                  srcs=[r["source"],
                        "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
                        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"],
