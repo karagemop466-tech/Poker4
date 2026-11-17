@@ -1,0 +1,301 @@
+{
+ "meta": {
+  "built": "2026-11-17",
+  "tax": 0.1338,
+  "tax_source": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+  "note": "Rates are kept as a dated log. True cost/night = (rate + resort fee) x (1 + tax)."
+ },
+ "hotels": [
+  {
+   "name": "The Venetian / The Palazzo",
+   "quality": "Luxury (5-star resort)",
+   "address": "3355 Las Vegas Blvd S, Las Vegas, NV 89109",
+   "resort_fee": 55.0,
+   "resort_fee_note": "$55 plus tax per night (official resort-fee page)",
+   "resort_fee_src": "https://www.venetianlasvegas.com/resort/resort-fee.html",
+   "parking": "Hotel guests $20/day self-parking; valet $40/day; Venetian Rewards Sapphire+ free self-parking; NV residents 3 hrs free",
+   "parking_src": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+   "cancellation": "Deposit (suite + fee + tax) billed at booking; prepaid offers non-cancellable/non-refundable; early departure $100 + tax; check-out 11:00 AM",
+   "cancellation_src": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+   "rate_log": [
+    {
+     "label": "Poker suite rate \u2014 starting rate (CONDITIONAL)",
+     "rate": 119.0,
+     "rate_note": "'These rates will start as low as $119 and $209 and can be higher' \u2014 not a date-specific quote; requires 6 hrs live cash play or a $300+ tournament buy-in per night (code EPOKR25), single/double occupancy, subject to availability",
+     "rate_src": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
+     "retrieved": "2026-11-17",
+     "dated_quote": false
+    },
+    {
+     "label": "Poker suite rate \u2014 alternate starting rate (CONDITIONAL)",
+     "rate": 209.0,
+     "rate_note": "Same official page, second starting tier; not a date-specific quote",
+     "rate_src": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
+     "retrieved": "2026-11-17",
+     "dated_quote": false
+    }
+   ],
+   "booking_url": "https://www.venetianlasvegas.com/booking?adults[]=2&arrival_date={in}&children[]=0&departure_date={out}&view=calendar",
+   "booking_note": "Official booking engine accepts arrival/departure dates in the URL; per-date links generated on the Hotels page.",
+   "notes": "Best verified data quality: fee, tax, parking, cancellation and conditional poker rates all on official pages. TRUE cost examples (conditional): ($119+$55)x1.1338 = $197.28/night; ($209+$55)x1.1338 = $299.32/night."
+  },
+  {
+   "name": "Wynn Las Vegas",
+   "quality": "Luxury (5-star resort)",
+   "address": "3131 Las Vegas Blvd S, Las Vegas, NV 89109",
+   "resort_fee": 55.0,
+   "resort_fee_note": "$55 + tax per night for bookings on or after Jan 15, 2025 (official terms page, per prior session's capture 2026-11-16)",
+   "resort_fee_src": "https://www.wynnlasvegas.com/terms-and-conditions/850257",
+   "parking": "",
+   "parking_src": "",
+   "cancellation": "",
+   "cancellation_src": "",
+   "rate_log": [],
+   "booking_url": "https://www.wynnlasvegas.com/book",
+   "booking_note": "No dated quote captured; official booking link only.",
+   "notes": "Wynn daily/WPT tournament terms verified 2026-11-17. Parking/cancellation terms not captured \u2014 flagged."
+  },
+  {
+   "name": "Bellagio",
+   "quality": "Luxury (5-star resort)",
+   "address": "3600 Las Vegas Blvd S, Las Vegas, NV 89109",
+   "resort_fee": null,
+   "resort_fee_note": "Not confirmed on an official page (prior sessions' fetch 404'd) \u2014 UNVERIFIED",
+   "resort_fee_src": "https://bellagio.mgmresorts.com/en/casino/poker.html",
+   "parking": "",
+   "parking_src": "",
+   "cancellation": "",
+   "cancellation_src": "",
+   "rate_log": [],
+   "booking_url": "https://www.bellagio.mgmresorts.com/en/booking.html",
+   "booking_note": "No dated quote captured.",
+   "notes": "Bellagio daily schedule has a $1,000 vs $1,100 buy-in conflict on official sources (flagged)."
+  },
+  {
+   "name": "Caesars Palace",
+   "quality": "Luxury (5-star resort)",
+   "address": "3570 Las Vegas Blvd S, Las Vegas, NV 89109",
+   "resort_fee": null,
+   "resort_fee_note": "Official page is marketing copy with no amount; third-party figures conflict ($49.95 vs $54.95) \u2014 UNVERIFIED",
+   "resort_fee_src": "https://www.caesars.com/caesars-palace",
+   "parking": "",
+   "parking_src": "",
+   "cancellation": "",
+   "cancellation_src": "",
+   "rate_log": [],
+   "booking_url": "https://www.caesars.com/caesars-palace",
+   "booking_note": "No dated quote captured.",
+   "notes": ""
+  },
+  {
+   "name": "Treasure Island",
+   "quality": "Mid-upper (4-star)",
+   "address": "3300 Las Vegas Blvd S, Las Vegas, NV 89109",
+   "resort_fee": 49.95,
+   "resort_fee_note": "$49.95 + tax per night (official page); optional only for listed qualifying bookings",
+   "resort_fee_src": "https://treasureisland.com/hotel/deluxe-rooms",
+   "parking": "",
+   "parking_src": "",
+   "cancellation": "",
+   "cancellation_src": "",
+   "rate_log": [],
+   "booking_url": "https://treasureisland.com/hotel",
+   "booking_note": "No dated quote captured.",
+   "notes": "Official TI offer terms also establish 13.38% Clark County room tax (prior session, 2026-11-16)."
+  },
+  {
+   "name": "Harrah's Las Vegas",
+   "quality": "Mid (3.5-star)",
+   "address": "3475 Las Vegas Blvd S, Las Vegas, NV 89109",
+   "resort_fee": null,
+   "resort_fee_note": "Not confirmed on an official page \u2014 UNVERIFIED",
+   "resort_fee_src": "https://www.caesars.com/harrahs-las-vegas",
+   "parking": "",
+   "parking_src": "",
+   "cancellation": "",
+   "cancellation_src": "",
+   "rate_log": [],
+   "booking_url": "https://www.caesars.com/harrahs-las-vegas",
+   "booking_note": "No dated quote captured.",
+   "notes": ""
+  },
+  {
+   "name": "Horseshoe Las Vegas",
+   "quality": "Mid (3-star)",
+   "address": "3645 Las Vegas Blvd S, Las Vegas, NV 89109",
+   "resort_fee": null,
+   "resort_fee_note": "Not confirmed on an official page \u2014 UNVERIFIED",
+   "resort_fee_src": "https://www.caesars.com/horseshoe-las-vegas",
+   "parking": "",
+   "parking_src": "",
+   "cancellation": "",
+   "cancellation_src": "",
+   "rate_log": [],
+   "booking_url": "https://www.caesars.com/horseshoe-las-vegas",
+   "booking_note": "No dated quote captured.",
+   "notes": ""
+  },
+  {
+   "name": "ARIA",
+   "quality": "Luxury (5-star resort)",
+   "address": "3730 Las Vegas Blvd S, Las Vegas, NV 89109",
+   "resort_fee": null,
+   "resort_fee_note": "Third-party sources conflict ($50 vs $55) \u2014 UNVERIFIED",
+   "resort_fee_src": "https://aria.mgmresorts.com/en.html",
+   "parking": "",
+   "parking_src": "",
+   "cancellation": "",
+   "cancellation_src": "",
+   "rate_log": [],
+   "booking_url": "https://aria.mgmresorts.com/en/booking.html",
+   "booking_note": "No dated quote captured.",
+   "notes": "Walk to Venetian measured 31 min \u2014 over the 30-minute limit."
+  }
+ ],
+ "walks": [
+  {
+   "hotel": "The Venetian / The Palazzo",
+   "venue": "Venetian",
+   "minutes": null,
+   "distance": null,
+   "note": "Poker room is inside the resort (Palazzo Level 2) \u2014 official directions from both resort lobbies.",
+   "url": "https://www.venetianlasvegas.com/resort/casino/poker.html",
+   "verified": true
+  },
+  {
+   "hotel": "Wynn Las Vegas",
+   "venue": "Venetian",
+   "minutes": 13,
+   "distance": "0.6 mi",
+   "note": "Best via Wynn Main Gate Dr (13 min); via Las Vegas Blvd S 14 min; via Sands Ave 16 min.",
+   "url": "https://www.google.com/maps/dir/?api=1&origin=Wynn+Las+Vegas,+3131+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&destination=The+Venetian+Resort,+3355+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&travelmode=walking",
+   "verified": true
+  },
+  {
+   "hotel": "Bellagio",
+   "venue": "Venetian",
+   "minutes": 21,
+   "distance": "0.9 mi",
+   "note": "Best via Las Vegas Blvd S (21 min); via Bellagio Dr 24 min.",
+   "url": "https://www.google.com/maps/dir/?api=1&origin=Bellagio,+3600+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&destination=The+Venetian+Resort,+3355+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&travelmode=walking",
+   "verified": true
+  },
+  {
+   "hotel": "ARIA",
+   "venue": "Venetian",
+   "minutes": 31,
+   "distance": "1.4 mi",
+   "note": "Best via Las Vegas Blvd S (31 min) \u2014 EXCEEDS the 30-minute limit; via Cosmopolitan Service Rd 32 min.",
+   "url": "https://www.google.com/maps/dir/?api=1&origin=Aria+Resort+%26+Casino,+3730+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&destination=The+Venetian+Resort,+3355+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&travelmode=walking",
+   "verified": true
+  },
+  {
+   "hotel": "Caesars Palace",
+   "venue": "Venetian",
+   "minutes": 12,
+   "distance": "0.5 mi",
+   "note": "Best via Las Vegas Blvd S (12 min); alternate 12 min.",
+   "url": "https://www.google.com/maps/dir/?api=1&origin=Caesars+Palace,+3570+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&destination=The+Venetian+Resort,+3355+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&travelmode=walking",
+   "verified": true
+  },
+  {
+   "hotel": "Treasure Island",
+   "venue": "Venetian",
+   "minutes": 6,
+   "distance": "0.2 mi",
+   "note": "Best via Las Vegas Blvd S (6 min); alternate 6 min via N Siegfried And Roy Dr.",
+   "url": "https://www.google.com/maps/dir/?api=1&origin=Treasure+Island+Las+Vegas,+3300+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&destination=The+Venetian+Resort,+3355+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&travelmode=walking",
+   "verified": true
+  },
+  {
+   "hotel": "Harrah's Las Vegas",
+   "venue": "Venetian",
+   "minutes": 6,
+   "distance": "0.3 mi",
+   "note": "Best via Las Vegas Blvd S (6 min).",
+   "url": "https://www.google.com/maps/dir/?api=1&origin=Harrah%27s+Las+Vegas,+3475+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&destination=The+Venetian+Resort,+3355+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&travelmode=walking",
+   "verified": true
+  },
+  {
+   "hotel": "Horseshoe Las Vegas",
+   "venue": "Venetian",
+   "minutes": 16,
+   "distance": "0.7 mi",
+   "note": "Best via Linq Ln (16 min); via Krueger Dr 16 min; via Las Vegas Blvd S 17 min.",
+   "url": "https://www.google.com/maps/dir/?api=1&origin=Horseshoe+Las+Vegas,+3645+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&destination=The+Venetian+Resort,+3355+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&travelmode=walking",
+   "verified": true
+  },
+  {
+   "hotel": "The Venetian / The Palazzo",
+   "venue": "Wynn",
+   "minutes": 13,
+   "distance": "0.6 mi",
+   "note": "Best via Wynn Main Gate Dr (13 min); via Las Vegas Blvd S 14 min.",
+   "url": "https://www.google.com/maps/dir/?api=1&origin=The+Venetian+Resort,+3355+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&destination=Wynn+Las+Vegas,+3131+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&travelmode=walking",
+   "verified": true
+  },
+  {
+   "hotel": "Wynn Las Vegas",
+   "venue": "Wynn",
+   "minutes": null,
+   "distance": null,
+   "note": "Poker room is inside the resort (Encore at Wynn Las Vegas) \u2014 official poker page.",
+   "url": "https://www.wynnlasvegas.com/casino/poker",
+   "verified": true
+  },
+  {
+   "hotel": "Bellagio",
+   "venue": "Wynn",
+   "minutes": null,
+   "distance": null,
+   "note": "Not yet measured \u2014 scheduled.",
+   "url": "https://www.google.com/maps/dir/?api=1&origin=Bellagio,+3600+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&destination=Wynn+Las+Vegas,+3131+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&travelmode=walking",
+   "verified": false
+  },
+  {
+   "hotel": "ARIA",
+   "venue": "Wynn",
+   "minutes": null,
+   "distance": null,
+   "note": "Not yet measured \u2014 scheduled.",
+   "url": "https://www.google.com/maps/dir/?api=1&origin=Aria+Resort+%26+Casino,+3730+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&destination=Wynn+Las+Vegas,+3131+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&travelmode=walking",
+   "verified": false
+  },
+  {
+   "hotel": "Caesars Palace",
+   "venue": "Wynn",
+   "minutes": null,
+   "distance": null,
+   "note": "Not yet measured \u2014 scheduled.",
+   "url": "https://www.google.com/maps/dir/?api=1&origin=Caesars+Palace,+3570+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&destination=Wynn+Las+Vegas,+3131+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&travelmode=walking",
+   "verified": false
+  },
+  {
+   "hotel": "Treasure Island",
+   "venue": "Wynn",
+   "minutes": null,
+   "distance": null,
+   "note": "Not yet measured \u2014 scheduled.",
+   "url": "https://www.google.com/maps/dir/?api=1&origin=Treasure+Island+Las+Vegas,+3300+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&destination=Wynn+Las+Vegas,+3131+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&travelmode=walking",
+   "verified": false
+  },
+  {
+   "hotel": "Harrah's Las Vegas",
+   "venue": "Wynn",
+   "minutes": null,
+   "distance": null,
+   "note": "Not yet measured \u2014 scheduled.",
+   "url": "https://www.google.com/maps/dir/?api=1&origin=Harrah%27s+Las+Vegas,+3475+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&destination=Wynn+Las+Vegas,+3131+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&travelmode=walking",
+   "verified": false
+  },
+  {
+   "hotel": "Horseshoe Las Vegas",
+   "venue": "Wynn",
+   "minutes": null,
+   "distance": null,
+   "note": "Not yet measured \u2014 scheduled.",
+   "url": "https://www.google.com/maps/dir/?api=1&origin=Horseshoe+Las+Vegas,+3645+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&destination=Wynn+Las+Vegas,+3131+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&travelmode=walking",
+   "verified": false
+  }
+ ]
+}
