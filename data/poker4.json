@@ -1042,50 +1042,125 @@
   },
   {
    "id": "F15",
+   "severity": "blocking-for-single-entry-claim",
+   "item": "13 multi-flight structure sheets state that a player who bags for Day 2 'may not play a subsequent flight' — the sheet contemplates play in more than one starting flight",
+   "detail": "Read line by line on 2026-11-17 (session 75757cc1). Sheets #2, #3, #4, #9, #10, #12, #13, #14, #20, #21, #35, #36, #37 (Events 1, 7, 19, 26, 47, 49, 56, 59) contain the sentence 'Any player who bags chips for Day 2 may not play a subsequent flight.' The rule restricts only players who bagged; it does not state an entry count. It therefore neither confirms single entry nor confirms re-entry, and these rows stay 'single-entry unverified'. Full verbatim log: data/75757cc1/structure_reads.tsv.",
+   "sources": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf"
+   ]
+  },
+  {
+   "id": "F16",
+   "severity": "data-quality-corrected",
+   "item": "Schedule feed had 6 defects against the official calendar; corrected 2026-11-17 and proven by a checker",
+   "detail": "data/schedule-snapshot.json (the feed that builds the root tournaments table) (a) printed the Event 39 Day 2 restart on 11 Dec at 7:00 PM, the official time is 10:00 AM; (b) omitted the Event 47 Day 2 restart at 1:00 PM on 13 Dec; (c) left the $500,000 guarantee blank for Event 56 at 10:10 AM and 6:10 PM on 17 Dec; (d) left the $150,000 guarantee blank for Event 59 at 11:10 AM on 20 Dec; (e) recorded level duration 11 min for Event 56 (6:10 PM, sheet #36 says 30) and 5 min for Event 59 (11:10 AM, sheet #4 says 40). Now 94/94 rows match the official page (data/75757cc1/check_calendar.py, exit 0). Corrections are traceable in parse_notes.",
+   "sources": [
+    "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_36.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf"
+   ]
+  },
+  {
+   "id": "F17",
+   "severity": "process",
+   "item": "Daily maintenance job overwrote the root pages with a stale build (fixed in session c2242cb1)",
+   "detail": "maintenance.yml ran build/build_pages.py every morning and committed *.html to main, reverting pages that scripts/integrate_data.py had generated (for example schedule.html went back to a 75 KB page instead of the redirect stub). Commit 6c94023 (16:57 UTC, 2026-11-17) is the visible instance. The job now runs only scripts/integrate_data.py and the current verifiers. Legacy build/ scripts still exist in the repo and should be retired by an owner.",
+   "sources": [
+    "https://github.com/karagemop466-tech/Poker4/blob/main/.github/workflows/maintenance.yml"
+   ]
+  },
+  {
+   "id": "F18",
+   "severity": "unverified-previously-published",
+   "item": "Walking minutes that were published as 'verified' have no official source",
+   "detail": "The earlier landing page listed TI 6 min, Harrah's 6, Caesars 12, Wynn 13, Horseshoe 16, Bellagio 21, ARIA 31 as verified. No official page publishes walking minutes, and data/walks.json records every minute value as null. The regenerated landing page no longer shows them. Map-based timings still need an owner (Google or Apple Maps, stored with a timestamp).",
+   "sources": [
+    "https://github.com/karagemop466-tech/Poker4/blob/main/data/walks.json"
+   ]
+  },
+  {
+   "id": "F19",
+   "severity": "caveat",
+   "item": "Wynn $55 resort fee is quoted only in an expired promotional package's terms",
+   "detail": "The Wynn terms page states a daily resort fee of $55 plus tax, but the page covers the Concours Sip and Savor package (travel Oct 27 – Nov 1, 2026), which has expired. No current general Wynn resort-fee page was read. Re-confirm before booking.",
+   "sources": [
+    "https://www.wynnlasvegas.com/terms-and-conditions/850257"
+   ]
+  },
+  {
+   "id": "F20",
+   "severity": "data-label",
+   "item": "'42 structure sheets audited' overstates the Venetian audit",
+   "detail": "data/structure-audit.json holds 42 records, but they mix Venetian DSE IV sheets with Wynn, Bellagio and other documents. tools/verify_poker4.py reports 12 tracked sheets with no record yet. The landing-page label should count Venetian sheets separately and state the gap. Not changed in this session.",
+   "sources": [
+    "https://github.com/karagemop466-tech/Poker4/blob/main/data/structure-audit.json",
+    "https://github.com/karagemop466-tech/Poker4/blob/main/tools/verify_poker4.py"
+   ]
+  },
+  {
+   "id": "F21",
+   "severity": "monitoring",
+   "item": "Scheduled monitors: some runs failing; eight jobs commit to main",
+   "detail": "monitor.yml ('Monitor official sources') and recheck.yml ('daily-recheck') failed on their latest scheduled runs; logs were not retrievable from the session sandbox, so the cause is not confirmed. recheck.yml now runs the current root verifier (tools/verify_root_site.py is stale and reports 19 errors). Several overlapping scheduled jobs commit to main, which is a race risk. Consolidating them is a suggestion for review.",
+   "sources": [
+    "https://github.com/karagemop466-tech/Poker4/blob/main/.github/workflows/monitor.yml",
+    "https://github.com/karagemop466-tech/Poker4/blob/main/.github/workflows/recheck.yml",
+    "https://github.com/karagemop466-tech/Poker4/blob/main/tools/verify_root_site.py"
+   ]
+  },
+  {
+   "id": "F22",
    "severity": "official-source-arithmetic",
    "item": "Wynn's $1,100 PLO structure sheet prints a fee split that does not add up ($975 + $85 + $45 = $1,105 against a $1,100 buy-in)",
    "detail": "Structure booklet, WPT World Championship, Tuesday December 1, 2026, 1 p.m., $1,100 PLO. The row keeps the sheet's own wording and the three components verbatim; nothing is adjusted. It is excluded from the ranked list until the venue confirms whether the fee is $80 or the pool slice is $970.",
    "sources": [
     "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
-   ]
+   ],
+   "note": "renumbered from F15 on merge with main, where that id was already used by another session"
   },
   {
-   "id": "F16",
+   "id": "F23",
    "severity": "stale-official-document",
    "item": "Bellagio's Saturday NLH sheet contradicts itself on price and prints a Day-2 date (9/13/26) that is already in the past",
    "detail": "The PDF's title block says 'NLH $1100 BUY-IN', the Bellagio poker page lists 'SATURDAYS | $1,000 NLH', and rule 07 on the same sheet says 'Of the $600 Buy-in'. Its rule 04 also schedules the 'Combined Final Day 2 (9/13/26)'. The buy-in is therefore left blank, the row is not scheduled, and it needs a fresh sheet from the room before any money is committed.",
    "sources": [
     "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt6d47974bf5a7d9b6/6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf",
     "https://bellagio.mgmresorts.com/en/casino/poker.html"
-   ]
+   ],
+   "note": "renumbered from F16 on merge with main, where that id was already used by another session"
   },
   {
-   "id": "F17",
+   "id": "F24",
    "severity": "schedule-availability",
    "item": "Wynn's daily slate is printed as a standing offer with no calendar dates, and the sheet itself says it may be suspended during other series",
    "detail": "'The Tournament will be offered Monday-Thursday and may be suspended during Seniors Events, Classic Events, or other Tournament Series.' Wynn runs its own WPT series from 2026-11-27 to 2026-12-21, so whether the $200/$240/$160 dailies run on any given trip date is not established by either document. Those rows carry no date and are never placed in the day plan.",
    "sources": [
     "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
     "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
-   ]
+   ],
+   "note": "renumbered from F17 on merge with main, where that id was already used by another session"
   },
   {
-   "id": "F18",
+   "id": "F25",
    "severity": "unverified-pricing",
    "item": "Caesars Palace's daily $100 slate is printed only in a marketing article: no house-fee split, no entry rule, no structure sheet",
    "detail": "The Caesars page states four daily $100 NLH tournaments (10 a.m., 2 p.m., 6 p.m., 9 p.m.), 20,000 starting chips, a $1,000 guarantee, 20-minute levels and a $50 add-on for 15,000 chips. It prints no house-fee split and no re-entry rule, and the older Caesars/Horseshoe flyer that used to be linked now returns HTTP 404. The four rows are published with the printed prices, marked unverified for fee and entry rule, and excluded from ranking.",
    "sources": [
     "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
-   ]
+   ],
+   "note": "renumbered from F18 on merge with main, where that id was already used by another session"
   },
   {
-   "id": "F19",
+   "id": "F26",
    "severity": "planning-input-missing",
    "item": "Wynn prints its late-registration deadlines as blind levels, not clock times, so a clock-based fallback cannot be computed for those rows",
    "detail": "Most WPT sheets read 'available until the start of level 9' and only some add '(approximately 4:30 p.m.)'. The clock figure is missing on the majority of the 69 sheets. Consequence: the day plan can only offer a fallback where the printed deadline is a time, which is why 13 of the 38 planned days carry no defensible second entry.",
    "sources": [
     "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
-   ]
+   ],
+   "note": "renumbered from F19 on merge with main, where that id was already used by another session"
   }
  ],
  "trip_example": {

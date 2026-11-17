@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generated_at": "2026-11-17T21:56:37Z",
+  "generated_at": "2026-11-17T22:11:24Z",
   "basis": "start time + printed registration-closes deadline + Day-2 restart rows on the official calendar",
   "days": 38
  },
@@ -835,7 +835,7 @@
    "earliest_printed_start": "10:00 AM",
    "duration_note": "no official source prints a finish time or a round count for this day, so the plan gives a start and a late-registration deadline rather than a predicted end",
    "restarts": [
-    "$800 No Limit Hold'Em Lips Day 2 Restart Play Down To Final 7 - Streamed Final Table (Pokergo) At",
+    "$800 No Limit Hold'Em Lips Day 2 Restart Play Down To Final 7 - Streamed Final Table (Pokergo) At 7:00 Pm",
     "$800 No Limit Hold'Em Lips Final Table Streamed Final Table (Pokergo)"
    ],
    "overlap_notes": [],
@@ -909,7 +909,9 @@
    "fallback_unavailable": "",
    "earliest_printed_start": "10:10 AM",
    "duration_note": "no official source prints a finish time or a round count for this day, so the plan gives a start and a late-registration deadline rather than a predicted end",
-   "restarts": [],
+   "restarts": [
+    "$2,200 No Limit Hold\u2019Em Day 2 Restart Pokeratlas Championship Title Event Play Down To Final 7 - Streamed Final Table (Pokergo)"
+   ],
    "overlap_notes": [
     "2 ranked entries share this day (starts 10:10 AM, 5:10 PM); entering one rules out the others, and no sheet prints a finish time to settle it"
    ],
@@ -1058,37 +1060,29 @@
   {
    "date": "2026-12-17",
    "weekday": "Thursday",
-   "fallback_unavailable": "",
+   "fallback_unavailable": "the leading event prints no late-registration deadline, so no second entry can be shown to be reachable",
    "earliest_printed_start": "10:10 AM",
    "duration_note": "no official source prints a finish time or a round count for this day, so the plan gives a start and a late-registration deadline rather than a predicted end",
    "restarts": [],
-   "overlap_notes": [],
-   "distinct_ranked_events": 1,
-   "entries_usd": 600,
-   "primary_id": "V57-2026-12-17-12:10pm",
+   "overlap_notes": [
+    "3 ranked entries share this day (starts 10:10 AM, 12:10 PM, 6:10 PM); entering one rules out the others, and no sheet prints a finish time to settle it"
+   ],
+   "distinct_ranked_events": 2,
+   "entries_usd": 1700,
+   "primary_id": "V56-2026-12-17-10:10am",
    "primary": {
-    "id": "V57-2026-12-17-12:10pm",
-    "name": "$600 Pot Limit Omaha Double Board Bomb Pot (1Day)",
+    "id": "V56-2026-12-17-10:10am",
+    "name": "$1,100 No Limit Hold'Em 1A $500K Gtd",
     "date": "2026-12-17",
-    "time": "12:10 PM",
-    "registration_closes": "4:40 PM",
-    "buy_in_usd": 600,
-    "guarantee_usd": 25000,
-    "venue": "venetian",
-    "weekday": "Thursday"
-   },
-   "fallback": {
-    "id": "V56-2026-12-17-6:10pm",
-    "name": "$1,100 No Limit Hold'Em 1B $40 Rake Discount For Entries Before",
-    "date": "2026-12-17",
-    "time": "6:10 PM",
+    "time": "10:10 AM",
     "registration_closes": null,
     "buy_in_usd": 1100,
-    "guarantee_usd": null,
+    "guarantee_usd": 500000,
     "venue": "venetian",
     "weekday": "Thursday"
    },
-   "fallback_id": "V56-2026-12-17-6:10pm"
+   "fallback": null,
+   "fallback_id": null
   },
   {
    "date": "2026-12-18",
@@ -1167,24 +1161,26 @@
   {
    "date": "2026-12-20",
    "weekday": "Sunday",
-   "fallback_unavailable": "no other event starts at or after the leading event's printed registration deadline",
+   "fallback_unavailable": "the leading event prints no late-registration deadline, so no second entry can be shown to be reachable",
    "earliest_printed_start": "11:00 AM",
    "duration_note": "no official source prints a finish time or a round count for this day, so the plan gives a start and a late-registration deadline rather than a predicted end",
    "restarts": [
     "$1,100 No Limit Hold'Em Day 2 Restart"
    ],
-   "overlap_notes": [],
-   "distinct_ranked_events": 1,
-   "entries_usd": 200,
-   "primary_id": "V60-2026-12-20-5:10pm",
+   "overlap_notes": [
+    "2 ranked entries share this day (starts 11:10 AM, 5:10 PM); entering one rules out the others, and no sheet prints a finish time to settle it"
+   ],
+   "distinct_ranked_events": 2,
+   "entries_usd": 800,
+   "primary_id": "V59-2026-12-20-11:10am",
    "primary": {
-    "id": "V60-2026-12-20-5:10pm",
-    "name": "$200 No Limit Hold'Em Bounty (1Day)",
+    "id": "V59-2026-12-20-11:10am",
+    "name": "$600 No Limit Hold'Em 1A $20 Rake Discount For Entries Before",
     "date": "2026-12-20",
-    "time": "5:10 PM",
-    "registration_closes": "9:40 PM",
-    "buy_in_usd": 200,
-    "guarantee_usd": 8000,
+    "time": "11:10 AM",
+    "registration_closes": null,
+    "buy_in_usd": 600,
+    "guarantee_usd": 150000,
     "venue": "venetian",
     "weekday": "Sunday"
    },

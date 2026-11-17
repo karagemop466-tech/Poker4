@@ -1,9 +1,9 @@
 {
  "meta": {
-  "generated_at": "2026-11-17T21:56:37Z",
-  "rows": 252,
+  "generated_at": "2026-11-17T22:11:24Z",
+  "rows": 253,
   "verified_single_entry": 0,
-  "rankable": 69,
+  "rankable": 72,
   "spend_advantage": 160
  },
  "events": [
@@ -80,7 +80,7 @@
    "gtd_ratio": 250.0,
    "gtd_over_pool_contribution": 312.5,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -158,7 +158,7 @@
    "gtd_ratio": 250.0,
    "gtd_over_pool_contribution": 312.5,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -236,7 +236,7 @@
    "gtd_ratio": 250.0,
    "gtd_over_pool_contribution": 312.5,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -314,7 +314,7 @@
    "gtd_ratio": 250.0,
    "gtd_over_pool_contribution": 312.5,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -392,7 +392,7 @@
    "gtd_ratio": 33.33,
    "gtd_over_pool_contribution": 41.32,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -424,55 +424,54 @@
      "status": "unverified",
      "value": null,
      "excerpt": null,
-     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_9.pdf",
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf",
      "retrieved": "2026-11-17"
     },
     "re_entry": {
      "status": "not_stated_in_sheet",
      "value": null,
      "excerpt": null,
-     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_9.pdf",
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf",
      "retrieved": "2026-11-17"
     },
     "add_on": {
      "status": "not_stated_in_sheet",
      "value": null,
      "excerpt": null,
-     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_9.pdf",
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf",
      "retrieved": "2026-11-17"
     },
     "fee": {
      "status": "confirmed",
      "value": "$60 of $300 withheld; $240 per entry to the prize pool",
      "excerpt": "$ 60 of the $ 300 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $ 240 of every $ 300 Buy In.",
-     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_9.pdf",
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf",
      "retrieved": "2026-11-17"
     }
    },
    "sources": [
     "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_9.pdf"
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf"
    ],
-   "sheet_key": "V_S9",
-   "sheet_note": "several sheets print this event number (different starting flights) \u2014 the row lists both",
+   "sheet_key": "V_S10",
+   "sheet_note": null,
    "house_fee_usd": 60,
    "pool_per_entry_usd": 240,
-   "sheet_start_time": "5:10 PM",
-   "sheet_late_registration": "6 levels + Break (~ 8:40 PM)",
+   "sheet_start_time": "11:10 AM",
+   "sheet_late_registration": "6 levels + Break (~ 3:40 PM)",
    "sheet_guarantee_text": "$75,000",
    "sheet_title": "$300 No Limit Hold\u2019em",
    "payout_pct_of_field": null,
    "levels_total": null,
-   "breaks_listed": 7,
+   "breaks_listed": 9,
    "spend_advantage_evidence": [],
    "guarantee_from_sheet_text": "$75,000",
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
-    "single-entry unverified",
-    "structure sheet ambiguous"
+    "single-entry unverified"
    ]
   },
   {
@@ -546,7 +545,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified",
     "not ranked \u2014 entry fee or guarantee unconfirmed"
@@ -623,7 +622,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified",
     "not ranked \u2014 entry fee or guarantee unconfirmed"
@@ -700,7 +699,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified",
     "not ranked \u2014 entry fee or guarantee unconfirmed"
@@ -777,7 +776,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified",
     "not ranked \u2014 entry fee or guarantee unconfirmed"
@@ -856,7 +855,7 @@
    "gtd_ratio": 187.5,
    "gtd_over_pool_contribution": 227.27,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -934,7 +933,7 @@
    "gtd_ratio": 40.0,
    "gtd_over_pool_contribution": 50.0,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -1012,7 +1011,7 @@
    "gtd_ratio": 187.5,
    "gtd_over_pool_contribution": 227.27,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -1090,7 +1089,7 @@
    "gtd_ratio": 40.0,
    "gtd_over_pool_contribution": 50.0,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -1167,7 +1166,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -1245,7 +1244,7 @@
    "gtd_ratio": 37.5,
    "gtd_over_pool_contribution": 44.78,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -1323,7 +1322,7 @@
    "gtd_ratio": 40.0,
    "gtd_over_pool_contribution": 50.0,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -1401,7 +1400,7 @@
    "gtd_ratio": 33.33,
    "gtd_over_pool_contribution": 41.32,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -1479,7 +1478,7 @@
    "gtd_ratio": 40.0,
    "gtd_over_pool_contribution": 50.0,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -1630,7 +1629,7 @@
    "gtd_ratio": 50.0,
    "gtd_over_pool_contribution": 58.82,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -1923,7 +1922,7 @@
    "gtd_ratio": 40.0,
    "gtd_over_pool_contribution": 50.0,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -2074,7 +2073,7 @@
    "gtd_ratio": 50.0,
    "gtd_over_pool_contribution": 58.82,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -2224,7 +2223,7 @@
    "gtd_ratio": 37.5,
    "gtd_over_pool_contribution": 44.12,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -2378,7 +2377,7 @@
    "gtd_ratio": 100.0,
    "gtd_over_pool_contribution": 125.0,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "spend-advantage format \u2014 excluded from the single-entry list"
    ]
@@ -2529,7 +2528,7 @@
    "gtd_ratio": 187.5,
    "gtd_over_pool_contribution": 227.27,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -2607,7 +2606,7 @@
    "gtd_ratio": 33.33,
    "gtd_over_pool_contribution": 41.32,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -2685,7 +2684,7 @@
    "gtd_ratio": 40.0,
    "gtd_over_pool_contribution": 50.0,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -2909,7 +2908,7 @@
    "gtd_ratio": 187.5,
    "gtd_over_pool_contribution": 227.27,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -3204,7 +3203,7 @@
    "gtd_ratio": 40.0,
    "gtd_over_pool_contribution": 50.0,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -3355,7 +3354,7 @@
    "gtd_ratio": 187.5,
    "gtd_over_pool_contribution": 227.27,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -3649,7 +3648,7 @@
    "gtd_ratio": 40.0,
    "gtd_over_pool_contribution": 50.0,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -3727,7 +3726,7 @@
    "gtd_ratio": 66.67,
    "gtd_over_pool_contribution": 78.43,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -3804,7 +3803,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -3955,7 +3954,7 @@
    "gtd_ratio": 40.0,
    "gtd_over_pool_contribution": 50.0,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -4179,7 +4178,7 @@
    "gtd_ratio": 625.0,
    "gtd_over_pool_contribution": 724.64,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -4257,7 +4256,7 @@
    "gtd_ratio": 41.67,
    "gtd_over_pool_contribution": 49.02,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -4408,7 +4407,7 @@
    "gtd_ratio": 625.0,
    "gtd_over_pool_contribution": 724.64,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -4630,7 +4629,7 @@
    "gtd_ratio": 625.0,
    "gtd_over_pool_contribution": 724.64,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -4852,7 +4851,7 @@
    "gtd_ratio": 625.0,
    "gtd_over_pool_contribution": 724.64,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -5147,7 +5146,7 @@
    "gtd_ratio": 625.0,
    "gtd_over_pool_contribution": 724.64,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -5179,53 +5178,53 @@
      "status": "unverified",
      "value": null,
      "excerpt": null,
-     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_13.pdf",
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_14.pdf",
      "retrieved": "2026-11-17"
     },
     "re_entry": {
      "status": "not_stated_in_sheet",
      "value": null,
      "excerpt": null,
-     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_13.pdf",
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_14.pdf",
      "retrieved": "2026-11-17"
     },
     "add_on": {
      "status": "not_stated_in_sheet",
      "value": null,
      "excerpt": null,
-     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_13.pdf",
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_14.pdf",
      "retrieved": "2026-11-17"
     },
     "fee": {
      "status": "confirmed",
      "value": "$110 of $800 withheld; $690 per entry to the prize pool",
      "excerpt": "$ 110 of the $ 800 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $ 690 of every $ 800 Buy In.",
-     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_13.pdf",
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_14.pdf",
      "retrieved": "2026-11-17"
     }
    },
    "sources": [
     "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_13.pdf"
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_14.pdf"
    ],
-   "sheet_key": "V_S13",
+   "sheet_key": "V_S14",
    "sheet_note": null,
    "house_fee_usd": 110,
    "pool_per_entry_usd": 690,
-   "sheet_start_time": "5:10 PM",
-   "sheet_late_registration": "6 levels + Break (~ 8:40 PM)",
+   "sheet_start_time": null,
+   "sheet_late_registration": "6 levels + Break (~ 7:25 PM)",
    "sheet_guarantee_text": "$500,000",
    "sheet_title": "$800 No Limit Hold\u2019em",
    "payout_pct_of_field": null,
    "levels_total": null,
-   "breaks_listed": 7,
+   "breaks_listed": 5,
    "spend_advantage_evidence": [],
    "single_entry_confirmed": false,
    "rankable": true,
    "gtd_ratio": 625.0,
    "gtd_over_pool_contribution": 724.64,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -5522,7 +5521,7 @@
    "gtd_ratio": 66.67,
    "gtd_over_pool_contribution": 78.43,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -5584,7 +5583,7 @@
     "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf"
    ],
    "sheet_key": "V_S12",
-   "sheet_note": "several sheets print this event number (different starting flights) \u2014 the row lists both",
+   "sheet_note": null,
    "house_fee_usd": 110,
    "pool_per_entry_usd": 690,
    "sheet_start_time": "11:10 AM",
@@ -5599,10 +5598,9 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
-    "single-entry unverified",
-    "structure sheet ambiguous"
+    "single-entry unverified"
    ]
   },
   {
@@ -5749,7 +5747,7 @@
    "gtd_ratio": 50.0,
    "gtd_over_pool_contribution": 60.0,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -6188,7 +6186,7 @@
    "gtd_ratio": 66.67,
    "gtd_over_pool_contribution": 78.43,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -6412,7 +6410,7 @@
    "gtd_ratio": 50.0,
    "gtd_over_pool_contribution": 60.0,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -6634,7 +6632,7 @@
    "gtd_ratio": 66.67,
    "gtd_over_pool_contribution": 78.43,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -6856,7 +6854,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified",
     "not ranked \u2014 entry fee or guarantee unconfirmed"
@@ -6935,7 +6933,7 @@
    "gtd_ratio": 50.0,
    "gtd_over_pool_contribution": 60.0,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -7157,7 +7155,7 @@
    "gtd_ratio": 16.67,
    "gtd_over_pool_contribution": 19.61,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -7308,7 +7306,7 @@
    "gtd_ratio": 93.75,
    "gtd_over_pool_contribution": 107.14,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -7674,7 +7672,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified",
     "not ranked \u2014 entry fee or guarantee unconfirmed"
@@ -7753,7 +7751,7 @@
    "gtd_ratio": 50.0,
    "gtd_over_pool_contribution": 60.0,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -8048,7 +8046,7 @@
    "gtd_ratio": 50.0,
    "gtd_over_pool_contribution": 57.97,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -8273,7 +8271,7 @@
    "gtd_ratio": 41.67,
    "gtd_over_pool_contribution": 49.02,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -8350,7 +8348,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified",
     "not ranked \u2014 entry fee or guarantee unconfirmed"
@@ -8429,7 +8427,7 @@
    "gtd_ratio": 50.0,
    "gtd_over_pool_contribution": 60.0,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -8506,6 +8504,83 @@
    "last_checked": "2026-11-17",
    "source_changed": false,
    "rankable": false
+  },
+  {
+   "id": "V39-2026-12-11-10:00am",
+   "venue": "venetian",
+   "venue_name": "The Venetian Poker Room",
+   "event_no": 39,
+   "name": "$800 No Limit Hold'Em Lips Day 2 Restart Play Down To Final 7 - Streamed Final Table (Pokergo) At 7:00 Pm",
+   "name_printed": "NO LIMIT HOLD'EM LIPS DAY 2 RESTART PLAY DOWN TO FINAL 7 - STREAMED FINAL TABLE (POKERGO) AT 7:00 PM",
+   "date": "2026-12-11",
+   "weekday": "Friday",
+   "time": "10:00 AM",
+   "registration_closes": null,
+   "buy_in_usd": 800,
+   "guarantee_usd": null,
+   "guarantee_printed": false,
+   "starting_chips": null,
+   "level_duration": null,
+   "kind": "Continuation (not an entry)",
+   "tags": [
+    "Continuation (not an entry)"
+   ],
+   "is_flight": false,
+   "is_continuation": true,
+   "rules": {
+    "single_entry": {
+     "status": "unverified",
+     "value": null,
+     "excerpt": null,
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_32.pdf",
+     "retrieved": "2026-11-17"
+    },
+    "re_entry": {
+     "status": "not_stated_in_sheet",
+     "value": null,
+     "excerpt": null,
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_32.pdf",
+     "retrieved": "2026-11-17"
+    },
+    "add_on": {
+     "status": "not_stated_in_sheet",
+     "value": null,
+     "excerpt": null,
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_32.pdf",
+     "retrieved": "2026-11-17"
+    },
+    "fee": {
+     "status": "confirmed",
+     "value": "$90 of $800 withheld; $690 per entry to the prize pool",
+     "excerpt": "$ 90 of the $ 800 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $ 690 of every $ 800 Buy In.",
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_32.pdf",
+     "retrieved": "2026-11-17"
+    }
+   },
+   "sources": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_32.pdf"
+   ],
+   "sheet_key": "V_S32",
+   "sheet_note": null,
+   "house_fee_usd": 90,
+   "pool_per_entry_usd": 690,
+   "sheet_start_time": null,
+   "sheet_late_registration": "9 levels + Break (~ 4:55 PM)",
+   "sheet_guarantee_text": "$40,000",
+   "sheet_title": "$800 NLH LIPS Ladies (2Day)",
+   "payout_pct_of_field": null,
+   "levels_total": null,
+   "breaks_listed": 9,
+   "spend_advantage_evidence": [],
+   "guarantee_from_sheet_text": "$40,000",
+   "single_entry_confirmed": false,
+   "rankable": false,
+   "last_checked": "2026-11-17",
+   "source_changed": true,
+   "flags": [
+    "single-entry unverified"
+   ]
   },
   {
    "id": "WPT-19-2026-12-11-1000AM-Day1C",
@@ -8653,7 +8728,7 @@
    "gtd_ratio": 50.0,
    "gtd_over_pool_contribution": 58.82,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -8803,7 +8878,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified",
     "not ranked \u2014 entry fee or guarantee unconfirmed"
@@ -8887,83 +8962,6 @@
    "venue": "venetian",
    "venue_name": "The Venetian Poker Room",
    "event_no": 39,
-   "name": "$800 No Limit Hold'Em Lips Day 2 Restart Play Down To Final 7 - Streamed Final Table (Pokergo) At",
-   "name_printed": "NO LIMIT HOLD'EM LIPS DAY 2 RESTART PLAY DOWN TO FINAL 7 - STREAMED FINAL TABLE (POKERGO) AT",
-   "date": "2026-12-11",
-   "weekday": "Friday",
-   "time": "7:00 PM",
-   "registration_closes": null,
-   "buy_in_usd": 800,
-   "guarantee_usd": null,
-   "guarantee_printed": false,
-   "starting_chips": null,
-   "level_duration": null,
-   "kind": "Continuation (not an entry)",
-   "tags": [
-    "Continuation (not an entry)"
-   ],
-   "is_flight": false,
-   "is_continuation": true,
-   "rules": {
-    "single_entry": {
-     "status": "unverified",
-     "value": null,
-     "excerpt": null,
-     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_32.pdf",
-     "retrieved": "2026-11-17"
-    },
-    "re_entry": {
-     "status": "not_stated_in_sheet",
-     "value": null,
-     "excerpt": null,
-     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_32.pdf",
-     "retrieved": "2026-11-17"
-    },
-    "add_on": {
-     "status": "not_stated_in_sheet",
-     "value": null,
-     "excerpt": null,
-     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_32.pdf",
-     "retrieved": "2026-11-17"
-    },
-    "fee": {
-     "status": "confirmed",
-     "value": "$90 of $800 withheld; $690 per entry to the prize pool",
-     "excerpt": "$ 90 of the $ 800 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $ 690 of every $ 800 Buy In.",
-     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_32.pdf",
-     "retrieved": "2026-11-17"
-    }
-   },
-   "sources": [
-    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_32.pdf"
-   ],
-   "sheet_key": "V_S32",
-   "sheet_note": null,
-   "house_fee_usd": 90,
-   "pool_per_entry_usd": 690,
-   "sheet_start_time": null,
-   "sheet_late_registration": "9 levels + Break (~ 4:55 PM)",
-   "sheet_guarantee_text": "$40,000",
-   "sheet_title": "$800 NLH LIPS Ladies (2Day)",
-   "payout_pct_of_field": null,
-   "levels_total": null,
-   "breaks_listed": 9,
-   "spend_advantage_evidence": [],
-   "guarantee_from_sheet_text": "$40,000",
-   "single_entry_confirmed": false,
-   "rankable": false,
-   "last_checked": "2026-11-17",
-   "source_changed": false,
-   "flags": [
-    "single-entry unverified"
-   ]
-  },
-  {
-   "id": "V39-2026-12-11-7:00pm--2",
-   "venue": "venetian",
-   "venue_name": "The Venetian Poker Room",
-   "event_no": 39,
    "name": "$800 No Limit Hold'Em Lips Final Table Streamed Final Table (Pokergo)",
    "name_printed": "NO LIMIT HOLD'EM LIPS FINAL TABLE STREAMED FINAL TABLE (POKERGO)",
    "date": "2026-12-11",
@@ -9031,11 +9029,10 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
-   ],
-   "duplicate_printed_row": true
+   ]
   },
   {
    "id": "V45-2026-12-11-8:10pm",
@@ -9109,7 +9106,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified",
     "not ranked \u2014 entry fee or guarantee unconfirmed"
@@ -9245,7 +9242,7 @@
     "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf"
    ],
    "sheet_key": "V_S21",
-   "sheet_note": "several sheets print this event number (different starting flights) \u2014 the row lists both",
+   "sheet_note": null,
    "house_fee_usd": 225,
    "pool_per_entry_usd": 1975,
    "sheet_start_time": null,
@@ -9261,10 +9258,9 @@
    "gtd_ratio": 454.55,
    "gtd_over_pool_contribution": 506.33,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
-    "single-entry unverified",
-    "structure sheet ambiguous"
+    "single-entry unverified"
    ]
   },
   {
@@ -9339,7 +9335,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified",
     "not ranked \u2014 entry fee or guarantee unconfirmed"
@@ -9733,56 +9729,55 @@
      "status": "unverified",
      "value": null,
      "excerpt": null,
-     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf",
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_37.pdf",
      "retrieved": "2026-11-17"
     },
     "re_entry": {
      "status": "not_stated_in_sheet",
      "value": null,
      "excerpt": null,
-     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf",
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_37.pdf",
      "retrieved": "2026-11-17"
     },
     "add_on": {
      "status": "not_stated_in_sheet",
      "value": null,
      "excerpt": null,
-     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf",
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_37.pdf",
      "retrieved": "2026-11-17"
     },
     "fee": {
      "status": "confirmed",
      "value": "$225 of $2200 withheld; $1975 per entry to the prize pool",
      "excerpt": "$ 225 of the $ 2200 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $ 1975 of every $ 2200 Buy In.",
-     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf",
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_37.pdf",
      "retrieved": "2026-11-17"
     }
    },
    "sources": [
     "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf"
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_37.pdf"
    ],
-   "sheet_key": "V_S21",
-   "sheet_note": "several sheets print this event number (different starting flights) \u2014 the row lists both",
+   "sheet_key": "V_S37",
+   "sheet_note": null,
    "house_fee_usd": 225,
    "pool_per_entry_usd": 1975,
    "sheet_start_time": null,
-   "sheet_late_registration": "9 levels + Break (~ 4:55 PM)",
+   "sheet_late_registration": "9 levels + Break (~ 11:10 PM)",
    "sheet_guarantee_text": "$1,000,000",
    "sheet_title": "$2,200 No Limit Hold\u2019em",
    "payout_pct_of_field": null,
    "levels_total": null,
-   "breaks_listed": 9,
+   "breaks_listed": 6,
    "spend_advantage_evidence": [],
    "single_entry_confirmed": false,
    "rankable": true,
    "gtd_ratio": 454.55,
    "gtd_over_pool_contribution": 506.33,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
-    "single-entry unverified",
-    "structure sheet ambiguous"
+    "single-entry unverified"
    ]
   },
   {
@@ -10001,7 +9996,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified",
     "not ranked \u2014 entry fee or guarantee unconfirmed"
@@ -10081,7 +10076,7 @@
    "gtd_ratio": 272.73,
    "gtd_over_pool_contribution": 312.5,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -10520,6 +10515,83 @@
    "rankable": false
   },
   {
+   "id": "V47-2026-12-13-1:00pm",
+   "venue": "venetian",
+   "venue_name": "The Venetian Poker Room",
+   "event_no": 47,
+   "name": "$2,200 No Limit Hold\u2019Em Day 2 Restart Pokeratlas Championship Title Event Play Down To Final 7 - Streamed Final Table (Pokergo)",
+   "name_printed": "NO LIMIT HOLD\u2019EM DAY 2 RESTART POKERATLAS CHAMPIONSHIP TITLE EVENT PLAY DOWN TO FINAL 7 - STREAMED FINAL TABLE (POKERGO)",
+   "date": "2026-12-13",
+   "weekday": "Sunday",
+   "time": "1:00 PM",
+   "registration_closes": null,
+   "buy_in_usd": 2200,
+   "guarantee_usd": null,
+   "guarantee_printed": false,
+   "starting_chips": null,
+   "level_duration": null,
+   "kind": "Continuation (not an entry)",
+   "tags": [
+    "Continuation (not an entry)"
+   ],
+   "is_flight": false,
+   "is_continuation": true,
+   "rules": {
+    "single_entry": {
+     "status": "unverified",
+     "value": null,
+     "excerpt": null,
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf",
+     "retrieved": "2026-11-17"
+    },
+    "re_entry": {
+     "status": "not_stated_in_sheet",
+     "value": null,
+     "excerpt": null,
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf",
+     "retrieved": "2026-11-17"
+    },
+    "add_on": {
+     "status": "not_stated_in_sheet",
+     "value": null,
+     "excerpt": null,
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf",
+     "retrieved": "2026-11-17"
+    },
+    "fee": {
+     "status": "confirmed",
+     "value": "$225 of $2200 withheld; $1975 per entry to the prize pool",
+     "excerpt": "$ 225 of the $ 2200 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $ 1975 of every $ 2200 Buy In.",
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf",
+     "retrieved": "2026-11-17"
+    }
+   },
+   "sources": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf"
+   ],
+   "sheet_key": "V_S21",
+   "sheet_note": null,
+   "house_fee_usd": 225,
+   "pool_per_entry_usd": 1975,
+   "sheet_start_time": null,
+   "sheet_late_registration": "9 levels + Break (~ 4:55 PM)",
+   "sheet_guarantee_text": "$1,000,000",
+   "sheet_title": "$2,200 No Limit Hold\u2019em",
+   "payout_pct_of_field": null,
+   "levels_total": null,
+   "breaks_listed": 9,
+   "spend_advantage_evidence": [],
+   "guarantee_from_sheet_text": "$1,000,000",
+   "single_entry_confirmed": false,
+   "rankable": false,
+   "last_checked": "2026-11-17",
+   "source_changed": true,
+   "flags": [
+    "single-entry unverified"
+   ]
+  },
+  {
    "id": "WPT-19-2026-12-13-100PM-Day3",
    "venue": "wynn",
    "venue_name": "Wynn Las Vegas Poker",
@@ -10665,7 +10737,7 @@
    "gtd_ratio": 50.0,
    "gtd_over_pool_contribution": 60.0,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -10815,7 +10887,7 @@
    "gtd_ratio": 272.73,
    "gtd_over_pool_contribution": 312.5,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -10877,7 +10949,7 @@
     "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf"
    ],
    "sheet_key": "V_S21",
-   "sheet_note": "several sheets print this event number (different starting flights) \u2014 the row lists both",
+   "sheet_note": null,
    "house_fee_usd": 225,
    "pool_per_entry_usd": 1975,
    "sheet_start_time": null,
@@ -10892,10 +10964,9 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
-    "single-entry unverified",
-    "structure sheet ambiguous"
+    "single-entry unverified"
    ]
   },
   {
@@ -11548,7 +11619,7 @@
    "gtd_ratio": 50.0,
    "gtd_over_pool_contribution": 60.0,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -11843,7 +11914,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -12136,7 +12207,7 @@
    "gtd_ratio": 68.18,
    "gtd_over_pool_contribution": 77.32,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -12502,7 +12573,7 @@
    "gtd_ratio": 50.0,
    "gtd_over_pool_contribution": 60.0,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -12797,7 +12868,7 @@
    "gtd_ratio": 83.33,
    "gtd_over_pool_contribution": 98.04,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -13159,7 +13230,7 @@
    "gtd_ratio": 50.0,
    "gtd_over_pool_contribution": 60.0,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -13384,15 +13455,15 @@
    "venue": "venetian",
    "venue_name": "The Venetian Poker Room",
    "event_no": 56,
-   "name": "$1,100 No Limit Hold'Em 1A $40 Rake Discount For Entries Before",
-   "name_printed": "NO LIMIT HOLD'EM 1A $40 RAKE DISCOUNT FOR ENTRIES BEFORE",
+   "name": "$1,100 No Limit Hold'Em 1A $500K Gtd",
+   "name_printed": "$1,100 No Limit Hold'em 1A $500K GTD",
    "date": "2026-12-17",
    "weekday": "Thursday",
    "time": "10:10 AM",
    "registration_closes": null,
    "buy_in_usd": 1100,
-   "guarantee_usd": null,
-   "guarantee_printed": false,
+   "guarantee_usd": 500000,
+   "guarantee_printed": true,
    "starting_chips": null,
    "level_duration": null,
    "kind": "Tournament",
@@ -13433,10 +13504,20 @@
    },
    "sources": [
     "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf"
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf",
+    "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
    ],
    "sheet_key": "V_S35",
    "sheet_note": null,
+   "conditional_entry_fee": {
+    "standard_usd": 1100,
+    "early_usd": 1060,
+    "discount_usd": 40,
+    "deadline": "before the event starts (10:10 a.m.)",
+    "excerpt": "On Day 1A, players who register before the start of the event (10:10 a.m.) will receive a forty ($40) discount on house fees for a total buy in of $1,060 instead of $1,100.",
+    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf",
+    "retrieved": "2026-11-17"
+   },
    "house_fee_usd": 140,
    "pool_per_entry_usd": 960,
    "sheet_start_time": "10:10 AM",
@@ -13447,14 +13528,14 @@
    "levels_total": null,
    "breaks_listed": 9,
    "spend_advantage_evidence": [],
-   "guarantee_from_sheet_text": "$500,000",
    "single_entry_confirmed": false,
-   "rankable": false,
+   "rankable": true,
+   "gtd_ratio": 454.55,
+   "gtd_over_pool_contribution": 520.83,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
-    "single-entry unverified",
-    "not ranked \u2014 entry fee or guarantee unconfirmed"
+    "single-entry unverified"
    ]
   },
   {
@@ -13891,7 +13972,7 @@
    "gtd_ratio": 41.67,
    "gtd_over_pool_contribution": 49.02,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -13972,15 +14053,15 @@
    "venue": "venetian",
    "venue_name": "The Venetian Poker Room",
    "event_no": 56,
-   "name": "$1,100 No Limit Hold'Em 1B $40 Rake Discount For Entries Before",
-   "name_printed": "NO LIMIT HOLD'EM 1B $40 RAKE DISCOUNT FOR ENTRIES BEFORE",
+   "name": "$1,100 No Limit Hold'Em 1B $500K Gtd",
+   "name_printed": "$1,100 No Limit Hold'em 1B $500K GTD",
    "date": "2026-12-17",
    "weekday": "Thursday",
    "time": "6:10 PM",
    "registration_closes": null,
    "buy_in_usd": 1100,
-   "guarantee_usd": null,
-   "guarantee_printed": false,
+   "guarantee_usd": 500000,
+   "guarantee_printed": true,
    "starting_chips": null,
    "level_duration": "11",
    "kind": "Tournament",
@@ -14021,10 +14102,20 @@
    },
    "sources": [
     "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_36.pdf"
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_36.pdf",
+    "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
    ],
    "sheet_key": "V_S36",
    "sheet_note": null,
+   "conditional_entry_fee": {
+    "standard_usd": 1100,
+    "early_usd": 1060,
+    "discount_usd": 40,
+    "deadline": "before the event starts (6:10 p.m.)",
+    "excerpt": "On Day 1B, players who register before the start of the event (6:10 p.m.) will receive a forty ($40) discount on house fees for a total buy in of $1,060 instead of $1,100.",
+    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_36.pdf",
+    "retrieved": "2026-11-17"
+   },
    "house_fee_usd": 140,
    "pool_per_entry_usd": 960,
    "sheet_start_time": "6:10 PM",
@@ -14035,14 +14126,14 @@
    "levels_total": null,
    "breaks_listed": 6,
    "spend_advantage_evidence": [],
-   "guarantee_from_sheet_text": "$500,000",
    "single_entry_confirmed": false,
-   "rankable": false,
+   "rankable": true,
+   "gtd_ratio": 454.55,
+   "gtd_over_pool_contribution": 520.83,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
-    "single-entry unverified",
-    "not ranked \u2014 entry fee or guarantee unconfirmed"
+    "single-entry unverified"
    ]
   },
   {
@@ -14260,7 +14351,7 @@
    "gtd_ratio": 454.55,
    "gtd_over_pool_contribution": 520.83,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -15056,7 +15147,7 @@
    "gtd_ratio": 454.55,
    "gtd_over_pool_contribution": 520.83,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -15134,7 +15225,7 @@
    "gtd_ratio": 454.55,
    "gtd_over_pool_contribution": 520.83,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -16006,7 +16097,7 @@
    "gtd_ratio": 100.0,
    "gtd_over_pool_contribution": 125.0,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "spend-advantage format \u2014 excluded from the single-entry list"
    ]
@@ -16214,7 +16305,7 @@
     "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf"
    ],
    "sheet_key": "V_S35",
-   "sheet_note": "several sheets print this event number (different starting flights) \u2014 the row lists both",
+   "sheet_note": null,
    "house_fee_usd": 140,
    "pool_per_entry_usd": 960,
    "sheet_start_time": "10:10 AM",
@@ -16229,10 +16320,9 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
-    "single-entry unverified",
-    "structure sheet ambiguous"
+    "single-entry unverified"
    ]
   },
   {
@@ -16393,8 +16483,8 @@
    "time": "11:10 AM",
    "registration_closes": null,
    "buy_in_usd": 600,
-   "guarantee_usd": null,
-   "guarantee_printed": false,
+   "guarantee_usd": 150000,
+   "guarantee_printed": true,
    "starting_chips": null,
    "level_duration": "5",
    "kind": "Tournament",
@@ -16449,14 +16539,14 @@
    "levels_total": null,
    "breaks_listed": 9,
    "spend_advantage_evidence": [],
-   "guarantee_from_sheet_text": "$150,000",
    "single_entry_confirmed": false,
-   "rankable": false,
+   "rankable": true,
+   "gtd_ratio": 250.0,
+   "gtd_over_pool_contribution": 297.03,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
-    "single-entry unverified",
-    "not ranked \u2014 entry fee or guarantee unconfirmed"
+    "single-entry unverified"
    ]
   },
   {
@@ -16962,7 +17052,7 @@
    "gtd_ratio": 40.0,
    "gtd_over_pool_contribution": 50.0,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -17259,7 +17349,7 @@
    "gtd_ratio": 250.0,
    "gtd_over_pool_contribution": 297.03,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -17483,7 +17573,7 @@
    "gtd_ratio": 40.0,
    "gtd_over_pool_contribution": 50.0,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -17634,7 +17724,7 @@
    "gtd_ratio": 250.0,
    "gtd_over_pool_contribution": 297.03,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -17712,7 +17802,7 @@
    "gtd_ratio": 40.0,
    "gtd_over_pool_contribution": 50.0,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -17789,7 +17879,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -17867,7 +17957,7 @@
    "gtd_ratio": 50.0,
    "gtd_over_pool_contribution": 58.82,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -17945,7 +18035,7 @@
    "gtd_ratio": 40.0,
    "gtd_over_pool_contribution": 50.0,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]

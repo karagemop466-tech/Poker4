@@ -1,7 +1,7 @@
 {
  "meta": {
-  "generated_at": "2026-11-17T21:57:19Z",
-  "rows": 93,
+  "generated_at": "2026-11-17T22:11:48Z",
+  "rows": 94,
   "note": "Rows read from the official schedule page at run time; blank fields were not printed on the page."
  },
  "rows": [
@@ -867,6 +867,23 @@
    "retrieved": "2026-11-17"
   },
   {
+   "parse_notes": [
+    "printed title carries its own clock time (\"… AT\"); read as the title, the start time is the next clock printed in the row"
+   ],
+   "registration_closes": null,
+   "date": "2026-12-11",
+   "weekday": "Friday",
+   "time": "10:00 AM",
+   "event_no": 39,
+   "event_name": "NO LIMIT HOLD'EM LIPS DAY 2 RESTART PLAY DOWN TO FINAL 7 - STREAMED FINAL TABLE (POKERGO) AT 7:00 PM",
+   "buy_in_usd": 800,
+   "guarantee_usd": null,
+   "starting_chips": null,
+   "level_duration": null,
+   "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+   "retrieved": "2026-11-17"
+  },
+  {
    "parse_notes": null,
    "registration_closes": "4:55 PM",
    "date": "2026-12-11",
@@ -892,23 +909,6 @@
    "event_no": 44,
    "event_name": "NLH MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47",
    "buy_in_usd": 260,
-   "guarantee_usd": null,
-   "starting_chips": null,
-   "level_duration": null,
-   "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-17"
-  },
-  {
-   "parse_notes": [
-    "registration-closes cell “10:00 AM” not later than the start time; not recorded"
-   ],
-   "registration_closes": null,
-   "date": "2026-12-11",
-   "weekday": "Friday",
-   "time": "7:00 PM",
-   "event_no": 39,
-   "event_name": "NO LIMIT HOLD'EM LIPS DAY 2 RESTART PLAY DOWN TO FINAL 7 - STREAMED FINAL TABLE (POKERGO) AT",
-   "buy_in_usd": 800,
    "guarantee_usd": null,
    "starting_chips": null,
    "level_duration": null,
@@ -1023,6 +1023,21 @@
    "guarantee_usd": 300000,
    "starting_chips": 40000,
    "level_duration": "40",
+   "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+   "retrieved": "2026-11-17"
+  },
+  {
+   "parse_notes": null,
+   "registration_closes": null,
+   "date": "2026-12-13",
+   "weekday": "Sunday",
+   "time": "1:00 PM",
+   "event_no": 47,
+   "event_name": "NO LIMIT HOLD’EM DAY 2 RESTART POKERATLAS CHAMPIONSHIP TITLE EVENT PLAY DOWN TO FINAL 7 - STREAMED FINAL TABLE (POKERGO)",
+   "buy_in_usd": 2200,
+   "guarantee_usd": null,
+   "starting_chips": null,
+   "level_duration": null,
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
    "retrieved": "2026-11-17"
   },
