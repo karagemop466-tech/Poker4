@@ -442,15 +442,12 @@ def audit_structure(text: str, url: str) -> dict:
 
 
 FACT_PATTERNS = {
-    "resort_fee": r"[^.
-]{0,90}resort\s*fee[^.
-]{0,200}",
-    "room_tax": r"[^.
-]{0,70}(?:13\.38|room\s+tax|state\s+room)[^.\n]{0,200}",
-    "parking": r"[^.\n]{0,70}(?:self[- \u2011]?parking|valet\s+parking|parking\s+(?:fee|rate|is))[^.\n]{0,200}",
-    "cancellation": r"[^.\n]{0,90}(?:cancellation|cancel\s+your|no[- ]show|non[- ]refundable)[^.\n]{0,260}",
-    "check_in_out": r"[^.\n]{0,40}(?:check[- ]in|check[- ]out)\s+(?:time|is|at|after|by)[^.\n]{0,140}",
-    "walk": r"[^.\n]{0,80}(?:minutes?\s+(?:walk|walking)|walking\s+distance|skybridge|monorail)[^.\n]{0,180}",
+    "resort_fee": r"[^.\n]{0,90}resort\s*fee[^.\n]{0,240}",
+    "room_tax": r"[^.\n]{0,90}(?:13\.38|room\s+tax|state\s+room)[^.\n]{0,240}",
+    "parking": r"[^.\n]{0,90}(?:self[- ]?parking|valet\s+parking|parking\s+(?:fee|rate|is))[^.\n]{0,240}",
+    "cancellation": r"[^.\n]{0,90}(?:cancellation|cancel\s+your|no[- ]show|non[- ]refundable)[^.\n]{0,240}",
+    "check_in_out": r"[^.\n]{0,90}(?:check[- ]in|check[- ]out)\s+(?:time|is|at|after|by)[^.\n]{0,240}",
+    "walk": r"[^.\n]{0,90}(?:minutes?\s+(?:walk|walking)|walking\s+distance|skybridge|monorail)[^.\n]{0,240}",
 }
 
 
