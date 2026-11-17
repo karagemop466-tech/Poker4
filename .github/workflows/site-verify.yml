@@ -1,0 +1,41 @@
+name: Verify the published site
+
+# A broken page must never reach GitHub Pages. Both verifiers run on every push that
+# touches the site or its data, and on every pull request against main.
+
+on:
+  push:
+    branches: [main, 'arena/e74e00fd-poker4']
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Rebuild from the committed snapshots and check it matches
+        run: |
+          python scripts/integrate_data.py
+          python scripts/verify_root.py
+          python scripts/verify.py
+
+      - name: Fail if the committed pages are not what the data produces
+        run: |
+          git add -A
+          if git diff --cached --quiet; then
+            echo "committed pages match data/ — nothing stale"
+          else
+            echo "The committed HTML does not match data/. Run: python3 scripts/integrate_data.py and commit the result."
+            git diff --cached --stat
+            exit 1
+          fi
+
+      - name: Check every page parses as HTML and links resolve
+        run: python3 scripts/verify_markup.py
