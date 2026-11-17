@@ -1,56 +1,10 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Official-source Las Vegas Strip poker tournament and hotel decision dashboard">
-<title>Rate log — Strip Poker Planner</title>
-<link rel="stylesheet" href="assets/site.css">
-</head><body>
-<header class="topbar"><a class="brand" href="index.html">♠ STRIP POKER PLANNER</a>
-<span class="stamp">Verified snapshot · 17 Nov 2026 UTC · every row links its official source</span></header>
-<nav class="nav"><div class="nav-inner"><a class="" href="index.html">Executive summary</a><a class="" href="tournaments.html">Tournaments</a><a class="" href="schedule.html">Day plan</a><a class="" href="hotels.html">Hotels &amp; true cost</a><a class="" href="trip-calculator.html">Trip calculator</a><a class="active" href="rate-log.html">Rate log</a><a class="" href="venues/venetian.html">Venues</a><a class="" href="monitor.html">Source monitor</a><a class="" href="questions.html">Questions</a><a class="" href="suggestions.html">Suggestions</a><a class="" href="flagged.html">Flagged for review</a><a class="" href="sources.html">Sources</a></div></nav>
-<main>
-<div class="hero"><p class="eyebrow">Rates · a dated log, never a single value</p>
-<h1>Rate log.</h1>
-<p class="sub">Every rate observation keeps its retrieval timestamp, occupancy, fee, tax, parking, and cancellation terms — so later checks can
-show what changed. Checkout totals and nightly averages fill in only when a date-specific official quote is captured; until then they stay blank.</p></div>
-<table><thead><tr><th>ID</th><th>Property</th><th>Retrieved / rate timestamp</th><th>Stay window & occupancy</th><th>Published rate</th><th>Nightly avg</th><th>Checkout total</th><th>Resort fee</th><th>Tax</th><th>Parking</th><th>Cancellation deadline</th><th>Notes</th><th>Sources</th></tr></thead>
-<tbody><tr><td>RL-001</td><td>The Venetian / The Palazzo</td>
-<td class="small">2026-11-17<br><span class="mut">2026-11-17 (page read, UTC)</span></td>
-<td class="small">— → —<br>single/double (Luxury King Suite)</td>
-<td>$119 / $209 starting poker-suite rates (&#x27;as low as&#x27;; can be higher)</td><td>—</td><td>—</td>
-<td class="small">$55 + tax</td><td class="small">13.38% Clark County room tax</td>
-<td class="small">$20/day hotel guests</td><td class="small">prepaid offers non-cancellable; deposit at booking</td>
-<td class="small">Conditional poker rate: 6 hrs live cash play or a $300+ tournament buy-in per night, code EPOKR25 by phone. Not a dated quote; date-specific totals require the official booking engine (deep link per date on the Hotels page).</td><td class="small"><a class="src" href="https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html" target="_blank" rel="noopener">V_RATES</a></td></tr><tr><td>RL-002</td><td>Wynn Las Vegas / Encore</td>
-<td class="small">2026-11-17<br><span class="mut">2026-11-17 (terms page read, UTC)</span></td>
-<td class="small">— → —<br></td>
-<td>—</td><td>—</td><td>—</td>
-<td class="small">$55 + tax</td><td class="small">13.38% county rate (see note)</td>
-<td class="small">free self-park, 2 vehicles (with resort fee)</td><td class="small">read offer: non-cancellable, full deposit at booking (rate-specific)</td>
-<td class="small">No nightly rate published on the official terms page. Date-specific quotes via official booking deep link.</td><td class="small"><a class="src" href="https://www.wynnlasvegas.com/terms-and-conditions/850257" target="_blank" rel="noopener">W_TERMS</a></td></tr><tr><td>RL-003</td><td>Treasure Island (TI)</td>
-<td class="small">2026-11-17<br><span class="mut">2026-11-17 (official page read, UTC)</span></td>
-<td class="small">— → —<br></td>
-<td>$69/night + no resort fee (TV Ad Special, conditional)</td><td>—</td><td>—</td>
-<td class="small">$49.95 + tax (mandatory unless qualifying booking)</td><td class="small">13.38% county rate (see note)</td>
-<td class="small">free valet &amp; self-park</td><td class="small">—</td>
-<td class="small">TV Ad Special is conditional; standard bookings pay the resort fee.</td><td class="small"><a class="src" href="https://treasureisland.com/hotel/tower-suite" target="_blank" rel="noopener">TI_FEE</a></td></tr><tr><td>RL-004</td><td>Bellagio</td>
-<td class="small">2026-11-16<br><span class="mut">2026-11-16 (official pages checked)</span></td>
-<td class="small">— → —<br></td>
-<td>—</td><td>—</td><td>—</td>
-<td class="small">—</td><td class="small">13.38% county rate (see note)</td>
-<td class="small">—</td><td class="small">—</td>
-<td class="small">No official resort-fee amount found (404 on fee page); values left blank + flagged.</td><td class="small"><a class="src" href="https://bellagio.mgmresorts.com/en/casino/poker.html" target="_blank" rel="noopener">B_PAGE</a></td></tr><tr><td>RL-005</td><td>Caesars Palace</td>
-<td class="small">2026-11-16<br><span class="mut">2026-11-16 (official pages checked)</span></td>
-<td class="small">— → —<br></td>
-<td>—</td><td>—</td><td>—</td>
-<td class="small">—</td><td class="small">13.38% county rate (see note)</td>
-<td class="small">—</td><td class="small">—</td>
-<td class="small">Official resort-fee page contains no fee amount; values left blank + flagged.</td><td class="small"><a class="src" href="https://www.caesars.com/caesars-palace/casino" target="_blank" rel="noopener">C_PAGE</a></td></tr></tbody></table>
-<h2>Capture checklist for an exact-date quote (compare like-for-like)</h2>
-<ol><li>Same dates + same occupancy on each official booking engine (links on the <a href="hotels.html">Hotels page</a>).</li>
-<li>Record: checkout total, nightly average, mandatory resort fee + tax, parking, cancellation deadline, rate timestamp.</li>
-<li>Compute true cost/night = (rate + resort fee) × 1.1338 and compare — never compare a bare rate against an all-in total.</li>
-<li>Append the capture to this log with its source link and timestamp.</li></ol>
-
-<footer>Values read from official operator sources only, with retrieval dates. Unverified values are blank and flagged on the
-<a href="flagged.html">Flagged for Review</a> page. This is a decision dashboard, not a booking engine or a forecast.
-Re-checked automatically (see <a href="monitor.html">Source monitor</a>).</footer>
-</main><script src="assets/site.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta http-equiv="refresh" content="0; url=hotels.html">
+<link rel="canonical" href="hotels.html">
+<title>Moved · Vegas Strip Poker Planner</title>
+<link rel="stylesheet" href="site.css"></head>
+<body><main><section class="page-head"><h1>This page moved</h1>
+<p><code>rate-log.html</code> was replaced during the integration: each property&#x27;s dated rate and fee log now shows on its own hotel card.</p>
+<p>You are being redirected to <a href="hotels.html">hotels.html</a>. If nothing happens, follow the link.</p>
+</section></main></body></html>

@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generated_at": "2026-11-17T02:01:12Z",
+  "generated_at": "2026-11-17T22:11:24Z",
   "basis": "start time + printed registration-closes deadline + Day-2 restart rows on the official calendar",
   "days": 38
  },
@@ -81,7 +81,7 @@
     "gtd_ratio": 250.0,
     "gtd_over_pool_contribution": 312.5,
     "last_checked": "2026-11-17",
-    "source_changed": false,
+    "source_changed": true,
     "flags": [
      "single-entry unverified"
     ]
@@ -159,7 +159,7 @@
     "gtd_ratio": 250.0,
     "gtd_over_pool_contribution": 312.5,
     "last_checked": "2026-11-17",
-    "source_changed": false,
+    "source_changed": true,
     "flags": [
      "single-entry unverified"
     ]
@@ -246,7 +246,7 @@
     "gtd_ratio": 250.0,
     "gtd_over_pool_contribution": 312.5,
     "last_checked": "2026-11-17",
-    "source_changed": false,
+    "source_changed": true,
     "flags": [
      "single-entry unverified"
     ]
@@ -324,7 +324,7 @@
     "gtd_ratio": 250.0,
     "gtd_over_pool_contribution": 312.5,
     "last_checked": "2026-11-17",
-    "source_changed": false,
+    "source_changed": true,
     "flags": [
      "single-entry unverified"
     ]
@@ -411,7 +411,7 @@
     "gtd_ratio": 33.33,
     "gtd_over_pool_contribution": 41.32,
     "last_checked": "2026-11-17",
-    "source_changed": false,
+    "source_changed": true,
     "flags": [
      "single-entry unverified"
     ]
@@ -499,7 +499,7 @@
     "single_entry_confirmed": false,
     "rankable": false,
     "last_checked": "2026-11-17",
-    "source_changed": false,
+    "source_changed": true,
     "flags": [
      "single-entry unverified",
      "not ranked \u2014 entry fee or guarantee unconfirmed"
@@ -586,7 +586,7 @@
     "single_entry_confirmed": false,
     "rankable": false,
     "last_checked": "2026-11-17",
-    "source_changed": false,
+    "source_changed": true,
     "flags": [
      "single-entry unverified",
      "not ranked \u2014 entry fee or guarantee unconfirmed"
@@ -673,7 +673,7 @@
     "single_entry_confirmed": false,
     "rankable": false,
     "last_checked": "2026-11-17",
-    "source_changed": false,
+    "source_changed": true,
     "flags": [
      "single-entry unverified",
      "not ranked \u2014 entry fee or guarantee unconfirmed"
@@ -760,7 +760,7 @@
     "single_entry_confirmed": false,
     "rankable": false,
     "last_checked": "2026-11-17",
-    "source_changed": false,
+    "source_changed": true,
     "flags": [
      "single-entry unverified",
      "not ranked \u2014 entry fee or guarantee unconfirmed"
@@ -849,7 +849,7 @@
     "gtd_ratio": 187.5,
     "gtd_over_pool_contribution": 227.27,
     "last_checked": "2026-11-17",
-    "source_changed": false,
+    "source_changed": true,
     "flags": [
      "single-entry unverified"
     ]
@@ -939,7 +939,7 @@
     "gtd_ratio": 187.5,
     "gtd_over_pool_contribution": 227.27,
     "last_checked": "2026-11-17",
-    "source_changed": false,
+    "source_changed": true,
     "flags": [
      "single-entry unverified"
     ]
@@ -1029,7 +1029,7 @@
     "gtd_ratio": 37.5,
     "gtd_over_pool_contribution": 44.78,
     "last_checked": "2026-11-17",
-    "source_changed": false,
+    "source_changed": true,
     "flags": [
      "single-entry unverified"
     ]
@@ -1107,7 +1107,7 @@
     "gtd_ratio": 40.0,
     "gtd_over_pool_contribution": 50.0,
     "last_checked": "2026-11-17",
-    "source_changed": false,
+    "source_changed": true,
     "flags": [
      "single-entry unverified"
     ]
@@ -1196,7 +1196,7 @@
     "gtd_ratio": 33.33,
     "gtd_over_pool_contribution": 41.32,
     "last_checked": "2026-11-17",
-    "source_changed": false,
+    "source_changed": true,
     "flags": [
      "single-entry unverified"
     ]
@@ -1274,7 +1274,7 @@
     "gtd_ratio": 40.0,
     "gtd_over_pool_contribution": 50.0,
     "last_checked": "2026-11-17",
-    "source_changed": false,
+    "source_changed": true,
     "flags": [
      "single-entry unverified"
     ]
@@ -1361,7 +1361,7 @@
     "gtd_ratio": 50.0,
     "gtd_over_pool_contribution": 58.82,
     "last_checked": "2026-11-17",
-    "source_changed": false,
+    "source_changed": true,
     "flags": [
      "single-entry unverified"
     ]
@@ -1439,7 +1439,7 @@
     "gtd_ratio": 40.0,
     "gtd_over_pool_contribution": 50.0,
     "last_checked": "2026-11-17",
-    "source_changed": false,
+    "source_changed": true,
     "flags": [
      "single-entry unverified"
     ]
@@ -1526,7 +1526,7 @@
     "gtd_ratio": 50.0,
     "gtd_over_pool_contribution": 58.82,
     "last_checked": "2026-11-17",
-    "source_changed": false,
+    "source_changed": true,
     "flags": [
      "single-entry unverified"
     ]
@@ -1607,7 +1607,7 @@
     "gtd_ratio": 100.0,
     "gtd_over_pool_contribution": 125.0,
     "last_checked": "2026-11-17",
-    "source_changed": false,
+    "source_changed": true,
     "flags": [
      "spend-advantage format \u2014 excluded from the single-entry list"
     ]
@@ -1696,7 +1696,7 @@
     "gtd_ratio": 187.5,
     "gtd_over_pool_contribution": 227.27,
     "last_checked": "2026-11-17",
-    "source_changed": false,
+    "source_changed": true,
     "flags": [
      "single-entry unverified"
     ]
@@ -1787,7 +1787,7 @@
     "gtd_ratio": 187.5,
     "gtd_over_pool_contribution": 227.27,
     "last_checked": "2026-11-17",
-    "source_changed": false,
+    "source_changed": true,
     "flags": [
      "single-entry unverified"
     ]
@@ -1877,7 +1877,7 @@
     "gtd_ratio": 187.5,
     "gtd_over_pool_contribution": 227.27,
     "last_checked": "2026-11-17",
-    "source_changed": false,
+    "source_changed": true,
     "flags": [
      "single-entry unverified"
     ]
@@ -1967,7 +1967,7 @@
     "gtd_ratio": 66.67,
     "gtd_over_pool_contribution": 78.43,
     "last_checked": "2026-11-17",
-    "source_changed": false,
+    "source_changed": true,
     "flags": [
      "single-entry unverified"
     ]
@@ -2045,7 +2045,7 @@
     "gtd_ratio": 40.0,
     "gtd_over_pool_contribution": 50.0,
     "last_checked": "2026-11-17",
-    "source_changed": false,
+    "source_changed": true,
     "flags": [
      "single-entry unverified"
     ]
@@ -2134,7 +2134,7 @@
     "gtd_ratio": 625.0,
     "gtd_over_pool_contribution": 724.64,
     "last_checked": "2026-11-17",
-    "source_changed": false,
+    "source_changed": true,
     "flags": [
      "single-entry unverified"
     ]
@@ -2212,7 +2212,7 @@
     "gtd_ratio": 625.0,
     "gtd_over_pool_contribution": 724.64,
     "last_checked": "2026-11-17",
-    "source_changed": false,
+    "source_changed": true,
     "flags": [
      "single-entry unverified"
     ]
@@ -2301,7 +2301,7 @@
     "gtd_ratio": 625.0,
     "gtd_over_pool_contribution": 724.64,
     "last_checked": "2026-11-17",
-    "source_changed": false,
+    "source_changed": true,
     "flags": [
      "single-entry unverified"
     ]
@@ -2379,7 +2379,7 @@
     "gtd_ratio": 625.0,
     "gtd_over_pool_contribution": 724.64,
     "last_checked": "2026-11-17",
-    "source_changed": false,
+    "source_changed": true,
     "flags": [
      "single-entry unverified"
     ]
@@ -2466,7 +2466,7 @@
     "gtd_ratio": 625.0,
     "gtd_over_pool_contribution": 724.64,
     "last_checked": "2026-11-17",
-    "source_changed": false,
+    "source_changed": true,
     "flags": [
      "single-entry unverified"
     ]
@@ -2498,53 +2498,53 @@
       "status": "unverified",
       "value": null,
       "excerpt": null,
-      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_13.pdf",
+      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_14.pdf",
       "retrieved": "2026-11-17"
      },
      "re_entry": {
       "status": "not_stated_in_sheet",
       "value": null,
       "excerpt": null,
-      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_13.pdf",
+      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_14.pdf",
       "retrieved": "2026-11-17"
      },
      "add_on": {
       "status": "not_stated_in_sheet",
       "value": null,
       "excerpt": null,
-      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_13.pdf",
+      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_14.pdf",
       "retrieved": "2026-11-17"
      },
      "fee": {
       "status": "confirmed",
       "value": "$110 of $800 withheld; $690 per entry to the prize pool",
       "excerpt": "$ 110 of the $ 800 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $ 690 of every $ 800 Buy In.",
-      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_13.pdf",
+      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_14.pdf",
       "retrieved": "2026-11-17"
      }
     },
     "sources": [
      "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-     "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_13.pdf"
+     "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_14.pdf"
     ],
-    "sheet_key": "V_S13",
+    "sheet_key": "V_S14",
     "sheet_note": null,
     "house_fee_usd": 110,
     "pool_per_entry_usd": 690,
-    "sheet_start_time": "5:10 PM",
-    "sheet_late_registration": "6 levels + Break (~ 8:40 PM)",
+    "sheet_start_time": null,
+    "sheet_late_registration": "6 levels + Break (~ 7:25 PM)",
     "sheet_guarantee_text": "$500,000",
     "sheet_title": "$800 No Limit Hold\u2019em",
     "payout_pct_of_field": null,
     "levels_total": null,
-    "breaks_listed": 7,
+    "breaks_listed": 5,
     "spend_advantage_evidence": [],
     "single_entry_confirmed": false,
     "rankable": true,
     "gtd_ratio": 625.0,
     "gtd_over_pool_contribution": 724.64,
     "last_checked": "2026-11-17",
-    "source_changed": false,
+    "source_changed": true,
     "flags": [
      "single-entry unverified"
     ]
@@ -2631,7 +2631,7 @@
     "gtd_ratio": 66.67,
     "gtd_over_pool_contribution": 78.43,
     "last_checked": "2026-11-17",
-    "source_changed": false,
+    "source_changed": true,
     "flags": [
      "single-entry unverified"
     ]
@@ -2709,7 +2709,7 @@
     "gtd_ratio": 50.0,
     "gtd_over_pool_contribution": 60.0,
     "last_checked": "2026-11-17",
-    "source_changed": false,
+    "source_changed": true,
     "flags": [
      "single-entry unverified"
     ]
@@ -2798,7 +2798,7 @@
     "gtd_ratio": 66.67,
     "gtd_over_pool_contribution": 78.43,
     "last_checked": "2026-11-17",
-    "source_changed": false,
+    "source_changed": true,
     "flags": [
      "single-entry unverified"
     ]
@@ -2876,7 +2876,7 @@
     "gtd_ratio": 50.0,
     "gtd_over_pool_contribution": 60.0,
     "last_checked": "2026-11-17",
-    "source_changed": false,
+    "source_changed": true,
     "flags": [
      "single-entry unverified"
     ]
@@ -2963,7 +2963,7 @@
     "gtd_ratio": 66.67,
     "gtd_over_pool_contribution": 78.43,
     "last_checked": "2026-11-17",
-    "source_changed": false,
+    "source_changed": true,
     "flags": [
      "single-entry unverified"
     ]
@@ -3041,7 +3041,7 @@
     "single_entry_confirmed": false,
     "rankable": false,
     "last_checked": "2026-11-17",
-    "source_changed": false,
+    "source_changed": true,
     "flags": [
      "single-entry unverified",
      "not ranked \u2014 entry fee or guarantee unconfirmed"
@@ -3131,7 +3131,7 @@
     "gtd_ratio": 16.67,
     "gtd_over_pool_contribution": 19.61,
     "last_checked": "2026-11-17",
-    "source_changed": false,
+    "source_changed": true,
     "flags": [
      "single-entry unverified"
     ]
@@ -3209,7 +3209,7 @@
     "single_entry_confirmed": false,
     "rankable": false,
     "last_checked": "2026-11-17",
-    "source_changed": false,
+    "source_changed": true,
     "flags": [
      "single-entry unverified",
      "not ranked \u2014 entry fee or guarantee unconfirmed"
@@ -3301,7 +3301,7 @@
     "gtd_ratio": 50.0,
     "gtd_over_pool_contribution": 57.97,
     "last_checked": "2026-11-17",
-    "source_changed": false,
+    "source_changed": true,
     "flags": [
      "single-entry unverified"
     ]
@@ -3379,7 +3379,7 @@
     "gtd_ratio": 50.0,
     "gtd_over_pool_contribution": 60.0,
     "last_checked": "2026-11-17",
-    "source_changed": false,
+    "source_changed": true,
     "flags": [
      "single-entry unverified"
     ]
@@ -3471,7 +3471,7 @@
     "gtd_ratio": 50.0,
     "gtd_over_pool_contribution": 58.82,
     "last_checked": "2026-11-17",
-    "source_changed": false,
+    "source_changed": true,
     "flags": [
      "single-entry unverified"
     ]
@@ -3548,7 +3548,7 @@
     "single_entry_confirmed": false,
     "rankable": false,
     "last_checked": "2026-11-17",
-    "source_changed": false,
+    "source_changed": true,
     "flags": [
      "single-entry unverified",
      "not ranked \u2014 entry fee or guarantee unconfirmed"
@@ -3640,7 +3640,7 @@
     "single_entry_confirmed": false,
     "rankable": false,
     "last_checked": "2026-11-17",
-    "source_changed": false,
+    "source_changed": true,
     "flags": [
      "single-entry unverified",
      "not ranked \u2014 entry fee or guarantee unconfirmed"
@@ -3718,7 +3718,7 @@
     "single_entry_confirmed": false,
     "rankable": false,
     "last_checked": "2026-11-17",
-    "source_changed": false,
+    "source_changed": true,
     "flags": [
      "single-entry unverified",
      "not ranked \u2014 entry fee or guarantee unconfirmed"
@@ -3810,7 +3810,7 @@
     "gtd_ratio": 272.73,
     "gtd_over_pool_contribution": 312.5,
     "last_checked": "2026-11-17",
-    "source_changed": false,
+    "source_changed": true,
     "flags": [
      "single-entry unverified"
     ]
@@ -3888,7 +3888,7 @@
     "gtd_ratio": 50.0,
     "gtd_over_pool_contribution": 60.0,
     "last_checked": "2026-11-17",
-    "source_changed": false,
+    "source_changed": true,
     "flags": [
      "single-entry unverified"
     ]
@@ -3978,7 +3978,7 @@
     "gtd_ratio": 272.73,
     "gtd_over_pool_contribution": 312.5,
     "last_checked": "2026-11-17",
-    "source_changed": false,
+    "source_changed": true,
     "flags": [
      "single-entry unverified"
     ]
@@ -4056,7 +4056,7 @@
     "gtd_ratio": 50.0,
     "gtd_over_pool_contribution": 60.0,
     "last_checked": "2026-11-17",
-    "source_changed": false,
+    "source_changed": true,
     "flags": [
      "single-entry unverified"
     ]
@@ -4145,7 +4145,7 @@
     "gtd_ratio": 68.18,
     "gtd_over_pool_contribution": 77.32,
     "last_checked": "2026-11-17",
-    "source_changed": false,
+    "source_changed": true,
     "flags": [
      "single-entry unverified"
     ]
@@ -4223,7 +4223,7 @@
     "gtd_ratio": 50.0,
     "gtd_over_pool_contribution": 60.0,
     "last_checked": "2026-11-17",
-    "source_changed": false,
+    "source_changed": true,
     "flags": [
      "single-entry unverified"
     ]
@@ -4312,7 +4312,7 @@
     "gtd_ratio": 83.33,
     "gtd_over_pool_contribution": 98.04,
     "last_checked": "2026-11-17",
-    "source_changed": false,
+    "source_changed": true,
     "flags": [
      "single-entry unverified"
     ]
@@ -4390,7 +4390,7 @@
     "gtd_ratio": 50.0,
     "gtd_over_pool_contribution": 60.0,
     "last_checked": "2026-11-17",
-    "source_changed": false,
+    "source_changed": true,
     "flags": [
      "single-entry unverified"
     ]
@@ -4409,8 +4409,8 @@
     "venue": "venetian",
     "venue_name": "The Venetian Poker Room",
     "event_no": 56,
-    "name": "$1,100 No Limit Hold'Em 1A $40 Rake Discount For Entries Before",
-    "name_printed": "NO LIMIT HOLD'EM 1A $40 RAKE DISCOUNT FOR ENTRIES BEFORE",
+    "name": "$1,100 No Limit Hold'Em 1A $500K Gtd",
+    "name_printed": "$1,100 No Limit Hold'em 1A $500K GTD",
     "date": "2026-12-17",
     "weekday": "Thursday",
     "time": "10:10 AM",
@@ -4458,10 +4458,20 @@
     },
     "sources": [
      "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-     "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf"
+     "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf",
+     "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
     ],
     "sheet_key": "V_S35",
     "sheet_note": null,
+    "conditional_entry_fee": {
+     "standard_usd": 1100,
+     "early_usd": 1060,
+     "discount_usd": 40,
+     "deadline": "before the event starts (10:10 a.m.)",
+     "excerpt": "On Day 1A, players who register before the start of the event (10:10 a.m.) will receive a forty ($40) discount on house fees for a total buy in of $1,060 instead of $1,100.",
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf",
+     "retrieved": "2026-11-17"
+    },
     "house_fee_usd": 140,
     "pool_per_entry_usd": 960,
     "sheet_start_time": "10:10 AM",
@@ -4477,7 +4487,7 @@
     "gtd_ratio": 454.55,
     "gtd_over_pool_contribution": 520.83,
     "last_checked": "2026-11-17",
-    "source_changed": false,
+    "source_changed": true,
     "flags": [
      "single-entry unverified"
     ]
@@ -4487,8 +4497,8 @@
     "venue": "venetian",
     "venue_name": "The Venetian Poker Room",
     "event_no": 56,
-    "name": "$1,100 No Limit Hold'Em 1B $40 Rake Discount For Entries Before",
-    "name_printed": "NO LIMIT HOLD'EM 1B $40 RAKE DISCOUNT FOR ENTRIES BEFORE",
+    "name": "$1,100 No Limit Hold'Em 1B $500K Gtd",
+    "name_printed": "$1,100 No Limit Hold'em 1B $500K GTD",
     "date": "2026-12-17",
     "weekday": "Thursday",
     "time": "6:10 PM",
@@ -4536,10 +4546,20 @@
     },
     "sources": [
      "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-     "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_36.pdf"
+     "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_36.pdf",
+     "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
     ],
     "sheet_key": "V_S36",
     "sheet_note": null,
+    "conditional_entry_fee": {
+     "standard_usd": 1100,
+     "early_usd": 1060,
+     "discount_usd": 40,
+     "deadline": "before the event starts (6:10 p.m.)",
+     "excerpt": "On Day 1B, players who register before the start of the event (6:10 p.m.) will receive a forty ($40) discount on house fees for a total buy in of $1,060 instead of $1,100.",
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_36.pdf",
+     "retrieved": "2026-11-17"
+    },
     "house_fee_usd": 140,
     "pool_per_entry_usd": 960,
     "sheet_start_time": "6:10 PM",
@@ -4555,14 +4575,14 @@
     "gtd_ratio": 454.55,
     "gtd_over_pool_contribution": 520.83,
     "last_checked": "2026-11-17",
-    "source_changed": false,
+    "source_changed": true,
     "flags": [
      "single-entry unverified"
     ]
    },
    "restarts": [],
    "overlap_notes": [
-    "$1,100 No Limit Hold'Em 1A $40 Rake Discount For Entries Before registration stays open until 4:55 PM, which is after $600 Pot Limit Omaha Double Board Bomb Pot (1Day) starts at 12:10 PM \u2014 the two cannot be played in sequence unless you are out of the first event before it closes"
+    "$1,100 No Limit Hold'Em 1A $500K Gtd registration stays open until 4:55 PM, which is after $600 Pot Limit Omaha Double Board Bomb Pot (1Day) starts at 12:10 PM \u2014 the two cannot be played in sequence unless you are out of the first event before it closes"
    ],
    "entries_usd": 2800,
    "primary_id": "V56-2026-12-17-10:10am",
@@ -4644,7 +4664,7 @@
     "gtd_ratio": 454.55,
     "gtd_over_pool_contribution": 520.83,
     "last_checked": "2026-11-17",
-    "source_changed": false,
+    "source_changed": true,
     "flags": [
      "single-entry unverified"
     ]
@@ -4722,7 +4742,7 @@
     "gtd_ratio": 454.55,
     "gtd_over_pool_contribution": 520.83,
     "last_checked": "2026-11-17",
-    "source_changed": false,
+    "source_changed": true,
     "flags": [
      "single-entry unverified"
     ]
@@ -4809,7 +4829,7 @@
     "gtd_ratio": 454.55,
     "gtd_over_pool_contribution": 520.83,
     "last_checked": "2026-11-17",
-    "source_changed": false,
+    "source_changed": true,
     "flags": [
      "single-entry unverified"
     ]
@@ -4890,7 +4910,7 @@
     "gtd_ratio": 100.0,
     "gtd_over_pool_contribution": 125.0,
     "last_checked": "2026-11-17",
-    "source_changed": false,
+    "source_changed": true,
     "flags": [
      "spend-advantage format \u2014 excluded from the single-entry list"
     ]
@@ -4977,7 +4997,7 @@
     "gtd_ratio": 250.0,
     "gtd_over_pool_contribution": 297.03,
     "last_checked": "2026-11-17",
-    "source_changed": false,
+    "source_changed": true,
     "flags": [
      "single-entry unverified"
     ]
@@ -5069,7 +5089,7 @@
     "gtd_ratio": 250.0,
     "gtd_over_pool_contribution": 297.03,
     "last_checked": "2026-11-17",
-    "source_changed": false,
+    "source_changed": true,
     "flags": [
      "single-entry unverified"
     ]
@@ -5159,7 +5179,7 @@
     "gtd_ratio": 250.0,
     "gtd_over_pool_contribution": 297.03,
     "last_checked": "2026-11-17",
-    "source_changed": false,
+    "source_changed": true,
     "flags": [
      "single-entry unverified"
     ]
@@ -5249,7 +5269,7 @@
     "gtd_ratio": 50.0,
     "gtd_over_pool_contribution": 58.82,
     "last_checked": "2026-11-17",
-    "source_changed": false,
+    "source_changed": true,
     "flags": [
      "single-entry unverified"
     ]
@@ -5327,7 +5347,7 @@
     "gtd_ratio": 40.0,
     "gtd_over_pool_contribution": 50.0,
     "last_checked": "2026-11-17",
-    "source_changed": false,
+    "source_changed": true,
     "flags": [
      "single-entry unverified"
     ]

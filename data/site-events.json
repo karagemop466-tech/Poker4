@@ -1,10 +1,10 @@
 {
  "meta": {
-  "generated_at": "2026-11-17T02:01:12Z",
+  "generated_at": "2026-11-17T22:11:24Z",
   "rows": 119,
   "verified_single_entry": 0,
-  "rankable": 72,
-  "spend_advantage": 23
+  "rankable": 83,
+  "spend_advantage": 26
  },
  "events": [
   {
@@ -80,7 +80,7 @@
    "gtd_ratio": 250.0,
    "gtd_over_pool_contribution": 312.5,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -158,7 +158,7 @@
    "gtd_ratio": 250.0,
    "gtd_over_pool_contribution": 312.5,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -236,7 +236,7 @@
    "gtd_ratio": 250.0,
    "gtd_over_pool_contribution": 312.5,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -314,7 +314,7 @@
    "gtd_ratio": 250.0,
    "gtd_over_pool_contribution": 312.5,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -392,7 +392,7 @@
    "gtd_ratio": 33.33,
    "gtd_over_pool_contribution": 41.32,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -424,55 +424,54 @@
      "status": "unverified",
      "value": null,
      "excerpt": null,
-     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_9.pdf",
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf",
      "retrieved": "2026-11-17"
     },
     "re_entry": {
      "status": "not_stated_in_sheet",
      "value": null,
      "excerpt": null,
-     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_9.pdf",
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf",
      "retrieved": "2026-11-17"
     },
     "add_on": {
      "status": "not_stated_in_sheet",
      "value": null,
      "excerpt": null,
-     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_9.pdf",
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf",
      "retrieved": "2026-11-17"
     },
     "fee": {
      "status": "confirmed",
      "value": "$60 of $300 withheld; $240 per entry to the prize pool",
      "excerpt": "$ 60 of the $ 300 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $ 240 of every $ 300 Buy In.",
-     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_9.pdf",
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf",
      "retrieved": "2026-11-17"
     }
    },
    "sources": [
     "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_9.pdf"
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf"
    ],
-   "sheet_key": "V_S9",
-   "sheet_note": "several sheets print this event number (different starting flights) \u2014 the row lists both",
+   "sheet_key": "V_S10",
+   "sheet_note": null,
    "house_fee_usd": 60,
    "pool_per_entry_usd": 240,
-   "sheet_start_time": "5:10 PM",
-   "sheet_late_registration": "6 levels + Break (~ 8:40 PM)",
+   "sheet_start_time": "11:10 AM",
+   "sheet_late_registration": "6 levels + Break (~ 3:40 PM)",
    "sheet_guarantee_text": "$75,000",
    "sheet_title": "$300 No Limit Hold\u2019em",
    "payout_pct_of_field": null,
    "levels_total": null,
-   "breaks_listed": 7,
+   "breaks_listed": 9,
    "spend_advantage_evidence": [],
    "guarantee_from_sheet_text": "$75,000",
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
-    "single-entry unverified",
-    "structure sheet ambiguous"
+    "single-entry unverified"
    ]
   },
   {
@@ -546,7 +545,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified",
     "not ranked \u2014 entry fee or guarantee unconfirmed"
@@ -623,7 +622,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified",
     "not ranked \u2014 entry fee or guarantee unconfirmed"
@@ -700,7 +699,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified",
     "not ranked \u2014 entry fee or guarantee unconfirmed"
@@ -777,7 +776,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified",
     "not ranked \u2014 entry fee or guarantee unconfirmed"
@@ -856,7 +855,7 @@
    "gtd_ratio": 187.5,
    "gtd_over_pool_contribution": 227.27,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -934,7 +933,7 @@
    "gtd_ratio": 40.0,
    "gtd_over_pool_contribution": 50.0,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -1012,7 +1011,7 @@
    "gtd_ratio": 187.5,
    "gtd_over_pool_contribution": 227.27,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -1090,7 +1089,7 @@
    "gtd_ratio": 40.0,
    "gtd_over_pool_contribution": 50.0,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -1167,7 +1166,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -1245,7 +1244,7 @@
    "gtd_ratio": 37.5,
    "gtd_over_pool_contribution": 44.78,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -1323,7 +1322,7 @@
    "gtd_ratio": 40.0,
    "gtd_over_pool_contribution": 50.0,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -1401,7 +1400,7 @@
    "gtd_ratio": 33.33,
    "gtd_over_pool_contribution": 41.32,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -1479,7 +1478,7 @@
    "gtd_ratio": 40.0,
    "gtd_over_pool_contribution": 50.0,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -1557,7 +1556,7 @@
    "gtd_ratio": 50.0,
    "gtd_over_pool_contribution": 58.82,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -1635,7 +1634,7 @@
    "gtd_ratio": 40.0,
    "gtd_over_pool_contribution": 50.0,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -1713,7 +1712,7 @@
    "gtd_ratio": 50.0,
    "gtd_over_pool_contribution": 58.82,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -1792,7 +1791,7 @@
    "gtd_ratio": 37.5,
    "gtd_over_pool_contribution": 44.12,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -1873,7 +1872,7 @@
    "gtd_ratio": 100.0,
    "gtd_over_pool_contribution": 125.0,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "spend-advantage format \u2014 excluded from the single-entry list"
    ]
@@ -1951,7 +1950,7 @@
    "gtd_ratio": 187.5,
    "gtd_over_pool_contribution": 227.27,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -2029,7 +2028,7 @@
    "gtd_ratio": 33.33,
    "gtd_over_pool_contribution": 41.32,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -2107,7 +2106,7 @@
    "gtd_ratio": 40.0,
    "gtd_over_pool_contribution": 50.0,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -2185,7 +2184,7 @@
    "gtd_ratio": 187.5,
    "gtd_over_pool_contribution": 227.27,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -2263,7 +2262,7 @@
    "gtd_ratio": 40.0,
    "gtd_over_pool_contribution": 50.0,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -2341,7 +2340,7 @@
    "gtd_ratio": 187.5,
    "gtd_over_pool_contribution": 227.27,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -2419,7 +2418,7 @@
    "gtd_ratio": 40.0,
    "gtd_over_pool_contribution": 50.0,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -2497,7 +2496,7 @@
    "gtd_ratio": 66.67,
    "gtd_over_pool_contribution": 78.43,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -2574,7 +2573,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -2652,7 +2651,7 @@
    "gtd_ratio": 40.0,
    "gtd_over_pool_contribution": 50.0,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -2730,7 +2729,7 @@
    "gtd_ratio": 625.0,
    "gtd_over_pool_contribution": 724.64,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -2808,7 +2807,7 @@
    "gtd_ratio": 41.67,
    "gtd_over_pool_contribution": 49.02,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -2886,7 +2885,7 @@
    "gtd_ratio": 625.0,
    "gtd_over_pool_contribution": 724.64,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -2964,7 +2963,7 @@
    "gtd_ratio": 625.0,
    "gtd_over_pool_contribution": 724.64,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -3042,7 +3041,7 @@
    "gtd_ratio": 625.0,
    "gtd_over_pool_contribution": 724.64,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -3120,7 +3119,7 @@
    "gtd_ratio": 625.0,
    "gtd_over_pool_contribution": 724.64,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -3152,53 +3151,53 @@
      "status": "unverified",
      "value": null,
      "excerpt": null,
-     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_13.pdf",
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_14.pdf",
      "retrieved": "2026-11-17"
     },
     "re_entry": {
      "status": "not_stated_in_sheet",
      "value": null,
      "excerpt": null,
-     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_13.pdf",
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_14.pdf",
      "retrieved": "2026-11-17"
     },
     "add_on": {
      "status": "not_stated_in_sheet",
      "value": null,
      "excerpt": null,
-     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_13.pdf",
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_14.pdf",
      "retrieved": "2026-11-17"
     },
     "fee": {
      "status": "confirmed",
      "value": "$110 of $800 withheld; $690 per entry to the prize pool",
      "excerpt": "$ 110 of the $ 800 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $ 690 of every $ 800 Buy In.",
-     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_13.pdf",
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_14.pdf",
      "retrieved": "2026-11-17"
     }
    },
    "sources": [
     "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_13.pdf"
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_14.pdf"
    ],
-   "sheet_key": "V_S13",
+   "sheet_key": "V_S14",
    "sheet_note": null,
    "house_fee_usd": 110,
    "pool_per_entry_usd": 690,
-   "sheet_start_time": "5:10 PM",
-   "sheet_late_registration": "6 levels + Break (~ 8:40 PM)",
+   "sheet_start_time": null,
+   "sheet_late_registration": "6 levels + Break (~ 7:25 PM)",
    "sheet_guarantee_text": "$500,000",
    "sheet_title": "$800 No Limit Hold\u2019em",
    "payout_pct_of_field": null,
    "levels_total": null,
-   "breaks_listed": 7,
+   "breaks_listed": 5,
    "spend_advantage_evidence": [],
    "single_entry_confirmed": false,
    "rankable": true,
    "gtd_ratio": 625.0,
    "gtd_over_pool_contribution": 724.64,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -3276,7 +3275,7 @@
    "gtd_ratio": 66.67,
    "gtd_over_pool_contribution": 78.43,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -3338,7 +3337,7 @@
     "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf"
    ],
    "sheet_key": "V_S12",
-   "sheet_note": "several sheets print this event number (different starting flights) \u2014 the row lists both",
+   "sheet_note": null,
    "house_fee_usd": 110,
    "pool_per_entry_usd": 690,
    "sheet_start_time": "11:10 AM",
@@ -3353,10 +3352,9 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
-    "single-entry unverified",
-    "structure sheet ambiguous"
+    "single-entry unverified"
    ]
   },
   {
@@ -3432,7 +3430,7 @@
    "gtd_ratio": 50.0,
    "gtd_over_pool_contribution": 60.0,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -3510,7 +3508,7 @@
    "gtd_ratio": 66.67,
    "gtd_over_pool_contribution": 78.43,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -3588,7 +3586,7 @@
    "gtd_ratio": 50.0,
    "gtd_over_pool_contribution": 60.0,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -3666,7 +3664,7 @@
    "gtd_ratio": 66.67,
    "gtd_over_pool_contribution": 78.43,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -3744,7 +3742,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified",
     "not ranked \u2014 entry fee or guarantee unconfirmed"
@@ -3823,7 +3821,7 @@
    "gtd_ratio": 50.0,
    "gtd_over_pool_contribution": 60.0,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -3901,7 +3899,7 @@
    "gtd_ratio": 16.67,
    "gtd_over_pool_contribution": 19.61,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -3979,7 +3977,7 @@
    "gtd_ratio": 93.75,
    "gtd_over_pool_contribution": 107.14,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -4057,7 +4055,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified",
     "not ranked \u2014 entry fee or guarantee unconfirmed"
@@ -4136,7 +4134,7 @@
    "gtd_ratio": 50.0,
    "gtd_over_pool_contribution": 60.0,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -4214,7 +4212,7 @@
    "gtd_ratio": 50.0,
    "gtd_over_pool_contribution": 57.97,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -4293,7 +4291,7 @@
    "gtd_ratio": 41.67,
    "gtd_over_pool_contribution": 49.02,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -4370,7 +4368,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified",
     "not ranked \u2014 entry fee or guarantee unconfirmed"
@@ -4449,7 +4447,7 @@
    "gtd_ratio": 50.0,
    "gtd_over_pool_contribution": 60.0,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -4526,7 +4524,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -4604,7 +4602,7 @@
    "gtd_ratio": 50.0,
    "gtd_over_pool_contribution": 58.82,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -4681,7 +4679,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified",
     "not ranked \u2014 entry fee or guarantee unconfirmed"
@@ -4759,7 +4757,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -4836,7 +4834,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified",
     "not ranked \u2014 entry fee or guarantee unconfirmed"
@@ -4899,7 +4897,7 @@
     "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf"
    ],
    "sheet_key": "V_S21",
-   "sheet_note": "several sheets print this event number (different starting flights) \u2014 the row lists both",
+   "sheet_note": null,
    "house_fee_usd": 225,
    "pool_per_entry_usd": 1975,
    "sheet_start_time": null,
@@ -4915,10 +4913,9 @@
    "gtd_ratio": 454.55,
    "gtd_over_pool_contribution": 506.33,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
-    "single-entry unverified",
-    "structure sheet ambiguous"
+    "single-entry unverified"
    ]
   },
   {
@@ -4993,7 +4990,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified",
     "not ranked \u2014 entry fee or guarantee unconfirmed"
@@ -5026,56 +5023,55 @@
      "status": "unverified",
      "value": null,
      "excerpt": null,
-     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf",
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_37.pdf",
      "retrieved": "2026-11-17"
     },
     "re_entry": {
      "status": "not_stated_in_sheet",
      "value": null,
      "excerpt": null,
-     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf",
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_37.pdf",
      "retrieved": "2026-11-17"
     },
     "add_on": {
      "status": "not_stated_in_sheet",
      "value": null,
      "excerpt": null,
-     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf",
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_37.pdf",
      "retrieved": "2026-11-17"
     },
     "fee": {
      "status": "confirmed",
      "value": "$225 of $2200 withheld; $1975 per entry to the prize pool",
      "excerpt": "$ 225 of the $ 2200 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $ 1975 of every $ 2200 Buy In.",
-     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf",
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_37.pdf",
      "retrieved": "2026-11-17"
     }
    },
    "sources": [
     "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf"
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_37.pdf"
    ],
-   "sheet_key": "V_S21",
-   "sheet_note": "several sheets print this event number (different starting flights) \u2014 the row lists both",
+   "sheet_key": "V_S37",
+   "sheet_note": null,
    "house_fee_usd": 225,
    "pool_per_entry_usd": 1975,
    "sheet_start_time": null,
-   "sheet_late_registration": "9 levels + Break (~ 4:55 PM)",
+   "sheet_late_registration": "9 levels + Break (~ 11:10 PM)",
    "sheet_guarantee_text": "$1,000,000",
    "sheet_title": "$2,200 No Limit Hold\u2019em",
    "payout_pct_of_field": null,
    "levels_total": null,
-   "breaks_listed": 9,
+   "breaks_listed": 6,
    "spend_advantage_evidence": [],
    "single_entry_confirmed": false,
    "rankable": true,
    "gtd_ratio": 454.55,
    "gtd_over_pool_contribution": 506.33,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
-    "single-entry unverified",
-    "structure sheet ambiguous"
+    "single-entry unverified"
    ]
   },
   {
@@ -5150,7 +5146,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified",
     "not ranked \u2014 entry fee or guarantee unconfirmed"
@@ -5230,7 +5226,7 @@
    "gtd_ratio": 272.73,
    "gtd_over_pool_contribution": 312.5,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -5292,7 +5288,7 @@
     "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf"
    ],
    "sheet_key": "V_S21",
-   "sheet_note": "several sheets print this event number (different starting flights) \u2014 the row lists both",
+   "sheet_note": null,
    "house_fee_usd": 225,
    "pool_per_entry_usd": 1975,
    "sheet_start_time": null,
@@ -5307,10 +5303,9 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
-    "single-entry unverified",
-    "structure sheet ambiguous"
+    "single-entry unverified"
    ]
   },
   {
@@ -5386,7 +5381,7 @@
    "gtd_ratio": 50.0,
    "gtd_over_pool_contribution": 60.0,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -5465,7 +5460,7 @@
    "gtd_ratio": 272.73,
    "gtd_over_pool_contribution": 312.5,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -5527,7 +5522,7 @@
     "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf"
    ],
    "sheet_key": "V_S21",
-   "sheet_note": "several sheets print this event number (different starting flights) \u2014 the row lists both",
+   "sheet_note": null,
    "house_fee_usd": 225,
    "pool_per_entry_usd": 1975,
    "sheet_start_time": null,
@@ -5542,10 +5537,9 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
-    "single-entry unverified",
-    "structure sheet ambiguous"
+    "single-entry unverified"
    ]
   },
   {
@@ -5621,7 +5615,7 @@
    "gtd_ratio": 50.0,
    "gtd_over_pool_contribution": 60.0,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -5699,7 +5693,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -5777,7 +5771,7 @@
    "gtd_ratio": 68.18,
    "gtd_over_pool_contribution": 77.32,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -5855,7 +5849,7 @@
    "gtd_ratio": 50.0,
    "gtd_over_pool_contribution": 60.0,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -5933,7 +5927,7 @@
    "gtd_ratio": 83.33,
    "gtd_over_pool_contribution": 98.04,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -6011,7 +6005,7 @@
    "gtd_ratio": 50.0,
    "gtd_over_pool_contribution": 60.0,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -6021,8 +6015,8 @@
    "venue": "venetian",
    "venue_name": "The Venetian Poker Room",
    "event_no": 56,
-   "name": "$1,100 No Limit Hold'Em 1A $40 Rake Discount For Entries Before",
-   "name_printed": "NO LIMIT HOLD'EM 1A $40 RAKE DISCOUNT FOR ENTRIES BEFORE",
+   "name": "$1,100 No Limit Hold'Em 1A $500K Gtd",
+   "name_printed": "$1,100 No Limit Hold'em 1A $500K GTD",
    "date": "2026-12-17",
    "weekday": "Thursday",
    "time": "10:10 AM",
@@ -6070,10 +6064,20 @@
    },
    "sources": [
     "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf"
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf",
+    "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
    ],
    "sheet_key": "V_S35",
    "sheet_note": null,
+   "conditional_entry_fee": {
+    "standard_usd": 1100,
+    "early_usd": 1060,
+    "discount_usd": 40,
+    "deadline": "before the event starts (10:10 a.m.)",
+    "excerpt": "On Day 1A, players who register before the start of the event (10:10 a.m.) will receive a forty ($40) discount on house fees for a total buy in of $1,060 instead of $1,100.",
+    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf",
+    "retrieved": "2026-11-17"
+   },
    "house_fee_usd": 140,
    "pool_per_entry_usd": 960,
    "sheet_start_time": "10:10 AM",
@@ -6089,7 +6093,7 @@
    "gtd_ratio": 454.55,
    "gtd_over_pool_contribution": 520.83,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -6167,7 +6171,7 @@
    "gtd_ratio": 41.67,
    "gtd_over_pool_contribution": 49.02,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -6177,8 +6181,8 @@
    "venue": "venetian",
    "venue_name": "The Venetian Poker Room",
    "event_no": 56,
-   "name": "$1,100 No Limit Hold'Em 1B $40 Rake Discount For Entries Before",
-   "name_printed": "NO LIMIT HOLD'EM 1B $40 RAKE DISCOUNT FOR ENTRIES BEFORE",
+   "name": "$1,100 No Limit Hold'Em 1B $500K Gtd",
+   "name_printed": "$1,100 No Limit Hold'em 1B $500K GTD",
    "date": "2026-12-17",
    "weekday": "Thursday",
    "time": "6:10 PM",
@@ -6226,10 +6230,20 @@
    },
    "sources": [
     "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_36.pdf"
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_36.pdf",
+    "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
    ],
    "sheet_key": "V_S36",
    "sheet_note": null,
+   "conditional_entry_fee": {
+    "standard_usd": 1100,
+    "early_usd": 1060,
+    "discount_usd": 40,
+    "deadline": "before the event starts (6:10 p.m.)",
+    "excerpt": "On Day 1B, players who register before the start of the event (6:10 p.m.) will receive a forty ($40) discount on house fees for a total buy in of $1,060 instead of $1,100.",
+    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_36.pdf",
+    "retrieved": "2026-11-17"
+   },
    "house_fee_usd": 140,
    "pool_per_entry_usd": 960,
    "sheet_start_time": "6:10 PM",
@@ -6245,7 +6259,7 @@
    "gtd_ratio": 454.55,
    "gtd_over_pool_contribution": 520.83,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -6323,7 +6337,7 @@
    "gtd_ratio": 454.55,
    "gtd_over_pool_contribution": 520.83,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -6401,7 +6415,7 @@
    "gtd_ratio": 454.55,
    "gtd_over_pool_contribution": 520.83,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -6479,7 +6493,7 @@
    "gtd_ratio": 454.55,
    "gtd_over_pool_contribution": 520.83,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -6560,7 +6574,7 @@
    "gtd_ratio": 100.0,
    "gtd_over_pool_contribution": 125.0,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "spend-advantage format \u2014 excluded from the single-entry list"
    ]
@@ -6622,7 +6636,7 @@
     "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf"
    ],
    "sheet_key": "V_S35",
-   "sheet_note": "several sheets print this event number (different starting flights) \u2014 the row lists both",
+   "sheet_note": null,
    "house_fee_usd": 140,
    "pool_per_entry_usd": 960,
    "sheet_start_time": "10:10 AM",
@@ -6637,10 +6651,9 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
-    "single-entry unverified",
-    "structure sheet ambiguous"
+    "single-entry unverified"
    ]
   },
   {
@@ -6716,7 +6729,7 @@
    "gtd_ratio": 250.0,
    "gtd_over_pool_contribution": 297.03,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -6794,7 +6807,7 @@
    "gtd_ratio": 40.0,
    "gtd_over_pool_contribution": 50.0,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -6872,7 +6885,7 @@
    "gtd_ratio": 250.0,
    "gtd_over_pool_contribution": 297.03,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -6950,7 +6963,7 @@
    "gtd_ratio": 40.0,
    "gtd_over_pool_contribution": 50.0,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -7028,7 +7041,7 @@
    "gtd_ratio": 250.0,
    "gtd_over_pool_contribution": 297.03,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -7106,7 +7119,7 @@
    "gtd_ratio": 40.0,
    "gtd_over_pool_contribution": 50.0,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -7183,7 +7196,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -7261,7 +7274,7 @@
    "gtd_ratio": 50.0,
    "gtd_over_pool_contribution": 58.82,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -7339,7 +7352,7 @@
    "gtd_ratio": 40.0,
    "gtd_over_pool_contribution": 50.0,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -7355,11 +7368,11 @@
    "printed_date": "Nov 27",
    "weekday": null,
    "time": null,
-   "registration_closes": null,
+   "registration_closes": "start of level 9",
    "buy_in_usd": 600,
-   "guarantee_usd": null,
-   "guarantee_printed": false,
-   "starting_chips": null,
+   "guarantee_usd": 400000,
+   "guarantee_printed": true,
+   "starting_chips": 40000,
    "kind": "Tournament",
    "tags": [
     "Recurring / weekly"
@@ -7370,30 +7383,30 @@
     "single_entry": {
      "status": "no",
      "value": "multiple entries allowed",
-     "excerpt": "Unlimited re-entry to level 9",
-     "source": "https://www.wynnlasvegas.com/casino/poker",
-     "retrieved": "2026-11-16"
+     "excerpt": "Registration: Unlimited re-entry for each starting flight will be available until the start of level 9. A player who advances to Day 2 is prohibited from entering a subsequent starting flight. A player that has advanced to Day 2 who enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight.",
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+     "retrieved": "2026-11-17"
     },
     "re_entry": {
      "status": "confirmed_allowed",
-     "value": "Unlimited re-entry to level 9",
-     "excerpt": "Unlimited re-entry to level 9",
-     "source": "https://www.wynnlasvegas.com/casino/poker",
-     "retrieved": "2026-11-16"
+     "value": "unlimited re-entry until the start of level 9 (the sheet's own cutoff)",
+     "excerpt": "Registration: Unlimited re-entry for each starting flight will be available until the start of level 9. A player who advances to Day 2 is prohibited from entering a subsequent starting flight. A player that has advanced to Day 2 who enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight.",
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+     "retrieved": "2026-11-17"
     },
     "add_on": {
-     "status": "unverified",
+     "status": "not_stated_in_sheet",
      "value": null,
-     "excerpt": null,
-     "source": "https://www.wynnlasvegas.com/casino/poker",
-     "retrieved": "2026-11-16"
+     "excerpt": "Players will start with 40,000 in tournament chips",
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+     "retrieved": "2026-11-17"
     },
     "fee": {
-     "status": "unverified",
-     "value": null,
-     "excerpt": null,
-     "source": "https://www.wynnlasvegas.com/casino/poker",
-     "retrieved": "2026-11-16"
+     "status": "confirmed",
+     "value": "$65 tournament fee + $25 poker-staff service charge; $510 of the $600 reaches the prize pool",
+     "excerpt": "Entry Fee: $600 Buy-in = $510 (Tournament Prize Pool) + $65 (Tournament Fee) + $25 (Poker Staff Service Charge)",
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+     "retrieved": "2026-11-17"
     }
    },
    "sources": [
@@ -7404,11 +7417,41 @@
    "sheet_key": null,
    "notes": "WPT World Championship series row (Nov 27 \u2013 Dec 21, 2026) from the venue's own PDFs",
    "spend_advantage": true,
-   "rankable": false,
+   "rankable": true,
    "flags": [
-    "schedule not re-published in this snapshot's dated calendar",
+    "fee split read from the room's own structure sheet on 2026-11-17",
     "single-entry excluded (entry rules allow more)"
    ],
+   "pool_per_entry_usd": 510,
+   "fee_usd": 65,
+   "staff_charge_usd": 25,
+   "level_duration": "30-min / 20-min / 40-min",
+   "sheet_guarantee_text": "This $600 No Limit Hold\u2019em $400,000 Guaranteed poker tournament (the \u201cTournament\u201d) is a two- day No Limit Hold'em event.",
+   "guarantee_wording": "$400,000 GUARANTEE",
+   "added_pool_wording": null,
+   "bounty_wording": null,
+   "entry_limit_wording": null,
+   "levels_note": "Length of Play: Day 1A-E: 30 minutes per level until 12.5% or less of the field remains. Day 1F: 20 minutes per level until 12.5% or less of the field remains. Day 2: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter.",
+   "chips_note": "Players will start with 40,000 in tournament chips",
+   "suspension_clause": null,
+   "verified_from_sheet": "2026-11-17",
+   "sheet_capture": {
+    "sha256": null,
+    "captured_at": "2026-11-17T22:11:27Z",
+    "line": 193,
+    "title": "$600 No Limit Hold\u2019em $400,000 GUARANTEE"
+   },
+   "printed_flights": [
+    "Day 1A: Friday, November 27, 2026 at 11 a.m.",
+    "Day 1B: Friday, November 27, 2026 at 5 p.m.",
+    "Day 1C: Saturday, November 28, 2026 at 11 a.m.",
+    "Day 1D: Saturday, November 28, 2026 at 5 p.m.",
+    "Day 1E: Sunday, November 29, 2026 at 11 a.m.",
+    "Day 1F: Sunday, November 29, 2026 at 6 p.m.",
+    "Day 2: Monday, November 30, 2026 at 1 p.m."
+   ],
+   "gtd_ratio": 666.67,
+   "gtd_over_pool_contribution": 784.31,
    "last_checked": "2026-11-17",
    "source_changed": false
   },
@@ -7423,11 +7466,11 @@
    "printed_date": "Nov 27",
    "weekday": null,
    "time": null,
-   "registration_closes": null,
+   "registration_closes": "start of level 9",
    "buy_in_usd": 600,
    "guarantee_usd": null,
    "guarantee_printed": false,
-   "starting_chips": null,
+   "starting_chips": 35000,
    "kind": "Tournament",
    "tags": [
     "Recurring / weekly"
@@ -7438,30 +7481,30 @@
     "single_entry": {
      "status": "no",
      "value": "multiple entries allowed",
-     "excerpt": "Unlimited re-entry (per official structures PDF)",
-     "source": "https://www.wynnlasvegas.com/casino/poker",
-     "retrieved": "2026-11-16"
+     "excerpt": "Registration: Unlimited re-entry will be available until the start of level 9",
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+     "retrieved": "2026-11-17"
     },
     "re_entry": {
      "status": "confirmed_allowed",
-     "value": "Unlimited re-entry (per official structures PDF)",
-     "excerpt": "Unlimited re-entry (per official structures PDF)",
-     "source": "https://www.wynnlasvegas.com/casino/poker",
-     "retrieved": "2026-11-16"
+     "value": "unlimited re-entry until the start of level 9 (the sheet's own cutoff)",
+     "excerpt": "Registration: Unlimited re-entry will be available until the start of level 9",
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+     "retrieved": "2026-11-17"
     },
     "add_on": {
-     "status": "unverified",
+     "status": "not_stated_in_sheet",
      "value": null,
-     "excerpt": null,
-     "source": "https://www.wynnlasvegas.com/casino/poker",
-     "retrieved": "2026-11-16"
+     "excerpt": "Players will start with 35,000 in tournament chips",
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+     "retrieved": "2026-11-17"
     },
     "fee": {
-     "status": "unverified",
-     "value": null,
-     "excerpt": null,
-     "source": "https://www.wynnlasvegas.com/casino/poker",
-     "retrieved": "2026-11-16"
+     "status": "confirmed",
+     "value": "$65 tournament fee + $25 poker-staff service charge; $510 of the $600 reaches the prize pool",
+     "excerpt": "Entry Fee: $600 Buy-in = $510 (Tournament Prize Pool) + $65 (Tournament Fee) + $25 (Poker Staff Service Charge)",
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+     "retrieved": "2026-11-17"
     }
    },
    "sources": [
@@ -7474,8 +7517,31 @@
    "spend_advantage": true,
    "rankable": false,
    "flags": [
-    "schedule not re-published in this snapshot's dated calendar",
-    "single-entry excluded (entry rules allow more)"
+    "fee split read from the room's own structure sheet on 2026-11-17",
+    "single-entry excluded (entry rules allow more)",
+    "no guarantee printed on the sheet \u2014 not ranked"
+   ],
+   "pool_per_entry_usd": 510,
+   "fee_usd": 65,
+   "staff_charge_usd": 25,
+   "level_duration": "30",
+   "sheet_guarantee_text": null,
+   "guarantee_wording": null,
+   "added_pool_wording": null,
+   "bounty_wording": null,
+   "entry_limit_wording": null,
+   "levels_note": "Length of Play: 30 minutes per level until a winner is declared.",
+   "chips_note": "Players will start with 35,000 in tournament chips",
+   "suspension_clause": null,
+   "verified_from_sheet": "2026-11-17",
+   "sheet_capture": {
+    "sha256": null,
+    "captured_at": "2026-11-17T22:11:27Z",
+    "line": 308,
+    "title": "t Games 10,000 20,000 20,000-40,000 Stud Games 5,000 5,000 20,000 20,000-40,000 $600 TORSE"
+   },
+   "printed_flights": [
+    "Friday, November 27, 2026, at 12 p.m."
    ],
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -7491,11 +7557,11 @@
    "printed_date": "Nov 28 & Dec 20",
    "weekday": null,
    "time": null,
-   "registration_closes": null,
+   "registration_closes": "start of level 9",
    "buy_in_usd": 600,
    "guarantee_usd": null,
    "guarantee_printed": false,
-   "starting_chips": null,
+   "starting_chips": 35000,
    "kind": "Tournament",
    "tags": [
     "Recurring / weekly"
@@ -7506,30 +7572,30 @@
     "single_entry": {
      "status": "no",
      "value": "multiple entries allowed",
-     "excerpt": "Unlimited re-entry (per official structures PDF)",
-     "source": "https://www.wynnlasvegas.com/casino/poker",
-     "retrieved": "2026-11-16"
+     "excerpt": "Registration: Unlimited re-entry will be available until the start of level 9.",
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+     "retrieved": "2026-11-17"
     },
     "re_entry": {
      "status": "confirmed_allowed",
-     "value": "Unlimited re-entry (per official structures PDF)",
-     "excerpt": "Unlimited re-entry (per official structures PDF)",
-     "source": "https://www.wynnlasvegas.com/casino/poker",
-     "retrieved": "2026-11-16"
+     "value": "unlimited re-entry until the start of level 9 (the sheet's own cutoff)",
+     "excerpt": "Registration: Unlimited re-entry will be available until the start of level 9.",
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+     "retrieved": "2026-11-17"
     },
     "add_on": {
-     "status": "unverified",
+     "status": "not_stated_in_sheet",
      "value": null,
-     "excerpt": null,
-     "source": "https://www.wynnlasvegas.com/casino/poker",
-     "retrieved": "2026-11-16"
+     "excerpt": "Players will start with 35,000 in tournament chips",
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+     "retrieved": "2026-11-17"
     },
     "fee": {
-     "status": "unverified",
-     "value": null,
-     "excerpt": null,
-     "source": "https://www.wynnlasvegas.com/casino/poker",
-     "retrieved": "2026-11-16"
+     "status": "confirmed",
+     "value": "$65 tournament fee + $25 poker-staff service charge; $510 of the $600 reaches the prize pool",
+     "excerpt": "Entry Fee: $600 Buy-in = $510 (Tournament Prize Pool) + $65 (Tournament Fee) + $25 (Poker Staff Service Charge)",
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+     "retrieved": "2026-11-17"
     }
    },
    "sources": [
@@ -7542,8 +7608,32 @@
    "spend_advantage": true,
    "rankable": false,
    "flags": [
-    "schedule not re-published in this snapshot's dated calendar",
-    "single-entry excluded (entry rules allow more)"
+    "fee split read from the room's own structure sheet on 2026-11-17",
+    "single-entry excluded (entry rules allow more)",
+    "no guarantee printed on the sheet \u2014 not ranked"
+   ],
+   "pool_per_entry_usd": 510,
+   "fee_usd": 65,
+   "staff_charge_usd": 25,
+   "level_duration": "30",
+   "sheet_guarantee_text": null,
+   "guarantee_wording": null,
+   "added_pool_wording": null,
+   "bounty_wording": null,
+   "entry_limit_wording": null,
+   "levels_note": "Length of Play: 30 minutes per level until a winner is declared.",
+   "chips_note": "Players will start with 35,000 in tournament chips",
+   "suspension_clause": null,
+   "verified_from_sheet": "2026-11-17",
+   "sheet_capture": {
+    "sha256": null,
+    "captured_at": "2026-11-17T22:11:27Z",
+    "line": 457,
+    "title": "$600 Mixed Triple Draw (A-5, 2-7, Badugi)"
+   },
+   "printed_flights": [
+    "Saturday, November 28, 2026, at 12 p.m.",
+    "Sunday, December 20, 2026, at 1 p.m."
    ],
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -7559,11 +7649,11 @@
    "printed_date": "Nov 30 - Dec 4",
    "weekday": null,
    "time": null,
-   "registration_closes": null,
+   "registration_closes": "start of level 9",
    "buy_in_usd": 800,
-   "guarantee_usd": null,
-   "guarantee_printed": false,
-   "starting_chips": null,
+   "guarantee_usd": 1000000,
+   "guarantee_printed": true,
+   "starting_chips": 40000,
    "kind": "Tournament",
    "tags": [
     "Recurring / weekly"
@@ -7574,30 +7664,30 @@
     "single_entry": {
      "status": "no",
      "value": "multiple entries allowed",
-     "excerpt": "Unlimited re-entry",
-     "source": "https://www.wynnlasvegas.com/casino/poker",
-     "retrieved": "2026-11-16"
+     "excerpt": "Registration: Unlimited re-entry for each starting flight will be available until the start of level 9. A player who advances to Day 2 is prohibited from entering a subsequent starting flight. A player that has advanced to Day 2 who enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight.",
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+     "retrieved": "2026-11-17"
     },
     "re_entry": {
      "status": "confirmed_allowed",
-     "value": "Unlimited re-entry",
-     "excerpt": "Unlimited re-entry",
-     "source": "https://www.wynnlasvegas.com/casino/poker",
-     "retrieved": "2026-11-16"
+     "value": "unlimited re-entry until the start of level 9 (the sheet's own cutoff)",
+     "excerpt": "Registration: Unlimited re-entry for each starting flight will be available until the start of level 9. A player who advances to Day 2 is prohibited from entering a subsequent starting flight. A player that has advanced to Day 2 who enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight.",
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+     "retrieved": "2026-11-17"
     },
     "add_on": {
-     "status": "unverified",
+     "status": "not_stated_in_sheet",
      "value": null,
-     "excerpt": null,
-     "source": "https://www.wynnlasvegas.com/casino/poker",
-     "retrieved": "2026-11-16"
+     "excerpt": "Players will start with 40,000 in tournament chips",
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+     "retrieved": "2026-11-17"
     },
     "fee": {
-     "status": "unverified",
-     "value": null,
-     "excerpt": null,
-     "source": "https://www.wynnlasvegas.com/casino/poker",
-     "retrieved": "2026-11-16"
+     "status": "confirmed",
+     "value": "$72 tournament fee + $33 poker-staff service charge; $695 of the $800 reaches the prize pool",
+     "excerpt": "Entry Fee: $800 Buy-in = $695 (Tournament Prize Pool) + $72 (Tournament Fee) + $33 (Poker Staff Service Charge)",
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+     "retrieved": "2026-11-17"
     }
    },
    "sources": [
@@ -7608,11 +7698,42 @@
    "sheet_key": null,
    "notes": "WPT World Championship series row (Nov 27 \u2013 Dec 21, 2026) from the venue's own PDFs",
    "spend_advantage": true,
-   "rankable": false,
+   "rankable": true,
    "flags": [
-    "schedule not re-published in this snapshot's dated calendar",
+    "fee split read from the room's own structure sheet on 2026-11-17",
     "single-entry excluded (entry rules allow more)"
    ],
+   "pool_per_entry_usd": 695,
+   "fee_usd": 72,
+   "staff_charge_usd": 33,
+   "level_duration": "30-min / 20-min / 40-min",
+   "sheet_guarantee_text": "This $800 No Limit Hold\u2019em $1,000,000 Guaranteed poker tournament (the \u201cTournament\u201d) is a three-day No Limit Hold'em event.",
+   "guarantee_wording": "$1,000,000 GUARANTEE",
+   "added_pool_wording": null,
+   "bounty_wording": null,
+   "entry_limit_wording": null,
+   "levels_note": "Length of Play: Day 1A-1E: 30 minutes per level until 12.5% or less of the field remains. Day 1F: 20 minutes per level until 12.5% or less of the field remains. Day 2: 40 minutes per level until nine (9) players remain. Day 3: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter.",
+   "chips_note": "Players will start with 40,000 in tournament chips",
+   "suspension_clause": null,
+   "verified_from_sheet": "2026-11-17",
+   "sheet_capture": {
+    "sha256": null,
+    "captured_at": "2026-11-17T22:11:27Z",
+    "line": 547,
+    "title": "$800 No Limit Hold\u2019em $1,000,000 GUARANTEE"
+   },
+   "printed_flights": [
+    "Day 1A: Monday, November 30, 2026 at 11 a.m.",
+    "Day 1B: Monday, November 30, 2026 at 5 p.m.",
+    "Day 1C: Tuesday, December 1, 2026 at 11 a.m.",
+    "Day 1D: Tuesday, December 1, 2026 at 5 p.m.",
+    "Day 1E: Wednesday, December 2, 2026 at 11 a.m.",
+    "Day 1F: Wednesday, December 2, 2026 at 6 p.m.",
+    "Day 2: Thursday, December 3, 2026 at 1 p.m.",
+    "Final Table: Friday, December 4, 2026 at 1 p.m."
+   ],
+   "gtd_ratio": 1250.0,
+   "gtd_over_pool_contribution": 1438.85,
    "last_checked": "2026-11-17",
    "source_changed": false
   },
@@ -7627,11 +7748,11 @@
    "printed_date": "Nov 30",
    "weekday": null,
    "time": null,
-   "registration_closes": null,
+   "registration_closes": "start of level 9",
    "buy_in_usd": 600,
    "guarantee_usd": null,
    "guarantee_printed": false,
-   "starting_chips": null,
+   "starting_chips": 35000,
    "kind": "Tournament",
    "tags": [
     "Recurring / weekly"
@@ -7642,30 +7763,30 @@
     "single_entry": {
      "status": "no",
      "value": "multiple entries allowed",
-     "excerpt": "Unlimited re-entry (per official structures PDF)",
-     "source": "https://www.wynnlasvegas.com/casino/poker",
-     "retrieved": "2026-11-16"
+     "excerpt": "Registration: Unlimited re-entry will be available until the start of level 9",
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+     "retrieved": "2026-11-17"
     },
     "re_entry": {
      "status": "confirmed_allowed",
-     "value": "Unlimited re-entry (per official structures PDF)",
-     "excerpt": "Unlimited re-entry (per official structures PDF)",
-     "source": "https://www.wynnlasvegas.com/casino/poker",
-     "retrieved": "2026-11-16"
+     "value": "unlimited re-entry until the start of level 9 (the sheet's own cutoff)",
+     "excerpt": "Registration: Unlimited re-entry will be available until the start of level 9",
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+     "retrieved": "2026-11-17"
     },
     "add_on": {
-     "status": "unverified",
+     "status": "not_stated_in_sheet",
      "value": null,
-     "excerpt": null,
-     "source": "https://www.wynnlasvegas.com/casino/poker",
-     "retrieved": "2026-11-16"
+     "excerpt": "Players will start with 35,000 in tournament chips",
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+     "retrieved": "2026-11-17"
     },
     "fee": {
-     "status": "unverified",
-     "value": null,
-     "excerpt": null,
-     "source": "https://www.wynnlasvegas.com/casino/poker",
-     "retrieved": "2026-11-16"
+     "status": "confirmed",
+     "value": "$65 tournament fee + $25 poker-staff service charge; $510 of the $600 reaches the prize pool",
+     "excerpt": "Entry Fee: $600 Buy-in = $510 (Tournament Prize Pool) + $65 (Tournament Fee) + $25 (Poker Staff Service Charge)",
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+     "retrieved": "2026-11-17"
     }
    },
    "sources": [
@@ -7678,8 +7799,31 @@
    "spend_advantage": true,
    "rankable": false,
    "flags": [
-    "schedule not re-published in this snapshot's dated calendar",
-    "single-entry excluded (entry rules allow more)"
+    "fee split read from the room's own structure sheet on 2026-11-17",
+    "single-entry excluded (entry rules allow more)",
+    "no guarantee printed on the sheet \u2014 not ranked"
+   ],
+   "pool_per_entry_usd": 510,
+   "fee_usd": 65,
+   "staff_charge_usd": 25,
+   "level_duration": "30",
+   "sheet_guarantee_text": null,
+   "guarantee_wording": null,
+   "added_pool_wording": null,
+   "bounty_wording": null,
+   "entry_limit_wording": null,
+   "levels_note": "Length of Play: 30 minutes per level until a winner is declared.",
+   "chips_note": "Players will start with 35,000 in tournament chips",
+   "suspension_clause": null,
+   "verified_from_sheet": "2026-11-17",
+   "sheet_capture": {
+    "sha256": null,
+    "captured_at": "2026-11-17T22:11:27Z",
+    "line": 645,
+    "title": "30 100,000 200,000 200,000-400,000 $600 Limit Omaha 8"
+   },
+   "printed_flights": [
+    "Monday, November 30, 2026, at 12 p.m."
    ],
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -7695,11 +7839,11 @@
    "printed_date": "Dec 1",
    "weekday": null,
    "time": null,
-   "registration_closes": null,
+   "registration_closes": "start of level 9",
    "buy_in_usd": 600,
    "guarantee_usd": null,
    "guarantee_printed": false,
-   "starting_chips": null,
+   "starting_chips": 35000,
    "kind": "Tournament",
    "tags": [
     "Recurring / weekly"
@@ -7710,30 +7854,30 @@
     "single_entry": {
      "status": "no",
      "value": "multiple entries allowed",
-     "excerpt": "Unlimited re-entry (per official structures PDF)",
-     "source": "https://www.wynnlasvegas.com/casino/poker",
-     "retrieved": "2026-11-16"
+     "excerpt": "Registration: Unlimited re-entry will be available until the start of level 9",
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+     "retrieved": "2026-11-17"
     },
     "re_entry": {
      "status": "confirmed_allowed",
-     "value": "Unlimited re-entry (per official structures PDF)",
-     "excerpt": "Unlimited re-entry (per official structures PDF)",
-     "source": "https://www.wynnlasvegas.com/casino/poker",
-     "retrieved": "2026-11-16"
+     "value": "unlimited re-entry until the start of level 9 (the sheet's own cutoff)",
+     "excerpt": "Registration: Unlimited re-entry will be available until the start of level 9",
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+     "retrieved": "2026-11-17"
     },
     "add_on": {
-     "status": "unverified",
+     "status": "not_stated_in_sheet",
      "value": null,
-     "excerpt": null,
-     "source": "https://www.wynnlasvegas.com/casino/poker",
-     "retrieved": "2026-11-16"
+     "excerpt": "Players will start with 35,000 in tournament chips",
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+     "retrieved": "2026-11-17"
     },
     "fee": {
-     "status": "unverified",
-     "value": null,
-     "excerpt": null,
-     "source": "https://www.wynnlasvegas.com/casino/poker",
-     "retrieved": "2026-11-16"
+     "status": "confirmed",
+     "value": "$65 tournament fee + $25 poker-staff service charge; $510 of the $600 reaches the prize pool",
+     "excerpt": "Entry Fee: $600 Buy-in = $510 (Tournament Prize Pool) + $65 (Tournament Fee) + $25 (Poker Staff Service Charge)",
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+     "retrieved": "2026-11-17"
     }
    },
    "sources": [
@@ -7746,8 +7890,31 @@
    "spend_advantage": true,
    "rankable": false,
    "flags": [
-    "schedule not re-published in this snapshot's dated calendar",
-    "single-entry excluded (entry rules allow more)"
+    "fee split read from the room's own structure sheet on 2026-11-17",
+    "single-entry excluded (entry rules allow more)",
+    "no guarantee printed on the sheet \u2014 not ranked"
+   ],
+   "pool_per_entry_usd": 510,
+   "fee_usd": 65,
+   "staff_charge_usd": 25,
+   "level_duration": "30",
+   "sheet_guarantee_text": null,
+   "guarantee_wording": null,
+   "added_pool_wording": null,
+   "bounty_wording": null,
+   "entry_limit_wording": null,
+   "levels_note": "Length of Play: 30 minutes per level until a winner is declared.",
+   "chips_note": "Players will start with 35,000 in tournament chips",
+   "suspension_clause": null,
+   "verified_from_sheet": "2026-11-17",
+   "sheet_capture": {
+    "sha256": null,
+    "captured_at": "2026-11-17T22:11:27Z",
+    "line": 725,
+    "title": "$600 Limit Omaha 8/Stud 8"
+   },
+   "printed_flights": [
+    "Tuesday, December 1, 2026, at 12 p.m."
    ],
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -7763,11 +7930,11 @@
    "printed_date": "Dec 1",
    "weekday": null,
    "time": null,
-   "registration_closes": null,
+   "registration_closes": "start of level 9 (approximately 5:30 p.m.)",
    "buy_in_usd": 1100,
    "guarantee_usd": null,
    "guarantee_printed": false,
-   "starting_chips": null,
+   "starting_chips": 30000,
    "kind": "Tournament",
    "tags": [
     "Recurring / weekly"
@@ -7778,30 +7945,30 @@
     "single_entry": {
      "status": "no",
      "value": "multiple entries allowed",
-     "excerpt": "Unlimited re-entry through level 9",
-     "source": "https://www.wynnlasvegas.com/casino/poker",
-     "retrieved": "2026-11-16"
+     "excerpt": "Registration: Unlimited re-entry will be available until the start of level 9 (approximately 5:30 p.m.).",
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+     "retrieved": "2026-11-17"
     },
     "re_entry": {
      "status": "confirmed_allowed",
-     "value": "Unlimited re-entry through level 9",
-     "excerpt": "Unlimited re-entry through level 9",
-     "source": "https://www.wynnlasvegas.com/casino/poker",
-     "retrieved": "2026-11-16"
+     "value": "unlimited re-entry until the start of level 9 (the sheet's own cutoff)",
+     "excerpt": "Registration: Unlimited re-entry will be available until the start of level 9 (approximately 5:30 p.m.).",
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+     "retrieved": "2026-11-17"
     },
     "add_on": {
-     "status": "unverified",
+     "status": "not_stated_in_sheet",
      "value": null,
-     "excerpt": null,
-     "source": "https://www.wynnlasvegas.com/casino/poker",
-     "retrieved": "2026-11-16"
+     "excerpt": "Players will start with 30,000 in tournament chips",
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+     "retrieved": "2026-11-17"
     },
     "fee": {
-     "status": "unverified",
-     "value": null,
-     "excerpt": null,
-     "source": "https://www.wynnlasvegas.com/casino/poker",
-     "retrieved": "2026-11-16"
+     "status": "confirmed",
+     "value": "$85 tournament fee + $45 poker-staff service charge; $975 of the $1,100 reaches the prize pool",
+     "excerpt": "Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $45 (Poker Staff Service Charge)",
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+     "retrieved": "2026-11-17"
     }
    },
    "sources": [
@@ -7814,8 +7981,31 @@
    "spend_advantage": true,
    "rankable": false,
    "flags": [
-    "schedule not re-published in this snapshot's dated calendar",
-    "single-entry excluded (entry rules allow more)"
+    "fee split read from the room's own structure sheet on 2026-11-17",
+    "single-entry excluded (entry rules allow more)",
+    "no guarantee printed on the sheet \u2014 not ranked"
+   ],
+   "pool_per_entry_usd": 975,
+   "fee_usd": 85,
+   "staff_charge_usd": 45,
+   "level_duration": "30",
+   "sheet_guarantee_text": null,
+   "guarantee_wording": null,
+   "added_pool_wording": null,
+   "bounty_wording": null,
+   "entry_limit_wording": null,
+   "levels_note": "Length of Play: 30 minutes per level until a winner is declared.",
+   "chips_note": "Players will start with 30,000 in tournament chips",
+   "suspension_clause": null,
+   "verified_from_sheet": "2026-11-17",
+   "sheet_capture": {
+    "sha256": null,
+    "captured_at": "2026-11-17T22:11:27Z",
+    "line": 806,
+    "title": "$1,100 PLO"
+   },
+   "printed_flights": [
+    "Tuesday, December 1, 2026, at 1 p.m."
    ],
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -7831,11 +8021,11 @@
    "printed_date": "Dec 3 - 5",
    "weekday": null,
    "time": null,
-   "registration_closes": null,
+   "registration_closes": "start of level 10",
    "buy_in_usd": 1600,
-   "guarantee_usd": null,
-   "guarantee_printed": false,
-   "starting_chips": null,
+   "guarantee_usd": 1000000,
+   "guarantee_printed": true,
+   "starting_chips": 40000,
    "kind": "Tournament",
    "tags": [
     "Recurring / weekly"
@@ -7846,30 +8036,30 @@
     "single_entry": {
      "status": "no",
      "value": "multiple entries allowed",
-     "excerpt": "Unlimited re-entry",
-     "source": "https://www.wynnlasvegas.com/casino/poker",
-     "retrieved": "2026-11-16"
+     "excerpt": "Registration: Unlimited re-entry for each starting flight will be available until the start of level 10. A player who advances to Day 2 is prohibited from entering a subsequent starting flight. A player that has advanced to Day 2 who enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight.",
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+     "retrieved": "2026-11-17"
     },
     "re_entry": {
      "status": "confirmed_allowed",
-     "value": "Unlimited re-entry",
-     "excerpt": "Unlimited re-entry",
-     "source": "https://www.wynnlasvegas.com/casino/poker",
-     "retrieved": "2026-11-16"
+     "value": "unlimited re-entry until the start of level 10 (the sheet's own cutoff)",
+     "excerpt": "Registration: Unlimited re-entry for each starting flight will be available until the start of level 10. A player who advances to Day 2 is prohibited from entering a subsequent starting flight. A player that has advanced to Day 2 who enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight.",
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+     "retrieved": "2026-11-17"
     },
     "add_on": {
-     "status": "unverified",
+     "status": "not_stated_in_sheet",
      "value": null,
-     "excerpt": null,
-     "source": "https://www.wynnlasvegas.com/casino/poker",
-     "retrieved": "2026-11-16"
+     "excerpt": "Players will start with 40,000 in tournament chips",
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+     "retrieved": "2026-11-17"
     },
     "fee": {
-     "status": "unverified",
-     "value": null,
-     "excerpt": null,
-     "source": "https://www.wynnlasvegas.com/casino/poker",
-     "retrieved": "2026-11-16"
+     "status": "confirmed",
+     "value": "$120 tournament fee + $50 poker-staff service charge; $1,430 of the $1,600 reaches the prize pool",
+     "excerpt": "Entry Fee: $1,600 Buy-in = $1,430 (Tournament Prize Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge)",
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+     "retrieved": "2026-11-17"
     }
    },
    "sources": [
@@ -7880,11 +8070,37 @@
    "sheet_key": null,
    "notes": "WPT World Championship series row (Nov 27 \u2013 Dec 21, 2026) from the venue's own PDFs",
    "spend_advantage": true,
-   "rankable": false,
+   "rankable": true,
    "flags": [
-    "schedule not re-published in this snapshot's dated calendar",
+    "fee split read from the room's own structure sheet on 2026-11-17",
     "single-entry excluded (entry rules allow more)"
    ],
+   "pool_per_entry_usd": 1430,
+   "fee_usd": 120,
+   "staff_charge_usd": 50,
+   "level_duration": "40-min / 30-min",
+   "sheet_guarantee_text": "This $1,600 No Limit Hold\u2019em $1,000,000 Guaranteed poker tournament (the \u201cTournament\u201d) is a two-day No Limit Hold'em event.",
+   "guarantee_wording": "$1,000,000 GUARANTEE",
+   "added_pool_wording": null,
+   "bounty_wording": null,
+   "entry_limit_wording": null,
+   "levels_note": "Length of Play: Day 1: 40 minutes per level until 12.5% or less of the field remains. Day 2: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter.",
+   "chips_note": "Players will start with 40,000 in tournament chips",
+   "suspension_clause": null,
+   "verified_from_sheet": "2026-11-17",
+   "sheet_capture": {
+    "sha256": null,
+    "captured_at": "2026-11-17T22:11:27Z",
+    "line": 874,
+    "title": "$1,600 No Limit Hold\u2019em $1,000,000 GUARANTEE"
+   },
+   "printed_flights": [
+    "Day 1A: Thursday, December 3, 2026 at 11 a.m.",
+    "Day 1B: Friday, December 4, 2026 at 11 a.m.",
+    "Day 2: Saturday, December 5, 2026 at 11 a.m."
+   ],
+   "gtd_ratio": 625.0,
+   "gtd_over_pool_contribution": 699.3,
    "last_checked": "2026-11-17",
    "source_changed": false
   },
@@ -7899,11 +8115,11 @@
    "printed_date": "Dec 4",
    "weekday": null,
    "time": null,
-   "registration_closes": null,
+   "registration_closes": "start of level 9 (approximately 4:30 p.m.)",
    "buy_in_usd": 600,
    "guarantee_usd": null,
    "guarantee_printed": false,
-   "starting_chips": null,
+   "starting_chips": 35000,
    "kind": "Tournament",
    "tags": [
     "Recurring / weekly"
@@ -7914,30 +8130,30 @@
     "single_entry": {
      "status": "no",
      "value": "multiple entries allowed",
-     "excerpt": "Unlimited re-entry (per official structures PDF)",
-     "source": "https://www.wynnlasvegas.com/casino/poker",
-     "retrieved": "2026-11-16"
+     "excerpt": "Registration: Unlimited re-entry will be available until the start of level 9 (approximately 4:30 p.m.).",
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+     "retrieved": "2026-11-17"
     },
     "re_entry": {
      "status": "confirmed_allowed",
-     "value": "Unlimited re-entry (per official structures PDF)",
-     "excerpt": "Unlimited re-entry (per official structures PDF)",
-     "source": "https://www.wynnlasvegas.com/casino/poker",
-     "retrieved": "2026-11-16"
+     "value": "unlimited re-entry until the start of level 9 (the sheet's own cutoff)",
+     "excerpt": "Registration: Unlimited re-entry will be available until the start of level 9 (approximately 4:30 p.m.).",
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+     "retrieved": "2026-11-17"
     },
     "add_on": {
-     "status": "unverified",
+     "status": "not_stated_in_sheet",
      "value": null,
-     "excerpt": null,
-     "source": "https://www.wynnlasvegas.com/casino/poker",
-     "retrieved": "2026-11-16"
+     "excerpt": "Players will start with 35,000 in tournament chips",
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+     "retrieved": "2026-11-17"
     },
     "fee": {
-     "status": "unverified",
-     "value": null,
-     "excerpt": null,
-     "source": "https://www.wynnlasvegas.com/casino/poker",
-     "retrieved": "2026-11-16"
+     "status": "confirmed",
+     "value": "$65 tournament fee + $25 poker-staff service charge; $510 of the $600 reaches the prize pool",
+     "excerpt": "Entry Fee: $600 Buy-in = $510 (Tournament Prize Pool) + $65 (Tournament Fee) + $25 (Poker Staff Service Charge)",
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+     "retrieved": "2026-11-17"
     }
    },
    "sources": [
@@ -7950,8 +8166,31 @@
    "spend_advantage": true,
    "rankable": false,
    "flags": [
-    "schedule not re-published in this snapshot's dated calendar",
-    "single-entry excluded (entry rules allow more)"
+    "fee split read from the room's own structure sheet on 2026-11-17",
+    "single-entry excluded (entry rules allow more)",
+    "no guarantee printed on the sheet \u2014 not ranked"
+   ],
+   "pool_per_entry_usd": 510,
+   "fee_usd": 65,
+   "staff_charge_usd": 25,
+   "level_duration": "30",
+   "sheet_guarantee_text": null,
+   "guarantee_wording": null,
+   "added_pool_wording": null,
+   "bounty_wording": null,
+   "entry_limit_wording": null,
+   "levels_note": "Length of Play: 30 minutes per level until a winner is declared.",
+   "chips_note": "Players will start with 35,000 in tournament chips",
+   "suspension_clause": null,
+   "verified_from_sheet": "2026-11-17",
+   "sheet_capture": {
+    "sha256": null,
+    "captured_at": "2026-11-17T22:11:27Z",
+    "line": 983,
+    "title": "t Games 10,000 20,000 20,000-40,000 Stud Games 5,000 5,000 20,000 20,000-40,000 $600 HORSE"
+   },
+   "printed_flights": [
+    "Friday, December 4, 2026 at 12 p.m."
    ],
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -7967,11 +8206,11 @@
    "printed_date": "Dec 5 - 12",
    "weekday": null,
    "time": null,
-   "registration_closes": null,
+   "registration_closes": "start of level 10 (approximately 6:45 p.m.)",
    "buy_in_usd": 1100,
    "guarantee_usd": 5000000,
    "guarantee_printed": true,
-   "starting_chips": null,
+   "starting_chips": 40000,
    "kind": "Tournament",
    "tags": [
     "Recurring / weekly"
@@ -7982,30 +8221,30 @@
     "single_entry": {
      "status": "no",
      "value": "multiple entries allowed",
-     "excerpt": "One entry plus one re-entry per flight",
-     "source": "https://www.wynnlasvegas.com/casino/poker",
-     "retrieved": "2026-11-16"
+     "excerpt": "Registration: One (1) Entry and One (1) re-entry for each starting flight will be available until the start of level 10 (approximately 6:45 p.m.). A player who advances to Day 2 is prohibited from entering a subsequent starting flight. A player that has advanced to Day 2 who enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight.",
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+     "retrieved": "2026-11-17"
     },
     "re_entry": {
      "status": "confirmed_allowed",
-     "value": "One entry plus one re-entry per flight",
-     "excerpt": "One entry plus one re-entry per flight",
-     "source": "https://www.wynnlasvegas.com/casino/poker",
-     "retrieved": "2026-11-16"
+     "value": "one entry plus one re-entry per starting flight, until the sheet's cutoff",
+     "excerpt": "Registration: One (1) Entry and One (1) re-entry for each starting flight will be available until the start of level 10 (approximately 6:45 p.m.). A player who advances to Day 2 is prohibited from entering a subsequent starting flight. A player that has advanced to Day 2 who enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight.",
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+     "retrieved": "2026-11-17"
     },
     "add_on": {
-     "status": "unverified",
+     "status": "not_stated_in_sheet",
      "value": null,
-     "excerpt": null,
-     "source": "https://www.wynnlasvegas.com/casino/poker",
-     "retrieved": "2026-11-16"
+     "excerpt": "Players will start with 40,000 in tournament chips",
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+     "retrieved": "2026-11-17"
     },
     "fee": {
-     "status": "unverified",
-     "value": null,
-     "excerpt": null,
-     "source": "https://www.wynnlasvegas.com/casino/poker",
-     "retrieved": "2026-11-16"
+     "status": "confirmed",
+     "value": "$90 tournament fee + $40 poker-staff service charge; $970 of the $1,100 reaches the prize pool",
+     "excerpt": "Entry Fee: $1,100 Buy-in = $970 (Tournament Prize Pool) + $90 (Tournament Fee) + $40 (Poker Staff Service Charge)",
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+     "retrieved": "2026-11-17"
     }
    },
    "sources": [
@@ -8016,12 +8255,42 @@
    "sheet_key": null,
    "notes": "WPT World Championship series row (Nov 27 \u2013 Dec 21, 2026) from the venue's own PDFs",
    "spend_advantage": true,
-   "rankable": false,
+   "rankable": true,
    "flags": [
-    "schedule not re-published in this snapshot's dated calendar",
+    "fee split read from the room's own structure sheet on 2026-11-17",
     "single-entry excluded (entry rules allow more)"
    ],
+   "pool_per_entry_usd": 970,
+   "fee_usd": 90,
+   "staff_charge_usd": 40,
+   "level_duration": "40-min / 60-min / 30-min",
+   "sheet_guarantee_text": "This $1,100 WPT Prime Championship $5,000,000 Guarantee poker tournament (the \u201cTournament\u201d) is a five-day No Limit Hold'em event.",
+   "guarantee_wording": "$5,000,000 GUARANTEE",
+   "added_pool_wording": null,
+   "bounty_wording": null,
+   "entry_limit_wording": null,
+   "levels_note": null,
+   "chips_note": "Players will start with 40,000 in tournament chips",
+   "suspension_clause": null,
+   "verified_from_sheet": "2026-11-17",
+   "sheet_capture": {
+    "sha256": null,
+    "captured_at": "2026-11-17T22:11:27Z",
+    "line": 1069,
+    "title": "$1,100 WPT Prime Championship $5,000,000 GUARANTEE"
+   },
+   "printed_flights": [
+    "Day 1A: Saturday, December 5, 2026 at 11 a.m.",
+    "Day 1B: Sunday, December 6, 2026 at 11 a.m.",
+    "Day 1C: Monday, December 7, 2026 at 11 a.m.",
+    "Day 1D: Tuesday, December 8, 2026 at 11 a.m.",
+    "Day 2: Wednesday, December 9, 2026 at 12 p.m.",
+    "Day 3: Thursday, December 10, 2026 at 12 p.m.",
+    "Day 4: Friday, December 11, 2026 at 12 p.m.",
+    "Final Table: Saturday, December 12, 2026 at 2 p.m."
+   ],
    "gtd_ratio": 4545.45,
+   "gtd_over_pool_contribution": 5154.64,
    "last_checked": "2026-11-17",
    "source_changed": false
   },
@@ -8036,11 +8305,11 @@
    "printed_date": "Dec 5 - 21 (nightly)",
    "weekday": null,
    "time": null,
-   "registration_closes": null,
+   "registration_closes": "start of level 9",
    "buy_in_usd": 600,
    "guarantee_usd": 50000,
    "guarantee_printed": true,
-   "starting_chips": null,
+   "starting_chips": 30000,
    "kind": "Tournament",
    "tags": [
     "Recurring / weekly"
@@ -8049,32 +8318,32 @@
    "is_continuation": false,
    "rules": {
     "single_entry": {
-     "status": "unverified",
-     "value": null,
-     "excerpt": null,
-     "source": "https://www.wynnlasvegas.com/casino/poker",
-     "retrieved": "2026-11-16"
+     "status": "no",
+     "value": "multiple entries allowed",
+     "excerpt": "Registration: Unlimited re-entry will be available until the start of level 9.",
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+     "retrieved": "2026-11-17"
     },
     "re_entry": {
-     "status": "unverified",
-     "value": null,
-     "excerpt": null,
-     "source": "https://www.wynnlasvegas.com/casino/poker",
-     "retrieved": "2026-11-16"
+     "status": "confirmed_allowed",
+     "value": "unlimited re-entry until the start of level 9 (the sheet's own cutoff)",
+     "excerpt": "Registration: Unlimited re-entry will be available until the start of level 9.",
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+     "retrieved": "2026-11-17"
     },
     "add_on": {
-     "status": "unverified",
+     "status": "not_stated_in_sheet",
      "value": null,
-     "excerpt": null,
-     "source": "https://www.wynnlasvegas.com/casino/poker",
-     "retrieved": "2026-11-16"
+     "excerpt": "Players will start with 30,000 in tournament chips",
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+     "retrieved": "2026-11-17"
     },
     "fee": {
-     "status": "unverified",
-     "value": null,
-     "excerpt": null,
-     "source": "https://www.wynnlasvegas.com/casino/poker",
-     "retrieved": "2026-11-16"
+     "status": "confirmed",
+     "value": "$60 tournament fee + $25 poker-staff service charge; $515 of the $600 reaches the prize pool",
+     "excerpt": "Entry Fee: $600 Buy-in = $515 (Tournament Prize Pool) + $60 (Tournament Fee) + $25 (Poker Staff Service Charge)",
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+     "retrieved": "2026-11-17"
     }
    },
    "sources": [
@@ -8084,12 +8353,43 @@
    ],
    "sheet_key": null,
    "notes": "entry terms not captured from the official PDFs \u2014 treated as unverified, not as single-entry",
-   "spend_advantage": false,
-   "rankable": false,
+   "spend_advantage": true,
+   "rankable": true,
    "flags": [
-    "single-entry unverified"
+    "fee split read from the room's own structure sheet on 2026-11-17",
+    "single-entry excluded (the sheet allows more than one buy-in)"
+   ],
+   "pool_per_entry_usd": 515,
+   "fee_usd": 60,
+   "staff_charge_usd": 25,
+   "level_duration": "20",
+   "sheet_guarantee_text": "This $600 NLH Turbo $50,000 guaranteed poker tournament (the \u201cTournament\u201d) is a single day No Limit Hold\u2019em event.",
+   "guarantee_wording": "$50,000 GUARANTEE",
+   "added_pool_wording": null,
+   "bounty_wording": null,
+   "entry_limit_wording": null,
+   "levels_note": "Length of Play: 20 minutes per level until a winner is declared.",
+   "chips_note": "Players will start with 30,000 in tournament chips",
+   "suspension_clause": null,
+   "verified_from_sheet": "2026-11-17",
+   "sheet_capture": {
+    "sha256": null,
+    "captured_at": "2026-11-17T22:11:27Z",
+    "line": 1175,
+    "title": "$600 NLH Turbo $50,000 GUARANTEE"
+   },
+   "printed_flights": [
+    "Saturday, December 5, 2026 at 9 p.m.",
+    "Sunday, December 6, 2026 at 9 p.m.",
+    "Monday, December 7, 2026 at 9 p.m.",
+    "Tuesday, December 8, 2026 at 9 p.m.",
+    "Wednesday, December 9, 2026 at 9 p.m.",
+    "Saturday, December 12, 2026 at 9 p.m.",
+    "Monday, December 14, 2026 at 9 p.m.",
+    "Monday, December 21, 2026 at 6 p.m."
    ],
    "gtd_ratio": 83.33,
+   "gtd_over_pool_contribution": 97.09,
    "last_checked": "2026-11-17",
    "source_changed": false
   },
@@ -8104,11 +8404,11 @@
    "printed_date": "Dec 6 - 7",
    "weekday": null,
    "time": null,
-   "registration_closes": null,
+   "registration_closes": "start of level 10",
    "buy_in_usd": 1600,
    "guarantee_usd": 500000,
    "guarantee_printed": true,
-   "starting_chips": null,
+   "starting_chips": 40000,
    "kind": "Tournament",
    "tags": [
     "Recurring / weekly"
@@ -8119,30 +8419,30 @@
     "single_entry": {
      "status": "no",
      "value": "multiple entries allowed",
-     "excerpt": "Unlimited re-entry through level 10",
-     "source": "https://www.wynnlasvegas.com/casino/poker",
-     "retrieved": "2026-11-16"
+     "excerpt": "Registration: Unlimited re-entry for each starting flight will be available until the start of level 10. A player who advances to Day 2 is prohibited from entering a subsequent starting flight. A player that has advanced to Day 2 who enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight.",
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+     "retrieved": "2026-11-17"
     },
     "re_entry": {
      "status": "confirmed_allowed",
-     "value": "Unlimited re-entry through level 10",
-     "excerpt": "Unlimited re-entry through level 10",
-     "source": "https://www.wynnlasvegas.com/casino/poker",
-     "retrieved": "2026-11-16"
+     "value": "unlimited re-entry until the start of level 10 (the sheet's own cutoff)",
+     "excerpt": "Registration: Unlimited re-entry for each starting flight will be available until the start of level 10. A player who advances to Day 2 is prohibited from entering a subsequent starting flight. A player that has advanced to Day 2 who enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight.",
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+     "retrieved": "2026-11-17"
     },
     "add_on": {
-     "status": "unverified",
+     "status": "not_stated_in_sheet",
      "value": null,
-     "excerpt": null,
-     "source": "https://www.wynnlasvegas.com/casino/poker",
-     "retrieved": "2026-11-16"
+     "excerpt": "Players will start with 40,000 in tournament chips",
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+     "retrieved": "2026-11-17"
     },
     "fee": {
-     "status": "unverified",
-     "value": null,
-     "excerpt": null,
-     "source": "https://www.wynnlasvegas.com/casino/poker",
-     "retrieved": "2026-11-16"
+     "status": "confirmed",
+     "value": "$120 tournament fee + $50 poker-staff service charge; $930 of the $1,600 reaches the prize pool",
+     "excerpt": "Entry Fee: $1,600 Buy-in = $930 (Tournament Prize Pool) + $500 (Mystery Bounty Prize Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge)",
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+     "retrieved": "2026-11-17"
     }
    },
    "sources": [
@@ -8153,12 +8453,37 @@
    "sheet_key": null,
    "notes": "WPT World Championship series row (Nov 27 \u2013 Dec 21, 2026) from the venue's own PDFs",
    "spend_advantage": true,
-   "rankable": false,
+   "rankable": true,
    "flags": [
-    "schedule not re-published in this snapshot's dated calendar",
+    "fee split read from the room's own structure sheet on 2026-11-17",
     "single-entry excluded (entry rules allow more)"
    ],
+   "pool_per_entry_usd": 930,
+   "fee_usd": 120,
+   "staff_charge_usd": 50,
+   "level_duration": "40-min / 20-min / 30-min",
+   "sheet_guarantee_text": "This $1,600 Mystery Bounty $500,000 Guarantee poker tournament (the \u201cTournament\u201d) is a two- day Pot Limit Omaha event.",
+   "guarantee_wording": "$500,000 GUARANTEE",
+   "added_pool_wording": null,
+   "bounty_wording": null,
+   "entry_limit_wording": null,
+   "levels_note": "Length of Play: Day 1A: 40 minutes per level until 12.5% or less of the field remains. Day 1B: 20 minutes per level until 12.5% or less of the field remains. Day 2: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter.",
+   "chips_note": "Players will start with 40,000 in tournament chips",
+   "suspension_clause": null,
+   "verified_from_sheet": "2026-11-17",
+   "sheet_capture": {
+    "sha256": null,
+    "captured_at": "2026-11-17T22:11:27Z",
+    "line": 1250,
+    "title": "$1,600 PLO Mystery Bounty $500,000 GUARANTEE"
+   },
+   "printed_flights": [
+    "Day 1A: Sunday, December 6, 2026, at 11 a.m.",
+    "Day 1B: Sunday, December 6, 2026, at 6 p.m.",
+    "Day 2: Monday, December 7, 2026, at 12 p.m."
+   ],
    "gtd_ratio": 312.5,
+   "gtd_over_pool_contribution": 537.63,
    "last_checked": "2026-11-17",
    "source_changed": false
   },
@@ -8173,11 +8498,11 @@
    "printed_date": "Dec 13 - 21",
    "weekday": null,
    "time": null,
-   "registration_closes": null,
+   "registration_closes": "start of level 9",
    "buy_in_usd": 10400,
    "guarantee_usd": null,
    "guarantee_printed": false,
-   "starting_chips": null,
+   "starting_chips": 100000,
    "kind": "Tournament",
    "tags": [
     "Recurring / weekly"
@@ -8186,32 +8511,32 @@
    "is_continuation": false,
    "rules": {
     "single_entry": {
-     "status": "unverified",
-     "value": null,
-     "excerpt": null,
-     "source": "https://www.wynnlasvegas.com/casino/poker",
-     "retrieved": "2026-11-16"
+     "status": "no",
+     "value": "Four (4) Entries maximum",
+     "excerpt": "Registration: Four (4) Entries maximum. Players are allowed One (1) entry per starting flight + One (1) Day 2 Entry prior to the start of Day 2. Registration is available until the start of level nine (9). A player who advances to Day 2 is prohibited from entering a subsequent starting flight. A player that has advanced to Day 2 who enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight.",
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+     "retrieved": "2026-11-17"
     },
     "re_entry": {
-     "status": "unverified",
-     "value": null,
-     "excerpt": null,
-     "source": "https://www.wynnlasvegas.com/casino/poker",
-     "retrieved": "2026-11-16"
+     "status": "confirmed_limited",
+     "value": "entries capped by the sheet: Four (4) Entries maximum",
+     "excerpt": "Registration: Four (4) Entries maximum. Players are allowed One (1) entry per starting flight + One (1) Day 2 Entry prior to the start of Day 2. Registration is available until the start of level nine (9). A player who advances to Day 2 is prohibited from entering a subsequent starting flight. A player that has advanced to Day 2 who enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight.",
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+     "retrieved": "2026-11-17"
     },
     "add_on": {
-     "status": "unverified",
+     "status": "not_stated_in_sheet",
      "value": null,
-     "excerpt": null,
-     "source": "https://www.wynnlasvegas.com/casino/poker",
-     "retrieved": "2026-11-16"
+     "excerpt": "Players will start with 100,000 in tournament chips",
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+     "retrieved": "2026-11-17"
     },
     "fee": {
-     "status": "unverified",
-     "value": null,
-     "excerpt": null,
-     "source": "https://www.wynnlasvegas.com/casino/poker",
-     "retrieved": "2026-11-16"
+     "status": "confirmed",
+     "value": "$400 tournament fee + $200 poker-staff service charge; $9,800 of the $10,400 reaches the prize pool",
+     "excerpt": "Entry Fee: $10,400 Buy-in = $9,800 (Tournament Prize Pool) + $400 (Tournament Fee) + $200 (Poker Staff Service Charge)",
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+     "retrieved": "2026-11-17"
     }
    },
    "sources": [
@@ -8221,10 +8546,41 @@
    ],
    "sheet_key": null,
    "notes": "entry terms not captured from the official PDFs \u2014 treated as unverified, not as single-entry",
-   "spend_advantage": false,
+   "spend_advantage": true,
    "rankable": false,
    "flags": [
-    "single-entry unverified"
+    "fee split read from the room's own structure sheet on 2026-11-17",
+    "single-entry excluded (the sheet allows more than one buy-in)",
+    "no guarantee printed on the sheet \u2014 not ranked"
+   ],
+   "pool_per_entry_usd": 9800,
+   "fee_usd": 400,
+   "staff_charge_usd": 200,
+   "level_duration": "90-min / 45-min",
+   "sheet_guarantee_text": "Mystery Payouts: $1,000,000 in \u201cMystery Payouts\u201d will be added to the prize pool from ClubWPT Gold (ClubWPT Gold is not available in Nevada).",
+   "guarantee_wording": null,
+   "added_pool_wording": "$1,000,000 ADDED",
+   "bounty_wording": null,
+   "entry_limit_wording": "Four (4) Entries maximum",
+   "levels_note": "Length of Play: Day 1: Eight (8) levels of 60 minutes each. Day 2: Five (5) levels of 90 minutes each. Day 3-4: Six (6) levels of 90 minutes each. Day 5: 90 minutes per level until the final 6 players remain. Final Table: 90 minutes per level until two (2) players remain, 45 minutes per level thereafter.",
+   "chips_note": "Players will start with 100,000 in tournament chips",
+   "suspension_clause": null,
+   "verified_from_sheet": "2026-11-17",
+   "sheet_capture": {
+    "sha256": null,
+    "captured_at": "2026-11-17T22:11:27Z",
+    "line": 2267,
+    "title": "$10,400 WPT World Championship"
+   },
+   "printed_flights": [
+    "Day 1A: Sunday, December 13, 2026 at 11 a.m.",
+    "Day 1B: Monday, December 14, 2026 at 11 a.m.",
+    "Day 1C: Tuesday, December 15, 2026 at 11 a.m.",
+    "Day 2: Wednesday, December 16, 2026 at 12 p.m.",
+    "Day 3: Thursday, December 17, 2026 at 12 p.m.",
+    "Day 4: Friday, December 18, 2026 at 12 p.m.",
+    "Day 5: Saturday, December 19, 2026 at 12 p.m.",
+    "Final Table: Sunday, December 20, 2026 at 2 p.m."
    ],
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -8240,11 +8596,11 @@
    "printed_date": "Dec 10 - 13",
    "weekday": null,
    "time": null,
-   "registration_closes": null,
+   "registration_closes": "start of level 9",
    "buy_in_usd": 400,
    "guarantee_usd": 3000000,
    "guarantee_printed": true,
-   "starting_chips": null,
+   "starting_chips": 30000,
    "kind": "Tournament",
    "tags": [
     "Recurring / weekly"
@@ -8253,32 +8609,32 @@
    "is_continuation": false,
    "rules": {
     "single_entry": {
-     "status": "unverified",
-     "value": null,
-     "excerpt": null,
-     "source": "https://www.wynnlasvegas.com/casino/poker",
-     "retrieved": "2026-11-16"
+     "status": "no",
+     "value": "multiple entries allowed",
+     "excerpt": "Registration: Unlimited re-entry for each starting flight will be available until the start of level 9. A player who advances to Day 2 is allowed to enter a subsequent starting flight. A player that has advanced to Day 2 from any of the subsequent starting flights will be permitted to play Day 2 with their largest Tournament chip stack from any of the original starting flights (Best stack forward). The player will receive the minimum Day 2 tournament payout ($700) for each additional Tournament chip stack which has advanced.",
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+     "retrieved": "2026-11-17"
     },
     "re_entry": {
-     "status": "unverified",
-     "value": null,
-     "excerpt": null,
-     "source": "https://www.wynnlasvegas.com/casino/poker",
-     "retrieved": "2026-11-16"
+     "status": "confirmed_allowed",
+     "value": "unlimited re-entry until the start of level 9 (the sheet's own cutoff)",
+     "excerpt": "Registration: Unlimited re-entry for each starting flight will be available until the start of level 9. A player who advances to Day 2 is allowed to enter a subsequent starting flight. A player that has advanced to Day 2 from any of the subsequent starting flights will be permitted to play Day 2 with their largest Tournament chip stack from any of the original starting flights (Best stack forward). The player will receive the minimum Day 2 tournament payout ($700) for each additional Tournament chip stack which has advanced.",
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+     "retrieved": "2026-11-17"
     },
     "add_on": {
-     "status": "unverified",
+     "status": "not_stated_in_sheet",
      "value": null,
-     "excerpt": null,
-     "source": "https://www.wynnlasvegas.com/casino/poker",
-     "retrieved": "2026-11-16"
+     "excerpt": "Players will start with 30,000 in tournament chips",
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+     "retrieved": "2026-11-17"
     },
     "fee": {
-     "status": "unverified",
-     "value": null,
-     "excerpt": null,
-     "source": "https://www.wynnlasvegas.com/casino/poker",
-     "retrieved": "2026-11-16"
+     "status": "confirmed",
+     "value": "$45 tournament fee + $22 poker-staff service charge; $333 of the $400 reaches the prize pool $1,200,000 from the Tournament Prize Pool will fund the Mystery Bounty Prize Pool.",
+     "excerpt": "Entry Fee: $400 Buy-in = $333 (Tournament Prize Pool) + $45 (Tournament Fee) + $22 (Poker Staff Service Charge)",
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+     "retrieved": "2026-11-17"
     }
    },
    "sources": [
@@ -8288,12 +8644,42 @@
    ],
    "sheet_key": null,
    "notes": "entry terms not captured from the official PDFs \u2014 treated as unverified, not as single-entry",
-   "spend_advantage": false,
-   "rankable": false,
+   "spend_advantage": true,
+   "rankable": true,
    "flags": [
-    "single-entry unverified"
+    "fee split read from the room's own structure sheet on 2026-11-17",
+    "single-entry excluded (the sheet allows more than one buy-in)"
+   ],
+   "pool_per_entry_usd": 333,
+   "fee_usd": 45,
+   "staff_charge_usd": 22,
+   "level_duration": "30-min / 20-min / 40-min / 60-min",
+   "sheet_guarantee_text": "$3,000,000 Guarantee",
+   "guarantee_wording": "$3,000,000 Guarantee",
+   "added_pool_wording": null,
+   "bounty_wording": "$1,200,000 from the Tournament Prize Pool will fund the Mystery Bounty Prize Pool.",
+   "entry_limit_wording": null,
+   "levels_note": null,
+   "chips_note": "Players will start with 30,000 in tournament chips",
+   "suspension_clause": null,
+   "verified_from_sheet": "2026-11-17",
+   "sheet_capture": {
+    "sha256": null,
+    "captured_at": "2026-11-17T22:11:27Z",
+    "line": 1962,
+    "title": "$400 Super Gold Million"
+   },
+   "printed_flights": [
+    "Day 1A: Thursday, December 10, 2026 at 10 a.m.",
+    "Day 1B: Thursday, December 10, 2026 at 6 p.m.",
+    "Day 1C: Friday, December 11, 2026 at 10 a.m.",
+    "Day 1D: Friday, December 11, 2026 at 6 p.m.",
+    "Day 2: Saturday, December 12, 2026 at 2 p.m.",
+    "Day 3: Sunday, December 13, 2026 at 1 p.m.",
+    "Final Table: Monday, December 14, 2026 at 2 p.m."
    ],
    "gtd_ratio": 7500.0,
+   "gtd_over_pool_contribution": 9009.01,
    "last_checked": "2026-11-17",
    "source_changed": false
   },
@@ -8573,11 +8959,11 @@
    "printed_date": "Mon-Thu daily",
    "weekday": null,
    "time": "12:00 PM",
-   "registration_closes": "Level 9 (~4:30 PM)",
+   "registration_closes": "start of level 9 (approximately 4:30 p.m.)",
    "buy_in_usd": 200,
    "guarantee_usd": 10000,
    "guarantee_printed": true,
-   "starting_chips": null,
+   "starting_chips": 25000,
    "kind": "Tournament",
    "tags": [
     "Recurring / weekly"
@@ -8588,30 +8974,30 @@
     "single_entry": {
      "status": "no",
      "value": "multiple entries allowed",
-     "excerpt": "Allowed (through level 9)",
-     "source": "https://www.wynnlasvegas.com/casino/poker",
-     "retrieved": "2026-11-16"
+     "excerpt": "Registration and re-entries will be available until the start of level 9 (approximately 4:30 p.m.)",
+     "source": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+     "retrieved": "2026-11-17"
     },
     "re_entry": {
      "status": "confirmed_allowed",
-     "value": "Allowed (through level 9)",
-     "excerpt": "Allowed (through level 9)",
-     "source": "https://www.wynnlasvegas.com/casino/poker",
-     "retrieved": "2026-11-16"
+     "value": "unlimited re-entry until the start of level 9 (the sheet's own cutoff)",
+     "excerpt": "Registration and re-entries will be available until the start of level 9 (approximately 4:30 p.m.)",
+     "source": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+     "retrieved": "2026-11-17"
     },
     "add_on": {
-     "status": "unverified",
+     "status": "not_stated_in_sheet",
      "value": null,
-     "excerpt": null,
-     "source": "https://www.wynnlasvegas.com/casino/poker",
-     "retrieved": "2026-11-16"
+     "excerpt": "Players will start with 25,000 in Tournament chips",
+     "source": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+     "retrieved": "2026-11-17"
     },
     "fee": {
      "status": "confirmed",
-     "value": "$26 fee + $12 staff",
-     "excerpt": "$26 fee + $12 staff",
-     "source": "https://www.wynnlasvegas.com/casino/poker",
-     "retrieved": "2026-11-16"
+     "value": "$26 tournament fee + $12 poker-staff service charge; $162 of the $200 reaches the prize pool",
+     "excerpt": "The $200 Entry Fee will be distributed as follows: $26 for the Tournament fee, $12 for the poker staff service charge, and $162 for the Tournament prize pool.",
+     "source": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+     "retrieved": "2026-11-17"
     }
    },
    "sources": [
@@ -8621,12 +9007,34 @@
    "sheet_key": null,
    "notes": null,
    "spend_advantage": true,
-   "rankable": false,
+   "rankable": true,
    "flags": [
-    "schedule not re-published in this snapshot's dated calendar",
-    "single-entry excluded (entry rules allow more)"
+    "fee split read from the room's own structure sheet on 2026-11-17",
+    "single-entry excluded (entry rules allow more)",
+    "may be suspended during a tournament series \u2014 see the sheet clause"
    ],
+   "pool_per_entry_usd": 162,
+   "fee_usd": 26,
+   "staff_charge_usd": 12,
+   "players_per_table": 9,
+   "level_duration": "30",
+   "sheet_guarantee_text": "$10,000 Guarantee",
+   "guarantee_wording": "$10,000 Guarantee",
+   "added_pool_wording": null,
+   "bounty_wording": null,
+   "entry_limit_wording": null,
+   "levels_note": null,
+   "chips_note": "Players will start with 25,000 in Tournament chips",
+   "suspension_clause": "The Tournament will be offered Monday-Thursday and may be suspended during Seniors Events, Classic Events, or other Tournament Series.",
+   "verified_from_sheet": "2026-11-17",
+   "sheet_capture": {
+    "sha256": null,
+    "captured_at": "2026-11-17T22:11:25Z",
+    "line": 1506,
+    "title": " $10,000 Guarantee $200 Entry Fee Level Small Blind Big Blind Ante $200 NLH Monday-Thursda"
+   },
    "gtd_ratio": 50.0,
+   "gtd_over_pool_contribution": 61.73,
    "last_checked": "2026-11-17",
    "source_changed": false
   },
@@ -8641,11 +9049,11 @@
    "printed_date": "Fri",
    "weekday": null,
    "time": "12:00 PM",
-   "registration_closes": "Level 9 (~4:30 PM)",
+   "registration_closes": "start of level 9 (approximately 4:30 p.m.)",
    "buy_in_usd": 240,
    "guarantee_usd": 40000,
    "guarantee_printed": true,
-   "starting_chips": null,
+   "starting_chips": 25000,
    "kind": "Tournament",
    "tags": [
     "Recurring / weekly"
@@ -8656,30 +9064,30 @@
     "single_entry": {
      "status": "no",
      "value": "multiple entries allowed",
-     "excerpt": "Rebuy $200 for 25,000 chips when at or below 15,000; one $100 add-on for 15,000",
-     "source": "https://www.wynnlasvegas.com/casino/poker",
-     "retrieved": "2026-11-16"
+     "excerpt": "Registration, rebuys and add-ons will be available until the start of level 9 (approximately 4:30 p.m.). Re-entry is NOT allowed. All rebuys must be done immediately from the player\u2019s original seat",
+     "source": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+     "retrieved": "2026-11-17"
     },
     "re_entry": {
-     "status": "unverified",
-     "value": null,
-     "excerpt": null,
-     "source": "https://www.wynnlasvegas.com/casino/poker",
-     "retrieved": "2026-11-16"
+     "status": "confirmed_not_allowed",
+     "value": "re-entry not allowed; the sheet still prices further buy-ins (rebuy/add-on)",
+     "excerpt": "Registration, rebuys and add-ons will be available until the start of level 9 (approximately 4:30 p.m.). Re-entry is NOT allowed. All rebuys must be done immediately from the player\u2019s original seat",
+     "source": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+     "retrieved": "2026-11-17"
     },
     "add_on": {
      "status": "confirmed_allowed",
-     "value": "Rebuy $200 for 25,000 chips when at or below 15,000; one $100 add-on for 15,000",
-     "excerpt": "Rebuy $200 for 25,000 chips when at or below 15,000; one $100 add-on for 15,000",
-     "source": "https://www.wynnlasvegas.com/casino/poker",
-     "retrieved": "2026-11-16"
+     "value": "Unlimited $200 rebuys for 25,000 tournament chips are available any time a player is at 15,000 chips or less. One (1) $100 add-on for 15,000 tournament chips is available any time until the end of registration. Players must have at least one (1) tournament chip in order to purchase the Add-on",
+     "excerpt": "Unlimited $200 rebuys for 25,000 tournament chips are available any time a player is at 15,000 chips or less. One (1) $100 add-on for 15,000 tournament chips is available any time until the end of registration. Players must have at least one (1) tournament chip in order to purchase the Add-on",
+     "source": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+     "retrieved": "2026-11-17"
     },
     "fee": {
      "status": "confirmed",
-     "value": "$35 fee + $15 staff",
-     "excerpt": "$35 fee + $15 staff",
-     "source": "https://www.wynnlasvegas.com/casino/poker",
-     "retrieved": "2026-11-16"
+     "value": "$35 tournament fee + $15 poker-staff service charge; $190 of the $240 reaches the prize pool",
+     "excerpt": "The Tournament entry fee is $240 (the \u201cEntry fee\u201d), of which $35 will be withheld for the Tournament fee and $15 as a service charge for poker staff. $190 of each Entry Fee and rebuy will fund the Tournament prize pool.",
+     "source": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+     "retrieved": "2026-11-17"
     }
    },
    "sources": [
@@ -8689,12 +9097,34 @@
    "sheet_key": null,
    "notes": null,
    "spend_advantage": true,
-   "rankable": false,
+   "rankable": true,
    "flags": [
-    "schedule not re-published in this snapshot's dated calendar",
-    "single-entry excluded (entry rules allow more)"
+    "fee split read from the room's own structure sheet on 2026-11-17",
+    "single-entry excluded (entry rules allow more)",
+    "may be suspended during a tournament series \u2014 see the sheet clause"
    ],
+   "pool_per_entry_usd": 190,
+   "fee_usd": 35,
+   "staff_charge_usd": 15,
+   "players_per_table": 9,
+   "level_duration": "30",
+   "sheet_guarantee_text": "$40,000 Guarantee",
+   "guarantee_wording": "$40,000 Guarantee",
+   "added_pool_wording": null,
+   "bounty_wording": null,
+   "entry_limit_wording": null,
+   "levels_note": null,
+   "chips_note": "Players will start with 25,000 in Tournament chips",
+   "suspension_clause": "The Tournament will be offered Friday and may be suspended during Seniors Events, Classic Events, or other Tournament Series.",
+   "verified_from_sheet": "2026-11-17",
+   "sheet_capture": {
+    "sha256": null,
+    "captured_at": "2026-11-17T22:11:25Z",
+    "line": 1869,
+    "title": "Add on $40,000 Guarantee $240 Entry Fee Level Small Blind Big Blind Ante $240 NLH Rebuy & "
+   },
    "gtd_ratio": 166.67,
+   "gtd_over_pool_contribution": 210.53,
    "last_checked": "2026-11-17",
    "source_changed": false
   },
@@ -8709,11 +9139,11 @@
    "printed_date": "Sat & Sun daily",
    "weekday": null,
    "time": "12:00 PM",
-   "registration_closes": "Level 11 (~5:30 PM)",
+   "registration_closes": "start of level 11 (approximately 5:30 p.m.)",
    "buy_in_usd": 200,
    "guarantee_usd": 25000,
    "guarantee_printed": true,
-   "starting_chips": null,
+   "starting_chips": 25000,
    "kind": "Tournament",
    "tags": [
     "Recurring / weekly"
@@ -8724,30 +9154,30 @@
     "single_entry": {
      "status": "no",
      "value": "multiple entries allowed",
-     "excerpt": "Allowed (through level 11)",
-     "source": "https://www.wynnlasvegas.com/casino/poker",
-     "retrieved": "2026-11-16"
+     "excerpt": "Registration, re-entries, and one (1) add-on per entry will be available until the start of level 11 (approximately 5:30 p.m.)",
+     "source": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+     "retrieved": "2026-11-17"
     },
     "re_entry": {
      "status": "confirmed_allowed",
-     "value": "Allowed (through level 11)",
-     "excerpt": "Allowed (through level 11)",
-     "source": "https://www.wynnlasvegas.com/casino/poker",
-     "retrieved": "2026-11-16"
+     "value": "unlimited re-entry until the start of level 11 (the sheet's own cutoff)",
+     "excerpt": "Registration, re-entries, and one (1) add-on per entry will be available until the start of level 11 (approximately 5:30 p.m.)",
+     "source": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+     "retrieved": "2026-11-17"
     },
     "add_on": {
      "status": "confirmed_allowed",
-     "value": "One $100 add-on",
-     "excerpt": "One $100 add-on",
-     "source": "https://www.wynnlasvegas.com/casino/poker",
-     "retrieved": "2026-11-16"
+     "value": "One (1) $100 add-on for 25,000 tournament chips is available any time until the end of registration. Players must have at least one (1) tournament chip in order to purchase the Add-on",
+     "excerpt": "One (1) $100 add-on for 25,000 tournament chips is available any time until the end of registration. Players must have at least one (1) tournament chip in order to purchase the Add-on",
+     "source": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+     "retrieved": "2026-11-17"
     },
     "fee": {
      "status": "confirmed",
-     "value": "$26 fee + $12 staff",
-     "excerpt": "$26 fee + $12 staff",
-     "source": "https://www.wynnlasvegas.com/casino/poker",
-     "retrieved": "2026-11-16"
+     "value": "$26 tournament fee + $12 poker-staff service charge; $162 of the $200 reaches the prize pool",
+     "excerpt": "The $200 Entry Fee will be distributed as follows: $26 for the Tournament fee, $12 for the poker staff service charge, and $162 for the Tournament prize pool.",
+     "source": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+     "retrieved": "2026-11-17"
     }
    },
    "sources": [
@@ -8757,12 +9187,34 @@
    "sheet_key": null,
    "notes": null,
    "spend_advantage": true,
-   "rankable": false,
+   "rankable": true,
    "flags": [
-    "schedule not re-published in this snapshot's dated calendar",
-    "single-entry excluded (entry rules allow more)"
+    "fee split read from the room's own structure sheet on 2026-11-17",
+    "single-entry excluded (entry rules allow more)",
+    "may be suspended during a tournament series \u2014 see the sheet clause"
    ],
+   "pool_per_entry_usd": 162,
+   "fee_usd": 26,
+   "staff_charge_usd": 12,
+   "players_per_table": 9,
+   "level_duration": "30",
+   "sheet_guarantee_text": "$25,000 Guarantee",
+   "guarantee_wording": "$25,000 Guarantee",
+   "added_pool_wording": null,
+   "bounty_wording": null,
+   "entry_limit_wording": null,
+   "levels_note": null,
+   "chips_note": "Players will start with 25,000 in Tournament chips",
+   "suspension_clause": "The Tournament will be offered Saturday & Sunday and may be suspended during Seniors Events, Classic Events, or other Tournament Series.",
+   "verified_from_sheet": "2026-11-17",
+   "sheet_capture": {
+    "sha256": null,
+    "captured_at": "2026-11-17T22:11:25Z",
+    "line": 2338,
+    "title": "NLH $200 Entry Fee $25,000 Guarantee Level Small Blind Big Blind Ante $200 NLH Saturday & "
+   },
    "gtd_ratio": 125.0,
+   "gtd_over_pool_contribution": 154.32,
    "last_checked": "2026-11-17",
    "source_changed": false
   },
@@ -8913,11 +9365,11 @@
    "printed_date": "Nightly",
    "weekday": null,
    "time": "6:00 PM",
-   "registration_closes": "Level 9 (~9:00 PM)",
+   "registration_closes": "start of level 9 (approximately 9:00 p.m.)",
    "buy_in_usd": 160,
    "guarantee_usd": 10000,
    "guarantee_printed": true,
-   "starting_chips": null,
+   "starting_chips": 25000,
    "kind": "Tournament",
    "tags": [
     "Recurring / weekly"
@@ -8928,30 +9380,30 @@
     "single_entry": {
      "status": "no",
      "value": "multiple entries allowed",
-     "excerpt": "Allowed (through level 9)",
-     "source": "https://www.wynnlasvegas.com/casino/poker",
-     "retrieved": "2026-11-16"
+     "excerpt": "Registration, re-entries, and one (1) add-on per entry will be available until the start of level 9 (approximately 9:00 p.m.)",
+     "source": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+     "retrieved": "2026-11-17"
     },
     "re_entry": {
      "status": "confirmed_allowed",
-     "value": "Allowed (through level 9)",
-     "excerpt": "Allowed (through level 9)",
-     "source": "https://www.wynnlasvegas.com/casino/poker",
-     "retrieved": "2026-11-16"
+     "value": "unlimited re-entry until the start of level 9 (the sheet's own cutoff)",
+     "excerpt": "Registration, re-entries, and one (1) add-on per entry will be available until the start of level 9 (approximately 9:00 p.m.)",
+     "source": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+     "retrieved": "2026-11-17"
     },
     "add_on": {
      "status": "confirmed_allowed",
-     "value": "One $100 add-on",
-     "excerpt": "One $100 add-on",
-     "source": "https://www.wynnlasvegas.com/casino/poker",
-     "retrieved": "2026-11-16"
+     "value": "One (1) $100 add-on for 25,000 tournament chips is available any time until the end of registration. Players must have at least one (1) tournament chip in order to purchase the Add-on",
+     "excerpt": "One (1) $100 add-on for 25,000 tournament chips is available any time until the end of registration. Players must have at least one (1) tournament chip in order to purchase the Add-on",
+     "source": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+     "retrieved": "2026-11-17"
     },
     "fee": {
      "status": "confirmed",
-     "value": "$20 fee + $10 staff",
-     "excerpt": "$20 fee + $10 staff",
-     "source": "https://www.wynnlasvegas.com/casino/poker",
-     "retrieved": "2026-11-16"
+     "value": "$20 tournament fee + $10 poker-staff service charge; $130 of the $160 reaches the prize pool",
+     "excerpt": "The $160 Entry Fee will be distributed as follows: $20 for the Tournament fee, $10 for the poker staff service charge, and $130 for the Tournament prize pool.",
+     "source": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+     "retrieved": "2026-11-17"
     }
    },
    "sources": [
@@ -8961,12 +9413,34 @@
    "sheet_key": null,
    "notes": null,
    "spend_advantage": true,
-   "rankable": false,
+   "rankable": true,
    "flags": [
-    "schedule not re-published in this snapshot's dated calendar",
-    "single-entry excluded (entry rules allow more)"
+    "fee split read from the room's own structure sheet on 2026-11-17",
+    "single-entry excluded (entry rules allow more)",
+    "may be suspended during a tournament series \u2014 see the sheet clause"
    ],
+   "pool_per_entry_usd": 130,
+   "fee_usd": 20,
+   "staff_charge_usd": 10,
+   "players_per_table": 9,
+   "level_duration": "20",
+   "sheet_guarantee_text": "$10,000 Guarantee",
+   "guarantee_wording": "$10,000 Guarantee",
+   "added_pool_wording": null,
+   "bounty_wording": null,
+   "entry_limit_wording": null,
+   "levels_note": null,
+   "chips_note": "Players will start with 25,000 in Tournament chips",
+   "suspension_clause": "The Tournament will be offered Nightly Monday-Sunday and may be suspended during Seniors Events, Classic Events, or other Tournament Series.",
+   "verified_from_sheet": "2026-11-17",
+   "sheet_capture": {
+    "sha256": null,
+    "captured_at": "2026-11-17T22:11:25Z",
+    "line": 2769,
+    "title": " Guarantee $160 Entry Fee Level Small Blind Big Blind Ante $160 NLH Nightly Monday-Sunday "
+   },
    "gtd_ratio": 62.5,
+   "gtd_over_pool_contribution": 76.92,
    "last_checked": "2026-11-17",
    "source_changed": false
   },

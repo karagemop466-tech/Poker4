@@ -1,9 +1,26 @@
 {
  "meta": {
-  "generated_at": "2026-11-17T02:01:47Z",
-  "changed_urls_this_run": []
+  "generated_at": "2026-11-17T22:11:48Z",
+  "changed_urls_this_run": [
+   "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+  ]
  },
  "entries": [
+  {
+   "at": "2026-11-17T22:11:24Z",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+   "scope": "schedule",
+   "key": "V_SCHED_PDF",
+   "diff": {
+    "added": [
+     "39|10:00 AM|NO LIMIT HOLD'EM LIPS DAY 2 ",
+     "47|1:00 PM|NO LIMIT HOLD’EM DAY 2 RESTA"
+    ],
+    "removed": [
+     "39|7:00 PM|NO LIMIT HOLD'EM LIPS DAY 2 "
+    ]
+   }
+  },
   {
    "at": "2026-11-17T01:14:46Z",
    "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_36.pdf",

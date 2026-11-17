@@ -102,6 +102,12 @@ def build_rows():
             row["feed_verified"] = any(abs(int(x.get("buy_in_usd") or 0) - (row["buy_in"] or -1)) < 1
                                       and x.get("event_no", "").strip() == row["event_no"].strip()
                                       for x in feed["rows"])
+    # continuation rows (Day 2 / Day 3 restarts, final tables) are not entries: entry-only fields
+    # (start, registration cutoff, chips, level, fee, pool) must not be copied from the Day 1 sheet
+    for row in rows:
+        if str(row.get("listing_kind", "")).startswith("Continuation"):
+            for k in ("start", "reg_close", "reg_close_min", "chips", "level", "fee", "to_pool"):
+                row[k] = None
     rows.sort(key=lambda x: (x["date"], x["reg_close_min"] or 0, x["time"]))
     return rows, rules
 
