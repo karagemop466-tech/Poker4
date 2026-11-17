@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generated_at": "2026-11-17T21:56:37Z",
+  "generated_at": "2026-11-17T22:02:42Z",
   "rule": "A hotel is usable for an 8 AM\u2013close day only if the walk from the lobby to the poker room can be completed inside 30 minutes.",
   "how_to_close": "Run the same hotel\u2194venue pairs through the Google Maps Distance Matrix API (mode=walking) or Apple Maps directions, store the returned duration plus the request timestamp, and paste those pairs into data/walks.json. The \u226430-minute filter then becomes a hard filter instead of a warning."
  },
