@@ -601,3 +601,15 @@ Policy: every data row must link an official source; values not confirmed from a
 - **Post-merge on `main`:** "Verify the published site" SUCCESS · "Poker4 site build + verification gate" SUCCESS · "Deploy static dashboard to GitHub Pages" SUCCESS (run 43999859321) · "pages build and deployment" (run 43999857621) queued/completed · "Official source sync + change monitor" running.
 - **Pages:** https://karagemop466-tech.github.io/Poker4/ (source: main, path `/`) — deploy succeeded at 02:01 UTC 2026-11-17.
 - **Race notes:** `main` advanced four times during this session (`be3594d` → `9b1f376` → `57f7399` → `1221f53` → `6fd824b` → `fa1dbad`); every round merged forward, never discarding others' work; the v2-monitor bot also pushed a snapshot commit to this session's branch (merged back). Final head `59a6c51` contains `origin/main` `fa1dbad`.
+
+---
+
+## Session arena/ae1abd73-poker4 (session `ae1abd73`) — independent re-check of entry-rule verdict
+
+- Session ID: `ae1abd73`. Branch: `arena/ae1abd73-poker4` (Arena-fixed name). Base: `main` @ `0d13de0`.
+- Claim (narrow scope, no overlap with the board's shared root outputs):
+
+| ID | Task | Status | Owner | File scope | Notes |
+|----|------|--------|-------|------------|-------|
+| X1 | Independent re-check of the Venetian DSE IV structure-sheet entry-rule verdict (`data/feature/structure-extract.md`, F1 from session d1d02f59): fetch the official structure PDFs, search each for single-entry / re-entry / add-on / rebuy wording, record hits and misses with retrieval date | in progress | ae1abd73 | `data/ae1abd73/*` (new folder only), this board (log entries) | Does not edit `data/feature/*` or any root page. Any discrepancy goes to Flagged, not into the other session's file. |
+
