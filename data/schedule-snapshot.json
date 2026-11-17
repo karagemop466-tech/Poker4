@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated_at": "2026-11-17T23:18:11Z",
+  "generated_at": "2026-11-17T23:19:12Z",
   "rows": 94,
-  "note": "Rows read from the official schedule text captured in data/raw; blank fields were not printed."
+  "note": "Rows read from the official schedule page at run time; blank fields were not printed on the page."
  },
  "rows": [
   {
@@ -999,22 +999,6 @@
   },
   {
    "parse_notes": null,
-   "registration_closes": "10:55 AM",
-   "date": "2026-12-12",
-   "weekday": "Saturday",
-   "time": "9:10 AM",
-   "event_no": 46,
-   "event_name": "NLH TURBO MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47",
-   "buy_in_usd": 260,
-   "guarantee_usd": null,
-   "guarantee_text": "2 SEAT",
-   "starting_chips": 20000,
-   "level_duration": "15",
-   "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-17"
-  },
-  {
-   "parse_notes": null,
    "registration_closes": "4:55 PM",
    "date": "2026-12-12",
    "weekday": "Saturday",
@@ -1058,6 +1042,22 @@
    "guarantee_text": null,
    "starting_chips": 40000,
    "level_duration": "30",
+   "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+   "retrieved": "2026-11-17"
+  },
+  {
+   "parse_notes": null,
+   "registration_closes": "10:55 AM",
+   "date": "2026-12-12",
+   "weekday": "Saturday",
+   "time": "9:10 AM",
+   "event_no": 46,
+   "event_name": "NLH TURBO MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47",
+   "buy_in_usd": 260,
+   "guarantee_usd": null,
+   "guarantee_text": "2 SEAT",
+   "starting_chips": 20000,
+   "level_duration": "15",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
    "retrieved": "2026-11-17"
   },

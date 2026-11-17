@@ -1,13 +1,11 @@
 {
- "generated_at": "2026-11-17T23:11:19Z",
- "urls_checked": 66,
+ "generated_at": "2026-11-17T23:19:12Z",
+ "urls_checked": 68,
  "urls_failed": [],
- "changed_this_run": [
-  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
- ],
+ "changed_this_run": [],
  "sheets_audited": 43,
  "schedule_rows": 94,
  "schedule_rows_with_date": 94,
  "date_head_sample": " Room @VenetianPoker IN GUARANTEED PRIZE POOLS $3.6 MILLION NOVEMBER 16- DECEMBER 23, 2026 MORE THAN DATE EVENT # EVENT TIME REG CLOSES GUARANTEE CHIPS LEVEL CHA",
- "hotel_fact_sources": 19
+ "hotel_fact_sources": 21
 }
