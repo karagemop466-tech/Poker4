@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generated_at": "2026-11-17T22:18:04Z",
+  "generated_at": "2026-11-17T22:33:44Z",
   "policy": "Sentences are copied verbatim from the fetched official page/PDF. A fact is only recorded when the wording is actually present; nothing is summarised, rounded or inferred."
  },
  "sources": {
@@ -8,8 +8,8 @@
    "label": "Venetian poker room (location + contact)",
    "venue": "The Venetian",
    "url": "https://www.venetianlasvegas.com/resort/casino/poker.html",
-   "retrieved": "2026-11-17T22:17:43Z",
-   "sha256": "b543b081dc804d53c981e00d6777e17944b79322ec5d622b5e718e3df0c95e48",
+   "retrieved": "2026-11-17T22:33:25Z",
+   "sha256": "1dbe2a5da1b4435255614bab9fefcb21fd25423b39be4dd25b68c3ebc80d0b6a",
    "facts": {
     "parking": [
      "> <p><b>From The Palazzo Lobby:</b></p> <p>Proceed across The Palazzo Casino Floor to the self-parking elevators",
@@ -23,40 +23,40 @@
    "label": "Wynn Las Vegas poker room page",
    "venue": "Wynn Las Vegas",
    "url": "https://wynnlasvegas.com/casino/poker",
-   "retrieved": "2026-11-17T22:17:51Z",
-   "sha256": "b5e221007c98d9cb0cef13413608809027b3975d60003243d1bcd73ce374248e",
+   "retrieved": "2026-11-17T22:33:31Z",
+   "sha256": "db2020e94daf876400053b793e7647fe87e2163428044b53ee320dd740881586",
    "facts": {}
   },
   "https://bellagio.mgmresorts.com/en/casino/poker.html": {
    "label": "Bellagio poker room page",
    "venue": "Bellagio",
    "url": "https://bellagio.mgmresorts.com/en/casino/poker.html",
-   "retrieved": "2026-11-17T22:17:52Z",
-   "sha256": "252930be82972e39309839a74ab562d52523c5585dfea50336661ebc66e90532",
+   "retrieved": "2026-11-17T22:33:32Z",
+   "sha256": "23c5d7db89fc0371c032dd5c64d790998deb6be55f599f3ee34866c4933982a5",
    "facts": {}
   },
   "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip": {
    "label": "Caesars Palace — poker tournaments page",
    "venue": "Caesars Palace",
    "url": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
-   "retrieved": "2026-11-17T22:17:52Z",
-   "sha256": "ae1aa3de28f692ec3d6b2f939b9cc646f9f923c22656b78b55ab45933ba96cb0",
+   "retrieved": "2026-11-17T22:33:32Z",
+   "sha256": "3060fcd82807d37aa20e62f65af66180e8653d54d9cd2861d6845777bfb229bc",
    "facts": {}
   },
   "https://aria.mgmresorts.com/en/casino/poker.html": {
    "label": "ARIA poker room page",
    "venue": "ARIA",
    "url": "https://aria.mgmresorts.com/en/casino/poker.html",
-   "retrieved": "2026-11-17T22:17:54Z",
-   "sha256": "6ede7f45221eeed5f8bffae3f7d3f80335738b06fac36dac3651a35b1f61835b",
+   "retrieved": "2026-11-17T22:33:34Z",
+   "sha256": "7296abaf3d886c03d88752d8c565ad20262d095eca47570ad07e1fff56892159",
    "facts": {}
   },
   "https://www.venetianlasvegas.com/resort/resort-fee.html": {
    "label": "Venetian — resort fee page",
    "venue": "The Venetian",
    "url": "https://www.venetianlasvegas.com/resort/resort-fee.html",
-   "retrieved": "2026-11-17T22:18:00Z",
-   "sha256": "afa3d24adef66adaafad92c553d7e3700f952fe33cb2e210899931a77a485bb0",
+   "retrieved": "2026-11-17T22:33:40Z",
+   "sha256": "01a4276cb0afaebb70f0edf31f327fbeaf19cb8b289110f0db6fbdf9bffed694",
    "facts": {
     "resort_fee": [
      "Resort Fee | Resort Fee Inclusions | The Venetian Resort Las Vegas Skip to main content --> Menu Offers Search Account Account Sign In {{ loginStatus",
@@ -70,8 +70,8 @@
    "label": "Venetian — hotel terms (tax, parking, cancellation)",
    "venue": "The Venetian",
    "url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
-   "retrieved": "2026-11-17T22:18:00Z",
-   "sha256": "2f2d6c31f24f19721949b6e1e772b240287c47cfef12f87e542fe31f732d9f93",
+   "retrieved": "2026-11-17T22:33:40Z",
+   "sha256": "2fa5ac3c0950c007bf930bf8ec769072a1171fec7a4ae1d09e56d706f36c59a2",
    "facts": {
     "resort_fee": [
      "Taxes, Surcharges, and Resort Fee Daily rates do not include the applicable Clark County Room Tax of 13",
@@ -104,8 +104,8 @@
    "label": "Venetian — poker suite rates + play requirements",
    "venue": "The Venetian",
    "url": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
-   "retrieved": "2026-11-17T22:18:01Z",
-   "sha256": "7163bcf2d084fc825ca728a76a6ed5723ec1df5446346309687a18d2fcd91890",
+   "retrieved": "2026-11-17T22:33:41Z",
+   "sha256": "3b2719aab6c7b827020551a335bcb1d5c24be60c9a83b444d60fb48acfa51cc9",
    "facts": {
     "resort_fee": [
      "There is a $55 resort fee per night stayed"
@@ -116,8 +116,8 @@
    "label": "Venetian — poker player parking",
    "venue": "The Venetian",
    "url": "https://www.venetianlasvegas.com/resort/casino/poker/player-parking.html",
-   "retrieved": "2026-11-17T22:18:01Z",
-   "sha256": "0a5d9de77b8e75917beb6ce65da5f2903f1a4e9850fd60dea2b50c00f386ab69",
+   "retrieved": "2026-11-17T22:33:41Z",
+   "sha256": "ba89a45a3138f213ef7fd20c607f68a778e4ab9fbf3686de9636c64bd6a9d01b",
    "facts": {
     "parking": [
      "MOBILE CHECK-IN VENETIAN REWARDS - SIGN IN Home Resort Casino Poker Poker Players Parking Self-Parking Info Venetian Rewards Sapphire members and above receive complimentary self-parking",
@@ -133,8 +133,8 @@
    "label": "Venetian Rewards terms (fee waiver language)",
    "venue": "The Venetian",
    "url": "https://www.venetianlasvegas.com/venetian-rewards/terms-and-conditions.html",
-   "retrieved": "2026-11-17T22:18:01Z",
-   "sha256": "93343efc5a4b6e595a98c198f8194f9db89f01d53521d2a0d60658aa814e61bb",
+   "retrieved": "2026-11-17T22:33:41Z",
+   "sha256": "27fbe20025c47c7dc408d8fcf41411cb18aded7be0a2dc7755787f7fdd2fc76a",
    "facts": {
     "resort_fee": [
      "Complimentary Resort Fees Member will receive complimentary resort fees for one (1) suite per stay",
@@ -154,8 +154,8 @@
    "label": "Wynn — resort fee / terms of stay",
    "venue": "Wynn Las Vegas",
    "url": "https://www.wynnlasvegas.com/terms-and-conditions/850257",
-   "retrieved": "2026-11-17T22:18:02Z",
-   "sha256": "26500889b68b990a87885d1b26140f8d4ee6f5877988a320a6636bdf72618b4c",
+   "retrieved": "2026-11-17T22:33:42Z",
+   "sha256": "ae10c2b9ad78d35c7b63d1c34b45ad13438c1551748499b588a8040805f38a52",
    "facts": {
     "resort_fee": [
      "RESORT FEE A daily resort fee of $55 plus tax will be added to your room account for each room night, which entitles you to receive complimentary self-parking for up to two (2) vehicles; in-room Wi-Fi of 15Mbps on an unlimited number of devices; complimentary bottled w",
@@ -179,8 +179,8 @@
    "label": "Treasure Island — rooms + resort fee",
    "venue": "Treasure Island",
    "url": "https://treasureisland.com/hotel/deluxe-rooms",
-   "retrieved": "2026-11-17T22:18:02Z",
-   "sha256": "b46c26ce5d83f8a1bf9e1331360700a01d1c560ca6a1450f3bac92cee8cbbfa4",
+   "retrieved": "2026-11-17T22:33:42Z",
+   "sha256": "0e9f72c30289cd43645aff5d111dd73a2b5a67b38795a0e4f0e7956b6842ddb2",
    "facts": {
     "resort_fee": [
      "s Buy Tickets CASINO MEMBERS Visit Website 1-800-944-7444 Deluxe Rooms From $ 59 Upgrades Resort Fees Select Upgrades Resort Fees Deluxe Room Info Room Details Approx",
@@ -199,32 +199,32 @@
    "label": "Caesars Palace — resort fee page (status tracked)",
    "venue": "Caesars Palace",
    "url": "https://www.caesars.com/caesars-palace/resort-fee",
-   "retrieved": "2026-11-17T22:18:03Z",
-   "sha256": "d557b3c2b0ef98dccb8b7cdcc837390b3d65a7ef902f28a982956a476978d318",
+   "retrieved": "2026-11-17T22:33:43Z",
+   "sha256": "a3af922909aaa174fd5b12ba9e71f658e930aa6dcd2c6da214263b9551d2150a",
    "facts": {}
   },
   "https://bellagio.mgmresorts.com/en/hotel.html": {
    "label": "Bellagio hotel page",
    "venue": "Bellagio",
    "url": "https://bellagio.mgmresorts.com/en/hotel.html",
-   "retrieved": "2026-11-17T22:18:03Z",
-   "sha256": "d9fc4109a9ef7f55a3fa4f7d58ca2d3ed072d6447d6c54e812d2e54d8c3f4f56",
+   "retrieved": "2026-11-17T22:33:43Z",
+   "sha256": "51e08187e42c49d9cca3a2a18d55b38e6156155510a471c910022ea2ed890106",
    "facts": {}
   },
   "https://www.caesars.com/harrahs-las-vegas": {
    "label": "Harrah's Las Vegas (status tracked)",
    "venue": "Harrah's",
    "url": "https://www.caesars.com/harrahs-las-vegas",
-   "retrieved": "2026-11-17T22:18:04Z",
-   "sha256": "25f05a0e872b2e937d3d45305e9185ab9688b65b0b040e7eeeadab31404f6aab",
+   "retrieved": "2026-11-17T22:33:43Z",
+   "sha256": "2963f75f5bd075b0274ec9a549081708e2ccd0e6798603b5133448bd90cc38e6",
    "facts": {}
   },
   "https://www.caesars.com/horseshoe-las-vegas": {
    "label": "Horseshoe Las Vegas (status tracked)",
    "venue": "Horseshoe",
    "url": "https://www.caesars.com/horseshoe-las-vegas",
-   "retrieved": "2026-11-17T22:18:04Z",
-   "sha256": "27bec73cc64cfd2c291b6584af60c55bddd0c0f7c1cc0d7cdee37bc7b08c3c66",
+   "retrieved": "2026-11-17T22:33:44Z",
+   "sha256": "6314c077fd9714289c1a4f313afbc32913fc514dd00b0e1284bd0901e0e2d328",
    "facts": {}
   }
  }
