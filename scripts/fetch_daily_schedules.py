@@ -17,7 +17,7 @@ UA = {"User-Agent": "Mozilla/5.0 (compatible; Poker4-daily-feed/1.0)"}
 
 # Official daily-schedule feeds for each listed poker room (Strip rooms + Circa check).
 FEED_URLS = [
-    ("Venetian DSE IV schedule", "https://www.venetianlasvegas.com/casino/poker/tournament-schedule.html"),
+    ("Venetian DSE IV schedule", "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"),
     ("Wynn daily tournament poster", "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"),
     ("Wynn poker room", "https://www.wynnlasvegas.com/casino/poker"),
     ("Bellagio poker", "https://bellagio.mgmresorts.com/en/casino/poker.html"),

@@ -253,12 +253,16 @@ PDF_DATE_RE = re.compile(
     r"(?P<mon>JANUARY|FEBRUARY|MARCH|APRIL|MAY|JUNE|JULY|AUGUST|SEPTEMBER|OCTOBER|NOVEMBER|DECEMBER)"
     r"\s+(?P<day>\d{1,2})(?:ST|ND|RD|TH)?\b", re.I)
 PDF_ROW_RE = re.compile(
-    r"(?P<no>\d{1,3})\s+\$(?P<buy>[\d,]+)\s+(?P<name>.{3,110}?)\s+"
+    # The printed title column wraps over several lines (e.g. "… STREAMED FINAL TABLE
+    # (POKERGO) AT 7:00 PM" for the LIPS Ladies Day 2 restart). The title is allowed to
+    # run long so a wrapped title is captured whole instead of being dropped.
+    r"(?P<no>\d{1,3})\s+\$(?P<buy>[\d,]+)\s+(?P<name>.{3,190}?)\s+"
     r"(?P<time>\d{1,2}:\d{2}\s*(?:AM|PM))"
     r"(?:\s+(?P<close>\d{1,2}:\d{2}\s*(?:AM|PM)))?"
     r"(?:\s+\$(?P<gtd>[\d,]+)(?P<gtdmult>\s*(?:K|MILL|MILLION))?)?"
     r"(?:\s+(?P<chips>\d{1,3},\d{3}))?"
     r"(?:\s+(?P<level>\d{1,2}(?:/\d{1,2})?))?", re.I)
+CLOCK_RE = re.compile(r"\b\d{1,2}:\d{2}\s*(?:AM|PM)\b", re.I)
 MONTHS = {m: i for i, m in enumerate(
     ["JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE", "JULY",
      "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER"], start=1)}
@@ -302,6 +306,7 @@ def parse_schedule_pdf(text: str, source_url: str, default_year: int | None = No
 
         for m in PDF_ROW_RE.finditer(seg):
             name = re.sub(r"\s+", " ", m.group("name")).strip(" -|")
+            start = re.sub(r"\s+", " ", m.group("time")).upper()
             note = []
             gtd = None
             if m.group("gtd"):
@@ -312,7 +317,22 @@ def parse_schedule_pdf(text: str, source_url: str, default_year: int | None = No
                 elif mult:
                     gtd *= 1_000_000
             close = re.sub(r"\s+", " ", m.group("close")).upper() if m.group("close") else None
-            if close and clock(close) is not None and clock(close) <= clock(m.group("time")):
+            if re.search(r"\bAT$", name, re.I):
+                # Printed title ends with "… AT <clock>": that clock belongs to the title
+                # (e.g. "STREAMED FINAL TABLE (POKERGO) AT 7:00 PM"), not to the TIME
+                # column. The start time is the next clock printed after it — the sheet's
+                # own web page prints the same row, and it agrees with that reading.
+                name = f"{name} {start}"
+                nxt = close if (close and clock(close) is not None) else None
+                if not nxt:
+                    tail = flat[m.end():m.end() + 120]
+                    hit = CLOCK_RE.search(tail)
+                    nxt = re.sub(r"\s+", " ", hit.group(0)).upper() if hit else None
+                start = nxt
+                close = None
+                note.append("printed title carries its own clock time (\"… AT\"); read as the title, "
+                            "the start time is the next clock printed in the row")
+            if close and clock(close) is not None and clock(start) is not None and clock(close) <= clock(start):
                 # a printed time that is not later than the start is table bleed from a
                 # neighbouring cell — drop it rather than mis-state a deadline
                 note.append(f"registration-closes cell “{close}” not later than the start time; not recorded")
@@ -328,7 +348,7 @@ def parse_schedule_pdf(text: str, source_url: str, default_year: int | None = No
                 "registration_closes": close,
                 "date": date_iso,
                 "weekday": (head.group("wd").title() if head and head.group("wd") else None),
-                "time": re.sub(r"\s+", " ", m.group("time")).upper(),
+                "time": start,
                 "event_no": int(m.group("no")),
                 "event_name": name,
                 "buy_in_usd": int(m.group("buy").replace(",", "")),

@@ -1,27 +1,40 @@
-name: daily-recheck
+name: Legacy source monitor (manual)
+
+# This monitor is retained for historical data under data/0f6c627b/ but is not
+# scheduled: url-check.yml is the sole scheduled canonical source-sync lane for
+# the root dashboard. It rebuilds with scripts/integrate_data.py and gates with
+# the root verifier, avoiding overlapping source monitors and stale page checks.
 
 on:
-  schedule:
-    - cron: "0 6 * * *"   # 06:00 UTC daily
   workflow_dispatch:
 
 permissions:
   contents: write
 
+concurrency:
+  group: legacy-source-monitor
+  cancel-in-progress: false
+
 jobs:
   recheck:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Check out repository
+        uses: actions/checkout@v4
 
-      - name: Re-check official sources (hash + diff)
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Re-check legacy monitored URLs
         run: python3 tools/recheck.py
 
-      - name: Capture room live schedules (snapshot + diff)
+      - name: Capture legacy room schedule snapshots
         run: python3 tools/daily_schedule.py
 
-      - name: Verify site integrity
-        run: python3 scripts/verify_root.py  # canonical root gate (tools/verify_root_site.py is stale: pre-PR-#43 markers)
+      - name: Verify the published site
+        run: python3 scripts/verify_root.py
 
       - name: Commit monitor output
         run: |
@@ -31,6 +44,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "no changes"
           else
-            git commit -m "chore(recheck): daily source monitor run $(date -u +%F)"
-            git push
+            git commit -m "chore(recheck): manual legacy source monitor run $(date -u +%F)"
+            git pull --rebase origin main
+            git push origin main
           fi
