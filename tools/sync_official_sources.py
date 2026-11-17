@@ -493,7 +493,12 @@ def audit_structure(text: str, url: str) -> dict:
 
 FACT_PATTERNS = {
     "resort_fee": r"[^.\n]{0,90}resort\s*fee[^.\n]{0,240}",
-    "room_tax": r"[^.\n]{0,90}(?:13\.38|room\s+tax|state\s+room)[^.\n]{0,240}",
+    # "lodging tax" is the wording MGM's hotel terms use instead of "room tax"; it is the sentence
+    # that proves the resort fee itself is taxed, which the true-cost calculation depends on.
+    "room_tax": r"[^.\n]{0,90}(?:13\.38|room\s+tax|state\s+room|lodging\s+tax(?:es)?)[^.\n]{0,240}",
+    # added 2026-11-17 (arena/60ade3e8): per-occupant charges above double occupancy change the
+    # room cost once a third or fourth player joins the room, so the clause is captured verbatim.
+    "occupancy_charge": r"[^.\n]{0,90}(?:additional\s+(?:occupant\s+)?charge|per\s+occupant[^.\n]{0,60}per\s+night)[^.\n]{0,240}",
     "parking": r"[^.\n]{0,90}(?:self[- ]?parking|valet\s+parking|parking\s+(?:fee|rate|is))[^.\n]{0,240}",
     "cancellation": r"[^.\n]{0,90}(?:cancellation|cancel\s+your|no[- ]show|non[- ]refundable)[^.\n]{0,240}",
     "check_in_out": r"[^.\n]{0,90}(?:check[- ]in|check[- ]out)\s+(?:time|is|at|after|by)[^.\n]{0,240}",
@@ -504,11 +509,23 @@ FACT_PATTERNS = {
 def extract_facts(text: str) -> dict:
     """Verbatim sentences containing the wording we need — copied, never rewritten."""
     flat = re.sub(r"\s+", " ", text)
+    # Amounts like "$55.00" and abbreviations like "i.e." used to cut a sentence in half, because the
+    # clause patterns stop at a period. Those periods are masked so the quoted sentence stays whole;
+    # the mask is undone before the sentence is stored, so what reaches the page is the original wording.
+    flat = re.sub(r"(?<=\d)\.(?=\d)", "\u0000", flat)
+    for abbr in ("i.e", "e.g", "vs", "approx", "No", "St"):
+        flat = flat.replace(abbr + ".", abbr + "\u0001")
     out: dict[str, list[str]] = {}
     for key, pat in FACT_PATTERNS.items():
         hits: list[str] = []
         for m in re.finditer(pat, flat, re.I):
-            sent = re.sub(r"\s+", " ", m.group(0)).strip(" -|")
+            sent = (re.sub(r"\s+", " ", m.group(0)).strip(" -|")
+                    .replace("\u0000", ".").replace("\u0001", "."))
+            if len(sent) >= 240:  # the excerpt hit the cap: do not end mid-word
+                sent = sent[:239].rsplit(" ", 1)[0].rstrip(",;:") + "…"
+            # a hit that opens with a piece of a URL is the tail of a link, not a sentence
+            if re.match(r"^(?:https?://|www\.|[^ ]*\)\.html\)|html\)|\.html\b)", sent, re.I):
+                continue
             if len(sent) > 24 and sent not in hits:
                 hits.append(sent)
             if len(hits) >= 6:

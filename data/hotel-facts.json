@@ -1,7 +1,8 @@
 {
  "meta": {
   "generated_at": "2026-11-17T22:17:00Z",
-  "policy": "Sentences are copied verbatim from the fetched official page/PDF. A fact is only recorded when the wording is actually present; nothing is summarised, rounded or inferred."
+  "policy": "Sentences are copied verbatim from the fetched official page/PDF. A fact is only recorded when the wording is actually present; nothing is summarised, rounded or inferred.",
+  "note_60ade3e8": "2026-11-17 (arena/60ade3e8-poker4): three entries re-derived from the official pages now tracked in data/tracked-sources.json — Bellagio and ARIA hotel reservation terms (their /hotel/resort-fee.html pages 404) and the Caesars Palace 2026 daily flyer. Same regex extraction the scheduled sync runs over fetched text."
  },
  "sources": {
   "https://www.venetianlasvegas.com/resort/casino/poker.html": {
@@ -226,6 +227,104 @@
    "retrieved": "2026-11-17T22:16:59Z",
    "sha256": "06dc403ff77e1f7dd33314e722b26dfb03ed44aa2fd7e623164490b2704ae4ac",
    "facts": {}
+  },
+  "https://bellagio.mgmresorts.com/en/terms-and-conditions.html": {
+   "label": "Bellagio — hotel reservation terms (daily resort fee, occupant charge, cancellation)",
+   "venue": "Bellagio",
+   "url": "https://bellagio.mgmresorts.com/en/terms-and-conditions.html",
+   "retrieved": "2026-11-17T23:05:00Z",
+   "sha256": null,
+   "captured_via": "verbatim excerpt capture committed at data/raw/bellagio-terms.txt on 2026-11-17; the scheduled sync replaces sha256 with the live byte hash",
+   "text_sha256": "bcadd45ffc521c10957500bd732db9a3d11b84bbebed2c128e3fa3f5398e2999",
+   "facts": {
+    "resort_fee": [
+     "A daily resort fee of $55.00 plus applicable tax will be applied to all reservations",
+     "The resort fee includes: In-room wireless internet access; unlimited local, domestic long distance (the 50 United States and DC) and toll-free calls; access to Paramount+ with SHOWTIME On Demand via in-room television; airline boarding…",
+     "Daily resort fees will be waived (i",
+     "Lodging taxes apply to the basic room rate, any resort fee, additional per occupant charges, upgrades, as well as any other charges as required by applicable law",
+     "ace an authorization against this account to cover applicable charges for room, taxes and resort fees, as well as a $150 incidental amount per day to allow you access to room charging privileges",
+     "Room rates, resort fees, additional occupant charges, cancellation fees, and cleaning fees are based on rates and fees applicable at time of booking your reservation, not at time of check-in (unless date of booking/check-in are the same…"
+    ],
+    "room_tax": [
+     "Taxes may include lodging tax, sales tax, entertainment tax, etc",
+     "Lodging taxes apply to the basic room rate, any resort fee, additional per occupant charges, upgrades, as well as any other charges as required by applicable law"
+    ],
+    "occupancy_charge": [
+     "There is an additional charge of $50 plus tax per occupant, per night, above 2 occupants per room",
+     "Room rates, resort fees, additional occupant charges, cancellation fees, and cleaning fees are based on rates and fees applicable at time of booking your reservation, not at time of check-in (unless date of booking/check-in are the same…"
+    ],
+    "cancellation": [
+     "The first night's deposit is fully refundable provided a timely notice of cancellation is received by Room Reservations at 888.987.6667 at least 72 hours prior to the arrival date, unless specifically excluded by booked offer",
+     "Cancellations less than 72 hours before your scheduled arrival (and no shows) will result in a forfeiture of the first night's deposit",
+     "e., Friday or Saturday night) cancellation fee (as determined by the first night of your scheduled stay), plus applicable taxes",
+     "Room rates, resort fees, additional occupant charges, cancellation fees, and cleaning fees are based on rates and fees applicable at time of booking your reservation, not at time of check-in (unless date of booking/check-in are the same…"
+    ]
+   }
+  },
+  "https://aria.mgmresorts.com/en/terms-and-conditions.html": {
+   "label": "ARIA — hotel reservation terms (daily resort fee, check-in/out, occupant charge, cancellation)",
+   "venue": "ARIA",
+   "url": "https://aria.mgmresorts.com/en/terms-and-conditions.html",
+   "retrieved": "2026-11-17T23:05:00Z",
+   "sha256": null,
+   "captured_via": "verbatim excerpt capture committed at data/raw/aria-terms.txt on 2026-11-17; the scheduled sync replaces sha256 with the live byte hash",
+   "text_sha256": "3fb08c6d9f008cd1a32af513f476c09d8f979ba02e6b1673f7ea2733c83d19fe",
+   "facts": {
+    "resort_fee": [
+     "A daily resort fee of $55.00 plus applicable tax will be applied to all reservations",
+     "The resort fee includes: In-room wireless internet access; unlimited local, domestic long distance (the 50 United States and DC) and toll-free calls; access to Paramount+ with SHOWTIME On Demand via in-room television; airline boarding…",
+     "Daily resort fees will be waived (i",
+     "Lodging taxes apply to the basic room rate, any resort fee, additional per occupant charges, upgrades, as well as any other charges as required by applicable law",
+     "place an authorization against this account to cover applicable charges for room, tax and resort fees, as well as a per day incidental amount of $150 for Deluxe Rooms, $250 for Tower Suites, $350 for Sky Suites and $500 for Villas to…",
+     "Room rates, resort fees, additional occupant charges, cancellation fees, and cleaning fees are based on rates and fees applicable at time of booking your reservation, not at time of check-in (unless date of booking/check-in are the same…"
+    ],
+    "room_tax": [
+     "Taxes may include lodging tax, sales tax, entertainment tax, etc",
+     "Lodging taxes apply to the basic room rate, any resort fee, additional per occupant charges, upgrades, as well as any other charges as required by applicable law"
+    ],
+    "occupancy_charge": [
+     "Additional Occupant Charge",
+     "There is an additional charge of $50 plus tax per occupant, per night, above 2 occupants per room",
+     "Room rates, resort fees, additional occupant charges, cancellation fees, and cleaning fees are based on rates and fees applicable at time of booking your reservation, not at time of check-in (unless date of booking/check-in are the same…"
+    ],
+    "cancellation": [
+     "The first night's deposit is fully refundable provided a timely notice of cancellation is received by Room Reservations at 866.359.7757 at least 72 hours prior to the arrival date, unless specifically excluded by booked offer",
+     "Cancellations less than 72 hours before your scheduled arrival (and no shows) will result in a forfeiture of the first night's deposit",
+     "e., Friday, Saturday or Sunday night) cancellation fee (as determined by the first night of your scheduled stay), plus applicable taxes",
+     "Room rates, resort fees, additional occupant charges, cancellation fees, and cleaning fees are based on rates and fees applicable at time of booking your reservation, not at time of check-in (unless date of booking/check-in are the same…"
+    ],
+    "check_in_out": [
+     "Check in time is 3:00 pm and check out time is 11:00 am"
+    ]
+   }
+  },
+  "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf": {
+   "label": "Caesars Palace — daily NLH tournament flyer (2026 PDF)",
+   "venue": "Caesars Palace",
+   "url": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+   "retrieved": "2026-11-17T23:05:00Z",
+   "sha256": null,
+   "captured_via": "verbatim excerpt capture committed at data/raw/caesars-daily-flyer-2026.txt on 2026-11-17; the scheduled sync replaces sha256 with the live byte hash",
+   "text_sha256": "fd2a7b8e825c32f08aa0304deb651bc843ebb8dd22e44315785a69746c42f172",
+   "facts": {}
+  },
+  "https://www.mgmresorts.com/en/things-to-do/parking.html": {
+   "label": "MGM Resorts — published parking rate table (Bellagio, ARIA and the other MGM Strip properties)",
+   "venue": "MGM Resorts (corporate, no room of its own)",
+   "url": "https://www.mgmresorts.com/en/things-to-do/parking.html",
+   "retrieved": "2026-11-17T23:20:00Z",
+   "sha256": null,
+   "captured_via": "verbatim excerpt capture committed at data/raw/mgm-parking.txt on 2026-11-17; the scheduled sync replaces sha256 with the live byte hash",
+   "facts": {
+    "parking": [
+     "Parking Rates Valet Parking Daily Rates Bellagio, ARIA, Vdara, The Cosmopolitan of Las Vegas, MGM Grand, Mandalay Bay, W Las Vegas, Park MGM, The Reserve at Park MGM, New York-New York, and Luxor - Mon - Thurs (Weekdays): $40 - Fri - Sun…",
+     "_ Self Parking Rates Bellagio, ARIA, Vdara, The Cosmopolitan of Las Vegas, MGM Grand, Mandalay Bay, W Las Vegas, Park MGM, The Reserve at Park MGM, New York-New York, Luxor, and Excalibur | Parking Duration | Mon - Thurs (Weekdays) | Fri…",
+     "_ For MGM Rewards Members Self-parking is complimentary for MGM Rewards Members with current level of Pearl, Gold, Platinum and NOIR",
+     "Valet-parking is complimentary for current Gold, Platinum and NOIR MGM Rewards Members",
+     "For Registered Hotel Guests Your 24-hour parking fee provides you with in-out privileges within the same parking type (self or valet) across all MGM Resorts Las Vegas destinations within the same 24 hour period (subject to availability)"
+    ]
+   },
+   "text_sha256": "1d24fb3788c28775cd207c0f48cffe72ab6811da764d16e58f79ba297238659b"
   }
  }
 }
