@@ -249,9 +249,9 @@ def parse_schedule(text: str, source_url: str) -> list[dict]:
 
 
 PDF_DATE_RE = re.compile(
-    r"(?P<wd>MONDAY|TUESDAY|WEDNESDAY|THURSDAY|FRIDAY|SATURDAY|SUNDAY),?\s+"
+    r"(?:(?P<wd>MONDAY|TUESDAY|WEDNESDAY|THURSDAY|FRIDAY|SATURDAY|SUNDAY)[,\s]+)?"
     r"(?P<mon>JANUARY|FEBRUARY|MARCH|APRIL|MAY|JUNE|JULY|AUGUST|SEPTEMBER|OCTOBER|NOVEMBER|DECEMBER)"
-    r"\s+(?P<day>\d{1,2})", re.I)
+    r"\s+(?P<day>\d{1,2})(?:ST|ND|RD|TH)?\b", re.I)
 PDF_ROW_RE = re.compile(
     r"(?P<no>\d{1,3})\s+\$(?P<buy>[\d,]+)\s+(?P<name>.{3,110}?)\s+"
     r"(?P<time>\d{1,2}:\d{2}\s*(?:AM|PM))"
@@ -327,7 +327,7 @@ def parse_schedule_pdf(text: str, source_url: str, default_year: int | None = No
                 "parse_notes": note or None,
                 "registration_closes": close,
                 "date": date_iso,
-                "weekday": head.group("wd").title() if head else None,
+                "weekday": (head.group("wd").title() if head and head.group("wd") else None),
                 "time": re.sub(r"\s+", " ", m.group("time")).upper(),
                 "event_no": int(m.group("no")),
                 "event_name": name,
@@ -441,6 +441,36 @@ def audit_structure(text: str, url: str) -> dict:
     return out
 
 
+FACT_PATTERNS = {
+    "resort_fee": r"[^.
+]{0,90}resort\s*fee[^.
+]{0,200}",
+    "room_tax": r"[^.
+]{0,70}(?:13\.38|room\s+tax|state\s+room)[^.\n]{0,200}",
+    "parking": r"[^.\n]{0,70}(?:self[- \u2011]?parking|valet\s+parking|parking\s+(?:fee|rate|is))[^.\n]{0,200}",
+    "cancellation": r"[^.\n]{0,90}(?:cancellation|cancel\s+your|no[- ]show|non[- ]refundable)[^.\n]{0,260}",
+    "check_in_out": r"[^.\n]{0,40}(?:check[- ]in|check[- ]out)\s+(?:time|is|at|after|by)[^.\n]{0,140}",
+    "walk": r"[^.\n]{0,80}(?:minutes?\s+(?:walk|walking)|walking\s+distance|skybridge|monorail)[^.\n]{0,180}",
+}
+
+
+def extract_facts(text: str) -> dict:
+    """Verbatim sentences containing the wording we need — copied, never rewritten."""
+    flat = re.sub(r"\s+", " ", text)
+    out: dict[str, list[str]] = {}
+    for key, pat in FACT_PATTERNS.items():
+        hits: list[str] = []
+        for m in re.finditer(pat, flat, re.I):
+            sent = re.sub(r"\s+", " ", m.group(0)).strip(" -|")
+            if len(sent) > 24 and sent not in hits:
+                hits.append(sent)
+            if len(hits) >= 6:
+                break
+        if hits:
+            out[key] = hits
+    return out
+
+
 # --------------------------------------------------------------------------- main
 def main() -> int:
     cfg = read_json(TRACKED, None)
@@ -458,6 +488,7 @@ def main() -> int:
     sheets: dict[str, dict] = prev_audit.get("sheets", {})
     snapshot_rows: list[dict] = []
     changed_urls: list[str] = []
+    facts: dict[str, dict] = {}
 
     for entry in cfg["sources"]:
         url = entry["url"]
@@ -520,6 +551,17 @@ def main() -> int:
                 rows = parse_schedule_pdf(text, url)
                 snapshot_rows.extend(rows)
                 rec["schedule_rows_parsed"] = len(rows)
+            if entry.get("save_text_to") and text:
+                dest = os.path.join(ROOT, entry["save_text_to"])
+                os.makedirs(os.path.dirname(dest), exist_ok=True)
+                with open(dest, "w", encoding="utf-8") as fh:
+                    fh.write(f"<!-- captured {rec['checked_at']} from {url} (sha256 {rec['sha256']}) -->\n")
+                    fh.write(text)
+                rec["saved_text_to"] = entry["save_text_to"]
+            if entry.get("extract_facts") and text:
+                facts[url] = {"label": entry.get("label"), "venue": entry.get("venue"),
+                              "url": url, "retrieved": rec["checked_at"], "sha256": rec["sha256"],
+                              "facts": extract_facts(text)}
             if entry.get("keep_text_excerpt") and text:
                 n = int(entry.get("excerpt_chars") or 600)
                 rec["text_head"] = text[:n]
@@ -546,6 +588,13 @@ def main() -> int:
         "meta": {"generated_at": now_utc(), "rows": len(snapshot_rows),
                  "note": "Rows read from the official schedule page at run time; blank fields were not printed on the page."},
         "rows": snapshot_rows,
+    })
+    write_json(os.path.join(DATA, "hotel-facts.json"), {
+        "meta": {"generated_at": now_utc(),
+                 "policy": "Sentences are copied verbatim from the fetched official page/PDF. "
+                           "A fact is only recorded when the wording is actually present; "
+                           "nothing is summarised, rounded or inferred."},
+        "sources": facts,
     })
     write_json(os.path.join(DATA, "change-log.json"), {
         "meta": {"generated_at": now_utc(), "changed_urls_this_run": changed_urls},
