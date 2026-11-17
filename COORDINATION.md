@@ -833,3 +833,45 @@ Files from `75757cc1` are kept as-is: `data/75757cc1/`, the 37-sheet structure r
 - Live pages re-fetched after deployment: https://karagemop466-tech.github.io/Poker4/tournaments.html and https://karagemop466-tech.github.io/Poker4/venues/venetian.html. F8 complete.
 
 - 2026-11-17: Rebased integration work forward onto origin/main after PR #59 merged at c1521ee and source-sync commit 8a459b3; regenerated canonical pages from the merged official corrections.
+
+---
+
+## Session `arena/8d2d8c23-poker4` (FINAL INTEGRATION for this round)
+
+- Role: **final integration session**. Open PR #65 (`arena/e281a2cc-poker4`) is still unmerged and is
+  based on a **stale main** (merge-base `0d13de0`, before PRs #55–#64), so merging it as-is would
+  revert main's newer 253-row canonical dataset. This session therefore ports its genuinely new
+  verification artefacts onto current main and merges it with main's canonical data kept intact.
+- Branch: `arena/8d2d8c23-poker4` (from `main` @ `ff3fa363`). Scope: root canonical pages +
+  `scripts/integrate_data.py` + `scripts/verify_root.py` + `app.js` + `site.css` + canonical `data/**`
+  + `data/verify/**` + `.github/workflows/**` (integration-owned jobs) + `COORDINATION.md` (log) +
+  `README.md`. Other sessions' subsites (`v2/`, `poker4/`, `planner/`, `site/`, `verified/`, `strip/`,
+  `60fb62da/`, `c07371e3/`, `df41f5c6/`, `pages/`, `archive/`, `prior_root_dashboard/`) are preserved;
+  only their *broken internal links* are repaired (no content deleted).
+- **No manual input is required from the user.** Every task below is executed and verified in-session.
+
+| ID | Task | Status | Owner | File scope | Sources / verification | Irregularities |
+|----|------|--------|-------|------------|------------------------|----------------|
+| I1 | Claim this round's tasks on the board before touching shared files | done | arena/8d2d8c23-poker4 | COORDINATION.md (log) | commit + push of this claim | — |
+| I2 | Integrate open PR #65 (stale base) without regressing main's canonical 253-row dataset | in progress | arena/8d2d8c23-poker4 | `data/verify/**`, `scripts/verify_live_sources.py`, `data/walks.json`, `scripts/integrate_data.py`, `build/**` | PR #65's 3 verification TSVs + live-source verifier; main's canonical rows kept | PR #65 merge-base is 5 merges behind main |
+| I3 | Walking-distance verification: put **measured** Google Maps walk times into the canonical `data/walks.json` so the "≤30 min walk" filter is a working hard filter | in progress | arena/8d2d8c23-poker4 | `data/walks.json`, `hotels.html`, `app.js` | PR #65 `data/verify/walking_routes_2026-11-17.tsv` (Google Maps walking directions, per-pair timestamps) | Walk times are Google Maps, **not** an operator-published figure — must stay labelled as such; Wynn internal + Venetian internal remain unmeasured |
+| I4 | Line-by-line re-verification of every published row against the committed official captures (`data/raw/*`) — no row may hold a value absent from its official source | in progress | arena/8d2d8c23-poker4 | `scripts/verify_root.py`, `data/**` | `data/raw/*` verbatim captures + `data/url-checks.json` (live run 2026-11-17T22:16:33Z) | — |
+| I5 | Repair the 450 broken internal links in the archived snapshot folders so the published site has **no** broken links | in progress | arena/8d2d8c23-poker4 | `pages/**`, `prior_root_dashboard/**` | link audit; no content deleted, only link targets re-pointed | — |
+| I6 | Feature audit of the brief against the canonical site (search, date filter, single-entry toggle, ≤30-min walk filter, trip calculator, dated rate log, change monitor, day plan, per-venue pages, exec summary, questions, suggestions, flagged page, last-checked) | pending | arena/8d2d8c23-poker4 | root pages, `app.js` | `scripts/verify_root.py`, `scripts/linkcheck.py`, `scripts/verify_markup.py` | — |
+| I7 | Integration: regenerate → verify → PR → merge → confirm Pages deploy → record here | pending | arena/8d2d8c23-poker4 | this branch, `main`, `COORDINATION.md` | — | — |
+
+### Log (arena/8d2d8c23-poker4)
+
+- 2026-11-17: Claimed I1–I7 before touching any shared file. Baseline audit on `main` @ `ff3fa363`:
+  `scripts/verify_root.py` OK (16 pages · 253 event rows · 74 rate-log lines · 64 tracked sources ·
+  0 warnings); `scripts/verify.py` OK; `scripts/verify_markup.py` OK (37 pages, 0 problems);
+  `scripts/linkcheck.py` OK for the 30 root pages. A repo-wide audit found **0** broken links in the
+  canonical root pages, `venues/`, `poker4/`, `v2/`, `strip/`, `verified/`, `df41f5c6/`, `c07371e3/`,
+  `60fb62da/`, `planner/`, `site/` — and **450** in the two preserved snapshot folders `pages/`
+  (357) and `prior_root_dashboard/` (93), which are published but whose relative links point at the
+  root layout they were snapshotted from. I5 repairs those without deleting any content.
+- 2026-11-17: Canonical generator confirmed to be `scripts/integrate_data.py` (reads `data/*.json`,
+  writes root `*.html` + `venues/*.html`); it is the only generator referenced by CI
+  (`site-verify.yml`, `url-check.yml`). `build/build_pages.py` + `build/build_integrated.py` are a
+  parallel, non-CI generator over `data/integrated/` that also writes root pages — a latent
+  overwrite hazard that I2/I7 must keep from clobbering the canonical output.
