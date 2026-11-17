@@ -1,47 +1,169 @@
 [
- {"id": "F1", "title": "Zero confirmed single-entry / freezeout events", "severity": "high",
+ {
+  "id": "F1",
+  "title": "Zero confirmed single-entry / freezeout events",
+  "severity": "high",
   "detail": "After reading ALL 37 Venetian DSE IV structure sheets, the Wynn daily structures, the Bellagio weekly PDFs and the Caesars Palace daily flyer on 2026-11-17, no official document states that any event is single-entry or a freezeout. Silence is not confirmation, so no row can be labeled confirmed single-entry. The toggle filter therefore shows zero rows until a property publishes or provides written entry rules.",
-  "sources": ["V-S", "W-DAILY", "B-FRI", "B-SUN", "C-FLYER"], "checked": "2026-11-17"},
- {"id": "F2", "title": "Venetian Events #18/#58 Valuetown: official sheet prices 'subsequent buy in's'", "severity": "high",
+  "sources": [
+   "V-S",
+   "W-DAILY",
+   "B-FRI",
+   "B-SUN",
+   "C-FLYER"
+  ],
+  "checked": "2026-11-17"
+ },
+ {
+  "id": "F2",
+  "title": "Venetian Events #18/#58 Valuetown: official sheet prices 'subsequent buy in's'",
+  "severity": "high",
   "detail": "Structure sheet 8 rule 07 reads: 'All subsequent buy in's after the initial buy in will be $200.' These two events are therefore classified multi-entry and placed in the separate spending-advantage section. PokerAtlas PRO $20 discount applies to the initial buy-in only.",
-  "sources": ["V-S"], "checked": "2026-11-17"},
- {"id": "F3", "title": "Bellagio Saturdays tournament: buy-in conflict inside official sources", "severity": "high",
+  "sources": [
+   "V-S"
+  ],
+  "checked": "2026-11-17"
+ },
+ {
+  "id": "F3",
+  "title": "Bellagio Saturdays tournament: buy-in conflict inside official sources",
+  "severity": "high",
   "detail": "The official Bellagio page links the Saturday PDF as '$1,000 NLH'; the PDF header says 'NLH $1100 BUY-IN'; PDF rule 7 says 'Of the $600 Buy-in, $510 goes to the Prize Pool'. The PDF also contains stale internal dates ('Combined Final Day 2 (9/13/26)', flight registration times for 1A/1B/1C/D). Buy-in left BLANK pending clarification from the poker room (702-693-7291).",
-  "sources": ["B-POKER", "B-SAT"], "checked": "2026-11-17"},
- {"id": "F4", "title": "Wynn WPT schedule PDF contains a date typo", "severity": "medium",
-  "detail": "The official Wynn WPT World Championship schedule PDF labels the Wednesday block 'Dec. 18 Wednesday' — Wednesday is Dec 16, 2026 (the surrounding rows run Dec 15 → Dec 17 Thursday). Rows shown here use Dec 16 with this flag attached.",
-  "sources": ["W-WPT"], "checked": "2026-11-17"},
- {"id": "F5", "title": "Wynn web page URLs restructured", "severity": "medium",
+  "sources": [
+   "B-POKER",
+   "B-SAT"
+  ],
+  "checked": "2026-11-17"
+ },
+ {
+  "id": "F4",
+  "title": "Wynn WPT schedule PDF contains a date typo",
+  "severity": "medium",
+  "detail": "The official Wynn WPT World Championship schedule PDF labels the Wednesday block 'Dec. 18 Wednesday' \u2014 Wednesday is Dec 16, 2026 (the surrounding rows run Dec 15 \u2192 Dec 17 Thursday). Rows shown here use Dec 16 with this flag attached.",
+  "sources": [
+   "W-WPT"
+  ],
+  "checked": "2026-11-17"
+ },
+ {
+  "id": "F5",
+  "title": "Wynn web page URLs restructured",
+  "severity": "medium",
   "detail": "wynnlasvegas.com/casino/poker now redirects to the Wynn homepage and wynnlasvegas.com/casino/poker-room and /hotel/resort-fee return 'page has checked out'. Tournament documents remain on cdn.wynnresorts.com (official CDN) and terms on wynnlasvegas.com/terms-and-conditions/850257. A direct link to a stable official Wynn poker landing page is not currently available.",
-  "sources": ["W-DAILY", "W-TERMS"], "checked": "2026-11-17"},
- {"id": "F6", "title": "Venetian poker page 'Current Series' banner is stale", "severity": "low",
+  "sources": [
+   "W-DAILY",
+   "W-TERMS"
+  ],
+  "checked": "2026-11-17"
+ },
+ {
+  "id": "F6",
+  "title": "Venetian poker page 'Current Series' banner is stale",
+  "severity": "low",
   "detail": "On 2026-11-17 the Venetian poker page still lists 'Current Series: WPT Fall Festival, October 28 - November 15, 2026', although DSE IV began Nov 16 per the official DSE page. Series data on this site comes from the DSE IV schedule page, not the stale banner.",
-  "sources": ["V-POKER", "V-DSE"], "checked": "2026-11-17"},
- {"id": "F7", "title": "Bellagio 'tournament play will resume on Saturday, July 26' notice has no year", "severity": "low",
+  "sources": [
+   "V-POKER",
+   "V-DSE"
+  ],
+  "checked": "2026-11-17"
+ },
+ {
+  "id": "F7",
+  "title": "Bellagio 'tournament play will resume on Saturday, July 26' notice has no year",
+  "severity": "low",
   "detail": "The notice appears on the official Bellagio poker page; July 26, 2026 is a Sunday while July 26, 2025 was a Saturday, so the notice is likely stale. The page's linked weekly PDFs (Fri/Sat/Sun) were used instead.",
-  "sources": ["B-POKER"], "checked": "2026-11-17"},
- {"id": "F8", "title": "Walking times not machine-verifiable from official sources", "severity": "high",
-  "detail": "No property publishes official walking-minute figures between hotels and poker rooms. Every hotel row carries a pre-built Google Maps walking-route link built from the property name; the ≤30-minute filter works only on verified rows (currently only Venetian/Palazzo = inside-building). Walking minutes stay blank until verified via Google/Apple Maps by a person or an approved Distance Matrix API call.",
-  "sources": ["V-POKER"], "checked": "2026-11-17"},
- {"id": "F9", "title": "Dated room rates captured only for Venetian/Palazzo", "severity": "high",
-  "detail": "The Venetian booking engine returns server-rendered quotes (captured Nov 27–30, 2026: $1,274.25/$426.75/$164.25 + $55 resort fee/night + 13.38% tax = $2,301.90). Wynn, Bellagio, ARIA, Caesars, Harrah's, Horseshoe and TI booking engines did not expose machine-readable quotes in this pass — their rate fields are blank and flagged, with official booking links provided per row.",
-  "sources": ["V-BOOK"], "checked": "2026-11-17"},
- {"id": "F10", "title": "Resort fees unverified for Bellagio, ARIA, Caesars Palace, Harrah's, Horseshoe", "severity": "high",
+  "sources": [
+   "B-POKER"
+  ],
+  "checked": "2026-11-17"
+ },
+ {
+  "id": "F8",
+  "title": "Walking times not machine-verifiable from official sources",
+  "severity": "high",
+  "detail": "No property publishes official walking-minute figures between hotels and poker rooms. Every hotel row carries a pre-built Google Maps walking-route link built from the property name; the \u226430-minute filter works only on verified rows (currently only Venetian/Palazzo = inside-building). Walking minutes stay blank until verified via Google/Apple Maps by a person or an approved Distance Matrix API call.",
+  "sources": [
+   "V-POKER"
+  ],
+  "checked": "2026-11-17"
+ },
+ {
+  "id": "F9",
+  "title": "Dated room rates captured only for Venetian/Palazzo",
+  "severity": "high",
+  "detail": "The Venetian booking engine returns server-rendered quotes (captured Nov 27\u201330, 2026: $1,274.25/$426.75/$164.25 + $55 resort fee/night + 13.38% tax = $2,301.90). Wynn, Bellagio, ARIA, Caesars, Harrah's, Horseshoe and TI booking engines did not expose machine-readable quotes in this pass \u2014 their rate fields are blank and flagged, with official booking links provided per row.",
+  "sources": [
+   "V-BOOK"
+  ],
+  "checked": "2026-11-17"
+ },
+ {
+  "id": "F10",
+  "title": "Resort fees unverified for Bellagio, ARIA, Caesars Palace, Harrah's, Horseshoe",
+  "severity": "high",
   "detail": "Official fee pages for these properties were not confirmed in this pass; secondary sources conflict (e.g., ARIA $50 vs $55; Caesars Palace $49.95 vs $54.95). Fields left blank per policy. Verified: Venetian $55+tax, Wynn $55+tax, TI $49.95+tax.",
-  "sources": ["V-RF", "W-TERMS", "TI-TOWER"], "checked": "2026-11-17"},
- {"id": "F11", "title": "Rooms with no official published tournament schedule (checked 2026-11-17)", "severity": "medium",
+  "sources": [
+   "V-RF",
+   "W-TERMS",
+   "TI-TOWER"
+  ],
+  "checked": "2026-11-17"
+ },
+ {
+  "id": "F11",
+  "title": "Rooms with no official published tournament schedule (checked 2026-11-17)",
+  "severity": "medium",
   "detail": "ARIA official page mentions daily tournaments but publishes no times/buy-ins (directs to @ARIAPoker on X). MGM Grand poker URL returns page-not-found. Horseshoe poker URL redirects to a generic Things-To-Do page. Harrah's official pages checked show no tournament schedule. Golden Nugget official poker page returned empty content. Third-party aggregators list tournaments for several of these rooms (e.g., Horseshoe $100 NLH, Golden Nugget $100 NLH, TI dailies) but per policy these are leads only, not verified rows.",
-  "sources": ["A-POKER", "MG-POKER", "H-POKER", "HH-HOTEL", "GN-POKER"], "checked": "2026-11-17"},
- {"id": "F12", "title": "Strip rooms not checked this pass", "severity": "medium",
+  "sources": [
+   "A-POKER",
+   "MG-POKER",
+   "H-POKER",
+   "HH-HOTEL",
+   "GN-POKER"
+  ],
+  "checked": "2026-11-17"
+ },
+ {
+  "id": "F12",
+  "title": "Strip rooms not checked this pass",
+  "severity": "medium",
   "detail": "Sahara, Resorts World, The STRAT, Park MGM, Mandalay Bay, The Cosmopolitan and Planet Hollywood official poker pages were not fetched in the 2026-11-17 pass. They are queued in scripts/scrape_daily.py and on the questions page for the next scheduled check.",
-  "sources": [], "checked": "2026-11-17"},
- {"id": "F13", "title": "Venetian events with no guarantee stated", "severity": "low",
+  "sources": [],
+  "checked": "2026-11-17"
+ },
+ {
+  "id": "F13",
+  "title": "Venetian events with no guarantee stated",
+  "severity": "low",
   "detail": "Events #3/#4/#5 (RaceDay Stack, sheet 18) and #6 (sheet 29) carry no guarantee on their official structure sheets. Guarantee and ratio cells are blank; such rows are excluded from guarantee-based ranking.",
-  "sources": ["V-S"], "checked": "2026-11-17"},
- {"id": "F14", "title": "Bounty guarantees include bounty money at Venetian", "severity": "medium",
-  "detail": "Venetian sheets state guarantees 'consist of the actual prize pool plus the total amount of bounties that are awarded' (sheets 1, 8, 11, 15, 16, 26, 27, 30, 33, 34). Guarantee ÷ buy-in ratios for bounty rows are therefore not comparable with pure prize-pool guarantees and are labeled separately.",
-  "sources": ["V-S"], "checked": "2026-11-17"},
- {"id": "F15", "title": "Trip dates and nightly budget/quality floor not fixed", "severity": "high",
-  "detail": "The brief requires fixed trip dates and a nightly budget/quality floor before final selection, but none were provided. The site therefore covers the full verified window (Nov 17 – Dec 23, 2026) with date filters and a trip calculator, and the schedule page marks every day plan provisional. See Questions Q1–Q2.",
-  "sources": [], "checked": "2026-11-17"}
+  "sources": [
+   "V-S"
+  ],
+  "checked": "2026-11-17"
+ },
+ {
+  "id": "F14",
+  "title": "Bounty guarantees include bounty money at Venetian",
+  "severity": "medium",
+  "detail": "Venetian sheets state guarantees 'consist of the actual prize pool plus the total amount of bounties that are awarded' (sheets 1, 8, 11, 15, 16, 26, 27, 30, 33, 34). Guarantee \u00f7 buy-in ratios for bounty rows are therefore not comparable with pure prize-pool guarantees and are labeled separately.",
+  "sources": [
+   "V-S"
+  ],
+  "checked": "2026-11-17"
+ },
+ {
+  "id": "F15",
+  "title": "Trip dates and nightly budget/quality floor not fixed",
+  "severity": "high",
+  "detail": "The brief requires fixed trip dates and a nightly budget/quality floor before final selection, but none were provided. The site therefore covers the full verified window (Nov 17 \u2013 Dec 23, 2026) with date filters and a trip calculator, and the schedule page marks every day plan provisional. See Questions Q1\u2013Q2.",
+  "sources": [],
+  "checked": "2026-11-17"
+ },
+ {
+  "id": "F18",
+  "title": "COORDINATION/README conflict-marker pollution on main (fixed for this integration)",
+  "severity": "low",
+  "detail": "During the 2026-11-17 integration rebase, COORDINATION.md and README.md on main were found to carry committed conflict-marker lines from earlier parallel merges (e.g. an '<<<<<<< HEAD' / '>>>>>>> origin/main' pair inside README's Scheduled-monitors section, and duplicated board blocks). Every merge in this session kept main's text verbatim and re-appended this session's records; the integration README is marker-free. Duplicated board sections were dropped only after verifying the retained copy was a strict superset (diff-checked).",
+  "sources": [],
+  "checked": "2026-11-17"
+ }
 ]
