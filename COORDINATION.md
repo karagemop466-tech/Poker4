@@ -875,3 +875,46 @@ Files from `75757cc1` are kept as-is: `data/75757cc1/`, the 37-sheet structure r
   (`site-verify.yml`, `url-check.yml`). `build/build_pages.py` + `build/build_integrated.py` are a
   parallel, non-CI generator over `data/integrated/` that also writes root pages — a latent
   overwrite hazard that I2/I7 must keep from clobbering the canonical output.
+
+---
+
+## Preserved board record — session `arena/e281a2cc-poker4` (PR #65)
+
+*Appended verbatim by the final integration session `arena/8d2d8c23-poker4` so the other
+session's record is not lost. PR #65 was merged into `arena/8d2d8c23-poker4`; see that
+session's log for how the conflicts were resolved and which of its artefacts were carried
+onto current `main`.*
+
+## Session arena/e281a2cc-poker4 (session `e281a2cc`) — verification + integration session, 2026-11-17
+
+- Session ID: `arena/e281a2cc-poker4`; branch `arena/e281a2cc-poker4` (from `main` @ `0d13de0`).
+- Role: **line-by-line re-verification of the canonical data layer against live official sources**, repair of the
+  stale/broken verification gates and the two failing scheduled monitors, close the remaining feature gaps, then
+  integrate → `main` → GitHub Pages.
+- Canonical build for this repo (re-verified, zero drift): `build/build_integrated.py` → `data/integrated/*.json`
+  → `build/build_pages.py` → root pages. Both scripts re-run clean against the committed tree (no diff).
+- File scope claimed: `COORDINATION.md` (log), `scripts/verify_live_sources.py`, `scripts/verify_root.py`, `scripts/verify_site2.py`,
+  `scripts/recheck_sources.py`, `tools/verify_root_site.py`, `tools/recheck.py`, `.github/workflows/recheck.yml`,
+  `.github/workflows/monitor.yml`, `build/build_integrated.py`, `build/build_pages.py`, `build/data_hotels.py`,
+  `assets/dashboard.js`, `data/verify/*`, `data/integrated/*` (only via the builders), and generated root pages.
+  Other-session snapshots remain untouched.
+- Not touched: every other session's frozen snapshot (`60fb62da/`, `c07371e3/`, `df41f5c6/`, `strip/`, `verified/`,
+  `planner/`, `poker4/`, `v2/`, `pages/`, `prior_root_dashboard/`, `site/`, `strip/`) and their builders.
+
+### Task board (this session)
+
+| ID | Task | Status | Owner | File scope | Sources / verification | Irregularities |
+|----|------|--------|-------|------------|------------------------|----------------|
+| V1 | Line-by-line re-verification of every canonical row against live official sources | in progress | arena/e281a2cc-poker4 | `scripts/verify_live_sources.py`, `data/verify/*`, `build/build_integrated.py`, canonical data via builders | Venetian DSE IV page (all 4 chunks) + all 37 official sheets read and metadata checked; Wynn poker page + live WPT schedule PDF; date/weekday inconsistency on 8 WPT rows flagged; hotel exact-date rates remain blank (dates/occupancy unavailable) | WPT official PDF prints Dec. 18 Wednesday; don't infer a correction |
+| V2 | Repair stale verifiers (`scripts/verify_root.py`, `scripts/verify_site2.py`, `tools/verify_root_site.py`) | done | arena/e281a2cc-poker4 | the three verifiers | Canonical-root and feature checks pass locally: 201/201 rendered tournament rows; 163 feature events; current data-* hooks and table-search checks | Old page-marker/count assertions removed; all current data-table rows checked for official source links |
+| V3 | Repair the two failing scheduled monitors: `monitor.yml` checkout credentials and `recheck.yml` fetch-failure behavior | in progress | arena/e281a2cc-poker4 | the two workflows + `tools/recheck.py` + canonical `scripts/recheck_sources.py` | Local syntax and integrity gates pass; `monitor.yml` persists checkout credentials; fetch failures are recorded and no longer abort later checks | Need post-push GitHub scheduled/manual workflow result; network fetches are blocked in this sandbox |
+| V4 | Search across every canonical data table and make the day-plan date filter operate on day cards | done | arena/e281a2cc-poker4 | `build/build_pages.py`, `assets/dashboard.js`, generated pages | Search input verified on all 11 canonical table pages; schedule cards carry `data-day` and use selected date; JS syntax and links pass | Legacy archived pages outside current builder remain untouched |
+| V5 | Final integration: rebuild, link audit, PR → `main`, merge, confirm Pages deploy, record result here | in progress | arena/e281a2cc-poker4 | this branch, `main`, `COORDINATION.md` | Local rebuild/verifiers/linkcheck pass; current branch still needs commit/push, PR, merge, and deploy confirmation | Will not merge until CI/deploy succeed |
+
+### Verification progress — 2026-11-17
+
+- **Venetian live schedule:** all 94 official rows in the 2026-11-17 live capture are compared against the canonical CSV and integrated JSON; row counts, keys, times, event numbers, buy-ins, guarantees, sheet links, and per-row rule-field sources/dates pass. Exact official names are preserved in `data/verify/venetian_dse_iv_live_2026-11-17.tsv`; 32 canonical title variants are explicitly listed by the verifier and published as Flag F11 (not silently treated as exact matches).
+- **Venetian structures:** all 37 PDFs were opened/read at the official URL series `https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_N.pdf` (N=1–37). Event numbers, title, start time, starting stack, level length, registration close, entry-fee split, guarantee, and the stated payout/bounty/milestone notes were compared with `build/data_venetian.py`; metadata matches. Per-sheet manual review index with 37 official links: `data/verify/venetian_structure_sheet_review_2026-11-17.tsv`. Entry-count rules remain unverified where the sheet is silent; “not stated” is not converted to freezeout.
+- **Wynn live source:** official poker page and both chunks of the WPT schedule PDF re-fetched. Eight rows in `WPT_ROWS` print a `Dec. 18 Wednesday` label, conflicting with the Gregorian weekday; the rows retain the official printed date/weekday and carry row-level `date/weekday conflict` badges plus Flag F03. No correction is inferred. Canonical rows with confirmed sources now carry separate `rule_fields` (`single_entry`, `re_entry`, `add_on`, `fees`) with status/value/excerpt/source URL/retrieval date; unknown policy values remain blank/unverified.
+- **Feature repairs:** trip-cost calculator inputs now start blank (no assumed dates, occupancy, number of entries, or conditional hotel quote); official booking URL generation requires check-in, check-out and adult occupancy. Every current data-table row has an official source link; every canonical table page has search; schedule date filtering applies to day cards. Google Maps routes for all cross-property Venetian/Wynn walk pairs have been opened and read; Bellagio→Wynn is 32 min, ARIA→Wynn 42 min, and ARIA→Venetian 31 min (all over the limit). All other measured cross-property rows are ≤30 min; Wynn's internal hotel-to-poker-room walk stays blank. Route log: `data/verify/walking_routes_2026-11-17.tsv`. Change monitoring retains CHANGED flags until review in the canonical monitor history.
+- **Local verification:** `build/build_integrated.py` (234 events, 69 sources, 11 flags, 38 plan days, 0 cross-check issues); `build/build_pages.py`; `scripts/verify_live_sources.py`; `scripts/verify_root.py`; `scripts/verify_site2.py`; `tools/verify_root_site.py`; `scripts/linkcheck.py` (30 pages); `node --check assets/dashboard.js`; Python compilation; `git diff --check` — all pass. Exact-date hotel quotes remain blank because no stay dates/occupancy were specified; sandbox fetch access to many monitored hosts fails, so scheduled live results still require CI confirmation.

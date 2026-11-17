@@ -158,6 +158,8 @@ def load_wpt():
         if "Mystery" in name: gtd_note = "mystery-bounty event — guarantee includes bounty pool"
         if "added" in name: gtd_note = "$1,000,000 added by ClubWPT Gold (not available in Nevada) — not a house guarantee"
         flags = []
+        if iso and wd and datetime.strptime(iso, "%Y-%m-%d").strftime("%A").lower() != wd.lower():
+            flags.append(f"official schedule date/weekday conflict: prints {dl} {wd}; unresolved")
         if kind == "satellite": flags.append("satellite — prizes are seats/tickets, not cash")
         if "Ladies" in name: flags.append("Ladies event (discounted entry $1,100 vs $11,100 full)")
         if "Seniors" in name: flags.append("Seniors event")
@@ -298,9 +300,9 @@ def build_flags(events, hotels):
     F("Resort fees unverified for Bellagio, Caesars Palace, Harrah's, Horseshoe, ARIA",
       "No official page states an amount (or the page is marketing copy). Third-party figures conflict and are not used. Venetian $55+tax, Wynn $55+tax (bookings on/after Jan 15 2025) and Treasure Island $49.95+tax are verified from official pages.",
       "https://www.caesars.com/caesars-palace")
-    F("Walk-time matrix incomplete for Wynn venue",
-      "Hotel→Venetian walking times verified for 7 hotels + on-site (Google Maps, 2026-11-17). ARIA at 31 min exceeds the 30-minute limit. Hotel→Wynn pairs for Bellagio/ARIA/Caesars/TI/Harrah's/Horseshoe are unmeasured — links provided, scheduled for automated re-check.",
-      "https://www.google.com/maps/dir/?api=1&origin=Wynn+Las+Vegas,+3131+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&destination=The+Venetian+Resort,+3355+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&travelmode=walking")
+    F("Walking times over 30 minutes: Bellagio/ARIA to Wynn; ARIA to Venetian",
+      "All hotel-to-venue cross-property walks were checked on Google Maps using official property addresses on 2026-11-17. Bellagio→Wynn is 32 min, ARIA→Wynn 42 min, and ARIA→Venetian 31 min; all exceed the requested 30-minute limit. Other measured cross-property pairs are 30 minutes or less. Wynn-on-Wynn internal walking time is not published/verified and remains blank.",
+      "https://www.google.com/maps/dir/?api=1&origin=Aria+Resort+%26+Casino,+3730+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&destination=Wynn+Las+Vegas,+3131+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&travelmode=walking")
     F("Bellagio Saturday buy-in conflict",
       "Bellagio official sources conflict on the Saturday NLH buy-in ($1,000 vs $1,100) and prior audit could not capture start time/date. Row carried with conflict label; not resolved by inference.",
       "https://bellagio.mgmresorts.com/en/casino/poker.html")
@@ -308,15 +310,62 @@ def build_flags(events, hotels):
       "The earliest verified starts are 9:10 AM (Venetian Event #46 satellite, Dec 12) and 10:00 AM/10:10 AM for most mains. No official schedule shows an 8:00 AM tournament in the window; the daily plan starts at the earliest verified start.",
       V.SCHED_URL)
     F("Event durations are labeled estimates",
-      "No official source publishes finish times. Plausible-duration estimates (1-day ≈ 10 h, flights ≈ 9 h, turbo/satellite ≈ 4–6 h) drive overlap flags and the daily plan; every such value is labeled as an estimate on the page.",
-      "")
+      "No official source publishes finish times. Plausible-duration estimates (1-day ≈ 10 h, flights ≈ 9 h, turbo/satellite ≈ 4–6 h) drive overlap flags and the daily plan; every such value is labeled as an estimate on the page. The linked official schedule and structure sheets provide the start times and level durations used as inputs.",
+      V.SCHED_URL)
+    F("32 Venetian display titles differ from the official page wording",
+      "Schedule keys, event numbers, dates, times, buy-ins, guarantees and sheet mappings reconcile; 32 canonical titles normalize capitalization, punctuation or shorten official display wording. The exact official text and each affected schedule row are preserved in data/verify/venetian_dse_iv_live_2026-11-17.tsv and listed by scripts/verify_live_sources.py. Review title variants; no row was dropped.",
+      V.SCHED_URL)
     return flags
+
+def structured_rule_fields(e):
+    """Expose each requested policy/value separately with its provenance.
+
+    A silence in an official sheet is recorded as unverified, never converted
+    into a "no". Existing excerpts are the source text/transcription already
+    attached to the curated row; every field carries the row's retrieval date.
+    """
+    url = e.get("structure_url") or (e.get("source_urls") or [""])[0]
+    checked = e.get("last_checked", TODAY)
+    status = e.get("entry_status", "not-stated")
+    entry_excerpt = e.get("entry_excerpt", "")
+    if status in ("re-entry-confirmed", "rebuy-add-on", "subsequent-buy-ins"):
+        single = dict(status="confirmed", value=False, excerpt=entry_excerpt)
+    elif status == "flights-bagging-rule":
+        single = dict(status="unverified", value=None, excerpt=entry_excerpt)
+    else:
+        single = dict(status="unverified", value=None, excerpt=entry_excerpt or "Official source does not state a maximum-entry/freezeout rule.")
+
+    if status in ("re-entry-confirmed", "subsequent-buy-ins"):
+        reentry = dict(status="confirmed", value=e.get("reentry"), excerpt=entry_excerpt)
+    elif status == "flights-bagging-rule":
+        reentry = dict(status="partial", value=None, excerpt=entry_excerpt)
+    else:
+        reentry = dict(status="unverified", value=None, excerpt=entry_excerpt or "Official source does not state a re-entry rule.")
+
+    addon_text = e.get("addon", "")
+    if re.search(r"\b(one|unlimited)\b.*\$", addon_text, re.I):
+        addon = dict(status="confirmed", value=addon_text, excerpt=entry_excerpt)
+    else:
+        addon = dict(status="unverified", value=None, excerpt=entry_excerpt or "Official source does not confirm whether an add-on is permitted.")
+
+    fee_text = e.get("fee_text", "")
+    fee_value = ({"total_entry_usd": e.get("buy_in"), "breakdown": fee_text}
+                 if e.get("fee_verified") and fee_text and e.get("buy_in") is not None else None)
+    fee = dict(status="confirmed" if fee_value else "unverified",
+               value=fee_value,
+               excerpt=fee_text or "Official fee breakdown not captured.")
+    return {key: dict(field, source_url=url, retrieved_on=checked)
+            for key, field in (("single_entry", single), ("re_entry", reentry),
+                               ("add_on", addon), ("fees", fee))}
+
 
 def main():
     ven = load_venetian()
     wd = load_wynn_daily()
     wpt = load_wpt()
     events = ven + wd + wpt
+    for event in events:
+        event["rule_fields"] = structured_rule_fields(event)
     plan = build_plan(ven + wpt)
     sources = build_sources(events)
     flags = build_flags(events, H.HOTELS)

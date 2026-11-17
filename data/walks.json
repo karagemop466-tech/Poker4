@@ -2,7 +2,10 @@
  "meta": {
   "generated_at": "2026-11-17T22:16:33Z",
   "rule": "A hotel is usable for an 8 AM\u2013close day only if the walk from the lobby to the poker room can be completed inside 30 minutes.",
-  "how_to_close": "Run the same hotel\u2194venue pairs through the Google Maps Distance Matrix API (mode=walking) or Apple Maps directions, store the returned duration plus the request timestamp, and paste those pairs into data/walks.json. The \u226430-minute filter then becomes a hard filter instead of a warning."
+  "measured_minutes_source": "Google Maps walking directions, opened and read on 2026-11-17 for every cross-property hotel->Venetian and hotel->Wynn pair; the route URL, the printed duration, the printed distance and the read date are kept per pair. A routing-engine duration is a measurement, not an operator-published figure, and the on-site internal walks (The Venetian/Palazzo and Wynn/Encore) have no route and stay unmeasured.",
+  "how_to_close": "Re-open each route URL in data/verify/walking_routes_2026-11-17.tsv and record the new duration and date, or take a lobby-to-poker-room walk on site and publish the measurement with the date it was taken. Update the pairs in data/poker4.json and rebuild; the rows update with the run.",
+  "pairs_total": 24,
+  "pairs_measured": 15
  },
  "pairs": [
   {
@@ -11,9 +14,27 @@
    "venue_id": "venetian",
    "venue": "The Venetian Poker Room",
    "minutes": null,
+   "distance": "",
    "meets_30_min": "not applicable (on-site)",
-   "status": "same property \u2014 poker room is inside The Venetian/Palazzo complex (Palazzo level 2). No official door-to-door minute count is published.",
-   "source": "https://www.venetianlasvegas.com/resort/casino/poker.html"
+   "status": "same property \u2014 the poker room is inside the Venetian/Palazzo complex (Palazzo level 2). No route measures the lobby-to-room walk; the operator publishes directions, not minutes.",
+   "source": "https://www.venetianlasvegas.com/resort/casino/poker.html",
+   "source_type": "operator",
+   "method": "",
+   "measured_on": ""
+  },
+  {
+   "hotel_id": "venetian",
+   "hotel": "The Venetian Resort \u2014 Venetian tower",
+   "venue_id": "wynn",
+   "venue": "Wynn Las Vegas Poker",
+   "minutes": 13,
+   "distance": "0.6 mi",
+   "meets_30_min": "yes \u2014 13 min measured (Google Maps)",
+   "status": "Best via Wynn Main Gate Dr (13 min); via Las Vegas Blvd S 14 min.",
+   "source": "https://www.google.com/maps/dir/?api=1&origin=The+Venetian+Resort,+3355+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&destination=Wynn+Las+Vegas,+3131+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&travelmode=walking",
+   "source_type": "maps",
+   "method": "Google Maps walking directions, opened and read on 2026-11-17",
+   "measured_on": "2026-11-17"
   },
   {
    "hotel_id": "palazzo",
@@ -21,9 +42,41 @@
    "venue_id": "venetian",
    "venue": "The Venetian Poker Room",
    "minutes": null,
-   "meets_30_min": "not applicable (same complex)",
-   "status": "Poker room is on The Palazzo level 2 and is reached from either tower; the operator publishes directions, not minutes.",
-   "source": "https://www.venetianlasvegas.com/resort/casino/poker.html"
+   "distance": "",
+   "meets_30_min": "not applicable (on-site)",
+   "status": "same complex \u2014 the poker room is on Palazzo level 2 and is reached from either tower. No route measures the lobby-to-room walk.",
+   "source": "https://www.venetianlasvegas.com/resort/casino/poker.html",
+   "source_type": "operator",
+   "method": "",
+   "measured_on": ""
+  },
+  {
+   "hotel_id": "palazzo",
+   "hotel": "The Palazzo (same resort, same poker-rate program)",
+   "venue_id": "wynn",
+   "venue": "Wynn Las Vegas Poker",
+   "minutes": 13,
+   "distance": "0.6 mi",
+   "meets_30_min": "yes \u2014 13 min measured (Google Maps)",
+   "status": "Best via Wynn Main Gate Dr (13 min); via Las Vegas Blvd S 14 min.",
+   "source": "https://www.google.com/maps/dir/?api=1&origin=The+Venetian+Resort,+3355+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&destination=Wynn+Las+Vegas,+3131+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&travelmode=walking",
+   "source_type": "maps",
+   "method": "Google Maps walking directions, opened and read on 2026-11-17",
+   "measured_on": "2026-11-17"
+  },
+  {
+   "hotel_id": "wynn",
+   "hotel": "Wynn Las Vegas",
+   "venue_id": "venetian",
+   "venue": "The Venetian Poker Room",
+   "minutes": 13,
+   "distance": "0.6 mi",
+   "meets_30_min": "yes \u2014 13 min measured (Google Maps)",
+   "status": "Best via Wynn Main Gate Dr (13 min); via Las Vegas Blvd S 14 min; via Sands Ave 16 min.",
+   "source": "https://www.google.com/maps/dir/?api=1&origin=Wynn+Las+Vegas,+3131+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&destination=The+Venetian+Resort,+3355+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&travelmode=walking",
+   "source_type": "maps",
+   "method": "Google Maps walking directions, opened and read on 2026-11-17",
+   "measured_on": "2026-11-17"
   },
   {
    "hotel_id": "wynn",
@@ -31,9 +84,13 @@
    "venue_id": "wynn",
    "venue": "Wynn Las Vegas Poker",
    "minutes": null,
-   "meets_30_min": "unverified",
-   "status": "Wynn to the Venetian poker room: no official walking-time source; ~2.2 miles of Strip frontage between the two resorts by public mapping, so it is not a plausible walk-to-play pairing anyway.",
-   "source": "https://www.venetianlasvegas.com/resort/casino/poker.html"
+   "distance": "",
+   "meets_30_min": "not applicable (on-site)",
+   "status": "same property \u2014 the poker room is inside the Wynn/Encore complex. No route measures the lobby-to-room walk and the operator publishes no minute count.",
+   "source": "https://www.venetianlasvegas.com/resort/casino/poker.html",
+   "source_type": "operator",
+   "method": "",
+   "measured_on": ""
   },
   {
    "hotel_id": "encore",
@@ -41,9 +98,13 @@
    "venue_id": "wynn",
    "venue": "Wynn Las Vegas Poker",
    "minutes": null,
-   "meets_30_min": "unverified (connected campus)",
-   "status": "Encore is connected to the Wynn tower that hosts the poker room; the property publishes no minute count.",
-   "source": "https://www.wynnlasvegas.com/casino/poker"
+   "distance": "",
+   "meets_30_min": "not applicable (on-site)",
+   "status": "same resort campus \u2014 Encore is connected to the Wynn tower that hosts the poker room. No route measures the lobby-to-room walk.",
+   "source": "https://www.wynnlasvegas.com/casino/poker",
+   "source_type": "operator",
+   "method": "",
+   "measured_on": ""
   },
   {
    "hotel_id": "bellagio",
@@ -51,9 +112,41 @@
    "venue_id": "bellagio",
    "venue": "Bellagio Poker Room",
    "minutes": null,
-   "meets_30_min": "unverified",
-   "status": "Bellagio sits across Las Vegas Boulevard from The Cosmopolitan and is one property away from the Venetian complex; no official minute count exists.",
-   "source": "https://bellagio.mgmresorts.com/en/casino/poker.html"
+   "distance": "",
+   "meets_30_min": "not applicable (on-site)",
+   "status": "same property \u2014 the poker room is inside the Bellagio. No route measures the lobby-to-room walk.",
+   "source": "https://bellagio.mgmresorts.com/en/casino/poker.html",
+   "source_type": "operator",
+   "method": "",
+   "measured_on": ""
+  },
+  {
+   "hotel_id": "bellagio",
+   "hotel": "Bellagio",
+   "venue_id": "venetian",
+   "venue": "The Venetian Poker Room",
+   "minutes": 21,
+   "distance": "0.9 mi",
+   "meets_30_min": "yes \u2014 21 min measured (Google Maps)",
+   "status": "Best via Las Vegas Blvd S (21 min); via Bellagio Dr 24 min.",
+   "source": "https://www.google.com/maps/dir/?api=1&origin=Bellagio,+3600+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&destination=The+Venetian+Resort,+3355+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&travelmode=walking",
+   "source_type": "maps",
+   "method": "Google Maps walking directions, opened and read on 2026-11-17",
+   "measured_on": "2026-11-17"
+  },
+  {
+   "hotel_id": "bellagio",
+   "hotel": "Bellagio",
+   "venue_id": "wynn",
+   "venue": "Wynn Las Vegas Poker",
+   "minutes": 32,
+   "distance": "1.4 mi",
+   "meets_30_min": "no \u2014 32 min measured, over the 30-minute limit",
+   "status": "Best via Las Vegas Blvd S (32 min); alternate via Las Vegas Blvd Overpass (33 min) or Bellagio Dr (36 min); over 30-minute limit.",
+   "source": "https://www.google.com/maps/dir/?api=1&origin=Bellagio,+3600+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&destination=Wynn+Las+Vegas,+3131+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&travelmode=walking",
+   "source_type": "maps",
+   "method": "Google Maps walking directions, opened and read on 2026-11-17",
+   "measured_on": "2026-11-17"
   },
   {
    "hotel_id": "caesars",
@@ -61,9 +154,41 @@
    "venue_id": "caesars",
    "venue": "Caesars Palace Poker Room",
    "minutes": null,
-   "meets_30_min": "unverified",
-   "status": "no official walking-time source",
-   "source": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+   "distance": "",
+   "meets_30_min": "not applicable (on-site)",
+   "status": "same property \u2014 the poker room is inside Caesars Palace. No route measures the lobby-to-room walk.",
+   "source": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
+   "source_type": "operator",
+   "method": "",
+   "measured_on": ""
+  },
+  {
+   "hotel_id": "caesars",
+   "hotel": "Caesars Palace",
+   "venue_id": "venetian",
+   "venue": "The Venetian Poker Room",
+   "minutes": 12,
+   "distance": "0.5 mi",
+   "meets_30_min": "yes \u2014 12 min measured (Google Maps)",
+   "status": "Best via Las Vegas Blvd S (12 min); alternate 12 min.",
+   "source": "https://www.google.com/maps/dir/?api=1&origin=Caesars+Palace,+3570+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&destination=The+Venetian+Resort,+3355+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&travelmode=walking",
+   "source_type": "maps",
+   "method": "Google Maps walking directions, opened and read on 2026-11-17",
+   "measured_on": "2026-11-17"
+  },
+  {
+   "hotel_id": "caesars",
+   "hotel": "Caesars Palace",
+   "venue_id": "wynn",
+   "venue": "Wynn Las Vegas Poker",
+   "minutes": 23,
+   "distance": "1.0 mi",
+   "meets_30_min": "yes \u2014 23 min measured (Google Maps)",
+   "status": "Best via Las Vegas Blvd S (23 min); alternate via Caesars Palace Dr (24 min).",
+   "source": "https://www.google.com/maps/dir/?api=1&origin=Caesars+Palace,+3570+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&destination=Wynn+Las+Vegas,+3131+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&travelmode=walking",
+   "source_type": "maps",
+   "method": "Google Maps walking directions, opened and read on 2026-11-17",
+   "measured_on": "2026-11-17"
   },
   {
    "hotel_id": "aria",
@@ -71,19 +196,69 @@
    "venue_id": "aria",
    "venue": "ARIA Poker Room",
    "minutes": null,
-   "meets_30_min": "unverified",
-   "status": "ARIA to the Venetian runs along the Strip through CityCenter; no official minute count. The Aria Express tram is free but does not reach the Venetian.",
-   "source": "https://aria.mgmresorts.com/en/casino/poker.html"
+   "distance": "",
+   "meets_30_min": "not applicable (on-site)",
+   "status": "same property \u2014 the poker room is inside ARIA. No route measures the lobby-to-room walk. The Aria Express tram is free but does not reach the Venetian.",
+   "source": "https://aria.mgmresorts.com/en/casino/poker.html",
+   "source_type": "operator",
+   "method": "",
+   "measured_on": ""
+  },
+  {
+   "hotel_id": "aria",
+   "hotel": "ARIA",
+   "venue_id": "venetian",
+   "venue": "The Venetian Poker Room",
+   "minutes": 31,
+   "distance": "1.4 mi",
+   "meets_30_min": "no \u2014 31 min measured, over the 30-minute limit",
+   "status": "Best via Las Vegas Blvd S (31 min) \u2014 EXCEEDS the 30-minute limit; via Cosmopolitan Service Rd 32 min.",
+   "source": "https://www.google.com/maps/dir/?api=1&origin=Aria+Resort+%26+Casino,+3730+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&destination=The+Venetian+Resort,+3355+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&travelmode=walking",
+   "source_type": "maps",
+   "method": "Google Maps walking directions, opened and read on 2026-11-17",
+   "measured_on": "2026-11-17"
+  },
+  {
+   "hotel_id": "aria",
+   "hotel": "ARIA",
+   "venue_id": "wynn",
+   "venue": "Wynn Las Vegas Poker",
+   "minutes": 42,
+   "distance": "1.9 mi",
+   "meets_30_min": "no \u2014 42 min measured, over the 30-minute limit",
+   "status": "Best via Las Vegas Blvd S (42 min); over 30-minute limit.",
+   "source": "https://www.google.com/maps/dir/?api=1&origin=Aria+Resort+%26+Casino,+3730+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&destination=Wynn+Las+Vegas,+3131+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&travelmode=walking",
+   "source_type": "maps",
+   "method": "Google Maps walking directions, opened and read on 2026-11-17",
+   "measured_on": "2026-11-17"
   },
   {
    "hotel_id": "ti",
    "hotel": "Treasure Island",
    "venue_id": "venetian",
    "venue": "The Venetian Poker Room",
-   "minutes": null,
-   "meets_30_min": "unverified",
-   "status": "TI is directly across Las Vegas Boulevard from the Venetian/Palazzo complex; the property publishes no walking minutes and the crossing + Strip walk is not time-verified here.",
-   "source": "https://treasureisland.com/hotel/deluxe-rooms"
+   "minutes": 6,
+   "distance": "0.2 mi",
+   "meets_30_min": "yes \u2014 6 min measured (Google Maps)",
+   "status": "Best via Las Vegas Blvd S (6 min); alternate 6 min via N Siegfried And Roy Dr.",
+   "source": "https://www.google.com/maps/dir/?api=1&origin=Treasure+Island+Las+Vegas,+3300+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&destination=The+Venetian+Resort,+3355+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&travelmode=walking",
+   "source_type": "maps",
+   "method": "Google Maps walking directions, opened and read on 2026-11-17",
+   "measured_on": "2026-11-17"
+  },
+  {
+   "hotel_id": "ti",
+   "hotel": "Treasure Island",
+   "venue_id": "wynn",
+   "venue": "Wynn Las Vegas Poker",
+   "minutes": 11,
+   "distance": "0.5 mi",
+   "meets_30_min": "yes \u2014 11 min measured (Google Maps)",
+   "status": "Best via Las Vegas Blvd S (11 min); alternate via Wynn Main Gate Dr (13 min).",
+   "source": "https://www.google.com/maps/dir/?api=1&origin=Treasure+Island+Las+Vegas,+3300+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&destination=Wynn+Las+Vegas,+3131+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&travelmode=walking",
+   "source_type": "maps",
+   "method": "Google Maps walking directions, opened and read on 2026-11-17",
+   "measured_on": "2026-11-17"
   },
   {
    "hotel_id": "horseshoe",
@@ -91,9 +266,41 @@
    "venue_id": "others",
    "venue": "Other rooms on and around the Strip",
    "minutes": null,
-   "meets_30_min": "unverified",
-   "status": "no official walking-time source",
-   "source": "https://www.caesars.com/horseshoe-las-vegas/casino/poker"
+   "distance": "",
+   "meets_30_min": "not applicable (on-site)",
+   "status": "same property \u2014 the poker room is inside Horseshoe Las Vegas. No route measures the lobby-to-room walk.",
+   "source": "https://www.caesars.com/horseshoe-las-vegas/casino/poker",
+   "source_type": "operator",
+   "method": "",
+   "measured_on": ""
+  },
+  {
+   "hotel_id": "horseshoe",
+   "hotel": "Horseshoe Las Vegas",
+   "venue_id": "venetian",
+   "venue": "The Venetian Poker Room",
+   "minutes": 16,
+   "distance": "0.7 mi",
+   "meets_30_min": "yes \u2014 16 min measured (Google Maps)",
+   "status": "Best via Linq Ln (16 min); via Krueger Dr 16 min; via Las Vegas Blvd S 17 min.",
+   "source": "https://www.google.com/maps/dir/?api=1&origin=Horseshoe+Las+Vegas,+3645+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&destination=The+Venetian+Resort,+3355+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&travelmode=walking",
+   "source_type": "maps",
+   "method": "Google Maps walking directions, opened and read on 2026-11-17",
+   "measured_on": "2026-11-17"
+  },
+  {
+   "hotel_id": "horseshoe",
+   "hotel": "Horseshoe Las Vegas",
+   "venue_id": "wynn",
+   "venue": "Wynn Las Vegas Poker",
+   "minutes": 29,
+   "distance": "1.3 mi",
+   "meets_30_min": "yes \u2014 29 min measured (Google Maps)",
+   "status": "Best via Las Vegas Blvd S (29 min); alternate via E Flamingo Rd (29 min), at the 30-minute limit.",
+   "source": "https://www.google.com/maps/dir/?api=1&origin=Horseshoe+Las+Vegas,+3645+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&destination=Wynn+Las+Vegas,+3131+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&travelmode=walking",
+   "source_type": "maps",
+   "method": "Google Maps walking directions, opened and read on 2026-11-17",
+   "measured_on": "2026-11-17"
   },
   {
    "hotel_id": "harrahs",
@@ -101,9 +308,41 @@
    "venue_id": "others",
    "venue": "Other rooms on and around the Strip",
    "minutes": null,
-   "meets_30_min": "unverified",
-   "status": "Harrah's sits between Planet Hollywood and The LINQ, opposite the Venetian side of the Strip; no official minute count.",
-   "source": "https://www.caesars.com/harrahs-las-vegas"
+   "distance": "",
+   "meets_30_min": "not applicable (on-site)",
+   "status": "same property \u2014 the poker room is inside Harrah's Las Vegas. No route measures the lobby-to-room walk.",
+   "source": "https://www.caesars.com/harrahs-las-vegas",
+   "source_type": "operator",
+   "method": "",
+   "measured_on": ""
+  },
+  {
+   "hotel_id": "harrahs",
+   "hotel": "Harrah's Las Vegas",
+   "venue_id": "venetian",
+   "venue": "The Venetian Poker Room",
+   "minutes": 6,
+   "distance": "0.3 mi",
+   "meets_30_min": "yes \u2014 6 min measured (Google Maps)",
+   "status": "Best via Las Vegas Blvd S (6 min).",
+   "source": "https://www.google.com/maps/dir/?api=1&origin=Harrah%27s+Las+Vegas,+3475+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&destination=The+Venetian+Resort,+3355+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&travelmode=walking",
+   "source_type": "maps",
+   "method": "Google Maps walking directions, opened and read on 2026-11-17",
+   "measured_on": "2026-11-17"
+  },
+  {
+   "hotel_id": "harrahs",
+   "hotel": "Harrah's Las Vegas",
+   "venue_id": "wynn",
+   "venue": "Wynn Las Vegas Poker",
+   "minutes": 18,
+   "distance": "0.8 mi",
+   "meets_30_min": "yes \u2014 18 min measured (Google Maps)",
+   "status": "Best via Las Vegas Blvd S (18 min); alternate via Wynn Main Gate Dr (18 min).",
+   "source": "https://www.google.com/maps/dir/?api=1&origin=Harrah%27s+Las+Vegas,+3475+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&destination=Wynn+Las+Vegas,+3131+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&travelmode=walking",
+   "source_type": "maps",
+   "method": "Google Maps walking directions, opened and read on 2026-11-17",
+   "measured_on": "2026-11-17"
   }
  ]
 }

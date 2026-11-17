@@ -158,6 +158,7 @@
   var wf = $("#walk-filter");
   if (wf) {
     var cards = $$(".hotel"), wc = $("#walk-count");
+    var measuredDate = (($("#walk-measured-on") || {}).textContent || "").trim();
     function applyWalk() {
       var mode = (wf.querySelector("input[name=walkf]:checked") || {}).value || "all";
       var shown = 0, provable = 0;
@@ -174,7 +175,11 @@
       });
       if (wc) {
         wc.textContent = shown + " of " + cards.length + " properties" +
-          (mode === "measured" && !provable ? " — no property has an official measured walking time yet, so nothing passes this filter" : "");
+          (mode === "measured"
+            ? (provable
+                ? " — measured walk time (Google Maps route, read " + measuredDate + "); a routing-engine duration is a measurement, not an operator-published figure"
+                : " — no property has a measured walking time yet, so nothing passes this filter")
+            : "");
       }
     }
     $$("input[name=walkf]", wf).forEach(function (r) { r.addEventListener("change", applyWalk); });

@@ -720,14 +720,23 @@ for h in CFG["hotels"]:
                 })
 walks: list[dict] = []
 for h in CFG["hotels"]:
-    for vid in h.get("venue_ids") or []:
+    # A hotel can be paired with more than one poker room.  Each pair is either
+    # the on-site walk inside the property (unmeasured: no route covers it and
+    # no operator publishes it) or a route that was actually opened and read,
+    # which keeps its own minutes, distance, route URL and read date.
+    for p in h.get("walks") or []:
+        vid = p.get("venue_id")
         walks.append({
             "hotel_id": h["id"], "hotel": h["property"], "venue_id": vid,
             "venue": (VENUE_BY_ID.get(vid) or {}).get("name", vid),
-            "minutes": (h.get("walk") or {}).get("minutes"),
-            "meets_30_min": (h.get("walk") or {}).get("meets_30_min", "unverified"),
-            "status": (h.get("walk") or {}).get("status"),
-            "source": (h.get("walk") or {}).get("source"),
+            "minutes": p.get("minutes"),
+            "distance": p.get("distance") or "",
+            "meets_30_min": p.get("meets_30_min", "unverified"),
+            "status": p.get("status"),
+            "source": p.get("source"),
+            "source_type": p.get("source_type") or "",
+            "method": p.get("method") or "",
+            "measured_on": p.get("measured_on") or "",
         })
 with open(DATA / "rate-log.json", "w", encoding="utf-8") as fh:
     json.dump({"meta": {"generated_at": SNAPSHOT_AT or TODAY,
@@ -735,7 +744,10 @@ with open(DATA / "rate-log.json", "w", encoding="utf-8") as fh:
                "entries": rate_log}, fh, indent=1)
 with open(DATA / "walks.json", "w", encoding="utf-8") as fh:
     json.dump({"meta": {"generated_at": SNAPSHOT_AT or TODAY, "rule": CFG["walk_policy"]["rule"],
-                        "how_to_close": CFG["walk_policy"]["how_to_close"]},
+                        "measured_minutes_source": CFG["walk_policy"].get("verified_minutes_source"),
+                        "how_to_close": CFG["walk_policy"]["how_to_close"],
+                        "pairs_total": len(walks),
+                        "pairs_measured": sum(1 for w in walks if w.get("minutes"))},
                "pairs": walks}, fh, indent=1)
 with open(DATA / "site-events.json", "w", encoding="utf-8") as fh:
     json.dump({"meta": {"generated_at": SNAPSHOT_AT or TODAY, "rows": len(events),
@@ -1175,13 +1187,19 @@ def status_banner():
             + f'<span class="stat">official-source run: {E(SNAPSHOT_AT or "never")} · 06:00 Las Vegas daily</span></div>')
 
 
-def hotel_table(hotels, base=""):
+def hotel_table(hotels, base="", venue_id=None):
     if not hotels:
         return ""
     body = ""
     for h in hotels:
         rate, fee, tax, total, rn = hotel_true_cost(h)
-        walk = h.get("walk") or {}
+        # The walk column is about the room on this page, so it looks up the
+        # pair for that venue rather than reusing the hotel's headline route.
+        pair = next((p for p in (h.get("walks") or []) if p.get("venue_id") == venue_id), None)
+        walk = pair or (h.get("walk") or {})
+        walk_min = walk.get("minutes")
+        walk_txt = (str(walk_min) + " min measured" if walk_min
+                    else E(walk.get("meets_30_min") or "unverified"))
         pk = h.get("parking") or {}
         body += ("<tr id='" + E(h["id"]) + "'><td><a href='" + base + "hotels.html#" + E(h["id"]) + "'>" + E(h["property"]) + "</a>"
                  + (note(h.get("fee_source_note")) if h.get("fee_source_note") else "") + "</td>"
@@ -1189,7 +1207,10 @@ def hotel_table(hotels, base=""):
                  + "<td class='num'>" + (money(fee) if fee else unk("unconfirmed")) + "</td>"
                  + "<td class='num'>" + (money(total) + note(tax_label(h) + " applied to both") if total else unk("cannot compute")) + "</td>"
                  + "<td class='num'>" + (money(pk.get("self_usd_per_day")) + note("per day") if pk.get("self_usd_per_day") else chip("parking unconfirmed", "chip chip-warn")) + "</td>"
-                 + "<td>" + E(walk.get("meets_30_min")) + (note(walk.get("status")) if walk.get("status") else "") + "</td>"
+                 + "<td>" + walk_txt + (note(walk.get("status")) if walk.get("status") else "")
+                 + (src_cell([walk.get("source")], walk.get("measured_on") or SNAPSHOT_AT[:10],
+                             label=("route ↗" if walk.get("source_type") == "maps" else "source ↗")) if walk.get("source") else "")
+                 + "</td>"
                  + "<td class='srccell'>" + src_cell([h.get("official_page"), h.get("booking_link")], SNAPSHOT_AT[:10]) + "</td></tr>")
     return ("<div class='table-scroll'><table class='compact hotels'><thead><tr><th>Property</th><th class='num'>Room rate</th>"
             "<th class='num'>Resort fee</th><th class='num'>True cost/night</th><th class='num'>Parking</th>"
@@ -1288,13 +1309,22 @@ def page_index():
     rankable = [e for e in events if e.get("rankable")]
     top = sorted(rankable, key=lambda e: -(e.get("gtd_ratio") or 0))[:6]
     h_rows = ""
+    measured_on = max((p.get("measured_on") for p in walks if p.get("measured_on")), default="")
     for h in CFG["hotels"]:
         rate, fee, tax, total, rn = hotel_true_cost(h)
+        my_walks = [p2 for p2 in walks if p2["hotel_id"] == h["id"]]
+        measured_mins = [p2["minutes"] for p2 in my_walks if p2.get("minutes")]
+        best = min(measured_mins) if measured_mins else None
+        if best is None:
+            walk_txt = E((h.get("walk") or {}).get("meets_30_min") or "unverified")
+        else:
+            walk_txt = (f"{best} min measured (Google Maps) — "
+                        + ("within 30 min" if best <= 30 else "over the 30-minute limit"))
         h_rows += (f"<tr><td><a href='hotels.html#{E(h['id'])}'>{E(h['property'])}</a></td>"
                    + f"<td class='num'>{money(fee) if fee else unk('unconfirmed')}</td>"
                    + f"<td class='num'>{money(total) if total else unk('no dated rate')}</td>"
                    + f"<td class='num'>{money((h.get('parking') or {}).get('self_usd_per_day')) if (h.get('parking') or {}).get('self_usd_per_day') else unk('unconfirmed')}</td>"
-                   + f"<td>{E((h.get('walk') or {}).get('meets_30_min'))}</td></tr>")
+                   + f"<td>{walk_txt}</td></tr>")
     v_rows = ""
     for v in CFG["venues"]:
         rows = [e for e in events if e["venue"] == v["id"]]
@@ -1325,9 +1355,9 @@ def page_index():
 </section>
 <section><h2>Rooms covered</h2>
 <table class="compact"><thead><tr><th>Venue</th><th class="num">Rows here</th><th>Machine-readable coverage</th><th>What that means</th><th class="num">Confirmed single-entry</th><th>Official sources</th></tr></thead><tbody>{v_rows}</tbody></table>
-<h2>Hotels within a 30-minute walk</h2>
-<table class="compact"><thead><tr><th>Property</th><th class="num">Mandatory resort fee</th><th class="num">True cost/night</th><th class="num">Parking</th><th>Walk</th></tr></thead><tbody>{h_rows}</tbody></table>
-<p class="mini-note">True cost/night = published room rate + mandatory resort fee, both taxed at {E(tax_label(CFG['hotels'][0]))}. “No dated rate” means the property publishes rates only inside its booking calendar, and we do not estimate them — see <a href="hotels.html">the hotel page</a> for the dated log and the source sentences.</p></section>
+<h2>Hotels and the walk to a poker room</h2>
+<table class="compact"><thead><tr><th>Property</th><th class="num">Mandatory resort fee</th><th class="num">True cost/night</th><th class="num">Parking</th><th>Walk to a room</th></tr></thead><tbody>{h_rows}</tbody></table>
+<p class="mini-note">True cost/night = published room rate + mandatory resort fee, both taxed at {E(tax_label(CFG['hotels'][0]))}. “No dated rate” means the property publishes rates only inside its booking calendar, and we do not estimate them — see <a href="hotels.html">the hotel page</a> for the dated log and the source sentences. The walk column shows the shortest route to a room that was opened and read in Google Maps walking directions on {E(measured_on or '—')}; a routing-engine duration is a measurement, not an operator-published figure, and the on-site internal walks stay unverified — <a href="flagged.html#F3">F3</a>.</p></section>
 <section class="how"><h2>How this stays current</h2>
 <p>All {len(source_rows)} official URLs are re-fetched on a schedule at 06:00 Las Vegas. The printed calendar PDF and every linked structure sheet are parsed field by field; a content hash detects cosmetic changes and only a <em>value</em> difference is written to the change log and flagged on the affected rows, so a re-render of the same page never looks like a schedule change. Each row carries its own “checked” date.</p>
 <p><a class="btn" href="review.html">run log</a> <a class="btn" href="data/sync-status.json">sync-status.json</a> <a class="btn" href="data/change-log.json">change-log.json</a> <a class="btn" href="data/site-events.json">site-events.json</a></p></section>
@@ -1419,8 +1449,8 @@ def _page_venue(v, base):
 <h2>Events here</h2>
 {events_table(rows, base, empty=(NO_ROWS_NOTE if not rows else ""))}
 {('<h3>Day-2 restarts and finals on the calendar (no new entry)</h3>' + events_table(cont, base)) if cont else ''}
-<h2>Hotels within a 30-minute walk</h2>
-{hotel_table(hotels, base) if hotels else unk("no hotel can be placed within 30 minutes of this room from an official measurement — see flag F6")}
+<h2>Hotels paired with this room, and the walk to it</h2>
+{hotel_table(hotels, base, venue_id=v["id"]) if hotels else unk("no hotel on the list is paired with this room — see the walking routes on the hotels page")}
 {("<h2>Flagged for this venue</h2><ul class='flags'>" + "".join(f"<li><strong>{E(f['id'])}</strong> {E(f['item'])} — {E(f['detail'])}</li>" for f in flags) + "</ul>") if flags else ''}
 <h2>Sources checked for this venue</h2>
 {source_table([s for s in source_rows if str(s.get("venue")).replace(chr(39), "") in VENUE_ALIAS.get(v["id"], set())], base)}
@@ -1431,6 +1461,7 @@ def _page_venue(v, base):
 # ----------------------------------------------------------------------- hotels
 def page_hotels():
     cards = ""
+    measured_on = max((p.get("measured_on") for p in walks if p.get("measured_on")), default="")
     for h in CFG["hotels"]:
         rate, fee, tax, total, rn = hotel_true_cost(h)
         vnames = ", ".join(VENUE_BY_ID.get(x, {}).get("name", x) for x in (h.get("venue_ids") or []))
@@ -1446,9 +1477,13 @@ def page_hotels():
             for sent, u in fact_sentences(h, field):
                 facts += f"<li><strong>{E(field.replace('_', ' '))}</strong> “{E(sent)}” {src_cell([u], SNAPSHOT_AT[:10], label='source page ↗')}</li>"
         walk_rows = "".join(
-            f"<tr><td>{E(p['venue'])}</td><td class='num'>{str(p['minutes']) + ' min' if p.get('minutes') else unk('not published')}</td>"
+            f"<tr><td>{E(p['venue'])}</td>"
+            f"<td class='num'>{str(p['minutes']) + ' min' if p.get('minutes') else unk('not measured')}</td>"
+            f"<td class='num'>{E(p.get('distance') or '—')}</td>"
             f"<td>{E(p['meets_30_min'])}</td><td class='qual'>{E(p.get('status') or '')}</td>"
-            f"<td class='srccell'>{src_cell([p.get('source')], SNAPSHOT_AT[:10], label='source ↗')}</td></tr>"
+            f"<td class='srccell'>{src_cell([p.get('source')], p.get('measured_on') or SNAPSHOT_AT[:10], label=('route ↗' if p.get('source_type') == 'maps' else 'source ↗'))}"
+            f"{note(p.get('method')) if p.get('method') else ''}</td>"
+            f"<td class='num'>{E(p.get('measured_on') or '—')}</td></tr>"
             for p in walks if p["hotel_id"] == h["id"])
         if total:
             calc = (f"<p class='truecost'>true cost per night = {money(rate)} room rate + {money(fee)} mandatory resort fee "
@@ -1468,10 +1503,20 @@ def page_hotels():
                        for d in (h.get("dead_source_pages") or []))
         canc = h.get("cancellation") or {}
         park = h.get("parking") or {}
-        mins = next((str(p2["minutes"]) for p2 in walks if p2["hotel_id"] == h["id"] and p2.get("minutes")), "")
+        # The walk filter asks the brief's question: can this property reach a
+        # room that runs tournaments inside 30 minutes?  The honest answer is the
+        # shortest route that was actually opened and read; a property with no
+        # measured route stays unmeasured rather than being scored as a pass.
+        my_walks = [p2 for p2 in walks if p2["hotel_id"] == h["id"]]
+        measured_mins = [p2["minutes"] for p2 in my_walks if p2.get("minutes")]
+        mins = str(min(measured_mins)) if measured_mins else ""
         onsite = "1" if "on-site" in str((h.get("walk") or {}).get("meets_30_min")).lower() else "0"
-        meets = (h.get("walk") or {}).get("meets_30_min")
-        meets_flag = "yes" if str(meets).lower().startswith(("yes", "under", "well")) else ("no" if str(meets).lower().startswith(("no", "over")) else "unverified")
+        # "not applicable (on-site)" also starts with "no", so the flag is derived
+        # from the measured routes rather than from the wording of the row.
+        if measured_mins:
+            meets_flag = "yes" if min(measured_mins) <= 30 else "no"
+        else:
+            meets_flag = "unverified"
         cards += f"""<article class="hotel" id="{E(h['id'])}" data-walk-min="{E(mins)}" data-onsite="{onsite}" data-meets="{E(meets_flag)}">
 <h3>{E(h['property'])} <span class="mini-note">near {E(vnames or 'the rooms listed below')}</span></h3>
 <p class="addr">{E(h.get('address') or '')} · <a href="{E(h.get('official_page') or '#')}" target="_blank" rel="noopener">official page ↗</a>{(" · <a href='" + E(h['booking_link']) + "' target='_blank' rel='noopener'>official booking engine — live rates for your dates ↗</a>") if h.get('booking_link') else ''}</p>
@@ -1488,7 +1533,7 @@ def page_hotels():
 <h4>Rates and fee facts as a dated log (not a single value)</h4>
 <div class="table-scroll"><table class="compact"><thead><tr><th>Observed</th><th>What it is</th><th class="num">Amount</th><th>Wording / qualifier</th><th>Quote status</th><th>Source</th></tr></thead><tbody>{log_rows}</tbody></table></div>
 <h4>Walk to the poker rooms</h4>
-<div class="table-scroll"><table class="compact"><thead><tr><th>Poker room</th><th class="num">Walk</th><th>Meets the 30-min rule</th><th>How we know</th><th>Source</th></tr></thead><tbody>{walk_rows}</tbody></table></div>
+<div class="table-scroll"><table class="compact"><thead><tr><th>Poker room</th><th class="num">Walk</th><th class="num">Distance</th><th>Meets the 30-min rule</th><th>How we know</th><th>Route / source</th><th class="num">Read on</th></tr></thead><tbody>{walk_rows}</tbody></table></div>
 {(f"<h4>Unresolved for this property</h4><ul class='flags'>{dead}</ul>") if dead else ''}
 </article>"""
     return shell("", "Hotels", f"""
@@ -1502,10 +1547,10 @@ def page_hotels():
 <label class="toggle"><input type="radio" name="walkf" value="measured"> measured walk ≤ 30 min</label>
 <span class="count" id="walk-count"></span>
 </div>
-<p class="mini-note">“Measured” is empty on purpose: no Strip property publishes a door-to-door walking time to another property's poker room, and the minutes cells are left blank rather than estimated — <a href="flagged.html#F6">F6</a> records the one API call that would fill them. Choosing it filters the list to what is actually provable today.</p></section>
+<p class="mini-note">“Measured” uses the cross-property routes that were opened and read in Google Maps walking directions on <span id="walk-measured-on">{E(measured_on or '—')}</span> — the route URL, the printed duration, the printed distance and the read date are on every row. A routing-engine duration is a measurement, not an operator-published figure, so each row says which it is. The lobby-to-poker-room walk inside a property has no route and no published minute count and stays unmeasured — <a href="flagged.html#F3">F3</a> records what is still open. Choosing this filter shows the properties a route actually proves.</p></section>
 {cards}
 <section class="callout"><h2>Reading a blank honestly</h2>
-<p>Where a property shows rates only inside its booking calendar, no number is copied onto this site — the booking link is given instead and the row is marked. Two official pages currently return 404 (Bellagio's resort-fee page and the Caesars Palace daily flyer); they are reported as unreachable, never replaced by a third-party mirror. ARIA publishes two different resort fees on two official pages ($50 and $55): both sentences are shown and neither is chosen for you. No official walking-minute figure exists for any hotel→poker-room pair on the Strip, so the ≤30-minute rule is carried as a warning, not a green tick — <a href="flagged.html#F6">F6</a> explains how to close it.</p></section>
+<p>Where a property shows rates only inside its booking calendar, no number is copied onto this site — the booking link is given instead and the row is marked. Two official pages currently return 404 (Bellagio's resort-fee page and the Caesars Palace daily flyer); they are reported as unreachable, never replaced by a third-party mirror. ARIA publishes two different resort fees on two official pages ($50 and $55): both sentences are shown and neither is chosen for you. Walking minutes are the one figure here that no operator publishes: the cross-property routes were opened in Google Maps walking directions and read, so they are labelled as map measurements with their date and route link, and the on-site internal walks stay unverified — <a href="flagged.html#F3">F3</a> explains what would close them.</p></section>
 """, "hotels.html", needs_data=False)
 
 

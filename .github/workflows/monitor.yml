@@ -21,6 +21,11 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+        with:
+          # this job refreshes the shared snapshot on main, so it needs a
+          # token-backed ref and a persisted credential to push the result
+          ref: main
+          persist-credentials: true
 
       - name: Set up Python
         uses: actions/setup-python@v5

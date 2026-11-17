@@ -16,7 +16,7 @@ TAX_SOURCE = "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.
 VEN_RESORT_FEE = "https://www.venetianlasvegas.com/resort/resort-fee.html"
 VEN_TERMS = "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html"
 VEN_POKER_RATES = "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html"
-VEN_BOOK = "https://www.venetianlasvegas.com/booking?adults[]=2&arrival_date={in}&children[]=0&departure_date={out}&view=calendar"
+VEN_BOOK = "https://www.venetianlasvegas.com/booking?adults[]={adults}&arrival_date={in}&children[]=0&departure_date={out}&view=calendar"
 WYNN_POKER = "https://www.wynnlasvegas.com/casino/poker"
 
 def gmaps(origin, destination):
@@ -58,13 +58,13 @@ WALKS = [
     ("Wynn Las Vegas", "Wynn", None, None,
      "Poker room is inside the resort (Encore at Wynn Las Vegas) — official poker page.",
      WYNN_POKER, True),
-    # Remaining hotel->Wynn pairs: link provided, measurement scheduled via maintenance workflow.
-    ("Bellagio", "Wynn", None, None, "Not yet measured — scheduled.", gmaps("Bellagio,+3600+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109", WYNN_ADDR), False),
-    ("ARIA", "Wynn", None, None, "Not yet measured — scheduled.", gmaps("Aria+Resort+%26+Casino,+3730+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109", WYNN_ADDR), False),
-    ("Caesars Palace", "Wynn", None, None, "Not yet measured — scheduled.", gmaps("Caesars+Palace,+3570+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109", WYNN_ADDR), False),
-    ("Treasure Island", "Wynn", None, None, "Not yet measured — scheduled.", gmaps("Treasure+Island+Las+Vegas,+3300+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109", WYNN_ADDR), False),
-    ("Harrah's Las Vegas", "Wynn", None, None, "Not yet measured — scheduled.", gmaps("Harrah%27s+Las+Vegas,+3475+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109", WYNN_ADDR), False),
-    ("Horseshoe Las Vegas", "Wynn", None, None, "Not yet measured — scheduled.", gmaps("Horseshoe+Las+Vegas,+3645+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109", WYNN_ADDR), False),
+    # Cross-property hotel->Wynn routes rechecked on Google Maps 2026-11-17.
+    ("Bellagio", "Wynn", 32, "1.4 mi", "Best via Las Vegas Blvd S (32 min); alternate via Las Vegas Blvd Overpass (33 min) or Bellagio Dr (36 min); over 30-minute limit.", gmaps("Bellagio,+3600+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109", WYNN_ADDR), True),
+    ("ARIA", "Wynn", 42, "1.9 mi", "Best via Las Vegas Blvd S (42 min); over 30-minute limit.", gmaps("Aria+Resort+%26+Casino,+3730+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109", WYNN_ADDR), True),
+    ("Caesars Palace", "Wynn", 23, "1.0 mi", "Best via Las Vegas Blvd S (23 min); alternate via Caesars Palace Dr (24 min).", gmaps("Caesars+Palace,+3570+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109", WYNN_ADDR), True),
+    ("Treasure Island", "Wynn", 11, "0.5 mi", "Best via Las Vegas Blvd S (11 min); alternate via Wynn Main Gate Dr (13 min).", gmaps("Treasure+Island+Las+Vegas,+3300+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109", WYNN_ADDR), True),
+    ("Harrah's Las Vegas", "Wynn", 18, "0.8 mi", "Best via Las Vegas Blvd S (18 min); alternate via Wynn Main Gate Dr (18 min).", gmaps("Harrah%27s+Las+Vegas,+3475+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109", WYNN_ADDR), True),
+    ("Horseshoe Las Vegas", "Wynn", 29, "1.3 mi", "Best via Las Vegas Blvd S (29 min); alternate via E Flamingo Rd (29 min), at the 30-minute limit.", gmaps("Horseshoe+Las+Vegas,+3645+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109", WYNN_ADDR), True),
 ]
 
 HOTELS = [

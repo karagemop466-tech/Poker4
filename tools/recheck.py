@@ -9,7 +9,8 @@ and refreshes the last-checked date. Nothing is deleted; history of hashes is
 kept per URL.
 
 Run: python3 tools/recheck.py          (one pass over all sources)
-Exit codes: 0 = ran (changed or not); 1 = at least one fetch failed.
+Exit codes: 0 = ran (changed, unchanged, or with recorded fetch failures). Fetch failures
+are stored in status.json and must not prevent schedule capture or downstream integrity checks.
 """
 import hashlib
 import json
@@ -72,17 +73,25 @@ def main():
     status = {"last_run": now, "entries": entries, "changed": changed, "failed": failed}
     STATUS.write_text(json.dumps(status, indent=2), encoding="utf-8")
 
-    # mark rows whose source changed: each event referencing a changed source key
-    # gets that key in review_flags; the site renders a "source changed" badge.
-    if changed:
-        changed_urls = {c["url"] for c in changed}
-        ev_path = D / "site-events.json"
+    # Mark rows whose source changed.  Each event that cites a changed source URL
+    # carries that URL in review_flags, and the site renders a "source changed"
+    # badge beside the row.  The flags are refreshed on every pass: once a later
+    # fetch matches the new baseline the stale badge is removed again, so a flag
+    # always describes the current run rather than an old one.
+    changed_urls = {c["url"] for c in changed}
+    monitored_urls = {s["url"] for s in sources.values() if s.get("url")}
+    ev_path = D / "site-events.json"
+    if ev_path.exists():
         ev = json.loads(ev_path.read_text(encoding="utf-8"))
-        for e in ev["events"]:
-            hit = sorted(changed_urls.intersection(e.get("sources", [])))
-            if hit:
-                flags = sorted(set(e.get("review_flags", [])).union(hit))
-                e["review_flags"] = flags
+        for e in ev.get("events", []):
+            old = set(e.get("review_flags", []))
+            # drop flags for sources we monitor but that no longer differ, keep
+            # flags for sources outside this registry (they are not ours to clear)
+            flags = (old - monitored_urls) | changed_urls.intersection(e.get("sources", []))
+            if flags:
+                e["review_flags"] = sorted(flags)
+            else:
+                e.pop("review_flags", None)
         ev_path.write_text(json.dumps(ev, indent=2), encoding="utf-8")
     # dated append-only log for post-hoc review
     with (MON / "runs.log").open("a", encoding="utf-8") as f:
@@ -96,6 +105,8 @@ def main():
              "outbound network, the scheduled job does)" if failed else ""))
     if changed:
         print("changed sources need row review:", [c["key"] for c in changed])
+    if failed:
+        print("WARNING: fetch failures are recorded; schedule capture and integrity checks may continue.")
     return 0
 
 if __name__ == "__main__":
