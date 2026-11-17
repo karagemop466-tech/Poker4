@@ -6,8 +6,10 @@ df41f5c6 sub-site check (scripts/verify.py), then checks the current dashboard
 features without depending on page-specific editorial wording:
 
   * every generated table page exists;
-  * any page with a <table> carries the universal search input (data-search)
-    and loads assets/dashboard.js.
+  * any page with a <table> carries a search input and loads a behavior script
+    (either family is valid: the integrate_data pages use #global-search +
+    app.js; the standalone sources/monitoring pages use data-search +
+    assets/dashboard.js).
 
 Run: python3 tools/verify_root_site.py   (exit 0 = pass)
 """
@@ -43,10 +45,10 @@ for rel in table_pages:
         errors.append(f"{rel}: missing generated dashboard page")
         continue
     doc = path.read_text(encoding="utf-8")
-    if "<table" in doc and "data-search" not in doc:
+    if "<table" in doc and 'type="search"' not in doc:
         errors.append(f"{rel}: table page has no search input")
-    if "<table" in doc and "assets/dashboard.js" not in doc:
-        errors.append(f"{rel}: table page does not load the dashboard behavior")
+    if "<table" in doc and "app.js" not in doc and "assets/dashboard.js" not in doc:
+        errors.append(f"{rel}: table page does not load a behavior script")
 
 if errors:
     print("ERRORS:")

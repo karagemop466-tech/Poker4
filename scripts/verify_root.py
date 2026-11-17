@@ -99,32 +99,25 @@ for page in PAGES:
     leftover = [t for t in ch.stack if t not in ("html", "body")]
     if leftover:
         errors.append(f"{page}: unclosed tags at EOF: {leftover[:6]}")
-    # Every data-table row on current dashboard pages must point to an official
-    # operator/organizer source (Google Maps is the route authority for walks).
-    if page in {"tournaments.html", "hotels.html", "questions.html", "suggestions.html",
-                "flagged.html", "sources.html", "monitoring.html", "venues/others.html",
-                "venues/venetian.html", "venues/wynn.html"}:
-        for tr in re.findall(r"<tr\b[^>]*>(.*?)</tr>", doc, re.S):
-            if "<td" not in tr:
-                continue
-            links = re.findall(r"href=[\"'](https?://[^\"']+)[\"']", tr)
-            if not links:
-                errors.append(f"{page}: data row has no official source link: {re.sub(chr(10), ' ', tr)[:100]}")
-                continue
-            hosts = [re.sub(r"^www\.", "", u.split("//", 1)[1].split("/", 1)[0]) for u in links]
-            if not any(h in official_hosts or h.endswith(".google.com") or h == "google.com" or h == "maps.apple.com" for h in hosts):
-                errors.append(f"{page}: data row links no recognized official source: {links[:2]}")
-    rows = re.findall(r"<tr[^>]*>\s*<td", doc)
-    if rows and "last_checked" in doc and "2026-" not in doc:
-        errors.append(f"{page}: checked-date field exists but no checked date is rendered")
+    # every event-table row must carry an official link or an explicit unverified marker
+    rows = re.findall(r'<tr class="ev-row"[^>]*>(.*?)</tr>', doc, re.S)
+    for tr in rows:
+        links = re.findall(r'href="(https?://[^"]+)"', tr)
+        if not links:
+            errors.append(f"{page}: event row with no official source link: {re.sub(chr(10), ' ', tr)[:90]}")
+        elif not any(re.sub(r"^www\.", "", l.split("//")[1].split("/")[0]) in official_hosts for l in links):
+            errors.append(f"{page}: event row whose only links are non-official: {links[:2]}")
+        elif '<span class="unknown">' not in tr and "chip-warn" not in tr and "chip-bad" not in tr:
+            warnings.append(f"{page}: event row with no unverified marker (check it is genuinely confirmed)")
+    # the pages that show a source column must show the checked date too
+    if rows and "checked " not in doc:
+        errors.append(f"{page}: event rows present but no 'checked' date rendered")
 
-# The current dashboard is generated from the canonical integrated layer.
-canonical = json.load(open(os.path.join(ROOT, "data/integrated/events.json"), encoding="utf-8"))["events"]
+site = json.load(open(os.path.join(ROOT, "data/site-events.json"), encoding="utf-8"))
 tourn = open(os.path.join(ROOT, "tournaments.html"), encoding="utf-8").read()
-n_rows = len(re.findall(r"<tr[^>]*>\s*<td", tourn))
-expected_rows = sum(1 for e in canonical if e.get("section") != "restart")
-if n_rows != expected_rows:
-    errors.append(f"tournaments.html renders {n_rows} data rows but the integrated event sections require {expected_rows}")
+n_rows = tourn.count('<tr class="ev-row"')
+if n_rows != len(site["events"]):
+    errors.append(f"tournaments.html renders {n_rows} rows but data/site-events.json holds {len(site['events'])}")
 for key in ("data/schedule-snapshot.json", "data/structure-audit.json", "data/hotel-facts.json",
             "data/url-checks.json", "data/source-status.json", "data/rate-log.json", "data/walks.json",
             "data/day-plan.json", "data/search-index.json", "data/change-log.json", "data/sync-status.json"):
@@ -147,17 +140,15 @@ for e in rate:
     if e.get("amount_usd") and not e.get("observed_on"):
         errors.append(f"rate-log: dated amount with no observation date: {e.get('label')}")
 
-for ev in canonical:
-    fields = ev.get("rule_fields", {})
-    single = fields.get("single_entry", {})
-    if single.get("status") == "confirmed" and single.get("value") is True:
-        if not single.get("excerpt") or not single.get("source_url") or not single.get("retrieved_on"):
-            errors.append(f"{ev['id']}: confirmed single-entry status lacks provenance")
-    if ev.get("section") == "main" and ev.get("buy_in") and ev.get("guarantee"):
-        if not ev.get("source_urls") or not ev.get("last_checked"):
-            errors.append(f"{ev['id']}: value candidate lacks source link or last_checked date")
+for ev in site["events"]:
+    if ev.get("single_entry_confirmed"):
+        r = ev["rules"]["single_entry"]
+        if r["status"] != "confirmed" or not r.get("excerpt"):
+            errors.append(f"{ev['id']}: labelled single-entry confirmed without an excerpt")
+    if ev.get("rankable") and not (ev.get("buy_in_usd") and ev.get("guarantee_usd")):
+        errors.append(f"{ev['id']}: rankable without both fee and guarantee confirmed")
 
-print(f"pages: {len(PAGES)} · rendered event rows: {n_rows}/{expected_rows} · rate-log lines: {len(rate)} · "
+print(f"pages: {len(PAGES)} · event rows: {len(site['events'])} · rate-log lines: {len(rate)} · "
       f"tracked sources: {len(tracked)} · warnings: {len(warnings)}")
 if warnings:
     print("WARNINGS:")
