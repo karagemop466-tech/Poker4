@@ -35,7 +35,8 @@
      "route_summary": "via Las Vegas Blvd S",
      "source": "google-maps-walking"
     }
-   ]
+   ],
+   "via_text": "Las Vegas Blvd S"
   },
   {
    "hotel_id": "harrahs",
@@ -64,7 +65,8 @@
      "route_summary": "via Las Vegas Blvd S",
      "source": "google-maps-walking"
     }
-   ]
+   ],
+   "via_text": "Las Vegas Blvd S"
   },
   {
    "hotel_id": "caesars",
@@ -93,7 +95,8 @@
      "route_summary": "via Las Vegas Blvd S",
      "source": "google-maps-walking"
     }
-   ]
+   ],
+   "via_text": "Las Vegas Blvd S"
   },
   {
    "hotel_id": "wynn",
@@ -122,7 +125,8 @@
      "route_summary": "via Wynn Main Gate Dr",
      "source": "google-maps-walking"
     }
-   ]
+   ],
+   "via_text": "Wynn Main Gate Dr"
   },
   {
    "hotel_id": "horseshoe",
@@ -151,7 +155,8 @@
      "route_summary": "via Linq Ln",
      "source": "google-maps-walking"
     }
-   ]
+   ],
+   "via_text": "Linq Ln"
   },
   {
    "hotel_id": "encore",
@@ -180,7 +185,8 @@
      "route_summary": "via Las Vegas Blvd S",
      "source": "google-maps-walking"
     }
-   ]
+   ],
+   "via_text": "Las Vegas Blvd S"
   },
   {
    "hotel_id": "bellagio",
@@ -209,7 +215,8 @@
      "route_summary": "via Las Vegas Blvd S",
      "source": "google-maps-walking"
     }
-   ]
+   ],
+   "via_text": "Las Vegas Blvd S"
   },
   {
    "hotel_id": "aria",
@@ -238,7 +245,48 @@
      "route_summary": "via Las Vegas Blvd S",
      "source": "google-maps-walking"
     }
-   ]
+   ],
+   "via_text": "Las Vegas Blvd S"
   }
- ]
+ ],
+ "comparison": {
+  "other_session_2026-11-17": {
+   "source": "data/poker4.json on origin/main (PR #71), hotel walk blocks",
+   "note": "Same pairs, same day, shorter durations that imply 6–8 mph. Kept for comparison only; not the values published on the site.",
+   "pairs": {
+    "wynn": {
+     "minutes": 4,
+     "distance_mi": 0.5
+    },
+    "encore": {
+     "minutes": 7,
+     "distance_mi": 1.0
+    },
+    "bellagio": {
+     "minutes": 10,
+     "distance_mi": 1.0
+    },
+    "caesars": {
+     "minutes": 12,
+     "distance_mi": 0.5
+    },
+    "aria": {
+     "minutes": 11,
+     "distance_mi": 1.4
+    },
+    "ti": {
+     "minutes": 5,
+     "distance_mi": 0.2
+    },
+    "horseshoe": {
+     "minutes": 7,
+     "distance_mi": 1.0
+    },
+    "harrahs": {
+     "minutes": 6,
+     "distance_mi": 0.3
+    }
+   }
+  }
+ }
 }

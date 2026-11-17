@@ -1,48 +1,22 @@
 {
  "meta": {
-  "generated_at": "2026-11-17T22:45:48Z",
+  "generated_at": "2026-11-17T22:46:30Z",
   "changed_urls_this_run": []
  },
  "entries": [
   {
-   "at": "2026-11-17T22:06:55Z",
+   "at": "2026-11-17T22:11:24Z",
    "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "scope": "schedule-parser-correction",
+   "scope": "schedule",
    "key": "V_SCHED_PDF",
-   "note": "Parser correction found by a line-by-line re-read of the official schedule PDF (data/raw/venetian-dse-iv-schedule.txt, captured 2026-11-17T02:01:12Z, sha256 e9799cea0b250bd38795f382f432fa0053edf5139f81ac7cf929692fcbcbde71). The source did not change; the reading of it did. The old left-to-right row regex read a clock printed inside an event name as the start time and dropped long names. The parser now peels the fixed trailing columns (TIME · REG CLOSES · GUARANTEE · CHIPS · LEVEL · COIN) off the right, so the value in each cell is the one the PDF prints.",
    "diff": {
-    "row_count": {
-     "was": 93,
-     "now": 94,
-     "detail": "one row was dropped because its event name exceeded the old 110-character limit: Event #47 $2,200 PokerAtlas Championship Day 2 Restart, SUNDAY, DECEMBER 13, TIME 1:00 PM."
-    },
-    "2026-12-11 event 39 time": {
-     "was": "7:00 PM",
-     "now": "10:00 AM",
-     "detail": "the printed TIME cell is 10:00 AM; “AT 7:00 PM” is part of the event name (the streamed final table, which has its own row)."
-    },
-    "2026-12-17 event 56 1B level": {
-     "was": "11",
-     "now": "30"
-    },
-    "2026-12-20 event 59 1A level": {
-     "was": "5",
-     "now": "40"
-    },
-    "events 56 1A/1B, 59 1A guarantee": {
-     "was": null,
-     "now": "$500,000 / $500,000 / $150,000",
-     "detail": "guarantee, registration-closes, chips and level were blank on three rows whose names contain a clock time; all four cells are printed on the PDF."
-    },
-    "milestone satellites (33, 37, 41, 44, 45, 46, 48) chips/level": {
-     "was": null,
-     "now": "20,000 chips, 20 or 15-minute levels",
-     "detail": "the GUARANTEE cell prints “2 SEATS”, which is not a dollar amount, so the old regex stopped there. Recorded as guarantee_text “2 seats” and never ranked; chips and levels now captured."
-    },
-    "events 47 1A/1B chips/level": {
-     "was": null,
-     "now": "40,000 chips, 40 / 30-minute levels"
-    }
+    "added": [
+     "39|10:00 AM|NO LIMIT HOLD'EM LIPS DAY 2 ",
+     "47|1:00 PM|NO LIMIT HOLD’EM DAY 2 RESTA"
+    ],
+    "removed": [
+     "39|7:00 PM|NO LIMIT HOLD'EM LIPS DAY 2 "
+    ]
    }
   },
   {
