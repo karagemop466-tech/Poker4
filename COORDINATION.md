@@ -22,8 +22,26 @@ Shared task board for the Poker4 project. Sessions claim tasks here to avoid dup
 - Resolved locally: kept this session's root `index.html` (`git checkout --ours`); combined COORDINATION.md (below); preserved the other session's root `index.html` verbatim at `pages/parallel-session-abd38ed7-index.html` so no work was discarded; all other files merged cleanly (their root HTML files, data JSONs, build scripts, verified/ and strip/ folders arrive from main).
 - After push, PR #8 was merged to main; GitHub Pages (source: main, path "/") rebuilds automatically.
 
-## Current session
-- Session ID: `arena/e2d11e52-poker4` — this session works on branch `arena/e2d11e52-poker4` only; integration (PR #8 → main, Pages deploy confirm) done on main.
+## Current session (active)
+- Session ID: `arena/5dba2ab6-poker4` — this session works on branch `arena/5dba2ab6-poker4` (== main @ be3594d4) only.
+- Scope claimed: trip cost calculator; search box + date filter + single-entry toggle across tables; venue-scoped tournament views; per-row "last checked" + scheduled official-URL re-check / change monitoring; dated rate log; overlap check (primary + conditional fallback); repo review + line-by-line verification; integration PR → main + Pages deploy + record result.
+- File scope: `index.html`, `tournaments.html`, `hotels.html`, `schedule.html`, `app.js`, `style.css`, `.github/workflows/pages.yml` (new scheduled check), `COORDINATION.md` (log only), `review.html` (irregularity notes). Does not touch other sessions' session-scoped folders (`60fb62da/`, `c07371e3/`, `df41f5c6/`, `strip/`, `verified/`, `data/df41f5c6/`, `data/c07371e3/`).
+
+## New task board (this session)
+
+| ID | Task | Status | Owner | File scope | Sources / verification | Irregularities |
+|----|------|--------|-------|------------|------------------------|----------------|
+| N1 | Trip cost calculator: entries × buy-ins + nights × true hotel cost | in progress | arena/5dba2ab6-poker4 | hotels.html, app.js | Arithmetic from existing official fee/tax figures; illustrative only | None yet |
+| N2 | Search box across all tables | in progress | arena/5dba2ab6-poker4 | tournaments.html, app.js | Existing table data | None yet |
+| N3 | Date filter on tournament table | planned | arena/5dba2ab6-poker4 | tournaments.html, app.js | Existing dated rows | None yet |
+| N4 | Single-entry / freezeout toggle filter | planned | arena/5dba2ab6-poker4 | tournaments.html, app.js | None confirmed → toggle honestly returns none | Single-entry unverified for all rows |
+| N5 | Per-venue tournament views (Venetian / Wynn / others) | planned | arena/5dba2ab6-poker4 | tournaments.html (venue filters) | Existing venue labels | None yet |
+| N6 | Per-row "last checked" + scheduled official URL re-check & change monitoring | planned | arena/5dba2ab6-poker4 | app.js, .github/workflows/pages.yml | Client-side best-effort; scheduled job via Actions | CORS may block client fetches |
+| N7 | Dated rate log (rates as a log, not a single value) | planned | arena/5dba2ab6-poker4 | hotels.html | Existing official fee/tax figures | Rates blank without dates |
+| N8 | Overlap check: primary event + conditional fallback per day | planned | arena/5dba2ab6-poker4 | schedule.html | Existing schedule rows | Finish times not published |
+| N9 | Repo review + line-by-line verification (source links, unverified flags) | planned | arena/5dba2ab6-poker4 | review.html, COORDINATION.md | Existing data + linked official sources | See existing flagged list |
+| N10 | Integration: PR → main, merge, Pages deploy check, record result | planned | arena/5dba2ab6-poker4 | this branch, main, COORDINATION.md | — | — |
+
 
 ## Task board (combined, both sessions)
 
