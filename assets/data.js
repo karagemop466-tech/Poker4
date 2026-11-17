@@ -1,5 +1,5 @@
 window.POKER4_DATA = {
- "generated": "2026-11-17 01:27 UTC",
+ "generated": "build of 2026-11-17",
  "retrieved": "2026-11-17",
  "events": [
   {

@@ -166,7 +166,7 @@ with open(os.path.join(ROOT, "data", "feature", "hotels.json"), "w") as f:
 with open(os.path.join(ROOT, "data", "feature", "sources.json"), "w") as f:
     json.dump(sources_out, f, indent=1)
 
-payload = {"generated": datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC"),
+payload = {"generated": "build of " + D.RETRIEVED,   # deterministic: tied to the data snapshot date
            "retrieved": D.RETRIEVED, "events": events, "hotels": D.HOTELS, "sources": sources_out,
            "tax_rate": D.TAX_RATE}
 try:
