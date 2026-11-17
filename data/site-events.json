@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generated_at": "2026-11-17T22:16:33Z",
+  "generated_at": "2026-11-17T22:48:11Z",
   "rows": 253,
   "verified_single_entry": 0,
   "rankable": 72,
@@ -18104,7 +18104,7 @@
    "flags": [
     "spend-advantage format \u2014 excluded from the single-entry list",
     "daily slate \u2014 the flyer prints no calendar date",
-    "official 2026 flyer prices this start time; the property's article states a blanket $100 for all four daily events \u2014 both sentences are on the row, the conflict is not resolved"
+    "official 2026 flyer prices this start time; the property's article states a blanket $100 for all four daily events \u2014 both sentences are on the row, the conflict is not resolved (flag F25)"
    ],
    "recurrence": {
     "printed": "Daily No-Limit Texas Hold'em Tournament Schedule",
@@ -18666,7 +18666,7 @@
    "flags": [
     "spend-advantage format \u2014 excluded from the single-entry list",
     "daily slate \u2014 the flyer prints no calendar date",
-    "official 2026 flyer prices this start time; the property's article states a blanket $100 for all four daily events \u2014 both sentences are on the row, the conflict is not resolved"
+    "official 2026 flyer prices this start time; the property's article states a blanket $100 for all four daily events \u2014 both sentences are on the row, the conflict is not resolved (flag F25)"
    ],
    "recurrence": {
     "printed": "Daily No-Limit Texas Hold'em Tournament Schedule",
@@ -18838,7 +18838,7 @@
    "flags": [
     "spend-advantage format \u2014 excluded from the single-entry list",
     "daily slate \u2014 the flyer prints no calendar date",
-    "official 2026 flyer prices this start time; the property's article states a blanket $100 for all four daily events \u2014 both sentences are on the row, the conflict is not resolved"
+    "official 2026 flyer prices this start time; the property's article states a blanket $100 for all four daily events \u2014 both sentences are on the row, the conflict is not resolved (flag F25)"
    ],
    "recurrence": {
     "printed": "Daily No-Limit Texas Hold'em Tournament Schedule",
@@ -18925,7 +18925,7 @@
    "flags": [
     "spend-advantage format \u2014 excluded from the single-entry list",
     "daily slate \u2014 the flyer prints no calendar date",
-    "official 2026 flyer prices this start time; the property's article states a blanket $100 for all four daily events \u2014 both sentences are on the row, the conflict is not resolved"
+    "official 2026 flyer prices this start time; the property's article states a blanket $100 for all four daily events \u2014 both sentences are on the row, the conflict is not resolved (flag F25)"
    ],
    "recurrence": {
     "printed": "Daily No-Limit Texas Hold'em Tournament Schedule",

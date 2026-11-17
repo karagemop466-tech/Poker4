@@ -137,7 +137,7 @@ The previous consolidated-data generator is preserved at `tools/build_data_conso
 ## Research policy
 "Confirmed" means the value appears in an official operator document with a quoted excerpt and a retrieval date.
 Omission of re-entry/add-on language is **not** confirmation of single entry. Ratios are arithmetic, not forecasts.
-Walking minutes are map estimates (no official source publishes them) and carry live route links.
+Walking minutes are measured Google Maps walking directions (mode=walking), retrieved 2026-11-17 for every hotel→Venetian poker-room pair and stored with the route distance, the "via" road, the exact directions URL and the retrieval date in `data/integrated/walks-google.json` (mirrored into `data/walks.json`). No Strip property publishes its own door-to-door walking time, so Google Maps is the measurement source; its durations run optimistic, so the route distance is shown beside every minute. The ≤30-minute filter is a hard filter on these measured values.
 
 All values shown as confirmed link to the official operator source, with retrieval dates. Unknown or ambiguous values are blank and flagged — never inferred. All 37 Venetian DeepStack Extravaganza IV structure sheets were read in full on 2026-11-17 and none states a single-entry, re-entry, or add-on limit; consequently **there is exactly one window-wide fact to plan around: no event is classified as verified single-entry.** Rooms that do publish rules (Wynn, Bellagio, Caesars) all allow some form of re-entry, rebuy, or add-on and are listed separately. The data is a point-in-time snapshot plus a daily change monitor — not a live feed or a booking quote.
 

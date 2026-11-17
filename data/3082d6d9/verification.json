@@ -1,0 +1,81 @@
+{
+  "meta": {
+    "session": "arena/3082d6d9-poker4",
+    "date": "2026-11-17",
+    "purpose": "Independent live re-check of official sources against published rows, plus repair of the two unreachable tracked URLs found in data/sync-status.json (Caesars daily flyer 2025 PDF; Bellagio resort-fee page).",
+    "method": "Live fetches of official pages through the session's retrieval channel (not the scheduled sync), compared field by field against data/site-events.json and data/poker4.json."
+  },
+  "checks": [
+    {
+      "id": "X1",
+      "what": "Caesars Palace 2025 daily NLH flyer",
+      "url": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2025.pdf",
+      "retrieved": "2026-11-17",
+      "result": "dead — returns no document (matches urls_failed in data/sync-status.json)",
+      "action": "replaced in data/tracked-sources.json (key C_FLYER) with the 2026 flyer"
+    },
+    {
+      "id": "X2",
+      "what": "Caesars Palace 2026 daily NLH flyer (live read)",
+      "url": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "retrieved": "2026-11-17",
+      "result": "live; prints four daily slots — 10 AM $100, 2 PM $160, 6 PM $100, 9 PM $160 — each 20,000 chips, 20-minute levels, $1,000 guarantee, $50 add-on at the first break ($45 pool / $5 fee), registration closes at the start of level 7, and rule 3 allows re-entry within the first break",
+      "finding": "PUBLISHED ROWS WERE WRONG: all four rows carried the explore page's blanket $100 buy-in and 'no fee split, no entry rule'. Rows corrected per the flyer; explore-page conflict recorded on flag F25.",
+      "action": "scripts/integrate_data.py Caesars block rewritten; tracked source re-pointed"
+    },
+    {
+      "id": "X3",
+      "what": "Caesars Palace explore page (conflicting value)",
+      "url": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
+      "retrieved": "2026-11-17",
+      "result": "still prints 'Every event carries a $100 buy-in' for all four slots — conflicts with the venue's own 2026 flyer",
+      "action": "kept as the second source on each row; conflict flagged (F25), not reconciled by inference"
+    },
+    {
+      "id": "X4",
+      "what": "Bellagio resort-fee page",
+      "url": "https://bellagio.mgmresorts.com/en/hotel/resort-fee.html",
+      "retrieved": "2026-11-17",
+      "result": "dead — 'Oops! We can't find that page' (matches urls_failed in data/sync-status.json)",
+      "action": "replaced in data/tracked-sources.json (key B_FEE) with the property's Hotel Reservation Terms page; hotel row updated"
+    },
+    {
+      "id": "X5",
+      "what": "Bellagio Hotel Reservation Terms (live read)",
+      "url": "https://bellagio.mgmresorts.com/en/terms-and-conditions.html",
+      "retrieved": "2026-11-17",
+      "result": "live; states 'A daily resort fee of $55.00 plus applicable tax will be applied to all reservations' with the amenity inclusions, and 'The first night's deposit is fully refundable provided a timely notice of cancellation is received ... at least 72 hours prior to the arrival date'",
+      "finding": "Bellagio resort fee now CONFIRMED ($55 + tax) and a cancellation deadline recorded; lodging-tax percentage is not printed on the page and stays blank (never inferred from another property)",
+      "action": "data/poker4.json bellagio row updated (fee confirmed, cancellation confirmed, tax left blank, retired URL logged)"
+    },
+    {
+      "id": "X6",
+      "what": "Venetian DSE IV calendar (live read, chunks 1 and 3) vs published rows",
+      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+      "retrieved": "2026-11-17",
+      "result": "spot rows match exactly: Event 26 $800 1A $500K GTD Dec 3 11:10 AM (sheet 12), 1B Dec 3 5:10 PM (sheet 13), 1F Turbo Dec 5 5:10 PM (sheet 14); Event 39 LIPS $800 Dec 10 10:10 AM and Dec 11 Day-2 restart 10:00 AM; Event 47 $2,200 PokerAtlas 1A Dec 12 10:10 AM; Event 56 Day 2 Dec 20 11:00 AM; Event 59 $600 1A $150K GTD Dec 20 11:10 AM with pre-11:10 $20 rake discount; series ends Dec 23",
+      "action": "none needed — the 22:11Z PDF change (Events 39/47 restart times) is already reflected in the published rows and in the change log"
+    },
+    {
+      "id": "X7",
+      "what": "Wynn WPT World Championship schedule PDF (live read) vs published rows",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "retrieved": "2026-11-17",
+      "result": "spot rows match exactly: Nov 27 11 AM NLH Day 1A $600 $400K GTD 40,000 chips; Nov 27 12 PM TORSE $600; Nov 27 1 PM PLO $400; Nov 30 $800 $1M GTD block; series runs to Dec 21 — matching the 148 dated Wynn rows' window",
+      "action": "none needed"
+    },
+    {
+      "id": "X8",
+      "what": "Existing build gates re-run on the tree at claim time",
+      "url": "local: scripts/verify_root.py, scripts/linkcheck.py, scripts/verify_markup.py, tools/c2242cb1_check_dse.py, tools/build_poker4.py",
+      "retrieved": "2026-11-17",
+      "result": "verify_root 16 pages / 253 rows / 0 warnings; linkcheck 30 pages OK; markup 37 pages OK; DSE check 94/94 matched; build drift 0",
+      "action": "none needed"
+    }
+  ],
+  "irregularities": [
+    "Caesars explore page vs 2026 flyer buy-in conflict (see X2/X3) — resolved toward the flyer, flagged F25",
+    "Bellagio lodging-tax percentage not printed on any live official page — left blank (flag F-side: see flagged.html)",
+    "The landing-page statusline counts the two retired URLs as unreachable until the next scheduled sync re-checks the replacement URLs (self-heals on the post-merge push run); the machine files data/sync-status.json and data/url-checks.json were not hand-edited"
+  ]
+}

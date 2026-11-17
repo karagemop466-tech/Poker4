@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generated_at": "2026-11-17T22:16:33Z",
+  "generated_at": "2026-11-17T22:48:11Z",
   "policy": "A dated log, not a single value. Every line keeps the date it was observed, the wording it came from and whether it is a dated quote at all."
  },
  "entries": [
@@ -917,7 +917,7 @@
    "observed_on": "2026-11-17",
    "label": "official resort fee wording",
    "amount_usd": null,
-   "qualifier": "A daily resort fee of $55.00 plus applicable tax will be applied to all reservations",
+   "qualifier": "A daily resort fee of $55",
    "source": "https://bellagio.mgmresorts.com/en/terms-and-conditions.html",
    "quote_status": "verbatim sentence captured 2026-11-17",
    "field": "resort_fee"
@@ -929,7 +929,7 @@
    "observed_on": "2026-11-17",
    "label": "official resort fee wording",
    "amount_usd": null,
-   "qualifier": "The resort fee includes: In-room wireless internet access; unlimited local, domestic long distance (the 50 United States and DC) and toll-free calls; access to Paramount+ with SHOWTIME On Demand via in-room television; airline boarding\u2026",
+   "qualifier": "The resort fee includes: In-room wireless internet access; unlimited local, domestic long distance (the 50 United States and DC) and toll-free calls; access to Paramount+ with SHOWTIME On Demand via in-room television; airline boarding pass printing; dig",
    "source": "https://bellagio.mgmresorts.com/en/terms-and-conditions.html",
    "quote_status": "verbatim sentence captured 2026-11-17",
    "field": "resort_fee"
@@ -977,7 +977,7 @@
    "observed_on": "2026-11-17",
    "label": "official cancellation wording",
    "amount_usd": null,
-   "qualifier": "The first night's deposit is fully refundable provided a timely notice of cancellation is received by Room Reservations at 888.987.6667 at least 72 hours prior to the arrival date, unless specifically excluded by booked offer",
+   "qualifier": "The first night's deposit is fully refundable provided a timely notice of cancellation is received by Room Reservations at 888",
    "source": "https://bellagio.mgmresorts.com/en/terms-and-conditions.html",
    "quote_status": "verbatim sentence captured 2026-11-17",
    "field": "cancellation"
@@ -1001,7 +1001,7 @@
    "observed_on": "2026-11-17",
    "label": "official cancellation wording",
    "amount_usd": null,
-   "qualifier": "e., Friday or Saturday night) cancellation fee (as determined by the first night of your scheduled stay), plus applicable taxes",
+   "qualifier": ", Friday or Saturday night) cancellation fee (as determined by the first night of your scheduled stay), plus applicable taxes",
    "source": "https://bellagio.mgmresorts.com/en/terms-and-conditions.html",
    "quote_status": "verbatim sentence captured 2026-11-17",
    "field": "cancellation"

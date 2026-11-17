@@ -684,7 +684,26 @@ for e in ROOM_FACTS["bellagio"]:
 # content path) prices each start time separately and prints the fee split and the re-entry
 # clause; the marketing article describes all four daily events at one blanket $100. The row
 # carries the flyer's value, the article's sentence stays beside it, and the disagreement is
-# flagged instead of resolved.
+# flagged (flag F25) instead of silently resolved. The values below are a fallback for a build
+# without the capture; when data/raw/caesars-daily-flyer-2026.txt is present, every number on
+# the row comes from that text via tools/room_extract.py, never from this table.
+CAESARS_FLYER_URL = ("https://www.caesars.com/content/dam/empire/clv/casino/poker/"
+                     "tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf")
+CAESARS_FLYER_RETRIEVED = "2026-11-17"
+CAESARS_FLYER_ROWS = [
+    {"time_printed": "10 AM", "buy_in_usd": 100, "house_fee_usd": 30, "pool_per_entry_usd": 70,
+     "guarantee_usd": 1000, "starting_chips": 20000, "level_minutes": 20,
+     "fee_excerpt": "Of the $100 buy in, $70 goes to the prize pool and $30 is held by Caesars Palace as a maintenance fee."},
+    {"time_printed": "2 PM", "buy_in_usd": 160, "house_fee_usd": 45, "pool_per_entry_usd": 115,
+     "guarantee_usd": 1000, "starting_chips": 20000, "level_minutes": 20,
+     "fee_excerpt": "Of the $160 buy in, $115 goes to the prize pool and $45 is held by Caesars Palace as a maintenance fee."},
+    {"time_printed": "6 PM", "buy_in_usd": 100, "house_fee_usd": 30, "pool_per_entry_usd": 70,
+     "guarantee_usd": 1000, "starting_chips": 20000, "level_minutes": 20,
+     "fee_excerpt": "Of the $100 buy in, $70 goes to the prize pool and $30 is held by Caesars Palace as a maintenance fee."},
+    {"time_printed": "9 PM", "buy_in_usd": 160, "house_fee_usd": 45, "pool_per_entry_usd": 115,
+     "guarantee_usd": 1000, "starting_chips": 20000, "level_minutes": 20,
+     "fee_excerpt": "Of the $160 buy in, $115 goes to the prize pool and $45 is held by Caesars Palace as a maintenance fee."},
+]
 c = ROOM_FACTS["caesars"]
 flyer = c.get("flyer") or {}
 
@@ -697,7 +716,8 @@ def _canon_time(t):
 
 
 FLYER_BY_TIME = {}
-for _r in (flyer.get("rows") or []):
+FLYER_FROM_CAPTURE = bool(flyer.get("rows"))
+for _r in (flyer.get("rows") or CAESARS_FLYER_ROWS):
     _k = _canon_time(_r.get("time_printed"))
     if _k:
         FLYER_BY_TIME[_k] = _r
@@ -723,9 +743,11 @@ for t in c["times"]:
                "source": c["source"], "retrieved": c["retrieved"]}
     buy = r.get("buy_in_usd") or c["buy_in_printed"]
     flags = ["daily slate — the flyer prints no calendar date"]
+    if r and not FLYER_FROM_CAPTURE:
+        flags.append("flyer value reconstructed from the 2026-11-17 read — this build has no data/raw capture of the PDF to re-derive it from")
     if r:
         flags.append("official 2026 flyer prices this start time; the property's article states a blanket $100 "
-                     "for all four daily events — both sentences are on the row, the conflict is not resolved")
+                     "for all four daily events — both sentences are on the row, the conflict is not resolved (flag F25)")
     else:
         flags.append("official page prints no house-fee split, so the row is not ranked")
     room_row(rid="CAESARS-DAILY-" + t.replace(" ", "").replace(":", ""), venue="caesars",
@@ -817,14 +839,22 @@ for h in CFG["hotels"]:
                 })
 walks: list[dict] = []
 for h in CFG["hotels"]:
-    for vid in h.get("venue_ids") or []:
+    w = h.get("walk") or {}
+    # The measured walk targets the Venetian poker room for every hotel (the brief's
+    # ≤30-min axis). Use the walk's own target venue/venue_id when present so the pair
+    # label matches the measurement, not the hotel's grouping venue_id.
+    for vid in ([w.get("venue_id")] if w.get("venue_id") else (h.get("venue_ids") or [])):
         walks.append({
             "hotel_id": h["id"], "hotel": h["property"], "venue_id": vid,
-            "venue": (VENUE_BY_ID.get(vid) or {}).get("name", vid),
-            "minutes": (h.get("walk") or {}).get("minutes"),
-            "meets_30_min": (h.get("walk") or {}).get("meets_30_min", "unverified"),
-            "status": (h.get("walk") or {}).get("status"),
-            "source": (h.get("walk") or {}).get("source"),
+            "venue": w.get("venue") or (VENUE_BY_ID.get(vid) or {}).get("name", vid),
+            "minutes": w.get("minutes"),
+            "distance_mi": w.get("distance_mi"),
+            "via": w.get("via"),
+            "meets_30_min": w.get("meets_30_min", "unverified"),
+            "status": w.get("status"),
+            "method": w.get("method"),
+            "retrieved": w.get("retrieved"),
+            "source": w.get("source"),
         })
 with open(DATA / "rate-log.json", "w", encoding="utf-8") as fh:
     json.dump({"meta": {"generated_at": SNAPSHOT_AT or TODAY,
@@ -1327,7 +1357,7 @@ def hotel_table(hotels, base=""):
                  + "<td class='srccell'>" + src_cell([h.get("official_page"), h.get("booking_link")], SNAPSHOT_AT[:10]) + "</td></tr>")
     return ("<div class='table-scroll'><table class='compact hotels'><thead><tr><th>Property</th><th class='num'>Room rate</th>"
             "<th class='num'>Resort fee</th><th class='num'>True cost/night</th><th class='num'>Parking</th>"
-            "<th>Walk to this room</th><th>Official source</th></tr></thead><tbody>" + body + "</tbody></table></div>")
+            "<th>Walk to Venetian poker room</th><th>Official source</th></tr></thead><tbody>" + body + "</tbody></table></div>")
 
 
 def source_table(rows, base=""):
@@ -1490,10 +1520,11 @@ def page_tournaments():
         f"<td class='num'>{E(e.get('time') or '?')}</td><td class='num'>{E(e.get('registration_closes') or 'not printed')}</td>"
         f"<td class='num'>{money(e.get('buy_in_usd'))}</td><td class='num'>{money(e.get('guarantee_usd'))}</td>"
         f"<td class='num'>{str(e.get('level_duration') or '?')} min</td>"
-        f"<td>{chip('single-entry ' + e['rules']['single_entry']['status'], 'chip chip-warn')}</td></tr>" for e in board)
+        f"<td>{chip('single-entry ' + e['rules']['single_entry']['status'], 'chip chip-warn')}</td>"
+        f"<td class='num'><span class='checked'>checked {E(e.get('last_checked') or 'not yet')}</span></td></tr>" for e in board)
     feed = (f"""<section class="feed"><h2>Morning board — what is on from {E(snap_day)} onward</h2>
 <p class="mini-note">Straight from the rooms' own printed schedules as re-read at 06:00 Las Vegas (snapshot {E(SNAPSHOT_AT or 'n/a')}); late-registration and level length are the calendar's own columns, not an estimate of when an event ends.</p>
-<div class="table-scroll"><table class="compact"><thead><tr><th>Day</th><th>Event</th><th class="num">Start</th><th class="num">Reg closes</th><th class="num">Entry</th><th class="num">Guarantee</th><th class="num">Levels</th><th>Entry rule</th></tr></thead><tbody>{board_rows}</tbody></table></div>
+<div class="table-scroll"><table class="compact"><thead><tr><th>Day</th><th>Event</th><th class="num">Start</th><th class="num">Reg closes</th><th class="num">Entry</th><th class="num">Guarantee</th><th class="num">Levels</th><th>Entry rule</th><th class="num">Last checked</th></tr></thead><tbody>{board_rows}</tbody></table></div>
 <p class="srcline">Full parsed calendar: <a href="data/schedule-snapshot.json">data/schedule-snapshot.json</a> · per-room source status: <a href="review.html">review log</a></p></section>""")
     return shell("", "Tournaments", f"""
 <section class="page-head"><h1>Every tournament the rooms published, with the entry rules beside it</h1>
@@ -1558,7 +1589,7 @@ def _page_venue(v, base):
 {events_table(rows, base, empty=(NO_ROWS_NOTE if not rows else ""))}
 {('<h3>Day-2 restarts and finals on the calendar (no new entry)</h3>' + events_table(cont, base)) if cont else ''}
 <h2>Hotels within a 30-minute walk</h2>
-{hotel_table(hotels, base) if hotels else unk("no hotel can be placed within 30 minutes of this room from an official measurement — see flag F6")}
+{hotel_table(hotels, base) if hotels else unk("no hotel is associated with this room in the data — see flags F3/F18 for the walking-minute measurement method")}
 {("<h2>Flagged for this venue</h2><ul class='flags'>" + "".join(f"<li><strong>{E(f['id'])}</strong> {E(f['item'])} — {E(f['detail'])}</li>" for f in flags) + "</ul>") if flags else ''}
 <h2>Sources checked for this venue</h2>
 {source_table([s for s in source_rows if str(s.get("venue")).replace(chr(39), "") in VENUE_ALIAS.get(v["id"], set())], base)}
@@ -1584,8 +1615,10 @@ def page_hotels():
             for sent, u in fact_sentences(h, field):
                 facts += f"<li><strong>{E(field.replace('_', ' '))}</strong> “{E(sent)}” {src_cell([u], SNAPSHOT_AT[:10], label='source page ↗')}</li>"
         walk_rows = "".join(
-            f"<tr><td>{E(p['venue'])}</td><td class='num'>{str(p['minutes']) + ' min' if p.get('minutes') else unk('not published')}</td>"
-            f"<td>{E(p['meets_30_min'])}</td><td class='qual'>{E(p.get('status') or '')}</td>"
+            f"<tr><td>{E(p['venue'])}</td>"
+            f"<td class='num'>{str(p['minutes']) + ' min' if p.get('minutes') is not None else unk('not published')}</td>"
+            + (f"<td class='num'>{p.get('distance_mi')} mi</td>" if p.get('distance_mi') is not None else "<td></td>")
+            + f"<td>{E(p['meets_30_min'])}</td><td class='qual'>{E(p.get('status') or '')}</td>"
             f"<td class='srccell'>{src_cell([p.get('source')], SNAPSHOT_AT[:10], label='source ↗')}</td></tr>"
             for p in walks if p["hotel_id"] == h["id"])
         if total:
@@ -1624,6 +1657,18 @@ def page_hotels():
                          f"so the dates are typed into its own calendar rather than pre-filled here</span>")
         else:
             book_cell = unk('no official booking page reached')
+        if not facts:
+            # No machine-captured sentence yet (e.g. a freshly re-anchored source page):
+            # fall back to the row's own confirmed excerpts instead of saying nothing exists.
+            fallback = ""
+            rf_ = h.get("resort_fee") or {}
+            if rf_.get("excerpt"):
+                fallback += (f"<li><strong>resort fee</strong> “{E(rf_['excerpt'])}” "
+                             f"{src_cell([rf_.get('source')], rf_.get('retrieved'), label='source page ↗')}</li>")
+            if canc.get("excerpt"):
+                fallback += (f"<li><strong>cancellation</strong> “{E(canc['excerpt'])}” "
+                             f"{src_cell([canc.get('source')], canc.get('retrieved'), label='source page ↗')}</li>")
+            facts = fallback
         mins = next((str(p2["minutes"]) for p2 in walks if p2["hotel_id"] == h["id"] and p2.get("minutes")), "")
         onsite = "1" if "on-site" in str((h.get("walk") or {}).get("meets_30_min")).lower() else "0"
         meets = (h.get("walk") or {}).get("meets_30_min")
@@ -1648,8 +1693,8 @@ def page_hotels():
 </div>
 <h4>Rates and fee facts as a dated log (not a single value)</h4>
 <div class="table-scroll"><table class="compact"><thead><tr><th>Observed</th><th>What it is</th><th class="num">Amount</th><th>Wording / qualifier</th><th>Quote status</th><th>Source</th></tr></thead><tbody>{log_rows}</tbody></table></div>
-<h4>Walk to the poker rooms</h4>
-<div class="table-scroll"><table class="compact"><thead><tr><th>Poker room</th><th class="num">Walk</th><th>Meets the 30-min rule</th><th>How we know</th><th>Source</th></tr></thead><tbody>{walk_rows}</tbody></table></div>
+<h4>Walk to the Venetian poker room (Google Maps, retrieved 2026-11-17)</h4>
+<div class="table-scroll"><table class="compact"><thead><tr><th>Poker-room target</th><th class="num">Walk</th><th class="num">Distance</th><th>Meets the 30-min rule</th><th>How we know</th><th>Source</th></tr></thead><tbody>{walk_rows}</tbody></table></div>
 {(f"<h4>Unresolved for this property</h4><ul class='flags'>{dead}</ul>") if dead else ''}
 </article>"""
     return shell("", "Hotels", f"""
@@ -1663,10 +1708,10 @@ def page_hotels():
 <label class="toggle"><input type="radio" name="walkf" value="measured"> measured walk ≤ 30 min</label>
 <span class="count" id="walk-count"></span>
 </div>
-<p class="mini-note">“Measured” is empty on purpose: no Strip property publishes a door-to-door walking time to another property's poker room, and the minutes cells are left blank rather than estimated — <a href="flagged.html#F6">F6</a> records the one API call that would fill them. Choosing it filters the list to what is actually provable today.</p></section>
+<p class="mini-note">“Measured” holds a real walking time for every property: Google Maps walking directions (mode=walking) were retrieved 2026-11-17 for each hotel→Venetian poker-room pair and stored with the route distance, the “via” road, the exact directions URL and the retrieval date (see <a href="data/integrated/walks-google.json">data/integrated/walks-google.json</a>; flags <a href="flagged.html#F3">F3</a> / <a href="flagged.html#F18">F18</a> record the closure). Google's walking durations run optimistic, so the route distance in miles is shown beside each minute. Choosing “measured walk ≤ 30 min” filters to the properties that provably meet the rule.</p></section>
 {cards}
 <section class="callout"><h2>Reading a blank honestly</h2>
-<p>Where a property shows rates only inside its booking calendar, no number is copied onto this site — the booking link is given instead and the row is marked. Two official pages returned 404 in the 2026-11-17 check: Bellagio's /hotel/resort-fee.html page and the 2025 Caesars Palace daily flyer. Both were repointed at their live official successors (Bellagio's Hotel Reservation Terms, which Bellagio's own FAQ names as the source of the fee, and the 2026 flyer on Caesars' own content path) and re-read by hand the same day — <a href="flagged.html#F5">F5</a> and <a href="flagged.html#F6">F6</a> record what each page now yields. Nothing here was replaced by a third-party mirror: the $50 and $56.69 ARIA/Bellagio figures that circulate on review sites are deliberately not used, because the properties' own terms pages print $55.00 plus applicable tax. No official walking-minute figure exists for any hotel→poker-room pair on the Strip, so the ≤30-minute rule is carried as a warning, not a green tick.</p></section>
+<p>Where a property shows rates only inside its booking calendar, no number is copied onto this site — the booking link is given instead and the row is marked. Two official pages returned 404 in the 2026-11-17 check: Bellagio&#39;s /hotel/resort-fee.html page and the 2025 Caesars Palace daily flyer. Both were re-anchored to the operator&#39;s own live successor the same day — Bellagio&#39;s Hotel Reservation Terms page, which Bellagio&#39;s FAQ names as where the fee is documented (“A daily resort fee of $55.00 plus applicable tax will be applied to all reservations”), and the 2026 flyer on Caesars&#39; own content path — and the retired URLs stay logged on the Bellagio row and in <a href="data/url-checks.json">data/url-checks.json</a> rather than being silently swapped. <a href="flagged.html#F5">F5</a> and <a href="flagged.html#F6">F6</a> record what each replacement page yields; <a href="flagged.html#F25">F25</a> records that Caesars&#39; two official pages disagree on two of the four daily buy-ins. Nothing was replaced with a third-party mirror: the $50 and $56.69 ARIA/Bellagio figures that circulate on review sites are deliberately not used because the properties&#39; own terms pages print $55.00 plus applicable tax, and the earlier sentence on this page claiming “ARIA publishes $50 and $55 on two official pages” has been corrected — <a href="flagged.html#F5">F5</a> shows the $50 figure traces only to third-party sources. Walking minutes are now measured rather than warned about: every hotel→poker-room pair carries a Google Maps walking time with its route distance and retrieval date (flags <a href="flagged.html#F3">F3</a> / <a href="flagged.html#F18">F18</a>), which is what the ≤30-minute filter below uses. The remaining blanks are the ones no official source can settle — a dated like-for-like room quote needs your exact dates and occupancy, and <a href="flagged.html#F27">F27</a> records that the 13.38% room-tax figure is the county&#39;s Primary Gaming Corridor rate rather than a number each property prints on its own page.</p></section>
 """, "hotels.html", needs_data=False)
 
 

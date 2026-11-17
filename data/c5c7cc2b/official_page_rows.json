@@ -1,0 +1,942 @@
+[
+ {
+  "date": "Monday, November 16, 2026",
+  "time": "11:10 AM",
+  "evno": 1,
+  "name": "$300 No Limit Hold'em 1A $75K GTD",
+  "sub": "",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf",
+  "buy": 300,
+  "gtd": 75000
+ },
+ {
+  "date": "Monday, November 16, 2026",
+  "time": "5:10 PM",
+  "evno": 1,
+  "name": "$300 No Limit Hold'em 1B $75K GTD",
+  "sub": "",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_9.pdf",
+  "buy": 300,
+  "gtd": 75000
+ },
+ {
+  "date": "Tuesday, November 17, 2026",
+  "time": "11:10 AM",
+  "evno": 1,
+  "name": "$300 No Limit Hold'em 1C $75K GTD",
+  "sub": "",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf",
+  "buy": 300,
+  "gtd": 75000
+ },
+ {
+  "date": "Tuesday, November 17, 2026",
+  "time": "5:10 PM",
+  "evno": 1,
+  "name": "$300 No Limit Hold'em 1D $75K GTD",
+  "sub": "",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_9.pdf",
+  "buy": 300,
+  "gtd": 75000
+ },
+ {
+  "date": "Wednesday, November 18, 2026",
+  "time": "11:10 AM",
+  "evno": 2,
+  "name": "$300 No LImit Hold'em $10K GTD (1Day)",
+  "sub": "",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf",
+  "buy": 300,
+  "gtd": 10000
+ },
+ {
+  "date": "Wednesday, November 18, 2026",
+  "time": "12:00 PM",
+  "evno": 1,
+  "name": "$300 No Limit Hold'em Day 2 Restart",
+  "sub": "",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf",
+  "buy": 300,
+  "gtd": null
+ },
+ {
+  "date": "Thursday, November 19, 2026",
+  "time": "10:10 AM",
+  "evno": 3,
+  "name": "$200 NLH RaceDay Stack (1Day)",
+  "sub": "Race to finish before the Race",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf",
+  "buy": 200,
+  "gtd": null
+ },
+ {
+  "date": "Friday, November 20, 2026",
+  "time": "10:10 AM",
+  "evno": 4,
+  "name": "$200 NLH RaceDay Stack (1Day)",
+  "sub": "Race to finish before the Race",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf",
+  "buy": 200,
+  "gtd": null
+ },
+ {
+  "date": "Saturday, November 21, 2026",
+  "time": "10:10 AM",
+  "evno": 5,
+  "name": "$200 NLH RaceDay Stack (1Day)",
+  "sub": "Race to finish before the Race",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf",
+  "buy": 200,
+  "gtd": null
+ },
+ {
+  "date": "Sunday, November 22, 2026",
+  "time": "11:10 AM",
+  "evno": 6,
+  "name": "$200 No LImit Hold'em (1Day)",
+  "sub": "",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_29.pdf",
+  "buy": 200,
+  "gtd": null
+ },
+ {
+  "date": "Monday, November 23, 2026",
+  "time": "11:10 AM",
+  "evno": 7,
+  "name": "$400 No Limit Hold'em 1A $75K GTD",
+  "sub": "",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_2.pdf",
+  "buy": 400,
+  "gtd": 75000
+ },
+ {
+  "date": "Monday, November 23, 2026",
+  "time": "5:10 PM",
+  "evno": 8,
+  "name": "$200 No Limit Hold'em $8K GTD (1Day)",
+  "sub": "Progressive Knock-Out Bounty (PKO)",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_30.pdf",
+  "buy": 200,
+  "gtd": 8000
+ },
+ {
+  "date": "Tuesday, November 24, 2026",
+  "time": "11:10 AM",
+  "evno": 7,
+  "name": "$400 No Limit Hold'em 1B $75K GTD",
+  "sub": "",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_2.pdf",
+  "buy": 400,
+  "gtd": 75000
+ },
+ {
+  "date": "Tuesday, November 24, 2026",
+  "time": "5:10 PM",
+  "evno": 9,
+  "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
+  "sub": "",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
+  "buy": 200,
+  "gtd": 8000
+ },
+ {
+  "date": "Wednesday, November 25, 2026",
+  "time": "11:00 AM",
+  "evno": 7,
+  "name": "$400 No Limit Hold'em Day 2 Restart",
+  "sub": "",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_2.pdf",
+  "buy": 400,
+  "gtd": null
+ },
+ {
+  "date": "Wednesday, November 25, 2026",
+  "time": "11:10 AM",
+  "evno": 10,
+  "name": "$400 No LImit Hold'em $15K GTD (1Day)",
+  "sub": "",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_6.pdf",
+  "buy": 400,
+  "gtd": 15000
+ },
+ {
+  "date": "Wednesday, November 25, 2026",
+  "time": "5:10 PM",
+  "evno": 11,
+  "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
+  "sub": "",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
+  "buy": 200,
+  "gtd": 8000
+ },
+ {
+  "date": "Thursday, November 26, 2026",
+  "time": "11:10 AM",
+  "evno": 12,
+  "name": "$300 No LImit Hold'em $10K GTD (1Day)",
+  "sub": "",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf",
+  "buy": 300,
+  "gtd": 10000
+ },
+ {
+  "date": "Thursday, November 26, 2026",
+  "time": "5:10 PM",
+  "evno": 13,
+  "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
+  "sub": "",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
+  "buy": 200,
+  "gtd": 8000
+ },
+ {
+  "date": "Friday, November 27, 2026",
+  "time": "11:10 AM",
+  "evno": 14,
+  "name": "$600 No Limit Hold'em $30K GTD (1Day)",
+  "sub": "",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf",
+  "buy": 600,
+  "gtd": 30000
+ },
+ {
+  "date": "Friday, November 27, 2026",
+  "time": "5:10 PM",
+  "evno": 15,
+  "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
+  "sub": "",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
+  "buy": 200,
+  "gtd": 8000
+ },
+ {
+  "date": "Saturday, November 28, 2026",
+  "time": "11:10 AM",
+  "evno": 16,
+  "name": "$600 No Limit Hold'em Bounty $30K GTD (1Day)",
+  "sub": "$200 bounties to start & $500 bounties in the money",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf",
+  "buy": 600,
+  "gtd": 30000
+ },
+ {
+  "date": "Saturday, November 28, 2026",
+  "time": "12:10 PM",
+  "evno": 17,
+  "name": "$400 Pot Limit Omaha Bounty $15K GTD (1Day)",
+  "sub": "",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_26.pdf",
+  "buy": 400,
+  "gtd": 15000
+ },
+ {
+  "date": "Saturday, November 28, 2026",
+  "time": "5:10 PM",
+  "evno": 18,
+  "name": "$200 NLH PokerAtlas Valuetown Bounty $20K GTD (1Day)",
+  "sub": "POKERATLAS PRO MEMBER $20 RAKE DISCOUNT",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_8.pdf",
+  "buy": 200,
+  "gtd": 20000
+ },
+ {
+  "date": "Sunday, November 29, 2026",
+  "time": "11:10 AM",
+  "evno": 19,
+  "name": "$400 No Limit Hold'em 1A $75K GTD",
+  "sub": "",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_3.pdf",
+  "buy": 400,
+  "gtd": 75000
+ },
+ {
+  "date": "Sunday, November 29, 2026",
+  "time": "12:10 PM",
+  "evno": 20,
+  "name": "$300 Pot Limit Omaha $10K GTD (1Day)",
+  "sub": "Double Board Bomb Pot",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_22.pdf",
+  "buy": 300,
+  "gtd": 10000
+ },
+ {
+  "date": "Sunday, November 29, 2026",
+  "time": "5:10 PM",
+  "evno": 21,
+  "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
+  "sub": "",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
+  "buy": 200,
+  "gtd": 8000
+ },
+ {
+  "date": "Monday, November 30, 2026",
+  "time": "11:10 AM",
+  "evno": 19,
+  "name": "$400 No Limit Hold'em 1B $75K GTD",
+  "sub": "",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_3.pdf",
+  "buy": 400,
+  "gtd": 75000
+ },
+ {
+  "date": "Monday, November 30, 2026",
+  "time": "5:10 PM",
+  "evno": 22,
+  "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
+  "sub": "",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
+  "buy": 200,
+  "gtd": 8000
+ },
+ {
+  "date": "Tuesday, December 1, 2026",
+  "time": "11:10 AM",
+  "evno": 19,
+  "name": "$400 No Limit Hold'em 1C $75K GTD",
+  "sub": "",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_3.pdf",
+  "buy": 400,
+  "gtd": 75000
+ },
+ {
+  "date": "Tuesday, December 1, 2026",
+  "time": "5:10 PM",
+  "evno": 23,
+  "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
+  "sub": "",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
+  "buy": 200,
+  "gtd": 8000
+ },
+ {
+  "date": "Wednesday, December 2, 2026",
+  "time": "10:10 AM",
+  "evno": 24,
+  "name": "$600 No Limit Hold'em Seniors $40K GTD (1Day)",
+  "sub": "Must be 50+ years of age to participate",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_17.pdf",
+  "buy": 600,
+  "gtd": 40000
+ },
+ {
+  "date": "Wednesday, December 2, 2026",
+  "time": "11:00 AM",
+  "evno": 19,
+  "name": "$400 No Limit Hold'em Day 2 Restart",
+  "sub": "",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_3.pdf",
+  "buy": 400,
+  "gtd": null
+ },
+ {
+  "date": "Wednesday, December 2, 2026",
+  "time": "5:10 PM",
+  "evno": 25,
+  "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
+  "sub": "",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
+  "buy": 200,
+  "gtd": 8000
+ },
+ {
+  "date": "Thursday, December 3, 2026",
+  "time": "11:10 AM",
+  "evno": 26,
+  "name": "$800 No Limit Hold'em 1A $500K GTD",
+  "sub": "",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf",
+  "buy": 800,
+  "gtd": 500000
+ },
+ {
+  "date": "Thursday, December 3, 2026",
+  "time": "12:10 PM",
+  "evno": 27,
+  "name": "$600 BIG O $25K GTD (1Day)",
+  "sub": "",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_28.pdf",
+  "buy": 600,
+  "gtd": 25000
+ },
+ {
+  "date": "Thursday, December 3, 2026",
+  "time": "5:10 PM",
+  "evno": 26,
+  "name": "$800 No Limit Hold'em 1B $500K GTD",
+  "sub": "",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_13.pdf",
+  "buy": 800,
+  "gtd": 500000
+ },
+ {
+  "date": "Friday, December 4, 2026",
+  "time": "11:10 AM",
+  "evno": 26,
+  "name": "$800 No Limit Hold'em 1C $500K GTD",
+  "sub": "",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf",
+  "buy": 800,
+  "gtd": 500000
+ },
+ {
+  "date": "Friday, December 4, 2026",
+  "time": "5:10 PM",
+  "evno": 26,
+  "name": "$800 No Limit Hold'em 1D $500K GTD",
+  "sub": "",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_13.pdf",
+  "buy": 800,
+  "gtd": 500000
+ },
+ {
+  "date": "Saturday, December 5, 2026",
+  "time": "11:10 AM",
+  "evno": 26,
+  "name": "$800 No Limit Hold'em 1E $500K GTD",
+  "sub": "",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf",
+  "buy": 800,
+  "gtd": 500000
+ },
+ {
+  "date": "Saturday, December 5, 2026",
+  "time": "5:10 PM",
+  "evno": 26,
+  "name": "$800 No Limit Hold'em 1F (Turbo) $500K GTD",
+  "sub": "",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_14.pdf",
+  "buy": 800,
+  "gtd": 500000
+ },
+ {
+  "date": "Sunday, December 6, 2026",
+  "time": "11:10 AM",
+  "evno": 28,
+  "name": "$600 No Limit Hold'em $40K GTD (1Day)",
+  "sub": "",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf",
+  "buy": 600,
+  "gtd": 40000
+ },
+ {
+  "date": "Sunday, December 6, 2026",
+  "time": "12:00 PM",
+  "evno": 26,
+  "name": "$800 No Limit Hold'em Day 2 Restart",
+  "sub": "",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf",
+  "buy": 800,
+  "gtd": null
+ },
+ {
+  "date": "Sunday, December 6, 2026",
+  "time": "5:10 PM",
+  "evno": 29,
+  "name": "$300 No Limit Hold'em Bounty $15K GTD (1Day)",
+  "sub": "",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf",
+  "buy": 300,
+  "gtd": 15000
+ },
+ {
+  "date": "Monday, December 7, 2026",
+  "time": "11:10 AM",
+  "evno": 30,
+  "name": "$600 No Limit Hold'em Bounty $40K GTD (1Day)",
+  "sub": "$200 bounties to start & $500 bounties in the money",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf",
+  "buy": 600,
+  "gtd": 40000
+ },
+ {
+  "date": "Monday, December 7, 2026",
+  "time": "5:10 PM",
+  "evno": 31,
+  "name": "$300 No Limit Hold'em Bounty $15K GTD (1Day)",
+  "sub": "",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf",
+  "buy": 300,
+  "gtd": 15000
+ },
+ {
+  "date": "Tuesday, December 8, 2026",
+  "time": "10:10 AM",
+  "evno": 32,
+  "name": "$600 No Limit Hold'em Seniors $40K GTD (1Day)",
+  "sub": "Must be 50+ years of age to participate",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_17.pdf",
+  "buy": 600,
+  "gtd": 40000
+ },
+ {
+  "date": "Tuesday, December 8, 2026",
+  "time": "4:10 PM",
+  "evno": 33,
+  "name": "$100 NLH LIPS Ladies Milestone Satellite (1Day)",
+  "sub": "Awards Direct Entry to Event # 39",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_19.pdf",
+  "buy": 100,
+  "gtd": null
+ },
+ {
+  "date": "Tuesday, December 8, 2026",
+  "time": "5:10 PM",
+  "evno": 34,
+  "name": "$300 No Limit Hold'em Bounty $15K GTD (1Day)",
+  "sub": "",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf",
+  "buy": 300,
+  "gtd": 15000
+ },
+ {
+  "date": "Wednesday, December 9, 2026",
+  "time": "10:10 AM",
+  "evno": 35,
+  "name": "$600 NLH LIPS Poker Jingle Tag Team $10K GTD (1Day)",
+  "sub": "Tag Teams Consist of Female/Female or Female/Male",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_31.pdf",
+  "buy": 600,
+  "gtd": 10000
+ },
+ {
+  "date": "Wednesday, December 9, 2026",
+  "time": "11:10 AM",
+  "evno": 36,
+  "name": "$800 No Limit Hold'em Bounty $75K GTD (1Day)",
+  "sub": "$200 bounties to start & $500 bounties in the money",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_16.pdf",
+  "buy": 800,
+  "gtd": 75000
+ },
+ {
+  "date": "Wednesday, December 9, 2026",
+  "time": "4:10 PM",
+  "evno": 37,
+  "name": "$100 NLH LIPS Ladies Milestone Satellite (1Day)",
+  "sub": "Awards Direct Entry to Event # 39",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_19.pdf",
+  "buy": 100,
+  "gtd": null
+ },
+ {
+  "date": "Wednesday, December 9, 2026",
+  "time": "5:10 PM",
+  "evno": 38,
+  "name": "$300 No Limit Hold'em Bounty $15K GTD (1Day)",
+  "sub": "",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf",
+  "buy": 300,
+  "gtd": 15000
+ },
+ {
+  "date": "Thursday, December 10, 2026",
+  "time": "10:10 AM",
+  "evno": 39,
+  "name": "$800 No Limit Hold'em LIPS Ladies $40K GTD (2Day)",
+  "sub": "Women in Poker - Main Event",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_32.pdf",
+  "buy": 800,
+  "gtd": 40000
+ },
+ {
+  "date": "Thursday, December 10, 2026",
+  "time": "12:10 PM",
+  "evno": 40,
+  "name": "$600 Pot Limit Omaha Bounty $25K GTD (1Day)",
+  "sub": "",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_27.pdf",
+  "buy": 600,
+  "gtd": 25000
+ },
+ {
+  "date": "Thursday, December 10, 2026",
+  "time": "4:10 PM",
+  "evno": 41,
+  "name": "$260 NLH Milestone Satellite (1Day)",
+  "sub": "Awards Direct Entry to Event # 47",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_24.pdf",
+  "buy": 260,
+  "gtd": null
+ },
+ {
+  "date": "Thursday, December 10, 2026",
+  "time": "5:10 PM",
+  "evno": 42,
+  "name": "$300 No Limit Hold'em Bounty $15K GTD (1Day)",
+  "sub": "",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf",
+  "buy": 300,
+  "gtd": 15000
+ },
+ {
+  "date": "Friday, December 11, 2026",
+  "time": "10:00 AM",
+  "evno": 39,
+  "name": "$800 No Limit Hold'em LIPS Ladies Day 2 Restart",
+  "sub": "Play Down to Final 7 - Streamed Final Table (PokerGO)",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_32.pdf",
+  "buy": 800,
+  "gtd": null
+ },
+ {
+  "date": "Friday, December 11, 2026",
+  "time": "11:10 AM",
+  "evno": 43,
+  "name": "$600 No Limit Hold'em LIPS $30K GTD (1Day)",
+  "sub": "KINGS and QUEENS Bounty - Open to all players",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_33.pdf",
+  "buy": 600,
+  "gtd": 30000
+ },
+ {
+  "date": "Friday, December 11, 2026",
+  "time": "4:10 PM",
+  "evno": 44,
+  "name": "$260 NLH Milestone Satellite (1Day)",
+  "sub": "Awards Direct Entry to Event # 47",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_24.pdf",
+  "buy": 260,
+  "gtd": null
+ },
+ {
+  "date": "Friday, December 11, 2026",
+  "time": "7:00 PM",
+  "evno": 39,
+  "name": "$800 No Limit Hold'em LIPS Ladies Final Table",
+  "sub": "Streamed Final Table (PokerGO)",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_32.pdf",
+  "buy": 800,
+  "gtd": null
+ },
+ {
+  "date": "Friday, December 11, 2026",
+  "time": "8:10 PM",
+  "evno": 45,
+  "name": "$260 NLH Turbo Milestone Satellite (1Day)",
+  "sub": "Awards Direct Entry to Event # 47",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_25.pdf",
+  "buy": 260,
+  "gtd": null
+ },
+ {
+  "date": "Saturday, December 12, 2026",
+  "time": "9:10 AM",
+  "evno": 46,
+  "name": "$260 NLH Turbo Milestone Satellite (1Day)",
+  "sub": "Awards Direct Entry to Event # 47",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_25.pdf",
+  "buy": 260,
+  "gtd": null
+ },
+ {
+  "date": "Saturday, December 12, 2026",
+  "time": "10:10 AM",
+  "evno": 47,
+  "name": "$2,200 No Limit Hold'em 1A $1 Mill GTD",
+  "sub": "PokerAtlas Championship Title Event",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf",
+  "buy": 2200,
+  "gtd": 1000000
+ },
+ {
+  "date": "Saturday, December 12, 2026",
+  "time": "12:10 PM",
+  "evno": 48,
+  "name": "$260 NLH Turbo Milestone Satellite (1Day)",
+  "sub": "Awards Direct Entry to Event # 47",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_25.pdf",
+  "buy": 260,
+  "gtd": null
+ },
+ {
+  "date": "Saturday, December 12, 2026",
+  "time": "6:10 PM",
+  "evno": 47,
+  "name": "$2,200 No Limit Hold'em 1B $1 Mill GTD",
+  "sub": "PokerAtlas Championship Title Event",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_37.pdf",
+  "buy": 2200,
+  "gtd": 1000000
+ },
+ {
+  "date": "Sunday, December 13, 2026",
+  "time": "10:10 AM",
+  "evno": 49,
+  "name": "$1,100 No Limit Hold'em Seniors 1A $300K GTD",
+  "sub": "Must be 50+ years of age to participate",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_20.pdf",
+  "buy": 1100,
+  "gtd": 300000
+ },
+ {
+  "date": "Sunday, December 13, 2026",
+  "time": "1:00 PM",
+  "evno": 47,
+  "name": "$2,200 NLH PokerAtlas Championship Title Event Day 2 Restart",
+  "sub": "Play Down to Final 7 - Streamed Final Table (PokerGO)",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf",
+  "buy": 2200,
+  "gtd": null
+ },
+ {
+  "date": "Sunday, December 13, 2026",
+  "time": "5:10 PM",
+  "evno": 50,
+  "name": "$300 No Limit Hold'em Bounty $15K GTD (1Day)",
+  "sub": "",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf",
+  "buy": 300,
+  "gtd": 15000
+ },
+ {
+  "date": "Monday, December 14, 2026",
+  "time": "10:10 AM",
+  "evno": 49,
+  "name": "$1,100 No Limit Hold'em Seniors 1B $300K GTD",
+  "sub": "Must be 50+ years of age to participate",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_20.pdf",
+  "buy": 1100,
+  "gtd": 300000
+ },
+ {
+  "date": "Monday, December 14, 2026",
+  "time": "11:00 AM",
+  "evno": 47,
+  "name": "$2,200 NLH PokerAtlas Championship Title Event Day 3 Restart",
+  "sub": "Streamed Final Table (PokerGO)",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf",
+  "buy": 2200,
+  "gtd": null
+ },
+ {
+  "date": "Monday, December 14, 2026",
+  "time": "5:10 PM",
+  "evno": 51,
+  "name": "$300 No Limit Hold'em Bounty $15K GTD (1Day)",
+  "sub": "",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf",
+  "buy": 300,
+  "gtd": 15000
+ },
+ {
+  "date": "Tuesday, December 15, 2026",
+  "time": "10:00 AM",
+  "evno": 49,
+  "name": "$1,100 No Limit Hold'em Seniors Day 2 Restart",
+  "sub": "",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_20.pdf",
+  "buy": 1100,
+  "gtd": null
+ },
+ {
+  "date": "Tuesday, December 15, 2026",
+  "time": "11:10 AM",
+  "evno": 52,
+  "name": "$1,100 No Limit Hold'em $75K GTD (1Day)",
+  "sub": "Progressive Knock-Out Bounty (PKO)",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_34.pdf",
+  "buy": 1100,
+  "gtd": 75000
+ },
+ {
+  "date": "Tuesday, December 15, 2026",
+  "time": "5:10 PM",
+  "evno": 53,
+  "name": "$300 No Limit Hold'em Bounty $15K GTD (1Day)",
+  "sub": "",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf",
+  "buy": 300,
+  "gtd": 15000
+ },
+ {
+  "date": "Wednesday, December 16, 2026",
+  "time": "11:10 AM",
+  "evno": 54,
+  "name": "$600 No Limit Hold'em Bounty $50K GTD (1Day)",
+  "sub": "$200 bounties to start & $500 bounties in the money",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf",
+  "buy": 600,
+  "gtd": 50000
+ },
+ {
+  "date": "Wednesday, December 16, 2026",
+  "time": "5:10 PM",
+  "evno": 55,
+  "name": "$300 No Limit Hold'em Bounty $15K GTD (1Day)",
+  "sub": "",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf",
+  "buy": 300,
+  "gtd": 15000
+ },
+ {
+  "date": "Thursday, December 17, 2026",
+  "time": "10:10 AM",
+  "evno": 56,
+  "name": "$1,100 No Limit Hold'em 1A $500K GTD",
+  "sub": "$40 Rake Discount for Entries Before 10:10 a.m.",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf",
+  "buy": 1100,
+  "gtd": 500000
+ },
+ {
+  "date": "Thursday, December 17, 2026",
+  "time": "12:10 PM",
+  "evno": 57,
+  "name": "$600 Pot Limit Omaha $25K GTD (1Day)",
+  "sub": "Double Board Bomb Pot",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_23.pdf",
+  "buy": 600,
+  "gtd": 25000
+ },
+ {
+  "date": "Thursday, December 17, 2026",
+  "time": "6:10 PM",
+  "evno": 56,
+  "name": "$1,100 No Limit Hold'em 1B $500K GTD",
+  "sub": "$40 Rake Discount for Entries Before 6:10 p.m.",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_36.pdf",
+  "buy": 1100,
+  "gtd": 500000
+ },
+ {
+  "date": "Friday, December 18, 2026",
+  "time": "10:10 AM",
+  "evno": 56,
+  "name": "$1,100 No Limit Hold'em 1C $500K GTD",
+  "sub": "",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf",
+  "buy": 1100,
+  "gtd": 500000
+ },
+ {
+  "date": "Friday, December 18, 2026",
+  "time": "6:10 PM",
+  "evno": 56,
+  "name": "$1,100 No Limit Hold'em 1D $500K GTD",
+  "sub": "",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_36.pdf",
+  "buy": 1100,
+  "gtd": 500000
+ },
+ {
+  "date": "Saturday, December 19, 2026",
+  "time": "10:10 AM",
+  "evno": 56,
+  "name": "$1,100 No Limit Hold'em 1E $500K GTD",
+  "sub": "",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf",
+  "buy": 1100,
+  "gtd": 500000
+ },
+ {
+  "date": "Saturday, December 19, 2026",
+  "time": "5:10 PM",
+  "evno": 58,
+  "name": "$200 NLH PokerAtlas Valuetown Bounty $20K GTD (1Day)",
+  "sub": "POKERATLAS PRO MEMBER $20 RAKE DISCOUNT",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_8.pdf",
+  "buy": 200,
+  "gtd": 20000
+ },
+ {
+  "date": "Sunday, December 20, 2026",
+  "time": "11:00 AM",
+  "evno": 56,
+  "name": "$1,100 No Limit Hold'em Day 2 Restart",
+  "sub": "",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf",
+  "buy": 1100,
+  "gtd": null
+ },
+ {
+  "date": "Sunday, December 20, 2026",
+  "time": "11:10 AM",
+  "evno": 59,
+  "name": "$600 No Limit Hold'em 1A $150K GTD",
+  "sub": "$20 Rake Discount for Entries Before 11:10 a.m.",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf",
+  "buy": 600,
+  "gtd": 150000
+ },
+ {
+  "date": "Sunday, December 20, 2026",
+  "time": "5:10 PM",
+  "evno": 60,
+  "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
+  "sub": "",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
+  "buy": 200,
+  "gtd": 8000
+ },
+ {
+  "date": "Monday, December 21, 2026",
+  "time": "11:10 AM",
+  "evno": 59,
+  "name": "$600 No Limit Hold'em 1B $150K GTD",
+  "sub": "",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf",
+  "buy": 600,
+  "gtd": 150000
+ },
+ {
+  "date": "Monday, December 21, 2026",
+  "time": "5:10 PM",
+  "evno": 61,
+  "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
+  "sub": "",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
+  "buy": 200,
+  "gtd": 8000
+ },
+ {
+  "date": "Tuesday, December 22, 2026",
+  "time": "11:10 AM",
+  "evno": 59,
+  "name": "$600 No Limit Hold'em 1C $150K GTD",
+  "sub": "",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf",
+  "buy": 600,
+  "gtd": 150000
+ },
+ {
+  "date": "Tuesday, December 22, 2026",
+  "time": "5:10 PM",
+  "evno": 62,
+  "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
+  "sub": "",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
+  "buy": 200,
+  "gtd": 8000
+ },
+ {
+  "date": "Wednesday, December 23, 2026",
+  "time": "11:00 AM",
+  "evno": 59,
+  "name": "$600 No Limit Hold'em Day 2 Restart",
+  "sub": "",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf",
+  "buy": 600,
+  "gtd": null
+ },
+ {
+  "date": "Wednesday, December 23, 2026",
+  "time": "11:10 AM",
+  "evno": 63,
+  "name": "$600 No Limit Hold'em $30K GTD (1Day)",
+  "sub": "",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf",
+  "buy": 600,
+  "gtd": 30000
+ },
+ {
+  "date": "Wednesday, December 23, 2026",
+  "time": "5:10 PM",
+  "evno": 64,
+  "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
+  "sub": "",
+  "sheet": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
+  "buy": 200,
+  "gtd": 8000
+ }
+]
