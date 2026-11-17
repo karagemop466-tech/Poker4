@@ -125,6 +125,26 @@
             index.push({ t: e.name, u: "tournaments.html#" + e.id, k: "event", s: e.venue_name });
           });
         }
+        if (!index.length) {
+          // offline / missing index: build a page-local index from the rendered
+          // rows so the search box still works against what is on screen
+          var seen = {};
+          $$("tr[data-id]").forEach(function (tr) {
+            var n = tr.querySelector(".evname");
+            var id = tr.getAttribute("data-id");
+            if (n && id && !seen[id]) {
+              seen[id] = 1;
+              index.push({ t: n.textContent, u: "tournaments.html#" + id, k: "event", s: "" });
+            }
+          });
+          $$("a[href*='tournaments.html#']").forEach(function (a) {
+            var href = a.getAttribute("href") || "";
+            if (!seen[href] && a.textContent.trim()) {
+              seen[href] = 1;
+              index.push({ t: a.textContent.trim(), u: href, k: "event", s: "" });
+            }
+          });
+        }
         cb();
       });
   }
