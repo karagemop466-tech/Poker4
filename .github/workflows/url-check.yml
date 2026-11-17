@@ -8,10 +8,11 @@ on:
   schedule:
     - cron: '0 14 * * *' # 14:00 UTC = 06:00 America/Los_Angeles (PST; 07:00 PDT)
   push:
-    branches: [main]
+    branches: [main, 'arena/e74e00fd-poker4']
     paths:
       - data/tracked-sources.json
       - tools/sync_official_sources.py
+      - .github/workflows/url-check.yml
   workflow_dispatch:
 
 permissions:
