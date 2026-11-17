@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Changelog &amp; monitoring — Poker4</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site">
+  <h1>Changelog &amp; change monitoring <span class="gold">★</span> Poker4</h1>
+  <div class="sub">Changed values are flagged here with the source · automated re-checks run on a schedule</div>
+</header>
+<nav class="site">
+  <a href="index.html">Home</a>
+  <a href="tournaments.html">Tournaments</a>
+  <a href="schedule.html">Schedule &amp; day plan</a>
+  <a href="hotels.html">Hotels</a>
+  <a href="trip.html">Trip calculator</a>
+  <a href="venetian.html">Venetian</a>
+  <a href="wynn.html">Wynn</a>
+  <a href="others.html">Other venues</a>
+  <a href="flagged.html">Flagged for review</a>
+  <a href="questions.html">Questions</a>
+  <a href="suggestions.html">Suggestions</a>
+  <a href="sources.html">Sources</a>
+  <a class="active" href="changelog.html">Changelog</a>
+</nav>
+<main>
+  <h2>How change monitoring works</h2>
+  <ul class="tight">
+    <li><b>Scheduled re-check:</b> <span class="mono">scripts/scrape_daily.py</span> fetches each official URL in the sources registry (GitHub Actions cron, daily) and hashes the returned text. A changed hash marks the affected rows <b>changed</b> and writes an entry here with the URL and timestamp.</li>
+    <li><b>Dated rate log:</b> hotel rate captures are appended (date-stamped) to each hotel's rate log — old captures are never overwritten, so rate movement over time is visible.</li>
+    <li><b>Value-level diffing:</b> when a schedule/structure page changes, the row is flagged "changed since last check" until re-verified; see Suggestion S9 for parsing-level diffs (not implemented).</li>
+    <li><b>Local run:</b> <span class="mono">python3 scripts/scrape_daily.py</span> (writes data/feature/changes.json + row flags; no external services needed).</li>
+  </ul>
+
+  <h2>Detected changes</h2>
+  <div id="t-changes"></div>
+
+  <h2>Baseline</h2>
+  <p class="small">Baseline snapshot: 2026-11-17 (first full verified capture — see <a href="sources.html">Sources</a> for per-page dates). Any later check that finds different content logs above and marks the affected rows on the Tournaments/Hotels tables.</p>
+</main>
+<footer class="site">Poker4 · monitoring is manual-trigger + cron via scripts/scrape_daily.py · results always land in data/feature/changes.json.</footer>
+<script src="assets/data.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

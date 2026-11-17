@@ -1,33 +1,63 @@
-# Strip Poker Planner — Las Vegas Strip tournament & stay dashboard
+# Poker4 — Vegas Strip live-poker tournament & stay planner
 
-Static, source-first planning dashboard for upcoming official poker-tournament listings around the Las Vegas Strip, integrated with hotel true-cost comparison, a day planner with honest overlap flags, a trip-cost calculator, and a daily change monitor. The verified data snapshot is dated **November 17, 2026 (UTC)** (rates captured Nov 16). Every value links its official operator source; unverified values are blank and flagged. The site never labels a tournament single-entry unless official rules say so.
+Static, source-first planning dashboard for live poker tournaments on the Las Vegas Strip (Nov 16 – Dec 23, 2026) and the hotels around them. Every value shown as confirmed links to an official operator page or official PDF; unknown or conflicting values are **blank and flagged** — never inferred. Data snapshot dated **2026-11-17**.
 
-## What the site does
+- `index.html` — executive summary, verified snapshot, honesty caveats
+- `tournaments.html` — master event table: search, date/venue/format filters, "single-entry confirmed only" toggle, brief-mandated sections (single-entry candidates · bounty/PKO · multi-entry & spending advantage · satellites), and the descriptive guarantee ÷ entry-fee ranking (not a forecast)
+- `schedule.html` — date picker + day plan: one primary event + conditional fallback, overlap flags from start times / late-reg cutoffs / plausible durations, 8 AM goal-gap disclosure
+- `hotels.html` — true nightly cost (rate + mandatory resort fee + 13.38% tax), dated rate logs, parking, cancellation deadlines, ≤30-min walk filter (verified walking times only), per-row Google Maps walking-route links
+- `trip.html` — trip cost calculator: entries × buy-ins + nights × true hotel cost, all inputs traceable
+- `venetian.html` / `wynn.html` / `others.html` — one page per venue with its events + hotels
+- `flagged.html` — flagged irregularities & unverified values (published, never silently resolved)
+- `questions.html` — open decisions/missing info with impact and resolution paths
+- `suggestions.html` — decision-only suggestions (nothing implemented until chosen)
+- `sources.html` — every official source with last-checked date
+- `changelog.html` — change-monitoring log (dated, with changed values flagged)
+- `decisions.html` / `review.html` — legacy redirects to `suggestions.html` / `flagged.html`
 
-- **Tournaments** — every tracked event (Venetian DeepStack Extravaganza IV, Wynn daily + WPT World Championship,
-  Bellagio weekly, Caesars Palace daily) with buy-in, house/staff fees, pool-per-entry, guarantee, and a descriptive
-  guarantee ÷ entry-fee ratio. Ranked only after both values are confirmed; bounty, satellite and multi-flight events are
-  labeled and ranked separately. Search box, date filter, and a **single-entry / freezeout confirmed toggle** (currently
-  zero rows pass it — no official sheet states one-entry-only).
-- **Entry rules per row** — stored as structured fields (single-entry, re-entry, add-on, fees) with the official excerpt
-  and retrieval date. Confirmed rules are quoted; silence is labeled unverified.
-- **Day plan** — one primary event per day plus conditional fallbacks, with overlap flags built from start time,
-  late-registration cutoff and a plausible-duration estimate (estimates are marked as estimates).
-- **Hotels & true cost** — true cost/night = (rate + resort fee) × 1.1338 Clark County room tax, parking, cancellation
-  terms, and a ≤30-minute walking filter with live Google Maps routes between official addresses.
-- **Rate log** — dated observations (checkout total, nightly average, fee, tax, parking, cancellation deadline, rate
-  timestamp) instead of single overwritten values.
-- **Trip calculator** — entries × buy-ins + nights × true hotel cost (+ parking), with the descriptive ratio.
-- **Change monitor** — a scheduled GitHub Actions job (`.github/workflows/monitor.yml`) re-fetches every official URL each
-  morning via `tools/monitor_sources.py`, stores hashes/excerpts, saves daily schedule snapshots under `data/feeds/`, and
-  appends to `data/change_log.json` so rows whose source changed can be marked.
-- **Q&A, Suggestions, Flagged for Review, Sources, Repo review** — decision support; suggestions are review-first and
-  nothing is implemented without an explicit choice.
+## Data & build pipeline
+
+```
+data/feature/dataset.py      canonical dataset: source registry, rule templates with verbatim
+                             excerpts + retrieval dates, 37 Venetian DSE IV structure-sheet
+                             groups (93 schedule rows), Wynn dailies + 58 WPT festival rows,
+                             Bellagio/Caesars rows, hotels with dated rate logs
+        │
+        ▼
+scripts/build_site2.py       expands + VALIDATES (hard gate): every row needs an official
+                             https source + last-checked date; every "confirmed" rule needs a
+                             verbatim excerpt; hotel totals must satisfy rate+fee+13.38% tax math
+        │
+        ▼
+assets/data.js               embedded dataset consumed by assets/app.js (works on file:// too)
+data/feature/*.json          auditable artifacts (events, hotels, sources, flagged, changes…)
+```
+
+Verify end-to-end with `python3 scripts/verify_site2.py` (rebuild + policy + link + element checks).
+
+## Scheduled re-check (change monitoring)
+
+`scripts/scrape_daily.py` (GitHub Actions cron via `.github/workflows/feature-recheck.yml`, 14:00 UTC daily, or run locally) fetches every official URL in the source registry, hashes the content, and on change: flags affected rows and appends a dated entry to `data/feature/changes.json` → surfaces on `changelog.html`. Hotel rate captures are append-only dated log entries, never overwritten.
+
+## Research policy
+
+- Official operator sources only (property pages, official CDN/PDF documents). Aggregators never feed rows.
+- **No tournament is labeled single-entry unless official rules say so.** As of 2026-11-17, zero events are confirmed single-entry/freezeout: all 37 Venetian structure sheets, Wynn structures, Bellagio PDFs and the Caesars flyer were read line by line; only Venetian Events #18/#58 state entry-count terms (they price subsequent buy-ins), and omission of re-entry language is not confirmation. Candidates with no contrary evidence are labeled "unverified".
+- Guarantee ÷ entry-fee ratios are descriptive only. Bounty guarantees include bounty money where the official sheet says so and are labeled non-comparable; satellites pay seats, not cash.
+- The data is a point-in-time snapshot, not a live feed or booking quote.
+
+## Run locally
+
+Open `index.html` directly, or serve the repository root with any static-file server. No build tooling or third-party runtime dependencies. Deployed with GitHub Pages via `.github/workflows/pages.yml` → https://karagemop466-tech.github.io/Poker4/
+
+## Preserved parallel dashboards, monitors & data sets (other sessions)
+
+The root dashboard above is the d1d02f59 integration round. Earlier and parallel session outputs are preserved untouched and reachable at their own paths:
 
 ## Parallel build: `v2/` (session 98e4cb1c)
 
 A parallel dashboard lives in **[`v2/`](v2/index.html)** and is generated from one verified data layer
-(`data/0f6c627b/*.json`, retrieval date **2026-11-17**). Everything below it in this README is the earlier,
+(`data/v2/*.json`, retrieval date **2026-11-17**). Everything below it in this README is the earlier,
 narrower snapshot, kept for comparison.
 
 | Page | What it answers |
@@ -47,14 +77,14 @@ narrower snapshot, kept for comparison.
 ### Rebuild it
 
 ```bash
-python3 tools/v2_extract.py        # Venetian TSV + structure sheets -> data/0f6c627b/events.json
-python3 tools/v2_extract_other.py  # Wynn WPT poster + hand rows    -> data/0f6c627b/events_other.json
+python3 tools/v2_extract.py        # Venetian TSV + structure sheets -> data/v2/events.json
+python3 tools/v2_extract_other.py  # Wynn WPT poster + hand rows    -> data/v2/events_other.json
 python3 tools/v2_walk.py           # labelled OSRM matrix           -> hotels.json walk pairs
 python3 tools/v2_build.py          # render                            -> v2/*.html
 python3 tools/v2_verify.py         # link / source / empty-table audit
 ```
 
-`.github/workflows/v2-monitor.yml` re-fetches every official URL in `data/0f6c627b/sources.json` daily,
+`.github/workflows/v2-monitor.yml` re-fetches every official URL in `data/v2/sources.json` daily,
 hashes the normalised page, and opens an issue when a hash moves. It never rewrites a value.
 
 ### The headline finding
@@ -133,9 +163,27 @@ Two scheduled workflows run side by side (both preserved): `.github/workflows/mo
 session 98e4cb1c) and `.github/workflows/source-recheck.yml` (this dashboard's official-URL hash/excerpt re-check with
 `data/change_log.json` + `data/feeds/` snapshots).
 
-## Parallel research sets & tooling (preserved, never treated as confirmation)
+## Integration update (2026-11-17, d1d02f59 final integration)
 
-- `planner/` — parallel planner site (session 98e4cb1c), `poker4/` — verified venue dashboard (session 98e4cb1c, CI-gated by `poker4-site-verify.yml`), `v2/` — parallel v2 dashboard (session 08f07d1d/b6421d6a) with its own `data/v2/` dataset and `v2-monitor.yml` change monitor
-- `prior_root_dashboard/` — the previous root dashboard exactly as it was on `main` before this integration (pages, `assets/`, its `data_v2_json/`, its README/COORDINATION snapshots); it is also still browsable at its original root URLs (`venues.html`, `calculator.html`, `ratelog.html`, `change-monitor.html`, `workflow.html`, `repo-review.html`, `review.html`, `decisions.html`, `style.css`, `app.js`)
-- `60fb62da/`, `c07371e3/`, `df41f5c6/`, `verified/`, `strip/`, `pages/` — earlier independent research sets
-- Builders: root dashboard = `tools/build_root_site.py` (this session); prior root dashboard = `tools/build_site.py` + `tools/build_data.py`; `v2/` subsite = `tools/v2_build.py`; `poker4/` = `tools/build_poker4.py`. Each builder owns its own outputs only.
+The root dashboard is the **d1d02f59 integration build** described above. Root pages that earlier sessions
+published at the root were superseded by it (the repo-wide precedent: an earlier integration archived its
+predecessor at `prior_root_dashboard/`). Nothing is deleted from history or from session-owned folders:
+
+- `prior_root_dashboard/` — archived root dashboard from before the 2026-11-17 integration rounds (pages, `assets/`, `data_v2_json/`)
+- `planner/`, `poker4/`, `v2/`, `60fb62da/`, `c07371e3/`, `df41f5c6/`, `verified/`, `strip/`, `pages/` — parallel-session sites and research sets, untouched
+- Builders per scope: this integration = `scripts/build_site2.py` (+ `scripts/verify_site2.py`); other sets keep their own builders (`tools/build_root_site.py`, `tools/build_site.py`, `tools/v2_build.py`, `tools/build_poker4.py`, …)
+
+### Scheduled monitors (all preserved, none removed)
+
+| Workflow | Scope | Cron |
+|---|---|---|
+| `.github/workflows/feature-recheck.yml` | **this site** (`data/feature/*`, `assets/data.js`) via `scripts/scrape_daily.py` | 14:00 UTC |
+| `.github/workflows/recheck.yml` | session 0f6c627b (`tools/recheck.py`, `tools/daily_schedule.py`) | 06:00 UTC |
+| `.github/workflows/monitor.yml` | session 98e4cb1c (`tools/monitor_sources.py`) | daily |
+| `.github/workflows/source-recheck.yml`, `v2-monitor.yml`, `tournament-monitor.yml`, `poker4-site-verify.yml` | other sessions' data sets | as scheduled |
+
+### Board irregularity noted
+
+`README.md` on `main` briefly carried committed conflict-marker lines (an `<<<<<<< HEAD` / `>>>>>>> origin/main`
+pair inside the "Scheduled monitors" section). The integration README above supersedes it and is marker-free.
+Logged as irregularity F18 on the Flagged page.

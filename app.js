@@ -1,322 +1,281 @@
-/* Poker4 dashboard renderer. Loads only data/*.json built by tools/build_data.py (official-source values only). */
+/* Poker4 integrated dashboard — generated data is read from window.POKER4 (inlined)
+   and data/search-index.json. No third-party endpoints are called. */
 (function () {
-"use strict";
-const $ = (s, el) => (el || document).querySelector(s);
-const $$ = (s, el) => Array.from((el || document).querySelectorAll(s));
-const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
-const money = v => (typeof v === "number" ? "$" + v.toLocaleString("en-US") : v == null ? "" : esc(v));
-const blank = "—";
-const TAX = 0.1338; // user-provided; unverified — see Flagged F9
+  "use strict";
+  var D = window.POKER4 || null;
+  var IS_VENUE = /\/venues\//.test(location.pathname);
+  var BASE = IS_VENUE ? "../" : "";
+  var TAX = 0.1338;
 
-let DATA = { events: [], satellites: [], meta: {}, venues: {} };
-let HOTELS = { hotels: [], meta: {} };
-let FLAGS = { items: [] };
-let RATELOG = { entries: [], meta: {} };
-let CHECKS = null; // data/url-checks.json if the scheduled job has run
+  function $(sel, ctx) { return (ctx || document).querySelector(sel); }
+  function $$(sel, ctx) { return Array.prototype.slice.call((ctx || document).querySelectorAll(sel)); }
 
-const state = {
-  q: "", date: "", venue: "", singleOnly: false, hideSeparate: true,
-  venuePage: $("body").dataset.venue || "",
-  walkVenue: "venetian", walkMax30: true
-};
-
-function badgeFor(e) {
-  const out = [];
-  (e.flags || []).forEach(f => out.push(`<span class="badge warn">${esc(f)}</span>`));
-  if (e.eligibility) out.push(`<span class="badge">${esc(e.eligibility)}</span>`);
-  if (e.special) out.push(`<span class="badge">${esc(e.special)}</span>`);
-  if (e.discount_official) out.push(`<span class="badge acc">official discount</span>`);
-  return out.join(" ");
-}
-function srcLinks(e, n) {
-  const s = (e.sources || []).slice(0, n || 1);
-  return s.map(x => `<a class="src" href="${esc(x.url)}" target="_blank" rel="noopener">official source</a>`).join(" · ");
-}
-function sessionsText(e) {
-  if (!e.sessions) return "";
-  return e.sessions.map(s => `${esc(s[0])}: ${esc(s[1])} ${esc(s[2])}`).join("<br>");
-}
-function rowMatchesDate(e, d) {
-  if (!d) return true;
-  return (e.sessions || []).some(s => (s[1] || "").startsWith(d));
-}
-function textOf(e) {
-  return [e.name, e.venue, e.game, e.start_time, e.late_registration, e.buyin, e.guarantee,
-    (e.flags || []).join(" "), e.eligibility, e.special, e.notes].join(" ").toLowerCase();
-}
-function baseRows() {
-  let rows = DATA.events.slice();
-  if (state.venuePage) rows = rows.filter(e => e.venue === state.venuePage);
-  if (state.venue) rows = rows.filter(e => e.venue === state.venue);
-  if (state.date) rows = rows.filter(e => rowMatchesDate(e, state.date));
-  if (state.q) rows = rows.filter(e => textOf(e).includes(state.q.toLowerCase()));
-  if (state.hideSeparate) rows = rows.filter(e => !(e.flags || []).includes("satellite"));
-  if (state.singleOnly) rows = rows.filter(e => e.single_entry_confirmed === true);
-  return rows;
-}
-function rankRows(rows) {
-  // Rank only when buy-in + guarantee (prize-pool basis) are confirmed; ratio is descriptive, not a forecast.
-  return rows.slice().sort((a, b) => {
-    const ra = (typeof a.guarantee === "number" && a.guarantee_basis === "prize pool") ? a.guarantee / a.buyin : -1;
-    const rb = (typeof b.guarantee === "number" && b.guarantee_basis === "prize pool") ? b.guarantee / b.buyin : -1;
-    if (rb !== ra) return rb - ra;
-    return (a.buyin || 0) - (b.buyin || 0);
-  });
-}
-
-/* ---------------- tournaments table ---------------- */
-function renderTournaments() {
-  const host = $("#tournaments-body");
-  if (!host) return;
-  const rows = rankRows(baseRows());
-  $("#t-count").textContent = rows.length;
-  host.innerHTML = rows.map(e => {
-    const ratio = (typeof e.guarantee === "number" && e.guarantee_basis === "prize pool")
-      ? (e.guarantee / e.buyin).toFixed(1) + "×" : blank;
-    const se = e.single_entry_confirmed ? `<span class="badge ok">confirmed</span>`
-      : `<span class="badge warn">unverified</span>`;
-    return `<tr>
-      <td>${esc(e.venue)}<div class="small muted">${esc(e.room || "")}</div></td>
-      <td><strong>${esc(e.name)}</strong>${(e.event_no ? ` <span class="muted small">#${e.event_no}</span>` : "")}
-        <div>${badgeFor(e)}</div>
-        ${e.bounty_text ? `<div class="excerpt">bounty: ${esc(e.bounty_text)}</div>` : ""}
-        ${e.discount_official ? `<div class="excerpt">${esc(e.discount_official)}</div>` : ""}</td>
-      <td class="small">${sessionsText(e) || esc(e.weekdays ? e.weekdays.join(", ") : "")}</td>
-      <td>${esc(e.start_time || "")}</td>
-      <td class="num">${money(e.buyin)}</td>
-      <td class="num">${e.house_fee != null ? money(e.house_fee) : blank}<div class="small muted">${e.pool_contribution != null ? "pool " + money(e.pool_contribution) : "split unverified"}</div></td>
-      <td class="num">${e.guarantee != null ? money(e.guarantee) : blank}<div class="small muted">${esc(e.guarantee_basis || "")}</div></td>
-      <td class="num">${ratio}</td>
-      <td class="small">${esc(e.starting_stack != null ? e.starting_stack.toLocaleString("en-US") : blank)}<div class="small muted">${esc(e.level_minutes ? e.level_minutes + " min lvls" : "")}</div></td>
-      <td class="small">${esc(e.late_registration || blank)}</td>
-      <td>${se}</td>
-      <td class="small">${srcLinks(e)}<div class="small muted">last checked ${esc(e.last_checked || "")}</div></td>
-    </tr>`;
-  }).join("") || `<tr><td colspan="12" class="muted">No events match the current filters. (With the single-entry toggle ON this list is honestly empty — no event has official single-entry wording yet. See Flagged F1–F3.)</td></tr>`;
-
-  // Separate section: officially confirmed re-entry / rebuy / add-on events
-  const sep = DATA.events.filter(e =>
-    (e.venue === "Wynn" && (e.id || "").startsWith("WYNN-DAILY")) ||
-    /re-entry|rebuy|subsequent buy/i.test((e.reentry_official || "") + (e.addon_official || "") + (e.single_entry_status || "")));
-  const sepHost = $("#reentry-body");
-  if (sepHost) {
-    sepHost.innerHTML = sep.map(e => `<tr>
-      <td>${esc(e.venue)}</td><td><strong>${esc(e.name)}</strong></td>
-      <td class="small">${sessionsText(e) || esc((e.weekdays || []).join(", "))}</td>
-      <td class="num">${money(e.buyin)}</td>
-      <td class="small">${esc((e.reentry_official || e.addon_official || "").slice(0, 300))}</td>
-      <td class="small">${srcLinks(e, 2)}</td></tr>`).join("");
-  }
-  // Satellites section
-  const satHost = $("#satellites-body");
-  if (satHost) {
-    const sats = (DATA.satellites || []).filter(s => !state.venuePage || s.venue === state.venuePage)
-      .filter(s => !state.date || (s.sessions || []).some(x => (x[1] || "").startsWith(state.date)));
-    satHost.innerHTML = sats.map(e => `<tr>
-      <td>${esc(e.venue)}</td><td><strong>${esc(e.name)}</strong></td>
-      <td class="small">${sessionsText(e)}</td>
-      <td class="num">${money(e.buyin)}</td>
-      <td class="num">${esc(typeof e.guarantee === "number" ? money(e.guarantee) : (e.guarantee || blank))}</td>
-      <td class="small">${srcLinks(e)}</td></tr>`).join("");
-  }
-}
-
-/* ---------------- schedule ---------------- */
-function renderSchedule() {
-  const host = $("#schedule-body");
-  if (!host) return;
-  const d = state.date;
-  if (!d) { host.innerHTML = `<tr><td colspan="6" class="muted">Pick a date above to build that day's plan.</td></tr>`; return; }
-  const dayRows = [];
-  DATA.events.concat(DATA.satellites || []).forEach(e => {
-    (e.sessions || []).forEach(s => { if ((s[1] || "") === d) dayRows.push({ e, s }); });
-  });
-  dayRows.sort((a, b) => (a.s[2] || "").localeCompare(b.s[2] || ""));
-  if (!dayRows.length) {
-    host.innerHTML = `<tr><td colspan="6" class="muted">No scheduled sessions on ${esc(d)} in the loaded official calendars (Venetian DSE IV runs Nov 16–Dec 23; WPT series Nov 27–Dec 21, 2026).</td></tr>`;
-    return;
-  }
-  // Overlap check: two sessions that cannot be played in sequence are flagged.
-  // No official finish times are published, so this uses start times + late-registration windows and is labeled "possible".
-  const startMin = t => { const m = t.match(/(\d+):(\d+)\s*(AM|PM)/i); if (!m) return 0; let h = +m[1] % 12 + (m[3].toUpperCase() === "PM" ? 12 : 0); return h * 60 + +m[2]; };
-  const flags = dayRows.map((r, i) => {
-    const st = startMin(r.s[2]);
-    let note = [];
-    dayRows.forEach((o, j) => {
-      if (i === j) return;
-      const os = startMin(o.s[2]);
-      if (os > st && os - st < 300 && (o.e.venue === r.e.venue)) note.push(`overlaps window of ${o.e.name} (${esc(o.s[2])}, same venue)`);
-      else if (os > st && os - st < 240) note.push(`tight transfer to ${esc(o.e.name)} at ${esc(o.s[2])} (${esc(o.e.venue)})`);
+  /* ---------------------------------------------------------------- tabs */
+  $$(".tab").forEach(function (t) {
+    t.addEventListener("click", function () {
+      var name = t.getAttribute("data-tab");
+      $$(".tab").forEach(function (x) { x.classList.toggle("active", x === t); });
+      $$(".tabpanel").forEach(function (p) {
+        p.classList.toggle("active", p.getAttribute("data-panel") === name);
+      });
+      applyFilters();
     });
-    return note;
   });
-  const primary = dayRows[0];
-  host.innerHTML = dayRows.map((r, i) => `<tr>
-    <td>${i === 0 ? `<span class="badge acc">primary (earliest)</span>` : (r.e.venue !== primary.e.venue ? `<span class="badge">conditional fallback</span>` : "")}</td>
-    <td>${esc(r.e.venue)}</td>
-    <td><strong>${esc(r.e.name)}</strong>${(r.e.event_no ? ` <span class="muted small">#${r.e.event_no}</span>` : "")}<div>${badgeFor(r.e)}</div></td>
-    <td>${esc(r.s[2])}<div class="small muted">${esc(r.s[0])}</div></td>
-    <td class="small">${money(r.e.buyin)}${r.e.guarantee != null ? " · gtd " + money(r.e.guarantee) : ""}<div class="small muted">LR: ${esc(r.e.late_registration || "unverified")}</div></td>
-    <td class="small">${flags[i].length ? `<span class="badge bad">possible overlap</span> ` + flags[i].join("; ") : `<span class="badge ok">no same-day conflict detected</span>`}<div class="small muted">finish times are not officially published — this is a start/LR-window check, not a confirmed-playable guarantee</div></td>
-  </tr>`).join("");
-}
 
-/* ---------------- hotels ---------------- */
-function walkCell(h) {
-  const mins = state.walkVenue === "venetian" ? h.walk_to_venetian_min : h.walk_to_wynn_min;
-  const linkKey = state.walkVenue === "venetian" ? "to_venetian_poker" : "to_wynn_poker";
-  const link = (h.map_links || {})[linkKey] || (h.map_links || {})["to_venetian_poker"];
-  return `${mins != null ? mins + " min (est.)" : blank} ${link ? `<a class="src" href="${esc(link)}" target="_blank" rel="noopener">maps</a>` : ""}`;
-}
-function renderHotels() {
-  const host = $("#hotels-body");
-  if (!host) return;
-  let rows = HOTELS.hotels.slice();
-  if (state.walkVenue === "wynn") rows = rows.filter(h => h.walk_to_wynn_min != null);
-  if (state.walkMax30) rows = rows.filter(h => {
-    const m = state.walkVenue === "venetian" ? h.walk_to_venetian_min : h.walk_to_wynn_min;
-    return m != null && m <= 30;
+  /* -------------------------------------------------- event row disclosure */
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest ? e.target.closest(".disclose") : null;
+    if (!b) return;
+    var row = b.closest("tr.ev-row");
+    var det = row && row.nextElementSibling;
+    if (!det || !det.classList.contains("ev-detail")) return;
+    var open = det.hasAttribute("hidden");
+    if (open) { det.removeAttribute("hidden"); } else { det.setAttribute("hidden", ""); }
+    b.setAttribute("aria-expanded", open ? "true" : "false");
+    b.textContent = open ? "hide source text" : "source text";
   });
-  rows.sort((a, b) => (a.walk_to_venetian_min || 0) - (b.walk_to_venetian_min || 0));
-  $("#h-count").textContent = rows.length;
-  host.innerHTML = rows.map(h => `<tr>
-    <td><strong>${esc(h.property)}</strong><div class="small muted">${esc(h.brand || "")}</div></td>
-    <td class="small">${esc(h.poker_room || blank)}</td>
-    <td class="num">${walkCell(h)}</td>
-    <td class="num">${esc(h.resort_fee || `<span class="badge warn">unverified</span>`)}
-      <div class="small muted">${h.resort_fee_retrieved ? "checked " + esc(h.resort_fee_retrieved) : "official fee page not reachable — see Flagged F11"}</div></td>
-    <td class="num">${esc(h.nightly_rate || `<span class="badge warn">unverified</span>`)}</td>
-    <td class="small">${esc(h.parking || blank)}</td>
-    <td class="small">${esc(h.cancellation || `<span class="badge warn">unverified</span>`)}</td>
-    <td class="small"><a href="${esc(h.booking_link)}" target="_blank" rel="noopener">official booking</a>
-      <div class="small muted">${(h.sources || []).slice(0, 1).map(s => `<a class="src" href="${esc(s)}" target="_blank" rel="noopener">source</a>`).join("")}</div></td>
-    <td class="small">${esc(h.notes || "")}</td>
-  </tr>`).join("");
-}
 
-/* ---------------- rate log ---------------- */
-function renderRateLog() {
-  const host = $("#ratelog-body");
-  if (!host) return;
-  host.innerHTML = RATELOG.entries.map(x => `<tr>
-    <td>${esc(x.date)}</td><td>${esc(x.property)}</td><td>${esc(x.item)}</td>
-    <td>${esc(x.value)}</td>
-    <td class="small"><a href="${esc(x.source)}" target="_blank" rel="noopener">official source</a></td>
-    <td class="small muted">${esc(x.method || "")}</td></tr>`).join("");
-}
-
-/* ---------------- flagged / review ---------------- */
-function renderFlags() {
-  const host = $("#flags-body");
-  if (!host) return;
-  host.innerHTML = FLAGS.items.map(f => `<tr>
-    <td><span class="badge ${f.severity === "important" ? "bad" : f.severity === "moderate" ? "warn" : ""}">${esc(f.severity)}</span> <strong>${esc(f.id)}</strong></td>
-    <td>${esc(f.title)}</td>
-    <td class="small">${esc(f.detail)}</td>
-    <td class="small">${(f.sources || []).map(s => `<a class="src" href="${esc(s)}" target="_blank" rel="noopener">source</a>`).join(" · ") || "—"}</td>
-    <td class="small muted">${esc(f.action || "—")}</td></tr>`).join("");
-}
-
-/* ---------------- sources ---------------- */
-function renderSources() {
-  const host = $("#sources-body");
-  if (!host) return;
-  const seen = new Map();
-  DATA.events.concat(DATA.satellites || []).forEach(e => (e.sources || []).forEach(s => {
-    if (!seen.has(s.url)) seen.set(s.url, { label: s.label, excerpt: s.excerpt, retrieved: s.retrieved });
-  }));
-  HOTELS.hotels.forEach(h => (h.sources || []).forEach(s => {
-    if (!seen.has(s)) seen.set(s, { label: "hotel official page", retrieved: HOTELS.meta && HOTELS.meta.built });
-  }));
-  FLAGS.items.forEach(f => (f.sources || []).forEach(s => { if (!seen.has(s)) seen.set(s, { label: "flag reference", retrieved: FLAGS.meta.updated }); }));
-  RATELOG.entries.forEach(x => { if (!seen.has(x.source)) seen.set(x.source, { label: x.item, retrieved: x.date }); });
-  const rows = Array.from(seen.entries()).sort((a, b) => a[0].localeCompare(b[0]));
-  $("#s-count").textContent = rows.length;
-  host.innerHTML = rows.map(([url, s]) => {
-    const c = CHECKS && CHECKS[url];
-    return `<tr><td class="small"><a href="${esc(url)}" target="_blank" rel="noopener">${esc(url.length > 90 ? url.slice(0, 90) + "…" : url)}</a></td>
-      <td class="small">${esc(s.label || "")}</td>
-      <td class="small muted">${esc((s.excerpt || "").slice(0, 160))}</td>
-      <td class="small">${esc(s.retrieved || "")}</td>
-      <td class="small">${c ? (c.ok ? `<span class="badge ok">checked ${esc((c.checkedAt || "").slice(0, 10))}${c.changed ? " · CHANGED" : ""}</span>` : `<span class="badge bad">unreachable ${esc((c.checkedAt || "").slice(0, 10))}</span>`) : `<span class="badge">scheduled check pending</span>`}</td></tr>`;
-  }).join("");
-}
-
-/* ---------------- calculators ---------------- */
-function bindCalculators() {
-  const nights = $("#c-nights"), rate = $("#c-rate"), fee = $("#c-fee"), entries = $("#c-entries"),
-        buyin = $("#c-buyin"), outNight = $("#c-out-night"), outTrip = $("#c-out-trip");
-  if (!nights) return;
-  function calc() {
-    const n = +nights.value || 0, r = +rate.value || 0, f = +fee.value || 0, en = +entries.value || 0, b = +buyin.value || 0;
-    const trueNight = (r + f) * (1 + TAX);
-    outNight.textContent = "$" + trueNight.toFixed(2);
-    outTrip.textContent = "$" + (en * b + n * trueNight).toFixed(2);
+  /* -------------------------------------------------------------- filters */
+  var byId = {};
+  if (D && D.events) { D.events.forEach(function (ev) { byId[ev.id] = ev; }); }
+  if (D && D.rowmeta) {
+    Object.keys(D.rowmeta).forEach(function (k) {
+      var m = D.rowmeta[k];
+      byId[k] = { rankable: m.rankable, rules: { fee: { status: m.fee } }, single_entry_confirmed: m.single };
+    });
   }
-  [nights, rate, fee, entries, buyin].forEach(el => el.addEventListener("input", calc));
-  fee.value = 55; calc(); // prefill Venetian verified fee
-}
 
-/* ---------------- filters ---------------- */
-function bindFilters() {
-  const q = $("#f-q"), date = $("#f-date"), venue = $("#f-venue"), single = $("#f-single"), hideS = $("#f-hide-sat");
-  const upd = () => {
-    state.q = q ? q.value.trim() : "";
-    state.date = date ? date.value : "";
-    state.venue = venue ? venue.value : "";
-    state.singleOnly = single ? single.checked : false;
-    state.hideSeparate = hideS ? hideS.checked : true;
-    renderTournaments(); renderSchedule();
-  };
-  if (q) q.addEventListener("input", upd);
-  if (date) date.addEventListener("input", upd);
-  if (venue) venue.addEventListener("change", upd);
-  if (single) single.addEventListener("change", upd);
-  if (hideS) hideS.addEventListener("change", upd);
+  function activePanelRows() {
+    var panel = $(".tabpanel.active");
+    return $$(panel ? "tr.ev-row" : ".nope", panel || document);
+  }
 
-  const wv = $("#f-walk-venue"), w30 = $("#f-walk30");
-  const updH = () => {
-    state.walkVenue = wv ? wv.value : "venetian";
-    state.walkMax30 = w30 ? w30.checked : true;
-    renderHotels();
-  };
-  if (wv) wv.addEventListener("change", updH);
-  if (w30) w30.addEventListener("change", updH);
-}
+  function val(id) { var el = $("#" + id); return el ? el.value : ""; }
+  function chk(id) { var el = $("#" + id); return el ? el.checked : false; }
 
-function fillVenueSelect() {
-  const sel = $("#f-venue");
-  if (!sel) return;
-  const venues = Array.from(new Set(DATA.events.map(e => e.venue)));
-  sel.innerHTML = `<option value="">All venues</option>` + venues.map(v => `<option value="${esc(v)}">${esc(v)}</option>`).join("");
-}
+  function applyFilters() {
+    var from = val("f-from"), to = val("f-to"), venue = val("f-venue");
+    var singleOnly = chk("f-single"), hideUnconf = chk("f-hide-unconfirmed");
+    var shown = 0, undated = 0, total = 0;
+    activePanelRows().forEach(function (tr) {
+      total++;
+      var ev = byId[tr.getAttribute("data-id")] || {};
+      var date = tr.getAttribute("data-date") || "";
+      var ok = true;
+      if (venue && tr.getAttribute("data-venue") !== venue) ok = false;
+      if (ok && (from || to)) {
+        if (!date) { ok = false; undated++; }
+        else { if (from && date < from) ok = false; if (to && date > to) ok = false; }
+      }
+      if (ok && singleOnly && tr.getAttribute("data-single") !== "1") ok = false;
+      if (ok && hideUnconf && !ev.rankable && !(ev.rules && ev.rules.fee && ev.rules.fee.status === "confirmed") && !ev.guarantee_usd) ok = false;
+      tr.style.display = ok ? "" : "none";
+      var det = tr.nextElementSibling;
+      if (det && det.classList.contains("ev-detail")) {
+        det.style.display = ok ? "" : "none";
+        if (!ok) det.setAttribute("hidden", "");
+      }
+      if (ok) shown++;
+    });
+    var c = $("#f-count");
+    if (c) {
+      c.textContent = shown + " of " + total + " rows shown" +
+        (undated ? " (" + undated + " row(s) hidden: no date printed on the calendar)" : "");
+    }
+  }
 
-function renderKpis() {
-  const set = (id, v) => { const el = $(id); if (el) el.textContent = v; };
-  set("#k-events", DATA.events.length + (DATA.satellites || []).length);
-  set("#k-venues", new Set(DATA.events.map(e => e.venue)).size);
-  set("#k-single", DATA.events.filter(e => e.single_entry_confirmed).length);
-  set("#k-flags", FLAGS.items.length);
-  set("#k-sources", $("#sources-body") ? $("#sources-body").children.length : null);
-}
+  ["f-from", "f-to", "f-venue", "f-single", "f-hide-unconfirmed"].forEach(function (id) {
+    var el = $("#" + id);
+    if (el) { el.addEventListener("change", applyFilters); el.addEventListener("input", applyFilters); }
+  });
+  $$(".btn-mini[data-preset]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var from = new Date(), to;
+      if (b.getAttribute("data-preset") === "all") {
+        setDates("2026-11-16", "2026-12-23"); return;
+      }
+      var span = parseInt(b.getAttribute("data-preset"), 10);
+      from.setHours(0, 0, 0, 0);
+      to = new Date(from.getTime() + span * 864e5);
+      setDates(iso(from), iso(to));
+    });
+  });
+  function iso(d) { return d.toISOString().slice(0, 10); }
+  function setDates(a, b) {
+    var f = $("#f-from"), t = $("#f-to");
+    if (f) f.value = a;
+    if (t) t.value = b;
+    applyFilters();
+  }
+  if ($(".filters")) applyFilters();
 
-async function loadJSON(url) {
-  const res = await fetch(url);
-  if (!res.ok) throw new Error(url + " " + res.status);
-  return res.json();
-}
+  /* --------------------------------------------------------------- search */
+  var searchInput = $("#global-search"), box = $("#search-results");
+  var index = null;
+  function loadIndex(cb) {
+    if (index) return cb();
+    fetch(BASE + "data/search-index.json").then(function (r) {
+      if (!r.ok) throw 0;
+      return r.json();
+    }).then(function (j) { index = j.items || []; cb(); })
+      .catch(function () {
+        index = [];
+        if (D && D.events) {
+          D.events.forEach(function (e) {
+            index.push({ t: e.name, u: "tournaments.html#" + e.id, k: "event", s: e.venue_name });
+          });
+        }
+        cb();
+      });
+  }
+  function render(q) {
+    if (!q || q.length < 2) { box.setAttribute("hidden", ""); return; }
+    var needle = q.toLowerCase();
+    var hits = (index || []).filter(function (it) {
+      return (it.t + " " + (it.s || "") + " " + (it.k || "")).toLowerCase().indexOf(needle) > -1;
+    }).slice(0, 25);
+    box.innerHTML = hits.length
+      ? hits.map(function (h) {
+          var href = h.u.indexOf("http") === 0 ? h.u : BASE + h.u.replace(/^\.\.\//, "");
+          return "<a href='" + href + "'><b class='kind'>" + esc(h.k) + "</b><b>" + esc(h.t) + "</b><i>" + esc(h.s || "") + "</i></a>";
+        }).join("")
+      : "<a><i>no match in the captured official data — the search covers events, hotels, flags, questions and official sources</i></a>";
+    box.removeAttribute("hidden");
+  }
+  function esc(s) {
+    return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c];
+    });
+  }
+  if (searchInput) {
+    searchInput.addEventListener("input", function () { loadIndex(function () { render(searchInput.value.trim()); }); });
+    document.addEventListener("click", function (e) {
+      if (!e.target.closest || !e.target.closest(".searchbox")) box.setAttribute("hidden", "");
+    });
+  }
 
-async function init() {
-  const jobs = [loadJSON("data/tournaments.json"), loadJSON("data/hotels.json"),
-                loadJSON("data/flagged.json"), loadJSON("data/rate-log.json")];
-  const results = await Promise.allSettled(jobs);
-  if (results[0].status === "fulfilled") DATA = results[0].value;
-  if (results[1].status === "fulfilled") HOTELS = results[1].value;
-  if (results[2].status === "fulfilled") FLAGS = results[2].value;
-  if (results[3].status === "fulfilled") RATELOG = results[3].value;
-  try { CHECKS = await loadJSON("data/url-checks.json"); } catch (e) { CHECKS = null; }
-  fillVenueSelect(); bindFilters(); bindCalculators();
-  renderTournaments(); renderSchedule(); renderHotels(); renderRateLog(); renderFlags(); renderSources(); renderKpis();
-}
-document.addEventListener("DOMContentLoaded", init);
+  /* ------------------------------------------------- hotel walk filter (≤30 min) */
+  var wf = $("#walk-filter");
+  if (wf) {
+    var cards = $$(".hotel"), wc = $("#walk-count");
+    function applyWalk() {
+      var mode = (wf.querySelector("input[name=walkf]:checked") || {}).value || "all";
+      var shown = 0, provable = 0;
+      cards.forEach(function (el) {
+        var ok = true;
+        if (mode === "onsite") ok = el.getAttribute("data-onsite") === "1";
+        else if (mode === "measured") {
+          var m = parseInt(el.getAttribute("data-walk-min"), 10);
+          ok = !isNaN(m) && m <= 30;
+        }
+        el.classList.toggle("hidden", !ok);
+        if (ok) shown++;
+        if (!isNaN(parseInt(el.getAttribute("data-walk-min"), 10))) provable++;
+      });
+      if (wc) {
+        wc.textContent = shown + " of " + cards.length + " properties" +
+          (mode === "measured" && !provable ? " — no property has an official measured walking time yet, so nothing passes this filter" : "");
+      }
+    }
+    $$("input[name=walkf]", wf).forEach(function (r) { r.addEventListener("change", applyWalk); });
+    applyWalk();
+  }
+
+  /* -------------------------------------------------------- deep-link rows */
+  if (location.hash) {
+    var row = $("tr[data-id='" + CSS.escape(location.hash.slice(1)) + "']");
+    if (row) {
+      row.classList.add("hl");
+      var det = row.nextElementSibling;
+      if (det && det.classList.contains("ev-detail")) {
+        det.removeAttribute("hidden");
+        var btn = $(".disclose", row);
+        if (btn) { btn.textContent = "hide source text"; btn.setAttribute("aria-expanded", "true"); }
+      }
+      setTimeout(function () { row.scrollIntoView({ block: "center" }); }, 30);
+    }
+  }
+
+  /* ----------------------------------------------------------- calculator */
+  var calc = $("#calc");
+  if (calc && D && D.hotels) {
+    var hotels = D.hotels || [];
+    var hSel = $("#calc-hotel"), rSel = $("#calc-rate"), fSel = $("#calc-fee"),
+        pSel = $("#calc-park"), nIn = $("#calc-nights"), rIn = $("#calc-rooms");
+
+    function hotelFor(id) {
+      for (var i = 0; i < hotels.length; i++) if (hotels[i].id === id) return hotels[i];
+      return hotels[0];
+    }
+    function fillRates(h) {
+      var keep = rSel.value;
+      rSel.innerHTML = "<option value=''>no official dated rate for this property</option>";
+      (h.rate_log || []).forEach(function (e, i) {
+        if (!e.amount_usd) return;
+        var o = document.createElement("option");
+        o.value = String(e.amount_usd);
+        o.textContent = e.amount_usd + " USD · " + (e.observed_on || "date not stated") + " · " +
+          String(e.label || e.qualifier || "").slice(0, 58);
+        o.setAttribute("data-note", String(e.qualifier || ""));
+        o.setAttribute("data-src", e.source || "");
+        rSel.appendChild(o);
+      });
+      rSel.value = keep && rSel.querySelector("option[value='" + keep + "']") ? keep : "";
+    }
+    function fillParking(h) {
+      var pk = h.parking || {};
+      pSel.innerHTML = "<option value=''>not confirmed</option>";
+      [["self_usd", "self-parking"], ["valet_usd", "valet"], ["self_usd", "self-parking"]].slice(0,2).forEach(function (pair) {
+        var v = pk[pair[0] + "_per_day"] !== undefined ? pk[pair[0] + "_per_day"] : pk[pair[0]];
+        if (typeof v === "number") {
+          var o = document.createElement("option");
+          o.value = String(v); o.textContent = v + " USD · " + pair[1] + " (published per day)";
+          pSel.appendChild(o);
+        } else if (v) {
+          var o2 = document.createElement("option");
+          o2.value = ""; o2.textContent = pair[1] + ": " + v + " — not a number, not added";
+          pSel.appendChild(o2);
+        }
+      });
+    }
+    function num(v) { var n = parseFloat(v); return isNaN(n) ? null : n; }
+    function money(v) { return v == null ? null : "$" + v.toLocaleString("en-US", { maximumFractionDigits: 2 }); }
+
+    function recalc() {
+      var h = hotelFor(hSel.value);
+      var rate = num(rSel.value), fee = num(fSel.options[fSel.selectedIndex] ? fSel.options[fSel.selectedIndex].getAttribute("data-fee") : "");
+      var park = num(pSel.value), nights = num(nIn.value) || 0, rooms = num(rIn.value) || 1;
+      var entries = 0, count = 0;
+      $$(".ev-pick").forEach(function (c) {
+        if (c.checked) { entries += num(c.getAttribute("data-cost")) || 0; count++; }
+      });
+      $("#t-entries").textContent = count ? money(entries) + " (" + count + " entr" + (count === 1 ? "y" : "ies") + ")" : "no events selected";
+      var night = (rate != null && fee != null) ? Math.round((rate + fee) * (1 + TAX) * 100) / 100 : null;
+      var notes = [];
+      if (night == null) {
+        $("#t-night").textContent = "cannot compute";
+        if (rate == null) notes.push("the property publishes room rates only inside its booking calendar for specific dates — pick a dated rate or use the booking link");
+        if (fee == null) notes.push("the mandatory resort fee is not confirmed for this property (its official fee page is unreachable or contradicts itself)");
+      } else {
+        $("#t-night").textContent = money(night) + " (" + money(rate) + " rate + " + money(fee) + " fee, ×1.1338 room tax)";
+      }
+      var hotelTotal = night == null ? null : night * nights * rooms + (park == null ? 0 : park * nights);
+      $("#t-hotel").textContent = hotelTotal == null ? "cannot compute"
+        : money(Math.round(hotelTotal * 100) / 100) + " (" + nights + " night" + (nights === 1 ? "" : "s") + " × " + rooms + " room" + (rooms === 1 ? "" : "s") +
+          (park == null ? "" : " + " + money(park * nights) + " parking") + ")";
+      var grand = hotelTotal == null ? entries : hotelTotal + entries;
+      $("#t-grand").textContent = money(Math.round(grand * 100) / 100) + (hotelTotal == null ? " (entries only — hotel incomplete)" : "");
+      var rn = rSel.options[rSel.selectedIndex];
+      if (rate != null && rn && rn.getAttribute("data-note")) notes.push("rate qualifier: " + rn.getAttribute("data-note"));
+      $("#calc-note").innerHTML = notes.length ? notes.map(function (n) { return "<div>" + esc(n) + "</div>"; }).join("") : "";
+      var book = $("#calc-book");
+      if (book && h.booking_link) { book.href = h.booking_link; book.target = "_blank"; book.rel = "noopener"; }
+    }
+    hSel.addEventListener("change", function () { var h = hotelFor(hSel.value); fillRates(h); fillParking(h); recalc(); });
+    [rSel, fSel, pSel, nIn, rIn].forEach(function (el) {
+      if (el) { el.addEventListener("input", recalc); el.addEventListener("change", recalc); }
+    });
+    document.addEventListener("change", function (e) { if (e.target.classList.contains("ev-pick")) recalc(); });
+    fillRates(hotelFor(hSel.value)); fillParking(hotelFor(hSel.value)); recalc();
+  }
 })();

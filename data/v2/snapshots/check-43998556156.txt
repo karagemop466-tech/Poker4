@@ -1,0 +1,17 @@
+# v2 source monitor
+
+checked: 61  changed: 8  unreachable: 3
+
+## Changed since last run (a human must re-read these)
+- **V_SERIES** — https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament.html
+- **V_POKER** — https://www.venetianlasvegas.com/resort/casino/poker.html
+- **V_RATES** — https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html
+- **V_TERMS** — https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html
+- **V_PARK** — https://www.venetianlasvegas.com/resort/casino/poker/player-parking.html
+- **W_POKER** — https://www.wynnlasvegas.com/casino/poker
+- **W_TC_FEE** — https://www.wynnlasvegas.com/terms-and-conditions/850257
+- **M_FEES_UNVERIFIED** — https://www.resortfeechecker.com/140596-resort_fee_bellagio.html
+## Unreachable
+- C_FEES — https://www.travelocity.com/Las-Vegas-Hotels-Caesars-Palace-Resort-Casino.h41245.Hotel-Information (HTTPError: HTTP Error 429: Too Many Requests)
+- B_POKER — https://bellagio.mgmresorts.com/en/casino/poker.html (TimeoutError: The read operation timed out)
+- MAP_OSRM — https://router.project-osrm.org/ (HTTPError: HTTP Error 400: Bad Request)

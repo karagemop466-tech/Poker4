@@ -1,45 +1,10 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Official-source Las Vegas Strip poker tournament and hotel decision dashboard">
-<title>Trip calculator — Strip Poker Planner</title>
-<link rel="stylesheet" href="assets/site.css">
-</head><body>
-<header class="topbar"><a class="brand" href="index.html">♠ STRIP POKER PLANNER</a>
-<span class="stamp">Verified snapshot · 17 Nov 2026 UTC · every row links its official source</span></header>
-<nav class="nav"><div class="nav-inner"><a class="" href="index.html">Executive summary</a><a class="" href="tournaments.html">Tournaments</a><a class="" href="schedule.html">Day plan</a><a class="" href="hotels.html">Hotels &amp; true cost</a><a class="active" href="trip-calculator.html">Trip calculator</a><a class="" href="rate-log.html">Rate log</a><a class="" href="venues/venetian.html">Venues</a><a class="" href="monitor.html">Source monitor</a><a class="" href="questions.html">Questions</a><a class="" href="suggestions.html">Suggestions</a><a class="" href="flagged.html">Flagged for review</a><a class="" href="sources.html">Sources</a></div></nav>
-<main>
-<div class="hero"><p class="eyebrow">Trip cost · entries × buy-ins + nights × true hotel cost</p>
-<h1>Estimated cost of the trip.</h1>
-<p class="sub">Trip cost = Σ(entries × buy-in) + Σ(nights × true cost/night). True cost/night = (rate + resort fee) × 1.1338.
-Numbers you type are your own quotes — everything else on this site stays source-linked.</p></div>
-
-<div class="card filterable" id="tripcalc">
-<div class="calc">
-<label>Tournament entries (#) <input id="entries" type="number" min="0" value="5"></label>
-<label>Average buy-in ($) <input id="buyin" type="number" min="0" value="300"></label>
-<label>Extra entry fees — re-entries/satellites ($) <input id="extraentries" type="number" min="0" value="0"></label>
-<label>Nights <input id="nights" type="number" min="0" value="5"></label>
-<label>Quoted nightly rate ($) <input id="rate" type="number" min="0" value="119"></label>
-<label>Mandatory resort fee ($/night) <input id="fee" type="number" min="0" value="55"></label>
-</div>
-<div class="result">
-<p>Entries subtotal: <b id="r-entries">$0</b></p>
-<p>True hotel cost/night: <b id="r-night">$0</b></p>
-<p>Stay subtotal: <b id="r-stay">$0</b></p>
-<p>Estimated trip cost: <b id="r-total">$0</b></p>
-</div>
-<p class="small mut">Defaults are the verified Venetian poker-suite starting rate ($119, conditional) and the verified $55 Venetian resort fee — replace them with your actual quote for exact planning. Tax source: <a class="src" href="https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html" target="_blank" rel="noopener">V_TERMS</a></p>
-</div>
-
-<h2>Worked example (documented, not a quote)</h2>
-<table><thead><tr><th>Component</th><th>Values used</th><th>Source / status</th></tr></thead><tbody>
-<tr><td>Entries</td><td>5 entries × $300 = $1,500</td><td class="small">example only — pick real events on the <a href="tournaments.html">Tournaments page</a></td></tr>
-<tr><td>True hotel cost/night</td><td>($119 + $55) × 1.1338 = $197.28</td><td class="small"><a class="src" href="https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html" target="_blank" rel="noopener">V_RATES</a> <a class="src" href="https://www.venetianlasvegas.com/resort/resort-fee.html" target="_blank" rel="noopener">V_RESORT</a> <a class="src" href="https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html" target="_blank" rel="noopener">V_TERMS</a> — conditional poker rate</td></tr>
-<tr><td>Stay</td><td>5 nights × $197.28 = $986.40</td><td class="small">nights × true cost/night</td></tr>
-<tr><td><b>Estimated trip cost</b></td><td><b>$2,486.40</b></td><td class="small">entries + stay</td></tr>
-</tbody></table>
-
-<footer>Values read from official operator sources only, with retrieval dates. Unverified values are blank and flagged on the
-<a href="flagged.html">Flagged for Review</a> page. This is a decision dashboard, not a booking engine or a forecast.
-Re-checked automatically (see <a href="monitor.html">Source monitor</a>).</footer>
-</main><script src="assets/site.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta http-equiv="refresh" content="0; url=calculator.html">
+<link rel="canonical" href="calculator.html">
+<title>Moved · Vegas Strip Poker Planner</title>
+<link rel="stylesheet" href="site.css"></head>
+<body><main><section class="page-head"><h1>This page moved</h1>
+<p><code>trip-calculator.html</code> was replaced during the integration: the cost calculator now reads the dated rate log and the confirmed fee for each property.</p>
+<p>You are being redirected to <a href="calculator.html">calculator.html</a>. If nothing happens, follow the link.</p>
+</section></main></body></html>

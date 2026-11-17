@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Venetian — Poker4</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site">
+  <h1>Venetian &amp; Palazzo <span class="gold">★</span> Poker4 venue page</h1>
+  <div class="sub">Poker room: inside The Palazzo, Level 2, Grand Canal Shoppes (official) · open 24 hours (official) · DeepStack Extravaganza IV: Nov 16 – Dec 23, 2026</div>
+</header>
+<nav class="site">
+  <a href="index.html">Home</a>
+  <a href="tournaments.html">Tournaments</a>
+  <a href="schedule.html">Schedule &amp; day plan</a>
+  <a href="hotels.html">Hotels</a>
+  <a href="trip.html">Trip calculator</a>
+  <a class="active" href="venetian.html">Venetian</a>
+  <a href="wynn.html">Wynn</a>
+  <a href="others.html">Other venues</a>
+  <a href="flagged.html">Flagged for review</a>
+  <a href="questions.html">Questions</a>
+  <a href="suggestions.html">Suggestions</a>
+  <a href="sources.html">Sources</a>
+  <a href="changelog.html">Changelog</a>
+</nav>
+<main>
+  <div id="venue-name" data-venue="Venetian" hidden></div>
+  <h2>Venue facts (official, checked 2026-11-17)</h2>
+  <dl class="kv">
+    <dt>Tournament series</dt><dd>DeepStack Extravaganza IV — 64 events, Nov 16 – Dec 23, 2026 (<a href="https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html" target="_blank" rel="noopener">official schedule ↗</a>)</dd>
+    <dt>Structure sheets</dt><dd>37 official PDFs, all read line by line (per-sheet excerpts embedded in each row below)</dd>
+    <dt>Hotel / poker rates</dt><dd>Poker suite rates from $119 / $209 (code EPOKR25) — conditional on 6 hours cash play or $300+ tournament buy-in per night (<a href="https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html" target="_blank" rel="noopener">official ↗</a>)</dd>
+    <dt>Resort fee / tax</dt><dd>$55 + tax per night; room tax 13.38% (<a href="https://www.venetianlasvegas.com/resort/resort-fee.html" target="_blank" rel="noopener">fee ↗</a> · <a href="https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html" target="_blank" rel="noopener">terms ↗</a>)</dd>
+    <dt>Poker parking</dt><dd>3 hours live cash play or $300+ tournament buy-in = free self-park (supervisor validation) (<a href="https://www.venetianlasvegas.com/resort/casino/poker/player-parking.html" target="_blank" rel="noopener">official ↗</a>)</dd>
+    <dt>Entry rules</dt><dd>Only Events #18/#58 (Valuetown) state entry-count terms — they price subsequent buy-ins at $200. All other events: unverified (see rows + <a href="flagged.html">F1</a>)</dd>
+    <dt>Watch out</dt><dd>The poker page's "Current Series" banner is stale (still shows WPT Fall Festival) — flagged F6. Flighted events: players who bag for Day 2 may not play a later flight (sheet excerpt on flighted rows).</dd>
+  </dl>
+
+  <h2>Events at this venue <span class="small" id="venue-count"></span></h2>
+  <div class="controls">
+    <div class="search"><label for="gsearch">Search</label><input class="searchbox" type="text" id="gsearch" placeholder="event, date, buy-in…"></div>
+  </div>
+  <div class="hscroll"><table class="data" id="venue-events"></table></div>
+
+  <h2>Hotels (with walk status to this room)</h2>
+  <div class="hscroll"><table class="data" id="venue-hotels"></table></div>
+</main>
+<footer class="site">Poker4 · venue page generated from the validated dataset · every figure above links an official source.</footer>
+<script src="assets/data.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
