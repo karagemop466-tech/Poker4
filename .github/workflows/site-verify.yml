@@ -38,34 +38,4 @@ jobs:
           fi
 
       - name: Check every page parses as HTML and links resolve
-        run: python3 - <<'PY'
-import glob, os, sys
-from html.parser import HTMLParser
-VOID = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "param", "source", "track", "wbr"}
-bad = 0
-for path in ["index.html"] + sorted(glob.glob("*.html")) + sorted(glob.glob("venues/*.html")):
-    doc = open(path, encoding="utf-8").read()
-    stack = []
-
-    class P(HTMLParser):
-        def handle_starttag(self, t, a):
-            if t not in VOID:
-                stack.append(t)
-
-        def handle_endtag(self, t):
-            if t in VOID:
-                return
-            if stack and stack[-1] == t:
-                stack.pop()
-            elif t in stack:
-                while stack and stack[-1] != t:
-                    stack.pop()
-                stack.pop()
-
-    P(convert_charrefs=True).feed(doc)
-    if [t for t in stack if t not in ("html", "body")]:
-        print(f"{path}: unclosed tags {stack[:5]}")
-        bad += 1
-print(f"parsed {len(glob.glob('*.html')) + len(glob.glob('venues/*.html'))} pages, {bad} with markup problems")
-sys.exit(1 if bad else 0)
-PY
+        run: python3 scripts/verify_markup.py
