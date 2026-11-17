@@ -372,7 +372,15 @@ def caesars_flyer() -> dict | None:
                             "excerpt": m.group(0).strip()}
 
     rows = []
-    for m in re.finditer(r"\|\s*(\d{1,2}\s*(?:AM|PM))\s*\|\s*\$([\d,]+)\s*\|\s*\$([\d,]+)\s*\|\s*([\d,]+)\s*\|\s*(\d+)\s*Minutes?\s*\|\s*\$([\d,]+)\s*\|", f, re.I):
+    # The flyer's schedule block is a table in the PDF. Depending on how the text was extracted the
+    # cells come out pipe-separated ("| 10 AM | $100 | …") or whitespace-separated
+    # ("10 AM $100 $50 20,000 20 Minutes $1,000"), which is what the scheduled sync's own capture
+    # produces. Both shapes are read, and only this order of printed columns:
+    # TIME · BUY-IN · ADD-ON · CHIPS · LEVEL MINUTES · GUARANTEE.
+    sep = r"(?:\s*\|\s*|\s+)"
+    row_re = (r"(\d{1,2}\s*(?:AM|PM))" + sep + r"\$([\d,]+)" + sep + r"\$([\d,]+)" + sep +
+              r"([\d,]{3,8})" + sep + r"(\d+)\s*Minutes?" + sep + r"\$([\d,]+)")
+    for m in re.finditer(row_re, f, re.I):
         t, buy, addon, chips, level, gtd = m.groups()
         buy_n = num(buy)
         sp = splits.get(buy_n) or {}
@@ -386,7 +394,7 @@ def caesars_flyer() -> dict | None:
             "house_fee_usd": sp.get("house_fee_usd"),
             "pool_per_entry_usd": sp.get("pool_usd"),
             "fee_excerpt": sp.get("excerpt"),
-            "row_excerpt": m.group(0).strip(" |"),
+            "row_excerpt": re.sub(r"\s+", " ", m.group(0)).strip(" |"),
         })
     out["rows"] = rows
     out["fee_splits"] = {str(k): v for k, v in splits.items()}

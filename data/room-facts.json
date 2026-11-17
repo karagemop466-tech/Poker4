@@ -64,7 +64,7 @@
  },
  "wynn_wpt": {
   "file": "data/raw/wynn-wpt-terms.txt",
-  "sha256": "4b84170296024bf49a3481b8d6c43b30d1751af9ae2f179f6faf96deba63d1d4",
+  "sha256": "7c07e7110bb881a641e7e8209b1c553e03ef39724318cccc77badc5529cdfe03",
   "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
   "events": [
    {
@@ -4710,7 +4710,7 @@
  },
  "wynn_daily": {
   "file": "data/raw/wynn-daily-structures.txt",
-  "sha256": "34323a88c5a2b62dfcc4e5f02940277f890832a23cbfb31b330093a2f618002c",
+  "sha256": "2266d35dd5871a8dc99a2bbd45cf380dad6147707c2d1d1eb820286c7a024543",
   "url": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
   "poster_file": "data/raw/wynn-daily-poster.txt",
   "poster_url": "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf",
@@ -5061,8 +5061,8 @@
    "url": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
    "retrieved": "2026-11-17",
    "capture": "data/raw/caesars-daily-flyer-2026.txt",
-   "capture_sha256": "cf42b037a7b8af23c4e060d1df4c52290356f40c600d366951df876843588ac2",
-   "title": "Daily No-Limit Texas Hold'em Tournament Schedule",
+   "capture_sha256": "8655d88d9d5ebd64a7557cb7061d0f06adf0b9f9b00863454e7547dda9dd0e1c",
+   "title": null,
    "addon_excerpt": "All Tournaments feature a $50 add-on for 15,000 tournament chips that can only be taken at the first break.",
    "registration_excerpt": "Registration will close at the start of level seven.",
    "break_excerpt": "All tournaments will have a 10-minute break every six levels.",
@@ -5082,7 +5082,7 @@
      "house_fee_usd": 30,
      "pool_per_entry_usd": 70,
      "fee_excerpt": "Of the $100 buy in, $70 goes to the prize pool and $30 is held by Caesars Palace as a maintenance fee.",
-     "row_excerpt": "10 AM | $100 | $50 | 20,000 | 20 Minutes | $1,000"
+     "row_excerpt": "10 AM $100 $50 20,000 20 Minutes $1,000"
     },
     {
      "time_printed": "2 PM",
@@ -5094,7 +5094,7 @@
      "house_fee_usd": 45,
      "pool_per_entry_usd": 115,
      "fee_excerpt": "Of the $160 buy in, $115 goes to the prize pool and $45 is held by Caesars Palace as a maintenance fee.",
-     "row_excerpt": "2 PM | $160 | $50 | 20,000 | 20 Minutes | $1,000"
+     "row_excerpt": "2 PM $160 $50 20,000 20 Minutes $1,000"
     },
     {
      "time_printed": "6 PM",
@@ -5106,7 +5106,7 @@
      "house_fee_usd": 30,
      "pool_per_entry_usd": 70,
      "fee_excerpt": "Of the $100 buy in, $70 goes to the prize pool and $30 is held by Caesars Palace as a maintenance fee.",
-     "row_excerpt": "6 PM | $100 | $50 | 20,000 | 20 Minutes | $1,000"
+     "row_excerpt": "6 PM $100 $50 20,000 20 Minutes $1,000"
     },
     {
      "time_printed": "9 PM",
@@ -5118,7 +5118,7 @@
      "house_fee_usd": 45,
      "pool_per_entry_usd": 115,
      "fee_excerpt": "Of the $160 buy in, $115 goes to the prize pool and $45 is held by Caesars Palace as a maintenance fee.",
-     "row_excerpt": "9 PM | $160 | $50 | 20,000 | 20 Minutes | $1,000"
+     "row_excerpt": "9 PM $160 $50 20,000 20 Minutes $1,000"
     }
    ],
    "fee_splits": {
