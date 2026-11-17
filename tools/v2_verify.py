@@ -13,7 +13,7 @@ for p in pages:
     name = os.path.basename(p)
     h = open(p).read()
     # leaked f-string braces
-    for m in re.finditer(r"\{[a-z_]+\[|\{[a-z_]+\}", h):
+    for m in re.finditer(r"\{[A-Za-z_]+\[|\{[A-Za-z_]+\}", h):
         problems.append((name, "leaked template expression: " + m.group(0)[:60]))
     # missing source ids
     for m in re.finditer(r"missing source id (\w+)", h):

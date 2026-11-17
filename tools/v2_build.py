@@ -459,7 +459,7 @@ def page_hotels():
 <h2>Fee and derived-cost summary</h2>
 {controls(show_date=False, show_se=False, show_walk=False)}
 {table(["Property","#Resort fee","#Room tax","#Published room floor","#Derived true cost / night","What that number is","Nearest poker room by foot","Source"], rows,
-       caption="Only values read on an official page, or derived from one. {DAGGER} = the Clark County 13.38% rate printed by The Venetian, applied here as a labelled assumption because this hotel does not print its own rate.", table_id="hotelfees")}
+       caption="Only values read on an official page, or derived from one. " + DAGGER + " = the Clark County 13.38% rate printed by The Venetian, applied here as a labelled assumption because this hotel does not print its own rate.", table_id="hotelfees")}
 <h2>Terms that change the total</h2>
 <ul class="tight">
 <li><strong>The Venetian poker rate is conditional.</strong> $119/$209 are “from” figures for players who book by phone with code EPOKR25 and then play <em>6 hours of live cash per night, or buy into a $300+ tournament</em>; miss it and the room reverts to the prevailing rate ({src_link('V_RATES','suite-rates page')}). Add a $150/night incidental hold and an 11:00 a.m. checkout ({src_link('V_TERMS','hotel terms')}).</li>
