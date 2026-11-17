@@ -148,7 +148,6 @@ Scope note: the session brief asks for `session-<id>/<task>` branches. The Arena
 
 - 2026-11-16 (df41f5c6): **PR #10** (`arena/df41f5c6-poker4` → `main`, integration of the df41f5c6 site and data; includes the board merge above) **merged** at `9117705` (19:12 UTC). Pages deploy for `9117705`: success (both workflows). Live check: `https://karagemop466-tech.github.io/Poker4/df41f5c6/flagged.html` loads with all 29 flags. Integration result: merged; no unresolved conflicts; flagged items published, not blocking.
 - 2026-11-16 (df41f5c6): Board conflicts logged: (1) PR #6 vs `main` after PRs #3/#5; (2) PR #10 vs `main` after `000d1da` and again after PR #12 (`81cd955`). Each time `main`'s board was kept verbatim and the df41f5c6 section re-appended.
-=======
 ---
 
 ## Session arena/60fb62da-poker4 (session `60fb62da`)
@@ -165,10 +164,27 @@ Scope note: the session brief asks for `session-<id>/<task>` branches. The Arena
 - Flagged items include missing single-entry/re-entry/add-on rules, no 8 AM candidate start, no date-specific hotel total, incomplete Strip-wide schedule coverage, unknown walking minutes, and conditional poker-rate play requirements.
 - Verification passed: JavaScript syntax, nested local-link audit, page-render simulation, and fee/tax arithmetic. Current-main `scripts/verify.py` passed: 10 pages, 17 sources, 29 flags, all rows with official sources and internal links resolving. Every subsite data row has an official organizer/property source. Latest upstream added CRLF CSV files that create repository-wide `git diff --check` trailing-CR warnings; those other-session files were left untouched.
 - PR #2: https://github.com/karagemop466-tech/Poker4/pull/2. Contribution remains limited to `60fb62da/` and this coordination entry. PR #10 was merged; PRs #4 and #13 remain outside this session's scope. Existing Pages deployment has succeeded after upstream merges; this session does not change the shared Pages workflow.
->>>>>>> origin/main
 
 
-## Current integration correction — arena/2da41d2b-poker4
+## Current session (active) — arena/e74e00fd-poker4
+
+- Session ID: `arena/e74e00fd-poker4`; branch `arena/e74e00fd-poker4`, branched from main @ `be3594d4`, merged with `origin/main` @ `f2e7d61` (PR #17 content: N1–N9) before any edit.
+- Role: continuation + final integration for the requirement items that N1–N9 did **not** cover. `arena/5dba2ab6-poker4` N10 (integration) is recorded as `planned` on its own row; PR #17 was merged, so this session takes over remaining integration and will note the result here rather than editing that session's row.
+- Board hygiene: two residual git conflict marker lines (`=======`, `>>>>>>> origin/main`) were found in this file around the duplicated `60fb62da` section. Both content copies were kept verbatim; only the two marker lines were deleted. No session text was discarded.
+- File scope claimed: root `index.html`, `tournaments.html`, `hotels.html`, `schedule.html`, `decisions.html`, `questions.html`, `review.html`, `app.js`, `style.css`; NEW `venues/*.html`, `data/venetian_structures.json`, `data/rate-log.json`, `data/walks.json`, `data/url-checks.json`, `data/change-log.json`, `tools/sync_official_sources.py`, `.github/workflows/url-check.yml` (upgrade), `scripts/verify.py` (extend), `COORDINATION.md` (this board). Other sessions' folders (`60fb62da/`, `c07371e3/`, `df41f5c6/`, `strip/`, `verified/`, `pages/`, `data/c07371e3/`, `data/df41f5c6/`) are read-only inputs — not edited.
+
+| ID | Task | Status | Owner | File scope | Sources / verification | Irregularities |
+|----|------|--------|-------|------------|------------------------|----------------|
+| M1 | Read EVERY Venetian DSE IV structure sheet (all 37 PDFs), store structured rule fields (single-entry, re-entry, add-on, house fee, pool per entry) with verbatim excerpt + retrieval date; remove "unverified" only where the official sheet confirms | in progress | arena/e74e00fd-poker4 | `data/venetian_structures.json`, `tournaments.html`, `app.js` | Official structure PDFs on venetianlasvegas.com | Prior sessions read only 6–7 sheets; a sheet that omits re-entry wording is not confirmation |
+| M2 | One page per venue (each with its own events + hotels), replacing filter-only view | in progress | arena/e74e00fd-poker4 | `venues/*.html`, nav in root pages | Official property pages | Wynn/Caesars/Bellagio/ARIA coverage depth differs; blanks stay blank |
+| M3 | Walking-route check: official addresses + published walking/tram info per hotel–venue pair, ≤30-min flag | in progress | arena/e74e00fd-poker4 | `data/walks.json`, `hotels.html`, `venues/*` | Official property pages / maps only if published | No venue publishes door-to-door walking minutes → flag, never estimate |
+| M4 | Dated rate log + like-for-like stay fields (checkout total, nightly average, mandatory fee + tax, parking, cancellation deadline, rate timestamp) | in progress | arena/e74e00fd-poker4 | `data/rate-log.json`, `hotels.html` | Official terms pages; dated quotes only if published | Dated room quotes not available without a booking session → blank + flagged |
+| M5 | Rank only on confirmed entry fee + guarantee; GTD ÷ entry as descriptive ratio; bounty/flight separated | in progress | arena/e74e00fd-poker4 | `app.js`, `tournaments.html` | M1 structure data | Ranking suppressed for any row with unconfirmed fee/guarantee |
+| M6 | Morning scrape + change monitoring of every official schedule source, row-level "source changed" marking | in progress | arena/e74e00fd-poker4 | `tools/sync_official_sources.py`, `.github/workflows/url-check.yml`, `data/url-checks.json`, `data/change-log.json` | HEAD + content hash + value extraction per row | Actions runner is the only place with network access; client fetch stays CORS-blocked |
+| M7 | Schedule overlap check from late-registration cutoff + plausible duration (primary + conditional fallback) | in progress | arena/e74e00fd-poker4 | `schedule.html`, `app.js` | M1 structures (levels, late reg, breaks) | Finish times not published → "possible overlap", never "confirmed" |
+| M8 | Integration: link check, PR → main, merge, Pages deploy confirm, record result | unclaimed → this session after M1–M7 | arena/e74e00fd-poker4 | repo root, main, this board | — | — |
+
+## Prior integration correction — arena/2da41d2b-poker4
 
 - Owner: `arena/2da41d2b-poker4`; scope: root dashboard/review navigation, `data/tournaments.json`, `data/df41f5c6/tournaments.json`, `build/build_site.py`, `scripts/build.py`, generated `verified/` and `df41f5c6/` pages, and this record.
 - Finding: omission of re-entry/add-on language is not confirmation of single-entry. This applies to 19 Venetian structure-sheet candidates and all 64 `df41f5c6` main-list rows, including Wynn rows. Preserved rows and source links; labeled entry rules unverified and removed categorical single-entry claims.
