@@ -1487,12 +1487,12 @@ to the measured Google Maps capture, all gates green on the merged tree.
 
 | ID | Task | Status | Owner | File scope | Sources / verification | Irregularities |
 |----|------|--------|-------|------------|------------------------|----------------|
-| B1 | Durable sync fix: `tools/sync_official_sources.py` must not leave `data/schedule-snapshot.json` with the known parse defects (open hand-off "the scheduled sync will keep rewriting schedule-snapshot.json") | in progress | arena/b808eea0-poker4 | `tools/sync_official_sources.py`, `data/c2242cb1/venetian_overrides.json`, `tools/c2242cb1_check_dse.py` | re-parse + override application gated by `tools/c2242cb1_check_dse.py` | raw PDF parse still drops Event 56/59 guarantees and mis-files registration-closes levels as `level_duration` |
-| B2 | Line-by-line re-verification of all 94 Venetian DSE IV rows vs the live official page (4 chunks), incl. names, times, buy-ins, guarantees, structure-sheet links | in progress | arena/b808eea0-poker4 | `data/c2242cb1/*`, generated pages (via `scripts/integrate_data.py`) | https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html | site rows 56 1B / 59 1A still carry mis-parsed `level_duration` 11/5; 59 1A name truncated |
-| B3 | Structure-sheet entry-policy re-audit: read the official structure sheets, remove "unverified" only where a sheet confirms the entry policy | in progress | arena/b808eea0-poker4 | `data/structure-audit.json` (only if verdicts change) | official structure PDFs on venetianlasvegas.com | prior audits: 0 explicit single-entry confirmations; 1 sheet explicitly allows re-entry |
-| B4 | Hotel fee/tax re-check (Wynn F19 expired-promo source; Venetian fee/tax) from current official pages | in progress | arena/b808eea0-poker4 | `data/hotel-facts.json`, `data/hotels.json` (only if values change) | wynnlasvegas.com / venetianlasvegas.com official pages | — |
-| B5 | Feature audit vs the brief (search, date filter, single-entry toggle, trip calculator, rate log, venue pages, overlap plan, ≤30-min walk filter, change monitor, last-checked, ratio ranking, suggestions/questions/summary/flagged) | in progress | arena/b808eea0-poker4 | report in this log; fixes only in files listed above | live site + `scripts/verify_root.py` | — |
-| B6 | Integration: regenerate → gates green → PR → merge → Pages deploy confirmed → record here | not started | arena/b808eea0-poker4 | this branch, `main`, `COORDINATION.md` | all canonical gates | — |
+| B1 | Durable sync fix: `tools/sync_official_sources.py` must not leave `data/schedule-snapshot.json` with the known parse defects (open hand-off "the scheduled sync will keep rewriting schedule-snapshot.json") | done | arena/b808eea0-poker4 | `tools/sync_official_sources.py`, `data/c2242cb1/venetian_overrides.json`, `tools/c2242cb1_check_dse.py` | re-parse + override application gated by `tools/c2242cb1_check_dse.py` | raw PDF parse still drops Event 56/59 guarantees and mis-files registration-closes levels as `level_duration` |
+| B2 | Line-by-line re-verification of all 94 Venetian DSE IV rows vs the live official page (4 chunks), incl. names, times, buy-ins, guarantees, structure-sheet links | done | arena/b808eea0-poker4 | `data/c2242cb1/*`, generated pages (via `scripts/integrate_data.py`) | https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html | site rows 56 1B / 59 1A still carry mis-parsed `level_duration` 11/5; 59 1A name truncated |
+| B3 | Structure-sheet entry-policy re-audit: read the official structure sheets, remove "unverified" only where a sheet confirms the entry policy | done | arena/b808eea0-poker4 | `data/structure-audit.json` (only if verdicts change) | official structure PDFs on venetianlasvegas.com | prior audits: 0 explicit single-entry confirmations; 1 sheet explicitly allows re-entry |
+| B4 | Hotel fee/tax re-check (Wynn F19 expired-promo source; Venetian fee/tax) from current official pages | done | arena/b808eea0-poker4 | `data/hotel-facts.json`, `data/hotels.json` (only if values change) | wynnlasvegas.com / venetianlasvegas.com official pages | — |
+| B5 | Feature audit vs the brief (search, date filter, single-entry toggle, trip calculator, rate log, venue pages, overlap plan, ≤30-min walk filter, change monitor, last-checked, ratio ranking, suggestions/questions/summary/flagged) | done | arena/b808eea0-poker4 | report in this log; fixes only in files listed above | live site + `scripts/verify_root.py` | — |
+| B6 | Integration: regenerate → gates green → PR → merge → Pages deploy confirmed → record here | done | arena/b808eea0-poker4 | this branch, `main`, `COORDINATION.md` | all canonical gates | — |
 
 - Claim committed and pushed before any shared file was touched (this commit).
 - Coordination note: no other session's claim is being edited. Where another session owns a file that
@@ -1562,3 +1562,19 @@ Irregularities recorded (not silently fixed):
    buy-in (1100) — published verbatim, flagged, not corrected.
 
 PR + Pages deploy result are recorded in the next entry.
+
+## Session arena/b808eea0-poker4 — B6 closed: PR #81 merged, Pages deploy confirmed (2026-11-17 23:18Z)
+
+- **PR [#81](https://github.com/karagemop466-tech/Poker4/pull/81)** ("B1–B6: line-by-line re-verification round…")
+  merged into `main` at 2026-11-17T23:18:33Z (merge commit `2f917dc2`). One re-integration was needed first:
+  `main` moved twice under the PR (PRs #79/#80 + scheduled syncs at 23:04/23:11Z), so `origin/main` was merged
+  in again (`f185daa`) with the same resolution policy and the full gate suite re-run green before the merge.
+- **Pages deploy confirmed**: the `pages build and deployment` run completed `success`, and the live site
+  (`https://karagemop466-tech.github.io/Poker4/`) was re-read after the deploy — the merged markers are
+  present (status line "37 Venetian structure sheets audited + 6 other official documents", 68 official
+  sources, 0 unreachable; Wynn fee chain + parking capture + Clark County tax note on the hotels page;
+  measured walks with the F18 closure note). The post-merge scheduled sync (`official-source run:
+  2026-11-17T23:18:43Z`) also ran clean: 0 URLs unreachable, 0 value changes.
+- All B1–B6 tasks are closed. Open items for future sessions remain on the flagged page (F1/F15 entry-policy
+  silence, F27 tax-rate provenance, WPT-08 fee-split irregularity) and in the suggestions list, which still
+  awaits user decisions row by row.
