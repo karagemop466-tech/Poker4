@@ -1,0 +1,37 @@
+name: Scheduled official URL re-check
+
+on:
+  schedule:
+    - cron: '0 6 * * *'   # daily, 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run official URL re-check
+        id: check
+        run: node tools/url_check.js
+
+      - name: Commit updated check log if anything changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet data/url-checks.json; then
+            echo "No changes to commit."
+          else
+            git add data/url-checks.json
+            git commit -m "chore: scheduled official URL re-check $(date -u +%F)"
+            git push
+          fi

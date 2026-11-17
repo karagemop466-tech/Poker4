@@ -22,8 +22,26 @@ Shared task board for the Poker4 project. Sessions claim tasks here to avoid dup
 - Resolved locally: kept this session's root `index.html` (`git checkout --ours`); combined COORDINATION.md (below); preserved the other session's root `index.html` verbatim at `pages/parallel-session-abd38ed7-index.html` so no work was discarded; all other files merged cleanly (their root HTML files, data JSONs, build scripts, verified/ and strip/ folders arrive from main).
 - After push, PR #8 was merged to main; GitHub Pages (source: main, path "/") rebuilds automatically.
 
-## Current session
-- Session ID: `arena/e2d11e52-poker4` — this session works on branch `arena/e2d11e52-poker4` only; integration (PR #8 → main, Pages deploy confirm) done on main.
+## Current session (active)
+- Session ID: `arena/5dba2ab6-poker4` — this session works on branch `arena/5dba2ab6-poker4` (== main @ be3594d4) only.
+- Scope claimed: trip cost calculator; search box + date filter + single-entry toggle across tables; venue-scoped tournament views; per-row "last checked" + scheduled official-URL re-check / change monitoring; dated rate log; overlap check (primary + conditional fallback); repo review + line-by-line verification; integration PR → main + Pages deploy + record result.
+- File scope: `index.html`, `tournaments.html`, `hotels.html`, `schedule.html`, `app.js`, `style.css`, `.github/workflows/pages.yml` (new scheduled check), `COORDINATION.md` (log only), `review.html` (irregularity notes). Does not touch other sessions' session-scoped folders (`60fb62da/`, `c07371e3/`, `df41f5c6/`, `strip/`, `verified/`, `data/df41f5c6/`, `data/c07371e3/`).
+
+## New task board (this session)
+
+| ID | Task | Status | Owner | File scope | Sources / verification | Irregularities |
+|----|------|--------|-------|------------|------------------------|----------------|
+| N1 | Trip cost calculator: entries × buy-ins + nights × true hotel cost | done | arena/5dba2ab6-poker4 | hotels.html, app.js | Arithmetic from official $55 fee + 13.38% tax; illustrative, labeled estimate | None |
+| N2 | Search box across all tables | done | arena/5dba2ab6-poker4 | tournaments.html, app.js | Existing table data | None |
+| N3 | Date filter on tournament table | done | arena/5dba2ab6-poker4 | tournaments.html, app.js | Existing dated rows | None |
+| N4 | Single-entry / freezeout toggle filter | done | arena/5dba2ab6-poker4 | tournaments.html, app.js | Toggle honestly returns none until official rules confirm | Single-entry unverified for all rows |
+| N5 | Venue-scoped tournament views (Venetian / Wynn / Caesars / Bellagio / Other) | done | arena/5dba2ab6-poker4 | tournaments.html (venue column + filters) | Existing venue labels; Wynn/Caesars/Bellagio rows from data/tournaments.json | Venue rows re-entry/add-on only, kept separate |
+| N6 | Per-row "last checked" + scheduled official URL re-check & change monitoring | done | arena/5dba2ab6-poker4 | app.js, tools/url_check.js, .github/workflows/url-check.yml | Client-side last-checked UI; daily scheduled server-side check writes data/url-checks.json | Client fetch blocked by CORS; server-side job is the authoritative check |
+| N7 | Dated rate log (rates as a log, not a single value) | done | arena/5dba2ab6-poker4 | hotels.html | Existing official fee/tax figures; retrieval dates logged | Nightly room rates blank without dates |
+| N8 | Overlap check: primary event + conditional fallback per day | done | arena/5dba2ab6-poker4 | schedule.html | Existing schedule rows + multi-flight Day-2 restarts | Finish times not published → overlap flagged as possible, not confirmed |
+| N9 | Repo review + line-by-line verification (source links, unverified flags) | done | arena/5dba2ab6-poker4 | review.html, COORDINATION.md | All external source URLs resolve to official operator domains; every tournament/hotel row carries an official source link; unconfirmed values (single-entry rules, finish times, walk minutes, dated room rates, cancellation deadlines) are left blank and flagged unverified, never inferred | Existing flagged list preserved in review.html |
+| N10 | Integration: PR → main, merge, Pages deploy check, record result | planned | arena/5dba2ab6-poker4 | this branch, main, COORDINATION.md | — | — |
+
 
 ## Task board (combined, both sessions)
 
