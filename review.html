@@ -14,7 +14,7 @@
 
 <section class="page-head"><h1>Review log — what was checked, when, and what changed</h1>
 <p class="lede">The numbers the site was built from, plus the raw material: every tracked official URL with the date it was last read, whether its bytes or its values moved, how many rows the parser got out of it, and the captured text itself. Any row on any page can be traced to a captured sentence in one click.</p>
-<div class="statusline"><span class="stat">93 calendar rows parsed</span><span class="stat">42 structure sheets audited</span><span class="stat">118 events on this site</span><span class="stat">0 confirmed single-entry</span><span class="stat">2 official URLs unreachable</span><span class="stat">0 sources with value changes</span><span class="stat">official-source run: 2026-11-17T02:01:12Z · 06:00 Las Vegas daily</span></div></section>
+<div class="statusline"><span class="stat">94 calendar rows parsed</span><span class="stat">42 structure sheets audited</span><span class="stat">119 events on this site</span><span class="stat">0 confirmed single-entry</span><span class="stat">2 official URLs unreachable</span><span class="stat">0 sources with value changes</span><span class="stat">official-source run: 2026-11-17T02:01:12Z · 06:00 Las Vegas daily</span></div></section>
 <div class="runstats"><div><h3>Last run</h3><ul>
 <li>64 official URLs checked · 2 failed</li>
 <li>42 structure sheets audited · 93 calendar rows · 93 rows carrying a date</li>
@@ -28,7 +28,34 @@
 <p class="mini-note">Policy: a dead official URL is reported and kept in the tracked list; it is never replaced by a third-party mirror.</p>
 <p class="mini-note">Reproduce offline: <code>python3 tools/sync_official_sources.py --from-raw</code> then <code>python3 scripts/integrate_data.py</code>.</p></div></div>
 <h2>Value changes recorded</h2>
-<div class="table-scroll"><table class="compact"><thead><tr><th>When (UTC)</th><th>Scope</th><th>Source</th><th>Fields that moved</th></tr></thead><tbody><tr><td>2026-11-17 01:14</td><td>structure</td><td>Venetian structure sheet #36 (official PDF)</td><td class='diff'><pre>{
+<div class="table-scroll"><table class="compact"><thead><tr><th>When (UTC)</th><th>Scope</th><th>Source</th><th>Fields that moved</th></tr></thead><tbody><tr><td>2026-11-17 22:06</td><td>schedule-parser-correction</td><td>Venetian DeepStack Extravaganza IV — printed schedule (PDF)</td><td class='diff'><pre>{
+ &quot;row_count&quot;: {
+  &quot;was&quot;: 93,
+  &quot;now&quot;: 94,
+  &quot;detail&quot;: &quot;one row was dropped because its event name exceeded the old 110-character limit: Event #47 $2,200 PokerAtlas Championship Day 2 Restart, SUNDAY, DECEMBER 13, TIME 1:00 PM.&quot;
+ },
+ &quot;2026-12-11 event 39 time&quot;: {
+  &quot;was&quot;: &quot;7:00 PM&quot;,
+  &quot;now&quot;: &quot;10:00 AM&quot;,
+  &quot;detail&quot;: &quot;the printed TIME cell is 10:00 AM; \u201cAT 7:00 PM\u201d is part of the event name (the streamed final table, which has its own row).&quot;
+ },
+ &quot;2026-12-17 event 56 1B level&quot;: {
+  &quot;was&quot;: &quot;11&quot;,
+  &quot;now&quot;: &quot;30&quot;
+ },
+ &quot;2026-12-20 event 59 1A level&quot;: {
+  &quot;was&quot;: &quot;5&quot;,
+  &quot;now&quot;: &quot;40&quot;
+ },
+ &quot;events 56 1A/1B, 59 1A guarantee&quot;: {
+  &quot;was&quot;: null,
+  &quot;now&quot;: &quot;$500,000 / $500,000 / $150,000&quot;,
+  &quot;detail&quot;: &quot;guarantee, registration-closes, chips and level were blank on three rows whose names contain a clock time; all four cells are printed on the PDF.&quot;
+ },
+ &quot;milestone satellites (33, 37, 41, 44, 45, 46, 48) chips/level&quot;: {
+  &quot;was&quot;: null,
+  &quot;now&quot;: &quot;20,000 chips, 20 or 15-minute levels&quot;,
+  &quot;detail&quot;: &quot;the GUARANTEE cell prints \u201c2 SEATS\u201d, which is not a dollar amount, so the old regex stopped there. Recorded as guarantee_text \u201c2 seats\u201d and never ranked; chips and levels now captu</pre></td></tr><tr><td>2026-11-17 01:14</td><td>structure</td><td>Venetian structure sheet #36 (official PDF)</td><td class='diff'><pre>{
  &quot;start_time&quot;: {
   &quot;was&quot;: null,
   &quot;now&quot;: &quot;6:10 PM&quot;

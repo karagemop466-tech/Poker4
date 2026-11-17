@@ -189,6 +189,7 @@ for row in SCHED["rows"]:
         "registration_closes": row.get("registration_closes"),
         "buy_in_usd": buy,
         "guarantee_usd": gtd,
+        "guarantee_text": row.get("guarantee_text"),
         "guarantee_printed": row.get("guarantee_usd") is not None,
         "starting_chips": row.get("starting_chips"),
         "level_duration": row.get("level_duration"),
@@ -774,7 +775,12 @@ def event_row(ev, base=""):
         ratio_txt = f"{ratio:.1f}×"
     tags = "".join(chip(t, "chip chip-tag") for t in (ev.get("tags") or [])[:3])
     flags = "".join(chip("⚑ " + f, "chip chip-warn") for f in (ev.get("flags") or [])[:3])
-    gtd = money_cell(ev["guarantee_usd"]) if ev.get("guarantee_usd") else unk("no guarantee printed")
+    if ev.get("guarantee_usd"):
+        gtd = money_cell(ev["guarantee_usd"])
+    elif ev.get("guarantee_text"):
+        gtd = money_cell(ev["guarantee_text"], "seats, not cash — never ranked")
+    else:
+        gtd = unk("no guarantee printed")
     return f"""<tr class="ev-row" id="{E(ev['id'])}" data-date="{E(ev.get('date') or '')}" data-venue="{E(ev['venue'])}" data-single="{1 if ev.get('single_entry_confirmed') else 0}" data-rankable="{1 if ev.get('rankable') else 0}" data-id="{E(ev['id'])}">
 <td class="when">{head}<span class="time">{E(ev.get('weekday') or '')}{tail}</span></td>
 <td class="ev">{link}<span class="evname">{E(ev['name'])}</span>{tags}{flags}</td>

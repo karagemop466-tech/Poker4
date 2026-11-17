@@ -977,8 +977,8 @@
   {
    "id": "F11",
    "severity": "data-quality",
-   "item": "13 of 93 printed schedule rows show no registration-closes value",
-   "detail": "Those are Day-2 restarts, final tables and one 6:10 PM flight where the calendar prints no deadline; overlap judgement for those rows falls back to the structure sheet's late-registration level count and is labelled as such.",
+   "item": "11 of 94 printed schedule rows show no registration-closes value",
+   "detail": "Every one of them is a Day-2 restart, a play-down or a streamed final table — the calendar prints no deadline for those. (An earlier pass counted 13 of 93: three of those were parser errors, not blanks — see the correction note in the change log.) Overlap judgement for those rows falls back to the structure sheet's late-registration level count and is labelled as such.",
    "sources": [
     "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
    ]
