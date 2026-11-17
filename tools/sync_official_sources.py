@@ -341,6 +341,31 @@ def parse_schedule_pdf(text: str, source_url: str, default_year: int | None = No
     return rows
 
 
+SCHEDULE_COMPARE_FIELDS = ("event_no", "time", "registration_closes", "buy_in_usd", "guarantee_usd",
+                           "starting_chips", "event_name", "date")
+
+
+def diff_schedule(old_rows, new_rows) -> dict:
+    """Row-level diff of the printed schedule, keyed by event number + time + name."""
+    if not old_rows:
+        return {}
+
+    def key(r):
+        return f"{r.get('event_no')}|{r.get('time')}|{(r.get('event_name') or '')[:28]}"
+
+    old = {key(r): r for r in old_rows}
+    new = {key(r): r for r in new_rows}
+    out = {"added": [k for k in new if k not in old][:40],
+           "removed": [k for k in old if k not in new][:40],
+           "changed": {}}
+    for k in set(old) & set(new):
+        d = {f: {"was": old[k].get(f), "now": new[k].get(f)}
+             for f in SCHEDULE_COMPARE_FIELDS if old[k].get(f) != new[k].get(f)}
+        if d:
+            out["changed"][k] = d
+    return {kk: vv for kk, vv in out.items() if vv}
+
+
 # ------------------------------------------------------------------- structures
 FIELD_PATTERNS = {
     "title": r"^\s*\$?[\d,]*\s*.{0,70}?$",
@@ -385,9 +410,14 @@ def audit_structure(text: str, url: str) -> dict:
             continue
         m = re.search(pat, flat, re.I)
         out[key] = re.sub(r"\s+", " ", m.group("v" if "v" in (m.groupdict() or {}) else 0)).strip(" |") if m else None
-    # The first non-empty line printed on the sheet is the event title.
+    # The title line is the first printed line that looks like an event heading.
     lines = [ln.strip() for ln in text.split("\n") if ln.strip()]
-    out["title"] = lines[0] if lines else None
+    title = None
+    for ln in lines[:12]:
+        if re.search(r"\$\s?\d[\d,]*\s+.{3,40}", ln) and "license" not in ln.lower():
+            title = re.sub(r"\s+", " ", ln)
+            break
+    out["title"] = title or (lines[0] if lines else None)
     fee = FEE_RE.search(flat)
     if fee:
         out["house_fee_usd"] = int(fee.group(1).replace(",", ""))
@@ -507,12 +537,12 @@ def main() -> int:
             rec["last_modified"] = res.get("last_modified")
             rec["content_type"] = res.get("content_type")
             before = prev.get(url) or {}
-            changed = bool(before) and before.get("sha256") and before["sha256"] != res["sha256"]
             rec["previous_sha256"] = before.get("sha256")
             rec["first_run"] = not bool(before)
-            rec["content_changed"] = changed
-            if changed:
-                changed_urls.append(url)
+            # Raw bytes on a marketing page move for cosmetic reasons; that is recorded
+            # but is NOT treated as a data change. Rows are only flagged from value diffs.
+            rec["bytes_changed"] = bool(before.get("sha256")) and before["sha256"] != res["sha256"]
+            rec["values_changed"] = None  # set below once text has been parsed
             body = res.pop("body")
             text = None
             if kind == "pdf":
@@ -533,6 +563,9 @@ def main() -> int:
                         }
                         if diffs:
                             audit["changed_fields"] = diffs
+                            rec["values_changed"] = True
+                            rec["changed_values"] = diffs
+                            changed_urls.append(url)
                             change_log["entries"].insert(0, {
                                 "at": rec["checked_at"], "url": url, "scope": "structure",
                                 "key": key, "diff": diffs,
@@ -559,6 +592,12 @@ def main() -> int:
                 facts[url] = {"label": entry.get("label"), "venue": entry.get("venue"),
                               "url": url, "retrieved": rec["checked_at"], "sha256": rec["sha256"],
                               "facts": extract_facts(text)}
+            if text is not None:
+                rec["text_sha256"] = hashlib.sha256(
+                    re.sub(r"\s+", " ", text).encode("utf-8")).hexdigest()
+                if rec["bytes_changed"]:
+                    prev_text = prev.get(url, {}).get("text_sha256")
+                    rec["text_changed"] = (prev_text != rec["text_sha256"]) if prev_text else None
             if entry.get("keep_text_excerpt") and text:
                 n = int(entry.get("excerpt_chars") or 600)
                 rec["text_head"] = text[:n]
@@ -572,6 +611,9 @@ def main() -> int:
     change_log["entries"] = change_log["entries"][:400]
     write_json(os.path.join(DATA, "url-checks.json"), checks)
     write_json(os.path.join(DATA, "structure-audit.json"), {
+        "schedule_rows": {k: v for k, v in [(e.get("key") or e["url"], snapshot_rows)
+                                             for e in cfg["sources"]
+                                             if e.get("parse") == "venetian-schedule-pdf"]},
         "meta": {
             "generated_at": now_utc(),
             "generator": "tools/sync_official_sources.py",
@@ -606,8 +648,8 @@ def main() -> int:
             fh.write(f"- Content changed this run: **{len(changed_urls)}**\n")
             fh.write(f"- Structure sheets audited: **{len(sheets)}**\n")
             fh.write(f"- Schedule rows parsed: **{len(snapshot_rows)}**\n")
-            for u in changed_urls:
-                fh.write(f"  - changed: {u}\n")
+            for u in changed_urls[:20]:
+                fh.write(f"  - value changed: {u}\n")
     dated = sum(1 for r in snapshot_rows if r.get("date"))
     sample_head = None
     for u2 in [e["url"] for e in cfg["sources"] if e.get("parse") == "venetian-schedule-pdf"]:

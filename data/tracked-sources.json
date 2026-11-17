@@ -15,7 +15,8 @@
    "key": "V_SCHED_PAGE",
    "parse": "venetian-schedule",
    "keep_text_excerpt": true,
-   "excerpt_chars": 2500
+   "excerpt_chars": 2500,
+   "save_text_to": "data/raw/venetian-dse-iv-page.txt"
   },
   {
    "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
@@ -25,8 +26,9 @@
    "key": "V_SCHED_PDF",
    "parse": "venetian-schedule-pdf",
    "keep_text_excerpt": true,
-   "excerpt_chars": 9000,
-   "default_year": 2026
+   "excerpt_chars": 26000,
+   "default_year": 2026,
+   "save_text_to": "data/raw/venetian-dse-iv-schedule.txt"
   },
   {
    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament.html",
@@ -42,7 +44,9 @@
    "venue": "The Venetian",
    "key": "V_POKER_PAGE",
    "keep_text_excerpt": true,
-   "excerpt_chars": 2600
+   "excerpt_chars": 2600,
+   "save_text_to": "data/raw/venetian-poker-room.txt",
+   "extract_facts": true
   },
   {
    "url": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
@@ -51,7 +55,8 @@
    "venue": "Wynn Las Vegas",
    "key": "W_DAILY",
    "keep_text_excerpt": true,
-   "excerpt_chars": 5200
+   "excerpt_chars": 5200,
+   "save_text_to": "data/raw/wynn-daily-structures.txt"
   },
   {
    "url": "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf",
@@ -60,7 +65,8 @@
    "venue": "Wynn Las Vegas",
    "key": "W_POSTER",
    "keep_text_excerpt": true,
-   "excerpt_chars": 5200
+   "excerpt_chars": 5200,
+   "save_text_to": "data/raw/wynn-daily-poster.txt"
   },
   {
    "url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
@@ -69,7 +75,8 @@
    "venue": "Wynn Las Vegas",
    "key": "W_WPT_SCHED",
    "keep_text_excerpt": true,
-   "excerpt_chars": 5200
+   "excerpt_chars": 5200,
+   "save_text_to": "data/raw/wynn-wpt-schedule.txt"
   },
   {
    "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
@@ -78,7 +85,8 @@
    "venue": "Wynn Las Vegas",
    "key": "W_WPT_STRUCT",
    "keep_text_excerpt": true,
-   "excerpt_chars": 5200
+   "excerpt_chars": 5200,
+   "save_text_to": "data/raw/wynn-wpt-terms.txt"
   },
   {
    "url": "https://wynnlasvegas.com/casino/poker",
@@ -87,7 +95,8 @@
    "venue": "Wynn Las Vegas",
    "key": "W_PAGE",
    "keep_text_excerpt": true,
-   "excerpt_chars": 2600
+   "excerpt_chars": 2600,
+   "extract_facts": true
   },
   {
    "url": "https://bellagio.mgmresorts.com/en/casino/poker.html",
@@ -96,7 +105,9 @@
    "venue": "Bellagio",
    "key": "B_PAGE",
    "keep_text_excerpt": true,
-   "excerpt_chars": 2600
+   "excerpt_chars": 2600,
+   "save_text_to": "data/raw/bellagio-poker.txt",
+   "extract_facts": true
   },
   {
    "url": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
@@ -105,7 +116,9 @@
    "venue": "Caesars Palace",
    "key": "C_PAGE",
    "keep_text_excerpt": true,
-   "excerpt_chars": 2600
+   "excerpt_chars": 2600,
+   "save_text_to": "data/raw/caesars-poker.txt",
+   "extract_facts": true
   },
   {
    "url": "https://www.caesars.com/horseshoe-las-vegas/casino/poker",
@@ -114,7 +127,8 @@
    "venue": "Horseshoe",
    "key": "H_PAGE",
    "keep_text_excerpt": true,
-   "excerpt_chars": 2600
+   "excerpt_chars": 2600,
+   "save_text_to": "data/raw/horseshoe-poker.txt"
   },
   {
    "url": "https://aria.mgmresorts.com/en/casino/poker.html",
@@ -123,7 +137,9 @@
    "venue": "ARIA",
    "key": "A_PAGE",
    "keep_text_excerpt": true,
-   "excerpt_chars": 2600
+   "excerpt_chars": 2600,
+   "save_text_to": "data/raw/aria-poker.txt",
+   "extract_facts": true
   },
   {
    "url": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2025.pdf",
@@ -396,63 +412,72 @@
    "label": "Venetian \u2014 resort fee page",
    "kind": "page",
    "venue": "The Venetian",
-   "key": "V_FEE"
+   "key": "V_FEE",
+   "extract_facts": true
   },
   {
    "url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
    "label": "Venetian \u2014 hotel terms (tax, parking, cancellation)",
    "kind": "page",
    "venue": "The Venetian",
-   "key": "V_TERMS"
+   "key": "V_TERMS",
+   "extract_facts": true
   },
   {
    "url": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
    "label": "Venetian \u2014 poker suite rates + play requirements",
    "kind": "page",
    "venue": "The Venetian",
-   "key": "V_RATES"
+   "key": "V_RATES",
+   "extract_facts": true
   },
   {
    "url": "https://www.venetianlasvegas.com/resort/casino/poker/player-parking.html",
    "label": "Venetian \u2014 poker player parking",
    "kind": "page",
    "venue": "The Venetian",
-   "key": "V_PARKING"
+   "key": "V_PARKING",
+   "extract_facts": true
   },
   {
    "url": "https://www.venetianlasvegas.com/venetian-rewards/terms-and-conditions.html",
    "label": "Venetian Rewards terms (fee waiver language)",
    "kind": "page",
    "venue": "The Venetian",
-   "key": "V_REWARDS"
+   "key": "V_REWARDS",
+   "extract_facts": true
   },
   {
    "url": "https://www.wynnlasvegas.com/terms-and-conditions/850257",
    "label": "Wynn \u2014 resort fee / terms of stay",
    "kind": "page",
    "venue": "Wynn Las Vegas",
-   "key": "W_FEE"
+   "key": "W_FEE",
+   "extract_facts": true
   },
   {
    "url": "https://treasureisland.com/hotel/deluxe-rooms",
    "label": "Treasure Island \u2014 rooms + resort fee",
    "kind": "page",
    "venue": "Treasure Island",
-   "key": "TI_FEE"
+   "key": "TI_FEE",
+   "extract_facts": true
   },
   {
    "url": "https://www.caesars.com/caesars-palace/resort-fee",
    "label": "Caesars Palace \u2014 resort fee page (status tracked)",
    "kind": "page",
    "venue": "Caesars Palace",
-   "key": "C_FEE"
+   "key": "C_FEE",
+   "extract_facts": true
   },
   {
    "url": "https://bellagio.mgmresorts.com/en/hotel.html",
    "label": "Bellagio hotel page",
    "kind": "page",
    "venue": "Bellagio",
-   "key": "B_HOTEL"
+   "key": "B_HOTEL",
+   "extract_facts": true
   },
   {
    "url": "https://bellagio.mgmresorts.com/en/hotel/resort-fee.html",
@@ -466,21 +491,24 @@
    "label": "Harrah's Las Vegas (status tracked)",
    "kind": "page",
    "venue": "Harrah's",
-   "key": "HARRAHS"
+   "key": "HARRAHS",
+   "extract_facts": true
   },
   {
    "url": "https://www.caesars.com/horseshoe-las-vegas",
    "label": "Horseshoe Las Vegas (status tracked)",
    "kind": "page",
    "venue": "Horseshoe",
-   "key": "HORSESHOE"
+   "key": "HORSESHOE",
+   "extract_facts": true
   },
   {
    "url": "https://www.wsop.com/schedule/",
    "label": "WSOP official schedule",
    "kind": "page",
    "venue": "WSOP",
-   "key": "WSOP"
+   "key": "WSOP",
+   "save_text_to": "data/raw/wsop-schedule.txt"
   }
  ]
 }
