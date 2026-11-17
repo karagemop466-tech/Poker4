@@ -11810,6 +11810,14 @@ window.POKER4_DATA = {
     "W-WPT"
    ],
    "checked": "2026-11-17"
+  },
+  {
+   "id": "F18",
+   "title": "COORDINATION/README conflict-marker pollution on main (fixed for this integration)",
+   "severity": "low",
+   "detail": "During the 2026-11-17 integration rebase, COORDINATION.md and README.md on main were found to carry committed conflict-marker lines from earlier parallel merges (e.g. an '<<<<<<< HEAD' / '>>>>>>> origin/main' pair inside README's Scheduled-monitors section, and duplicated board blocks). Every merge in this session kept main's text verbatim and re-appended this session's records; the integration README is marker-free. Duplicated board sections were dropped only after verifying the retained copy was a strict superset (diff-checked).",
+   "sources": [],
+   "checked": "2026-11-17"
   }
  ],
  "changes": [
