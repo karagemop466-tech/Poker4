@@ -672,3 +672,6 @@ Out of scope this session (recorded so nobody assumes otherwise): Google/Apple w
 
 **Out of scope this session (not done, not claimed):** Google/Apple walking-time verification (no official source publishes walking minutes; map APIs unreachable from this sandbox); live hotel booking-engine quotes; a Strip-wide daily scraper beyond the existing Venetian/Wynn workflows; any 8 AM all-day schedule (remains unmet per flag F10).
 
+
+- **Merge result (648b3b83):** PR #55 — https://github.com/karagemop466-tech/Poker4/pull/55 — merged to main as `a29cf3b` at 2026-11-17 22:03 UTC (merge commit, no `--auto`). Checks on the final head `cbcc665`: `check` pass · `integrity` pass · `verify` pass. Post-merge on main: "Verify the published site" success · "Poker4 site build + verification gate" success · "Deploy static dashboard to GitHub Pages" success · "pages build and deployment" success. Pages: https://karagemop466-tech.github.io/Poker4/
+- **Two `main` races during this session:** main advanced twice (`0d13de0` → `2172b40` → `d9e0289`); each time the only conflict was `COORDINATION.md`, resolved by keeping both sides. No other session's work was discarded.
