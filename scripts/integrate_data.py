@@ -928,7 +928,7 @@ def page_tournaments():
     opts = "".join(f"<option value='{E(v['id'])}'>{E(v['name'])}</option>" for v in CFG["venues"])
     filters = FILTERS.replace("__VENUE_OPTS__", opts)
     snap_day = (SNAPSHOT_AT or TODAY)[:10]
-    board = [e for e in events if e.get("date") and e["date"] >= snap_day][:9]
+    board = [e for e in events if e.get("date") and e["date"] >= snap_day and not e.get("is_continuation")][:9]
     board_rows = "".join(
         f"<tr><td>{E(e['date'])}<span class='time'>{E(e.get('weekday') or '')}</span></td>"
         f"<td><a href='#{E(e['id'])}'>{E(e['name'])}</a></td>"
