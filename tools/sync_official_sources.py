@@ -273,16 +273,44 @@ def parse_schedule_pdf(text: str, source_url: str, default_year: int | None = No
 
     Each row is attributed to the most recent printed date header. Fields the page
     does not print stay null — they are never carried over from a neighbouring row.
+
+    Column split (b808eea0, 2026-11-17): the EVENT title is allowed to contain clock
+    text (e.g. "$40 RAKE DISCOUNT FOR ENTRIES BEFORE 10:10 AM", "… (POKERGO) AT 7:00 PM").
+    The row is therefore parsed from its tail: the TIME..LEVEL columns must consume the
+    row exactly to its end (or trophy/coin marker), a REG CLOSES clock must be strictly
+    later than the start, and when several splits are valid the longest title wins.
+    Previously a lazy title match stopped at the first clock inside the title, which
+    mis-filed the deadline clock as TIME and dropped the printed guarantee.
     """
     flat = re.sub(r"\s+", " ", text).strip()
     heads = list(PDF_DATE_RE.finditer(flat))
     if not heads:
         return []
     bounds = [(m.start(), m) for m in heads] + [(len(flat), None)]
+
+    def clock(value):
+        if not value:
+            return None
+        h, rest = value.upper().split(":")
+        mm = rest.strip()[:2]
+        ap = "PM" if "PM" in rest.upper() else "AM"
+        hr = int(h) % 12 + (12 if ap == "PM" else 0)
+        return hr * 60 + int(mm)
+
+    tail_re = re.compile(
+        r"\s*(?P<time>\d{1,2}:\d{2}\s*(?:AM|PM))"
+        r"(?:\s+(?P<close>\d{1,2}:\d{2}\s*(?:AM|PM)))?"
+        r"(?:\s+(?:(?P<seats>\d{1,2})\s+SEATS|\$(?P<gtd>[\d,]+)(?P<gtdmult>\s*(?:K|MILL|MILLION))?))?"
+        r"(?:\s+(?P<chips>\d{1,3},\d{3}))?"
+        r"(?:\s+(?P<level>\d{1,2}(?:/\d{1,2})?))?"
+        r"(?:\s+(?:TROPHY|SILVER|GOLD|BRONZE|COIN)\b.*)?$", re.I)
+    row_start_re = re.compile(r"(?P<no>\d{1,3})\s+\$(?P<buy>[\d,]+)\s+")
+    clock_re = re.compile(r"\d{1,2}:\d{2}\s*(?:AM|PM)", re.I)
+
     rows: list[dict] = []
-    for i, (start, head) in enumerate(bounds[:-1]):
-        end = bounds[i + 1][0]
-        seg = flat[start:end]
+    for i, (start_pos, head) in enumerate(bounds[:-1]):
+        end_pos = bounds[i + 1][0]
+        seg = flat[start_pos:end_pos]
         mon = MONTHS.get(head.group("mon").upper())
         day = int(head.group("day"))
         year = default_year
@@ -295,70 +323,82 @@ def parse_schedule_pdf(text: str, source_url: str, default_year: int | None = No
                 date_iso = dt.date(year, mon, day).isoformat()
             except ValueError:
                 date_iso = None
-        def clock(value):
-            if not value:
-                return None
-            h, rest = value.upper().split(":")
-            mm = rest.strip()[:2]
-            ap = "PM" if "PM" in rest.upper() else "AM"
-            hr = int(h) % 12 + (12 if ap == "PM" else 0)
-            return hr * 60 + int(mm)
 
-        for m in PDF_ROW_RE.finditer(seg):
-            name = re.sub(r"\s+", " ", m.group("name")).strip(" -|")
-            start = re.sub(r"\s+", " ", m.group("time")).upper()
-            note = []
-            gtd = None
-            if m.group("gtd"):
-                gtd = int(m.group("gtd").replace(",", ""))
-                mult = (m.group("gtdmult") or "").strip()
-                if mult == "K":
-                    gtd *= 1000
-                elif mult:
-                    gtd *= 1_000_000
-            close = re.sub(r"\s+", " ", m.group("close")).upper() if m.group("close") else None
-            if re.search(r"\bAT$", name, re.I):
-                # Printed title ends with "… AT <clock>": that clock belongs to the title
-                # (e.g. "STREAMED FINAL TABLE (POKERGO) AT 7:00 PM"), not to the TIME
-                # column. The start time is the next clock printed after it — the sheet's
-                # own web page prints the same row, and it agrees with that reading.
-                name = f"{name} {start}"
-                nxt = close if (close and clock(close) is not None) else None
-                if not nxt:
-                    tail = flat[m.end():m.end() + 120]
-                    hit = CLOCK_RE.search(tail)
-                    nxt = re.sub(r"\s+", " ", hit.group(0)).upper() if hit else None
-                start = nxt
-                close = None
-                note.append("printed title carries its own clock time (\"… AT\"); read as the title, "
-                            "the start time is the next clock printed in the row")
-            if close and clock(close) is not None and clock(start) is not None and clock(close) <= clock(start):
-                # a printed time that is not later than the start is table bleed from a
-                # neighbouring cell — drop it rather than mis-state a deadline
-                note.append(f"registration-closes cell “{close}” not later than the start time; not recorded")
-                close = None
-            level = m.group("level")
-            if level:
-                parts = [int(x) for x in re.split(r"/", level)]
-                if not all(5 <= x <= 120 for x in parts):
-                    note.append(f"LEVEL cell “{level}” is not a plausible blind level; not recorded")
-                    level = None
+        starts = list(row_start_re.finditer(seg))
+        for j, st in enumerate(starts):
+            row_end = starts[j + 1].start() if j + 1 < len(starts) else len(seg)
+            row_text = seg[st.end():row_end].strip()
+            # candidate splits: every printed clock as the start of the TIME column
+            candidates = []
+            for cm in clock_re.finditer(row_text):
+                tm = tail_re.match(row_text, cm.start())
+                if not tm or tm.end() != len(row_text):
+                    continue
+                start_clock = re.sub(r"\s+", " ", tm.group("time")).upper()
+                close = re.sub(r"\s+", " ", tm.group("close")).upper() if tm.group("close") else None
+                note = []
+                if close and clock(close) is not None and clock(start_clock) is not None \
+                        and clock(close) <= clock(start_clock):
+                    # a printed time not later than the start cannot be the REG CLOSES
+                    # column of this split — reject the split (it is the deadline clock
+                    # printed inside the title)
+                    continue
+                level = tm.group("level")
+                if level:
+                    parts = [int(x) for x in re.split(r"/", level)]
+                    if not all(5 <= x <= 120 for x in parts):
+                        note.append(f"LEVEL cell “{level}” is not a plausible blind level; not recorded")
+                        level = None
+                name = re.sub(r"\s+", " ", row_text[:cm.start()]).strip(" -|")
+                if len(name) < 3:
+                    continue
+                gtd = None
+                if tm.group("gtd"):
+                    gtd = int(tm.group("gtd").replace(",", ""))
+                    mult = (tm.group("gtdmult") or "").strip()
+                    if mult == "K":
+                        gtd *= 1000
+                    elif mult:
+                        gtd *= 1_000_000
+                chips = int(tm.group("chips").replace(",", "")) if tm.group("chips") else None
+                # A printed row fills columns left to right: TIME [REG CLOSES]
+                # [GUARANTEE] [CHIPS] [LEVEL]. When the title carries its own clock
+                # (e.g. "… FOR ENTRIES BEFORE 10:10 AM", "… (POKERGO) AT 7:00 PM") more
+                # than one split consumes the row; the real one uses the most printed
+                # columns, and, of those, the longest title.
+                score = sum(x is not None for x in (close, gtd if gtd is not None else tm.group("seats"),
+                                                    chips, level))
+                candidates.append({
+                    "name": name, "start": start_clock, "close": close, "note": note,
+                    "level": level, "gtd": gtd, "seats": tm.group("seats"), "score": score,
+                    "chips": chips,
+                })
+            if not candidates:
+                continue
+            best = max(candidates, key=lambda c: (c["score"], len(c["name"])))
+            note = list(best["note"])
+            if len(candidates) > 1:
+                note.append("title carries its own clock time; the start time is the clock that "
+                            "lets REG CLOSES..LEVEL consume the printed row")
             rows.append({
                 "parse_notes": note or None,
-                "registration_closes": close,
+                "registration_closes": best["close"],
                 "date": date_iso,
                 "weekday": (head.group("wd").title() if head and head.group("wd") else None),
-                "time": start,
-                "event_no": int(m.group("no")),
-                "event_name": name,
-                "buy_in_usd": int(m.group("buy").replace(",", "")),
-                "guarantee_usd": gtd,
-                "starting_chips": int(m.group("chips").replace(",", "")) if m.group("chips") else None,
-                "level_duration": level,
+                "time": best["start"],
+                "event_no": int(st.group("no")),
+                "event_name": best["name"],
+                "buy_in_usd": int(st.group("buy").replace(",", "")),
+                "guarantee_usd": best["gtd"],
+                "guarantee_text": (f"{best['seats']} SEATS" if best["seats"] else None),
+                "starting_chips": best["chips"],
+                "level_duration": best["level"],
                 "source": source_url,
                 "retrieved": today_utc(),
             })
     return rows
+
+
 
 
 SCHEDULE_COMPARE_FIELDS = ("event_no", "time", "registration_closes", "buy_in_usd", "guarantee_usd",
@@ -518,6 +558,51 @@ def extract_facts(text: str) -> dict:
     return out
 
 
+# --------------------------------------------------------------- venetian overrides
+VENETIAN_OVERRIDES = os.path.join(DATA, "c2242cb1", "venetian_overrides.json")
+
+
+def apply_venetian_overrides(rows: list[dict]) -> list[dict]:
+    """Apply data/c2242cb1/venetian_overrides.json to parsed Venetian schedule rows.
+
+    Row-level corrections where the PDF extraction disagrees with the official
+    schedule page and its structure sheets (page-style event names, conditional
+    entry fees, rows a broken parse dropped). Applied here at scrape time AND by
+    scripts/integrate_data.py at build time, so neither a re-scrape nor a stale
+    snapshot can silently undo them. Each "set" must match exactly one row — or
+    find a row already carrying the corrected values — otherwise the run stops
+    rather than publishing a row that disagrees with the official page.
+    """
+    if not os.path.exists(VENETIAN_OVERRIDES):
+        return rows
+    ovr = read_json(VENETIAN_OVERRIDES, {})
+    rows = [dict(r) for r in rows]
+    for op in ovr.get("operations", []):
+        if op["op"] == "set":
+            m = op["match"]
+            hits = [r for r in rows if r.get("date") == m["date"] and r.get("time") == m["time"]
+                    and r.get("event_no") == m["event_no"]
+                    and (not m.get("name_contains") or m["name_contains"] in (r.get("event_name") or "").upper())]
+            if len(hits) == 1:
+                hits[0].update(op["set"])
+            elif len(hits) == 0:
+                done = [r for r in rows if r.get("date") == m["date"] and r.get("event_no") == m["event_no"]
+                        and all(r.get(k) == v for k, v in op["set"].items())]
+                if not done:
+                    raise SystemExit(f"venetian override matched no row and no corrected row exists: {m}")
+            else:
+                raise SystemExit(f"venetian override matched {len(hits)} rows (need exactly 1): {m}")
+        elif op["op"] == "add":
+            r = op["row"]
+            if any(x.get("date") == r.get("date") and x.get("time") == r.get("time")
+                   and x.get("event_no") == r.get("event_no") for x in rows):
+                continue
+            rows.append(dict(r))
+        else:
+            raise SystemExit(f"unknown override op: {op['op']}")
+    return rows
+
+
 # --------------------------------------------------------------------------- main
 def from_raw(cfg: dict) -> int:
     """Offline re-derivation: rebuild the audit + schedule snapshots from the text
@@ -541,7 +626,8 @@ def from_raw(cfg: dict) -> int:
         url = entry["url"]
         checked = (prev.get(url) or {}).get("checked_at") or now_utc()
         if entry.get("parse") == "venetian-schedule-pdf":
-            snapshot_rows.extend(parse_schedule_pdf(text, url, entry.get("default_year")))
+            snapshot_rows.extend(apply_venetian_overrides(
+                parse_schedule_pdf(text, url, entry.get("default_year"))))
         if entry.get("kind") == "pdf" and re.search(r"structure", url, re.I):
             key = entry.get("key") or url.rsplit("/", 1)[-1]
             audit = audit_structure(text, url)
@@ -647,7 +733,7 @@ def main() -> int:
                     snapshot_rows.extend(rows)
                     rec["schedule_rows_parsed"] = len(rows)
             if entry.get("parse") == "venetian-schedule-pdf" and text:
-                rows = parse_schedule_pdf(text, url, entry.get("default_year"))
+                rows = apply_venetian_overrides(parse_schedule_pdf(text, url, entry.get("default_year")))
                 key = entry.get("key") or url.rsplit("/", 1)[-1]
                 diff = diff_schedule((prev_audit.get("schedule_rows") or {}).get(key), rows)
                 if diff:

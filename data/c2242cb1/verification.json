@@ -1,51 +1,113 @@
 {
-  "session": "c2242cb1",
-  "retrieved": "2026-11-17",
-  "scope": "Independent re-read of key official values on the root site (K2). Values confirmed here are only those quoted from the official page named in each row.",
-  "checks": [
-    {"id": "V1", "claim": "Venetian DeepStack IV schedule: 94 rows (date, start time, event #, name, buy-in, printed guarantee)",
-     "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
-     "observed": "Full table read across 4 fetch chunks; 94 rows; transcription in data/c2242cb1/venetian_official_rows_2026-11-17.json",
-     "result": "match after 6 corrections",
-     "detail": "Compared with data/site-events.json: 0 field mismatches remain (tools/c2242cb1_check_dse.py). Before correction: (a) Dec 11 10:00 AM Day 2 Restart published at 7:00 PM; (b) Dec 13 1:00 PM Day 2 Restart missing; (c) guarantees printed in the event names ($500K Dec 17 1A and 1B, $150K Dec 20 1A) were blank.",
-     "action": "Corrected by data/c2242cb1/venetian_overrides.json, applied in scripts/integrate_data.py (build fails if an override matches other than exactly one row)."},
-    {"id": "V2", "claim": "Venetian resort fee $55 plus tax per night",
-     "source": "https://www.venetianlasvegas.com/resort/resort-fee.html",
-     "observed": "\"Rates include a daily Resort Fee of $55 plus tax per night, payable upon check-in.\"",
-     "result": "match", "detail": "Also on https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html", "action": "none"},
-    {"id": "V3", "claim": "Clark County room tax 13.38%",
-     "source": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
-     "observed": "\"Daily rates do not include the applicable Clark County Room Tax of 13.38%.\"",
-     "result": "match", "detail": "Hotel-side figure as published by the Venetian; the calculator applies it to rate + resort fee.", "action": "none"},
-    {"id": "V4", "claim": "Venetian registered-hotel-guest self-parking $20/day",
-     "source": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
-     "observed": "\"The daily fee for registered hotel guests is $20/day, seven days a week.\" Non-hotel guests $20 Mon–Thu, $25 Fri–Sun; valet $40/day.",
-     "result": "match", "detail": "Event parking rates may apply; check signage.", "action": "none"},
-    {"id": "V5", "claim": "Venetian poker suite rates start at $119 / $209 (conditional)",
-     "source": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
-     "observed": "\"These rates will start as low as $119 and $209 and can be higher.\" Requires 6 hours live cash play or a $300+ tournament buy-in each night, tracked by Venetian Rewards card; $55 resort fee per night.",
-     "result": "match (conditional)", "detail": "Not a date-specific quote. Qualification rules are on the page and must be met for the rate to apply.", "action": "Keep as a conditional rate; never shown as a booked price."},
-    {"id": "V6", "claim": "Treasure Island resort fee $49.95 + tax per day",
-     "source": "https://treasureisland.com/hotel/tower-suite",
-     "observed": "\"The $49.95 + tax daily resort fee at TI Las Vegas...\" Inclusions list free valet and self-park.",
-     "result": "match", "detail": "Board previously cited an offer page; this is the room page, read 2026-11-17.", "action": "none"},
-    {"id": "V7", "claim": "Wynn resort fee $55 plus tax per night",
-     "source": "https://www.wynnlasvegas.com/terms-and-conditions/850257",
-     "observed": "\"A daily resort fee of $55 plus tax will be added to your room account for each room night\" (Wynn Resort King / Two Queens and Tower Suites).",
-     "result": "match with caveat",
-     "detail": "The quoted text sits in the terms of a promotional package (Concours Sip and Savor, travel Oct 27 – Nov 1, 2026), which has expired. No general, current Wynn resort-fee page was read. Re-confirm before any booking.",
-     "action": "Flagged; value kept as published."},
-    {"id": "V8", "claim": "Walking minutes between hotels and poker rooms (\"verified\" 6–31 min)",
-     "source": "none (no official page publishes walk minutes; data/walks.json records minutes = null for every pair)",
-     "observed": "No official source found.",
-     "result": "not verifiable — previously published as 'Verified'",
-     "detail": "The landing page previously listed 'TI 6 min, Harrah's 6 min, Caesars 12 min, Wynn 13 min, Horseshoe 16 min, Bellagio 21 min, ARIA 31 min' as verified. The source for those minutes is not recorded in the repo. The regenerated landing page no longer shows them.",
-     "action": "Removed from the live page by regeneration. Flagged for review. Map-based timings (Google/Apple Maps) remain a requirement that needs an owner."}
-  ],
-  "not_rechecked_this_session": [
-    "All 37 structure-sheet PDFs (single-entry / re-entry / add-on rules). Prior sessions read them; no sheet confirms single entry.",
-    "Wynn WPT schedule and structures PDFs, Caesars, Bellagio and ARIA rows.",
-    "Hotel rate quotes for specific dates (none are captured; rate logs are conditional).",
-    "Daily-schedule scraper output (tools/scrape_schedule.py) — its last run failed in CI and the logs are not retrievable from this sandbox."
-  ]
+ "session": "c2242cb1",
+ "retrieved": "2026-11-17",
+ "scope": "Independent re-read of key official values on the root site (K2). Values confirmed here are only those quoted from the official page named in each row.",
+ "checks": [
+  {
+   "id": "V1",
+   "claim": "Venetian DeepStack IV schedule: 94 rows (date, start time, event #, name, buy-in, printed guarantee)",
+   "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "observed": "Full table read across 4 fetch chunks; 94 rows; transcription in data/c2242cb1/venetian_official_rows_2026-11-17.json",
+   "result": "match after 6 corrections",
+   "detail": "Compared with data/site-events.json: 0 field mismatches remain (tools/c2242cb1_check_dse.py). Before correction: (a) Dec 11 10:00 AM Day 2 Restart published at 7:00 PM; (b) Dec 13 1:00 PM Day 2 Restart missing; (c) guarantees printed in the event names ($500K Dec 17 1A and 1B, $150K Dec 20 1A) were blank.",
+   "action": "Corrected by data/c2242cb1/venetian_overrides.json, applied in scripts/integrate_data.py (build fails if an override matches other than exactly one row)."
+  },
+  {
+   "id": "V2",
+   "claim": "Venetian resort fee $55 plus tax per night",
+   "source": "https://www.venetianlasvegas.com/resort/resort-fee.html",
+   "observed": "\"Rates include a daily Resort Fee of $55 plus tax per night, payable upon check-in.\"",
+   "result": "match",
+   "detail": "Also on https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+   "action": "none"
+  },
+  {
+   "id": "V3",
+   "claim": "Clark County room tax 13.38%",
+   "source": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+   "observed": "\"Daily rates do not include the applicable Clark County Room Tax of 13.38%.\"",
+   "result": "match",
+   "detail": "Hotel-side figure as published by the Venetian; the calculator applies it to rate + resort fee.",
+   "action": "none"
+  },
+  {
+   "id": "V4",
+   "claim": "Venetian registered-hotel-guest self-parking $20/day",
+   "source": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+   "observed": "\"The daily fee for registered hotel guests is $20/day, seven days a week.\" Non-hotel guests $20 Mon–Thu, $25 Fri–Sun; valet $40/day.",
+   "result": "match",
+   "detail": "Event parking rates may apply; check signage.",
+   "action": "none"
+  },
+  {
+   "id": "V5",
+   "claim": "Venetian poker suite rates start at $119 / $209 (conditional)",
+   "source": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
+   "observed": "\"These rates will start as low as $119 and $209 and can be higher.\" Requires 6 hours live cash play or a $300+ tournament buy-in each night, tracked by Venetian Rewards card; $55 resort fee per night.",
+   "result": "match (conditional)",
+   "detail": "Not a date-specific quote. Qualification rules are on the page and must be met for the rate to apply.",
+   "action": "Keep as a conditional rate; never shown as a booked price."
+  },
+  {
+   "id": "V6",
+   "claim": "Treasure Island resort fee $49.95 + tax per day",
+   "source": "https://treasureisland.com/hotel/tower-suite",
+   "observed": "\"The $49.95 + tax daily resort fee at TI Las Vegas...\" Inclusions list free valet and self-park.",
+   "result": "match",
+   "detail": "Board previously cited an offer page; this is the room page, read 2026-11-17.",
+   "action": "none"
+  },
+  {
+   "id": "V7",
+   "claim": "Wynn resort fee $55 plus tax per night",
+   "source": "https://www.wynnlasvegas.com/terms-and-conditions/850257",
+   "observed": "\"A daily resort fee of $55 plus tax will be added to your room account for each room night\" (Wynn Resort King / Two Queens and Tower Suites).",
+   "result": "match with caveat",
+   "detail": "The quoted text sits in the terms of a promotional package (Concours Sip and Savor, travel Oct 27 – Nov 1, 2026), which has expired. No general, current Wynn resort-fee page was read. Re-confirm before any booking.",
+   "action": "Flagged; value kept as published."
+  },
+  {
+   "id": "V8",
+   "claim": "Walking minutes between hotels and poker rooms (\"verified\" 6–31 min)",
+   "source": "none (no official page publishes walk minutes; data/walks.json records minutes = null for every pair)",
+   "observed": "No official source found.",
+   "result": "not verifiable — previously published as 'Verified'",
+   "detail": "The landing page previously listed 'TI 6 min, Harrah's 6 min, Caesars 12 min, Wynn 13 min, Horseshoe 16 min, Bellagio 21 min, ARIA 31 min' as verified. The source for those minutes is not recorded in the repo. The regenerated landing page no longer shows them.",
+   "action": "Removed from the live page by regeneration. Flagged for review. Map-based timings (Google/Apple Maps) remain a requirement that needs an owner."
+  },
+  {
+   "id": "B1",
+   "claim": "Venetian DSE IV rows re-verified line by line against the live official page (94 rows) and the raw capture of the same URL (data/raw/venetian-dse-iv-page.txt, captured 2026-11-17T22:16:33Z)",
+   "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "observed": "tools/b808eea0_check_dse_live.py: raw capture 94 rows, transcription 94 rows, site 94 rows — 0 unmatched in either direction; buy-in and printed guarantee agree row for row.",
+   "result": "match",
+   "detail": "Transcription conventions (normalised 'No LImit' typo, dropped note sub-lines) accepted by word-level name matching; every factual field compared exactly.",
+   "action": "Gate added: tools/b808eea0_check_dse_live.py (runs offline against the committed capture)."
+  },
+  {
+   "id": "B2",
+   "claim": "Event 56 (Dec 17-20) and Event 59 (Dec 20-23) row details vs structure sheets 35, 36 and 4",
+   "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf ; .../dse_nov_2026-structure_36.pdf ; .../dse_nov_2026-structure_4.pdf",
+   "observed": "Read live 2026-11-17. Sheet 35 (56 Days A+C+E): Level Duration 40 minutes, Late Registration 9 levels + Break (~4:55 PM), Guarantee $500,000, rule 7 = $140 house fee of $1,100 ($960 to the prize pool), Day-1A-only $40 discount before 10:10 a.m. → $1,060. Sheet 36 (56 Days B+D): 30 minutes, 9 levels + Break (~11:10 PM), $500,000, Day-1B discount → $1,060. Sheet 4 (59 Days A+B+C): 40 minutes, 9 levels + Break (5:55 PM), $150,000, rule 7 = $95 house fee of $600 ($505 to the prize pool), Day-1A-only $20 discount before 11:10 a.m. → $580.",
+   "result": "match after correction",
+   "detail": "Published rows previously mis-filed the registration figure as level_duration ('11' on 56 1B, '5' on 59 1A), left 56 1A/1B/59 1A without registration close, and truncated the 59 1A name at the rake-discount note. None of the three sheets contains a maximum-entry / no-rebuy / no-add-on clause: rule 8 (a player who bags for Day 2 may not play a subsequent flight) limits flights, not entries, so single-entry remains unverified.",
+   "action": "Corrected in data/c2242cb1/venetian_overrides.json (name, level_duration, registration_closes, conditional_entry_fee) and at the parser root (tools/sync_official_sources.py tail-anchored column split; see B3)."
+  },
+  {
+   "id": "B3",
+   "claim": "PDF schedule parser root-cause fix (title clock text no longer steals the TIME column)",
+   "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+   "observed": "Before/after diff on the committed capture (data/raw/venetian-dse-iv-schedule.txt): 94 rows both ways; exactly 12 rows changed, every change matching the printed columns on the capture lines (satellites gain printed chips/level; Events 47 1A/1B gain printed chips/level; Events 56 1A/1B and 59 1A gain printed guarantee, reg-close and level and keep their full titles).",
+   "result": "match",
+   "detail": "The lazy title match used to stop at the first clock inside the title ('RAKE DISCOUNT FOR ENTRIES BEFORE 10:10 AM', '(POKERGO) AT 7:00 PM'), which mis-filed columns. The parser now splits the row from its tail (TIME [REG CLOSES] [GUARANTEE] [CHIPS] [LEVEL]), requires a REG CLOSES clock strictly later than the start, and prefers the split that uses the most printed columns. tools/sync_official_sources.py also applies data/c2242cb1/venetian_overrides.json at scrape time, so the stored snapshot itself carries the corrections (the open hand-off from sessions c2242cb1 / 75757cc1).",
+   "action": "Gate added: tools/b808eea0_check_dse_live.py asserts the corrected values in both data/schedule-snapshot.json and data/site-events.json."
+  }
+ ],
+ "not_rechecked_this_session": [
+  "All 37 structure-sheet PDFs (single-entry / re-entry / add-on rules). Prior sessions read them; no sheet confirms single entry.",
+  "Wynn WPT schedule and structures PDFs, Caesars, Bellagio and ARIA rows.",
+  "Hotel rate quotes for specific dates (none are captured; rate logs are conditional).",
+  "Daily-schedule scraper output (tools/scrape_schedule.py) — its last run failed in CI and the logs are not retrievable from this sandbox."
+ ],
+ "b808eea0_note": "Checks B1-B3 added by session arena/b808eea0-poker4, 2026-11-17 (line-by-line re-verification round)."
 }

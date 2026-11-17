@@ -305,6 +305,12 @@ for row in SCHED["rows"]:
             "source": sheet_url,
             "retrieved": (sheet or {}).get("retrieved"),
         }
+    # Verified conditional entry fees carried on the snapshot row itself
+    # (data/c2242cb1/venetian_overrides.json), e.g. Event 59 Day 1A's $20 early
+    # discount from structure sheet 4 rule 7. Each dict carries its own source,
+    # excerpt and retrieval date.
+    if row.get("conditional_entry_fee") and "conditional_entry_fee" not in entry:
+        entry["conditional_entry_fee"] = row["conditional_entry_fee"]
     if sheet:
         fee = sheet.get("house_fee_usd")
         pool = sheet.get("pool_per_entry_usd")
