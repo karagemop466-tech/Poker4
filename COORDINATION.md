@@ -176,3 +176,18 @@ Scope note: the session brief asks for `session-<id>/<task>` branches. The Arena
 - Validation: `python3 build/build_site.py`; `python3 scripts/build.py`; `python3 scripts/verify.py` (10 pages, 17 sources, 29 flags; all row sources/internal links verified); `git diff --check`. Data audit confirms 19 and 64 candidate rows are labeled unverified.
 - PR #4 merged to `main` as merge commit `fb62f758526b2bbfc13ad50b238faa88cf5094ec` at 2026-11-16 19:15:25 UTC. The "Deploy static dashboard to GitHub Pages" run `43937426421` and "pages build and deployment" run `43937425213` both completed successfully. GitHub Pages API reports status `built`, public URL `https://karagemop466-tech.github.io/Poker4/`, source `main:/`. Direct browser fetch of the live page was not available from this environment; workflow and Pages API statuses were verified.
 - 2026-11-17 — arena/f8fa22bb-poker4: added standalone trip-calculator.html (entries x buy-ins + nights x true hotel cost), change-monitor.html (official URL re-check log), venue-venetian.html / venue-wynn.html / venue-others.html (one page per venue with events and hotels), data/url-monitor.json (10 URLs with check intervals). Added navigation links to these pages on all root HTML pages. Main already contains integrated trip calculator (in hotels.html), date filter, last-checked monitoring, overlap detection, and scheduled URL re-check (tools/url_check.js, .github/workflows/url-check.yml) from session arena/5dba2ab6-poker4. No event verified as strict single-entry — all flagged.
+
+---
+
+## Session arena/aa32d8fd-poker4 (current session)
+
+Session ID: `arena/aa32d8fd-poker4`; branch `arena/aa32d8fd-poker4`, branched from main. All work on this branch only; edits limited to non-overlapping root files claimed below. Shared session subfolders are NOT touched.
+
+| ID | Task | Status | Owner | File scope | Sources / verification | Irregularities |
+|----|------|--------|-------|------------|------------------------|----------------|
+| C1 | Root sources page, suggestions page, build scripts, and enhanced data (last_checked dates, structured rule fields with source excerpts + retrieval dates, dated hotel rate log, change-monitor registry) | done | arena/aa32d8fd-poker4 | `sources.html`, `suggestions.html`, `scripts/build_root.py`, `scripts/enhance_data.py`; `data/tournaments.json`, `data/hotels.json`, `data/sources.json` | Existing repo data (official sources); live re-check of official sites NOT possible from this sandbox (external hosts besides github blocked) — rows kept unverified where not confirmed | No live official fetch available; data snapshot kept as-is and flagged |
+| C2 | Verification pass (line-by-line source check), broken-link check | done | arena/aa32d8fd-poker4 | root data files + new pages | All source keys valid; 0 broken internal links in new pages | — |
+| C3 | PR from `arena/aa32d8fd-poker4` to `main`, merge, GitHub Pages deploy confirm, record PR link + merge result here | in progress | arena/aa32d8fd-poker4 | PR, `main`, `COORDINATION.md` | — | — |
+
+### Log (arena/aa32d8fd-poker4)
+- 2026-11-17: claimed C1-C3. Rebasing onto latest main caused overlapping conflicts with parallel sessions' root files (trip calculator, filters, venue pages); per non-overlapping scope, kept main's integrated root site and added only non-conflicting files: sources.html, suggestions.html, build scripts, enhanced data.
