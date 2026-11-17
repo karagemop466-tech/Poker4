@@ -65,7 +65,11 @@
   },
   "https://www.resortfeechecker.com/140596-resort_fee_bellagio.html": {
    "last_checked": "2026-11-17",
+<<<<<<< HEAD
    "sha256": "8570be44a2b609827c9a04204cf3b1a64ca6c4645513f641555239b42e824ca2",
+=======
+   "sha256": "8c1ada3bb92d9a553b12a58ab9d27401f6cd07a59f2944d659e64b5b56e4e53b",
+>>>>>>> origin/arena/e74e00fd-poker4
    "source_ids": [
     "M_FEES_UNVERIFIED"
    ]
@@ -359,21 +363,21 @@
   },
   "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html": {
    "last_checked": "2026-11-17",
-   "sha256": "8e69d5f60236c5a54fbea66be8228ac1ba3f5929d1feb97785f4e456d110894b",
+   "sha256": "864210ee8d2a08ece9fcfea16fc91ad1bcefad60e9026d82eb29f2149527fa4b",
    "source_ids": [
     "V_TERMS"
    ]
   },
   "https://www.venetianlasvegas.com/resort/casino/poker.html": {
    "last_checked": "2026-11-17",
-   "sha256": "b8fca9f6bc8a59790c5787509706fcad6f2bede18b24603738e00d6d96668386",
+   "sha256": "01efec42c073ccda85d6a7a79aa8fa68e5bd91287bdbc3a967df3bd688c55c86",
    "source_ids": [
     "V_POKER"
    ]
   },
   "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament.html": {
    "last_checked": "2026-11-17",
-   "sha256": "5ececab5ffd9a58d8bf44c881f5e7ea17a59affbf9ad3f4c6462776c0e08d60c",
+   "sha256": "4695a7f4a3f3d598322b16ca21d8ba6dd4c82b5b669c26f6a9b5ce37d2e5aafe",
    "source_ids": [
     "V_SERIES"
    ]
@@ -387,14 +391,14 @@
   },
   "https://www.venetianlasvegas.com/resort/casino/poker/player-parking.html": {
    "last_checked": "2026-11-17",
-   "sha256": "163ad9a2b6d5619ed54d2fe0b9c482ea11214885bc7d028e45d24c682476f8a6",
+   "sha256": "5dd9808617da3f1a889691f9689cb7fe335c6606ad26d8138a22b3d1a23d50af",
    "source_ids": [
     "V_PARK"
    ]
   },
   "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html": {
    "last_checked": "2026-11-17",
-   "sha256": "79b5b4db40b7bde19c772b1661843a5258a91c62d75d8d1d6ccba37fb741a645",
+   "sha256": "26c8221095cb45bb8f16293f51927f9dbd3c99b03e08466454ed73df149c79d4",
    "source_ids": [
     "V_RATES"
    ]
@@ -422,7 +426,7 @@
   },
   "https://www.wynnlasvegas.com/terms-and-conditions/850257": {
    "last_checked": "2026-11-17",
-   "sha256": "213f7af0f2f91779870849eb74105f8ae3305c4eefaabbc6d49d85b33e553f49",
+   "sha256": "328b99a8f23253dcf076649fbbd6eafe20ecb3c18698dbe56f39956499630677",
    "source_ids": [
     "W_TC_FEE"
    ]
