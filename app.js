@@ -160,21 +160,23 @@
     var cards = $$(".hotel"), wc = $("#walk-count");
     function applyWalk() {
       var mode = (wf.querySelector("input[name=walkf]:checked") || {}).value || "all";
-      var shown = 0, provable = 0;
+      var shown = 0, provable = 0, failed = 0;
       cards.forEach(function (el) {
         var ok = true;
-        if (mode === "onsite") ok = el.getAttribute("data-onsite") === "1";
-        else if (mode === "measured") {
-          var m = parseInt(el.getAttribute("data-walk-min"), 10);
-          ok = !isNaN(m) && m <= 30;
-        }
+        var m = parseInt(el.getAttribute("data-walk-min"), 10);
+        var onsite = el.getAttribute("data-onsite") === "1";
+        if (mode === "onsite") ok = onsite;
+        else if (mode === "measured") ok = onsite || (!isNaN(m) && m <= 30);
         el.classList.toggle("hidden", !ok);
         if (ok) shown++;
-        if (!isNaN(parseInt(el.getAttribute("data-walk-min"), 10))) provable++;
+        if (!isNaN(m)) provable++;
+        if (!isNaN(m) && m > 30) failed++;
       });
       if (wc) {
         wc.textContent = shown + " of " + cards.length + " properties" +
-          (mode === "measured" && !provable ? " — no property has an official measured walking time yet, so nothing passes this filter" : "");
+          (mode === "measured"
+            ? " — " + provable + " measured with Google Maps walking directions, " + failed + " over the 30-minute line and hidden"
+            : "");
       }
     }
     $$("input[name=walkf]", wf).forEach(function (r) { r.addEventListener("change", applyWalk); });
