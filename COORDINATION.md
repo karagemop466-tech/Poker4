@@ -220,8 +220,18 @@ Shared root data/pages owned by prior integration sessions are NOT edited by me 
 | T27 | Live-data feed / daily schedule scraper | done (script + workflow) | arena/f75326a3-poker4 | tools/scrape_schedule.py, .github/workflows/monitor.yml | Official schedule URL | Runs on schedule; writes dated snapshots |
 | T28 | One page per venue (Venetian, Wynn, others) with events + hotels | done | arena/f75326a3-poker4 | planner/venues/*.html | Official property/poker pages | Wynn/other details limited to prior verified set |
 | T29 | Flagged-for-review page (irregularities) | done | arena/f75326a3-poker4 | planner/flagged.html | See T20–T28 | See rows above |
-| T30 | Integration: root nav link, link check, PR → main, merge, Pages deploy confirm | pending | arena/f75326a3-poker4 | root index.html nav, COORDINATION.md | — | — |
+| T30 | Integration: root nav link, link check, PR → main, merge, Pages deploy confirm | done | arena/f75326a3-poker4 | root index.html nav, COORDINATION.md | PR #25 merged to main; Pages deploy confirmed built (workflow run 43994184245, success) | Merge conflict in root index.html nav resolved by combining both sessions' nav links; COORDINATION.md conflict resolved by keeping main's board verbatim + re-appending this session's section |
 
 ### Log (arena/f75326a3-poker4)
 - 2026-11-17: Claimed T20–T30 (this entry). Branch is fresh from `main` @ `be3594d`; no other session is active.
 - 2026-11-17: Read the full official Venetian DSE IV schedule (4 chunks) and all 37 structure PDFs. Recorded the structure_8 re-buy language as the single confirmed non-single-entry signal.
+- 2026-11-17: Built the planner (T21–T29): 93 verified events, trip-cost calculator, filterable tournaments table, hotels + true-cost/night + dated rate log + ≤30-min walking filter, day-plan overlap with primary/fallback, per-venue pages, change-monitoring tooling + scheduled workflow. Local checks: planner.js syntax OK, data.js parses (93 events, every row 2 official source links), 11 planner HTML pages, 0 broken internal links/asset refs, all pages serve HTTP 200.
+- 2026-11-17: **Merge conflicts** on push. `origin/main` advanced (PRs #19–#21 from other sessions) while this branch was being built. First `git pull --rebase` stopped on the COORDINATION.md claim commit; resolved by keeping `origin/main`'s board verbatim and re-appending this session's section (nothing from other sessions discarded). Second conflict on the root `index.html` nav: combined both sessions' nav links (theirs: trip-calculator / change-monitor / venue-venetian; mine: planner/index.html) — neither set removed. Rebased and pushed with `--force-with-lease` (remote branch held only this session's pre-rebase commits).
+- 2026-11-17: **PR #25** (`arena/f75326a3-poker4` → `main`) created and **merged** with `gh pr merge 25 --merge` (merge commit method). PR was `MERGEABLE` before merge.
+- 2026-11-17: **GitHub Pages deploy** for the PR #25 merge: workflow "Deploy static dashboard to GitHub Pages" run `43994184245` → **completed / success**. Pages API reports `status: built`, source `main:/`, URL `https://karagemop466-tech.github.io/Poker4/`. Live check: `https://karagemop466-tech.github.io/Poker4/planner/index.html` serves the decision hub with the headline single-entry finding and all planner links.
+
+### Deploy / PR record (arena/f75326a3-poker4)
+- PR #25: https://github.com/karagemop466-tech/Poker4/pull/25 — merged to `main` (merge commit method).
+- Merge result: success; PR closed by merge.
+- Pages deploy result: SUCCESS — workflow run `43994184245` completed successfully; Pages API `built`; live planner hub verified.
+- Flagged items (0 confirmed single-entry; structure_8 re-buys for events #18/#58; no dated room rates; no official walking minutes; no 8 AM start; unpublished finish times) are published on `planner/flagged.html` and did not block the merge.
