@@ -65,7 +65,7 @@
   },
   "https://www.resortfeechecker.com/140596-resort_fee_bellagio.html": {
    "last_checked": "2026-11-17",
-   "sha256": "8c1ada3bb92d9a553b12a58ab9d27401f6cd07a59f2944d659e64b5b56e4e53b",
+   "sha256": "364e41129e1ece3e48c0f6258ed23da1b0628487ec15885c325cc28bfa3b86ad",
    "source_ids": [
     "M_FEES_UNVERIFIED"
    ]
@@ -366,21 +366,21 @@
   },
   "https://www.venetianlasvegas.com/resort/casino/poker.html": {
    "last_checked": "2026-11-17",
-   "sha256": "01efec42c073ccda85d6a7a79aa8fa68e5bd91287bdbc3a967df3bd688c55c86",
+   "sha256": "b8fca9f6bc8a59790c5787509706fcad6f2bede18b24603738e00d6d96668386",
    "source_ids": [
     "V_POKER"
    ]
   },
   "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament.html": {
    "last_checked": "2026-11-17",
-   "sha256": "4695a7f4a3f3d598322b16ca21d8ba6dd4c82b5b669c26f6a9b5ce37d2e5aafe",
+   "sha256": "5ececab5ffd9a58d8bf44c881f5e7ea17a59affbf9ad3f4c6462776c0e08d60c",
    "source_ids": [
     "V_SERIES"
    ]
   },
   "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html": {
    "last_checked": "2026-11-17",
-   "sha256": "b14f9b2b2b88dd28fb7a1026d59d04624a0050a53d581c1eae2275836b8d2926",
+   "sha256": "fb6a653843a1e0ce79494c4b79089ee4a78e44e0b22e05be2cd437caec3443ab",
    "source_ids": [
     "V_CAL"
    ]
@@ -422,7 +422,7 @@
   },
   "https://www.wynnlasvegas.com/terms-and-conditions/850257": {
    "last_checked": "2026-11-17",
-   "sha256": "328b99a8f23253dcf076649fbbd6eafe20ecb3c18698dbe56f39956499630677",
+   "sha256": "213f7af0f2f91779870849eb74105f8ae3305c4eefaabbc6d49d85b33e553f49",
    "source_ids": [
     "W_TC_FEE"
    ]
