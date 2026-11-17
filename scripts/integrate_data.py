@@ -1387,10 +1387,11 @@ def page_tournaments():
         f"<td class='num'>{E(e.get('time') or '?')}</td><td class='num'>{E(e.get('registration_closes') or 'not printed')}</td>"
         f"<td class='num'>{money(e.get('buy_in_usd'))}</td><td class='num'>{money(e.get('guarantee_usd'))}</td>"
         f"<td class='num'>{str(e.get('level_duration') or '?')} min</td>"
-        f"<td>{chip('single-entry ' + e['rules']['single_entry']['status'], 'chip chip-warn')}</td></tr>" for e in board)
+        f"<td>{chip('single-entry ' + e['rules']['single_entry']['status'], 'chip chip-warn')}</td>"
+        f"<td class='num'><span class='checked'>checked {E(e.get('last_checked') or 'not yet')}</span></td></tr>" for e in board)
     feed = (f"""<section class="feed"><h2>Morning board — what is on from {E(snap_day)} onward</h2>
 <p class="mini-note">Straight from the rooms' own printed schedules as re-read at 06:00 Las Vegas (snapshot {E(SNAPSHOT_AT or 'n/a')}); late-registration and level length are the calendar's own columns, not an estimate of when an event ends.</p>
-<div class="table-scroll"><table class="compact"><thead><tr><th>Day</th><th>Event</th><th class="num">Start</th><th class="num">Reg closes</th><th class="num">Entry</th><th class="num">Guarantee</th><th class="num">Levels</th><th>Entry rule</th></tr></thead><tbody>{board_rows}</tbody></table></div>
+<div class="table-scroll"><table class="compact"><thead><tr><th>Day</th><th>Event</th><th class="num">Start</th><th class="num">Reg closes</th><th class="num">Entry</th><th class="num">Guarantee</th><th class="num">Levels</th><th>Entry rule</th><th class="num">Last checked</th></tr></thead><tbody>{board_rows}</tbody></table></div>
 <p class="srcline">Full parsed calendar: <a href="data/schedule-snapshot.json">data/schedule-snapshot.json</a> · per-room source status: <a href="review.html">review log</a></p></section>""")
     return shell("", "Tournaments", f"""
 <section class="page-head"><h1>Every tournament the rooms published, with the entry rules beside it</h1>
