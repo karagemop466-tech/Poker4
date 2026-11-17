@@ -1,0 +1,148 @@
+{
+  "meta": {
+    "session": "arena/03d073d2-poker4",
+    "task_ids": [
+      "H1",
+      "H2",
+      "H3",
+      "H4"
+    ],
+    "retrieved_on": "2026-11-17",
+    "method": "Read with the page-fetch tool on 2026-11-17 (UTC). The tool returns page text, not the original bytes, so no byte-level sha256 is recorded for these reads. Each quote below is copied verbatim from that text. Re-check with the scheduled monitor or by opening the URL.",
+    "policy": "Only sentences actually present in an official operator or government document are recorded. Nothing is rounded, summarised or inferred. Third-party sites were read to find candidate official pages and are NOT used as evidence."
+  },
+  "sources": [
+    {
+      "id": "V_TERMS_LIVE",
+      "label": "Venetian Resort — Hotel Terms & Conditions (official, live read)",
+      "url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+      "retrieved_on": "2026-11-17",
+      "quotes": [
+        {
+          "field": "room_tax",
+          "text": "Daily rates do not include the applicable Clark County Room Tax of 13.38%.",
+          "section": "Taxes, Surcharges, and Resort Fee"
+        },
+        {
+          "field": "resort_fee",
+          "text": "The Venetian Resort has a standard Las Vegas Resort Fee of $55 plus applicable tax per night, payable upon check-in.",
+          "section": "Taxes, Surcharges, and Resort Fee"
+        },
+        {
+          "field": "parking",
+          "text": "The daily fee for registered hotel guests is $20/day, seven days a week. For non-hotel guests, the fee is $20, Monday – Thursday, and $25/day Friday – Sunday. Valet parking is $40/day.",
+          "section": "Parking Fees"
+        }
+      ],
+      "matches_site_value": {
+        "tax_rate_pct": 13.38,
+        "resort_fee_usd": 55,
+        "self_parking_usd_per_day": 20,
+        "valet_parking_usd_per_day": 40
+      }
+    },
+    {
+      "id": "CLARK_COUNTY_TAX_LETTER",
+      "label": "Clark County Department of Business License — 'Newly adopted transient lodging tax rate changes' letter, dated 15 Nov 2016 (official government document)",
+      "url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:7436500e-cac4-420a-b23a-02d3fec69900/original/as/room-tax-increase-transient-lodging-letter-111616.pdf",
+      "retrieved_on": "2026-11-17",
+      "quotes": [
+        {
+          "field": "room_tax",
+          "text": "Transient Lodging Establishments located within the Primary Gaming Corridor will impose a combined a transient lodging tax rate of 13.38 percent.",
+          "section": "Primary Gaming Corridor"
+        },
+        {
+          "field": "room_tax",
+          "text": "[12.0% (current rate) + 0.5% (LVCVA expansion) + 0.88% (Stadium Construction) = 13.38%]",
+          "section": "Primary Gaming Corridor"
+        },
+        {
+          "field": "room_tax",
+          "text": "Beginning March 1, 2017, Clark County transient lodging establishments including incorporated cities that are located in the Stadium District or the Primary Gaming Corridor (PGC) will be required to impose a new transient lodging tax as part of the combined transient lodging tax.",
+          "section": "Stadium Construction (CCC 4.08.033)"
+        },
+        {
+          "field": "room_tax",
+          "text": "Transient Lodging Establishments located within the stadium district but outside of the Primary Gaming Corridor will impose, a combined transient lodging tax rate of 13.00 percent.",
+          "section": "Stadium District outside PGC"
+        }
+      ],
+      "scope_note": "The letter defines the rate by map area. It says the PGC map is on the county business-licence website but does not reproduce it, so property-level PGC membership is NOT verified by this record (see flag F27)."
+    },
+    {
+      "id": "WYNN_OFFER_DK26WLV2",
+      "label": "Wynn Las Vegas — Special Offer Terms & Conditions, offer code DK26WLV2 (official, live read)",
+      "url": "https://www.wynnlasvegas.com/terms-and-conditions/DK26WLV2",
+      "retrieved_on": "2026-11-17",
+      "offer_validity": "Only available on select dates from October 2, 2026 through March 31, 2027; reservations by Discover Wynn Call Center only; Wynn Resort King rooms; blackout dates include November 17–21, 2026.",
+      "quotes": [
+        {
+          "field": "resort_fee",
+          "text": "Guests must pay $55 resort fee.",
+          "section": "Opening paragraph"
+        },
+        {
+          "field": "resort_fee",
+          "text": "A daily resort fee of $55 plus tax will be added to your room account for each room night, which entitles you to receive complimentary self-parking for up to two vehicles; in-room Wi-Fi of 15 Mbps on an unlimited number of devices; complimentary bottled water, refreshed daily; unlimited local, domestic long distance (including HI and AK) and toll free calls; access for up to two persons to our fitness center; and a digital newsstand of magazines and newspapers.",
+          "section": "Resort Fee"
+        },
+        {
+          "field": "cancellation",
+          "text": "A deposit of one (1) night of room and tax will be charged at the time of booking and cancellations must be received at least 48 hours prior to arrival date or deposit will be forfeited.",
+          "section": "Additional Fees, Deposit and Cancellation Policies",
+          "scope": "this offer only"
+        },
+        {
+          "field": "cancellation",
+          "text": "For all reservations that include a stay on 11/15/2026 through 11/21/2026, a full deposit of all room nights and tax will be charged at the time of confirming your reservation and a three-week cancellation policy is applied.",
+          "section": "Additional Fees, Deposit and Cancellation Policies",
+          "scope": "this offer only; stays 15–21 Nov 2026"
+        },
+        {
+          "field": "cancellation",
+          "text": "For all reservations that include a stay on 12/29/2026 through 12/31/2026, a full deposit of all room nights and tax will be charged at the time of confirming your reservation and a 30-day cancellation policy is applied.",
+          "section": "Additional Fees, Deposit and Cancellation Policies",
+          "scope": "this offer only; stays 29–31 Dec 2026"
+        },
+        {
+          "field": "cancellation",
+          "text": "For all reservations that include a stay on 01/04/2027 through 01/06/2027, a full deposit of all room nights and tax will be charged at the time of confirming your reservation and a two-week cancellation policy is applied.",
+          "section": "Additional Fees, Deposit and Cancellation Policies",
+          "scope": "this offer only; stays 4–6 Jan 2027"
+        }
+      ],
+      "scope_note": "Offer-specific. This is not a general Wynn cancellation policy, and it is not a rate quote for any date the user has not chosen."
+    },
+    {
+      "id": "WYNN_TERMS_850257_PREVIOUS",
+      "label": "Wynn Las Vegas — Terms (page 850257, previously cited)",
+      "url": "https://www.wynnlasvegas.com/terms-and-conditions/850257",
+      "retrieved_on": "2026-11-17",
+      "note": "Already in the registry. It carries the $55 + tax sentence, but the page covers the Concours Sip and Savor package (travel Oct 27 – Nov 1, 2026), which has expired (flag F19). Kept as a secondary citation only."
+    }
+  ],
+  "outcomes": [
+    {
+      "task": "H1",
+      "result": "Rate 13.38% confirmed as the county's Primary Gaming Corridor rate (county letter) and as printed on the Venetian's own terms (live). Property-level PGC membership for other hotels NOT confirmed (F27)."
+    },
+    {
+      "task": "H2",
+      "result": "Wynn $55 + tax resort fee confirmed on a current official Wynn offer page (DK26WLV2, valid to 31 Mar 2027). The general Wynn rate-page fee was not separately read."
+    },
+    {
+      "task": "H3",
+      "result": "Wynn cancellation is offer-specific: 48-hour rule for DK26WLV2 plus three stay-date windows. No general Wynn policy recorded."
+    },
+    {
+      "task": "H4",
+      "result": "New flags F27 (PGC map not checked) and F28 (stale committed sha256 in room-facts.json, regenerated). F6 extended: Bellagio fee still unverified after a second search; only third-party pages state a figure."
+    }
+  ],
+  "not_done": [
+    "Bellagio resort fee: no official Bellagio page reachable; third-party sites give $50, $55, $45 — not used.",
+    "Clark County PGC map: referenced by the letter, not retrieved; per-property membership unverified.",
+    "The county letter is not in the daily monitor registry (data/tracked-sources.json); adding it needs a parser, left for the integration owner."
+  ]
+}

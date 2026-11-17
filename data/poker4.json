@@ -144,9 +144,10 @@
    },
    "tax": {
     "rate_pct": 13.38,
-    "basis": "Clark County room tax, applied to room rate and to the resort fee",
+    "basis": "Clark County room tax 13.38%, printed on the Venetian's own terms; applied to room rate and to the resort fee. The county letter (15 Nov 2016) sets 13.38% for the Primary Gaming Corridor — this property's map membership is not yet checked (F27).",
     "source": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
-    "status": "verified from official terms"
+    "status": "verified from official terms (read live 2026-11-17: 'Daily rates do not include the applicable Clark County Room Tax of 13.38%') and the Clark County letter",
+    "authority": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:7436500e-cac4-420a-b23a-02d3fec69900/original/as/room-tax-increase-transient-lodging-letter-111616.pdf"
    },
    "parking": {
     "self_usd_per_day": 20,
@@ -229,9 +230,10 @@
    },
    "tax": {
     "rate_pct": 13.38,
-    "basis": "Clark County room tax",
+    "basis": "Clark County room tax 13.38%, printed on the Venetian's own terms; applied to room rate and to the resort fee. The county letter (15 Nov 2016) sets 13.38% for the Primary Gaming Corridor — this property's map membership is not yet checked (F27).",
     "source": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
-    "status": "verified from official terms"
+    "status": "verified from official terms (read live 2026-11-17: 'Daily rates do not include the applicable Clark County Room Tax of 13.38%') and the Clark County letter",
+    "authority": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:7436500e-cac4-420a-b23a-02d3fec69900/original/as/room-tax-increase-transient-lodging-letter-111616.pdf"
    },
    "parking": {
     "self_usd_per_day": 20,
@@ -275,15 +277,15 @@
    "booking_link": "https://www.wynnlasvegas.com/",
    "resort_fee": {
     "amount_usd": 55,
-    "basis": "per room, per night + tax, for bookings on or after Jan 15, 2025 (official terms page)",
-    "source": "https://www.wynnlasvegas.com/terms-and-conditions/850257",
-    "status": "verified from official terms"
+    "basis": "per room night, plus tax (read on current Wynn offer terms DK26WLV2, 2026-11-17)",
+    "source": "https://www.wynnlasvegas.com/terms-and-conditions/DK26WLV2",
+    "status": "verified from current official Wynn offer terms (DK26WLV2: 'A daily resort fee of $55 plus tax will be added to your room account for each room night'). General Wynn rate-page fee not separately read."
    },
    "tax": {
     "rate_pct": 13.38,
-    "basis": "Clark County room tax (state room tax rate; the property's own fee pages state the fee is plus tax)",
-    "source": "https://treasureisland.com/deals-offers/buy-1-get-1-bogo-free-fine-print",
-    "status": "third-party-of-record: verified on a Caesars-owned property page, not on the Wynn page — flagged"
+    "basis": "Clark County room tax 13.38% per Clark County letter (15 Nov 2016), which sets 13.38% for the Primary Gaming Corridor. Wynn's own offer pages say only 'plus tax'. This property's map membership is not yet checked (F27).",
+    "source": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:7436500e-cac4-420a-b23a-02d3fec69900/original/as/room-tax-increase-transient-lodging-letter-111616.pdf",
+    "status": "rate from official county letter; not printed on a Wynn page; PGC map membership unverified (F27)"
    },
    "parking": {
     "self_usd_per_day": null,
@@ -292,9 +294,9 @@
     "status": "not printed on the fetched official page — left blank"
    },
    "cancellation": {
-    "text": "not captured",
-    "status": "unverified",
-    "source": "https://www.wynnlasvegas.com/terms-and-conditions/850257"
+    "text": "Offer-specific only (Wynn offer DK26WLV2): one night's room and tax is charged as a deposit at booking, and cancellations must be received at least 48 hours before arrival or the deposit is forfeited. Longer windows apply to stays 15–21 Nov 2026 (three-week policy), 29–31 Dec 2026 (30-day) and 4–6 Jan 2027 (two-week). No general Wynn cancellation policy was captured.",
+    "status": "offer-specific — not a general policy; read your own booking's terms",
+    "source": "https://www.wynnlasvegas.com/terms-and-conditions/DK26WLV2"
    },
    "walk": {
     "status": "Wynn to the Venetian poker room: no official walking-time source; ~2.2 miles of Strip frontage between the two resorts by public mapping, so it is not a plausible walk-to-play pairing anyway.",
@@ -966,7 +968,7 @@
    "id": "F6",
    "severity": "source-dead",
    "item": "Bellagio resort-fee page returns HTTP 404",
-   "detail": "Confirmed again by the scheduled monitor on 2026-11-17, matching the earlier session's finding. Bellagio's true nightly cost stays blank.",
+   "detail": "Confirmed again by the scheduled monitor on 2026-11-17, matching the earlier session's finding. Bellagio's true nightly cost stays blank. Second search on 2026-11-17 (session 03d073d2): only third-party sites (hoteltiplasvegas.com, feelingvegas.com, vacations.united.com, applevacations.com) state a Bellagio fee, and none is an official MGM page, so the Bellagio fee stays blank.",
    "sources": [
     "https://bellagio.mgmresorts.com/en/hotel/resort-fee.html"
    ]
@@ -1083,9 +1085,10 @@
   {
    "id": "F19",
    "severity": "caveat",
-   "item": "Wynn $55 resort fee is quoted only in an expired promotional package's terms",
-   "detail": "The Wynn terms page states a daily resort fee of $55 plus tax, but the page covers the Concours Sip and Savor package (travel Oct 27 – Nov 1, 2026), which has expired. No current general Wynn resort-fee page was read. Re-confirm before booking.",
+   "item": "Wynn $55 resort fee: now read on a current official Wynn offer page (DK26WLV2)",
+   "detail": "The earlier citation (page 850257) covers the Concours Sip and Savor package (travel Oct 27 – Nov 1, 2026), which has expired. The current offer page DK26WLV2 (select dates Oct 2, 2026 – Mar 31, 2027; Wynn Resort King; call-centre booking only) states 'A daily resort fee of $55 plus tax', read 2026-11-17 in session 03d073d2. The general Wynn rate-page fee was not separately read, and offer terms change, so re-confirm on the booking page before paying.",
    "sources": [
+    "https://www.wynnlasvegas.com/terms-and-conditions/DK26WLV2",
     "https://www.wynnlasvegas.com/terms-and-conditions/850257"
    ]
   },
@@ -1161,6 +1164,36 @@
     "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
    ],
    "note": "renumbered from F19 on merge with main, where that id was already used by another session"
+  },
+  {
+   "id": "F27",
+   "severity": "unverified",
+   "item": "Primary Gaming Corridor membership (13.38% vs 13.00%) not checked property by property",
+   "detail": "The Clark County letter of 15 Nov 2016 sets 13.38% for properties inside the Primary Gaming Corridor, 13.00% for stadium-district properties outside it, and only the 0.5% LVCVA increase outside both. It refers to the PGC map on the county website but does not reproduce it. The Venetian's own terms print 13.38% (read live 2026-11-17). Wynn's rate is now sourced to the county letter and Treasure Island's to its offer-terms page, but neither property's map membership has been checked. Action: open the county PGC map and confirm each property before its rate is treated as confirmed. The letter is dated 15 Nov 2016. The current Clark County code (CCC 4.08) was not read in this session; the 13.38% figure is corroborated by the Venetian's live 2026 terms page, not by a current county document.",
+   "sources": [
+    "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:7436500e-cac4-420a-b23a-02d3fec69900/original/as/room-tax-increase-transient-lodging-letter-111616.pdf",
+    "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+    "https://treasureisland.com/deals-offers/buy-1-get-1-bogo-free-fine-print"
+   ]
+  },
+  {
+   "id": "F28",
+   "severity": "data-quality-corrected",
+   "item": "data/room-facts.json carried sha256 values that did not match the raw captures it cites",
+   "detail": "Re-running tools/room_extract.py recomputed the hashes of data/raw/wynn-wpt-terms.txt and data/raw/wynn-daily-structures.txt. The committed values were stale. The regenerated file changes only those sha256 fields (commit 7c5767d). The raw captures were not changed.",
+   "sources": [
+    "https://github.com/karagemop466-tech/Poker4/blob/main/data/room-facts.json"
+   ]
+  },
+  {
+   "id": "F29",
+   "severity": "monitor-failure",
+   "item": "Daily poker4 monitor (tournament-monitor.yml) failed its verification gate on 2026-11-17; not yet fixed",
+   "detail": "The workflow 'Daily schedule + source-change monitor' failed at its step 'Verify the site before committing' (tools/verify_poker4.py). This happened on the 22:26 UTC scheduled run (run 44190052816, commit ff3fa36) and on three push runs earlier the same day (43994467535, 43994447808, 43994391262). The sandbox could not download the failed-run logs (EOF), so the exact failing check was not read. Run offline on the committed tree, verify_poker4.py passes (20 pages, 94 tournament rows, 57 sources). A manual retry was refused (HTTP 403, 'Resource not accessible by integration'). The root site and its Pages deploy are not affected: that job commits only the poker4/ sub-site data, and the root deploy succeeded on the merge commit. Action for the owner: open the failed run's 'Verify the site' step log and fix the cause, or re-run the schedule after the cause is fixed.",
+   "sources": [
+    "https://github.com/karagemop466-tech/Poker4/actions/runs/44190052816",
+    "https://github.com/karagemop466-tech/Poker4/blob/main/.github/workflows/tournament-monitor.yml"
+   ]
   }
  ],
  "trip_example": {
