@@ -18050,7 +18050,7 @@
    "date": null,
    "weekday": null,
    "time": "10:00 AM",
-   "registration_closes": null,
+   "registration_closes": "start of level 7",
    "buy_in_usd": 100,
    "guarantee_usd": 1000,
    "guarantee_printed": true,
@@ -18071,40 +18071,39 @@
      "retrieved": "2026-11-17"
     },
     "re_entry": {
-     "status": "unverified",
-     "value": null,
-     "excerpt": "the page describes the slate but prints no re-entry rule",
-     "source": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
+     "status": "confirmed_allowed",
+     "value": "re-entry allowed after elimination, within the first break of play",
+     "excerpt": "Participants may only register themselves, but may re-enter, by paying the entry fee, upon elimination within the first break of play.",
+     "source": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
      "retrieved": "2026-11-17"
     },
     "add_on": {
      "status": "confirmed_allowed",
-     "value": "$50 add-on for 15,000 extra chips",
-     "excerpt": "a $50 add-on at the first break gives you an extra 15,000 chips",
-     "source": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
+     "value": "$50 add-on for 15,000 extra chips (first break only)",
+     "excerpt": "a $50 add-on at the first break gives you an extra 15,000 chips; Of the $50 add-on, $45 goes to the prize pool and $5 is held by Caesars Palace as a maintenance fee.",
+     "source": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
      "retrieved": "2026-11-17"
     },
     "spend_advantage": true,
     "fee": {
-     "status": "unverified",
-     "value": null,
-     "excerpt": "the page prints the $100 buy-in but not the house-fee split",
-     "source": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
+     "status": "confirmed",
+     "value": "$70 tournament prize pool; $30 Caesars Palace maintenance fee",
+     "excerpt": "Of the $100 buy in, $70 goes to the prize pool and $30 is held by Caesars Palace as a maintenance fee.",
+     "source": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
      "retrieved": "2026-11-17"
     }
    },
    "sources": [
-    "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+    "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
+    "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf"
    ],
    "sheet_key": null,
-   "notes": "add-on offered: a $50 add-on at the first break gives you an extra 15,000 chips",
+   "notes": "add-on offered: a $50 add-on at the first break gives you an extra 15,000 chips; registration closes at the start of level 7.",
    "spend_advantage": true,
    "single_entry_confirmed": false,
    "flags": [
     "spend-advantage format \u2014 excluded from the single-entry list",
-    "fee split not printed \u2014 not ranked",
-    "daily slate \u2014 no calendar date printed",
-    "official page prints no house-fee split, so the row is not ranked"
+    "daily slate \u2014 no calendar date printed"
    ],
    "gtd_ratio": 10.0,
    "last_checked": "2026-11-17",
@@ -18551,13 +18550,13 @@
    "venue": "caesars",
    "venue_name": "Caesars Palace Poker Room",
    "event_no": null,
-   "name": "$100 No Limit Hold'em",
-   "name_printed": "$100 NO LIMIT HOLD'EM",
+   "name": "$160 No Limit Hold'em",
+   "name_printed": "$160 NO LIMIT HOLD'EM",
    "date": null,
    "weekday": null,
    "time": "2:00 PM",
-   "registration_closes": null,
-   "buy_in_usd": 100,
+   "registration_closes": "start of level 7",
+   "buy_in_usd": 160,
    "guarantee_usd": 1000,
    "guarantee_printed": true,
    "starting_chips": 20000,
@@ -18577,42 +18576,41 @@
      "retrieved": "2026-11-17"
     },
     "re_entry": {
-     "status": "unverified",
-     "value": null,
-     "excerpt": "the page describes the slate but prints no re-entry rule",
-     "source": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
+     "status": "confirmed_allowed",
+     "value": "re-entry allowed after elimination, within the first break of play",
+     "excerpt": "Participants may only register themselves, but may re-enter, by paying the entry fee, upon elimination within the first break of play.",
+     "source": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
      "retrieved": "2026-11-17"
     },
     "add_on": {
      "status": "confirmed_allowed",
-     "value": "$50 add-on for 15,000 extra chips",
-     "excerpt": "a $50 add-on at the first break gives you an extra 15,000 chips",
-     "source": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
+     "value": "$50 add-on for 15,000 extra chips (first break only)",
+     "excerpt": "a $50 add-on at the first break gives you an extra 15,000 chips; Of the $50 add-on, $45 goes to the prize pool and $5 is held by Caesars Palace as a maintenance fee.",
+     "source": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
      "retrieved": "2026-11-17"
     },
     "spend_advantage": true,
     "fee": {
-     "status": "unverified",
-     "value": null,
-     "excerpt": "the page prints the $100 buy-in but not the house-fee split",
-     "source": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
+     "status": "confirmed",
+     "value": "$115 tournament prize pool; $45 Caesars Palace maintenance fee",
+     "excerpt": "Of the $160 buy in, $115 goes to the prize pool and $45 is held by Caesars Palace as a maintenance fee.",
+     "source": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
      "retrieved": "2026-11-17"
     }
    },
    "sources": [
-    "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+    "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
+    "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf"
    ],
    "sheet_key": null,
-   "notes": "add-on offered: a $50 add-on at the first break gives you an extra 15,000 chips",
+   "notes": "add-on offered: a $50 add-on at the first break gives you an extra 15,000 chips; registration closes at the start of level 7. 2026 flyer prints $160 for this slot; the explore page's \u201cevery event carries a $100 buy-in\u201d sentence conflicts \u2014 see flag F25.",
    "spend_advantage": true,
    "single_entry_confirmed": false,
    "flags": [
     "spend-advantage format \u2014 excluded from the single-entry list",
-    "fee split not printed \u2014 not ranked",
-    "daily slate \u2014 no calendar date printed",
-    "official page prints no house-fee split, so the row is not ranked"
+    "daily slate \u2014 no calendar date printed"
    ],
-   "gtd_ratio": 10.0,
+   "gtd_ratio": 6.25,
    "last_checked": "2026-11-17",
    "source_changed": false,
    "rankable": false
@@ -18700,7 +18698,7 @@
    "date": null,
    "weekday": null,
    "time": "6:00 PM",
-   "registration_closes": null,
+   "registration_closes": "start of level 7",
    "buy_in_usd": 100,
    "guarantee_usd": 1000,
    "guarantee_printed": true,
@@ -18721,40 +18719,39 @@
      "retrieved": "2026-11-17"
     },
     "re_entry": {
-     "status": "unverified",
-     "value": null,
-     "excerpt": "the page describes the slate but prints no re-entry rule",
-     "source": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
+     "status": "confirmed_allowed",
+     "value": "re-entry allowed after elimination, within the first break of play",
+     "excerpt": "Participants may only register themselves, but may re-enter, by paying the entry fee, upon elimination within the first break of play.",
+     "source": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
      "retrieved": "2026-11-17"
     },
     "add_on": {
      "status": "confirmed_allowed",
-     "value": "$50 add-on for 15,000 extra chips",
-     "excerpt": "a $50 add-on at the first break gives you an extra 15,000 chips",
-     "source": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
+     "value": "$50 add-on for 15,000 extra chips (first break only)",
+     "excerpt": "a $50 add-on at the first break gives you an extra 15,000 chips; Of the $50 add-on, $45 goes to the prize pool and $5 is held by Caesars Palace as a maintenance fee.",
+     "source": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
      "retrieved": "2026-11-17"
     },
     "spend_advantage": true,
     "fee": {
-     "status": "unverified",
-     "value": null,
-     "excerpt": "the page prints the $100 buy-in but not the house-fee split",
-     "source": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
+     "status": "confirmed",
+     "value": "$70 tournament prize pool; $30 Caesars Palace maintenance fee",
+     "excerpt": "Of the $100 buy in, $70 goes to the prize pool and $30 is held by Caesars Palace as a maintenance fee.",
+     "source": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
      "retrieved": "2026-11-17"
     }
    },
    "sources": [
-    "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+    "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
+    "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf"
    ],
    "sheet_key": null,
-   "notes": "add-on offered: a $50 add-on at the first break gives you an extra 15,000 chips",
+   "notes": "add-on offered: a $50 add-on at the first break gives you an extra 15,000 chips; registration closes at the start of level 7.",
    "spend_advantage": true,
    "single_entry_confirmed": false,
    "flags": [
     "spend-advantage format \u2014 excluded from the single-entry list",
-    "fee split not printed \u2014 not ranked",
-    "daily slate \u2014 no calendar date printed",
-    "official page prints no house-fee split, so the row is not ranked"
+    "daily slate \u2014 no calendar date printed"
    ],
    "gtd_ratio": 10.0,
    "last_checked": "2026-11-17",
@@ -18766,13 +18763,13 @@
    "venue": "caesars",
    "venue_name": "Caesars Palace Poker Room",
    "event_no": null,
-   "name": "$100 No Limit Hold'em",
-   "name_printed": "$100 NO LIMIT HOLD'EM",
+   "name": "$160 No Limit Hold'em",
+   "name_printed": "$160 NO LIMIT HOLD'EM",
    "date": null,
    "weekday": null,
    "time": "9:00 PM",
-   "registration_closes": null,
-   "buy_in_usd": 100,
+   "registration_closes": "start of level 7",
+   "buy_in_usd": 160,
    "guarantee_usd": 1000,
    "guarantee_printed": true,
    "starting_chips": 20000,
@@ -18792,42 +18789,41 @@
      "retrieved": "2026-11-17"
     },
     "re_entry": {
-     "status": "unverified",
-     "value": null,
-     "excerpt": "the page describes the slate but prints no re-entry rule",
-     "source": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
+     "status": "confirmed_allowed",
+     "value": "re-entry allowed after elimination, within the first break of play",
+     "excerpt": "Participants may only register themselves, but may re-enter, by paying the entry fee, upon elimination within the first break of play.",
+     "source": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
      "retrieved": "2026-11-17"
     },
     "add_on": {
      "status": "confirmed_allowed",
-     "value": "$50 add-on for 15,000 extra chips",
-     "excerpt": "a $50 add-on at the first break gives you an extra 15,000 chips",
-     "source": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
+     "value": "$50 add-on for 15,000 extra chips (first break only)",
+     "excerpt": "a $50 add-on at the first break gives you an extra 15,000 chips; Of the $50 add-on, $45 goes to the prize pool and $5 is held by Caesars Palace as a maintenance fee.",
+     "source": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
      "retrieved": "2026-11-17"
     },
     "spend_advantage": true,
     "fee": {
-     "status": "unverified",
-     "value": null,
-     "excerpt": "the page prints the $100 buy-in but not the house-fee split",
-     "source": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
+     "status": "confirmed",
+     "value": "$115 tournament prize pool; $45 Caesars Palace maintenance fee",
+     "excerpt": "Of the $160 buy in, $115 goes to the prize pool and $45 is held by Caesars Palace as a maintenance fee.",
+     "source": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
      "retrieved": "2026-11-17"
     }
    },
    "sources": [
-    "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+    "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
+    "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf"
    ],
    "sheet_key": null,
-   "notes": "add-on offered: a $50 add-on at the first break gives you an extra 15,000 chips",
+   "notes": "add-on offered: a $50 add-on at the first break gives you an extra 15,000 chips; registration closes at the start of level 7. 2026 flyer prints $160 for this slot; the explore page's \u201cevery event carries a $100 buy-in\u201d sentence conflicts \u2014 see flag F25.",
    "spend_advantage": true,
    "single_entry_confirmed": false,
    "flags": [
     "spend-advantage format \u2014 excluded from the single-entry list",
-    "fee split not printed \u2014 not ranked",
-    "daily slate \u2014 no calendar date printed",
-    "official page prints no house-fee split, so the row is not ranked"
+    "daily slate \u2014 no calendar date printed"
    ],
-   "gtd_ratio": 10.0,
+   "gtd_ratio": 6.25,
    "last_checked": "2026-11-17",
    "source_changed": false,
    "rankable": false
