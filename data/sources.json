@@ -86,5 +86,44 @@
       "url": "https://www.orleanscasino.com/casino/poker",
       "type": "official"
     }
-  }
+  },
+  "monitor_registry": [
+    {
+      "id": "M-VEN-SCHED",
+      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+      "label": "Venetian DSE IV event schedule",
+      "last_checked": "2026-11-16",
+      "status": "not_rechecked_external_blocked",
+      "changed": false,
+      "note": "External host not reachable from this build; change re-check must run server-side against the official page."
+    },
+    {
+      "id": "M-VEN-FEE",
+      "url": "https://www.venetianlasvegas.com/resort/resort-fee.html",
+      "label": "Venetian resort fee",
+      "last_checked": "2026-11-16",
+      "status": "not_rechecked_external_blocked",
+      "changed": false,
+      "note": "$55 + tax confirmed at snapshot; re-check required before relying on current rate."
+    },
+    {
+      "id": "M-VEN-RATES",
+      "url": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
+      "label": "Venetian poker suite rates",
+      "last_checked": "2026-11-16",
+      "status": "not_rechecked_external_blocked",
+      "changed": false,
+      "note": "Starting endpoints $119/$209 are conditional, not date-specific quotes."
+    },
+    {
+      "id": "M-WYNN-POKER",
+      "url": "https://www.wynnlasvegas.com/casino/poker",
+      "label": "Wynn poker room",
+      "last_checked": "2026-11-16",
+      "status": "not_rechecked_external_blocked",
+      "changed": false,
+      "note": "Official Wynn daily/WPT schedules cited at snapshot; re-check required."
+    }
+  ],
+  "monitor_note": "Official URLs are listed for scheduled re-check. A changed value sets changed = true and flags the affected rows. Client-side re-fetch of external hosts is blocked in this sandbox; run the check server-side and update last_checked / changed before each publish."
 }

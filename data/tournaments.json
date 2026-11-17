@@ -3,7 +3,9 @@
     "accessed": "2026-11-16",
     "window": "Nov 16 – Dec 23, 2026 (dates as printed on the official schedules)",
     "scope": "Las Vegas Strip poker rooms. Off-Strip rooms are listed on the Flagged page only.",
-    "ranking_rule": "No rows are ranked as single-entry until official rules explicitly confirm no re-entry/add-on. Candidate ratio is arithmetic only, not expected value."
+    "ranking_rule": "No rows are ranked as single-entry until official rules explicitly confirm no re-entry/add-on. Candidate ratio is arithmetic only, not expected value.",
+    "enhanced": "2026-11-16",
+    "rule_field_note": "single_entry / reentry / addon are confirmed only where the official structure sheet states them; absence of a statement is recorded as 'unverified', never treated as freezeout. fee / total_entry_fee are confirmed where the schedule or structure states a dollar amount."
   },
   "sources": {
     "V_SCHED": {
@@ -118,7 +120,48 @@
         "V_SCHED",
         "V_S5"
       ],
-      "notes": "Structure sheet covers events 2 and 12. Pays 12.5% of field. 21+ and Venetian Rewards card required."
+      "notes": "Structure sheet covers events 2 and 12. Pays 12.5% of field. 21+ and Venetian Rewards card required.",
+      "last_checked": "2026-11-16",
+      "retrieval_date": "2026-11-16",
+      "source_checked": "2026-11-16",
+      "source_changed": false,
+      "rule_fields": {
+        "single_entry": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "Reviewed structure does not state a one-entry limit or prohibit re-entry/rebuy/add-on.",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "reentry": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "Re-entry policy not stated in the reviewed structure.",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "addon": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "Add-on policy not stated in the reviewed structure.",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "fee": {
+          "value": 58,
+          "status": "confirmed",
+          "excerpt": "$58 house fee",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "total_entry_fee": {
+          "value": 300,
+          "status": "confirmed",
+          "excerpt": "$300 buy-in",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        }
+      }
     },
     {
       "day": "Sun Nov 22, 2026",
@@ -138,7 +181,48 @@
         "V_SCHED",
         "V_S29"
       ],
-      "notes": "Guarantee not printed on the schedule or the structure sheet, so it is left blank. Prize split not on the structure sheet."
+      "notes": "Guarantee not printed on the schedule or the structure sheet, so it is left blank. Prize split not on the structure sheet.",
+      "last_checked": "2026-11-16",
+      "retrieval_date": "2026-11-16",
+      "source_checked": "2026-11-16",
+      "source_changed": false,
+      "rule_fields": {
+        "single_entry": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "Reviewed structure does not state a one-entry limit or prohibit re-entry/rebuy/add-on.",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "reentry": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "Re-entry policy not stated in the reviewed structure.",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "addon": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "Add-on policy not stated in the reviewed structure.",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "fee": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "House fee not stated in the reviewed source.",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "total_entry_fee": {
+          "value": 200,
+          "status": "confirmed",
+          "excerpt": "$200 buy-in",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        }
+      }
     },
     {
       "day": "Tue Nov 24, 2026",
@@ -158,7 +242,48 @@
         "V_SCHED",
         "V_S1"
       ],
-      "notes": "$50 bounty per elimination; the $8,000 guarantee includes bounties. Pays 12.5% of field."
+      "notes": "$50 bounty per elimination; the $8,000 guarantee includes bounties. Pays 12.5% of field.",
+      "last_checked": "2026-11-16",
+      "retrieval_date": "2026-11-16",
+      "source_checked": "2026-11-16",
+      "source_changed": false,
+      "rule_fields": {
+        "single_entry": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "Reviewed structure does not state a one-entry limit or prohibit re-entry/rebuy/add-on.",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "reentry": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "Re-entry policy not stated in the reviewed structure.",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "addon": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "Add-on policy not stated in the reviewed structure.",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "fee": {
+          "value": 40,
+          "status": "confirmed",
+          "excerpt": "$40 house fee",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "total_entry_fee": {
+          "value": 200,
+          "status": "confirmed",
+          "excerpt": "$200 buy-in",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        }
+      }
     },
     {
       "day": "Wed Nov 25, 2026",
@@ -178,7 +303,48 @@
         "V_SCHED",
         "V_S6"
       ],
-      "notes": "Pays 12.5% of field."
+      "notes": "Pays 12.5% of field.",
+      "last_checked": "2026-11-16",
+      "retrieval_date": "2026-11-16",
+      "source_checked": "2026-11-16",
+      "source_changed": false,
+      "rule_fields": {
+        "single_entry": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "Reviewed structure does not state a one-entry limit or prohibit re-entry/rebuy/add-on.",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "reentry": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "Re-entry policy not stated in the reviewed structure.",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "addon": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "Add-on policy not stated in the reviewed structure.",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "fee": {
+          "value": 65,
+          "status": "confirmed",
+          "excerpt": "$65 house fee",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "total_entry_fee": {
+          "value": 400,
+          "status": "confirmed",
+          "excerpt": "$400 buy-in",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        }
+      }
     },
     {
       "day": "Wed Nov 25, 2026",
@@ -198,7 +364,48 @@
         "V_SCHED",
         "V_S1"
       ],
-      "notes": "$50 bounty per elimination; guarantee includes bounties."
+      "notes": "$50 bounty per elimination; guarantee includes bounties.",
+      "last_checked": "2026-11-16",
+      "retrieval_date": "2026-11-16",
+      "source_checked": "2026-11-16",
+      "source_changed": false,
+      "rule_fields": {
+        "single_entry": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "Reviewed structure does not state a one-entry limit or prohibit re-entry/rebuy/add-on.",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "reentry": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "Re-entry policy not stated in the reviewed structure.",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "addon": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "Add-on policy not stated in the reviewed structure.",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "fee": {
+          "value": 40,
+          "status": "confirmed",
+          "excerpt": "$40 house fee",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "total_entry_fee": {
+          "value": 200,
+          "status": "confirmed",
+          "excerpt": "$200 buy-in",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        }
+      }
     },
     {
       "day": "Thu Nov 26, 2026",
@@ -218,7 +425,48 @@
         "V_SCHED",
         "V_S5"
       ],
-      "notes": "Same structure sheet as event 2. Pays 12.5% of field."
+      "notes": "Same structure sheet as event 2. Pays 12.5% of field.",
+      "last_checked": "2026-11-16",
+      "retrieval_date": "2026-11-16",
+      "source_checked": "2026-11-16",
+      "source_changed": false,
+      "rule_fields": {
+        "single_entry": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "Reviewed structure does not state a one-entry limit or prohibit re-entry/rebuy/add-on.",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "reentry": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "Re-entry policy not stated in the reviewed structure.",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "addon": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "Add-on policy not stated in the reviewed structure.",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "fee": {
+          "value": 58,
+          "status": "confirmed",
+          "excerpt": "$58 house fee",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "total_entry_fee": {
+          "value": 300,
+          "status": "confirmed",
+          "excerpt": "$300 buy-in",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        }
+      }
     },
     {
       "day": "Thu Nov 26, 2026",
@@ -238,7 +486,48 @@
         "V_SCHED",
         "V_S1"
       ],
-      "notes": "$50 bounty per elimination; guarantee includes bounties."
+      "notes": "$50 bounty per elimination; guarantee includes bounties.",
+      "last_checked": "2026-11-16",
+      "retrieval_date": "2026-11-16",
+      "source_checked": "2026-11-16",
+      "source_changed": false,
+      "rule_fields": {
+        "single_entry": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "Reviewed structure does not state a one-entry limit or prohibit re-entry/rebuy/add-on.",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "reentry": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "Re-entry policy not stated in the reviewed structure.",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "addon": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "Add-on policy not stated in the reviewed structure.",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "fee": {
+          "value": 40,
+          "status": "confirmed",
+          "excerpt": "$40 house fee",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "total_entry_fee": {
+          "value": 200,
+          "status": "confirmed",
+          "excerpt": "$200 buy-in",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        }
+      }
     },
     {
       "day": "Fri Nov 27, 2026",
@@ -258,7 +547,48 @@
         "V_SCHED",
         "V_S7"
       ],
-      "notes": "Structure sheet covers events 14, 28 and 63. Pays 12.5% of field."
+      "notes": "Structure sheet covers events 14, 28 and 63. Pays 12.5% of field.",
+      "last_checked": "2026-11-16",
+      "retrieval_date": "2026-11-16",
+      "source_checked": "2026-11-16",
+      "source_changed": false,
+      "rule_fields": {
+        "single_entry": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "Reviewed structure does not state a one-entry limit or prohibit re-entry/rebuy/add-on.",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "reentry": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "Re-entry policy not stated in the reviewed structure.",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "addon": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "Add-on policy not stated in the reviewed structure.",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "fee": {
+          "value": 90,
+          "status": "confirmed",
+          "excerpt": "$90 house fee",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "total_entry_fee": {
+          "value": 600,
+          "status": "confirmed",
+          "excerpt": "$600 buy-in",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        }
+      }
     },
     {
       "day": "Fri Nov 27, 2026",
@@ -278,7 +608,48 @@
         "V_SCHED",
         "V_S1"
       ],
-      "notes": "$50 bounty per elimination; guarantee includes bounties."
+      "notes": "$50 bounty per elimination; guarantee includes bounties.",
+      "last_checked": "2026-11-16",
+      "retrieval_date": "2026-11-16",
+      "source_checked": "2026-11-16",
+      "source_changed": false,
+      "rule_fields": {
+        "single_entry": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "Reviewed structure does not state a one-entry limit or prohibit re-entry/rebuy/add-on.",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "reentry": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "Re-entry policy not stated in the reviewed structure.",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "addon": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "Add-on policy not stated in the reviewed structure.",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "fee": {
+          "value": 40,
+          "status": "confirmed",
+          "excerpt": "$40 house fee",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "total_entry_fee": {
+          "value": 200,
+          "status": "confirmed",
+          "excerpt": "$200 buy-in",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        }
+      }
     },
     {
       "day": "Sun Nov 29, 2026",
@@ -298,7 +669,48 @@
         "V_SCHED",
         "V_S1"
       ],
-      "notes": "$50 bounty per elimination; guarantee includes bounties."
+      "notes": "$50 bounty per elimination; guarantee includes bounties.",
+      "last_checked": "2026-11-16",
+      "retrieval_date": "2026-11-16",
+      "source_checked": "2026-11-16",
+      "source_changed": false,
+      "rule_fields": {
+        "single_entry": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "Reviewed structure does not state a one-entry limit or prohibit re-entry/rebuy/add-on.",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "reentry": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "Re-entry policy not stated in the reviewed structure.",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "addon": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "Add-on policy not stated in the reviewed structure.",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "fee": {
+          "value": 40,
+          "status": "confirmed",
+          "excerpt": "$40 house fee",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "total_entry_fee": {
+          "value": 200,
+          "status": "confirmed",
+          "excerpt": "$200 buy-in",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        }
+      }
     },
     {
       "day": "Mon Nov 30, 2026",
@@ -318,7 +730,48 @@
         "V_SCHED",
         "V_S1"
       ],
-      "notes": "$50 bounty per elimination; guarantee includes bounties."
+      "notes": "$50 bounty per elimination; guarantee includes bounties.",
+      "last_checked": "2026-11-16",
+      "retrieval_date": "2026-11-16",
+      "source_checked": "2026-11-16",
+      "source_changed": false,
+      "rule_fields": {
+        "single_entry": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "Reviewed structure does not state a one-entry limit or prohibit re-entry/rebuy/add-on.",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "reentry": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "Re-entry policy not stated in the reviewed structure.",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "addon": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "Add-on policy not stated in the reviewed structure.",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "fee": {
+          "value": 40,
+          "status": "confirmed",
+          "excerpt": "$40 house fee",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "total_entry_fee": {
+          "value": 200,
+          "status": "confirmed",
+          "excerpt": "$200 buy-in",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        }
+      }
     },
     {
       "day": "Tue Dec 1, 2026",
@@ -338,7 +791,48 @@
         "V_SCHED",
         "V_S1"
       ],
-      "notes": "$50 bounty per elimination; guarantee includes bounties."
+      "notes": "$50 bounty per elimination; guarantee includes bounties.",
+      "last_checked": "2026-11-16",
+      "retrieval_date": "2026-11-16",
+      "source_checked": "2026-11-16",
+      "source_changed": false,
+      "rule_fields": {
+        "single_entry": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "Reviewed structure does not state a one-entry limit or prohibit re-entry/rebuy/add-on.",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "reentry": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "Re-entry policy not stated in the reviewed structure.",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "addon": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "Add-on policy not stated in the reviewed structure.",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "fee": {
+          "value": 40,
+          "status": "confirmed",
+          "excerpt": "$40 house fee",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "total_entry_fee": {
+          "value": 200,
+          "status": "confirmed",
+          "excerpt": "$200 buy-in",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        }
+      }
     },
     {
       "day": "Wed Dec 2, 2026",
@@ -358,7 +852,48 @@
         "V_SCHED",
         "V_S1"
       ],
-      "notes": "$50 bounty per elimination; guarantee includes bounties."
+      "notes": "$50 bounty per elimination; guarantee includes bounties.",
+      "last_checked": "2026-11-16",
+      "retrieval_date": "2026-11-16",
+      "source_checked": "2026-11-16",
+      "source_changed": false,
+      "rule_fields": {
+        "single_entry": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "Reviewed structure does not state a one-entry limit or prohibit re-entry/rebuy/add-on.",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "reentry": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "Re-entry policy not stated in the reviewed structure.",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "addon": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "Add-on policy not stated in the reviewed structure.",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "fee": {
+          "value": 40,
+          "status": "confirmed",
+          "excerpt": "$40 house fee",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "total_entry_fee": {
+          "value": 200,
+          "status": "confirmed",
+          "excerpt": "$200 buy-in",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        }
+      }
     },
     {
       "day": "Sun Dec 6, 2026",
@@ -378,7 +913,48 @@
         "V_SCHED",
         "V_S7"
       ],
-      "notes": "Structure sheet states the $40,000 guarantee for event 28. Highest verified guarantee-to-buy-in ratio in this window."
+      "notes": "Structure sheet states the $40,000 guarantee for event 28. Highest verified guarantee-to-buy-in ratio in this window.",
+      "last_checked": "2026-11-16",
+      "retrieval_date": "2026-11-16",
+      "source_checked": "2026-11-16",
+      "source_changed": false,
+      "rule_fields": {
+        "single_entry": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "Reviewed structure does not state a one-entry limit or prohibit re-entry/rebuy/add-on.",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "reentry": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "Re-entry policy not stated in the reviewed structure.",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "addon": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "Add-on policy not stated in the reviewed structure.",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "fee": {
+          "value": 90,
+          "status": "confirmed",
+          "excerpt": "$90 house fee",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "total_entry_fee": {
+          "value": 600,
+          "status": "confirmed",
+          "excerpt": "$600 buy-in",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        }
+      }
     },
     {
       "day": "Sun Dec 20, 2026",
@@ -398,7 +974,48 @@
         "V_SCHED",
         "V_S1"
       ],
-      "notes": "$50 bounty per elimination; guarantee includes bounties."
+      "notes": "$50 bounty per elimination; guarantee includes bounties.",
+      "last_checked": "2026-11-16",
+      "retrieval_date": "2026-11-16",
+      "source_checked": "2026-11-16",
+      "source_changed": false,
+      "rule_fields": {
+        "single_entry": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "Reviewed structure does not state a one-entry limit or prohibit re-entry/rebuy/add-on.",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "reentry": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "Re-entry policy not stated in the reviewed structure.",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "addon": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "Add-on policy not stated in the reviewed structure.",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "fee": {
+          "value": 40,
+          "status": "confirmed",
+          "excerpt": "$40 house fee",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "total_entry_fee": {
+          "value": 200,
+          "status": "confirmed",
+          "excerpt": "$200 buy-in",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        }
+      }
     },
     {
       "day": "Mon Dec 21, 2026",
@@ -418,7 +1035,48 @@
         "V_SCHED",
         "V_S1"
       ],
-      "notes": "$50 bounty per elimination; guarantee includes bounties."
+      "notes": "$50 bounty per elimination; guarantee includes bounties.",
+      "last_checked": "2026-11-16",
+      "retrieval_date": "2026-11-16",
+      "source_checked": "2026-11-16",
+      "source_changed": false,
+      "rule_fields": {
+        "single_entry": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "Reviewed structure does not state a one-entry limit or prohibit re-entry/rebuy/add-on.",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "reentry": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "Re-entry policy not stated in the reviewed structure.",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "addon": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "Add-on policy not stated in the reviewed structure.",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "fee": {
+          "value": 40,
+          "status": "confirmed",
+          "excerpt": "$40 house fee",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "total_entry_fee": {
+          "value": 200,
+          "status": "confirmed",
+          "excerpt": "$200 buy-in",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        }
+      }
     },
     {
       "day": "Tue Dec 22, 2026",
@@ -438,7 +1096,48 @@
         "V_SCHED",
         "V_S1"
       ],
-      "notes": "$50 bounty per elimination; guarantee includes bounties."
+      "notes": "$50 bounty per elimination; guarantee includes bounties.",
+      "last_checked": "2026-11-16",
+      "retrieval_date": "2026-11-16",
+      "source_checked": "2026-11-16",
+      "source_changed": false,
+      "rule_fields": {
+        "single_entry": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "Reviewed structure does not state a one-entry limit or prohibit re-entry/rebuy/add-on.",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "reentry": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "Re-entry policy not stated in the reviewed structure.",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "addon": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "Add-on policy not stated in the reviewed structure.",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "fee": {
+          "value": 40,
+          "status": "confirmed",
+          "excerpt": "$40 house fee",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "total_entry_fee": {
+          "value": 200,
+          "status": "confirmed",
+          "excerpt": "$200 buy-in",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        }
+      }
     },
     {
       "day": "Wed Dec 23, 2026",
@@ -458,7 +1157,48 @@
         "V_SCHED",
         "V_S7"
       ],
-      "notes": "Structure sheet covers events 14, 28 and 63."
+      "notes": "Structure sheet covers events 14, 28 and 63.",
+      "last_checked": "2026-11-16",
+      "retrieval_date": "2026-11-16",
+      "source_checked": "2026-11-16",
+      "source_changed": false,
+      "rule_fields": {
+        "single_entry": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "Reviewed structure does not state a one-entry limit or prohibit re-entry/rebuy/add-on.",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "reentry": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "Re-entry policy not stated in the reviewed structure.",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "addon": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "Add-on policy not stated in the reviewed structure.",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "fee": {
+          "value": 90,
+          "status": "confirmed",
+          "excerpt": "$90 house fee",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "total_entry_fee": {
+          "value": 600,
+          "status": "confirmed",
+          "excerpt": "$600 buy-in",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        }
+      }
     },
     {
       "day": "Wed Dec 23, 2026",
@@ -478,7 +1218,48 @@
         "V_SCHED",
         "V_S1"
       ],
-      "notes": "$50 bounty per elimination; guarantee includes bounties."
+      "notes": "$50 bounty per elimination; guarantee includes bounties.",
+      "last_checked": "2026-11-16",
+      "retrieval_date": "2026-11-16",
+      "source_checked": "2026-11-16",
+      "source_changed": false,
+      "rule_fields": {
+        "single_entry": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "Reviewed structure does not state a one-entry limit or prohibit re-entry/rebuy/add-on.",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "reentry": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "Re-entry policy not stated in the reviewed structure.",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "addon": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "Add-on policy not stated in the reviewed structure.",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "fee": {
+          "value": 40,
+          "status": "confirmed",
+          "excerpt": "$40 house fee",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        },
+        "total_entry_fee": {
+          "value": 200,
+          "status": "confirmed",
+          "excerpt": "$200 buy-in",
+          "source": "V_SCHED",
+          "retrieved": "2026-11-16"
+        }
+      }
     }
   ],
   "reentry_or_addon": [
@@ -497,7 +1278,48 @@
         "C_FLYER",
         "C_PAGE"
       ],
-      "notes": "Flyer: $70 of $100 to prize pool, $30 house fee. Registration closes at start of level 7."
+      "notes": "Flyer: $70 of $100 to prize pool, $30 house fee. Registration closes at start of level 7.",
+      "last_checked": "2026-11-16",
+      "retrieval_date": "2026-11-16",
+      "source_checked": "2026-11-16",
+      "source_changed": false,
+      "rule_fields": {
+        "single_entry": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "Reviewed structure does not state a one-entry limit or prohibit re-entry/rebuy/add-on.",
+          "source": "C_FLYER",
+          "retrieved": "2026-11-16"
+        },
+        "reentry": {
+          "value": null,
+          "status": "confirmed",
+          "excerpt": "Re-entry allowed at first break ($100); optional $50 add-on for 15,000 chips at first break",
+          "source": "C_FLYER",
+          "retrieved": "2026-11-16"
+        },
+        "addon": {
+          "value": null,
+          "status": "confirmed",
+          "excerpt": "Re-entry allowed at first break ($100); optional $50 add-on for 15,000 chips at first break",
+          "source": "C_FLYER",
+          "retrieved": "2026-11-16"
+        },
+        "fee": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "House fee not stated in the reviewed source.",
+          "source": "C_FLYER",
+          "retrieved": "2026-11-16"
+        },
+        "total_entry_fee": {
+          "value": 100,
+          "status": "confirmed",
+          "excerpt": "$100 buy-in",
+          "source": "C_FLYER",
+          "retrieved": "2026-11-16"
+        }
+      }
     },
     {
       "day": "Daily (per undated 2026 flyer)",
@@ -514,7 +1336,48 @@
         "C_FLYER",
         "C_PAGE"
       ],
-      "notes": "Flyer: $115 of $160 to prize pool, $45 house fee."
+      "notes": "Flyer: $115 of $160 to prize pool, $45 house fee.",
+      "last_checked": "2026-11-16",
+      "retrieval_date": "2026-11-16",
+      "source_checked": "2026-11-16",
+      "source_changed": false,
+      "rule_fields": {
+        "single_entry": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "Reviewed structure does not state a one-entry limit or prohibit re-entry/rebuy/add-on.",
+          "source": "C_FLYER",
+          "retrieved": "2026-11-16"
+        },
+        "reentry": {
+          "value": null,
+          "status": "confirmed",
+          "excerpt": "Re-entry allowed at first break; optional $50 add-on for 15,000 chips",
+          "source": "C_FLYER",
+          "retrieved": "2026-11-16"
+        },
+        "addon": {
+          "value": null,
+          "status": "confirmed",
+          "excerpt": "Re-entry allowed at first break; optional $50 add-on for 15,000 chips",
+          "source": "C_FLYER",
+          "retrieved": "2026-11-16"
+        },
+        "fee": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "House fee not stated in the reviewed source.",
+          "source": "C_FLYER",
+          "retrieved": "2026-11-16"
+        },
+        "total_entry_fee": {
+          "value": 160,
+          "status": "confirmed",
+          "excerpt": "$160 buy-in",
+          "source": "C_FLYER",
+          "retrieved": "2026-11-16"
+        }
+      }
     },
     {
       "day": "Daily (per undated 2026 flyer)",
@@ -531,7 +1394,48 @@
         "C_FLYER",
         "C_PAGE"
       ],
-      "notes": "Same format as 10:00 AM event."
+      "notes": "Same format as 10:00 AM event.",
+      "last_checked": "2026-11-16",
+      "retrieval_date": "2026-11-16",
+      "source_checked": "2026-11-16",
+      "source_changed": false,
+      "rule_fields": {
+        "single_entry": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "Reviewed structure does not state a one-entry limit or prohibit re-entry/rebuy/add-on.",
+          "source": "C_FLYER",
+          "retrieved": "2026-11-16"
+        },
+        "reentry": {
+          "value": null,
+          "status": "confirmed",
+          "excerpt": "Re-entry allowed at first break; optional $50 add-on for 15,000 chips",
+          "source": "C_FLYER",
+          "retrieved": "2026-11-16"
+        },
+        "addon": {
+          "value": null,
+          "status": "confirmed",
+          "excerpt": "Re-entry allowed at first break; optional $50 add-on for 15,000 chips",
+          "source": "C_FLYER",
+          "retrieved": "2026-11-16"
+        },
+        "fee": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "House fee not stated in the reviewed source.",
+          "source": "C_FLYER",
+          "retrieved": "2026-11-16"
+        },
+        "total_entry_fee": {
+          "value": 100,
+          "status": "confirmed",
+          "excerpt": "$100 buy-in",
+          "source": "C_FLYER",
+          "retrieved": "2026-11-16"
+        }
+      }
     },
     {
       "day": "Daily (per undated 2026 flyer)",
@@ -548,7 +1452,48 @@
         "C_FLYER",
         "C_PAGE"
       ],
-      "notes": "Same format as 2:00 PM event."
+      "notes": "Same format as 2:00 PM event.",
+      "last_checked": "2026-11-16",
+      "retrieval_date": "2026-11-16",
+      "source_checked": "2026-11-16",
+      "source_changed": false,
+      "rule_fields": {
+        "single_entry": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "Reviewed structure does not state a one-entry limit or prohibit re-entry/rebuy/add-on.",
+          "source": "C_FLYER",
+          "retrieved": "2026-11-16"
+        },
+        "reentry": {
+          "value": null,
+          "status": "confirmed",
+          "excerpt": "Re-entry allowed at first break; optional $50 add-on for 15,000 chips",
+          "source": "C_FLYER",
+          "retrieved": "2026-11-16"
+        },
+        "addon": {
+          "value": null,
+          "status": "confirmed",
+          "excerpt": "Re-entry allowed at first break; optional $50 add-on for 15,000 chips",
+          "source": "C_FLYER",
+          "retrieved": "2026-11-16"
+        },
+        "fee": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "House fee not stated in the reviewed source.",
+          "source": "C_FLYER",
+          "retrieved": "2026-11-16"
+        },
+        "total_entry_fee": {
+          "value": 160,
+          "status": "confirmed",
+          "excerpt": "$160 buy-in",
+          "source": "C_FLYER",
+          "retrieved": "2026-11-16"
+        }
+      }
     },
     {
       "day": "Mon–Thu (Wynn daily schedule)",
@@ -566,7 +1511,48 @@
         "W_POSTER",
         "W_PAGE"
       ],
-      "notes": "Loyalty requirement not confirmed; check with the poker desk."
+      "notes": "Loyalty requirement not confirmed; check with the poker desk.",
+      "last_checked": "2026-11-16",
+      "retrieval_date": "2026-11-16",
+      "source_checked": "2026-11-16",
+      "source_changed": false,
+      "rule_fields": {
+        "single_entry": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "Reviewed structure does not state a one-entry limit or prohibit re-entry/rebuy/add-on.",
+          "source": "W_DAILY",
+          "retrieved": "2026-11-16"
+        },
+        "reentry": {
+          "value": null,
+          "status": "confirmed",
+          "excerpt": "Re-entry allowed at $200 until level 9",
+          "source": "W_DAILY",
+          "retrieved": "2026-11-16"
+        },
+        "addon": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "Add-on policy not stated in the reviewed structure.",
+          "source": "W_DAILY",
+          "retrieved": "2026-11-16"
+        },
+        "fee": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "House fee not stated in the reviewed source.",
+          "source": "W_DAILY",
+          "retrieved": "2026-11-16"
+        },
+        "total_entry_fee": {
+          "value": 200,
+          "status": "confirmed",
+          "excerpt": "$200 buy-in",
+          "source": "W_DAILY",
+          "retrieved": "2026-11-16"
+        }
+      }
     },
     {
       "day": "Fri (Wynn daily schedule)",
@@ -583,7 +1569,48 @@
         "W_DAILY",
         "W_POSTER"
       ],
-      "notes": "Structure sheet title: 'Friday NLH Rebuy & Add on'."
+      "notes": "Structure sheet title: 'Friday NLH Rebuy & Add on'.",
+      "last_checked": "2026-11-16",
+      "retrieval_date": "2026-11-16",
+      "source_checked": "2026-11-16",
+      "source_changed": false,
+      "rule_fields": {
+        "single_entry": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "Reviewed structure does not state a one-entry limit or prohibit re-entry/rebuy/add-on.",
+          "source": "W_DAILY",
+          "retrieved": "2026-11-16"
+        },
+        "reentry": {
+          "value": null,
+          "status": "confirmed",
+          "excerpt": "Unlimited $200 rebuys while at ≤15,000 chips; one $100 add-on; re-entry NOT allowed",
+          "source": "W_DAILY",
+          "retrieved": "2026-11-16"
+        },
+        "addon": {
+          "value": null,
+          "status": "confirmed",
+          "excerpt": "Unlimited $200 rebuys while at ≤15,000 chips; one $100 add-on; re-entry NOT allowed",
+          "source": "W_DAILY",
+          "retrieved": "2026-11-16"
+        },
+        "fee": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "House fee not stated in the reviewed source.",
+          "source": "W_DAILY",
+          "retrieved": "2026-11-16"
+        },
+        "total_entry_fee": {
+          "value": 240,
+          "status": "confirmed",
+          "excerpt": "$240 buy-in",
+          "source": "W_DAILY",
+          "retrieved": "2026-11-16"
+        }
+      }
     },
     {
       "day": "Sat & Sun (Wynn daily schedule)",
@@ -600,7 +1627,48 @@
         "W_DAILY",
         "W_POSTER"
       ],
-      "notes": "Re-entry fee is stated in the terms; treat as re-entry event."
+      "notes": "Re-entry fee is stated in the terms; treat as re-entry event.",
+      "last_checked": "2026-11-16",
+      "retrieval_date": "2026-11-16",
+      "source_checked": "2026-11-16",
+      "source_changed": false,
+      "rule_fields": {
+        "single_entry": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "Reviewed structure does not state a one-entry limit or prohibit re-entry/rebuy/add-on.",
+          "source": "W_DAILY",
+          "retrieved": "2026-11-16"
+        },
+        "reentry": {
+          "value": null,
+          "status": "confirmed",
+          "excerpt": "Re-entry fee $200 (per structure sheet). Starting chips and add-on terms for this event were not transcribed.",
+          "source": "W_DAILY",
+          "retrieved": "2026-11-16"
+        },
+        "addon": {
+          "value": null,
+          "status": "confirmed",
+          "excerpt": "Re-entry fee $200 (per structure sheet). Starting chips and add-on terms for this event were not transcribed.",
+          "source": "W_DAILY",
+          "retrieved": "2026-11-16"
+        },
+        "fee": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "House fee not stated in the reviewed source.",
+          "source": "W_DAILY",
+          "retrieved": "2026-11-16"
+        },
+        "total_entry_fee": {
+          "value": 200,
+          "status": "confirmed",
+          "excerpt": "$200 buy-in",
+          "source": "W_DAILY",
+          "retrieved": "2026-11-16"
+        }
+      }
     },
     {
       "day": "Nightly, Mon–Sun (Wynn daily schedule)",
@@ -617,7 +1685,48 @@
         "W_DAILY",
         "W_POSTER"
       ],
-      "notes": "Wynn daily poster lists the nightly event; poster asset is dated 2025, confirm current."
+      "notes": "Wynn daily poster lists the nightly event; poster asset is dated 2025, confirm current.",
+      "last_checked": "2026-11-16",
+      "retrieval_date": "2026-11-16",
+      "source_checked": "2026-11-16",
+      "source_changed": false,
+      "rule_fields": {
+        "single_entry": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "Reviewed structure does not state a one-entry limit or prohibit re-entry/rebuy/add-on.",
+          "source": "W_DAILY",
+          "retrieved": "2026-11-16"
+        },
+        "reentry": {
+          "value": null,
+          "status": "confirmed",
+          "excerpt": "Re-entry allowed; one $100 add-on per entry until end of registration",
+          "source": "W_DAILY",
+          "retrieved": "2026-11-16"
+        },
+        "addon": {
+          "value": null,
+          "status": "confirmed",
+          "excerpt": "Re-entry allowed; one $100 add-on per entry until end of registration",
+          "source": "W_DAILY",
+          "retrieved": "2026-11-16"
+        },
+        "fee": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "House fee not stated in the reviewed source.",
+          "source": "W_DAILY",
+          "retrieved": "2026-11-16"
+        },
+        "total_entry_fee": {
+          "value": 160,
+          "status": "confirmed",
+          "excerpt": "$160 buy-in",
+          "source": "W_DAILY",
+          "retrieved": "2026-11-16"
+        }
+      }
     },
     {
       "day": "Fri (Bellagio weekly)",
@@ -634,7 +1743,48 @@
         "B_FRI",
         "B_PAGE"
       ],
-      "notes": "$510 to prize pool, $50 house fee, $40 optional gratuity (extra chips). Schedule PDF is undated."
+      "notes": "$510 to prize pool, $50 house fee, $40 optional gratuity (extra chips). Schedule PDF is undated.",
+      "last_checked": "2026-11-16",
+      "retrieval_date": "2026-11-16",
+      "source_checked": "2026-11-16",
+      "source_changed": false,
+      "rule_fields": {
+        "single_entry": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "Reviewed structure does not state a one-entry limit or prohibit re-entry/rebuy/add-on.",
+          "source": "B_FRI",
+          "retrieved": "2026-11-16"
+        },
+        "reentry": {
+          "value": null,
+          "status": "confirmed",
+          "excerpt": "Re-entry through end of level 8. Base stack 15,000; the optional $40 staff gratuity adds 15,000 (30,000 total).",
+          "source": "B_FRI",
+          "retrieved": "2026-11-16"
+        },
+        "addon": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "Add-on policy not stated in the reviewed structure.",
+          "source": "B_FRI",
+          "retrieved": "2026-11-16"
+        },
+        "fee": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "House fee not stated in the reviewed source.",
+          "source": "B_FRI",
+          "retrieved": "2026-11-16"
+        },
+        "total_entry_fee": {
+          "value": 600,
+          "status": "confirmed",
+          "excerpt": "$600 buy-in",
+          "source": "B_FRI",
+          "retrieved": "2026-11-16"
+        }
+      }
     },
     {
       "day": "Sat (Bellagio weekly)",
@@ -651,7 +1801,48 @@
         "B_SAT",
         "B_PAGE"
       ],
-      "notes": "Buy-in conflicts inside the same PDF ($1,000 in file name, $1,100 in header). Combined guarantee $50,000. Left blank until resolved."
+      "notes": "Buy-in conflicts inside the same PDF ($1,000 in file name, $1,100 in header). Combined guarantee $50,000. Left blank until resolved.",
+      "last_checked": "2026-11-16",
+      "retrieval_date": "2026-11-16",
+      "source_checked": "2026-11-16",
+      "source_changed": false,
+      "rule_fields": {
+        "single_entry": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "Reviewed structure does not state a one-entry limit or prohibit re-entry/rebuy/add-on.",
+          "source": "B_SAT",
+          "retrieved": "2026-11-16"
+        },
+        "reentry": {
+          "value": null,
+          "status": "confirmed",
+          "excerpt": "Re-entry through end of level 8. Base stack 20,000; the optional $40 staff gratuity adds 20,000 (40,000 total).",
+          "source": "B_SAT",
+          "retrieved": "2026-11-16"
+        },
+        "addon": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "Add-on policy not stated in the reviewed structure.",
+          "source": "B_SAT",
+          "retrieved": "2026-11-16"
+        },
+        "fee": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "House fee not stated in the reviewed source.",
+          "source": "B_SAT",
+          "retrieved": "2026-11-16"
+        },
+        "total_entry_fee": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "Buy-in not stated in the reviewed source.",
+          "source": "B_SAT",
+          "retrieved": "2026-11-16"
+        }
+      }
     },
     {
       "day": "Sun (Bellagio weekly)",
@@ -668,7 +1859,48 @@
         "B_SUN",
         "B_PAGE"
       ],
-      "notes": "$340 to prize pool, $35 house fee."
+      "notes": "$340 to prize pool, $35 house fee.",
+      "last_checked": "2026-11-16",
+      "retrieval_date": "2026-11-16",
+      "source_checked": "2026-11-16",
+      "source_changed": false,
+      "rule_fields": {
+        "single_entry": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "Reviewed structure does not state a one-entry limit or prohibit re-entry/rebuy/add-on.",
+          "source": "B_SUN",
+          "retrieved": "2026-11-16"
+        },
+        "reentry": {
+          "value": null,
+          "status": "confirmed",
+          "excerpt": "Re-entry through end of level 8. Base stack 15,000; the optional $25 staff gratuity adds 15,000 (30,000 total).",
+          "source": "B_SUN",
+          "retrieved": "2026-11-16"
+        },
+        "addon": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "Add-on policy not stated in the reviewed structure.",
+          "source": "B_SUN",
+          "retrieved": "2026-11-16"
+        },
+        "fee": {
+          "value": null,
+          "status": "unverified",
+          "excerpt": "House fee not stated in the reviewed source.",
+          "source": "B_SUN",
+          "retrieved": "2026-11-16"
+        },
+        "total_entry_fee": {
+          "value": 400,
+          "status": "confirmed",
+          "excerpt": "$400 buy-in",
+          "source": "B_SUN",
+          "retrieved": "2026-11-16"
+        }
+      }
     }
   ]
 }
