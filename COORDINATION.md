@@ -148,24 +148,6 @@ Scope note: the session brief asks for `session-<id>/<task>` branches. The Arena
 
 - 2026-11-16 (df41f5c6): **PR #10** (`arena/df41f5c6-poker4` → `main`, integration of the df41f5c6 site and data; includes the board merge above) **merged** at `9117705` (19:12 UTC). Pages deploy for `9117705`: success (both workflows). Live check: `https://karagemop466-tech.github.io/Poker4/df41f5c6/flagged.html` loads with all 29 flags. Integration result: merged; no unresolved conflicts; flagged items published, not blocking.
 - 2026-11-16 (df41f5c6): Board conflicts logged: (1) PR #6 vs `main` after PRs #3/#5; (2) PR #10 vs `main` after `000d1da` and again after PR #12 (`81cd955`). Each time `main`'s board was kept verbatim and the df41f5c6 section re-appended.
-=======
----
-
-## Session arena/60fb62da-poker4 (session `60fb62da`)
-
-| Task | Status | Owner | Files in scope |
-|---|---|---|---|
-| Independent official-source Venetian schedule/hotel audit and decision dashboard | needs review | arena/60fb62da-poker4 | `60fb62da/*`; this appended coordination entry only |
-
-- The task began in a README-only checkout. As concurrent PRs merged, root index/navigation/data became shared integration scope. To avoid overwriting another session, this dashboard is isolated at `/60fb62da/`; root files remain the current upstream `main` version.
-- Conflict history: PR #2 initially conflicted after upstream merges. Latest `origin/main` has been merged into this branch. Each merge conflict was only in `COORDINATION.md`; resolution retained the latest complete upstream board and appended this session's log. The latest upstream board also contained two residual merge-marker lines around the PR #8 result; those delimiter lines were removed while retaining all text on both sides. No other session's files were overwritten. This subsite does not alter root navigation/data.
-- Official tournament sources: [Venetian DeepStack Extravaganza IV full schedule](https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html) (all four chunks); official structure PDFs for Events #2/#12, #3–5, #6, #10, #14/#28/#63, and #27. Verified dates/times, event names, buy-ins and guarantees as stated. No reviewed candidate rules confirm one entry only or prohibit re-entry/rebuy/add-on; zero are marked confirmed single-entry.
-- Official lodging/location sources: [Venetian poker suite rates/play terms](https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html), [resort fee](https://www.venetianlasvegas.com/resort/resort-fee.html), [hotel terms/tax](https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html), [poker room location](https://www.venetianlasvegas.com/resort/casino/poker.html). Verified $119/$209 conditional poker-rate starts, $55 resort fee + tax, 13.38% room tax, play qualification, and poker room at Palazzo Level 2 with official directions from both resort lobbies. No official walking minutes published. Conditional math: ($119+$55)×1.1338=$197.28; ($209+$55)×1.1338=$299.32; these are not date-specific room quotes.
-- Further official hotel leads: [Treasure Island Tower Suite/fee page](https://treasureisland.com/hotel/tower-suite) and [offer terms](https://treasureisland.com/deals-offers/buy-1-get-1-bogo-free-fine-print) establish $49.95 resort fee + tax and 13.38% Clark County room tax, but no dated room rate. Official [Harrah’s](https://www.caesars.com/harrahs-las-vegas) and [Horseshoe](https://www.caesars.com/horseshoe-las-vegas) pages are linked as alternatives; unconfirmed fees/rates/walking minutes remain blank.
-- Flagged items include missing single-entry/re-entry/add-on rules, no 8 AM candidate start, no date-specific hotel total, incomplete Strip-wide schedule coverage, unknown walking minutes, and conditional poker-rate play requirements.
-- Verification passed: JavaScript syntax, nested local-link audit, page-render simulation, and fee/tax arithmetic. Current-main `scripts/verify.py` passed: 10 pages, 17 sources, 29 flags, all rows with official sources and internal links resolving. Every subsite data row has an official organizer/property source. Latest upstream added CRLF CSV files that create repository-wide `git diff --check` trailing-CR warnings; those other-session files were left untouched.
-- PR #2: https://github.com/karagemop466-tech/Poker4/pull/2. Contribution remains limited to `60fb62da/` and this coordination entry. PR #10 was merged; PRs #4 and #13 remain outside this session's scope. Existing Pages deployment has succeeded after upstream merges; this session does not change the shared Pages workflow.
->>>>>>> origin/main
 
 
 ## Current integration correction — arena/2da41d2b-poker4
@@ -175,3 +157,28 @@ Scope note: the session brief asks for `session-<id>/<task>` branches. The Arena
 - Integration: root navigation links the preserved `c07371e3` site; root Flagged for Review links its flagged log with an independent-source-set caveat.
 - Validation: `python3 build/build_site.py`; `python3 scripts/build.py`; `python3 scripts/verify.py` (10 pages, 17 sources, 29 flags; all row sources/internal links verified); `git diff --check`. Data audit confirms 19 and 64 candidate rows are labeled unverified.
 - PR #4 merged to `main` as merge commit `fb62f758526b2bbfc13ad50b238faa88cf5094ec` at 2026-11-16 19:15:25 UTC. The "Deploy static dashboard to GitHub Pages" run `43937426421` and "pages build and deployment" run `43937425213` both completed successfully. GitHub Pages API reports status `built`, public URL `https://karagemop466-tech.github.io/Poker4/`, source `main:/`. Direct browser fetch of the live page was not available from this environment; workflow and Pages API statuses were verified.
+
+---
+
+## Session arena/08f07d1d-poker4 (session `08f07d1d`) — claim
+
+- Started 2026-11-17 on branch `arena/08f07d1d-poker4`, branched from `main` @ `be3594d` (PR #15 merge). This session also acts as the integration session for the root dashboard, because the requested features (trip-cost calculator, venue pages, search, filters, dated rate log, change monitoring) all touch shared root outputs.
+- **Board cleanup performed:** `COORDINATION.md` on `main` carried residual merge markers from an earlier session (`=======` at line 133 and `>>>>>>> origin/main` at line 150) plus a duplicated copy of the `60fb62da` section. Deleted lines 133–150 only; the retained copy at lines 116–132 is a superset (verified with `diff`), so no text was lost. Logged here as an irregularity fix.
+
+### Task board (this session)
+
+| ID | Task | Status | Owner | File scope | Notes |
+|----|------|--------|-------|------------|-------|
+| A1 | Read every official structure sheet; remove "unverified" only where the sheet explicitly confirms entry/re-entry/add-on rules | in progress | arena/08f07d1d-poker4 | `data/08f07d1d/structure_rules.json` | Fetching each Venetian DSE IV structure PDF |
+| A2 | Structured rule fields per event (single entry, re-entry, add-on, fee) with source excerpt + retrieval date | in progress | arena/08f07d1d-poker4 | `data/08f07d1d/tournaments.json` | Depends on A1 |
+| A3 | "Last checked" date on every row + dated rate log (hotel rates as observations, not one value) | in progress | arena/08f07d1d-poker4 | `data/08f07d1d/rates.json`, `hotels.json` | |
+| A4 | Official URL re-check on a schedule + change monitor marking rows whose source changed | in progress | arena/08f07d1d-poker4 | `.github/workflows/monitor.yml`, `tools/fetch_sources.py`, `data/08f07d1d/watch.json`, `data/08f07d1d/monitor_log.json` | Daily cron + manual dispatch |
+| A5 | Morning scraper of each Strip poker room's official schedule | in progress | arena/08f07d1d-poker4 | `tools/scrape_schedules.py`, `data/08f07d1d/feed/` | Same workflow as A4 |
+| A6 | Overlap + walking-route checks; primary event per day with conditional fallback | in progress | arena/08f07d1d-poker4 | `data/08f07d1d/schedule.json`, `walks.json` | |
+| A7 | Venue pages (one per venue: events + hotels), date filter, search box across all tables, freezeout toggle filter, trip-cost calculator, GTD/buy-in ratio ranking | in progress | arena/08f07d1d-poker4 | `poker4/` (site), `build_poker4.py` | Isolated dir so parallel sessions cannot collide |
+| A8 | Executive summary, questions/missing info, suggestions section (review-only, nothing auto-implemented) | in progress | arena/08f07d1d-poker4 | `poker4/` pages | |
+| A9 | Flagged-for-Review page for every unverified value and irregularity | in progress | arena/08f07d1d-poker4 | `poker4/flagged.html` | |
+| A10 | Integration: PR → main, merge, confirm Pages deploy, record result | pending | arena/08f07d1d-poker4 | root `index.html` nav, `README.md`, this board | Only after A1–A9 |
+
+- **Out of scope / not touched:** other sessions' subsites `60fb62da/`, `c07371e3/`, `df41f5c6/`, `strip/`, `verified/`, their data dirs, and their build scripts. They are preserved verbatim and remain linked from the root.
+- Request to other sessions: none. If a session wants the root nav to link a new subsite, log it here.
