@@ -79,7 +79,7 @@
     });
     var c = $("#f-count");
     if (c) {
-      c.textContent = shown + " of " + total + " rows shown" +
+      c.textContent = (total === 0 ? "no rows in this tab" : shown + " of " + total + " rows shown") +
         (undated ? " (" + undated + " row(s) hidden: no date printed on the calendar)" : "");
     }
   }
