@@ -9,7 +9,8 @@ and refreshes the last-checked date. Nothing is deleted; history of hashes is
 kept per URL.
 
 Run: python3 tools/recheck.py          (one pass over all sources)
-Exit codes: 0 = ran (changed or not); 1 = at least one fetch failed.
+Exit codes: 0 = ran (changed or not, failures recorded); 1 = the run produced
+no usable information (nothing fetched, or more than a quarter unreachable).
 """
 import hashlib
 import json
@@ -83,7 +84,20 @@ def main():
     print(f"recheck: {len(entries)} urls — {len(changed)} changed, {len(failed)} failed")
     if changed:
         print("changed sources need row review:", [c["key"] for c in changed])
-    return 1 if failed else 0
+    # A single unreachable casino/hotel site is a fact about the source, not a broken
+    # monitor: it is recorded in status.json + runs.log and surfaced on the site, so the
+    # job stays green. It only fails when the run is worthless (nothing fetched) or
+    # unreliable (more than a quarter of the sources unreachable).
+    if not entries:
+        print("recheck: no sources to check")
+        return 1
+    if len(failed) == len(entries):
+        print("recheck: every source failed — the run produced no information")
+        return 1
+    if len(failed) > max(3, len(entries) // 4):
+        print(f"recheck: {len(failed)} of {len(entries)} sources unreachable — run is unreliable")
+        return 1
+    return 0
 
 if __name__ == "__main__":
     sys.exit(main())

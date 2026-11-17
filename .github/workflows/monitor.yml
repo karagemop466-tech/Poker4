@@ -17,9 +17,10 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
         with:
-          # need a token-backed ref to push the updated snapshot
+          # the token has to stay in the remote URL: this job pushes the refreshed
+          # last-checked dates back to main (persist-credentials: false made every
+          # push fail with "could not read Username", which is why this job was red)
           ref: main
-          persist-credentials: false
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -37,10 +38,11 @@ jobs:
         run: |
           git config user.name "Poker4 Monitor"
           git config user.email "monitor@users.noreply.github.com"
-          if git diff --quiet; then
+          git pull --rebase --autostash origin main
+          git add -A planner/assets/data.js planner/data planner/assets/snapshots.json
+          if git diff --cached --quiet; then
             echo "No changes to monitoring state."
           else
-            git add planner/assets/data.js planner/data planner/assets/snapshots.json
             git commit -m "chore(monitor): refresh official-source last-checked dates and change log"
-            git push
+            git push origin main || { git pull --rebase --autostash origin main && git push origin main; }
           fi
