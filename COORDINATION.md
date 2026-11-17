@@ -167,17 +167,39 @@ Session ID: `arena/98e4cb1c-poker4`. Branch is fixed by Arena as `arena/98e4cb1c
 
 | ID | Task | Status | Owner | File scope |
 |----|------|--------|-------|-----------|
-| P1 | Board hygiene: remove residual merge-marker lines from COORDINATION.md | in progress | arena/98e4cb1c-poker4 | `COORDINATION.md` (log only) |
-| P2 | Re-verify every event row against official sources; rebuild the tournament dataset with per-row source excerpt + retrieval date; remove "unverified" only where confirmed; else mark `not published` / `contradiction` | in progress | arena/98e4cb1c-poker4 | `data/v2/*.json`, `tools/v2_sources.py` |
-| P3 | Structured rule fields (single entry / re-entry / add-on / fees, each with excerpt + retrieval date); separate multiple-entry & advantage-by-spend section | in progress | arena/98e4cb1c-poker4 | `data/v2/*.json` |
-| P4 | Dated rate log for hotels (checkout total, nightly avg, resort fee, tax, parking, cancellation, timestamp) — no single-value rates | in progress | arena/98e4cb1c-poker4 | `data/v2/hotels*.json` |
-| P5 | Trip cost calculator: (entries × buy-in) + (nights × true hotel cost) | in progress | arena/98e4cb1c-poker4 | `tools/v2_build.py`, generated pages |
-| P6 | Date filter, search across all tables, single-entry toggle, ≤30-min walk filter | in progress | arena/98e4cb1c-poker4 | `tools/v2_build.py` |
-| P7 | Overlap / schedule-fit checker (start, late-reg cutoff, plausible duration; primary event + conditional fallback per day) | in progress | arena/98e4cb1c-poker4 | `data/v2/*.json`, `tools/v2_build.py` |
-| P8 | One page per venue (Venetian, Wynn, others) with events + nearest hotels | in progress | arena/98e4cb1c-poker4 | generated `venues/*.html` |
-| P9 | Walking-route estimates (distance + ≤30 min), with method labelled; never presented as verified walking minutes unless an official source gives them | in progress | arena/98e4cb1c-poker4 | `data/v2/*.json` |
-| P10 | Change monitoring: re-check official URLs, diff against stored snapshot hashes, mark rows whose source changed; scheduled workflow | in progress | arena/98e4cb1c-poker4 | `tools/v2_monitor.py`, `data/v2/snapshots/*`, `.github/workflows/` |
-| P11 | Repo review (line-by-line irregularity log), Questions-that-must-be-answered page, Suggestions page (decision-only) | in progress | arena/98e4cb1c-poker4 | generated pages |
-| P12 | Site: new dashboard built from `data/v2/`; integration; PR → main; merge; Pages deploy confirm; record here | in progress | arena/98e4cb1c-poker4 | `v2/` (all pages), root `index.html` redirect, `COORDINATION.md` |
+| P1 | Board hygiene: remove residual merge-marker lines from COORDINATION.md | done | arena/98e4cb1c-poker4 | `COORDINATION.md` (log only) |
+| P2 | Re-verify every event row against official sources; rebuild the tournament dataset with per-row source excerpt + retrieval date; remove "unverified" only where confirmed; else mark `not published` / `contradiction` | done | arena/98e4cb1c-poker4 | `data/v2/*.json`, `tools/v2_sources.py` |
+| P3 | Structured rule fields (single entry / re-entry / add-on / fees, each with excerpt + retrieval date); separate multiple-entry & advantage-by-spend section | done | arena/98e4cb1c-poker4 | `data/v2/*.json` |
+| P4 | Dated rate log for hotels (checkout total, nightly avg, resort fee, tax, parking, cancellation, timestamp) — no single-value rates | done | arena/98e4cb1c-poker4 | `data/v2/hotels*.json` |
+| P5 | Trip cost calculator: (entries × buy-in) + (nights × true hotel cost) | done | arena/98e4cb1c-poker4 | `tools/v2_build.py`, generated pages |
+| P6 | Date filter, search across all tables, single-entry toggle, ≤30-min walk filter | done | arena/98e4cb1c-poker4 | `tools/v2_build.py` |
+| P7 | Overlap / schedule-fit checker (start, late-reg cutoff, plausible duration; primary event + conditional fallback per day) | done | arena/98e4cb1c-poker4 | `data/v2/*.json`, `tools/v2_build.py` |
+| P8 | One page per venue (Venetian, Wynn, others) with events + nearest hotels | done | arena/98e4cb1c-poker4 | generated `venues/*.html` |
+| P9 | Walking-route estimates (distance + ≤30 min), with method labelled; never presented as verified walking minutes unless an official source gives them | done | arena/98e4cb1c-poker4 | `data/v2/*.json` |
+| P10 | Change monitoring: re-check official URLs, diff against stored snapshot hashes, mark rows whose source changed; scheduled workflow | done | arena/98e4cb1c-poker4 | `tools/v2_monitor.py`, `data/v2/snapshots/*`, `.github/workflows/` |
+| P11 | Repo review (line-by-line irregularity log), Questions-that-must-be-answered page, Suggestions page (decision-only) | done | arena/98e4cb1c-poker4 | generated pages |
+| P12 | Site: new dashboard built from `data/v2/`; integration; PR → main; merge; Pages deploy confirm; record here | done | arena/98e4cb1c-poker4 | `v2/` (all pages), root `index.html` redirect, `COORDINATION.md` |
 
 Scope discipline: this session **adds** `data/v2/`, `tools/v2_*`, `v2/` and edits `COORDINATION.md`, root `index.html`, `README.md` and `.github/workflows/v2-monitor.yml` only at final integration. It does **not** modify other sessions' folders (`c07371e3/`, `df41f5c6/`, `60fb62da/`, `strip/`, `verified/`, `pages/`) or their data. Those remain linked as historical snapshots.
+
+### Result — arena/98e4cb1c-poker4 (all twelve tasks complete)
+
+**Files added (this session's scope only):** `data/v2/*.json` (sources, events, events_other, hotels, structure_facts, flagged, questions, suggestions, raw TSVs), `tools/v2_extract.py`, `tools/v2_extract_other.py`, `tools/v2_walk.py`, `tools/v2_build.py`, `tools/v2_verify.py`, `tools/v2_check_sources.py`, `v2/` (11 pages + assets), `.github/workflows/v2-monitor.yml`. **Integration edits:** root `index.html` (v2 entry point section, plus links to the two previously unlinked snapshots), `README.md`, this board. No other session's folder or data was touched.
+
+**What was verified, from official pages only, all retrieved 2026-11-17:**
+- Venetian DSE IV: full calendar transcript (94 rows → **83 entry rows + 11 Day-2/final rows**) and **all 37 structure sheets read in full**. Calendar guarantee cross-checks against sheet guarantee on every row where both exist; `guarantee_per_event` overrides applied (sheet 7 → events 14/28/63 = $30K/$40K/$30K; sheet 11 → events 16/30/54 = $30K/$40K/$50K).
+- Wynn WPT World Championship poster Nov 27 – Dec 21, **both pages transcribed: 134 rows** (49 one-day, 39 flights, 25 satellites, 16 restarts, 5 final tables). Run `tools/v2_extract_other.py` to reproduce.
+- Entry rules: **0** Venetian events confirmed single-entry. The only published single-entry statement is WPT's "a single entry per starting flight" for the $10,400 Championship — flagged as per-flight, not whole-event. Published re-entry/add-on rules captured for Wynn dailies, Wynn Friday rebuy, Caesars $100/$160 dailies, Bellagio Friday/Saturday, and WPT Super Gold Million (unlimited re-entry).
+- Hotels: official fee confirmed for Venetian ($55), Wynn ($55) and TI ($49.95); **Caesars Palace and Bellagio fees left blank** (MGM fee/reservation URLs 404, Caesars pages silent — third-party $54.95–$62.36 recorded as leads only, never displayed). 13.38% printed by the Venetian, applied elsewhere with a † label.
+- Walking: one labelled OSRM 8×8 distance matrix, single formula `min/4.8 km/h×60×1.25`, reciprocal-route asymmetry exposed per row. Six pairs exceed 30 minutes.
+
+**Defects found and fixed in this session's own earlier data (not another session's):**
+1. `hotels.json` stored OSRM **seconds** in a `minutes` field (926 m → 2.4 min). Replaced by `tools/v2_walk.py`.
+2. The first 6×6 route table had **mismatched destination indices** — Palazzo→TI was recorded as 2,484.9 m where the labelled matrix gives 972.2 m. Re-requested as a labelled 8-node matrix; no matrix value is published without its node labels.
+3. `sources.json` contained a raw Python line (`'excerpt': excerpt,`) as an entry, truncated by heredoc shell expansion. Rewritten from the verified record; every referenced source id now resolves (0 missing).
+
+**Checks run:** `python3 tools/v2_extract.py` (83/11/0/no IRREG), `tools/v2_extract_other.py` (134 rows), `tools/v2_walk.py`, `tools/v2_build.py` (11 pages), `tools/v2_verify.py` → "No structural problems found" (no leaked template braces, every data row carries an official link, all internal links resolve), plus an HTTP render pass over all 11 pages and both assets (all 200).
+
+**Publish state:** 25 items on `v2/flagged.html`, 22 questions on `v2/questions.html`, 12 suggestions on `v2/suggestions.html`. Flagged and unverified items are published, not hidden, and do not block merge.
+
+**Known gap, recorded as F24/F25:** `tools/v2_check_sources.py` could not be executed here because shell network is blocked (every `curl` returns HTTP 000). The workflow runs it on GitHub runners; its first manual `workflow_dispatch` run will create `data/v2/source_state.json` and the baseline hashes.
