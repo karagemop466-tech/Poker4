@@ -1,0 +1,344 @@
+{
+  "meta": {
+    "session": "arena/14c124ef-poker4",
+    "retrieved": "2026-11-17",
+    "retrieved_utc_detail": "all fetches 2026-11-17T22:30Z-23:00Z window",
+    "method": "Live fetch of each official page/PDF with the session web tooling (not the build environment's scraper). Sentences below are copied verbatim from the fetched page. Nothing is inferred; a value is recorded only when the wording is actually present. This file is session-scoped evidence for the integration sessions to adopt; no shared canonical file was edited.",
+    "policy_reference": "COORDINATION.md V1-V3 claim (session arena/14c124ef-poker4)"
+  },
+  "checks": [
+    {
+      "id": "H1",
+      "lane": "hotel",
+      "property": "The Venetian / The Palazzo",
+      "field": "resort_fee",
+      "canonical_value": "$55 per room per night + tax",
+      "official_value": "$55 plus tax per night",
+      "verbatim": "Rates include a daily Resort Fee of $55 plus tax per night, payable upon check-in.",
+      "outcome": "matches",
+      "source": "https://www.venetianlasvegas.com/resort/resort-fee.html",
+      "retrieved": "2026-11-17"
+    },
+    {
+      "id": "H2",
+      "lane": "hotel",
+      "property": "The Venetian / The Palazzo",
+      "field": "room_tax",
+      "canonical_value": "13.38% Clark County Room Tax",
+      "official_value": "13.38%",
+      "verbatim": "Daily rates do not include the applicable Clark County Room Tax of 13.38%. Starting rates are based on double occupancy.",
+      "outcome": "matches - flag F9 (tax corroborated but not independently re-verified) can be retired: this session independently re-read the official terms page live",
+      "source": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+      "retrieved": "2026-11-17"
+    },
+    {
+      "id": "H3",
+      "lane": "hotel",
+      "property": "The Venetian / The Palazzo",
+      "field": "parking",
+      "canonical_value": "self $20/day (hotel guests), valet $40",
+      "official_value": "self $20/day registered guests ($20 Mon-Thu / $25 Fri-Sun non-guests), valet $40/day",
+      "verbatim": "The daily fee for registered hotel guests is $20/day, seven days a week. For non-hotel guests, the fee is $20, Monday \u2013 Thursday, and $25/day Friday \u2013 Sunday. Valet parking is $40/day. Event parking rates may be in effect and are subject to change; check posted signage for additional details.",
+      "outcome": "matches and extends (adds the non-guest Fri-Sun $25 detail)",
+      "source": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+      "retrieved": "2026-11-17"
+    },
+    {
+      "id": "H4",
+      "lane": "hotel",
+      "property": "The Venetian / The Palazzo",
+      "field": "cancellation",
+      "canonical_value": "blank - rate-specific, must be read on booking page",
+      "official_value": "deposit billed at confirmation; prepaid offers non-cancellable; early check-out charge",
+      "verbatim": "A deposit for your stay, including suite, fee, and tax, will be billed upon reservation confirmation. Depending on the offer and reservation, the deposit may be either payment of your first night\u2019s stay or prepayment of your entire stay. ... For prepaid offers ... bookings made using a prepaid offer are non-cancellable and non-refundable, and cancellation will result in a forfeiture of the deposit. ... Check-out prior to your scheduled departure date will result in an additional charge of $100 plus tax.",
+      "outcome": "confirms canonical blank is correct - the property publishes no single deadline; a rate-specific deadline must be read per booking. New official details recorded for the integration session.",
+      "source": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+      "retrieved": "2026-11-17"
+    },
+    {
+      "id": "H5",
+      "lane": "hotel",
+      "property": "Bellagio",
+      "field": "resort_fee",
+      "canonical_value": "blank (flagged)",
+      "official_value": "$55.00 plus applicable tax per night",
+      "verbatim": "Daily Resort Fee. A daily resort fee of $55.00 plus applicable tax will be applied to all reservations. The resort fee includes: In-room wireless internet access; unlimited local, domestic long distance (the 50 United States and DC) and toll-free calls; access to Paramount+ with SHOWTIME On Demand via in-room television; airline boarding pass printing; digital newspaper and magazine access; and fitness center access for guests 18+.",
+      "outcome": "fills blank - officially verified from Bellagio's own hotel reservation terms",
+      "source": "https://bellagio.mgmresorts.com/en/terms-and-conditions.html",
+      "retrieved": "2026-11-17"
+    },
+    {
+      "id": "H6",
+      "lane": "hotel",
+      "property": "Bellagio",
+      "field": "cancellation",
+      "canonical_value": "blank",
+      "official_value": "first night refundable if cancelled 72+ hours before arrival",
+      "verbatim": "The first night's deposit is fully refundable provided a timely notice of cancellation is received by Room Reservations at 888.987.6667 at least 72 hours prior to the arrival date, unless specifically excluded by booked offer. Cancellations less than 72 hours before your scheduled arrival (and no shows) will result in a forfeiture of the first night's deposit.",
+      "outcome": "fills blank",
+      "source": "https://bellagio.mgmresorts.com/en/terms-and-conditions.html",
+      "retrieved": "2026-11-17"
+    },
+    {
+      "id": "H7",
+      "lane": "hotel",
+      "property": "ARIA",
+      "field": "resort_fee",
+      "canonical_value": "blank (flagged)",
+      "official_value": "$55.00 plus applicable tax per night",
+      "verbatim": "Daily Resort Fee. A daily resort fee of $55.00 plus applicable tax will be applied to all reservations.",
+      "outcome": "fills blank - officially verified from ARIA's own hotel reservation terms",
+      "source": "https://aria.mgmresorts.com/en/terms-and-conditions.html",
+      "retrieved": "2026-11-17"
+    },
+    {
+      "id": "H8",
+      "lane": "hotel",
+      "property": "ARIA",
+      "field": "cancellation",
+      "canonical_value": "blank",
+      "official_value": "first night refundable if cancelled 72+ hours before arrival",
+      "verbatim": "The first night's deposit is fully refundable provided a timely notice of cancellation is received by Room Reservations at 866.359.7757 at least 72 hours prior to the arrival date, unless specifically excluded by booked offer.",
+      "outcome": "fills blank",
+      "source": "https://aria.mgmresorts.com/en/terms-and-conditions.html",
+      "retrieved": "2026-11-17"
+    },
+    {
+      "id": "H9",
+      "lane": "hotel",
+      "property": "Wynn Las Vegas / Encore",
+      "field": "resort_fee",
+      "canonical_value": "$55 (source: expired promotional page 850257 - flag F19)",
+      "official_value": "$55 plus tax for bookings on or after Jan 15, 2025 ($50 before); Tower Suites fee $55 plus tax",
+      "verbatim": "Reservations booked prior to January 15, 2025, will be charged a daily resort fee of $50 plus tax; reservations booked on or after January 15, 2025, will be charged a daily resort fee of $55 plus tax. ... TOWER SUITES RESORT FEE: A daily resort fee of $55 plus tax will be added to your room account for each complimentary (if applicable) and purchased room night.",
+      "outcome": "value confirmed on a current official Wynn terms page with an active validity window (offer dates Oct 2, 2026 - Mar 31, 2027 on page DK26WLV2); F19's expired-source complaint can be retired by re-pointing to these live pages. Caveat kept: both pages are offer Terms & Conditions, not a standalone general fee schedule.",
+      "source": "https://www.wynnlasvegas.com/terms-and-conditions/850014",
+      "second_source": "https://www.wynnlasvegas.com/terms-and-conditions/DK26WLV2",
+      "retrieved": "2026-11-17"
+    },
+    {
+      "id": "H10",
+      "lane": "hotel",
+      "property": "Wynn Las Vegas / Encore",
+      "field": "parking",
+      "canonical_value": "blank",
+      "official_value": "self-parking free for registered guests (incl. poker-room guests); $25/day non-guests; valet $40",
+      "verbatim": "Self-parking at the resort is complimentary for all Wynn and Encore Resort and Tower Suite registered guests, subject to availability. For non-registered guests the daily parking fee is $25 per day, with the first three (3) hours free. ... Complimentary self-parking is extended to Wynn Poker Room guests (visit the Poker Room for details) ... Valet parking is $40 per day up to 24 hours (no grace period, no re-entry).",
+      "outcome": "fills blank",
+      "source": "https://www.wynnlasvegas.com/terms-and-conditions/850014",
+      "retrieved": "2026-11-17"
+    },
+    {
+      "id": "H11",
+      "lane": "hotel",
+      "property": "Wynn Las Vegas / Encore",
+      "field": "cancellation",
+      "canonical_value": "blank",
+      "official_value": "48-hour baseline; event windows stricter (F1 week Nov 15-21, 2026: full deposit + 3-week cancellation; Dec 29-31, 2026: 30-day)",
+      "verbatim": "Unless otherwise specified below, cancellations must be received at least 48 hours prior to arrival date or deposit (if applicable) will be forfeited. ... For all reservations that include a stay on 11/15/2026 through 11/21/2026, a full deposit of all room nights and tax will be charged at the time of confirming your reservation and a three-week cancellation policy is applied. For all reservations that include a stay on 12/29/2026 through 12/31/2026, a full deposit of all room nights and tax will be charged at the time of confirming your reservation and a 30-day cancellation policy is applied.",
+      "outcome": "fills blank with dated, trip-window-relevant cancellation deadlines",
+      "source": "https://www.wynnlasvegas.com/terms-and-conditions/DK26WLV2",
+      "retrieved": "2026-11-17"
+    },
+    {
+      "id": "H12",
+      "lane": "hotel",
+      "property": "Treasure Island",
+      "field": "resort_fee",
+      "canonical_value": "\"Optional $49.95/day + tax ... package headlines NO RESORT FEE\"",
+      "official_value": "$49.95 + tax daily resort fee, REQUIRED for standard bookings; optional only for qualified bookings (My TI Guestbook TV Ad Special, qualified Treasury Players Club members, qualified meeting groups)",
+      "verbatim": "The $49.95 + tax daily resort fee* at TI Las Vegas provides hotel guests with several of the most commonly requested additional services at a package price. Resort fees are required, and in addition to the room rates displayed online with the exception that resort fees are optional only for My TI Guestbook members that book our exclusive TV Ad Special offer, qualified Treasury Players Club casino members, and qualified meeting groups that book directly with the hotel on select dates.",
+      "outcome": "clarifies - the fee is required for ordinary bookings; the canonical wording should be tightened by the integration session so the fee is not read as broadly optional",
+      "source": "https://treasureisland.com/hotel/tower-suite",
+      "retrieved": "2026-11-17"
+    },
+    {
+      "id": "H13",
+      "lane": "hotel",
+      "property": "Treasure Island",
+      "field": "parking",
+      "canonical_value": "\"Always Free Parking\" (homepage headline)",
+      "official_value": "Always Free Valet Parking & Self Park Garage (listed as a resort-fee inclusion)",
+      "verbatim": "Inclusions: Always Free Valet Parking & Self Park Garage; High Speed (up to 20 Mbps) WiFi Internet Access for Unlimited Devices; 2-for-1 Cocktail Voucher; Daily Use of Fitness Center.",
+      "outcome": "matches and extends (parking is a resort-fee inclusion on the fee page)",
+      "source": "https://treasureisland.com/hotel/tower-suite",
+      "retrieved": "2026-11-17"
+    },
+    {
+      "id": "H14",
+      "lane": "hotel",
+      "property": "Caesars Palace / Harrah's / The LINQ / Flamingo / Horseshoe (Caesars Las Vegas properties)",
+      "field": "resort_fee",
+      "canonical_value": "blank per property (flag F11: pages unreachable from build environment)",
+      "official_value": "official corporate range $45-$60 plus applicable tax; waived for Diamond and Seven Stars",
+      "verbatim": "Paid reservations are subject to hotel cancellation polices. Room reservations are subject to a daily resort fee between $45-$60 plus applicable tax. Resort fees are waived for Diamond and Seven Stars.",
+      "outcome": "partially fills blank - an OFFICIAL per-brand RANGE from Caesars' own corporate disclaimer; per-property exact amounts are still not published on any caesars.com page this session could reach (each property's /resort-fee URL redirects to its homepage without fee text), so per-property blanks stay blank",
+      "source": "https://www.caesars.com/corporate/disclaimer",
+      "retrieved": "2026-11-17"
+    },
+    {
+      "id": "H15",
+      "lane": "hotel",
+      "property": "Caesars Palace / Harrah's / The LINQ / Flamingo / Horseshoe",
+      "field": "cancellation",
+      "canonical_value": "blank",
+      "official_value": "complimentary-room no-show fee $50 unless cancelled by 6pm of arrival date; paid reservations subject to hotel cancellation policies; booking flow advertises FREE 48-Hour Cancellation",
+      "verbatim": "Complimentary room no-show fee of $50 unless reservation cancelled by 6pm of arrival date. Paid reservations are subject to hotel cancellation polices.",
+      "outcome": "partial - the property homepages fetched live advertise \"FREE 48-Hour Cancellation*\" (Caesars Palace and Harrah's hero banners, asterisk terms not printed in fetched text); the authoritative per-rate cancellation deadline remains booking-page-specific",
+      "source": "https://www.caesars.com/corporate/disclaimer",
+      "retrieved": "2026-11-17"
+    },
+    {
+      "id": "E1",
+      "lane": "event",
+      "series": "WPT World Championship at Wynn - structures booklet (flag F7: chunks 4-7 not read line-by-line)",
+      "field": "entry_rules all chunks 0-7",
+      "official_value": "13 events read; 11 print \"Unlimited re-entry\", WPT Prime prints \"One (1) Entry and One (1) re-entry for each starting flight\", none states a single-entry-only rule or an add-on",
+      "verbatim_examples": [
+        "$600 NLH $400K GTD (Nov 27-30): \"Unlimited re-entry for each starting flight will be available until the start of level 9.\"",
+        "$1,100 WPT Prime Championship $5,000,000 GTD (Dec 5-12): \"One (1) Entry and One (1) re-entry for each starting flight will be available until the start of level 10 (approximately 6:45 p.m.).\"",
+        "$600 NLH Turbo (Dec 5/6/7/8/9/12/14 9 p.m., Dec 21 6 p.m.): \"Unlimited re-entry will be available until the start of level 9.\"",
+        "$1,600 PLO Mystery Bounty $500K GTD (Dec 6-7): \"Unlimited re-entry for each starting flight will be available until the start of level 10.\" Fee split: \"$1,600 Buy-in = $930 (Tournament Prize Pool) + $500 (Mystery Bounty Prize Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge)\"; \"All Tournament and Bounty prizes are included in the Tournament guaranteed prize pool of $500,000 ... $325,000 of the Guarantee will be designated for the Tournament prize pool and $175,000 of the Guarantee will be designated for the Bounty prize pool.\"",
+        "WPT Prime payout note: \"$10,400 will be withheld from the prize pool and issued to first place in the form of an entry to the December 2027 WPT World Championship.\""
+      ],
+      "outcome": "flag F7 closed for this booklet - all 8 chunks read line-by-line on the live official PDF. Zero single-entry confirmations; the standing finding (0 of 253 rows confirmed single-entry) holds. Fee splits now printed per event, confirming the descriptive guarantee/entry-fee ratio inputs. Mystery-bounty guarantee includes the bounty pool, confirming the non-comparable label on bounty rows.",
+      "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+      "retrieved": "2026-11-17"
+    },
+    {
+      "id": "E2",
+      "lane": "event",
+      "series": "Caesars Palace daily tournaments (4 canonical rows)",
+      "field": "schedule, buy-in, guarantee, stack, levels, add-on",
+      "official_value": "4 NLH daily at 10 a.m., 2 p.m., 6 p.m., 9 p.m.; $100 buy-in; 20,000 starting chips; $1,000 guaranteed prize pool; blinds every 20 minutes; $50 add-on at first break for 15,000 extra chips",
+      "verbatim": "You will find four No-Limit Hold\u2019em tournaments each day at 10 a.m., 2 p.m., 6 p.m. and 9 p.m. Every event carries a $100 buy-in, starts you with 20,000 chips, and features a $1,000 guaranteed prize pool. Blinds increase every 20 minutes to keep the pace lively, and a $50 add-on at the first break gives you an extra 15,000 chips if you want a deeper run.",
+      "outcome": "all four canonical CAESARS-DAILY-* rows match the live official page exactly (times, $100, 20,000 chips, $1,000 GTD, 20-min levels, $50 add-on recorded as spend-advantage). No correction needed.",
+      "source": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
+      "retrieved": "2026-11-17"
+    },
+    {
+      "id": "E3",
+      "lane": "event",
+      "series": "Bellagio Friday $600 NLH sheet",
+      "field": "stack, fee split, re-entry, gratuity mechanic",
+      "official_value": "30,000 chips INCLUDING optional staff gratuity (15,000 + 15,000); $600 = $510 pool + $50 house fee + $40 voluntary gratuity; re-entry through end of level 8; re-verified live",
+      "verbatim": "Players will start with 30,000 tournament chips, including the optional Staff Gratuity. (15,000 + 15,000) ... The $600 Buy-In is allocated as follows: $510 to Prize Pool; $50 House Fee; $40 Voluntary Staff Gratuity. ... The voluntary staff gratuity will grant players an extra 15,000 chips.",
+      "outcome": "canonical row matches (30,000 chips, re-entry through L8) - but the sheet's optional-gratuity-for-extra-chips mechanic is NOT recorded in the canonical add_on field (status \"not_stated_in_sheet\"). Irregularity IR1: paying $40 more buys 15,000 extra chips - exactly the spend-more-advantage class the brief wants flagged separately.",
+      "source": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt9cf95b0e60ec253e/6af491a3a9851d75c40be840/mgm-bellagio-poker-fridays-$600-nlh.pdf",
+      "retrieved": "2026-11-17"
+    },
+    {
+      "id": "E4",
+      "lane": "event",
+      "series": "Bellagio Saturday sheet (the $1,000 / $1,100 / $600 conflict row)",
+      "field": "buy-in conflict status",
+      "official_value": "conflict is real and three-way on current official documents: sheet title block prints \"NLH $1100 BUY-IN\", the poker page labels the link \"SATURDAYS | $1,000 NLH\", and rule 7 of the same sheet prints \"Of the $600 Buy-in, $510 goes to the Prize Pool, $50 is Admin Fees and $40 is optional staff gratuity\"",
+      "verbatim": "Title: \"NLH $1100 BUY-IN\" / \"Saturdays | 11:00 a.m.\"; rule 7: \"Of the $600 Buy-in, $510 goes to the Prize Pool, $50 is Admin Fees and $40 is optional staff gratuity.\"; rule 8: \"Bellagio guarantees that the total Combined Prize Pool will be at least $50,000.\"; rule 9: \"There is a voluntary staff gratuity of $40, at registration only. The voluntary staff gratuity will grant players an extra 20,000 chips.\"; rule 1: \"Players start with 40,000 in tournament chips (20,000 + 20,000 optional).\"; rule 3: \"Registration will be open until the start of Level 10.\"; rule 4: \"Combined Final Day 2 (9/13/26) will begin at 12pm at Bellagio.\"",
+      "outcome": "canonical decision (buy-in left blank, row flagged) is correct and stays. New irregularity IR2: the same sheet also prints rule 9 - a $40 optional gratuity for 20,000 extra chips (spend-more mechanic, unrecorded in canonical add_on) - and rule 4 references a combined Day 2 of 9/13/26, a stale date from a previous series that the current page still links.",
+      "source": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt6d47974bf5a7d9b6/6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf",
+      "second_source": "https://bellagio.mgmresorts.com/en/casino/poker.html",
+      "retrieved": "2026-11-17"
+    },
+    {
+      "id": "E5",
+      "lane": "event",
+      "series": "Bellagio Sunday $400 H.O.R.S.E. sheet",
+      "field": "stack, fee split, gratuity mechanic, re-entry",
+      "official_value": "30,000 chips including optional gratuity (15,000 + 15,000); $400 = $340 pool + $35 house fee + $25 voluntary gratuity; $25 gratuity grants 15,000 extra chips; re-entry through end of level 8",
+      "verbatim": "A voluntarty Staff gratuity of $25, at registration only, will grant players an additional 15,000 in starting chips. This is an optional gratuity that will be provided directly to the Staff and will not be kept by the House. ... Players will start with 30,000 tournament chips, including the optional Staff Gratuity. (15,000 + 15,000) ... Players may buy-in and re-enter through the end of level 8 (Including Break).",
+      "outcome": "canonical row matches (30,000, re-entry L8). Same irregularity IR1 as E3: optional gratuity-for-chips unrecorded in canonical add_on. (Sheet's own typo \"voluntarty\" preserved.)",
+      "source": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt07fcf1244a6da661/6af491a339e2b4f6b76a86ad/mgm-bellagio-poker-sundays-$400-horse.pdf",
+      "retrieved": "2026-11-17"
+    },
+    {
+      "id": "E6",
+      "lane": "event",
+      "series": "WPT World Championship schedule PDF (flag F4: impossible weekday \"Dec. 18 Wednesday\")",
+      "field": "weekday label",
+      "official_value": "the CURRENT official PDF prints BOTH \"Dec. 18 Wednesday\" rows AND \"Dec. 18 Friday\" rows in the same table; Dec 18, 2026 is a Friday, so the Wednesday block is mislabeled in the operator's own document",
+      "verbatim": "\"| Dec. 18 Wednesday | 11 a.m. | No Limit Hold'em Day 1A | $1,100 | $1,000,000 | 40,000 | 40 |\" ... \"| Dec. 18 Friday | 12 p.m. | WPT World Championship Day 4 |\" (both from the live PDF today). The captured copy at data/raw/wynn-wpt-schedule.txt (sha256 9291f60e...) contains the same mixed labels.",
+      "outcome": "flag F4 is CONFIRMED STILL LIVE (not stale, not operator-corrected). The \"Dec. 18 Wednesday\" rows (NLH Day 1A $1,100 $1M GTD 11 a.m., PLO Double Board Bomb Pot $800 12 p.m., PLO 6-Max $10,500 1 p.m., HORSE $800 1 p.m., satellite 6 p.m., NLH Day 1B $1,100 7 p.m.) belong to Friday Dec 18 by position in the date column; consumers must not treat the Wednesday label as a real extra day.",
+      "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "retrieved": "2026-11-17"
+    },
+    {
+      "id": "E7",
+      "lane": "event",
+      "series": "Horseshoe Las Vegas (no canonical rows exist)",
+      "field": "daily schedule lead",
+      "official_value": "official Caesars page states six daily NLH tournaments at 9 a.m., 11 a.m., 2 p.m., 5 p.m., 8 p.m. and 11 p.m., with a mixture of buy-ins/levels/guarantees - but prints no buy-in amounts, so no row can be built without inventing values",
+      "verbatim": "At Horseshoe Las Vegas, the tournament slate ups the ante with six daily No-Limit Hold\u2019em games. The times at 9 a.m., 11 a.m., 2 p.m., 5 p.m., 8 p.m. and 11 p.m. provide plenty of opportunity throughout the day to grab a seat. A mixture of buy-ins, levels and guarantees caters to all participants.",
+      "outcome": "recorded as a lead for the integration sessions: times are officially published but buy-ins are not on any official page this session reached, so Horseshoe rows stay absent rather than inferred (per the no-inference policy).",
+      "source": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
+      "retrieved": "2026-11-17"
+    }
+  ],
+  "irregularities_for_review": [
+    {
+      "id": "IR1",
+      "severity": "moderate",
+      "title": "Bellagio optional staff gratuity buys extra chips - not recorded in canonical add_on rules",
+      "detail": "All three current Bellagio structure sheets (FRI $600, SAT title-$1,100, SUN $400) print an optional, at-registration-only staff gratuity that grants extra tournament chips ($40 -> +15,000 on FRI; $40 -> +20,000 on SAT; $25 -> +15,000 on SUN). The canonical rows carry add_on status \"not_stated_in_sheet\" for all three, so the tournaments table's spend-more-advantage classification misses this mechanic. The sheets also define the starting stack as inclusive of the optional gratuity (e.g., 30,000 = 15,000 + 15,000), so a player who declines pays less and starts short-stacked - a like-for-like comparison caveat.",
+      "disposition": "session-scoped finding only; canonical edit belongs to an integration session",
+      "sources": [
+        "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt9cf95b0e60ec253e/6af491a3a9851d75c40be840/mgm-bellagio-poker-fridays-$600-nlh.pdf",
+        "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt6d47974bf5a7d9b6/6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf",
+        "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt07fcf1244a6da661/6af491a339e2b4f6b76a86ad/mgm-bellagio-poker-sundays-$400-horse.pdf"
+      ],
+      "retrieved": "2026-11-17"
+    },
+    {
+      "id": "IR2",
+      "severity": "moderate",
+      "title": "Current Bellagio Saturday sheet references a stale combined Day 2 date (9/13/26)",
+      "detail": "Rule 4 of the Saturday sheet linked from the live Bellagio poker page today prints \"Combined Final Day 2 (9/13/26) will begin at 12pm at Bellagio\" - a September 13, 2026 date on a sheet still published for recurring Saturday events. The page's own note says tournament play \"will resume on Saturday, July 26, beginning with the $300 PLO Double Board Bomb Pot Tournament\", so the linked recurring sheets predate the current series. Consumers cannot treat the sheet's Day-2/date statements as current-series facts.",
+      "disposition": "flagged; not edited",
+      "sources": [
+        "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt6d47974bf5a7d9b6/6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf",
+        "https://bellagio.mgmresorts.com/en/casino/poker.html"
+      ],
+      "retrieved": "2026-11-17"
+    },
+    {
+      "id": "IR3",
+      "severity": "info",
+      "title": "Wynn F1-week cancellation window (Nov 15-21, 2026) requires full deposit + 3-week cancellation on the read offer terms",
+      "detail": "The current official Wynn offer terms page states that reservations including a stay 11/15/2026-11/21/2026 are charged a full deposit of all room nights and tax at confirmation with a three-week cancellation policy; Dec 29-31, 2026 stays carry a 30-day policy. These are offer-specific terms on a page with an active validity window (Oct 2, 2026 - Mar 31, 2027); the general-booking default on the same page is 48 hours. Anyone booking during F1 week must re-read the terms on their own rate.",
+      "disposition": "recorded as dated cancellation evidence for the rate log's consumers",
+      "sources": [
+        "https://www.wynnlasvegas.com/terms-and-conditions/DK26WLV2"
+      ],
+      "retrieved": "2026-11-17"
+    },
+    {
+      "id": "IR4",
+      "severity": "info",
+      "title": "Caesars publishes an official resort-fee range, not per-property amounts",
+      "detail": "Caesars' own corporate disclaimer states \"a daily resort fee between $45-$60 plus applicable tax\" for its properties and that the fee is waived for Diamond and Seven Stars tier members. The per-property /resort-fee URLs (e.g., caesars.com/caesars-palace/resort-fee) redirect to property homepages without fee text, so exact per-property amounts remain officially unpublished on caesars.com as of this read. Per-property blanks stay blank; the official range is the only citable official value.",
+      "disposition": "recorded; canonical per-property blanks stay blank pending a page that prints the exact amount",
+      "sources": [
+        "https://www.caesars.com/corporate/disclaimer",
+        "https://www.caesars.com/caesars-palace/resort-fee"
+      ],
+      "retrieved": "2026-11-17"
+    },
+    {
+      "id": "IR5",
+      "severity": "info",
+      "title": "WPT schedule PDF weekday labels remain mixed in the current official document (F4 live)",
+      "detail": "See E6. The official PDF prints \"Dec. 18 Wednesday\" blocks alongside \"Dec. 18 Friday\" blocks. Any row built from the Wednesday-labeled block must inherit the flag rather than silently correcting the weekday.",
+      "disposition": "flag F4 stays open; evidence recorded",
+      "sources": [
+        "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+      ],
+      "retrieved": "2026-11-17"
+    }
+  ],
+  "flags_touched": {
+    "F4": "confirmed still live with fresh evidence (E6/IR5)",
+    "F7": "closed for the WPT World Championship structures booklet - all 8 chunks read line-by-line on the live official PDF (E1)",
+    "F9": "independently re-verified this session on the live official Venetian terms page (H2)",
+    "F11": "partially addressed for MGM properties (Bellagio/ARIA fee + cancellation now officially verified: H5-H8) and Caesars properties (official range only: H14/H15/IR4); per-property Caesars amounts remain blank",
+    "F19": "replaced-source evidence: the $55 Wynn fee is confirmed on current official Wynn terms pages with an active validity window (H9); re-pointing the canonical source is an integration-session edit"
+  }
+}
