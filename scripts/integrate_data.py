@@ -682,21 +682,56 @@ for e in ROOM_FACTS["bellagio"]:
              gtd_excerpt=e.get("guarantee_excerpt"), weekday=e["weekday"],
              note=f"played {e['weekday']}s")
 
-# --- Caesars Palace: times and prices printed, no fee split, no entry rule ------
+# --- Caesars Palace: the 2026 daily flyer prints per-slot buy-ins, fee splits ---
+# and a re-entry rule (session 3082d6d9, live read 2026-11-17).  The explore page's
+# blanket “Every event carries a $100 buy-in” sentence conflicts with the flyer's
+# $160 slots at 2 p.m. and 9 p.m.; the dedicated, dated flyer is the schedule
+# document of record, so the rows follow it and the conflict stays on flag F25.
+CAESARS_FLYER_URL = ("https://www.caesars.com/content/dam/empire/clv/casino/poker/"
+                     "tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf")
+CAESARS_FLYER_RETRIEVED = "2026-11-17"
+CAESARS_FLYER_BUYINS = {"10:00 AM": 100, "2:00 PM": 160, "6:00 PM": 100, "9:00 PM": 160}
+CAESARS_FLYER_FEE = {
+    100: {"value": "$70 tournament prize pool; $30 Caesars Palace maintenance fee",
+          "excerpt": "Of the $100 buy in, $70 goes to the prize pool and $30 is held by Caesars Palace as a maintenance fee."},
+    160: {"value": "$115 tournament prize pool; $45 Caesars Palace maintenance fee",
+          "excerpt": "Of the $160 buy in, $115 goes to the prize pool and $45 is held by Caesars Palace as a maintenance fee."},
+}
 c = ROOM_FACTS["caesars"]
 for t in c["times"]:
-    rules = room_rule_set(c["rules"], c["source"], c["retrieved"])
+    buy_t = CAESARS_FLYER_BUYINS.get(t, c["buy_in_printed"])
+    rules = {
+        # neither official source states an entry-count limit; omission is not confirmation
+        "single_entry": {"status": "unverified", "value": None, "excerpt": c["rules"]["single_entry"]["excerpt"],
+                         "source": c["source"], "retrieved": c["retrieved"]},
+        "re_entry": {"status": "confirmed_allowed",
+                     "value": "re-entry allowed after elimination, within the first break of play",
+                     "excerpt": "Participants may only register themselves, but may re-enter, by paying the entry fee, upon elimination within the first break of play.",
+                     "source": CAESARS_FLYER_URL, "retrieved": CAESARS_FLYER_RETRIEVED},
+        "add_on": {"status": "confirmed_allowed",
+                   "value": "$50 add-on for 15,000 extra chips (first break only)",
+                   "excerpt": ("a $50 add-on at the first break gives you an extra 15,000 chips; "
+                               "Of the $50 add-on, $45 goes to the prize pool and $5 is held by Caesars Palace as a maintenance fee."),
+                   "source": CAESARS_FLYER_URL, "retrieved": CAESARS_FLYER_RETRIEVED},
+    }
     rules["spend_advantage"] = True
-    fee = {"status": "unverified", "value": None, "excerpt": c["rules"]["fee"]["excerpt"],
-           "source": c["source"], "retrieved": c["retrieved"]}
+    split = CAESARS_FLYER_FEE.get(buy_t)
+    if split:
+        fee = {"status": "confirmed", "value": split["value"], "excerpt": split["excerpt"],
+               "source": CAESARS_FLYER_URL, "retrieved": CAESARS_FLYER_RETRIEVED}
+    else:
+        fee = {"status": "unverified", "value": None, "excerpt": c["rules"]["fee"]["excerpt"],
+               "source": c["source"], "retrieved": c["retrieved"]}
+    conflict_note = ("" if buy_t == c["buy_in_printed"] else
+                     " 2026 flyer prints $160 for this slot; the explore page's “every event carries a $100 buy-in” sentence conflicts — see flag F25.")
     room_row(rid="CAESARS-DAILY-" + t.replace(" ", "").replace(":", ""), venue="caesars",
              venue_name="Caesars Palace Poker Room", date=None, time=t,
-             name=f"${c['buy_in_printed']} No Limit Hold'em", buy=c["buy_in_printed"],
+             name=f"${buy_t} No Limit Hold'em", buy=buy_t,
              gtd=c["guarantee_printed"], rules=rules, fee=fee, chips_=c["chips_printed"],
-             level_min=c["level_minutes_printed"], reg=None, sources=[c["source"]],
-             extra_flags=["daily slate — no calendar date printed",
-                          "official page prints no house-fee split, so the row is not ranked"],
-             note="add-on offered: " + c["rules"]["add_on"]["excerpt"])
+             level_min=c["level_minutes_printed"], reg="start of level 7",
+             sources=[c["source"], CAESARS_FLYER_URL],
+             extra_flags=["daily slate — no calendar date printed"],
+             note=("add-on offered: a $50 add-on at the first break gives you an extra 15,000 chips; registration closes at the start of level 7." + conflict_note))
 events.extend(ROOM_ROWS)
 
 
@@ -1612,6 +1647,18 @@ def page_hotels():
                        for d in (h.get("dead_source_pages") or []))
         canc = h.get("cancellation") or {}
         park = h.get("parking") or {}
+        if not facts:
+            # No machine-captured sentence yet (e.g. a freshly re-anchored source page):
+            # fall back to the row's own confirmed excerpts instead of saying nothing exists.
+            fallback = ""
+            rf_ = h.get("resort_fee") or {}
+            if rf_.get("excerpt"):
+                fallback += (f"<li><strong>resort fee</strong> “{E(rf_['excerpt'])}” "
+                             f"{src_cell([rf_.get('source')], rf_.get('retrieved'), label='source page ↗')}</li>")
+            if canc.get("excerpt"):
+                fallback += (f"<li><strong>cancellation</strong> “{E(canc['excerpt'])}” "
+                             f"{src_cell([canc.get('source')], canc.get('retrieved'), label='source page ↗')}</li>")
+            facts = fallback
         mins = next((str(p2["minutes"]) for p2 in walks if p2["hotel_id"] == h["id"] and p2.get("minutes")), "")
         onsite = "1" if "on-site" in str((h.get("walk") or {}).get("meets_30_min")).lower() else "0"
         meets = (h.get("walk") or {}).get("meets_30_min")
@@ -1651,7 +1698,7 @@ def page_hotels():
 <p class="mini-note">“Measured” holds a real walking time for every property: Google Maps walking directions (mode=walking) were retrieved 2026-11-17 for each hotel→Venetian poker-room pair and stored with the route distance, the “via” road, the exact directions URL and the retrieval date (see <a href="data/integrated/walks-google.json">data/integrated/walks-google.json</a>; flags <a href="flagged.html#F3">F3</a> / <a href="flagged.html#F18">F18</a> record the closure). Google's walking durations run optimistic, so the route distance in miles is shown beside each minute. Choosing “measured walk ≤ 30 min” filters to the properties that provably meet the rule.</p></section>
 {cards}
 <section class="callout"><h2>Reading a blank honestly</h2>
-<p>Where a property shows rates only inside its booking calendar, no number is copied onto this site — the booking link is given instead and the row is marked. Two official pages currently return 404 (Bellagio's resort-fee page and the Caesars Palace daily flyer); they are reported as unreachable, never replaced by a third-party mirror. ARIA publishes two different resort fees on two official pages ($50 and $55): both sentences are shown and neither is chosen for you. Walking minutes are no longer a warning: every hotel→Venetian poker-room walk is a measured Google Maps value retrieved 2026-11-17, with the route distance shown beside it — the ≤30-minute rule is now a hard filter (flags <a href="flagged.html#F3">F3</a> / <a href="flagged.html#F18">F18</a>). The remaining blanks are the ones no official source can settle — a dated like-for-like room quote needs your exact dates and occupancy.</p></section>
+<p>Where a property shows rates only inside its booking calendar, no number is copied onto this site — the booking link is given instead and the row is marked. The two official pages that had gone dark (Bellagio's resort-fee page and the Caesars Palace daily flyer) were re-anchored to live official pages on 2026-11-17: Bellagio's fee now comes from the property's Hotel Reservation Terms page (“A daily resort fee of $55.00 plus applicable tax will be applied to all reservations”), and the Caesars slate comes from the venue's 2026 daily flyer PDF — the retired URLs stay logged on the Bellagio row and in data/url-checks.json rather than being silently swapped. ARIA publishes two different resort fees on two official pages ($50 and $55): both sentences are shown and neither is chosen for you. Walking minutes are no longer a warning: every hotel→Venetian poker-room walk is a measured Google Maps value retrieved 2026-11-17, with the route distance shown beside it — the ≤30-minute rule is now a hard filter (flags <a href="flagged.html#F3">F3</a> / <a href="flagged.html#F18">F18</a>). The remaining blanks are the ones no official source can settle — a dated like-for-like room quote needs your exact dates and occupancy.</p></section>
 """, "hotels.html", needs_data=False)
 
 

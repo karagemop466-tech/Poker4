@@ -3,13 +3,13 @@
   "purpose": "Every official URL the dashboard cites. tools/sync_official_sources.py re-checks each one on a schedule and records content changes.",
   "generated": "2026-11-17",
   "owner": "arena/e74e00fd-poker4",
-  "rule": "Only official operator/property domains are tracked. A tracked URL that 404s is reported as unreachable \u2014 it is never replaced by a third-party mirror.",
+  "rule": "Only official operator/property domains are tracked. A tracked URL that 404s is reported as unreachable — it is never replaced by a third-party mirror.",
   "touch": "retrigger-sync"
  },
  "sources": [
   {
    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
-   "label": "Venetian DeepStack Extravaganza IV \u2014 full series schedule",
+   "label": "Venetian DeepStack Extravaganza IV — full series schedule",
    "kind": "page",
    "venue": "The Venetian",
    "key": "V_SCHED_PAGE",
@@ -20,7 +20,7 @@
   },
   {
    "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "label": "Venetian DeepStack Extravaganza IV \u2014 printed schedule (PDF)",
+   "label": "Venetian DeepStack Extravaganza IV — printed schedule (PDF)",
    "kind": "pdf",
    "venue": "The Venetian",
    "key": "V_SCHED_PDF",
@@ -32,7 +32,7 @@
   },
   {
    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament.html",
-   "label": "Venetian poker \u2014 DeepStack series landing page",
+   "label": "Venetian poker — DeepStack series landing page",
    "kind": "page",
    "venue": "The Venetian",
    "key": "V_POKER_MAIN"
@@ -50,7 +50,7 @@
   },
   {
    "url": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
-   "label": "Wynn \u2014 all daily tournament structures (PDF)",
+   "label": "Wynn — all daily tournament structures (PDF)",
    "kind": "pdf",
    "venue": "Wynn Las Vegas",
    "key": "W_DAILY",
@@ -60,7 +60,7 @@
   },
   {
    "url": "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf",
-   "label": "Wynn \u2014 daily tournament poster (PDF)",
+   "label": "Wynn — daily tournament poster (PDF)",
    "kind": "pdf",
    "venue": "Wynn Las Vegas",
    "key": "W_POSTER",
@@ -70,7 +70,7 @@
   },
   {
    "url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
-   "label": "Wynn \u2014 WPT World Championship schedule (PDF)",
+   "label": "Wynn — WPT World Championship schedule (PDF)",
    "kind": "pdf",
    "venue": "Wynn Las Vegas",
    "key": "W_WPT_SCHED",
@@ -80,7 +80,7 @@
   },
   {
    "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
-   "label": "Wynn \u2014 WPT World Championship structures / terms (PDF)",
+   "label": "Wynn — WPT World Championship structures / terms (PDF)",
    "kind": "pdf",
    "venue": "Wynn Las Vegas",
    "key": "W_WPT_STRUCT",
@@ -111,7 +111,7 @@
   },
   {
    "url": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
-   "label": "Caesars Palace \u2014 poker tournaments page",
+   "label": "Caesars Palace — poker tournaments page",
    "kind": "page",
    "venue": "Caesars Palace",
    "key": "C_PAGE",
@@ -142,11 +142,12 @@
    "extract_facts": true
   },
   {
-   "url": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2025.pdf",
-   "label": "Caesars Palace \u2014 daily NLH tournament flyer (PDF)",
+   "url": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+   "label": "Caesars Palace — daily NLH tournament flyer (PDF, 2026)",
    "kind": "pdf",
    "venue": "Caesars Palace",
-   "key": "C_FLYER"
+   "key": "C_FLYER",
+   "note": "2025 flyer 404s (retired by the venue); replaced with the 2026 flyer on 2026-11-17 by session arena/3082d6d9-poker4 after a live fetch confirmed it loads and prints the per-slot buy-ins, fee splits and re-entry rule."
   },
   {
    "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
@@ -409,7 +410,7 @@
   },
   {
    "url": "https://www.venetianlasvegas.com/resort/resort-fee.html",
-   "label": "Venetian \u2014 resort fee page",
+   "label": "Venetian — resort fee page",
    "kind": "page",
    "venue": "The Venetian",
    "key": "V_FEE",
@@ -417,7 +418,7 @@
   },
   {
    "url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
-   "label": "Venetian \u2014 hotel terms (tax, parking, cancellation)",
+   "label": "Venetian — hotel terms (tax, parking, cancellation)",
    "kind": "page",
    "venue": "The Venetian",
    "key": "V_TERMS",
@@ -425,7 +426,7 @@
   },
   {
    "url": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
-   "label": "Venetian \u2014 poker suite rates + play requirements",
+   "label": "Venetian — poker suite rates + play requirements",
    "kind": "page",
    "venue": "The Venetian",
    "key": "V_RATES",
@@ -433,7 +434,7 @@
   },
   {
    "url": "https://www.venetianlasvegas.com/resort/casino/poker/player-parking.html",
-   "label": "Venetian \u2014 poker player parking",
+   "label": "Venetian — poker player parking",
    "kind": "page",
    "venue": "The Venetian",
    "key": "V_PARKING",
@@ -449,7 +450,7 @@
   },
   {
    "url": "https://www.wynnlasvegas.com/terms-and-conditions/850257",
-   "label": "Wynn \u2014 resort fee / terms of stay",
+   "label": "Wynn — resort fee / terms of stay",
    "kind": "page",
    "venue": "Wynn Las Vegas",
    "key": "W_FEE",
@@ -457,7 +458,7 @@
   },
   {
    "url": "https://treasureisland.com/hotel/deluxe-rooms",
-   "label": "Treasure Island \u2014 rooms + resort fee",
+   "label": "Treasure Island — rooms + resort fee",
    "kind": "page",
    "venue": "Treasure Island",
    "key": "TI_FEE",
@@ -465,7 +466,7 @@
   },
   {
    "url": "https://www.caesars.com/caesars-palace/resort-fee",
-   "label": "Caesars Palace \u2014 resort fee page (status tracked)",
+   "label": "Caesars Palace — resort fee page (status tracked)",
    "kind": "page",
    "venue": "Caesars Palace",
    "key": "C_FEE",
@@ -480,11 +481,16 @@
    "extract_facts": true
   },
   {
-   "url": "https://bellagio.mgmresorts.com/en/hotel/resort-fee.html",
-   "label": "Bellagio resort-fee page (status tracked)",
+   "url": "https://bellagio.mgmresorts.com/en/terms-and-conditions.html",
+   "label": "Bellagio hotel reservation terms — daily resort fee (status tracked)",
    "kind": "page",
    "venue": "Bellagio",
-   "key": "B_FEE"
+   "key": "B_FEE",
+   "keep_text_excerpt": true,
+   "excerpt_chars": 2600,
+   "save_text_to": "data/raw/bellagio-terms.txt",
+   "extract_facts": true,
+   "note": "The former /en/hotel/resort-fee.html page is retired (404); replaced on 2026-11-17 by session arena/3082d6d9-poker4 with the property's Hotel Reservation Terms page, which states the fee: 'A daily resort fee of $55.00 plus applicable tax will be applied to all reservations.'"
   },
   {
    "url": "https://www.caesars.com/harrahs-las-vegas",
