@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wynn — Poker4</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site">
+  <h1>Wynn Las Vegas &amp; Encore <span class="gold">★</span> Poker4 venue page</h1>
+  <div class="sub">WPT World Championship festival: Nov 27 – Dec 21, 2026 + daily tournaments · resort fee $55+tax verified · data checked 2026-11-17</div>
+</header>
+<nav class="site">
+  <a href="index.html">Home</a>
+  <a href="tournaments.html">Tournaments</a>
+  <a href="schedule.html">Schedule &amp; day plan</a>
+  <a href="hotels.html">Hotels</a>
+  <a href="trip.html">Trip calculator</a>
+  <a href="venetian.html">Venetian</a>
+  <a class="active" href="wynn.html">Wynn</a>
+  <a href="others.html">Other venues</a>
+  <a href="flagged.html">Flagged for review</a>
+  <a href="questions.html">Questions</a>
+  <a href="suggestions.html">Suggestions</a>
+  <a href="sources.html">Sources</a>
+  <a href="changelog.html">Changelog</a>
+</nav>
+<main>
+  <div id="venue-name" data-venue="Wynn" hidden></div>
+  <h2>Venue facts (official, checked 2026-11-17)</h2>
+  <dl class="kv">
+    <dt>Daily tournaments</dt><dd>Mon–Thu 12:00 $200/$10K GTD · Fri 12:00 $240/$40K GTD (unlimited $200 rebuys + $100 add-on, no re-entry) · Sat&amp;Sun 12:00 $200/$25K GTD (re-entry + one add-on through L11) · Nightly 18:00 $160/$10K GTD — all from the official structures PDF (<a href="https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf" target="_blank" rel="noopener">official ↗</a>). Dailies may be suspended during series events.</dd>
+    <dt>WPT highlights</dt><dd>$1,100 WPT Prime $5M GTD (Dec 5–12, 6 start flights) · $10,400 WPT World Championship Main Event Dec 13–20 (<b>$1M added — this is added money, not a guarantee</b>, flagged F-note on the Tournaments rows) · Super Gold $400 $3M GTD Mystery Bounty (Dec 10–14) · $3,000 NLH $2M GTD (Dec 5–7) · nightly $600/$50K turbos · satellites $200–$3,000 (<a href="https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf" target="_blank" rel="noopener">official schedule ↗</a>)</dd>
+    <dt>Resort fee</dt><dd>$55 + tax per night at both Wynn Resort rooms and Tower Suites (WiFi, water, calls, fitness ×2, self-park for 2 vehicles) (<a href="https://www.wynnlasvegas.com/terms-and-conditions/850257" target="_blank" rel="noopener">official terms ↗</a>)</dd>
+    <dt>Deposit / cancellation</dt><dd>Current offer terms: full deposit at booking, non-cancellable/non-refundable/non-changeable; $150/night incidentals hold at check-in. Tower Suites include a $50 daily breakfast credit (official terms).</dd>
+    <dt>Entry rules</dt><dd>Dailies are multi-entry (re-entry/rebuy/add-on confirmed with fee splits: e.g., $200 = $26 tournament fee + $12 staff + $162 pool). Per-event WPT entry rules: unverified — read each event's structure sheet before buying in.</dd>
+    <dt>Watch out</dt><dd>wynnlasvegas.com/casino/poker and /casino/poker-room are gone/redirected (F5) — cite the CDN documents. The WPT schedule PDF mislabels Wed Dec 16 as "Dec. 18 Wednesday" (F4). The Main Event's "$1M added" must not be read as a guarantee.</dd>
+  </dl>
+
+  <h2>Events at this venue <span class="small" id="venue-count"></span></h2>
+  <div class="controls">
+    <div class="search"><label for="gsearch">Search</label><input class="searchbox" type="text" id="gsearch" placeholder="event, date, buy-in…"></div>
+  </div>
+  <div class="hscroll"><table class="data" id="venue-events"></table></div>
+
+  <h2>Hotels (with walk status to the Venetian room for reference)</h2>
+  <div class="hscroll"><table class="data" id="venue-hotels"></table></div>
+</main>
+<footer class="site">Poker4 · venue page generated from the validated dataset · every figure above links an official source.</footer>
+<script src="assets/data.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
