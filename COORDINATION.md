@@ -833,3 +833,35 @@ Files from `75757cc1` are kept as-is: `data/75757cc1/`, the 37-sheet structure r
 - Live pages re-fetched after deployment: https://karagemop466-tech.github.io/Poker4/tournaments.html and https://karagemop466-tech.github.io/Poker4/venues/venetian.html. F8 complete.
 
 - 2026-11-17: Rebased integration work forward onto origin/main after PR #59 merged at c1521ee and source-sync commit 8a459b3; regenerated canonical pages from the merged official corrections.
+
+---
+
+## Session arena/28aec69b-poker4 (session `28aec69b`) — official-source repair + measured walking routes + traceability, 2026-11-17
+
+- Session ID: `arena/28aec69b-poker4`; branch `arena/28aec69b-poker4` (from `main` @ `ff3fa36`).
+- Canonical layer confirmed before touching anything: `data/**` → `scripts/integrate_data.py` → root pages +
+  `venues/*.html`. Re-ran the generator on an unmodified tree: **zero drift** (`git status` clean, 253 events,
+  38 plan days, 74 rate-log lines, 10 walks, 64 sources; `scripts/verify_root.py`, `scripts/verify_markup.py`,
+  `scripts/linkcheck.py`, `scripts/verify.py` all pass). So this session edits **data + the canonical generator
+  only** — no hand-edited HTML.
+- **Overlap note / handoff request:** session `arena/e281a2cc-poker4` has open PR #65 (head `da2dbcb4`) whose
+  claim includes `build/build_integrated.py`, `build/build_pages.py`, `scripts/verify_root.py`,
+  `assets/dashboard.js` and **hand-edited root pages**. Its COORDINATION claim states the canonical build is
+  `build/build_pages.py`; on `main` today the canonical generator is `scripts/integrate_data.py`, which is why
+  PR #65 is CONFLICTING/DIRTY. This session does **not** edit any of their claimed files. Their measured
+  walking-route log (`data/verify/walking_routes_2026-11-17.tsv`) and structure-sheet review were read from
+  their branch through the GitHub API (read-only, no merge) and are used here with credit.
+- **Request to `e281a2cc`:** re-apply your root-page edits through `data/` + `scripts/integrate_data.py`, or
+  merge PR #65 into `main` before this session's regeneration; your hand-edited `index/hotels/calculator/…`
+  pages will otherwise be re-rendered from `data/`. This session's canonical rows already carry your route
+  numbers (see X3) so no research is lost either way.
+
+| ID | Task | Status | Owner | File scope | Sources / verification | Irregularities |
+|----|------|--------|-------|------------|------------------------|----------------|
+| X1 | Independent live re-verification of the canonical Venetian calendar rows and the hotel fee/tax chain against the official pages (fetched in-sandbox today), published as a dated evidence log | pending | arena/28aec69b-poker4 | `data/verify/28aec69b_*_2026-11-17.tsv` (new files), this board | Live official fetches 2026-11-17 | — |
+| X2 | Repair the two official URLs that return 404 in the monitor (Caesars Palace daily-NLH flyer, Bellagio resort-fee page): find the current official URL, or record the 404 itself as the finding — never a third-party mirror | pending | arena/28aec69b-poker4 | `data/tracked-sources.json`, `data/poker4.json` (source fields), this board | Official operator pages only | — |
+| X3 | Make the ≤30-minute walking filter real: replace the all-blank walk table with measured pedestrian routes for every hotel→poker-room pair, each with the route engine, the raw response, the request date and the Google/Maps deep link from the official addresses; keep unmeasured pairs blank | pending | arena/28aec69b-poker4 | `data/poker4.json` (hotel `walk`), `scripts/integrate_data.py` (walk table + filter text), `data/walks.json` (generated) | OSRM foot routing from official addresses + `data/verify/walking_routes_2026-11-17.tsv` (session e281a2cc, Google Maps, 2026-11-17) | Route-engine minutes are not published by the properties — labelled as a measured route, never as an official figure |
+| X4 | Close hotel fee/parking/cancellation blanks where an official page now publishes them (Bellagio, Caesars Palace, ARIA, Encore, TI, Horseshoe, Harrah's); leave blanks + flags where it does not | pending | arena/28aec69b-poker4 | `data/poker4.json` (hotel fee/tax/parking), `data/hotel-facts.json` (verbatim sentences) | Official property pages only | — |
+| X5 | Requirements traceability: publish one table mapping every line of the brief to the page/field that answers it, with a status (done / done-with-gap / blocked-on-source) and the source that proves it | pending | arena/28aec69b-poker4 | `scripts/integrate_data.py`, new generated `coverage.html`, root nav | — | — |
+| X6 | Flag bookkeeping for what X1–X4 change: update F6 (walks) and any flag whose gap is now closed; add flags for anything the fetches contradicted | pending | arena/28aec69b-poker4 | `data/poker4.json` (`flags`, `questions`, `suggestions`) | — | — |
+| X7 | Integration: regenerate → verify → PR → merge → confirm Pages deploy → record here, including the disposition of PR #65 | pending | arena/28aec69b-poker4 | this branch, `main`, `COORDINATION.md` | — | — |
