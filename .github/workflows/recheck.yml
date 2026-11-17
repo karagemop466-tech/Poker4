@@ -33,18 +33,25 @@ jobs:
       - name: Capture legacy room schedule snapshots
         run: python3 tools/daily_schedule.py
 
+      # The gate must be the verifier that describes the site that is actually
+      # published.  tools/verify_root_site.py checks the superseded pre-integration
+      # page set and fails on today's pages, which made this job red every night.
       - name: Verify the published site
-        run: python3 scripts/verify_root.py
+        run: |
+          python3 scripts/verify_root.py
+          python3 scripts/verify.py
+          python3 scripts/verify_markup.py
+          python3 scripts/linkcheck.py
 
       - name: Commit monitor output
         run: |
           git config user.name "poker4-recheck-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add data/0f6c627b/monitor
+          git add -A data/monitor data/0f6c627b/monitor
           if git diff --cached --quiet; then
             echo "no changes"
           else
-            git commit -m "chore(recheck): manual legacy source monitor run $(date -u +%F)"
-            git pull --rebase origin main
-            git push origin main
+            git commit -m "chore(recheck): daily source monitor run $(date -u +%F)"
+            git pull --rebase origin "${GITHUB_REF_NAME}"
+            git push origin "${GITHUB_REF_NAME}"
           fi

@@ -1,0 +1,5056 @@
+{
+ "meta": {
+  "generated_by": "tools/room_extract.py",
+  "session": "511d43ab (tasks A1/A2)",
+  "retrieved": "2026-11-17",
+  "policy": "Every value below was read from the official capture text committed in data/raw/ (the same bytes the scheduled monitor hashes) or from the venue's structure sheet committed on 2026-11-17. Fields the sheet does not print are null. single_entry stays 'unverified' unless the sheet restricts the player to one entry.",
+  "sources": [
+   {
+    "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "label": "Wynn — WPT World Championship structures (every event sheet)",
+    "venue": "Wynn Las Vegas"
+   },
+   {
+    "url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+    "label": "Wynn — WPT World Championship schedule",
+    "venue": "Wynn Las Vegas"
+   },
+   {
+    "url": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+    "label": "Wynn — all daily tournament structures",
+    "venue": "Wynn Las Vegas"
+   },
+   {
+    "url": "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf",
+    "label": "Wynn — daily tournament poster",
+    "venue": "Wynn Las Vegas"
+   },
+   {
+    "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt9cf95b0e60ec253e/6af491a3a9851d75c40be840/mgm-bellagio-poker-fridays-$600-nlh.pdf",
+    "label": "Bellagio — Friday $600 NLH structure sheet",
+    "venue": "Bellagio"
+   },
+   {
+    "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt6d47974bf5a7d9b6/6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf",
+    "label": "Bellagio — Saturday NLH structure sheet",
+    "venue": "Bellagio"
+   },
+   {
+    "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt07fcf1244a6da661/6af491a339e2b4f6b76a86ad/mgm-bellagio-poker-sundays-$400-horse.pdf",
+    "label": "Bellagio — Sunday $400 H.O.R.S.E. structure sheet",
+    "venue": "Bellagio"
+   },
+   {
+    "url": "https://bellagio.mgmresorts.com/en/casino/poker.html",
+    "label": "Bellagio poker room page (links the three sheets)",
+    "venue": "Bellagio"
+   },
+   {
+    "url": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
+    "label": "Caesars Palace + Horseshoe daily tournament description",
+    "venue": "Caesars Palace"
+   }
+  ],
+  "problems": [],
+  "source_irregularities": [
+   "WPT-08 printed fee split does not add up to the printed buy-in (1105 vs 1100) — recorded verbatim and flagged, not corrected"
+  ],
+  "unparsed_blocks": []
+ },
+ "wynn_wpt": {
+  "file": "data/raw/wynn-wpt-terms.txt",
+  "sha256": "58e3eaa9ba7fa0bf6c0564d3ffbce3bcd549ead6d43f27933bd922a60ce4b794",
+  "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+  "events": [
+   {
+    "id": "WPT-01",
+    "venue": "wynn",
+    "venue_name": "Wynn Las Vegas Poker",
+    "buy_in_usd": 600,
+    "name_printed": "No Limit Hold’em $400,000 Guaranteed poker",
+    "guarantee_usd": 400000,
+    "guarantee_excerpt": "$400,000 Guarantee",
+    "fee_total_usd": 600,
+    "fee_components": [
+     {
+      "amount_usd": 510,
+      "purpose": "Tournament Prize Pool"
+     },
+     {
+      "amount_usd": 65,
+      "purpose": "Tournament Fee"
+     },
+     {
+      "amount_usd": 25,
+      "purpose": "Poker Staff Service Charge"
+     }
+    ],
+    "fee_excerpt": "Entry Fee: Entry Fee: $600 Buy-in = $510 (Tournament Prize Pool) + $65 (Tournament Fee) + $25 (Poker Staff Service Charge) Registration:",
+    "fee_split_sums_to_buy_in": true,
+    "discounted_entry_excerpt": null,
+    "registration_excerpt": "Unlimited re-entry for each starting flight will be available until the start of level 9. A player who advances to Day 2 is prohibited from entering a subsequent starting flight. A player that has advanced to Day 2 who enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight.",
+    "rules": {
+     "single_entry": {
+      "status": "unverified",
+      "value": null,
+      "excerpt": null
+     },
+     "re_entry": {
+      "status": "confirmed_allowed",
+      "value": "unlimited re-entry / rebuys (printed)",
+      "excerpt": "Unlimited re-entry"
+     },
+     "add_on": {
+      "status": "not_stated_in_sheet",
+      "value": null,
+      "excerpt": null
+     },
+     "spend_advantage": true
+    },
+    "starting_chips": 40000,
+    "level_minutes": 30,
+    "payout_fraction": null,
+    "days": [
+     {
+      "date": "2026-11-27",
+      "time": "11:00 AM",
+      "excerpt": "November 27, 2026 at 11 a.m.",
+      "stage": "Day 1A"
+     },
+     {
+      "date": "2026-11-27",
+      "time": "5:00 PM",
+      "excerpt": "November 27, 2026 at 5 p.m.",
+      "stage": "Day 1B"
+     },
+     {
+      "date": "2026-11-28",
+      "time": "11:00 AM",
+      "excerpt": "November 28, 2026 at 11 a.m.",
+      "stage": "Day 1C"
+     },
+     {
+      "date": "2026-11-28",
+      "time": "5:00 PM",
+      "excerpt": "November 28, 2026 at 5 p.m.",
+      "stage": "Day 1D"
+     },
+     {
+      "date": "2026-11-29",
+      "time": "11:00 AM",
+      "excerpt": "November 29, 2026 at 11 a.m.",
+      "stage": "Day 1E"
+     },
+     {
+      "date": "2026-11-29",
+      "time": "6:00 PM",
+      "excerpt": "November 29, 2026 at 6 p.m.",
+      "stage": "Day 1F"
+     },
+     {
+      "date": "2026-11-30",
+      "time": "1:00 PM",
+      "excerpt": "November 30, 2026 at 1 p.m.",
+      "stage": "Day 2"
+     }
+    ],
+    "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "retrieved": "2026-11-17",
+    "block_index": 1
+   },
+   {
+    "id": "WPT-02",
+    "venue": "wynn",
+    "venue_name": "Wynn Las Vegas Poker",
+    "buy_in_usd": 600,
+    "name_printed": "TORSE poker",
+    "guarantee_usd": null,
+    "guarantee_excerpt": null,
+    "fee_total_usd": 600,
+    "fee_components": [
+     {
+      "amount_usd": 510,
+      "purpose": "Tournament Prize Pool"
+     },
+     {
+      "amount_usd": 65,
+      "purpose": "Tournament Fee"
+     },
+     {
+      "amount_usd": 25,
+      "purpose": "Poker Staff Service Charge"
+     }
+    ],
+    "fee_excerpt": "Entry Fee: Entry Fee: $600 Buy-in = $510 (Tournament Prize Pool) + $65 (Tournament Fee) + $25 (Poker Staff Service Charge) Registration:",
+    "fee_split_sums_to_buy_in": true,
+    "discounted_entry_excerpt": null,
+    "registration_excerpt": "Unlimited re-entry will be available until the start of level 9",
+    "rules": {
+     "single_entry": {
+      "status": "unverified",
+      "value": null,
+      "excerpt": null
+     },
+     "re_entry": {
+      "status": "confirmed_allowed",
+      "value": "unlimited re-entry / rebuys (printed)",
+      "excerpt": "Unlimited re-entry"
+     },
+     "add_on": {
+      "status": "not_stated_in_sheet",
+      "value": null,
+      "excerpt": null
+     },
+     "spend_advantage": true
+    },
+    "starting_chips": 35000,
+    "level_minutes": 30,
+    "payout_fraction": null,
+    "days": [
+     {
+      "date": "2026-11-27",
+      "time": "12:00 PM",
+      "excerpt": "November 27, 2026, at 12 p.m.",
+      "stage": null
+     }
+    ],
+    "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "retrieved": "2026-11-17",
+    "block_index": 2
+   },
+   {
+    "id": "WPT-03",
+    "venue": "wynn",
+    "venue_name": "Wynn Las Vegas Poker",
+    "buy_in_usd": 400,
+    "name_printed": "PLO poker",
+    "guarantee_usd": null,
+    "guarantee_excerpt": null,
+    "fee_total_usd": 400,
+    "fee_components": [
+     {
+      "amount_usd": 337,
+      "purpose": "Tournament Prize Pool"
+     },
+     {
+      "amount_usd": 45,
+      "purpose": "Tournament Fee"
+     },
+     {
+      "amount_usd": 18,
+      "purpose": "Poker Staff Service Charge"
+     }
+    ],
+    "fee_excerpt": "Entry Fee: Entry Fee: $400 Buy-in = $337 (Tournament Prize Pool) + $45 (Tournament Fee) + $18 (Poker Staff Service Charge) Registration:",
+    "fee_split_sums_to_buy_in": true,
+    "discounted_entry_excerpt": null,
+    "registration_excerpt": "Unlimited re-entry will be available until the start of level 9 (approximately 5:30 p.m.).",
+    "rules": {
+     "single_entry": {
+      "status": "unverified",
+      "value": null,
+      "excerpt": null
+     },
+     "re_entry": {
+      "status": "confirmed_allowed",
+      "value": "unlimited re-entry / rebuys (printed)",
+      "excerpt": "Unlimited re-entry"
+     },
+     "add_on": {
+      "status": "not_stated_in_sheet",
+      "value": null,
+      "excerpt": null
+     },
+     "spend_advantage": true
+    },
+    "starting_chips": 30000,
+    "level_minutes": 30,
+    "payout_fraction": null,
+    "days": [
+     {
+      "date": "2026-11-27",
+      "time": "1:00 PM",
+      "excerpt": "November 27, 2026, at 1 p.m.",
+      "stage": null
+     }
+    ],
+    "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "retrieved": "2026-11-17",
+    "block_index": 3
+   },
+   {
+    "id": "WPT-04",
+    "venue": "wynn",
+    "venue_name": "Wynn Las Vegas Poker",
+    "buy_in_usd": 600,
+    "name_printed": "Mixed Triple Draw (A-5, 2-7, Badugi) poker",
+    "guarantee_usd": null,
+    "guarantee_excerpt": null,
+    "fee_total_usd": 600,
+    "fee_components": [
+     {
+      "amount_usd": 510,
+      "purpose": "Tournament Prize Pool"
+     },
+     {
+      "amount_usd": 65,
+      "purpose": "Tournament Fee"
+     },
+     {
+      "amount_usd": 25,
+      "purpose": "Poker Staff Service Charge"
+     }
+    ],
+    "fee_excerpt": "Entry Fee: Entry Fee: $600 Buy-in = $510 (Tournament Prize Pool) + $65 (Tournament Fee) + $25 (Poker Staff Service Charge) Registration:",
+    "fee_split_sums_to_buy_in": true,
+    "discounted_entry_excerpt": null,
+    "registration_excerpt": "Unlimited re-entry will be available until the start of level 9.",
+    "rules": {
+     "single_entry": {
+      "status": "unverified",
+      "value": null,
+      "excerpt": null
+     },
+     "re_entry": {
+      "status": "confirmed_allowed",
+      "value": "unlimited re-entry / rebuys (printed)",
+      "excerpt": "Unlimited re-entry"
+     },
+     "add_on": {
+      "status": "not_stated_in_sheet",
+      "value": null,
+      "excerpt": null
+     },
+     "spend_advantage": true
+    },
+    "starting_chips": 35000,
+    "level_minutes": 30,
+    "payout_fraction": null,
+    "days": [
+     {
+      "date": "2026-11-28",
+      "time": "12:00 PM",
+      "excerpt": "November 28, 2026, at 12 p.m.",
+      "stage": null
+     },
+     {
+      "date": "2026-12-20",
+      "time": "1:00 PM",
+      "excerpt": "December 20, 2026, at 1 p.m.",
+      "stage": null
+     }
+    ],
+    "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "retrieved": "2026-11-17",
+    "block_index": 4
+   },
+   {
+    "id": "WPT-05",
+    "venue": "wynn",
+    "venue_name": "Wynn Las Vegas Poker",
+    "buy_in_usd": 800,
+    "name_printed": "No Limit Hold’em $1,000,000 Guaranteed poker",
+    "guarantee_usd": 1000000,
+    "guarantee_excerpt": "$1,000,000 Guarantee",
+    "fee_total_usd": 800,
+    "fee_components": [
+     {
+      "amount_usd": 695,
+      "purpose": "Tournament Prize Pool"
+     },
+     {
+      "amount_usd": 72,
+      "purpose": "Tournament Fee"
+     },
+     {
+      "amount_usd": 33,
+      "purpose": "Poker Staff Service Charge"
+     }
+    ],
+    "fee_excerpt": "Entry Fee: Entry Fee: $800 Buy-in = $695 (Tournament Prize Pool) + $72 (Tournament Fee) + $33 (Poker Staff Service Charge) Registration:",
+    "fee_split_sums_to_buy_in": true,
+    "discounted_entry_excerpt": null,
+    "registration_excerpt": "Unlimited re-entry for each starting flight will be available until the start of level 9. A player who advances to Day 2 is prohibited from entering a subsequent starting flight. A player that has advanced to Day 2 who enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight.",
+    "rules": {
+     "single_entry": {
+      "status": "unverified",
+      "value": null,
+      "excerpt": null
+     },
+     "re_entry": {
+      "status": "confirmed_allowed",
+      "value": "unlimited re-entry / rebuys (printed)",
+      "excerpt": "Unlimited re-entry"
+     },
+     "add_on": {
+      "status": "not_stated_in_sheet",
+      "value": null,
+      "excerpt": null
+     },
+     "spend_advantage": true
+    },
+    "starting_chips": 40000,
+    "level_minutes": 30,
+    "payout_fraction": null,
+    "days": [
+     {
+      "date": "2026-11-30",
+      "time": "11:00 AM",
+      "excerpt": "November 30, 2026 at 11 a.m.",
+      "stage": "Day 1A"
+     },
+     {
+      "date": "2026-11-30",
+      "time": "5:00 PM",
+      "excerpt": "November 30, 2026 at 5 p.m.",
+      "stage": "Day 1B"
+     },
+     {
+      "date": "2026-12-01",
+      "time": "11:00 AM",
+      "excerpt": "December 1, 2026 at 11 a.m.",
+      "stage": "Day 1C"
+     },
+     {
+      "date": "2026-12-01",
+      "time": "5:00 PM",
+      "excerpt": "December 1, 2026 at 5 p.m.",
+      "stage": "Day 1D"
+     },
+     {
+      "date": "2026-12-02",
+      "time": "11:00 AM",
+      "excerpt": "December 2, 2026 at 11 a.m.",
+      "stage": "Day 1E"
+     },
+     {
+      "date": "2026-12-02",
+      "time": "6:00 PM",
+      "excerpt": "December 2, 2026 at 6 p.m.",
+      "stage": "Day 1F"
+     },
+     {
+      "date": "2026-12-03",
+      "time": "1:00 PM",
+      "excerpt": "December 3, 2026 at 1 p.m.",
+      "stage": "Day 2"
+     },
+     {
+      "date": "2026-12-04",
+      "time": "1:00 PM",
+      "excerpt": "December 4, 2026 at 1 p.m.",
+      "stage": "Final Table"
+     }
+    ],
+    "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "retrieved": "2026-11-17",
+    "block_index": 5
+   },
+   {
+    "id": "WPT-06",
+    "venue": "wynn",
+    "venue_name": "Wynn Las Vegas Poker",
+    "buy_in_usd": 600,
+    "name_printed": "Limit Omaha 8 poker",
+    "guarantee_usd": null,
+    "guarantee_excerpt": null,
+    "fee_total_usd": 600,
+    "fee_components": [
+     {
+      "amount_usd": 510,
+      "purpose": "Tournament Prize Pool"
+     },
+     {
+      "amount_usd": 65,
+      "purpose": "Tournament Fee"
+     },
+     {
+      "amount_usd": 25,
+      "purpose": "Poker Staff Service Charge"
+     }
+    ],
+    "fee_excerpt": "Entry Fee: Entry Fee: $600 Buy-in = $510 (Tournament Prize Pool) + $65 (Tournament Fee) + $25 (Poker Staff Service Charge) Registration:",
+    "fee_split_sums_to_buy_in": true,
+    "discounted_entry_excerpt": null,
+    "registration_excerpt": "Unlimited re-entry will be available until the start of level 9",
+    "rules": {
+     "single_entry": {
+      "status": "unverified",
+      "value": null,
+      "excerpt": null
+     },
+     "re_entry": {
+      "status": "confirmed_allowed",
+      "value": "unlimited re-entry / rebuys (printed)",
+      "excerpt": "Unlimited re-entry"
+     },
+     "add_on": {
+      "status": "not_stated_in_sheet",
+      "value": null,
+      "excerpt": null
+     },
+     "spend_advantage": true
+    },
+    "starting_chips": 35000,
+    "level_minutes": 30,
+    "payout_fraction": null,
+    "days": [
+     {
+      "date": "2026-11-30",
+      "time": "12:00 PM",
+      "excerpt": "November 30, 2026, at 12 p.m.",
+      "stage": null
+     }
+    ],
+    "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "retrieved": "2026-11-17",
+    "block_index": 6
+   },
+   {
+    "id": "WPT-07",
+    "venue": "wynn",
+    "venue_name": "Wynn Las Vegas Poker",
+    "buy_in_usd": 600,
+    "name_printed": "Limit Omaha 8/Stud 8 poker",
+    "guarantee_usd": null,
+    "guarantee_excerpt": null,
+    "fee_total_usd": 600,
+    "fee_components": [
+     {
+      "amount_usd": 510,
+      "purpose": "Tournament Prize Pool"
+     },
+     {
+      "amount_usd": 65,
+      "purpose": "Tournament Fee"
+     },
+     {
+      "amount_usd": 25,
+      "purpose": "Poker Staff Service Charge"
+     }
+    ],
+    "fee_excerpt": "Entry Fee: Entry Fee: $600 Buy-in = $510 (Tournament Prize Pool) + $65 (Tournament Fee) + $25 (Poker Staff Service Charge) Registration:",
+    "fee_split_sums_to_buy_in": true,
+    "discounted_entry_excerpt": null,
+    "registration_excerpt": "Unlimited re-entry will be available until the start of level 9",
+    "rules": {
+     "single_entry": {
+      "status": "unverified",
+      "value": null,
+      "excerpt": null
+     },
+     "re_entry": {
+      "status": "confirmed_allowed",
+      "value": "unlimited re-entry / rebuys (printed)",
+      "excerpt": "Unlimited re-entry"
+     },
+     "add_on": {
+      "status": "not_stated_in_sheet",
+      "value": null,
+      "excerpt": null
+     },
+     "spend_advantage": true
+    },
+    "starting_chips": 35000,
+    "level_minutes": 30,
+    "payout_fraction": null,
+    "days": [
+     {
+      "date": "2026-12-01",
+      "time": "12:00 PM",
+      "excerpt": "December 1, 2026, at 12 p.m.",
+      "stage": null
+     }
+    ],
+    "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "retrieved": "2026-11-17",
+    "block_index": 7
+   },
+   {
+    "id": "WPT-08",
+    "venue": "wynn",
+    "venue_name": "Wynn Las Vegas Poker",
+    "buy_in_usd": 1100,
+    "name_printed": "PLO poker",
+    "guarantee_usd": null,
+    "guarantee_excerpt": null,
+    "fee_total_usd": 1100,
+    "fee_components": [
+     {
+      "amount_usd": 975,
+      "purpose": "Tournament Prize Pool"
+     },
+     {
+      "amount_usd": 85,
+      "purpose": "Tournament Fee"
+     },
+     {
+      "amount_usd": 45,
+      "purpose": "Poker Staff Service Charge"
+     }
+    ],
+    "fee_excerpt": "Entry Fee: Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $45 (Poker Staff Service Charge) Registration:",
+    "fee_split_sums_to_buy_in": false,
+    "discounted_entry_excerpt": null,
+    "registration_excerpt": "Unlimited re-entry will be available until the start of level 9 (approximately 5:30 p.m.).",
+    "rules": {
+     "single_entry": {
+      "status": "unverified",
+      "value": null,
+      "excerpt": null
+     },
+     "re_entry": {
+      "status": "confirmed_allowed",
+      "value": "unlimited re-entry / rebuys (printed)",
+      "excerpt": "Unlimited re-entry"
+     },
+     "add_on": {
+      "status": "not_stated_in_sheet",
+      "value": null,
+      "excerpt": null
+     },
+     "spend_advantage": true
+    },
+    "starting_chips": 30000,
+    "level_minutes": 30,
+    "payout_fraction": null,
+    "days": [
+     {
+      "date": "2026-12-01",
+      "time": "1:00 PM",
+      "excerpt": "December 1, 2026, at 1 p.m.",
+      "stage": null
+     }
+    ],
+    "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "retrieved": "2026-11-17",
+    "block_index": 8
+   },
+   {
+    "id": "WPT-09",
+    "venue": "wynn",
+    "venue_name": "Wynn Las Vegas Poker",
+    "buy_in_usd": 1600,
+    "name_printed": "No Limit Hold’em $1,000,000 Guaranteed poker",
+    "guarantee_usd": 1000000,
+    "guarantee_excerpt": "$1,000,000 Guarantee",
+    "fee_total_usd": 1600,
+    "fee_components": [
+     {
+      "amount_usd": 1430,
+      "purpose": "Tournament Prize Pool"
+     },
+     {
+      "amount_usd": 120,
+      "purpose": "Tournament Fee"
+     },
+     {
+      "amount_usd": 50,
+      "purpose": "Poker Staff Service Charge"
+     }
+    ],
+    "fee_excerpt": "Entry Fee: Entry Fee: $1,600 Buy-in = $1,430 (Tournament Prize Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge) Registration:",
+    "fee_split_sums_to_buy_in": true,
+    "discounted_entry_excerpt": null,
+    "registration_excerpt": "Unlimited re-entry for each starting flight will be available until the start of level 10. A player who advances to Day 2 is prohibited from entering a subsequent starting flight. A player that has advanced to Day 2 who enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight.",
+    "rules": {
+     "single_entry": {
+      "status": "unverified",
+      "value": null,
+      "excerpt": null
+     },
+     "re_entry": {
+      "status": "confirmed_allowed",
+      "value": "unlimited re-entry / rebuys (printed)",
+      "excerpt": "Unlimited re-entry"
+     },
+     "add_on": {
+      "status": "not_stated_in_sheet",
+      "value": null,
+      "excerpt": null
+     },
+     "spend_advantage": true
+    },
+    "starting_chips": 40000,
+    "level_minutes": 40,
+    "payout_fraction": null,
+    "days": [
+     {
+      "date": "2026-12-03",
+      "time": "11:00 AM",
+      "excerpt": "December 3, 2026 at 11 a.m.",
+      "stage": "Day 1A"
+     },
+     {
+      "date": "2026-12-04",
+      "time": "11:00 AM",
+      "excerpt": "December 4, 2026 at 11 a.m.",
+      "stage": "Day 1B"
+     },
+     {
+      "date": "2026-12-05",
+      "time": "11:00 AM",
+      "excerpt": "December 5, 2026 at 11 a.m.",
+      "stage": "Day 2"
+     }
+    ],
+    "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "retrieved": "2026-11-17",
+    "block_index": 9
+   },
+   {
+    "id": "WPT-10",
+    "venue": "wynn",
+    "venue_name": "Wynn Las Vegas Poker",
+    "buy_in_usd": 600,
+    "name_printed": "HORSE poker",
+    "guarantee_usd": null,
+    "guarantee_excerpt": null,
+    "fee_total_usd": 600,
+    "fee_components": [
+     {
+      "amount_usd": 510,
+      "purpose": "Tournament Prize Pool"
+     },
+     {
+      "amount_usd": 65,
+      "purpose": "Tournament Fee"
+     },
+     {
+      "amount_usd": 25,
+      "purpose": "Poker Staff Service Charge"
+     }
+    ],
+    "fee_excerpt": "Entry Fee: Entry Fee: $600 Buy-in = $510 (Tournament Prize Pool) + $65 (Tournament Fee) + $25 (Poker Staff Service Charge) Registration:",
+    "fee_split_sums_to_buy_in": true,
+    "discounted_entry_excerpt": null,
+    "registration_excerpt": "Unlimited re-entry will be available until the start of level 9 (approximately 4:30 p.m.).",
+    "rules": {
+     "single_entry": {
+      "status": "unverified",
+      "value": null,
+      "excerpt": null
+     },
+     "re_entry": {
+      "status": "confirmed_allowed",
+      "value": "unlimited re-entry / rebuys (printed)",
+      "excerpt": "Unlimited re-entry"
+     },
+     "add_on": {
+      "status": "not_stated_in_sheet",
+      "value": null,
+      "excerpt": null
+     },
+     "spend_advantage": true
+    },
+    "starting_chips": 35000,
+    "level_minutes": 30,
+    "payout_fraction": null,
+    "days": [
+     {
+      "date": "2026-12-04",
+      "time": "12:00 PM",
+      "excerpt": "December 4, 2026 at 12 p.m.",
+      "stage": null
+     }
+    ],
+    "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "retrieved": "2026-11-17",
+    "block_index": 10
+   },
+   {
+    "id": "WPT-11",
+    "venue": "wynn",
+    "venue_name": "Wynn Las Vegas Poker",
+    "buy_in_usd": 1100,
+    "name_printed": "WPT Prime Championship $5,000,000 Guarantee poker",
+    "guarantee_usd": 5000000,
+    "guarantee_excerpt": "$5,000,000 Guarantee",
+    "fee_total_usd": 1100,
+    "fee_components": [
+     {
+      "amount_usd": 970,
+      "purpose": "Tournament Prize Pool"
+     },
+     {
+      "amount_usd": 90,
+      "purpose": "Tournament Fee"
+     },
+     {
+      "amount_usd": 40,
+      "purpose": "Poker Staff Service Charge"
+     }
+    ],
+    "fee_excerpt": "Entry Fee: Entry Fee: $1,100 Buy-in = $970 (Tournament Prize Pool) + $90 (Tournament Fee) + $40 (Poker Staff Service Charge) Registration:",
+    "fee_split_sums_to_buy_in": true,
+    "discounted_entry_excerpt": null,
+    "registration_excerpt": "One (1) Entry and One (1) re-entry for each starting flight will be available until the start of level 10 (approximately 6:45 p.m.). A player who advances to Day 2 is prohibited from entering a subsequent starting flight. A player that has advanced to Day 2 who enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight.",
+    "rules": {
+     "single_entry": {
+      "status": "unverified",
+      "value": null,
+      "excerpt": null
+     },
+     "re_entry": {
+      "status": "confirmed_limited",
+      "value": "one (1) entry and one (1) re-entry",
+      "excerpt": "One (1) Entry"
+     },
+     "add_on": {
+      "status": "not_stated_in_sheet",
+      "value": null,
+      "excerpt": null
+     },
+     "spend_advantage": true
+    },
+    "starting_chips": 40000,
+    "level_minutes": 40,
+    "payout_fraction": "1-in-8",
+    "days": [
+     {
+      "date": "2026-12-05",
+      "time": "11:00 AM",
+      "excerpt": "December 5, 2026 at 11 a.m.",
+      "stage": "Day 1A"
+     },
+     {
+      "date": "2026-12-06",
+      "time": "11:00 AM",
+      "excerpt": "December 6, 2026 at 11 a.m.",
+      "stage": "Day 1B"
+     },
+     {
+      "date": "2026-12-07",
+      "time": "11:00 AM",
+      "excerpt": "December 7, 2026 at 11 a.m.",
+      "stage": "Day 1C"
+     },
+     {
+      "date": "2026-12-08",
+      "time": "11:00 AM",
+      "excerpt": "December 8, 2026 at 11 a.m.",
+      "stage": "Day 1D"
+     },
+     {
+      "date": "2026-12-09",
+      "time": "12:00 PM",
+      "excerpt": "December 9, 2026 at 12 p.m.",
+      "stage": "Day 2"
+     },
+     {
+      "date": "2026-12-10",
+      "time": "12:00 PM",
+      "excerpt": "December 10, 2026 at 12 p.m.",
+      "stage": "Day 3"
+     },
+     {
+      "date": "2026-12-11",
+      "time": "12:00 PM",
+      "excerpt": "December 11, 2026 at 12 p.m.",
+      "stage": "Day 4"
+     },
+     {
+      "date": "2026-12-12",
+      "time": "2:00 PM",
+      "excerpt": "December 12, 2026 at 2 p.m.",
+      "stage": "Final Table"
+     }
+    ],
+    "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "retrieved": "2026-11-17",
+    "block_index": 11
+   },
+   {
+    "id": "WPT-12",
+    "venue": "wynn",
+    "venue_name": "Wynn Las Vegas Poker",
+    "buy_in_usd": 600,
+    "name_printed": "NLH Turbo $50,000 guaranteed poker",
+    "guarantee_usd": 50000,
+    "guarantee_excerpt": "$50,000 guarantee",
+    "fee_total_usd": 600,
+    "fee_components": [
+     {
+      "amount_usd": 515,
+      "purpose": "Tournament Prize Pool"
+     },
+     {
+      "amount_usd": 60,
+      "purpose": "Tournament Fee"
+     },
+     {
+      "amount_usd": 25,
+      "purpose": "Poker Staff Service Charge"
+     }
+    ],
+    "fee_excerpt": "Entry Fee: Entry Fee: $600 Buy-in = $515 (Tournament Prize Pool) + $60 (Tournament Fee) + $25 (Poker Staff Service Charge) Registration:",
+    "fee_split_sums_to_buy_in": true,
+    "discounted_entry_excerpt": null,
+    "registration_excerpt": "Unlimited re-entry will be available until the start of level 9.",
+    "rules": {
+     "single_entry": {
+      "status": "unverified",
+      "value": null,
+      "excerpt": null
+     },
+     "re_entry": {
+      "status": "confirmed_allowed",
+      "value": "unlimited re-entry / rebuys (printed)",
+      "excerpt": "Unlimited re-entry"
+     },
+     "add_on": {
+      "status": "not_stated_in_sheet",
+      "value": null,
+      "excerpt": null
+     },
+     "spend_advantage": true
+    },
+    "starting_chips": 30000,
+    "level_minutes": 20,
+    "payout_fraction": null,
+    "days": [
+     {
+      "date": "2026-12-05",
+      "time": "9:00 PM",
+      "excerpt": "December 5, 2026 at 9 p.m.",
+      "stage": null
+     },
+     {
+      "date": "2026-12-06",
+      "time": "9:00 PM",
+      "excerpt": "December 6, 2026 at 9 p.m.",
+      "stage": null
+     },
+     {
+      "date": "2026-12-07",
+      "time": "9:00 PM",
+      "excerpt": "December 7, 2026 at 9 p.m.",
+      "stage": null
+     },
+     {
+      "date": "2026-12-08",
+      "time": "9:00 PM",
+      "excerpt": "December 8, 2026 at 9 p.m.",
+      "stage": null
+     },
+     {
+      "date": "2026-12-09",
+      "time": "9:00 PM",
+      "excerpt": "December 9, 2026 at 9 p.m.",
+      "stage": null
+     },
+     {
+      "date": "2026-12-12",
+      "time": "9:00 PM",
+      "excerpt": "December 12, 2026 at 9 p.m.",
+      "stage": null
+     },
+     {
+      "date": "2026-12-14",
+      "time": "9:00 PM",
+      "excerpt": "December 14, 2026 at 9 p.m.",
+      "stage": null
+     },
+     {
+      "date": "2026-12-21",
+      "time": "6:00 PM",
+      "excerpt": "December 21, 2026 at 6 p.m.",
+      "stage": null
+     }
+    ],
+    "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "retrieved": "2026-11-17",
+    "block_index": 12
+   },
+   {
+    "id": "WPT-13",
+    "venue": "wynn",
+    "venue_name": "Wynn Las Vegas Poker",
+    "buy_in_usd": 1600,
+    "name_printed": "Mystery Bounty $500,000 Guarantee poker",
+    "guarantee_usd": 500000,
+    "guarantee_excerpt": "$500,000 Guarantee",
+    "fee_total_usd": 1600,
+    "fee_components": [
+     {
+      "amount_usd": 930,
+      "purpose": "Tournament Prize Pool"
+     },
+     {
+      "amount_usd": 500,
+      "purpose": "Mystery Bounty Prize Pool"
+     },
+     {
+      "amount_usd": 120,
+      "purpose": "Tournament Fee"
+     },
+     {
+      "amount_usd": 50,
+      "purpose": "Poker Staff Service Charge"
+     }
+    ],
+    "fee_excerpt": "Entry Fee: Entry Fee: $1,600 Buy-in = $930 (Tournament Prize Pool) + $500 (Mystery Bounty Prize Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge) Registration:",
+    "fee_split_sums_to_buy_in": true,
+    "discounted_entry_excerpt": null,
+    "registration_excerpt": "Unlimited re-entry for each starting flight will be available until the start of level 10. A player who advances to Day 2 is prohibited from entering a subsequent starting flight. A player that has advanced to Day 2 who enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight.",
+    "rules": {
+     "single_entry": {
+      "status": "unverified",
+      "value": null,
+      "excerpt": null
+     },
+     "re_entry": {
+      "status": "confirmed_allowed",
+      "value": "unlimited re-entry / rebuys (printed)",
+      "excerpt": "Unlimited re-entry"
+     },
+     "add_on": {
+      "status": "not_stated_in_sheet",
+      "value": null,
+      "excerpt": null
+     },
+     "spend_advantage": true
+    },
+    "starting_chips": 40000,
+    "level_minutes": 40,
+    "payout_fraction": null,
+    "days": [
+     {
+      "date": "2026-12-06",
+      "time": "11:00 AM",
+      "excerpt": "December 6, 2026, at 11 a.m.",
+      "stage": "Day 1A"
+     },
+     {
+      "date": "2026-12-06",
+      "time": "6:00 PM",
+      "excerpt": "December 6, 2026, at 6 p.m.",
+      "stage": "Day 1B"
+     },
+     {
+      "date": "2026-12-07",
+      "time": "12:00 PM",
+      "excerpt": "December 7, 2026, at 12 p.m.",
+      "stage": "Day 2"
+     }
+    ],
+    "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "retrieved": "2026-11-17",
+    "block_index": 13
+   },
+   {
+    "id": "WPT-14",
+    "venue": "wynn",
+    "venue_name": "Wynn Las Vegas Poker",
+    "buy_in_usd": 1100,
+    "name_printed": "HORSE poker",
+    "guarantee_usd": null,
+    "guarantee_excerpt": null,
+    "fee_total_usd": 1100,
+    "fee_components": [
+     {
+      "amount_usd": 965,
+      "purpose": "Tournament Prize Pool"
+     },
+     {
+      "amount_usd": 90,
+      "purpose": "Tournament Fee"
+     },
+     {
+      "amount_usd": 45,
+      "purpose": "Poker Staff Service Charge"
+     }
+    ],
+    "fee_excerpt": "Entry Fee: Entry Fee: $1,100 Buy-in = $965 (Tournament Prize Pool) + $90 (Tournament Fee) + $45 (Poker Staff Service Charge) Registration:",
+    "fee_split_sums_to_buy_in": true,
+    "discounted_entry_excerpt": null,
+    "registration_excerpt": "Unlimited re-entry will be available until the start of level 10 (approximately 6:30 p.m.).",
+    "rules": {
+     "single_entry": {
+      "status": "unverified",
+      "value": null,
+      "excerpt": null
+     },
+     "re_entry": {
+      "status": "confirmed_allowed",
+      "value": "unlimited re-entry / rebuys (printed)",
+      "excerpt": "Unlimited re-entry"
+     },
+     "add_on": {
+      "status": "not_stated_in_sheet",
+      "value": null,
+      "excerpt": null
+     },
+     "spend_advantage": true
+    },
+    "starting_chips": 40000,
+    "level_minutes": 40,
+    "payout_fraction": null,
+    "days": [
+     {
+      "date": "2026-12-07",
+      "time": "11:00 AM",
+      "excerpt": "December 7, 2026, at 11 a.m.",
+      "stage": "Day 1"
+     },
+     {
+      "date": "2026-12-08",
+      "time": "11:00 AM",
+      "excerpt": "December 8, 2026, at 11 a.m.",
+      "stage": "Day 2"
+     }
+    ],
+    "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "retrieved": "2026-11-17",
+    "block_index": 14
+   },
+   {
+    "id": "WPT-15",
+    "venue": "wynn",
+    "venue_name": "Wynn Las Vegas Poker",
+    "buy_in_usd": 1600,
+    "name_printed": "PLO $500 Bounty $100,000 guaranteed poker",
+    "guarantee_usd": 100000,
+    "guarantee_excerpt": "$100,000 guarantee",
+    "fee_total_usd": 1600,
+    "fee_components": [
+     {
+      "amount_usd": 940,
+      "purpose": "Tournament Prize Pool"
+     },
+     {
+      "amount_usd": 500,
+      "purpose": "Bounty Prize Pool"
+     },
+     {
+      "amount_usd": 115,
+      "purpose": "Tournament Fee"
+     },
+     {
+      "amount_usd": 45,
+      "purpose": "Poker Staff Service Charge"
+     }
+    ],
+    "fee_excerpt": "Entry Fee: Entry Fee: $1,600 Buy-in = $940 (Tournament Prize Pool) + $500 (Bounty Prize Pool) + $115 (Tournament Fee) + $45 (Poker Staff Service Charge) Registration:",
+    "fee_split_sums_to_buy_in": true,
+    "discounted_entry_excerpt": null,
+    "registration_excerpt": "Unlimited re-entry will be available until the start of level 9 (approximately 5:30 p.m.).",
+    "rules": {
+     "single_entry": {
+      "status": "unverified",
+      "value": null,
+      "excerpt": null
+     },
+     "re_entry": {
+      "status": "confirmed_allowed",
+      "value": "unlimited re-entry / rebuys (printed)",
+      "excerpt": "Unlimited re-entry"
+     },
+     "add_on": {
+      "status": "not_stated_in_sheet",
+      "value": null,
+      "excerpt": null
+     },
+     "spend_advantage": true
+    },
+    "starting_chips": 30000,
+    "level_minutes": 30,
+    "payout_fraction": null,
+    "days": [
+     {
+      "date": "2026-12-07",
+      "time": "1:00 PM",
+      "excerpt": "December 7, 2026, at 1 p.m.",
+      "stage": null
+     }
+    ],
+    "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "retrieved": "2026-11-17",
+    "block_index": 15
+   },
+   {
+    "id": "WPT-16",
+    "venue": "wynn",
+    "venue_name": "Wynn Las Vegas Poker",
+    "buy_in_usd": 1600,
+    "name_printed": "No Limit Hold’em $1,000,000 Guaranteed poker",
+    "guarantee_usd": 1000000,
+    "guarantee_excerpt": "$1,000,000 Guarantee",
+    "fee_total_usd": 1600,
+    "fee_components": [
+     {
+      "amount_usd": 1430,
+      "purpose": "Tournament Prize Pool"
+     },
+     {
+      "amount_usd": 120,
+      "purpose": "Tournament Fee"
+     },
+     {
+      "amount_usd": 50,
+      "purpose": "Poker Staff Service Charge"
+     }
+    ],
+    "fee_excerpt": "Entry Fee: Entry Fee: $1,600 Buy-in = $1,430 (Tournament Prize Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge) Registration:",
+    "fee_split_sums_to_buy_in": true,
+    "discounted_entry_excerpt": null,
+    "registration_excerpt": "Unlimited re-entry for each starting flight will be available until the start of level 10.",
+    "rules": {
+     "single_entry": {
+      "status": "unverified",
+      "value": null,
+      "excerpt": null
+     },
+     "re_entry": {
+      "status": "confirmed_allowed",
+      "value": "unlimited re-entry / rebuys (printed)",
+      "excerpt": "Unlimited re-entry"
+     },
+     "add_on": {
+      "status": "not_stated_in_sheet",
+      "value": null,
+      "excerpt": null
+     },
+     "spend_advantage": true
+    },
+    "starting_chips": 40000,
+    "level_minutes": 40,
+    "payout_fraction": null,
+    "days": [
+     {
+      "date": "2026-12-09",
+      "time": "11:00 AM",
+      "excerpt": "December 9, 2026 at 11 a.m.",
+      "stage": "Day 1"
+     },
+     {
+      "date": "2026-12-10",
+      "time": "11:00 AM",
+      "excerpt": "December 10, 2026 at 11 a.m.",
+      "stage": "Day 2"
+     }
+    ],
+    "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "retrieved": "2026-11-17",
+    "block_index": 16
+   },
+   {
+    "id": "WPT-17",
+    "venue": "wynn",
+    "venue_name": "Wynn Las Vegas Poker",
+    "buy_in_usd": 3000,
+    "name_printed": "PLO $1,000 Bounty $250,000 guaranteed poker",
+    "guarantee_usd": 250000,
+    "guarantee_excerpt": "$250,000 guarantee",
+    "fee_total_usd": 3000,
+    "fee_components": [
+     {
+      "amount_usd": 1730,
+      "purpose": "Tournament Prize Pool"
+     },
+     {
+      "amount_usd": 1000,
+      "purpose": "Bounty Prize Pool"
+     },
+     {
+      "amount_usd": 200,
+      "purpose": "Tournament Fee"
+     },
+     {
+      "amount_usd": 70,
+      "purpose": "Poker Staff Service Charge"
+     }
+    ],
+    "fee_excerpt": "Entry Fee: Entry Fee: $3,000 Buy-in = $1,730 (Tournament Prize Pool) + $1,000 (Bounty Prize Pool) + $200 (Tournament Fee) + $70 (Poker Staff Service Charge) Registration:",
+    "fee_split_sums_to_buy_in": true,
+    "discounted_entry_excerpt": null,
+    "registration_excerpt": "Unlimited re-entry will be available until the start of level 9 (approximately 5:30 p.m.).",
+    "rules": {
+     "single_entry": {
+      "status": "unverified",
+      "value": null,
+      "excerpt": null
+     },
+     "re_entry": {
+      "status": "confirmed_allowed",
+      "value": "unlimited re-entry / rebuys (printed)",
+      "excerpt": "Unlimited re-entry"
+     },
+     "add_on": {
+      "status": "not_stated_in_sheet",
+      "value": null,
+      "excerpt": null
+     },
+     "spend_advantage": true
+    },
+    "starting_chips": 30000,
+    "level_minutes": 30,
+    "payout_fraction": null,
+    "days": [
+     {
+      "date": "2026-12-09",
+      "time": "1:00 PM",
+      "excerpt": "December 9, 2026, at 1 p.m.",
+      "stage": null
+     }
+    ],
+    "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "retrieved": "2026-11-17",
+    "block_index": 17
+   },
+   {
+    "id": "WPT-18",
+    "venue": "wynn",
+    "venue_name": "Wynn Las Vegas Poker",
+    "buy_in_usd": 800,
+    "name_printed": "Limit Omaha 8 poker",
+    "guarantee_usd": null,
+    "guarantee_excerpt": null,
+    "fee_total_usd": 800,
+    "fee_components": [
+     {
+      "amount_usd": 695,
+      "purpose": "Tournament Prize Pool"
+     },
+     {
+      "amount_usd": 72,
+      "purpose": "Tournament Fee"
+     },
+     {
+      "amount_usd": 33,
+      "purpose": "Poker Staff Service Charge"
+     }
+    ],
+    "fee_excerpt": "Entry Fee: Entry Fee: $800 Buy-in = $695 (Tournament Prize Pool) + $72 (Tournament Fee) + $33 (Poker Staff Service Charge) Registration:",
+    "fee_split_sums_to_buy_in": true,
+    "discounted_entry_excerpt": null,
+    "registration_excerpt": "Unlimited re-entry will be available until the start of level 9.",
+    "rules": {
+     "single_entry": {
+      "status": "unverified",
+      "value": null,
+      "excerpt": null
+     },
+     "re_entry": {
+      "status": "confirmed_allowed",
+      "value": "unlimited re-entry / rebuys (printed)",
+      "excerpt": "Unlimited re-entry"
+     },
+     "add_on": {
+      "status": "not_stated_in_sheet",
+      "value": null,
+      "excerpt": null
+     },
+     "spend_advantage": true
+    },
+    "starting_chips": 35000,
+    "level_minutes": 30,
+    "payout_fraction": null,
+    "days": [
+     {
+      "date": "2026-12-09",
+      "time": "1:00 PM",
+      "excerpt": "December 9, 2026, at 1 p.m.",
+      "stage": null
+     }
+    ],
+    "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "retrieved": "2026-11-17",
+    "block_index": 18
+   },
+   {
+    "id": "WPT-19",
+    "venue": "wynn",
+    "venue_name": "Wynn Las Vegas Poker",
+    "buy_in_usd": 400,
+    "name_printed": "Super Gold Million",
+    "guarantee_usd": 3000000,
+    "guarantee_excerpt": "$3,000,000 Guarantee",
+    "fee_total_usd": 400,
+    "fee_components": [
+     {
+      "amount_usd": 333,
+      "purpose": "Tournament Prize Pool"
+     },
+     {
+      "amount_usd": 45,
+      "purpose": "Tournament Fee"
+     },
+     {
+      "amount_usd": 22,
+      "purpose": "Poker Staff Service Charge"
+     }
+    ],
+    "fee_excerpt": "Entry Fee: Entry Fee: $400 Buy-in = $333 (Tournament Prize Pool) + $45 (Tournament Fee) + $22 (Poker Staff Service Charge) $1,200,000 from the Tournament Prize Pool will fund the Mystery Bounty Prize Pool. Registration:",
+    "fee_split_sums_to_buy_in": true,
+    "discounted_entry_excerpt": null,
+    "registration_excerpt": "Unlimited re-entry for each starting flight will be available until the start of level 9. A player who advances to Day 2 is allowed to enter a subsequent starting flight. A player that has advanced to Day 2 from any of the subsequent starting flights will be permitted to play Day 2 with their largest Tournament chip stack from any of the original starting flights (Best stack forward). The player will receive the minimum Day 2 tournament payout ($700) for each additional Tournament chip stack which has advanced.",
+    "rules": {
+     "single_entry": {
+      "status": "unverified",
+      "value": null,
+      "excerpt": null
+     },
+     "re_entry": {
+      "status": "confirmed_allowed",
+      "value": "unlimited re-entry / rebuys (printed)",
+      "excerpt": "Unlimited re-entry"
+     },
+     "add_on": {
+      "status": "not_stated_in_sheet",
+      "value": null,
+      "excerpt": null
+     },
+     "spend_advantage": true
+    },
+    "starting_chips": 30000,
+    "level_minutes": 30,
+    "payout_fraction": "1-in-8",
+    "days": [
+     {
+      "date": "2026-12-10",
+      "time": "10:00 AM",
+      "excerpt": "December 10, 2026 at 10 a.m.",
+      "stage": "Day 1A"
+     },
+     {
+      "date": "2026-12-10",
+      "time": "6:00 PM",
+      "excerpt": "December 10, 2026 at 6 p.m.",
+      "stage": "Day 1B"
+     },
+     {
+      "date": "2026-12-11",
+      "time": "10:00 AM",
+      "excerpt": "December 11, 2026 at 10 a.m.",
+      "stage": "Day 1C"
+     },
+     {
+      "date": "2026-12-11",
+      "time": "6:00 PM",
+      "excerpt": "December 11, 2026 at 6 p.m.",
+      "stage": "Day 1D"
+     },
+     {
+      "date": "2026-12-12",
+      "time": "2:00 PM",
+      "excerpt": "December 12, 2026 at 2 p.m.",
+      "stage": "Day 2"
+     },
+     {
+      "date": "2026-12-13",
+      "time": "1:00 PM",
+      "excerpt": "December 13, 2026 at 1 p.m.",
+      "stage": "Day 3"
+     },
+     {
+      "date": "2026-12-14",
+      "time": "2:00 PM",
+      "excerpt": "December 14, 2026 at 2 p.m.",
+      "stage": "Final Table"
+     }
+    ],
+    "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "retrieved": "2026-11-17",
+    "block_index": 19
+   },
+   {
+    "id": "WPT-20",
+    "venue": "wynn",
+    "venue_name": "Wynn Las Vegas Poker",
+    "buy_in_usd": 800,
+    "name_printed": "No Limit Hold’em $100,000 Guaranteed poker",
+    "guarantee_usd": 100000,
+    "guarantee_excerpt": "$100,000 Guarantee",
+    "fee_total_usd": 800,
+    "fee_components": [
+     {
+      "amount_usd": 700,
+      "purpose": "Tournament Prize Pool"
+     },
+     {
+      "amount_usd": 70,
+      "purpose": "Tournament Fee"
+     },
+     {
+      "amount_usd": 30,
+      "purpose": "Poker Staff Service Charge"
+     }
+    ],
+    "fee_excerpt": "Entry Fee: Entry Fee: $800 Buy-in = $700 (Tournament Prize Pool) + $70 (Tournament Fee) + $30 (Poker Staff Service Charge) Registration:",
+    "fee_split_sums_to_buy_in": true,
+    "discounted_entry_excerpt": null,
+    "registration_excerpt": "Unlimited re-entry will be available until the start of level 9 (approximately 2:30 p.m.).",
+    "rules": {
+     "single_entry": {
+      "status": "unverified",
+      "value": null,
+      "excerpt": null
+     },
+     "re_entry": {
+      "status": "confirmed_allowed",
+      "value": "unlimited re-entry / rebuys (printed)",
+      "excerpt": "Unlimited re-entry"
+     },
+     "add_on": {
+      "status": "not_stated_in_sheet",
+      "value": null,
+      "excerpt": null
+     },
+     "spend_advantage": true
+    },
+    "starting_chips": 30000,
+    "level_minutes": 30,
+    "payout_fraction": null,
+    "days": [
+     {
+      "date": "2026-12-12",
+      "time": "10:00 AM",
+      "excerpt": "December 12, 2026 at 10 a.m.",
+      "stage": null
+     }
+    ],
+    "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "retrieved": "2026-11-17",
+    "block_index": 20
+   },
+   {
+    "id": "WPT-21",
+    "venue": "wynn",
+    "venue_name": "Wynn Las Vegas Poker",
+    "buy_in_usd": 3000,
+    "name_printed": "PLO $250,000 Guaranteed poker",
+    "guarantee_usd": 250000,
+    "guarantee_excerpt": "$250,000 Guarantee",
+    "fee_total_usd": 3000,
+    "fee_components": [
+     {
+      "amount_usd": 2730,
+      "purpose": "Tournament Prize Pool"
+     },
+     {
+      "amount_usd": 200,
+      "purpose": "Tournament Fee"
+     },
+     {
+      "amount_usd": 70,
+      "purpose": "Poker Staff Service Charge"
+     }
+    ],
+    "fee_excerpt": "Entry Fee: Entry Fee: $3,000 Buy-in = $2,730 (Tournament Prize Pool) + $200 (Tournament Fee) + $70 (Poker Staff Service Charge) Registration:",
+    "fee_split_sums_to_buy_in": true,
+    "discounted_entry_excerpt": null,
+    "registration_excerpt": "Unlimited re-entry will be available until the start of level 9 (approximately 5:30 p.m.).",
+    "rules": {
+     "single_entry": {
+      "status": "unverified",
+      "value": null,
+      "excerpt": null
+     },
+     "re_entry": {
+      "status": "confirmed_allowed",
+      "value": "unlimited re-entry / rebuys (printed)",
+      "excerpt": "Unlimited re-entry"
+     },
+     "add_on": {
+      "status": "not_stated_in_sheet",
+      "value": null,
+      "excerpt": null
+     },
+     "spend_advantage": true
+    },
+    "starting_chips": 30000,
+    "level_minutes": 30,
+    "payout_fraction": null,
+    "days": [
+     {
+      "date": "2026-12-12",
+      "time": "1:00 PM",
+      "excerpt": "December 12, 2026, at 1 p.m.",
+      "stage": null
+     }
+    ],
+    "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "retrieved": "2026-11-17",
+    "block_index": 21
+   },
+   {
+    "id": "WPT-22",
+    "venue": "wynn",
+    "venue_name": "Wynn Las Vegas Poker",
+    "buy_in_usd": 10400,
+    "name_printed": "WPT World Championship",
+    "guarantee_usd": null,
+    "guarantee_excerpt": null,
+    "fee_total_usd": 10400,
+    "fee_components": [
+     {
+      "amount_usd": 9800,
+      "purpose": "Tournament Prize Pool"
+     },
+     {
+      "amount_usd": 400,
+      "purpose": "Tournament Fee"
+     },
+     {
+      "amount_usd": 200,
+      "purpose": "Poker Staff Service Charge"
+     }
+    ],
+    "fee_excerpt": "Entry Fee: Entry Fee: $10,400 Buy-in = $9,800 (Tournament Prize Pool) + $400 (Tournament Fee) + $200 (Poker Staff Service Charge) Registration:",
+    "fee_split_sums_to_buy_in": true,
+    "discounted_entry_excerpt": null,
+    "registration_excerpt": "Four (4) Entries maximum. Players are allowed One (1) entry per starting flight + One (1) Day 2 Entry prior to the start of Day 2. Registration is available until the start of level nine (9). A player who advances to Day 2 is prohibited from entering a subsequent starting flight. A player that has advanced to Day 2 who enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight.",
+    "rules": {
+     "single_entry": {
+      "status": "unverified",
+      "value": null,
+      "excerpt": null
+     },
+     "re_entry": {
+      "status": "confirmed_limited",
+      "value": "four (4) entries maximum",
+      "excerpt": "Four (4) Entries"
+     },
+     "add_on": {
+      "status": "not_stated_in_sheet",
+      "value": null,
+      "excerpt": null
+     },
+     "spend_advantage": true
+    },
+    "starting_chips": 100000,
+    "level_minutes": 90,
+    "payout_fraction": "1-in-8",
+    "days": [
+     {
+      "date": "2026-12-13",
+      "time": "11:00 AM",
+      "excerpt": "December 13, 2026 at 11 a.m.",
+      "stage": "Day 1A"
+     },
+     {
+      "date": "2026-12-14",
+      "time": "11:00 AM",
+      "excerpt": "December 14, 2026 at 11 a.m.",
+      "stage": "Day 1B"
+     },
+     {
+      "date": "2026-12-15",
+      "time": "11:00 AM",
+      "excerpt": "December 15, 2026 at 11 a.m.",
+      "stage": "Day 1C"
+     },
+     {
+      "date": "2026-12-16",
+      "time": "12:00 PM",
+      "excerpt": "December 16, 2026 at 12 p.m.",
+      "stage": "Day 2"
+     },
+     {
+      "date": "2026-12-17",
+      "time": "12:00 PM",
+      "excerpt": "December 17, 2026 at 12 p.m.",
+      "stage": "Day 3"
+     },
+     {
+      "date": "2026-12-18",
+      "time": "12:00 PM",
+      "excerpt": "December 18, 2026 at 12 p.m.",
+      "stage": "Day 4"
+     },
+     {
+      "date": "2026-12-19",
+      "time": "12:00 PM",
+      "excerpt": "December 19, 2026 at 12 p.m.",
+      "stage": "Day 5"
+     },
+     {
+      "date": "2026-12-20",
+      "time": "2:00 PM",
+      "excerpt": "December 20, 2026 at 2 p.m.",
+      "stage": "Final Table"
+     }
+    ],
+    "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "retrieved": "2026-11-17",
+    "block_index": 22
+   },
+   {
+    "id": "WPT-23",
+    "venue": "wynn",
+    "venue_name": "Wynn Las Vegas Poker",
+    "buy_in_usd": 11100,
+    "name_printed": "(***discounted to $1,100 for Ladies) WPT Ladies Championship $250,000 Guarantee poker",
+    "guarantee_usd": 250000,
+    "guarantee_excerpt": "$250,000 Guarantee",
+    "fee_total_usd": 11100,
+    "fee_components": [
+     {
+      "amount_usd": 10965,
+      "purpose": "Tournament Prize Pool"
+     },
+     {
+      "amount_usd": 90,
+      "purpose": "Tournament Fee"
+     },
+     {
+      "amount_usd": 45,
+      "purpose": "Poker Staff Service Charge"
+     }
+    ],
+    "fee_excerpt": "Entry Fee: Entry Fee: $11,100 Buy-in = $10,965 (Tournament Prize Pool) + $90 (Tournament Fee) + $45 (Poker Staff Service Charge) *Discounted Ladies Entry Fee: $1,100 Buy-in = $965 (Tournament Prize Pool) + $90 (Tournament Fee) + $45 (Poker Staff Service Charge) Registration:",
+    "fee_split_sums_to_buy_in": true,
+    "discounted_entry_excerpt": "Discounted Ladies Entry Fee: $1,100 Buy-in = $965 (Tournament Prize Pool) + $90 (Tournament Fee) + $45 (Poker Staff Service Charge)",
+    "registration_excerpt": "Unlimited re-entry will be available until the start of level 10 (approximately 6:30 p.m.).",
+    "rules": {
+     "single_entry": {
+      "status": "unverified",
+      "value": null,
+      "excerpt": null
+     },
+     "re_entry": {
+      "status": "confirmed_allowed",
+      "value": "unlimited re-entry / rebuys (printed)",
+      "excerpt": "Unlimited re-entry"
+     },
+     "add_on": {
+      "status": "not_stated_in_sheet",
+      "value": null,
+      "excerpt": null
+     },
+     "spend_advantage": true
+    },
+    "starting_chips": 40000,
+    "level_minutes": 40,
+    "payout_fraction": null,
+    "days": [
+     {
+      "date": "2026-12-13",
+      "time": "11:00 AM",
+      "excerpt": "December 13, 2026 at 11 a.m.",
+      "stage": "Day 1"
+     },
+     {
+      "date": "2026-12-14",
+      "time": "11:00 AM",
+      "excerpt": "December 14, 2026 at 11 a.m.",
+      "stage": "Day 2"
+     }
+    ],
+    "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "retrieved": "2026-11-17",
+    "block_index": 23
+   },
+   {
+    "id": "WPT-24",
+    "venue": "wynn",
+    "venue_name": "Wynn Las Vegas Poker",
+    "buy_in_usd": 1100,
+    "name_printed": "TORSE poker",
+    "guarantee_usd": null,
+    "guarantee_excerpt": null,
+    "fee_total_usd": 1100,
+    "fee_components": [
+     {
+      "amount_usd": 965,
+      "purpose": "Tournament Prize Pool"
+     },
+     {
+      "amount_usd": 90,
+      "purpose": "Tournament Fee"
+     },
+     {
+      "amount_usd": 45,
+      "purpose": "Poker Staff Service Charge"
+     }
+    ],
+    "fee_excerpt": "Entry Fee: Entry Fee: $1,100 Buy-in = $965 (Tournament Prize Pool) + $90 (Tournament Fee) + $45 (Poker Staff Service Charge) Registration:",
+    "fee_split_sums_to_buy_in": true,
+    "discounted_entry_excerpt": null,
+    "registration_excerpt": "Unlimited re-entry will be available until the start of level 10 (approximately 6:30 p.m.).",
+    "rules": {
+     "single_entry": {
+      "status": "unverified",
+      "value": null,
+      "excerpt": null
+     },
+     "re_entry": {
+      "status": "confirmed_allowed",
+      "value": "unlimited re-entry / rebuys (printed)",
+      "excerpt": "Unlimited re-entry"
+     },
+     "add_on": {
+      "status": "not_stated_in_sheet",
+      "value": null,
+      "excerpt": null
+     },
+     "spend_advantage": true
+    },
+    "starting_chips": 40000,
+    "level_minutes": 40,
+    "payout_fraction": null,
+    "days": [
+     {
+      "date": "2026-12-13",
+      "time": "11:00 AM",
+      "excerpt": "December 13, 2026, at 11 a.m.",
+      "stage": "Day 1"
+     },
+     {
+      "date": "2026-12-14",
+      "time": "11:00 AM",
+      "excerpt": "December 14, 2026, at 11 a.m.",
+      "stage": "Day 2"
+     }
+    ],
+    "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "retrieved": "2026-11-17",
+    "block_index": 24
+   },
+   {
+    "id": "WPT-25",
+    "venue": "wynn",
+    "venue_name": "Wynn Las Vegas Poker",
+    "buy_in_usd": 800,
+    "name_printed": "No Limit Hold’em $500,000 Guaranteed poker",
+    "guarantee_usd": 500000,
+    "guarantee_excerpt": "$500,000 Guarantee",
+    "fee_total_usd": 800,
+    "fee_components": [
+     {
+      "amount_usd": 695,
+      "purpose": "Tournament Prize Pool"
+     },
+     {
+      "amount_usd": 72,
+      "purpose": "Tournament Fee"
+     },
+     {
+      "amount_usd": 33,
+      "purpose": "Poker Staff Service Charge"
+     }
+    ],
+    "fee_excerpt": "Entry Fee: Entry Fee: $800 Buy-in = $695 (Tournament Prize Pool) + $72 (Tournament Fee) + $33 (Poker Staff Service Charge) Registration:",
+    "fee_split_sums_to_buy_in": true,
+    "discounted_entry_excerpt": null,
+    "registration_excerpt": "Unlimited re-entry for each starting flight will be available until the start of level 10. A player who advances to Day 2 is prohibited from entering a subsequent starting flight. A player that has advanced to Day 2 who enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight.",
+    "rules": {
+     "single_entry": {
+      "status": "unverified",
+      "value": null,
+      "excerpt": null
+     },
+     "re_entry": {
+      "status": "confirmed_allowed",
+      "value": "unlimited re-entry / rebuys (printed)",
+      "excerpt": "Unlimited re-entry"
+     },
+     "add_on": {
+      "status": "not_stated_in_sheet",
+      "value": null,
+      "excerpt": null
+     },
+     "spend_advantage": true
+    },
+    "starting_chips": 40000,
+    "level_minutes": 40,
+    "payout_fraction": null,
+    "days": [
+     {
+      "date": "2026-12-13",
+      "time": "11:00 AM",
+      "excerpt": "December 13, 2026 at 11 a.m.",
+      "stage": "Day 1A"
+     },
+     {
+      "date": "2026-12-14",
+      "time": "11:00 AM",
+      "excerpt": "December 14, 2026 at 11 a.m.",
+      "stage": "Day 1B"
+     },
+     {
+      "date": "2026-12-15",
+      "time": "11:00 AM",
+      "excerpt": "December 15, 2026 at 11 a.m.",
+      "stage": "Day 2"
+     }
+    ],
+    "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "retrieved": "2026-11-17",
+    "block_index": 25
+   },
+   {
+    "id": "WPT-26",
+    "venue": "wynn",
+    "venue_name": "Wynn Las Vegas Poker",
+    "buy_in_usd": 1600,
+    "name_printed": "PLO $1,000,000 Guaranteed poker",
+    "guarantee_usd": 1000000,
+    "guarantee_excerpt": "$1,000,000 Guarantee",
+    "fee_total_usd": 1600,
+    "fee_components": [
+     {
+      "amount_usd": 1430,
+      "purpose": "Tournament Prize Pool"
+     },
+     {
+      "amount_usd": 120,
+      "purpose": "Tournament Fee"
+     },
+     {
+      "amount_usd": 50,
+      "purpose": "Poker Staff Service Charge"
+     }
+    ],
+    "fee_excerpt": "Entry Fee: Entry Fee: $1,600 Buy-in = $1,430 (Tournament Prize Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge) Registration:",
+    "fee_split_sums_to_buy_in": true,
+    "discounted_entry_excerpt": null,
+    "registration_excerpt": "Unlimited re-entry for each starting flight will be available until the start of level 10. A player who advances to Day 2 is prohibited from entering a subsequent starting flight. A player that has advanced to Day 2 who enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight.",
+    "rules": {
+     "single_entry": {
+      "status": "unverified",
+      "value": null,
+      "excerpt": null
+     },
+     "re_entry": {
+      "status": "confirmed_allowed",
+      "value": "unlimited re-entry / rebuys (printed)",
+      "excerpt": "Unlimited re-entry"
+     },
+     "add_on": {
+      "status": "not_stated_in_sheet",
+      "value": null,
+      "excerpt": null
+     },
+     "spend_advantage": true
+    },
+    "starting_chips": 40000,
+    "level_minutes": 40,
+    "payout_fraction": null,
+    "days": [
+     {
+      "date": "2026-12-13",
+      "time": "12:00 PM",
+      "excerpt": "December 13, 2026 at 12 p.m.",
+      "stage": "Day 1A"
+     },
+     {
+      "date": "2026-12-14",
+      "time": "12:00 PM",
+      "excerpt": "December 14, 2026 at 12 p.m.",
+      "stage": "Day 1B"
+     },
+     {
+      "date": "2026-12-15",
+      "time": "12:00 PM",
+      "excerpt": "December 15, 2026 at 12 p.m.",
+      "stage": "Day 2"
+     }
+    ],
+    "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "retrieved": "2026-11-17",
+    "block_index": 26
+   },
+   {
+    "id": "WPT-27",
+    "venue": "wynn",
+    "venue_name": "Wynn Las Vegas Poker",
+    "buy_in_usd": 1100,
+    "name_printed": "Mixed Triple Draw (A-5, 2-7, Badugi) poker",
+    "guarantee_usd": null,
+    "guarantee_excerpt": null,
+    "fee_total_usd": 1100,
+    "fee_components": [
+     {
+      "amount_usd": 965,
+      "purpose": "Tournament Prize Pool"
+     },
+     {
+      "amount_usd": 90,
+      "purpose": "Tournament Fee"
+     },
+     {
+      "amount_usd": 45,
+      "purpose": "Poker Staff Service Charge"
+     }
+    ],
+    "fee_excerpt": "Entry Fee: Entry Fee: $1,100 Buy-in = $965 (Tournament Prize Pool) + $90 (Tournament Fee) + $45 (Poker Staff Service Charge) Registration:",
+    "fee_split_sums_to_buy_in": true,
+    "discounted_entry_excerpt": null,
+    "registration_excerpt": "Unlimited re-entry will be available until the start of level 10 (approximately 7:30 p.m.).",
+    "rules": {
+     "single_entry": {
+      "status": "unverified",
+      "value": null,
+      "excerpt": null
+     },
+     "re_entry": {
+      "status": "confirmed_allowed",
+      "value": "unlimited re-entry / rebuys (printed)",
+      "excerpt": "Unlimited re-entry"
+     },
+     "add_on": {
+      "status": "not_stated_in_sheet",
+      "value": null,
+      "excerpt": null
+     },
+     "spend_advantage": true
+    },
+    "starting_chips": 40000,
+    "level_minutes": 40,
+    "payout_fraction": null,
+    "days": [
+     {
+      "date": "2026-12-14",
+      "time": "12:00 PM",
+      "excerpt": "December 14, 2026, at 12 p.m.",
+      "stage": "Day 1"
+     },
+     {
+      "date": "2026-12-15",
+      "time": "12:00 PM",
+      "excerpt": "December 15, 2026, at 12 p.m.",
+      "stage": "Day 2"
+     }
+    ],
+    "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "retrieved": "2026-11-17",
+    "block_index": 27
+   },
+   {
+    "id": "WPT-28",
+    "venue": "wynn",
+    "venue_name": "Wynn Las Vegas Poker",
+    "buy_in_usd": 1100,
+    "name_printed": "PLO Turbo $100,000 guaranteed poker",
+    "guarantee_usd": 100000,
+    "guarantee_excerpt": "$100,000 guarantee",
+    "fee_total_usd": 1100,
+    "fee_components": [
+     {
+      "amount_usd": 975,
+      "purpose": "Tournament Prize Pool"
+     },
+     {
+      "amount_usd": 85,
+      "purpose": "Tournament Fee"
+     },
+     {
+      "amount_usd": 40,
+      "purpose": "Poker Staff Service Charge"
+     }
+    ],
+    "fee_excerpt": "Entry Fee: Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge) Registration:",
+    "fee_split_sums_to_buy_in": true,
+    "discounted_entry_excerpt": null,
+    "registration_excerpt": "Unlimited re-entry will be available until the start of level 9 (approximately 9 p.m.).",
+    "rules": {
+     "single_entry": {
+      "status": "unverified",
+      "value": null,
+      "excerpt": null
+     },
+     "re_entry": {
+      "status": "confirmed_allowed",
+      "value": "unlimited re-entry / rebuys (printed)",
+      "excerpt": "Unlimited re-entry"
+     },
+     "add_on": {
+      "status": "not_stated_in_sheet",
+      "value": null,
+      "excerpt": null
+     },
+     "spend_advantage": true
+    },
+    "starting_chips": 30000,
+    "level_minutes": 20,
+    "payout_fraction": null,
+    "days": [
+     {
+      "date": "2026-12-14",
+      "time": "7:00 PM",
+      "excerpt": "December 14, 2026, at 7 p.m.",
+      "stage": null
+     }
+    ],
+    "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "retrieved": "2026-11-17",
+    "block_index": 28
+   },
+   {
+    "id": "WPT-29",
+    "venue": "wynn",
+    "venue_name": "Wynn Las Vegas Poker",
+    "buy_in_usd": 1100,
+    "name_printed": "Big O poker",
+    "guarantee_usd": null,
+    "guarantee_excerpt": null,
+    "fee_total_usd": 1100,
+    "fee_components": [
+     {
+      "amount_usd": 975,
+      "purpose": "Tournament Prize Pool"
+     },
+     {
+      "amount_usd": 85,
+      "purpose": "Tournament Fee"
+     },
+     {
+      "amount_usd": 40,
+      "purpose": "Poker Staff Service Charge"
+     }
+    ],
+    "fee_excerpt": "Entry Fee: Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge) Registration:",
+    "fee_split_sums_to_buy_in": true,
+    "discounted_entry_excerpt": null,
+    "registration_excerpt": "Unlimited re-entry will be available until the start of level 9 (approximately 4:30 p.m.)",
+    "rules": {
+     "single_entry": {
+      "status": "unverified",
+      "value": null,
+      "excerpt": null
+     },
+     "re_entry": {
+      "status": "confirmed_allowed",
+      "value": "unlimited re-entry / rebuys (printed)",
+      "excerpt": "Unlimited re-entry"
+     },
+     "add_on": {
+      "status": "not_stated_in_sheet",
+      "value": null,
+      "excerpt": null
+     },
+     "spend_advantage": true
+    },
+    "starting_chips": 30000,
+    "level_minutes": 30,
+    "payout_fraction": null,
+    "days": [
+     {
+      "date": "2026-12-15",
+      "time": "12:00 PM",
+      "excerpt": "December 15, 2026 12 p.m.",
+      "stage": null
+     }
+    ],
+    "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "retrieved": "2026-11-17",
+    "block_index": 29
+   },
+   {
+    "id": "WPT-30",
+    "venue": "wynn",
+    "venue_name": "Wynn Las Vegas Poker",
+    "buy_in_usd": 3000,
+    "name_printed": "PLO Progressive Bounty $250,000 guaranteed poker",
+    "guarantee_usd": 250000,
+    "guarantee_excerpt": "$250,000 guarantee",
+    "fee_total_usd": 3000,
+    "fee_components": [
+     {
+      "amount_usd": 1730,
+      "purpose": "Tournament Prize Pool"
+     },
+     {
+      "amount_usd": 1000,
+      "purpose": "Bounty Prize Pool"
+     },
+     {
+      "amount_usd": 200,
+      "purpose": "Tournament Fee"
+     },
+     {
+      "amount_usd": 70,
+      "purpose": "Poker Staff Service Charge"
+     }
+    ],
+    "fee_excerpt": "Entry Fee: Entry Fee: $3,000 Buy-in = $1,730 (Tournament Prize Pool) + $1,000 (Bounty Prize Pool) + $200 (Tournament Fee) + $70 (Poker Staff Service Charge) Registration:",
+    "fee_split_sums_to_buy_in": true,
+    "discounted_entry_excerpt": null,
+    "registration_excerpt": "Unlimited re-entry will be available until the start of level 9 (approximately 5:30 p.m.).",
+    "rules": {
+     "single_entry": {
+      "status": "unverified",
+      "value": null,
+      "excerpt": null
+     },
+     "re_entry": {
+      "status": "confirmed_allowed",
+      "value": "unlimited re-entry / rebuys (printed)",
+      "excerpt": "Unlimited re-entry"
+     },
+     "add_on": {
+      "status": "not_stated_in_sheet",
+      "value": null,
+      "excerpt": null
+     },
+     "spend_advantage": true
+    },
+    "starting_chips": 30000,
+    "level_minutes": 30,
+    "payout_fraction": null,
+    "days": [
+     {
+      "date": "2026-12-15",
+      "time": "1:00 PM",
+      "excerpt": "December 15, 2026 at 1 p.m.",
+      "stage": null
+     }
+    ],
+    "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "retrieved": "2026-11-17",
+    "block_index": 30
+   },
+   {
+    "id": "WPT-31",
+    "venue": "wynn",
+    "venue_name": "Wynn Las Vegas Poker",
+    "buy_in_usd": 1600,
+    "name_printed": "NLH $500 Bounty Turbo $100,000 guaranteed poker",
+    "guarantee_usd": 100000,
+    "guarantee_excerpt": "$100,000 guarantee",
+    "fee_total_usd": 1600,
+    "fee_components": [
+     {
+      "amount_usd": 940,
+      "purpose": "Tournament Prize Pool"
+     },
+     {
+      "amount_usd": 500,
+      "purpose": "Bounty Prize Pool"
+     },
+     {
+      "amount_usd": 115,
+      "purpose": "Tournament Fee"
+     },
+     {
+      "amount_usd": 45,
+      "purpose": "Poker Staff Service Charge"
+     }
+    ],
+    "fee_excerpt": "Entry Fee: Entry Fee: $1,600 Buy-in = $940 (Tournament Prize Pool) + $500 (Bounty Prize Pool) + $115 (Tournament Fee) + $45 (Poker Staff Service Charge) Registration:",
+    "fee_split_sums_to_buy_in": true,
+    "discounted_entry_excerpt": null,
+    "registration_excerpt": "Unlimited re-entry will be available until the start of level 9.",
+    "rules": {
+     "single_entry": {
+      "status": "unverified",
+      "value": null,
+      "excerpt": null
+     },
+     "re_entry": {
+      "status": "confirmed_allowed",
+      "value": "unlimited re-entry / rebuys (printed)",
+      "excerpt": "Unlimited re-entry"
+     },
+     "add_on": {
+      "status": "not_stated_in_sheet",
+      "value": null,
+      "excerpt": null
+     },
+     "spend_advantage": true
+    },
+    "starting_chips": 30000,
+    "level_minutes": 20,
+    "payout_fraction": null,
+    "days": [
+     {
+      "date": "2026-12-15",
+      "time": "7:00 PM",
+      "excerpt": "December 15, 2026, at 7 p.m.",
+      "stage": null
+     }
+    ],
+    "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "retrieved": "2026-11-17",
+    "block_index": 31
+   },
+   {
+    "id": "WPT-32",
+    "venue": "wynn",
+    "venue_name": "Wynn Las Vegas Poker",
+    "buy_in_usd": 1100,
+    "name_printed": "No Limit Hold’em $1,000,000 Guaranteed poker",
+    "guarantee_usd": 1000000,
+    "guarantee_excerpt": "$1,000,000 Guarantee",
+    "fee_total_usd": 1100,
+    "fee_components": [
+     {
+      "amount_usd": 965,
+      "purpose": "Tournament Prize Pool"
+     },
+     {
+      "amount_usd": 90,
+      "purpose": "Tournament Fee"
+     },
+     {
+      "amount_usd": 45,
+      "purpose": "Poker Staff Service Charge"
+     }
+    ],
+    "fee_excerpt": "Entry Fee: Entry Fee: $1,100 Buy-in = $965 (Tournament Prize Pool) + $90 (Tournament Fee) + $45 (Poker Staff Service Charge) Registration:",
+    "fee_split_sums_to_buy_in": true,
+    "discounted_entry_excerpt": null,
+    "registration_excerpt": "Unlimited re-entry for each starting flight will be available until the start of level 10. A player who advances to Day 2 is prohibited from entering a subsequent starting flight. A player that has advanced to Day 2 who enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight.",
+    "rules": {
+     "single_entry": {
+      "status": "unverified",
+      "value": null,
+      "excerpt": null
+     },
+     "re_entry": {
+      "status": "confirmed_allowed",
+      "value": "unlimited re-entry / rebuys (printed)",
+      "excerpt": "Unlimited re-entry"
+     },
+     "add_on": {
+      "status": "not_stated_in_sheet",
+      "value": null,
+      "excerpt": null
+     },
+     "spend_advantage": true
+    },
+    "starting_chips": 40000,
+    "level_minutes": 40,
+    "payout_fraction": null,
+    "days": [
+     {
+      "date": "2026-12-16",
+      "time": "11:00 AM",
+      "excerpt": "December 16, 2026 at 11 a.m.",
+      "stage": "Day 1A"
+     },
+     {
+      "date": "2026-12-16",
+      "time": "7:00 PM",
+      "excerpt": "December 16, 2026 at 7 p.m.",
+      "stage": "Day 1B"
+     },
+     {
+      "date": "2026-12-17",
+      "time": "12:00 PM",
+      "excerpt": "December 17, 2026 at 12 p.m.",
+      "stage": "Day 2"
+     }
+    ],
+    "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "retrieved": "2026-11-17",
+    "block_index": 32
+   },
+   {
+    "id": "WPT-33",
+    "venue": "wynn",
+    "venue_name": "Wynn Las Vegas Poker",
+    "buy_in_usd": 800,
+    "name_printed": "PLO Double Board Bomb Pot poker",
+    "guarantee_usd": null,
+    "guarantee_excerpt": null,
+    "fee_total_usd": 800,
+    "fee_components": [
+     {
+      "amount_usd": 700,
+      "purpose": "Tournament Prize Pool"
+     },
+     {
+      "amount_usd": 70,
+      "purpose": "Tournament Fee"
+     },
+     {
+      "amount_usd": 30,
+      "purpose": "Poker Staff Service Charge"
+     }
+    ],
+    "fee_excerpt": "Entry Fee: Entry Fee: $800 Buy-in = $700 (Tournament Prize Pool) + $70 (Tournament Fee) + $30 (Poker Staff Service Charge) Registration:",
+    "fee_split_sums_to_buy_in": true,
+    "discounted_entry_excerpt": null,
+    "registration_excerpt": "Unlimited re-entry will be available until the start of level 9 (approximately 4:30 p.m.).",
+    "rules": {
+     "single_entry": {
+      "status": "unverified",
+      "value": null,
+      "excerpt": null
+     },
+     "re_entry": {
+      "status": "confirmed_allowed",
+      "value": "unlimited re-entry / rebuys (printed)",
+      "excerpt": "Unlimited re-entry"
+     },
+     "add_on": {
+      "status": "not_stated_in_sheet",
+      "value": null,
+      "excerpt": null
+     },
+     "spend_advantage": true
+    },
+    "starting_chips": 30000,
+    "level_minutes": 30,
+    "payout_fraction": null,
+    "days": [
+     {
+      "date": "2026-12-16",
+      "time": "12:00 PM",
+      "excerpt": "December 16, 2026 at 12 p.m.",
+      "stage": null
+     }
+    ],
+    "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "retrieved": "2026-11-17",
+    "block_index": 33
+   },
+   {
+    "id": "WPT-34",
+    "venue": "wynn",
+    "venue_name": "Wynn Las Vegas Poker",
+    "buy_in_usd": 10500,
+    "name_printed": "PLO 6-Max poker",
+    "guarantee_usd": null,
+    "guarantee_excerpt": null,
+    "fee_total_usd": 10500,
+    "fee_components": [
+     {
+      "amount_usd": 10000,
+      "purpose": "Tournament Prize Pool"
+     },
+     {
+      "amount_usd": 420,
+      "purpose": "Tournament Fee"
+     },
+     {
+      "amount_usd": 80,
+      "purpose": "Poker Staff Service Charge"
+     }
+    ],
+    "fee_excerpt": "Entry Fee: Entry Fee: $10,500 Buy-in = $10,000 (Tournament Prize Pool) + $420 (Tournament Fee) + $80 (Poker Staff Service Charge) Players registered prior to the start of the event will receive a $400 discount. Registration:",
+    "fee_split_sums_to_buy_in": true,
+    "discounted_entry_excerpt": null,
+    "registration_excerpt": "Unlimited re-entry will be available until the start of level 7 (approximately 4:30 p.m.).",
+    "rules": {
+     "single_entry": {
+      "status": "unverified",
+      "value": null,
+      "excerpt": null
+     },
+     "re_entry": {
+      "status": "confirmed_allowed",
+      "value": "unlimited re-entry / rebuys (printed)",
+      "excerpt": "Unlimited re-entry"
+     },
+     "add_on": {
+      "status": "not_stated_in_sheet",
+      "value": null,
+      "excerpt": null
+     },
+     "spend_advantage": true
+    },
+    "starting_chips": 100000,
+    "level_minutes": 30,
+    "payout_fraction": null,
+    "days": [
+     {
+      "date": "2026-12-16",
+      "time": "1:00 PM",
+      "excerpt": "December 16, 2026 at 1 p.m.",
+      "stage": null
+     }
+    ],
+    "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "retrieved": "2026-11-17",
+    "block_index": 34
+   },
+   {
+    "id": "WPT-35",
+    "venue": "wynn",
+    "venue_name": "Wynn Las Vegas Poker",
+    "buy_in_usd": 800,
+    "name_printed": "HORSE poker",
+    "guarantee_usd": null,
+    "guarantee_excerpt": null,
+    "fee_total_usd": 800,
+    "fee_components": [
+     {
+      "amount_usd": 695,
+      "purpose": "Tournament Prize Pool"
+     },
+     {
+      "amount_usd": 72,
+      "purpose": "Tournament Fee"
+     },
+     {
+      "amount_usd": 33,
+      "purpose": "Poker Staff Service Charge"
+     }
+    ],
+    "fee_excerpt": "Entry Fee: Entry Fee: $800 Buy-in = $695 (Tournament Prize Pool) + $72 (Tournament Fee) + $33 (Poker Staff Service Charge) Registration:",
+    "fee_split_sums_to_buy_in": true,
+    "discounted_entry_excerpt": null,
+    "registration_excerpt": "Unlimited re-entry will be available until the start of level 9 (approximately 5:30 p.m.).",
+    "rules": {
+     "single_entry": {
+      "status": "unverified",
+      "value": null,
+      "excerpt": null
+     },
+     "re_entry": {
+      "status": "confirmed_allowed",
+      "value": "unlimited re-entry / rebuys (printed)",
+      "excerpt": "Unlimited re-entry"
+     },
+     "add_on": {
+      "status": "not_stated_in_sheet",
+      "value": null,
+      "excerpt": null
+     },
+     "spend_advantage": true
+    },
+    "starting_chips": 35000,
+    "level_minutes": 30,
+    "payout_fraction": null,
+    "days": [
+     {
+      "date": "2026-12-16",
+      "time": "1:00 PM",
+      "excerpt": "December 16, 2026 at 1 p.m.",
+      "stage": null
+     }
+    ],
+    "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "retrieved": "2026-11-17",
+    "block_index": 35
+   },
+   {
+    "id": "WPT-36",
+    "venue": "wynn",
+    "venue_name": "Wynn Las Vegas Poker",
+    "buy_in_usd": 1100,
+    "name_printed": "Seniors NLH Championship 50+ $500,000 Guarantee poker",
+    "guarantee_usd": 500000,
+    "guarantee_excerpt": "$500,000 Guarantee",
+    "fee_total_usd": 1100,
+    "fee_components": [
+     {
+      "amount_usd": 965,
+      "purpose": "Tournament Prize Pool"
+     },
+     {
+      "amount_usd": 90,
+      "purpose": "Tournament Fee"
+     },
+     {
+      "amount_usd": 45,
+      "purpose": "Poker Staff Service Charge"
+     }
+    ],
+    "fee_excerpt": "Entry Fee: Entry Fee: $1,100 Buy-in = $965 (Tournament Prize Pool) + $90 (Tournament Fee) + $45 (Poker Staff Service Charge) Players must be 50 years of age or older to participate. Registration:",
+    "fee_split_sums_to_buy_in": true,
+    "discounted_entry_excerpt": null,
+    "registration_excerpt": "Unlimited re-entry will be available until the start of level 10 (approximately 6:30 p.m.).",
+    "rules": {
+     "single_entry": {
+      "status": "unverified",
+      "value": null,
+      "excerpt": null
+     },
+     "re_entry": {
+      "status": "confirmed_allowed",
+      "value": "unlimited re-entry / rebuys (printed)",
+      "excerpt": "Unlimited re-entry"
+     },
+     "add_on": {
+      "status": "not_stated_in_sheet",
+      "value": null,
+      "excerpt": null
+     },
+     "spend_advantage": true
+    },
+    "starting_chips": 40000,
+    "level_minutes": 40,
+    "payout_fraction": null,
+    "days": [
+     {
+      "date": "2026-12-17",
+      "time": "11:00 AM",
+      "excerpt": "December 17, 2026 at 11 a.m.",
+      "stage": "Day 1"
+     },
+     {
+      "date": "2026-12-18",
+      "time": "11:00 AM",
+      "excerpt": "December 18, 2026 at 11 a.m.",
+      "stage": "Day 2"
+     },
+     {
+      "date": "2026-12-19",
+      "time": "11:00 AM",
+      "excerpt": "December 19, 2026 at 11 a.m.",
+      "stage": "Day 3"
+     }
+    ],
+    "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "retrieved": "2026-11-17",
+    "block_index": 36
+   },
+   {
+    "id": "WPT-37",
+    "venue": "wynn",
+    "venue_name": "Wynn Las Vegas Poker",
+    "buy_in_usd": 1600,
+    "name_printed": "Wynn Mix Championship",
+    "guarantee_usd": null,
+    "guarantee_excerpt": null,
+    "fee_total_usd": 1600,
+    "fee_components": [
+     {
+      "amount_usd": 1430,
+      "purpose": "Tournament Prize Pool"
+     },
+     {
+      "amount_usd": 120,
+      "purpose": "Tournament Fee"
+     },
+     {
+      "amount_usd": 50,
+      "purpose": "Poker Staff Service Charge"
+     }
+    ],
+    "fee_excerpt": "Entry Fee: Entry Fee: $1,600 Buy-in = $1,430 (Tournament Prize Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge) Registration:",
+    "fee_split_sums_to_buy_in": true,
+    "discounted_entry_excerpt": null,
+    "registration_excerpt": "Unlimited re-entry will be available until the start of level 10 (approximately 6:30 p.m.).",
+    "rules": {
+     "single_entry": {
+      "status": "unverified",
+      "value": null,
+      "excerpt": null
+     },
+     "re_entry": {
+      "status": "confirmed_allowed",
+      "value": "unlimited re-entry / rebuys (printed)",
+      "excerpt": "Unlimited re-entry"
+     },
+     "add_on": {
+      "status": "not_stated_in_sheet",
+      "value": null,
+      "excerpt": null
+     },
+     "spend_advantage": true
+    },
+    "starting_chips": 40000,
+    "level_minutes": 60,
+    "payout_fraction": null,
+    "days": [
+     {
+      "date": "2026-12-17",
+      "time": "11:00 AM",
+      "excerpt": "December 17, 2026, at 11 a.m.",
+      "stage": "Day 1"
+     },
+     {
+      "date": "2026-12-18",
+      "time": "11:00 AM",
+      "excerpt": "December 18, 2026, at 11 a.m.",
+      "stage": "Day 2"
+     }
+    ],
+    "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "retrieved": "2026-11-17",
+    "block_index": 37
+   },
+   {
+    "id": "WPT-38",
+    "venue": "wynn",
+    "venue_name": "Wynn Las Vegas Poker",
+    "buy_in_usd": 3000,
+    "name_printed": "No Limit Hold’em $2,000,000 Guaranteed poker",
+    "guarantee_usd": 2000000,
+    "guarantee_excerpt": "$2,000,000 Guarantee",
+    "fee_total_usd": 3000,
+    "fee_components": [
+     {
+      "amount_usd": 2720,
+      "purpose": "Tournament Prize Pool"
+     },
+     {
+      "amount_usd": 205,
+      "purpose": "Tournament Fee"
+     },
+     {
+      "amount_usd": 75,
+      "purpose": "Poker Staff Service Charge"
+     }
+    ],
+    "fee_excerpt": "Entry Fee: Entry Fee: $3,000 Buy-in = $2,720 (Tournament Prize Pool) + $205 (Tournament Fee) + $75 (Poker Staff Service Charge) Registration:",
+    "fee_split_sums_to_buy_in": true,
+    "discounted_entry_excerpt": null,
+    "registration_excerpt": "Unlimited re-entry will be available until the start of level 10 (approximately 7:30 p.m.).",
+    "rules": {
+     "single_entry": {
+      "status": "unverified",
+      "value": null,
+      "excerpt": null
+     },
+     "re_entry": {
+      "status": "confirmed_allowed",
+      "value": "unlimited re-entry / rebuys (printed)",
+      "excerpt": "Unlimited re-entry"
+     },
+     "add_on": {
+      "status": "not_stated_in_sheet",
+      "value": null,
+      "excerpt": null
+     },
+     "spend_advantage": true
+    },
+    "starting_chips": 40000,
+    "level_minutes": 40,
+    "payout_fraction": null,
+    "days": [
+     {
+      "date": "2026-12-17",
+      "time": "12:00 PM",
+      "excerpt": "December 17, 2026 at 12 p.m.",
+      "stage": "Day 1A"
+     },
+     {
+      "date": "2026-12-18",
+      "time": "12:00 PM",
+      "excerpt": "December 18, 2026 at 12 p.m.",
+      "stage": "Day 1B"
+     },
+     {
+      "date": "2026-12-19",
+      "time": "12:00 PM",
+      "excerpt": "December 19, 2026 at 12 p.m.",
+      "stage": "Day 2"
+     },
+     {
+      "date": "2026-12-20",
+      "time": "12:00 PM",
+      "excerpt": "December 20, 2026 at 12 p.m.",
+      "stage": "Final Table"
+     }
+    ],
+    "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "retrieved": "2026-11-17",
+    "block_index": 38
+   },
+   {
+    "id": "WPT-39",
+    "venue": "wynn",
+    "venue_name": "Wynn Las Vegas Poker",
+    "buy_in_usd": 25800,
+    "name_printed": "NLH High Roller",
+    "guarantee_usd": null,
+    "guarantee_excerpt": null,
+    "fee_total_usd": 25800,
+    "fee_components": [
+     {
+      "amount_usd": 25000,
+      "purpose": "Tournament Prize Pool"
+     },
+     {
+      "amount_usd": 700,
+      "purpose": "Tournament Fee"
+     },
+     {
+      "amount_usd": 100,
+      "purpose": "Poker Staff Service Charge"
+     }
+    ],
+    "fee_excerpt": "Entry Fee: Entry Fee: $25,800 Buy-in = $25,000 (Tournament Prize Pool) + $700 (Tournament Fee) + $100 (Poker Staff Service Charge) Players registered prior to the start of the event will receive a $400 discount. Registration:",
+    "fee_split_sums_to_buy_in": true,
+    "discounted_entry_excerpt": null,
+    "registration_excerpt": "Unlimited re-entry will be available until the start of level 10 (approximately 8:30 p.m.)",
+    "rules": {
+     "single_entry": {
+      "status": "unverified",
+      "value": null,
+      "excerpt": null
+     },
+     "re_entry": {
+      "status": "confirmed_allowed",
+      "value": "unlimited re-entry / rebuys (printed)",
+      "excerpt": "Unlimited re-entry"
+     },
+     "add_on": {
+      "status": "not_stated_in_sheet",
+      "value": null,
+      "excerpt": null
+     },
+     "spend_advantage": true
+    },
+    "starting_chips": 200000,
+    "level_minutes": 60,
+    "payout_fraction": null,
+    "days": [
+     {
+      "date": "2026-12-17",
+      "time": "1:00 PM",
+      "excerpt": "December 17, 2026 at 1 p.m.",
+      "stage": "Day 1"
+     },
+     {
+      "date": "2026-12-18",
+      "time": "1:00 PM",
+      "excerpt": "December 18, 2026 at 1 p.m.",
+      "stage": "Day 2"
+     }
+    ],
+    "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "retrieved": "2026-11-17",
+    "block_index": 39
+   },
+   {
+    "id": "WPT-40",
+    "venue": "wynn",
+    "venue_name": "Wynn Las Vegas Poker",
+    "buy_in_usd": 1600,
+    "name_printed": "Limit Omaha 8 poker",
+    "guarantee_usd": null,
+    "guarantee_excerpt": null,
+    "fee_total_usd": 1600,
+    "fee_components": [
+     {
+      "amount_usd": 1430,
+      "purpose": "Tournament Prize Pool"
+     },
+     {
+      "amount_usd": 120,
+      "purpose": "Tournament Fee"
+     },
+     {
+      "amount_usd": 50,
+      "purpose": "Poker Staff Service Charge"
+     }
+    ],
+    "fee_excerpt": "Entry Fee: Entry Fee: $1,600 Buy-in = $1,430 (Tournament Prize Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge) Registration:",
+    "fee_split_sums_to_buy_in": true,
+    "discounted_entry_excerpt": null,
+    "registration_excerpt": "Unlimited re-entry will be available until the start of level 10 (approximately 7:30 p.m.).",
+    "rules": {
+     "single_entry": {
+      "status": "unverified",
+      "value": null,
+      "excerpt": null
+     },
+     "re_entry": {
+      "status": "confirmed_allowed",
+      "value": "unlimited re-entry / rebuys (printed)",
+      "excerpt": "Unlimited re-entry"
+     },
+     "add_on": {
+      "status": "not_stated_in_sheet",
+      "value": null,
+      "excerpt": null
+     },
+     "spend_advantage": true
+    },
+    "starting_chips": 40000,
+    "level_minutes": 60,
+    "payout_fraction": null,
+    "days": [
+     {
+      "date": "2026-12-18",
+      "time": "12:00 PM",
+      "excerpt": "December 18, 2026, at 12 p.m.",
+      "stage": "Day 1"
+     },
+     {
+      "date": "2026-12-19",
+      "time": "12:00 PM",
+      "excerpt": "December 19, 2026, at 12 p.m.",
+      "stage": "Day 2"
+     }
+    ],
+    "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "retrieved": "2026-11-17",
+    "block_index": 40
+   },
+   {
+    "id": "WPT-41",
+    "venue": "wynn",
+    "venue_name": "Wynn Las Vegas Poker",
+    "buy_in_usd": 600,
+    "name_printed": "No Limit Hold’em $100,000 Guaranteed poker",
+    "guarantee_usd": 100000,
+    "guarantee_excerpt": "$100,000 Guarantee",
+    "fee_total_usd": 600,
+    "fee_components": [
+     {
+      "amount_usd": 515,
+      "purpose": "Tournament Prize Pool"
+     },
+     {
+      "amount_usd": 60,
+      "purpose": "Tournament Fee"
+     },
+     {
+      "amount_usd": 25,
+      "purpose": "Poker Staff Service Charge"
+     }
+    ],
+    "fee_excerpt": "Entry Fee: Entry Fee: $600 Buy-in = $515 (Tournament Prize Pool) + $60 (Tournament Fee) + $25 (Poker Staff Service Charge) Registration:",
+    "fee_split_sums_to_buy_in": true,
+    "discounted_entry_excerpt": null,
+    "registration_excerpt": "Unlimited re-entry will be available until the start of level 9 (approximately 4:30 p.m.).",
+    "rules": {
+     "single_entry": {
+      "status": "unverified",
+      "value": null,
+      "excerpt": null
+     },
+     "re_entry": {
+      "status": "confirmed_allowed",
+      "value": "unlimited re-entry / rebuys (printed)",
+      "excerpt": "Unlimited re-entry"
+     },
+     "add_on": {
+      "status": "not_stated_in_sheet",
+      "value": null,
+      "excerpt": null
+     },
+     "spend_advantage": true
+    },
+    "starting_chips": 30000,
+    "level_minutes": 30,
+    "payout_fraction": null,
+    "days": [
+     {
+      "date": "2026-12-18",
+      "time": "12:00 PM",
+      "excerpt": "December 18, 2026 at 12 p.m.",
+      "stage": null
+     }
+    ],
+    "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "retrieved": "2026-11-17",
+    "block_index": 41
+   },
+   {
+    "id": "WPT-42",
+    "venue": "wynn",
+    "venue_name": "Wynn Las Vegas Poker",
+    "buy_in_usd": 10500,
+    "name_printed": "NLH 6-Max poker",
+    "guarantee_usd": null,
+    "guarantee_excerpt": null,
+    "fee_total_usd": 10500,
+    "fee_components": [
+     {
+      "amount_usd": 10000,
+      "purpose": "Tournament Prize Pool"
+     },
+     {
+      "amount_usd": 420,
+      "purpose": "Tournament Fee"
+     },
+     {
+      "amount_usd": 80,
+      "purpose": "Poker Staff Service Charge"
+     }
+    ],
+    "fee_excerpt": "Entry Fee: Entry Fee: $10,500 Buy-in = $10,000 (Tournament Prize Pool) + $420 (Tournament Fee) + $80 (Poker Staff Service Charge) Players registered prior to the start of the event will receive a $400 discount. Registration:",
+    "fee_split_sums_to_buy_in": true,
+    "discounted_entry_excerpt": null,
+    "registration_excerpt": "Unlimited re-entry will be available until the start of level 7 (approximately 4:30 p.m.).",
+    "rules": {
+     "single_entry": {
+      "status": "unverified",
+      "value": null,
+      "excerpt": null
+     },
+     "re_entry": {
+      "status": "confirmed_allowed",
+      "value": "unlimited re-entry / rebuys (printed)",
+      "excerpt": "Unlimited re-entry"
+     },
+     "add_on": {
+      "status": "not_stated_in_sheet",
+      "value": null,
+      "excerpt": null
+     },
+     "spend_advantage": true
+    },
+    "starting_chips": 100000,
+    "level_minutes": 30,
+    "payout_fraction": null,
+    "days": [
+     {
+      "date": "2026-12-18",
+      "time": "1:00 PM",
+      "excerpt": "December 18, 2026 at 1 p.m.",
+      "stage": null
+     }
+    ],
+    "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "retrieved": "2026-11-17",
+    "block_index": 42
+   },
+   {
+    "id": "WPT-43",
+    "venue": "wynn",
+    "venue_name": "Wynn Las Vegas Poker",
+    "buy_in_usd": 1100,
+    "name_printed": "NLH Turbo $100,000 guaranteed poker",
+    "guarantee_usd": 100000,
+    "guarantee_excerpt": "$100,000 guarantee",
+    "fee_total_usd": 1100,
+    "fee_components": [
+     {
+      "amount_usd": 975,
+      "purpose": "Tournament Prize Pool"
+     },
+     {
+      "amount_usd": 85,
+      "purpose": "Tournament Fee"
+     },
+     {
+      "amount_usd": 40,
+      "purpose": "Poker Staff Service Charge"
+     }
+    ],
+    "fee_excerpt": "Entry Fee: Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge) Registration:",
+    "fee_split_sums_to_buy_in": true,
+    "discounted_entry_excerpt": null,
+    "registration_excerpt": "Unlimited re-entry will be available until the start of level 9.",
+    "rules": {
+     "single_entry": {
+      "status": "unverified",
+      "value": null,
+      "excerpt": null
+     },
+     "re_entry": {
+      "status": "confirmed_allowed",
+      "value": "unlimited re-entry / rebuys (printed)",
+      "excerpt": "Unlimited re-entry"
+     },
+     "add_on": {
+      "status": "not_stated_in_sheet",
+      "value": null,
+      "excerpt": null
+     },
+     "spend_advantage": true
+    },
+    "starting_chips": 30000,
+    "level_minutes": 20,
+    "payout_fraction": null,
+    "days": [
+     {
+      "date": "2026-12-18",
+      "time": "6:00 PM",
+      "excerpt": "December 18, 2026 at 6 p.m.",
+      "stage": null
+     }
+    ],
+    "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "retrieved": "2026-11-17",
+    "block_index": 43
+   },
+   {
+    "id": "WPT-44",
+    "venue": "wynn",
+    "venue_name": "Wynn Las Vegas Poker",
+    "buy_in_usd": 5000,
+    "name_printed": "Seniors High Roller $250,000 guarantee poker",
+    "guarantee_usd": 250000,
+    "guarantee_excerpt": "$250,000 guarantee",
+    "fee_total_usd": 5000,
+    "fee_components": [
+     {
+      "amount_usd": 4650,
+      "purpose": "Tournament Prize Pool"
+     },
+     {
+      "amount_usd": 250,
+      "purpose": "Tournament Fee"
+     },
+     {
+      "amount_usd": 100,
+      "purpose": "Poker Staff Service Charge"
+     }
+    ],
+    "fee_excerpt": "Entry Fee: Entry Fee: $5,000 Buy-in = $4,650 (Tournament Prize Pool) + $ 250 (Tournament Fee) + $100 (Poker Staff Service Charge) Registration:",
+    "fee_split_sums_to_buy_in": true,
+    "discounted_entry_excerpt": null,
+    "registration_excerpt": "Unlimited re-entry will be available until the start of level 11 (approximately 1:15 p.m. on Day 2).",
+    "rules": {
+     "single_entry": {
+      "status": "unverified",
+      "value": null,
+      "excerpt": null
+     },
+     "re_entry": {
+      "status": "confirmed_allowed",
+      "value": "unlimited re-entry / rebuys (printed)",
+      "excerpt": "Unlimited re-entry"
+     },
+     "add_on": {
+      "status": "not_stated_in_sheet",
+      "value": null,
+      "excerpt": null
+     },
+     "spend_advantage": true
+    },
+    "starting_chips": 50000,
+    "level_minutes": 60,
+    "payout_fraction": null,
+    "days": [
+     {
+      "date": "2026-12-19",
+      "time": "11:00 AM",
+      "excerpt": "December 19, 2026, at 11 a.m.",
+      "stage": "Day 1"
+     },
+     {
+      "date": "2026-12-20",
+      "time": "11:00 AM",
+      "excerpt": "December 20, 2026, at 11 a.m.",
+      "stage": "Day 2"
+     },
+     {
+      "date": "2026-12-21",
+      "time": "11:00 AM",
+      "excerpt": "December 21, 2026, at 11 a.m.",
+      "stage": "Day 3"
+     }
+    ],
+    "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "retrieved": "2026-11-17",
+    "block_index": 44
+   },
+   {
+    "id": "WPT-45",
+    "venue": "wynn",
+    "venue_name": "Wynn Las Vegas Poker",
+    "buy_in_usd": 1600,
+    "name_printed": "Mystery Bounty $1,000,000 Guarantee poker",
+    "guarantee_usd": 1000000,
+    "guarantee_excerpt": "$1,000,000 Guarantee",
+    "fee_total_usd": 1600,
+    "fee_components": [
+     {
+      "amount_usd": 930,
+      "purpose": "Tournament Prize Pool"
+     },
+     {
+      "amount_usd": 500,
+      "purpose": "Mystery Bounty Prize Pool"
+     },
+     {
+      "amount_usd": 120,
+      "purpose": "Tournament Fee"
+     },
+     {
+      "amount_usd": 50,
+      "purpose": "Poker Staff Service Charge"
+     }
+    ],
+    "fee_excerpt": "Entry Fee: Entry Fee: $1,600 Buy-in = $930 (Tournament Prize Pool) + $500 (Mystery Bounty Prize Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge) Registration:",
+    "fee_split_sums_to_buy_in": true,
+    "discounted_entry_excerpt": null,
+    "registration_excerpt": "Unlimited re-entry for will be available until the start of level 10.",
+    "rules": {
+     "single_entry": {
+      "status": "unverified",
+      "value": null,
+      "excerpt": null
+     },
+     "re_entry": {
+      "status": "confirmed_allowed",
+      "value": "unlimited re-entry / rebuys (printed)",
+      "excerpt": "Unlimited re-entry"
+     },
+     "add_on": {
+      "status": "not_stated_in_sheet",
+      "value": null,
+      "excerpt": null
+     },
+     "spend_advantage": true
+    },
+    "starting_chips": 40000,
+    "level_minutes": 40,
+    "payout_fraction": null,
+    "days": [
+     {
+      "date": "2026-12-19",
+      "time": "11:00 AM",
+      "excerpt": "December 19, 2026 at 11 a.m.",
+      "stage": "Day 1A"
+     },
+     {
+      "date": "2026-12-19",
+      "time": "7:00 PM",
+      "excerpt": "December 19, 2026 at 7 p.m.",
+      "stage": "Day 1B"
+     },
+     {
+      "date": "2026-12-20",
+      "time": "11:00 AM",
+      "excerpt": "December 20, 2026 at 11 a.m.",
+      "stage": "Day 1C"
+     },
+     {
+      "date": "2026-12-20",
+      "time": "7:00 PM",
+      "excerpt": "December 20, 2026 at 7 p.m.",
+      "stage": "Day 1D"
+     },
+     {
+      "date": "2026-12-21",
+      "time": "1:00 PM",
+      "excerpt": "December 21, 2026 at 1 p.m.",
+      "stage": "Day 2"
+     }
+    ],
+    "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "retrieved": "2026-11-17",
+    "block_index": 45
+   },
+   {
+    "id": "WPT-46",
+    "venue": "wynn",
+    "venue_name": "Wynn Las Vegas Poker",
+    "buy_in_usd": 10500,
+    "name_printed": "PLO poker",
+    "guarantee_usd": null,
+    "guarantee_excerpt": null,
+    "fee_total_usd": 10500,
+    "fee_components": [
+     {
+      "amount_usd": 10000,
+      "purpose": "Tournament Prize Pool"
+     },
+     {
+      "amount_usd": 420,
+      "purpose": "Tournament Fee"
+     },
+     {
+      "amount_usd": 80,
+      "purpose": "Poker Staff Service Charge"
+     }
+    ],
+    "fee_excerpt": "Entry Fee: Entry Fee: $10,500 Buy-in = $10,000 (Tournament Prize Pool) + $420 (Tournament Fee) + $80 (Poker Staff Service Charge) Players registered prior to the start of the event will receive a $400 discount. Registration:",
+    "fee_split_sums_to_buy_in": true,
+    "discounted_entry_excerpt": null,
+    "registration_excerpt": "Unlimited re-entry will be available until the start of level 7 (approximately 4:30 p.m.).",
+    "rules": {
+     "single_entry": {
+      "status": "unverified",
+      "value": null,
+      "excerpt": null
+     },
+     "re_entry": {
+      "status": "confirmed_allowed",
+      "value": "unlimited re-entry / rebuys (printed)",
+      "excerpt": "Unlimited re-entry"
+     },
+     "add_on": {
+      "status": "not_stated_in_sheet",
+      "value": null,
+      "excerpt": null
+     },
+     "spend_advantage": true
+    },
+    "starting_chips": 100000,
+    "level_minutes": 30,
+    "payout_fraction": null,
+    "days": [
+     {
+      "date": "2026-12-19",
+      "time": "1:00 PM",
+      "excerpt": "December 19, 2026 at 1 p.m.",
+      "stage": null
+     }
+    ],
+    "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "retrieved": "2026-11-17",
+    "block_index": 46
+   },
+   {
+    "id": "WPT-47",
+    "venue": "wynn",
+    "venue_name": "Wynn Las Vegas Poker",
+    "buy_in_usd": 3000,
+    "name_printed": "NLH 6-Max $500,000 guaranteed poker",
+    "guarantee_usd": 500000,
+    "guarantee_excerpt": "$500,000 guarantee",
+    "fee_total_usd": 3000,
+    "fee_components": [
+     {
+      "amount_usd": 2730,
+      "purpose": "Tournament Prize Pool"
+     },
+     {
+      "amount_usd": 200,
+      "purpose": "Tournament Fee"
+     },
+     {
+      "amount_usd": 70,
+      "purpose": "Poker Staff Service Charge"
+     }
+    ],
+    "fee_excerpt": "Entry Fee: Entry Fee: $3,000 Buy-in = $2,730 (Tournament Prize Pool) + $200 (Tournament Fee) + $70 (Poker Staff Service Charge) Registration:",
+    "fee_split_sums_to_buy_in": true,
+    "discounted_entry_excerpt": null,
+    "registration_excerpt": "Unlimited re-entry will be available until the start of level 9 (approximately 5:30 p.m.).",
+    "rules": {
+     "single_entry": {
+      "status": "unverified",
+      "value": null,
+      "excerpt": null
+     },
+     "re_entry": {
+      "status": "confirmed_allowed",
+      "value": "unlimited re-entry / rebuys (printed)",
+      "excerpt": "Unlimited re-entry"
+     },
+     "add_on": {
+      "status": "not_stated_in_sheet",
+      "value": null,
+      "excerpt": null
+     },
+     "spend_advantage": true
+    },
+    "starting_chips": 30000,
+    "level_minutes": 30,
+    "payout_fraction": null,
+    "days": [
+     {
+      "date": "2026-12-19",
+      "time": "1:00 PM",
+      "excerpt": "December 19, 2026 at 1 p.m.",
+      "stage": null
+     }
+    ],
+    "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "retrieved": "2026-11-17",
+    "block_index": 47
+   },
+   {
+    "id": "WPT-48",
+    "venue": "wynn",
+    "venue_name": "Wynn Las Vegas Poker",
+    "buy_in_usd": 1600,
+    "name_printed": "TORSE Championship poker",
+    "guarantee_usd": null,
+    "guarantee_excerpt": null,
+    "fee_total_usd": 1600,
+    "fee_components": [
+     {
+      "amount_usd": 1430,
+      "purpose": "Tournament Prize Pool"
+     },
+     {
+      "amount_usd": 120,
+      "purpose": "Tournament Fee"
+     },
+     {
+      "amount_usd": 50,
+      "purpose": "Poker Staff Service Charge"
+     }
+    ],
+    "fee_excerpt": "Entry Fee: Entry Fee: $1,600 Buy-in = $1,430 (Tournament Prize Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge) Registration:",
+    "fee_split_sums_to_buy_in": true,
+    "discounted_entry_excerpt": null,
+    "registration_excerpt": "Unlimited re-entry will be available until the start of level 10 (approximately 7:30 p.m.).",
+    "rules": {
+     "single_entry": {
+      "status": "unverified",
+      "value": null,
+      "excerpt": null
+     },
+     "re_entry": {
+      "status": "confirmed_allowed",
+      "value": "unlimited re-entry / rebuys (printed)",
+      "excerpt": "Unlimited re-entry"
+     },
+     "add_on": {
+      "status": "not_stated_in_sheet",
+      "value": null,
+      "excerpt": null
+     },
+     "spend_advantage": true
+    },
+    "starting_chips": 40000,
+    "level_minutes": 60,
+    "payout_fraction": null,
+    "days": [
+     {
+      "date": "2026-12-19",
+      "time": "1:00 PM",
+      "excerpt": "December 19, 2026, at 1 p.m.",
+      "stage": "Day 1"
+     },
+     {
+      "date": "2026-12-20",
+      "time": "1:00 PM",
+      "excerpt": "December 20, 2026, at 1 p.m.",
+      "stage": "Day 2"
+     }
+    ],
+    "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "retrieved": "2026-11-17",
+    "block_index": 48
+   },
+   {
+    "id": "WPT-49",
+    "venue": "wynn",
+    "venue_name": "Wynn Las Vegas Poker",
+    "buy_in_usd": 600,
+    "name_printed": "NLH Turbo $50,000 guaranteed poker",
+    "guarantee_usd": 50000,
+    "guarantee_excerpt": "$50,000 guarantee",
+    "fee_total_usd": 600,
+    "fee_components": [
+     {
+      "amount_usd": 515,
+      "purpose": "Tournament Prize Pool"
+     },
+     {
+      "amount_usd": 60,
+      "purpose": "Tournament Fee"
+     },
+     {
+      "amount_usd": 25,
+      "purpose": "Poker Staff Service Charge"
+     }
+    ],
+    "fee_excerpt": "Entry Fee: Entry Fee: $600 Buy-in = $515 (Tournament Prize Pool) + $60 (Tournament Fee) + $25 (Poker Staff Service Charge) Registration:",
+    "fee_split_sums_to_buy_in": true,
+    "discounted_entry_excerpt": null,
+    "registration_excerpt": "Unlimited re-entry will be available until the start of level 9.",
+    "rules": {
+     "single_entry": {
+      "status": "unverified",
+      "value": null,
+      "excerpt": null
+     },
+     "re_entry": {
+      "status": "confirmed_allowed",
+      "value": "unlimited re-entry / rebuys (printed)",
+      "excerpt": "Unlimited re-entry"
+     },
+     "add_on": {
+      "status": "not_stated_in_sheet",
+      "value": null,
+      "excerpt": null
+     },
+     "spend_advantage": true
+    },
+    "starting_chips": 30000,
+    "level_minutes": 20,
+    "payout_fraction": null,
+    "days": [
+     {
+      "date": "2026-12-19",
+      "time": "6:00 PM",
+      "excerpt": "December 19, 2026 at 6 p.m.",
+      "stage": null
+     }
+    ],
+    "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "retrieved": "2026-11-17",
+    "block_index": 49
+   },
+   {
+    "id": "WPT-50",
+    "venue": "wynn",
+    "venue_name": "Wynn Las Vegas Poker",
+    "buy_in_usd": 600,
+    "name_printed": "No Limit Hold’em $50,000 guaranteed poker",
+    "guarantee_usd": 50000,
+    "guarantee_excerpt": "$50,000 guarantee",
+    "fee_total_usd": 600,
+    "fee_components": [
+     {
+      "amount_usd": 515,
+      "purpose": "Tournament Prize Pool"
+     },
+     {
+      "amount_usd": 60,
+      "purpose": "Tournament Fee"
+     },
+     {
+      "amount_usd": 25,
+      "purpose": "Poker Staff Service Charge"
+     }
+    ],
+    "fee_excerpt": "Entry Fee: Entry Fee: $600 Buy-in = $515 (Tournament Prize Pool) + $60 (Tournament Fee) + $25 (Poker Staff Service Charge) Registration:",
+    "fee_split_sums_to_buy_in": true,
+    "discounted_entry_excerpt": null,
+    "registration_excerpt": "Unlimited re-entry will be available until the start of level 9.",
+    "rules": {
+     "single_entry": {
+      "status": "unverified",
+      "value": null,
+      "excerpt": null
+     },
+     "re_entry": {
+      "status": "confirmed_allowed",
+      "value": "unlimited re-entry / rebuys (printed)",
+      "excerpt": "Unlimited re-entry"
+     },
+     "add_on": {
+      "status": "not_stated_in_sheet",
+      "value": null,
+      "excerpt": null
+     },
+     "spend_advantage": true
+    },
+    "starting_chips": 30000,
+    "level_minutes": 30,
+    "payout_fraction": null,
+    "days": [
+     {
+      "date": "2026-12-20",
+      "time": "12:00 PM",
+      "excerpt": "December 20, 2026 at 12 p.m.",
+      "stage": null
+     }
+    ],
+    "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "retrieved": "2026-11-17",
+    "block_index": 50
+   },
+   {
+    "id": "WPT-51",
+    "venue": "wynn",
+    "venue_name": "Wynn Las Vegas Poker",
+    "buy_in_usd": 10500,
+    "name_printed": "NLH 8-Max poker",
+    "guarantee_usd": null,
+    "guarantee_excerpt": null,
+    "fee_total_usd": 10500,
+    "fee_components": [
+     {
+      "amount_usd": 10000,
+      "purpose": "Tournament Prize Pool"
+     },
+     {
+      "amount_usd": 420,
+      "purpose": "Tournament Fee"
+     },
+     {
+      "amount_usd": 80,
+      "purpose": "Poker Staff Service Charge"
+     }
+    ],
+    "fee_excerpt": "Entry Fee: Entry Fee: $10,500 Buy-in = $10,000 (Tournament Prize Pool) + $420 (Tournament Fee) + $80 (Poker Staff Service Charge) Players registered prior to the start of the event will receive a $400 discount. Registration:",
+    "fee_split_sums_to_buy_in": true,
+    "discounted_entry_excerpt": null,
+    "registration_excerpt": "Unlimited re-entry will be available until the start of level 7 (approximately 4:30 p.m.).",
+    "rules": {
+     "single_entry": {
+      "status": "unverified",
+      "value": null,
+      "excerpt": null
+     },
+     "re_entry": {
+      "status": "confirmed_allowed",
+      "value": "unlimited re-entry / rebuys (printed)",
+      "excerpt": "Unlimited re-entry"
+     },
+     "add_on": {
+      "status": "not_stated_in_sheet",
+      "value": null,
+      "excerpt": null
+     },
+     "spend_advantage": true
+    },
+    "starting_chips": 100000,
+    "level_minutes": 30,
+    "payout_fraction": null,
+    "days": [
+     {
+      "date": "2026-12-20",
+      "time": "1:00 PM",
+      "excerpt": "December 20, 2026 at 1 p.m.",
+      "stage": null
+     }
+    ],
+    "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "retrieved": "2026-11-17",
+    "block_index": 51
+   },
+   {
+    "id": "WPT-52",
+    "venue": "wynn",
+    "venue_name": "Wynn Las Vegas Poker",
+    "buy_in_usd": 600,
+    "name_printed": "5-Card PLO Turbo $50,000 guaranteed poker",
+    "guarantee_usd": 50000,
+    "guarantee_excerpt": "$50,000 guarantee",
+    "fee_total_usd": 600,
+    "fee_components": [
+     {
+      "amount_usd": 515,
+      "purpose": "Tournament Prize Pool"
+     },
+     {
+      "amount_usd": 60,
+      "purpose": "Tournament Fee"
+     },
+     {
+      "amount_usd": 25,
+      "purpose": "Poker Staff Service Charge"
+     }
+    ],
+    "fee_excerpt": "Entry Fee: Entry Fee: $600 Buy-in = $515 (Tournament Prize Pool) + $60 (Tournament Fee) + $25 (Poker Staff Service Charge) Registration:",
+    "fee_split_sums_to_buy_in": true,
+    "discounted_entry_excerpt": null,
+    "registration_excerpt": "Unlimited re-entry will be available until the start of level 9 (approximately 9 p.m.).",
+    "rules": {
+     "single_entry": {
+      "status": "unverified",
+      "value": null,
+      "excerpt": null
+     },
+     "re_entry": {
+      "status": "confirmed_allowed",
+      "value": "unlimited re-entry / rebuys (printed)",
+      "excerpt": "Unlimited re-entry"
+     },
+     "add_on": {
+      "status": "not_stated_in_sheet",
+      "value": null,
+      "excerpt": null
+     },
+     "spend_advantage": true
+    },
+    "starting_chips": 30000,
+    "level_minutes": 20,
+    "payout_fraction": null,
+    "days": [
+     {
+      "date": "2026-12-20",
+      "time": "6:00 PM",
+      "excerpt": "December 20, 2026, at 6 p.m.",
+      "stage": null
+     }
+    ],
+    "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "retrieved": "2026-11-17",
+    "block_index": 52
+   },
+   {
+    "id": "WPT-53",
+    "venue": "wynn",
+    "venue_name": "Wynn Las Vegas Poker",
+    "buy_in_usd": 1100,
+    "name_printed": "No Limit Hold’em $100,000 guaranteed poker",
+    "guarantee_usd": 100000,
+    "guarantee_excerpt": "$100,000 guarantee",
+    "fee_total_usd": 1100,
+    "fee_components": [
+     {
+      "amount_usd": 975,
+      "purpose": "Tournament Prize Pool"
+     },
+     {
+      "amount_usd": 85,
+      "purpose": "Tournament Fee"
+     },
+     {
+      "amount_usd": 40,
+      "purpose": "Poker Staff Service Charge"
+     }
+    ],
+    "fee_excerpt": "Entry Fee: Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge) Registration:",
+    "fee_split_sums_to_buy_in": true,
+    "discounted_entry_excerpt": null,
+    "registration_excerpt": "Unlimited re-entry will be available until the start of level 9.",
+    "rules": {
+     "single_entry": {
+      "status": "unverified",
+      "value": null,
+      "excerpt": null
+     },
+     "re_entry": {
+      "status": "confirmed_allowed",
+      "value": "unlimited re-entry / rebuys (printed)",
+      "excerpt": "Unlimited re-entry"
+     },
+     "add_on": {
+      "status": "not_stated_in_sheet",
+      "value": null,
+      "excerpt": null
+     },
+     "spend_advantage": true
+    },
+    "starting_chips": 30000,
+    "level_minutes": 30,
+    "payout_fraction": null,
+    "days": [
+     {
+      "date": "2026-12-21",
+      "time": "12:00 PM",
+      "excerpt": "December 21, 2026 at 12 p.m.",
+      "stage": null
+     }
+    ],
+    "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "retrieved": "2026-11-17",
+    "block_index": 53
+   },
+   {
+    "id": "WPT-54",
+    "venue": "wynn",
+    "venue_name": "Wynn Las Vegas Poker",
+    "buy_in_usd": 400,
+    "name_printed": "Double Play Milestone Satellite (the “Tournament”) is a single day No Limit Hold’em event. This event will be offered on the following days: • Thursday, December 3, 2026 at 7 p.m. • Friday, December 4, 2026 at 7 p.m. • Sunday, December 6, 2026 at 7 p.m. Entry Fee: $400 Buy-in = $337 (Tournament Prize Pool) + $45 (Tournament Fee) + $18 (Poker Staff Service Charge) Registration: Unlimited re-entry will be available until the start of level 9. Starting Stack: Players will start with 20,000 in",
+    "guarantee_usd": null,
+    "guarantee_excerpt": null,
+    "fee_total_usd": 400,
+    "fee_components": [
+     {
+      "amount_usd": 337,
+      "purpose": "Tournament Prize Pool"
+     },
+     {
+      "amount_usd": 45,
+      "purpose": "Tournament Fee"
+     },
+     {
+      "amount_usd": 18,
+      "purpose": "Poker Staff Service Charge"
+     }
+    ],
+    "fee_excerpt": "Entry Fee: Entry Fee: $400 Buy-in = $337 (Tournament Prize Pool) + $45 (Tournament Fee) + $18 (Poker Staff Service Charge) Registration:",
+    "fee_split_sums_to_buy_in": true,
+    "discounted_entry_excerpt": null,
+    "registration_excerpt": "Unlimited re-entry will be available until the start of level 9.",
+    "rules": {
+     "single_entry": {
+      "status": "unverified",
+      "value": null,
+      "excerpt": null
+     },
+     "re_entry": {
+      "status": "confirmed_allowed",
+      "value": "unlimited re-entry / rebuys (printed)",
+      "excerpt": "Unlimited re-entry"
+     },
+     "add_on": {
+      "status": "not_stated_in_sheet",
+      "value": null,
+      "excerpt": null
+     },
+     "spend_advantage": true
+    },
+    "starting_chips": 20000,
+    "level_minutes": 20,
+    "payout_fraction": null,
+    "days": [
+     {
+      "date": "2026-12-03",
+      "time": "7:00 PM",
+      "excerpt": "December 3, 2026 at 7 p.m.",
+      "stage": null
+     },
+     {
+      "date": "2026-12-04",
+      "time": "7:00 PM",
+      "excerpt": "December 4, 2026 at 7 p.m.",
+      "stage": null
+     },
+     {
+      "date": "2026-12-06",
+      "time": "7:00 PM",
+      "excerpt": "December 6, 2026 at 7 p.m.",
+      "stage": null
+     }
+    ],
+    "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "retrieved": "2026-11-17",
+    "block_index": 54
+   },
+   {
+    "id": "WPT-55",
+    "venue": "wynn",
+    "venue_name": "Wynn Las Vegas Poker",
+    "buy_in_usd": 200,
+    "name_printed": "Milestone Satellite to $1,100 Prime Championship (the “Tournament”) is a single day No Limit Hold’em event. This event will be held on the following day(s): • Sunday, December 6, 2026, at 12 p.m. Direct Entry: At the conclusion of each event, prize winners will be directly registered into the $1,100 Prime Championship $5,000,000 GTD Poker Tournament. Upon registration, winners will receive a seat assignment, and their chips will be put into play from the start of the event. Entry Fee: $200 Buy-in = $165 (Tournament Prize Pool) + $20 (Tournament Fee) + $15 (Poker Staff Service Charge) Registration: Unlimited re-entry will be available until the start of level 9. Starting Stack: Players will start with 20,000 in",
+    "guarantee_usd": null,
+    "guarantee_excerpt": null,
+    "fee_total_usd": 200,
+    "fee_components": [
+     {
+      "amount_usd": 165,
+      "purpose": "Tournament Prize Pool"
+     },
+     {
+      "amount_usd": 20,
+      "purpose": "Tournament Fee"
+     },
+     {
+      "amount_usd": 15,
+      "purpose": "Poker Staff Service Charge"
+     }
+    ],
+    "fee_excerpt": "Entry Fee: Entry Fee: $200 Buy-in = $165 (Tournament Prize Pool) + $20 (Tournament Fee) + $15 (Poker Staff Service Charge) Registration:",
+    "fee_split_sums_to_buy_in": true,
+    "discounted_entry_excerpt": null,
+    "registration_excerpt": ", winners will receive a seat assignment, and their chips will be put into play from the start of the event. Entry Fee: $200 Buy-in = $165 (Tournament Prize Pool) + $20 (Tournament Fee) + $15 (Poker Staff Service Charge) Registration: Unlimited re-entry will be available until the start of level 9.",
+    "rules": {
+     "single_entry": {
+      "status": "unverified",
+      "value": null,
+      "excerpt": null
+     },
+     "re_entry": {
+      "status": "confirmed_allowed",
+      "value": "unlimited re-entry / rebuys (printed)",
+      "excerpt": "Entry Fee: $200 Buy-in = $165 (Tournament Prize Pool) + $20 (Tournament Fee) + $15 (Poker Staff Service Charge) Registration: Unlimited re-entry"
+     },
+     "add_on": {
+      "status": "not_stated_in_sheet",
+      "value": null,
+      "excerpt": null
+     },
+     "spend_advantage": true
+    },
+    "starting_chips": 20000,
+    "level_minutes": 20,
+    "payout_fraction": null,
+    "days": [
+     {
+      "date": "2026-12-06",
+      "time": "12:00 PM",
+      "excerpt": "December 6, 2026, at 12 p.m.",
+      "stage": null
+     }
+    ],
+    "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "retrieved": "2026-11-17",
+    "block_index": 55
+   },
+   {
+    "id": "WPT-56",
+    "venue": "wynn",
+    "venue_name": "Wynn Las Vegas Poker",
+    "buy_in_usd": 1600,
+    "name_printed": "Milestone Satellite to Prime and World Championship poker",
+    "guarantee_usd": null,
+    "guarantee_excerpt": null,
+    "fee_total_usd": 1600,
+    "fee_components": [
+     {
+      "amount_usd": 1440,
+      "purpose": "Tournament Prize Pool"
+     },
+     {
+      "amount_usd": 115,
+      "purpose": "Tournament Fee"
+     },
+     {
+      "amount_usd": 45,
+      "purpose": "Poker Staff Service Charge"
+     }
+    ],
+    "fee_excerpt": "Entry Fee: Entry Fee: $1,600 Buy-in = $1,440 (Tournament Prize Pool) + $115 (Tournament Fee) + $45 (Poker Staff Service Charge) Registration:",
+    "fee_split_sums_to_buy_in": true,
+    "discounted_entry_excerpt": null,
+    "registration_excerpt": ", winners will receive a seat assignment, and their chips will be put into play from the start the event(s). Entry Fee: $1,600 Buy-in = $1,440 (Tournament Prize Pool) + $115 (Tournament Fee) + $45 (Poker Staff Service Charge) Registration: Unlimited re-entry will be available until the start of level 9.",
+    "rules": {
+     "single_entry": {
+      "status": "unverified",
+      "value": null,
+      "excerpt": null
+     },
+     "re_entry": {
+      "status": "confirmed_allowed",
+      "value": "unlimited re-entry / rebuys (printed)",
+      "excerpt": "Entry Fee: $1,600 Buy-in = $1,440 (Tournament Prize Pool) + $115 (Tournament Fee) + $45 (Poker Staff Service Charge) Registration: Unlimited re-entry"
+     },
+     "add_on": {
+      "status": "not_stated_in_sheet",
+      "value": null,
+      "excerpt": null
+     },
+     "spend_advantage": true
+    },
+    "starting_chips": 20000,
+    "level_minutes": 25,
+    "payout_fraction": null,
+    "days": [
+     {
+      "date": "2026-12-07",
+      "time": "7:00 PM",
+      "excerpt": "December 7, 2026 at 7 p.m.",
+      "stage": null
+     }
+    ],
+    "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "retrieved": "2026-11-17",
+    "block_index": 56
+   },
+   {
+    "id": "WPT-57",
+    "venue": "wynn",
+    "venue_name": "Wynn Las Vegas Poker",
+    "buy_in_usd": 1100,
+    "name_printed": "Milestone Satellite to $10,400 World Championship poker",
+    "guarantee_usd": null,
+    "guarantee_excerpt": null,
+    "fee_total_usd": 1100,
+    "fee_components": [
+     {
+      "amount_usd": 975,
+      "purpose": "Tournament Prize Pool"
+     },
+     {
+      "amount_usd": 85,
+      "purpose": "Tournament Fee"
+     },
+     {
+      "amount_usd": 40,
+      "purpose": "Poker Staff Service Charge"
+     }
+    ],
+    "fee_excerpt": "Entry Fee: Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge) Registration:",
+    "fee_split_sums_to_buy_in": true,
+    "discounted_entry_excerpt": null,
+    "registration_excerpt": ", winners will receive a seat assignment, and their chips will be put into play from the start the event. Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge) Registration: Unlimited re-entry will be available until the start of level 9.",
+    "rules": {
+     "single_entry": {
+      "status": "unverified",
+      "value": null,
+      "excerpt": null
+     },
+     "re_entry": {
+      "status": "confirmed_allowed",
+      "value": "unlimited re-entry / rebuys (printed)",
+      "excerpt": "Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge) Registration: Unlimited re-entry"
+     },
+     "add_on": {
+      "status": "not_stated_in_sheet",
+      "value": null,
+      "excerpt": null
+     },
+     "spend_advantage": true
+    },
+    "starting_chips": 20000,
+    "level_minutes": 25,
+    "payout_fraction": null,
+    "days": [
+     {
+      "date": "2026-12-08",
+      "time": "7:00 PM",
+      "excerpt": "December 8, 2026 at 7 p.m.",
+      "stage": null
+     },
+     {
+      "date": "2026-12-09",
+      "time": "2:00 PM",
+      "excerpt": "December 9, 2026 at 2 p.m.",
+      "stage": null
+     },
+     {
+      "date": "2026-12-09",
+      "time": "7:00 PM",
+      "excerpt": "December 9, 2026 at 7 p.m.",
+      "stage": null
+     }
+    ],
+    "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "retrieved": "2026-11-17",
+    "block_index": 57
+   },
+   {
+    "id": "WPT-58",
+    "venue": "wynn",
+    "venue_name": "Wynn Las Vegas Poker",
+    "buy_in_usd": 1100,
+    "name_printed": "Milestone Satellite to $10,400 World Championship poker",
+    "guarantee_usd": null,
+    "guarantee_excerpt": null,
+    "fee_total_usd": 1100,
+    "fee_components": [
+     {
+      "amount_usd": 975,
+      "purpose": "Tournament Prize Pool"
+     },
+     {
+      "amount_usd": 85,
+      "purpose": "Tournament Fee"
+     },
+     {
+      "amount_usd": 40,
+      "purpose": "Poker Staff Service Charge"
+     }
+    ],
+    "fee_excerpt": "Entry Fee: Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge) Registration:",
+    "fee_split_sums_to_buy_in": true,
+    "discounted_entry_excerpt": null,
+    "registration_excerpt": ", winners will receive a seat assignment for Day 1A/B, and their chips will be put into play from the start the event. Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge) Registration: Unlimited re-entry will be available until the start of level 9.",
+    "rules": {
+     "single_entry": {
+      "status": "unverified",
+      "value": null,
+      "excerpt": null
+     },
+     "re_entry": {
+      "status": "confirmed_allowed",
+      "value": "unlimited re-entry / rebuys (printed)",
+      "excerpt": "Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge) Registration: Unlimited re-entry"
+     },
+     "add_on": {
+      "status": "not_stated_in_sheet",
+      "value": null,
+      "excerpt": null
+     },
+     "spend_advantage": true
+    },
+    "starting_chips": 20000,
+    "level_minutes": 25,
+    "payout_fraction": null,
+    "days": [
+     {
+      "date": "2026-12-12",
+      "time": "2:00 PM",
+      "excerpt": "December 12, 2026 at 2 p.m.",
+      "stage": null
+     },
+     {
+      "date": "2026-12-12",
+      "time": "7:00 PM",
+      "excerpt": "December 12, 2026 at 7 p.m.",
+      "stage": null
+     }
+    ],
+    "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "retrieved": "2026-11-17",
+    "block_index": 58
+   },
+   {
+    "id": "WPT-59",
+    "venue": "wynn",
+    "venue_name": "Wynn Las Vegas Poker",
+    "buy_in_usd": 200,
+    "name_printed": "Milestone Satellite to $1,100 Ladies Championship poker",
+    "guarantee_usd": null,
+    "guarantee_excerpt": null,
+    "fee_total_usd": 200,
+    "fee_components": [
+     {
+      "amount_usd": 165,
+      "purpose": "Tournament Prize Pool"
+     },
+     {
+      "amount_usd": 20,
+      "purpose": "Tournament Fee"
+     },
+     {
+      "amount_usd": 15,
+      "purpose": "Poker Staff Service Charge"
+     }
+    ],
+    "fee_excerpt": "Entry Fee: Entry Fee: $200 Buy-in = $165 (Tournament Prize Pool) + $20 (Tournament Fee) + $15 (Poker Staff Service Charge) Registration:",
+    "fee_split_sums_to_buy_in": true,
+    "discounted_entry_excerpt": null,
+    "registration_excerpt": ", winners will receive a seat assignment and their chips will be put into play from the start the event. Entry Fee: $200 Buy-in = $165 (Tournament Prize Pool) + $20 (Tournament Fee) + $15 (Poker Staff Service Charge) Registration: Unlimited re-entry will be available until the start of level 9.",
+    "rules": {
+     "single_entry": {
+      "status": "unverified",
+      "value": null,
+      "excerpt": null
+     },
+     "re_entry": {
+      "status": "confirmed_allowed",
+      "value": "unlimited re-entry / rebuys (printed)",
+      "excerpt": "Entry Fee: $200 Buy-in = $165 (Tournament Prize Pool) + $20 (Tournament Fee) + $15 (Poker Staff Service Charge) Registration: Unlimited re-entry"
+     },
+     "add_on": {
+      "status": "not_stated_in_sheet",
+      "value": null,
+      "excerpt": null
+     },
+     "spend_advantage": true
+    },
+    "starting_chips": 20000,
+    "level_minutes": 20,
+    "payout_fraction": null,
+    "days": [
+     {
+      "date": "2026-12-12",
+      "time": "4:00 PM",
+      "excerpt": "December 12, 2026 at 4 p.m.",
+      "stage": null
+     }
+    ],
+    "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "retrieved": "2026-11-17",
+    "block_index": 59
+   },
+   {
+    "id": "WPT-60",
+    "venue": "wynn",
+    "venue_name": "Wynn Las Vegas Poker",
+    "buy_in_usd": 1100,
+    "name_printed": "Milestone Satellite to $10,400 World Championship poker",
+    "guarantee_usd": null,
+    "guarantee_excerpt": null,
+    "fee_total_usd": 1100,
+    "fee_components": [
+     {
+      "amount_usd": 975,
+      "purpose": "Tournament Prize Pool"
+     },
+     {
+      "amount_usd": 85,
+      "purpose": "Tournament Fee"
+     },
+     {
+      "amount_usd": 40,
+      "purpose": "Poker Staff Service Charge"
+     }
+    ],
+    "fee_excerpt": "Entry Fee: Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge) Registration:",
+    "fee_split_sums_to_buy_in": true,
+    "discounted_entry_excerpt": null,
+    "registration_excerpt": ", winners will receive a seat assignment for Day 1B, and their chips will be put into play from the start the event. Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge) Registration: Unlimited re-entry will be available until the start of level 9.",
+    "rules": {
+     "single_entry": {
+      "status": "unverified",
+      "value": null,
+      "excerpt": null
+     },
+     "re_entry": {
+      "status": "confirmed_allowed",
+      "value": "unlimited re-entry / rebuys (printed)",
+      "excerpt": "Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge) Registration: Unlimited re-entry"
+     },
+     "add_on": {
+      "status": "not_stated_in_sheet",
+      "value": null,
+      "excerpt": null
+     },
+     "spend_advantage": true
+    },
+    "starting_chips": 20000,
+    "level_minutes": 25,
+    "payout_fraction": null,
+    "days": [
+     {
+      "date": "2026-12-13",
+      "time": "12:00 PM",
+      "excerpt": "December 13, 2026 at 12 p.m.",
+      "stage": null
+     }
+    ],
+    "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "retrieved": "2026-11-17",
+    "block_index": 60
+   },
+   {
+    "id": "WPT-61",
+    "venue": "wynn",
+    "venue_name": "Wynn Las Vegas Poker",
+    "buy_in_usd": 1100,
+    "name_printed": "Milestone Satellite to $10,400 World Championship poker",
+    "guarantee_usd": null,
+    "guarantee_excerpt": null,
+    "fee_total_usd": 1100,
+    "fee_components": [
+     {
+      "amount_usd": 975,
+      "purpose": "Tournament Prize Pool"
+     },
+     {
+      "amount_usd": 85,
+      "purpose": "Tournament Fee"
+     },
+     {
+      "amount_usd": 40,
+      "purpose": "Poker Staff Service Charge"
+     }
+    ],
+    "fee_excerpt": "Entry Fee: Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge) Registration:",
+    "fee_split_sums_to_buy_in": true,
+    "discounted_entry_excerpt": null,
+    "registration_excerpt": ", winners will receive a seat assignment for Day 1B/C, and their chips will be put into play from the start the event. Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge) Registration: Unlimited re-entry will be available until the start of level 9.",
+    "rules": {
+     "single_entry": {
+      "status": "unverified",
+      "value": null,
+      "excerpt": null
+     },
+     "re_entry": {
+      "status": "confirmed_allowed",
+      "value": "unlimited re-entry / rebuys (printed)",
+      "excerpt": "Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge) Registration: Unlimited re-entry"
+     },
+     "add_on": {
+      "status": "not_stated_in_sheet",
+      "value": null,
+      "excerpt": null
+     },
+     "spend_advantage": true
+    },
+    "starting_chips": 20000,
+    "level_minutes": 25,
+    "payout_fraction": null,
+    "days": [
+     {
+      "date": "2026-12-13",
+      "time": "6:00 PM",
+      "excerpt": "December 13, 2026 at 6 p.m.",
+      "stage": null
+     }
+    ],
+    "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "retrieved": "2026-11-17",
+    "block_index": 61
+   },
+   {
+    "id": "WPT-62",
+    "venue": "wynn",
+    "venue_name": "Wynn Las Vegas Poker",
+    "buy_in_usd": 1100,
+    "name_printed": "Milestone Satellite to $10,400 World Championship poker",
+    "guarantee_usd": null,
+    "guarantee_excerpt": null,
+    "fee_total_usd": 1100,
+    "fee_components": [
+     {
+      "amount_usd": 975,
+      "purpose": "Tournament Prize Pool"
+     },
+     {
+      "amount_usd": 85,
+      "purpose": "Tournament Fee"
+     },
+     {
+      "amount_usd": 40,
+      "purpose": "Poker Staff Service Charge"
+     }
+    ],
+    "fee_excerpt": "Entry Fee: Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge) Registration:",
+    "fee_split_sums_to_buy_in": true,
+    "discounted_entry_excerpt": null,
+    "registration_excerpt": ", winners will receive a seat assignment for Day 1C, and their chips will be put into play from the start the event. Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge) Registration: Unlimited re-entry will be available until the start of level 9.",
+    "rules": {
+     "single_entry": {
+      "status": "unverified",
+      "value": null,
+      "excerpt": null
+     },
+     "re_entry": {
+      "status": "confirmed_allowed",
+      "value": "unlimited re-entry / rebuys (printed)",
+      "excerpt": "Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge) Registration: Unlimited re-entry"
+     },
+     "add_on": {
+      "status": "not_stated_in_sheet",
+      "value": null,
+      "excerpt": null
+     },
+     "spend_advantage": true
+    },
+    "starting_chips": 20000,
+    "level_minutes": 25,
+    "payout_fraction": null,
+    "days": [
+     {
+      "date": "2026-12-14",
+      "time": "12:00 PM",
+      "excerpt": "December 14, 2026 at 12 p.m.",
+      "stage": null
+     },
+     {
+      "date": "2026-12-14",
+      "time": "6:00 PM",
+      "excerpt": "December 14, 2026 at 6 p.m.",
+      "stage": null
+     }
+    ],
+    "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "retrieved": "2026-11-17",
+    "block_index": 62
+   },
+   {
+    "id": "WPT-63",
+    "venue": "wynn",
+    "venue_name": "Wynn Las Vegas Poker",
+    "buy_in_usd": 1100,
+    "name_printed": "Milestone Satellite to $10,400 World Championship poker",
+    "guarantee_usd": null,
+    "guarantee_excerpt": null,
+    "fee_total_usd": 1100,
+    "fee_components": [
+     {
+      "amount_usd": 975,
+      "purpose": "Tournament Prize Pool"
+     },
+     {
+      "amount_usd": 85,
+      "purpose": "Tournament Fee"
+     },
+     {
+      "amount_usd": 40,
+      "purpose": "Poker Staff Service Charge"
+     }
+    ],
+    "fee_excerpt": "Entry Fee: Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge) Registration:",
+    "fee_split_sums_to_buy_in": true,
+    "discounted_entry_excerpt": null,
+    "registration_excerpt": ", winners will receive a seat assignment for Day 1C/Day 2, and their chips will be put into play from the start the event. Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge) Registration: Unlimited re-entry will be available until the start of level 9.",
+    "rules": {
+     "single_entry": {
+      "status": "unverified",
+      "value": null,
+      "excerpt": null
+     },
+     "re_entry": {
+      "status": "confirmed_allowed",
+      "value": "unlimited re-entry / rebuys (printed)",
+      "excerpt": "Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge) Registration: Unlimited re-entry"
+     },
+     "add_on": {
+      "status": "not_stated_in_sheet",
+      "value": null,
+      "excerpt": null
+     },
+     "spend_advantage": true
+    },
+    "starting_chips": 20000,
+    "level_minutes": 25,
+    "payout_fraction": null,
+    "days": [
+     {
+      "date": "2026-12-15",
+      "time": "11:00 AM",
+      "excerpt": "December 15, 2026 at 11 a.m.",
+      "stage": null
+     }
+    ],
+    "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "retrieved": "2026-11-17",
+    "block_index": 63
+   },
+   {
+    "id": "WPT-64",
+    "venue": "wynn",
+    "venue_name": "Wynn Las Vegas Poker",
+    "buy_in_usd": 1100,
+    "name_printed": "Milestone Satellite to $10,400 World Championship poker",
+    "guarantee_usd": null,
+    "guarantee_excerpt": null,
+    "fee_total_usd": 1100,
+    "fee_components": [
+     {
+      "amount_usd": 975,
+      "purpose": "Tournament Prize Pool"
+     },
+     {
+      "amount_usd": 85,
+      "purpose": "Tournament Fee"
+     },
+     {
+      "amount_usd": 40,
+      "purpose": "Poker Staff Service Charge"
+     }
+    ],
+    "fee_excerpt": "Entry Fee: Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge) Registration:",
+    "fee_split_sums_to_buy_in": true,
+    "discounted_entry_excerpt": null,
+    "registration_excerpt": ", winners will receive a seat assignment for Day 2, and their chips will be put into play from the start the event. Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge) Registration: Unlimited re-entry will be available until the start of level 9.",
+    "rules": {
+     "single_entry": {
+      "status": "unverified",
+      "value": null,
+      "excerpt": null
+     },
+     "re_entry": {
+      "status": "confirmed_allowed",
+      "value": "unlimited re-entry / rebuys (printed)",
+      "excerpt": "Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge) Registration: Unlimited re-entry"
+     },
+     "add_on": {
+      "status": "not_stated_in_sheet",
+      "value": null,
+      "excerpt": null
+     },
+     "spend_advantage": true
+    },
+    "starting_chips": 20000,
+    "level_minutes": 25,
+    "payout_fraction": null,
+    "days": [
+     {
+      "date": "2026-12-15",
+      "time": "6:00 PM",
+      "excerpt": "December 15, 2026 at 6 p.m.",
+      "stage": null
+     }
+    ],
+    "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "retrieved": "2026-11-17",
+    "block_index": 64
+   },
+   {
+    "id": "WPT-65",
+    "venue": "wynn",
+    "venue_name": "Wynn Las Vegas Poker",
+    "buy_in_usd": 3000,
+    "name_printed": "Milestone Satellite to $25,800 No Limit Hold’em poker",
+    "guarantee_usd": null,
+    "guarantee_excerpt": null,
+    "fee_total_usd": 3000,
+    "fee_components": [
+     {
+      "amount_usd": 2730,
+      "purpose": "Tournament Prize Pool"
+     },
+     {
+      "amount_usd": 200,
+      "purpose": "Tournament Fee"
+     },
+     {
+      "amount_usd": 70,
+      "purpose": "Poker Staff Service Charge"
+     }
+    ],
+    "fee_excerpt": "Entry Fee: Entry Fee: $3,000 Buy-in = $2,730 (Tournament Prize Pool) + $200 (Tournament Fee) + $70 (Poker Staff Service Charge) Players registered prior to the start of the event will receive a $100 discount. Registration:",
+    "fee_split_sums_to_buy_in": true,
+    "discounted_entry_excerpt": null,
+    "registration_excerpt": ", winners will receive a seat assignment, and their chips will be put into play from the start the event. Entry Fee: $3,000 Buy-in = $2,730 (Tournament Prize Pool) + $200 (Tournament Fee) + $70 (Poker Staff Service Charge) Players registered prior to the start of the event will receive a $100 discount. Registration: Unlimited re-entry will be available until the start of level 9.",
+    "rules": {
+     "single_entry": {
+      "status": "unverified",
+      "value": null,
+      "excerpt": null
+     },
+     "re_entry": {
+      "status": "confirmed_allowed",
+      "value": "unlimited re-entry / rebuys (printed)",
+      "excerpt": "Registration: Unlimited re-entry"
+     },
+     "add_on": {
+      "status": "not_stated_in_sheet",
+      "value": null,
+      "excerpt": null
+     },
+     "spend_advantage": true
+    },
+    "starting_chips": 20000,
+    "level_minutes": 25,
+    "payout_fraction": null,
+    "days": [
+     {
+      "date": "2026-12-16",
+      "time": "6:00 PM",
+      "excerpt": "December 16, 2026 at 6 p.m.",
+      "stage": null
+     }
+    ],
+    "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "retrieved": "2026-11-17",
+    "block_index": 65
+   },
+   {
+    "id": "WPT-66",
+    "venue": "wynn",
+    "venue_name": "Wynn Las Vegas Poker",
+    "buy_in_usd": 400,
+    "name_printed": "Milestone Satellite to $3,000 No Limit Hold’em poker",
+    "guarantee_usd": null,
+    "guarantee_excerpt": null,
+    "fee_total_usd": 400,
+    "fee_components": [
+     {
+      "amount_usd": 337,
+      "purpose": "Tournament Prize Pool"
+     },
+     {
+      "amount_usd": 45,
+      "purpose": "Tournament Fee"
+     },
+     {
+      "amount_usd": 18,
+      "purpose": "Poker Staff Service Charge"
+     }
+    ],
+    "fee_excerpt": "Entry Fee: Entry Fee: $400 Buy-in = $337 (Tournament Prize Pool) + $45 (Tournament Fee) + $18 (Poker Staff Service Charge) Registration:",
+    "fee_split_sums_to_buy_in": true,
+    "discounted_entry_excerpt": null,
+    "registration_excerpt": ", winners will receive a seat assignment, and their chips will be put into play from the start the event. Entry Fee: $400 Buy-in = $337 (Tournament Prize Pool) + $45 (Tournament Fee) + $18 (Poker Staff Service Charge) Registration: Unlimited re-entry will be available until the start of level 9.",
+    "rules": {
+     "single_entry": {
+      "status": "unverified",
+      "value": null,
+      "excerpt": null
+     },
+     "re_entry": {
+      "status": "confirmed_allowed",
+      "value": "unlimited re-entry / rebuys (printed)",
+      "excerpt": "Entry Fee: $400 Buy-in = $337 (Tournament Prize Pool) + $45 (Tournament Fee) + $18 (Poker Staff Service Charge) Registration: Unlimited re-entry"
+     },
+     "add_on": {
+      "status": "not_stated_in_sheet",
+      "value": null,
+      "excerpt": null
+     },
+     "spend_advantage": true
+    },
+    "starting_chips": 20000,
+    "level_minutes": 20,
+    "payout_fraction": null,
+    "days": [
+     {
+      "date": "2026-12-16",
+      "time": "6:00 PM",
+      "excerpt": "December 16, 2026 at 6 p.m.",
+      "stage": null
+     },
+     {
+      "date": "2026-12-17",
+      "time": "7:00 PM",
+      "excerpt": "December 17, 2026 at 7 p.m.",
+      "stage": null
+     }
+    ],
+    "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "retrieved": "2026-11-17",
+    "block_index": 66
+   },
+   {
+    "id": "WPT-67",
+    "venue": "wynn",
+    "venue_name": "Wynn Las Vegas Poker",
+    "buy_in_usd": 400,
+    "name_printed": "Milestone Satellite to $3,000 No Limit Hold’em poker",
+    "guarantee_usd": null,
+    "guarantee_excerpt": null,
+    "fee_total_usd": 400,
+    "fee_components": [
+     {
+      "amount_usd": 337,
+      "purpose": "Tournament Prize Pool"
+     },
+     {
+      "amount_usd": 45,
+      "purpose": "Tournament Fee"
+     },
+     {
+      "amount_usd": 18,
+      "purpose": "Poker Staff Service Charge"
+     }
+    ],
+    "fee_excerpt": "Entry Fee: Entry Fee: $400 Buy-in = $337 (Tournament Prize Pool) + $45 (Tournament Fee) + $18 (Poker Staff Service Charge) Registration:",
+    "fee_split_sums_to_buy_in": true,
+    "discounted_entry_excerpt": null,
+    "registration_excerpt": ", winners will receive a seat assignment, and their chips will be put into play from the start the event. Entry Fee: $400 Buy-in = $337 (Tournament Prize Pool) + $45 (Tournament Fee) + $18 (Poker Staff Service Charge) Registration: Unlimited re-entry will be available until the start of level 9.",
+    "rules": {
+     "single_entry": {
+      "status": "unverified",
+      "value": null,
+      "excerpt": null
+     },
+     "re_entry": {
+      "status": "confirmed_allowed",
+      "value": "unlimited re-entry / rebuys (printed)",
+      "excerpt": "Entry Fee: $400 Buy-in = $337 (Tournament Prize Pool) + $45 (Tournament Fee) + $18 (Poker Staff Service Charge) Registration: Unlimited re-entry"
+     },
+     "add_on": {
+      "status": "not_stated_in_sheet",
+      "value": null,
+      "excerpt": null
+     },
+     "spend_advantage": true
+    },
+    "starting_chips": 20000,
+    "level_minutes": 15,
+    "payout_fraction": null,
+    "days": [
+     {
+      "date": "2026-12-18",
+      "time": "10:00 AM",
+      "excerpt": "December 18, 2026 at 10 a.m.",
+      "stage": null
+     }
+    ],
+    "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "retrieved": "2026-11-17",
+    "block_index": 67
+   },
+   {
+    "id": "WPT-68",
+    "venue": "wynn",
+    "venue_name": "Wynn Las Vegas Poker",
+    "buy_in_usd": 600,
+    "name_printed": "Milestone Satellite to $5,000 Seniors NLH (the “Tournament”) is a single day No Limit Hold’em event. This event will be held on the following day(s): • Friday, December 18, 2026 at 2 p.m. Must be 50 years of age or older to participate. Direct Entry: At the conclusion of each event, prize winners will be directly registered into the $5,000 Seniors NLH 50+ $250,000 GTD Poker Tournament. Upon registration, winners will receive a seat assignment, and their chips will be put into play from the start of the event. Entry Fee: $600 Buy-in = $515 (Tournament Prize Pool) + $60 (Tournament Fee) + $25 (Poker Staff Service Charge) Registration: Unlimited re-entry will be available until the start of level 9 (approximately 5 p.m.). Starting Stack: Players will start with 20,000 in",
+    "guarantee_usd": null,
+    "guarantee_excerpt": null,
+    "fee_total_usd": 600,
+    "fee_components": [
+     {
+      "amount_usd": 515,
+      "purpose": "Tournament Prize Pool"
+     },
+     {
+      "amount_usd": 60,
+      "purpose": "Tournament Fee"
+     },
+     {
+      "amount_usd": 25,
+      "purpose": "Poker Staff Service Charge"
+     }
+    ],
+    "fee_excerpt": "Entry Fee: Entry Fee: $600 Buy-in = $515 (Tournament Prize Pool) + $60 (Tournament Fee) + $25 (Poker Staff Service Charge) Registration:",
+    "fee_split_sums_to_buy_in": true,
+    "discounted_entry_excerpt": null,
+    "registration_excerpt": ", winners will receive a seat assignment, and their chips will be put into play from the start of the event. Entry Fee: $600 Buy-in = $515 (Tournament Prize Pool) + $60 (Tournament Fee) + $25 (Poker Staff Service Charge) Registration: Unlimited re-entry will be available until the start of level 9 (approximately 5 p.m.).",
+    "rules": {
+     "single_entry": {
+      "status": "unverified",
+      "value": null,
+      "excerpt": null
+     },
+     "re_entry": {
+      "status": "confirmed_allowed",
+      "value": "unlimited re-entry / rebuys (printed)",
+      "excerpt": "Entry Fee: $600 Buy-in = $515 (Tournament Prize Pool) + $60 (Tournament Fee) + $25 (Poker Staff Service Charge) Registration: Unlimited re-entry"
+     },
+     "add_on": {
+      "status": "not_stated_in_sheet",
+      "value": null,
+      "excerpt": null
+     },
+     "spend_advantage": true
+    },
+    "starting_chips": 20000,
+    "level_minutes": 20,
+    "payout_fraction": null,
+    "days": [
+     {
+      "date": "2026-12-18",
+      "time": "2:00 PM",
+      "excerpt": "December 18, 2026 at 2 p.m.",
+      "stage": null
+     }
+    ],
+    "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "retrieved": "2026-11-17",
+    "block_index": 68
+   },
+   {
+    "id": "WPT-69",
+    "venue": "wynn",
+    "venue_name": "Wynn Las Vegas Poker",
+    "buy_in_usd": 300,
+    "name_printed": "Milestone Satellite to $1,600 Mystery Bounty (the “Tournament”) is a single day No Limit Hold’em event. This event will be held on the following day(s): • Saturday, December 19, 2026, at 12 p.m. • Saturday, December 19, 2026, at 5 p.m. Direct Entry: At the conclusion of each event, prize winners will be directly registered into the $1,600 Mystery Bounty $1,000,000 GTD Poker Tournament. Upon registration, winners will receive a seat assignment, and their chips will be put into play from the start of the event. Entry Fee: $300 Buy-in = $250 (Tournament Prize Pool) + $34 (Tournament Fee) + $16 (Poker Staff Service Charge) Registration: Unlimited re-entry will be available until the start of level 9. Starting Stack: Players will start with 20,000 in",
+    "guarantee_usd": null,
+    "guarantee_excerpt": null,
+    "fee_total_usd": 300,
+    "fee_components": [
+     {
+      "amount_usd": 250,
+      "purpose": "Tournament Prize Pool"
+     },
+     {
+      "amount_usd": 34,
+      "purpose": "Tournament Fee"
+     },
+     {
+      "amount_usd": 16,
+      "purpose": "Poker Staff Service Charge"
+     }
+    ],
+    "fee_excerpt": "Entry Fee: Entry Fee: $300 Buy-in = $250 (Tournament Prize Pool) + $34 (Tournament Fee) + $16 (Poker Staff Service Charge) Registration:",
+    "fee_split_sums_to_buy_in": true,
+    "discounted_entry_excerpt": null,
+    "registration_excerpt": ", winners will receive a seat assignment, and their chips will be put into play from the start of the event. Entry Fee: $300 Buy-in = $250 (Tournament Prize Pool) + $34 (Tournament Fee) + $16 (Poker Staff Service Charge) Registration: Unlimited re-entry will be available until the start of level 9.",
+    "rules": {
+     "single_entry": {
+      "status": "unverified",
+      "value": null,
+      "excerpt": null
+     },
+     "re_entry": {
+      "status": "confirmed_allowed",
+      "value": "unlimited re-entry / rebuys (printed)",
+      "excerpt": "Entry Fee: $300 Buy-in = $250 (Tournament Prize Pool) + $34 (Tournament Fee) + $16 (Poker Staff Service Charge) Registration: Unlimited re-entry"
+     },
+     "add_on": {
+      "status": "not_stated_in_sheet",
+      "value": null,
+      "excerpt": null
+     },
+     "spend_advantage": true
+    },
+    "starting_chips": 20000,
+    "level_minutes": 20,
+    "payout_fraction": null,
+    "days": [
+     {
+      "date": "2026-12-19",
+      "time": "12:00 PM",
+      "excerpt": "December 19, 2026, at 12 p.m.",
+      "stage": null
+     },
+     {
+      "date": "2026-12-19",
+      "time": "5:00 PM",
+      "excerpt": "December 19, 2026, at 5 p.m.",
+      "stage": null
+     }
+    ],
+    "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "retrieved": "2026-11-17",
+    "block_index": 69
+   }
+  ],
+  "unparsed_blocks": []
+ },
+ "wynn_daily": {
+  "file": "data/raw/wynn-daily-structures.txt",
+  "sha256": "af4aa5c8a4f857030555e88510aa234920cbf8c59332a7753e6332f4f29a4857",
+  "url": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+  "poster_file": "data/raw/wynn-daily-poster.txt",
+  "poster_url": "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf",
+  "events": [
+   {
+    "id": "WYNN-DAILY-1",
+    "venue": "wynn",
+    "venue_name": "Wynn Las Vegas Poker",
+    "buy_in_usd": 200,
+    "name_printed": "NLH $10,000 Guarantee poker",
+    "guarantee_usd": 10000,
+    "start_time": "12 PM",
+    "offered_days_printed": "Monday-Thursday",
+    "fee_excerpt": "3. The Tournament entry fee, as well as the re-entry fee, is $200 (the “Entry Fee”), and must be paid with cash or Wynn Las Vegas live casino chips; no other forms of payment will be accepted. The $200 Entry Fee will be distributed as follows: $26 for the Tournament fee, $12 for the poker staff service charge, and $162 for the Tournament prize pool.",
+    "registration_excerpt": "4. Registration and re-entries will be available until the start of level 9 (approximately 4:30 p.m.).",
+    "rules": {
+     "single_entry": {
+      "status": "unverified",
+      "value": null,
+      "excerpt": null
+     },
+     "re_entry": {
+      "status": "confirmed_allowed",
+      "value": "re-entries available (printed)",
+      "excerpt": "Registration and re-entries will be available"
+     },
+     "add_on": {
+      "status": "not_stated_in_sheet",
+      "value": null,
+      "excerpt": null
+     },
+     "spend_advantage": true
+    },
+    "extra_play_option_excerpt": null,
+    "starting_chips": 25000,
+    "level_minutes": 30,
+    "source": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+    "retrieved": "2026-11-17",
+    "block_index": 1
+   },
+   {
+    "id": "WYNN-DAILY-2",
+    "venue": "wynn",
+    "venue_name": "Wynn Las Vegas Poker",
+    "buy_in_usd": 240,
+    "name_printed": "NLH $40,000 Guarantee poker",
+    "guarantee_usd": 40000,
+    "start_time": "12 PM",
+    "offered_days_printed": "Friday",
+    "fee_excerpt": null,
+    "registration_excerpt": "4. Registration, rebuys and add-ons will be available until the start of level 9 (approximately 4:30 p.m.). Re-entry is NOT allowed. All rebuys must be done immediately from the player’s original seat.",
+    "rules": {
+     "single_entry": {
+      "status": "unverified",
+      "value": null,
+      "excerpt": null
+     },
+     "re_entry": {
+      "status": "not_stated_in_sheet",
+      "value": null,
+      "excerpt": null
+     },
+     "add_on": {
+      "status": "confirmed_allowed",
+      "value": "add-on offered",
+      "excerpt": "Registration, rebuys and add-ons will be available until the start of level 9 (approximately 4:30 p."
+     },
+     "spend_advantage": true
+    },
+    "extra_play_option_excerpt": "Unlimited $200 rebuys for 25,000 tournament chips are available any time a player is at 15,000 chips or less.",
+    "starting_chips": 25000,
+    "level_minutes": 30,
+    "source": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+    "retrieved": "2026-11-17",
+    "block_index": 2
+   },
+   {
+    "id": "WYNN-DAILY-3",
+    "venue": "wynn",
+    "venue_name": "Wynn Las Vegas Poker",
+    "buy_in_usd": 200,
+    "name_printed": "NLH $25,000 Guarantee poker",
+    "guarantee_usd": 25000,
+    "start_time": "12 PM",
+    "offered_days_printed": "Saturday & Sunday",
+    "fee_excerpt": "2. The Tournament entry fee, as well as the re-entry fee, is $200 (the “Entry Fee”), and must be paid with cash or Wynn Las Vegas live casino chips; no other forms of payment will be accepted. The $200 Entry Fee will be distributed as follows: $26 for the Tournament fee, $12 for the poker staff service charge, and $162 for the Tournament prize pool. $5 from each $100 add-on with be withheld as a Tournament fee and $5 from each add-on will be withheld as a service charge for poker staff.",
+    "registration_excerpt": "3. Registration, re-entries, and one (1) add-on per entry will be available until the start of level 11 (approximately 5:30 p.m.).",
+    "rules": {
+     "single_entry": {
+      "status": "unverified",
+      "value": null,
+      "excerpt": null
+     },
+     "re_entry": {
+      "status": "confirmed_allowed",
+      "value": "re-entries available (printed)",
+      "excerpt": "re-entries, and one (1) add-on per entry will be available until the start of level 11 (approximately 5:30 p."
+     },
+     "add_on": {
+      "status": "confirmed_allowed",
+      "value": "add-on offered",
+      "excerpt": "Registration, re-entries, and one (1) add-on per entry will be available until the start of level 11 (approximately 5:30 p."
+     },
+     "spend_advantage": true
+    },
+    "extra_play_option_excerpt": "One (1) $100 add-on for 25,000 tournament chips is available any time until the end of registration.",
+    "starting_chips": 25000,
+    "level_minutes": 30,
+    "source": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+    "retrieved": "2026-11-17",
+    "block_index": 3
+   },
+   {
+    "id": "WYNN-DAILY-4",
+    "venue": "wynn",
+    "venue_name": "Wynn Las Vegas Poker",
+    "buy_in_usd": 160,
+    "name_printed": "NLH $10,000 Guarantee poker",
+    "guarantee_usd": 10000,
+    "start_time": "6 PM",
+    "offered_days_printed": "Nightly Monday-Sunday",
+    "fee_excerpt": "3. The Tournament entry fee, as well as the re-entry fee, is $160 (the “Entry Fee”), and must be paid with cash or Wynn Las Vegas live casino chips; no other forms of payment will be accepted. The $160 Entry Fee will be distributed as follows: $20 for the Tournament fee, $10 for the poker staff service charge, and $130 for the Tournament prize pool. $5 from each $100 add-on will be withheld as a Tournament fee and $5 from each add-on will be withheld as a service charge for poker staff.",
+    "registration_excerpt": "4. Registration, re-entries, and one (1) add-on per entry will be available until the start of level 9 (approximately 9:00 p.m.).",
+    "rules": {
+     "single_entry": {
+      "status": "unverified",
+      "value": null,
+      "excerpt": null
+     },
+     "re_entry": {
+      "status": "confirmed_allowed",
+      "value": "re-entries available (printed)",
+      "excerpt": "re-entries, and one (1) add-on per entry will be available until the start of level 9 (approximately 9:00 p."
+     },
+     "add_on": {
+      "status": "confirmed_allowed",
+      "value": "add-on offered",
+      "excerpt": "Registration, re-entries, and one (1) add-on per entry will be available until the start of level 9 (approximately 9:00 p."
+     },
+     "spend_advantage": true
+    },
+    "extra_play_option_excerpt": "One (1) $100 add-on for 25,000 tournament chips is available any time until the end of registration.",
+    "starting_chips": 25000,
+    "level_minutes": 20,
+    "source": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+    "retrieved": "2026-11-17",
+    "block_index": 4
+   }
+  ]
+ },
+ "bellagio": [
+  {
+   "id": "BELLAGIO-FRI",
+   "venue": "bellagio",
+   "venue_name": "Bellagio Poker Room",
+   "buy_in_usd": 600,
+   "name_printed": "$600 No Limit Hold'em",
+   "weekday": "Friday",
+   "start_time": "11:00 AM",
+   "guarantee_usd": null,
+   "guarantee_excerpt": null,
+   "fee_excerpt": "The $600 Buy-In is allocated as follows: $510 to Prize Pool; $50 House Fee; $40 Voluntary Staff Gratuity.",
+   "fee_components": [
+    {
+     "amount_usd": 510,
+     "purpose": "to Prize Pool"
+    },
+    {
+     "amount_usd": 50,
+     "purpose": "House Fee"
+    },
+    {
+     "amount_usd": 40,
+     "purpose": "Voluntary Staff Gratuity"
+    }
+   ],
+   "registration_excerpt": "Players may buy-in and re-enter through the end of level 8 (Including Break).",
+   "rules": {
+    "single_entry": {
+     "status": "unverified",
+     "value": null,
+     "excerpt": null
+    },
+    "re_entry": {
+     "status": "confirmed_allowed",
+     "value": "buy-in and re-enter through the end of level 8",
+     "excerpt": "Players may buy-in and re-enter through the end of level 8 (Including Break)."
+    },
+    "add_on": {
+     "status": "not_stated_in_sheet",
+     "value": null,
+     "excerpt": null
+    },
+    "spend_advantage": true
+   },
+   "starting_chips": 30000,
+   "level_minutes": 30,
+   "source": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt9cf95b0e60ec253e/6af491a3a9851d75c40be840/mgm-bellagio-poker-fridays-$600-nlh.pdf",
+   "retrieved": "2026-11-17",
+   "capture_file": "data/raw/bellagio-friday-600-nlh.txt",
+   "capture_sha256": "df28e9984a38f4960bd11ba6b1c566161a450a416e4d9b8d3bc9392acd0eb99b",
+   "page_source": "https://bellagio.mgmresorts.com/en/casino/poker.html"
+  },
+  {
+   "id": "BELLAGIO-SAT",
+   "venue": "bellagio",
+   "venue_name": "Bellagio Poker Room",
+   "buy_in_usd": null,
+   "name_printed": "No Limit Hold'em — the sheet's title block prints '$1100 BUY-IN' and the poker page lists it as 'SATURDAYS | $1,000 NLH', while rule 07 on the same sheet says 'Of the $600 Buy-in': the buy-in is therefore left blank and the row is flagged",
+   "weekday": "Saturday",
+   "start_time": "11:00 AM",
+   "guarantee_usd": 50000,
+   "guarantee_excerpt": "Bellagio guarantees that the total Combined Prize Pool will be at least $50,000.",
+   "fee_excerpt": "Of the $600 Buy-in, $510 goes to the Prize Pool, $50 is Admin Fees and $40 is optional staff gratuity.",
+   "fee_components": [
+    {
+     "amount_usd": 510,
+     "purpose": "goes to the Prize Pool"
+    },
+    {
+     "amount_usd": 50,
+     "purpose": "is Admin Fees"
+    },
+    {
+     "amount_usd": 40,
+     "purpose": "is optional staff gratuity"
+    }
+   ],
+   "registration_excerpt": "Registration will be open until the start of Level 10.",
+   "rules": {
+    "single_entry": {
+     "status": "unverified",
+     "value": null,
+     "excerpt": null
+    },
+    "re_entry": {
+     "status": "not_stated_in_sheet",
+     "value": null,
+     "excerpt": null
+    },
+    "add_on": {
+     "status": "not_stated_in_sheet",
+     "value": null,
+     "excerpt": null
+    },
+    "spend_advantage": false
+   },
+   "starting_chips": 40000,
+   "level_minutes": null,
+   "source": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt6d47974bf5a7d9b6/6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf",
+   "retrieved": "2026-11-17",
+   "capture_file": "data/raw/bellagio-saturday-1100-nlh.txt",
+   "capture_sha256": "d1bfbdf1241810e617cf42ff4077b7adfe1f12f1cfba354d6c736762172c0991",
+   "page_source": "https://bellagio.mgmresorts.com/en/casino/poker.html"
+  },
+  {
+   "id": "BELLAGIO-SUN",
+   "venue": "bellagio",
+   "venue_name": "Bellagio Poker Room",
+   "buy_in_usd": 400,
+   "name_printed": "$400 H.O.R.S.E.",
+   "weekday": "Sunday",
+   "start_time": "11:00 AM",
+   "guarantee_usd": null,
+   "guarantee_excerpt": null,
+   "fee_excerpt": "The $400 Buy-In is allocated as follows: $340 to Prize Pool; $35 House Fee; $25 Voluntary Staff Gratuity.",
+   "fee_components": [
+    {
+     "amount_usd": 340,
+     "purpose": "to Prize Pool"
+    },
+    {
+     "amount_usd": 35,
+     "purpose": "House Fee"
+    },
+    {
+     "amount_usd": 25,
+     "purpose": "Voluntary Staff Gratuity"
+    }
+   ],
+   "registration_excerpt": "Players may buy-in and re-enter through the end of level 8 (Including Break).",
+   "rules": {
+    "single_entry": {
+     "status": "unverified",
+     "value": null,
+     "excerpt": null
+    },
+    "re_entry": {
+     "status": "confirmed_allowed",
+     "value": "buy-in and re-enter through the end of level 8",
+     "excerpt": "Players may buy-in and re-enter through the end of level 8 (Including Break)."
+    },
+    "add_on": {
+     "status": "not_stated_in_sheet",
+     "value": null,
+     "excerpt": null
+    },
+    "spend_advantage": true
+   },
+   "starting_chips": 30000,
+   "level_minutes": 30,
+   "source": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt07fcf1244a6da661/6af491a339e2b4f6b76a86ad/mgm-bellagio-poker-sundays-$400-horse.pdf",
+   "retrieved": "2026-11-17",
+   "capture_file": "data/raw/bellagio-sunday-400-horse.txt",
+   "capture_sha256": "d85ab8a3d52179e09d0901bb57fe6a9f2e17e90ad168aee48d5b4d9d8403b7c1",
+   "page_source": "https://bellagio.mgmresorts.com/en/casino/poker.html"
+  }
+ ],
+ "caesars": {
+  "source": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
+  "retrieved": "2026-11-17",
+  "schedule_excerpt": "At Caesars Palace, the daily schedule runs like clockwork. You will find four No-Limit Hold'em tournaments each day at 10 a.m., 2 p.m., 6 p.m. and 9 p.m. Every event carries a $100 buy-in, starts you with 20,000 chips, and features a $1,000 guaranteed prize pool. Blinds increase every 20 minutes to keep the pace lively, and a $50 add-on at the first break gives you an extra 15,000 chips if you want a deeper run.",
+  "horseshoe_excerpt": "At Horseshoe Las Vegas, the tournament slate ups the ante with six daily No-Limit Hold'em games. The times at 9 a.m., 11 a.m., 2 p.m., 5 p.m., 8 p.m. and 11 p.m. provide plenty of opportunity throughout the day to grab a seat. A mixture of buy-ins, levels and guarantees caters to all participants",
+  "times": [
+   "10:00 AM",
+   "2:00 PM",
+   "6:00 PM",
+   "9:00 PM"
+  ],
+  "buy_in_printed": 100,
+  "chips_printed": 20000,
+  "guarantee_printed": 1000,
+  "level_minutes_printed": 20,
+  "rules": {
+   "single_entry": {
+    "status": "unverified",
+    "value": null,
+    "excerpt": "the page prints no single-entry rule"
+   },
+   "re_entry": {
+    "status": "unverified",
+    "value": null,
+    "excerpt": "the page describes the slate but prints no re-entry rule"
+   },
+   "add_on": {
+    "status": "confirmed_allowed",
+    "value": "$50 add-on for 15,000 extra chips",
+    "excerpt": "a $50 add-on at the first break gives you an extra 15,000 chips"
+   },
+   "fee": {
+    "status": "unverified",
+    "value": null,
+    "excerpt": "the page prints the $100 buy-in but not the house-fee split"
+   },
+   "spend_advantage": true
+  }
+ }
+}
