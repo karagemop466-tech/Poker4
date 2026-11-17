@@ -1005,6 +1005,28 @@
    "sources": [
     "https://github.com/karagemop466-tech/Poker4/actions/workflows/url-check.yml"
    ]
+  },
+  {
+   "id": "F15",
+   "severity": "blocking-for-single-entry-claim",
+   "item": "13 multi-flight structure sheets state that a player who bags for Day 2 'may not play a subsequent flight' — the sheet contemplates play in more than one starting flight",
+   "detail": "Read line by line on 2026-11-17 (session 75757cc1). Sheets #2, #3, #4, #9, #10, #12, #13, #14, #20, #21, #35, #36, #37 (Events 1, 7, 19, 26, 47, 49, 56, 59) contain the sentence 'Any player who bags chips for Day 2 may not play a subsequent flight.' The rule restricts only players who bagged; it does not state an entry count. It therefore neither confirms single entry nor confirms re-entry, and these rows stay 'single-entry unverified'. Full verbatim log: data/75757cc1/structure_reads.tsv.",
+   "sources": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf"
+   ]
+  },
+  {
+   "id": "F16",
+   "severity": "data-quality-corrected",
+   "item": "Schedule feed had 6 defects against the official calendar; corrected 2026-11-17 and proven by a checker",
+   "detail": "data/schedule-snapshot.json (the feed that builds the root tournaments table) (a) printed the Event 39 Day 2 restart on 11 Dec at 7:00 PM, the official time is 10:00 AM; (b) omitted the Event 47 Day 2 restart at 1:00 PM on 13 Dec; (c) left the $500,000 guarantee blank for Event 56 at 10:10 AM and 6:10 PM on 17 Dec; (d) left the $150,000 guarantee blank for Event 59 at 11:10 AM on 20 Dec; (e) recorded level duration 11 min for Event 56 (6:10 PM, sheet #36 says 30) and 5 min for Event 59 (11:10 AM, sheet #4 says 40). Now 94/94 rows match the official page (data/75757cc1/check_calendar.py, exit 0). Corrections are traceable in parse_notes.",
+   "sources": [
+    "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_36.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf"
+   ]
   }
  ],
  "trip_example": {
