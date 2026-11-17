@@ -157,3 +157,24 @@ Scope note: the session brief asks for `session-<id>/<task>` branches. The Arena
 - Integration: root navigation links the preserved `c07371e3` site; root Flagged for Review links its flagged log with an independent-source-set caveat.
 - Validation: `python3 build/build_site.py`; `python3 scripts/build.py`; `python3 scripts/verify.py` (10 pages, 17 sources, 29 flags; all row sources/internal links verified); `git diff --check`. Data audit confirms 19 and 64 candidate rows are labeled unverified.
 - PR #4 merged to `main` as merge commit `fb62f758526b2bbfc13ad50b238faa88cf5094ec` at 2026-11-16 19:15:25 UTC. The "Deploy static dashboard to GitHub Pages" run `43937426421` and "pages build and deployment" run `43937425213` both completed successfully. GitHub Pages API reports status `built`, public URL `https://karagemop466-tech.github.io/Poker4/`, source `main:/`. Direct browser fetch of the live page was not available from this environment; workflow and Pages API statuses were verified.
+
+---
+
+## Session arena/0f6c627b-poker4 (session `0f6c627b`) — current integration session
+
+- Session ID: `0f6c627b`. Branch: `arena/0f6c627b-poker4` (Arena-fixed branch name; all tasks committed in order on this one branch). Base: `main` @ `be3594d`.
+- Role: final integration session for the 2026-11-17 requirement set (structure-sheet verification, structured rule fields, last-checked dates, dated rate log, venue pages, search/date/entry-rule/walk filters, trip calculator, overlap flags, scheduled source re-check + daily scrape tooling). Claims T-A…T-J below; no other session has claimed them.
+
+| ID | Task | Status | Owner | File scope | Sources / verification | Irregularities |
+|----|------|--------|-------|------------|------------------------|----------------|
+| T-A | Read every Venetian DSE IV structure sheet (37), Wynn daily/WPT structures, Bellagio Fri/Sat/Sun sheets, Caesars flyer; extract entry-rule fields with excerpts; remove "unverified" only where an official sheet confirms a rule | in progress | 0f6c627b | `data/v2/structure_rules.json`, `data/v2/events.json` | official structure PDFs (URLs in `data/v2/sources.json`) | — |
+| T-B | Structured rule fields (single-entry / re-entry / add-on / fees) per event with source excerpt + retrieval date; `last_checked` per row | in progress | 0f6c627b | `data/v2/events.json` | same as T-A | — |
+| T-C | Hotel true-cost capture: dated rate log (checkout total, nightly average, resort fee + tax, parking, cancellation deadline, rate timestamp), official booking links per date, 13.38% tax rule | in progress | 0f6c627b | `data/v2/hotels.json`, `data/v2/rate_log.json` | official hotel terms/fee/rate pages | — |
+| T-D | Walking-route pairs (hotel × venue) with Google/Apple Maps walking links, ≤30-min filter | in progress | 0f6c627b | `data/v2/walking.json` | Google/Apple Maps walking directions (links), official addresses | — |
+| T-E | Site build: root dashboard rebuilt with search box, date filter, single-entry toggle, walk filter, trip-cost calculator, overlap flags (primary + conditional fallback per day), ranked table (pool ÷ fee ratio, bounty/flight separate), one page per venue, rate log page | in progress | 0f6c627b | `index.html`, `tournaments.html`, `schedule.html`, `hotels.html`, `trip-calculator.html`, `venues/*`, `rate-log.html`, `questions.html`, `suggestions.html`, `flagged.html`, `sources.html`, `style.css`, `assets/site.js`, `tools/build_root_site.py` | generated from `data/v2/*`; every row links its official source | — |
+| T-F | Change monitoring: `tools/recheck.py` + `tools/daily_schedule.py` + scheduled GitHub Action (daily) that re-checks each official URL, marks rows whose source changed, refreshes `last_checked` | in progress | 0f6c627b | `tools/recheck.py`, `tools/daily_schedule.py`, `.github/workflows/recheck.yml`, `data/v2/monitor/` | runs on GitHub Actions against the same official URLs | — |
+| T-G | Trip-planning workflow pages: executive summary, day plan (8 AM–all day), questions/answers with missing info, suggestions for user decision | in progress | 0f6c627b | `index.html`, `schedule.html`, `questions.html`, `suggestions.html` | see row sources | — |
+| T-H | Verification pass: every table row → official source link; unverifiable values blank + flagged; internal link check; arithmetic check | in progress | 0f6c627b | `tools/verify_root_site.py` | script-checked, then manual spot review | — |
+| T-J | Integration: PR → main, merge, Pages deploy confirm, record here | in progress | 0f6c627b | this section | — | — |
+
+- Scope note: prior sessions' subsites (`60fb62da/`, `c07371e3/`, `df41f5c6/`, `verified/`, `strip/`, `pages/`, `data/c07371e3/`, `data/df41f5c6/`, `build/`, `scripts/`) are preserved and linked from the root dashboard; this session does not modify their files. Root integration pages listed in T-E are the shared output this session owns as final integration.
