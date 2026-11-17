@@ -127,80 +127,115 @@ def html_to_text(raw: bytes) -> str:
 
 
 def pdf_to_text(raw: bytes, workdir: str) -> tuple[str | None, str]:
-    """pdftotext -layout when available, else pypdf; else give up (recorded)."""
+    """pdftotext -layout when available; otherwise pypdf; otherwise give up (recorded)."""
+    notes = []
     exe = shutil.which("pdftotext")
     if exe:
         path = os.path.join(workdir, "sheet.pdf")
         with open(path, "wb") as fh:
             fh.write(raw)
         try:
-            out = subprocess.run(
-                [exe, "-layout", "-enc", "UTF-8", path, "-"],
-                capture_output=True, timeout=120, check=False,
-            )
+            out = subprocess.run([exe, "-layout", "-enc", "UTF-8", path, "-"],
+                                 capture_output=True, timeout=120, check=False)
             if out.returncode == 0 and out.stdout.strip():
                 return out.stdout.decode("utf-8", "replace"), "pdftotext"
+            notes.append(f"pdftotext rc={out.returncode}")
         except Exception as exc:  # noqa: BLE001
-            err = f"pdftotext failed: {exc}"
-        try:  # second choice
-            from pypdf import PdfReader  # provided by the workflow's pip step
+            notes.append(f"pdftotext error: {exc}")
+    else:
+        notes.append("pdftotext not installed")
+    try:
+        import io
 
-            import io
+        from pypdf import PdfReader
 
-            reader = PdfReader(io.BytesIO(raw))
-            txt = "\n".join((page.extract_text() or "") for page in reader.pages)
-            if txt.strip():
-                return txt, "pypdf"
-        except Exception as exc:  # noqa: BLE001
-            err += f"; pypdf failed: {exc}"
-        return None, err
-    return None, "pdftotext not installed and pypdf unavailable"
+        reader = PdfReader(io.BytesIO(raw))
+        txt = "\n".join((page.extract_text() or "") for page in reader.pages)
+        if txt.strip():
+            return txt, "pypdf"
+        notes.append("pypdf returned no text")
+    except Exception as exc:  # noqa: BLE001
+        notes.append(f"pypdf error: {exc}")
+    return None, "; ".join(notes)
 
 
 # --------------------------------------------------------------------- schedule
-DATE_HEAD_RE = re.compile(r"(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday),\s*([A-Z][a-z]+)\s+(\d{1,2}),\s*(\d{4})")
-EVENT_ROW_RE = re.compile(
-    r"(?P<time>\d{1,2}:\d{2}\s*(?:AM|PM))\s*\|\s*Event\s*#?(?P<no>\d+)\s*\|\s*(?P<name>.*?)(?:\|\s*(?P<rest>.*))?$",
-    re.I,
-)
-BUYIN_RE = re.compile(r"\$\s?([\d,]+)(?!\s*(?:K|Mill| Million))", re.I)
 GTD_RE = re.compile(r"\$\s?([\d,.]+)\s*(K|Mill| Million|MM)?\s*(?:USD)?\s*GTD", re.I)
+BUYIN_RE = re.compile(r"\$\s?([\d,]+)(?!\s*(?:K|Mill| Million|MM))", re.I)
+DATE_RE = re.compile(
+    r"(?:(?P<wd>Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)[,\s]+)?\s*"
+    r"(?P<mon>January|February|March|April|May|June|July|August|September|October|November|December)"
+    r"\s+(?P<day>\d{1,2})(?:st|nd|rd|th)?(?:,\s*(?P<year>\d{4}))?", re.I)
+TIME_RE = re.compile(r"^(?P<t>\d{1,2}:\d{2}\s*(?:AM|PM))$", re.I)
+MONTH_ABBR = {m.lower(): i for i, m in enumerate(
+    ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"], start=1)}
 
 
 def parse_schedule(text: str, source_url: str) -> list[dict]:
-    """One row per printed schedule line, values copied only when printed."""
+    """One row per printed schedule line. Values are copied only when printed.
+
+    The official pages print a table: Date | Time | Event # | Event Name | Structures | Results.
+    Rows that continue a multi-flight event leave the date cell blank, so the last
+    seen date carries forward.
+    """
     rows: list[dict] = []
-    cur_date = None
-    cur_weekday = None
+    cur: dict[str, str | None] = {"date": None, "weekday": None}
     for line in text.split("\n"):
-        head = DATE_HEAD_RE.search(line)
-        if head:
-            mon, day, year = head.group(2), int(head.group(3)), int(head.group(4))
-            try:
-                cur_date = dt.datetime.strptime(f"{mon} {day} {year}", "%b %d %Y").date().isoformat()
-            except ValueError:
-                cur_date = None
-            cur_weekday = head.group(1)
+        cells = [c.strip() for c in line.split("|")]
+        cells = [c for c in cells if c != ""]
+        if not cells:
             continue
-        m = EVENT_ROW_RE.search(line)
-        if not m:
+        joined = " ".join(cells)
+        if "Event Name" in joined and "Structures" in joined:
+            continue  # header row
+        date_hit = None
+        for c in cells:
+            m = DATE_RE.search(c)
+            if m and m.group("mon"):
+                mon = MONTH_ABBR.get(m.group("mon").lower()[:3])
+                day = int(m.group("day"))
+                year = int(m.group("year")) if m.group("year") else None
+                if mon and day and year:
+                    try:
+                        date_hit = {
+                            "date": dt.date(year, mon, day).isoformat(),
+                            "weekday": (m.group("wd") or
+                                       dt.date(year, mon, day).strftime("%A")),
+                        }
+                    except ValueError:
+                        date_hit = None
+                    break
+        if date_hit:
+            cur = date_hit
+        time_cell = next((TIME_RE.match(c).group("t").upper()
+                          for c in cells if TIME_RE.match(c)), None)
+        event_no = None
+        for c in cells:
+            m = re.fullmatch(r"(?:Event\s*)?#?(\d{1,3})", c, re.I)
+            if m:
+                event_no = int(m.group(1))
+                break
+        name = None
+        for c in cells:
+            if len(c) > 12 and "$" in c and not re.fullmatch(r"View|Results|\d.*", c):
+                name = c
+                break
+        if not (time_cell and event_no is not None and name):
             continue
-        name = m.group("name").strip(" |")
-        tail = (m.group("rest") or "").strip()
-        gu = GTD_RE.search(name + " " + tail)
+        gu = GTD_RE.search(name)
         buy = BUYIN_RE.search(name)
-        rows.append({
-            "date": cur_date,
-            "weekday": cur_weekday,
-            "time": re.sub(r"\s+", " ", m.group("time")).upper(),
-            "event_no": int(m.group("no")),
+        row = {
+            "date": cur["date"],
+            "weekday": cur["weekday"],
+            "time": re.sub(r"\s+", " ", time_cell),
+            "event_no": event_no,
             "event_name": name,
             "buy_in_usd": int(buy.group(1).replace(",", "")) if buy else None,
             "guarantee_usd": None,
-            "guarantee_text": (gu.group(0).strip() if gu else None),
+            "guarantee_text": gu.group(0).strip() if gu else None,
             "source": source_url,
             "retrieved": today_utc(),
-        })
+        }
         if gu:
             val = float(gu.group(1).replace(",", ""))
             mult = (gu.group(2) or "").strip().lower()
@@ -208,7 +243,8 @@ def parse_schedule(text: str, source_url: str) -> list[dict]:
                 val *= 1000
             elif mult:
                 val *= 1_000_000
-            rows[-1]["guarantee_usd"] = int(val)
+            row["guarantee_usd"] = int(val)
+        rows.append(row)
     return rows
 
 
