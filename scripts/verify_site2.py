@@ -47,19 +47,30 @@ for page in pages:
             if strict:
                 fail(f"{page}: broken internal reference {href}")
             print(f"WARN (other-session page) {page}: broken reference {href}")
-    if strict and ("assets/data.js" not in html or "assets/app.js" not in html):
-        fail(f"{page}: missing script includes")
+    if strict:
+        legacy_bundle = "assets/data.js" in html and "assets/app.js" in html
+        current_bundle = "assets/dashboard.js" in html and "assets/dashboard.css" in html
+        shared_root_bundle = ("site.js" in html and "site.css" in html) or ("app.js" in html and "site.css" in html)
+        if not (legacy_bundle or current_bundle or shared_root_bundle):
+            fail(f"{page}: missing recognized site bundle (legacy, shared-root, or current dashboard assets)")
 
-# 4. app.js ids referenced by pages exist in app.js expectations (spot check key ids)
-app = open(os.path.join(ROOT, "assets", "app.js")).read()
-for page, ids in {"tournaments.html": ["f-venue", "f-confirmed", "t-main", "t-multi", "t-rank"],
-                  "schedule.html": ["s-date", "s-plan", "t-day"],
-                  "hotels.html": ["t-hotels", "f-walk"],
-                  "trip.html": ["trip-out", "trip-hotel", "trip-nights"],
-                  "flagged.html": ["t-flagged"],
-                  "sources.html": ["t-sources"]}.items():
-    html = open(os.path.join(ROOT, page)).read()
-    for i in ids:
-        if f'id="{i}"' not in html: fail(f"{page}: missing element id {i}")
+# 4. Current canonical root pages use data-* hooks rather than the retired
+# f-venue/t-main IDs. Verify those hooks and calculator IDs structurally.
+required = {
+    "tournaments.html": ["data-search", "data-datefilter", "data-freezeout"],
+    "schedule.html": ["data-search", "data-datefilter", "data-day"],
+    "hotels.html": ["data-search", "data-walkfilter"],
+    "calculator.html": ["c-entries", "c-buyin", "c-nights", "c-out"],
+    "flagged.html": ["data-search"],
+    "sources.html": ["data-search"],
+}
+for page, hooks in required.items():
+    html = open(os.path.join(ROOT, page), encoding="utf-8").read()
+    for hook in hooks:
+        if hook.startswith("data-"):
+            present = hook in html
+        else:
+            present = f'id="{hook}"' in html
+        if not present: fail(f"{page}: missing current dashboard hook {hook}")
 
 print(f"VERIFY OK: {len(payload['events'])} events, {len(payload['hotels'])} hotels, {len(payload['sources'])} sources, {len(pages)} pages.")

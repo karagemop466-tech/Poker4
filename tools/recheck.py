@@ -75,15 +75,27 @@ def main():
 
     # mark rows whose source changed: each event referencing a changed source key
     # gets that key in review_flags; the site renders a "source changed" badge.
-    if changed:
-        changed_urls = {c["url"] for c in changed}
-        ev_path = D / "site-events.json"
+    # Current-run change flags are refreshed on every pass: once a later source
+    # fetch matches the new baseline, the stale "changed" badge is removed.
+    changed_urls = {c["url"] for c in changed}
+    monitored_urls = {s["url"] for s in sources.values() if isinstance(s, dict) and s.get("url")}
+    ev_path = D / "site-events.json"
+    if ev_path.exists():
         ev = json.loads(ev_path.read_text(encoding="utf-8"))
+        monitored_keys = set(sources)
+        changed_keys = {c["key"] for c in changed}
         for e in ev["events"]:
             hit = sorted(changed_urls.intersection(e.get("sources", [])))
+            old = set(e.get("review_flags", []))
+            monitor_flags = old & monitored_urls
+            foreign = old - monitored_urls
             if hit:
-                flags = sorted(set(e.get("review_flags", [])).union(hit))
-                e["review_flags"] = flags
+                e["review_flags"] = sorted(foreign.union(hit))
+            elif monitor_flags:
+                if foreign:
+                    e["review_flags"] = sorted(foreign)
+                else:
+                    e.pop("review_flags", None)
         ev_path.write_text(json.dumps(ev, indent=2), encoding="utf-8")
     # dated append-only log for post-hoc review
     with (MON / "runs.log").open("a", encoding="utf-8") as f:

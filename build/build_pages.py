@@ -14,8 +14,20 @@ HOTELS = load("hotels.json")
 SOURCES = load("sources.json")
 PLAN = load("plan.json")
 FLAGS = load("flags.json")
+try:
+    MONITORING = load("monitoring.json")
+except FileNotFoundError:
+    MONITORING = {"checks": []}
+CHANGED_URLS = {c.get("url") for c in MONITORING.get("checks", [])
+                if str(c.get("changed", "")).lower().startswith("yes") or
+                   str(c.get("status", "")).lower().startswith("changed")}
 EVENTS = DATA["events"]
 TODAY = DATA["meta"]["built"]
+VEN_SCHED = "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
+WPT_SCHED = "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+WPT_STRUCTS = "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+VEN_POKER_RATES = "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html"
+VEN_BOOK = HOTELS["hotels"][0]["booking_url"]
 
 NAV = [("index.html","Overview"),("tournaments.html","Tournaments"),("schedule.html","Daily plan"),
        ("hotels.html","Hotels"),("calculator.html","Trip calculator"),("venues/venetian.html","Venetian"),
@@ -76,8 +88,16 @@ def src_cell(e):
 
 def event_row(e, with_date=True):
     r = []
-    if with_date: r.append(esc(e["date"]))
-    r += [esc(e["time"]), esc(e["venue"]), esc(e["name"]),
+    if with_date:
+        date_cell = esc(e["date"])
+        conflict = next((f for f in e.get("flags", []) if f.startswith("official schedule date/weekday conflict:")), None)
+        if conflict:
+            date_cell += ' <span class="badge warn" title="%s">date/weekday conflict</span>' % esc(conflict)
+        r.append(date_cell)
+    event_name = esc(e["name"])
+    if CHANGED_URLS.intersection(e.get("source_urls", [])):
+        event_name += ' <span class="badge warn" title="An official source changed since the previous scheduled check; review this row.">SOURCE CHANGED</span>'
+    r += [esc(e["time"]), esc(e["venue"]), event_name,
           money(e["buy_in"]) or "—", money(e["guarantee"]) or "—",
           ratio_cell(e), rule_cell(e), esc(e["late_reg"]) or "—", esc(e["last_checked"]), src_cell(e)]
     return r
@@ -116,14 +136,10 @@ def build_index():
         'Every Venetian structure sheet (37) and every Wynn daily/WPT terms page was read from official PDFs on %s. '
         '<b>Not a single event is confirmed single-entry/freezeout</b>: Venetian sheets never state an entry-count rule (one sheet even references &ldquo;subsequent buy in&rsquo;s&rdquo;), and every Wynn daily explicitly allows re-entry (the Friday event adds unlimited rebuys and an add-on). '
         'Those spend-advantage events are kept in their own sections.</p>' % TODAY)
-    body.append('<p><b>Best verified value plays</b> (ratio = guaranteed pool ÷ total entry fee, descriptive arithmetic only, never a forecast): '
-        'Wynn Super Gold Million Mystery Bounty $400 / $3,000,000 (7,500&times;, but it is a mystery-bounty flight event), '
-        'Venetian $2,200 PokerAtlas Championship $1,000,000 (454.5&times;), Venetian $800 NLH $500,000 (625&times; across six flights), '
-        'WPT Prime $1,100 / $5,000,000 (4,545.5&times;, flights), Wynn $800 NLH $1,000,000 (1,250&times;, flights). '
-        'Single-flight, non-bounty candidates with clean guarantees include Venetian $600 NLH $40K (#28, 66.7&times;), $600 Seniors $40K (66.7&times;), $800 LIPS Ladies $40K (50&times;).</p>')
+    body.append('<p><b>Single-entry recommendation status:</b> no event can yet be recommended or ranked as a confirmed single-entry tournament. The tournament tables retain confirmed entry/guarantee arithmetic as descriptive reference only, while entry-policy-unknown, re-entry, flight, bounty and satellite events remain separated and labeled. Obtain written maximum-entry / no-rebuy / no-add-on terms before ranking candidates.</p>')
     body.append('<p><b>Hotels</b>: The Venetian is the only property with a fully verified cost picture ($55 + tax resort fee, 13.38% Clark County tax, $20/day self-parking, cancellation terms, conditional poker rates from $119/$209 with a play requirement). '
-        'Verified walks to the Venetian poker room: TI 6 min, Harrah&rsquo;s 6 min, Caesars 12 min, Wynn 13 min, Horseshoe 16 min, Bellagio 21 min — all ≤30 min; ARIA is 31 min and fails the limit. '
-        'True cost/night = (rate + resort fee) × 1.1338 — the <a href="calculator.html">trip calculator</a> does the math per stay and shows checkout totals and nightly averages.</p>')
+        'Verified walks: Venetian-bound cross-property routes are ≤30 min except ARIA (31 min); Wynn-bound routes are ≤30 min except Bellagio (32 min) and ARIA (42 min). Wynn internal hotel-to-poker-room time remains unmeasured. '
+        'The <a href="calculator.html">trip calculator</a> uses only user-provided rates and dates, plus verified fees; no stay quote or occupancy is assumed.</p>')
     body.append('<p><b>Daily plan</b>: the <a href="schedule.html">Daily plan</a> gives each day a primary event and a conditional fallback using verified start times, verified late-registration cutoffs and labeled duration estimates; overlapping pairs are flagged rather than sequenced impossibly. '
         'Note: no official schedule shows an 8:00 AM start in this window; the earliest verified starts are 9:10–10:10 AM.</p>')
     body.append('<h2>How to use this site</h2><ul>'
@@ -138,10 +154,8 @@ def build_index():
 # ------------------------------------------------------------- tournaments
 def build_tournaments():
     body = [filterbar()]
-    body.append('<p class="note">Ranked only after the total entry fee and guarantee are both confirmed on an official source. '
-        'Pool ÷ entry is a descriptive ratio — arithmetic only, not a forecast. Bounty, flight, satellite and re-entry/rebuy events are labeled and listed separately. '
-        'Within a flight, no Venetian sheet states an entry-count rule, so those rows stay <span class="badge unverified">unverified</span> until a source confirms them.</p>')
-    secs = [("main","Section A — Ranked main events (non-bounty, confirmed buy-in &amp; guarantee)"),
+    body.append('<p class="note">No event currently qualifies for a single-entry recommendation: not one audited structure sheet confirms a maximum of one entry / freezeout. Confirmed buy-in and guarantee values are shown as reference only; no event is ranked as a single-entry pick until its entry policy is verified. Pool ÷ entry is a descriptive ratio — arithmetic only, not a forecast. Bounty, flight, satellite and re-entry/rebuy events are labeled and listed separately.</p>')
+    secs = [("main","Section A — Buy-in &amp; guarantee confirmed; entry policy unverified (not ranked as single-entry)"),
             ("flight","Section B — Flights &amp; multi-day events (shared guarantee, labeled separately)"),
             ("bounty","Section C — Bounty / PKO / mystery-bounty (guarantee often includes bounties)"),
             ("satellite","Section D — Satellites (prizes are seats/tickets)"),
@@ -165,11 +179,11 @@ def build_schedule():
         'Overlap flags use verified start times and late-registration cutoffs plus <b>plausible-duration estimates</b> (labeled; no official source publishes finish times).</p>')
     for dt, p in PLAN["plan"].items():
         ov = "".join("<li>%s</li>" % esc(o) for o in p["overlaps"]) or "<li class='muted'>none detected</li>"
-        body.append('<div class="daycard"><h3>%s %s</h3>'
+        body.append('<div class="daycard" data-day="%s"><h3>%s %s</h3>'
             '<p><b>Primary:</b> %s (%s) %s</p>'
             '<p><b>Fallback:</b> %s (%s)<br><span class="muted">%s</span></p>'
             '<details><summary>Overlap flags (%d)</summary><ul>%s</ul></details></div>'
-            % (esc(p["date"]), esc(p["weekday"]), esc(p["primary_name"]), esc(p["primary_time"]),
+            % (esc(p["date"]), esc(p["date"]), esc(p["weekday"]), esc(p["primary_name"]), esc(p["primary_time"]),
                link(DATA_SRC(p["primary"]), "source") if p["primary"] else "",
                esc(p["fallback_name"]), esc(p["fallback_time"]), esc(p["fallback_condition"] or "—"),
                len(p["overlaps"]), ov))
@@ -194,7 +208,7 @@ def build_hotels():
         ts = latest["retrieved"] if latest else "—"
         rows.append([esc(h["name"]), esc(h["quality"]), fee + " " + link(h["resort_fee_src"], "src"),
                      rate, "13.38%", esc(h["parking"])[:60] + ("…" if len(h["parking"])>60 else "") + (" " + link(h["parking_src"], "src") if h["parking_src"] else ""),
-                     esc(ts), link(h["booking_url"], "book (official)")])
+                     esc(ts), link(h["booking_url"].split("?")[0] if "{in}" in h["booking_url"] else h["booking_url"], "book (official)")])
     body.append('<h2>Hotel cost fields</h2>')
     body.append(table(["Property","Quality","Resort fee","Latest rate (dated log)","Room tax","Parking","Rate timestamp","Booking"], rows))
     body.append('<h2>Dated rate log (all entries)</h2>')
@@ -212,11 +226,13 @@ def build_hotels():
     body.append('<p class="note">No official dated quotes were captured this session, so checkout totals stay blank (flagged). '
         'The table below is the like-for-like capture template the scheduled re-check fills in: checkout total, nightly average, mandatory resort fee + tax, parking, cancellation deadline and rate timestamp for the same stay. '
         'Use the per-date official booking links to pull a quote for exact dates and occupancy, then the calculator applies the verified fee and tax.</p>')
-    body.append(table(["Property","Stay dates","Occupancy","Checkout total","Nightly average","Mandatory fee + tax","Parking","Cancellation deadline","Rate timestamp"],
-        [[esc(h["name"]), '<span class="badge unverified">not captured</span>', "2 guests",
-          '<span class="badge unverified">—</span>', '<span class="badge unverified">—</span>',
+    body.append(table(["Property","Stay dates","Occupancy","Checkout total","Nightly average","Mandatory fee + tax","Parking","Cancellation deadline","Rate timestamp","Official booking"],
+        [[esc(h["name"]), '<span class="badge unverified">not captured</span>',
+          '<span class="badge unverified">occupancy not provided</span>',
+          '<span class="badge unverified">not captured</span>', '<span class="badge unverified">not captured</span>',
           (money(h["resort_fee"]) + " + 13.38% tax / night") if h["resort_fee"] else "unverified",
-          esc(h["parking"] or "—")[:40], esc(h["cancellation"] or "—")[:40], "—"] for h in HOTELS["hotels"]]))
+          esc(h["parking"] or "—")[:40], '<span class="badge unverified">not captured for a dated booking</span>', "—",
+          link(h["booking_url"].split("?")[0] if "{in}" in h["booking_url"] else h["booking_url"], "official booking")] for h in HOTELS["hotels"]]))
     body.append('<h2>Walking routes (official addresses, Google Maps)</h2>')
     wrows = []
     for w in HOTELS["walks"]:
@@ -230,8 +246,9 @@ def build_hotels():
     body.append(table(["Hotel","Venue","Walk time","Distance","Route note","Map / source","Checked"],
                       wrows, 'data-walktable'))
     body.append('<h2>Official booking links per date</h2><p class="note">Pick dates to generate the official booking URL (the booking engine accepts arrival/departure in the link). Rates displayed there are live quotes; record them in the dated log before comparing.</p>'
-        '<div class="filters"><label>Check-in <input type="date" id="bk-in" value="2026-11-27"></label>'
-        '<label>Check-out <input type="date" id="bk-out" value="2026-12-01"></label><div id="bk-links"></div></div>')
+        '<div class="filters"><label>Check-in <input type="date" id="bk-in"></label>'
+        '<label>Check-out <input type="date" id="bk-out"></label>'
+        '<label>Adults <input type="number" id="bk-adults" min="1" step="1" placeholder="Enter occupancy"></label><div id="bk-links"></div></div>')
     bk = json.dumps([dict(name=h["name"], url=h["booking_url"]) for h in HOTELS["hotels"] if "{in}" in h["booking_url"]])
     body.append('<script>window.addEventListener("DOMContentLoaded",function(){poker4InitBooking(%s);});</script>' % bk)
     page("hotels.html", "Hotels &amp; true cost", "".join(body))
@@ -240,20 +257,20 @@ def build_hotels():
 def build_calculator():
     opts = []
     for h in HOTELS["hotels"]:
-        fee = h["resort_fee"] or 0
-        rate = h["rate_log"][0]["rate"] if h["rate_log"] else ""
-        opts.append('<option value="%s" data-fee="%s" data-rate="%s">%s</option>' % (esc(h["name"]), fee, rate, esc(h["name"])))
+        fee = h["resort_fee"] or ""
+        opts.append('<option value="%s" data-fee="%s">%s</option>' % (esc(h["name"]), fee, esc(h["name"])))
     body = ['<p class="note">Estimated trip cost = <b>entries × buy-ins + nights × true hotel cost</b>, where true hotel cost/night = (nightly rate + mandatory resort fee) × 1.1338 tax. '
-        'Parking is shown as a separate optional line. Defaults come from the verified dated log where one exists; every input is editable. Numbers you type are not saved or sent anywhere.</p>']
+        'Trip dates, exact occupancy and a date-specific booking quote have not been supplied or captured, so cost inputs start blank rather than using a conditional rate as a quote. '
+        'Parking is shown as a separate optional line. Numbers you type are not saved or sent anywhere.</p>']
     body.append('<div class="calc"><div class="calcgrid">'
-        '<label>Entries (total across tournaments) <input type="number" id="c-entries" value="7" min="0"></label>'
-        '<label>Buy-in per entry ($) <input type="number" id="c-buyin" value="600" min="0" step="1"></label>'
-        '<label>Nights <input type="number" id="c-nights" value="5" min="0"></label>'
-        '<label>Hotel <select id="c-hotel">%s</select></label>'
-        '<label>Nightly rate ($, before fee &amp; tax) <input type="number" id="c-rate" value="209" min="0" step="1"></label>'
-        '<label>Resort fee ($/night) <input type="number" id="c-fee" value="55" min="0" step="1"></label>'
+        '<label>Entries (total across tournaments) <input type="number" id="c-entries" min="0" placeholder="Enter count"></label>'
+        '<label>Buy-in per entry ($) <input type="number" id="c-buyin" min="0" step="1" placeholder="Enter amount"></label>'
+        '<label>Nights <input type="number" id="c-nights" min="0" placeholder="Enter nights"></label>'
+        '<label>Hotel <select id="c-hotel"><option value="">Choose a hotel</option>%s</select></label>'
+        '<label>Nightly rate ($, before fee &amp; tax) <input type="number" id="c-rate" min="0" step="1" placeholder="Use dated quote"></label>'
+        '<label>Resort fee ($/night) <input type="number" id="c-fee" min="0" step="1" placeholder="Select verified hotel"></label>'
         '<label>Room tax (%%) <input type="number" id="c-tax" value="13.38" min="0" step="0.01"></label>'
-        '<label>Parking ($/night, optional) <input type="number" id="c-park" value="20" min="0" step="1"></label>'
+        '<label>Parking ($/night, optional) <input type="number" id="c-park" min="0" step="1" placeholder="Optional"></label>'
         '</div><div class="calcout" id="c-out"></div></div>' % "".join(opts))
     body.append('<h2>What the output means</h2><ul>'
         '<li><b>Entries × buy-ins</b> — total tournament cost at one entry per event (rebuys/add-ons would change this; those events are in separate sections).</li>'
@@ -289,9 +306,13 @@ def build_monitoring():
         mon = dict(meta=dict(built=TODAY), checks=[])
     body = ['<p class="note">Each official URL is re-checked automatically on a schedule (GitHub Actions, daily) and every morning the scraper pulls each listed poker room&rsquo;s official daily schedule. '
         'Rows whose source content changed since the last check are marked <span class="badge warn">CHANGED</span> here and on the Flagged page.</p>']
-    rows = [[esc(s["label"]), link(s["url"]), esc(s.get("status", "baseline captured — first scheduled run pending")),
-             esc(s.get("last_checked", TODAY)), esc(s.get("changed", "—"))] for s in SOURCES["sources"][:25]]
-    body.append('<h2>Source re-check status (first 25 of %d)</h2>' % len(SOURCES["sources"]))
+    checks_by_url = {c.get("url"): c for c in MONITORING.get("checks", [])}
+    rows = [[esc(s["label"]), link(s["url"]),
+             esc(checks_by_url.get(s["url"], {}).get("status", s.get("status", "baseline captured — first scheduled run pending"))),
+             esc(checks_by_url.get(s["url"], {}).get("last_checked", s.get("last_checked", TODAY))),
+             esc(checks_by_url.get(s["url"], {}).get("changed", "—"))] for s in SOURCES["sources"]]
+    body.append('<h2>Source re-check status (%d official URLs)</h2>' % len(SOURCES["sources"]))
+    body.append(filterbar(dates=False, freezeout=False, placeholder="Search monitored sources…"))
     body.append(table(["Source","URL","Status","Last checked","Changed"], rows))
     body.append('<h2>Morning daily-schedule feed</h2><p>Target feeds: Venetian DSE IV schedule page, Wynn daily poster/structures, Bellagio poker page. '
         'Snapshots land in <code>data/integrated/monitoring/</code> with timestamps; the report above is regenerated from them. '
@@ -300,48 +321,55 @@ def build_monitoring():
 
 # ---------------------------------------------------------------- questions
 QUESTIONS = [
- ("Q1","Trip dates and budget","Are the trip dates fixed to any subset of Nov 16 – Dec 23, 2026, and is there a nightly budget ceiling?","Needed before any hotel is chosen. Blocks: booking.","open"),
- ("Q2","Single-entry policy hard requirement","Must every played event be confirmed single-entry/freezeout, or is 'entry rule unverified' acceptable for candidates?","Current verified data contains ZERO confirmed freezeouts — a hard policy would leave nothing to play until rooms confirm rules in writing.","open — decisive"),
- ("Q3","Venetian entry rules in writing","Can the Venetian poker room provide written maximum-entry / no-rebuy / no-add-on rules for the specific events of interest (email lv_cas_poker@venetianlasvegas.com or call 700.414.7657)?","This is the single missing fact that flips rows from unverified to confirmed or disqualified.","open"),
- ("Q4","Bounty tolerance","Are bounty/mystery-bounty events acceptable (their guarantees include bounty pools, so pool÷entry is not comparable)?","Determines whether the Super Gold Million ($400/$3M) and Venetian bounty dailies are candidates.","open"),
- ("Q5","Occupancy","How many guests per room?","Rates captured assume single/double occupancy; extra guests add $50+/night at the Venetian (verified).","open"),
- ("Q6","Hotel dated quotes","What do the official booking engines show for the exact dates/occupancy?","No dated quotes were machine-capturable; per-date official links are generated on the Hotels page. Needed for like-for-like totals.","open"),
- ("Q7","Walk-time completion","Should the remaining hotel→Wynn walk pairs be measured now, or is the scheduled re-check acceptable?","Venetian-venue pairs are complete (7 measured + on-site); Wynn pairs partially measured.","open"),
- ("Q8","Poker-rate qualification","Will the player do 6 hrs cash play or a $300+ tournament buy-in per night to qualify for the Venetian $119/$209 poker rates?","Qualification terms are verified; failing them rebills the prevailing rate.","open"),
- ("Q9","Bust-out tolerance","If playing bounty/flight events, is re-entering (spending more) acceptable at all, even where allowed?","Sets whether re-entry-confirmed events are excluded entirely or just ranked separately.","open"),
- ("Q10","8 AM start","Is the 8 AM start a hard requirement?","No verified event in the window starts before 9:10 AM. A hard requirement conflicts with the official schedules as published.","open — conflict"),
- ("Q11","Bellagio buy-in conflict","Which is correct for the Bellagio Saturday NLH: $1,000 or $1,100?","Official sources conflict; row is labeled with the conflict. Bellagio poker desk can settle it.","open"),
- ("Q12","WPT schedule date labels","Do the 'Dec. 18 Wednesday' rows on the official WPT PDF actually mean Dec. 16?","Official PDF date/weekday labels conflict internally; rows are shown as printed and flagged. Wynn poker room (702) 770-7654 can settle it.","open"),
+ ("Q1","Trip dates and budget","Are the trip dates fixed to any subset of Nov 16 – Dec 23, 2026, and is there a nightly budget ceiling?","Needed before any hotel is chosen. Blocks: booking.","open", VEN_SCHED),
+ ("Q2","Single-entry policy hard requirement","Must every played event be confirmed single-entry/freezeout, or is 'entry rule unverified' acceptable for candidates?","No event is confirmed freezeout; a hard policy leaves no eligible event until rooms confirm rules in writing.","open — decisive", VEN_SCHED),
+ ("Q3","Venetian entry rules in writing","Can the Venetian poker room provide written maximum-entry / no-rebuy / no-add-on rules for events of interest?","This is the missing fact that flips rows from unverified to confirmed or disqualified.","open", VEN_SCHED),
+ ("Q4","Bounty tolerance","Are bounty/mystery-bounty events acceptable? Their guarantees may include bounty pools, so pool÷entry is not comparable.","Determines whether Super Gold Million and Venetian bounty events can be candidates.","open", WPT_SCHED),
+ ("Q5","Occupancy","How many guests per room?","Required for a like-for-like hotel quote; occupancy is not assumed.","open", VEN_BOOK.split("?")[0]),
+ ("Q6","Hotel dated quotes","What do the official booking engines show for the exact dates and occupancy?","No dated totals were captured; per-date official links are on Hotels. Required for checkout totals.","open", VEN_BOOK.split("?")[0]),
+ ("Q7","On-site Wynn walk","Should the internal hotel-to-poker-room walk within Wynn be timed, or should it remain blank until an official route is available?","All cross-property hotel→venue routes have now been checked; Bellagio and ARIA exceed 30 minutes to Wynn. The Wynn property page identifies the poker room but gives no verified internal walking time.","open", "https://www.wynnlasvegas.com/casino/poker"),
+ ("Q8","Poker-rate qualification","Will the player satisfy the play requirements for the Venetian $119/$209 poker rates?","The terms are conditional; failing them results in the prevailing rate.","open", VEN_POKER_RATES),
+ ("Q9","Bust-out tolerance","If playing bounty/flight events, is re-entering (spending more) acceptable where allowed?","Sets whether re-entry-confirmed events are excluded or only separated.","open", WPT_STRUCTS),
+ ("Q10","8 AM start","Is the 8 AM start a hard requirement?","No verified event in the window starts at 8 AM; the earliest Venetian start is 9:10 AM.","open — conflict", VEN_SCHED),
+ ("Q11","Bellagio buy-in conflict","Which is correct for the Bellagio Saturday NLH: $1,000 or $1,100?","Official sources conflict; do not use this row for ranking until resolved.","open", "https://bellagio.mgmresorts.com/en/casino/poker.html"),
+ ("Q12","WPT schedule date labels","How should Wynn resolve the official PDF rows labeled 'Dec. 18 Wednesday'?","The official PDF conflicts internally; rows are shown as printed and marked for review.","open", WPT_SCHED),
 ]
+
 def build_questions():
-    rows = [[esc(a), esc(b), esc(c), esc(d), '<span class="badge warn">%s</span>' % esc(e)] for a,b,c,d,e in QUESTIONS]
+    rows = [[esc(a), esc(b), esc(c), esc(d), '<span class="badge warn">%s</span>' % esc(e), link(source, "official source")]
+            for a,b,c,d,e,source in QUESTIONS]
     body = ['<p class="note">A clear list of questions, information and answers that must be addressed before decisions can reasonably be made — based on what we have and what we do not have. '
-        'Each row says what it blocks and how to discover the missing information (suggestions live on the Suggestions page).</p>']
-    body.append(table(["#","Topic","Question / needed information","Why it matters / how to discover it","Status"], rows))
+        'Each row says what it blocks and links the official source used to identify the missing information.</p>']
+    body.append(filterbar(dates=False, freezeout=False, placeholder="Search questions…"))
+    body.append(table(["#","Topic","Question / needed information","Why it matters / how to discover it","Status","Official source"], rows))
     page("questions.html", "Questions before decisions", "".join(body))
 
 # -------------------------------------------------------------- suggestions
 SUGGESTIONS = [
- ("S1","Ask the Venetian poker room for written entry rules per event (email template on Questions Q3)","Would convert the biggest unverified block into confirmed/disqualified rows","high","awaiting user choice — not implemented"),
- ("S2","Add a booking-engine snapshotter (Playwright) to capture dated hotel quotes nightly into the rate log","Fills the like-for-like checkout-total table automatically; cost: heavier CI","high","awaiting user choice — not implemented"),
- ("S3","Expand the morning daily-schedule feed to ARIA/Bellagio/Caesars/Harrah's/Horseshoe official pages","Wider daily coverage; some rooms publish only on PDFs or not at all","medium","awaiting user choice — not implemented"),
- ("S4","Add an email/SMS alert when the change monitor marks a source CHANGED","Faster reaction to schedule changes; requires a secret/token in the repo settings","medium","awaiting user choice — not implemented"),
- ("S5","Add per-event bankroll simulator (labeled clearly as toy math, not EV)","Decision support; risks being mistaken for a forecast","low","awaiting user choice — not implemented"),
- ("S6","Measure remaining hotel→Wynn walk pairs now instead of via the scheduled job","Completeness; only a few fetches","medium","awaiting user choice — not implemented"),
- ("S7","Add a printable one-page day-plan PDF export","Convenience on the floor","low","awaiting user choice — not implemented"),
- ("S8","Archive earlier session subsites from the root nav (keep URLs live)","Less clutter; content stays reachable via Archive page","low","awaiting user choice — not implemented"),
+ ("S1","Ask the Venetian poker room for written entry rules per event (Questions Q3)","Would convert the biggest unverified block into confirmed/disqualified rows","high","awaiting user choice — not implemented", VEN_SCHED),
+ ("S2","Add a booking-engine snapshotter to capture dated hotel quotes nightly into the rate log","Fills the like-for-like checkout-total table automatically; cost: heavier CI","high","awaiting user choice — not implemented", VEN_BOOK.split("?")[0]),
+ ("S3","Expand the morning daily-schedule feed to ARIA/Bellagio/Caesars/Harrah's/Horseshoe official pages","Wider daily coverage; some rooms publish only on PDFs or not at all","medium","awaiting user choice — not implemented", "https://bellagio.mgmresorts.com/en/casino/poker.html"),
+ ("S4","Add an email/SMS alert when the change monitor marks a source CHANGED","Faster reaction to schedule changes; requires a secret/token in repo settings","medium","awaiting user choice — not implemented", WPT_SCHED),
+ ("S5","Add a per-event bankroll simulator labeled clearly as toy math, not EV","Decision support; risks being mistaken for a forecast","low","awaiting user choice — not implemented", VEN_SCHED),
+ ("S6","Measure cross-property walking routes","Completeness; route values can change over time","medium","completed for all cross-property rows on 2026-11-17; Wynn on-property walk remains unmeasured", "https://www.google.com/maps/dir/?api=1&origin=The+Venetian+Resort,+3355+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&destination=Wynn+Las+Vegas,+3131+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&travelmode=walking"),
+ ("S7","Add a printable one-page day-plan PDF export","Convenience at the poker room","low","awaiting user choice — not implemented", VEN_SCHED),
+ ("S8","Archive earlier session subsites from the root navigation while keeping URLs live","Less clutter; content remains accessible from the archive page","low","awaiting user choice — not implemented", VEN_SCHED),
 ]
+
 def build_suggestions():
-    rows = [[esc(a), esc(b), esc(c), esc(d), '<span class="badge warn">%s</span>' % esc(e)] for a,b,c,d,e in SUGGESTIONS]
+    rows = [[esc(a), esc(b), esc(c), esc(d), '<span class="badge warn">%s</span>' % esc(e), link(source, "official source")]
+            for a,b,c,d,e,source in SUGGESTIONS]
     body = ['<p class="note">A dedicated section for suggestions so someone can review them and choose the best path <b>before</b> anything is implemented. '
-        'Nothing on this page has been implemented — each row is decision-only. Tell the session which rows to execute.</p>']
-    body.append(table(["#","Suggestion","Impact if adopted","Priority","Status"], rows))
+        'Nothing on this page has been implemented — each row is decision-only and links the official source that motivates the suggestion.</p>']
+    body.append(filterbar(dates=False, freezeout=False, placeholder="Search suggestions…"))
+    body.append(table(["#","Suggestion","Impact if adopted","Priority","Status","Official source"], rows))
     page("suggestions.html", "Suggestions (decision-only)", "".join(body))
 
 # ----------------------------------------------------------------- flagged
 def build_flagged():
     body = ['<p class="note">Flagged irregularities and unverified items. None of these blocks the site; they are published here so they can be reviewed after launch with source links.</p>']
     rows = [[esc(f["id"]), esc(f["title"]), esc(f["detail"]), link(f["source"]) if f["source"] else "—"] for f in FLAGS["flags"]]
+    body.append(filterbar(dates=False, freezeout=False, placeholder="Search flagged items…"))
     body.append(table(["#","Flag","Detail","Source"], rows))
     page("flagged.html", "Flagged for review", "".join(body))
 
@@ -349,6 +377,7 @@ def build_flagged():
 def build_sources_page():
     rows = [[esc(s["label"]), link(s["url"]), "official" if s["official"] else "—", esc(s["last_checked"])] for s in SOURCES["sources"]]
     body = ['<p class="note">Full source registry. Every table row on this site links at least one of these. %d sources, all official property/organizer pages or PDFs (Google Maps used for walk times).</p>' % len(rows)]
+    body.append(filterbar(dates=False, freezeout=False, placeholder="Search official sources…"))
     body.append(table(["Label","URL","Type","Last checked"], rows))
     page("sources.html", "Sources", "".join(body))
 
@@ -382,6 +411,7 @@ def build_others():
         ["Friday","Bellagio","$600 No Limit Hold'em","$600","—","re-entry through level 8 (prior audit of official page)","start time/date not captured",link("https://bellagio.mgmresorts.com/en/casino/poker.html")],
         ["Saturday","Bellagio","$1,000 or $1,100 No Limit Hold'em (conflict)","$1,000 or $1,100","$50,000","NOT CAPTURED — unverified","buy-in conflict on official sources: $1,100 header vs $1,000 rules text",link("https://bellagio.mgmresorts.com/en/casino/poker.html")],
     ]
+    body.append(filterbar(dates=False, freezeout=False, placeholder="Search other venues…"))
     body.append(table(["Day","Venue","Event","Entry","Guarantee","Entry rules","Flags","Source"], rows))
     body.append('<h2>Rooms checked but not listed as candidates</h2><ul>'
         '<li>ARIA — poker room active; no official tournament schedule captured; walk to Venetian 31 min (over limit).</li>'

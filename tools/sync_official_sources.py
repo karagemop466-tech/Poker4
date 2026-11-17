@@ -286,6 +286,225 @@ MONTHS = {m: i for i, m in enumerate(
      "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER"], start=1)}
 
 
+# --------------------------------------------------------------------- schedule (PDF, line-oriented)
+# The printed calendar is a table whose cells wrap onto extra lines, and whose DATE cell is
+# sometimes replaced by a series banner ("LIPS CHAMPIONSHIP", "@PokerAtlas* TOUR"). A single
+# regex over the flattened text silently lost two rows (Dec 11 10:00 AM #39 and Dec 13
+# 1:00 PM #47) and mis-dated one (it read the "AT 7:00 PM" inside a wrapped event name as the
+# start time). This parser works line by line, the way the table is actually laid out:
+#   * a row starts either with "<event #> $<buy-in>" on one line, or with a bare event number
+#     whose name and columns continue on the following lines;
+#   * the column values are read from the *last* physical line of the row, from its first
+#     clock token onward — that is where the TIME column sits in `pdftotext -layout` output,
+#     so a time that is part of a wrapped event name is never mistaken for the start time.
+LINE_DATE_RE = re.compile(
+    r"^\s*(?:(?P<wd>MONDAY|TUESDAY|WEDNESDAY|THURSDAY|FRIDAY|SATURDAY|SUNDAY)[,\s]+)?"
+    r"(?P<mon>JANUARY|FEBRUARY|MARCH|APRIL|MAY|JUNE|JULY|AUGUST|SEPTEMBER|OCTOBER|NOVEMBER|DECEMBER)"
+    r"\s+(?P<day>\d{1,2})(?:ST|ND|RD|TH)?\b", re.I)
+LINE_ROW_RE = re.compile(r"^(?P<no>\d{1,3})\s+\$\s?(?P<buy>[\d,]+)\s*(?P<rest>.*)$")
+LINE_BARE_RE = re.compile(r"^(?P<no>\d{1,3})$")
+LINE_BUYIN_RE = re.compile(r"^\$\s?(?P<buy>[\d,]+)\s*(?P<rest>.*)$")
+LINE_TIME_RE = re.compile(r"^(\d{1,2}:\d{2}\s*(?:AM|PM))", re.I)
+LINE_TIME_ANY_RE = re.compile(r"(?<![\d:.])\d{1,2}:\d{2}\s*(?:AM|PM)", re.I)
+LINE_GTD_RE = re.compile(r"^\$\s?(?P<v>[\d,.]+)(?P<mult>\s*(?:K|MILL|MILLION|MM))?\b", re.I)
+LINE_SEATS_RE = re.compile(r"^(?P<n>\d{1,3})\s+(SEAT|SEATS|PRIZE|PRIZES)\b", re.I)
+LINE_CHIPS_RE = re.compile(r"^(?P<v>\d{1,3},\d{3})\b")
+LINE_LEVEL_RE = re.compile(r"^(?P<v>\d{1,2}(?:\s*/\s*\d{1,2})?)(?:\s|$)")
+TAIL_TOKEN_RE = re.compile(
+    r"(?P<time>\d{1,2}:\d{2}\s*(?:AM|PM))"
+    r"|(?P<money>\$\s?[\d,.]+(?:\s*(?:K|MILL|MILLION|MM))?(?!\s*[A-Za-z]*GTD))"
+    r"|(?P<seats>\d{1,3}\s+(?:SEAT|SEATS|PRIZE|PRIZES))"
+    r"|(?P<chips>\d{1,3},\d{3})"
+    r"|(?P<level>\d{1,2}(?:\s*/\s*\d{1,2})?)(?=\s|$)", re.I)
+LINE_NOISE_RE = re.compile(r"^(DATE EVENT #|CHAMPIONSHIP\s*$|COIN OR TROPHY\s*$|VENETIAN POKER$|"
+                           r"NOVEMBER 16- DECEMBER 23, 2026$|MORE$|THAN$|\$3\.6 MILLION$|"
+                           r"IN GUARANTEED PRIZE POOLS\s*$)", re.I)
+
+
+def _clock_minutes(value: str):
+    m = re.match(r"(\d{1,2}):(\d{2})\s*(AM|PM)", value.strip(), re.I)
+    if not m:
+        return None
+    h, mm, ap = int(m.group(1)), int(m.group(2)), m.group(3).upper()
+    return ((h % 12) + (12 if ap == "PM" else 0)) * 60 + mm
+
+
+def parse_schedule_pdf_lines(text: str, source_url: str, default_year: int | None = None) -> list[dict]:
+    """One row per printed calendar row, recovered from the `pdftotext -layout` line structure."""
+    lines = [re.sub(r"[ \t\xa0]+", " ", ln).strip() for ln in text.split("\n")]
+    rows: list[dict] = []
+    cur_date = cur_wd = None
+    year = default_year
+    i = 0
+    while i < len(lines):
+        line = lines[i]
+        i += 1
+        if not line or LINE_NOISE_RE.match(line):
+            continue
+        rest = line
+        dm = LINE_DATE_RE.match(line)
+        if dm:
+            ym = re.search(r"\b(20\d{2})\b", line)
+            if ym:
+                year = int(ym.group(1))
+            mon = MONTHS.get(dm.group("mon").upper())
+            day = int(dm.group("day"))
+            try:
+                d = dt.date(year or 0, mon, day)
+                cur_date = d.isoformat()
+                cur_wd = (dm.group("wd") or d.strftime("%A")).title()
+            except (ValueError, TypeError):
+                cur_date, cur_wd = None, (dm.group("wd").title() if dm.group("wd") else None)
+            rest = line[dm.end():].strip()
+            if not rest:
+                continue
+        bm = LINE_BARE_RE.match(rest)
+        head = LINE_ROW_RE.match(rest)
+        if bm:  # event number alone: the row's cells continue on the following lines
+            no = int(bm.group("no"))
+            buy = name = None
+            body_lines: list[str] = []
+            tail = None
+            for _ in range(8):
+                if i >= len(lines):
+                    break
+                nxt = lines[i]
+                i += 1
+                if not nxt:
+                    continue
+                if LINE_DATE_RE.match(nxt) or LINE_ROW_RE.match(nxt) or LINE_NOISE_RE.match(nxt):
+                    break
+                bmm = LINE_ROW_RE.match(nxt)
+                buy_m = None if bmm else LINE_BUYIN_RE.match(nxt)
+                if bmm and buy is None:
+                    buy = int(bmm.group("buy").replace(",", ""))
+                    nxt_tail = bmm.group("rest")
+                elif buy_m and buy is None:
+                    buy = int(buy_m.group("buy").replace(",", ""))
+                    nxt_tail = buy_m.group("rest")
+                else:
+                    nxt_tail = nxt
+                tm = LINE_TIME_RE.match(nxt_tail)
+                if tm:
+                    name_part = nxt_tail[:tm.start()].strip()
+                    if name_part:
+                        body_lines.append(name_part)
+                    tail = nxt_tail[tm.start():].strip()
+                    break
+                body_lines.append(nxt_tail)
+            if tail is None or buy is None:
+                continue
+            name = re.sub(r"\s+", " ", " ".join(body_lines)).strip(" -|")
+            rows.append(_pdf_row(no, buy, name, tail, cur_date, cur_wd, source_url))
+            continue
+        if head:
+            no = int(head.group("no"))
+            buy = int(head.group("buy").replace(",", ""))
+            body = head.group("rest")
+            tm = LINE_TIME_ANY_RE.search(body)
+            if not tm:  # the columns wrapped onto the next line
+                for _ in range(6):
+                    if i >= len(lines):
+                        break
+                    nxt = lines[i]
+                    i += 1
+                    if not nxt:
+                        continue
+                    if LINE_DATE_RE.match(nxt) or LINE_ROW_RE.match(nxt):
+                        i -= 1
+                        break
+                    tm2 = LINE_TIME_ANY_RE.search(nxt)
+                    if tm2:
+                        name = re.sub(r"\s+", " ", (body + " " + nxt[:tm2.start()])).strip(" -|")
+                        rows.append(_pdf_row(no, buy, name, nxt[tm2.start():].strip(),
+                                             cur_date, cur_wd, source_url))
+                        break
+                    body = (body + " " + nxt).strip()
+                else:
+                    continue
+                continue
+            name = re.sub(r"\s+", " ", body[:tm.start()]).strip(" -|")
+            rows.append(_pdf_row(no, buy, name, body[tm.start():].strip(), cur_date, cur_wd, source_url))
+            continue
+    return [r for r in rows if r]
+
+
+def _pdf_row(no: int, buy: int, name: str, tail: str, date_iso, weekday, source_url) -> dict | None:
+    """Split a row's tail (TIME [REG CLOSES] [GUARANTEE] [CHIPS] [LEVEL] [TROPHY]) into columns.
+
+    A wrapped event name can end inside the tail (for example "$40 RAKE DISCOUNT FOR ENTRIES
+    BEFORE 10:10 AM", where the printed start time is also 10:10 AM), so time tokens that are
+    not later than the start are treated as part of the name and skipped rather than recorded as
+    a registration deadline.
+    """
+    note: list[str] = []
+    if not name:
+        return None
+    tokens = [(mo.lastgroup, mo.group(0).strip()) for mo in TAIL_TOKEN_RE.finditer(tail)]
+    if not tokens or tokens[0][0] != "time":
+        return None
+    time_val = tokens[0][1]
+    start_min = _clock_minutes(time_val)
+    idx = 1
+    close = None
+    while idx < len(tokens):
+        kind, val = tokens[idx][0], tokens[idx][1]
+        if kind != "time":
+            break
+        mins = _clock_minutes(val)
+        if mins is not None and start_min is not None and mins > start_min:
+            close = val
+            idx += 1
+            break
+        note.append(f"a printed time “{val}” inside the event name is not later than the start "
+                    "time; left in the name, not recorded as a registration deadline")
+        idx += 1
+    gtd = gtd_text = None
+    if idx < len(tokens) and tokens[idx][0] == "money":
+        raw = tokens[idx][1]
+        m = LINE_GTD_RE.match(raw)
+        if m:
+            val = float(m.group("v").replace(",", ""))
+            mult = (m.group("mult") or "").strip().upper()
+            if mult == "K":
+                val *= 1000
+            elif mult:
+                val *= 1_000_000
+            gtd = int(val)
+            idx += 1
+    elif idx < len(tokens) and tokens[idx][0] == "seats":
+        gtd_text = re.sub(r"\s+", " ", tokens[idx][1]).strip()
+        idx += 1
+    chips = None
+    if idx < len(tokens) and tokens[idx][0] == "chips":
+        chips = int(tokens[idx][1].replace(",", ""))
+        idx += 1
+    level = None
+    if idx < len(tokens) and tokens[idx][0] == "level":
+        v = re.sub(r"\s+", "", tokens[idx][1])
+        parts = [int(x) for x in v.split("/")]
+        if all(5 <= x <= 120 for x in parts):
+            level = v
+        else:
+            note.append(f"LEVEL cell “{v}” is not a plausible blind level; not recorded")
+    return {
+        "parse_notes": note or None,
+        "registration_closes": re.sub(r"\s+", " ", close).upper() if close else None,
+        "date": date_iso,
+        "weekday": weekday,
+        "time": re.sub(r"\s+", " ", time_val).upper(),
+        "event_no": no,
+        "event_name": name,
+        "buy_in_usd": buy,
+        "guarantee_usd": gtd,
+        "guarantee_text": gtd_text,
+        "starting_chips": chips,
+        "level_duration": level,
+        "source": source_url,
+        "retrieved": today_utc(),
+    }
+
+
 def parse_schedule_pdf(text: str, source_url: str, default_year: int | None = None) -> list[dict]:
     """Rows of the printed schedule table: DATE | EVENT # | EVENT | TIME | REG CLOSES | GUARANTEE | CHIPS | LEVEL.
 
@@ -294,7 +513,32 @@ def parse_schedule_pdf(text: str, source_url: str, default_year: int | None = No
     that a clock time printed *inside* an event name stays in the name instead of
     being read as the start time. Fields the page does not print stay null — they
     are never carried over from a neighbouring row.
+
+    The line-oriented parser above is used first because it reads the wrapped cells and the
+    banner-replaced DATE cells correctly. The older table-text pass is kept as a fallback and
+    as a cross-check: any row it finds that the line parser did not is reported in
+    `_parser_disagreement` (never published as a value) so a disagreement is reviewed instead
+    of silently changing the calendar.
     """
+    line_rows = parse_schedule_pdf_lines(text, source_url, default_year)
+    if not line_rows:  # layout changed beyond recognition — fall back to the table-text pass
+        return _parse_schedule_pdf_text(text, source_url, default_year)
+
+    def key(r):
+        return (r.get("date"), r.get("event_no"), (r.get("time") or "").upper())
+
+    seen = {key(r) for r in line_rows}
+    orphan = [r for r in _parse_schedule_pdf_text(text, source_url, default_year) if key(r) not in seen]
+    for r in line_rows:
+        if orphan and not r.get("parse_notes"):
+            r["parse_notes"] = [f"{len(orphan)} row(s) the table-text pass read differently — "
+                                "compare data/schedule-snapshot.json against the printed page"]
+            break
+    return line_rows
+
+
+def _parse_schedule_pdf_text(text: str, source_url: str, default_year: int | None = None) -> list[dict]:
+    """Table-text pass over the flattened PDF (kept as fallback / cross-check)."""
     flat = re.sub(r"\s+", " ", text).strip()
     heads = list(PDF_DATE_RE.finditer(flat))
     if not heads:
