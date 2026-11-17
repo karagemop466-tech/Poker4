@@ -22,8 +22,26 @@ Shared task board for the Poker4 project. Sessions claim tasks here to avoid dup
 - Resolved locally: kept this session's root `index.html` (`git checkout --ours`); combined COORDINATION.md (below); preserved the other session's root `index.html` verbatim at `pages/parallel-session-abd38ed7-index.html` so no work was discarded; all other files merged cleanly (their root HTML files, data JSONs, build scripts, verified/ and strip/ folders arrive from main).
 - After push, PR #8 was merged to main; GitHub Pages (source: main, path "/") rebuilds automatically.
 
-## Current session
-- Session ID: `arena/e2d11e52-poker4` — this session works on branch `arena/e2d11e52-poker4` only; integration (PR #8 → main, Pages deploy confirm) done on main.
+## Current session (active)
+- Session ID: `arena/5dba2ab6-poker4` — this session works on branch `arena/5dba2ab6-poker4` (== main @ be3594d4) only.
+- Scope claimed: trip cost calculator; search box + date filter + single-entry toggle across tables; venue-scoped tournament views; per-row "last checked" + scheduled official-URL re-check / change monitoring; dated rate log; overlap check (primary + conditional fallback); repo review + line-by-line verification; integration PR → main + Pages deploy + record result.
+- File scope: `index.html`, `tournaments.html`, `hotels.html`, `schedule.html`, `app.js`, `style.css`, `.github/workflows/pages.yml` (new scheduled check), `COORDINATION.md` (log only), `review.html` (irregularity notes). Does not touch other sessions' session-scoped folders (`60fb62da/`, `c07371e3/`, `df41f5c6/`, `strip/`, `verified/`, `data/df41f5c6/`, `data/c07371e3/`).
+
+## New task board (this session)
+
+| ID | Task | Status | Owner | File scope | Sources / verification | Irregularities |
+|----|------|--------|-------|------------|------------------------|----------------|
+| N1 | Trip cost calculator: entries × buy-ins + nights × true hotel cost | done | arena/5dba2ab6-poker4 | hotels.html, app.js | Arithmetic from official $55 fee + 13.38% tax; illustrative, labeled estimate | None |
+| N2 | Search box across all tables | done | arena/5dba2ab6-poker4 | tournaments.html, app.js | Existing table data | None |
+| N3 | Date filter on tournament table | done | arena/5dba2ab6-poker4 | tournaments.html, app.js | Existing dated rows | None |
+| N4 | Single-entry / freezeout toggle filter | done | arena/5dba2ab6-poker4 | tournaments.html, app.js | Toggle honestly returns none until official rules confirm | Single-entry unverified for all rows |
+| N5 | Venue-scoped tournament views (Venetian / Wynn / Caesars / Bellagio / Other) | done | arena/5dba2ab6-poker4 | tournaments.html (venue column + filters) | Existing venue labels; Wynn/Caesars/Bellagio rows from data/tournaments.json | Venue rows re-entry/add-on only, kept separate |
+| N6 | Per-row "last checked" + scheduled official URL re-check & change monitoring | done | arena/5dba2ab6-poker4 | app.js, tools/url_check.js, .github/workflows/url-check.yml | Client-side last-checked UI; daily scheduled server-side check writes data/url-checks.json | Client fetch blocked by CORS; server-side job is the authoritative check |
+| N7 | Dated rate log (rates as a log, not a single value) | done | arena/5dba2ab6-poker4 | hotels.html | Existing official fee/tax figures; retrieval dates logged | Nightly room rates blank without dates |
+| N8 | Overlap check: primary event + conditional fallback per day | done | arena/5dba2ab6-poker4 | schedule.html | Existing schedule rows + multi-flight Day-2 restarts | Finish times not published → overlap flagged as possible, not confirmed |
+| N9 | Repo review + line-by-line verification (source links, unverified flags) | done | arena/5dba2ab6-poker4 | review.html, COORDINATION.md | All external source URLs resolve to official operator domains; every tournament/hotel row carries an official source link; unconfirmed values (single-entry rules, finish times, walk minutes, dated room rates, cancellation deadlines) are left blank and flagged unverified, never inferred | Existing flagged list preserved in review.html |
+| N10 | Integration: PR → main, merge, Pages deploy check, record result | done | arena/5dba2ab6-poker4 | this branch, main, COORDINATION.md | PR #17 merged to main; Pages status "built", source main:/, URL https://karagemop466-tech.github.io/Poker4/ | — |
+
 
 ## Task board (combined, both sessions)
 
@@ -155,6 +173,24 @@ Scope note: the session brief asks for `session-<id>/<task>` branches. The Arena
 - Integration: root navigation links the preserved `c07371e3` site; root Flagged for Review links its flagged log with an independent-source-set caveat.
 - Validation: `python3 build/build_site.py`; `python3 scripts/build.py`; `python3 scripts/verify.py` (10 pages, 17 sources, 29 flags; all row sources/internal links verified); `git diff --check`. Data audit confirms 19 and 64 candidate rows are labeled unverified.
 - PR #4 merged to `main` as merge commit `fb62f758526b2bbfc13ad50b238faa88cf5094ec` at 2026-11-16 19:15:25 UTC. The "Deploy static dashboard to GitHub Pages" run `43937426421` and "pages build and deployment" run `43937425213` both completed successfully. GitHub Pages API reports status `built`, public URL `https://karagemop466-tech.github.io/Poker4/`, source `main:/`. Direct browser fetch of the live page was not available from this environment; workflow and Pages API statuses were verified.
+- 2026-11-17 — arena/f8fa22bb-poker4: added standalone trip-calculator.html (entries x buy-ins + nights x true hotel cost), change-monitor.html (official URL re-check log), venue-venetian.html / venue-wynn.html / venue-others.html (one page per venue with events and hotels), data/url-monitor.json (10 URLs with check intervals). Added navigation links to these pages on all root HTML pages. Main already contains integrated trip calculator (in hotels.html), date filter, last-checked monitoring, overlap detection, and scheduled URL re-check (tools/url_check.js, .github/workflows/url-check.yml) from session arena/5dba2ab6-poker4. No event verified as strict single-entry — all flagged.
+
+---
+
+## Session arena/aa32d8fd-poker4 (current session)
+
+Session ID: `arena/aa32d8fd-poker4`; branch `arena/aa32d8fd-poker4`, branched from main. All work on this branch only; edits limited to non-overlapping root files claimed below. Shared session subfolders are NOT touched.
+
+| ID | Task | Status | Owner | File scope | Sources / verification | Irregularities |
+|----|------|--------|-------|------------|------------------------|----------------|
+| C1 | Root sources page, suggestions page, build scripts, and enhanced data (last_checked dates, structured rule fields with source excerpts + retrieval dates, dated hotel rate log, change-monitor registry) | done | arena/aa32d8fd-poker4 | `sources.html`, `suggestions.html`, `scripts/build_root.py`, `scripts/enhance_data.py`; `data/tournaments.json`, `data/hotels.json`, `data/sources.json` | Existing repo data (official sources); live re-check of official sites NOT possible from this sandbox (external hosts besides github blocked) — rows kept unverified where not confirmed | No live official fetch available; data snapshot kept as-is and flagged |
+| C2 | Verification pass (line-by-line source check), broken-link check | done | arena/aa32d8fd-poker4 | root data files + new pages | All source keys valid; 0 broken internal links in new pages | — |
+| C3 | PR from `arena/aa32d8fd-poker4` to `main`, merge, GitHub Pages deploy confirm, record PR link + merge result here | done | arena/aa32d8fd-poker4 | PR, `main`, `COORDINATION.md` | PR #20 merged via merge commit bb845cce0b3aeae74a6679600a5b124854c25f91; PR URL https://github.com/karagemop466-tech/Poker4/pull/20; Pages status `built`, source `main:/`, URL https://karagemop466-tech.github.io/Poker4/ ; deploy run 43993023974 succeeded. | — |
+
+### Log (arena/aa32d8fd-poker4)
+- 2026-11-17: claimed C1-C3. Rebasing onto latest main caused overlapping conflicts with parallel sessions' root files (trip calculator, filters, venue pages); per non-overlapping scope, kept main's integrated root site and added only non-conflicting files: sources.html, suggestions.html, build scripts, enhanced data.
+- 2026-11-17: C1 done (sources.html, suggestions.html, scripts/build_root.py, scripts/enhance_data.py, enhanced data/tournaments.json, data/hotels.json, data/sources.json with last_checked, rule fields, dated rate log, change-monitor registry). C2 done (0 broken internal links in new pages; all source keys valid). C3 done: PR #20 merged to main (merge commit bb845cc), GitHub Pages deploy succeeded (status `built`, run 43993023974), result recorded here.
+
 
 
 ---
