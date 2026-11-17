@@ -608,7 +608,25 @@ def main() -> int:
             fh.write(f"- Schedule rows parsed: **{len(snapshot_rows)}**\n")
             for u in changed_urls:
                 fh.write(f"  - changed: {u}\n")
-    print(f"checked={len(checks)} changed={len(changed_urls)} sheets={len(sheets)} rows={len(snapshot_rows)}")
+    dated = sum(1 for r in snapshot_rows if r.get("date"))
+    sample_head = None
+    for u2 in [e["url"] for e in cfg["sources"] if e.get("parse") == "venetian-schedule-pdf"]:
+        body = (checks.get(u2) or {}).get("text_head") or ""
+        flat = re.sub(r"\s+", " ", body)
+        m = PDF_DATE_RE.search(flat)
+        sample_head = flat[max(0, m.start() - 60):m.end() + 90] if m else "no date header matched"
+    write_json(os.path.join(DATA, "sync-status.json"), {
+        "generated_at": now_utc(),
+        "urls_checked": len(checks),
+        "urls_failed": [u for u, v in checks.items() if not v.get("ok")],
+        "changed_this_run": changed_urls,
+        "sheets_audited": len(sheets),
+        "schedule_rows": len(snapshot_rows),
+        "schedule_rows_with_date": dated,
+        "date_head_sample": sample_head,
+        "hotel_fact_sources": len(facts),
+    })
+    print(f"checked={len(checks)} changed={len(changed_urls)} sheets={len(sheets)} rows={len(snapshot_rows)} dated={dated}")
     return 0
 
 
