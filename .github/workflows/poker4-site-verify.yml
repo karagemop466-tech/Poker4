@@ -1,4 +1,4 @@
-name: Site build + verification gate
+name: Poker4 site build + verification gate
 
 on:
   pull_request:

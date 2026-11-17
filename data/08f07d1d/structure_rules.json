@@ -33,7 +33,7 @@
  },
  {
   "sheet": 2,
-  "title": "$400 No Limit Hold'em \u2014 Day A+B @ 11:10 AM with Day 2 @ 11:00 AM",
+  "title": "$400 No Limit Hold'em — Day A+B @ 11:10 AM with Day 2 @ 11:00 AM",
   "events": [
    7
   ],
@@ -55,7 +55,7 @@
  },
  {
   "sheet": 3,
-  "title": "$400 No Limit Hold'em \u2014 Day A+B+C @ 11:10 AM with Day 2 @ 11:00 AM",
+  "title": "$400 No Limit Hold'em — Day A+B+C @ 11:10 AM with Day 2 @ 11:00 AM",
   "events": [
    19
   ],
@@ -76,7 +76,7 @@
  },
  {
   "sheet": 4,
-  "title": "$600 No Limit Hold'em \u2014 Day A+B+C @ 11:10 AM with Day 2 @ 11:00 AM",
+  "title": "$600 No Limit Hold'em — Day A+B+C @ 11:10 AM with Day 2 @ 11:00 AM",
   "events": [
    59
   ],
@@ -165,7 +165,7 @@
  },
  {
   "sheet": 8,
-  "title": "$200 No Limit Hold'em Valuetown Bounty (1Day) \u2014 PokerAtlas PRO Member $20 Rake Discount",
+  "title": "$200 No Limit Hold'em Valuetown Bounty (1Day) — PokerAtlas PRO Member $20 Rake Discount",
   "events": [
    18,
    58
@@ -180,7 +180,7 @@
   "to_pool_usd": 160,
   "payout": "12.5% of the field",
   "entry_rule_excerpt": "PokerAtlas PRO players will receive a twenty ($20) rake discount on their initial $200 buy in only, for a total buy in of $180 instead of $200. ... All subsequent buy in's after the initial buy in will be $200.",
-  "reentry": "allowed \u2014 sheet prices 'all subsequent buy in's after the initial buy in'",
+  "reentry": "allowed — sheet prices 'all subsequent buy in's after the initial buy in'",
   "addon": "not stated",
   "single_entry_confirmed": false,
   "multi_entry_confirmed": true,
@@ -188,7 +188,7 @@
  },
  {
   "sheet": 9,
-  "title": "$300 No Limit Hold'em \u2014 Day B+D @ 5:10 PM with Day 2 @ 12:00 PM",
+  "title": "$300 No Limit Hold'em — Day B+D @ 5:10 PM with Day 2 @ 12:00 PM",
   "events": [
    1
   ],
@@ -210,7 +210,7 @@
  },
  {
   "sheet": 10,
-  "title": "$300 No Limit Hold'em \u2014 Day A+C @ 11:10 AM with Day 2 @ 12:00 PM",
+  "title": "$300 No Limit Hold'em — Day A+C @ 11:10 AM with Day 2 @ 12:00 PM",
   "events": [
    1
   ],
@@ -243,7 +243,7 @@
   "level": "30 minutes",
   "reg_close": "10 levels + Break (4:55 PM)",
   "guarantee_usd": null,
-  "guarantee_note": "$30,000 (#16); $40,000 (#30); $50,000 (#54) \u2014 each is prize pool + total bounties",
+  "guarantee_note": "$30,000 (#16); $40,000 (#30); $50,000 (#54) — each is prize pool + total bounties",
   "fee_usd": 90,
   "to_pool_usd": 510,
   "payout": "12.5% of the field",
@@ -255,7 +255,7 @@
  },
  {
   "sheet": 12,
-  "title": "$800 No Limit Hold'em \u2014 Day A+C+E @ 11:10 AM with Day 2 @ 12:00 PM",
+  "title": "$800 No Limit Hold'em — Day A+C+E @ 11:10 AM with Day 2 @ 12:00 PM",
   "events": [
    26
   ],
@@ -277,7 +277,7 @@
  },
  {
   "sheet": 13,
-  "title": "$800 No Limit Hold'em \u2014 Day B+D @ 5:10 PM with Day 2 @ 12:00 PM",
+  "title": "$800 No Limit Hold'em — Day B+D @ 5:10 PM with Day 2 @ 12:00 PM",
   "events": [
    26
   ],
@@ -296,6 +296,70 @@
   "single_entry_confirmed": false,
   "other": "Sheet says 'SEE OTHER STRUCTURE SHEET FOR DAYS A+C+F'",
   "last_checked": "2026-11-17"
+ },
+ {
+  "title": "$800 No Limit Hold'em — Event #26 Day F (Turbo), 5:10 PM with Day 2 @ 12:00 PM",
+  "events": [
+   26
+  ],
+  "start": "5:10 PM (Day F) / Day 2 12:00 PM",
+  "chips": 40000,
+  "level": "20 minutes",
+  "reg_close": "6 levels + Break (~ 7:25 PM)",
+  "guarantee_usd": 500000,
+  "guarantee_note": "Guarantee: $500,000 (stated on the sheet; not marked bounty-inclusive)",
+  "fee_usd": 110,
+  "to_pool_usd": 690,
+  "payout": "12.5% of the field",
+  "entry_rule_excerpt": "8. Any player who bags chips for Day 2 may not play a subsequent flight.",
+  "reentry": "not stated",
+  "addon": "not stated",
+  "single_entry_confirmed": false,
+  "bagging_restriction": true,
+  "other": "Rule 3: each starting flight plays to ~12.5% of field, Day 2 combines 1A-1F, all in the money; clock reverts to earliest stoppage. Rule 10: pre-registered stacks in play at the start. Footer: 'SEE OTHER STRUCTURE SHEETS FOR DAYS A+B+C+D+E'. Rules 12-13: Day 2 shot clock 20s/30s + time-extension chips by field size.",
+  "early_discount_usd": null,
+  "early_discount_condition": null,
+  "last_checked": "2026-11-17",
+  "read": "first-hand human read of the official PDF",
+  "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_14.pdf",
+  "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_14.pdf",
+  "sheet": 14
+ },
+ {
+  "title": "$300 No Limit Hold'em Bounty (1Day)",
+  "events": [
+   29,
+   31,
+   34,
+   38,
+   42,
+   50,
+   51,
+   53,
+   55
+  ],
+  "start": "5:10 PM",
+  "chips": 25000,
+  "level": "30 minutes",
+  "reg_close": "8 levels + Break (9:40 PM)",
+  "guarantee_usd": 15000,
+  "guarantee_note": "Guarantee: $15,000 (prize pool + total bounties) — guaranteed figure INCLUDES the $100 bounties",
+  "fee_usd": 50,
+  "to_pool_usd": 250,
+  "payout": "12.5% of the field",
+  "entry_rule_excerpt": null,
+  "reentry": "not stated",
+  "addon": "not stated",
+  "single_entry_confirmed": false,
+  "bagging_restriction": false,
+  "other": "Rule 9: players receive $100 bounty per elimination, split among same-hand killers. Rule 10: the $15,000 guarantee = actual prize pool + total bounties awarded. Rule 11: pre-registered stacks in play at start. no sentence about one entry per player, re-entry or add-ons appears anywhere on this sheet",
+  "early_discount_usd": null,
+  "early_discount_condition": null,
+  "last_checked": "2026-11-17",
+  "read": "first-hand human read of the official PDF",
+  "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf",
+  "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf",
+  "sheet": 15
  },
  {
   "sheet": 18,

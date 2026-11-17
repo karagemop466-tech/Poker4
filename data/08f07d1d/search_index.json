@@ -275,13 +275,6 @@
    "a": "2026-12-04-26-5:10PM"
   },
   {
-   "t": "2026-12-05 5:10 PM #26 $800 No Limit Hold'em 1F (Turbo) $500K GTD",
-   "k": "Tournament",
-   "d": "$800 entry · $500,000 GTD · sheet not audited in this pass",
-   "u": "@@/tournaments.html",
-   "a": "2026-12-05-26-5:10PM"
-  },
-  {
    "t": "2026-12-05 11:10 AM #26 $800 No Limit Hold'em 1E $500K GTD",
    "k": "Tournament",
    "d": "$800 entry · $500,000 GTD · not stated on the sheet",
@@ -289,11 +282,11 @@
    "a": "2026-12-05-26-11:10AM"
   },
   {
-   "t": "2026-12-06 5:10 PM #29 $300 No Limit Hold'em Bounty $15K GTD (1Day)",
+   "t": "2026-12-05 5:10 PM #26 $800 No Limit Hold'em 1F (Turbo) $500K GTD",
    "k": "Tournament",
-   "d": "$300 entry · $15,000 GTD · sheet not audited in this pass",
+   "d": "$800 entry · $500,000 GTD · not stated on the sheet",
    "u": "@@/tournaments.html",
-   "a": "2026-12-06-29-5:10PM"
+   "a": "2026-12-05-26-5:10PM"
   },
   {
    "t": "2026-12-06 12:00 PM #26 $800 No Limit Hold'em Day 2 Restart",
@@ -310,11 +303,11 @@
    "a": "2026-12-06-28-11:10AM"
   },
   {
-   "t": "2026-12-07 5:10 PM #31 $300 No Limit Hold'em Bounty $15K GTD (1Day)",
+   "t": "2026-12-06 5:10 PM #29 $300 No Limit Hold'em Bounty $15K GTD (1Day)",
    "k": "Tournament",
-   "d": "$300 entry · $15,000 GTD · sheet not audited in this pass",
+   "d": "$300 entry · $15,000 GTD · not stated on the sheet",
    "u": "@@/tournaments.html",
-   "a": "2026-12-07-31-5:10PM"
+   "a": "2026-12-06-29-5:10PM"
   },
   {
    "t": "2026-12-07 11:10 AM #30 $600 No Limit Hold'em Bounty $40K GTD (1Day) - $200 bounties to start and $500 bounties in the money",
@@ -322,6 +315,13 @@
    "d": "$600 entry · $40,000 GTD · not stated on the sheet",
    "u": "@@/tournaments.html",
    "a": "2026-12-07-30-11:10AM"
+  },
+  {
+   "t": "2026-12-07 5:10 PM #31 $300 No Limit Hold'em Bounty $15K GTD (1Day)",
+   "k": "Tournament",
+   "d": "$300 entry · $15,000 GTD · not stated on the sheet",
+   "u": "@@/tournaments.html",
+   "a": "2026-12-07-31-5:10PM"
   },
   {
    "t": "2026-12-08 10:10 AM #32 $600 No Limit Hold'em Seniors $40K GTD (1Day) - Must be 50+",
@@ -340,7 +340,7 @@
   {
    "t": "2026-12-08 5:10 PM #34 $300 No Limit Hold'em Bounty $15K GTD (1Day)",
    "k": "Tournament",
-   "d": "$300 entry · $15,000 GTD · sheet not audited in this pass",
+   "d": "$300 entry · $15,000 GTD · not stated on the sheet",
    "u": "@@/tournaments.html",
    "a": "2026-12-08-34-5:10PM"
   },
@@ -368,7 +368,7 @@
   {
    "t": "2026-12-09 5:10 PM #38 $300 No Limit Hold'em Bounty $15K GTD (1Day)",
    "k": "Tournament",
-   "d": "$300 entry · $15,000 GTD · sheet not audited in this pass",
+   "d": "$300 entry · $15,000 GTD · not stated on the sheet",
    "u": "@@/tournaments.html",
    "a": "2026-12-09-38-5:10PM"
   },
@@ -396,7 +396,7 @@
   {
    "t": "2026-12-10 5:10 PM #42 $300 No Limit Hold'em Bounty $15K GTD (1Day)",
    "k": "Tournament",
-   "d": "$300 entry · $15,000 GTD · sheet not audited in this pass",
+   "d": "$300 entry · $15,000 GTD · not stated on the sheet",
    "u": "@@/tournaments.html",
    "a": "2026-12-10-42-5:10PM"
   },
@@ -480,7 +480,7 @@
   {
    "t": "2026-12-13 5:10 PM #50 $300 No Limit Hold'em Bounty $15K GTD (1Day)",
    "k": "Tournament",
-   "d": "$300 entry · $15,000 GTD · sheet not audited in this pass",
+   "d": "$300 entry · $15,000 GTD · not stated on the sheet",
    "u": "@@/tournaments.html",
    "a": "2026-12-13-50-5:10PM"
   },
@@ -501,7 +501,7 @@
   {
    "t": "2026-12-14 5:10 PM #51 $300 No Limit Hold'em Bounty $15K GTD (1Day)",
    "k": "Tournament",
-   "d": "$300 entry · $15,000 GTD · sheet not audited in this pass",
+   "d": "$300 entry · $15,000 GTD · not stated on the sheet",
    "u": "@@/tournaments.html",
    "a": "2026-12-14-51-5:10PM"
   },
@@ -522,16 +522,9 @@
   {
    "t": "2026-12-15 5:10 PM #53 $300 No Limit Hold'em Bounty $15K GTD (1Day)",
    "k": "Tournament",
-   "d": "$300 entry · $15,000 GTD · sheet not audited in this pass",
+   "d": "$300 entry · $15,000 GTD · not stated on the sheet",
    "u": "@@/tournaments.html",
    "a": "2026-12-15-53-5:10PM"
-  },
-  {
-   "t": "2026-12-16 5:10 PM #55 $300 No Limit Hold'em Bounty $15K GTD (1Day)",
-   "k": "Tournament",
-   "d": "$300 entry · $15,000 GTD · sheet not audited in this pass",
-   "u": "@@/tournaments.html",
-   "a": "2026-12-16-55-5:10PM"
   },
   {
    "t": "2026-12-16 11:10 AM #54 $600 No Limit Hold'em Bounty $50K GTD (1Day) - $200 bounties to start and $500 bounties in the money",
@@ -539,6 +532,13 @@
    "d": "$600 entry · $50,000 GTD · not stated on the sheet",
    "u": "@@/tournaments.html",
    "a": "2026-12-16-54-11:10AM"
+  },
+  {
+   "t": "2026-12-16 5:10 PM #55 $300 No Limit Hold'em Bounty $15K GTD (1Day)",
+   "k": "Tournament",
+   "d": "$300 entry · $15,000 GTD · not stated on the sheet",
+   "u": "@@/tournaments.html",
+   "a": "2026-12-16-55-5:10PM"
   },
   {
    "t": "2026-12-17 10:10 AM #56 $1,100 No Limit Hold'em 1A $500K GTD - $40 rake discount for entries before 10:10 a.m.",
@@ -751,16 +751,16 @@
    "a": "sheet-13"
   },
   {
-   "t": "Structure sheet #14 ",
+   "t": "Structure sheet #14 $800 No Limit Hold'em — Event #26 Day F (Turbo), 5:10 PM with Day 2 @ 12:00 PM",
    "k": "Structure sheet",
-   "d": "fees — · reg closes — · not audited in this pass",
+   "d": "fees $110 · reg closes 6 levels + Break (~ 7:25 PM) · entry rule not stated",
    "u": "@@/structures.html",
    "a": "sheet-14"
   },
   {
-   "t": "Structure sheet #15 ",
+   "t": "Structure sheet #15 $300 No Limit Hold'em Bounty (1Day)",
    "k": "Structure sheet",
-   "d": "fees — · reg closes — · not audited in this pass",
+   "d": "fees $50 · reg closes 8 levels + Break (9:40 PM) · entry rule not stated",
    "u": "@@/structures.html",
    "a": "sheet-15"
   },
@@ -1057,6 +1057,20 @@
    "d": "The daily re-check is wired as a scheduled GitHub Actions job that commits data back to the branch it ran on. Its first scheduled run after merge is what turns 'last checked' into ",
    "u": "@@/flagged.html",
    "a": "F-CI"
+  },
+  {
+   "t": "F-WF-PATH This repo already registers a workflow at `.github/workflows/site-check.yml`",
+   "k": "Flag",
+   "d": "The Actions API lists an active workflow with that path named \"Check Vegas Field Notes sub-site\", owned by another session's branch; my gate was written to the same path and one of",
+   "u": "@@/flagged.html",
+   "a": "F-WF-PATH"
+  },
+  {
+   "t": "F-PR28 Open PR #28 implements the same 14-item feature list on the root pages",
+   "k": "Flag",
+   "d": "Session b6421d6a's PR #28 (\"dashboard v2\") adds a trip calculator, rate log, venue pages, monitor and verifier under root paths (index/hotels/schedule/calculator/tools/data-v2) whi",
+   "u": "@@/flagged.html",
+   "a": "F-PR28"
   },
   {
    "t": "For each candidate one-day event, does the room allow re-entry, rebuys or an add-on - and can it say so in writing?",

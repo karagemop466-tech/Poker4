@@ -576,7 +576,7 @@ questions are the ones where a wrong assumption costs money.</p>
                  else "<span class='muted'>— no official source applies: this is a traveller decision, not a documentation gap</span>")
         return (f"<tr id='{esc(f['id'])}'><td>{esc(f['id'])}</td><td><b>{esc(f['title'])}</b><p>{esc(f['detail'])}</p></td>"
                 f"<td>{pill(f['severity'],'danger' if f['severity']=='blocking' else 'warn' if f['severity']=='important' else 'ok')}</td>"
-                f"<td>{esc(f['how_to_close'])}</td><td>{links}</td></tr>")
+                f"<td>{esc(f.get('how_to_close', 'owner decision'))}</td><td>{links}</td></tr>")
     body = f"""<p class="eyebrow">Unverified values, irregularities and closed items</p><h1>Flagged for review</h1>
 <p class="lede">Nothing on this site is hidden behind a blank cell. Each gap, conflict or dead source below says what is missing,
 what would close it, and links the official page that should carry the answer. These items do not block the publish — they block a

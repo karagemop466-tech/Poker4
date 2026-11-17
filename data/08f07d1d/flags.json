@@ -276,6 +276,35 @@
      "url": "https://github.com/karagemop466-tech/Poker4/blob/main/.github/workflows/tournament-monitor.yml"
     }
    ]
+  },
+  {
+   "id": "F-WF-PATH",
+   "title": "This repo already registers a workflow at `.github/workflows/site-check.yml`",
+   "detail": "The Actions API lists an active workflow with that path named \"Check Vegas Field Notes sub-site\", owned by another session's branch; my gate was written to the same path and one of the two would have silently replaced the other. Mine is now `.github/workflows/poker4-site-verify.yml`. Nothing else in either file was changed — the other session's workflow is left as they published it, and the collision is reported here rather than resolved by me.",
+   "status": "mitigated in this branch",
+   "severity": "process",
+   "no_official_source": true,
+   "sources": [],
+   "affects": [
+    "poker4-site-verify.yml"
+   ],
+   "how_to_close": "Owner decides whether both gates should exist; if not, delete one path."
+  },
+  {
+   "id": "F-PR28",
+   "title": "Open PR #28 implements the same 14-item feature list on the root pages",
+   "detail": "Session b6421d6a's PR #28 (\"dashboard v2\") adds a trip calculator, rate log, venue pages, monitor and verifier under root paths (index/hotels/schedule/calculator/tools/data-v2) while this branch ships the same features under poker4/. No file path overlaps in the diff itself, but both edit root index.html / README.md / COORDINATION.md, so whichever merges second will conflict. This is a duplicate-effort collision, not an error to auto-fix: both dashboards stay published and the merge order is left to the owner. Earlier merged PR #23 (98e4cb1c v2 monitor) also added .github/workflows/monitor.yml + v2-monitor.yml alongside this branch's tournament-monitor.yml.",
+   "status": "flagged for review, not fixed",
+   "severity": "process",
+   "no_official_source": true,
+   "sources": [],
+   "affects": [
+    "index.html",
+    "README.md",
+    "COORDINATION.md"
+   ],
+   "how_to_close": "Owner picks which dashboard is canonical; the other becomes an archive link."
   }
- ]
+ ],
+ "count": 22
 }

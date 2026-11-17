@@ -233,6 +233,47 @@ def iso_from_text(t: str):
     return None
 
 
+def promote_facts(rec: dict, aud: dict) -> dict:
+    """Copy officially-quoted facts from the sheet audit into the canonical fields.
+
+    Only fills fields that are missing or null, so a hand-read record is never overwritten, and it never
+    turns silence into a confirmation: `single_entry_confirmed` comes solely from audit_sheet()'s quote test.
+    """
+    stated = aud.get("stated", {})
+    num = lambda v: int(re.sub(r"[^0-9]", "", v)) if v and re.search(r"\d", str(v)) else None
+    fill = {
+        "start": stated.get("start_time"),
+        "reg_close": stated.get("reg_close"),
+        "level": stated.get("level"),
+        "chips": num(stated.get("chips")),
+        "guarantee_usd": num(stated.get("guarantee")),
+        "fee_usd": num(stated.get("fee_withheld")),
+        "to_pool_usd": num(stated.get("to_pool")),
+        "payout": (str(stated.get("payout_pct")) + "% of the field") if stated.get("payout_pct") else None,
+    }
+    touched = []
+    for k, v in fill.items():
+        if v is not None and rec.get(k) in (None, "", []):
+            rec[k] = v
+            touched.append(k)
+    quotes = [stated.get(x, {}).get("excerpt") for x in
+              ("one_entry_only", "reentry_forbidden", "reentry_allowed", "addon_allowed", "late_reg_close")]
+    quote = next((q for q in quotes if q), None)
+    if not rec.get("entry_rule_excerpt") and (quote or aud.get("rule_lines")):
+        rec["entry_rule_excerpt"] = quote or aud["rule_lines"][0]
+        touched.append("entry_rule_excerpt")
+    if "bagging_restriction" not in rec:
+        rec["bagging_restriction"] = any("bags chips" in l.lower() for l in aud.get("rule_lines", []))
+        touched.append("bagging_restriction")
+    if touched:
+        rec["facts_promoted"] = today()
+        rec["field_source"] = ("monitor extraction over official PDF text; each value is quoted in "
+                              "monitor.stated - not human-confirmed")
+    rec["single_entry_confirmed"] = bool(aud.get("single_entry_confirmed")) or bool(rec.get("single_entry_confirmed"))
+    rec.setdefault("entry_rule", aud.get("entry_rule", "not stated on the sheet"))
+    return rec
+
+
 def run(only: str | None = None, commit: bool = False, quiet: bool = False) -> dict:
     reg = load(SOURCES_F, {"sources": []})
     state = load(STATE_F, {"generated": None, "sources": {}})
@@ -276,7 +317,8 @@ def run(only: str | None = None, commit: bool = False, quiet: bool = False) -> d
                 base = rules.get(sheet, {"sheet": sheet, "source_url": url})
                 base.update({"source_url": url, "last_checked": today(), "monitor": aud,
                              "sha256": entry["sha256"], "changed": changed_flag})
-                rules[sheet] = base
+                base.setdefault("sheet", sheet)
+                rules[sheet] = promote_facts(base, aud)
                 if aud.get("single_entry_confirmed") and not base.get("single_entry_confirmed"):
                     confirmed_new.append(sheet)
         if src.get("parser") == "venetian_dse_schedule" and res["bytes"]:
