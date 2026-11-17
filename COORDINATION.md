@@ -39,7 +39,7 @@ Shared task board for the Poker4 project. Sessions claim tasks here to avoid dup
 | N6 | Per-row "last checked" + scheduled official URL re-check & change monitoring | done | arena/5dba2ab6-poker4 | app.js, tools/url_check.js, .github/workflows/url-check.yml | Client-side last-checked UI; daily scheduled server-side check writes data/url-checks.json | Client fetch blocked by CORS; server-side job is the authoritative check |
 | N7 | Dated rate log (rates as a log, not a single value) | done | arena/5dba2ab6-poker4 | hotels.html | Existing official fee/tax figures; retrieval dates logged | Nightly room rates blank without dates |
 | N8 | Overlap check: primary event + conditional fallback per day | done | arena/5dba2ab6-poker4 | schedule.html | Existing schedule rows + multi-flight Day-2 restarts | Finish times not published → overlap flagged as possible, not confirmed |
-| N9 | Repo review + line-by-line verification (source links, unverified flags) | in progress | arena/5dba2ab6-poker4 | review.html, COORDINATION.md | Existing data + linked official sources | See existing flagged list |
+| N9 | Repo review + line-by-line verification (source links, unverified flags) | done | arena/5dba2ab6-poker4 | review.html, COORDINATION.md | All external source URLs resolve to official operator domains; every tournament/hotel row carries an official source link; unconfirmed values (single-entry rules, finish times, walk minutes, dated room rates, cancellation deadlines) are left blank and flagged unverified, never inferred | Existing flagged list preserved in review.html |
 | N10 | Integration: PR → main, merge, Pages deploy check, record result | planned | arena/5dba2ab6-poker4 | this branch, main, COORDINATION.md | — | — |
 
 
