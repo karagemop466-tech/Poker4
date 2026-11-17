@@ -3893,7 +3893,9 @@
      "single-entry unverified"
     ]
    },
-   "restarts": [],
+   "restarts": [
+    "$2,200 Nlh Pokeratlas Championship Title Event Day 2 Restart - Play Down To Final 7, Streamed Final Table (Pokergo)"
+   ],
    "overlap_notes": [],
    "entries_usd": 1400,
    "primary_id": "V49-2026-12-13-10:10am",
@@ -4414,8 +4416,8 @@
     "time": "10:10 AM",
     "registration_closes": null,
     "buy_in_usd": 1100,
-    "guarantee_usd": null,
-    "guarantee_printed": false,
+    "guarantee_usd": 500000,
+    "guarantee_printed": true,
     "starting_chips": null,
     "level_duration": null,
     "kind": "Tournament",
@@ -4470,14 +4472,14 @@
     "levels_total": null,
     "breaks_listed": 9,
     "spend_advantage_evidence": [],
-    "guarantee_from_sheet_text": "$500,000",
     "single_entry_confirmed": false,
-    "rankable": false,
+    "rankable": true,
+    "gtd_ratio": 454.55,
+    "gtd_over_pool_contribution": 520.83,
     "last_checked": "2026-11-17",
     "source_changed": false,
     "flags": [
-     "single-entry unverified",
-     "not ranked \u2014 entry fee or guarantee unconfirmed"
+     "single-entry unverified"
     ]
    },
    "fallback": {
@@ -4915,8 +4917,8 @@
     "time": "11:10 AM",
     "registration_closes": null,
     "buy_in_usd": 600,
-    "guarantee_usd": null,
-    "guarantee_printed": false,
+    "guarantee_usd": 150000,
+    "guarantee_printed": true,
     "starting_chips": null,
     "level_duration": "5",
     "kind": "Tournament",
@@ -4971,14 +4973,14 @@
     "levels_total": null,
     "breaks_listed": 9,
     "spend_advantage_evidence": [],
-    "guarantee_from_sheet_text": "$150,000",
     "single_entry_confirmed": false,
-    "rankable": false,
+    "rankable": true,
+    "gtd_ratio": 250.0,
+    "gtd_over_pool_contribution": 297.03,
     "last_checked": "2026-11-17",
     "source_changed": false,
     "flags": [
-     "single-entry unverified",
-     "not ranked \u2014 entry fee or guarantee unconfirmed"
+     "single-entry unverified"
     ]
    },
    "fallback": {

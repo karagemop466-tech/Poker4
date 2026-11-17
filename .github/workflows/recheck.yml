@@ -21,7 +21,7 @@ jobs:
         run: python3 tools/daily_schedule.py
 
       - name: Verify site integrity
-        run: python3 tools/verify_root_site.py
+        run: python3 scripts/verify_root.py  # canonical root gate (tools/verify_root_site.py is stale: pre-PR-#43 markers)
 
       - name: Commit monitor output
         run: |

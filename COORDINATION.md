@@ -615,3 +615,43 @@ Branched from `main` @ `0d13de0`. No other session holds an active claim on the 
 | K3 | Board log, verification record, PR → main, merge, Pages deploy check | in progress | c2242cb1 | `COORDINATION.md` (log only) | — |
 
 Irregularity noted at claim time: the `monitor.yml` ("Monitor official sources") and `recheck.yml` ("daily-recheck") scheduled runs failed on the latest cron (run logs not retrievable from the sandbox; to be diagnosed by re-running the scripts). Logged here, not yet resolved.
+
+### Result record — arena/c2242cb1-poker4 (2026-11-17)
+
+**Status:** K1 done · K2 done (with flagged caveats) · K3 in progress (PR + merge recorded below once complete).
+
+**Root cause found (K1).** `main` was publishing a stale root site. `.github/workflows/maintenance.yml` ran the legacy `build/build_pages.py` every morning and committed `*.html` to `main`. That overwrote the pages `scripts/integrate_data.py` generates. The visible instance is commit `6c94023` (16:57 UTC, 2026-11-17): `schedule.html` went back to a 75 KB page instead of the redirect stub, `tournaments.html` lost the tab layout, and the landing page stated walking minutes as "verified". Fix: maintenance now runs only `scripts/integrate_data.py` and the current verifiers. `recheck.yml` now runs `scripts/verify_root.py` instead of the stale `tools/verify_root_site.py` (19 errors on the current pages).
+
+**Other fixes in this branch**
+- `scripts/integrate_data.py`: tournaments default to the first tab that has rows. Before, the page opened on the empty "Single-entry / freezeout" tab and the date/venue filters appeared dead. This is a design change: the single-entry tab stays first and still says "nothing qualifies". Revert by restoring the `active` class logic if you disagree.
+- Venetian schedule (K2): the PDF-parsed `schedule-snapshot.json` disagreed with the official page in 3 ways. Corrected through `data/c2242cb1/venetian_overrides.json`, which the generator applies on every build. Each `set` must match exactly one row, or the build stops.
+- Flags F15–F20 added to `data/poker4.json` (published on the Flagged page).
+- `data/c2242cb1/`: official transcription of all 94 Venetian rows, the override file, and `verification.json` (each check, source link, retrieval date, outcome).
+- `tools/c2242cb1_check_dse.py`: re-runnable check. Passes on the corrected output; fails on the pre-fix output (6 problems), so it does catch these errors.
+
+**Sources read this session (retrieved 2026-11-17)**
+- S-V1 Venetian DeepStack IV schedule (4 chunks, 94 rows): https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html
+- S-V2 Venetian resort fee $55 + tax: https://www.venetianlasvegas.com/resort/resort-fee.html
+- S-V3 Venetian hotel terms (13.38% Clark County room tax; $20/day parking; $55 fee): https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html
+- S-V4 Venetian poker suite rates ($119/$209 "as low as", play rules): https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html
+- S-T1 Treasure Island tower suite ($49.95 + tax daily resort fee): https://treasureisland.com/hotel/tower-suite
+- S-W1 Wynn terms ($55 + tax, promotional package, expired Nov 1, 2026): https://www.wynnlasvegas.com/terms-and-conditions/850257
+
+**Verification performed**
+- Full Venetian table compared row by row: 94 official rows vs 94 published rows after correction; 0 field mismatches (date, time, event #, buy-in, printed guarantee).
+- Hotel values V2–V6 matched their official pages. V7 (Wynn $55) matches its page but the page is an expired promo, so it is flagged.
+- Walking minutes (V8): no official source; every value in `data/walks.json` is null. Previously published "verified" minutes removed by regeneration; flagged.
+- All gates green on the final tree: `verify_root.py` (16 pages, 119 event rows, 0 warnings); `verify.py`; `verify_markup.py` (37 pages); `linkcheck.py` (30 pages); `validate_site.py`; `verify_poker4.py`; `check_rows.py`; `poker4_monitor --selftest`; `build_poker4.py` (zero drift); `c2242cb1_check_dse.py`; `node --check app.js`; `integrate_data.py` idempotent (two consecutive builds byte-identical).
+- Headless browser (jsdom) smoke test of tournaments, venue, and other pages: 0 JS errors; date window, single-entry toggle and search behave correctly.
+
+**Irregularities (all published on the Flagged page)**
+- F15 stale-build overwrite (fixed here).
+- F16 PDF-parser errors (corrected by override; the parser itself is not fixed).
+- F17 walking minutes "verified" with no official source (removed).
+- F18 Wynn fee sourced from an expired promotional page.
+- F19 "42 structure sheets audited" mixes non-Venetian documents; `verify_poker4` reports 12 tracked sheets with no record.
+- F20 `monitor.yml` and `recheck.yml` failed on their last scheduled runs; logs are not retrievable from the sandbox, so the cause is unconfirmed. Eight overlapping scheduled jobs commit to `main`.
+
+**Not re-verified this session (left as flagged, not changed):** the 37 structure-sheet PDFs' entry rules, the Wynn WPT schedule/structure PDFs, Bellagio/Caesars/ARIA rows, date-specific hotel rates, and the scraper output. Single-entry remains unconfirmed for every event.
+
+**Live-site note:** the landing page now shows 119 events and 94 Venetian rows. The Dec 17 1A/1B and Dec 20 1A rows now show their printed guarantees, so they enter the descriptive ratio ranking (ratio arithmetic only, not a forecast).
