@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated_at": "2026-11-17T01:31:49Z",
+  "generated_at": "2026-11-17T01:45:05Z",
   "rows": 93,
-  "note": "Rows read from the official schedule text captured in data/raw; blank fields were not printed."
+  "note": "Rows read from the official schedule page at run time; blank fields were not printed on the page."
  },
  "rows": [
   {
@@ -867,23 +867,6 @@
    "retrieved": "2026-11-17"
   },
   {
-   "parse_notes": [
-    "registration-closes cell “10:00 AM” not later than the start time; not recorded"
-   ],
-   "registration_closes": null,
-   "date": "2026-12-11",
-   "weekday": "Friday",
-   "time": "7:00 PM",
-   "event_no": 39,
-   "event_name": "NO LIMIT HOLD'EM LIPS DAY 2 RESTART PLAY DOWN TO FINAL 7 - STREAMED FINAL TABLE (POKERGO) AT",
-   "buy_in_usd": 800,
-   "guarantee_usd": null,
-   "starting_chips": null,
-   "level_duration": null,
-   "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-17"
-  },
-  {
    "parse_notes": null,
    "registration_closes": "4:55 PM",
    "date": "2026-12-11",
@@ -916,6 +899,23 @@
    "retrieved": "2026-11-17"
   },
   {
+   "parse_notes": [
+    "registration-closes cell “10:00 AM” not later than the start time; not recorded"
+   ],
+   "registration_closes": null,
+   "date": "2026-12-11",
+   "weekday": "Friday",
+   "time": "7:00 PM",
+   "event_no": 39,
+   "event_name": "NO LIMIT HOLD'EM LIPS DAY 2 RESTART PLAY DOWN TO FINAL 7 - STREAMED FINAL TABLE (POKERGO) AT",
+   "buy_in_usd": 800,
+   "guarantee_usd": null,
+   "starting_chips": null,
+   "level_duration": null,
+   "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+   "retrieved": "2026-11-17"
+  },
+  {
    "parse_notes": null,
    "registration_closes": null,
    "date": "2026-12-11",
@@ -939,23 +939,6 @@
    "weekday": "Friday",
    "time": "8:10 PM",
    "event_no": 45,
-   "event_name": "NLH TURBO MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47",
-   "buy_in_usd": 260,
-   "guarantee_usd": null,
-   "starting_chips": null,
-   "level_duration": null,
-   "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-17"
-  },
-  {
-   "parse_notes": [
-    "LEVEL cell “2” is not a plausible blind level; not recorded"
-   ],
-   "registration_closes": "10:55 AM",
-   "date": "2026-12-12",
-   "weekday": "Saturday",
-   "time": "9:10 AM",
-   "event_no": 46,
    "event_name": "NLH TURBO MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47",
    "buy_in_usd": 260,
    "guarantee_usd": null,
@@ -1006,6 +989,23 @@
    "event_name": "NO LIMIT HOLD'EM 1B POKERATLAS CHAMPIONSHIP TITLE EVENT",
    "buy_in_usd": 2200,
    "guarantee_usd": 1000000,
+   "starting_chips": null,
+   "level_duration": null,
+   "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+   "retrieved": "2026-11-17"
+  },
+  {
+   "parse_notes": [
+    "LEVEL cell “2” is not a plausible blind level; not recorded"
+   ],
+   "registration_closes": "10:55 AM",
+   "date": "2026-12-12",
+   "weekday": "Saturday",
+   "time": "9:10 AM",
+   "event_no": 46,
+   "event_name": "NLH TURBO MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47",
+   "buy_in_usd": 260,
+   "guarantee_usd": null,
    "starting_chips": null,
    "level_duration": null,
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
