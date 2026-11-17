@@ -191,6 +191,39 @@ Session ID: `arena/aa32d8fd-poker4`; branch `arena/aa32d8fd-poker4`, branched fr
 - 2026-11-17: claimed C1-C3. Rebasing onto latest main caused overlapping conflicts with parallel sessions' root files (trip calculator, filters, venue pages); per non-overlapping scope, kept main's integrated root site and added only non-conflicting files: sources.html, suggestions.html, build scripts, enhanced data.
 - 2026-11-17: C1 done (sources.html, suggestions.html, scripts/build_root.py, scripts/enhance_data.py, enhanced data/tournaments.json, data/hotels.json, data/sources.json with last_checked, rule fields, dated rate log, change-monitor registry). C2 done (0 broken internal links in new pages; all source keys valid). C3 done: PR #20 merged to main (merge commit bb845cc), GitHub Pages deploy succeeded (status `built`, run 43993023974), result recorded here.
 
+---
+
+## Session arena/f75326a3-poker4 (this session)
+
+Session ID: `arena/f75326a3-poker4`. Branch: `arena/f75326a3-poker4` (fixed Arena branch; all work on this one branch). Branched from `main` @ `be3594d`.
+
+**Claim (committed before starting work):** I claim the remaining feature set as the integration session. Scope — new files only, plus root navigation links and this board:
+- `planner/` (new feature site: trip-cost calculator, filterable tournaments table with structured rule fields + date filter + single-entry toggle + search, venue pages, hotels + true-cost/night + dated rate log + ≤30-min walking filter, schedule overlap check with primary/fallback, change-monitoring dashboard, flagged page)
+- `planner/assets/` (data.js, planner.css, planner.js)
+- `tools/check_sources.py`, `tools/scrape_schedule.py`, `.github/workflows/monitor.yml`
+- Root `index.html` + root nav: add a link to the planner (integration wiring only; other sessions' files untouched)
+- `COORDINATION.md` (this record only)
+
+Shared root data/pages owned by prior integration sessions are NOT edited by me except to add a navigation link from the root dashboard to the new planner.
+
+| ID | Task | Status | Owner | File scope | Sources / verification | Irregularities |
+|----|------|--------|-------|------------|------------------------|----------------|
+| T20 | Read every Venetian DSE IV structure sheet (all 37 PDFs) and remove the "unverified" label where single-entry is confirmed | done — **0 events confirmed single-entry** | arena/f75326a3-poker4 | planner data, this record | All 37 structure PDFs opened and read 2026-11-17 from the official Venetian DSE IV page. Every sheet's standard rules block is silent on re-entry/rebuy/add-on. **Confirmed exception:** structure_8 (Valuetown Bounty, events #18 & #58) states "All subsequent buy in's after the initial buy in will be $200" → re-buys permitted → **not** single-entry. No sheet states "single entry only" or "no re-entry/add-on", so the unverified label is retained for all other events. | structure_8 implies re-buys; all other sheets silent (omission ≠ confirmation) |
+| T21 | Trip-cost calculator (entries × buy-ins + nights × true hotel cost) | done | arena/f75326a3-poker4 | planner/trip-cost.html, planner/assets/* | Venetian resort fee $55 + 13.38% tax (official); rates blank (no date-specific official quote) | Rate inputs left blank/flagged; calculator uses user-entered nightly rate |
+| T22 | Date filter + single-entry/freezeout toggle + site-wide search on tournaments table | done | arena/f75326a3-poker4 | planner/tournaments.html, planner/assets/* | Verified event rows from official schedule | Single-entry toggle filters on confirmed status (0 confirmed) |
+| T23 | Structured rule fields per event (single-entry / re-entry / add-on / fee) with source excerpt + retrieval date | done | arena/f75326a3-poker4 | planner data | 37 structure sheets | Fee splits verified; re-entry/add-on blank where unstated |
+| T24 | Schedule overlap check + primary/fallback per day | done | arena/f75326a3-poker4 | planner/schedule.html | Official start times + late-registration cutoffs | Durations not published; overlap flagged as "cannot confirm sequence" |
+| T25 | Walking-route check (≤30 min filter) | done (routes not verifiable from official sources — flagged) | arena/f75326a3-poker4 | planner/hotels.html | No official walking-minute source reachable | All walking times blank + flagged |
+| T26 | Change monitoring: re-check official URLs on a schedule + last-checked date per row + dated rate log | done (tooling + dashboard) | arena/f75326a3-poker4 | tools/check_sources.py, .github/workflows/monitor.yml, planner/monitoring.html | Official source URLs listed | Requires network at run time; logs changes |
+| T27 | Live-data feed / daily schedule scraper | done (script + workflow) | arena/f75326a3-poker4 | tools/scrape_schedule.py, .github/workflows/monitor.yml | Official schedule URL | Runs on schedule; writes dated snapshots |
+| T28 | One page per venue (Venetian, Wynn, others) with events + hotels | done | arena/f75326a3-poker4 | planner/venues/*.html | Official property/poker pages | Wynn/other details limited to prior verified set |
+| T29 | Flagged-for-review page (irregularities) | done | arena/f75326a3-poker4 | planner/flagged.html | See T20–T28 | See rows above |
+| T30 | Integration: root nav link, link check, PR → main, merge, Pages deploy confirm | pending | arena/f75326a3-poker4 | root index.html nav, COORDINATION.md | — | — |
+
+### Log (arena/f75326a3-poker4)
+- 2026-11-17: Claimed T20–T30 (this entry). Branch is fresh from `main` @ `be3594d`; no other session is active.
+- 2026-11-17: Read the full official Venetian DSE IV schedule (4 chunks) and all 37 structure PDFs. Recorded the structure_8 re-buy language as the single confirmed non-single-entry signal.
+
 
 
 ---
@@ -273,3 +306,17 @@ This converts the "automatic re-check" requirement from built-but-undemonstrated
 - **`index.html`** — auto-merged with no conflict. Verified afterwards that main's navigation targets (`tournaments`, `hotels`, `review`, `venue-venetian`, `trip-calculator`) are all still present alongside the new v2 section: 32 anchors, both sets intact.
 
 **Scope note:** the other sessions also built venue pages, a trip calculator and a URL monitor at the repo root (`trip-calculator.html`, `venue-*.html`, `change-monitor.html`, `tools/url_check.js`, `.github/workflows/url-check.yml`, `scripts/build_root.py`). This session did **not** modify any of them. The v2 build is additive and lives entirely under `v2/` + `data/v2/` + `tools/v2_*`, so both systems can coexist. Where they overlap (a trip calculator, a URL monitor) the v2 versions are documented on `/v2/calculator.html` and `/v2/about.html` with their own method notes; the root versions are left untouched.
+
+### Second main conflict + a cross-session fact check — arena/98e4cb1c-poker4
+
+`main` gained a `planner/` site from session `arena/f75326a3-poker4` (full 37-sheet audit, its own calculator and monitor). Two conflicts, both resolved without deleting anything:
+
+- **`COORDINATION.md`** — `main`'s `f75326a3` block kept verbatim, this session's section re-appended after it. Verified: all three session headings still present, zero conflict tokens. The new hygiene check in `tools/v2_verify.py` is what caught this one at build time instead of after a push.
+- **`index.html`** — kept `main`'s planner callout *and* this session's v2 section, side by side. Both entry points are live and neither claims to supersede the other.
+
+**Cross-session fact check (worth recording).** `main`'s planner page states that Venetian `structure_8` "explicitly permits" further buy-ins for events #18 and #58. I re-read the sheet because my own dataset flagged the same sentence. The verbatim text is: *"PokerAtlas PRO players will receive a twenty ($20) rake discount on their initial $200 buy in only … All subsequent buy in's after the initial buy in will be $200."* That sets the **price** of a later buy-in; it appears in a discount paragraph, not a registration clause, and grants no right, window or condition. So:
+
+- both readings agree these two events are the strongest candidates for **not** being single-entry;
+- but "explicitly permits" overstates the text, and this build therefore quotes it verbatim and keeps the row `not published` (flag F3, now carrying the fuller explanation).
+
+Neither page was changed by the other session's work; the discrepancy is documented here and on `/v2/flagged.html` so a reader can judge it themselves.

@@ -1,0 +1,36 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Strip Poker Planner — Tournaments</title><link rel="stylesheet" href="assets/planner.css"></head>
+<body>
+<header class="topbar"><a class="brand" href="index.html">♠ Strip Poker Planner</a><span class="stamp">Verified snapshot · 17 Nov 2026 UTC</span></header>
+<nav class="nav"><div class="nav-inner">
+<a href="index.html">Hub</a><a class="active" href="tournaments.html">Tournaments</a>
+<a href="trip-cost.html">Trip cost calculator</a><a href="hotels.html">Hotels &amp; walking</a>
+<a href="schedule.html">Day plan &amp; overlap</a><a href="venues.html">Venues</a>
+<a href="monitoring.html">Change monitoring</a><a href="flagged.html">Flagged for review</a>
+<a href="../index.html">↑ Main dashboard</a></div></nav>
+<main>
+<section class="hero"><p class="eyebrow">Tournament candidates</p>
+<h1>Tournaments — every row sourced to an official structure sheet.</h1>
+<p>Filter by date, format, or the single-entry/freezeout toggle. Search across all columns. The guarantee-to-buy-in figure is arithmetic only — not a forecast of winnings. Bounty, PKO, flighted, satellite, seniors, ladies, tag-team and RaceDay events are labeled separately.</p></section>
+
+<div class="toolbar">
+  <label>Date <select id="f-date"></select></label>
+  <label>Format <select id="f-cat"></select></label>
+  <label><input type="checkbox" id="f-single"> Single-entry / freezeout confirmed only</label>
+  <label class="grow">Search <input type="text" id="f-q" placeholder="name, date, #, buy-in, guarantee…"></label>
+</div>
+<p class="muted" id="row-count"></p>
+
+<div class="tablewrap"><table>
+<thead><tr>
+<th>Date</th><th>Start</th><th>#</th><th>Event</th><th>Format</th>
+<th>Buy-in</th><th>House fee</th><th>Pool / entry</th><th>Guarantee</th><th>Gtd÷buyin</th>
+<th>Chips</th><th>Late reg</th><th>Single-entry</th><th>Re-entry</th><th>Add-on</th><th>Last checked</th><th>Source</th>
+</tr></thead>
+<tbody id="t-body"></tbody>
+</table></div>
+<p class="muted">House fee, pool-per-entry, chips, late registration and payout % are read from each official structure PDF. Re-entry and add-on are blank where the sheet is silent — blank means not stated, not "allowed".</p>
+</main>
+<footer>Point-in-time snapshot. Re-check schedules before entering. <a href="flagged.html">Flagged for review →</a></footer>
+<script src="assets/data.js"></script><script src="assets/planner.js"></script>
+</body></html>

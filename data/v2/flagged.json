@@ -34,9 +34,9 @@
    "id": "F3",
    "category": "Entry rules",
    "severity": "material",
-   "title": "Venetian event #8/#18/#58 mention 'subsequent buy in's' without defining them",
-   "detail": "Structure sheet 8 rule 07 gives PokerAtlas PRO members a $20 discount on the initial $200 buy-in and says 'All subsequent buy in's after the initial buy in will be $200'. That wording allows for later buy-ins but does not grant a re-entry right or describe an add-on.",
-   "how_to_settle": "Ask the poker room to confirm whether 'subsequent buy in' means re-entry after elimination, and under what window.",
+   "title": "Structure 8's 'subsequent buy in's' wording is the closest thing to a published entry rule \u2014 and it is ambiguous",
+   "detail": "Sheet 8 (events #18 and #58, Valuetown Bounty) rule 07 gives PokerAtlas PRO members a $20 discount on the initial $200 buy-in and then says: 'All subsequent buy in's after the initial buy in will be $200.' A parallel session's planner describes this as explicitly permitting further buy-ins. That is a fair reading, but the sentence sits in a paragraph about a discount and a price, not in a registration clause: it sets the price of a later buy-in without granting a right to one, and without stating a window or a re-entry condition. This site therefore records the quote verbatim and classifies the row 'not published' rather than 're-entry allowed'. Note the practical point both readings share: these two events are the strongest candidates for NOT being single-entry.",
+   "how_to_settle": "Ask the poker room directly whether a 'subsequent buy in' is available to any eliminated player, and if so through which level. One answer resolves both this item and F1 for these two events.",
    "sources": [
     "V_S08"
    ]

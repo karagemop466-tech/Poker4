@@ -1,0 +1,30 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Strip Poker Planner — Hotels &amp; walking</title><link rel="stylesheet" href="assets/planner.css"></head>
+<body>
+<header class="topbar"><a class="brand" href="index.html">♠ Strip Poker Planner</a><span class="stamp">Verified snapshot · 17 Nov 2026 UTC</span></header>
+<nav class="nav"><div class="nav-inner">
+<a href="index.html">Hub</a><a href="tournaments.html">Tournaments</a><a href="trip-cost.html">Trip cost calculator</a><a class="active" href="hotels.html">Hotels &amp; walking</a>
+<a href="schedule.html">Day plan &amp; overlap</a><a href="venues.html">Venues</a>
+<a href="monitoring.html">Change monitoring</a><a href="flagged.html">Flagged for review</a>
+<a href="../index.html">↑ Main dashboard</a></div></nav>
+<main>
+<section class="hero"><p class="eyebrow">Lodging &amp; true cost</p>
+<h1>Hotels near the tournaments — true cost per night and walking.</h1>
+<p>True cost per night = <b>room rate + resort fee + 13.38% room tax</b>. Only the Venetian resort fee ($55 + tax) is verified from an official page; other fees and all walking minutes are blank and flagged. Use the ≤30-minute walk filter once walking times are verified.</p></section>
+
+<div class="toolbar"><label><input type="checkbox" id="f-walk"> Show only hotels within a ≤30-minute walk</label></div>
+<div class="grid" id="hotel-rows"></div>
+
+<section class="section"><h2>Dated rate log</h2>
+<p class="muted">Rates are kept as a dated log, not a single value. No official dated room quote has been captured yet, so the log is empty — each verified quote will be appended with its date, source, and timestamp.</p>
+<div class="callout"><strong>To populate:</strong> open the property's official booking link for your exact dates, record the quoted room rate, and run <code>python3 tools/check_sources.py</code> (or the scheduled workflow) to append it here with a timestamp. Do not store a single rate as if it applied to all dates.</div>
+</section>
+
+<section class="section"><h2>Walking-route check</h2>
+<p class="muted">Official walking minutes from each hotel to the Venetian poker room were not reachable from an official source, so all walking values are blank and flagged. The ≤30-minute filter is wired and will apply as soon as verified walking times are entered. Verify with Google Maps / Apple Maps and the property's official directions before relying on a walk.</p>
+<p><a class="button ghost" href="flagged.html">See walking-time flags →</a></p>
+</section>
+</main>
+<footer>Cost and quality are prioritized over distance, but distance must stay reasonable (≤30 min walk). Verify fees, rates and walking before booking. <a href="flagged.html">Flagged for review →</a></footer>
+<script src="assets/data.js"></script><script src="assets/planner.js"></script>
+</body></html>
