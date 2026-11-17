@@ -1,0 +1,8 @@
+# v2 source monitor
+
+checked: 61  changed: 0  unreachable: 3
+
+## Unreachable
+- C_FEES — https://www.travelocity.com/Las-Vegas-Hotels-Caesars-Palace-Resort-Casino.h41245.Hotel-Information (HTTPError: HTTP Error 429: Too Many Requests)
+- B_POKER — https://bellagio.mgmresorts.com/en/casino/poker.html (TimeoutError: The read operation timed out)
+- MAP_OSRM — https://router.project-osrm.org/ (HTTPError: HTTP Error 400: Bad Request)
