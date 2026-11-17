@@ -248,6 +248,15 @@ def parse_schedule(text: str, source_url: str) -> list[dict]:
     return rows
 
 
+PDF_DATE_RE = re.compile(r"(?P<mon>Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\.?\s+(?P<day>\d{1,2})", re.I)
+PDF_TIME_RE = re.compile(r"(?P<t>\d{1,2}:\d{2}\s*(?:AM|PM))", re.I)
+
+
+def parse_schedule_pdf(text: str, source_url: str) -> list[dict]:
+    """Placeholder — refined once the printed layout of the sheet is recorded."""
+    return []
+
+
 # ------------------------------------------------------------------- structures
 FIELD_PATTERNS = {
     "title": r"^\s*\$?[\d,]*\s*.{0,70}?$",
@@ -383,6 +392,7 @@ def main() -> int:
             if kind == "pdf":
                 text, note = pdf_to_text(body, workdir)
                 rec["extractor"] = note
+                rec["text_chars"] = len(text) if text else 0
                 if text:
                     key = entry.get("key") or url.rsplit("/", 1)[-1]
                     audit = audit_structure(text, url)
@@ -408,8 +418,13 @@ def main() -> int:
                     rows = parse_schedule(text, url)
                     snapshot_rows.extend(rows)
                     rec["schedule_rows_parsed"] = len(rows)
+            if entry.get("parse") == "venetian-schedule-pdf" and text:
+                rows = parse_schedule_pdf(text, url)
+                snapshot_rows.extend(rows)
+                rec["schedule_rows_parsed"] = len(rows)
             if entry.get("keep_text_excerpt") and text:
-                rec["text_head"] = text[:600]
+                n = int(entry.get("excerpt_chars") or 600)
+                rec["text_head"] = text[:n]
         else:
             rec["error"] = res.get("error")
             rec["content_changed"] = None

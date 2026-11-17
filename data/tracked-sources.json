@@ -12,14 +12,19 @@
    "kind": "page",
    "venue": "The Venetian",
    "key": "V_SCHED_PAGE",
-   "parse": "venetian-schedule"
+   "parse": "venetian-schedule",
+   "keep_text_excerpt": true,
+   "excerpt_chars": 2500
   },
   {
    "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
    "label": "Venetian DeepStack Extravaganza IV \u2014 printed schedule (PDF)",
    "kind": "pdf",
    "venue": "The Venetian",
-   "key": "V_SCHED_PDF"
+   "key": "V_SCHED_PDF",
+   "parse": "venetian-schedule-pdf",
+   "keep_text_excerpt": true,
+   "excerpt_chars": 9000
   },
   {
    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament.html",
