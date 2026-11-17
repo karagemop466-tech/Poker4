@@ -2982,8 +2982,8 @@
     "buy_in_usd": 100,
     "guarantee_usd": null,
     "guarantee_printed": false,
-    "starting_chips": null,
-    "level_duration": null,
+    "starting_chips": 20000,
+    "level_duration": "20",
     "kind": "Satellite",
     "tags": [
      "Satellite",
@@ -3150,8 +3150,8 @@
     "buy_in_usd": 100,
     "guarantee_usd": null,
     "guarantee_printed": false,
-    "starting_chips": null,
-    "level_duration": null,
+    "starting_chips": 20000,
+    "level_duration": "20",
     "kind": "Satellite",
     "tags": [
      "Satellite",
@@ -3490,8 +3490,8 @@
     "buy_in_usd": 260,
     "guarantee_usd": null,
     "guarantee_printed": false,
-    "starting_chips": null,
-    "level_duration": null,
+    "starting_chips": 20000,
+    "level_duration": "15",
     "kind": "Satellite",
     "tags": [
      "Satellite"
@@ -3555,7 +3555,7 @@
     ]
    },
    "restarts": [
-    "$800 No Limit Hold'Em Lips Day 2 Restart Play Down To Final 7 - Streamed Final Table (Pokergo) At",
+    "$800 No Limit Hold'Em Lips Day 2 Restart Play Down To Final 7 - Streamed Final Table (Pokergo) At 7:00 Pm",
     "$800 No Limit Hold'Em Lips Final Table Streamed Final Table (Pokergo)"
    ],
    "overlap_notes": [
@@ -3582,8 +3582,8 @@
     "buy_in_usd": 260,
     "guarantee_usd": null,
     "guarantee_printed": false,
-    "starting_chips": null,
-    "level_duration": null,
+    "starting_chips": 20000,
+    "level_duration": "15",
     "kind": "Satellite",
     "tags": [
      "Satellite"
@@ -3660,8 +3660,8 @@
     "buy_in_usd": 260,
     "guarantee_usd": null,
     "guarantee_printed": false,
-    "starting_chips": null,
-    "level_duration": null,
+    "starting_chips": 20000,
+    "level_duration": "15",
     "kind": "Satellite",
     "tags": [
      "Satellite"
@@ -3893,7 +3893,9 @@
      "single-entry unverified"
     ]
    },
-   "restarts": [],
+   "restarts": [
+    "$2,200 No Limit Hold\u2019Em Day 2 Restart Pokeratlas Championship Title Event Play Down To Final 7 - Streamed Final Table (Pokergo)"
+   ],
    "overlap_notes": [],
    "entries_usd": 1400,
    "primary_id": "V49-2026-12-13-10:10am",
@@ -4412,12 +4414,12 @@
     "date": "2026-12-17",
     "weekday": "Thursday",
     "time": "10:10 AM",
-    "registration_closes": null,
+    "registration_closes": "4:55 PM",
     "buy_in_usd": 1100,
-    "guarantee_usd": null,
-    "guarantee_printed": false,
-    "starting_chips": null,
-    "level_duration": null,
+    "guarantee_usd": 500000,
+    "guarantee_printed": true,
+    "starting_chips": 40000,
+    "level_duration": "40",
     "kind": "Tournament",
     "tags": [
      "Multi-flight"
@@ -4470,88 +4472,88 @@
     "levels_total": null,
     "breaks_listed": 9,
     "spend_advantage_evidence": [],
-    "guarantee_from_sheet_text": "$500,000",
     "single_entry_confirmed": false,
-    "rankable": false,
+    "rankable": true,
+    "gtd_ratio": 454.55,
+    "gtd_over_pool_contribution": 520.83,
     "last_checked": "2026-11-17",
     "source_changed": false,
     "flags": [
-     "single-entry unverified",
-     "not ranked \u2014 entry fee or guarantee unconfirmed"
+     "single-entry unverified"
     ]
    },
    "fallback": {
-    "id": "V57-2026-12-17-12:10pm",
+    "id": "V56-2026-12-17-6:10pm",
     "venue": "venetian",
     "venue_name": "The Venetian Poker Room",
-    "event_no": 57,
-    "name": "$600 Pot Limit Omaha Double Board Bomb Pot (1Day)",
-    "name_printed": "POT LIMIT OMAHA DOUBLE BOARD BOMB POT (1DAY)",
+    "event_no": 56,
+    "name": "$1,100 No Limit Hold'Em 1B $40 Rake Discount For Entries Before",
+    "name_printed": "NO LIMIT HOLD'EM 1B $40 RAKE DISCOUNT FOR ENTRIES BEFORE",
     "date": "2026-12-17",
     "weekday": "Thursday",
-    "time": "12:10 PM",
-    "registration_closes": "4:40 PM",
-    "buy_in_usd": 600,
-    "guarantee_usd": 25000,
+    "time": "6:10 PM",
+    "registration_closes": "11:10 PM",
+    "buy_in_usd": 1100,
+    "guarantee_usd": 500000,
     "guarantee_printed": true,
-    "starting_chips": 30000,
+    "starting_chips": 40000,
     "level_duration": "30",
     "kind": "Tournament",
     "tags": [
-     "Mixed game"
+     "Multi-flight"
     ],
-    "is_flight": false,
+    "is_flight": true,
     "is_continuation": false,
     "rules": {
      "single_entry": {
       "status": "unverified",
       "value": null,
       "excerpt": null,
-      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_23.pdf",
+      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_36.pdf",
       "retrieved": "2026-11-17"
      },
      "re_entry": {
       "status": "not_stated_in_sheet",
       "value": null,
       "excerpt": null,
-      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_23.pdf",
+      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_36.pdf",
       "retrieved": "2026-11-17"
      },
      "add_on": {
       "status": "not_stated_in_sheet",
       "value": null,
       "excerpt": null,
-      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_23.pdf",
+      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_36.pdf",
       "retrieved": "2026-11-17"
      },
      "fee": {
       "status": "confirmed",
-      "value": "$90 of $600 withheld; $510 per entry to the prize pool",
-      "excerpt": "$ 90 of the $ 600 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $ 510 of every $ 600 Buy In.",
-      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_23.pdf",
+      "value": "$140 of $1100 withheld; $960 per entry to the prize pool",
+      "excerpt": "$ 140 of the $ 1100 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $ 960 of every $ 1100 Buy In.",
+      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_36.pdf",
       "retrieved": "2026-11-17"
      }
     },
     "sources": [
      "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-     "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_23.pdf"
+     "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_36.pdf"
     ],
-    "sheet_key": "V_S23",
+    "sheet_key": "V_S36",
     "sheet_note": null,
-    "house_fee_usd": 90,
-    "pool_per_entry_usd": 510,
-    "sheet_start_time": "12:10 PM",
-    "sheet_late_registration": "8 levels + break (~ 4:40 PM)",
-    "sheet_guarantee_text": "$25,000",
-    "sheet_title": "$600 Pot Limit Omaha",
+    "house_fee_usd": 140,
+    "pool_per_entry_usd": 960,
+    "sheet_start_time": "6:10 PM",
+    "sheet_late_registration": "9 levels + Break (~ 11:10 PM)",
+    "sheet_guarantee_text": "$500,000",
+    "sheet_title": "$1,100 No Limit Hold\u2019em",
     "payout_pct_of_field": null,
     "levels_total": null,
     "breaks_listed": 6,
     "spend_advantage_evidence": [],
     "single_entry_confirmed": false,
     "rankable": true,
-    "gtd_ratio": 41.67,
-    "gtd_over_pool_contribution": 49.02,
+    "gtd_ratio": 454.55,
+    "gtd_over_pool_contribution": 520.83,
     "last_checked": "2026-11-17",
     "source_changed": false,
     "flags": [
@@ -4560,12 +4562,11 @@
    },
    "restarts": [],
    "overlap_notes": [
-    "$1,100 No Limit Hold'Em 1A $40 Rake Discount For Entries Before prints no registration deadline, so overlap with $600 Pot Limit Omaha Double Board Bomb Pot (1Day) cannot be settled from official data",
-    "$1,100 No Limit Hold'Em 1A $40 Rake Discount For Entries Before prints no registration deadline, so overlap with $1,100 No Limit Hold'Em 1B $40 Rake Discount For Entries Before cannot be settled from official data"
+    "$1,100 No Limit Hold'Em 1A $40 Rake Discount For Entries Before registration stays open until 4:55 PM, which is after $600 Pot Limit Omaha Double Board Bomb Pot (1Day) starts at 12:10 PM \u2014 the two cannot be played in sequence unless you are out of the first event before it closes"
    ],
    "entries_usd": 2800,
    "primary_id": "V56-2026-12-17-10:10am",
-   "fallback_id": "V57-2026-12-17-12:10pm"
+   "fallback_id": "V56-2026-12-17-6:10pm"
   },
   {
    "date": "2026-12-18",
@@ -4913,12 +4914,12 @@
     "date": "2026-12-20",
     "weekday": "Sunday",
     "time": "11:10 AM",
-    "registration_closes": null,
+    "registration_closes": "5:55 PM",
     "buy_in_usd": 600,
-    "guarantee_usd": null,
-    "guarantee_printed": false,
-    "starting_chips": null,
-    "level_duration": "5",
+    "guarantee_usd": 150000,
+    "guarantee_printed": true,
+    "starting_chips": 40000,
+    "level_duration": "40",
     "kind": "Tournament",
     "tags": [
      "Multi-flight"
@@ -4971,103 +4972,26 @@
     "levels_total": null,
     "breaks_listed": 9,
     "spend_advantage_evidence": [],
-    "guarantee_from_sheet_text": "$150,000",
-    "single_entry_confirmed": false,
-    "rankable": false,
-    "last_checked": "2026-11-17",
-    "source_changed": false,
-    "flags": [
-     "single-entry unverified",
-     "not ranked \u2014 entry fee or guarantee unconfirmed"
-    ]
-   },
-   "fallback": {
-    "id": "V60-2026-12-20-5:10pm",
-    "venue": "venetian",
-    "venue_name": "The Venetian Poker Room",
-    "event_no": 60,
-    "name": "$200 No Limit Hold'Em Bounty (1Day)",
-    "name_printed": "NO LIMIT HOLD'EM BOUNTY (1DAY)",
-    "date": "2026-12-20",
-    "weekday": "Sunday",
-    "time": "5:10 PM",
-    "registration_closes": "9:40 PM",
-    "buy_in_usd": 200,
-    "guarantee_usd": 8000,
-    "guarantee_printed": true,
-    "starting_chips": 25000,
-    "level_duration": "30",
-    "kind": "Tournament",
-    "tags": [
-     "Bounty / PKO"
-    ],
-    "is_flight": false,
-    "is_continuation": false,
-    "rules": {
-     "single_entry": {
-      "status": "unverified",
-      "value": null,
-      "excerpt": null,
-      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
-      "retrieved": "2026-11-17"
-     },
-     "re_entry": {
-      "status": "not_stated_in_sheet",
-      "value": null,
-      "excerpt": null,
-      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
-      "retrieved": "2026-11-17"
-     },
-     "add_on": {
-      "status": "not_stated_in_sheet",
-      "value": null,
-      "excerpt": null,
-      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
-      "retrieved": "2026-11-17"
-     },
-     "fee": {
-      "status": "confirmed",
-      "value": "$40 of $200 withheld; $160 per entry to the prize pool",
-      "excerpt": "$ 40 of the $ 200 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $ 160 of every $ 200 Buy In.",
-      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
-      "retrieved": "2026-11-17"
-     }
-    },
-    "sources": [
-     "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-     "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
-    ],
-    "sheet_key": "V_S1",
-    "sheet_note": null,
-    "house_fee_usd": 40,
-    "pool_per_entry_usd": 160,
-    "sheet_start_time": "5:10 PM",
-    "sheet_late_registration": "8 levels + Break (9:40 PM)",
-    "sheet_guarantee_text": "$8,000 (prize pool + total bounties)",
-    "sheet_title": "$200 No Limit Hold\u2019em Bounty (1Day)",
-    "payout_pct_of_field": "12.5%",
-    "levels_total": null,
-    "breaks_listed": 6,
-    "spend_advantage_evidence": [],
     "single_entry_confirmed": false,
     "rankable": true,
-    "gtd_ratio": 40.0,
-    "gtd_over_pool_contribution": 50.0,
+    "gtd_ratio": 250.0,
+    "gtd_over_pool_contribution": 297.03,
     "last_checked": "2026-11-17",
     "source_changed": false,
     "flags": [
      "single-entry unverified"
     ]
    },
+   "fallback": null,
    "restarts": [
     "$1,100 No Limit Hold'Em Day 2 Restart"
    ],
    "overlap_notes": [
-    "$600 No Limit Hold'Em 1A $20 Rake Discount For Entries Before prints no registration deadline, so overlap with $200 No Limit Hold'Em Bounty (1Day) cannot be settled from official data"
+    "$600 No Limit Hold'Em 1A $20 Rake Discount For Entries Before registration stays open until 5:55 PM, which is after $200 No Limit Hold'Em Bounty (1Day) starts at 5:10 PM \u2014 the two cannot be played in sequence unless you are out of the first event before it closes"
    ],
    "entries_usd": 800,
    "primary_id": "V59-2026-12-20-11:10am",
-   "fallback_id": "V60-2026-12-20-5:10pm"
+   "fallback_id": null
   },
   {
    "date": "2026-12-21",

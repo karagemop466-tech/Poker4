@@ -1,9 +1,9 @@
 {
  "meta": {
   "generated_at": "2026-11-17T02:01:12Z",
-  "rows": 118,
+  "rows": 119,
   "verified_single_entry": 0,
-  "rankable": 69,
+  "rankable": 72,
   "spend_advantage": 23
  },
  "events": [
@@ -3685,8 +3685,8 @@
    "buy_in_usd": 100,
    "guarantee_usd": null,
    "guarantee_printed": false,
-   "starting_chips": null,
-   "level_duration": null,
+   "starting_chips": 20000,
+   "level_duration": "20",
    "kind": "Satellite",
    "tags": [
     "Satellite",
@@ -3998,8 +3998,8 @@
    "buy_in_usd": 100,
    "guarantee_usd": null,
    "guarantee_printed": false,
-   "starting_chips": null,
-   "level_duration": null,
+   "starting_chips": 20000,
+   "level_duration": "20",
    "kind": "Satellite",
    "tags": [
     "Satellite",
@@ -4312,8 +4312,8 @@
    "buy_in_usd": 260,
    "guarantee_usd": null,
    "guarantee_printed": false,
-   "starting_chips": null,
-   "level_duration": null,
+   "starting_chips": 20000,
+   "level_duration": "20",
    "kind": "Satellite",
    "tags": [
     "Satellite"
@@ -4455,6 +4455,83 @@
    ]
   },
   {
+   "id": "V39-2026-12-11-10:00am",
+   "venue": "venetian",
+   "venue_name": "The Venetian Poker Room",
+   "event_no": 39,
+   "name": "$800 No Limit Hold'Em Lips Day 2 Restart Play Down To Final 7 - Streamed Final Table (Pokergo) At 7:00 Pm",
+   "name_printed": "NO LIMIT HOLD'EM LIPS DAY 2 RESTART PLAY DOWN TO FINAL 7 - STREAMED FINAL TABLE (POKERGO) AT 7:00 PM",
+   "date": "2026-12-11",
+   "weekday": "Friday",
+   "time": "10:00 AM",
+   "registration_closes": null,
+   "buy_in_usd": 800,
+   "guarantee_usd": null,
+   "guarantee_printed": false,
+   "starting_chips": null,
+   "level_duration": null,
+   "kind": "Continuation (not an entry)",
+   "tags": [
+    "Continuation (not an entry)"
+   ],
+   "is_flight": false,
+   "is_continuation": true,
+   "rules": {
+    "single_entry": {
+     "status": "unverified",
+     "value": null,
+     "excerpt": null,
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_32.pdf",
+     "retrieved": "2026-11-17"
+    },
+    "re_entry": {
+     "status": "not_stated_in_sheet",
+     "value": null,
+     "excerpt": null,
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_32.pdf",
+     "retrieved": "2026-11-17"
+    },
+    "add_on": {
+     "status": "not_stated_in_sheet",
+     "value": null,
+     "excerpt": null,
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_32.pdf",
+     "retrieved": "2026-11-17"
+    },
+    "fee": {
+     "status": "confirmed",
+     "value": "$90 of $800 withheld; $690 per entry to the prize pool",
+     "excerpt": "$ 90 of the $ 800 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $ 690 of every $ 800 Buy In.",
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_32.pdf",
+     "retrieved": "2026-11-17"
+    }
+   },
+   "sources": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_32.pdf"
+   ],
+   "sheet_key": "V_S32",
+   "sheet_note": null,
+   "house_fee_usd": 90,
+   "pool_per_entry_usd": 690,
+   "sheet_start_time": null,
+   "sheet_late_registration": "9 levels + Break (~ 4:55 PM)",
+   "sheet_guarantee_text": "$40,000",
+   "sheet_title": "$800 NLH LIPS Ladies (2Day)",
+   "payout_pct_of_field": null,
+   "levels_total": null,
+   "breaks_listed": 9,
+   "spend_advantage_evidence": [],
+   "guarantee_from_sheet_text": "$40,000",
+   "single_entry_confirmed": false,
+   "rankable": false,
+   "last_checked": "2026-11-17",
+   "source_changed": false,
+   "flags": [
+    "single-entry unverified"
+   ]
+  },
+  {
    "id": "V43-2026-12-11-11:10am",
    "venue": "venetian",
    "venue_name": "The Venetian Poker Room",
@@ -4546,8 +4623,8 @@
    "buy_in_usd": 260,
    "guarantee_usd": null,
    "guarantee_printed": false,
-   "starting_chips": null,
-   "level_duration": null,
+   "starting_chips": 20000,
+   "level_duration": "20",
    "kind": "Satellite",
    "tags": [
     "Satellite"
@@ -4608,83 +4685,6 @@
    "flags": [
     "single-entry unverified",
     "not ranked \u2014 entry fee or guarantee unconfirmed"
-   ]
-  },
-  {
-   "id": "V39-2026-12-11-7:00pm",
-   "venue": "venetian",
-   "venue_name": "The Venetian Poker Room",
-   "event_no": 39,
-   "name": "$800 No Limit Hold'Em Lips Day 2 Restart Play Down To Final 7 - Streamed Final Table (Pokergo) At",
-   "name_printed": "NO LIMIT HOLD'EM LIPS DAY 2 RESTART PLAY DOWN TO FINAL 7 - STREAMED FINAL TABLE (POKERGO) AT",
-   "date": "2026-12-11",
-   "weekday": "Friday",
-   "time": "7:00 PM",
-   "registration_closes": null,
-   "buy_in_usd": 800,
-   "guarantee_usd": null,
-   "guarantee_printed": false,
-   "starting_chips": null,
-   "level_duration": null,
-   "kind": "Continuation (not an entry)",
-   "tags": [
-    "Continuation (not an entry)"
-   ],
-   "is_flight": false,
-   "is_continuation": true,
-   "rules": {
-    "single_entry": {
-     "status": "unverified",
-     "value": null,
-     "excerpt": null,
-     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_32.pdf",
-     "retrieved": "2026-11-17"
-    },
-    "re_entry": {
-     "status": "not_stated_in_sheet",
-     "value": null,
-     "excerpt": null,
-     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_32.pdf",
-     "retrieved": "2026-11-17"
-    },
-    "add_on": {
-     "status": "not_stated_in_sheet",
-     "value": null,
-     "excerpt": null,
-     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_32.pdf",
-     "retrieved": "2026-11-17"
-    },
-    "fee": {
-     "status": "confirmed",
-     "value": "$90 of $800 withheld; $690 per entry to the prize pool",
-     "excerpt": "$ 90 of the $ 800 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $ 690 of every $ 800 Buy In.",
-     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_32.pdf",
-     "retrieved": "2026-11-17"
-    }
-   },
-   "sources": [
-    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_32.pdf"
-   ],
-   "sheet_key": "V_S32",
-   "sheet_note": null,
-   "house_fee_usd": 90,
-   "pool_per_entry_usd": 690,
-   "sheet_start_time": null,
-   "sheet_late_registration": "9 levels + Break (~ 4:55 PM)",
-   "sheet_guarantee_text": "$40,000",
-   "sheet_title": "$800 NLH LIPS Ladies (2Day)",
-   "payout_pct_of_field": null,
-   "levels_total": null,
-   "breaks_listed": 9,
-   "spend_advantage_evidence": [],
-   "guarantee_from_sheet_text": "$40,000",
-   "single_entry_confirmed": false,
-   "rankable": false,
-   "last_checked": "2026-11-17",
-   "source_changed": false,
-   "flags": [
-    "single-entry unverified"
    ]
   },
   {
@@ -4778,8 +4778,8 @@
    "buy_in_usd": 260,
    "guarantee_usd": null,
    "guarantee_printed": false,
-   "starting_chips": null,
-   "level_duration": null,
+   "starting_chips": 20000,
+   "level_duration": "15",
    "kind": "Satellite",
    "tags": [
     "Satellite"
@@ -4856,8 +4856,8 @@
    "buy_in_usd": 2200,
    "guarantee_usd": 1000000,
    "guarantee_printed": true,
-   "starting_chips": null,
-   "level_duration": null,
+   "starting_chips": 40000,
+   "level_duration": "40",
    "kind": "Tournament",
    "tags": [
     "Multi-flight"
@@ -4935,8 +4935,8 @@
    "buy_in_usd": 260,
    "guarantee_usd": null,
    "guarantee_printed": false,
-   "starting_chips": null,
-   "level_duration": null,
+   "starting_chips": 20000,
+   "level_duration": "15",
    "kind": "Satellite",
    "tags": [
     "Satellite"
@@ -5013,8 +5013,8 @@
    "buy_in_usd": 2200,
    "guarantee_usd": 1000000,
    "guarantee_printed": true,
-   "starting_chips": null,
-   "level_duration": null,
+   "starting_chips": 40000,
+   "level_duration": "30",
    "kind": "Tournament",
    "tags": [
     "Multi-flight"
@@ -5092,8 +5092,8 @@
    "buy_in_usd": 260,
    "guarantee_usd": null,
    "guarantee_printed": false,
-   "starting_chips": null,
-   "level_duration": null,
+   "starting_chips": 20000,
+   "level_duration": "15",
    "kind": "Satellite",
    "tags": [
     "Satellite"
@@ -5233,6 +5233,84 @@
    "source_changed": false,
    "flags": [
     "single-entry unverified"
+   ]
+  },
+  {
+   "id": "V47-2026-12-13-1:00pm",
+   "venue": "venetian",
+   "venue_name": "The Venetian Poker Room",
+   "event_no": 47,
+   "name": "$2,200 No Limit Hold\u2019Em Day 2 Restart Pokeratlas Championship Title Event Play Down To Final 7 - Streamed Final Table (Pokergo)",
+   "name_printed": "NO LIMIT HOLD\u2019EM DAY 2 RESTART POKERATLAS CHAMPIONSHIP TITLE EVENT PLAY DOWN TO FINAL 7 - STREAMED FINAL TABLE (POKERGO)",
+   "date": "2026-12-13",
+   "weekday": "Sunday",
+   "time": "1:00 PM",
+   "registration_closes": null,
+   "buy_in_usd": 2200,
+   "guarantee_usd": null,
+   "guarantee_printed": false,
+   "starting_chips": null,
+   "level_duration": null,
+   "kind": "Continuation (not an entry)",
+   "tags": [
+    "Continuation (not an entry)"
+   ],
+   "is_flight": false,
+   "is_continuation": true,
+   "rules": {
+    "single_entry": {
+     "status": "unverified",
+     "value": null,
+     "excerpt": null,
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf",
+     "retrieved": "2026-11-17"
+    },
+    "re_entry": {
+     "status": "not_stated_in_sheet",
+     "value": null,
+     "excerpt": null,
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf",
+     "retrieved": "2026-11-17"
+    },
+    "add_on": {
+     "status": "not_stated_in_sheet",
+     "value": null,
+     "excerpt": null,
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf",
+     "retrieved": "2026-11-17"
+    },
+    "fee": {
+     "status": "confirmed",
+     "value": "$225 of $2200 withheld; $1975 per entry to the prize pool",
+     "excerpt": "$ 225 of the $ 2200 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $ 1975 of every $ 2200 Buy In.",
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf",
+     "retrieved": "2026-11-17"
+    }
+   },
+   "sources": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf"
+   ],
+   "sheet_key": "V_S21",
+   "sheet_note": "several sheets print this event number (different starting flights) \u2014 the row lists both",
+   "house_fee_usd": 225,
+   "pool_per_entry_usd": 1975,
+   "sheet_start_time": null,
+   "sheet_late_registration": "9 levels + Break (~ 4:55 PM)",
+   "sheet_guarantee_text": "$1,000,000",
+   "sheet_title": "$2,200 No Limit Hold\u2019em",
+   "payout_pct_of_field": null,
+   "levels_total": null,
+   "breaks_listed": 9,
+   "spend_advantage_evidence": [],
+   "guarantee_from_sheet_text": "$1,000,000",
+   "single_entry_confirmed": false,
+   "rankable": false,
+   "last_checked": "2026-11-17",
+   "source_changed": false,
+   "flags": [
+    "single-entry unverified",
+    "structure sheet ambiguous"
    ]
   },
   {
@@ -5948,12 +6026,12 @@
    "date": "2026-12-17",
    "weekday": "Thursday",
    "time": "10:10 AM",
-   "registration_closes": null,
+   "registration_closes": "4:55 PM",
    "buy_in_usd": 1100,
-   "guarantee_usd": null,
-   "guarantee_printed": false,
-   "starting_chips": null,
-   "level_duration": null,
+   "guarantee_usd": 500000,
+   "guarantee_printed": true,
+   "starting_chips": 40000,
+   "level_duration": "40",
    "kind": "Tournament",
    "tags": [
     "Multi-flight"
@@ -6006,14 +6084,14 @@
    "levels_total": null,
    "breaks_listed": 9,
    "spend_advantage_evidence": [],
-   "guarantee_from_sheet_text": "$500,000",
    "single_entry_confirmed": false,
-   "rankable": false,
+   "rankable": true,
+   "gtd_ratio": 454.55,
+   "gtd_over_pool_contribution": 520.83,
    "last_checked": "2026-11-17",
    "source_changed": false,
    "flags": [
-    "single-entry unverified",
-    "not ranked \u2014 entry fee or guarantee unconfirmed"
+    "single-entry unverified"
    ]
   },
   {
@@ -6104,12 +6182,12 @@
    "date": "2026-12-17",
    "weekday": "Thursday",
    "time": "6:10 PM",
-   "registration_closes": null,
+   "registration_closes": "11:10 PM",
    "buy_in_usd": 1100,
-   "guarantee_usd": null,
-   "guarantee_printed": false,
-   "starting_chips": null,
-   "level_duration": "11",
+   "guarantee_usd": 500000,
+   "guarantee_printed": true,
+   "starting_chips": 40000,
+   "level_duration": "30",
    "kind": "Tournament",
    "tags": [
     "Multi-flight"
@@ -6162,14 +6240,14 @@
    "levels_total": null,
    "breaks_listed": 6,
    "spend_advantage_evidence": [],
-   "guarantee_from_sheet_text": "$500,000",
    "single_entry_confirmed": false,
-   "rankable": false,
+   "rankable": true,
+   "gtd_ratio": 454.55,
+   "gtd_over_pool_contribution": 520.83,
    "last_checked": "2026-11-17",
    "source_changed": false,
    "flags": [
-    "single-entry unverified",
-    "not ranked \u2014 entry fee or guarantee unconfirmed"
+    "single-entry unverified"
    ]
   },
   {
@@ -6575,12 +6653,12 @@
    "date": "2026-12-20",
    "weekday": "Sunday",
    "time": "11:10 AM",
-   "registration_closes": null,
+   "registration_closes": "5:55 PM",
    "buy_in_usd": 600,
-   "guarantee_usd": null,
-   "guarantee_printed": false,
-   "starting_chips": null,
-   "level_duration": "5",
+   "guarantee_usd": 150000,
+   "guarantee_printed": true,
+   "starting_chips": 40000,
+   "level_duration": "40",
    "kind": "Tournament",
    "tags": [
     "Multi-flight"
@@ -6633,14 +6711,14 @@
    "levels_total": null,
    "breaks_listed": 9,
    "spend_advantage_evidence": [],
-   "guarantee_from_sheet_text": "$150,000",
    "single_entry_confirmed": false,
-   "rankable": false,
+   "rankable": true,
+   "gtd_ratio": 250.0,
+   "gtd_over_pool_contribution": 297.03,
    "last_checked": "2026-11-17",
    "source_changed": false,
    "flags": [
-    "single-entry unverified",
-    "not ranked \u2014 entry fee or guarantee unconfirmed"
+    "single-entry unverified"
    ]
   },
   {
