@@ -65,11 +65,7 @@
   },
   "https://www.resortfeechecker.com/140596-resort_fee_bellagio.html": {
    "last_checked": "2026-11-17",
-<<<<<<< HEAD
-   "sha256": "8570be44a2b609827c9a04204cf3b1a64ca6c4645513f641555239b42e824ca2",
-=======
    "sha256": "8c1ada3bb92d9a553b12a58ab9d27401f6cd07a59f2944d659e64b5b56e4e53b",
->>>>>>> origin/arena/e74e00fd-poker4
    "source_ids": [
     "M_FEES_UNVERIFIED"
    ]
