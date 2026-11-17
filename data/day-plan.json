@@ -8,6 +8,86 @@
   {
    "date": "2026-11-16",
    "weekday": "Monday",
+   "recurring_options": [
+    {
+     "id": "CAESARS-DAILY-1000AM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "10:00 AM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 10:00 AM, before the lead event's registration closes (3:40 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-1",
+     "name": "$200 NLH $10,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "12 PM",
+     "buy_in_usd": 200,
+     "printed_days": "Monday-Thursday",
+     "feasibility": "starts 12 PM, before the lead event's registration closes (3:40 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-200PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "2:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 2:00 PM, before the lead event's registration closes (3:40 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-4",
+     "name": "$160 NLH $10,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "6 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Nightly Monday-Sunday",
+     "feasibility": "starts 6 PM, at or after the lead event's printed registration deadline (3:40 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-600PM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "6:00 PM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 6:00 PM, at or after the lead event's printed registration deadline (3:40 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-900PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "9:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 9:00 PM, at or after the lead event's printed registration deadline (3:40 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    }
+   ],
    "fallback_unavailable": "no other event starts at or after the leading event's printed registration deadline",
    "earliest_printed_start": "11:10 AM",
    "duration_note": "no official source prints a finish time or a round count for this day, so the plan gives a start and a late-registration deadline rather than a predicted end",
@@ -35,6 +115,86 @@
   {
    "date": "2026-11-17",
    "weekday": "Tuesday",
+   "recurring_options": [
+    {
+     "id": "CAESARS-DAILY-1000AM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "10:00 AM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 10:00 AM, before the lead event's registration closes (3:40 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-1",
+     "name": "$200 NLH $10,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "12 PM",
+     "buy_in_usd": 200,
+     "printed_days": "Monday-Thursday",
+     "feasibility": "starts 12 PM, before the lead event's registration closes (3:40 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-200PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "2:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 2:00 PM, before the lead event's registration closes (3:40 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-4",
+     "name": "$160 NLH $10,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "6 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Nightly Monday-Sunday",
+     "feasibility": "starts 6 PM, at or after the lead event's printed registration deadline (3:40 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-600PM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "6:00 PM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 6:00 PM, at or after the lead event's printed registration deadline (3:40 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-900PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "9:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 9:00 PM, at or after the lead event's printed registration deadline (3:40 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    }
+   ],
    "fallback_unavailable": "no other event starts at or after the leading event's printed registration deadline",
    "earliest_printed_start": "11:10 AM",
    "duration_note": "no official source prints a finish time or a round count for this day, so the plan gives a start and a late-registration deadline rather than a predicted end",
@@ -62,6 +222,86 @@
   {
    "date": "2026-11-18",
    "weekday": "Wednesday",
+   "recurring_options": [
+    {
+     "id": "CAESARS-DAILY-1000AM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "10:00 AM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 10:00 AM, before the lead event's registration closes (4:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-1",
+     "name": "$200 NLH $10,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "12 PM",
+     "buy_in_usd": 200,
+     "printed_days": "Monday-Thursday",
+     "feasibility": "starts 12 PM, before the lead event's registration closes (4:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-200PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "2:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 2:00 PM, before the lead event's registration closes (4:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-4",
+     "name": "$160 NLH $10,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "6 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Nightly Monday-Sunday",
+     "feasibility": "starts 6 PM, at or after the lead event's printed registration deadline (4:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-600PM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "6:00 PM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 6:00 PM, at or after the lead event's printed registration deadline (4:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-900PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "9:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 9:00 PM, at or after the lead event's printed registration deadline (4:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    }
+   ],
    "fallback_unavailable": "no other event starts at or after the leading event's printed registration deadline",
    "earliest_printed_start": "11:10 AM",
    "duration_note": "no official source prints a finish time or a round count for this day, so the plan gives a start and a late-registration deadline rather than a predicted end",
@@ -89,6 +329,86 @@
   {
    "date": "2026-11-19",
    "weekday": "Thursday",
+   "recurring_options": [
+    {
+     "id": "CAESARS-DAILY-1000AM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "10:00 AM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 10:00 AM, before the lead event's registration closes (12:25 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-1",
+     "name": "$200 NLH $10,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "12 PM",
+     "buy_in_usd": 200,
+     "printed_days": "Monday-Thursday",
+     "feasibility": "starts 12 PM, before the lead event's registration closes (12:25 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-200PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "2:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 2:00 PM, at or after the lead event's printed registration deadline (12:25 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-4",
+     "name": "$160 NLH $10,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "6 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Nightly Monday-Sunday",
+     "feasibility": "starts 6 PM, at or after the lead event's printed registration deadline (12:25 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-600PM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "6:00 PM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 6:00 PM, at or after the lead event's printed registration deadline (12:25 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-900PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "9:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 9:00 PM, at or after the lead event's printed registration deadline (12:25 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    }
+   ],
    "fallback_unavailable": "no other event starts at or after the leading event's printed registration deadline",
    "earliest_printed_start": "10:10 AM",
    "duration_note": "no official source prints a finish time or a round count for this day, so the plan gives a start and a late-registration deadline rather than a predicted end",
@@ -114,6 +434,99 @@
   {
    "date": "2026-11-20",
    "weekday": "Friday",
+   "recurring_options": [
+    {
+     "id": "CAESARS-DAILY-1000AM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "10:00 AM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 10:00 AM, before the lead event's registration closes (12:25 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "BELLAGIO-FRI",
+     "name": "$600 No Limit Hold'em",
+     "venue": "Bellagio Poker Room",
+     "time": "11:00 AM",
+     "buy_in_usd": 600,
+     "printed_days": "Friday",
+     "feasibility": "starts 11:00 AM, before the lead event's registration closes (12:25 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt9cf95b0e60ec253e/6af491a3a9851d75c40be840/mgm-bellagio-poker-fridays-$600-nlh.pdf",
+      "https://bellagio.mgmresorts.com/en/casino/poker.html"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-2",
+     "name": "$240 NLH $40,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "12 PM",
+     "buy_in_usd": 240,
+     "printed_days": "Friday",
+     "feasibility": "starts 12 PM, before the lead event's registration closes (12:25 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-200PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "2:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 2:00 PM, at or after the lead event's printed registration deadline (12:25 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-4",
+     "name": "$160 NLH $10,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "6 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Nightly Monday-Sunday",
+     "feasibility": "starts 6 PM, at or after the lead event's printed registration deadline (12:25 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-600PM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "6:00 PM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 6:00 PM, at or after the lead event's printed registration deadline (12:25 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-900PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "9:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 9:00 PM, at or after the lead event's printed registration deadline (12:25 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    }
+   ],
    "fallback_unavailable": "no other event starts at or after the leading event's printed registration deadline",
    "earliest_printed_start": "10:10 AM",
    "duration_note": "no official source prints a finish time or a round count for this day, so the plan gives a start and a late-registration deadline rather than a predicted end",
@@ -139,6 +552,99 @@
   {
    "date": "2026-11-21",
    "weekday": "Saturday",
+   "recurring_options": [
+    {
+     "id": "CAESARS-DAILY-1000AM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "10:00 AM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 10:00 AM, before the lead event's registration closes (12:25 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "BELLAGIO-SAT",
+     "name": "No Limit Hold'em \u2014 the sheet's title block prints '$1100 BUY-IN' and the poker page lists it as 'SATURDAYS | $1,000 NLH', while rule 07 on the same sheet says 'Of the $600 Buy-in': the buy-in is therefore left blank and the row is flagged",
+     "venue": "Bellagio Poker Room",
+     "time": "11:00 AM",
+     "buy_in_usd": null,
+     "printed_days": "Saturday",
+     "feasibility": "starts 11:00 AM, before the lead event's registration closes (12:25 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt6d47974bf5a7d9b6/6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf",
+      "https://bellagio.mgmresorts.com/en/casino/poker.html"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-3",
+     "name": "$200 NLH $25,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "12 PM",
+     "buy_in_usd": 200,
+     "printed_days": "Saturday & Sunday",
+     "feasibility": "starts 12 PM, before the lead event's registration closes (12:25 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-200PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "2:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 2:00 PM, at or after the lead event's printed registration deadline (12:25 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-4",
+     "name": "$160 NLH $10,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "6 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Nightly Monday-Sunday",
+     "feasibility": "starts 6 PM, at or after the lead event's printed registration deadline (12:25 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-600PM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "6:00 PM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 6:00 PM, at or after the lead event's printed registration deadline (12:25 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-900PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "9:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 9:00 PM, at or after the lead event's printed registration deadline (12:25 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    }
+   ],
    "fallback_unavailable": "no other event starts at or after the leading event's printed registration deadline",
    "earliest_printed_start": "10:10 AM",
    "duration_note": "no official source prints a finish time or a round count for this day, so the plan gives a start and a late-registration deadline rather than a predicted end",
@@ -164,6 +670,99 @@
   {
    "date": "2026-11-22",
    "weekday": "Sunday",
+   "recurring_options": [
+    {
+     "id": "CAESARS-DAILY-1000AM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "10:00 AM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 10:00 AM, before the lead event's registration closes (3:40 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "BELLAGIO-SUN",
+     "name": "$400 H.O.R.S.E.",
+     "venue": "Bellagio Poker Room",
+     "time": "11:00 AM",
+     "buy_in_usd": 400,
+     "printed_days": "Sunday",
+     "feasibility": "starts 11:00 AM, before the lead event's registration closes (3:40 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt07fcf1244a6da661/6af491a339e2b4f6b76a86ad/mgm-bellagio-poker-sundays-$400-horse.pdf",
+      "https://bellagio.mgmresorts.com/en/casino/poker.html"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-3",
+     "name": "$200 NLH $25,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "12 PM",
+     "buy_in_usd": 200,
+     "printed_days": "Saturday & Sunday",
+     "feasibility": "starts 12 PM, before the lead event's registration closes (3:40 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-200PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "2:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 2:00 PM, before the lead event's registration closes (3:40 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-4",
+     "name": "$160 NLH $10,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "6 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Nightly Monday-Sunday",
+     "feasibility": "starts 6 PM, at or after the lead event's printed registration deadline (3:40 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-600PM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "6:00 PM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 6:00 PM, at or after the lead event's printed registration deadline (3:40 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-900PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "9:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 9:00 PM, at or after the lead event's printed registration deadline (3:40 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    }
+   ],
    "fallback_unavailable": "no other event starts at or after the leading event's printed registration deadline",
    "earliest_printed_start": "11:10 AM",
    "duration_note": "no official source prints a finish time or a round count for this day, so the plan gives a start and a late-registration deadline rather than a predicted end",
@@ -189,6 +788,86 @@
   {
    "date": "2026-11-23",
    "weekday": "Monday",
+   "recurring_options": [
+    {
+     "id": "CAESARS-DAILY-1000AM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "10:00 AM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 10:00 AM, before the lead event's registration closes (5:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-1",
+     "name": "$200 NLH $10,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "12 PM",
+     "buy_in_usd": 200,
+     "printed_days": "Monday-Thursday",
+     "feasibility": "starts 12 PM, before the lead event's registration closes (5:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-200PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "2:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 2:00 PM, before the lead event's registration closes (5:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-4",
+     "name": "$160 NLH $10,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "6 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Nightly Monday-Sunday",
+     "feasibility": "starts 6 PM, at or after the lead event's printed registration deadline (5:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-600PM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "6:00 PM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 6:00 PM, at or after the lead event's printed registration deadline (5:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-900PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "9:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 9:00 PM, at or after the lead event's printed registration deadline (5:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    }
+   ],
    "fallback_unavailable": "no other event starts at or after the leading event's printed registration deadline",
    "earliest_printed_start": "11:10 AM",
    "duration_note": "no official source prints a finish time or a round count for this day, so the plan gives a start and a late-registration deadline rather than a predicted end",
@@ -217,6 +896,86 @@
   {
    "date": "2026-11-24",
    "weekday": "Tuesday",
+   "recurring_options": [
+    {
+     "id": "CAESARS-DAILY-1000AM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "10:00 AM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 10:00 AM, before the lead event's registration closes (5:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-1",
+     "name": "$200 NLH $10,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "12 PM",
+     "buy_in_usd": 200,
+     "printed_days": "Monday-Thursday",
+     "feasibility": "starts 12 PM, before the lead event's registration closes (5:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-200PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "2:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 2:00 PM, before the lead event's registration closes (5:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-4",
+     "name": "$160 NLH $10,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "6 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Nightly Monday-Sunday",
+     "feasibility": "starts 6 PM, at or after the lead event's printed registration deadline (5:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-600PM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "6:00 PM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 6:00 PM, at or after the lead event's printed registration deadline (5:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-900PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "9:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 9:00 PM, at or after the lead event's printed registration deadline (5:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    }
+   ],
    "fallback_unavailable": "no other event starts at or after the leading event's printed registration deadline",
    "earliest_printed_start": "11:10 AM",
    "duration_note": "no official source prints a finish time or a round count for this day, so the plan gives a start and a late-registration deadline rather than a predicted end",
@@ -245,6 +1004,86 @@
   {
    "date": "2026-11-25",
    "weekday": "Wednesday",
+   "recurring_options": [
+    {
+     "id": "CAESARS-DAILY-1000AM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "10:00 AM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 10:00 AM, before the lead event's registration closes (4:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-1",
+     "name": "$200 NLH $10,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "12 PM",
+     "buy_in_usd": 200,
+     "printed_days": "Monday-Thursday",
+     "feasibility": "starts 12 PM, before the lead event's registration closes (4:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-200PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "2:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 2:00 PM, before the lead event's registration closes (4:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-4",
+     "name": "$160 NLH $10,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "6 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Nightly Monday-Sunday",
+     "feasibility": "starts 6 PM, at or after the lead event's printed registration deadline (4:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-600PM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "6:00 PM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 6:00 PM, at or after the lead event's printed registration deadline (4:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-900PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "9:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 9:00 PM, at or after the lead event's printed registration deadline (4:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    }
+   ],
    "fallback_unavailable": "",
    "earliest_printed_start": "11:10 AM",
    "duration_note": "no official source prints a finish time or a round count for this day, so the plan gives a start and a late-registration deadline rather than a predicted end",
@@ -284,6 +1123,86 @@
   {
    "date": "2026-11-26",
    "weekday": "Thursday",
+   "recurring_options": [
+    {
+     "id": "CAESARS-DAILY-1000AM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "10:00 AM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 10:00 AM, before the lead event's registration closes (4:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-1",
+     "name": "$200 NLH $10,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "12 PM",
+     "buy_in_usd": 200,
+     "printed_days": "Monday-Thursday",
+     "feasibility": "starts 12 PM, before the lead event's registration closes (4:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-200PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "2:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 2:00 PM, before the lead event's registration closes (4:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-4",
+     "name": "$160 NLH $10,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "6 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Nightly Monday-Sunday",
+     "feasibility": "starts 6 PM, at or after the lead event's printed registration deadline (4:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-600PM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "6:00 PM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 6:00 PM, at or after the lead event's printed registration deadline (4:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-900PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "9:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 9:00 PM, at or after the lead event's printed registration deadline (4:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    }
+   ],
    "fallback_unavailable": "",
    "earliest_printed_start": "11:10 AM",
    "duration_note": "no official source prints a finish time or a round count for this day, so the plan gives a start and a late-registration deadline rather than a predicted end",
@@ -321,6 +1240,99 @@
   {
    "date": "2026-11-27",
    "weekday": "Friday",
+   "recurring_options": [
+    {
+     "id": "CAESARS-DAILY-1000AM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "10:00 AM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 10:00 AM, before the lead event's registration closes (4:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "BELLAGIO-FRI",
+     "name": "$600 No Limit Hold'em",
+     "venue": "Bellagio Poker Room",
+     "time": "11:00 AM",
+     "buy_in_usd": 600,
+     "printed_days": "Friday",
+     "feasibility": "starts 11:00 AM, before the lead event's registration closes (4:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt9cf95b0e60ec253e/6af491a3a9851d75c40be840/mgm-bellagio-poker-fridays-$600-nlh.pdf",
+      "https://bellagio.mgmresorts.com/en/casino/poker.html"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-2",
+     "name": "$240 NLH $40,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "12 PM",
+     "buy_in_usd": 240,
+     "printed_days": "Friday",
+     "feasibility": "starts 12 PM, before the lead event's registration closes (4:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-200PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "2:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 2:00 PM, before the lead event's registration closes (4:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-4",
+     "name": "$160 NLH $10,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "6 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Nightly Monday-Sunday",
+     "feasibility": "starts 6 PM, at or after the lead event's printed registration deadline (4:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-600PM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "6:00 PM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 6:00 PM, at or after the lead event's printed registration deadline (4:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-900PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "9:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 9:00 PM, at or after the lead event's printed registration deadline (4:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    }
+   ],
    "fallback_unavailable": "",
    "earliest_printed_start": "11:00 AM",
    "duration_note": "no official source prints a finish time or a round count for this day, so the plan gives a start and a late-registration deadline rather than a predicted end",
@@ -358,6 +1370,99 @@
   {
    "date": "2026-11-28",
    "weekday": "Saturday",
+   "recurring_options": [
+    {
+     "id": "CAESARS-DAILY-1000AM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "10:00 AM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 10:00 AM, before the lead event's registration closes (4:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "BELLAGIO-SAT",
+     "name": "No Limit Hold'em \u2014 the sheet's title block prints '$1100 BUY-IN' and the poker page lists it as 'SATURDAYS | $1,000 NLH', while rule 07 on the same sheet says 'Of the $600 Buy-in': the buy-in is therefore left blank and the row is flagged",
+     "venue": "Bellagio Poker Room",
+     "time": "11:00 AM",
+     "buy_in_usd": null,
+     "printed_days": "Saturday",
+     "feasibility": "starts 11:00 AM, before the lead event's registration closes (4:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt6d47974bf5a7d9b6/6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf",
+      "https://bellagio.mgmresorts.com/en/casino/poker.html"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-3",
+     "name": "$200 NLH $25,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "12 PM",
+     "buy_in_usd": 200,
+     "printed_days": "Saturday & Sunday",
+     "feasibility": "starts 12 PM, before the lead event's registration closes (4:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-200PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "2:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 2:00 PM, before the lead event's registration closes (4:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-4",
+     "name": "$160 NLH $10,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "6 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Nightly Monday-Sunday",
+     "feasibility": "starts 6 PM, at or after the lead event's printed registration deadline (4:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-600PM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "6:00 PM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 6:00 PM, at or after the lead event's printed registration deadline (4:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-900PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "9:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 9:00 PM, at or after the lead event's printed registration deadline (4:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    }
+   ],
    "fallback_unavailable": "",
    "earliest_printed_start": "11:00 AM",
    "duration_note": "no official source prints a finish time or a round count for this day, so the plan gives a start and a late-registration deadline rather than a predicted end",
@@ -396,6 +1501,99 @@
   {
    "date": "2026-11-29",
    "weekday": "Sunday",
+   "recurring_options": [
+    {
+     "id": "CAESARS-DAILY-1000AM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "10:00 AM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 10:00 AM, before the lead event's registration closes (5:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "BELLAGIO-SUN",
+     "name": "$400 H.O.R.S.E.",
+     "venue": "Bellagio Poker Room",
+     "time": "11:00 AM",
+     "buy_in_usd": 400,
+     "printed_days": "Sunday",
+     "feasibility": "starts 11:00 AM, before the lead event's registration closes (5:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt07fcf1244a6da661/6af491a339e2b4f6b76a86ad/mgm-bellagio-poker-sundays-$400-horse.pdf",
+      "https://bellagio.mgmresorts.com/en/casino/poker.html"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-3",
+     "name": "$200 NLH $25,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "12 PM",
+     "buy_in_usd": 200,
+     "printed_days": "Saturday & Sunday",
+     "feasibility": "starts 12 PM, before the lead event's registration closes (5:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-200PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "2:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 2:00 PM, before the lead event's registration closes (5:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-4",
+     "name": "$160 NLH $10,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "6 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Nightly Monday-Sunday",
+     "feasibility": "starts 6 PM, at or after the lead event's printed registration deadline (5:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-600PM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "6:00 PM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 6:00 PM, at or after the lead event's printed registration deadline (5:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-900PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "9:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 9:00 PM, at or after the lead event's printed registration deadline (5:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    }
+   ],
    "fallback_unavailable": "",
    "earliest_printed_start": "11:00 AM",
    "duration_note": "no official source prints a finish time or a round count for this day, so the plan gives a start and a late-registration deadline rather than a predicted end",
@@ -435,6 +1633,86 @@
   {
    "date": "2026-11-30",
    "weekday": "Monday",
+   "recurring_options": [
+    {
+     "id": "CAESARS-DAILY-1000AM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "10:00 AM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 10:00 AM, before the lead event's registration closes (5:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-1",
+     "name": "$200 NLH $10,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "12 PM",
+     "buy_in_usd": 200,
+     "printed_days": "Monday-Thursday",
+     "feasibility": "starts 12 PM, before the lead event's registration closes (5:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-200PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "2:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 2:00 PM, before the lead event's registration closes (5:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-4",
+     "name": "$160 NLH $10,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "6 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Nightly Monday-Sunday",
+     "feasibility": "starts 6 PM, at or after the lead event's printed registration deadline (5:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-600PM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "6:00 PM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 6:00 PM, at or after the lead event's printed registration deadline (5:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-900PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "9:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 9:00 PM, at or after the lead event's printed registration deadline (5:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    }
+   ],
    "fallback_unavailable": "no other event starts at or after the leading event's printed registration deadline",
    "earliest_printed_start": "11:00 AM",
    "duration_note": "no official source prints a finish time or a round count for this day, so the plan gives a start and a late-registration deadline rather than a predicted end",
@@ -463,6 +1741,86 @@
   {
    "date": "2026-12-01",
    "weekday": "Tuesday",
+   "recurring_options": [
+    {
+     "id": "CAESARS-DAILY-1000AM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "10:00 AM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 10:00 AM, before the lead event's registration closes (5:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-1",
+     "name": "$200 NLH $10,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "12 PM",
+     "buy_in_usd": 200,
+     "printed_days": "Monday-Thursday",
+     "feasibility": "starts 12 PM, before the lead event's registration closes (5:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-200PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "2:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 2:00 PM, before the lead event's registration closes (5:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-4",
+     "name": "$160 NLH $10,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "6 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Nightly Monday-Sunday",
+     "feasibility": "starts 6 PM, at or after the lead event's printed registration deadline (5:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-600PM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "6:00 PM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 6:00 PM, at or after the lead event's printed registration deadline (5:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-900PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "9:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 9:00 PM, at or after the lead event's printed registration deadline (5:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    }
+   ],
    "fallback_unavailable": "no other event starts at or after the leading event's printed registration deadline",
    "earliest_printed_start": "11:00 AM",
    "duration_note": "no official source prints a finish time or a round count for this day, so the plan gives a start and a late-registration deadline rather than a predicted end",
@@ -491,6 +1849,86 @@
   {
    "date": "2026-12-02",
    "weekday": "Wednesday",
+   "recurring_options": [
+    {
+     "id": "CAESARS-DAILY-1000AM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "10:00 AM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 10:00 AM, before the lead event's registration closes (3:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-1",
+     "name": "$200 NLH $10,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "12 PM",
+     "buy_in_usd": 200,
+     "printed_days": "Monday-Thursday",
+     "feasibility": "starts 12 PM, before the lead event's registration closes (3:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-200PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "2:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 2:00 PM, before the lead event's registration closes (3:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-4",
+     "name": "$160 NLH $10,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "6 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Nightly Monday-Sunday",
+     "feasibility": "starts 6 PM, at or after the lead event's printed registration deadline (3:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-600PM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "6:00 PM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 6:00 PM, at or after the lead event's printed registration deadline (3:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-900PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "9:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 9:00 PM, at or after the lead event's printed registration deadline (3:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    }
+   ],
    "fallback_unavailable": "",
    "earliest_printed_start": "10:10 AM",
    "duration_note": "no official source prints a finish time or a round count for this day, so the plan gives a start and a late-registration deadline rather than a predicted end",
@@ -530,6 +1968,86 @@
   {
    "date": "2026-12-03",
    "weekday": "Thursday",
+   "recurring_options": [
+    {
+     "id": "CAESARS-DAILY-1000AM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "10:00 AM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 10:00 AM, before the lead event's registration closes (3:40 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-1",
+     "name": "$200 NLH $10,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "12 PM",
+     "buy_in_usd": 200,
+     "printed_days": "Monday-Thursday",
+     "feasibility": "starts 12 PM, before the lead event's registration closes (3:40 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-200PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "2:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 2:00 PM, before the lead event's registration closes (3:40 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-4",
+     "name": "$160 NLH $10,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "6 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Nightly Monday-Sunday",
+     "feasibility": "starts 6 PM, at or after the lead event's printed registration deadline (3:40 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-600PM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "6:00 PM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 6:00 PM, at or after the lead event's printed registration deadline (3:40 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-900PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "9:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 9:00 PM, at or after the lead event's printed registration deadline (3:40 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    }
+   ],
    "fallback_unavailable": "",
    "earliest_printed_start": "11:00 AM",
    "duration_note": "no official source prints a finish time or a round count for this day, so the plan gives a start and a late-registration deadline rather than a predicted end",
@@ -568,6 +2086,99 @@
   {
    "date": "2026-12-04",
    "weekday": "Friday",
+   "recurring_options": [
+    {
+     "id": "CAESARS-DAILY-1000AM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "10:00 AM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 10:00 AM, before the lead event's registration closes (3:40 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "BELLAGIO-FRI",
+     "name": "$600 No Limit Hold'em",
+     "venue": "Bellagio Poker Room",
+     "time": "11:00 AM",
+     "buy_in_usd": 600,
+     "printed_days": "Friday",
+     "feasibility": "starts 11:00 AM, before the lead event's registration closes (3:40 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt9cf95b0e60ec253e/6af491a3a9851d75c40be840/mgm-bellagio-poker-fridays-$600-nlh.pdf",
+      "https://bellagio.mgmresorts.com/en/casino/poker.html"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-2",
+     "name": "$240 NLH $40,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "12 PM",
+     "buy_in_usd": 240,
+     "printed_days": "Friday",
+     "feasibility": "starts 12 PM, before the lead event's registration closes (3:40 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-200PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "2:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 2:00 PM, before the lead event's registration closes (3:40 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-4",
+     "name": "$160 NLH $10,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "6 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Nightly Monday-Sunday",
+     "feasibility": "starts 6 PM, at or after the lead event's printed registration deadline (3:40 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-600PM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "6:00 PM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 6:00 PM, at or after the lead event's printed registration deadline (3:40 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-900PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "9:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 9:00 PM, at or after the lead event's printed registration deadline (3:40 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    }
+   ],
    "fallback_unavailable": "",
    "earliest_printed_start": "11:00 AM",
    "duration_note": "no official source prints a finish time or a round count for this day, so the plan gives a start and a late-registration deadline rather than a predicted end",
@@ -605,6 +2216,99 @@
   {
    "date": "2026-12-05",
    "weekday": "Saturday",
+   "recurring_options": [
+    {
+     "id": "CAESARS-DAILY-1000AM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "10:00 AM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 10:00 AM, before the lead event's registration closes (3:40 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "BELLAGIO-SAT",
+     "name": "No Limit Hold'em \u2014 the sheet's title block prints '$1100 BUY-IN' and the poker page lists it as 'SATURDAYS | $1,000 NLH', while rule 07 on the same sheet says 'Of the $600 Buy-in': the buy-in is therefore left blank and the row is flagged",
+     "venue": "Bellagio Poker Room",
+     "time": "11:00 AM",
+     "buy_in_usd": null,
+     "printed_days": "Saturday",
+     "feasibility": "starts 11:00 AM, before the lead event's registration closes (3:40 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt6d47974bf5a7d9b6/6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf",
+      "https://bellagio.mgmresorts.com/en/casino/poker.html"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-3",
+     "name": "$200 NLH $25,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "12 PM",
+     "buy_in_usd": 200,
+     "printed_days": "Saturday & Sunday",
+     "feasibility": "starts 12 PM, before the lead event's registration closes (3:40 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-200PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "2:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 2:00 PM, before the lead event's registration closes (3:40 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-4",
+     "name": "$160 NLH $10,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "6 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Nightly Monday-Sunday",
+     "feasibility": "starts 6 PM, at or after the lead event's printed registration deadline (3:40 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-600PM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "6:00 PM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 6:00 PM, at or after the lead event's printed registration deadline (3:40 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-900PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "9:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 9:00 PM, at or after the lead event's printed registration deadline (3:40 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    }
+   ],
    "fallback_unavailable": "",
    "earliest_printed_start": "11:00 AM",
    "duration_note": "no official source prints a finish time or a round count for this day, so the plan gives a start and a late-registration deadline rather than a predicted end",
@@ -642,6 +2346,99 @@
   {
    "date": "2026-12-06",
    "weekday": "Sunday",
+   "recurring_options": [
+    {
+     "id": "CAESARS-DAILY-1000AM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "10:00 AM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 10:00 AM, before the lead event's registration closes (4:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "BELLAGIO-SUN",
+     "name": "$400 H.O.R.S.E.",
+     "venue": "Bellagio Poker Room",
+     "time": "11:00 AM",
+     "buy_in_usd": 400,
+     "printed_days": "Sunday",
+     "feasibility": "starts 11:00 AM, before the lead event's registration closes (4:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt07fcf1244a6da661/6af491a339e2b4f6b76a86ad/mgm-bellagio-poker-sundays-$400-horse.pdf",
+      "https://bellagio.mgmresorts.com/en/casino/poker.html"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-3",
+     "name": "$200 NLH $25,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "12 PM",
+     "buy_in_usd": 200,
+     "printed_days": "Saturday & Sunday",
+     "feasibility": "starts 12 PM, before the lead event's registration closes (4:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-200PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "2:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 2:00 PM, before the lead event's registration closes (4:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-4",
+     "name": "$160 NLH $10,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "6 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Nightly Monday-Sunday",
+     "feasibility": "starts 6 PM, at or after the lead event's printed registration deadline (4:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-600PM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "6:00 PM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 6:00 PM, at or after the lead event's printed registration deadline (4:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-900PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "9:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 9:00 PM, at or after the lead event's printed registration deadline (4:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    }
+   ],
    "fallback_unavailable": "",
    "earliest_printed_start": "11:00 AM",
    "duration_note": "no official source prints a finish time or a round count for this day, so the plan gives a start and a late-registration deadline rather than a predicted end",
@@ -681,6 +2478,86 @@
   {
    "date": "2026-12-07",
    "weekday": "Monday",
+   "recurring_options": [
+    {
+     "id": "CAESARS-DAILY-1000AM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "10:00 AM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 10:00 AM, before the lead event's registration closes (4:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-1",
+     "name": "$200 NLH $10,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "12 PM",
+     "buy_in_usd": 200,
+     "printed_days": "Monday-Thursday",
+     "feasibility": "starts 12 PM, before the lead event's registration closes (4:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-200PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "2:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 2:00 PM, before the lead event's registration closes (4:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-4",
+     "name": "$160 NLH $10,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "6 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Nightly Monday-Sunday",
+     "feasibility": "starts 6 PM, at or after the lead event's printed registration deadline (4:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-600PM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "6:00 PM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 6:00 PM, at or after the lead event's printed registration deadline (4:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-900PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "9:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 9:00 PM, at or after the lead event's printed registration deadline (4:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    }
+   ],
    "fallback_unavailable": "",
    "earliest_printed_start": "11:00 AM",
    "duration_note": "no official source prints a finish time or a round count for this day, so the plan gives a start and a late-registration deadline rather than a predicted end",
@@ -718,6 +2595,86 @@
   {
    "date": "2026-12-08",
    "weekday": "Tuesday",
+   "recurring_options": [
+    {
+     "id": "CAESARS-DAILY-1000AM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "10:00 AM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 10:00 AM, before the lead event's registration closes (3:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-1",
+     "name": "$200 NLH $10,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "12 PM",
+     "buy_in_usd": 200,
+     "printed_days": "Monday-Thursday",
+     "feasibility": "starts 12 PM, before the lead event's registration closes (3:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-200PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "2:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 2:00 PM, before the lead event's registration closes (3:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-4",
+     "name": "$160 NLH $10,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "6 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Nightly Monday-Sunday",
+     "feasibility": "starts 6 PM, at or after the lead event's printed registration deadline (3:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-600PM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "6:00 PM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 6:00 PM, at or after the lead event's printed registration deadline (3:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-900PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "9:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 9:00 PM, at or after the lead event's printed registration deadline (3:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    }
+   ],
    "fallback_unavailable": "",
    "earliest_printed_start": "10:10 AM",
    "duration_note": "no official source prints a finish time or a round count for this day, so the plan gives a start and a late-registration deadline rather than a predicted end",
@@ -755,6 +2712,86 @@
   {
    "date": "2026-12-09",
    "weekday": "Wednesday",
+   "recurring_options": [
+    {
+     "id": "CAESARS-DAILY-1000AM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "10:00 AM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 10:00 AM, before the lead event's registration closes (2:40 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-1",
+     "name": "$200 NLH $10,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "12 PM",
+     "buy_in_usd": 200,
+     "printed_days": "Monday-Thursday",
+     "feasibility": "starts 12 PM, before the lead event's registration closes (2:40 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-200PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "2:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 2:00 PM, before the lead event's registration closes (2:40 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-4",
+     "name": "$160 NLH $10,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "6 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Nightly Monday-Sunday",
+     "feasibility": "starts 6 PM, at or after the lead event's printed registration deadline (2:40 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-600PM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "6:00 PM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 6:00 PM, at or after the lead event's printed registration deadline (2:40 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-900PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "9:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 9:00 PM, at or after the lead event's printed registration deadline (2:40 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    }
+   ],
    "fallback_unavailable": "",
    "earliest_printed_start": "10:10 AM",
    "duration_note": "no official source prints a finish time or a round count for this day, so the plan gives a start and a late-registration deadline rather than a predicted end",
@@ -793,6 +2830,86 @@
   {
    "date": "2026-12-10",
    "weekday": "Thursday",
+   "recurring_options": [
+    {
+     "id": "CAESARS-DAILY-1000AM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "10:00 AM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 10:00 AM, before the lead event's registration closes (4:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-1",
+     "name": "$200 NLH $10,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "12 PM",
+     "buy_in_usd": 200,
+     "printed_days": "Monday-Thursday",
+     "feasibility": "starts 12 PM, before the lead event's registration closes (4:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-200PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "2:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 2:00 PM, before the lead event's registration closes (4:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-4",
+     "name": "$160 NLH $10,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "6 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Nightly Monday-Sunday",
+     "feasibility": "starts 6 PM, at or after the lead event's printed registration deadline (4:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-600PM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "6:00 PM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 6:00 PM, at or after the lead event's printed registration deadline (4:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-900PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "9:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 9:00 PM, at or after the lead event's printed registration deadline (4:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    }
+   ],
    "fallback_unavailable": "",
    "earliest_printed_start": "10:00 AM",
    "duration_note": "no official source prints a finish time or a round count for this day, so the plan gives a start and a late-registration deadline rather than a predicted end",
@@ -831,6 +2948,99 @@
   {
    "date": "2026-12-11",
    "weekday": "Friday",
+   "recurring_options": [
+    {
+     "id": "CAESARS-DAILY-1000AM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "10:00 AM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 10:00 AM, before the lead event's registration closes (4:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "BELLAGIO-FRI",
+     "name": "$600 No Limit Hold'em",
+     "venue": "Bellagio Poker Room",
+     "time": "11:00 AM",
+     "buy_in_usd": 600,
+     "printed_days": "Friday",
+     "feasibility": "starts 11:00 AM, before the lead event's registration closes (4:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt9cf95b0e60ec253e/6af491a3a9851d75c40be840/mgm-bellagio-poker-fridays-$600-nlh.pdf",
+      "https://bellagio.mgmresorts.com/en/casino/poker.html"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-2",
+     "name": "$240 NLH $40,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "12 PM",
+     "buy_in_usd": 240,
+     "printed_days": "Friday",
+     "feasibility": "starts 12 PM, before the lead event's registration closes (4:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-200PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "2:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 2:00 PM, before the lead event's registration closes (4:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-4",
+     "name": "$160 NLH $10,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "6 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Nightly Monday-Sunday",
+     "feasibility": "starts 6 PM, at or after the lead event's printed registration deadline (4:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-600PM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "6:00 PM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 6:00 PM, at or after the lead event's printed registration deadline (4:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-900PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "9:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 9:00 PM, at or after the lead event's printed registration deadline (4:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    }
+   ],
    "fallback_unavailable": "",
    "earliest_printed_start": "10:00 AM",
    "duration_note": "no official source prints a finish time or a round count for this day, so the plan gives a start and a late-registration deadline rather than a predicted end",
@@ -869,6 +3079,99 @@
   {
    "date": "2026-12-12",
    "weekday": "Saturday",
+   "recurring_options": [
+    {
+     "id": "CAESARS-DAILY-1000AM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "10:00 AM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 10:00 AM, before the lead event's registration closes (4:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "BELLAGIO-SAT",
+     "name": "No Limit Hold'em \u2014 the sheet's title block prints '$1100 BUY-IN' and the poker page lists it as 'SATURDAYS | $1,000 NLH', while rule 07 on the same sheet says 'Of the $600 Buy-in': the buy-in is therefore left blank and the row is flagged",
+     "venue": "Bellagio Poker Room",
+     "time": "11:00 AM",
+     "buy_in_usd": null,
+     "printed_days": "Saturday",
+     "feasibility": "starts 11:00 AM, before the lead event's registration closes (4:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt6d47974bf5a7d9b6/6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf",
+      "https://bellagio.mgmresorts.com/en/casino/poker.html"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-3",
+     "name": "$200 NLH $25,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "12 PM",
+     "buy_in_usd": 200,
+     "printed_days": "Saturday & Sunday",
+     "feasibility": "starts 12 PM, before the lead event's registration closes (4:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-200PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "2:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 2:00 PM, before the lead event's registration closes (4:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-4",
+     "name": "$160 NLH $10,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "6 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Nightly Monday-Sunday",
+     "feasibility": "starts 6 PM, at or after the lead event's printed registration deadline (4:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-600PM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "6:00 PM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 6:00 PM, at or after the lead event's printed registration deadline (4:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-900PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "9:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 9:00 PM, at or after the lead event's printed registration deadline (4:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    }
+   ],
    "fallback_unavailable": "",
    "earliest_printed_start": "9:10 AM",
    "duration_note": "no official source prints a finish time or a round count for this day, so the plan gives a start and a late-registration deadline rather than a predicted end",
@@ -906,6 +3209,99 @@
   {
    "date": "2026-12-13",
    "weekday": "Sunday",
+   "recurring_options": [
+    {
+     "id": "CAESARS-DAILY-1000AM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "10:00 AM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 10:00 AM, before the lead event's registration closes (4:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "BELLAGIO-SUN",
+     "name": "$400 H.O.R.S.E.",
+     "venue": "Bellagio Poker Room",
+     "time": "11:00 AM",
+     "buy_in_usd": 400,
+     "printed_days": "Sunday",
+     "feasibility": "starts 11:00 AM, before the lead event's registration closes (4:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt07fcf1244a6da661/6af491a339e2b4f6b76a86ad/mgm-bellagio-poker-sundays-$400-horse.pdf",
+      "https://bellagio.mgmresorts.com/en/casino/poker.html"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-3",
+     "name": "$200 NLH $25,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "12 PM",
+     "buy_in_usd": 200,
+     "printed_days": "Saturday & Sunday",
+     "feasibility": "starts 12 PM, before the lead event's registration closes (4:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-200PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "2:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 2:00 PM, before the lead event's registration closes (4:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-4",
+     "name": "$160 NLH $10,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "6 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Nightly Monday-Sunday",
+     "feasibility": "starts 6 PM, at or after the lead event's printed registration deadline (4:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-600PM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "6:00 PM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 6:00 PM, at or after the lead event's printed registration deadline (4:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-900PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "9:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 9:00 PM, at or after the lead event's printed registration deadline (4:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    }
+   ],
    "fallback_unavailable": "",
    "earliest_printed_start": "10:10 AM",
    "duration_note": "no official source prints a finish time or a round count for this day, so the plan gives a start and a late-registration deadline rather than a predicted end",
@@ -945,6 +3341,86 @@
   {
    "date": "2026-12-14",
    "weekday": "Monday",
+   "recurring_options": [
+    {
+     "id": "CAESARS-DAILY-1000AM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "10:00 AM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 10:00 AM, before the lead event's registration closes (4:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-1",
+     "name": "$200 NLH $10,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "12 PM",
+     "buy_in_usd": 200,
+     "printed_days": "Monday-Thursday",
+     "feasibility": "starts 12 PM, before the lead event's registration closes (4:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-200PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "2:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 2:00 PM, before the lead event's registration closes (4:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-4",
+     "name": "$160 NLH $10,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "6 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Nightly Monday-Sunday",
+     "feasibility": "starts 6 PM, at or after the lead event's printed registration deadline (4:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-600PM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "6:00 PM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 6:00 PM, at or after the lead event's printed registration deadline (4:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-900PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "9:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 9:00 PM, at or after the lead event's printed registration deadline (4:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    }
+   ],
    "fallback_unavailable": "",
    "earliest_printed_start": "10:10 AM",
    "duration_note": "no official source prints a finish time or a round count for this day, so the plan gives a start and a late-registration deadline rather than a predicted end",
@@ -984,6 +3460,86 @@
   {
    "date": "2026-12-15",
    "weekday": "Tuesday",
+   "recurring_options": [
+    {
+     "id": "CAESARS-DAILY-1000AM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "10:00 AM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 10:00 AM, before the lead event's registration closes (4:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-1",
+     "name": "$200 NLH $10,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "12 PM",
+     "buy_in_usd": 200,
+     "printed_days": "Monday-Thursday",
+     "feasibility": "starts 12 PM, before the lead event's registration closes (4:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-200PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "2:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 2:00 PM, before the lead event's registration closes (4:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-4",
+     "name": "$160 NLH $10,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "6 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Nightly Monday-Sunday",
+     "feasibility": "starts 6 PM, at or after the lead event's printed registration deadline (4:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-600PM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "6:00 PM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 6:00 PM, at or after the lead event's printed registration deadline (4:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-900PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "9:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 9:00 PM, at or after the lead event's printed registration deadline (4:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    }
+   ],
    "fallback_unavailable": "",
    "earliest_printed_start": "11:00 AM",
    "duration_note": "no official source prints a finish time or a round count for this day, so the plan gives a start and a late-registration deadline rather than a predicted end",
@@ -1023,6 +3579,86 @@
   {
    "date": "2026-12-16",
    "weekday": "Wednesday",
+   "recurring_options": [
+    {
+     "id": "CAESARS-DAILY-1000AM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "10:00 AM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 10:00 AM, before the lead event's registration closes (4:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-1",
+     "name": "$200 NLH $10,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "12 PM",
+     "buy_in_usd": 200,
+     "printed_days": "Monday-Thursday",
+     "feasibility": "starts 12 PM, before the lead event's registration closes (4:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-200PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "2:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 2:00 PM, before the lead event's registration closes (4:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-4",
+     "name": "$160 NLH $10,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "6 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Nightly Monday-Sunday",
+     "feasibility": "starts 6 PM, at or after the lead event's printed registration deadline (4:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-600PM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "6:00 PM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 6:00 PM, at or after the lead event's printed registration deadline (4:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-900PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "9:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 9:00 PM, at or after the lead event's printed registration deadline (4:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    }
+   ],
    "fallback_unavailable": "",
    "earliest_printed_start": "11:00 AM",
    "duration_note": "no official source prints a finish time or a round count for this day, so the plan gives a start and a late-registration deadline rather than a predicted end",
@@ -1060,6 +3696,86 @@
   {
    "date": "2026-12-17",
    "weekday": "Thursday",
+   "recurring_options": [
+    {
+     "id": "CAESARS-DAILY-1000AM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "10:00 AM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "no sequencing test is possible: the lead event prints no late-registration deadline, so whether a second entry fits is not answerable from the schedule",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-1",
+     "name": "$200 NLH $10,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "12 PM",
+     "buy_in_usd": 200,
+     "printed_days": "Monday-Thursday",
+     "feasibility": "no sequencing test is possible: the lead event prints no late-registration deadline, so whether a second entry fits is not answerable from the schedule",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-200PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "2:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "no sequencing test is possible: the lead event prints no late-registration deadline, so whether a second entry fits is not answerable from the schedule",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-4",
+     "name": "$160 NLH $10,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "6 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Nightly Monday-Sunday",
+     "feasibility": "no sequencing test is possible: the lead event prints no late-registration deadline, so whether a second entry fits is not answerable from the schedule",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-600PM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "6:00 PM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "no sequencing test is possible: the lead event prints no late-registration deadline, so whether a second entry fits is not answerable from the schedule",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-900PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "9:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "no sequencing test is possible: the lead event prints no late-registration deadline, so whether a second entry fits is not answerable from the schedule",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    }
+   ],
    "fallback_unavailable": "the leading event prints no late-registration deadline, so no second entry can be shown to be reachable",
    "earliest_printed_start": "10:10 AM",
    "duration_note": "no official source prints a finish time or a round count for this day, so the plan gives a start and a late-registration deadline rather than a predicted end",
@@ -1087,6 +3803,99 @@
   {
    "date": "2026-12-18",
    "weekday": "Friday",
+   "recurring_options": [
+    {
+     "id": "CAESARS-DAILY-1000AM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "10:00 AM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 10:00 AM, before the lead event's registration closes (4:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "BELLAGIO-FRI",
+     "name": "$600 No Limit Hold'em",
+     "venue": "Bellagio Poker Room",
+     "time": "11:00 AM",
+     "buy_in_usd": 600,
+     "printed_days": "Friday",
+     "feasibility": "starts 11:00 AM, before the lead event's registration closes (4:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt9cf95b0e60ec253e/6af491a3a9851d75c40be840/mgm-bellagio-poker-fridays-$600-nlh.pdf",
+      "https://bellagio.mgmresorts.com/en/casino/poker.html"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-2",
+     "name": "$240 NLH $40,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "12 PM",
+     "buy_in_usd": 240,
+     "printed_days": "Friday",
+     "feasibility": "starts 12 PM, before the lead event's registration closes (4:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-200PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "2:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 2:00 PM, before the lead event's registration closes (4:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-4",
+     "name": "$160 NLH $10,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "6 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Nightly Monday-Sunday",
+     "feasibility": "starts 6 PM, at or after the lead event's printed registration deadline (4:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-600PM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "6:00 PM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 6:00 PM, at or after the lead event's printed registration deadline (4:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-900PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "9:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 9:00 PM, at or after the lead event's printed registration deadline (4:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    }
+   ],
    "fallback_unavailable": "",
    "earliest_printed_start": "10:00 AM",
    "duration_note": "no official source prints a finish time or a round count for this day, so the plan gives a start and a late-registration deadline rather than a predicted end",
@@ -1124,6 +3933,99 @@
   {
    "date": "2026-12-19",
    "weekday": "Saturday",
+   "recurring_options": [
+    {
+     "id": "CAESARS-DAILY-1000AM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "10:00 AM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 10:00 AM, before the lead event's registration closes (4:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "BELLAGIO-SAT",
+     "name": "No Limit Hold'em \u2014 the sheet's title block prints '$1100 BUY-IN' and the poker page lists it as 'SATURDAYS | $1,000 NLH', while rule 07 on the same sheet says 'Of the $600 Buy-in': the buy-in is therefore left blank and the row is flagged",
+     "venue": "Bellagio Poker Room",
+     "time": "11:00 AM",
+     "buy_in_usd": null,
+     "printed_days": "Saturday",
+     "feasibility": "starts 11:00 AM, before the lead event's registration closes (4:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt6d47974bf5a7d9b6/6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf",
+      "https://bellagio.mgmresorts.com/en/casino/poker.html"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-3",
+     "name": "$200 NLH $25,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "12 PM",
+     "buy_in_usd": 200,
+     "printed_days": "Saturday & Sunday",
+     "feasibility": "starts 12 PM, before the lead event's registration closes (4:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-200PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "2:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 2:00 PM, before the lead event's registration closes (4:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-4",
+     "name": "$160 NLH $10,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "6 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Nightly Monday-Sunday",
+     "feasibility": "starts 6 PM, at or after the lead event's printed registration deadline (4:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-600PM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "6:00 PM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 6:00 PM, at or after the lead event's printed registration deadline (4:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-900PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "9:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 9:00 PM, at or after the lead event's printed registration deadline (4:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    }
+   ],
    "fallback_unavailable": "",
    "earliest_printed_start": "10:10 AM",
    "duration_note": "no official source prints a finish time or a round count for this day, so the plan gives a start and a late-registration deadline rather than a predicted end",
@@ -1161,6 +4063,99 @@
   {
    "date": "2026-12-20",
    "weekday": "Sunday",
+   "recurring_options": [
+    {
+     "id": "CAESARS-DAILY-1000AM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "10:00 AM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "no sequencing test is possible: the lead event prints no late-registration deadline, so whether a second entry fits is not answerable from the schedule",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "BELLAGIO-SUN",
+     "name": "$400 H.O.R.S.E.",
+     "venue": "Bellagio Poker Room",
+     "time": "11:00 AM",
+     "buy_in_usd": 400,
+     "printed_days": "Sunday",
+     "feasibility": "no sequencing test is possible: the lead event prints no late-registration deadline, so whether a second entry fits is not answerable from the schedule",
+     "sources": [
+      "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt07fcf1244a6da661/6af491a339e2b4f6b76a86ad/mgm-bellagio-poker-sundays-$400-horse.pdf",
+      "https://bellagio.mgmresorts.com/en/casino/poker.html"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-3",
+     "name": "$200 NLH $25,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "12 PM",
+     "buy_in_usd": 200,
+     "printed_days": "Saturday & Sunday",
+     "feasibility": "no sequencing test is possible: the lead event prints no late-registration deadline, so whether a second entry fits is not answerable from the schedule",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-200PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "2:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "no sequencing test is possible: the lead event prints no late-registration deadline, so whether a second entry fits is not answerable from the schedule",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-4",
+     "name": "$160 NLH $10,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "6 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Nightly Monday-Sunday",
+     "feasibility": "no sequencing test is possible: the lead event prints no late-registration deadline, so whether a second entry fits is not answerable from the schedule",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-600PM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "6:00 PM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "no sequencing test is possible: the lead event prints no late-registration deadline, so whether a second entry fits is not answerable from the schedule",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-900PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "9:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "no sequencing test is possible: the lead event prints no late-registration deadline, so whether a second entry fits is not answerable from the schedule",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    }
+   ],
    "fallback_unavailable": "the leading event prints no late-registration deadline, so no second entry can be shown to be reachable",
    "earliest_printed_start": "11:00 AM",
    "duration_note": "no official source prints a finish time or a round count for this day, so the plan gives a start and a late-registration deadline rather than a predicted end",
@@ -1190,6 +4185,86 @@
   {
    "date": "2026-12-21",
    "weekday": "Monday",
+   "recurring_options": [
+    {
+     "id": "CAESARS-DAILY-1000AM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "10:00 AM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 10:00 AM, before the lead event's registration closes (5:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-1",
+     "name": "$200 NLH $10,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "12 PM",
+     "buy_in_usd": 200,
+     "printed_days": "Monday-Thursday",
+     "feasibility": "starts 12 PM, before the lead event's registration closes (5:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-200PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "2:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 2:00 PM, before the lead event's registration closes (5:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-4",
+     "name": "$160 NLH $10,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "6 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Nightly Monday-Sunday",
+     "feasibility": "starts 6 PM, at or after the lead event's printed registration deadline (5:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-600PM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "6:00 PM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 6:00 PM, at or after the lead event's printed registration deadline (5:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-900PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "9:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 9:00 PM, at or after the lead event's printed registration deadline (5:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    }
+   ],
    "fallback_unavailable": "",
    "earliest_printed_start": "11:00 AM",
    "duration_note": "no official source prints a finish time or a round count for this day, so the plan gives a start and a late-registration deadline rather than a predicted end",
@@ -1228,6 +4303,86 @@
   {
    "date": "2026-12-22",
    "weekday": "Tuesday",
+   "recurring_options": [
+    {
+     "id": "CAESARS-DAILY-1000AM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "10:00 AM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 10:00 AM, before the lead event's registration closes (5:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-1",
+     "name": "$200 NLH $10,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "12 PM",
+     "buy_in_usd": 200,
+     "printed_days": "Monday-Thursday",
+     "feasibility": "starts 12 PM, before the lead event's registration closes (5:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-200PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "2:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 2:00 PM, before the lead event's registration closes (5:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-4",
+     "name": "$160 NLH $10,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "6 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Nightly Monday-Sunday",
+     "feasibility": "starts 6 PM, at or after the lead event's printed registration deadline (5:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-600PM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "6:00 PM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 6:00 PM, at or after the lead event's printed registration deadline (5:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-900PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "9:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 9:00 PM, at or after the lead event's printed registration deadline (5:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    }
+   ],
    "fallback_unavailable": "no other event starts at or after the leading event's printed registration deadline",
    "earliest_printed_start": "11:10 AM",
    "duration_note": "no official source prints a finish time or a round count for this day, so the plan gives a start and a late-registration deadline rather than a predicted end",
@@ -1256,6 +4411,86 @@
   {
    "date": "2026-12-23",
    "weekday": "Wednesday",
+   "recurring_options": [
+    {
+     "id": "CAESARS-DAILY-1000AM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "10:00 AM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 10:00 AM, before the lead event's registration closes (4:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-1",
+     "name": "$200 NLH $10,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "12 PM",
+     "buy_in_usd": 200,
+     "printed_days": "Monday-Thursday",
+     "feasibility": "starts 12 PM, before the lead event's registration closes (4:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-200PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "2:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 2:00 PM, before the lead event's registration closes (4:55 PM) \u2014 reachable only if you are already out of the lead event",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "WYNN-DAILY-4",
+     "name": "$160 NLH $10,000 Guarantee poker",
+     "venue": "Wynn Las Vegas Poker",
+     "time": "6 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Nightly Monday-Sunday",
+     "feasibility": "starts 6 PM, at or after the lead event's printed registration deadline (4:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-600PM",
+     "name": "$100 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "6:00 PM",
+     "buy_in_usd": 100,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 6:00 PM, at or after the lead event's printed registration deadline (4:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    },
+    {
+     "id": "CAESARS-DAILY-900PM",
+     "name": "$160 No Limit Hold'em",
+     "venue": "Caesars Palace Poker Room",
+     "time": "9:00 PM",
+     "buy_in_usd": 160,
+     "printed_days": "Daily No-Limit Texas Hold'em Tournament Schedule",
+     "feasibility": "starts 9:00 PM, at or after the lead event's printed registration deadline (4:55 PM), so a second entry is arithmetically possible",
+     "sources": [
+      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+     ]
+    }
+   ],
    "fallback_unavailable": "",
    "earliest_printed_start": "11:10 AM",
    "duration_note": "no official source prints a finish time or a round count for this day, so the plan gives a start and a late-registration deadline rather than a predicted end",

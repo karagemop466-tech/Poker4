@@ -1,8 +1,8 @@
 {
  "meta": {
   "generated_at": "2026-11-17T22:16:33Z",
-  "tracked": 64,
-  "reachable": 62,
+  "tracked": 68,
+  "reachable": 66,
   "unreachable": 2,
   "value_changes_recorded": 14
  },
@@ -25,6 +25,25 @@
    "extractor": null,
    "rows_parsed": null,
    "saved": "data/raw/aria-poker.txt"
+  },
+  {
+   "url": "https://aria.mgmresorts.com/en/terms-and-conditions.html",
+   "label": "ARIA \u2014 hotel reservation terms (daily resort fee, check-in/out, occupant charge, cancellation)",
+   "venue": "ARIA",
+   "kind": "page",
+   "checked_at": "2026-11-17T23:20:00Z",
+   "status": 200,
+   "ok": true,
+   "sha256": "",
+   "bytes": null,
+   "last_modified": null,
+   "first_run": true,
+   "bytes_changed": null,
+   "values_changed": null,
+   "error": null,
+   "extractor": null,
+   "rows_parsed": null,
+   "saved": "data/raw/aria-terms.txt"
   },
   {
    "url": "https://bellagio.mgmresorts.com/en/casino/poker.html",
@@ -82,6 +101,25 @@
    "extractor": null,
    "rows_parsed": null,
    "saved": null
+  },
+  {
+   "url": "https://bellagio.mgmresorts.com/en/terms-and-conditions.html",
+   "label": "Bellagio \u2014 hotel reservation terms (daily resort fee, occupant charge, cancellation)",
+   "venue": "Bellagio",
+   "kind": "page",
+   "checked_at": "2026-11-17T23:20:00Z",
+   "status": 200,
+   "ok": true,
+   "sha256": "",
+   "bytes": null,
+   "last_modified": null,
+   "first_run": true,
+   "bytes_changed": null,
+   "values_changed": null,
+   "error": null,
+   "extractor": null,
+   "rows_parsed": null,
+   "saved": "data/raw/bellagio-terms.txt"
   },
   {
    "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
@@ -217,6 +255,25 @@
    "saved": null
   },
   {
+   "url": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+   "label": "Caesars Palace \u2014 daily NLH tournament flyer (2026 PDF; the 2025 file it replaces now 404s)",
+   "venue": "Caesars Palace",
+   "kind": "pdf",
+   "checked_at": "2026-11-17T23:20:00Z",
+   "status": 200,
+   "ok": true,
+   "sha256": "",
+   "bytes": null,
+   "last_modified": null,
+   "first_run": true,
+   "bytes_changed": null,
+   "values_changed": null,
+   "error": null,
+   "extractor": null,
+   "rows_parsed": 0,
+   "saved": "data/raw/caesars-daily-flyer-2026.txt"
+  },
+  {
    "url": "https://www.caesars.com/harrahs-las-vegas",
    "label": "Harrah's Las Vegas (status tracked)",
    "venue": "Harrah's",
@@ -291,6 +348,25 @@
    "extractor": null,
    "rows_parsed": null,
    "saved": "data/raw/caesars-poker.txt"
+  },
+  {
+   "url": "https://www.mgmresorts.com/en/things-to-do/parking.html",
+   "label": "MGM Resorts \u2014 published parking rate table (Bellagio, ARIA and the other MGM Strip properties)",
+   "venue": "MGM Resorts (corporate, no room of its own)",
+   "kind": "page",
+   "checked_at": "2026-11-17T23:20:00Z",
+   "status": 200,
+   "ok": true,
+   "sha256": "",
+   "bytes": null,
+   "last_modified": null,
+   "first_run": true,
+   "bytes_changed": null,
+   "values_changed": null,
+   "error": null,
+   "extractor": null,
+   "rows_parsed": null,
+   "saved": "data/raw/mgm-parking.txt"
   },
   {
    "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
