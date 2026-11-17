@@ -670,37 +670,84 @@ for ev in events:
         continue
     days.setdefault(ev["date"], []).append(ev)
 
+# No Strip room publishes how long its tournaments last, so a duration is never
+# invented here.  A day gets a conditional fallback only when the second event's
+# printed start is at or after the first event's printed late-registration deadline:
+# at that point the first entry can no longer be bought, so the sequence is at least
+# arithmetically possible.  Every day also lists the printed Day-2 / final restarts,
+# which are the only official signal about when a play day ends.
+def event_key(ev):
+    """Identity of the *event*, not of the printed start: 1A and 1B are one event, two ways in."""
+    if ev.get("event_no"):
+        return f"V{ev['event_no']}"
+    return re.split(r"-20\d\d-", ev["id"])[0]
+
+
 plan = []
 for date, rows in sorted(days.items()):
     rows = sorted(rows, key=lambda r: to_min(r["time"]) or 0)
-    primary = rows[0]
-    fallback = None
-    for cand in rows[1:]:
-        if (to_min(cand["time"]) or 0) >= (to_min(primary.get("registration_closes")) or 0):
-            fallback = cand
+    # The day's lead entry: prefer a ranked (fee + guarantee confirmed, single-entry
+    # candidate) row, earliest start first; otherwise the earliest printed start.
+    primary = next((r for r in rows if r.get("rankable")), rows[0])
+    p_close = to_min(primary.get("registration_closes"))
+    fallback, why_not = None, ("the leading event prints no late-registration deadline, so no second "
+                               "entry can be shown to be reachable") if p_close is None else (
+                              "no other event starts at or after the leading event's printed registration deadline")
+    for cand in rows:
+        if cand is primary or cand.get("is_continuation"):
+            continue
+        if event_key(cand) == event_key(primary):
+            continue   # a later flight of the same event is an alternative start, not a second entry
+        c_start = to_min(cand.get("time"))
+        if c_start is None or p_close is None:
+            continue
+        if c_start >= p_close:
+            fallback, why_not = cand, ""
             break
     cont = [e for e in events if e.get("date") == date and e.get("is_continuation")]
     conflicts = []
+    ranked = [r for r in rows if r.get("rankable")]
+    if len(ranked) > 1:
+        conflicts.append(f"{len(ranked)} ranked entries share this day "
+                         f"(starts {', '.join(sorted({r.get('time') or 'not printed' for r in ranked}))}); "
+                         f"entering one rules out the others, and no sheet prints a finish time to settle it")
     for i, a in enumerate(rows):
         for b in rows[i + 1:]:
             ac = to_min(a.get("registration_closes"))
             bs = to_min(b.get("time"))
-            if ac and bs and bs < ac:
-                conflicts.append(f"{a['name']} registration stays open until {a['registration_closes']}, which is after {b['name']} starts at {b['time']} — the two cannot be played in sequence unless you are out of the first event before it closes")
-            elif not ac:
-                conflicts.append(f"{a['name']} prints no registration deadline, so overlap with {b['name']} cannot be settled from official data")
+            if ac and bs and bs < ac and a.get("rankable") and b.get("rankable"):
+                conflicts.append(f"{a['name']} keeps registration open until {a['registration_closes']}, after "
+                                 f"{b['name']} starts at {b['time']} — playable in sequence only if you are out of the "
+                                 f"first event before that deadline, which the sheet does not promise")
     plan.append({
         "date": date, "weekday": rows[0].get("weekday"),
-        "primary": primary, "fallback": fallback,
+        "primary": primary, "fallback": fallback, "fallback_unavailable": why_not,
+        "earliest_printed_start": next((r["time"] for r in rows if r.get("time")), None),
+        "duration_note": ("no official source prints a finish time or a round count for this day, so the plan "
+                          "gives a start and a late-registration deadline rather than a predicted end"),
         "restarts": [c["name"] for c in cont],
         "overlap_notes": conflicts,
-        "entries_usd": sum(c.get("buy_in_usd") or 0 for c in rows),
+        # counting one entry per *event*, because a 1A/1B pair is one event with two ways in
+        "distinct_ranked_events": len({event_key(r) for r in ranked}),
+        "entries_usd": sum(next(r for r in ranked if event_key(r) == k).get("buy_in_usd") or 0
+                           for k in sorted({event_key(r) for r in ranked})),
     })
 with open(DATA / "day-plan.json", "w", encoding="utf-8") as fh:
     json.dump({"meta": {"generated_at": SNAPSHOT_AT or TODAY,
                         "basis": "start time + printed registration-closes deadline + Day-2 restart rows on the official calendar",
                         "days": len(plan)},
-               "days": [{**d, "primary_id": d["primary"]["id"], "fallback_id": (d["fallback"] or {}).get("id")} for d in plan]},
+               # the plan rows are compared and written field by field: dropping the two heavy nested
+               # event objects keeps this file readable and keeps the build byte-stable
+               "days": [{k: v for k, v in d.items() if k not in ("primary", "fallback")} |
+                        {"primary_id": d["primary"]["id"],
+                         "primary": {k: d["primary"].get(k) for k in ("id", "name", "date", "time",
+                                                                     "registration_closes", "buy_in_usd",
+                                                                     "guarantee_usd", "venue", "weekday")},
+                         "fallback": ({k: d["fallback"].get(k) for k in ("id", "name", "date", "time",
+                                                                         "registration_closes", "buy_in_usd",
+                                                                         "guarantee_usd", "venue", "weekday")}
+                                      if d["fallback"] else None),
+                         "fallback_id": (d["fallback"] or {}).get("id")} for d in plan]},
               fh, indent=1)
 
 # ------------------------------------------------------------------------- sources
@@ -1302,19 +1349,21 @@ def page_plan():
                  f" · reg closes {E(p.get('registration_closes') or 'not printed')} · entry {money(p.get('buy_in_usd'))}</span>")
         f_txt = (f"<a href='tournaments.html#{E(f['id'])}'>{E(f['name'])}</a><span class='time'>starts {E(f.get('time') or 'time not printed')}"
                  f" · reg closes {E(f.get('registration_closes') or 'not printed')} · entry {money(f.get('buy_in_usd'))}</span>") if f \
-            else unk("no second event printed for this date")
+            else unk(d.get("fallback_unavailable") or "no second entry is reachable on the official data")
         conf = "".join(f"<p>{E(c)}</p>" for c in d.get("overlap_notes") or []) or "<span class='ok'>nothing blocks a second entry</span>"
         res = "; ".join(d.get("restarts") or [])
-        rows += (f"<tr class='day-row' data-date='{E(d['date'])}'><td class='when'><strong>{E(d['date'])}</strong><span class='time'>{E(d.get('weekday') or '')}</span></td>"
-                 f"<td>{p_txt}</td><td>{f_txt}</td><td class='restarts'>{E(res) if res else unk('nothing to defend')}</td>"
-                 f"<td class='conflicts'>{conf}</td><td class='num'>{money(d['entries_usd'])}</td></tr>")
+        rows += (f"<tr class='day-row' data-date='{E(d['date'])}'><td class='when'><strong>{E(d['date'])}</strong>"
+                 f"<span class='time'>{E(d.get('weekday') or '')} · first start {E(d.get('earliest_printed_start') or 'not printed')}</span></td>"
+                 f"<td>{p_txt}</td><td>{f_txt}</td><td class='restarts'>{E(res) if res else unk('nothing printed')}</td>"
+                 f"<td class='conflicts'>{conf}</td><td class='num'>{money(d['entries_usd'])}"
+                 f"{note('one entry per distinct event; ' + str(d.get('distinct_ranked_events', 0)) + ' ranked event(s) this day')}</td></tr>")
     with_fb = len([x for x in plan if x.get("fallback")])
     return shell("", "Day plan", f"""
 <section class="page-head"><h1>One day, one primary event, one conditional fallback</h1>
 <p class="lede">Sequencing uses only what the calendar prints: the start time, the “REG CLOSES” column and the Day-2 restart rows. A day gets a <strong>primary</strong> event and a <strong>fallback</strong> that is only reachable if you are done with the first — that means its start is at or after the primary's registration deadline, the closest thing to a guaranteed exit the official data offers. No event duration is invented: where a sheet lists levels, the implied length sits on the tournament row, and it is never used to reorder this plan.</p>
 {status_banner()}
 <p class="warn">The day cannot start at 8:00 AM: nothing on the Strip publishes an 8:00 AM first flight. In this window the earliest first starts are 10:10 AM (raceday events) and 11:10 AM for the $300 Events 1A/9, so each day begins at the earliest official start and the difference is flagged rather than papered over.</p></section>
-<div class="table-scroll"><table class="compact days"><thead><tr><th>Day</th><th>Primary</th><th>Conditional fallback</th><th>Day-2 / finals that day</th><th>Overlap check</th><th class="num">Entries if both</th></tr></thead>
+<div class="table-scroll"><table class="compact days"><thead><tr><th>Day</th><th>Primary</th><th>Conditional fallback</th><th>Day-2 / finals that day</th><th>Overlap check</th><th class="num">Ranked entries that day</th></tr></thead>
 <tbody>{rows}</tbody></table></div>
 <section class="callout"><h2>Why some days carry no fallback</h2>
 <p>Where a second event starts before the first one's registration window closes, playing both is impossible on the official data — those days list the conflict instead of scheduling it. {with_fb} of {len(plan)} days have a defensible fallback. Rows on the same date with the same buy-in but different flights (1A/1B/1C…) are alternative starts of <em>one</em> event, not two entries, and the plan never counts both.</p>
