@@ -601,3 +601,26 @@ Policy: every data row must link an official source; values not confirmed from a
 - **Post-merge on `main`:** "Verify the published site" SUCCESS · "Poker4 site build + verification gate" SUCCESS · "Deploy static dashboard to GitHub Pages" SUCCESS (run 43999859321) · "pages build and deployment" (run 43999857621) queued/completed · "Official source sync + change monitor" running.
 - **Pages:** https://karagemop466-tech.github.io/Poker4/ (source: main, path `/`) — deploy succeeded at 02:01 UTC 2026-11-17.
 - **Race notes:** `main` advanced four times during this session (`be3594d` → `9b1f376` → `57f7399` → `1221f53` → `6fd824b` → `fa1dbad`); every round merged forward, never discarding others' work; the v2-monitor bot also pushed a snapshot commit to this session's branch (merged back). Final head `59a6c51` contains `origin/main` `fa1dbad`.
+
+---
+
+## Session `arena/a3838778-poker4` (this session) — FINAL INTEGRATION + FEATURE + VERIFICATION SESSION
+
+- Session ID: `arena/a3838778-poker4`. Branch `arena/a3838778-poker4`, branched from `main` @ `0d13de0` (only remote branch present; no other session has an open PR or a live branch, so this session acts as the final integration session).
+- **Claim (written before work started, pushed with the first commit):** all open tasks. File scope: root `*.html`, `site.css`, `app.js`, `venues/*.html`, `data/poker4.json`, `data/hotel-facts.json`, `data/walks.json`, `data/rate-log.json`, `data/change-log.json`, `scripts/integrate_data.py`, `scripts/verify_root.py`, `.github/workflows/{url-check,recheck,monitor}.yml`, `README.md`, and this board (log + claim). **Not touched:** other sessions' preserved folders (`60fb62da/`, `c07371e3/`, `df41f5c6/`, `strip/`, `verified/`, `poker4/`, `v2/`, `planner/`, `site/`, `archive/`, `pages/`, `prior_root_dashboard/`, `data/{08f07d1d,0f6c627b,c07371e3,df41f5c6,v2}/`, `tools/v2_*`, `tools/build_poker4.py`, `tools/c07371e3_*`).
+### Task board (this session, `arena/a3838778-poker4`)
+
+| ID | Task | Status | Owner | File scope | Sources / verification | Irregularities |
+|----|------|--------|-------|------------|------------------------|----------------|
+| A1 | Read COORDINATION.md, claim scope, commit + push claim | done | a3838778 | COORDINATION.md | this board | none |
+| A2 | Rebuild root site from the canonical data layer; remove the stale/duplicate page family at the root | in progress | a3838778 | root `*.html`, `venues/*.html` | `scripts/integrate_data.py` from `data/`; output diffed against `main` | 11 root files on `main` were stale w.r.t. their own builder (I1) |
+| A3 | Line-by-line re-verification against the official sources (spot-check every field class) | in progress | a3838778 | `data/verification/*.json`, `review.html` | official pages/PDFs re-fetched this session; see the verification table below | see V-rows |
+| A4 | Fix the two red scheduled monitors; stop the commit-step race | in progress | a3838778 | `.github/workflows/recheck.yml`, `.github/workflows/monitor.yml`, `tools/recheck.py` | workflow re-run after merge | 2 failing runs (I2) |
+| A5 | Close the remaining brief gaps that the data layer can honestly support (official addresses + one-click walking routes, per-date official booking links, hotel capture fields, 8 AM gap) | in progress | a3838778 | `data/poker4.json`, `data/hotel-facts.json`, `scripts/integrate_data.py` | official property pages | 8 monitors duplicated (I3, suggestion only — no other session's workflow deleted without a decision) |
+| A6 | Executive summary, questions, suggestions, flagged, sources pages present and consistent | in progress | a3838778 | `index.html`, `questions.html`, `suggestions.html`, `flagged.html`, `review.html` | generated from `data/poker4.json` | none |
+| A7 | Final verification: row-source check, link check, JSON parse, YAML parse, jsdom smoke | pending | a3838778 | `scripts/verify_root.py`, `scripts/linkcheck.py` | full run recorded below | none |
+| A8 | PR → main, merge without waiting, confirm Pages deploy, record result here | pending | a3838778 | branch → `main` | PR link + deploy run recorded below | none |
+- Findings at session start (recorded as irregularities, see the task board below):
+  1. The committed root pages were **stale relative to their own builder**: `scripts/integrate_data.py` regenerated 11 files differently from what was on `main` (two page families with different nav, CSS and numbers coexisted at the root — e.g. the committed `index.html` claimed *verified* walk minutes that the canonical data layer records as *not published*).
+  2. Two scheduled monitors were **red**: `recheck.yml` ("daily-recheck", run 44114765586) failed in `tools/recheck.py`; `monitor.yml` ("Monitor official sources", run 44129398646) failed in its commit step.
+  3. Eight scheduled scraper workflows across sessions hit the same official URLs every morning.
