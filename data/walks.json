@@ -1,0 +1,155 @@
+{
+ "generated": "2026-11-17",
+ "walks": [
+  {
+   "hotel_id": "venetian",
+   "origin_address": "The Venetian Resort, 3355 Las Vegas Blvd S",
+   "destination_address": "Venetian Poker Room (Palazzo Level 2)",
+   "walk_minutes_estimate": 0,
+   "status": "host venue",
+   "maps_url": "https://www.google.com/maps/dir/?api=1&origin=The+Venetian+Resort,+3355+Las+Vegas+Blvd+S&destination=Venetian+Poker+Room+(Palazzo+Level+2)&travelmode=walking",
+   "verified": "estimate — no official source publishes walking minutes; Google Maps link given for live verification",
+   "last_checked": "2026-11-17"
+  },
+  {
+   "hotel_id": "wynn",
+   "origin_address": "Wynn Las Vegas, 3131 Las Vegas Blvd S",
+   "destination_address": "Venetian Poker Room, 3355 Las Vegas Blvd S",
+   "walk_minutes_estimate": 14,
+   "status": "≤30",
+   "maps_url": "https://www.google.com/maps/dir/?api=1&origin=Wynn+Las+Vegas,+3131+Las+Vegas+Blvd+S&destination=Venetian+Poker+Room,+3355+Las+Vegas+Blvd+S&travelmode=walking",
+   "verified": "estimate — no official source publishes walking minutes; Google Maps link given for live verification",
+   "last_checked": "2026-11-17"
+  },
+  {
+   "hotel_id": "ti",
+   "origin_address": "Treasure Island, 3300 Las Vegas Blvd S",
+   "destination_address": "Venetian Poker Room, 3355 Las Vegas Blvd S",
+   "walk_minutes_estimate": 12,
+   "status": "≤30",
+   "maps_url": "https://www.google.com/maps/dir/?api=1&origin=Treasure+Island,+3300+Las+Vegas+Blvd+S&destination=Venetian+Poker+Room,+3355+Las+Vegas+Blvd+S&travelmode=walking",
+   "verified": "estimate — no official source publishes walking minutes; Google Maps link given for live verification",
+   "last_checked": "2026-11-17"
+  },
+  {
+   "hotel_id": "bellagio",
+   "origin_address": "Bellagio, 3600 Las Vegas Blvd S",
+   "destination_address": "Venetian Poker Room, 3355 Las Vegas Blvd S",
+   "walk_minutes_estimate": 22,
+   "status": "≤30",
+   "maps_url": "https://www.google.com/maps/dir/?api=1&origin=Bellagio,+3600+Las+Vegas+Blvd+S&destination=Venetian+Poker+Room,+3355+Las+Vegas+Blvd+S&travelmode=walking",
+   "verified": "estimate — no official source publishes walking minutes; Google Maps link given for live verification",
+   "last_checked": "2026-11-17"
+  },
+  {
+   "hotel_id": "aria",
+   "origin_address": "ARIA, 3708 Las Vegas Blvd S",
+   "destination_address": "Venetian Poker Room, 3355 Las Vegas Blvd S",
+   "walk_minutes_estimate": 18,
+   "status": "≤30",
+   "maps_url": "https://www.google.com/maps/dir/?api=1&origin=ARIA,+3708+Las+Vegas+Blvd+S&destination=Venetian+Poker+Room,+3355+Las+Vegas+Blvd+S&travelmode=walking",
+   "verified": "estimate — no official source publishes walking minutes; Google Maps link given for live verification",
+   "last_checked": "2026-11-17"
+  },
+  {
+   "hotel_id": "caesars",
+   "origin_address": "Caesars Palace, 3570 Las Vegas Blvd S",
+   "destination_address": "Venetian Poker Room, 3355 Las Vegas Blvd S",
+   "walk_minutes_estimate": 16,
+   "status": "≤30",
+   "maps_url": "https://www.google.com/maps/dir/?api=1&origin=Caesars+Palace,+3570+Las+Vegas+Blvd+S&destination=Venetian+Poker+Room,+3355+Las+Vegas+Blvd+S&travelmode=walking",
+   "verified": "estimate — no official source publishes walking minutes; Google Maps link given for live verification",
+   "last_checked": "2026-11-17"
+  },
+  {
+   "hotel_id": "harrahs",
+   "origin_address": "Harrah's, 3475 Las Vegas Blvd S",
+   "destination_address": "Venetian Poker Room, 3355 Las Vegas Blvd S",
+   "walk_minutes_estimate": 10,
+   "status": "≤30",
+   "maps_url": "https://www.google.com/maps/dir/?api=1&origin=Harrah's,+3475+Las+Vegas+Blvd+S&destination=Venetian+Poker+Room,+3355+Las+Vegas+Blvd+S&travelmode=walking",
+   "verified": "estimate — no official source publishes walking minutes; Google Maps link given for live verification",
+   "last_checked": "2026-11-17"
+  },
+  {
+   "hotel_id": "horseshoe",
+   "origin_address": "Horseshoe Las Vegas, 3645 Las Vegas Blvd S",
+   "destination_address": "Venetian Poker Room, 3355 Las Vegas Blvd S",
+   "walk_minutes_estimate": 14,
+   "status": "≤30",
+   "maps_url": "https://www.google.com/maps/dir/?api=1&origin=Horseshoe+Las+Vegas,+3645+Las+Vegas+Blvd+S&destination=Venetian+Poker+Room,+3355+Las+Vegas+Blvd+S&travelmode=walking",
+   "verified": "estimate — no official source publishes walking minutes; Google Maps link given for live verification",
+   "last_checked": "2026-11-17"
+  },
+  {
+   "hotel_id": "parkmgm",
+   "origin_address": "Park MGM, 3770 Las Vegas Blvd S",
+   "destination_address": "Venetian Poker Room, 3355 Las Vegas Blvd S",
+   "walk_minutes_estimate": 32,
+   "status": ">30",
+   "maps_url": "https://www.google.com/maps/dir/?api=1&origin=Park+MGM,+3770+Las+Vegas+Blvd+S&destination=Venetian+Poker+Room,+3355+Las+Vegas+Blvd+S&travelmode=walking",
+   "verified": "estimate — no official source publishes walking minutes; Google Maps link given for live verification",
+   "last_checked": "2026-11-17"
+  },
+  {
+   "hotel_id": "wynn",
+   "origin_address": "Wynn Las Vegas, 3131 Las Vegas Blvd S",
+   "destination_address": "Wynn Poker Room (Encore), 3131 Las Vegas Blvd S",
+   "walk_minutes_estimate": 0,
+   "status": "host venue",
+   "maps_url": "https://www.google.com/maps/dir/?api=1&origin=Wynn+Las+Vegas,+3131+Las+Vegas+Blvd+S&destination=Wynn+Poker+Room+(Encore),+3131+Las+Vegas+Blvd+S&travelmode=walking",
+   "verified": "estimate — no official source publishes walking minutes; Google Maps link given for live verification",
+   "last_checked": "2026-11-17"
+  },
+  {
+   "hotel_id": "bellagio",
+   "origin_address": "Bellagio, 3600 Las Vegas Blvd S",
+   "destination_address": "Wynn Poker Room (Encore), 3131 Las Vegas Blvd S",
+   "walk_minutes_estimate": 34,
+   "status": ">30",
+   "maps_url": "https://www.google.com/maps/dir/?api=1&origin=Bellagio,+3600+Las+Vegas+Blvd+S&destination=Wynn+Poker+Room+(Encore),+3131+Las+Vegas+Blvd+S&travelmode=walking",
+   "verified": "estimate — no official source publishes walking minutes; Google Maps link given for live verification",
+   "last_checked": "2026-11-17"
+  },
+  {
+   "hotel_id": "ti",
+   "origin_address": "Treasure Island, 3300 Las Vegas Blvd S",
+   "destination_address": "Wynn Poker Room (Encore), 3131 Las Vegas Blvd S",
+   "walk_minutes_estimate": 16,
+   "status": "≤30",
+   "maps_url": "https://www.google.com/maps/dir/?api=1&origin=Treasure+Island,+3300+Las+Vegas+Blvd+S&destination=Wynn+Poker+Room+(Encore),+3131+Las+Vegas+Blvd+S&travelmode=walking",
+   "verified": "estimate — no official source publishes walking minutes; Google Maps link given for live verification",
+   "last_checked": "2026-11-17"
+  },
+  {
+   "hotel_id": "venetian",
+   "origin_address": "The Venetian Resort, 3355 Las Vegas Blvd S",
+   "destination_address": "Wynn Poker Room (Encore), 3131 Las Vegas Blvd S",
+   "walk_minutes_estimate": 14,
+   "status": "≤30",
+   "maps_url": "https://www.google.com/maps/dir/?api=1&origin=The+Venetian+Resort,+3355+Las+Vegas+Blvd+S&destination=Wynn+Poker+Room+(Encore),+3131+Las+Vegas+Blvd+S&travelmode=walking",
+   "verified": "estimate — no official source publishes walking minutes; Google Maps link given for live verification",
+   "last_checked": "2026-11-17"
+  },
+  {
+   "hotel_id": "bellagio",
+   "origin_address": "Bellagio, 3600 Las Vegas Blvd S",
+   "destination_address": "Bellagio Poker Room, 3600 Las Vegas Blvd S",
+   "walk_minutes_estimate": 0,
+   "status": "host venue",
+   "maps_url": "https://www.google.com/maps/dir/?api=1&origin=Bellagio,+3600+Las+Vegas+Blvd+S&destination=Bellagio+Poker+Room,+3600+Las+Vegas+Blvd+S&travelmode=walking",
+   "verified": "estimate — no official source publishes walking minutes; Google Maps link given for live verification",
+   "last_checked": "2026-11-17"
+  },
+  {
+   "hotel_id": "caesars",
+   "origin_address": "Caesars Palace, 3570 Las Vegas Blvd S",
+   "destination_address": "Caesars Palace Poker Room, 3570 Las Vegas Blvd S",
+   "walk_minutes_estimate": 0,
+   "status": "host venue",
+   "maps_url": "https://www.google.com/maps/dir/?api=1&origin=Caesars+Palace,+3570+Las+Vegas+Blvd+S&destination=Caesars+Palace+Poker+Room,+3570+Las+Vegas+Blvd+S&travelmode=walking",
+   "verified": "estimate — no official source publishes walking minutes; Google Maps link given for live verification",
+   "last_checked": "2026-11-17"
+  }
+ ]
+}

@@ -1,0 +1,59 @@
+{
+ "generated": "2026-11-17",
+ "entries": [
+  {
+   "date": "2026-11-17",
+   "source_id": "A_TERMS",
+   "url": "https://aria.mgmresorts.com/en/terms-and-conditions.html",
+   "row_ref": "hotel:aria",
+   "field": "resort_fee",
+   "change": "Earlier snapshot recorded $50 (PokerNews/secondary) vs $55; official ARIA terms page states $55.00 + tax. Row corrected to $55 (official).",
+   "severity": "corrected"
+  },
+  {
+   "date": "2026-11-17",
+   "source_id": "B_SAT",
+   "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt6d47974bf5a7d9b6/6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf",
+   "row_ref": "event:BELL-SAT",
+   "field": "buy_in",
+   "change": "Official Saturday sheet is internally inconsistent: header '$1100 BUY-IN' vs rule 07 '$600 Buy-in'; sheet also carries a stale Day 2 date (9/13/26). Buy-in left blank and row flagged.",
+   "severity": "flagged"
+  },
+  {
+   "date": "2026-11-17",
+   "source_id": "V_STRUCTURE_25",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_25.pdf",
+   "row_ref": "event:V-*,46",
+   "field": "time",
+   "change": "Structure sheet 25 lists Event #46 start at 9:10 AM — earlier than the 10:10 AM previously recorded as the series' earliest start. Row set added.",
+   "severity": "updated"
+  },
+  {
+   "date": "2026-11-17",
+   "source_id": "V_STRUCTURE_8",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_8.pdf",
+   "row_ref": "event:V-*,18",
+   "field": "entry_rules",
+   "change": "Valuetown Bounty sheet rule 07 prices 'all subsequent buy in's after the initial buy in' at $200 — multi-entry implied; row excluded from single-entry candidates and excerpt stored.",
+   "severity": "flagged"
+  },
+  {
+   "date": "2026-11-17",
+   "source_id": "W_DAILY",
+   "url": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+   "row_ref": "event:WYNN-*",
+   "field": "entry_rules",
+   "change": "Wynn daily PDF terms confirm re-entry (Mon–Thu, Sat–Sun, Nightly) and confirm rebuy/add-on (Friday). Rows relabeled from unverified to confirmed; moved to spending-advantage section.",
+   "severity": "updated"
+  },
+  {
+   "date": "2026-11-17",
+   "source_id": "C_FLYER",
+   "url": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+   "row_ref": "event:CAES-*",
+   "field": "entry_rules",
+   "change": "Caesars flyer confirms $50 add-on (first break) and re-entry within first break for all four dailies. Rows relabeled confirmed.",
+   "severity": "updated"
+  }
+ ]
+}
