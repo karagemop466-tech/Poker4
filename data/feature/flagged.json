@@ -1,0 +1,195 @@
+[
+ {
+  "id": "F1",
+  "title": "Zero confirmed single-entry / freezeout events",
+  "severity": "high",
+  "detail": "After reading ALL 37 Venetian DSE IV structure sheets, the Wynn daily structures, the Bellagio weekly PDFs, the Caesars Palace daily flyer and the WPT festival structures PDF on 2026-11-17, no official document establishes a whole-event single-entry / freezeout tournament. The only official entry-count statements found are caps, not freezeouts: the WPT World Championship allows 'a single entry per starting flight' (3 flights = up to 3 entries, official WPT press release); WPT Prime allows 'One (1) Entry and One (1) re-entry for each starting flight'; the Super Gold Million and most WPT side events price 'Unlimited re-entry'; Venetian Events #18/#58 price 'subsequent buy in's'. Silence elsewhere is not confirmation. The 'single-entry confirmed' toggle therefore shows zero rows until a property publishes or provides written whole-event single-entry rules.",
+  "sources": [
+   "V-S",
+   "W-DAILY",
+   "WPT-TC",
+   "WPT-PR",
+   "B-FRI",
+   "B-SUN",
+   "C-FLYER"
+  ],
+  "checked": "2026-11-17"
+ },
+ {
+  "id": "F2",
+  "title": "Venetian Events #18/#58 Valuetown: official sheet prices 'subsequent buy in's'",
+  "severity": "high",
+  "detail": "Structure sheet 8 rule 07 reads: 'All subsequent buy in's after the initial buy in will be $200.' These two events are therefore classified multi-entry and placed in the separate spending-advantage section. PokerAtlas PRO $20 discount applies to the initial buy-in only.",
+  "sources": [
+   "V-S"
+  ],
+  "checked": "2026-11-17"
+ },
+ {
+  "id": "F3",
+  "title": "Bellagio Saturdays tournament: buy-in conflict inside official sources",
+  "severity": "high",
+  "detail": "The official Bellagio page links the Saturday PDF as '$1,000 NLH'; the PDF header says 'NLH $1100 BUY-IN'; PDF rule 7 says 'Of the $600 Buy-in, $510 goes to the Prize Pool'. The PDF also contains stale internal dates ('Combined Final Day 2 (9/13/26)', flight registration times for 1A/1B/1C/D). Buy-in left BLANK pending clarification from the poker room (702-693-7291).",
+  "sources": [
+   "B-POKER",
+   "B-SAT"
+  ],
+  "checked": "2026-11-17"
+ },
+ {
+  "id": "F4",
+  "title": "Wynn WPT schedule PDF contains a date typo",
+  "severity": "medium",
+  "detail": "The official Wynn WPT World Championship schedule PDF labels the Wednesday block 'Dec. 18 Wednesday' \u2014 Wednesday is Dec 16, 2026 (the surrounding rows run Dec 15 \u2192 Dec 17 Thursday). Rows shown here use Dec 16 with this flag attached.",
+  "sources": [
+   "W-WPT"
+  ],
+  "checked": "2026-11-17"
+ },
+ {
+  "id": "F5",
+  "title": "Wynn web page URLs restructured",
+  "severity": "medium",
+  "detail": "wynnlasvegas.com/casino/poker now redirects to the Wynn homepage and wynnlasvegas.com/casino/poker-room and /hotel/resort-fee return 'page has checked out'. Tournament documents remain on cdn.wynnresorts.com (official CDN) and terms on wynnlasvegas.com/terms-and-conditions/850257. A direct link to a stable official Wynn poker landing page is not currently available.",
+  "sources": [
+   "W-DAILY",
+   "W-TERMS"
+  ],
+  "checked": "2026-11-17"
+ },
+ {
+  "id": "F6",
+  "title": "Venetian poker page 'Current Series' banner is stale",
+  "severity": "low",
+  "detail": "On 2026-11-17 the Venetian poker page still lists 'Current Series: WPT Fall Festival, October 28 - November 15, 2026', although DSE IV began Nov 16 per the official DSE page. Series data on this site comes from the DSE IV schedule page, not the stale banner.",
+  "sources": [
+   "V-POKER",
+   "V-DSE"
+  ],
+  "checked": "2026-11-17"
+ },
+ {
+  "id": "F7",
+  "title": "Bellagio 'tournament play will resume on Saturday, July 26' notice has no year",
+  "severity": "low",
+  "detail": "The notice appears on the official Bellagio poker page; July 26, 2026 is a Sunday while July 26, 2025 was a Saturday, so the notice is likely stale. The page's linked weekly PDFs (Fri/Sat/Sun) were used instead.",
+  "sources": [
+   "B-POKER"
+  ],
+  "checked": "2026-11-17"
+ },
+ {
+  "id": "F8",
+  "title": "Walking times not machine-verifiable from official sources",
+  "severity": "high",
+  "detail": "No property publishes official walking-minute figures between hotels and poker rooms. Every hotel row carries a pre-built Google Maps walking-route link built from the property name; the \u226430-minute filter works only on verified rows (currently only Venetian/Palazzo = inside-building). Walking minutes stay blank until verified via Google/Apple Maps by a person or an approved Distance Matrix API call.",
+  "sources": [
+   "V-POKER"
+  ],
+  "checked": "2026-11-17"
+ },
+ {
+  "id": "F9",
+  "title": "Dated room rates captured only for Venetian/Palazzo",
+  "severity": "high",
+  "detail": "The Venetian booking engine returns server-rendered quotes (captured Nov 27\u201330, 2026: $1,274.25/$426.75/$164.25 + $55 resort fee/night + 13.38% tax = $2,301.90). Wynn, Bellagio, ARIA, Caesars, Harrah's, Horseshoe and TI booking engines did not expose machine-readable quotes in this pass \u2014 their rate fields are blank and flagged, with official booking links provided per row.",
+  "sources": [
+   "V-BOOK"
+  ],
+  "checked": "2026-11-17"
+ },
+ {
+  "id": "F10",
+  "title": "Resort fees unverified for Caesars Palace, Harrah's, Horseshoe (Bellagio/ARIA resolved 2026-11-17)",
+  "severity": "high",
+  "detail": "Verified from official pages: Venetian $55+tax, Wynn $55+tax, Bellagio $55+tax (bellagio.mgmresorts.com terms), ARIA $55+tax (aria.mgmresorts.com terms \u2014 resolves the secondary $50/$55 conflict in favor of $55), Treasure Island $49.95+tax. Still blank + flagged: Caesars Palace, Harrah's and Horseshoe (secondary sources conflict, e.g. Caesars $49.95 vs $54.95; official fee pages not confirmed).",
+  "sources": [
+   "V-RF",
+   "W-TERMS",
+   "B-TERMS",
+   "A-TERMS",
+   "TI-TOWER"
+  ],
+  "checked": "2026-11-17"
+ },
+ {
+  "id": "F11",
+  "title": "Rooms with no official published tournament schedule (checked 2026-11-17)",
+  "severity": "medium",
+  "detail": "ARIA official page mentions daily tournaments but publishes no times/buy-ins (directs to @ARIAPoker on X). MGM Grand poker URL returns page-not-found. Horseshoe poker URL redirects to a generic Things-To-Do page. Harrah's official pages checked show no tournament schedule. Golden Nugget official poker page returned empty content. Third-party aggregators list tournaments for several of these rooms (e.g., Horseshoe $100 NLH, Golden Nugget $100 NLH, TI dailies) but per policy these are leads only, not verified rows.",
+  "sources": [
+   "A-POKER",
+   "MG-POKER",
+   "H-POKER",
+   "HH-HOTEL",
+   "GN-POKER"
+  ],
+  "checked": "2026-11-17"
+ },
+ {
+  "id": "F12",
+  "title": "Strip rooms not checked this pass",
+  "severity": "medium",
+  "detail": "Sahara, Resorts World, The STRAT, Park MGM, Mandalay Bay, The Cosmopolitan and Planet Hollywood official poker pages were not fetched in the 2026-11-17 pass. They are queued in scripts/scrape_daily.py and on the questions page for the next scheduled check.",
+  "sources": [],
+  "checked": "2026-11-17"
+ },
+ {
+  "id": "F13",
+  "title": "Venetian events with no guarantee stated",
+  "severity": "low",
+  "detail": "Events #3/#4/#5 (RaceDay Stack, sheet 18) and #6 (sheet 29) carry no guarantee on their official structure sheets. Guarantee and ratio cells are blank; such rows are excluded from guarantee-based ranking.",
+  "sources": [
+   "V-S"
+  ],
+  "checked": "2026-11-17"
+ },
+ {
+  "id": "F14",
+  "title": "Bounty guarantees include bounty money at Venetian",
+  "severity": "medium",
+  "detail": "Venetian sheets state guarantees 'consist of the actual prize pool plus the total amount of bounties that are awarded' (sheets 1, 8, 11, 15, 16, 26, 27, 30, 33, 34). Guarantee \u00f7 buy-in ratios for bounty rows are therefore not comparable with pure prize-pool guarantees and are labeled separately.",
+  "sources": [
+   "V-S"
+  ],
+  "checked": "2026-11-17"
+ },
+ {
+  "id": "F15",
+  "title": "Trip dates and nightly budget/quality floor not fixed",
+  "severity": "high",
+  "detail": "The brief requires fixed trip dates and a nightly budget/quality floor before final selection, but none were provided. The site therefore covers the full verified window (Nov 17 \u2013 Dec 23, 2026) with date filters and a trip calculator, and the schedule page marks every day plan provisional. See Questions Q1\u2013Q2.",
+  "sources": [],
+  "checked": "2026-11-17"
+ },
+ {
+  "id": "F16",
+  "title": "WPT festival entry rules verified for 16 of 58 rows",
+  "severity": "medium",
+  "detail": "The official WPT structures PDF (per-event T&C) confirms entry rules and fee splits for 16 rows: $600/$400K NLH, TORSE, PLO $400, Mixed Triple Draw $600, $800/$1M NLH, Limit O8, O8/Stud 8, PLO $1,100, $1,600/$1M NLH, HORSE $600, Prime $1,100 (1 entry + 1 re-entry per flight), $600/$50K turbo, PLO Mystery Bounty $1,600 (guarantee explicitly includes bounty money: 'All Tournament and Bounty prizes are included in the Tournament guaranteed prize pool of $500,000') and, via the official press release, the Main Event and Super Gold Million. The remaining 44 WPT rows (mostly Dec 7\u201321 side events and satellites) have no per-event T&C in the published documents \u2014 entry rules stay unverified.",
+  "sources": [
+   "WPT-TC",
+   "WPT-PR"
+  ],
+  "checked": "2026-11-17"
+ },
+ {
+  "id": "F17",
+  "title": "WPT Main Event '$1,000,000 ADDED' clarified: mystery-bounty overlay, not a guarantee",
+  "severity": "low",
+  "detail": "The official WPT press release states ClubWPT Gold 'will add a mystery bounty element to the event, contributing $1 million in cash and prizes exclusively for mystery bounties, separate from and in addition to the prize pool generated by event entries.' The poster's '$1,000,000 ADDED' is therefore an added overlay (paid out via mystery bounty draws), NOT a prize-pool guarantee \u2014 the guarantee/ratio cells for this event stay blank.",
+  "sources": [
+   "WPT-PR",
+   "W-WPT"
+  ],
+  "checked": "2026-11-17"
+ },
+ {
+  "id": "F18",
+  "title": "COORDINATION/README conflict-marker pollution on main (fixed for this integration)",
+  "severity": "low",
+  "detail": "During the 2026-11-17 integration rebase, COORDINATION.md and README.md on main were found to carry committed conflict-marker lines from earlier parallel merges (e.g. an '<<<<<<< HEAD' / '>>>>>>> origin/main' pair inside README's Scheduled-monitors section, and duplicated board blocks). Every merge in this session kept main's text verbatim and re-appended this session's records; the integration README is marker-free. Duplicated board sections were dropped only after verifying the retained copy was a strict superset (diff-checked).",
+  "sources": [],
+  "checked": "2026-11-17"
+ }
+]

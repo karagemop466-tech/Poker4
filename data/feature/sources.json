@@ -1,0 +1,158 @@
+[
+ {
+  "id": "V-DSE",
+  "title": "Venetian DSE IV official schedule page",
+  "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+  "last_checked": "2026-11-17"
+ },
+ {
+  "id": "V-S",
+  "title": "Venetian DSE IV structure sheets (official PDFs, structure_1..37)",
+  "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf",
+  "last_checked": "2026-11-17"
+ },
+ {
+  "id": "V-POKER",
+  "title": "Venetian official poker room page (location, hours)",
+  "url": "https://www.venetianlasvegas.com/resort/casino/poker.html",
+  "last_checked": "2026-11-17"
+ },
+ {
+  "id": "V-SUITE",
+  "title": "Venetian official poker suite rates & play requirements",
+  "url": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
+  "last_checked": "2026-11-17"
+ },
+ {
+  "id": "V-RF",
+  "title": "Venetian official resort fee page",
+  "url": "https://www.venetianlasvegas.com/resort/resort-fee.html",
+  "last_checked": "2026-11-17"
+ },
+ {
+  "id": "V-TERMS",
+  "title": "Venetian official hotel terms & conditions (13.38% tax, deposit, cancellation, parking)",
+  "url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+  "last_checked": "2026-11-17"
+ },
+ {
+  "id": "V-PARK",
+  "title": "Venetian official poker player parking page",
+  "url": "https://www.venetianlasvegas.com/resort/casino/poker/player-parking.html",
+  "last_checked": "2026-11-17"
+ },
+ {
+  "id": "V-BOOK",
+  "title": "Venetian official booking engine (dated rate quote)",
+  "url": "https://www.venetianlasvegas.com/book",
+  "last_checked": "2026-11-17"
+ },
+ {
+  "id": "W-DAILY",
+  "title": "Wynn official daily tournament structures PDF",
+  "url": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+  "last_checked": "2026-11-17"
+ },
+ {
+  "id": "W-WPT",
+  "title": "Wynn official WPT World Championship schedule PDF (Nov 27\u2013Dec 21, 2026)",
+  "url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+  "last_checked": "2026-11-17"
+ },
+ {
+  "id": "WPT-TC",
+  "title": "WPT official World Championship General Terms & Conditions PDF",
+  "url": "https://wptmedia-mig.s3.amazonaws.com/wp-content/uploads/2026/11/WPT_World_Championship_Structures.pdf",
+  "last_checked": "2026-11-17"
+ },
+ {
+  "id": "W-TERMS",
+  "title": "Wynn official terms & conditions page (resort fee $55+tax, deposit, cancellation)",
+  "url": "https://www.wynnlasvegas.com/terms-and-conditions/850257",
+  "last_checked": "2026-11-17"
+ },
+ {
+  "id": "B-POKER",
+  "title": "Bellagio official poker page (weekly tournament PDFs linked)",
+  "url": "https://bellagio.mgmresorts.com/en/casino/poker.html",
+  "last_checked": "2026-11-17"
+ },
+ {
+  "id": "B-FRI",
+  "title": "Bellagio official Fridays $600 NLH structure PDF",
+  "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt9cf95b0e60ec253e/6af491a3a9851d75c40be840/mgm-bellagio-poker-fridays-$600-nlh.pdf",
+  "last_checked": "2026-11-17"
+ },
+ {
+  "id": "B-SAT",
+  "title": "Bellagio official Saturdays NLH structure PDF (buy-in conflict inside)",
+  "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt6d47974bf5a7d9b6/6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf",
+  "last_checked": "2026-11-17"
+ },
+ {
+  "id": "B-SUN",
+  "title": "Bellagio official Sundays $400 H.O.R.S.E. structure PDF",
+  "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt07fcf1244a6da661/6af491a339e2b4f6b76a86ad/mgm-bellagio-poker-sundays-$400-horse.pdf",
+  "last_checked": "2026-11-17"
+ },
+ {
+  "id": "C-FLYER",
+  "title": "Caesars Palace official daily NLH tournament flyer 2026 PDF",
+  "url": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+  "last_checked": "2026-11-17"
+ },
+ {
+  "id": "A-POKER",
+  "title": "ARIA official poker page (daily tournaments mentioned; no schedule published)",
+  "url": "https://aria.mgmresorts.com/en/casino/poker.html",
+  "last_checked": "2026-11-17"
+ },
+ {
+  "id": "MG-POKER",
+  "title": "MGM Grand official poker URL (returns page-not-found on 2026-11-17)",
+  "url": "https://mgmgrand.mgmresorts.com/en/casino/poker.html",
+  "last_checked": "2026-11-17"
+ },
+ {
+  "id": "H-POKER",
+  "title": "Horseshoe Las Vegas official site (poker URL redirects to generic Things To Do)",
+  "url": "https://www.caesars.com/horseshoe-las-vegas/things-to-do/casino/poker",
+  "last_checked": "2026-11-17"
+ },
+ {
+  "id": "HH-HOTEL",
+  "title": "Harrah's official hotel page (booking widget: free 48-hour cancellation)",
+  "url": "https://www.caesars.com/harrahs-las-vegas/hotel",
+  "last_checked": "2026-11-17"
+ },
+ {
+  "id": "TI-TOWER",
+  "title": "Treasure Island official Tower Suite page (resort fee $49.95+tax, free parking)",
+  "url": "https://treasureisland.com/hotel/tower-suite",
+  "last_checked": "2026-11-17"
+ },
+ {
+  "id": "GN-POKER",
+  "title": "Golden Nugget official poker page (returned empty content on 2026-11-17)",
+  "url": "https://www.goldennugget.com/las-vegas/casino/poker/",
+  "last_checked": "2026-11-17"
+ },
+ {
+  "id": "WPT-PR",
+  "title": "WPT official press release 2026-09-14 (Main Event single entry per starting flight; Super Gold unlimited re-entry; $1M mystery-bounty overlay)",
+  "url": "https://www.worldpokertour.com/article/wpt-world-championship-at-wynn-las-vegas-set-for-season-24-finale-with-over-85-events-and-20m-in-gte",
+  "last_checked": "2026-11-17"
+ },
+ {
+  "id": "B-TERMS",
+  "title": "Bellagio official hotel terms (resort fee $55+tax, 72-hour cancellation, $50 extra occupant)",
+  "url": "https://bellagio.mgmresorts.com/en/terms-and-conditions.html",
+  "last_checked": "2026-11-17"
+ },
+ {
+  "id": "A-TERMS",
+  "title": "ARIA official hotel terms (resort fee $55+tax, 72-hour cancellation, tiered incidentals)",
+  "url": "https://aria.mgmresorts.com/en/terms-and-conditions.html",
+  "last_checked": "2026-11-17"
+ }
+]
