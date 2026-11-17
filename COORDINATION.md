@@ -130,24 +130,6 @@ Scope note: the session brief asks for `session-<id>/<task>` branches. The Arena
 
 - 2026-11-16 (df41f5c6): **PR #10** (`arena/df41f5c6-poker4` → `main`, integration of the df41f5c6 site and data; includes the board merge above) **merged** at `9117705` (19:12 UTC). Pages deploy for `9117705`: success (both workflows). Live check: `https://karagemop466-tech.github.io/Poker4/df41f5c6/flagged.html` loads with all 29 flags. Integration result: merged; no unresolved conflicts; flagged items published, not blocking.
 - 2026-11-16 (df41f5c6): Board conflicts logged: (1) PR #6 vs `main` after PRs #3/#5; (2) PR #10 vs `main` after `000d1da` and again after PR #12 (`81cd955`). Each time `main`'s board was kept verbatim and the df41f5c6 section re-appended.
-=======
----
-
-## Session arena/60fb62da-poker4 (session `60fb62da`)
-
-| Task | Status | Owner | Files in scope |
-|---|---|---|---|
-| Independent official-source Venetian schedule/hotel audit and decision dashboard | needs review | arena/60fb62da-poker4 | `60fb62da/*`; this appended coordination entry only |
-
-- The task began in a README-only checkout. As concurrent PRs merged, root index/navigation/data became shared integration scope. To avoid overwriting another session, this dashboard is isolated at `/60fb62da/`; root files remain the current upstream `main` version.
-- Conflict history: PR #2 initially conflicted after upstream merges. Latest `origin/main` has been merged into this branch. Each merge conflict was only in `COORDINATION.md`; resolution retained the latest complete upstream board and appended this session's log. The latest upstream board also contained two residual merge-marker lines around the PR #8 result; those delimiter lines were removed while retaining all text on both sides. No other session's files were overwritten. This subsite does not alter root navigation/data.
-- Official tournament sources: [Venetian DeepStack Extravaganza IV full schedule](https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html) (all four chunks); official structure PDFs for Events #2/#12, #3–5, #6, #10, #14/#28/#63, and #27. Verified dates/times, event names, buy-ins and guarantees as stated. No reviewed candidate rules confirm one entry only or prohibit re-entry/rebuy/add-on; zero are marked confirmed single-entry.
-- Official lodging/location sources: [Venetian poker suite rates/play terms](https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html), [resort fee](https://www.venetianlasvegas.com/resort/resort-fee.html), [hotel terms/tax](https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html), [poker room location](https://www.venetianlasvegas.com/resort/casino/poker.html). Verified $119/$209 conditional poker-rate starts, $55 resort fee + tax, 13.38% room tax, play qualification, and poker room at Palazzo Level 2 with official directions from both resort lobbies. No official walking minutes published. Conditional math: ($119+$55)×1.1338=$197.28; ($209+$55)×1.1338=$299.32; these are not date-specific room quotes.
-- Further official hotel leads: [Treasure Island Tower Suite/fee page](https://treasureisland.com/hotel/tower-suite) and [offer terms](https://treasureisland.com/deals-offers/buy-1-get-1-bogo-free-fine-print) establish $49.95 resort fee + tax and 13.38% Clark County room tax, but no dated room rate. Official [Harrah’s](https://www.caesars.com/harrahs-las-vegas) and [Horseshoe](https://www.caesars.com/horseshoe-las-vegas) pages are linked as alternatives; unconfirmed fees/rates/walking minutes remain blank.
-- Flagged items include missing single-entry/re-entry/add-on rules, no 8 AM candidate start, no date-specific hotel total, incomplete Strip-wide schedule coverage, unknown walking minutes, and conditional poker-rate play requirements.
-- Verification passed: JavaScript syntax, nested local-link audit, page-render simulation, and fee/tax arithmetic. Current-main `scripts/verify.py` passed: 10 pages, 17 sources, 29 flags, all rows with official sources and internal links resolving. Every subsite data row has an official organizer/property source. Latest upstream added CRLF CSV files that create repository-wide `git diff --check` trailing-CR warnings; those other-session files were left untouched.
-- PR #2: https://github.com/karagemop466-tech/Poker4/pull/2. Contribution remains limited to `60fb62da/` and this coordination entry. PR #10 was merged; PRs #4 and #13 remain outside this session's scope. Existing Pages deployment has succeeded after upstream merges; this session does not change the shared Pages workflow.
->>>>>>> origin/main
 
 
 ## Current integration correction — arena/2da41d2b-poker4
@@ -157,3 +139,23 @@ Scope note: the session brief asks for `session-<id>/<task>` branches. The Arena
 - Integration: root navigation links the preserved `c07371e3` site; root Flagged for Review links its flagged log with an independent-source-set caveat.
 - Validation: `python3 build/build_site.py`; `python3 scripts/build.py`; `python3 scripts/verify.py` (10 pages, 17 sources, 29 flags; all row sources/internal links verified); `git diff --check`. Data audit confirms 19 and 64 candidate rows are labeled unverified.
 - PR #4 merged to `main` as merge commit `fb62f758526b2bbfc13ad50b238faa88cf5094ec` at 2026-11-16 19:15:25 UTC. The "Deploy static dashboard to GitHub Pages" run `43937426421` and "pages build and deployment" run `43937425213` both completed successfully. GitHub Pages API reports status `built`, public URL `https://karagemop466-tech.github.io/Poker4/`, source `main:/`. Direct browser fetch of the live page was not available from this environment; workflow and Pages API statuses were verified.
+
+---
+
+## Session arena/b040f8dd-poker4 (session `b040f8dd`) — FINAL INTEGRATION + FEATURE SESSION
+
+Branch: `arena/b040f8dd-poker4` (from main @ be3594d). Role per project brief: final integration session — merges prior session outputs, re-verifies combined data line by line, adds the required features, publishes to GitHub Pages via PR to main.
+
+| ID | Task | Status | Owner | File scope |
+|----|------|--------|-------|------------|
+| I1 | Re-verify combined tournament data line by line from official sources (Venetian DSE IV schedule + all 37 structure sheets, Wynn daily structures, WPT schedule + structures) | in progress | b040f8dd | `data/integrated/*`, `build/build_integrated.py` |
+| I2 | Structured rule fields (single-entry / re-entry / add-on / fees) with source excerpt + retrieval date; remove "unverified" only where a sheet confirms a rule | in progress | b040f8dd | `data/integrated/events.json` |
+| I3 | Hotels: dated rate log, resort fee + 13.38% tax, parking, cancellation, rate timestamps, official booking links per date | in progress | b040f8dd | `data/integrated/hotels.json` |
+| I4 | Walking-route matrix (Google Maps official-address walking times) + ≤30-min filter | in progress | b040f8dd | `data/integrated/hotels.json` |
+| I5 | Site rebuild at root: landing + subpages, search box, date filter, single-entry toggle, trip calculator, per-venue pages, overlap plan, monitoring page | in progress | b040f8dd | `index.html`, `tournaments.html`, `hotels.html`, `schedule.html`, `calculator.html`, `venues/*`, `monitoring.html`, `questions.html`, `suggestions.html`, `flagged.html`, `sources.html`, `archive.html`, `assets/dashboard.*` |
+| I6 | Change monitoring: scheduled re-check of every official URL + morning daily-schedule scrape (GitHub Actions) | in progress | b040f8dd | `scripts/recheck_sources.py`, `scripts/fetch_daily_schedules.py`, `.github/workflows/maintenance.yml`, `data/integrated/monitoring.json` |
+| I7 | Site verification (every table row links an official source; internal links resolve) + PR → main + Pages deploy confirm | in progress | b040f8dd | `scripts/verify_site.py`, this board |
+
+Claim note: all prior sessions' tasks are marked done and their PRs merged; no task is actively claimed by another session. This session takes the integration role and edits the shared root outputs as the brief prescribes. Prior session subsites (`60fb62da/`, `c07371e3/`, `df41f5c6/`, `strip/`, `verified/`, `pages/`) are preserved and linked from the new Archive page — nothing is deleted.
+
+2026-11-17 (b040f8dd) — Claimed I1–I7. Fixed residual merge markers in this board (a duplicated 60fb62da section between `=======` and `>>>>>>> origin/main`; first copy kept verbatim, duplicate removed, both sides' text preserved).
