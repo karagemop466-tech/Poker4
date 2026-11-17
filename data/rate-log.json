@@ -6,29 +6,29 @@
  "entries": [
   {
    "hotel_id": "venetian",
-   "property": "The Venetian Resort — Venetian tower",
+   "property": "The Venetian Resort \u2014 Venetian tower",
    "seq": 1,
    "observed_on": "2026-11-16",
    "label": "Advertised poker rate, starting endpoint A",
    "amount_usd": 119,
    "qualifier": "'as low as' starting price for a suite at The Venetian or The Palazzo under the poker-rate offer; not assigned to one tower, not a dated quote",
    "source": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
-   "quote_status": "advertised starting point — not a rate for specific dates"
+   "quote_status": "advertised starting point \u2014 not a rate for specific dates"
   },
   {
    "hotel_id": "venetian",
-   "property": "The Venetian Resort — Venetian tower",
+   "property": "The Venetian Resort \u2014 Venetian tower",
    "seq": 2,
    "observed_on": "2026-11-16",
    "label": "Advertised poker rate, starting endpoint B",
    "amount_usd": 209,
    "qualifier": "second 'as low as' endpoint on the same official page; same caveats",
    "source": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
-   "quote_status": "advertised starting point — not a rate for specific dates"
+   "quote_status": "advertised starting point \u2014 not a rate for specific dates"
   },
   {
    "hotel_id": "venetian",
-   "property": "The Venetian Resort — Venetian tower",
+   "property": "The Venetian Resort \u2014 Venetian tower",
    "seq": 3,
    "observed_on": "2026-11-17",
    "label": "Checkout total / nightly average for the actual stay",
@@ -36,6 +36,17 @@
    "qualifier": "requires a dated booking session (dates, occupancy, rate class); deliberately left blank rather than estimated",
    "source": "https://www.venetianlasvegas.com/book",
    "quote_status": "not obtainable from a static page"
+  },
+  {
+   "hotel_id": "venetian",
+   "property": "The Venetian Resort \u2014 Venetian tower",
+   "seq": 4,
+   "observed_on": "2026-11-16",
+   "label": "Dated booking-engine snapshot (checkout total / nightly average)",
+   "amount_usd": 512.2,
+   "qualifier": "Official booking page capture for Dec 18-20, 2026 (2 nights, Luxury King, 2 adults): $1,024.39 all-in incl. $55 fee + 13.38% tax = $512.20/night; recorded from an earlier session's dated capture (data carried this figure before integration) - re-quote before booking",
+   "source": "https://www.venetianlasvegas.com/book",
+   "quote_status": "dated snapshot - not a live quote; re-quote before booking"
   },
   {
    "hotel_id": "palazzo",
@@ -49,8 +60,19 @@
    "quote_status": "unassigned"
   },
   {
+   "hotel_id": "ti",
+   "property": "Treasure Island",
+   "seq": 1,
+   "observed_on": "2026-11-17",
+   "label": "Mandatory resort fee, amount re-read on official page",
+   "amount_usd": 49.95,
+   "qualifier": "'Total Resort Fee Plus Tax $49.95' collected at check-out; free self & valet parking (tower-suite page re-read 2026-11-17; cross-checks the resort_fee already verified from the TI offers page)",
+   "source": "https://treasureisland.com/hotel/tower-suite",
+   "quote_status": "verbatim sentence captured 2026-11-17"
+  },
+  {
    "hotel_id": "venetian",
-   "property": "The Venetian Resort — Venetian tower",
+   "property": "The Venetian Resort \u2014 Venetian tower",
    "seq": 90,
    "observed_on": "2026-11-17",
    "label": "official parking wording",
@@ -62,7 +84,7 @@
   },
   {
    "hotel_id": "venetian",
-   "property": "The Venetian Resort — Venetian tower",
+   "property": "The Venetian Resort \u2014 Venetian tower",
    "seq": 90,
    "observed_on": "2026-11-17",
    "label": "official parking wording",
@@ -74,7 +96,7 @@
   },
   {
    "hotel_id": "venetian",
-   "property": "The Venetian Resort — Venetian tower",
+   "property": "The Venetian Resort \u2014 Venetian tower",
    "seq": 90,
    "observed_on": "2026-11-17",
    "label": "official parking wording",
@@ -86,7 +108,7 @@
   },
   {
    "hotel_id": "venetian",
-   "property": "The Venetian Resort — Venetian tower",
+   "property": "The Venetian Resort \u2014 Venetian tower",
    "seq": 90,
    "observed_on": "2026-11-17",
    "label": "official resort fee wording",
@@ -98,7 +120,7 @@
   },
   {
    "hotel_id": "venetian",
-   "property": "The Venetian Resort — Venetian tower",
+   "property": "The Venetian Resort \u2014 Venetian tower",
    "seq": 90,
    "observed_on": "2026-11-17",
    "label": "official resort fee wording",
@@ -110,19 +132,19 @@
   },
   {
    "hotel_id": "venetian",
-   "property": "The Venetian Resort — Venetian tower",
+   "property": "The Venetian Resort \u2014 Venetian tower",
    "seq": 90,
    "observed_on": "2026-11-17",
    "label": "official resort fee wording",
    "amount_usd": null,
-   "qualifier": "The Resort Fee includes: Access for two to the fitness facility within the Canyon Ranch ® spa + fitness In-suite internet access (WiFi or Ethernet) Boarding pass printing Unlimited local and toll-free calls Access to thousands of top newspapers and magaz",
+   "qualifier": "The Resort Fee includes: Access for two to the fitness facility within the Canyon Ranch \u00ae spa + fitness In-suite internet access (WiFi or Ethernet) Boarding pass printing Unlimited local and toll-free calls Access to thousands of top newspapers and magaz",
    "source": "https://www.venetianlasvegas.com/resort/resort-fee.html",
    "quote_status": "verbatim sentence captured 2026-11-17",
    "field": "resort_fee"
   },
   {
    "hotel_id": "venetian",
-   "property": "The Venetian Resort — Venetian tower",
+   "property": "The Venetian Resort \u2014 Venetian tower",
    "seq": 90,
    "observed_on": "2026-11-17",
    "label": "official resort fee wording",
@@ -134,7 +156,7 @@
   },
   {
    "hotel_id": "venetian",
-   "property": "The Venetian Resort — Venetian tower",
+   "property": "The Venetian Resort \u2014 Venetian tower",
    "seq": 90,
    "observed_on": "2026-11-17",
    "label": "official resort fee wording",
@@ -146,19 +168,19 @@
   },
   {
    "hotel_id": "venetian",
-   "property": "The Venetian Resort — Venetian tower",
+   "property": "The Venetian Resort \u2014 Venetian tower",
    "seq": 90,
    "observed_on": "2026-11-17",
    "label": "official resort fee wording",
    "amount_usd": null,
-   "qualifier": "The Resort Fee includes: Access for two to the fitness facility within the Canyon Ranch® spa + fitness In-suite internet access (WiFi or Ethernet) Boarding pass printing Unlimited local and toll-free calls Access to thousands of top newspapers and magazi",
+   "qualifier": "The Resort Fee includes: Access for two to the fitness facility within the Canyon Ranch\u00ae spa + fitness In-suite internet access (WiFi or Ethernet) Boarding pass printing Unlimited local and toll-free calls Access to thousands of top newspapers and magazi",
    "source": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
    "quote_status": "verbatim sentence captured 2026-11-17",
    "field": "resort_fee"
   },
   {
    "hotel_id": "venetian",
-   "property": "The Venetian Resort — Venetian tower",
+   "property": "The Venetian Resort \u2014 Venetian tower",
    "seq": 90,
    "observed_on": "2026-11-17",
    "label": "official room tax wording",
@@ -170,7 +192,7 @@
   },
   {
    "hotel_id": "venetian",
-   "property": "The Venetian Resort — Venetian tower",
+   "property": "The Venetian Resort \u2014 Venetian tower",
    "seq": 90,
    "observed_on": "2026-11-17",
    "label": "official parking wording",
@@ -182,7 +204,7 @@
   },
   {
    "hotel_id": "venetian",
-   "property": "The Venetian Resort — Venetian tower",
+   "property": "The Venetian Resort \u2014 Venetian tower",
    "seq": 90,
    "observed_on": "2026-11-17",
    "label": "official parking wording",
@@ -194,19 +216,19 @@
   },
   {
    "hotel_id": "venetian",
-   "property": "The Venetian Resort — Venetian tower",
+   "property": "The Venetian Resort \u2014 Venetian tower",
    "seq": 90,
    "observed_on": "2026-11-17",
    "label": "official parking wording",
    "amount_usd": null,
-   "qualifier": "Nevada residents receive 3 hours of complimentary self-parking by scanning their valid Nevada Driver’s License at a self-parking kiosk",
+   "qualifier": "Nevada residents receive 3 hours of complimentary self-parking by scanning their valid Nevada Driver\u2019s License at a self-parking kiosk",
    "source": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
    "quote_status": "verbatim sentence captured 2026-11-17",
    "field": "parking"
   },
   {
    "hotel_id": "venetian",
-   "property": "The Venetian Resort — Venetian tower",
+   "property": "The Venetian Resort \u2014 Venetian tower",
    "seq": 90,
    "observed_on": "2026-11-17",
    "label": "official cancellation wording",
@@ -218,7 +240,7 @@
   },
   {
    "hotel_id": "venetian",
-   "property": "The Venetian Resort — Venetian tower",
+   "property": "The Venetian Resort \u2014 Venetian tower",
    "seq": 90,
    "observed_on": "2026-11-17",
    "label": "official cancellation wording",
@@ -230,7 +252,7 @@
   },
   {
    "hotel_id": "venetian",
-   "property": "The Venetian Resort — Venetian tower",
+   "property": "The Venetian Resort \u2014 Venetian tower",
    "seq": 90,
    "observed_on": "2026-11-17",
    "label": "official resort fee wording",
@@ -242,7 +264,7 @@
   },
   {
    "hotel_id": "venetian",
-   "property": "The Venetian Resort — Venetian tower",
+   "property": "The Venetian Resort \u2014 Venetian tower",
    "seq": 90,
    "observed_on": "2026-11-17",
    "label": "official parking wording",
@@ -254,7 +276,7 @@
   },
   {
    "hotel_id": "venetian",
-   "property": "The Venetian Resort — Venetian tower",
+   "property": "The Venetian Resort \u2014 Venetian tower",
    "seq": 90,
    "observed_on": "2026-11-17",
    "label": "official parking wording",
@@ -266,19 +288,19 @@
   },
   {
    "hotel_id": "venetian",
-   "property": "The Venetian Resort — Venetian tower",
+   "property": "The Venetian Resort \u2014 Venetian tower",
    "seq": 90,
    "observed_on": "2026-11-17",
    "label": "official parking wording",
    "amount_usd": null,
-   "qualifier": "Nevada residents receive three hours of complimentary self-parking by scanning their valid Nevada Driver’s License at a self-parking kiosk",
+   "qualifier": "Nevada residents receive three hours of complimentary self-parking by scanning their valid Nevada Driver\u2019s License at a self-parking kiosk",
    "source": "https://www.venetianlasvegas.com/resort/casino/poker/player-parking.html",
    "quote_status": "verbatim sentence captured 2026-11-17",
    "field": "parking"
   },
   {
    "hotel_id": "venetian",
-   "property": "The Venetian Resort — Venetian tower",
+   "property": "The Venetian Resort \u2014 Venetian tower",
    "seq": 90,
    "observed_on": "2026-11-17",
    "label": "official resort fee wording",
@@ -290,7 +312,7 @@
   },
   {
    "hotel_id": "venetian",
-   "property": "The Venetian Resort — Venetian tower",
+   "property": "The Venetian Resort \u2014 Venetian tower",
    "seq": 90,
    "observed_on": "2026-11-17",
    "label": "official resort fee wording",
@@ -302,7 +324,7 @@
   },
   {
    "hotel_id": "venetian",
-   "property": "The Venetian Resort — Venetian tower",
+   "property": "The Venetian Resort \u2014 Venetian tower",
    "seq": 90,
    "observed_on": "2026-11-17",
    "label": "official cancellation wording",
@@ -314,7 +336,7 @@
   },
   {
    "hotel_id": "venetian",
-   "property": "The Venetian Resort — Venetian tower",
+   "property": "The Venetian Resort \u2014 Venetian tower",
    "seq": 90,
    "observed_on": "2026-11-17",
    "label": "official cancellation wording",
@@ -326,7 +348,7 @@
   },
   {
    "hotel_id": "venetian",
-   "property": "The Venetian Resort — Venetian tower",
+   "property": "The Venetian Resort \u2014 Venetian tower",
    "seq": 90,
    "observed_on": "2026-11-17",
    "label": "official cancellation wording",
@@ -403,7 +425,7 @@
    "observed_on": "2026-11-17",
    "label": "official resort fee wording",
    "amount_usd": null,
-   "qualifier": "The Resort Fee includes: Access for two to the fitness facility within the Canyon Ranch ® spa + fitness In-suite internet access (WiFi or Ethernet) Boarding pass printing Unlimited local and toll-free calls Access to thousands of top newspapers and magaz",
+   "qualifier": "The Resort Fee includes: Access for two to the fitness facility within the Canyon Ranch \u00ae spa + fitness In-suite internet access (WiFi or Ethernet) Boarding pass printing Unlimited local and toll-free calls Access to thousands of top newspapers and magaz",
    "source": "https://www.venetianlasvegas.com/resort/resort-fee.html",
    "quote_status": "verbatim sentence captured 2026-11-17",
    "field": "resort_fee"
@@ -439,7 +461,7 @@
    "observed_on": "2026-11-17",
    "label": "official resort fee wording",
    "amount_usd": null,
-   "qualifier": "The Resort Fee includes: Access for two to the fitness facility within the Canyon Ranch® spa + fitness In-suite internet access (WiFi or Ethernet) Boarding pass printing Unlimited local and toll-free calls Access to thousands of top newspapers and magazi",
+   "qualifier": "The Resort Fee includes: Access for two to the fitness facility within the Canyon Ranch\u00ae spa + fitness In-suite internet access (WiFi or Ethernet) Boarding pass printing Unlimited local and toll-free calls Access to thousands of top newspapers and magazi",
    "source": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
    "quote_status": "verbatim sentence captured 2026-11-17",
    "field": "resort_fee"
@@ -487,7 +509,7 @@
    "observed_on": "2026-11-17",
    "label": "official parking wording",
    "amount_usd": null,
-   "qualifier": "Nevada residents receive 3 hours of complimentary self-parking by scanning their valid Nevada Driver’s License at a self-parking kiosk",
+   "qualifier": "Nevada residents receive 3 hours of complimentary self-parking by scanning their valid Nevada Driver\u2019s License at a self-parking kiosk",
    "source": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
    "quote_status": "verbatim sentence captured 2026-11-17",
    "field": "parking"
@@ -559,7 +581,7 @@
    "observed_on": "2026-11-17",
    "label": "official parking wording",
    "amount_usd": null,
-   "qualifier": "Nevada residents receive three hours of complimentary self-parking by scanning their valid Nevada Driver’s License at a self-parking kiosk",
+   "qualifier": "Nevada residents receive three hours of complimentary self-parking by scanning their valid Nevada Driver\u2019s License at a self-parking kiosk",
    "source": "https://www.venetianlasvegas.com/resort/casino/poker/player-parking.html",
    "quote_status": "verbatim sentence captured 2026-11-17",
    "field": "parking"
@@ -835,7 +857,7 @@
    "observed_on": "2026-11-17",
    "label": "official resort fee wording",
    "amount_usd": null,
-   "qualifier": "easonal) High speed (≤ 20 Mbps) WiFi internet access for unlimited devices (included with resort fee ) Comfort Individual climate control Clock radio phone with alarm, 24-hour voicemail, and USB charging ports Mirrored wardrobe closet Full size iron and ironing board Services & Snacks In-Room Dining Available - Limited Hours Small refrige",
+   "qualifier": "easonal) High speed (\u2264 20 Mbps) WiFi internet access for unlimited devices (included with resort fee ) Comfort Individual climate control Clock radio phone with alarm, 24-hour voicemail, and USB charging ports Mirrored wardrobe closet Full size iron and ironing board Services & Snacks In-Room Dining Available - Limited Hours Small refrige",
    "source": "https://treasureisland.com/hotel/deluxe-rooms",
    "quote_status": "verbatim sentence captured 2026-11-17",
    "field": "resort_fee"
@@ -859,34 +881,10 @@
    "observed_on": "2026-11-17",
    "label": "official parking wording",
    "amount_usd": null,
-   "qualifier": "Resort Fee Amenities* Always Free Valet Parking & Self Park Garage High Speed (≤ 20 Mbps) WiFi Internet Access for Unlimited Devices 2-for-1 Cocktail Voucher Daily Use of Fitness Center Daily Multilingual Digital Newspapers & Magazines In Room Local/Toll Free Calls Airline Boarding Pass",
+   "qualifier": "Resort Fee Amenities* Always Free Valet Parking & Self Park Garage High Speed (\u2264 20 Mbps) WiFi Internet Access for Unlimited Devices 2-for-1 Cocktail Voucher Daily Use of Fitness Center Daily Multilingual Digital Newspapers & Magazines In Room Local/Toll Free Calls Airline Boarding Pass",
    "source": "https://treasureisland.com/hotel/deluxe-rooms",
    "quote_status": "verbatim sentence captured 2026-11-17",
    "field": "parking"
-  },
-  {
-   "hotel_id": "venetian",
-   "property": "The Venetian Resort — Venetian tower",
-   "seq": 91,
-   "observed_on": "2026-11-16",
-   "label": "dated booking-engine snapshot (checkout total / nightly average)",
-   "amount_usd": 512.2,
-   "qualifier": "Official booking page capture for 2 nights Dec 18–20 2026, Luxury King, 2 adults: $1,024.39 all-in incl. $55 fee + 13.38% tax = $512.20/night — snapshot only, re-quote before booking",
-   "source": "https://www.venetianlasvegas.com/book",
-   "quote_status": "dated snapshot — not a live quote",
-   "field": "room_rate"
-  },
-  {
-   "hotel_id": "ti",
-   "property": "Treasure Island",
-   "seq": 92,
-   "observed_on": "2026-11-17",
-   "label": "official resort fee wording",
-   "amount_usd": 49.95,
-   "qualifier": "'Total Resort Fee Plus Tax $49.95' collected at check-out; free self & valet parking (official page re-read 2026-11-17)",
-   "source": "https://treasureisland.com/hotel/tower-suite",
-   "quote_status": "verbatim sentence captured 2026-11-17",
-   "field": "resort_fee"
   }
  ]
 }

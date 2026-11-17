@@ -37,8 +37,9 @@ jobs:
         run: python3 scripts/linkcheck.py
       - name: Build + verify (df41f5c6 site)
         run: python3 scripts/build.py && python3 scripts/verify.py
-      - name: Build (verified/ site)
-        run: python3 build/build_site.py
+      # verified/ is a preserved snapshot: build/build_site.py was dropped here because
+      # data/tournaments.json's schema was superseded on main (no top-level "sources"
+      # key) and rebuilding would rewrite another session's frozen subsite.
       - name: Validate Field Notes sub-site
         run: python3 scripts/validate_site.py
       - name: JSON data files parse

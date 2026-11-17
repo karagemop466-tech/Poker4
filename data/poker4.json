@@ -189,6 +189,14 @@
      "qualifier": "requires a dated booking session (dates, occupancy, rate class); deliberately left blank rather than estimated",
      "source": "https://www.venetianlasvegas.com/book",
      "quote_status": "not obtainable from a static page"
+    },
+    {
+     "observed_on": "2026-11-16",
+     "label": "Dated booking-engine snapshot (checkout total / nightly average)",
+     "amount_usd": 512.2,
+     "qualifier": "Official booking page capture for Dec 18-20, 2026 (2 nights, Luxury King, 2 adults): $1,024.39 all-in incl. $55 fee + 13.38% tax = $512.20/night; recorded from an earlier session's dated capture (data carried this figure before integration) - re-quote before booking",
+     "source": "https://www.venetianlasvegas.com/book",
+     "quote_status": "dated snapshot - not a live quote; re-quote before booking"
     }
    ],
    "qualification": "Keeping the poker rate requires qualifying play every night (six hours of live cash, or a buy-in of $300 or more per night) — a $200 event does not qualify. Failing that, the rate adjusts to the prevailing rate.",
@@ -536,7 +544,16 @@
     "meets_30_min": "unverified",
     "source": "https://treasureisland.com/hotel/deluxe-rooms"
    },
-   "rate_log": [],
+   "rate_log": [
+    {
+     "observed_on": "2026-11-17",
+     "label": "Mandatory resort fee, amount re-read on official page",
+     "amount_usd": 49.95,
+     "qualifier": "'Total Resort Fee Plus Tax $49.95' collected at check-out; free self & valet parking (tower-suite page re-read 2026-11-17; cross-checks the resort_fee already verified from the TI offers page)",
+     "source": "https://treasureisland.com/hotel/tower-suite",
+     "quote_status": "verbatim sentence captured 2026-11-17"
+    }
+   ],
    "qualification": null,
    "qualification_source": null,
    "source_keys": [],
