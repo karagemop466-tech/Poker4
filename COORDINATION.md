@@ -130,7 +130,6 @@ Scope note: the session brief asks for `session-<id>/<task>` branches. The Arena
 
 - 2026-11-16 (df41f5c6): **PR #10** (`arena/df41f5c6-poker4` → `main`, integration of the df41f5c6 site and data; includes the board merge above) **merged** at `9117705` (19:12 UTC). Pages deploy for `9117705`: success (both workflows). Live check: `https://karagemop466-tech.github.io/Poker4/df41f5c6/flagged.html` loads with all 29 flags. Integration result: merged; no unresolved conflicts; flagged items published, not blocking.
 - 2026-11-16 (df41f5c6): Board conflicts logged: (1) PR #6 vs `main` after PRs #3/#5; (2) PR #10 vs `main` after `000d1da` and again after PR #12 (`81cd955`). Each time `main`'s board was kept verbatim and the df41f5c6 section re-appended.
-=======
 ---
 
 ## Session arena/60fb62da-poker4 (session `60fb62da`)
@@ -147,7 +146,6 @@ Scope note: the session brief asks for `session-<id>/<task>` branches. The Arena
 - Flagged items include missing single-entry/re-entry/add-on rules, no 8 AM candidate start, no date-specific hotel total, incomplete Strip-wide schedule coverage, unknown walking minutes, and conditional poker-rate play requirements.
 - Verification passed: JavaScript syntax, nested local-link audit, page-render simulation, and fee/tax arithmetic. Current-main `scripts/verify.py` passed: 10 pages, 17 sources, 29 flags, all rows with official sources and internal links resolving. Every subsite data row has an official organizer/property source. Latest upstream added CRLF CSV files that create repository-wide `git diff --check` trailing-CR warnings; those other-session files were left untouched.
 - PR #2: https://github.com/karagemop466-tech/Poker4/pull/2. Contribution remains limited to `60fb62da/` and this coordination entry. PR #10 was merged; PRs #4 and #13 remain outside this session's scope. Existing Pages deployment has succeeded after upstream merges; this session does not change the shared Pages workflow.
->>>>>>> origin/main
 
 
 ## Current integration correction — arena/2da41d2b-poker4
@@ -157,3 +155,29 @@ Scope note: the session brief asks for `session-<id>/<task>` branches. The Arena
 - Integration: root navigation links the preserved `c07371e3` site; root Flagged for Review links its flagged log with an independent-source-set caveat.
 - Validation: `python3 build/build_site.py`; `python3 scripts/build.py`; `python3 scripts/verify.py` (10 pages, 17 sources, 29 flags; all row sources/internal links verified); `git diff --check`. Data audit confirms 19 and 64 candidate rows are labeled unverified.
 - PR #4 merged to `main` as merge commit `fb62f758526b2bbfc13ad50b238faa88cf5094ec` at 2026-11-16 19:15:25 UTC. The "Deploy static dashboard to GitHub Pages" run `43937426421` and "pages build and deployment" run `43937425213` both completed successfully. GitHub Pages API reports status `built`, public URL `https://karagemop466-tech.github.io/Poker4/`, source `main:/`. Direct browser fetch of the live page was not available from this environment; workflow and Pages API statuses were verified.
+
+
+---
+
+## Session `arena/98e4cb1c-poker4` (this session) — modern dashboard + dated logs
+
+Session ID: `arena/98e4cb1c-poker4`. Branch is fixed by Arena as `arena/98e4cb1c-poker4` (cannot be `session-<id>/<task>`); all tasks happen on that single branch, committed in order.
+
+**Claim (written before work started, pushed immediately):**
+
+| ID | Task | Status | Owner | File scope |
+|----|------|--------|-------|-----------|
+| P1 | Board hygiene: remove residual merge-marker lines from COORDINATION.md | in progress | arena/98e4cb1c-poker4 | `COORDINATION.md` (log only) |
+| P2 | Re-verify every event row against official sources; rebuild the tournament dataset with per-row source excerpt + retrieval date; remove "unverified" only where confirmed; else mark `not published` / `contradiction` | in progress | arena/98e4cb1c-poker4 | `data/v2/*.json`, `tools/v2_sources.py` |
+| P3 | Structured rule fields (single entry / re-entry / add-on / fees, each with excerpt + retrieval date); separate multiple-entry & advantage-by-spend section | in progress | arena/98e4cb1c-poker4 | `data/v2/*.json` |
+| P4 | Dated rate log for hotels (checkout total, nightly avg, resort fee, tax, parking, cancellation, timestamp) — no single-value rates | in progress | arena/98e4cb1c-poker4 | `data/v2/hotels*.json` |
+| P5 | Trip cost calculator: (entries × buy-in) + (nights × true hotel cost) | in progress | arena/98e4cb1c-poker4 | `tools/v2_build.py`, generated pages |
+| P6 | Date filter, search across all tables, single-entry toggle, ≤30-min walk filter | in progress | arena/98e4cb1c-poker4 | `tools/v2_build.py` |
+| P7 | Overlap / schedule-fit checker (start, late-reg cutoff, plausible duration; primary event + conditional fallback per day) | in progress | arena/98e4cb1c-poker4 | `data/v2/*.json`, `tools/v2_build.py` |
+| P8 | One page per venue (Venetian, Wynn, others) with events + nearest hotels | in progress | arena/98e4cb1c-poker4 | generated `venues/*.html` |
+| P9 | Walking-route estimates (distance + ≤30 min), with method labelled; never presented as verified walking minutes unless an official source gives them | in progress | arena/98e4cb1c-poker4 | `data/v2/*.json` |
+| P10 | Change monitoring: re-check official URLs, diff against stored snapshot hashes, mark rows whose source changed; scheduled workflow | in progress | arena/98e4cb1c-poker4 | `tools/v2_monitor.py`, `data/v2/snapshots/*`, `.github/workflows/` |
+| P11 | Repo review (line-by-line irregularity log), Questions-that-must-be-answered page, Suggestions page (decision-only) | in progress | arena/98e4cb1c-poker4 | generated pages |
+| P12 | Site: new dashboard built from `data/v2/`; integration; PR → main; merge; Pages deploy confirm; record here | in progress | arena/98e4cb1c-poker4 | `v2/` (all pages), root `index.html` redirect, `COORDINATION.md` |
+
+Scope discipline: this session **adds** `data/v2/`, `tools/v2_*`, `v2/` and edits `COORDINATION.md`, root `index.html`, `README.md` and `.github/workflows/v2-monitor.yml` only at final integration. It does **not** modify other sessions' folders (`c07371e3/`, `df41f5c6/`, `60fb62da/`, `strip/`, `verified/`, `pages/`) or their data. Those remain linked as historical snapshots.
