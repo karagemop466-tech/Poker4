@@ -1,0 +1,303 @@
+{
+ "meta": {
+  "retrieved": "2026-11-17",
+  "note": "Every item names the action that settles it. Severity blocking = a requested decision cannot be made correctly until resolved."
+ },
+ "items": [
+  {
+   "id": "F1",
+   "category": "Entry rules",
+   "severity": "blocking",
+   "title": "No Venetian 2026 structure sheet states whether re-entry is allowed",
+   "detail": "All 37 DeepStack Extravaganza IV structure sheets were fetched and read in full. They state a late-registration window and nothing else about entry; none contains 're-entry', 'rebuy', 'freezeout' or 'single entry'. Prior Venetian sheets (2023, 2024) do print 'Registration and Re-Entry is allowed for nine (9) levels', which proves the silence is not a house formatting convention.",
+   "how_to_settle": "Ask the Venetian Poker Room (702.414.7657, lv_cas_poker@venetianlasvegas.com) for the entry rule of the specific event numbers, in writing, and record the reply with its date.",
+   "sources": [
+    "V_S05",
+    "V_OLD_2023_1",
+    "V_OLD_2024_1",
+    "V_POKER"
+   ]
+  },
+  {
+   "id": "F2",
+   "category": "Entry rules",
+   "severity": "blocking",
+   "title": "Zero Strip tournaments pass a strict single-entry filter",
+   "detail": "Only the WPT $10,400 World Championship has an official single-entry statement, and it is per starting flight (three flights) \u2014 so it also fails a strict whole-event single-entry test. Consequence: the single-entry shortlist is empty on current evidence.",
+   "how_to_settle": "Settle F1 first. If the Venetian confirms one entry per event for named event numbers, those rows enter the shortlist.",
+   "sources": [
+    "W_WPT_PR",
+    "V_S05"
+   ]
+  },
+  {
+   "id": "F3",
+   "category": "Entry rules",
+   "severity": "material",
+   "title": "Venetian event #8/#18/#58 mention 'subsequent buy in's' without defining them",
+   "detail": "Structure sheet 8 rule 07 gives PokerAtlas PRO members a $20 discount on the initial $200 buy-in and says 'All subsequent buy in's after the initial buy in will be $200'. That wording allows for later buy-ins but does not grant a re-entry right or describe an add-on.",
+   "how_to_settle": "Ask the poker room to confirm whether 'subsequent buy in' means re-entry after elimination, and under what window.",
+   "sources": [
+    "V_S08"
+   ]
+  },
+  {
+   "id": "F4",
+   "category": "Entry rules",
+   "severity": "material",
+   "title": "Bellagio Saturday sheet contradicts itself on the buy-in",
+   "detail": "Linked PDF file name: 'mgm-bellagio-poker-saturdays-$1000-nlh.pdf'. Heading inside: 'NLH $1100 BUY-IN'. Rule 07 inside: 'Of the $600 Buy-in, $510 goes to the Prize Pool'. Three different numbers in one document.",
+   "how_to_settle": "Call Bellagio poker (702.693.7291) to confirm the Saturday buy-in, or wait for MGM to correct the PDF.",
+   "sources": [
+    "B_SAT",
+    "B_POKER"
+   ]
+  },
+  {
+   "id": "F5",
+   "category": "Entry rules",
+   "severity": "material",
+   "title": "Wynn WPT festival fees are not on the poster",
+   "detail": "The official poster states: 'For a complete listing of house and staff fees, visit wynnpoker.com or see the event structure sheets.' The per-event structure sheets were not read in this session, so all 134 WPT rows have a buy-in but no confirmed house fee.",
+   "how_to_settle": "Fetch https://cdn.wynnresorts.com/.../WPT_World_Championship_Structures.pdf per event, or wynnpoker.com's per-event structure pages, and record each fee split.",
+   "sources": [
+    "W_WPT",
+    "W_WPT_TC"
+   ]
+  },
+  {
+   "id": "F6",
+   "category": "Rates",
+   "severity": "blocking",
+   "title": "No date-specific hotel quote could be read",
+   "detail": "The Venetian booking calendar returned the literal placeholder '$XXX' for every night to this session. No other property's booking engine exposed a read amount either. Every hotel number on the site is therefore a published floor or a fee, never a checkout total for real dates.",
+   "how_to_settle": "Open each property's booking link for the actual travel dates and record the checkout total, nightly average, fee and tax separately, with the timestamp.",
+   "sources": [
+    "V_BOOK",
+    "V_RATES"
+   ]
+  },
+  {
+   "id": "F7",
+   "category": "Rates",
+   "severity": "material",
+   "title": "Caesars Palace and Bellagio resort fees could not be read on an official page",
+   "detail": "caesars.com/caesars-palace, /hotel, /hotel-policies and /HotelTerms printed no resort-fee amount. mgmresorts.com resort-fee and Bellagio reservation-policy URLs both returned 404. Third-party listings quote $54.95, $55, $62.30 and $62.36 for the same two hotels, which is exactly why none is displayed.",
+   "how_to_settle": "Capture the fee from the property's own booking checkout, or from MGM's live resort-fee page once its URL is known.",
+   "sources": [
+    "C_FEES",
+    "M_FEES_UNVERIFIED"
+   ]
+  },
+  {
+   "id": "F8",
+   "category": "Rates",
+   "severity": "material",
+   "title": "13.38% tax is not printed by Wynn, TI, Caesars or Bellagio",
+   "detail": "Only The Venetian's hotel terms state 'Clark County Room Tax of 13.38%'. For the other properties the rate is a county-level assumption, labelled with an asterisk wherever it appears.",
+   "how_to_settle": "Confirm on each property's booking checkout, where tax is itemised.",
+   "sources": [
+    "V_TERMS",
+    "W_TC_FEE"
+   ]
+  },
+  {
+   "id": "F9",
+   "category": "Rates",
+   "severity": "material",
+   "title": "Venetian poker rate is conditional and can be revoked at checkout",
+   "detail": "The $119/$209 rates require booking by phone (code EPOKR25) and then 6 hours of active cash play or a $300+ tournament buy-in for each night stayed; otherwise the nightly rate reverts to the prevailing rate. Blackout dates apply and rates are only quoted 150 days ahead.",
+   "how_to_settle": "Confirm the qualification tracking at check-in and keep a record of tournament buy-ins during the stay.",
+   "sources": [
+    "V_RATES"
+   ]
+  },
+  {
+   "id": "F10",
+   "category": "Rates",
+   "severity": "material",
+   "title": "No cancellation deadline printed for the Venetian poker rate",
+   "detail": "The generic hotel terms describe a deposit at booking and non-refundable prepaid offers, but the poker-rate page does not print a cancellation deadline. Caesars advertises free 48-hour cancellation; Wynn offer pages vary between 48 hours and non-cancellable.",
+   "how_to_settle": "Record the cancellation terms shown in the booking flow for the chosen rate code.",
+   "sources": [
+    "V_TERMS",
+    "W_TC_FEE"
+   ]
+  },
+  {
+   "id": "F11",
+   "category": "Walking",
+   "severity": "material",
+   "title": "No official walking time exists for any hotel \u2192 poker-room pair",
+   "detail": "No casino publishes walking minutes. Figures here come from a labelled OSRM 8x8 distance matrix on OpenStreetMap, converted with one formula and a 25% buffer. The router does not model indoor casino corridors, the Venetian poker room on level 2 of the Grand Canal Shoppes, or Wynn's room being in the Encore tower. Reciprocal routes disagree by up to 62% (Venetian tower <-> Palazzo), so those rows carry an asymmetry tag instead of a quietly chosen number.",
+   "how_to_settle": "Walk the route once on arrival and record the actual door-to-table time; or check Google/Apple Maps for the specific entrance, which this sandbox could not access.",
+   "sources": [
+    "MAP_OSRM",
+    "MAP_NOMINATIM",
+    "V_POKER",
+    "W_POKER"
+   ]
+  },
+  {
+   "id": "F12",
+   "category": "Walking",
+   "severity": "material",
+   "title": "The 30-minute walking rule excludes six hotel\u2013venue pairs",
+   "detail": "Using one labelled OSRM matrix and a single conversion (metres / 4.8 km/h * 60 * 1.25), six pairs exceed 30 minutes: Wynn<->Caesars (42.4 min one way, 42.9 the other), Wynn<->Bellagio (39.4/43.6), Treasure Island<->Bellagio (33.5), Harrah's<->Bellagio (34.9). Every hotel is still within 30 minutes of at least one poker room, so no property is disqualified outright.",
+   "how_to_settle": "Walk the route once, or check Google/Apple Maps for the specific casino entrance; both are inaccessible to this sandbox.",
+   "sources": [
+    "MAP_OSRM"
+   ]
+  },
+  {
+   "id": "F13",
+   "category": "Schedule",
+   "severity": "material",
+   "title": "No official event publishes a finish time",
+   "detail": "The day plans use a heuristic derived from each event's own structure (late-registration window doubled, plus an hour of breaks) to decide whether two events can be played in sequence. It is an estimate, clearly labelled, not an official finish time.",
+   "how_to_settle": "Record actual finishes from results pages for the same events in the previous series and replace the heuristic with observed duration.",
+   "sources": [
+    "V_CAL",
+    "V_S05"
+   ]
+  },
+  {
+   "id": "F14",
+   "category": "Schedule",
+   "severity": "material",
+   "title": "No tournament on any official Strip schedule starts at 08:00",
+   "detail": "Earliest verified start: 9:10 AM (Venetian satellite #46, Dec 12). Earliest main-event start: 10:10 AM. Wynn's earliest is 10:00 AM on Dec 10 (Super Gold Million) and 11:00 AM otherwise. An 8 AM start exists nowhere in this dataset.",
+   "how_to_settle": "If an 8 AM start is essential, it must come from a room outside this set (e.g. an off-Strip room) or from a series not yet published.",
+   "sources": [
+    "V_CAL",
+    "W_WPT"
+   ]
+  },
+  {
+   "id": "F15",
+   "category": "Schedule",
+   "severity": "material",
+   "title": "Venetian 10:10 AM events are mostly restricted by age, sex or team composition",
+   "detail": "Of the 10:10 AM starts: Nov 19\u201321 $200 RaceDay are open; Dec 2 and Dec 8 are Seniors (50+); Dec 9 #35 is a women/women or women/men tag team; Dec 10 is LIPS Ladies (female only); Dec 13\u201314 are Seniors; Dec 17\u201319 #56 are open $1,100 flights. For a male player under 50 the open morning starts are Nov 19\u201321, Dec 12 (9:10 satellite / 10:10 #47) and Dec 17\u201319.",
+   "how_to_settle": "Confirm the travel party's eligibility before selecting a morning event.",
+   "sources": [
+    "V_S17",
+    "V_S19",
+    "V_S31",
+    "V_S32",
+    "V_S20"
+   ]
+  },
+  {
+   "id": "F16",
+   "category": "Coverage",
+   "severity": "material",
+   "title": "Strip coverage is not complete",
+   "detail": "Confirmed official schedules were read for Venetian, Wynn/Encore, Caesars Palace and Bellagio. Harrah's, Horseshoe, Paris, Planet Hollywood, Flamingo, The Linq, MGM Grand, ARIA, Mandalay Bay, Park MGM, New York-New York, Luxor, Excalibur and Treasure Island were NOT checked for tournaments in this session.",
+   "how_to_settle": "Fetch each room's official poker/tournament page and record its schedule the same way, or ask the poker desks for their current flyer.",
+   "sources": [
+    "V_CAL",
+    "W_WPT",
+    "C_FLYER",
+    "B_POKER"
+   ]
+  },
+  {
+   "id": "F17",
+   "category": "Coverage",
+   "severity": "material",
+   "title": "Wynn nightly $160 terms not published in the document read",
+   "detail": "The nightly is advertised on the official poster and poker page, but the structures PDF only prints terms for the Mon\u2013Thu, Friday and weekend events. Fee, chips, level length and entry rules are therefore unknown.",
+   "how_to_settle": "Ask the Wynn poker desk (702.770.7654) for the nightly structure sheet.",
+   "sources": [
+    "W_POSTER",
+    "W_DAILY"
+   ]
+  },
+  {
+   "id": "F18",
+   "category": "Guarantees",
+   "severity": "material",
+   "title": "Some Venetian guarantees include bounties",
+   "detail": "Sheets 1, 8, 11, 15, 16, 26, 27, 30, 33 and 34 print the guarantee as 'prize pool + total bounties'. Comparing those to a pure pool guarantee overstates their value. Three rows (#3, #4, #5, #6) print no guarantee at all.",
+   "how_to_settle": "Nothing to settle \u2014 recorded as guarantee_basis and tagged 'incl. bounties' in the ratio column.",
+   "sources": [
+    "V_S01",
+    "V_S18",
+    "V_S29"
+   ]
+  },
+  {
+   "id": "F19",
+   "category": "Guarantees",
+   "severity": "material",
+   "title": "Caesars flyer has no date or day-of-week",
+   "detail": "The 2026 daily NLH flyer lists 10 AM / 2 PM / 6 PM / 9 PM events but is not tied to a specific date, and does not state whether all four run every day of the week.",
+   "how_to_settle": "Call Caesars poker to confirm which days each tier runs.",
+   "sources": [
+    "C_FLYER"
+   ]
+  },
+  {
+   "id": "F20",
+   "category": "Guarantees",
+   "severity": "material",
+   "title": "Ratios are arithmetic, not expected value",
+   "detail": "Guarantee \u00f7 buy-in says nothing about field size, payout structure, rake or your edge. It is displayed as a descriptive screening number only, and bounty-inclusive guarantees are tagged.",
+   "how_to_settle": "No action; documented so the number is not misread.",
+   "sources": [
+    "V_S05"
+   ]
+  },
+  {
+   "id": "F21",
+   "category": "Repo",
+   "severity": "material",
+   "title": "Residual merge-conflict markers were present in COORDINATION.md",
+   "detail": "A '=======' line and a '>>>>>>> origin/main' line survived a merged PR, duplicating the 60fb62da session block.",
+   "how_to_settle": "Removed the delimiter lines only; both blocks kept verbatim. Recorded in COORDINATION.md.",
+   "sources": [],
+   "repo_link": "https://github.com/karagemop466-tech/Poker4/blob/main/COORDINATION.md"
+  },
+  {
+   "id": "F22",
+   "category": "Repo",
+   "severity": "material",
+   "title": "Six parallel sites with competing claims on the same repo",
+   "detail": "c07371e3/, 60fb62da/, strip/, verified/, df41f5c6/ and pages/ each carry their own snapshot and classification, with different data schemas. Some older dashboards used 'single entry' labels that later sessions corrected.",
+   "how_to_settle": "Decide which snapshot is canonical. This build treats data/v2/ as current and links the rest as historical.",
+   "sources": [],
+   "repo_link": "https://github.com/karagemop466-tech/Poker4/tree/main"
+  },
+  {
+   "id": "F23",
+   "category": "Repo",
+   "severity": "material",
+   "title": "Earlier snapshots were built without a retrieval date on every row",
+   "detail": "Several earlier pages show values without a per-value date stamp, which makes it impossible to tell whether a value is current.",
+   "how_to_settle": "This build stamps the retrieval date on every source row in data/v2/sources.json and shows it in the source table on the Method page.",
+   "sources": [],
+   "repo_link": "https://github.com/karagemop466-tech/Poker4/tree/main/data"
+  },
+  {
+   "id": "F24",
+   "category": "Reproduction",
+   "severity": "material",
+   "title": "The new monitor script cannot be executed inside this session",
+   "detail": "Shell-level network access is blocked in this sandbox \u2014 every curl returns HTTP 000 \u2014 so tools/v2_check_sources.py was written and syntax-checked but never executed against the live URLs. The scheduled workflow runs it on GitHub's own runners, where outbound HTTP works.",
+   "how_to_settle": "Trigger 'v2 source monitor' once from the Actions tab (workflow_dispatch) and read the first snapshot in data/v2/snapshots/. That will also create data/v2/source_state.json with the first baseline hashes.",
+   "sources": [],
+   "repo_link": "https://github.com/karagemop466-tech/Poker4/blob/main/tools/v2_check_sources.py"
+  },
+  {
+   "id": "F25",
+   "category": "Reproduction",
+   "severity": "material",
+   "title": "The scheduled monitor has never produced a baseline",
+   "detail": "data/v2/source_state.json does not exist yet, which is correct for a first run but means no change has ever been detected. Until one scheduled run completes, the 'automatic re-check' requirement is built but not demonstrated.",
+   "how_to_settle": "Run the workflow once manually; confirm it commits data/v2/source_state.json.",
+   "sources": [],
+   "repo_link": "https://github.com/karagemop466-tech/Poker4/blob/main/.github/workflows/v2-monitor.yml"
+  }
+ ]
+}

@@ -1,0 +1,63 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Trip calculator · Strip Poker Planner</title>
+<meta name="description" content="Official-source Las Vegas Strip poker tournament and hotel-cost dashboard. Verified values only; everything else is flagged.">
+<link rel="stylesheet" href="assets/app.css"></head><body>
+<header class="top"><div class="top-in"><a class="brand" href="../index.html">♠ STRIP POKER <span>PLANNER</span></a>
+<span class="stamp">verified 2026-11-17 · v2</span></div>
+<nav class="main"><a href="index.html">Dashboard</a><a href="tournaments.html">Tournaments</a><a href="schedule.html">Day plans</a><a href="hotels.html">Hotels &amp; rates</a><a href="calculator.html" class="active">Trip calculator</a><a href="venues.html">Venues</a><a href="separate.html">Re-entry / add-on</a><a href="questions.html">Questions</a><a href="suggestions.html">Suggestions</a><a href="flagged.html">Flagged for review</a><a href="about.html">Method &amp; sources</a></nav></header>
+<main>
+<div class="breadcrumb"><a href="index.html">Dashboard</a> / Trip calculator</div>
+<h1>Trip calculator: entries × buy-ins + nights × true hotel cost</h1>
+<p class="lede">All four numbers you need are either confirmed on an official page or printed in the table below. Nothing is pre-filled with an estimate — if a fee is unknown, type nothing and the calculator tells you the total is incomplete rather than inventing one.</p>
+<h2>Run the numbers</h2>
+<div class="controls">
+<label>Entries planned<input type="number" id="c_entries" value="4" min="0" step="1"></label>
+<label>Average buy-in ($)<input type="number" id="c_buyin" value="300" min="0" step="25"></label>
+<label>Nights<input type="number" id="c_nights" value="5" min="0" step="1"></label>
+<label>Room rate / night ($)<input type="number" id="c_rate" value="119" min="0" step="1"></label>
+<label>Resort fee / night ($)<input type="number" id="c_fee" value="55" min="0" step="0.01"></label>
+<label>Room tax (%)<input type="number" id="c_tax" value="13.38" min="0" step="0.01"></label>
+<label>Parking / night ($)<input type="number" id="c_parking" value="0" min="0" step="1"></label>
+</div>
+<div class="calc-out" id="calcOut">—</div>
+<p class="small muted">The default room rate ($119) and fee ($55) are The Venetian's published poker-rate floor and confirmed resort fee. The default is <em>not</em> a quote for your dates; it is the lowest figure the hotel itself publishes. Replace it with the amount your booking page shows for your dates.</p>
+<h2>Buy-in shortcuts</h2>
+<div class="tablewrap"><table data-searchable="1"><caption>Every confirmed total entry cost by venue, so the calculator can be filled without guessing<span data-count style="float:right"></span></caption>
+<thead><tr><th>Venue</th><th>Event</th><th class="num">Total entry</th><th class="num">House fee</th><th class="num">Fee %</th><th class="num">To prize pool</th><th>Source</th></tr></thead><tbody>
+<tr data-search="venetian"><td>Venetian</td><td>#2/#12 $300 NLH</td><td class="num">$300</td><td class="num">$58</td><td class="num">19.3%</td><td class="num">$242</td><td><a href="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf" title="Structure sheet 5 — $300 NLH (1Day), events 02 and 12">source</a></td></tr>
+<tr data-search="venetian"><td>Venetian</td><td>#6 $200 NLH</td><td class="num">$200</td><td class="num">$40</td><td class="num">20.0%</td><td class="num">$160</td><td><a href="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_29.pdf" title="Structure sheet 29 — $200 NLH (1Day), event 06">source</a></td></tr>
+<tr data-search="venetian"><td>Venetian</td><td>#3–5 $200 RaceDay</td><td class="num">$200</td><td class="num">$35</td><td class="num">17.5%</td><td class="num">$165</td><td><a href="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf" title="Structure sheet 18 — $200 NLH RaceDay Stack (1Day), events 03/04/05">source</a></td></tr>
+<tr data-search="venetian"><td>Venetian</td><td>#9/11/13 $200 bounty</td><td class="num">$200</td><td class="num">$40</td><td class="num">20.0%</td><td class="num">$160</td><td><a href="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf" title="Structure sheet 1 — $200 No Limit Hold&#x27;em Bounty (1Day), events 09/11/13/15/21/22/23/25/60/61/62/64">source</a></td></tr>
+<tr data-search="venetian"><td>Venetian</td><td>#10 $400 NLH</td><td class="num">$400</td><td class="num">$65</td><td class="num">16.3%</td><td class="num">$335</td><td><a href="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_6.pdf" title="Structure sheet 6 — $400 NLH (1Day), event 10">source</a></td></tr>
+<tr data-search="venetian"><td>Venetian</td><td>#14/28/63 $600 NLH</td><td class="num">$600</td><td class="num">$90</td><td class="num">15.0%</td><td class="num">$510</td><td><a href="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf" title="Structure sheet 7 — $600 NLH (1Day), events 14, 28, 63">source</a></td></tr>
+<tr data-search="venetian"><td>Venetian</td><td>#26 $800 NLH</td><td class="num">$800</td><td class="num">$110</td><td class="num">13.8%</td><td class="num">$690</td><td><a href="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf" title="Structure sheet 12 — $800 NLH Day A+C+E, event 26">source</a></td></tr>
+<tr data-search="venetian"><td>Venetian</td><td>#56 $1,100 NLH (early-bird $1,060)</td><td class="num">$1,100</td><td class="num">$140</td><td class="num">12.7%</td><td class="num">$960</td><td><a href="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf" title="Structure sheet 35 — $1,100 NLH Day A+C+E, event 56">source</a></td></tr>
+<tr data-search="venetian"><td>Venetian</td><td>#47 $2,200 Championship</td><td class="num">$2,200</td><td class="num">$225</td><td class="num">10.2%</td><td class="num">$1,975</td><td><a href="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf" title="Structure sheet 21 — $2,200 NLH PokerAtlas Championship Title Event Day 1A, event 47">source</a></td></tr>
+<tr data-search="wynn"><td>Wynn</td><td>Daily Mon–Thu $200</td><td class="num">$200</td><td class="num">$38</td><td class="num">19.0%</td><td class="num">$162</td><td><a href="https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf" title="Daily tournament structures + terms (PDF)">source</a></td></tr>
+<tr data-search="wynn"><td>Wynn</td><td>Friday rebuy $240</td><td class="num">$240</td><td class="num">$50</td><td class="num">20.8%</td><td class="num">$190</td><td><a href="https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf" title="Daily tournament structures + terms (PDF)">source</a></td></tr>
+<tr data-search="wynn"><td>Wynn</td><td>WPT &amp; all series events</td><td class="num"><span class="blank">UNVERIFIED</span></td><td class="num"><span class="blank">—</span></td><td class="num"><span class="blank">—</span></td><td class="num"><span class="blank">—</span></td><td><a href="https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf" title="WPT World Championship schedule poster (PDF), Nov 27 – Dec 21, 2026">source</a> (fee deferred to structure sheets)</td></tr>
+<tr data-search="bellagio"><td>Bellagio</td><td>Friday $600</td><td class="num">$600 (+$40 gratuity)</td><td class="num">$50</td><td class="num">8.3%</td><td class="num">$510</td><td><a href="https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt9cf95b0e60ec253e/6af491a3a9851d75c40be840/mgm-bellagio-poker-fridays-$600-nlh.pdf" title="Bellagio Fridays $600 NLH structure (PDF)">source</a></td></tr>
+<tr data-search="caesars"><td>Caesars</td><td>Daily $100 / $160</td><td class="num">$100 / $160 (+$50 add-on)</td><td class="num">$30 / $45</td><td class="num">30.0% / 28.1%</td><td class="num">$70 / $115</td><td><a href="https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf" title="Daily No-Limit Texas Hold&#x27;em tournament flyer 2026 (PDF)">source</a></td></tr>
+<tr data-search="treasure island"><td>Treasure Island</td><td>No tournament confirmed</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td><a href="https://treasureisland.com/hotel/tower-suite" title="Tower Suite page — resort fees">source</a></td></tr>
+</tbody></table></div>
+<h2>Worked example, with every term visible</h2>
+<div class="card">
+<p><strong>Plan:</strong> 4 Venetian entries at $300, 5 nights at The Venetian's published poker-rate floor.</p>
+<p class="mono">Entries&nbsp;&nbsp; 4 × $300 = $1,200<br>
+True night ($119 + $55) × 1.1338 = $197.28<br>
+Hotel&nbsp;&nbsp;&nbsp;&nbsp; 5 × $197.28 = $986.42<br>
+Parking&nbsp;&nbsp; waived if you play 3+ hours per day (else 5 × $20 = $100)<br>
+<strong>Total&nbsp;&nbsp;&nbsp; $2,186.42</strong> before food, travel and the incidental hold.</p>
+<p class="small muted">The play requirement matters twice here: the poker rate itself needs 6 hours of cash play or a $300+ buy-in per night, and free parking needs 3 hours of play. Four $300 tournaments over five nights satisfies both on paper — but the rate reverts to the prevailing rate for any night you miss.</p>
+</div>
+<h2>What the calculator still cannot tell you</h2>
+<ul class="tight">
+<li>Whether your chosen event actually allows the number of entries you typed. For the Venetian, that is unresolved (see <a href="flagged.html">Flagged</a>).</li>
+<li>Your real room rate, until you open the booking page for your exact dates and read the checkout total.</li>
+<li>Food, travel to Las Vegas, tips, and the $150/night incidental hold.</li>
+</ul>
+
+<footer><p><strong>How to read this site.</strong> A value is shown only if a session runner read it on the official page linked in that row, on 2026-11-17. Everything else says <span class="blank">UNVERIFIED</span> and appears on the <a href="flagged.html">Flagged for review</a> page with its source links. Walking minutes are OpenStreetMap/OSRM foot-routing estimates between property centroids — not a casino publication and not Google or Apple Maps. Guarantee ÷ buy-in is arithmetic, not a forecast.</p>
+<p><a href="about.html">Method, source table and repo findings →</a> · <a href="../index.html">Older research snapshots</a></p></footer></main>
+<script src="assets/app.js"></script></body></html>

@@ -1,0 +1,67 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dashboard · Strip Poker Planner</title>
+<meta name="description" content="Official-source Las Vegas Strip poker tournament and hotel-cost dashboard. Verified values only; everything else is flagged.">
+<link rel="stylesheet" href="assets/app.css"></head><body>
+<header class="top"><div class="top-in"><a class="brand" href="../index.html">♠ STRIP POKER <span>PLANNER</span></a>
+<span class="stamp">verified 2026-11-17 · v2</span></div>
+<nav class="main"><a href="index.html" class="active">Dashboard</a><a href="tournaments.html">Tournaments</a><a href="schedule.html">Day plans</a><a href="hotels.html">Hotels &amp; rates</a><a href="calculator.html">Trip calculator</a><a href="venues.html">Venues</a><a href="separate.html">Re-entry / add-on</a><a href="questions.html">Questions</a><a href="suggestions.html">Suggestions</a><a href="flagged.html">Flagged for review</a><a href="about.html">Method &amp; sources</a></nav></header>
+<main>
+<p class="eyebrow">Decision dashboard · official-source snapshot 2026-11-17</p>
+<h1>Strip poker, organised so you can decide.</h1>
+<p class="lede">Upcoming Las Vegas Strip tournaments, what each one actually costs to enter, what the hotel really costs per night, and an honest list of what is still unconfirmed. Built from the operators' own pages and PDFs, checked line by line on 2026-11-17. Nothing is filled in or inferred — blanks are blanks.</p>
+<div class="pill-row"><a class="btn" href="tournaments.html">Browse 177 dated entries</a> <a class="btn ghost" href="calculator.html">Price a trip</a> <a class="btn ghost" href="flagged.html">What is unverified</a></div>
+
+<div class="kpis">
+<div class="kpi"><span>Venetian dated entries</span><b>83</b><span>DSE IV, Nov 16 – Dec 23 2026</span></div>
+<div class="kpi"><span>Wynn WPT dated entries</span><b>88</b><span>Nov 27 – Dec 21 2026</span></div>
+<div class="kpi"><span>Confirmed 1-entry-per-flight</span><b>3</b><span>WPT $10,400 Championship flights only</span></div>
+<div class="kpi"><span>Venetian resort fee</span><b>$55</b><span>+ 13.38% tax, confirmed on the hotel's own terms</span></div>
+</div>
+
+<div class="callout bad"><strong>The single biggest finding: you cannot yet prove any Strip tournament is single-entry.</strong>
+The Venetian's own 2026 structure sheets state a <em>late-registration</em> window and nothing else about entry. They do not say “one entry only”, and they do not say “re-entry allowed”. Prior Venetian sheets from 2023–2024 did print “Registration and Re-Entry is allowed”, which shows the silence is meaningful and not a formatting habit. The only official single-entry statement found anywhere on the Strip is the WPT's own release for the <strong>$10,400 WPT World Championship at Wynn</strong>: “a single entry per starting flight” — and with three flights that still allows three entries in total. <a href="flagged.html">See the full evidence trail →</a></div>
+
+<h2>What the data actually supports</h2>
+<div class="grid">
+<article class="card"><span class="tag ok">cheapest verified entry</span><h3>$100 · Caesars Palace daily</h3>
+<p>$30 of the $100 is the house fee; $70 reaches the pool; $1,000 guaranteed. <strong>Re-entry and a $50 add-on are both allowed</strong>, so it sits in the <a href="separate.html">separate section</a>, not the single-entry list.</p></article>
+<article class="card"><span class="tag info">best guarantee ÷ buy-in on the Venetian list</span><h3>$2,200 → $1,000,000 (455×)</h3>
+<p>Dec 12–14, PokerAtlas Championship. That ratio is arithmetic only: guarantee ÷ buy-in says nothing about expected value, field size or skill. Fee is $225 of the $2,200 (10.2%), confirmed on the sheet.</p></article>
+<article class="card"><span class="tag warn">best value per dollar at the low end</span><h3>$300 → $10,000 (33×)</h3>
+<p>Nov 18 and Nov 26. $58 house fee (19.3% — the highest percentage rake among the one-day events), $242 to the pool. Single-entry status unknown.</p></article>
+</div>
+
+<h2>Hotel cost, honestly labelled</h2>
+<div class="tablewrap"><table data-searchable="1"><caption>The only fee numbers confirmed on an operator's own page, plus the one published rate floor<span data-count style="float:right"></span></caption>
+<thead><tr><th>Property</th><th class="num">Resort fee</th><th class="num">Room tax</th><th class="num">Published room floor</th><th class="num">Derived true cost / night</th><th>Status</th><th>Source</th></tr></thead><tbody>
+<tr data-search="venetian"><td>The Venetian / Palazzo</td><td class="num">$55</td><td class="num">13.38%</td><td class="num">$119</td><td class="num">$197.28</td><td><span class="tag warn">derived, not a quote</span></td><td><a href="https://www.venetianlasvegas.com/resort/resort-fee.html" title="Resort Fee page">source</a> · <a href="https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html" title="2026 Special Suite Rates for poker players">source</a></td></tr>
+<tr data-search="venetian"><td>The Venetian / Palazzo (upper “from”)</td><td class="num">$55</td><td class="num">13.38%</td><td class="num">$209</td><td class="num">$299.32</td><td><span class="tag warn">derived, not a quote</span></td><td><a href="https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html" title="2026 Special Suite Rates for poker players">source</a></td></tr>
+<tr data-search="wynn"><td>Wynn / Encore</td><td class="num">$55</td><td class="num">13.38%*</td><td class="num"><span class="blank">UNVERIFIED</span></td><td class="num"><span class="blank">—</span></td><td><span class="tag bad">no dated rate read</span></td><td><a href="https://www.wynnlasvegas.com/terms-and-conditions/850257" title="Wynn terms &amp; conditions page stating the resort fee">source</a></td></tr>
+<tr data-search="treasure island ti"><td>Treasure Island</td><td class="num">$49.95</td><td class="num">13.38%*</td><td class="num">$69 promo</td><td class="num">$78.23</td><td><span class="tag warn">promo headline</span></td><td><a href="https://treasureisland.com/hotel/tower-suite" title="Tower Suite page — resort fees">source</a></td></tr>
+<tr data-search="caesars palace"><td>Caesars Palace</td><td class="num"><span class="blank">UNVERIFIED</span></td><td class="num">13.38%*</td><td class="num">$139 promo</td><td class="num"><span class="blank">—</span></td><td><span class="tag bad">fee not on official page</span></td><td><a href="https://www.caesars.com/caesars-palace/hotel">caesars.com</a></td></tr>
+<tr data-search="bellagio"><td>Bellagio</td><td class="num"><span class="blank">UNVERIFIED</span></td><td class="num">13.38%*</td><td class="num"><span class="blank">UNVERIFIED</span></td><td class="num"><span class="blank">—</span></td><td><span class="tag bad">MGM fee page 404</span></td><td><a href="https://www.resortfeechecker.com/140596-resort_fee_bellagio.html" title="Bellagio resort fee — third-party reporting">source</a></td></tr>
+</tbody></table></div>
+<p class="small muted">*13.38% is the Clark County rate as printed on The Venetian's hotel terms. Wynn, TI, Caesars and Bellagio did not print a tax percentage on the pages read, so using 13.38% for them is a derivation, not a quote.</p>
+
+<h2>The question that decides everything</h2>
+<ol class="tight">
+<li><strong>Which exact dates are you travelling?</strong> Rates are date-specific. Without dates every hotel total is a "from" figure. The site therefore computes with your inputs rather than inventing a number.</li>
+<li><strong>Is a single entry per flight acceptable, or must it be one entry for the whole event?</strong> This flips the entire ranking: if per-flight is acceptable, the WPT $10,400 is the only official single-entry-per-flight event found; if not, nothing on the Strip qualifies on current evidence.</li>
+<li><strong>Will you call the poker room to get the entry rule in writing?</strong> That is the one action that converts the whole Venetian list from "unverified" to usable.</li>
+</ol>
+<p>Full decision list on <a href="questions.html">Questions</a>. Improvements ranked by impact on <a href="suggestions.html">Suggestions</a>.</p>
+
+<h2>Go deeper</h2>
+<div class="grid">
+<article class="card"><h3><a href="tournaments.html">Tournaments</a></h3><p>83 Venetian entries with fee, stack, level length and late-reg clock time, each linked to its own structure sheet.</p></article>
+<article class="card"><h3><a href="schedule.html">Day plans</a></h3><p>Which two events on the same day can actually both be played, and which are physically impossible.</p></article>
+<article class="card"><h3><a href="hotels.html">Hotels & rates</a></h3><p>Resort fee, tax, parking, cancellation, the poker-rate play requirement, and walking time to each room.</p></article>
+<article class="card"><h3><a href="venues.html">Venues</a></h3><p>One page per room: Venetian, Wynn, Caesars Palace, Bellagio — events plus the nearest hotels.</p></article>
+<article class="card"><h3><a href="separate.html">Re-entry / add-on</a></h3><p>Every event where spending more buys more chips: re-entry, rebuys, add-ons, and Bellagio's gratuity chips.</p></article>
+<article class="card"><h3><a href="flagged.html">Flagged for review</a></h3><p>25 specific unresolved items with the source that should settle each one.</p></article>
+</div>
+
+<footer><p><strong>How to read this site.</strong> A value is shown only if a session runner read it on the official page linked in that row, on 2026-11-17. Everything else says <span class="blank">UNVERIFIED</span> and appears on the <a href="flagged.html">Flagged for review</a> page with its source links. Walking minutes are OpenStreetMap/OSRM foot-routing estimates between property centroids — not a casino publication and not Google or Apple Maps. Guarantee ÷ buy-in is arithmetic, not a forecast.</p>
+<p><a href="about.html">Method, source table and repo findings →</a> · <a href="../index.html">Older research snapshots</a></p></footer></main>
+<script src="assets/app.js"></script></body></html>

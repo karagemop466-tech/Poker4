@@ -1,0 +1,55 @@
+name: v2 source monitor
+
+# Re-checks every official URL in data/v2/sources.json, hashes the parts of the page
+# that carry the facts we publish, and opens an issue when a hash moves.
+# It deliberately does NOT rewrite any value: a human still reads the diff.
+
+on:
+  schedule:
+    - cron: "17 13 * * *"   # daily, 13:17 UTC (05:17 Las Vegas)
+  workflow_dispatch:
+  push:
+    paths:
+      - "data/v2/sources.json"
+      - "tools/v2_check_sources.py"
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Check sources
+        id: check
+        run: python3 tools/v2_check_sources.py --state data/v2/source_state.json --report data/v2/snapshots/check-$(date -u +%Y-%m-%d).txt
+      - name: Commit state + snapshot
+        if: always()
+        run: |
+          git config user.name  "v2-monitor[bot]"
+          git config user.email "v2-monitor@users.noreply.github.com"
+          git add data/v2/source_state.json data/v2/snapshots || true
+          git diff --quiet --cached || git commit -m "chore(v2): source monitor run $(date -u +%Y-%m-%d)"
+          git pull --rebase origin ${GITHUB_REF_NAME}
+          git push origin HEAD:${GITHUB_REF_NAME}
+      - name: Open an issue when something changed
+        if: steps.check.outputs.changed != '0'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const body = fs.readFileSync(process.env.GITHUB_STEP_SUMMARY_PATH || '/dev/null', 'utf8');
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `v2: ${process.env.CHANGED} official source(s) changed`,
+              body: body || 'See the latest file in data/v2/snapshots/.',
+              labels: ['v2-monitor']
+            });
+        env:
+          CHANGED: ${{ steps.check.outputs.changed }}
