@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generated_at": "2026-11-17T23:03:37Z",
+  "generated_at": "2026-11-17T23:11:04Z",
   "basis": "start time + printed registration-closes deadline + Day-2 restart rows on the official calendar",
   "days": 38
  },
@@ -4175,14 +4175,14 @@
    ],
    "overlap_notes": [
     "2 ranked entries share this day (starts 11:10 AM, 5:10 PM); entering one rules out the others, and no sheet prints a finish time to settle it",
-    "$600 No Limit Hold'Em 1A $20 Rake Discount For Entries Before 11:10 Am keeps registration open until 5:55 PM, after $200 No Limit Hold'Em Bounty (1Day) starts at 5:10 PM \u2014 playable in sequence only if you are out of the first event before that deadline, which the sheet does not promise"
+    "$600 No Limit Hold'Em 1A $20 Rake Discount For Entries Before keeps registration open until 5:55 PM, after $200 No Limit Hold'Em Bounty (1Day) starts at 5:10 PM \u2014 playable in sequence only if you are out of the first event before that deadline, which the sheet does not promise"
    ],
    "distinct_ranked_events": 2,
    "entries_usd": 800,
    "primary_id": "V59-2026-12-20-11:10am",
    "primary": {
     "id": "V59-2026-12-20-11:10am",
-    "name": "$600 No Limit Hold'Em 1A $20 Rake Discount For Entries Before 11:10 Am",
+    "name": "$600 No Limit Hold'Em 1A $20 Rake Discount For Entries Before",
     "date": "2026-12-20",
     "time": "11:10 AM",
     "registration_closes": "5:55 PM",

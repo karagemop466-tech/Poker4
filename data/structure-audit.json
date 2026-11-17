@@ -763,7 +763,7 @@
     "event_name": "NLH LIPS LADIES MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #39",
     "buy_in_usd": 100,
     "guarantee_usd": null,
-    "guarantee_text": "2 seats",
+    "guarantee_text": "2 SEAT",
     "starting_chips": 20000,
     "level_duration": "20",
     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
@@ -827,7 +827,7 @@
     "event_name": "NLH LIPS LADIES MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #39",
     "buy_in_usd": 100,
     "guarantee_usd": null,
-    "guarantee_text": "2 seats",
+    "guarantee_text": "2 SEAT",
     "starting_chips": 20000,
     "level_duration": "20",
     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
@@ -891,7 +891,7 @@
     "event_name": "NLH MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47",
     "buy_in_usd": 260,
     "guarantee_usd": null,
-    "guarantee_text": "2 seats",
+    "guarantee_text": "2 SEAT",
     "starting_chips": 20000,
     "level_duration": "20",
     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
@@ -914,9 +914,7 @@
     "retrieved": "2026-11-17"
    },
    {
-    "parse_notes": [
-     "“7:00 PM” appears inside the event name, not in the TIME column; start time taken as 10:00 AM"
-    ],
+    "parse_notes": null,
     "registration_closes": null,
     "date": "2026-12-11",
     "weekday": "Friday",
@@ -957,7 +955,7 @@
     "event_name": "NLH MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47",
     "buy_in_usd": 260,
     "guarantee_usd": null,
-    "guarantee_text": "2 seats",
+    "guarantee_text": "2 SEAT",
     "starting_chips": 20000,
     "level_duration": "20",
     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
@@ -989,7 +987,7 @@
     "event_name": "NLH TURBO MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47",
     "buy_in_usd": 260,
     "guarantee_usd": null,
-    "guarantee_text": "2 seats",
+    "guarantee_text": "2 SEAT",
     "starting_chips": 20000,
     "level_duration": "15",
     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
@@ -1021,7 +1019,7 @@
     "event_name": "NLH TURBO MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47",
     "buy_in_usd": 260,
     "guarantee_usd": null,
-    "guarantee_text": "2 seats",
+    "guarantee_text": "2 SEAT",
     "starting_chips": 20000,
     "level_duration": "15",
     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
@@ -1053,7 +1051,7 @@
     "event_name": "NLH TURBO MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47",
     "buy_in_usd": 260,
     "guarantee_usd": null,
-    "guarantee_text": "2 seats",
+    "guarantee_text": "2 SEAT",
     "starting_chips": 20000,
     "level_duration": "15",
     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
@@ -1236,13 +1234,15 @@
     "retrieved": "2026-11-17"
    },
    {
-    "parse_notes": null,
+    "parse_notes": [
+     "a printed time “10:10 AM” inside the event name is not later than the start time; left in the name, not recorded as a registration deadline"
+    ],
     "registration_closes": "4:55 PM",
     "date": "2026-12-17",
     "weekday": "Thursday",
     "time": "10:10 AM",
     "event_no": 56,
-    "event_name": "NO LIMIT HOLD'EM 1A $40 RAKE DISCOUNT FOR ENTRIES BEFORE 10:10 AM",
+    "event_name": "NO LIMIT HOLD'EM 1A $40 RAKE DISCOUNT FOR ENTRIES BEFORE",
     "buy_in_usd": 1100,
     "guarantee_usd": 500000,
     "guarantee_text": null,
@@ -1268,13 +1268,15 @@
     "retrieved": "2026-11-17"
    },
    {
-    "parse_notes": null,
+    "parse_notes": [
+     "a printed time “6:10 PM” inside the event name is not later than the start time; left in the name, not recorded as a registration deadline"
+    ],
     "registration_closes": "11:10 PM",
     "date": "2026-12-17",
     "weekday": "Thursday",
     "time": "6:10 PM",
     "event_no": 56,
-    "event_name": "NO LIMIT HOLD'EM 1B $40 RAKE DISCOUNT FOR ENTRIES BEFORE 6:10 PM",
+    "event_name": "NO LIMIT HOLD'EM 1B $40 RAKE DISCOUNT FOR ENTRIES BEFORE",
     "buy_in_usd": 1100,
     "guarantee_usd": 500000,
     "guarantee_text": null,
@@ -1364,13 +1366,15 @@
     "retrieved": "2026-11-17"
    },
    {
-    "parse_notes": null,
+    "parse_notes": [
+     "a printed time “11:10 AM” inside the event name is not later than the start time; left in the name, not recorded as a registration deadline"
+    ],
     "registration_closes": "5:55 PM",
     "date": "2026-12-20",
     "weekday": "Sunday",
     "time": "11:10 AM",
     "event_no": 59,
-    "event_name": "NO LIMIT HOLD'EM 1A $20 RAKE DISCOUNT FOR ENTRIES BEFORE 11:10 AM",
+    "event_name": "NO LIMIT HOLD'EM 1A $20 RAKE DISCOUNT FOR ENTRIES BEFORE",
     "buy_in_usd": 600,
     "guarantee_usd": 150000,
     "guarantee_text": null,
@@ -1510,7 +1514,7 @@
   ]
  },
  "meta": {
-  "generated_at": "2026-11-17T23:04:03Z",
+  "generated_at": "2026-11-17T23:11:19Z",
   "generator": "tools/sync_official_sources.py",
   "policy": "Field values are matched from the fetched sheet text only. entry_policy='not_stated_in_sheet' means the sheet contains no clause about entries/re-entries/add-ons — that is NOT confirmation of single-entry play."
  },
