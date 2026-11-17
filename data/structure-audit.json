@@ -1437,7 +1437,7 @@
   ]
  },
  "meta": {
-  "generated_at": "2026-11-17T22:46:30Z",
+  "generated_at": "2026-11-17T22:48:33Z",
   "generator": "tools/sync_official_sources.py",
   "policy": "Field values are matched from the fetched sheet text only. entry_policy='not_stated_in_sheet' means the sheet contains no clause about entries/re-entries/add-ons — that is NOT confirmation of single-entry play."
  },
@@ -2755,6 +2755,39 @@
    "levels_listed": null,
    "breaks_listed": 6,
    "pdf_sha256": "7ddf2e7e85c00833a0e0362a60d5fdbda8765d925fe3f98893485cc6a1b83057"
+  },
+  "C_FLYER": {
+   "source": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+   "retrieved": "2026-11-17",
+   "event_numbers": null,
+   "start_time": null,
+   "starting_chips": null,
+   "level_duration": null,
+   "late_registration": null,
+   "guarantee": "10 AM $100 $50 20,000 20 Minutes $1,000",
+   "day2": null,
+   "flight_start": null,
+   "bagging": null,
+   "title": "10 AM $100 $50 20,000 20 Minutes $1,000",
+   "house_fee_usd": null,
+   "buy_in_usd": null,
+   "pool_per_entry_usd": null,
+   "payout_pct_of_field": null,
+   "clauses": {
+    "single_entry_confirmed": [],
+    "entry_forbidden": [],
+    "reentry_allowed": [],
+    "reentry_limited": [],
+    "addon_allowed": [
+     "Version 6.19.2026 Daily No-Limit Texas Hold’em Tournament Schedule Time Buy-In Add-On Optional Starting Chips Level Times Guarantee 10 AM $100 $50 20,000 20 Minutes $1,000 2 PM $160"
+    ],
+    "addon_forbidden": []
+   },
+   "subsequent_entry_excerpt": null,
+   "entry_policy": "not_single_entry",
+   "levels_listed": null,
+   "breaks_listed": 1,
+   "pdf_sha256": "4ed421291e69642b9a45e7510ee1fe9ca2807abeccad9e85fba7a2fb391e5222"
   }
  }
 }
