@@ -181,6 +181,46 @@
     "event_name": "NO LIMIT HOLD'EM 1C $150K GTD"
    },
    "why": "b808eea0 2026-11-17: official page prints '$600 No Limit Hold'em 1C $150K GTD'; PDF parse dropped the printed guarantee from the name (guarantee_usd field already correct)."
+  },
+  {
+   "op": "set",
+   "match": {
+    "date": "2026-12-17",
+    "time": "10:10 AM",
+    "event_no": 56
+   },
+   "set": {
+    "conditional_entry_fee": {
+     "standard_usd": 1100,
+     "early_usd": 1060,
+     "discount_usd": 40,
+     "deadline": "before the start of the event (10:10 a.m.), Day 1A only",
+     "excerpt": "$140 of the $1,100 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $960 of every $1,100 Buy In. On Day 1A, players who register before the start of the event (10:10 a.m.) will receive a forty ($40) discount on house fees for a total buy in of $1,060 instead of $1,100. $40 discounts will no longer be applied once the event has started and played one hand.",
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf",
+     "retrieved": "2026-11-17"
+    }
+   },
+   "why": "b808eea0 2026-11-17: structure sheet 35 rule 7 read live (twice: B2 pass + merge re-check). The $40 early house-fee discount ($1,100 -> $1,060 before 10:10 a.m.) is printed only on this sheet; without this op the snapshot carries no entry-fee rule for the row."
+  },
+  {
+   "op": "set",
+   "match": {
+    "date": "2026-12-17",
+    "time": "6:10 PM",
+    "event_no": 56
+   },
+   "set": {
+    "conditional_entry_fee": {
+     "standard_usd": 1100,
+     "early_usd": 1060,
+     "discount_usd": 40,
+     "deadline": "before the start of the event (6:10 PM), Day 1B only",
+     "excerpt": "$140 of the $1,100 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $960 of every $1,100 Buy In. On Day 1B, players who register before the start of the event (6:10 PM.) will receive a forty ($40) discount on house fees for a total buy in of $1,060 instead of $1,100. $40 discounts will no longer be applied once the event has started and played one hand.",
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_36.pdf",
+     "retrieved": "2026-11-17"
+    }
+   },
+   "why": "b808eea0 2026-11-17: structure sheet 36 rule 7 read live (twice: B2 pass + merge re-check). The $40 early house-fee discount ($1,100 -> $1,060 before 6:10 PM) is printed only on this sheet; without this op the snapshot carries no entry-fee rule for the row."
   }
  ]
 }

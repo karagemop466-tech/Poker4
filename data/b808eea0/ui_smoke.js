@@ -119,9 +119,14 @@ console.log('tournaments.html');
           if (measured) {
             measured.checked = true; fire(hdom, measured, 'change');
             const visibleHotels = Array.from(hd.querySelectorAll('.hotel')).filter(c => !c.classList.contains('hidden'));
-            ok(visibleHotels.length === 0, 'measured ≤30-min filter shows nothing while no walk time is officially measured');
-            const wc = hd.querySelector('#walk-count');
-            ok(wc && wc.textContent.indexOf('no property has an official measured walking time') !== -1, 'filter explains why nothing passes');
+            // 2026-11-17: Google Maps walking times were measured and stored with
+            // URLs + timestamps (data/integrated/walks-google.json), so the filter
+            // now shows every property with an official-sourced measured walk <=30.
+            ok(visibleHotels.length > 0, 'measured ≤30-min filter shows the measured properties (' + visibleHotels.length + ')');
+            ok(visibleHotels.every(c => {
+              const m = parseInt(c.getAttribute('data-walk-min') || '', 10);
+              return (!isNaN(m) && m <= 30) || c.getAttribute('data-onsite') === '1';
+            }), 'every shown property has a measured walk ≤ 30 min or is on-site');
           }
         }
 

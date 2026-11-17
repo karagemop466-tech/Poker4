@@ -263,6 +263,24 @@ PDF_ROW_RE = re.compile(
     r"(?:\s+(?P<chips>\d{1,3},\d{3}))?"
     r"(?:\s+(?P<level>\d{1,2}(?:/\d{1,2})?))?", re.I)
 CLOCK_RE = re.compile(r"\b\d{1,2}:\d{2}\s*(?:AM|PM)\b", re.I)
+
+# --- right-aligned row parser -------------------------------------------------
+# The printed table is column-based, but a PDF text dump flattens it into one
+# line, and several event names contain a clock time of their own
+# ("…$40 RAKE DISCOUNT FOR ENTRIES BEFORE 10:10 AM", "…FINAL TABLE (POKERGO) AT
+# 7:00 PM"). A left-to-right regex therefore reads the name's clock as the start
+# time. The columns after the name are printed in a fixed order —
+# TIME · REG CLOSES · GUARANTEE · CHIPS · LEVEL · COIN/TROPHY — so the cells are
+# peeled off from the RIGHT instead. Whatever remains is the event name, clock
+# times inside it included.
+PDF_ROW_START_RE = re.compile(r"(?<![\w$])(\d{1,3})\s+\$([\d,]+)\s+")
+PDF_COIN_RE = re.compile(r"\s*(?:TROPHY\s*\+\s*)?(?:GOLD|SILVER|BRONZE)\s+COINS?\s*$", re.I)
+PDF_LEVEL_RE = re.compile(r"\s+(\d{1,2}(?:/\d{1,2})?)$")
+PDF_CHIPS_RE = re.compile(r"\s+(\d{1,3},\d{3})$")
+PDF_GTD_RE = re.compile(r"\s+\$([\d,]+)(?:\s*(K|MILL|MILLION))?$", re.I)
+PDF_GTD_SEATS_RE = re.compile(r"\s+(\d+)\s+SEATS?$", re.I)
+PDF_TIME_RE = re.compile(r"\s+(\d{1,2}:\d{2}\s*(?:AM|PM))$", re.I)
+PDF_FOOTER_RE = re.compile(r"\s+The Venetian®.*$", re.I)
 MONTHS = {m: i for i, m in enumerate(
     ["JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE", "JULY",
      "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER"], start=1)}
@@ -271,46 +289,21 @@ MONTHS = {m: i for i, m in enumerate(
 def parse_schedule_pdf(text: str, source_url: str, default_year: int | None = None) -> list[dict]:
     """Rows of the printed schedule table: DATE | EVENT # | EVENT | TIME | REG CLOSES | GUARANTEE | CHIPS | LEVEL.
 
-    Each row is attributed to the most recent printed date header. Fields the page
-    does not print stay null — they are never carried over from a neighbouring row.
-
-    Column split (b808eea0, 2026-11-17): the EVENT title is allowed to contain clock
-    text (e.g. "$40 RAKE DISCOUNT FOR ENTRIES BEFORE 10:10 AM", "… (POKERGO) AT 7:00 PM").
-    The row is therefore parsed from its tail: the TIME..LEVEL columns must consume the
-    row exactly to its end (or trophy/coin marker), a REG CLOSES clock must be strictly
-    later than the start, and when several splits are valid the longest title wins.
-    Previously a lazy title match stopped at the first clock inside the title, which
-    mis-filed the deadline clock as TIME and dropped the printed guarantee.
+    Each row is attributed to the most recent printed date header. The trailing
+    cells are peeled off the end of the flat PDF line (see the regexes above) so
+    that a clock time printed *inside* an event name stays in the name instead of
+    being read as the start time. Fields the page does not print stay null — they
+    are never carried over from a neighbouring row.
     """
     flat = re.sub(r"\s+", " ", text).strip()
     heads = list(PDF_DATE_RE.finditer(flat))
     if not heads:
         return []
     bounds = [(m.start(), m) for m in heads] + [(len(flat), None)]
-
-    def clock(value):
-        if not value:
-            return None
-        h, rest = value.upper().split(":")
-        mm = rest.strip()[:2]
-        ap = "PM" if "PM" in rest.upper() else "AM"
-        hr = int(h) % 12 + (12 if ap == "PM" else 0)
-        return hr * 60 + int(mm)
-
-    tail_re = re.compile(
-        r"\s*(?P<time>\d{1,2}:\d{2}\s*(?:AM|PM))"
-        r"(?:\s+(?P<close>\d{1,2}:\d{2}\s*(?:AM|PM)))?"
-        r"(?:\s+(?:(?P<seats>\d{1,2})\s+SEATS|\$(?P<gtd>[\d,]+)(?P<gtdmult>\s*(?:K|MILL|MILLION))?))?"
-        r"(?:\s+(?P<chips>\d{1,3},\d{3}))?"
-        r"(?:\s+(?P<level>\d{1,2}(?:/\d{1,2})?))?"
-        r"(?:\s+(?:TROPHY|SILVER|GOLD|BRONZE|COIN)\b.*)?$", re.I)
-    row_start_re = re.compile(r"(?P<no>\d{1,3})\s+\$(?P<buy>[\d,]+)\s+")
-    clock_re = re.compile(r"\d{1,2}:\d{2}\s*(?:AM|PM)", re.I)
-
     rows: list[dict] = []
-    for i, (start_pos, head) in enumerate(bounds[:-1]):
-        end_pos = bounds[i + 1][0]
-        seg = flat[start_pos:end_pos]
+    for i, (start, head) in enumerate(bounds[:-1]):
+        end = bounds[i + 1][0]
+        seg = flat[start:end]
         mon = MONTHS.get(head.group("mon").upper())
         day = int(head.group("day"))
         year = default_year
@@ -324,81 +317,103 @@ def parse_schedule_pdf(text: str, source_url: str, default_year: int | None = No
             except ValueError:
                 date_iso = None
 
-        starts = list(row_start_re.finditer(seg))
-        for j, st in enumerate(starts):
-            row_end = starts[j + 1].start() if j + 1 < len(starts) else len(seg)
-            row_text = seg[st.end():row_end].strip()
-            # candidate splits: every printed clock as the start of the TIME column
-            candidates = []
-            for cm in clock_re.finditer(row_text):
-                tm = tail_re.match(row_text, cm.start())
-                if not tm or tm.end() != len(row_text):
-                    continue
-                start_clock = re.sub(r"\s+", " ", tm.group("time")).upper()
-                close = re.sub(r"\s+", " ", tm.group("close")).upper() if tm.group("close") else None
-                note = []
-                if close and clock(close) is not None and clock(start_clock) is not None \
-                        and clock(close) <= clock(start_clock):
-                    # a printed time not later than the start cannot be the REG CLOSES
-                    # column of this split — reject the split (it is the deadline clock
-                    # printed inside the title)
-                    continue
-                level = tm.group("level")
-                if level:
-                    parts = [int(x) for x in re.split(r"/", level)]
-                    if not all(5 <= x <= 120 for x in parts):
-                        note.append(f"LEVEL cell “{level}” is not a plausible blind level; not recorded")
-                        level = None
-                name = re.sub(r"\s+", " ", row_text[:cm.start()]).strip(" -|")
-                if len(name) < 3:
-                    continue
-                gtd = None
-                if tm.group("gtd"):
-                    gtd = int(tm.group("gtd").replace(",", ""))
-                    mult = (tm.group("gtdmult") or "").strip()
-                    if mult == "K":
-                        gtd *= 1000
-                    elif mult:
-                        gtd *= 1_000_000
-                chips = int(tm.group("chips").replace(",", "")) if tm.group("chips") else None
-                # A printed row fills columns left to right: TIME [REG CLOSES]
-                # [GUARANTEE] [CHIPS] [LEVEL]. When the title carries its own clock
-                # (e.g. "… FOR ENTRIES BEFORE 10:10 AM", "… (POKERGO) AT 7:00 PM") more
-                # than one split consumes the row; the real one uses the most printed
-                # columns, and, of those, the longest title.
-                score = sum(x is not None for x in (close, gtd if gtd is not None else tm.group("seats"),
-                                                    chips, level))
-                candidates.append({
-                    "name": name, "start": start_clock, "close": close, "note": note,
-                    "level": level, "gtd": gtd, "seats": tm.group("seats"), "score": score,
-                    "chips": chips,
-                })
-            if not candidates:
-                continue
-            best = max(candidates, key=lambda c: (c["score"], len(c["name"])))
-            note = list(best["note"])
-            if len(candidates) > 1:
-                note.append("title carries its own clock time; the start time is the clock that "
-                            "lets REG CLOSES..LEVEL consume the printed row")
+        def clock(value):
+            if not value:
+                return None
+            h, rest = value.upper().split(":")
+            mm = rest.strip()[:2]
+            ap = "PM" if "PM" in rest.upper() else "AM"
+            hr = int(h) % 12 + (12 if ap == "PM" else 0)
+            return hr * 60 + int(mm)
+
+        starts = list(PDF_ROW_START_RE.finditer(seg))
+        for j, m in enumerate(starts):
+            stop = starts[j + 1].start() if j + 1 < len(starts) else len(seg)
+            chunk = re.sub(PDF_FOOTER_RE, "", seg[m.start():stop]).strip()
+            note: list[str] = []
+            event_no = int(m.group(1))
+            buy = int(m.group(2).replace(",", ""))
+            body = chunk[m.end() - m.start():].strip()
+
+            # --- peel the trailing cells off the right, in printed column order
+            for _ in range(3):
+                new_body = re.sub(PDF_COIN_RE, "", body).strip()
+                if new_body == body:
+                    break
+                body = new_body
+            level = None
+            m_lvl = PDF_LEVEL_RE.search(body)
+            if m_lvl:
+                cand = m_lvl.group(1)
+                parts = [int(x) for x in cand.split("/")]
+                if all(5 <= x <= 120 for x in parts):
+                    level = cand
+                    body = body[:m_lvl.start()].strip()
+                else:
+                    note.append(f"trailing value “{cand}” is not a plausible blind level; not recorded")
+                    body = body[:m_lvl.start()].strip()
+            chips = None
+            m_ch = PDF_CHIPS_RE.search(body)
+            if m_ch:
+                chips = int(m_ch.group(1).replace(",", ""))
+                body = body[:m_ch.start()].strip()
+            gtd = None
+            gtd_text = None
+            m_gtd = PDF_GTD_RE.search(body)
+            if m_gtd:
+                gtd = int(m_gtd.group(1).replace(",", ""))
+                mult = (m_gtd.group(2) or "").strip().upper()
+                if mult == "K":
+                    gtd *= 1000
+                elif mult:
+                    gtd *= 1_000_000
+                body = body[:m_gtd.start()].strip()
+            else:
+                m_seats = PDF_GTD_SEATS_RE.search(body)
+                if m_seats:
+                    gtd_text = f"{m_seats.group(1)} seats"
+                    body = body[:m_seats.start()].strip()
+            # --- the TIME and REG CLOSES columns, right to left
+            times: list[str] = []
+            while len(times) < 2:
+                m_t = PDF_TIME_RE.search(body)
+                if not m_t:
+                    break
+                times.insert(0, re.sub(r"\s+", " ", m_t.group(1)).upper())
+                body = body[:m_t.start()].strip()
+            if len(times) == 2 and clock(times[1]) is not None and clock(times[1]) > clock(times[0]):
+                time_s, close = times[0], times[1]
+            elif len(times) == 2:
+                # the later-looking clock is not later than the earlier one: it belongs
+                # to the event name (“…FINAL TABLE (POKERGO) AT 7:00 PM 10:00 AM”), so
+                # the start time is the last clock and no deadline is recorded.
+                time_s, close = times[1], None
+                body = (body + " " + times[0]).strip()
+                note.append(f"“{times[0]}” appears inside the event name, not in the TIME column; "
+                            f"start time taken as {times[1]}")
+            elif len(times) == 1:
+                time_s, close = times[0], None
+            else:
+                note.append("no TIME cell printed on this row; row kept without a start time")
+                time_s, close = None, None
+            name = re.sub(r"\s+", " ", body).strip(" -|")
             rows.append({
                 "parse_notes": note or None,
-                "registration_closes": best["close"],
+                "registration_closes": close,
                 "date": date_iso,
                 "weekday": (head.group("wd").title() if head and head.group("wd") else None),
-                "time": best["start"],
-                "event_no": int(st.group("no")),
-                "event_name": best["name"],
-                "buy_in_usd": int(st.group("buy").replace(",", "")),
-                "guarantee_usd": best["gtd"],
-                "guarantee_text": (f"{best['seats']} SEATS" if best["seats"] else None),
-                "starting_chips": best["chips"],
-                "level_duration": best["level"],
+                "time": time_s,
+                "event_no": event_no,
+                "event_name": name,
+                "buy_in_usd": buy,
+                "guarantee_usd": gtd,
+                "guarantee_text": gtd_text,
+                "starting_chips": chips,
+                "level_duration": level,
                 "source": source_url,
                 "retrieved": today_utc(),
             })
     return rows
-
-
 
 
 SCHEDULE_COMPARE_FIELDS = ("event_no", "time", "registration_closes", "buy_in_usd", "guarantee_usd",
@@ -533,7 +548,12 @@ def audit_structure(text: str, url: str) -> dict:
 
 FACT_PATTERNS = {
     "resort_fee": r"[^.\n]{0,90}resort\s*fee[^.\n]{0,240}",
-    "room_tax": r"[^.\n]{0,90}(?:13\.38|room\s+tax|state\s+room)[^.\n]{0,240}",
+    # "lodging tax" is the wording MGM's hotel terms use instead of "room tax"; it is the sentence
+    # that proves the resort fee itself is taxed, which the true-cost calculation depends on.
+    "room_tax": r"[^.\n]{0,90}(?:13\.38|room\s+tax|state\s+room|lodging\s+tax(?:es)?)[^.\n]{0,240}",
+    # added 2026-11-17 (arena/60ade3e8): per-occupant charges above double occupancy change the
+    # room cost once a third or fourth player joins the room, so the clause is captured verbatim.
+    "occupancy_charge": r"[^.\n]{0,90}(?:additional\s+(?:occupant\s+)?charge|per\s+occupant[^.\n]{0,60}per\s+night)[^.\n]{0,240}",
     "parking": r"[^.\n]{0,90}(?:self[- ]?parking|valet\s+parking|parking\s+(?:fee|rate|is))[^.\n]{0,240}",
     "cancellation": r"[^.\n]{0,90}(?:cancel\w*|no[- ]?show)[^.\n]{0,240}",
     "check_in_out": r"[^.\n]{0,90}(?:check[- ]in|check[- ]out)\s+(?:time|is|at|after|by)[^.\n]{0,240}",
@@ -544,11 +564,23 @@ FACT_PATTERNS = {
 def extract_facts(text: str) -> dict:
     """Verbatim sentences containing the wording we need — copied, never rewritten."""
     flat = re.sub(r"\s+", " ", text)
+    # Amounts like "$55.00" and abbreviations like "i.e." used to cut a sentence in half, because the
+    # clause patterns stop at a period. Those periods are masked so the quoted sentence stays whole;
+    # the mask is undone before the sentence is stored, so what reaches the page is the original wording.
+    flat = re.sub(r"(?<=\d)\.(?=\d)", "\u0000", flat)
+    for abbr in ("i.e", "e.g", "vs", "approx", "No", "St"):
+        flat = flat.replace(abbr + ".", abbr + "\u0001")
     out: dict[str, list[str]] = {}
     for key, pat in FACT_PATTERNS.items():
         hits: list[str] = []
         for m in re.finditer(pat, flat, re.I):
-            sent = re.sub(r"\s+", " ", m.group(0)).strip(" -|")
+            sent = (re.sub(r"\s+", " ", m.group(0)).strip(" -|")
+                    .replace("\u0000", ".").replace("\u0001", "."))
+            if len(sent) >= 240:  # the excerpt hit the cap: do not end mid-word
+                sent = sent[:239].rsplit(" ", 1)[0].rstrip(",;:") + "…"
+            # a hit that opens with a piece of a URL is the tail of a link, not a sentence
+            if re.match(r"^(?:https?://|www\.|[^ ]*\)\.html\)|html\)|\.html\b)", sent, re.I):
+                continue
             if len(sent) > 24 and sent not in hits:
                 hits.append(sent)
             if len(hits) >= 6:
@@ -631,6 +663,11 @@ def from_raw(cfg: dict) -> int:
         if entry.get("kind") == "pdf" and re.search(r"structure", url, re.I):
             key = entry.get("key") or url.rsplit("/", 1)[-1]
             audit = audit_structure(text, url)
+            # keep the hash of the bytes this text was extracted from, so an
+            # offline re-derivation stays traceable to the fetch it came from
+            fetched_sha = (prev.get(url) or {}).get("sha256")
+            if fetched_sha:
+                audit["pdf_sha256"] = fetched_sha
             audit["rederived_from"] = dest
             sheets[key] = audit
             rederived.append(key)

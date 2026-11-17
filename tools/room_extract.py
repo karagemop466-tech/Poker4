@@ -51,6 +51,13 @@ BELLAGIO_SAT = "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt
 BELLAGIO_SUN = "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt07fcf1244a6da661/6af491a339e2b4f6b76a86ad/mgm-bellagio-poker-sundays-$400-horse.pdf"
 BELLAGIO_PAGE = "https://bellagio.mgmresorts.com/en/casino/poker.html"
 CAESARS_PAGE = "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+# 2026-11-17 (arena/60ade3e8-poker4): the property's own daily schedule document.  The marketing
+# article above describes the slate in one sentence ("Every event carries a $100 buy-in"); this PDF
+# is the itemised schedule and prints a different buy-in for two of the four start times.  The 2025
+# file that used to be tracked now 404s — this is its live successor on the same official path.
+CAESARS_FLYER = ("https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/"
+                 "clv-poker-daily-nlh-tournament-flyer-2026.pdf")
+CAESARS_FLYER_RAW = RAW / "caesars-daily-flyer-2026.txt"
 
 MONTHS = {m: i for i, m in enumerate(
     "January February March April May June July August September October November December".split(), 1)}
@@ -322,10 +329,98 @@ def bellagio():
     return events
 
 
+def caesars_flyer() -> dict | None:
+    """Read Caesars Palace's own daily flyer (the itemised schedule document).
+
+    Everything here is a sentence copied out of the captured PDF text.  A field the flyer does
+    not print stays null.  Where the flyer and the marketing article disagree, both sentences are
+    kept — the disagreement is reported, never averaged or silently resolved.
+    """
+    if not CAESARS_FLYER_RAW.exists():
+        return None
+    raw = CAESARS_FLYER_RAW.read_text(encoding="utf-8")
+    body = raw.split("-->\n", 1)[-1] if raw.startswith("<!--") else raw
+    f = flat(body)
+    num = lambda s: int(re.sub(r"[^\d]", "", s) or 0)
+
+    def sentence(pattern: str) -> str | None:
+        m = re.search(pattern, f, re.I)
+        return m.group(0).strip() if m else None
+
+    out: dict = {
+        "url": CAESARS_FLYER,
+        "retrieved": RETRIEVED,
+        "capture": "data/raw/" + CAESARS_FLYER_RAW.name,
+        "capture_sha256": sha256(CAESARS_FLYER_RAW),
+        "title": sentence(r"Daily No-Limit Texas Hold'em Tournament Schedule"),
+        "addon_excerpt": sentence(r"All Tournaments feature a \$\d[\d,]* add-on for [\d,]+ tournament chips[^.]*\."),
+        "registration_excerpt": sentence(r"Registration will close at the start of level[^(.]*\.?"),
+        "break_excerpt": sentence(r"All tournaments will have a \d+-minute break every \w+ levels?\.?"),
+        "signup_excerpt": sentence(r"Sign-ups start one hour before the scheduled start of the event\."),
+        "re_entry_excerpt": sentence(r"Participants may only register themselves[^.]*\."),
+        "fielded_excerpt": sentence(r"Caesars Palace reserves the right to modify or cancel these tournaments[^.]*\."),
+        "min_players_excerpt": sentence(r"Must have at least \d+ players to start a tournament[^.]*\.?"),
+        "chop_excerpt": sentence(r"Prize pool may not be chopped[^.]*\."),
+    }
+
+    # fee split: "Of the $100 buy in, $70 goes to the prize pool and $30 is held by Caesars Palace
+    # as a maintenance fee."  Keyed by the buy-in it prices.
+    splits: dict[int, dict] = {}
+    for m in re.finditer(r"Of the \$([\d,]+) (buy in|add-on), \$([\d,]+) goes to the prize pool and \$([\d,]+) is held by [^.]*\.", f, re.I):
+        buy, what, pool, fee = m.group(1), m.group(2), num(m.group(3)), num(m.group(4))
+        splits[num(buy)] = {"kind": what.lower(), "pool_usd": pool, "house_fee_usd": fee,
+                            "excerpt": m.group(0).strip()}
+
+    rows = []
+    # The flyer's schedule block is a table in the PDF. Depending on how the text was extracted the
+    # cells come out pipe-separated ("| 10 AM | $100 | …") or whitespace-separated
+    # ("10 AM $100 $50 20,000 20 Minutes $1,000"), which is what the scheduled sync's own capture
+    # produces. Both shapes are read, and only this order of printed columns:
+    # TIME · BUY-IN · ADD-ON · CHIPS · LEVEL MINUTES · GUARANTEE.
+    sep = r"(?:\s*\|\s*|\s+)"
+    row_re = (r"(\d{1,2}\s*(?:AM|PM))" + sep + r"\$([\d,]+)" + sep + r"\$([\d,]+)" + sep +
+              r"([\d,]{3,8})" + sep + r"(\d+)\s*Minutes?" + sep + r"\$([\d,]+)")
+    for m in re.finditer(row_re, f, re.I):
+        t, buy, addon, chips, level, gtd = m.groups()
+        buy_n = num(buy)
+        sp = splits.get(buy_n) or {}
+        rows.append({
+            "time_printed": re.sub(r"\s+", " ", t).upper().replace(" ", " "),
+            "buy_in_usd": buy_n,
+            "addon_usd": num(addon),
+            "starting_chips": num(chips),
+            "level_minutes": int(level),
+            "guarantee_usd": num(gtd),
+            "house_fee_usd": sp.get("house_fee_usd"),
+            "pool_per_entry_usd": sp.get("pool_usd"),
+            "fee_excerpt": sp.get("excerpt"),
+            "row_excerpt": re.sub(r"\s+", " ", m.group(0)).strip(" |"),
+        })
+    out["rows"] = rows
+    out["fee_splits"] = {str(k): v for k, v in splits.items()}
+    out["rules"] = {
+        "single_entry": {"status": "confirmed_not_single_entry" if out["re_entry_excerpt"] else "unverified",
+                         "value": ("one entry per player per field, plus one re-entry within the first break"
+                                    if out["re_entry_excerpt"] else None),
+                         "excerpt": out["re_entry_excerpt"]},
+        "re_entry": ({"status": "confirmed_allowed", "value": "re-entry for the entry fee, only upon elimination within the first break",
+                      "excerpt": out["re_entry_excerpt"]} if out["re_entry_excerpt"]
+                     else {"status": "not_stated_in_sheet", "value": None, "excerpt": None}),
+        "add_on": ({"status": "confirmed_allowed", "value": f"${rows[0]['addon_usd']} add-on for 15,000 chips, first break only",
+                    "excerpt": out["addon_excerpt"]} if out["addon_excerpt"] and rows
+                   else {"status": "not_stated_in_sheet", "value": None, "excerpt": None}),
+        "fielded": {"status": "confirmed", "value": "the room may modify or cancel the slate at its discretion",
+                    "excerpt": out["fielded_excerpt"]},
+        "min_field": {"status": "confirmed", "value": out["min_players_excerpt"], "excerpt": out["min_players_excerpt"]},
+    }
+    return out
+
+
 def main():
     wpt = wynn_wpt()
     daily = wynn_daily()
     bell = bellagio()
+    flyer = caesars_flyer()
 
     problems = []          # an extraction failure: the build must stop
     irregularities = []    # the official document itself is inconsistent: flag, do not "fix"
@@ -351,6 +446,25 @@ def main():
     for e in bell:
         if not e["fee_components"]:
             problems.append(f"{e['id']} has no printed fee split")
+    caesars_conflict: list[str] = []
+    if flyer is not None:
+        if len(flyer["rows"]) < 4:
+            problems.append(f"Caesars flyer rows parsed: {len(flyer['rows'])} (<4) — capture truncated?")
+        for r in flyer["rows"]:
+            if r["buy_in_usd"] and not r["fee_excerpt"]:
+                problems.append(f"Caesars {r['time_printed']} buy-in ${r['buy_in_usd']} has no printed fee split in the flyer")
+        # two official Caesars pages, two different price lists.  Published as a conflict.
+        priced = {r["time_printed"]: r["buy_in_usd"] for r in flyer["rows"]}
+        if priced and set(priced.values()) - {100}:
+            caesars_conflict.append(
+                "the property's 2026 daily flyer prints "
+                + ", ".join(f"{t} ${v}" for t, v in priced.items())
+                + ", while the Caesars poker article describes all four daily events at a blanket $100 buy-in "
+                  "(\"Every event carries a $100 buy-in\"). Both are official; the flyer is the itemised schedule, "
+                  "so its per-time price is shown on the row and the disagreement is flagged here rather than resolved.")
+    else:
+        irregularities.append("Caesars flyer capture data/raw/caesars-daily-flyer-2026.txt is not present — "
+                              "the four daily rows fall back to the marketing article's blanket $100 sentence and stay unranked")
 
     payload = {
         "meta": {
@@ -371,6 +485,7 @@ def main():
                 {"url": BELLAGIO_SUN, "label": "Bellagio — Sunday $400 H.O.R.S.E. structure sheet", "venue": "Bellagio"},
                 {"url": BELLAGIO_PAGE, "label": "Bellagio poker room page (links the three sheets)", "venue": "Bellagio"},
                 {"url": CAESARS_PAGE, "label": "Caesars Palace + Horseshoe daily tournament description", "venue": "Caesars Palace"},
+                {"url": CAESARS_FLYER, "label": "Caesars Palace — daily NLH tournament flyer 2026 (itemised schedule, fee split, re-entry clause)", "venue": "Caesars Palace"},
             ],
             "problems": problems,
             "source_irregularities": irregularities,
@@ -404,6 +519,8 @@ def main():
                         "excerpt": "the page prints the $100 buy-in but not the house-fee split"},
                 "spend_advantage": True,
             },
+            "flyer": flyer,
+            "page_vs_flyer_conflict": caesars_conflict,
         },
     }
     OUT.write_text(json.dumps(payload, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")

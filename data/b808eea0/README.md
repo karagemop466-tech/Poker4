@@ -8,4 +8,6 @@
   confirmed single-entry), global search incl. no-match message, trip-cost
   calculator arithmetic (night = (rate+fee)×1.1338, hotel = night×nights+parking,
   trip = entries + hotel), "cannot compute" honesty when no dated rate, and the
-  ≤30-min walk filter's empty state. Written 2026-11-17; all checks green.
+  ≤30-min walk filter (shows only properties with a measured walk ≤ 30 min, per
+  the Google Maps measurements merged 2026-11-17). Written 2026-11-17; all checks
+  green on the merged tree.

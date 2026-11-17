@@ -1,14 +1,11 @@
 {
- "generated_at": "2026-11-17T22:17:00Z",
- "urls_checked": 64,
- "urls_failed": [
-  "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2025.pdf",
-  "https://bellagio.mgmresorts.com/en/hotel/resort-fee.html"
- ],
+ "generated_at": "2026-11-17T22:59:53Z",
+ "urls_checked": 66,
+ "urls_failed": [],
  "changed_this_run": [],
- "sheets_audited": 42,
+ "sheets_audited": 43,
  "schedule_rows": 94,
  "schedule_rows_with_date": 94,
  "date_head_sample": " Room @VenetianPoker IN GUARANTEED PRIZE POOLS $3.6 MILLION NOVEMBER 16- DECEMBER 23, 2026 MORE THAN DATE EVENT # EVENT TIME REG CLOSES GUARANTEE CHIPS LEVEL CHA",
- "hotel_fact_sources": 16
+ "hotel_fact_sources": 19
 }

@@ -4,7 +4,8 @@
   "generated": "2026-11-17",
   "owner": "arena/e74e00fd-poker4",
   "rule": "Only official operator/property domains are tracked. A tracked URL that 404s is reported as unreachable — it is never replaced by a third-party mirror.",
-  "touch": "retrigger-sync"
+  "touch": "retrigger-sync · 60ade3e8: registry merged (union of both sessions' repoints, 2 additional official pages) on 2026-11-17",
+  "sources": 68
  },
  "sources": [
   {
@@ -142,11 +143,13 @@
    "extract_facts": true
   },
   {
-   "url": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2025.pdf",
-   "label": "Caesars Palace — daily NLH tournament flyer (PDF)",
+   "url": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+   "label": "Caesars Palace — daily NLH tournament flyer (PDF, 2026)",
    "kind": "pdf",
    "venue": "Caesars Palace",
-   "key": "C_FLYER"
+   "key": "C_FLYER",
+   "note": "2025 flyer 404s (retired by the venue); replaced with the 2026 flyer on 2026-11-17 by session arena/3082d6d9-poker4 after a live fetch confirmed it loads and prints the per-slot buy-ins, fee splits and re-entry rule.",
+   "save_text_to": "data/raw/caesars-daily-flyer-2026.txt"
   },
   {
    "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
@@ -480,11 +483,16 @@
    "extract_facts": true
   },
   {
-   "url": "https://bellagio.mgmresorts.com/en/hotel/resort-fee.html",
-   "label": "Bellagio resort-fee page (status tracked)",
+   "url": "https://bellagio.mgmresorts.com/en/terms-and-conditions.html",
+   "label": "Bellagio hotel reservation terms — daily resort fee (status tracked)",
    "kind": "page",
    "venue": "Bellagio",
-   "key": "B_FEE"
+   "key": "B_FEE",
+   "keep_text_excerpt": true,
+   "excerpt_chars": 2600,
+   "save_text_to": "data/raw/bellagio-terms.txt",
+   "extract_facts": true,
+   "note": "The former /en/hotel/resort-fee.html page is retired (404); replaced on 2026-11-17 by session arena/3082d6d9-poker4 with the property's Hotel Reservation Terms page, which states the fee: 'A daily resort fee of $55.00 plus applicable tax will be applied to all reservations.'"
   },
   {
    "url": "https://www.caesars.com/harrahs-las-vegas",
@@ -524,6 +532,24 @@
    "url": "https://www.wynnlasvegas.com/terms-and-conditions/DK26WLV2",
    "kind": "page",
    "venue": "wynn",
+   "extract_facts": true
+  },
+  {
+   "url": "https://aria.mgmresorts.com/en/terms-and-conditions.html",
+   "label": "ARIA — hotel reservation terms (daily resort fee, check-in/out, occupant charge, cancellation)",
+   "kind": "page",
+   "venue": "ARIA",
+   "key": "A_TERMS",
+   "extract_facts": true,
+   "save_text_to": "data/raw/aria-terms.txt"
+  },
+  {
+   "url": "https://www.mgmresorts.com/en/things-to-do/parking.html",
+   "label": "MGM Resorts — published parking rate table (Bellagio, ARIA and the other MGM Strip properties)",
+   "kind": "page",
+   "venue": "MGM Resorts (corporate, no room of its own)",
+   "key": "MGM_PARKING",
+   "save_text_to": "data/raw/mgm-parking.txt",
    "extract_facts": true
   }
  ]

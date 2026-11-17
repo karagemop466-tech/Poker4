@@ -8,7 +8,7 @@ on:
   schedule:
     - cron: '0 14 * * *' # 14:00 UTC = 06:00 America/Los_Angeles (PST; 07:00 PDT)
   push:
-    branches: [main, 'arena/e74e00fd-poker4']
+    branches: [main, 'arena/a3838778-poker4']
     paths:
       - data/tracked-sources.json
       - data/poker4.json
@@ -55,10 +55,14 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # rebase first: the v2 monitor and the other session jobs push to main too, and a
+          # plain push loses that race silently, which is what left "no changes to record"
+          # runs behind while the site kept serving stale last-checked dates.
+          git pull --rebase --autostash origin ${GITHUB_REF_NAME}
           git add -A
           if git diff --cached --quiet; then
             echo "No source changes to record."
           else
             git commit -m "chore(sources): scheduled official-source sync $(date -u +%FT%TZ)"
-            git push || echo "push failed — snapshot left in the run artefacts"
+            git push origin HEAD:${GITHUB_REF_NAME} || { git pull --rebase --autostash origin ${GITHUB_REF_NAME} && git push origin HEAD:${GITHUB_REF_NAME}; }
           fi
