@@ -112,7 +112,7 @@
    "id": "F-GTD",
    "severity": "moderate",
    "title": "Four upcoming events publish no guarantee",
-   "detail": "Events #3, #4, #5 (RaceDay Stack) and #6 have no guarantee line on their structure sheets and none in the calendar row, so guarantee/entry ratio is blank for them and they cannot be ranked on value. They are not assumed to be unguaranteed.",
+   "detail": "Events #3, #4, #5 (RaceDay Stack) and #6 have no guarantee line on their structure sheets and none in the calendar row, so guarantee/entry ratio is blank for them and they cannot be ranked on value. They are not assumed to be unguaranteed. Sheets #15 ($15,000 for events 29/31/34/38/42/50/51/53/55) and #16 ($75,000 for event #36) each state the guarantee as \"(prize pool + total bounties)\", so their guarantee is not comparable with a plain guarantee: those events stay in the separate bounty section and their GTD÷entry ratio is labelled bounty-inclusive. Sheets #18 and #29 print no guarantee line at all.",
    "how_to_close": "Ask the room whether a guarantee exists for those events.",
    "sources": [
     {

@@ -279,7 +279,7 @@ plan, and a scheduled re-check that marks a row the moment its source moves.</p>
          "no structure sheet read in this pass states one entry per player, and silence is not confirmation. "
          "Every row below carries its own sheet so the wording (or its absence) is one click away.", "danger")}
 {callout("<b>What is verified:</b> 93 of 94 calendar rows were re-read cell-by-cell against the live official page "
-         "(`tools/check_rows.py` → 0 mismatches); 15 of 37 structure sheets were read end-to-end; the $55 + tax nightly "
+         "(`tools/check_rows.py` → 0 mismatches); " + str(len(rules)) + " of 37 structure sheets were read end-to-end; the $55 + tax nightly "
          "resort fee was re-read today. <b>What is not:</b> entry rules, dated room rates, cancellation deadlines, "
          "walking minutes, and every non-Venetian room's schedule.")}
 <section class="section"><h2>Best descriptive ratio among low-cost candidates</h2>
@@ -608,7 +608,7 @@ could not be read, the row is blank and flagged.</p>""" + table(
 Flagged for your decision rather than silently "tidied", because several fixes touch other sessions' files.</p>""" + table(
         ["Irregularity","Detail and status"],
         [f"<tr><td><b>{esc(t)}</b></td><td>{esc(d)}</td></tr>" for t, d in irregular], cls="data prose") + callout(
-        "Verified this session: 93 of 94 official calendar rows re-read cell-by-cell (0 mismatches); 15 of 37 structure sheets read "
+        "Verified this session: 93 of 94 official calendar rows re-read cell-by-cell (0 mismatches); " + str(len(rules)) + " of 37 structure sheets read "
         "end-to-end; the $55 + tax resort fee re-read today. Not verified by this session: room tax, parking, cancellation, every "
         "non-Venetian room, all dated room rates, all walking minutes.")
     sizes["repo-review.html"] = page("repo-review.html", "Repository review", body, active="repo-review.html",
