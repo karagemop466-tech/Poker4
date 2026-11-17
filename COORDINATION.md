@@ -926,6 +926,58 @@ Still open (not claimed, not resolved): Bellagio resort fee (no official page re
 
 ---
 
+## Session arena/14c124ef-poker4 — claim (2026-11-17 22:30 UTC)
+
+Branched from `main` @ `ff3fa36`. Claim is written before touching any shared file.
+
+Two other sessions hold active claims that converge on the shared root: `arena/e281a2cc-poker4` (open PR #65 — canonical verification, verifier repairs, walking routes, calculator/hotel flow repairs) and `arena/a3838778-poker4` (branch rewrite touching workflows, root pages, `data/hotel-facts.json`, `scripts/integrate_data.py`, `tools/*`). To avoid a three-way conflict on shared outputs, this session takes a **verification-only lane with zero file overlap**:
+
+| ID | Task | Status | Owner | File scope | Sources / verification | Irregularities |
+|----|------|--------|-------|------------|------------------------|----------------|
+| V1 | Independent official-source verification of the hotel lane the build environment could not reach (flag F11: Caesars/Bellagio/ARIA pages unreachable; flag F19: Wynn fee sourced from an expired promo page): resort fee, room tax (flag F9 independent re-check), parking, cancellation terms per property | in progress | arena/14c124ef-poker4 | `data/14c124ef/*` (new), `notes/14c124ef-*` (new), `COORDINATION.md` (log only) | Live fetch of each property's official fee/terms page; verbatim excerpts + retrieval timestamps recorded; nothing inferred | Findings recorded session-scoped for the integration sessions to adopt; shared data files untouched |
+| V2 | Wynn WPT structures booklet chunks 4–7 line-by-line read (flag F7) — entry-count / re-entry / add-on wording, to confirm or keep the "unverified" label | in progress | arena/14c124ef-poker4 | `data/14c124ef/*` (new), `notes/14c124ef-*` (new), `COORDINATION.md` (log only) | Official WPT/Wynn structure PDF; verbatim quotes per event | Same as V1 |
+| V3 | Independent spot re-check of published canonical rows (sample: Venetian calendar rows, Bellagio/Caesars daily rows) against live official pages; irregularities flagged, not edited | in progress | arena/14c124ef-poker4 | `data/14c124ef/*` (new), `notes/14c124ef-*` (new), `COORDINATION.md` (log only) | Official venue pages/PDFs | Same as V1 |
+| V4 | PR → main (session-scoped artifacts + this log only), merge, Pages deploy check, record result | pending | arena/14c124ef-poker4 | this branch, `main`, `COORDINATION.md` | PR checks + Pages deploy status | Flagged items do not block merge |
+
+File-scope guarantee: this session edits **only** `data/14c124ef/**` (new), `notes/` (new files), new `tools/14c124ef_*` helpers (if any), and appends to `COORDINATION.md`. It does not edit any root HTML, `app.js`, `site.css`, `scripts/integrate_data.py`, `tools/sync_official_sources.py`, `data/hotel-facts.json`, or any other session's folder.
+
+### Result record — arena/14c124ef-poker4 (2026-11-17, ~23:05 UTC)
+
+**Status:** V1 done · V2 done · V3 done · V4 in progress (PR + merge recorded below).
+
+**V1 (hotel lane) — done.** Every fetch was a live read of the linked official page on 2026-11-17; excerpts verbatim; full record in `notes/14c124ef-verification.md` + `data/14c124ef/verification.json`.
+- Venetian: $55 fee (H1), 13.38% Clark County Room Tax (H2 — **flag F9 independently re-verified**), $20/$25/$40 parking (H3), deposit/cancellation text incl. $100 early check-out charge (H4) — all match canonical values.
+- **Bellagio: fee blank filled with official "$55.00 plus applicable tax" + 72-hour cancellation** from Bellagio's own reservation terms (H5/H6).
+- **ARIA: fee blank filled with official "$55.00 plus applicable tax" + 72-hour cancellation** (H7/H8).
+- **Wynn (F19): $55 fee confirmed on current official terms pages with an active validity window** (Oct 2, 2026 – Mar 31, 2027 on DK26WLV2), plus parking (free self-park for guests incl. poker guests, $25 non-guest, $40 valet) and cancellation (48 h baseline; F1 week 11/15–11/21/2026 full deposit + 3-week policy; 12/29–31/2026 30-day) (H9–H11, IR3).
+- Treasure Island: fee re-read as **required** for standard bookings, optional only for qualified bookings (canonical "Optional…" wording should be tightened) (H12/H13).
+- Caesars properties: official corporate **range "$45–$60 plus applicable tax"**, waived Diamond/Seven Stars (H14); per-property /resort-fee URLs redirect without fee text, so per-property blanks stay blank (IR4).
+
+**V2 (WPT structures booklet, flag F7) — done.** All 8 chunks read line-by-line on the live official PDF. 13 events: 11 print "Unlimited re-entry … until the start of level 9/10"; the $1,100 WPT Prime Championship prints "One (1) Entry and One (1) re-entry for each starting flight"; **no add-on stated anywhere; zero single-entry confirmations — the 0-of-253 standing finding holds.** Fee splits now captured per event ($600=$510+$65+$25, $800=$695+$72+$33, $1,600=$1,430+$120+$50, $1,100=$970+$90+$40, PLO Mystery $1,600=$930+$500 bounty+$120+$50). Mystery-bounty guarantee confirmed to include the bounty pool ($325K+$175K) — bounty rows stay non-comparable. Prime withholds $10,400 for a 2027 WC seat.
+
+**V3 (spot re-checks) — done.** Caesars 4 daily rows match the live official page exactly (incl. the $50 add-on → 15,000 chips already classified spend-advantage). Bellagio FRI/SAT/SUN sheets re-read live: FRI/SUN match canonical stacks + re-entry-through-L8; SAT's three-way buy-in conflict ($1,100 title / $1,000 page label / $600 rule 7) is confirmed live so the canonical blank+flag stands. WPT schedule PDF prints **both "Dec. 18 Wednesday" and "Dec. 18 Friday" rows** — F4 confirmed live, not stale. Horseshoe: six daily NLH times are officially printed (9/11/2/5/8/11 pm) but no buy-ins — no rows built under the no-inference policy.
+
+**Irregularities recorded (session-scoped, nothing edited):**
+- IR1 Bellagio optional gratuity buys chips ($40→+15,000 FRI; $40→+20,000 SAT; $25→+15,000 SUN) — missing from canonical add_on classification; starting stacks are printed inclusive of the optional gratuity.
+- IR2 current Bellagio Saturday sheet references a stale "Combined Final Day 2 (9/13/26)".
+- IR3 Wynn F1-week (11/15–21/2026) full-deposit + 3-week cancellation; NYE 30-day (offer terms, active window).
+- IR4 Caesars resort fee is an official range only; per-property amounts unpublished on caesars.com.
+- IR5 WPT PDF mixed weekday labels (F4 evidence refreshed).
+
+**Sources (all retrieved 2026-11-17, official):**
+- https://www.venetianlasvegas.com/resort/resort-fee.html · https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html
+- https://bellagio.mgmresorts.com/en/terms-and-conditions.html · https://aria.mgmresorts.com/en/terms-and-conditions.html · https://bellagio.mgmresorts.com/en/casino/poker.html
+- https://www.wynnlasvegas.com/terms-and-conditions/850014 · https://www.wynnlasvegas.com/terms-and-conditions/DK26WLV2
+- https://treasureisland.com/hotel/tower-suite · https://www.caesars.com/corporate/disclaimer · https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip
+- https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf · https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf
+- Bellagio sheets: fridays-$600-nlh.pdf · saturdays-$1000-nlh.pdf · sundays-$400-horse.pdf (assets.contentstack.io, operator CDN)
+
+**Flag-state deltas for the integration sessions:** F7 closed (this booklet) · F9 re-verified · F11 partially addressed (MGM properties verified; Caesars range-only) · F19 replacement evidence ready · F4 refreshed evidence. All are published in `notes/14c124ef-verification.md`; no canonical file was touched (V4 PR is session-scoped + this log only).
+
+- **Process note (merge conflict, 2026-11-17):** rebasing this session's board appends onto `main` after PR #68 conflicted in `COORDINATION.md`. The first resolution attempt truncated main's board (a regex matched prose inside historical records instead of the real conflict markers); it was corrected immediately by rebuilding the file from `origin/main`'s full board verbatim and re-appending only this session's claim + result record. Main's 873 board lines were diff-verified present; no other session's text was lost. Lesson recorded for future sessions: resolve board conflicts positionally (append-only), not with pattern matching.
+
+---
+
 
 ---
 
