@@ -499,11 +499,60 @@ def extract_facts(text: str) -> dict:
 
 
 # --------------------------------------------------------------------------- main
+def from_raw(cfg: dict) -> int:
+    """Offline re-derivation: rebuild the audit + schedule snapshots from the text
+    already captured under data/raw (same code paths, no network). Lets the site be
+    rebuilt reproducibly without re-fetching, and lets a parser fix be verified
+    against the exact bytes that were fetched."""
+    prev = read_json(os.path.join(DATA, "url-checks.json"), {})
+    prev_audit = read_json(os.path.join(DATA, "structure-audit.json"), {"sheets": {}})
+    sheets: dict[str, dict] = dict(prev_audit.get("sheets") or {})  # keep sheets we cannot re-derive offline
+    rederived: list[str] = []
+    snapshot_rows: list[dict] = []
+    for entry in cfg["sources"]:
+        dest = entry.get("save_text_to")
+        if not dest:
+            continue
+        path = os.path.join(ROOT, dest)
+        if not os.path.exists(path):
+            continue
+        raw = open(path, encoding="utf-8").read()
+        text = raw.split("-->\n", 1)[-1] if raw.startswith("<!--") else raw
+        url = entry["url"]
+        checked = (prev.get(url) or {}).get("checked_at") or now_utc()
+        if entry.get("parse") == "venetian-schedule-pdf":
+            snapshot_rows.extend(parse_schedule_pdf(text, url, entry.get("default_year")))
+        if entry.get("kind") == "pdf" and re.search(r"structure", url, re.I):
+            key = entry.get("key") or url.rsplit("/", 1)[-1]
+            audit = audit_structure(text, url)
+            audit["rederived_from"] = dest
+            sheets[key] = audit
+            rederived.append(key)
+    write_json(os.path.join(DATA, "structure-audit.json"), {
+        "meta": {"generated_at": now_utc(), "generator": "tools/sync_official_sources.py --from-raw",
+                 "rederived": len(rederived),
+                 "policy": prev_audit.get("meta", {}).get("policy", ""), "sheets": sheets},
+        "sheets": sheets,
+        "schedule_rows": {"V_SCHED_PDF": snapshot_rows},
+        "audit_schedule_rows": {k: len(v) for k, v in ((prev_audit.get("schedule_rows") or {}).items())},
+    })
+    write_json(os.path.join(DATA, "schedule-snapshot.json"), {
+        "meta": {"generated_at": now_utc(), "rows": len(snapshot_rows),
+                 "note": "Rows read from the official schedule text captured in data/raw; blank fields were not printed."},
+        "rows": snapshot_rows,
+    })
+    print(f"[from-raw] sheets={len(sheets)} schedule_rows={len(snapshot_rows)} "
+          f"dated={sum(1 for r in snapshot_rows if r.get('date'))}")
+    return 0
+
+
 def main() -> int:
     cfg = read_json(TRACKED, None)
     if not cfg:
         print(f"missing {TRACKED}", file=sys.stderr)
         return 2
+    if "--from-raw" in sys.argv:
+        return from_raw(cfg)
     os.makedirs(DATA, exist_ok=True)
     workdir = os.path.join(DATA, ".sync-tmp")
     os.makedirs(workdir, exist_ok=True)
@@ -578,8 +627,19 @@ def main() -> int:
                     snapshot_rows.extend(rows)
                     rec["schedule_rows_parsed"] = len(rows)
             if entry.get("parse") == "venetian-schedule-pdf" and text:
-                rows = parse_schedule_pdf(text, url)
-                snapshot_rows.extend(rows)
+                rows = parse_schedule_pdf(text, url, entry.get("default_year"))
+                key = entry.get("key") or url.rsplit("/", 1)[-1]
+                diff = diff_schedule((prev_audit.get("schedule_rows") or {}).get(key), rows)
+                if diff:
+                    rec["values_changed"] = True
+                    rec["schedule_diff"] = diff
+                    changed_urls.append(url)
+                    change_log["entries"].insert(0, {
+                        "at": rec["checked_at"], "url": url, "scope": "schedule",
+                        "key": key, "diff": diff,
+                    })
+                rows_by_time = sorted(rows, key=lambda r: (r.get("date") or "9999", r["time"]))
+                snapshot_rows.extend(rows_by_time)
                 rec["schedule_rows_parsed"] = len(rows)
             if entry.get("save_text_to") and text:
                 dest = os.path.join(ROOT, entry["save_text_to"])

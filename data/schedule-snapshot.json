@@ -1,14 +1,14 @@
 {
  "meta": {
-  "generated_at": "2026-11-17T01:27:15Z",
+  "generated_at": "2026-11-17T01:31:49Z",
   "rows": 93,
-  "note": "Rows read from the official schedule page at run time; blank fields were not printed on the page."
+  "note": "Rows read from the official schedule text captured in data/raw; blank fields were not printed."
  },
  "rows": [
   {
    "parse_notes": null,
    "registration_closes": "3:40 PM",
-   "date": null,
+   "date": "2026-11-16",
    "weekday": "Monday",
    "time": "11:10 AM",
    "event_no": 1,
@@ -23,7 +23,7 @@
   {
    "parse_notes": null,
    "registration_closes": "8:40 PM",
-   "date": null,
+   "date": "2026-11-16",
    "weekday": "Monday",
    "time": "5:10 PM",
    "event_no": 1,
@@ -38,7 +38,7 @@
   {
    "parse_notes": null,
    "registration_closes": "3:40 PM",
-   "date": null,
+   "date": "2026-11-17",
    "weekday": "Tuesday",
    "time": "11:10 AM",
    "event_no": 1,
@@ -53,7 +53,7 @@
   {
    "parse_notes": null,
    "registration_closes": "8:40 PM",
-   "date": null,
+   "date": "2026-11-17",
    "weekday": "Tuesday",
    "time": "5:10 PM",
    "event_no": 1,
@@ -68,7 +68,7 @@
   {
    "parse_notes": null,
    "registration_closes": "4:55 PM",
-   "date": null,
+   "date": "2026-11-18",
    "weekday": "Wednesday",
    "time": "11:10 AM",
    "event_no": 2,
@@ -83,7 +83,7 @@
   {
    "parse_notes": null,
    "registration_closes": null,
-   "date": null,
+   "date": "2026-11-18",
    "weekday": "Wednesday",
    "time": "12:00 PM",
    "event_no": 1,
@@ -98,7 +98,7 @@
   {
    "parse_notes": null,
    "registration_closes": "12:25 PM",
-   "date": null,
+   "date": "2026-11-19",
    "weekday": "Thursday",
    "time": "10:10 AM",
    "event_no": 3,
@@ -113,7 +113,7 @@
   {
    "parse_notes": null,
    "registration_closes": "12:25 PM",
-   "date": null,
+   "date": "2026-11-20",
    "weekday": "Friday",
    "time": "10:10 AM",
    "event_no": 4,
@@ -128,7 +128,7 @@
   {
    "parse_notes": null,
    "registration_closes": "12:25 PM",
-   "date": null,
+   "date": "2026-11-21",
    "weekday": "Saturday",
    "time": "10:10 AM",
    "event_no": 5,
@@ -143,7 +143,7 @@
   {
    "parse_notes": null,
    "registration_closes": "3:40 PM",
-   "date": null,
+   "date": "2026-11-22",
    "weekday": "Sunday",
    "time": "11:10 AM",
    "event_no": 6,
@@ -158,7 +158,7 @@
   {
    "parse_notes": null,
    "registration_closes": "5:55 PM",
-   "date": null,
+   "date": "2026-11-23",
    "weekday": "Monday",
    "time": "11:10 AM",
    "event_no": 7,
@@ -173,7 +173,7 @@
   {
    "parse_notes": null,
    "registration_closes": "9:40 PM",
-   "date": null,
+   "date": "2026-11-23",
    "weekday": "Monday",
    "time": "5:10 PM",
    "event_no": 8,
@@ -188,7 +188,7 @@
   {
    "parse_notes": null,
    "registration_closes": "5:55 PM",
-   "date": null,
+   "date": "2026-11-24",
    "weekday": "Tuesday",
    "time": "11:10 AM",
    "event_no": 7,
@@ -203,7 +203,7 @@
   {
    "parse_notes": null,
    "registration_closes": "9:40 PM",
-   "date": null,
+   "date": "2026-11-24",
    "weekday": "Tuesday",
    "time": "5:10 PM",
    "event_no": 9,
@@ -218,7 +218,7 @@
   {
    "parse_notes": null,
    "registration_closes": null,
-   "date": null,
+   "date": "2026-11-25",
    "weekday": "Wednesday",
    "time": "11:00 AM",
    "event_no": 7,
@@ -233,7 +233,7 @@
   {
    "parse_notes": null,
    "registration_closes": "4:55 PM",
-   "date": null,
+   "date": "2026-11-25",
    "weekday": "Wednesday",
    "time": "11:10 AM",
    "event_no": 10,
@@ -248,7 +248,7 @@
   {
    "parse_notes": null,
    "registration_closes": "9:40 PM",
-   "date": null,
+   "date": "2026-11-25",
    "weekday": "Wednesday",
    "time": "5:10 PM",
    "event_no": 11,
@@ -263,7 +263,7 @@
   {
    "parse_notes": null,
    "registration_closes": "4:55 PM",
-   "date": null,
+   "date": "2026-11-26",
    "weekday": "Thursday",
    "time": "11:10 AM",
    "event_no": 12,
@@ -278,7 +278,7 @@
   {
    "parse_notes": null,
    "registration_closes": "9:40 PM",
-   "date": null,
+   "date": "2026-11-26",
    "weekday": "Thursday",
    "time": "5:10 PM",
    "event_no": 13,
@@ -293,7 +293,7 @@
   {
    "parse_notes": null,
    "registration_closes": "4:55 PM",
-   "date": null,
+   "date": "2026-11-27",
    "weekday": "Friday",
    "time": "11:10 AM",
    "event_no": 14,
@@ -308,7 +308,7 @@
   {
    "parse_notes": null,
    "registration_closes": "9:40 PM",
-   "date": null,
+   "date": "2026-11-27",
    "weekday": "Friday",
    "time": "5:10 PM",
    "event_no": 15,
@@ -323,7 +323,7 @@
   {
    "parse_notes": null,
    "registration_closes": "4:55 PM",
-   "date": null,
+   "date": "2026-11-28",
    "weekday": "Saturday",
    "time": "11:10 AM",
    "event_no": 16,
@@ -338,7 +338,7 @@
   {
    "parse_notes": null,
    "registration_closes": "4:40 PM",
-   "date": null,
+   "date": "2026-11-28",
    "weekday": "Saturday",
    "time": "12:10 PM",
    "event_no": 17,
@@ -353,7 +353,7 @@
   {
    "parse_notes": null,
    "registration_closes": "9:40 PM",
-   "date": null,
+   "date": "2026-11-28",
    "weekday": "Saturday",
    "time": "5:10 PM",
    "event_no": 18,
@@ -368,7 +368,7 @@
   {
    "parse_notes": null,
    "registration_closes": "5:55 PM",
-   "date": null,
+   "date": "2026-11-29",
    "weekday": "Sunday",
    "time": "11:10 AM",
    "event_no": 19,
@@ -383,7 +383,7 @@
   {
    "parse_notes": null,
    "registration_closes": "4:40 PM",
-   "date": null,
+   "date": "2026-11-29",
    "weekday": "Sunday",
    "time": "12:10 PM",
    "event_no": 20,
@@ -398,7 +398,7 @@
   {
    "parse_notes": null,
    "registration_closes": "9:40 PM",
-   "date": null,
+   "date": "2026-11-29",
    "weekday": "Sunday",
    "time": "5:10 PM",
    "event_no": 21,
@@ -413,7 +413,7 @@
   {
    "parse_notes": null,
    "registration_closes": "5:55 PM",
-   "date": null,
+   "date": "2026-11-30",
    "weekday": "Monday",
    "time": "11:10 AM",
    "event_no": 19,
@@ -428,7 +428,7 @@
   {
    "parse_notes": null,
    "registration_closes": "9:40 PM",
-   "date": null,
+   "date": "2026-11-30",
    "weekday": "Monday",
    "time": "5:10 PM",
    "event_no": 22,
@@ -443,7 +443,7 @@
   {
    "parse_notes": null,
    "registration_closes": "5:55 PM",
-   "date": null,
+   "date": "2026-12-01",
    "weekday": "Tuesday",
    "time": "11:10 AM",
    "event_no": 19,
@@ -458,7 +458,7 @@
   {
    "parse_notes": null,
    "registration_closes": "9:40 PM",
-   "date": null,
+   "date": "2026-12-01",
    "weekday": "Tuesday",
    "time": "5:10 PM",
    "event_no": 23,
@@ -473,7 +473,7 @@
   {
    "parse_notes": null,
    "registration_closes": "3:55 PM",
-   "date": null,
+   "date": "2026-12-02",
    "weekday": "Wednesday",
    "time": "10:10 AM",
    "event_no": 24,
@@ -488,7 +488,7 @@
   {
    "parse_notes": null,
    "registration_closes": null,
-   "date": null,
+   "date": "2026-12-02",
    "weekday": "Wednesday",
    "time": "11:00 AM",
    "event_no": 19,
@@ -503,7 +503,7 @@
   {
    "parse_notes": null,
    "registration_closes": "9:40 PM",
-   "date": null,
+   "date": "2026-12-02",
    "weekday": "Wednesday",
    "time": "5:10 PM",
    "event_no": 25,
@@ -518,7 +518,7 @@
   {
    "parse_notes": null,
    "registration_closes": "3:40 PM",
-   "date": null,
+   "date": "2026-12-03",
    "weekday": "Thursday",
    "time": "11:10 AM",
    "event_no": 26,
@@ -533,7 +533,7 @@
   {
    "parse_notes": null,
    "registration_closes": "4:40 PM",
-   "date": null,
+   "date": "2026-12-03",
    "weekday": "Thursday",
    "time": "12:10 PM",
    "event_no": 27,
@@ -548,7 +548,7 @@
   {
    "parse_notes": null,
    "registration_closes": "8:40 PM",
-   "date": null,
+   "date": "2026-12-03",
    "weekday": "Thursday",
    "time": "5:10 PM",
    "event_no": 26,
@@ -563,7 +563,7 @@
   {
    "parse_notes": null,
    "registration_closes": "3:40 PM",
-   "date": null,
+   "date": "2026-12-04",
    "weekday": "Friday",
    "time": "11:10 AM",
    "event_no": 26,
@@ -578,7 +578,7 @@
   {
    "parse_notes": null,
    "registration_closes": "8:40 PM",
-   "date": null,
+   "date": "2026-12-04",
    "weekday": "Friday",
    "time": "5:10 PM",
    "event_no": 26,
@@ -593,7 +593,7 @@
   {
    "parse_notes": null,
    "registration_closes": "3:40 PM",
-   "date": null,
+   "date": "2026-12-05",
    "weekday": "Saturday",
    "time": "11:10 AM",
    "event_no": 26,
@@ -608,7 +608,7 @@
   {
    "parse_notes": null,
    "registration_closes": "7:25 PM",
-   "date": null,
+   "date": "2026-12-05",
    "weekday": "Saturday",
    "time": "5:10 PM",
    "event_no": 26,
@@ -623,7 +623,7 @@
   {
    "parse_notes": null,
    "registration_closes": "4:55 PM",
-   "date": null,
+   "date": "2026-12-06",
    "weekday": "Sunday",
    "time": "11:10 AM",
    "event_no": 28,
@@ -638,7 +638,7 @@
   {
    "parse_notes": null,
    "registration_closes": null,
-   "date": null,
+   "date": "2026-12-06",
    "weekday": "Sunday",
    "time": "12:00 PM",
    "event_no": 26,
@@ -653,7 +653,7 @@
   {
    "parse_notes": null,
    "registration_closes": "9:40 PM",
-   "date": null,
+   "date": "2026-12-06",
    "weekday": "Sunday",
    "time": "5:10 PM",
    "event_no": 29,
@@ -668,7 +668,7 @@
   {
    "parse_notes": null,
    "registration_closes": "4:55 PM",
-   "date": null,
+   "date": "2026-12-07",
    "weekday": "Monday",
    "time": "11:10 AM",
    "event_no": 30,
@@ -683,7 +683,7 @@
   {
    "parse_notes": null,
    "registration_closes": "9:40 PM",
-   "date": null,
+   "date": "2026-12-07",
    "weekday": "Monday",
    "time": "5:10 PM",
    "event_no": 31,
@@ -698,7 +698,7 @@
   {
    "parse_notes": null,
    "registration_closes": "3:55 PM",
-   "date": null,
+   "date": "2026-12-08",
    "weekday": "Tuesday",
    "time": "10:10 AM",
    "event_no": 32,
@@ -715,7 +715,7 @@
     "LEVEL cell “2” is not a plausible blind level; not recorded"
    ],
    "registration_closes": "6:25 PM",
-   "date": null,
+   "date": "2026-12-08",
    "weekday": "Tuesday",
    "time": "4:10 PM",
    "event_no": 33,
@@ -730,7 +730,7 @@
   {
    "parse_notes": null,
    "registration_closes": "9:40 PM",
-   "date": null,
+   "date": "2026-12-08",
    "weekday": "Tuesday",
    "time": "5:10 PM",
    "event_no": 34,
@@ -745,7 +745,7 @@
   {
    "parse_notes": null,
    "registration_closes": "2:40 PM",
-   "date": null,
+   "date": "2026-12-09",
    "weekday": "Wednesday",
    "time": "10:10 AM",
    "event_no": 35,
@@ -760,7 +760,7 @@
   {
    "parse_notes": null,
    "registration_closes": "4:55 PM",
-   "date": null,
+   "date": "2026-12-09",
    "weekday": "Wednesday",
    "time": "11:10 AM",
    "event_no": 36,
@@ -777,7 +777,7 @@
     "LEVEL cell “2” is not a plausible blind level; not recorded"
    ],
    "registration_closes": "6:25 PM",
-   "date": null,
+   "date": "2026-12-09",
    "weekday": "Wednesday",
    "time": "4:10 PM",
    "event_no": 37,
@@ -792,7 +792,7 @@
   {
    "parse_notes": null,
    "registration_closes": "9:40 PM",
-   "date": null,
+   "date": "2026-12-09",
    "weekday": "Wednesday",
    "time": "5:10 PM",
    "event_no": 38,
@@ -807,7 +807,7 @@
   {
    "parse_notes": null,
    "registration_closes": "4:55 PM",
-   "date": null,
+   "date": "2026-12-10",
    "weekday": "Thursday",
    "time": "10:10 AM",
    "event_no": 39,
@@ -822,7 +822,7 @@
   {
    "parse_notes": null,
    "registration_closes": "4:40 PM",
-   "date": null,
+   "date": "2026-12-10",
    "weekday": "Thursday",
    "time": "12:10 PM",
    "event_no": 40,
@@ -839,7 +839,7 @@
     "LEVEL cell “2” is not a plausible blind level; not recorded"
    ],
    "registration_closes": "6:25 PM",
-   "date": null,
+   "date": "2026-12-10",
    "weekday": "Thursday",
    "time": "4:10 PM",
    "event_no": 41,
@@ -854,7 +854,7 @@
   {
    "parse_notes": null,
    "registration_closes": "9:40 PM",
-   "date": null,
+   "date": "2026-12-10",
    "weekday": "Thursday",
    "time": "5:10 PM",
    "event_no": 42,
@@ -871,7 +871,7 @@
     "registration-closes cell “10:00 AM” not later than the start time; not recorded"
    ],
    "registration_closes": null,
-   "date": null,
+   "date": "2026-12-11",
    "weekday": "Friday",
    "time": "7:00 PM",
    "event_no": 39,
@@ -886,7 +886,7 @@
   {
    "parse_notes": null,
    "registration_closes": "4:55 PM",
-   "date": null,
+   "date": "2026-12-11",
    "weekday": "Friday",
    "time": "11:10 AM",
    "event_no": 43,
@@ -903,7 +903,7 @@
     "LEVEL cell “2” is not a plausible blind level; not recorded"
    ],
    "registration_closes": "6:25 PM",
-   "date": null,
+   "date": "2026-12-11",
    "weekday": "Friday",
    "time": "4:10 PM",
    "event_no": 44,
@@ -918,7 +918,7 @@
   {
    "parse_notes": null,
    "registration_closes": null,
-   "date": null,
+   "date": "2026-12-11",
    "weekday": "Friday",
    "time": "7:00 PM",
    "event_no": 39,
@@ -935,7 +935,7 @@
     "LEVEL cell “2” is not a plausible blind level; not recorded"
    ],
    "registration_closes": "9:55 PM",
-   "date": null,
+   "date": "2026-12-11",
    "weekday": "Friday",
    "time": "8:10 PM",
    "event_no": 45,
@@ -952,7 +952,7 @@
     "LEVEL cell “2” is not a plausible blind level; not recorded"
    ],
    "registration_closes": "10:55 AM",
-   "date": null,
+   "date": "2026-12-12",
    "weekday": "Saturday",
    "time": "9:10 AM",
    "event_no": 46,
@@ -967,7 +967,7 @@
   {
    "parse_notes": null,
    "registration_closes": "4:55 PM",
-   "date": null,
+   "date": "2026-12-12",
    "weekday": "Saturday",
    "time": "10:10 AM",
    "event_no": 47,
@@ -984,7 +984,7 @@
     "LEVEL cell “2” is not a plausible blind level; not recorded"
    ],
    "registration_closes": "1:55 PM",
-   "date": null,
+   "date": "2026-12-12",
    "weekday": "Saturday",
    "time": "12:10 PM",
    "event_no": 48,
@@ -999,7 +999,7 @@
   {
    "parse_notes": null,
    "registration_closes": "11:10 PM",
-   "date": null,
+   "date": "2026-12-12",
    "weekday": "Saturday",
    "time": "6:10 PM",
    "event_no": 47,
@@ -1014,7 +1014,7 @@
   {
    "parse_notes": null,
    "registration_closes": "4:55 PM",
-   "date": null,
+   "date": "2026-12-13",
    "weekday": "Sunday",
    "time": "10:10 AM",
    "event_no": 49,
@@ -1029,7 +1029,7 @@
   {
    "parse_notes": null,
    "registration_closes": "9:40 PM",
-   "date": null,
+   "date": "2026-12-13",
    "weekday": "Sunday",
    "time": "5:10 PM",
    "event_no": 50,
@@ -1044,7 +1044,7 @@
   {
    "parse_notes": null,
    "registration_closes": "4:55 PM",
-   "date": null,
+   "date": "2026-12-14",
    "weekday": "Monday",
    "time": "10:10 AM",
    "event_no": 49,
@@ -1059,7 +1059,7 @@
   {
    "parse_notes": null,
    "registration_closes": null,
-   "date": null,
+   "date": "2026-12-14",
    "weekday": "Monday",
    "time": "11:00 AM",
    "event_no": 47,
@@ -1074,7 +1074,7 @@
   {
    "parse_notes": null,
    "registration_closes": "9:40 PM",
-   "date": null,
+   "date": "2026-12-14",
    "weekday": "Monday",
    "time": "5:10 PM",
    "event_no": 51,
@@ -1089,7 +1089,7 @@
   {
    "parse_notes": null,
    "registration_closes": null,
-   "date": null,
+   "date": "2026-12-15",
    "weekday": "Tuesday",
    "time": "10:00 AM",
    "event_no": 49,
@@ -1104,7 +1104,7 @@
   {
    "parse_notes": null,
    "registration_closes": "4:55 PM",
-   "date": null,
+   "date": "2026-12-15",
    "weekday": "Tuesday",
    "time": "11:10 AM",
    "event_no": 52,
@@ -1119,7 +1119,7 @@
   {
    "parse_notes": null,
    "registration_closes": "9:40 PM",
-   "date": null,
+   "date": "2026-12-15",
    "weekday": "Tuesday",
    "time": "5:10 PM",
    "event_no": 53,
@@ -1134,7 +1134,7 @@
   {
    "parse_notes": null,
    "registration_closes": "4:55 PM",
-   "date": null,
+   "date": "2026-12-16",
    "weekday": "Wednesday",
    "time": "11:10 AM",
    "event_no": 54,
@@ -1149,7 +1149,7 @@
   {
    "parse_notes": null,
    "registration_closes": "9:40 PM",
-   "date": null,
+   "date": "2026-12-16",
    "weekday": "Wednesday",
    "time": "5:10 PM",
    "event_no": 55,
@@ -1167,7 +1167,7 @@
     "LEVEL cell “4” is not a plausible blind level; not recorded"
    ],
    "registration_closes": null,
-   "date": null,
+   "date": "2026-12-17",
    "weekday": "Thursday",
    "time": "10:10 AM",
    "event_no": 56,
@@ -1182,7 +1182,7 @@
   {
    "parse_notes": null,
    "registration_closes": "4:40 PM",
-   "date": null,
+   "date": "2026-12-17",
    "weekday": "Thursday",
    "time": "12:10 PM",
    "event_no": 57,
@@ -1199,7 +1199,7 @@
     "registration-closes cell “6:10 PM” not later than the start time; not recorded"
    ],
    "registration_closes": null,
-   "date": null,
+   "date": "2026-12-17",
    "weekday": "Thursday",
    "time": "6:10 PM",
    "event_no": 56,
@@ -1214,7 +1214,7 @@
   {
    "parse_notes": null,
    "registration_closes": "4:55 PM",
-   "date": null,
+   "date": "2026-12-18",
    "weekday": "Friday",
    "time": "10:10 AM",
    "event_no": 56,
@@ -1229,7 +1229,7 @@
   {
    "parse_notes": null,
    "registration_closes": "11:10 PM",
-   "date": null,
+   "date": "2026-12-18",
    "weekday": "Friday",
    "time": "6:10 PM",
    "event_no": 56,
@@ -1244,7 +1244,7 @@
   {
    "parse_notes": null,
    "registration_closes": "4:55 PM",
-   "date": null,
+   "date": "2026-12-19",
    "weekday": "Saturday",
    "time": "10:10 AM",
    "event_no": 56,
@@ -1259,7 +1259,7 @@
   {
    "parse_notes": null,
    "registration_closes": "9:40 PM",
-   "date": null,
+   "date": "2026-12-19",
    "weekday": "Saturday",
    "time": "5:10 PM",
    "event_no": 58,
@@ -1274,7 +1274,7 @@
   {
    "parse_notes": null,
    "registration_closes": null,
-   "date": null,
+   "date": "2026-12-20",
    "weekday": "Sunday",
    "time": "11:00 AM",
    "event_no": 56,
@@ -1291,7 +1291,7 @@
     "registration-closes cell “11:10 AM” not later than the start time; not recorded"
    ],
    "registration_closes": null,
-   "date": null,
+   "date": "2026-12-20",
    "weekday": "Sunday",
    "time": "11:10 AM",
    "event_no": 59,
@@ -1306,7 +1306,7 @@
   {
    "parse_notes": null,
    "registration_closes": "9:40 PM",
-   "date": null,
+   "date": "2026-12-20",
    "weekday": "Sunday",
    "time": "5:10 PM",
    "event_no": 60,
@@ -1321,7 +1321,7 @@
   {
    "parse_notes": null,
    "registration_closes": "5:55 PM",
-   "date": null,
+   "date": "2026-12-21",
    "weekday": "Monday",
    "time": "11:10 AM",
    "event_no": 59,
@@ -1336,7 +1336,7 @@
   {
    "parse_notes": null,
    "registration_closes": "9:40 PM",
-   "date": null,
+   "date": "2026-12-21",
    "weekday": "Monday",
    "time": "5:10 PM",
    "event_no": 61,
@@ -1351,7 +1351,7 @@
   {
    "parse_notes": null,
    "registration_closes": "5:55 PM",
-   "date": null,
+   "date": "2026-12-22",
    "weekday": "Tuesday",
    "time": "11:10 AM",
    "event_no": 59,
@@ -1366,7 +1366,7 @@
   {
    "parse_notes": null,
    "registration_closes": "9:40 PM",
-   "date": null,
+   "date": "2026-12-22",
    "weekday": "Tuesday",
    "time": "5:10 PM",
    "event_no": 62,
@@ -1381,7 +1381,7 @@
   {
    "parse_notes": null,
    "registration_closes": null,
-   "date": null,
+   "date": "2026-12-23",
    "weekday": "Wednesday",
    "time": "11:00 AM",
    "event_no": 59,
@@ -1396,7 +1396,7 @@
   {
    "parse_notes": null,
    "registration_closes": "4:55 PM",
-   "date": null,
+   "date": "2026-12-23",
    "weekday": "Wednesday",
    "time": "11:10 AM",
    "event_no": 63,
@@ -1411,7 +1411,7 @@
   {
    "parse_notes": null,
    "registration_closes": "9:40 PM",
-   "date": null,
+   "date": "2026-12-23",
    "weekday": "Wednesday",
    "time": "5:10 PM",
    "event_no": 64,

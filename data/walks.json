@@ -1,0 +1,109 @@
+{
+ "meta": {
+  "generated_at": "2026-11-17T01:26:55Z",
+  "rule": "A hotel is usable for an 8 AM\u2013close day only if the walk from the lobby to the poker room can be completed inside 30 minutes.",
+  "how_to_close": "Run the same hotel\u2194venue pairs through the Google Maps Distance Matrix API (mode=walking) or Apple Maps directions, store the returned duration plus the request timestamp, and paste those pairs into data/walks.json. The \u226430-minute filter then becomes a hard filter instead of a warning."
+ },
+ "pairs": [
+  {
+   "hotel_id": "venetian",
+   "hotel": "The Venetian Resort \u2014 Venetian tower",
+   "venue_id": "venetian",
+   "venue": "The Venetian Poker Room",
+   "minutes": null,
+   "meets_30_min": "not applicable (on-site)",
+   "status": "same property \u2014 poker room is inside The Venetian/Palazzo complex (Palazzo level 2). No official door-to-door minute count is published.",
+   "source": "https://www.venetianlasvegas.com/resort/casino/poker.html"
+  },
+  {
+   "hotel_id": "palazzo",
+   "hotel": "The Palazzo (same resort, same poker-rate program)",
+   "venue_id": "venetian",
+   "venue": "The Venetian Poker Room",
+   "minutes": null,
+   "meets_30_min": "not applicable (same complex)",
+   "status": "Poker room is on The Palazzo level 2 and is reached from either tower; the operator publishes directions, not minutes.",
+   "source": "https://www.venetianlasvegas.com/resort/casino/poker.html"
+  },
+  {
+   "hotel_id": "wynn",
+   "hotel": "Wynn Las Vegas",
+   "venue_id": "wynn",
+   "venue": "Wynn Las Vegas Poker",
+   "minutes": null,
+   "meets_30_min": "unverified",
+   "status": "Wynn to the Venetian poker room: no official walking-time source; ~2.2 miles of Strip frontage between the two resorts by public mapping, so it is not a plausible walk-to-play pairing anyway.",
+   "source": "https://www.venetianlasvegas.com/resort/casino/poker.html"
+  },
+  {
+   "hotel_id": "encore",
+   "hotel": "Encore (Wynn resort campus)",
+   "venue_id": "wynn",
+   "venue": "Wynn Las Vegas Poker",
+   "minutes": null,
+   "meets_30_min": "unverified (connected campus)",
+   "status": "Encore is connected to the Wynn tower that hosts the poker room; the property publishes no minute count.",
+   "source": "https://www.wynnlasvegas.com/casino/poker"
+  },
+  {
+   "hotel_id": "bellagio",
+   "hotel": "Bellagio",
+   "venue_id": "bellagio",
+   "venue": "Bellagio Poker Room",
+   "minutes": null,
+   "meets_30_min": "unverified",
+   "status": "Bellagio sits across Las Vegas Boulevard from The Cosmopolitan and is one property away from the Venetian complex; no official minute count exists.",
+   "source": "https://bellagio.mgmresorts.com/en/casino/poker.html"
+  },
+  {
+   "hotel_id": "caesars",
+   "hotel": "Caesars Palace",
+   "venue_id": "caesars",
+   "venue": "Caesars Palace Poker Room",
+   "minutes": null,
+   "meets_30_min": "unverified",
+   "status": "no official walking-time source",
+   "source": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+  },
+  {
+   "hotel_id": "aria",
+   "hotel": "ARIA",
+   "venue_id": "aria",
+   "venue": "ARIA Poker Room",
+   "minutes": null,
+   "meets_30_min": "unverified",
+   "status": "ARIA to the Venetian runs along the Strip through CityCenter; no official minute count. The Aria Express tram is free but does not reach the Venetian.",
+   "source": "https://aria.mgmresorts.com/en/casino/poker.html"
+  },
+  {
+   "hotel_id": "ti",
+   "hotel": "Treasure Island",
+   "venue_id": "venetian",
+   "venue": "The Venetian Poker Room",
+   "minutes": null,
+   "meets_30_min": "unverified",
+   "status": "TI is directly across Las Vegas Boulevard from the Venetian/Palazzo complex; the property publishes no walking minutes and the crossing + Strip walk is not time-verified here.",
+   "source": "https://treasureisland.com/hotel/deluxe-rooms"
+  },
+  {
+   "hotel_id": "horseshoe",
+   "hotel": "Horseshoe Las Vegas",
+   "venue_id": "others",
+   "venue": "Other rooms on and around the Strip",
+   "minutes": null,
+   "meets_30_min": "unverified",
+   "status": "no official walking-time source",
+   "source": "https://www.caesars.com/horseshoe-las-vegas/casino/poker"
+  },
+  {
+   "hotel_id": "harrahs",
+   "hotel": "Harrah's Las Vegas",
+   "venue_id": "others",
+   "venue": "Other rooms on and around the Strip",
+   "minutes": null,
+   "meets_30_min": "unverified",
+   "status": "Harrah's sits between Planet Hollywood and The LINQ, opposite the Venetian side of the Strip; no official minute count.",
+   "source": "https://www.caesars.com/harrahs-las-vegas"
+  }
+ ]
+}

@@ -11,7 +11,10 @@ on:
     branches: [main, 'arena/e74e00fd-poker4']
     paths:
       - data/tracked-sources.json
+      - data/poker4.json
       - tools/sync_official_sources.py
+      - scripts/integrate_data.py
+      - scripts/verify_root.py
       - .github/workflows/url-check.yml
   workflow_dispatch:
 
@@ -39,6 +42,14 @@ jobs:
 
       - name: Re-check official sources and audit structure sheets
         run: python tools/sync_official_sources.py
+
+      - name: Rebuild the dashboard pages from the refreshed snapshots
+        run: python scripts/integrate_data.py
+
+      - name: Verify the site before publishing it
+        run: |
+          python scripts/verify_root.py
+          python scripts/verify.py
 
       - name: Commit the refreshed snapshots
         run: |
