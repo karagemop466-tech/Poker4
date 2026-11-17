@@ -761,6 +761,20 @@
     "https://aria.mgmresorts.com/en/casino/poker.html",
     "https://wynnlasvegas.com/casino/poker"
    ]
+  },
+  {
+   "id": "Q9",
+   "question": "Does any Strip room actually forbid a second entry in writing, and will they put it in an e-mail?",
+   "why_it_matters": "It is the difference between the brief's single-entry list being empty and being populated. The published sheets for the Venetian series, the Wynn series and the Bellagio weekend events all permit re-entries; the Wynn daily Friday event is the only one that forbids re-entry while still selling unlimited rebuys and an add-on.",
+   "we_have": "Read and quoted, 2026-11-17: 37 Venetian structure sheets (0 state single-entry; 13 carry the 'bag for Day 2 then no further flight' rule; sheet 8 prints 'All subsequent buy in's after the initial buy in will be $200'); the Wynn WPT booklet (69 event sheets: 67 print 'unlimited re-entry', 2 print a one-entry-plus-one-re-entry cap, including the $10,400 World Championship's 'Four (4) Entries maximum'); the three Bellagio sheets ('buy-in and re-enter through the end of level 8'); and the Caesars page (silent).",
+   "missing": "A room-written statement that a specific event is freezeout, plus which of those events the room will still be running on the trip dates.",
+   "how_to_close": "One e-mail or phone call per room (The Venetian 702.414.7657, Wynn 702.770.7654, Bellagio 702.693.7291) asking: for event X on date Y, is a player limited to one entry, and are rebuys or add-ons offered? Quote the answer and its date on the row.",
+   "owner": "you (one e-mail or call per room) — no agent can produce a room's written answer",
+   "sources": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_8.pdf",
+    "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt9cf95b0e60ec253e/6af491a3a9851d75c40be840/mgm-bellagio-poker-fridays-$600-nlh.pdf"
+   ]
   }
  ],
  "suggestions": [
@@ -833,6 +847,26 @@
    "effort": "done",
    "decision_needed": "None — review the change log after a week of runs to confirm the noise level.",
    "status": "built"
+  },
+  {
+   "id": "S8",
+   "title": "Publish a per-room 'ask list' generated from the gaps",
+   "problem": "The gaps are now specific (fee arithmetic on one Wynn sheet, a stale Bellagio Saturday sheet, Caesars' missing fee split) but they are buried in 252 rows.",
+   "proposal": "Generate the open-questions page directly from the flags that name a source and a field, so each room has a one-screen list of the exact sentences to request, with the quote already drafted.",
+   "impact": "turns a research backlog into three short calls",
+   "effort": "small — the flags already carry the source URL and the missing field",
+   "status": "proposed",
+   "decision_needed": "turns a research backlog into three short calls"
+  },
+  {
+   "id": "S9",
+   "title": "Treat 'printed level number' deadlines as first-class and add a per-event clock table",
+   "problem": "Wynn's late registration is printed as 'until the start of level 9', so the site cannot place a second entry after it, and 13 of 38 days lose their fallback (F19).",
+   "proposal": "Store the level number as its own field next to the clock time, and derive the clock time only from the sheet's own printed '(approximately 4:30 p.m.)' where it exists; where it does not, show the level and mark the clock unknown instead of leaving the plan silent.",
+   "impact": "restores a defensible fallback on most Wynn days without inventing a duration",
+   "effort": "medium — new field on every row, no new source needed",
+   "status": "proposed",
+   "decision_needed": "restores a defensible fallback on most Wynn days without inventing a duration"
   }
  ],
  "decision_workflow": [
@@ -1004,6 +1038,53 @@
    "detail": "Twelve sheets were read through the agent's own page fetcher and the same field values (buy-in, house fee, pool contribution, guarantee, registration window) were then matched by the Actions runner's independent fetch of the same PDFs. Both reads agree; where they would not, the row is flagged.",
    "sources": [
     "https://github.com/karagemop466-tech/Poker4/actions/workflows/url-check.yml"
+   ]
+  },
+  {
+   "id": "F15",
+   "severity": "official-source-arithmetic",
+   "item": "Wynn's $1,100 PLO structure sheet prints a fee split that does not add up ($975 + $85 + $45 = $1,105 against a $1,100 buy-in)",
+   "detail": "Structure booklet, WPT World Championship, Tuesday December 1, 2026, 1 p.m., $1,100 PLO. The row keeps the sheet's own wording and the three components verbatim; nothing is adjusted. It is excluded from the ranked list until the venue confirms whether the fee is $80 or the pool slice is $970.",
+   "sources": [
+    "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+   ]
+  },
+  {
+   "id": "F16",
+   "severity": "stale-official-document",
+   "item": "Bellagio's Saturday NLH sheet contradicts itself on price and prints a Day-2 date (9/13/26) that is already in the past",
+   "detail": "The PDF's title block says 'NLH $1100 BUY-IN', the Bellagio poker page lists 'SATURDAYS | $1,000 NLH', and rule 07 on the same sheet says 'Of the $600 Buy-in'. Its rule 04 also schedules the 'Combined Final Day 2 (9/13/26)'. The buy-in is therefore left blank, the row is not scheduled, and it needs a fresh sheet from the room before any money is committed.",
+   "sources": [
+    "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt6d47974bf5a7d9b6/6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf",
+    "https://bellagio.mgmresorts.com/en/casino/poker.html"
+   ]
+  },
+  {
+   "id": "F17",
+   "severity": "schedule-availability",
+   "item": "Wynn's daily slate is printed as a standing offer with no calendar dates, and the sheet itself says it may be suspended during other series",
+   "detail": "'The Tournament will be offered Monday-Thursday and may be suspended during Seniors Events, Classic Events, or other Tournament Series.' Wynn runs its own WPT series from 2026-11-27 to 2026-12-21, so whether the $200/$240/$160 dailies run on any given trip date is not established by either document. Those rows carry no date and are never placed in the day plan.",
+   "sources": [
+    "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+    "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+   ]
+  },
+  {
+   "id": "F18",
+   "severity": "unverified-pricing",
+   "item": "Caesars Palace's daily $100 slate is printed only in a marketing article: no house-fee split, no entry rule, no structure sheet",
+   "detail": "The Caesars page states four daily $100 NLH tournaments (10 a.m., 2 p.m., 6 p.m., 9 p.m.), 20,000 starting chips, a $1,000 guarantee, 20-minute levels and a $50 add-on for 15,000 chips. It prints no house-fee split and no re-entry rule, and the older Caesars/Horseshoe flyer that used to be linked now returns HTTP 404. The four rows are published with the printed prices, marked unverified for fee and entry rule, and excluded from ranking.",
+   "sources": [
+    "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+   ]
+  },
+  {
+   "id": "F19",
+   "severity": "planning-input-missing",
+   "item": "Wynn prints its late-registration deadlines as blind levels, not clock times, so a clock-based fallback cannot be computed for those rows",
+   "detail": "Most WPT sheets read 'available until the start of level 9' and only some add '(approximately 4:30 p.m.)'. The clock figure is missing on the majority of the 69 sheets. Consequence: the day plan can only offer a fallback where the printed deadline is a time, which is why 13 of the 38 planned days carry no defensible second entry.",
+   "sources": [
+    "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
    ]
   }
  ],

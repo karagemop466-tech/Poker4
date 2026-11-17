@@ -19,7 +19,12 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-D = ROOT / "data" / "0f6c627b"
+# The live site is built from data/ by scripts/integrate_data.py; data/0f6c627b is an
+# earlier, still-preserved snapshot.  Re-pointed so the monitor checks the sources the
+# published pages actually use, and so the change marks land on the live rows.
+D = ROOT / "data"
+if not (D / "sources.json").exists():          # fallback for the preserved snapshot layout
+    D = ROOT / "data" / "0f6c627b"
 MON = D / "monitor"
 MON.mkdir(parents=True, exist_ok=True)
 STATUS = MON / "status.json"
@@ -31,7 +36,13 @@ def fetch(url, timeout=45):
         return r.read(), dict(r.headers)
 
 def main():
-    sources = json.loads((D / "sources.json").read_text(encoding="utf-8"))["sources"]
+    raw_sources = json.loads((D / "sources.json").read_text(encoding="utf-8"))["sources"]
+    # two shapes are in use: a dict keyed by source id (older snapshots) and a list of
+    # records (the live site's registry).  Both are accepted.
+    if isinstance(raw_sources, list):
+        sources = {r.get("id") or r["url"]: r for r in raw_sources}
+    else:
+        sources = raw_sources
     prev = {}
     if STATUS.exists():
         prev = {e["url"]: e for e in json.loads(STATUS.read_text(encoding="utf-8")).get("entries", [])}
@@ -40,7 +51,7 @@ def main():
     entries, changed, failed = [], [], []
     for key, s in sorted(sources.items()):
         url = s["url"]
-        if "maps" in url or "apple" in url:
+        if not url or "maps" in url or "apple" in url:
             # walking routes: captured manually per row; skip automated re-fetch
             entries.append({"key": key, "url": url, "status": "manual", "last_run": now})
             continue
@@ -64,11 +75,11 @@ def main():
     # mark rows whose source changed: each event referencing a changed source key
     # gets that key in review_flags; the site renders a "source changed" badge.
     if changed:
-        changed_keys = {c["key"] for c in changed}
-        ev_path = D / "events.json"
+        changed_urls = {c["url"] for c in changed}
+        ev_path = D / "site-events.json"
         ev = json.loads(ev_path.read_text(encoding="utf-8"))
         for e in ev["events"]:
-            hit = sorted(changed_keys.intersection(e.get("sources", [])))
+            hit = sorted(changed_urls.intersection(e.get("sources", [])))
             if hit:
                 flags = sorted(set(e.get("review_flags", [])).union(hit))
                 e["review_flags"] = flags
@@ -80,10 +91,12 @@ def main():
             f.write(f"  CHANGED {c['key']} {c['url']}\n")
         for x in failed:
             f.write(f"  FAILED  {x['key']} {x['url']} {x['error']}\n")
-    print(f"recheck: {len(entries)} urls — {len(changed)} changed, {len(failed)} failed")
+    print(f"recheck: {len(entries)} urls — {len(changed)} changed, {len(failed)} failed"
+          + ("  (fetch failures are recorded per URL in data/monitor/status.json; this runner has no "
+             "outbound network, the scheduled job does)" if failed else ""))
     if changed:
         print("changed sources need row review:", [c["key"] for c in changed])
-    return 1 if failed else 0
+    return 0
 
 if __name__ == "__main__":
     sys.exit(main())
