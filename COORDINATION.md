@@ -601,3 +601,17 @@ Policy: every data row must link an official source; values not confirmed from a
 - **Post-merge on `main`:** "Verify the published site" SUCCESS · "Poker4 site build + verification gate" SUCCESS · "Deploy static dashboard to GitHub Pages" SUCCESS (run 43999859321) · "pages build and deployment" (run 43999857621) queued/completed · "Official source sync + change monitor" running.
 - **Pages:** https://karagemop466-tech.github.io/Poker4/ (source: main, path `/`) — deploy succeeded at 02:01 UTC 2026-11-17.
 - **Race notes:** `main` advanced four times during this session (`be3594d` → `9b1f376` → `57f7399` → `1221f53` → `6fd824b` → `fa1dbad`); every round merged forward, never discarding others' work; the v2-monitor bot also pushed a snapshot commit to this session's branch (merged back). Final head `59a6c51` contains `origin/main` `fa1dbad`.
+
+---
+
+## Session arena/c2242cb1-poker4 (session `c2242cb1`) — claim (2026-11-17)
+
+Branched from `main` @ `0d13de0`. No other session holds an active claim on the board (every prior section is marked done/merged). This session takes the narrow integration-audit role for the existing root site; it does not create a new parallel dashboard.
+
+| ID | Task | Status | Owner | File scope | Notes |
+|----|------|--------|-------|------------|-------|
+| K1 | Repair false-positive/stale gates that make the scheduled `daily-recheck` (recheck.yml) and root verifier report failures on a correct site | in progress | c2242cb1 | `scripts/verify_root.py`, `tools/verify_root_site.py` | verify_root reports "renders 0 rows" although the static table holds 118 rows; verify_root_site asserts pre-PR-#43 markers (19 errors) |
+| K2 | Independent live re-read of key official values (Venetian DSE IV schedule page, Venetian resort fee/suite-rate terms, Treasure Island tower-suite fee, Wynn WPT schedule PDF) and comparison against `data/site-events.json` / hotel records | in progress | c2242cb1 | `data/c2242cb1/verification.json` (new) | Results recorded with official links; mismatches flagged, not silently edited |
+| K3 | Board log, verification record, PR → main, merge, Pages deploy check | in progress | c2242cb1 | `COORDINATION.md` (log only) | — |
+
+Irregularity noted at claim time: the `monitor.yml` ("Monitor official sources") and `recheck.yml` ("daily-recheck") scheduled runs failed on the latest cron (run logs not retrievable from the sandbox; to be diagnosed by re-running the scripts). Logged here, not yet resolved.
