@@ -4727,6 +4727,13 @@
    "a": "F-ROOT-404"
   },
   {
+   "t": "F-BOT-BRANCH Another session's scheduled monitor commits to whichever branch triggers it, including this session's branch",
+   "k": "Flag",
+   "d": "`.github/workflows/v2-monitor.yml` (\"Re-check official sources\") ran on a push event to `arena/08f07d1d-poker4` and pushed commit dd37b41 \"chore(v2): source monitor run 43995086181",
+   "u": "@@/flagged.html",
+   "a": "F-BOT-BRANCH"
+  },
+  {
    "t": "For each candidate one-day event, does the room allow re-entry, rebuys or an add-on - and can it say so in writing?",
    "k": "Question",
    "d": "A yes/no per event number, in writing, for the events you would actually play.",

@@ -330,7 +330,21 @@
     "index.html"
    ],
    "how_to_close": "The owning session either publishes pages/index.html or drops the link."
+  },
+  {
+   "id": "F-BOT-BRANCH",
+   "title": "Another session's scheduled monitor commits to whichever branch triggers it, including this session's branch",
+   "detail": "`.github/workflows/v2-monitor.yml` (\"Re-check official sources\") ran on a push event to `arena/08f07d1d-poker4` and pushed commit dd37b41 \"chore(v2): source monitor run 43995086181\" onto that branch, touching only `data/v2/source_state.json` and a `data/v2/snapshots/` file. Nothing of mine was modified, so I merged it rather than dropping it — but a monitor that writes to the ref that happened to trigger it will land bot commits on other sessions' open branches, which is how a branch quietly diverges from what its author built. This branch's own monitor commits are restricted to the ref it resolves from its `ref` input and are labelled `[skip ci]`.",
+   "severity": "process",
+   "status": "merged here; owner should scope the workflow's commit target",
+   "no_official_source": true,
+   "sources": [],
+   "affects": [
+    "data/v2/source_state.json",
+    "data/v2/snapshots/"
+   ],
+   "how_to_close": "Pin that workflow's commit target to `main`, or add `[skip ci]` plus a branch allowlist."
   }
  ],
- "count": 24
+ "count": 25
 }
