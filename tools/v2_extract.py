@@ -103,6 +103,24 @@ for r in entries:
     else:
         r["plausible_min_hours"] = None
 
+# --- guarantee scope -------------------------------------------------------
+# A multi-flight event prints ONE guarantee for the whole event. Dividing it by a
+# single flight's buy-in would overstate the ratio, so the scope is recorded and
+# the builder refuses to show a per-flight ratio for flights.
+import collections as _c
+_flights = _c.defaultdict(list)
+for r in entries:
+    _flights[r["event_no"]].append(r)
+for no, rs in _flights.items():
+    for r in rs:
+        r["guarantee_scope"] = "event_total" if len(rs) > 1 else "entry"
+        r["flights_in_event"] = len(rs)
+        if len(rs) > 1:
+            r["guarantee_scope_note"] = (
+                "Event #%s runs %d starting flights. The printed guarantee is for the whole event, "
+                "not per flight, so no guarantee-to-buy-in ratio is shown on a flight row."
+                % (no, len(rs)))
+
 import collections
 by_day = collections.defaultdict(list)
 for r in entries:

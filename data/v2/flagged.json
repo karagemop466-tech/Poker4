@@ -10,7 +10,7 @@
    "severity": "blocking",
    "title": "No Venetian 2026 structure sheet states whether re-entry is allowed",
    "detail": "All 37 DeepStack Extravaganza IV structure sheets were fetched and read in full. They state a late-registration window and nothing else about entry; none contains 're-entry', 'rebuy', 'freezeout' or 'single entry'. Prior Venetian sheets (2023, 2024) do print 'Registration and Re-Entry is allowed for nine (9) levels', which proves the silence is not a house formatting convention.",
-   "how_to_settle": "Ask the Venetian Poker Room (702.414.7657, lv_cas_poker@venetianlasvegas.com) for the entry rule of the specific event numbers, in writing, and record the reply with its date.",
+   "how_to_settle": "Ask the Venetian Poker Room for the entry rule of the specific event numbers, in writing, and record the reply with its date. The contact details on the official poker page are the ones to use; this session did not verify a phone number or email address, so none is printed here.",
    "sources": [
     "V_S05",
     "V_OLD_2023_1",
@@ -208,7 +208,7 @@
    "severity": "material",
    "title": "Wynn nightly $160 terms not published in the document read",
    "detail": "The nightly is advertised on the official poster and poker page, but the structures PDF only prints terms for the Mon\u2013Thu, Friday and weekend events. Fee, chips, level length and entry rules are therefore unknown.",
-   "how_to_settle": "Ask the Wynn poker desk (702.770.7654) for the nightly structure sheet.",
+   "how_to_settle": "Call the Wynn poker room on the number printed on the official tournament poster, (702) 770-7654, and ask for the nightly structure sheet. That number is transcribed from the poster itself (W_WPT), so it is verified.",
    "sources": [
     "W_POSTER",
     "W_DAILY"

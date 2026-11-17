@@ -39,7 +39,7 @@ NAV = [
 RET = "2026-11-17"
 NOFEE = '<span class="blank">—</span>'
 UNV = '<span class="blank">UNVERIFIED</span>'
-NA_ = "&mdash;"
+NA_ = "—"
 DAGGER = "\u2020"
 
 
@@ -114,6 +114,76 @@ def controls(show_date=True, show_se=True, show_walk=False, show_kind=False):
     return '<div class="controls">' + "".join(bits) + "</div>"
 
 
+
+def ratio(e):
+    g = e["guarantee_printed"] if e["guarantee_printed"] is not None else e["guarantee_on_sheet"]
+    return (g / e["buy_in"]) if (g and e["buy_in"]) else None
+
+
+def dashboard_cards():
+    rated = [e for e in EV["events"] if ratio(e) and e.get("guarantee_scope") == "entry"]
+    top = max(rated, key=ratio)
+    cheapest = min((e for e in EV["events"] if e["buy_in"] and e["guarantee_printed"]),
+                   key=lambda e: (e["buy_in"], e["date"]))
+    cards = []
+    cards.append(
+        '<article class="card"><span class="tag ok">cheapest verified entry on the Venetian list</span>'
+        '<h3>$%s · %s</h3>'
+        '<p>%s, #%s. $%s of the $%s is the house fee and $%s reaches the pool; the guarantee is $%s. '
+        'The Caesars Palace $100 daily has the same buy-in but allows re-entry and a $50 add-on, so it sits in the '
+        '<a href="separate.html">separate section</a>.</p></article>'
+        % (format(cheapest["buy_in"], ","), E(cheapest["venue"]),
+           E(cheapest["date"] + " " + cheapest["start"]), E(cheapest["event_no"]),
+           cheapest["fee_house"], format(cheapest["buy_in"], ","),
+           format(cheapest["prize_pool_per_entry"], ","),
+           format(cheapest["guarantee_printed"], ",")))
+    bounty_note = ""
+    if top["guarantee_basis"] == "pool_plus_bounties":
+        bounty_note = (" Its guarantee is printed as <em>prize pool + total bounties</em>, so part of that $%s is "
+                       "bounty money rather than prize pool." % format(top["guarantee_printed"], ","))
+    cards.append(
+        '<article class="card"><span class="tag info">largest guarantee ÷ buy-in, single-entry-scope rows only</span>'
+        '<h3>$%s → $%s (%.0f×)</h3><p>%s. That ratio is arithmetic only — guarantee ÷ '
+        'buy-in says nothing about expected value, field size or skill. The house fee is $%s of the $%s (%.1f%%), '
+        'confirmed on its own sheet.%s</p></article>'
+        % (format(top["buy_in"], ","), format(top["guarantee_printed"] or top["guarantee_on_sheet"], ","),
+           ratio(top), E(top["name_printed"].split(" - ")[0] + " · " + top["date"]),
+           top["fee_house"], format(top["buy_in"], ","), top["fee_house"] / top["buy_in"] * 100, bounty_note))
+    cards.append(
+        '<article class="card"><span class="tag warn">same buy-in, different rake</span>'
+        '<h3>$300 — but the house fee is $50, $58 or $60</h3>'
+        '<p>Three $300 events carry three different house fees depending on their sheet: $58 (events #2 and #12, '
+        '19.3%), $60 (event #1 flights, 20.0%) and $50 (the $300 bounty rows, 16.7%). Rake is not uniform across '
+        'the series, which is exactly why every row links its own sheet.</p></article>')
+    return "".join(cards)
+
+
+
+def buyin_rows():
+    """Every distinct (buy-in, house fee) split found on an official structure sheet."""
+    groups = {}
+    for e in EV["events"]:
+        if e["buy_in"] is None or e["fee_house"] is None:
+            continue
+        key = (e["buy_in"], e["fee_house"], e["prize_pool_per_entry"])
+        g = groups.setdefault(key, {"events": set(), "sheets": set(), "names": set()})
+        g["events"].add(e["event_no"])
+        g["sheets"].add(int(e["sheet_url"].split("_")[-1].replace(".pdf", "")))
+        g["names"].add(e["name_printed"].split(" - ")[0][:46])
+    rows = []
+    for (buy, fee, pool), g in sorted(groups.items()):
+        pct = fee / buy * 100
+        link = " · ".join(src_link("V_S%02d" % n, "s%d" % n) for n in sorted(g["sheets"])[:3])
+        rows.append(
+            '<tr data-search="venetian %d"><td>Venetian</td>'
+            '<td class="small">%s</td><td class="num">$%s</td><td class="num">$%s</td>'
+            '<td class="num">%.1f%%</td><td class="num">$%s</td>'
+            '<td class="num">%d</td><td>%s</td></tr>'
+            % (buy, E(sorted(g["names"])[0]), format(buy, ","), fee, pct,
+               format(pool, ","), len(g["events"]), link))
+    return rows
+
+
 # ---------------------------------------------------------------- tournaments
 def tournament_rows():
     rows = []
@@ -121,13 +191,15 @@ def tournament_rows():
         date = e["date"]
         gtd = e["guarantee_printed"] if e["guarantee_printed"] is not None else e["guarantee_on_sheet"]
         basis = e["guarantee_basis"]
-        ratio = ""
-        if gtd and e["buy_in"]:
+        if gtd is None or not e["buy_in"]:
+            ratio = '<span class="blank">no GTD printed</span>'
+        elif e.get("guarantee_scope") == "event_total":
+            ratio = ('<span class="blank">event-total GTD</span><br><span class="small muted">'
+                     + str(e.get("flights_in_event", 0)) + ' flights, not comparable per flight</span>')
+        else:
             ratio = "%.1f×" % (gtd / e["buy_in"])
             if basis == "pool_plus_bounties":
                 ratio += " <span class='tag warn'>incl. bounties</span>"
-        elif gtd is None:
-            ratio = '<span class="blank">no GTD printed</span>'
         se = "1" if e["entry_rule_status"] == "single_entry_confirmed" else "0"
         cells = [
             f'<td class="mono">{date}</td>',
@@ -137,7 +209,7 @@ def tournament_rows():
             f'<td class="num">{money(e["buy_in"])}</td>',
             f'<td class="num">{money(gtd)}</td>',
             f'<td class="num">{ratio}</td>',
-            f'<td class="num">{e["chips"] or "&mdash;"}</td>',
+            f'<td class="num">{e["chips"] or "—"}</td>',
             f'<td class="num">{e["level_min"]}</td>',
             f'<td class="mono">{v(e["late_reg_time"])}</td>',
             f'<td><span class="tag bad">not published</span></td>',
@@ -163,7 +235,7 @@ def page_tournaments():
 </div>
 {controls(show_date=True, show_se=True)}
 {table(["Date","#Start","#Ev","Event","#Buy-in","#GTD","#GTD÷buy-in","#Chips","#Level min","Late reg closes","Official entry rule","Sources"], rows,
-       caption="Venetian DeepStack Extravaganza IV — official calendar + structure sheets",
+       caption="Venetian DeepStack Extravaganza IV — official calendar + structure sheets. A multi-flight event prints ONE guarantee for the whole event, so its flights show ‘event-total GTD’ instead of a per-flight ratio.",
        table_id="tourn")}
 <h2>Events the official pages do not give a guarantee for</h2>
 <p>Three rows print no guaranteed prize pool anywhere on the official calendar or their structure sheet: {', '.join('#' + e['event_no'] + ' (' + e['date'] + ')' for e in EV['events'] if not (e['guarantee_printed'] or e['guarantee_on_sheet']))}. They are left blank rather than estimated.</p>
@@ -199,13 +271,7 @@ The Venetian's own 2026 structure sheets state a <em>late-registration</em> wind
 
 <h2>What the data actually supports</h2>
 <div class="grid">
-<article class="card"><span class="tag ok">cheapest verified entry</span><h3>$100 · Caesars Palace daily</h3>
-<p>$30 of the $100 is the house fee; $70 reaches the pool; $1,000 guaranteed. <strong>Re-entry and a $50 add-on are both allowed</strong>, so it sits in the <a href="separate.html">separate section</a>, not the single-entry list.</p></article>
-<article class="card"><span class="tag info">best guarantee ÷ buy-in on the Venetian list</span><h3>$2,200 → $1,000,000 (455×)</h3>
-<p>Dec 12–14, PokerAtlas Championship. That ratio is arithmetic only: guarantee ÷ buy-in says nothing about expected value, field size or skill. Fee is $225 of the $2,200 (10.2%), confirmed on the sheet.</p></article>
-<article class="card"><span class="tag warn">best value per dollar at the low end</span><h3>$300 → $10,000 (33×)</h3>
-<p>Nov 18 and Nov 26. $58 house fee (19.3% — the highest percentage rake among the one-day events), $242 to the pool. Single-entry status unknown.</p></article>
-</div>
+{"".join(dashboard_cards())}</div>
 
 <h2>Hotel cost, honestly labelled</h2>
 <div class="tablewrap"><table data-searchable="1"><caption>The only fee numbers confirmed on an operator's own page, plus the one published rate floor<span data-count style="float:right"></span></caption>
@@ -273,8 +339,8 @@ def page_schedule():
                 f'<tr data-date="{d}" data-search="{E((d + " " + primary["name_printed"]).lower())}">'
                 f'<td class="mono">{d}</td>'
                 f'<td><strong>#{primary["event_no"]}</strong> {E(primary["name_printed"].split(" - ")[0])}<br><span class="small muted">{primary["start"]} · {money(primary["buy_in"])} · {primary["chips"]} chips · {primary["level_min"]} min levels</span></td>'
-                f'<td>{"&mdash;" if not fallback else pf}</td>'
-                f'<td class="small">{("Satellites: " + ", ".join(s["start"] + " #" + s["event_no"] for s in sats)) if sats else "&mdash;"}</td>'
+                f'<td>{"—" if not fallback else pf}</td>'
+                f'<td class="small">{("Satellites: " + ", ".join(s["start"] + " #" + s["event_no"] for s in sats)) if sats else "—"}</td>'
                 f'<td>{"Yes — Day 2/final table" if d in restart_days else "No"}</td>'
                 f'<td>{src_link("V_CAL","calendar")} · {src_link("V_S%02d" % int(primary["sheet_url"].split("_")[-1].replace(".pdf","")), "sheet")}</td></tr>')
         for i in range(len(evs) - 1):
@@ -344,7 +410,7 @@ def page_hotels():
             if w["status"] == "same_property":
                 walkrows.append(
                     '<tr data-walk30="1" data-search="%s"><td>%s</td><td>%s</td>'
-                    '<td class="num">&mdash;</td><td class="num">0 m</td>'
+                    '<td class="num">—</td><td class="num">0 m</td>'
                     '<td><span class="tag ok">inside the resort</span></td>'
                     '<td class="small mono">same property</td><td>%s</td></tr>'
                     % (E((h["name"] + " " + w["venue"]).lower()), E(h["name"]), E(w["venue"]),
@@ -433,16 +499,8 @@ def page_calculator():
 <p class="small muted">The default room rate ($119) and fee ($55) are The Venetian's published poker-rate floor and confirmed resort fee. The default is <em>not</em> a quote for your dates; it is the lowest figure the hotel itself publishes. Replace it with the amount your booking page shows for your dates.</p>
 <h2>Buy-in shortcuts</h2>
 <div class="tablewrap"><table data-searchable="1"><caption>Every confirmed total entry cost by venue, so the calculator can be filled without guessing<span data-count style="float:right"></span></caption>
-<thead><tr><th>Venue</th><th>Event</th><th class="num">Total entry</th><th class="num">House fee</th><th class="num">Fee %</th><th class="num">To prize pool</th><th>Source</th></tr></thead><tbody>
-<tr data-search="venetian"><td>Venetian</td><td>#2/#12 $300 NLH</td><td class="num">$300</td><td class="num">$58</td><td class="num">19.3%</td><td class="num">$242</td><td>{src_link('V_S05')}</td></tr>
-<tr data-search="venetian"><td>Venetian</td><td>#6 $200 NLH</td><td class="num">$200</td><td class="num">$40</td><td class="num">20.0%</td><td class="num">$160</td><td>{src_link('V_S29')}</td></tr>
-<tr data-search="venetian"><td>Venetian</td><td>#3–5 $200 RaceDay</td><td class="num">$200</td><td class="num">$35</td><td class="num">17.5%</td><td class="num">$165</td><td>{src_link('V_S18')}</td></tr>
-<tr data-search="venetian"><td>Venetian</td><td>#9/11/13 $200 bounty</td><td class="num">$200</td><td class="num">$40</td><td class="num">20.0%</td><td class="num">$160</td><td>{src_link('V_S01')}</td></tr>
-<tr data-search="venetian"><td>Venetian</td><td>#10 $400 NLH</td><td class="num">$400</td><td class="num">$65</td><td class="num">16.3%</td><td class="num">$335</td><td>{src_link('V_S06')}</td></tr>
-<tr data-search="venetian"><td>Venetian</td><td>#14/28/63 $600 NLH</td><td class="num">$600</td><td class="num">$90</td><td class="num">15.0%</td><td class="num">$510</td><td>{src_link('V_S07')}</td></tr>
-<tr data-search="venetian"><td>Venetian</td><td>#26 $800 NLH</td><td class="num">$800</td><td class="num">$110</td><td class="num">13.8%</td><td class="num">$690</td><td>{src_link('V_S12')}</td></tr>
-<tr data-search="venetian"><td>Venetian</td><td>#56 $1,100 NLH (early-bird $1,060)</td><td class="num">$1,100</td><td class="num">$140</td><td class="num">12.7%</td><td class="num">$960</td><td>{src_link('V_S35')}</td></tr>
-<tr data-search="venetian"><td>Venetian</td><td>#47 $2,200 Championship</td><td class="num">$2,200</td><td class="num">$225</td><td class="num">10.2%</td><td class="num">$1,975</td><td>{src_link('V_S21')}</td></tr>
+<thead><tr><th>Venue</th><th>Event as printed</th><th class="num">Total entry</th><th class="num">House fee</th><th class="num">Fee %</th><th class="num">To prize pool</th><th class="num">Rows</th><th>Source</th></tr></thead><tbody>
+{"".join(buyin_rows())}
 <tr data-search="wynn"><td>Wynn</td><td>Daily Mon–Thu $200</td><td class="num">$200</td><td class="num">$38</td><td class="num">19.0%</td><td class="num">$162</td><td>{src_link('W_DAILY')}</td></tr>
 <tr data-search="wynn"><td>Wynn</td><td>Friday rebuy $240</td><td class="num">$240</td><td class="num">$50</td><td class="num">20.8%</td><td class="num">$190</td><td>{src_link('W_DAILY')}</td></tr>
 <tr data-search="wynn"><td>Wynn</td><td>WPT &amp; all series events</td><td class="num"><span class="blank">UNVERIFIED</span></td><td class="num"><span class="blank">—</span></td><td class="num"><span class="blank">—</span></td><td class="num"><span class="blank">—</span></td><td>{src_link('W_WPT')} (fee deferred to structure sheets)</td></tr>
@@ -477,7 +535,7 @@ def page_venues():
             "hours": "Open 24 hours (V_POKER)",
             "srcs": ["V_POKER", "V_CAL", "V_RATES", "V_FEE"],
             "hotels": ["venetian", "wynn", "harrahs", "treasure_island", "caesars_palace", "bellagio"],
-            "note": "Largest room on the Strip (50 tables, 14,000 sq ft).",
+            "note": "Location and level are confirmed on the official poker page. Table count and square footage were not read from an official source in this session, so they are not stated.",
         },
         "Wynn": {
             "full": "Wynn Las Vegas — Poker Room, located in Encore",

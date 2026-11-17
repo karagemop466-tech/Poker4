@@ -203,3 +203,16 @@ Scope discipline: this session **adds** `data/v2/`, `tools/v2_*`, `v2/` and edit
 **Publish state:** 25 items on `v2/flagged.html`, 22 questions on `v2/questions.html`, 12 suggestions on `v2/suggestions.html`. Flagged and unverified items are published, not hidden, and do not block merge.
 
 **Known gap, recorded as F24/F25:** `tools/v2_check_sources.py` could not be executed here because shell network is blocked (every `curl` returns HTTP 000). The workflow runs it on GitHub runners; its first manual `workflow_dispatch` run will create `data/v2/source_state.json` and the baseline hashes.
+
+### Post-build accuracy pass — arena/98e4cb1c-poker4
+
+Rendered pages were re-read against the JSON after the first build and **six factual defects were found and fixed**. All six were introduced in this session's own pages, not inherited:
+
+1. **Guarantee ratios divided a whole-event guarantee by one flight's buy-in.** Event #1 printed $75,000 across four flights; the table showed 250× per flight. Event #26 read 625×. Now every event with more than one flight carries `guarantee_scope: "event_total"`, shows "event-total GTD — N flights, not comparable per flight", and is excluded from the "largest ratio" card. 27 of 83 rows changed.
+2. **The "largest guarantee ÷ buy-in" card named $2,200 → $1,000,000 (455×).** With flights excluded, the real answer is $200 → $20,000 (100×), and that guarantee is bounty-inclusive — now stated in the card.
+3. **The buy-in shortcut table was hand-typed and generalised one rake per buy-in.** Structure sheets show three different $300 rakes ($50 / $58 / $60) and three different $600 rakes ($80 / $90 / $95). The table is now generated: 20 distinct (buy-in, fee, pool) combinations, each linking its own sheet.
+4. **"$58 is the highest percentage rake among one-day events" was false.** At least three $200 events carry a $40 fee (20.0%), above $58/$300 (19.3%). Claim removed.
+5. **The page stated "the 30-minute walking rule eliminates nothing".** After the re-route it eliminates six pairs (Wynn↔Caesars 42.4, Wynn↔Bellagio 39.4, TI↔Bellagio 33.5, Harrah's↔Bellagio 34.9). Corrected, with the asymmetry explained.
+6. **Two unverified contact details were printed as fact.** The Venetian phone/email (never read from an official page here) was removed from F1; the Wynn number was kept only because it appears verbatim on the official poster that was transcribed. The Venetian "50 tables / 14,000 sq ft" claim was also removed — table count was never read from an official source.
+
+Also fixed: the monitor workflow referenced a non-existent `GITHUB_STEP_SUMMARY_PATH` variable and built the issue body from it; it now tees the report into `$GITHUB_STEP_SUMMARY`, commits the snapshot under a run-id filename, and the issue body links the run. The checker was executed once locally and correctly reported **64/64 unreachable** (sandbox shell network is blocked) rather than reporting a silent pass.
