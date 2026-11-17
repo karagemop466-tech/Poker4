@@ -1,8 +1,10 @@
 {
- "generated_at": "2026-11-17T22:48:33Z",
+ "generated_at": "2026-11-17T22:54:23Z",
  "urls_checked": 64,
  "urls_failed": [],
- "changed_this_run": [],
+ "changed_this_run": [
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+ ],
  "sheets_audited": 43,
  "schedule_rows": 94,
  "schedule_rows_with_date": 94,
