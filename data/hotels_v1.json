@@ -1,7 +1,9 @@
 {
   "meta": {
     "accessed": "2026-11-16",
-    "rule": "Only values read on an official page are shown. Room rates, taxes, and walking times are not confirmed and are left blank."
+    "rule": "Only values read on an official page are shown. Room rates, taxes, and walking times are not confirmed and are left blank.",
+    "enhanced": "2026-11-16",
+    "rate_log_note": "Rates are kept as a dated log, not a single value. Each log entry records the base rate, mandatory resort fee, tax, timestamp and source for one observed date. True cost/night = rate + resort fee + 13.38% Clark County tax (+ parking where applicable)."
   },
   "hotels": [
     {
@@ -13,7 +15,24 @@
         "V_RESORT",
         "V_POKER"
       ],
-      "notes": "Walking time from the room to the poker room not confirmed. Rates for your dates not confirmed."
+      "notes": "Walking time from the room to the poker room not confirmed. Rates for your dates not confirmed.",
+      "last_checked": "2026-11-16",
+      "rate_log": [
+        {
+          "date": "2026-11-16",
+          "rate": null,
+          "resort_fee": 55,
+          "tax_rate": 0.1338,
+          "total": null,
+          "timestamp": "2026-11-16T00:00:00Z",
+          "source": "V_RESORT",
+          "note": "Mandatory resort fee confirmed on official page; room rate not confirmed for any date."
+        }
+      ],
+      "checkout_total": null,
+      "nightly_average": null,
+      "parking": null,
+      "cancellation_deadline": null
     },
     {
       "property": "Wynn Las Vegas",
@@ -23,7 +42,24 @@
       "sources": [
         "W_PAGE"
       ],
-      "notes": "Official resort-fee page could not be reached. Third-party figures conflict and are not used."
+      "notes": "Official resort-fee page could not be reached. Third-party figures conflict and are not used.",
+      "last_checked": "2026-11-16",
+      "rate_log": [
+        {
+          "date": "2026-11-16",
+          "rate": null,
+          "resort_fee": null,
+          "tax_rate": 0.1338,
+          "total": null,
+          "timestamp": "2026-11-16T00:00:00Z",
+          "source": null,
+          "note": "Mandatory resort fee confirmed on official page; room rate not confirmed for any date."
+        }
+      ],
+      "checkout_total": null,
+      "nightly_average": null,
+      "parking": null,
+      "cancellation_deadline": null
     },
     {
       "property": "Bellagio",
@@ -34,7 +70,24 @@
         "B_PAGE",
         "B_HOTEL"
       ],
-      "notes": "Official resort-fee page could not be reached (404). Third-party figures conflict and are not used."
+      "notes": "Official resort-fee page could not be reached (404). Third-party figures conflict and are not used.",
+      "last_checked": "2026-11-16",
+      "rate_log": [
+        {
+          "date": "2026-11-16",
+          "rate": null,
+          "resort_fee": null,
+          "tax_rate": 0.1338,
+          "total": null,
+          "timestamp": "2026-11-16T00:00:00Z",
+          "source": null,
+          "note": "Mandatory resort fee confirmed on official page; room rate not confirmed for any date."
+        }
+      ],
+      "checkout_total": null,
+      "nightly_average": null,
+      "parking": null,
+      "cancellation_deadline": null
     },
     {
       "property": "Caesars Palace",
@@ -45,7 +98,24 @@
         "C_PAGE",
         "C_FEE"
       ],
-      "notes": "Official resort-fee page is marketing copy with no fee amount. Third-party figures conflict and are not used."
+      "notes": "Official resort-fee page is marketing copy with no fee amount. Third-party figures conflict and are not used.",
+      "last_checked": "2026-11-16",
+      "rate_log": [
+        {
+          "date": "2026-11-16",
+          "rate": null,
+          "resort_fee": null,
+          "tax_rate": 0.1338,
+          "total": null,
+          "timestamp": "2026-11-16T00:00:00Z",
+          "source": null,
+          "note": "Mandatory resort fee confirmed on official page; room rate not confirmed for any date."
+        }
+      ],
+      "checkout_total": null,
+      "nightly_average": null,
+      "parking": null,
+      "cancellation_deadline": null
     }
   ]
 }

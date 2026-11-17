@@ -156,6 +156,125 @@
    "label": "Horseshoe Las Vegas official page",
    "url": "https://www.caesars.com/horseshoe-las-vegas",
    "last_checked": "2026-11-17"
+  },
+  {
+   "id": "S1",
+   "label": "S1",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+   "last_checked": "2026-11-16",
+   "merged_from": "session v2/planner sources.json"
+  },
+  {
+   "id": "S2",
+   "label": "S2",
+   "url": "https://www.venetianlasvegas.com/resort/casino/poker.html",
+   "last_checked": "2026-11-16",
+   "merged_from": "session v2/planner sources.json"
+  },
+  {
+   "id": "S3",
+   "label": "S3",
+   "url": "https://www.venetianlasvegas.com/resort/resort-fee.html",
+   "last_checked": "2026-11-16",
+   "merged_from": "session v2/planner sources.json"
+  },
+  {
+   "id": "S4",
+   "label": "S4",
+   "url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+   "last_checked": "2026-11-16",
+   "merged_from": "session v2/planner sources.json"
+  },
+  {
+   "id": "S5",
+   "label": "S5",
+   "url": "https://wynnlasvegas.com/casino/poker",
+   "last_checked": "2026-11-16",
+   "merged_from": "session v2/planner sources.json"
+  },
+  {
+   "id": "S6",
+   "label": "S6",
+   "url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+   "last_checked": "2026-11-16",
+   "merged_from": "session v2/planner sources.json"
+  },
+  {
+   "id": "S7",
+   "label": "S7",
+   "url": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
+   "last_checked": "2026-11-16",
+   "merged_from": "session v2/planner sources.json"
+  },
+  {
+   "id": "S8",
+   "label": "S8",
+   "url": "https://www.caesars.com/horseshoe-las-vegas/casino/poker",
+   "last_checked": "2026-11-16",
+   "merged_from": "session v2/planner sources.json"
+  },
+  {
+   "id": "S9",
+   "label": "S9",
+   "url": "https://mgmgrand.mgmresorts.com/en/casino/poker-tables.html",
+   "last_checked": "2026-11-16",
+   "merged_from": "session v2/planner sources.json"
+  },
+  {
+   "id": "S10",
+   "label": "S10",
+   "url": "https://aria.mgmresorts.com/en/casino/poker.html",
+   "last_checked": "2026-11-16",
+   "merged_from": "session v2/planner sources.json"
+  },
+  {
+   "id": "S11",
+   "label": "S11",
+   "url": "https://southpointcasino.com/",
+   "last_checked": "2026-11-16",
+   "merged_from": "session v2/planner sources.json"
+  },
+  {
+   "id": "S12",
+   "label": "S12",
+   "url": "https://bellagio.mgmresorts.com/en/poker.html",
+   "last_checked": "2026-11-16",
+   "merged_from": "session v2/planner sources.json"
+  },
+  {
+   "id": "S13",
+   "label": "S13",
+   "url": "https://planethollywoodresort.com/casino/poker",
+   "last_checked": "2026-11-16",
+   "merged_from": "session v2/planner sources.json"
+  },
+  {
+   "id": "S14",
+   "label": "S14",
+   "url": "https://rwlasvegas.com/casino/poker",
+   "last_checked": "2026-11-16",
+   "merged_from": "session v2/planner sources.json"
+  },
+  {
+   "id": "S15",
+   "label": "S15",
+   "url": "https://github.com/karagemop466-tech/Poker4",
+   "last_checked": "2026-11-16",
+   "merged_from": "session v2/planner sources.json"
+  },
+  {
+   "id": "S16",
+   "label": "S16",
+   "url": "https://www.goldennugget.com/las-vegas/casino/poker",
+   "last_checked": "2026-11-16",
+   "merged_from": "session v2/planner sources.json"
+  },
+  {
+   "id": "S17",
+   "label": "S17",
+   "url": "https://www.orleanscasino.com/casino/poker",
+   "last_checked": "2026-11-16",
+   "merged_from": "session v2/planner sources.json"
   }
  ]
 }

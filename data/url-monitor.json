@@ -1,0 +1,96 @@
+{
+  "last_updated": "2026-11-17",
+  "method": "Manual verification against official URLs (static site \u2014 no server-side cron)",
+  "urls": [
+    {
+      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+      "label": "Venetian DSE IV schedule",
+      "last_checked": "2026-11-17",
+      "check_interval_days": 7,
+      "changed": null,
+      "previous_value": null,
+      "notes": "Re-check weekly for schedule changes"
+    },
+    {
+      "url": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
+      "label": "Venetian poker suite rates",
+      "last_checked": "2026-11-17",
+      "check_interval_days": 7,
+      "changed": null,
+      "previous_value": null,
+      "notes": "Re-check weekly for rate/poker-rate changes"
+    },
+    {
+      "url": "https://www.venetianlasvegas.com/resort/resort-fee.html",
+      "label": "Venetian resort fee",
+      "last_checked": "2026-11-17",
+      "check_interval_days": 30,
+      "changed": null,
+      "previous_value": null,
+      "notes": "Re-check monthly for fee changes"
+    },
+    {
+      "url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+      "label": "Venetian hotel terms",
+      "last_checked": "2026-11-17",
+      "check_interval_days": 30,
+      "changed": null,
+      "previous_value": null,
+      "notes": "Re-check monthly for tax/parking/cancellation changes"
+    },
+    {
+      "url": "https://www.wynnlasvegas.com/casino/poker",
+      "label": "Wynn poker room",
+      "last_checked": "2026-11-17",
+      "check_interval_days": 7,
+      "changed": null,
+      "previous_value": null,
+      "notes": "Re-check weekly for daily schedule changes"
+    },
+    {
+      "url": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "label": "Wynn daily tournament structures PDF",
+      "last_checked": "2026-11-17",
+      "check_interval_days": 7,
+      "changed": null,
+      "previous_value": null,
+      "notes": "Re-check weekly for structure changes"
+    },
+    {
+      "url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "label": "Wynn WPT schedule PDF",
+      "last_checked": "2026-11-17",
+      "check_interval_days": 7,
+      "changed": null,
+      "previous_value": null,
+      "notes": "Re-check weekly during WPT series"
+    },
+    {
+      "url": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "label": "Caesars Palace daily NLH flyer",
+      "last_checked": "2026-11-17",
+      "check_interval_days": 7,
+      "changed": null,
+      "previous_value": null,
+      "notes": "Undated flyer \u2014 re-check for dated version"
+    },
+    {
+      "url": "https://bellagio.mgmresorts.com/en/casino/poker.html",
+      "label": "Bellagio poker page",
+      "last_checked": "2026-11-17",
+      "check_interval_days": 7,
+      "changed": null,
+      "previous_value": null,
+      "notes": "Re-check weekly; page had ambiguous date statement"
+    },
+    {
+      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament.html",
+      "label": "Venetian poker main page",
+      "last_checked": "2026-11-17",
+      "check_interval_days": 14,
+      "changed": null,
+      "previous_value": null,
+      "notes": "Re-check biweekly"
+    }
+  ]
+}

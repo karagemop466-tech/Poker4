@@ -1,37 +1,46 @@
-name: Source monitor & daily schedule feed
+name: Monitor official sources
 
 on:
   schedule:
-    - cron: "0 14 * * *"   # 14:00 UTC ≈ 6–7 AM PT — every morning Las Vegas time
+    # Daily at 07:00 UTC — pulls each Strip room's official schedule each morning
+    # and re-checks every official source URL for changes.
+    - cron: "0 7 * * *"
   workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
-  monitor:
+  recheck:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+        with:
+          # need a token-backed ref to push the updated snapshot
+          ref: main
+          persist-credentials: false
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: "3.x"
 
-      - name: Re-check official URLs and refresh schedule feed
-        run: python3 tools/monitor_sources.py
+      - name: Re-check every official source URL
+        run: python3 tools/check_sources.py
 
-      - name: Commit updated snapshots and change log
+      - name: Pull each Strip room's official daily schedule
+        run: python3 tools/scrape_schedule.py
+        continue-on-error: true
+
+      - name: Commit updated monitoring state if changed
         run: |
-          git config user.name "poker4-monitor"
-          git config user.email "poker4-monitor@users.noreply.github.com"
-          git add data/source_snapshots.json data/change_log.json data/feeds || true
-          if git diff --cached --quiet; then
-            echo "No source changes detected."
+          git config user.name "Poker4 Monitor"
+          git config user.email "monitor@users.noreply.github.com"
+          if git diff --quiet; then
+            echo "No changes to monitoring state."
           else
-            git commit -m "monitor: daily official-source re-check ($(date -u +%F))"
-            git pull --rebase origin main || true
-            git push origin main
+            git add planner/assets/data.js planner/data planner/assets/snapshots.json
+            git commit -m "chore(monitor): refresh official-source last-checked dates and change log"
+            git push
           fi

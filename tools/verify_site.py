@@ -13,7 +13,7 @@ pages += ["venues/" + p for p in os.listdir("venues") if p.endswith(".html")]
 for p in pages:
     t = open(p).read()
     for href in re.findall(r'href="([^"]+)"', t) + re.findall(r'src="([^"]+)"', t):
-        if href.startswith(("http://", "https://", "mailto:", "tel:", "#")): continue
+        if href.startswith(("http://", "https://", "mailto:", "tel:", "#")) or "${" in href: continue
         target = os.path.normpath(os.path.join(os.path.dirname(p), href.split("#")[0]))
         if not os.path.exists(target):
             errors.append("broken link in %s → %s" % (p, href))
