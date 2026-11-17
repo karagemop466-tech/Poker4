@@ -196,6 +196,19 @@ True cost at $119: <b>$197.28</b>/night. <a href="hotels.html">Hotel math →</a
 <article class="card"><h3>Automatic source re-check</h3><p>A scheduled GitHub Actions job re-fetches every official URL daily, stores hashes, and marks rows whose source changed. <a href="monitor.html">Change monitor →</a></p></article>
 <article class="card"><h3>One page per venue</h3><p>Venetian, Wynn, Bellagio, Caesars, ARIA — each with its events and walkable hotels. <a href="venues.html">Venues →</a></p></article>
 </div></section>
+<section class="section"><h2>Parallel research sets (preserved, independent snapshots)</h2>
+<p class="muted">Earlier sessions worked in parallel on this repository; their sites are preserved untouched and linked for
+comparison. They use their own snapshots and classifications; none of them overrides the verification status above.</p>
+<div class="grid">
+<article class="card"><h3><a href="planner/index.html">planner/</a></h3><p class="muted">Parallel planner site (session 98e4cb1c)</p></article>
+<article class="card"><h3><a href="v2/index.html">v2/</a></h3><p class="muted">Parallel v2 dashboard with its own data/ and monitors</p></article>
+<article class="card"><h3><a href="c07371e3/index.html">c07371e3/</a></h3><p class="muted">Venetian-focused schedule review (94-row CSV)</p></article>
+<article class="card"><h3><a href="60fb62da/index.html">60fb62da/</a></h3><p class="muted">Independent official-source audit</p></article>
+<article class="card"><h3><a href="df41f5c6/index.html">df41f5c6/</a></h3><p class="muted">Expanded tournament candidates</p></article>
+<article class="card"><h3><a href="verified/index.html">verified/</a></h3><p class="muted">Structure-sheet candidate review</p></article>
+<article class="card"><h3><a href="strip/index.html">strip/</a></h3><p class="muted">Strip-wide candidate review</p></article>
+<article class="card"><h3><a href="change-monitor.html">change-monitor.html</a></h3><p class="muted">Parallel root change-monitor page</p></article>
+</div></section>
 <section class="section"><h2>Recommended next move</h2>
 <ol class="tight">
 <li>Fix trip dates and a nightly budget, then use the <a href="calculator.html">trip calculator</a> with real hotel quotes for those dates (rates here are published leads, not dated quotes).</li>
