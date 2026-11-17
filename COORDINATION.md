@@ -1462,3 +1462,7 @@ written against, and any new source should be added to `data/tracked-sources.jso
 
 Gates on the merged tree: `verify_root` 16 pages · 253 rows · **111** rate-log lines · 66 sources · 0 warnings; `verify_markup`
 37 pages 0 problems; `linkcheck` 30 pages; `verify.py` OK; `validate_site.py` OK; `node --check app.js` OK; rebuild → clean.
+
+**Integration PR:** [#79](https://github.com/karagemop466-tech/Poker4/pull/79) — opened 2026-11-17 ~23:12 UTC,
+merging without waiting per the session brief. Merge result and Pages deploy confirmation to be
+recorded here immediately after the merge.
