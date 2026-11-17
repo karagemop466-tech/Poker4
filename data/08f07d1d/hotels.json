@@ -1,0 +1,151 @@
+{
+ "generated": "2026-11-17",
+ "currency": "USD",
+ "tax_note": "Room tax and resort-fee tax are applied as percentage inputs in the calculator; defaults come from the sources below and are re-checked by the monitor.",
+ "hotels": [
+  {
+   "id": "venetian",
+   "name": "The Venetian Resort / The Palazzo",
+   "venue": "venetian",
+   "relationship": "Host property of the DeepStack Extravaganza series; the poker room is in this property.",
+   "resort_fee": {
+    "value": 55,
+    "unit": "per room, per night, plus tax",
+    "status": "confirmed",
+    "quote": "Rates include a daily Resort Fee of $55 plus tax per night, payable upon check-in.",
+    "source": "https://www.venetianlasvegas.com/resort/resort-fee.html",
+    "checked": "2026-11-17",
+    "verified_by": "session 08f07d1d read the live page on 2026-11-17"
+   },
+   "resort_fee_inclusions": {
+    "status": "confirmed",
+    "quote": "Access for two to the fitness facility within the Canyon Ranch spa + fitness; In-suite internet access (WiFi or Ethernet); Boarding pass printing; Unlimited local and toll-free calls; Access to thousands of top newspapers and magazines using PressReader app.",
+    "source": "https://www.venetianlasvegas.com/resort/resort-fee.html",
+    "checked": "2026-11-17"
+   },
+   "room_tax": {
+    "value": 13.38,
+    "unit": "% Clark County room tax",
+    "status": "carried - not re-read this session",
+    "quote": null,
+    "source": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+    "checked": "2026-11-16 (earlier session)",
+    "note": "This session could not load that page (fetch failed 4 times on 2026-11-17); the monitor will re-read it. Treat as unverified until then.",
+    "flag": "F-TAX"
+   },
+   "parking": {
+    "value": null,
+    "status": "not re-read this session",
+    "source": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+    "flag": "F-PARKING"
+   },
+   "cancellation": {
+    "value": null,
+    "status": "not captured - needs a dated quote",
+    "source": "https://www.venetianlasvegas.com/booking",
+    "flag": "F-CANCEL"
+   },
+   "checkout_total": {
+    "value": null,
+    "status": "not available without dates",
+    "flag": "F-RATE"
+   },
+   "booking_link": "https://www.venetianlasvegas.com/booking?adults[]={guests}&arrival_date={arrive}&children[]=0&departure_date={depart}&view=calendar",
+   "booking_link_note": "Link pattern copied from the official Venetian page's own date picker on 2026-11-17; it opens the official engine for the chosen dates. It does not assert any price.",
+   "quality": {
+    "rating": null,
+    "status": "not verified - no official quality metric collected",
+    "flag": "F-QUALITY"
+   }
+  },
+  {
+   "id": "palazzo",
+   "name": "The Palazzo",
+   "venue": "venetian",
+   "relationship": "Same resort; named in the same official poker-rate offer.",
+   "resort_fee": {
+    "value": 55,
+    "unit": "per room, per night, plus tax",
+    "status": "confirmed",
+    "quote": "Rates include a daily Resort Fee of $55 plus tax per night, payable upon check-in.",
+    "source": "https://www.venetianlasvegas.com/resort/resort-fee.html",
+    "checked": "2026-11-17",
+    "note": "The official resort-fee page speaks for Venetian and Palazzo reservations generally; it does not split the fee by building."
+   },
+   "room_tax": {
+    "value": 13.38,
+    "status": "carried - not re-read this session",
+    "flag": "F-TAX"
+   },
+   "checkout_total": {
+    "value": null,
+    "status": "not available without dates",
+    "flag": "F-RATE"
+   },
+   "booking_link": "https://www.venetianlasvegas.com/booking?adults[]={guests}&arrival_date={arrive}&children[]=0&departure_date={depart}&view=calendar",
+   "quality": {
+    "rating": null,
+    "status": "not verified",
+    "flag": "F-QUALITY"
+   }
+  },
+  {
+   "id": "wynn",
+   "name": "Wynn Las Vegas",
+   "venue": "wynn",
+   "relationship": "Host of the Wynn poker room; separate property, not the DeepStack host.",
+   "resort_fee": {
+    "value": null,
+    "status": "not verified this session",
+    "flag": "F-FEE-WYNN"
+   },
+   "room_tax": {
+    "value": null,
+    "status": "not verified",
+    "flag": "F-TAX"
+   },
+   "checkout_total": {
+    "value": null,
+    "status": "not available without dates",
+    "flag": "F-RATE"
+   },
+   "booking_link": "https://reservations.wynnlasvegas.com/ibe/index.aspx?hotelID=13763&langID=1&currID=0&checkIn={arrive_us}&checkOut={depart_us}",
+   "booking_link_note": "Reservations-engine link pattern observed on the official Wynn page on 2026-11-17 (it appeared in the property's own offer card).",
+   "quality": {
+    "rating": null,
+    "status": "not verified",
+    "flag": "F-QUALITY"
+   }
+  },
+  {
+   "id": "treasure-island",
+   "name": "Treasure Island",
+   "venue": "other",
+   "relationship": "Off the DeepStack venue list; carried from an earlier session's official-page reading.",
+   "resort_fee": {
+    "value": 49.95,
+    "unit": "plus tax",
+    "status": "carried - not re-read this session",
+    "source": "https://treasureisland.com/hotel/tower-suite",
+    "checked": "2026-11-16 (earlier session)",
+    "flag": "F-FEE-TI"
+   },
+   "room_tax": {
+    "value": 13.38,
+    "status": "carried - not re-read this session",
+    "flag": "F-TAX"
+   },
+   "checkout_total": {
+    "value": null,
+    "status": "not available without dates",
+    "flag": "F-RATE"
+   },
+   "booking_link": "https://www.treasureisland.com/",
+   "quality": {
+    "rating": null,
+    "status": "not verified",
+    "flag": "F-QUALITY"
+   }
+  }
+ ]
+}

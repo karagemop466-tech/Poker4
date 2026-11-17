@@ -1,0 +1,463 @@
+{
+ "generated": "2026-11-17",
+ "note": "Every URL here is a property-owned or organizer-owned page. The monitor re-checks each one on a schedule; a row is only marked confirmed when the linked document states it.",
+ "sources": [
+  {
+   "id": "V-SCH",
+   "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "kind": "schedule",
+   "label": "Venetian DeepStack Extravaganza IV official calendar (Nov 16 - Dec 23, 2026)",
+   "venue": "venetian",
+   "official": true,
+   "parser": "venetian_dse_schedule"
+  },
+  {
+   "id": "V-DSE",
+   "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament.html",
+   "kind": "schedule",
+   "label": "Venetian DeepStack series landing page",
+   "venue": "venetian",
+   "official": true
+  },
+  {
+   "id": "V-POKER",
+   "url": "https://www.venetianlasvegas.com/resort/casino/poker.html",
+   "kind": "room",
+   "label": "Venetian poker room (official page)",
+   "venue": "venetian",
+   "official": true
+  },
+  {
+   "id": "V-PDF-01",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
+   "kind": "structure",
+   "label": "Venetian DSE IV official structure sheet #1",
+   "venue": "venetian",
+   "official": true
+  },
+  {
+   "id": "V-PDF-02",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_2.pdf",
+   "kind": "structure",
+   "label": "Venetian DSE IV official structure sheet #2",
+   "venue": "venetian",
+   "official": true
+  },
+  {
+   "id": "V-PDF-03",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_3.pdf",
+   "kind": "structure",
+   "label": "Venetian DSE IV official structure sheet #3",
+   "venue": "venetian",
+   "official": true
+  },
+  {
+   "id": "V-PDF-04",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf",
+   "kind": "structure",
+   "label": "Venetian DSE IV official structure sheet #4",
+   "venue": "venetian",
+   "official": true
+  },
+  {
+   "id": "V-PDF-05",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf",
+   "kind": "structure",
+   "label": "Venetian DSE IV official structure sheet #5",
+   "venue": "venetian",
+   "official": true
+  },
+  {
+   "id": "V-PDF-06",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_6.pdf",
+   "kind": "structure",
+   "label": "Venetian DSE IV official structure sheet #6",
+   "venue": "venetian",
+   "official": true
+  },
+  {
+   "id": "V-PDF-07",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf",
+   "kind": "structure",
+   "label": "Venetian DSE IV official structure sheet #7",
+   "venue": "venetian",
+   "official": true
+  },
+  {
+   "id": "V-PDF-08",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_8.pdf",
+   "kind": "structure",
+   "label": "Venetian DSE IV official structure sheet #8",
+   "venue": "venetian",
+   "official": true
+  },
+  {
+   "id": "V-PDF-09",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_9.pdf",
+   "kind": "structure",
+   "label": "Venetian DSE IV official structure sheet #9",
+   "venue": "venetian",
+   "official": true
+  },
+  {
+   "id": "V-PDF-10",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf",
+   "kind": "structure",
+   "label": "Venetian DSE IV official structure sheet #10",
+   "venue": "venetian",
+   "official": true
+  },
+  {
+   "id": "V-PDF-11",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf",
+   "kind": "structure",
+   "label": "Venetian DSE IV official structure sheet #11",
+   "venue": "venetian",
+   "official": true
+  },
+  {
+   "id": "V-PDF-12",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf",
+   "kind": "structure",
+   "label": "Venetian DSE IV official structure sheet #12",
+   "venue": "venetian",
+   "official": true
+  },
+  {
+   "id": "V-PDF-13",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_13.pdf",
+   "kind": "structure",
+   "label": "Venetian DSE IV official structure sheet #13",
+   "venue": "venetian",
+   "official": true
+  },
+  {
+   "id": "V-PDF-14",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_14.pdf",
+   "kind": "structure",
+   "label": "Venetian DSE IV official structure sheet #14",
+   "venue": "venetian",
+   "official": true
+  },
+  {
+   "id": "V-PDF-15",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf",
+   "kind": "structure",
+   "label": "Venetian DSE IV official structure sheet #15",
+   "venue": "venetian",
+   "official": true
+  },
+  {
+   "id": "V-PDF-16",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_16.pdf",
+   "kind": "structure",
+   "label": "Venetian DSE IV official structure sheet #16",
+   "venue": "venetian",
+   "official": true
+  },
+  {
+   "id": "V-PDF-17",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_17.pdf",
+   "kind": "structure",
+   "label": "Venetian DSE IV official structure sheet #17",
+   "venue": "venetian",
+   "official": true
+  },
+  {
+   "id": "V-PDF-18",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf",
+   "kind": "structure",
+   "label": "Venetian DSE IV official structure sheet #18",
+   "venue": "venetian",
+   "official": true
+  },
+  {
+   "id": "V-PDF-19",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_19.pdf",
+   "kind": "structure",
+   "label": "Venetian DSE IV official structure sheet #19",
+   "venue": "venetian",
+   "official": true
+  },
+  {
+   "id": "V-PDF-20",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_20.pdf",
+   "kind": "structure",
+   "label": "Venetian DSE IV official structure sheet #20",
+   "venue": "venetian",
+   "official": true
+  },
+  {
+   "id": "V-PDF-21",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf",
+   "kind": "structure",
+   "label": "Venetian DSE IV official structure sheet #21",
+   "venue": "venetian",
+   "official": true
+  },
+  {
+   "id": "V-PDF-22",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_22.pdf",
+   "kind": "structure",
+   "label": "Venetian DSE IV official structure sheet #22",
+   "venue": "venetian",
+   "official": true
+  },
+  {
+   "id": "V-PDF-23",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_23.pdf",
+   "kind": "structure",
+   "label": "Venetian DSE IV official structure sheet #23",
+   "venue": "venetian",
+   "official": true
+  },
+  {
+   "id": "V-PDF-24",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_24.pdf",
+   "kind": "structure",
+   "label": "Venetian DSE IV official structure sheet #24",
+   "venue": "venetian",
+   "official": true
+  },
+  {
+   "id": "V-PDF-25",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_25.pdf",
+   "kind": "structure",
+   "label": "Venetian DSE IV official structure sheet #25",
+   "venue": "venetian",
+   "official": true
+  },
+  {
+   "id": "V-PDF-26",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_26.pdf",
+   "kind": "structure",
+   "label": "Venetian DSE IV official structure sheet #26",
+   "venue": "venetian",
+   "official": true
+  },
+  {
+   "id": "V-PDF-27",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_27.pdf",
+   "kind": "structure",
+   "label": "Venetian DSE IV official structure sheet #27",
+   "venue": "venetian",
+   "official": true
+  },
+  {
+   "id": "V-PDF-28",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_28.pdf",
+   "kind": "structure",
+   "label": "Venetian DSE IV official structure sheet #28",
+   "venue": "venetian",
+   "official": true
+  },
+  {
+   "id": "V-PDF-29",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_29.pdf",
+   "kind": "structure",
+   "label": "Venetian DSE IV official structure sheet #29",
+   "venue": "venetian",
+   "official": true
+  },
+  {
+   "id": "V-PDF-30",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_30.pdf",
+   "kind": "structure",
+   "label": "Venetian DSE IV official structure sheet #30",
+   "venue": "venetian",
+   "official": true
+  },
+  {
+   "id": "V-PDF-31",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_31.pdf",
+   "kind": "structure",
+   "label": "Venetian DSE IV official structure sheet #31",
+   "venue": "venetian",
+   "official": true
+  },
+  {
+   "id": "V-PDF-32",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_32.pdf",
+   "kind": "structure",
+   "label": "Venetian DSE IV official structure sheet #32",
+   "venue": "venetian",
+   "official": true
+  },
+  {
+   "id": "V-PDF-33",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_33.pdf",
+   "kind": "structure",
+   "label": "Venetian DSE IV official structure sheet #33",
+   "venue": "venetian",
+   "official": true
+  },
+  {
+   "id": "V-PDF-34",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_34.pdf",
+   "kind": "structure",
+   "label": "Venetian DSE IV official structure sheet #34",
+   "venue": "venetian",
+   "official": true
+  },
+  {
+   "id": "V-PDF-35",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf",
+   "kind": "structure",
+   "label": "Venetian DSE IV official structure sheet #35",
+   "venue": "venetian",
+   "official": true
+  },
+  {
+   "id": "V-PDF-36",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_36.pdf",
+   "kind": "structure",
+   "label": "Venetian DSE IV official structure sheet #36",
+   "venue": "venetian",
+   "official": true
+  },
+  {
+   "id": "V-PDF-37",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_37.pdf",
+   "kind": "structure",
+   "label": "Venetian DSE IV official structure sheet #37",
+   "venue": "venetian",
+   "official": true
+  },
+  {
+   "id": "W-POKER",
+   "url": "https://www.wynnlasvegas.com/casino/poker",
+   "kind": "room",
+   "label": "Wynn Las Vegas poker room (official)",
+   "venue": "wynn",
+   "official": true
+  },
+  {
+   "id": "W-WPT",
+   "url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+   "kind": "schedule",
+   "label": "Wynn WPT World Championship schedule PDF (official CDN)",
+   "venue": "wynn",
+   "official": true
+  },
+  {
+   "id": "B-POKER",
+   "url": "https://bellagio.mgmresorts.com/en/casino/poker.html",
+   "kind": "room",
+   "label": "Bellagio poker (official MGM page)",
+   "venue": "bellagio",
+   "official": true
+  },
+  {
+   "id": "A-POKER",
+   "url": "https://aria.mgmresorts.com/en/casino/poker.html",
+   "kind": "room",
+   "label": "ARIA poker (official MGM page)",
+   "venue": "aria",
+   "official": true
+  },
+  {
+   "id": "C-POKER",
+   "url": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
+   "kind": "schedule",
+   "label": "Caesars Entertainment Strip poker tournaments (official)",
+   "venue": "caesars",
+   "official": true
+  },
+  {
+   "id": "H-POKER",
+   "url": "https://www.caesars.com/horseshoe-las-vegas/casino/poker",
+   "kind": "room",
+   "label": "Horseshoe Las Vegas poker (official)",
+   "venue": "horseshoe",
+   "official": true
+  },
+  {
+   "id": "G-POKER",
+   "url": "https://www.goldennugget.com/las-vegas/casino/poker",
+   "kind": "room",
+   "label": "Golden Nugget poker (official)",
+   "venue": "goldennugget",
+   "official": true
+  },
+  {
+   "id": "O-POKER",
+   "url": "https://www.orleanscasino.com/casino/poker",
+   "kind": "room",
+   "label": "Orleans poker (official)",
+   "venue": "orleans",
+   "official": true
+  },
+  {
+   "id": "P-POKER",
+   "url": "https://planethollywoodresort.com/casino/poker",
+   "kind": "room",
+   "label": "Planet Hollywood poker (official)",
+   "venue": "planethollywood",
+   "official": true
+  },
+  {
+   "id": "R-POKER",
+   "url": "https://rwlasvegas.com/casino/poker",
+   "kind": "room",
+   "label": "Resorts World poker (official)",
+   "venue": "resortsworld",
+   "official": true
+  },
+  {
+   "id": "SP-POKER",
+   "url": "https://www.southpointcasino.com/casino/poker",
+   "kind": "room",
+   "label": "South Point poker (official, off-Strip)",
+   "venue": "southpoint",
+   "official": true
+  },
+  {
+   "id": "V-FEE",
+   "url": "https://www.venetianlasvegas.com/resort/resort-fee.html",
+   "kind": "fee",
+   "label": "Venetian official resort-fee page",
+   "venue": "venetian",
+   "official": true
+  },
+  {
+   "id": "V-TERMS",
+   "url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+   "kind": "terms",
+   "label": "Venetian official hotel terms (tax, parking, cancellation)",
+   "venue": "venetian",
+   "official": true
+  },
+  {
+   "id": "V-RATES",
+   "url": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
+   "kind": "rates",
+   "label": "Venetian official poker suite-rate terms",
+   "venue": "venetian",
+   "official": true
+  },
+  {
+   "id": "V-BOOK",
+   "url": "https://www.venetianlasvegas.com/book",
+   "kind": "booking",
+   "label": "Venetian official booking engine (dated quote starts here)",
+   "venue": "venetian",
+   "official": true
+  },
+  {
+   "id": "TI-FEE",
+   "url": "https://treasureisland.com/hotel/tower-suite",
+   "kind": "fee",
+   "label": "Treasure Island official room page (resort fee shown on page)",
+   "venue": "treasureisland",
+   "official": true
+  },
+  {
+   "id": "W-FEE",
+   "url": "https://www.wynnlasvegas.com/rooms-and-suites",
+   "kind": "rates",
+   "label": "Wynn rooms page (official)",
+   "venue": "wynn",
+   "official": true
+  }
+ ]
+}
