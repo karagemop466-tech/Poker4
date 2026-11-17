@@ -19,3 +19,9 @@ Open `index.html` directly, or serve the repository root with any static-file se
 ## Research policy
 
 All values shown as confirmed link to the official operator source. Unknown or ambiguous values are blank and flagged. The available official tournament schedule does not explicitly establish whether entries or re-entries are allowed for the upcoming one-day events; consequently, **there are no tournaments classified as verified single-entry**. The data is a point-in-time snapshot, not a live feed or booking quote.
+
+## Vegas Field Notes sub-site
+
+A separate, official-source-checked dashboard from session `arena/6313b65a-poker4` lives in [`site/`](site/). It preserves the existing root dashboard and shared Pages workflow. Once this contribution is merged and the existing Pages workflow finishes, browse the sub-site at [`/site/`](https://karagemop466-tech.github.io/Poker4/site/).
+
+The sub-site's dated verification report is [`research/VERIFICATION.md`](research/VERIFICATION.md). Its reviewed strict single-entry count is zero confirmed; unknown entry rules remain unknown. Local run and validation instructions are in [`site/README.md`](site/README.md).

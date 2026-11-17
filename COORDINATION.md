@@ -148,3 +148,18 @@ Scope note: the session brief asks for `session-<id>/<task>` branches. The Arena
 
 -2026-11-17 — Claimed T11 (final integration) on branch `arena/88295d28-poker4` (from main @ `be3594d`). Scope: `COORDINATION.md`, shared root site (`index.html`, `tournaments.html`, `hotels.html`, `schedule.html`, `decisions.html`, `questions.html`, `review.html`, `style.css`), `data/*.json`, `scripts/`, `.github/workflows/`, and the integration PR → main.
 - 2026-11-17 — Irregularity found and repaired: `COORDINATION.md` on `main` contained leftover conflict markers (`=======` at old line 133, `>>>>>>> origin/main` at old line 150) with a duplicated `60fb62da` section. Resolution: kept the first full copy (which contained every bullet, plus the two df41f5c6 log lines), deleted the duplicate section and both marker lines. No other session's content removed.
+## Session arena/6313b65a-poker4 — official-source dashboard
+
+| Task | Status | Owner | Scope |
+|---|---|---|---|
+| Audit selected upcoming Strip-area poker events and same-property hotel costs | complete for the 2026-11-16 snapshot | `6313b65a` | `research/VERIFICATION.md` |
+| Build a sourced decision dashboard | complete | `6313b65a` | `site/`, `scripts/validate_site.py`, `site/README.md` |
+| Integrate without replacing the existing root Pages site; PR and deployment | in progress | `6313b65a` | This session record, `README.md`, `.github/workflows/site-check.yml` |
+
+- Research finding: **zero strict single-entry events confirmed** by reviewed official terms. Missing entry terms remain unknown. The full qualification method, dates, evidence, hotel-fee disclosures, and unresolved items are in `research/VERIFICATION.md`.
+- Dashboard data: 8 dated event IDs / 9 start rows, 11 recurring schedules, 3 selected WPT festival events, 9 prize-pool-share examples, 7 hotel comparisons, and 45 official source URLs. All hotel totals remain blank pending trip details.
+- Integration note: PR #16 initially conflicted because `main` advanced through PR #15 while this branch was being built. The conflict was resolved by retaining `main`'s root dashboard, README, and root-publishing `.github/workflows/pages.yml`; the new dashboard remains under `site/`. The existing Pages workflow uploads the repository root, so after merge it will be available at `/site/` without replacing the root experience. `.github/workflows/site-check.yml` validates this sub-site on pull requests.
+- Verification: `python3 scripts/validate_site.py`, `node --check site/app.js`, HTML parser smoke, `git diff --check`, and HTTP smoke checks on port 4173 passed. The dashboard is dependency-free; no browser automation tool was available for visual testing.
+- Preview process: `vegas-poker-research-dashboard-0153a62c` (port 4173).
+- Integration commit `9c29111` merged current `origin/main` into this branch without changing the branch name; conflict resolution retained the upstream root site and shared Pages workflow. PR #16 is now `CLEAN` / `MERGEABLE`, and its `Check Vegas Field Notes sub-site` run `43938814659` passed. PR: https://github.com/karagemop466-tech/Poker4/pull/16.
+- PR #16 remains open; do not merge until the user confirms. This sub-site has not deployed yet. After merge, the existing root Pages workflow should publish it at `/site/`; the root workflow has previously succeeded for upstream `main` commits.
