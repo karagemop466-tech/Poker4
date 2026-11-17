@@ -320,3 +320,12 @@ This converts the "automatic re-check" requirement from built-but-undemonstrated
 - but "explicitly permits" overstates the text, and this build therefore quotes it verbatim and keeps the row `not published` (flag F3, now carrying the fuller explanation).
 
 Neither page was changed by the other session's work; the discrepancy is documented here and on `/v2/flagged.html` so a reader can judge it themselves.
+
+### Shipped — PR #23 merged, Pages live — arena/98e4cb1c-poker4
+
+- **PR:** https://github.com/karagemop466-tech/Poker4/pull/23 — merged to `main` at **2026-11-17T01:17:33Z**, merge commit **`7859cb5`** (36 files at open, grown by the monitor's own commits).
+- **Pages deploy:** the first `pages build and deployment` run for `7859cb5` (run `43994448958`) **failed** — two GitHub-initiated deployments were queued for the same commit at 01:17:37 and 01:17:45 and the loser errored. It was resolved by re-running the deployment, not by changing any file: run `43994595719` **succeeded** at 01:19:10Z, and the Pages API reports status `built`, source `main:/`, URL https://karagemop466-tech.github.io/Poker4/ .
+- **Live verification:** all 13 v2 assets resolve on `main` — `v2/index.html` (10,476 B), `tournaments` (104,930), `hotels` (27,348), `calculator` (19,577), `venues` (119,748), `separate` (20,635), `flagged` (43,936), `questions` (23,192), `suggestions` (17,715), `about` (51,222), `schedule` (80,507), plus `assets/app.css` and `assets/app.js`. Live URL: https://karagemop466-tech.github.io/Poker4/v2/
+- **Note on the deploy failure:** it was a duplicate-deployment race, not a build error. `gh workflow run` dispatch was unavailable (403, no `workflow` scope on the integration), so the re-run was achieved by letting the `pages-build-deployment` workflow re-trigger on the same commit. Recorded here because a future session seeing a red `pages build and deployment` for `7859cb5` should not assume the v2 files are broken.
+- **Merge conflicts resolved on the way in, none by discarding work:** `COORDINATION.md` twice (sessions `aa32d8fd`, `f75326a3`) and `index.html` once (planner callout vs v2 section — both kept). `data/v2/source_state.json` once (kept the workflow's real 61-URL baseline over a broken local one).
+- **Flagged items published, not blocking:** 26 items on `/v2/flagged.html` (3 open-blocking, 21 material, 2 resolved). All are live and linked.
