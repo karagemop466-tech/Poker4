@@ -1,0 +1,31 @@
+{
+ "trip_window": {
+  "first_day": "2026-11-17",
+  "last_day": "2026-12-23",
+  "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+  "checked": "2026-11-17"
+ },
+ "day_plan": {
+  "play_from": "08:00",
+  "play_until": "02:00",
+  "note": "Requested 8 AM start. Earliest start on the official Venetian calendar that was checked on 2026-11-17 is 9:10 AM (Event #46 satellite, Dec 12); earliest non-satellite start is 10:00 AM (Day 2 restarts). No one-day main event starts at or before 8:10 AM."
+ },
+ "walk_limit_minutes": 30,
+ "occupancy": {
+  "guests": 2,
+  "status": "assumption - not supplied by the traveller; hotel totals change with it",
+  "flag": "F-OCC"
+ },
+ "single_entry_rule": "Only events whose official structure states one entry per player (no re-entry, no rebuy, no add-on) qualify. Silence does not qualify.",
+ "ranking_rule": "Rank on confirmed total entry fee and confirmed guarantee only. GTD / entry is a descriptive ratio, not a forecast. Bounty, satellite/flight, restricted-field and other-game events are ranked in a separate section.",
+ "budget_floor": {
+  "value": null,
+  "status": "not supplied",
+  "flag": "F-BUDGET"
+ },
+ "quality_floor": {
+  "value": null,
+  "status": "not supplied - no official quality metric is collected by this project",
+  "flag": "F-QUALITY"
+ }
+}
