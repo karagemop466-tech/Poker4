@@ -65,7 +65,7 @@
   },
   "https://www.resortfeechecker.com/140596-resort_fee_bellagio.html": {
    "last_checked": "2026-11-17",
-   "sha256": "d80cc335474ee22ba4694215b411c79f1c90b78c5c66e417cd941c21b2aadf25",
+   "sha256": "fa7957f6bf1f3d5c7742d1e908a8011887939639988263072402f251fb549f86",
    "source_ids": [
     "M_FEES_UNVERIFIED"
    ]
@@ -415,14 +415,14 @@
   },
   "https://www.wynnlasvegas.com/casino/poker": {
    "last_checked": "2026-11-17",
-   "sha256": "fc9665720871a5d49f127033f42e2576a1337973578878ec445899891da8b6b0",
+   "sha256": "f40a61dba1bc528020bf6a50874d8c24394b29fb4ad212801c1b5fbeb453debc",
    "source_ids": [
     "W_POKER"
    ]
   },
   "https://www.wynnlasvegas.com/terms-and-conditions/850257": {
    "last_checked": "2026-11-17",
-   "sha256": "328b99a8f23253dcf076649fbbd6eafe20ecb3c18698dbe56f39956499630677",
+   "sha256": "923a3b8e81d0f8d34a2b739200878b1b48d5ca40ec5d3988cc38ba33c2b7c9c3",
    "source_ids": [
     "W_TC_FEE"
    ]
