@@ -363,11 +363,17 @@ def build_archive():
         '<li><a href="pages/tournaments.html">pages/ — first root session site</a></li>'
         '<li><a href="decisions.html">decisions.html</a> · <a href="review.html">review.html</a> — earlier root pages</li>'
         '<li><b>08f07d1d session:</b> <a href="v2/index.html">v2/ verified poker4 dashboard</a> (live) · '
-        '<a href="archive/08f07d1d/index.html">archive/08f07d1d/ — their root page versions preserved verbatim</a> '
-        '(index, tournaments, hotels, schedule, questions, sources, suggestions) · their other root pages remain live: '
+        '<a href="poker4/index.html">poker4/ subsite</a> (live) · '
+        '<a href="archive/08f07d1d/index.html">archive/08f07d1d/ — PR #26 root page versions preserved verbatim</a> · '
+        '<a href="archive/08f07d1d/pr30/index.html">archive/08f07d1d/pr30/ — PR #30 root/venue page versions preserved verbatim</a> · '
+        'their other root pages remain live: '
         '<a href="change-monitor.html">change-monitor.html</a>, <a href="trip-calculator.html">trip-calculator.html</a>, '
         '<a href="venue-venetian.html">venue-venetian.html</a>, <a href="venue-wynn.html">venue-wynn.html</a>, '
-        '<a href="venue-others.html">venue-others.html</a> · their data: <code>data/08f07d1d/</code>, <code>data/v2/</code></li></ul>']
+        '<a href="venue-others.html">venue-others.html</a>, <a href="venues.html">venues.html</a>, '
+        '<a href="ratelog.html">ratelog.html</a>, <a href="repo-review.html">repo-review.html</a>, '
+        '<a href="workflow.html">workflow.html</a>, <a href="venues/aria.html">venues/aria</a> · '
+        '<a href="venues/bellagio.html">bellagio</a> · <a href="venues/caesars.html">caesars</a> · '
+        'their data: <code>data/08f07d1d/</code>, <code>data/v2/</code>, <code>data/rate_log.json</code></li></ul>']
     page("archive.html", "Archive of earlier session sites", "".join(body))
 
 def build_others():

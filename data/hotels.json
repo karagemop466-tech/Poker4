@@ -1,121 +1,192 @@
 {
-  "meta": {
-    "accessed": "2026-11-16",
-    "rule": "Only values read on an official page are shown. Room rates, taxes, and walking times are not confirmed and are left blank.",
-    "enhanced": "2026-11-16",
-    "rate_log_note": "Rates are kept as a dated log, not a single value. Each log entry records the base rate, mandatory resort fee, tax, timestamp and source for one observed date. True cost/night = rate + resort fee + 13.38% Clark County tax (+ parking where applicable)."
+ "generated": "2026-11-17",
+ "true_cost_formula": "true cost per night = (nightly rate + resort fee) × (1 + 13.38% Clark County room tax)",
+ "hotels": [
+  {
+   "id": "venetian",
+   "name": "The Venetian Resort (Venetian & Palazzo towers)",
+   "address": "3355 Las Vegas Blvd S, Las Vegas, NV 89109",
+   "resort_fee": 55.0,
+   "resort_fee_source": "V_FEE",
+   "tax_rate": 0.1338,
+   "tax_source": "V_TERMS",
+   "parking": "Self-park $20/day (hotel guests); $20 Mon–Thu / $25 Fri–Sun (non-guests); valet $40/day; Venetian Rewards Sapphire+ free self-park",
+   "parking_source": "V_TERMS",
+   "cancellation": "Prepaid offers non-cancellable; standard deposit = first night or full stay; early departure fee $100 + tax; $150/night incidental hold",
+   "cancellation_source": "V_TERMS",
+   "poker_rate": "Official poker suite rate from $119/$209 (code EPOKR25) — requires 6h live cash play or a $300+ tournament buy-in per night; subject to availability",
+   "poker_rate_source": "V_POKER_RATE",
+   "booking_url": "https://www.venetianlasvegas.com/book",
+   "venue_walk": "0 min (host venue — poker room at Palazzo Level 2)",
+   "last_checked": "2026-11-17",
+   "flags": []
   },
-  "hotels": [
-    {
-      "property": "The Venetian / The Palazzo",
-      "poker_location": "Venetian poker room (official poker page).",
-      "resort_fee": "$55 + tax per night (official resort-fee page).",
-      "walk": null,
-      "sources": [
-        "V_RESORT",
-        "V_POKER"
-      ],
-      "notes": "Walking time from the room to the poker room not confirmed. Rates for your dates not confirmed.",
-      "last_checked": "2026-11-16",
-      "rate_log": [
-        {
-          "date": "2026-11-16",
-          "rate": null,
-          "resort_fee": 55,
-          "tax_rate": 0.1338,
-          "total": null,
-          "timestamp": "2026-11-16T00:00:00Z",
-          "source": "V_RESORT",
-          "note": "Mandatory resort fee confirmed on official page; room rate not confirmed for any date."
-        }
-      ],
-      "checkout_total": null,
-      "nightly_average": null,
-      "parking": null,
-      "cancellation_deadline": null
-    },
-    {
-      "property": "Wynn Las Vegas",
-      "poker_location": "Wynn poker room (official poker page).",
-      "resort_fee": null,
-      "walk": null,
-      "sources": [
-        "W_PAGE"
-      ],
-      "notes": "Official resort-fee page could not be reached. Third-party figures conflict and are not used.",
-      "last_checked": "2026-11-16",
-      "rate_log": [
-        {
-          "date": "2026-11-16",
-          "rate": null,
-          "resort_fee": null,
-          "tax_rate": 0.1338,
-          "total": null,
-          "timestamp": "2026-11-16T00:00:00Z",
-          "source": null,
-          "note": "Mandatory resort fee confirmed on official page; room rate not confirmed for any date."
-        }
-      ],
-      "checkout_total": null,
-      "nightly_average": null,
-      "parking": null,
-      "cancellation_deadline": null
-    },
-    {
-      "property": "Bellagio",
-      "poker_location": "Bellagio poker room (official poker page).",
-      "resort_fee": null,
-      "walk": null,
-      "sources": [
-        "B_PAGE",
-        "B_HOTEL"
-      ],
-      "notes": "Official resort-fee page could not be reached (404). Third-party figures conflict and are not used.",
-      "last_checked": "2026-11-16",
-      "rate_log": [
-        {
-          "date": "2026-11-16",
-          "rate": null,
-          "resort_fee": null,
-          "tax_rate": 0.1338,
-          "total": null,
-          "timestamp": "2026-11-16T00:00:00Z",
-          "source": null,
-          "note": "Mandatory resort fee confirmed on official page; room rate not confirmed for any date."
-        }
-      ],
-      "checkout_total": null,
-      "nightly_average": null,
-      "parking": null,
-      "cancellation_deadline": null
-    },
-    {
-      "property": "Caesars Palace",
-      "poker_location": "Caesars Palace poker room (official casino page).",
-      "resort_fee": null,
-      "walk": null,
-      "sources": [
-        "C_PAGE",
-        "C_FEE"
-      ],
-      "notes": "Official resort-fee page is marketing copy with no fee amount. Third-party figures conflict and are not used.",
-      "last_checked": "2026-11-16",
-      "rate_log": [
-        {
-          "date": "2026-11-16",
-          "rate": null,
-          "resort_fee": null,
-          "tax_rate": 0.1338,
-          "total": null,
-          "timestamp": "2026-11-16T00:00:00Z",
-          "source": null,
-          "note": "Mandatory resort fee confirmed on official page; room rate not confirmed for any date."
-        }
-      ],
-      "checkout_total": null,
-      "nightly_average": null,
-      "parking": null,
-      "cancellation_deadline": null
-    }
-  ]
+  {
+   "id": "wynn",
+   "name": "Wynn Las Vegas / Encore",
+   "address": "3131 Las Vegas Blvd S, Las Vegas, NV 89109",
+   "resort_fee": 55.0,
+   "resort_fee_source": "W_TERMS",
+   "tax_rate": 0.1338,
+   "tax_source": "V_TERMS",
+   "parking": "Complimentary self-parking for up to 2 vehicles included with resort fee",
+   "parking_source": "W_TERMS",
+   "cancellation": "Offer-specific (the fetched terms page covers a Nov 2026 package: full prepaid, non-cancellable); standard-rate cancellation terms not confirmed — flagged",
+   "cancellation_source": "W_TERMS",
+   "poker_rate": null,
+   "poker_rate_source": null,
+   "booking_url": "https://www.wynnlasvegas.com/",
+   "venue_walk": "0 min for Wynn daily/WPT (poker room located in Encore)",
+   "last_checked": "2026-11-17",
+   "flags": [
+    "standard (non-offer) cancellation terms unverified"
+   ]
+  },
+  {
+   "id": "bellagio",
+   "name": "Bellagio",
+   "address": "3600 Las Vegas Blvd S, Las Vegas, NV 89109",
+   "resort_fee": 55.0,
+   "resort_fee_source": "B_TERMS",
+   "tax_rate": 0.1338,
+   "tax_source": "V_TERMS",
+   "parking": "Self-park $20/day (hotel guests, all week); $20 Mon–Thu / $25 Fri–Sun (non-guests); valet $40/day; free for MGM Rewards Pearl+",
+   "parking_source": "MGM_PARK",
+   "cancellation": "First-night deposit fully refundable if cancelled ≥72 h before arrival; later cancellation forfeits first night",
+   "cancellation_source": "B_TERMS",
+   "poker_rate": null,
+   "poker_rate_source": null,
+   "booking_url": "https://bellagio.mgmresorts.com/en/rooms.html",
+   "venue_walk": "~22 min walk to Venetian poker room (map estimate)",
+   "last_checked": "2026-11-17",
+   "flags": []
+  },
+  {
+   "id": "aria",
+   "name": "ARIA Resort & Casino",
+   "address": "3708 Las Vegas Blvd S, Las Vegas, NV 89109",
+   "resort_fee": 55.0,
+   "resort_fee_source": "A_TERMS",
+   "tax_rate": 0.1338,
+   "tax_source": "V_TERMS",
+   "parking": "Self-park $20/day (hotel guests); $20 Mon–Thu / $25 Fri–Sun (non-guests); valet $40/day",
+   "parking_source": "MGM_PARK",
+   "cancellation": "First-night deposit refundable if cancelled ≥72 h before arrival; later cancellation forfeits first night",
+   "cancellation_source": "A_TERMS",
+   "poker_rate": null,
+   "poker_rate_source": null,
+   "booking_url": "https://aria.mgmresorts.com/en/rooms.html",
+   "venue_walk": "~18 min walk to Venetian poker room (map estimate)",
+   "last_checked": "2026-11-17",
+   "flags": [
+    "prior snapshot said $50 fee; official page now states $55 — resolved to $55 (see change log)"
+   ]
+  },
+  {
+   "id": "ti",
+   "name": "Treasure Island (TI)",
+   "address": "3300 Las Vegas Blvd S, Las Vegas, NV 89109",
+   "resort_fee": 49.95,
+   "resort_fee_source": "TI_ROOMS",
+   "tax_rate": 0.1338,
+   "tax_source": "V_TERMS",
+   "parking": "Free valet & self-park garage for hotel guests (included)",
+   "parking_source": "TI_ROOMS",
+   "cancellation": "Not captured from official page — flagged",
+   "cancellation_source": null,
+   "poker_rate": null,
+   "poker_rate_source": null,
+   "booking_url": "https://treasureisland.com/hotel/deluxe-rooms",
+   "venue_walk": "~12 min walk to Venetian poker room (map estimate)",
+   "last_checked": "2026-11-17",
+   "flags": [
+    "'$69/night + no resort fee' TV Ad Special exists (My TI members) — see official offers"
+   ]
+  },
+  {
+   "id": "caesars",
+   "name": "Caesars Palace",
+   "address": "3570 Las Vegas Blvd S, Las Vegas, NV 89109",
+   "resort_fee": null,
+   "resort_fee_source": null,
+   "tax_rate": 0.1338,
+   "tax_source": "V_TERMS",
+   "parking": "Not captured from official page — flagged",
+   "parking_source": null,
+   "cancellation": "Homepage advertises 'FREE 48-Hour Cancellation' on direct bookings (banner, 2026-11-17); offer terms apply",
+   "cancellation_source": "C_HOME",
+   "poker_rate": null,
+   "poker_rate_source": null,
+   "booking_url": "https://www.caesars.com/book/?propcode=CLV",
+   "venue_walk": "~16 min walk to Venetian poker room (map estimate)",
+   "last_checked": "2026-11-17",
+   "flags": [
+    "resort fee NOT confirmed on official page (secondary sources conflict $49.95 vs $54.95) — left blank"
+   ]
+  },
+  {
+   "id": "parkmgm",
+   "name": "Park MGM",
+   "address": "3770 Las Vegas Blvd S, Las Vegas, NV 89109",
+   "resort_fee": null,
+   "resort_fee_source": null,
+   "tax_rate": 0.1338,
+   "tax_source": "V_TERMS",
+   "parking": "Self-park $20/day (hotel guests); $20 Mon–Thu / $25 Fri–Sun (non-guests); valet $40/day",
+   "parking_source": "MGM_PARK",
+   "cancellation": "Not captured — flagged",
+   "cancellation_source": null,
+   "poker_rate": null,
+   "poker_rate_source": null,
+   "booking_url": "https://parkmgm.mgmresorts.com/en/rooms.html",
+   "venue_walk": "~32 min walk to Venetian poker room (map estimate — over the 30-minute limit)",
+   "last_checked": "2026-11-17",
+   "flags": [
+    "resort fee not extracted from official terms — blank",
+    "walk over 30 min limit"
+   ]
+  },
+  {
+   "id": "harrahs",
+   "name": "Harrah's Las Vegas",
+   "address": "3475 Las Vegas Blvd S, Las Vegas, NV 89109",
+   "resort_fee": null,
+   "resort_fee_source": null,
+   "tax_rate": 0.1338,
+   "tax_source": "V_TERMS",
+   "parking": "Not captured — flagged",
+   "parking_source": null,
+   "cancellation": "Not captured — flagged",
+   "cancellation_source": null,
+   "poker_rate": null,
+   "poker_rate_source": null,
+   "booking_url": "https://www.caesars.com/harrahs-las-vegas",
+   "venue_walk": "~10 min walk to Venetian poker room (map estimate)",
+   "last_checked": "2026-11-17",
+   "flags": [
+    "fee/rate not confirmed on official page — blank"
+   ]
+  },
+  {
+   "id": "horseshoe",
+   "name": "Horseshoe Las Vegas",
+   "address": "3645 Las Vegas Blvd S, Las Vegas, NV 89109",
+   "resort_fee": null,
+   "resort_fee_source": null,
+   "tax_rate": 0.1338,
+   "tax_source": "V_TERMS",
+   "parking": "Not captured — flagged",
+   "parking_source": null,
+   "cancellation": "Not captured — flagged",
+   "cancellation_source": null,
+   "poker_rate": null,
+   "poker_rate_source": null,
+   "booking_url": "https://www.caesars.com/horseshoe-las-vegas",
+   "venue_walk": "~14 min walk to Venetian poker room (map estimate)",
+   "last_checked": "2026-11-17",
+   "flags": [
+    "fee/rate not confirmed on official page — blank"
+   ]
+  }
+ ]
 }

@@ -221,7 +221,7 @@
   {
    "t": "2026-12-02 10:10 AM #24 $600 No Limit Hold'em Seniors $40K GTD (1Day) - Must be 50+",
    "k": "Tournament",
-   "d": "$600 entry · $40,000 GTD · sheet not audited in this pass",
+   "d": "$600 entry · $40,000 GTD · not stated on the sheet",
    "u": "@@/tournaments.html",
    "a": "2026-12-02-24-10:10AM"
   },
@@ -324,18 +324,18 @@
    "a": "2026-12-07-31-5:10PM"
   },
   {
-   "t": "2026-12-08 10:10 AM #32 $600 No Limit Hold'em Seniors $40K GTD (1Day) - Must be 50+",
-   "k": "Tournament",
-   "d": "$600 entry · $40,000 GTD · sheet not audited in this pass",
-   "u": "@@/tournaments.html",
-   "a": "2026-12-08-32-10:10AM"
-  },
-  {
    "t": "2026-12-08 4:10 PM #33 $100 NLH LIPS Ladies Milestone Satellite (1Day) - Awards Direct Entry to Event 39",
    "k": "Tournament",
    "d": "$100 entry · — GTD · sheet not audited in this pass",
    "u": "@@/tournaments.html",
    "a": "2026-12-08-33-4:10PM"
+  },
+  {
+   "t": "2026-12-08 10:10 AM #32 $600 No Limit Hold'em Seniors $40K GTD (1Day) - Must be 50+",
+   "k": "Tournament",
+   "d": "$600 entry · $40,000 GTD · not stated on the sheet",
+   "u": "@@/tournaments.html",
+   "a": "2026-12-08-32-10:10AM"
   },
   {
    "t": "2026-12-08 5:10 PM #34 $300 No Limit Hold'em Bounty $15K GTD (1Day)",
@@ -352,18 +352,18 @@
    "a": "2026-12-09-35-10:10AM"
   },
   {
-   "t": "2026-12-09 11:10 AM #36 $800 No Limit Hold'em Bounty $75K GTD (1Day) - $200 bounties to start and $500 bounties in the money",
-   "k": "Tournament",
-   "d": "$800 entry · $75,000 GTD · sheet not audited in this pass",
-   "u": "@@/tournaments.html",
-   "a": "2026-12-09-36-11:10AM"
-  },
-  {
    "t": "2026-12-09 4:10 PM #37 $100 NLH LIPS Ladies Milestone Satellite (1Day) - Awards Direct Entry to Event 39",
    "k": "Tournament",
    "d": "$100 entry · — GTD · sheet not audited in this pass",
    "u": "@@/tournaments.html",
    "a": "2026-12-09-37-4:10PM"
+  },
+  {
+   "t": "2026-12-09 11:10 AM #36 $800 No Limit Hold'em Bounty $75K GTD (1Day) - $200 bounties to start and $500 bounties in the money",
+   "k": "Tournament",
+   "d": "$800 entry · $75,000 GTD · not stated on the sheet",
+   "u": "@@/tournaments.html",
+   "a": "2026-12-09-36-11:10AM"
   },
   {
    "t": "2026-12-09 5:10 PM #38 $300 No Limit Hold'em Bounty $15K GTD (1Day)",
@@ -765,16 +765,16 @@
    "a": "sheet-15"
   },
   {
-   "t": "Structure sheet #16 ",
+   "t": "Structure sheet #16 $800 No Limit Hold'em Bounty (1Day) — Event #36",
    "k": "Structure sheet",
-   "d": "fees — · reg closes — · not audited in this pass",
+   "d": "fees $100 · reg closes 10 levels + Break (4:55 PM) · entry rule not stated",
    "u": "@@/structures.html",
    "a": "sheet-16"
   },
   {
-   "t": "Structure sheet #17 ",
+   "t": "Structure sheet #17 $600 No Limit Hold'em Seniors (1Day) — Events #24 and #32",
    "k": "Structure sheet",
-   "d": "fees — · reg closes — · not audited in this pass",
+   "d": "fees $90 · reg closes 10 levels + Break (~ 3:55 PM) · entry rule not stated",
    "u": "@@/structures.html",
    "a": "sheet-17"
   },
@@ -1085,6 +1085,13 @@
    "d": "Detected by the link check while resolving the merge of `origin/main` into this branch. `pages/` is not tracked, so the link 404s on GitHub Pages. Not created and not removed here:",
    "u": "@@/flagged.html",
    "a": "F-ROOT-404"
+  },
+  {
+   "t": "F-BOT-BRANCH Another session's scheduled monitor commits to whichever branch triggers it, including this session's branch",
+   "k": "Flag",
+   "d": "`.github/workflows/v2-monitor.yml` (\"Re-check official sources\") ran on a push event to `arena/08f07d1d-poker4` and pushed commit dd37b41 \"chore(v2): source monitor run 43995086181",
+   "u": "@@/flagged.html",
+   "a": "F-BOT-BRANCH"
   },
   {
    "t": "For each candidate one-day event, does the room allow re-entry, rebuys or an add-on - and can it say so in writing?",

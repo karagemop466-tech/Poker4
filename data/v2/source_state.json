@@ -65,7 +65,7 @@
   },
   "https://www.resortfeechecker.com/140596-resort_fee_bellagio.html": {
    "last_checked": "2026-11-17",
-   "sha256": "fa7957f6bf1f3d5c7742d1e908a8011887939639988263072402f251fb549f86",
+   "sha256": "a44d3a2d9e84bc2b5fadb70227d712e402bd5d6c71266afef5973be63d063bfc",
    "source_ids": [
     "M_FEES_UNVERIFIED"
    ]
@@ -422,7 +422,7 @@
   },
   "https://www.wynnlasvegas.com/terms-and-conditions/850257": {
    "last_checked": "2026-11-17",
-   "sha256": "923a3b8e81d0f8d34a2b739200878b1b48d5ca40ec5d3988cc38ba33c2b7c9c3",
+   "sha256": "213f7af0f2f91779870849eb74105f8ae3305c4eefaabbc6d49d85b33e553f49",
    "source_ids": [
     "W_TC_FEE"
    ]
