@@ -1,16 +1,19 @@
 # Poker Strip tournament & stay dashboard
 
-Static, source-first planning dashboard for upcoming official poker-tournament listings around the Las Vegas Strip. The data snapshot is dated **November 16, 2026 (UTC)**. It distinguishes verified facts from unknowns and does not label a tournament single-entry unless official rules say so.
+Static, source-first planning dashboard for upcoming official poker-tournament listings around the Las Vegas Strip. The data snapshot is dated **November 16, 2026 (UTC)** and the official schedule, resort-fee, hotel-terms, suite-rate, Wynn and Treasure Island pages were **re-verified on November 17, 2026**. It distinguishes verified facts from unknowns and does not label a tournament single-entry unless official rules say so.
 
 ## Project pages
 
 - `index.html` — executive summary and key decision blockers
-- `tournaments.html` — dated tournament candidates and spending/bounty exclusions
-- `schedule.html` — practical day-planning constraints
-- `hotels.html` — official Venetian/Palazzo rates, resort-fee math, and unknown stay pricing
+- `tournaments.html` — dated tournament candidates, search box, date filter, single-entry toggle, per-row "last checked" dates
+- `schedule.html` — day-planning constraints plus a generated same-day overlap check
+- `hotels.html` — official Venetian/Palazzo rates, resort-fee math, and the dated hotel rate log
+- `calculator.html` — trip cost calculator: entries × buy-ins + nights × true hotel cost
+- `venue-venetian.html`, `venue-wynn.html`, `venue-other.html` — one page per venue with its events and hotels
 - `decisions.html` — questions, missing information, and staged suggestions
-- `questions.html` — compact companion decision checklist, retained from the first integration and now source-linked row by row
+- `questions.html` — compact companion decision checklist, source-linked row by row
 - `review.html` — flagged items and verification limitations
+- `recheck.html` — status of the daily automatic re-check of every official source URL
 
 ## Run locally
 

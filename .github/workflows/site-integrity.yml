@@ -1,0 +1,45 @@
+name: Site integrity (root dashboard)
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - '*.html'
+      - '*.js'
+      - '*.css'
+      - 'data/**'
+      - 'scripts/**'
+      - 'site/**'
+      - 'build/**'
+      - '.github/workflows/site-integrity.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: JavaScript syntax (root app.js + site/app.js)
+        run: node --check app.js && node --check site/app.js
+      - name: Internal link audit (root pages)
+        run: python3 scripts/linkcheck.py
+      - name: Build + verify (df41f5c6 site)
+        run: python3 scripts/build.py && python3 scripts/verify.py
+      - name: Build (verified/ site)
+        run: python3 build/build_site.py
+      - name: Validate Field Notes sub-site
+        run: python3 scripts/validate_site.py
+      - name: JSON data files parse
+        run: python3 -c "import json,glob,sys; [json.load(open(f)) for f in glob.glob('data/**/*.json',recursive=True)]; print('json OK')"
