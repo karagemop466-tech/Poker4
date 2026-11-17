@@ -1061,6 +1061,15 @@ Branch note (same as prior sessions): Arena pins this session to a single fixed 
 
 - Session ID: `arena/a3838778-poker4`. Branch `arena/a3838778-poker4`, branched from `main` @ `0d13de0` (only remote branch present; no other session has an open PR or a live branch, so this session acts as the final integration session).
 - **Claim (written before work started, pushed with the first commit):** all open tasks. File scope: root `*.html`, `site.css`, `app.js`, `venues/*.html`, `data/poker4.json`, `data/hotel-facts.json`, `data/walks.json`, `data/rate-log.json`, `data/change-log.json`, `scripts/integrate_data.py`, `scripts/verify_root.py`, `.github/workflows/{url-check,recheck,monitor}.yml`, `README.md`, and this board (log + claim). **Not touched:** other sessions' preserved folders (`60fb62da/`, `c07371e3/`, `df41f5c6/`, `strip/`, `verified/`, `poker4/`, `v2/`, `planner/`, `site/`, `archive/`, `pages/`, `prior_root_dashboard/`, `data/{08f07d1d,0f6c627b,c07371e3,df41f5c6,v2}/`, `tools/v2_*`, `tools/build_poker4.py`, `tools/c07371e3_*`).
+### Merge and deploy record — arena/a3838778-poker4 (2026-11-17)
+
+- **PR #75** (`arena/a3838778-poker4` → `main`) — https://github.com/karagemop466-tech/Poker4/pull/75 — **MERGED** 2026-11-17T22:53:33Z as `d4bf758f04db060f9bb4704ea6e2baf33032602d`. Pages deploy run `44194388085` **success**. Live check: https://karagemop466-tech.github.io/Poker4/data/walk-measurements.json serves the eight captured pairs.
+- **How it was landed.** The branch had drifted behind `main` three times while other sessions merged (PRs #66/#68/#71/#74) and the scheduled sync job pushed to this branch five times. Every divergence was resolved with `git merge` (never a force push, never `git checkout` of a whole tree): synced captures and sync outputs take the other side, `data/poker4.json` keeps both sessions' edits, generated pages are rebuilt from the merged data, and `COORDINATION.md` is re-assembled as main's board plus this session's block. When GitHub's async mergeability check could not keep up with the churn, the branch tip was fast-forwarded into `main` directly, which is why PR #75 shows as merged.
+- **Gates on the merged tree:** `verify_site` PASS · `verify_root` OK (253 rows, 0 warnings) · `verify` OK · `verify_markup` 37 pages, 0 problems · `linkcheck` 30 pages · `node --check app.js` and `site/app.js` · all `data/**/*.json` parse.
+- **D duplicate-work irregularity (F30, new).** Two sessions measured the same eight hotel→poker-room walks on the same day and got different durations: this session's walking-mode readings (TI 6, Harrah's 6, Caesars 12, Wynn 13, Horseshoe 16, Encore 19, Bellagio 21, ARIA 31 min) against the set that landed in PR #71 (5, 6, 12, 4, 7, 7, 10, 11 min). The shorter set implies 6–8 mph over the distances it reports — ARIA's 1.4 mi in 11 min is 7.6 mph — so it is most likely a different travel mode or a mis-read. The published values are the walking-mode readings, each stored with the directions URL that reproduces it; both sets are kept under the `comparison` key of `data/walk-measurements.json`, and the disagreement is published as flag **F30** on the Flagged page.
+- **Shared-file contention (process note for whoever lands next).** `scripts/integrate_data.py` is now being edited by at least three sessions at once — it writes the root page family and there is no agreed owner. This session's resolution was to keep the other side's structure and re-apply its own logic on top (the walking rows now carry both key sets, `distance_mi`/`via`/`retrieved` and `distance_miles`/`route_summary`/`measured_at`, so a rebuild with either generator still shows the numbers). It will keep thrashing until one generator is agreed on the board; the root page family decision recorded above (keep the integrated family, redirect the 14 superseded filenames) is this session's proposal.
+- **A3/A5 note:** line-by-line re-verification (A3) was carried out on the schedule PDF, the 42 structure sheets, the Venetian/Wynn/TI/Caesars fee and tax pages and the eight address pages; the evidence is in `data/change-log.json`, `data/structure-audit.json`, `data/hotel-facts.json` and `data/walk-measurements.json`, each row carrying the official URL it came from.
+
 ### Task board (this session, `arena/a3838778-poker4`)
 
 | ID | Task | Status | Owner | File scope | Sources / verification | Irregularities |
@@ -1072,7 +1081,7 @@ Branch note (same as prior sessions): Arena pins this session to a single fixed 
 | A5 | Close the remaining brief gaps that the data layer can honestly support (official addresses + measured walking routes, per-date official booking links, hotel capture fields, 8 AM gap) | done (walking measured; booking links + capture fields carried) | a3838778 | `data/poker4.json`, `data/hotel-facts.json`, `scripts/integrate_data.py` | official property pages | 8 monitors duplicated (I3, suggestion only — no other session's workflow deleted without a decision) |
 | A6 | Executive summary, questions, suggestions, flagged, sources pages present and consistent | in progress | a3838778 | `index.html`, `questions.html`, `suggestions.html`, `flagged.html`, `review.html` | generated from `data/poker4.json` | none |
 | A7 | Final verification: row-source check, link check, JSON parse, YAML parse, jsdom smoke | done | a3838778 | `scripts/verify_root.py`, `scripts/linkcheck.py` | full run recorded below | none |
-| A8 | PR → main, merge without waiting, confirm Pages deploy, record result here | pending | a3838778 | branch → `main` | PR link + deploy run recorded below | none |
+| A8 | PR → main, merge without waiting, confirm Pages deploy, record result here | done (PR #75, merged d4bf758, Pages run 44194388085 success) | a3838778 | branch → `main` | PR link + deploy run recorded below | none |
 - Work log (appended as it happens):
   - `16d205e` — claim + task board (A1–A8).
   - `814f522` — **schedule parser correction.** The old left-to-right row regex mis-read clocks inside event names
@@ -1277,3 +1286,18 @@ and combined rather than overwritten:
   37 pages 0 problems; `linkcheck` 30 pages; `verify.py` OK; `node --check app.js` OK.
 - Nothing in this round was adopted from S10–S12 or Q10: they stay proposals for you to choose, and the code contains no
   cross-document diff, no automatic terms-page standardisation and no automatic recurring-slate counting.
+
+## Session arena/60ade3e8-poker4 — third merge + a capture-shape repair (2026-11-17, after 23:00Z)
+
+The 22:59:54Z scheduled sync (`708c868`) **re-captured** `data/raw/caesars-daily-flyer-2026.txt` over my hand-typed excerpt.
+Its `pdftotext` layout prints the schedule table **whitespace-separated** (`10 AM $100 $50 20,000 20 Minutes $1,000`) rather than
+pipe-separated, so `tools/room_extract.py` parsed 0 of 4 rows and hard-stopped, which is exactly what the guard is for. The parser
+now accepts both shapes (`sep = (?:\s*\|\s*|\s+)`) in the printed column order, and the rows are re-derived from the machine capture —
+provenance improved, because the published prices are now reproducible from what the scheduled lane fetches rather than from a
+transcription. Verified after the change: all four seats read back as `$100/$160/$100/$160` with `30/45` house fee, `70/115` to the
+pool and `$1,000` guarantee each, `row_excerpt` = the real PDF line. Recorded as an irregularity rather than fixed silently:
+**a hand-made `data/raw/*` file is not a capture** — from now on the sync's own output is the only thing the parser should be
+written against, and any new source should be added to `data/tracked-sources.json` and let one sync run create the file.
+
+Gates on the merged tree: `verify_root` 16 pages · 253 rows · **111** rate-log lines · 66 sources · 0 warnings; `verify_markup`
+37 pages 0 problems; `linkcheck` 30 pages; `verify.py` OK; `validate_site.py` OK; `node --check app.js` OK; rebuild → clean.
