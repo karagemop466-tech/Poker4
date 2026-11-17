@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generated_at": "2026-11-17T01:14:50Z",
+  "generated_at": "2026-11-17T01:17:02Z",
   "rows": 93,
   "note": "Rows read from the official schedule page at run time; blank fields were not printed on the page."
  },
@@ -413,7 +413,7 @@
   {
    "parse_notes": null,
    "registration_closes": "5:55 PM",
-   "date": "2026-11-30",
+   "date": null,
    "weekday": "Monday",
    "time": "11:10 AM",
    "event_no": 19,
@@ -428,7 +428,7 @@
   {
    "parse_notes": null,
    "registration_closes": "9:40 PM",
-   "date": "2026-11-30",
+   "date": null,
    "weekday": "Monday",
    "time": "5:10 PM",
    "event_no": 22,
@@ -807,7 +807,7 @@
   {
    "parse_notes": null,
    "registration_closes": "4:55 PM",
-   "date": "2026-12-10",
+   "date": null,
    "weekday": "Thursday",
    "time": "10:10 AM",
    "event_no": 39,
@@ -822,7 +822,7 @@
   {
    "parse_notes": null,
    "registration_closes": "4:40 PM",
-   "date": "2026-12-10",
+   "date": null,
    "weekday": "Thursday",
    "time": "12:10 PM",
    "event_no": 40,
@@ -839,7 +839,7 @@
     "LEVEL cell “2” is not a plausible blind level; not recorded"
    ],
    "registration_closes": "6:25 PM",
-   "date": "2026-12-10",
+   "date": null,
    "weekday": "Thursday",
    "time": "4:10 PM",
    "event_no": 41,
@@ -854,7 +854,7 @@
   {
    "parse_notes": null,
    "registration_closes": "9:40 PM",
-   "date": "2026-12-10",
+   "date": null,
    "weekday": "Thursday",
    "time": "5:10 PM",
    "event_no": 42,
@@ -1244,7 +1244,7 @@
   {
    "parse_notes": null,
    "registration_closes": "4:55 PM",
-   "date": "2026-12-19",
+   "date": null,
    "weekday": "Saturday",
    "time": "10:10 AM",
    "event_no": 56,
@@ -1259,7 +1259,7 @@
   {
    "parse_notes": null,
    "registration_closes": "9:40 PM",
-   "date": "2026-12-19",
+   "date": null,
    "weekday": "Saturday",
    "time": "5:10 PM",
    "event_no": 58,
