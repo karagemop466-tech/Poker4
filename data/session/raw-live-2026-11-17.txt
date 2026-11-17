@@ -43,3 +43,63 @@ URL https://bellagio.mgmresorts.com/en/casino/poker.html
 Read 2026-11-17. Page states poker room location "Northside of Casino, next to Sportsbook", host phone 702.693.7291.
 Tournament links to three PDFs: FRIDAYS $600 NLH, SATURDAYS $1,000 NLH, SUNDAYS $400 H.O.R.S.E.
 NOTE: the page's dated "Please Note" line ("Tournament play will resume on Saturday, July 26 ... $300 PLO Double Board Bomb Pot ... 2 PM PT") is stale marketing copy relative to a Nov/Dec 2026 visit; no 2026 dated schedule text is printed on the room page itself. The three PDFs must be read for structure facts (next block).
+
+=== S3b Wynn — WPT World Championship STRUCTURES PDF (per-event terms) ===
+URL https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf
+Read chunks 0-7 (whole document) 2026-11-17. General T&C: 21+; registration opens 4 h before start; register in Wynn Poker Room located in Encore; reference each event's structure sheet.
+ Per-event terms captured (verbatim key lines):
+ $600 NLH $400,000 GTD — "two-day"; Entry Fee "$600 Buy-in = $510 (Tournament Prize Pool) + $65 (Tournament Fee) + $25 (Poker Staff Service Charge)"; Registration: "Unlimited re-entry for each starting flight will be available until the start of level 9. A player who advances to Day 2 is prohibited from entering a subsequent starting flight."; 40,000 chips.
+ $600 TORSE — single day; "$600 Buy-in = $510 + $65 + $25"; "Unlimited re-entry will be available until the start of level 9"; 35,000 chips; Nov 27 12 p.m.
+ $400 PLO — single day Nov 27 1 p.m.; "$400 Buy-in = $337 (Tournament Prize Pool) + $45 (Tournament Fee) + $18 (Poker Staff Service Charge)"; "Unlimited re-entry ... until the start of level 9 (approximately 5:30 p.m.)"; 30,000 chips.
+ $600 Mixed Triple Draw (A-5, 2-7, Badugi) — Nov 28 12 p.m. and Dec 20 1 p.m.; "$600 = $510 + $65 + $25"; "Unlimited re-entry ... until the start of level 9"; 35,000 chips.
+ $800 NLH $1,000,000 GTD — "three-day"; Day 1A Nov 30 11 a.m. ... Day 1F Dec 2 6 p.m.; Day 2 Dec 3 1 p.m.; Final Table Dec 4 1 p.m.; "$800 Buy-in = $695 (Tournament Prize Pool) + $72 (Tournament Fee) + $33 (Poker Staff Service Charge)"; "Unlimited re-entry for each starting flight ... until the start of level 9. A player who advances to Day 2 is prohibited from entering a subsequent starting flight."; 40,000 chips.
+ $600 Limit Omaha 8 — Nov 30 12 p.m.; "$600 = $510 + $65 + $25"; unlimited re-entry until start of level 9; 35,000 chips.
+ $600 Limit Omaha 8/Stud 8 — Dec 1 12 p.m.; same fee split; unlimited re-entry until level 9; 35,000 chips.
+ $1,100 PLO — Dec 1 1 p.m.; "$1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $45 (Poker Staff Service Charge)"; "Unlimited re-entry ... until the start of level 9 (approximately 5:30 p.m.)"; 30,000 chips.
+ $1,600 NLH $1,000,000 GTD — "two-day"; Day 1A Dec 3 11 a.m.; Day 1B Dec 4 11 a.m.; Day 2 Dec 5 11 a.m.; "$1,600 Buy-in = $1,430 (Tournament Prize Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge)"; "Unlimited re-entry for each starting flight ... until the start of level 10."; 40,000 chips.
+ $600 HORSE — Dec 4 12 p.m.; "$600 = $510 + $65 + $25"; "Unlimited re-entry ... until the start of level 9 (approximately 4:30 p.m.)"; 35,000 chips; tables 8-handed.
+ $1,100 WPT Prime Championship $5,000,000 GTD — "five-day"; Day 1A Dec 5 11 a.m.; 1B Dec 6; 1C Dec 7; 1D Dec 8; Day 2 Dec 9 12 p.m.; Day 3 Dec 10 12 p.m.; Day 4 Dec 11 12 p.m.; Final Table Dec 12 2 p.m.; "$1,100 Buy-in = $970 (Tournament Prize Pool) + $90 (Tournament Fee) + $40 (Poker Staff Service Charge)"; "One (1) Entry and One (1) re-entry for each starting flight will be available until the start of level 10 (approximately 6:45 p.m.)."; 40,000 chips; "One in eight (1-in-8) entries will be in the money (approximately 12.5%)."; "$10,400 will be withheld from the prize pool and issued to first place in the form of an entry to the December 2027 WPT World Championship."
+ $600 NLH Turbo $50,000 GTD — "$600 Buy-in = $515 (Tournament Prize Pool) + $60 (Tournament Fee) + $25 (Poker Staff Service Charge)"; "Unlimited re-entry will be available until the start of level 9."; 30,000 chips; 20-minute levels; listed dates: Dec 5, 6, 7, 8, 9, 12, 14 at 9 p.m. and "Monday, December 21, 2026 at 6 p.m."
+ $1,600 PLO Mystery Bounty $500,000 GTD — Day 1A Dec 6 11 a.m., Day 1B Dec 6 6 p.m., Day 2 Dec 7 12 p.m.; "$1,600 Buy-in = $930 (Tournament Prize Pool) + $500 (Mystery Bounty Prize Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge)"; unlimited re-entry per flight until start of level 10; 40,000 chips; "All Tournament and Bounty prizes are included in the Tournament guaranteed prize pool of $500,000".
+ NOT PRESENT in the extracted text (all 8 chunks read): the $400 Super Gold Million Mystery Bounty ($3,000,000 GTD) terms and the $10,400 WPT World Championship terms. Their per-event Registration/fee lines are therefore NOT verified from this PDF (text-extraction gap). Independently reproduces the earlier flagged gap.
+ IRREGULARITY (new, verified 2026-11-17): the poster lists "Dec. 21 Monday | 8 p.m. | NLH Turbo | $600 | $50,000" while the structures T&C list the Dec 21 $600 NLH Turbo at 6 p.m. Two official Wynn documents disagree on the start time of the same event.
+
+=== S4b Caesars — full flyer detail === (see S4; page 2 read: payout percentages, tournament rules). No guaranteed-pool change.
+
+=== S5b Bellagio — three structure PDFs ===
+Fridays $600 NLH: https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt9cf95b0e60ec253e/6af491a3a9851d75c40be840/mgm-bellagio-poker-fridays-$600-nlh.pdf
+ "NLH $600 BUY-IN — Fridays | 11:00 a.m."; 30,000 chips incl. optional $40 staff gratuity (15,000+15,000); 30-min levels, 12-min break every 4 levels; "Players may buy-in and re-enter through the end of level 8 (Including Break)."; "$600 Buy-In is allocated as follows: $510 to Prize Pool; $50 House Fee; $40 Voluntary Staff Gratuity."; 8-handed, final table 9-handed; tickets non-refundable. NO guaranteed prize pool printed.
+Saturdays PDF: https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt6d47974bf5a7d9b6/6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf
+ Title block: "NLH $1100 BUY-IN — Saturdays | 11:00 a.m."; rule 01 "Players start with 40,000 in tournament chips (20,000 + 20,000 optional)"; rule 03 "Registration will be open until the start of Level 10"; rule 04 "Combined Final Day 2 (9/13/26) will begin at 12pm at Bellagio"; rule 07 "Of the $600 Buy-in, $510 goes to the Prize Pool, $50 is Admin Fees and $40 is optional staff gratuity"; rule 08 "$50,000" combined guarantee.
+ IRREGULARITY (verified): the Saturday PDF contradicts itself and the room page — the page link says "$1,000 NLH", the PDF headline says "$1,100", and the PDF body describes a $600 multi-flight event with a stale 9/13/26 final day. No Saturday amount is published on this site; flagged instead.
+Sundays $400 H.O.R.S.E.: https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt07fcf1244a6da661/6af491a339e2b4f6b76a86ad/mgm-bellagio-poker-sundays-$400-horse.pdf
+ "$400 H.O.R.S.E. TOURNAMENT — Sundays | 11:00 a.m."; "$400 Buy-In ... $340 to Prize Pool; $35 House Fee; $25 Voluntary Staff Gratuity"; 30,000 chips incl. optional gratuity; 30-min levels; "Players may buy-in and re-enter through the end of level 8 (Including Break)."; 12-min breaks every 4 levels; payout ≈12.5% of field; 8-handed; TDA rules/NRS 463.362. NO guaranteed pool printed.
+
+=== S6 Wynn — poker room page (festival dates + daily suspension) ===
+URL https://www.wynnlasvegas.com/casino/poker
+Read 2026-11-17. "WPT WORLD CHAMPIONSHIP — November 27–December 21"; "New for 2026, the Super Gold Million brings a $400 buy-in featuring a $3,000,000 guarantee!"; "Our popular slate of daily tournaments runs twice a day during non-event timeframes, offering a total of $200,000 in guaranteed prize pools weekly."; "*Please note that the Daily Tournament schedule will be suspended during each Wynn Signature, Wynn Millions, and Classic tournament series."
+ => The Wynn dailies (12 p.m. / 6 p.m.) are therefore suspended across Nov 27–Dec 21, 2026 (the WPT festival window). Rows are published as recurring dailies with that suspension stated.
+
+=== S6b Wynn — daily tournament POSTER (times/days) ===
+URL https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf
+Read 2026-11-17: "Monday–Thursday • $200 NLH • 12 p.m."; "Friday • $240 NLH Rebuy • 12 p.m."; "Saturday • $200 NLH • 12 p.m."; "Sunday • $200 NLH • 12 p.m."; "NIGHTLY $10,000 Guarantee • $160 NLH • 6 p.m."
+
+=== S7 Venetian — poker suite rates / play requirement ===
+URL https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html
+Read 2026-11-17. "These rates will start as low as $119 and $209 and can be higher."; "Future rates are only provided out to a maximum of 150 days from the current date."; "Rates are based on single/double occupancy in a Luxury King Suite"; "There is a $55 resort fee per night stayed."; code EPOKR25, phone 866.255.8936; "you will be required to play six hours of active live cash gameplay or buy in to a $300 or higher tournament for each night stayed ... prior to 2 a.m. the last night stayed"; failure ⇒ "nightly suite rate will be adjusted to the prevailing rate".
+ => $119/$209 are starting rates conditioned on poker play, NOT dated quotes. No dated total is published on this page.
+
+=== S8 Venetian — hotel terms (tax, parking, cancellation, check-in) ===
+URL https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html
+Read both chunks 2026-11-17. "Check-in time is from 3:00 p.m. to 11:59 p.m. ... Check-out time is 11:00 a.m."; "A deposit for your stay, including suite, fee, and tax, will be billed upon reservation confirmation."; "A credit card incidental deposit of $150 per night is required upon check-in"; **_Prepaid Offers._ ... non-cancellable and non-refundable**; "Daily rates do not include the applicable Clark County Room Tax of 13.38%."; "For reservations with more than 2 guests per suite, a charge of $50 is added to the daily rate for each additional guest 13+"; "standard Las Vegas Resort Fee of $55 plus applicable tax per night"; "Check-out prior to your scheduled departure date will result in an additional charge of $100 plus tax."; parking: "registered hotel guests is $20/day, seven days a week. For non-hotel guests, the fee is $20, Monday – Thursday, and $25/day Friday – Sunday. Valet parking is $40/day."; Sapphire+ free self-parking; Nevada residents 3 h free self-parking.
+ => No explicit free-cancellation deadline is published for standard (non-prepaid) rates on this page. Flagged, not inferred.
+
+=== S9 Wynn — terms 850257 (resort fee, deposit, cancellation) ===
+URL https://www.wynnlasvegas.com/terms-and-conditions/850257
+Read 2026-11-17. NOTE: this is the "Concours Sip and Savor Experience and Accommodation Package 2026" offer's terms (offer travel Oct 27 – Nov 1, 2026), not a general hotel-terms page. It states: "A daily resort fee of $55 plus tax will be added to your room account for each room night" (Wynn Resort King/Two Queens; and a separate identical $55+tax Tower Suites fee) with free self-parking for up to two vehicles; "A full deposit of all room nights and tax will be charged at the time of booking. Reservations are non-cancellable, non-refundable, and non-changeable."; "$150 a night for incidentals".
+ => The $55 + tax resort fee is verified from an official Wynn page. The cancellation text belongs to a specific past-dated offer and must NOT be presented as Wynn's general cancellation policy. Flagged.
+
+=== S10 Treasure Island — Tower Suite page (resort fee) ===
+URL https://treasureisland.com/hotel/tower-suite
+Read 2026-11-17. "The $49.95 + tax daily resort fee* at TI Las Vegas ..."; "Resort fees are required, and in addition to the room rates displayed online with the exception that resort fees are optional only for My TI Guestbook members that book our exclusive TV Ad Special offer, qualified Treasury Players Club casino members, and qualified meeting groups ..."; Inclusions: "Always Free Valet Parking & Self Park Garage", WiFi, fitness center; offer "01 $69* NIGHT + NO RESORT FEE**" (no date range or room count printed in the extracted text).
+ => $49.95 + tax verified; free parking verified; no dated room total and no tax rate printed on this page.
