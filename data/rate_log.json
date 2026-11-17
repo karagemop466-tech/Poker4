@@ -1,0 +1,66 @@
+{
+ "generated": "2026-11-17",
+ "schema_note": "Dated log, not single values. checkout_total/nightly_avg filled only for a like-for-like dated booking quote (same dates, same room, tax and fee included); null otherwise. Every entry keeps its rate_timestamp.",
+ "entries": [
+  {
+   "hotel": "venetian",
+   "date_checked": "2026-11-17",
+   "rate_type": "poker-rate (conditional)",
+   "nightly_rate": 119.0,
+   "resort_fee": 55.0,
+   "tax_rate": 0.1338,
+   "nightly_avg": null,
+   "checkout_total": null,
+   "parking": 20.0,
+   "cancellation_deadline": "prepaid/non-cancellable (offer terms)",
+   "rate_timestamp": "2026-11-17T00:00:00-08:00",
+   "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
+   "note": "Official poker rate 'as low as $119' ($209 Palazzo tier); not a dated quote; requires qualifying play"
+  },
+  {
+   "hotel": "venetian",
+   "date_checked": "2026-11-17",
+   "rate_type": "published-lead",
+   "nightly_rate": 209.0,
+   "resort_fee": 55.0,
+   "tax_rate": 0.1338,
+   "nightly_avg": null,
+   "checkout_total": null,
+   "parking": 20.0,
+   "cancellation_deadline": "prepaid/non-cancellable (offer terms)",
+   "rate_timestamp": "2026-11-17T00:00:00-08:00",
+   "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
+   "note": "Palazzo-tier poker rate start; conditional on qualifying play"
+  },
+  {
+   "hotel": "ti",
+   "date_checked": "2026-11-17",
+   "rate_type": "published-lead (member offer)",
+   "nightly_rate": 69.0,
+   "resort_fee": 0.0,
+   "tax_rate": 0.1338,
+   "nightly_avg": null,
+   "checkout_total": null,
+   "parking": 0.0,
+   "cancellation_deadline": "not captured",
+   "rate_timestamp": "2026-11-17T00:00:00-08:00",
+   "source_url": "https://treasureisland.com/hotel/deluxe-rooms",
+   "note": "'$69/night + no resort fee' TV Ad Special for My TI Guestbook members; standard fee is $49.95+tax"
+  },
+  {
+   "hotel": "caesars",
+   "date_checked": "2026-11-17",
+   "rate_type": "published-lead",
+   "nightly_rate": 139.0,
+   "resort_fee": null,
+   "tax_rate": 0.1338,
+   "nightly_avg": null,
+   "checkout_total": null,
+   "parking": null,
+   "cancellation_deadline": "'FREE 48-Hour Cancellation' banner (direct bookings)",
+   "rate_timestamp": "2026-11-17T00:00:00-08:00",
+   "source_url": "https://www.caesars.com/caesars-palace",
+   "note": "Homepage 'Rooms from $186 $139' Cyber Monday banner; not a dated quote; resort fee still unverified"
+  }
+ ]
+}
