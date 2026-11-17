@@ -1,0 +1,14 @@
+<!-- captured 2026-11-17 (session arena/3082d6d9-poker4, text-only rendering via the session retrieval channel — no byte-level sha256; the scheduled sync's next run overwrites this with its canonical hash-stamped capture) from https://bellagio.mgmresorts.com/en/terms-and-conditions.html -->
+# Hotel Reservation Terms and Conditions
+
+By booking this reservation, you confirm your agreement to these terms and conditions. Other terms and conditions may also apply depending upon your specific offer. If you do not agree to all of these terms and conditions, please contact Room Reservations at 888.987.6667.
+
+Daily Resort Fee. A daily resort fee of $55.00 plus applicable tax will be applied to all reservations. The resort fee includes: In-room wireless internet access; unlimited local, domestic long distance (the 50 United States and DC) and toll-free calls; access to Paramount+ with SHOWTIME On Demand via in-room television; airline boarding pass printing; digital newspaper and magazine access; and fitness center access for guests 18+. Amenities, such as fitness center access, are subject to availability and guest demand. Daily resort fees will be waived (i.e., removed from the bill at check out) for eligible members with Gold+ Tier Level status with eligible reservations https://www.mgmresorts.com/en/mgm-rewards/daily-resort-fee-waiver.html)
+
+Additional Occupant Charge. There is an additional charge of $50 plus tax per occupant, per night, above 2 occupants per room.
+
+* Taxes. Estimated taxes are based on current tax rates which are subject to change as required by applicable law. Taxes may include lodging tax, sales tax, entertainment tax, etc. Lodging taxes apply to the basic room rate, any resort fee, additional per occupant charges, upgrades, as well as any other charges as required by applicable law.
+
+Refund of Deposit. The first night's deposit is fully refundable provided a timely notice of cancellation is received by Room Reservations at 888.987.6667 at least 72 hours prior to the arrival date, unless specifically excluded by booked offer. Cancellations less than 72 hours before your scheduled arrival (and no shows) will result in a forfeiture of the first night's deposit. If you have a complimentary stay (or at least the first night is complimentary) and do not cancel at least 72 hours prior to your scheduled arrival (or do not show up), then you will be charged a $165 mid-week or $200 weekend (i.e., Friday or Saturday night) cancellation fee (as determined by the first night of your scheduled stay), plus applicable taxes.
+
+[Truncated text-only capture of the page sections that carry the fee, tax and cancellation values used on this site. The live page is authoritative: https://bellagio.mgmresorts.com/en/terms-and-conditions.html]

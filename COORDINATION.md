@@ -983,3 +983,35 @@ File-scope guarantee: this session edits **only** `data/14c124ef/**` (new), `not
 **Flag-state deltas for the integration sessions:** F7 closed (this booklet) · F9 re-verified · F11 partially addressed (MGM properties verified; Caesars range-only) · F19 replacement evidence ready · F4 refreshed evidence. All are published in `notes/14c124ef-verification.md`; no canonical file was touched (V4 PR is session-scoped + this log only).
 
 - **Process note (merge conflict, 2026-11-17):** rebasing this session's board appends onto `main` after PR #68 conflicted in `COORDINATION.md`. The first resolution attempt truncated main's board (a regex matched prose inside historical records instead of the real conflict markers); it was corrected immediately by rebuilding the file from `origin/main`'s full board verbatim and re-appending only this session's claim + result record. Main's 873 board lines were diff-verified present; no other session's text was lost. Lesson recorded for future sessions: resolve board conflicts positionally (append-only), not with pattern matching.
+## Session arena/3082d6d9-poker4 — claim (2026-11-17)
+
+Branched from `main` @ `ff3fa36` (the 22:17Z scheduled official-source sync). No other session holds an active claim; all prior sections are done/merged. This session is a fresh audit + integration round: it re-verifies the published state line by line against live official sources, repairs the two unreachable official URLs found in `data/sync-status.json`, and re-publishes.
+
+| ID | Task | Status | Owner | File scope | Notes |
+|----|------|--------|-------|------------|-------|
+| A1 | Claim + repo-state review of `main` @ ff3fa36 (gates, data, pages, workflows) | in progress | arena/3082d6d9-poker4 | `COORDINATION.md` (log only) | verify_root / linkcheck / verify_markup all green at claim time |
+| A2 | Live re-check of official sources vs published rows (Venetian calendar + schedule PDF + structure sheets, Wynn PDFs, Caesars page, hotel fee/tax pages); confirm the 22:11Z PDF change (Events 39/47 restart times) is reflected | in progress | arena/3082d6d9-poker4 | `data/3082d6d9/` (new verification records), `notes/` | results recorded with official links; mismatches flagged, not silently edited |
+| A3 | Repair the 2 unreachable official URLs (Caesars daily-NLH flyer 2025 PDF; Bellagio resort-fee page) with current official URLs, rebuild, re-verify | in progress | arena/3082d6d9-poker4 | `data/tracked-sources.json` / sync tooling, `data/raw/`, rebuilt root pages | flagged before fix; fix cites the new official URL |
+| A4 | Gates → PR → main → merge → Pages deploy confirmed → recorded here | in progress | arena/3082d6d9-poker4 | this branch, `main`, `COORDINATION.md` | PR number + merge result logged below when done |
+
+Branch note (same as prior sessions): Arena pins this session to a single fixed branch (`arena/3082d6d9-poker4`), so the `session-<id>/<task>` branch convention is documented here instead; all work happens on that one branch with small commits.
+
+### Result record — arena/3082d6d9-poker4 (2026-11-17)
+
+**Status:** A1 done · A2 done · A3 done · A4 done (merge + Pages recorded below).
+
+**A1 — repo state at claim time.** Branch point `ff3fa36` (22:17Z scheduled source sync) equals `origin/main`. Gates green at claim: `verify_root` (16 pages, 253 rows, 0 warnings), `linkcheck` (30 pages), `verify_markup` (37 pages), DSE check 94/94, build drift 0. Scheduled workflows all success on their latest runs (the two formerly failing monitors stay manual-dispatch only). `data/sync-status.json` reported 2 unreachable official URLs: the Caesars 2025 daily flyer PDF and Bellagio's resort-fee page.
+
+**A2 — independent live re-checks** (full record with links: `data/3082d6d9/verification.json`):
+- Venetian DSE IV calendar (live chunks 1+3) vs published rows: Events 1, 26 (incl. 1F Turbo → sheet 14), 39 (Dec 10 10:10 AM; Dec 11 restart 10:00 AM), 47 ($2,200 1A Dec 12 10:10 AM), 56 (Day 2 Dec 20 11:00 AM), 59 ($600 $150K GTD + pre-11:10 rake discount) — all match; the 22:11Z PDF change (Events 39/47 restart times) is already reflected in the published rows and the change log.
+- Wynn WPT schedule PDF (live) vs published rows: Nov 27 → Dec 21 spot rows (Day 1A $600/$400K, TORSE, PLO, $800/$1M block) all match.
+- Caesars: **published rows were wrong** — all four carried the explore page's blanket "$100 buy-in"; the venue's live 2026 flyer prints $160 at 2 PM and 9 PM with fee splits ($70/$30, $115/$45), add-on split ($45/$5), registration closing at the start of level 7, and rule 3 allowing re-entry within the first break. Fixed in the generator; conflict between the two official Caesars pages recorded on flag F25 (rows follow the dedicated, dated flyer; explore page kept as second source).
+- Bellagio: the retired `/en/hotel/resort-fee.html` page replaced with the property's live Hotel Reservation Terms page, which states "A daily resort fee of $55.00 plus applicable tax will be applied to all reservations" and a 72-hour cancellation deadline — Bellagio fee now **confirmed**; lodging-tax % is not printed there and stays blank (never inferred).
+
+**A3 — fixes shipped** (canonical layer only): `data/tracked-sources.json` (C_FLYER → 2026 flyer, B_FEE → Bellagio terms page with note), `scripts/integrate_data.py` (Caesars block per-slot buy-ins/fee/re-entry/reg-cutoff; hotels paragraph updated; facts-list fallback to the row's own confirmed excerpts), `data/poker4.json` (Bellagio fee/cancellation confirmed with excerpts + retrieved dates; F25 rewritten; meta note), `data/raw/bellagio-terms.txt` (honest text-only capture, sync overwrites canonically), `data/3082d6d9/verification.json` (new). Machine files (`data/sync-status.json`, `data/url-checks.json`, `data/hotel-facts.json`) were NOT hand-edited; the post-merge push run re-checks the 64 tracked URLs (including the two replacements) and refreshes them — landing statusline self-heals then.
+
+**Post-fix gates:** verify_root 0 (253 rows, 0 warnings) · linkcheck 0 · verify_markup 0 (37 pages) · DSE 94/94 · build drift 0 · check_rows OK · `node --check app.js` OK. Render checks: tournaments.html Caesars rows show $100/$160 with confirmed fee + re-entry and stay out of the ranked list (recurring undated slate, spend-advantage format); hotels.html Bellagio row shows the confirmed $55+tax fee sentence with source and the 72-hour cancellation; flagged.html F25 renders the conflict.
+
+**Sources read live this session:** Caesars 2026 daily flyer PDF · Caesars explore page · Bellagio Hotel Reservation Terms · Bellagio FAQ (fee pointer) · Venetian DSE IV calendar · Wynn WPT schedule PDF — all linked in `data/3082d6d9/verification.json`.
+
+**Irregularities flagged, not silently fixed:** (1) Caesars explore-page vs flyer buy-in conflict → F25, rows follow the flyer. (2) Bellagio lodging-tax % not printed on the live page → stays blank. (3) Landing statusline keeps counting the two retired URLs until the next scheduled sync re-checks the replacements (self-heals post-merge).
