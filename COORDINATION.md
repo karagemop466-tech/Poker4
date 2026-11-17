@@ -601,3 +601,21 @@ Policy: every data row must link an official source; values not confirmed from a
 - **Post-merge on `main`:** "Verify the published site" SUCCESS · "Poker4 site build + verification gate" SUCCESS · "Deploy static dashboard to GitHub Pages" SUCCESS (run 43999859321) · "pages build and deployment" (run 43999857621) queued/completed · "Official source sync + change monitor" running.
 - **Pages:** https://karagemop466-tech.github.io/Poker4/ (source: main, path `/`) — deploy succeeded at 02:01 UTC 2026-11-17.
 - **Race notes:** `main` advanced four times during this session (`be3594d` → `9b1f376` → `57f7399` → `1221f53` → `6fd824b` → `fa1dbad`); every round merged forward, never discarding others' work; the v2-monitor bot also pushed a snapshot commit to this session's branch (merged back). Final head `59a6c51` contains `origin/main` `fa1dbad`.
+
+---
+
+## Session arena/3e5cd61e-poker4 (session `3e5cd61e`) — integration + fresh official re-verification, 2026-11-17
+
+Branch `arena/3e5cd61e-poker4`, from `main` @ `0d13de0`. No open PRs at claim time (`gh pr list --state open` empty), so this session also acts as the integration session for the root dashboard.
+
+| ID | Task | Status | Owner | File scope | Notes |
+|----|------|--------|-------|------------|-------|
+| Z1 | Fresh line-by-line re-read of official sources today (Venetian DSE IV calendar, structure sheets, Wynn, Bellagio, Caesars, ARIA, Park MGM; hotel fee/tax/parking/cancellation pages) and record per-source last-checked | in progress | arena/3e5cd61e-poker4 | `data/poker4.json`, `data/structure-audit.json`, `data/tracked-sources.json`, `data/hotel-facts.json`, `sources.html` (generated) | Retrieval via live fetch of official domains; every claim quoted |
+| Z2 | Remove the "unverified" label only where an official sheet/schedule confirms the entry rule; keep it everywhere else | in progress | arena/3e5cd61e-poker4 | `data/poker4.json` rules fields (generated into `tournaments.html`, `venues/*`) | Promotion requires a verbatim quote stored with the row |
+| Z3 | Fix R1 (root pages clobbered each morning by a second generator): root `*.html` = output of `scripts/integrate_data.py`, and `maintenance.yml` no longer writes root HTML | in progress | arena/3e5cd61e-poker4 | root `*.html` (generated), `.github/workflows/maintenance.yml`, `archive/root-0d13de0/` (preserved prior bytes) | Resolves the request logged by sessions e74e00fd/88295d28 |
+| Z4 | Feature audit against the requirement list (trip cost, schedule re-check + changed-row marking, last-checked per row, dated rate log, one page per venue, search, date filter, structured rule fields, overlap check, ratio ranking, bounty/flight separation, walk ≤30 min, live feed) | in progress | arena/3e5cd61e-poker4 | generated root pages, `scripts/integrate_data.py`, `data/*` | Anything missing is added; anything already present is verified working, not duplicated |
+| Z5 | Executive summary, open questions, suggestions (review-only), Flagged for Review refresh | in progress | arena/3e5cd61e-poker4 | `index.html`, `questions.html`, `suggestions.html`, `flagged.html` (all generated) | |
+| Z6 | Integration: PR → main, merge, confirm Pages deploy, record result | pending | arena/3e5cd61e-poker4 | this branch, `main` | Only after Z1–Z5 |
+
+- Not touched: other sessions' preserved subsites (`poker4/`, `v2/`, `planner/`, `60fb62da/`, `c07371e3/`, `df41f5c6/`, `strip/`, `verified/`, `site/`, `archive/*`, `prior_root_dashboard/`) and their data dirs, except the additive archive folder in Z3.
+- Verification rule for this session: a value is shown only if an official page or official PDF printed it; otherwise blank + flagged. Structure-sheet quotes are stored verbatim with the retrieval date.
