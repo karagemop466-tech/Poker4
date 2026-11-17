@@ -157,7 +157,6 @@ Scope note: the session brief asks for `session-<id>/<task>` branches. The Arena
 - Integration: root navigation links the preserved `c07371e3` site; root Flagged for Review links its flagged log with an independent-source-set caveat.
 - Validation: `python3 build/build_site.py`; `python3 scripts/build.py`; `python3 scripts/verify.py` (10 pages, 17 sources, 29 flags; all row sources/internal links verified); `git diff --check`. Data audit confirms 19 and 64 candidate rows are labeled unverified.
 - PR #4 merged to `main` as merge commit `fb62f758526b2bbfc13ad50b238faa88cf5094ec` at 2026-11-16 19:15:25 UTC. The "Deploy static dashboard to GitHub Pages" run `43937426421` and "pages build and deployment" run `43937425213` both completed successfully. GitHub Pages API reports status `built`, public URL `https://karagemop466-tech.github.io/Poker4/`, source `main:/`. Direct browser fetch of the live page was not available from this environment; workflow and Pages API statuses were verified.
-<<<<<<< HEAD
 - 2026-11-17 — arena/f8fa22bb-poker4: added standalone trip-calculator.html (entries x buy-ins + nights x true hotel cost), change-monitor.html (official URL re-check log), venue-venetian.html / venue-wynn.html / venue-others.html (one page per venue with events and hotels), data/url-monitor.json (10 URLs with check intervals). Added navigation links to these pages on all root HTML pages. Main already contains integrated trip calculator (in hotels.html), date filter, last-checked monitoring, overlap detection, and scheduled URL re-check (tools/url_check.js, .github/workflows/url-check.yml) from session arena/5dba2ab6-poker4. No event verified as strict single-entry — all flagged.
 
 ---
@@ -175,16 +174,15 @@ Session ID: `arena/aa32d8fd-poker4`; branch `arena/aa32d8fd-poker4`, branched fr
 ### Log (arena/aa32d8fd-poker4)
 - 2026-11-17: claimed C1-C3. Rebasing onto latest main caused overlapping conflicts with parallel sessions' root files (trip calculator, filters, venue pages); per non-overlapping scope, kept main's integrated root site and added only non-conflicting files: sources.html, suggestions.html, build scripts, enhanced data.
 - 2026-11-17: C1 done (sources.html, suggestions.html, scripts/build_root.py, scripts/enhance_data.py, enhanced data/tournaments.json, data/hotels.json, data/sources.json with last_checked, rule fields, dated rate log, change-monitor registry). C2 done (0 broken internal links in new pages; all source keys valid). C3 done: PR #20 merged to main (merge commit bb845cc), GitHub Pages deploy succeeded (status `built`, run 43993023974), result recorded here.
-=======
 
 
 ## Active work claim — arena/2c470c15-poker4
 
 | ID | Task | Status | Owner | File scope |
 |---|---|---|---|---|
-| T11 | Integrate decision tools: per-venue pages, global/table search, date and single-entry filters, trip-cost estimator, structured rule/rate logs, schedule fit and walking checks, scheduled official-source monitor/feed | in progress | `arena/2c470c15-poker4` | `index.html`, root dashboard pages, `app.js`, `assets/`, `data/`, `venues/`, `scripts/`, `.github/workflows/`, `README.md`, `COORDINATION.md` |
+| T11 | Final gaps: hotel-to-Venetian walking-route matrix/filter; daily official schedule content feed with source-change detection; final integration QA | in progress | `arena/2c470c15-poker4` | `walking-routes.html`, `data/walking-routes.json`, `data/live-schedules.json`, `tools/daily_schedule_feed.js`, `tools/daily_schedule_feed.test.js`, `.github/workflows/daily-official-schedules.yml`, `app.js`, `index.html`, `change-monitor.html`, `README.md`, `COORDINATION.md` |
 
-- This session is using the Arena-provided current branch `arena/2c470c15-poker4`; no branch switch or additional worktree will be created. Historical tasks above are already marked done/needs review; no active claim for T11 was present.
-- Source baseline in the repository is dated 2026-11-16. No new event/rate/walking fact will be promoted to verified unless a source excerpt and retrieval date are available; missing values stay blank and appear on the review page.
-- Repository irregularity observed before work: `COORDINATION.md` contained literal merge-conflict markers and a duplicate `60fb62da` block. Removed only the stale marker block and duplicate; the complete original block remains.
->>>>>>> 0e93bab (chore: claim Poker4 decision-tool integration)
+- After `git pull --rebase origin main`, `main` advanced through PRs #19 and #21. The earlier trip calculator, filters, venue pages, structured rule fields, and rate log are already present and marked done; T11 is narrowed to the remaining walking-route and schedule-feed gaps.
+- Rebase conflict on 2026-11-17 affected only `COORDINATION.md`: latest main added the `arena/f8fa22bb-poker4` and `arena/aa32d8fd-poker4` records while retaining stale merge markers and a duplicate `60fb62da` block. Resolution kept every unique main/session record, retained the unique f8fa22bb note, removed only marker lines and the duplicate block, and appended this claim.
+- Source baseline remains dated 2026-11-16/17. No walking duration or address will be invented. Route rows without an official-address source and measured duration stay blank and fail the ≤30-minute verified filter. Scraped source changes will be review flags only; event values will not be silently rewritten.
+- Final integration finding: merged `app.js` calls an undefined `setupSearch()` before initializing the trip calculator. A small integration fix is included in this claim so the already-merged calculator can run.
