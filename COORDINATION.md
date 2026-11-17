@@ -833,3 +833,19 @@ Files from `75757cc1` are kept as-is: `data/75757cc1/`, the 37-sheet structure r
 - Live pages re-fetched after deployment: https://karagemop466-tech.github.io/Poker4/tournaments.html and https://karagemop466-tech.github.io/Poker4/venues/venetian.html. F8 complete.
 
 - 2026-11-17: Rebased integration work forward onto origin/main after PR #59 merged at c1521ee and source-sync commit 8a459b3; regenerated canonical pages from the merged official corrections.
+
+---
+
+## Session arena/8ba759ca-poker4 — independent verification + final integration (claim, 2026-11-17)
+
+Session ID: `arena/8ba759ca-poker4`; branch `arena/8ba759ca-poker4` (from `main` @ `ff3fa36`, the 22:17 official-source sync). Claim written and pushed before any other edit, per the board convention.
+
+Role: independent verification pass over the published root site, then final integration for this brief round — merge the one open PR if its checks pass (its work stays claimed by its owner), ship one integration PR to `main`, merge, confirm the GitHub Pages deploy, and record the result below. No other session's claimed task is taken over.
+
+| ID | Task | Status | Owner | File scope | Sources / verification | Irregularities |
+|----|------|--------|-------|------------|------------------------|----------------|
+| V1 | Independent line-by-line re-verification of key published values against live official sources (Venetian DSE IV calendar rows, structure-sheet single-entry verdict, Venetian resort fee + 13.38% tax terms, TI fee, Wynn page) with links for manual review | claimed | arena/8ba759ca-poker4 | `data/8ba759ca/*` (new folder only), this board | Official operator pages/PDFs fetched in this session | — |
+| V2 | Full local gate run + feature audit of the root site against the brief (search, date filter, single-entry toggle, walk filter, calculator, rate log, monitor, venue pages, summary/questions/suggestions/flagged) | claimed | arena/8ba759ca-poker4 | this board + `data/8ba759ca/*` | `scripts/verify_root.py`, `verify.py`, `verify_markup.py`, `linkcheck.py`, plus manual page audit | — |
+| V3 | Integration: reconcile with open PR #65 (owner `arena/e281a2cc-poker4` — their files stay theirs), PR → main, merge, Pages deploy confirm, record here | claimed | arena/8ba759ca-poker4 | this board, `main` | GitHub checks + live Pages fetch after deploy | — |
+
+Explicitly NOT claimed (owners elsewhere): PR #65's verifier/walking-route/monitor repairs; scheduled workflows owned by other sessions; other sessions' subsites (`v2/`, `poker4/`, `planner/`, `site/`, `verified/`, `strip/`, `60fb62da/`, `c07371e3/`, `df41f5c6/`, `pages/`, `build/`, `archive/`, `prior_root_dashboard/`).
