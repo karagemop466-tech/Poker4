@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Wynn — dailies &amp; WPT World Championship — Poker4</title>
+<link rel="stylesheet" href="style.css">
+<base href="../">
+</head>
+<body data-venue="Wynn">
+<header class="site"><div class="wrap">
+  <span class="logo">♠ Poker4</span>
+  <nav>
+    <a href="index.html">Summary</a>
+    <a href="tournaments.html">Tournaments</a>
+    <a href="schedule.html">Schedule planner</a>
+    <a href="hotels.html">Hotels &amp; cost</a>
+    <a href="venues/venetian.html">Venetian</a>
+    <a href="venues/wynn.html" class="active">Wynn</a>
+    <a href="venues/other-venues.html">Other rooms</a>
+    <a href="questions.html">Questions</a>
+    <a href="suggestions.html">Suggestions</a>
+    <a href="review.html">Flagged for review</a>
+    <a href="sources.html">Sources</a>
+  </nav>
+</div></header>
+<main class="wrap">
+  <h1>Wynn — dailies + WPT World Championship</h1>
+  <p class="lead">Recurring dailies year-round; WPT series Nov 27 – Dec 21, 2026 (printed on the official structures PDF). The poker room is officially “located in Encore at Wynn Las Vegas”. All values below come from the official Wynn PDFs.</p>
+
+  <div class="callout bad"><strong>Important:</strong> every Wynn daily event officially allows re-entry and/or add-ons — none is single-entry. And each daily “may be suspended during Seniors Events, Classic Events, or other Tournament Series”, so during the WPT series the dailies may not run as printed (Flagged F2, F3). Every WPT-series event whose structure was read allows unlimited re-entry until level 9 (Flagged F7 lists the not-yet-read remainder).</div>
+
+  <div class="filters">
+    <input type="text" id="f-q" placeholder="Search Wynn events…">
+    <input type="date" id="f-date" min="2026-11-27" max="2026-12-21">
+    <label><input type="checkbox" id="f-single"> single-entry / freezeout confirmed only</label>
+    <span class="badge acc" id="t-count">…</span>
+  </div>
+
+  <div class="tablewrap"><table>
+    <thead><tr>
+      <th>Event</th><th>Dates / sessions</th><th>Start</th><th>Buy-in</th><th>House fee / pool</th>
+      <th>Guarantee</th><th>GTD ÷ entry</th><th>Stack / levels</th><th>LR cutoff</th><th>Single entry</th><th>Source · checked</th>
+    </tr></thead>
+    <tbody id="tournaments-body"><tr><td colspan="11" class="muted">Loading…</td></tr></tbody>
+  </table></div>
+
+  <h2>Satellites &amp; seat-only events</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Event</th><th>Sessions</th><th>Buy-in</th><th>Prize</th><th>Source</th></tr></thead>
+    <tbody id="satellites-body"><tr><td colspan="5" class="muted">Loading…</td></tr></tbody>
+  </table></div>
+
+  <h2>Recurring daily tournaments (official structures, verified)</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Event</th><th>Days</th><th>Start</th><th>Buy-in</th><th>GTD</th><th>Re-entry / add-on (official)</th></tr></thead>
+    <tbody id="reentry-body"><tr><td colspan="6" class="muted">Loading…</td></tr></tbody>
+  </table></div>
+
+  <h2>Hotels for Wynn play</h2>
+  <p class="small muted">Wynn/Encore on-site (fee unverified this session). Beware Formula 1 week Nov 19–21, 2026 — the official offer page prices that weekend separately. See <a href="hotels.html">Hotels &amp; cost</a>.</p>
+</main>
+<footer class="site"><div class="wrap">
+  <span>Built from official operator documents only · last data build 2026-11-17</span>
+  <span><a href="sources.html">Sources</a> · <a href="review.html">Flagged for review</a></span>
+</div></footer>
+<script src="app.js"></script>
+</body>
+</html>

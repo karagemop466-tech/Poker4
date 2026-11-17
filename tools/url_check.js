@@ -9,32 +9,37 @@ const OUT = path.join(ROOT, 'data', 'url-checks.json');
 const PREV = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : {};
 
 // Canonical official URLs referenced by the dashboard. Add/remove here as sources change.
+const V = 'https://www.venetianlasvegas.com';
+const VS = V + '/content/dam/vlvweb/casino/poker/deepstack/2026/structures';
 const URLS = [
-  'https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html',
-  'https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament.html',
-  'https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html',
-  'https://www.venetianlasvegas.com/resort/resort-fee.html',
-  'https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html',
-  'https://www.venetianlasvegas.com/book',
+  V + '/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html',
+  V + '/resort/casino/poker/deepstack-extravaganza-poker-tournament.html',
+  V + '/resort/casino/poker/suite-rates.html',
+  V + '/resort/resort-fee.html',
+  V + '/legal/hotel-terms-and-conditions.html',
+  V + '/book',
   'https://www.wynnlasvegas.com/casino/poker',
+  'https://www.wynnlasvegas.com/',
+  'https://wynnpoker.com/',
   'https://bellagio.mgmresorts.com/en/casino/poker.html',
+  'https://aria.mgmresorts.com/en/casino/poker.html',
   'https://www.caesars.com/caesars-palace/casino',
   'https://www.caesars.com/caesars-palace/resort-fee',
-  'https://www.treasureisland.com/',
   'https://www.caesars.com/harrahs-las-vegas',
   'https://www.caesars.com/horseshoe-las-vegas',
+  'https://www.caesars.com/linq',
+  'https://www.caesars.com/flamingo-las-vegas',
+  'https://treasureisland.com/',
   'https://www.wsop.com/schedule/'
 ];
 
-// Structure PDFs linked from tournament rows (sampled set; the schedule page is the index).
+// Official structure/rule PDFs: every Venetian DSE IV structure sheet (1-37) + Wynn PDFs.
 const PDF_URLS = [
-  'https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf',
-  'https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf',
-  'https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_6.pdf',
-  'https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf',
-  'https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_29.pdf',
+  ...Array.from({ length: 37 }, (_, i) => `${VS}/dse_nov_2026-structure_${i + 1}.pdf`),
   'https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf',
-  'https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf'
+  'https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf',
+  'https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf',
+  'https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf'
 ];
 
 const TIMEOUT_MS = 20000;

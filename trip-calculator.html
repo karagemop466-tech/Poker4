@@ -1,13 +1,45 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Trip Cost Calculator — Strip Poker Planner</title><link rel="stylesheet" href="style.css"><script defer src="app.js"></script></head><body><header class="topbar"><a class="brand" href="index.html">♠ STRIP POKER PLANNER</a><span class="stamp">Research snapshot · 17 Nov 2026 UTC</span></header><nav class="nav"><div class="nav-inner"><a href="index.html">Executive brief</a><a href="tournaments.html">Tournaments</a><a href="schedule.html">Day plan</a><a href="hotels.html">Hotels &amp; cost</a><a class="active" href="trip-calculator.html">Trip cost</a><a href="change-monitor.html">URL change monitor</a><a href="venue-venetian.html">Venues</a><a href="decisions.html">Questions &amp; suggestions</a><a href="review.html">Flagged for review</a></div></nav><main><p class="eyebrow">Estimated cost of a trip</p><h1>Trip cost calculator</h1><p class="lede">Estimated total = (entries × buy-in per entry) + (nights × true hotel cost per night). True hotel cost = base rate + mandatory resort fee + 13.38% Clark County room tax. Figures use the official Venetian/Palazzo poker-rate terms ($55 resort fee + tax; 13.38% room tax). Date-specific room quotes are not available — enter your own base rate if you have an official quote.</p>
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Official-source Las Vegas Strip poker tournament and hotel decision dashboard">
+<title>Trip calculator — Strip Poker Planner</title>
+<link rel="stylesheet" href="assets/site.css">
+</head><body>
+<header class="topbar"><a class="brand" href="index.html">♠ STRIP POKER PLANNER</a>
+<span class="stamp">Verified snapshot · 17 Nov 2026 UTC · every row links its official source</span></header>
+<nav class="nav"><div class="nav-inner"><a class="" href="index.html">Executive summary</a><a class="" href="tournaments.html">Tournaments</a><a class="" href="schedule.html">Day plan</a><a class="" href="hotels.html">Hotels &amp; true cost</a><a class="active" href="trip-calculator.html">Trip calculator</a><a class="" href="rate-log.html">Rate log</a><a class="" href="venues/venetian.html">Venues</a><a class="" href="monitor.html">Source monitor</a><a class="" href="questions.html">Questions</a><a class="" href="suggestions.html">Suggestions</a><a class="" href="flagged.html">Flagged for review</a><a class="" href="sources.html">Sources</a></div></nav>
+<main>
+<div class="hero"><p class="eyebrow">Trip cost · entries × buy-ins + nights × true hotel cost</p>
+<h1>Estimated cost of the trip.</h1>
+<p class="sub">Trip cost = Σ(entries × buy-in) + Σ(nights × true cost/night). True cost/night = (rate + resort fee) × 1.1338.
+Numbers you type are your own quotes — everything else on this site stays source-linked.</p></div>
 
-<div class="table-wrap"><form id="trip-form" class="grid"><div><label style="display:block;font-weight:600;margin-bottom:6px">Tournament entries</label><input type="number" id="entries" value="1" min="0" step="1"></div><div><label style="display:block;font-weight:600;margin-bottom:6px">Buy-in per entry ($)</label><input type="number" id="buyin" value="300" min="0" step="10"></div><div><label style="display:block;font-weight:600;margin-bottom:6px">Hotel nights</label><input type="number" id="nights" value="3" min="0" step="1"></div><div><label style="display:block;font-weight:600;margin-bottom:6px">Hotel base rate per night ($)</label><input type="number" id="baserate" value="119" min="0" step="1"></div><div><label style="display:block;font-weight:600;margin-bottom:6px">Resort fee per night ($)</label><input type="number" id="resortfee" value="55" min="0" step="1"></div><div><label style="display:block;font-weight:600;margin-bottom:6px">Room tax rate (%)</label><input type="number" id="taxrate" value="13.38" min="0" step="0.01"></div><div style="align-self:end"><button type="button" id="calc-btn" class="button">Calculate trip cost</button></div></form></div>
+<div class="card filterable" id="tripcalc">
+<div class="calc">
+<label>Tournament entries (#) <input id="entries" type="number" min="0" value="5"></label>
+<label>Average buy-in ($) <input id="buyin" type="number" min="0" value="300"></label>
+<label>Extra entry fees — re-entries/satellites ($) <input id="extraentries" type="number" min="0" value="0"></label>
+<label>Nights <input id="nights" type="number" min="0" value="5"></label>
+<label>Quoted nightly rate ($) <input id="rate" type="number" min="0" value="119"></label>
+<label>Mandatory resort fee ($/night) <input id="fee" type="number" min="0" value="55"></label>
+</div>
+<div class="result">
+<p>Entries subtotal: <b id="r-entries">$0</b></p>
+<p>True hotel cost/night: <b id="r-night">$0</b></p>
+<p>Stay subtotal: <b id="r-stay">$0</b></p>
+<p>Estimated trip cost: <b id="r-total">$0</b></p>
+</div>
+<p class="small mut">Defaults are the verified Venetian poker-suite starting rate ($119, conditional) and the verified $55 Venetian resort fee — replace them with your actual quote for exact planning. Tax source: <a class="src" href="https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html" target="_blank" rel="noopener">V_TERMS</a></p>
+</div>
 
-<div class="callout" id="result" style="display:none;margin-top:20px"><h3>Estimated trip total</h3><div class="grid"><div class="card"><p class="muted">Tournament buy-ins total</p><b id="t-buyins">$0</b></div><div class="card"><p class="muted">Hotel base total (nights × rate)</p><b id="t-hotel-base">$0</b></div><div class="card"><p class="muted">Resort fee total</p><b id="t-resort-fee">$0</b></div><div class="card"><p class="muted">Room tax total</p><b id="t-tax">$0</b></div><div class="card"><p class="muted">True hotel cost per night</p><b id="t-hotel-night">$0</b></div><div class="card"><p class="muted">Hotel total (nights)</p><b id="t-hotel-total">$0</b></div><div class="card" style="border-top:4px solid var(--green)"><p class="muted">Estimated trip total</p><b id="t-grand">$0</b></div></div><p class="muted" style="margin-top:10px">This is an estimate, not a booking quote. Actual room rates vary by dates, occupancy, availability, and poker-rate qualification. Re-check official rates for your exact dates before booking.</p></div>
+<h2>Worked example (documented, not a quote)</h2>
+<table><thead><tr><th>Component</th><th>Values used</th><th>Source / status</th></tr></thead><tbody>
+<tr><td>Entries</td><td>5 entries × $300 = $1,500</td><td class="small">example only — pick real events on the <a href="tournaments.html">Tournaments page</a></td></tr>
+<tr><td>True hotel cost/night</td><td>($119 + $55) × 1.1338 = $197.28</td><td class="small"><a class="src" href="https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html" target="_blank" rel="noopener">V_RATES</a> <a class="src" href="https://www.venetianlasvegas.com/resort/resort-fee.html" target="_blank" rel="noopener">V_RESORT</a> <a class="src" href="https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html" target="_blank" rel="noopener">V_TERMS</a> — conditional poker rate</td></tr>
+<tr><td>Stay</td><td>5 nights × $197.28 = $986.40</td><td class="small">nights × true cost/night</td></tr>
+<tr><td><b>Estimated trip cost</b></td><td><b>$2,486.40</b></td><td class="small">entries + stay</td></tr>
+</tbody></table>
 
-<div class="hero-actions" style="margin-top:24px"><a class="button ghost" href="calculator.html">Advanced: pick events from the verified schedule →</a><a class="button" href="https://www.venetianlasvegas.com/book" target="_blank" rel="noopener">Check official Venetian rates for dates ↗</a><a class="button ghost" href="hotels.html">Review hotel fee math →</a></div>
-
-<section class="section"><h2>Formula used</h2><div class="grid"><article class="card"><h3>True hotel cost per night</h3><p style="font-family:ui-monospace,monospace">true cost/night = base rate + resort fee + (base rate + resort fee) × tax rate</p><p>Example with Venetian terms: $119 + $55 + ($119 + $55) × 13.38% = $197.28/night.</p><p><a href="https://www.venetianlasvegas.com/resort/resort-fee.html">Official resort fee ↗</a> · <a href="https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html">Official hotel terms ↗</a></p></article><article class="card"><h3>Estimated trip total</h3><p style="font-family:ui-monospace,monospace">trip total = (entries × buy-in) + (nights × true cost/night)</p><p>Includes only tournament buy-ins and hotel costs. Excludes travel, food, parking ($20/day self / $40/day valet at Venetian), tips, and any add-ons/re-entries.</p><p><a href="https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html">Official parking terms ↗</a></p></article></div></section>
-
-<section class="section"><h2>Reference: official poker-rate starting points (Venetian / Palazzo)</h2><div class="table-wrap"><table><thead><tr><th>Property</th><th>Base rate from (advertised)</th><th>Resort fee / night</th><th>Tax</th><th>True cost from / night</th><th>Rate qualification</th><th>Source</th></tr></thead><tbody><tr><td>The Venetian</td><td>$119 – $209 (endpoint not property-specific)</td><td>$55 + tax</td><td>13.38% Clark County room tax</td><td>$197.28 – $299.32</td><td>6 live-cash hours or $300+ tournament buy-in per night</td><td><a class="source-link" href="https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html">Poker rates ↗</a></td></tr><tr><td>The Palazzo</td><td>$119 – $209 (endpoint not property-specific)</td><td>$55 + tax</td><td>13.38% Clark County room tax</td><td>$197.28 – $299.32</td><td>Same poker-rate program</td><td><a class="source-link" href="https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html">Poker rates ↗</a></td></tr></tbody></table></div><p class="muted">The official page quotes starting endpoints “as low as $119 and $209” without assigning each to a named property. These are illustrative calculations, not quotes.</p></section>
-
-<footer class="footer">All fee and tax figures are from official Venetian property pages linked on this page. Date-specific quotes require entering travel dates in the official booking flow. <a href="https://www.venetianlasvegas.com/book">Official booking ↗</a></footer></main></body></html>
+<footer>Values read from official operator sources only, with retrieval dates. Unverified values are blank and flagged on the
+<a href="flagged.html">Flagged for Review</a> page. This is a decision dashboard, not a booking engine or a forecast.
+Re-checked automatically (see <a href="monitor.html">Source monitor</a>).</footer>
+</main><script src="assets/site.js"></script></body></html>

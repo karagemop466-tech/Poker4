@@ -13,13 +13,7 @@ from pathlib import Path
 from urllib.parse import urlparse, unquote
 
 ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_PAGES = [
-    "index.html", "tournaments.html", "schedule.html", "hotels.html",
-    "decisions.html", "questions.html", "review.html", "calculator.html",
-    "trip-calculator.html", "change-monitor.html",
-    "venue-venetian.html", "venue-wynn.html", "venue-others.html",
-    "recheck.html", "sources.html", "suggestions.html",
-]
+DEFAULT_PAGES = sorted(p.name for p in ROOT.glob("*.html"))
 
 ATTR = re.compile(r'(?:href|src)\s*=\s*"([^"]+)"')
 

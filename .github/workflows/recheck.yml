@@ -1,8 +1,8 @@
-name: Re-check official source URLs (daily)
+name: daily-recheck
 
 on:
   schedule:
-    - cron: '17 15 * * *'   # every day 15:17 UTC (08:17 Las Vegas)
+    - cron: "0 6 * * *"   # 06:00 UTC daily
   workflow_dispatch:
 
 permissions:
@@ -12,37 +12,25 @@ jobs:
   recheck:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.x'
-      - name: Re-check every official URL in data/recheck_log.json
-        run: python3 scripts/recheck.py
-      - name: Summarize results
+      - uses: actions/checkout@v4
+
+      - name: Re-check official sources (hash + diff)
+        run: python3 tools/recheck.py
+
+      - name: Capture room live schedules (snapshot + diff)
+        run: python3 tools/daily_schedule.py
+
+      - name: Verify site integrity
+        run: python3 tools/verify_root_site.py
+
+      - name: Commit monitor output
         run: |
-          echo "## Official URL re-check — $(date -u +%F)" >> "$GITHUB_STEP_SUMMARY"
-          python3 - <<'PY' >> "$GITHUB_STEP_SUMMARY"
-          import json
-          log = json.load(open('data/recheck_log.json'))
-          print(f"Checked **{len(log['urls'])}** URLs. Statuses:")
-          for s in sorted({u['status'] for u in log['urls']}):
-              print(f"- {s}: {sum(1 for u in log['urls'] if u['status'] == s)}")
-          changed = [u for u in log['urls'] if u['status'] == 'changed']
-          if changed:
-              print("\n### CHANGED — re-verify rows citing these sources")
-              for u in changed:
-                  print(f"- [{u['label']}]({u['url']})")
-          PY
-      - name: Commit updated recheck log
-        run: |
-          if git diff --quiet data/recheck_log.json; then
-            echo "No log changes."
+          git config user.name "poker4-recheck-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/0f6c627b/monitor
+          if git diff --cached --quiet; then
+            echo "no changes"
           else
-            git config user.name "github-actions[bot]"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add data/recheck_log.json
-            git commit -m "recheck: official source URLs verified $(date -u +%F)"
+            git commit -m "chore(recheck): daily source monitor run $(date -u +%F)"
             git push
           fi

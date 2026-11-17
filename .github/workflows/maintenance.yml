@@ -1,0 +1,36 @@
+name: Scheduled source re-check & daily schedule feed
+
+on:
+  schedule:
+    - cron: "17 7 * * *"   # 07:17 UTC ≈ 11:17 PM-morning Las Vegas; daily
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  maintenance:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Re-check official sources (flag changed rows)
+        run: python3 scripts/recheck_sources.py
+      - name: Morning daily-schedule feed
+        run: python3 scripts/fetch_daily_schedules.py
+      - name: Rebuild data + pages
+        run: |
+          python3 build/build_integrated.py
+          python3 build/build_pages.py
+      - name: Verify site
+        run: python3 scripts/verify_site.py
+      - name: Commit updated snapshots & monitoring data
+        run: |
+          git config user.name "poker4-maintenance"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A data/integrated monitoring 2>/dev/null || true
+          git add -A data/integrated *.html venues assets
+          git diff --cached --quiet || git commit -m "chore: scheduled source re-check + daily schedule feed $(date -u +%F)"
+          git push
