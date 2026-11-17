@@ -1,0 +1,52 @@
+{
+ "session": "arena/c5c7cc2b-poker4",
+ "date": "2026-11-17",
+ "role": "V1/V2 line-by-line live re-verification of published data against official sources",
+ "results": {
+  "venetian_calendar": {
+   "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "fetched": "2026-11-17 (4 chunks, all rows)",
+   "compare": "94 live official rows vs 94 published venue=venetian rows on (date, time, event #), buy-in printed in name, guarantee printed in name, structure-sheet link",
+   "mismatches": 0,
+   "artifact": "data/c5c7cc2b/official_calendar_fetch.md, data/c5c7cc2b/official_page_rows.json"
+  },
+  "structure_sheets_live_read": {
+   "policy": "each fetched sheet compared against data/structure-audit.json fields (buy-in, house fee, pool per entry, starting chips, level duration, late registration, guarantee) and scanned for entry/re-entry/add-on clauses",
+   "sheets_read": [
+    "S8",
+    "S10",
+    "S12",
+    "S15",
+    "S19",
+    "S21",
+    "S25",
+    "S30",
+    "S37"
+   ],
+   "coverage_note": "9 of 37 Venetian structure sheets re-fetched live; stratified to cover every buy-in tier ($100-$2,200), every special format (bounty, PKO, milestone satellite, turbo, multi-flight), and every sheet used by a top-ranked row. The remaining 28 sheets retain their same-day (2026-11-17) machine capture with pdf_sha256 in data/structure-audit.json and are re-checked daily by tools/sync_official_sources.py.",
+   "field_mismatches": 0,
+   "entry_policy_findings": "No sheet states single-entry / no-rebuy / no-add-on. S8 clause 07 prints 'All subsequent buy in's after the initial buy in will be $200' (re-entry priced -> spend-advantage rows stay separate). S10/S12/S21/S37 print the bagging clause 'Any player who bags chips for Day 2 may not play a subsequent flight' (a flight limitation, not an entry-count confirmation). S19 prints 'Open to Female players'. S30 prints the $50 starting-bounty 1/2-1/2 PKO split.",
+   "new_flag": "F27 - official sheet 25 level-25 blind line internally inconsistent (120,000 ante vs 75,000-125,000 blinds); copied verbatim, not corrected"
+  },
+  "hotel_facts_live_read": {
+   "venetian_resort_fee": "'Rates include a daily Resort Fee of $55 plus tax per night, payable upon check-in.' - matches stored fact (https://www.venetianlasvegas.com/resort/resort-fee.html)",
+   "venetian_hotel_terms": "'Daily rates do not include the applicable Clark County Room Tax of 13.38%.' + 'The daily fee for registered hotel guests is $20/day, seven days a week.' + $55 fee sentence - all match stored facts (https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html)",
+   "treasure_island": "'The $49.95 + tax daily resort fee* at TI Las Vegas' - matches (https://treasureisland.com/hotel/tower-suite)",
+   "wynn_fee_page": "https://www.wynnlasvegas.com/terms-and-conditions/850257 re-read: page is the expired 'Concours Sip and Savor 2026' package (booking window ended 2026-10-30, travel ended 2026-11-01); its '$55 plus tax' resort-fee wording matches the stored figure, and flag F19 (expired-promo sourcing) remains correct and stays published"
+  },
+  "wynn_daily_structures_live_read": {
+   "source": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+   "compare": "Mon-Thu $200 ($26/$12/$162 split, 'Registration and re-entries will be available'), Fri $240 Rebuy & Add-on ($35/$15/$190 split, 'Re-entry is NOT allowed', unlimited $200 rebuys, one $100 add-on), Sat/Sun $200 ($26/$12/$162) - all match data/room-facts.json excerpts verbatim",
+   "mismatches": 0,
+   "note": "Wynn dailies confirm re-entry/rebuy/add-on and stay in the spending-advantage section; none confirm single-entry"
+  }
+ },
+ "site_feature_audit": {
+  "checked_pages": "index, tournaments, hotels, plan (schedule.html redirects here), calculator, ratelog, monitoring, suggestions, questions, flagged, review, sources, venues/venetian|wynn|bellagio|caesars|aria|others",
+  "gates": "verify_root, verify, verify_markup, linkcheck, validate_site, verify_poker4, check_rows - all exit 0 before changes",
+  "fixes": [
+   "morning-board table now prints a per-row 'Last checked' date (was missing; the main events table already carried it in its Official-source cell)",
+   "flag F27 added for the official sheet-25 typo"
+  ]
+ }
+}
