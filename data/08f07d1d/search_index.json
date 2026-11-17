@@ -100,18 +100,18 @@
    "a": "2026-11-24-9-5:10PM"
   },
   {
-   "t": "2026-11-25 11:10 AM #10 $400 No Limit Hold'em $15K GTD (1Day)",
-   "k": "Tournament",
-   "d": "$400 entry · $15,000 GTD · not stated on the sheet",
-   "u": "@@/tournaments.html",
-   "a": "2026-11-25-10-11:10AM"
-  },
-  {
    "t": "2026-11-25 11:00 AM #7 $400 No Limit Hold'em Day 2 Restart",
    "k": "Tournament",
    "d": "— entry · — GTD · not stated on the sheet",
    "u": "@@/tournaments.html",
    "a": "2026-11-25-7-11:00AM"
+  },
+  {
+   "t": "2026-11-25 11:10 AM #10 $400 No Limit Hold'em $15K GTD (1Day)",
+   "k": "Tournament",
+   "d": "$400 entry · $15,000 GTD · not stated on the sheet",
+   "u": "@@/tournaments.html",
+   "a": "2026-11-25-10-11:10AM"
   },
   {
    "t": "2026-11-25 5:10 PM #11 $200 No Limit Hold'em Bounty $8K GTD (1Day)",
@@ -151,7 +151,7 @@
   {
    "t": "2026-11-28 12:10 PM #17 $400 Pot Limit Omaha Bounty $15K GTD (1Day)",
    "k": "Tournament",
-   "d": "$400 entry · $15,000 GTD · sheet not audited in this pass",
+   "d": "$400 entry · $15,000 GTD · not stated on the sheet",
    "u": "@@/tournaments.html",
    "a": "2026-11-28-17-12:10PM"
   },
@@ -219,18 +219,18 @@
    "a": "2026-12-01-23-5:10PM"
   },
   {
-   "t": "2026-12-02 10:10 AM #24 $600 No Limit Hold'em Seniors $40K GTD (1Day) - Must be 50+",
-   "k": "Tournament",
-   "d": "$600 entry · $40,000 GTD · not stated on the sheet",
-   "u": "@@/tournaments.html",
-   "a": "2026-12-02-24-10:10AM"
-  },
-  {
    "t": "2026-12-02 11:00 AM #19 $400 No Limit Hold'em Day 2 Restart",
    "k": "Tournament",
    "d": "— entry · — GTD · not stated on the sheet",
    "u": "@@/tournaments.html",
    "a": "2026-12-02-19-11:00AM"
+  },
+  {
+   "t": "2026-12-02 10:10 AM #24 $600 No Limit Hold'em Seniors $40K GTD (1Day) - Must be 50+",
+   "k": "Tournament",
+   "d": "$600 entry · $40,000 GTD · not stated on the sheet",
+   "u": "@@/tournaments.html",
+   "a": "2026-12-02-24-10:10AM"
   },
   {
    "t": "2026-12-02 5:10 PM #25 $200 No Limit Hold'em Bounty $8K GTD (1Day)",
@@ -240,18 +240,18 @@
    "a": "2026-12-02-25-5:10PM"
   },
   {
-   "t": "2026-12-03 12:10 PM #27 $600 BIG O $25K GTD (1Day)",
-   "k": "Tournament",
-   "d": "$600 entry · $25,000 GTD · sheet not audited in this pass",
-   "u": "@@/tournaments.html",
-   "a": "2026-12-03-27-12:10PM"
-  },
-  {
    "t": "2026-12-03 11:10 AM #26 $800 No Limit Hold'em 1A $500K GTD",
    "k": "Tournament",
    "d": "$800 entry · $500,000 GTD · not stated on the sheet",
    "u": "@@/tournaments.html",
    "a": "2026-12-03-26-11:10AM"
+  },
+  {
+   "t": "2026-12-03 12:10 PM #27 $600 BIG O $25K GTD (1Day)",
+   "k": "Tournament",
+   "d": "$600 entry · $25,000 GTD · not stated on the sheet",
+   "u": "@@/tournaments.html",
+   "a": "2026-12-03-27-12:10PM"
   },
   {
    "t": "2026-12-03 5:10 PM #26 $800 No Limit Hold'em 1B $500K GTD",
@@ -347,7 +347,7 @@
   {
    "t": "2026-12-09 10:10 AM #35 $600 NLH LIPS Poker Jingle Tag Team $10K GTD (1Day) - Tag Teams Female/Female or Female/Male",
    "k": "Tournament",
-   "d": "$600 entry · $10,000 GTD · sheet not audited in this pass",
+   "d": "$600 entry · $10,000 GTD · not stated on the sheet",
    "u": "@@/tournaments.html",
    "a": "2026-12-09-35-10:10AM"
   },
@@ -373,23 +373,23 @@
    "a": "2026-12-09-38-5:10PM"
   },
   {
-   "t": "2026-12-10 10:10 AM #39 $800 No Limit Hold'em LIPS Ladies $40K GTD (2Day) - Women in Poker Main Event",
-   "k": "Tournament",
-   "d": "$800 entry · $40,000 GTD · sheet not audited in this pass",
-   "u": "@@/tournaments.html",
-   "a": "2026-12-10-39-10:10AM"
-  },
-  {
    "t": "2026-12-10 12:10 PM #40 $600 Pot Limit Omaha Bounty $25K GTD (1Day)",
    "k": "Tournament",
-   "d": "$600 entry · $25,000 GTD · sheet not audited in this pass",
+   "d": "$600 entry · $25,000 GTD · not stated on the sheet",
    "u": "@@/tournaments.html",
    "a": "2026-12-10-40-12:10PM"
   },
   {
+   "t": "2026-12-10 10:10 AM #39 $800 No Limit Hold'em LIPS Ladies $40K GTD (2Day) - Women in Poker Main Event",
+   "k": "Tournament",
+   "d": "$800 entry · $40,000 GTD · not stated on the sheet",
+   "u": "@@/tournaments.html",
+   "a": "2026-12-10-39-10:10AM"
+  },
+  {
    "t": "2026-12-10 4:10 PM #41 $260 No Limit Hold'em Milestone Satellite (1Day) - Awards Direct Entry to Event 47",
    "k": "Tournament",
-   "d": "$260 entry · — GTD · sheet not audited in this pass",
+   "d": "$260 entry · — GTD · not stated on the sheet",
    "u": "@@/tournaments.html",
    "a": "2026-12-10-41-4:10PM"
   },
@@ -403,56 +403,49 @@
   {
    "t": "2026-12-11 10:00 AM #39 $800 No Limit Hold'em LIPS Ladies Day 2 Restart - Play down to Final 7, streamed final table (PokerGO)",
    "k": "Tournament",
-   "d": "$800 entry · — GTD · sheet not audited in this pass",
+   "d": "$800 entry · — GTD · not stated on the sheet",
    "u": "@@/tournaments.html",
    "a": "2026-12-11-39-10:00AM"
   },
   {
-   "t": "2026-12-11 11:10 AM #43 $600 No Limit Hold'em LIPS $30K GTD (1Day) - KINGS and QUEENS Bounty, open to all players",
-   "k": "Tournament",
-   "d": "$600 entry · $30,000 GTD · sheet not audited in this pass",
-   "u": "@@/tournaments.html",
-   "a": "2026-12-11-43-11:10AM"
-  },
-  {
-   "t": "2026-12-11 4:10 PM #44 $260 No Limit Hold'em Milestone Satellite (1Day) - Awards Direct Entry to Event 47",
-   "k": "Tournament",
-   "d": "$260 entry · — GTD · sheet not audited in this pass",
-   "u": "@@/tournaments.html",
-   "a": "2026-12-11-44-4:10PM"
-  },
-  {
    "t": "2026-12-11 7:00 PM #39 $800 No Limit Hold'em LIPS Ladies Final Table - Streamed final table (PokerGO)",
    "k": "Tournament",
-   "d": "$800 entry · — GTD · sheet not audited in this pass",
+   "d": "$800 entry · — GTD · not stated on the sheet",
    "u": "@@/tournaments.html",
    "a": "2026-12-11-39-7:00PM"
   },
   {
    "t": "2026-12-11 8:10 PM #45 $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event 47",
    "k": "Tournament",
-   "d": "$260 entry · — GTD · sheet not audited in this pass",
+   "d": "$260 entry · — GTD · not stated on the sheet",
    "u": "@@/tournaments.html",
    "a": "2026-12-11-45-8:10PM"
   },
   {
+   "t": "2026-12-11 11:10 AM #43 $600 No Limit Hold'em LIPS $30K GTD (1Day) - KINGS and QUEENS Bounty, open to all players",
+   "k": "Tournament",
+   "d": "$600 entry · $30,000 GTD · not stated on the sheet",
+   "u": "@@/tournaments.html",
+   "a": "2026-12-11-43-11:10AM"
+  },
+  {
+   "t": "2026-12-11 4:10 PM #44 $260 No Limit Hold'em Milestone Satellite (1Day) - Awards Direct Entry to Event 47",
+   "k": "Tournament",
+   "d": "$260 entry · — GTD · not stated on the sheet",
+   "u": "@@/tournaments.html",
+   "a": "2026-12-11-44-4:10PM"
+  },
+  {
    "t": "2026-12-12 12:10 PM #48 $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event 47",
    "k": "Tournament",
-   "d": "$260 entry · — GTD · sheet not audited in this pass",
+   "d": "$260 entry · — GTD · not stated on the sheet",
    "u": "@@/tournaments.html",
    "a": "2026-12-12-48-12:10PM"
   },
   {
-   "t": "2026-12-12 6:10 PM #47 $2,200 No Limit Hold'em 1B $1 Mill GTD - PokerAtlas Championship Title Event",
-   "k": "Tournament",
-   "d": "$2,200 entry · $1,000,000 GTD · sheet not audited in this pass",
-   "u": "@@/tournaments.html",
-   "a": "2026-12-12-47-6:10PM"
-  },
-  {
    "t": "2026-12-12 9:10 AM #46 $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event 47",
    "k": "Tournament",
-   "d": "$260 entry · — GTD · sheet not audited in this pass",
+   "d": "$260 entry · — GTD · not stated on the sheet",
    "u": "@@/tournaments.html",
    "a": "2026-12-12-46-9:10AM"
   },
@@ -462,6 +455,13 @@
    "d": "$2,200 entry · $1,000,000 GTD · not stated on the sheet",
    "u": "@@/tournaments.html",
    "a": "2026-12-12-47-10:10AM"
+  },
+  {
+   "t": "2026-12-12 6:10 PM #47 $2,200 No Limit Hold'em 1B $1 Mill GTD - PokerAtlas Championship Title Event",
+   "k": "Tournament",
+   "d": "$2,200 entry · $1,000,000 GTD · not stated on the sheet",
+   "u": "@@/tournaments.html",
+   "a": "2026-12-12-47-6:10PM"
   },
   {
    "t": "2026-12-13 1:00 PM #47 $2,200 NLH PokerAtlas Championship Title Event Day 2 Restart - Play down to Final 7, streamed final table (PokerGO)",
@@ -506,18 +506,18 @@
    "a": "2026-12-14-51-5:10PM"
   },
   {
-   "t": "2026-12-15 11:10 AM #52 $1,100 No Limit Hold'em $75K GTD (1Day) - Progressive Knock-Out Bounty (PKO)",
-   "k": "Tournament",
-   "d": "$1,100 entry · $75,000 GTD · sheet not audited in this pass",
-   "u": "@@/tournaments.html",
-   "a": "2026-12-15-52-11:10AM"
-  },
-  {
    "t": "2026-12-15 10:00 AM #49 $1,100 No Limit Hold'em Seniors Day 2 Restart",
    "k": "Tournament",
    "d": "$1,100 entry · — GTD · not stated on the sheet",
    "u": "@@/tournaments.html",
    "a": "2026-12-15-49-10:00AM"
+  },
+  {
+   "t": "2026-12-15 11:10 AM #52 $1,100 No Limit Hold'em $75K GTD (1Day) - Progressive Knock-Out Bounty (PKO)",
+   "k": "Tournament",
+   "d": "$1,100 entry · $75,000 GTD · not stated on the sheet",
+   "u": "@@/tournaments.html",
+   "a": "2026-12-15-52-11:10AM"
   },
   {
    "t": "2026-12-15 5:10 PM #53 $300 No Limit Hold'em Bounty $15K GTD (1Day)",
@@ -541,20 +541,6 @@
    "a": "2026-12-16-55-5:10PM"
   },
   {
-   "t": "2026-12-17 10:10 AM #56 $1,100 No Limit Hold'em 1A $500K GTD - $40 rake discount for entries before 10:10 a.m.",
-   "k": "Tournament",
-   "d": "$1,100 entry · $500,000 GTD · sheet not audited in this pass",
-   "u": "@@/tournaments.html",
-   "a": "2026-12-17-56-10:10AM"
-  },
-  {
-   "t": "2026-12-17 6:10 PM #56 $1,100 No Limit Hold'em 1B $500K GTD - $40 rake discount for entries before 6:10 p.m.",
-   "k": "Tournament",
-   "d": "$1,100 entry · $500,000 GTD · sheet not audited in this pass",
-   "u": "@@/tournaments.html",
-   "a": "2026-12-17-56-6:10PM"
-  },
-  {
    "t": "2026-12-17 12:10 PM #57 $600 Pot Limit Omaha $25K GTD (1Day) - Double Board Bomb Pot",
    "k": "Tournament",
    "d": "$600 entry · $25,000 GTD · not stated on the sheet",
@@ -562,23 +548,37 @@
    "a": "2026-12-17-57-12:10PM"
   },
   {
+   "t": "2026-12-17 10:10 AM #56 $1,100 No Limit Hold'em 1A $500K GTD - $40 rake discount for entries before 10:10 a.m.",
+   "k": "Tournament",
+   "d": "$1,100 entry · $500,000 GTD · not stated on the sheet",
+   "u": "@@/tournaments.html",
+   "a": "2026-12-17-56-10:10AM"
+  },
+  {
+   "t": "2026-12-17 6:10 PM #56 $1,100 No Limit Hold'em 1B $500K GTD - $40 rake discount for entries before 6:10 p.m.",
+   "k": "Tournament",
+   "d": "$1,100 entry · $500,000 GTD · not stated on the sheet",
+   "u": "@@/tournaments.html",
+   "a": "2026-12-17-56-6:10PM"
+  },
+  {
    "t": "2026-12-18 10:10 AM #56 $1,100 No Limit Hold'em 1C $500K GTD",
    "k": "Tournament",
-   "d": "$1,100 entry · $500,000 GTD · sheet not audited in this pass",
+   "d": "$1,100 entry · $500,000 GTD · not stated on the sheet",
    "u": "@@/tournaments.html",
    "a": "2026-12-18-56-10:10AM"
   },
   {
    "t": "2026-12-18 6:10 PM #56 $1,100 No Limit Hold'em 1D $500K GTD",
    "k": "Tournament",
-   "d": "$1,100 entry · $500,000 GTD · sheet not audited in this pass",
+   "d": "$1,100 entry · $500,000 GTD · not stated on the sheet",
    "u": "@@/tournaments.html",
    "a": "2026-12-18-56-6:10PM"
   },
   {
    "t": "2026-12-19 10:10 AM #56 $1,100 No Limit Hold'em 1E $500K GTD",
    "k": "Tournament",
-   "d": "$1,100 entry · $500,000 GTD · sheet not audited in this pass",
+   "d": "$1,100 entry · $500,000 GTD · not stated on the sheet",
    "u": "@@/tournaments.html",
    "a": "2026-12-19-56-10:10AM"
   },
@@ -592,7 +592,7 @@
   {
    "t": "2026-12-20 11:00 AM #56 $1,100 No Limit Hold'em Day 2 Restart",
    "k": "Tournament",
-   "d": "— entry · — GTD · sheet not audited in this pass",
+   "d": "— entry · — GTD · not stated on the sheet",
    "u": "@@/tournaments.html",
    "a": "2026-12-20-56-11:00AM"
   },
@@ -639,18 +639,18 @@
    "a": "2026-12-22-62-5:10PM"
   },
   {
-   "t": "2026-12-23 11:10 AM #63 $600 No Limit Hold'em $30K GTD (1Day)",
-   "k": "Tournament",
-   "d": "$600 entry · $30,000 GTD · not stated on the sheet",
-   "u": "@@/tournaments.html",
-   "a": "2026-12-23-63-11:10AM"
-  },
-  {
    "t": "2026-12-23 11:00 AM #59 $600 No Limit Hold'em Day 2 Restart",
    "k": "Tournament",
    "d": "— entry · — GTD · not stated on the sheet",
    "u": "@@/tournaments.html",
    "a": "2026-12-23-59-11:00AM"
+  },
+  {
+   "t": "2026-12-23 11:10 AM #63 $600 No Limit Hold'em $30K GTD (1Day)",
+   "k": "Tournament",
+   "d": "$600 entry · $30,000 GTD · not stated on the sheet",
+   "u": "@@/tournaments.html",
+   "a": "2026-12-23-63-11:10AM"
   },
   {
    "t": "2026-12-23 5:10 PM #64 $200 No Limit Hold'em Bounty $8K GTD (1Day)",
@@ -800,9 +800,9 @@
    "a": "sheet-20"
   },
   {
-   "t": "Structure sheet #21 $500 No Limit Hold'em (1Day) — Events #35, #40, #46, #49, #52, #56, #57",
+   "t": "Structure sheet #21 $2,200 No Limit Hold'em (1Day) — PokerAtlas Championship Title Event #47, Day 1A",
    "k": "Structure sheet",
-   "d": "fees $110 · reg closes 10 levels + Break (4:55 PM) · entry rule not stated",
+   "d": "fees $225 · reg closes 9 levels + Break (~ 4:55 PM) · entry rule not stated",
    "u": "@@/structures.html",
    "a": "sheet-21"
   },
@@ -821,37 +821,37 @@
    "a": "sheet-23"
   },
   {
-   "t": "Structure sheet #24 ",
+   "t": "Structure sheet #24 $260 No Limit Hold'em (1Day) — Milestone Satellite to $2,200 PokerAtlas Event #47",
    "k": "Structure sheet",
-   "d": "fees — · reg closes — · not audited in this pass",
+   "d": "fees $40 · reg closes 6 levels + Break (~6:25 PM) · entry rule not stated",
    "u": "@@/structures.html",
    "a": "sheet-24"
   },
   {
-   "t": "Structure sheet #25 ",
+   "t": "Structure sheet #25 $260 No Limit Hold'em Turbo (1Day) — Milestone Satellite to Event #47",
    "k": "Structure sheet",
-   "d": "fees — · reg closes — · not audited in this pass",
+   "d": "fees $35 · reg closes 6 levels · entry rule not stated",
    "u": "@@/structures.html",
    "a": "sheet-25"
   },
   {
-   "t": "Structure sheet #26 ",
+   "t": "Structure sheet #26 $400 Pot Limit Omaha Bounty (1Day)",
    "k": "Structure sheet",
-   "d": "fees — · reg closes — · not audited in this pass",
+   "d": "fees $60 · reg closes 8 levels + break (~ 4:40 PM) · entry rule not stated",
    "u": "@@/structures.html",
    "a": "sheet-26"
   },
   {
-   "t": "Structure sheet #27 ",
+   "t": "Structure sheet #27 $600 Pot Limit Omaha Bounty (1Day)",
    "k": "Structure sheet",
-   "d": "fees — · reg closes — · not audited in this pass",
+   "d": "fees $90 · reg closes 8 levels + break (~ 4:40 PM) · entry rule not stated",
    "u": "@@/structures.html",
    "a": "sheet-27"
   },
   {
-   "t": "Structure sheet #28 ",
+   "t": "Structure sheet #28 $600 BIG O (1Day)",
    "k": "Structure sheet",
-   "d": "fees — · reg closes — · not audited in this pass",
+   "d": "fees $90 · reg closes 8 levels + break (~ 4:40 PM) · entry rule not stated",
    "u": "@@/structures.html",
    "a": "sheet-28"
   },
@@ -870,51 +870,51 @@
    "a": "sheet-30"
   },
   {
-   "t": "Structure sheet #31 ",
+   "t": "Structure sheet #31 $600 No Limit Hold'em — LIPS Poker Jingle Tag Team Event (1Day)",
    "k": "Structure sheet",
-   "d": "fees — · reg closes — · not audited in this pass",
+   "d": "fees $90 · reg closes 8 levels + Break (~ 2:40 PM) · entry rule not stated",
    "u": "@@/structures.html",
    "a": "sheet-31"
   },
   {
-   "t": "Structure sheet #32 ",
+   "t": "Structure sheet #32 $800 No Limit Hold'em LIPS Ladies — Women in Poker Main Event (2Day)",
    "k": "Structure sheet",
-   "d": "fees — · reg closes — · not audited in this pass",
+   "d": "fees $110 · reg closes 9 levels + Break (~ 4:55 PM) · entry rule not stated",
    "u": "@@/structures.html",
    "a": "sheet-32"
   },
   {
-   "t": "Structure sheet #33 ",
+   "t": "Structure sheet #33 $600 No Limit Hold'em LIPS (1Day) — Kings and Queens Bounty, open to all players",
    "k": "Structure sheet",
-   "d": "fees — · reg closes — · not audited in this pass",
+   "d": "fees $90 · reg closes 10 levels + Break (4:55 PM) · entry rule not stated",
    "u": "@@/structures.html",
    "a": "sheet-33"
   },
   {
-   "t": "Structure sheet #34 ",
+   "t": "Structure sheet #34 $1,100 No Limit Hold'em (1Day) — Progressive Knock-Out Bounty (PKO)",
    "k": "Structure sheet",
-   "d": "fees — · reg closes — · not audited in this pass",
+   "d": "fees $130 · reg closes 10 levels + Break (4:55 PM) · entry rule not stated",
    "u": "@@/structures.html",
    "a": "sheet-34"
   },
   {
-   "t": "Structure sheet #35 ",
+   "t": "Structure sheet #35 $1,100 No Limit Hold'em (1Day) — Flights 1A, 1C, 1E (sheet 'Day A+C+E')",
    "k": "Structure sheet",
-   "d": "fees — · reg closes — · not audited in this pass",
+   "d": "fees $140 · reg closes 9 levels + Break (~ 4:55 PM) · entry rule not stated",
    "u": "@@/structures.html",
    "a": "sheet-35"
   },
   {
-   "t": "Structure sheet #36 ",
+   "t": "Structure sheet #36 $1,100 No Limit Hold'em (1Day) — Flights 1B, 1D (sheet 'Day B+D')",
    "k": "Structure sheet",
-   "d": "fees — · reg closes — · not audited in this pass",
+   "d": "fees $140 · reg closes 9 levels + Break (~ 11:10 PM) · entry rule not stated",
    "u": "@@/structures.html",
    "a": "sheet-36"
   },
   {
-   "t": "Structure sheet #37 ",
+   "t": "Structure sheet #37 $2,200 No Limit Hold'em (1Day) — PokerAtlas Championship Title Event #47, Day 1B",
    "k": "Structure sheet",
-   "d": "fees — · reg closes — · not audited in this pass",
+   "d": "fees $225 · reg closes 9 levels + Break (~ 11:10 PM) · entry rule not stated",
    "u": "@@/structures.html",
    "a": "sheet-37"
   },
