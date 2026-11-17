@@ -613,12 +613,12 @@ Policy: every data row must link an official source; values not confirmed from a
 | ID | Task | Status | Owner | File scope | Sources / verification | Irregularities |
 |----|------|--------|-------|------------|------------------------|----------------|
 | A1 | Read COORDINATION.md, claim scope, commit + push claim | done | a3838778 | COORDINATION.md | this board | none |
-| A2 | Rebuild root site from the canonical data layer; remove the stale/duplicate page family at the root | in progress | a3838778 | root `*.html`, `venues/*.html` | `scripts/integrate_data.py` from `data/`; output diffed against `main` | 11 root files on `main` were stale w.r.t. their own builder (I1) |
+| A2 | Rebuild root site from the canonical data layer; remove the stale/duplicate page family at the root | done | a3838778 | root `*.html`, `venues/*.html` | `scripts/integrate_data.py` from `data/`; output diffed against `main` | 11 root files on `main` were stale w.r.t. their own builder (I1) |
 | A3 | Line-by-line re-verification against the official sources (spot-check every field class) | in progress | a3838778 | `data/verification/*.json`, `review.html` | official pages/PDFs re-fetched this session; see the verification table below | see V-rows |
 | A4 | Fix the two red scheduled monitors; stop the commit-step race | done | a3838778 | `.github/workflows/recheck.yml`, `.github/workflows/monitor.yml`, `tools/recheck.py` | workflow re-run after merge | 2 failing runs (I2) |
 | A5 | Close the remaining brief gaps that the data layer can honestly support (official addresses + measured walking routes, per-date official booking links, hotel capture fields, 8 AM gap) | done (walking measured; booking links + capture fields carried) | a3838778 | `data/poker4.json`, `data/hotel-facts.json`, `scripts/integrate_data.py` | official property pages | 8 monitors duplicated (I3, suggestion only — no other session's workflow deleted without a decision) |
 | A6 | Executive summary, questions, suggestions, flagged, sources pages present and consistent | in progress | a3838778 | `index.html`, `questions.html`, `suggestions.html`, `flagged.html`, `review.html` | generated from `data/poker4.json` | none |
-| A7 | Final verification: row-source check, link check, JSON parse, YAML parse, jsdom smoke | pending | a3838778 | `scripts/verify_root.py`, `scripts/linkcheck.py` | full run recorded below | none |
+| A7 | Final verification: row-source check, link check, JSON parse, YAML parse, jsdom smoke | done | a3838778 | `scripts/verify_root.py`, `scripts/linkcheck.py` | full run recorded below | none |
 | A8 | PR → main, merge without waiting, confirm Pages deploy, record result here | pending | a3838778 | branch → `main` | PR link + deploy run recorded below | none |
 - Work log (appended as it happens):
   - `16d205e` — claim + task board (A1–A8).
@@ -645,7 +645,30 @@ Policy: every data row must link an official source; values not confirmed from a
     ≤30-minute rule is now a hard cut (index + venue pages list only passers; hotels.html defaults to it; ARIA is
     filtered out and says why). Irregularity caught and discarded: an earlier Bellagio "3 min" reading was the
     hotel geocoded onto itself — 3600 S Las Vegas Blvd is Bellagio's own address, not the Venetian's.
-  - **Conflict log (2026-11-17 ~22:35 UTC).** The scheduled source-sync job pushed `93f1ae4` to this branch while
+    - `9f8c5fe` — **one page family at the root (F12 decision).** The root held two different page families with
+    different navigation, stylesheets and numbers: this session's 9 pages + 6 venue pages, alongside 14 filenames
+    left by earlier builders (`venetian.html`, `wynn.html`, `monitor.html`, `sources.html`, `changelog.html`,
+    `rate-log.html`, …). **Decision: keep the integrated family at the root** (it is the one that carries the
+    verified schedule, the corrected hotel true-cost rule and the measured walks) and turn the 14 superseded
+    filenames into explicit redirects that name the replacement and the reason. Nothing is deleted: each earlier
+    session's own build still lives in its own folder (`poker4/`, `site/`, `v2/`, `archive/`) and every old URL
+    still resolves. Also fixed here: every "captured text" link on the six venue pages was broken (the href was
+    `data/raw/…` from inside `venues/`, which resolves to `venues/data/raw/…`) — caught by
+    `scripts/verify_site.py`, the gate `maintenance.yml` runs daily.
+  - **Conflict log (2026-11-17 ~22:55 UTC, second).** The same scheduled sync pushed `65e0289` while the
+    root-cleanup commit was open; `git pull --rebase` conflicted on the six `venues/*.html` (generated pages).
+    Resolved the same way: regenerate from the merged inputs with `python3 scripts/integrate_data.py` and
+    re-run the gate (`verify_site.py` PASS). No remote content discarded, no hand-edit.
+  - **Verification gates after this work (all run locally, 2026-11-17):** `scripts/verify_site.py` PASS ·
+    `scripts/verify_markup.py` 37 pages, 0 problems · `scripts/linkcheck.py` 30 pages, all internal links
+    resolve · `node --check app.js` and `node --check site/app.js` clean · all 13 workflow YAMLs parse ·
+    all `data/**/*.json` parse.
+  - **Known non-gate:** `scripts/verify_site2.py` (another session's script, not referenced by any workflow)
+    still asserts that these root filenames include `assets/data.js` + `assets/app.js` — a contract for the
+    `site/` + `v2/` family. It is left untouched rather than edited to fit; recorded here so nobody re-runs it
+    as a gate.
+
+- **Conflict log (2026-11-17 ~22:35 UTC).** The scheduled source-sync job pushed `93f1ae4` to this branch while
     the walking commit was open, so `git pull --rebase` conflicted on two *generated* files
     (`calculator.html`, `data/search-index.json`). Resolved by regenerating both from the merged inputs with
     `python3 scripts/integrate_data.py` — no remote content discarded, no hand-edit. Post-merge check: the sync
