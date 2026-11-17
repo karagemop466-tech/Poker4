@@ -53,3 +53,16 @@ input[type=number]{background:var(--panel2);border:1px solid var(--line);color:v
 .calcrow{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:8px 0}
 .calcrow .out{font-size:18px;font-weight:700;color:#fff}
 .calcrow label{color:var(--mut);font-size:13px}
+
+/* Compatibility for the preserved prior-session page decisions.html (content untouched) */
+.topbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding:12px 16px;background:var(--panel);border-bottom:1px solid var(--line)}
+.brand{font-weight:700;color:var(--ink)} .stamp{color:var(--mut);font-size:12px}
+.nav{background:var(--panel);border-bottom:1px solid var(--line)}
+.nav-inner{max-width:var(--max);margin:0 auto;padding:6px 16px;display:flex;flex-wrap:wrap;gap:4px}
+.nav-inner a{padding:6px 10px;border-radius:8px;color:var(--mut);font-size:14px}
+.nav-inner a.active{color:#fff;background:var(--acc)}
+main{max-width:var(--max);margin:0 auto;padding:20px 16px}
+.eyebrow{color:var(--acc);font-size:12px;text-transform:uppercase;letter-spacing:.08em;margin:0 0 4px}
+.lede{color:var(--mut);max-width:900px}
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius);margin:14px 0}
+.table-wrap table{font-size:13px}
