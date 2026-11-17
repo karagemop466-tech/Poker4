@@ -535,7 +535,7 @@ FACT_PATTERNS = {
     "resort_fee": r"[^.\n]{0,90}resort\s*fee[^.\n]{0,240}",
     "room_tax": r"[^.\n]{0,90}(?:13\.38|room\s+tax|state\s+room)[^.\n]{0,240}",
     "parking": r"[^.\n]{0,90}(?:self[- ]?parking|valet\s+parking|parking\s+(?:fee|rate|is))[^.\n]{0,240}",
-    "cancellation": r"[^.\n]{0,90}(?:cancellation|cancel\s+your|no[- ]show|non[- ]refundable)[^.\n]{0,240}",
+    "cancellation": r"[^.\n]{0,90}(?:cancel\w*|no[- ]?show)[^.\n]{0,240}",
     "check_in_out": r"[^.\n]{0,90}(?:check[- ]in|check[- ]out)\s+(?:time|is|at|after|by)[^.\n]{0,240}",
     "walk": r"[^.\n]{0,90}(?:minutes?\s+(?:walk|walking)|walking\s+distance|skybridge|monorail)[^.\n]{0,240}",
 }

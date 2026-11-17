@@ -271,30 +271,32 @@
    "venue_ids": [
     "wynn"
    ],
-   "official_page": "https://www.wynnlasvegas.com/terms-and-conditions/850257",
+   "official_page": "https://www.wynnlasvegas.com/terms-and-conditions/850070",
    "booking_link": "https://www.wynnlasvegas.com/",
    "resort_fee": {
     "amount_usd": 55,
-    "basis": "per room, per night + tax, for bookings on or after Jan 15, 2025 (official terms page)",
-    "source": "https://www.wynnlasvegas.com/terms-and-conditions/850257",
-    "status": "verified from official terms"
+    "basis": "per room, per night, plus tax. Confirmed 2026-11-17 on two current official pages: offer terms DK26WLV2 (valid Oct 2 2026 – Mar 31 2027, covers the trip window) and the standing Resort Fee / Tower Suites Resort Fee sections of terms page 850070. Both resort rooms and Tower Suites are $55 + tax.",
+    "source": "https://www.wynnlasvegas.com/terms-and-conditions/DK26WLV2",
+    "source2": "https://www.wynnlasvegas.com/terms-and-conditions/850070",
+    "status": "verified from current official terms (2 pages agree)"
    },
    "tax": {
     "rate_pct": 13.38,
-    "basis": "Clark County room tax (state room tax rate; the property's own fee pages state the fee is plus tax)",
-    "source": "https://treasureisland.com/deals-offers/buy-1-get-1-bogo-free-fine-print",
-    "status": "third-party-of-record: verified on a Caesars-owned property page, not on the Wynn page — flagged"
+    "basis": "Clark County room tax. Wynn's own pages say the resort fee is 'plus tax' but do not print the rate; the 13.38% rate is printed on other official Las Vegas property terms (Venetian hotel terms; Treasure Island offer fine print). Rate not printed by Wynn — flagged.",
+    "source": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+    "source2": "https://treasureisland.com/deals-offers/buy-1-get-1-bogo-free-fine-print",
+    "status": "cross-property rate: official Venetian + TI pages print 13.38%; Wynn states 'plus tax' without a rate — flagged"
    },
    "parking": {
-    "self_usd_per_day": null,
-    "valet_usd_per_day": null,
-    "source": "https://www.wynnlasvegas.com/terms-and-conditions/850257",
-    "status": "not printed on the fetched official page — left blank"
+    "self_usd_per_day": 0,
+    "valet_usd_per_day": 40,
+    "source": "https://www.wynnlasvegas.com/terms-and-conditions/850070",
+    "status": "verified 2026-11-17: self parking complimentary for registered guests (also for Wynn Poker Room guests and select Wynn Rewards tiers); non-registered $25/day with first 3 hours free; valet $40/day up to 24h, complimentary for Tower Suites guests. Prices may be higher during special events."
    },
    "cancellation": {
-    "text": "not captured",
-    "status": "unverified",
-    "source": "https://www.wynnlasvegas.com/terms-and-conditions/850257"
+    "text": "Deposit of one night room and tax at booking; cancellations at least 48 hours before arrival or the deposit is forfeited. Special windows (offer DK26WLV2, read 2026-11-17): stays 2026-11-15..11-21 require a full deposit and a three-week cancellation policy; stays 2026-12-29..12-31 a 30-day policy; stays 2027-01-04..01-06 a two-week policy. Early departure penalties apply.",
+    "status": "verified from official offer terms DK26WLV2 (2026-11-17)",
+    "source": "https://www.wynnlasvegas.com/terms-and-conditions/DK26WLV2"
    },
    "walk": {
     "status": "Wynn to the Venetian poker room: no official walking-time source; ~2.2 miles of Strip frontage between the two resorts by public mapping, so it is not a plausible walk-to-play pairing anyway.",
@@ -1083,17 +1085,19 @@
   {
    "id": "F19",
    "severity": "caveat",
-   "item": "Wynn $55 resort fee is quoted only in an expired promotional package's terms",
-   "detail": "The Wynn terms page states a daily resort fee of $55 plus tax, but the page covers the Concours Sip and Savor package (travel Oct 27 – Nov 1, 2026), which has expired. No current general Wynn resort-fee page was read. Re-confirm before booking.",
+   "item": "Wynn $55 resort fee now confirmed on current official pages; Wynn still publishes fee terms only inside terms/offer pages",
+   "detail": "Re-checked 2026-11-17 (session b808eea0). The $55 + tax daily resort fee (resort rooms and Tower Suites) is printed on two current official pages read live: offer terms DK26WLV2 (valid Oct 2, 2026 – Mar 31, 2027 — covers the planned travel window) and the standing Resort Fee / Tower Suites Resort Fee / PARKING INFORMATION sections of terms page 850070. The earlier expired-promo source (850257, Concours Sip and Savor, travel Oct 27 – Nov 1, 2026) is kept as a third concordant citation. Remaining caveat: wynnlasvegas.com has no dedicated standing resort-fee page — /hotel/resort-fee, /hotel/resort-fees-and-parking and /hotel/policies all return 404 (checked 2026-11-17) — so the fee text lives inside offer terms and must be re-read when booking. Parking and cancellation figures now captured from the same pages (see the hotels table).",
    "sources": [
+    "https://www.wynnlasvegas.com/terms-and-conditions/DK26WLV2",
+    "https://www.wynnlasvegas.com/terms-and-conditions/850070",
     "https://www.wynnlasvegas.com/terms-and-conditions/850257"
    ]
   },
   {
    "id": "F20",
    "severity": "data-label",
-   "item": "'42 structure sheets audited' overstates the Venetian audit",
-   "detail": "data/structure-audit.json holds 42 records, but they mix Venetian DSE IV sheets with Wynn, Bellagio and other documents. tools/verify_poker4.py reports 12 tracked sheets with no record yet. The landing-page label should count Venetian sheets separately and state the gap. Not changed in this session.",
+   "item": "'structure sheets audited' label mixed Venetian sheets with other documents (fixed 2026-11-17)",
+   "detail": "data/structure-audit.json holds 42 records: 37 Venetian DSE IV structure sheets (V_S1–V_S37), the Venetian printed schedule PDF, and 4 Wynn documents (daily structures, daily poster, WPT schedule, WPT terms). The status line now prints the breakdown (session b808eea0) instead of a bare '42 structure sheets'. tools/verify_poker4.py also reports tracked sheets with no audit record; those remain a gap until the sync re-audits them.",
    "sources": [
     "https://github.com/karagemop466-tech/Poker4/blob/main/data/structure-audit.json",
     "https://github.com/karagemop466-tech/Poker4/blob/main/tools/verify_poker4.py"
@@ -1103,7 +1107,7 @@
    "id": "F21",
    "severity": "monitoring",
    "item": "Scheduled monitors: some runs failing; eight jobs commit to main",
-   "detail": "monitor.yml ('Monitor official sources') and recheck.yml ('daily-recheck') failed on their latest scheduled runs; logs were not retrievable from the session sandbox, so the cause is not confirmed. recheck.yml now runs the current root verifier (tools/verify_root_site.py is stale and reports 19 errors). Several overlapping scheduled jobs commit to main, which is a race risk. Consolidating them is a suggestion for review.",
+   "detail": "Re-checked 2026-11-17 (session b808eea0): monitor.yml ('Monitor official sources') and recheck.yml ('daily-recheck') are now workflow_dispatch only (manual), so their previously failing scheduled runs no longer occur; the 0f40cfac consolidation made url-check.yml the single scheduled sync + rebuild lane and maintenance.yml the daily multi-room feed. Remaining risk: several workflows can still commit to main (race on generated files), and the feed job's manual-dispatch test returned a GitHub API 403; the first scheduled feed run is still pending runtime confirmation. Consolidation of the remaining jobs is a suggestion for review.",
    "sources": [
     "https://github.com/karagemop466-tech/Poker4/blob/main/.github/workflows/monitor.yml",
     "https://github.com/karagemop466-tech/Poker4/blob/main/.github/workflows/recheck.yml",
