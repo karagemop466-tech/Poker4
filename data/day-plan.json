@@ -2498,46 +2498,46 @@
       "status": "unverified",
       "value": null,
       "excerpt": null,
-      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_13.pdf",
+      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_14.pdf",
       "retrieved": "2026-11-17"
      },
      "re_entry": {
       "status": "not_stated_in_sheet",
       "value": null,
       "excerpt": null,
-      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_13.pdf",
+      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_14.pdf",
       "retrieved": "2026-11-17"
      },
      "add_on": {
       "status": "not_stated_in_sheet",
       "value": null,
       "excerpt": null,
-      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_13.pdf",
+      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_14.pdf",
       "retrieved": "2026-11-17"
      },
      "fee": {
       "status": "confirmed",
       "value": "$110 of $800 withheld; $690 per entry to the prize pool",
       "excerpt": "$ 110 of the $ 800 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $ 690 of every $ 800 Buy In.",
-      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_13.pdf",
+      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_14.pdf",
       "retrieved": "2026-11-17"
      }
     },
     "sources": [
      "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-     "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_13.pdf"
+     "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_14.pdf"
     ],
-    "sheet_key": "V_S13",
+    "sheet_key": "V_S14",
     "sheet_note": null,
     "house_fee_usd": 110,
     "pool_per_entry_usd": 690,
-    "sheet_start_time": "5:10 PM",
-    "sheet_late_registration": "6 levels + Break (~ 8:40 PM)",
+    "sheet_start_time": null,
+    "sheet_late_registration": "6 levels + Break (~ 7:25 PM)",
     "sheet_guarantee_text": "$500,000",
     "sheet_title": "$800 No Limit Hold\u2019em",
     "payout_pct_of_field": null,
     "levels_total": null,
-    "breaks_listed": 7,
+    "breaks_listed": 5,
     "spend_advantage_evidence": [],
     "single_entry_confirmed": false,
     "rankable": true,
@@ -4409,8 +4409,8 @@
     "venue": "venetian",
     "venue_name": "The Venetian Poker Room",
     "event_no": 56,
-    "name": "$1,100 No Limit Hold'Em 1A $40 Rake Discount For Entries Before",
-    "name_printed": "NO LIMIT HOLD'EM 1A $40 RAKE DISCOUNT FOR ENTRIES BEFORE",
+    "name": "$1,100 No Limit Hold'Em 1A $500K Gtd",
+    "name_printed": "$1,100 No Limit Hold'em 1A $500K GTD",
     "date": "2026-12-17",
     "weekday": "Thursday",
     "time": "10:10 AM",
@@ -4458,10 +4458,20 @@
     },
     "sources": [
      "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-     "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf"
+     "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf",
+     "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
     ],
     "sheet_key": "V_S35",
     "sheet_note": null,
+    "conditional_entry_fee": {
+     "standard_usd": 1100,
+     "early_usd": 1060,
+     "discount_usd": 40,
+     "deadline": "before the event starts (10:10 a.m.)",
+     "excerpt": "On Day 1A, players who register before the start of the event (10:10 a.m.) will receive a forty ($40) discount on house fees for a total buy in of $1,060 instead of $1,100.",
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf",
+     "retrieved": "2026-11-17"
+    },
     "house_fee_usd": 140,
     "pool_per_entry_usd": 960,
     "sheet_start_time": "10:10 AM",
@@ -4562,8 +4572,8 @@
    },
    "restarts": [],
    "overlap_notes": [
-    "$1,100 No Limit Hold'Em 1A $40 Rake Discount For Entries Before prints no registration deadline, so overlap with $600 Pot Limit Omaha Double Board Bomb Pot (1Day) cannot be settled from official data",
-    "$1,100 No Limit Hold'Em 1A $40 Rake Discount For Entries Before prints no registration deadline, so overlap with $1,100 No Limit Hold'Em 1B $40 Rake Discount For Entries Before cannot be settled from official data"
+    "$1,100 No Limit Hold'Em 1A $500K Gtd prints no registration deadline, so overlap with $600 Pot Limit Omaha Double Board Bomb Pot (1Day) cannot be settled from official data",
+    "$1,100 No Limit Hold'Em 1A $500K Gtd prints no registration deadline, so overlap with $1,100 No Limit Hold'Em 1B $500K Gtd cannot be settled from official data"
    ],
    "entries_usd": 2800,
    "primary_id": "V56-2026-12-17-10:10am",

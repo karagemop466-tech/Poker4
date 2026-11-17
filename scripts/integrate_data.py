@@ -149,19 +149,49 @@ for key, sheet in (AUDIT.get("sheets") or {}).items():
         SHEET_BY_EVENT.setdefault(n, []).append({**sheet, "_key": key})
 
 VENUE_BY_ID = {v["id"]: v for v in CFG["venues"]}
-AMBIGUOUS_NOTE = "several sheets print this event number (different starting flights) — the row lists both"
+AMBIGUOUS_NOTE = "several sheets print this event number; no exact official row-to-sheet mapping was applied, so sheet-derived values are left blank"
 
 
-def pick_sheet(event_no: int, time: str | None, date: str | None):
+def pick_sheet(event_no: int, time: str | None, date: str | None, name: str = ""):
     cands = SHEET_BY_EVENT.get(event_no) or []
     if not cands:
         return None, "no structure sheet printed for this event number"
+
+    # Per-flight exceptions taken directly from the official Venetian calendar's
+    # Structures column. The sheets do not print a Day-A start time for Events 39
+    # and 47, so a generic time-based match cannot distinguish those flights.
+    # For Event 56, the official page links the 1A/1C/1E sheets to #35 and the
+    # 1B/1D sheets to #36; Day 2 also links #35.
+    exact_key = None
+    if event_no == 47:
+        if re.search(r"\b1B\b", name, re.I):
+            exact_key = "V_S37"
+        else:
+            exact_key = "V_S21"
+    elif event_no == 56:
+        if re.search(r"\b1B\b|\b1D\b", name, re.I):
+            exact_key = "V_S36"
+        else:
+            exact_key = "V_S35"
+    elif event_no == 26 and re.search(r"\b1F\b.*TURBO", name, re.I):
+        exact_key = "V_S14"
+    elif event_no == 1 and re.search(r"DAY \d (?:RESTART|RE-ENTRY)", name, re.I):
+        exact_key = "V_S10"
+    elif event_no == 26 and re.search(r"DAY \d (?:RESTART|RE-ENTRY)", name, re.I):
+        exact_key = "V_S12"
+    if exact_key:
+        exact = next((c for c in cands if c.get("_key") == exact_key), None)
+        if exact:
+            return exact, None
+
     if len(cands) == 1:
         return cands[0], None
     timed = [c for c in cands if (c.get("start_time") or "").strip().upper() == (time or "").upper()]
     if len(timed) == 1:
         return timed[0], None
-    return cands[0], AMBIGUOUS_NOTE
+    # Never attach the first arbitrary matching sheet: doing so silently exposes
+    # the wrong fee, level, or flight rules as if they belong to this row.
+    return None, AMBIGUOUS_NOTE
 
 
 KIND_PATTERNS = [
@@ -206,9 +236,22 @@ for row in SCHED["rows"]:
     name = (row.get("event_name") or "").upper()
     buy = row.get("buy_in_usd")
     gtd = row.get("guarantee_usd")
-    sheet, sheet_note = pick_sheet(row["event_no"], row.get("time"), row.get("date"))
+    sheet, sheet_note = pick_sheet(row["event_no"], row.get("time"), row.get("date"), row.get("event_name") or "")
     sheet_url = sheet.get("source") if sheet else ""
     sources = [row["source"]] + ([sheet_url] if sheet_url else [])
+
+    # The PDF text extractor splits the Event 56 1A/1B detail lines at the
+    # page-column boundary: it drops the printed $500K GTD and truncates the
+    # rake-discount note. The venue's live event page prints both facts in full.
+    # Restore them only for the affected two rows and retain that page as a row
+    # source, rather than carrying forward the incomplete PDF extraction.
+    if row["event_no"] == 56 and row.get("date") == "2026-12-17":
+        suffix = "1A" if (row.get("time") or "").upper() == "10:10 AM" else "1B"
+        name = f"$1,100 No Limit Hold'em {suffix} $500K GTD"
+        gtd = 500000
+        page_url = "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
+        if page_url not in sources:
+            sources.append(page_url)
     kind, tags = classify(name)
     entry = {
         "id": f"V{row['event_no']}-{row.get('date')}-{(row.get('time') or '').replace(' ', '').lower()}",
@@ -223,7 +266,7 @@ for row in SCHED["rows"]:
         "registration_closes": row.get("registration_closes"),
         "buy_in_usd": buy,
         "guarantee_usd": gtd,
-        "guarantee_printed": row.get("guarantee_usd") is not None,
+        "guarantee_printed": gtd is not None,
         "starting_chips": row.get("starting_chips"),
         "level_duration": row.get("level_duration"),
         "kind": kind,
@@ -244,6 +287,20 @@ for row in SCHED["rows"]:
         "sheet_key": (sheet or {}).get("_key"),
         "sheet_note": sheet_note,
     }
+    if row["event_no"] == 56 and row.get("date") == "2026-12-17":
+        suffix = "1A" if (row.get("time") or "").upper() == "10:10 AM" else "1B"
+        cutoff = "10:10 a.m." if suffix == "1A" else "6:10 p.m."
+        entry["conditional_entry_fee"] = {
+            "standard_usd": 1100,
+            "early_usd": 1060,
+            "discount_usd": 40,
+            "deadline": f"before the event starts ({cutoff})",
+            "excerpt": (f"On Day {suffix}, players who register before the start of the event "
+                        f"({cutoff}) will receive a forty ($40) discount on house fees for a "
+                        "total buy in of $1,060 instead of $1,100."),
+            "source": sheet_url,
+            "retrieved": (sheet or {}).get("retrieved"),
+        }
     if sheet:
         fee = sheet.get("house_fee_usd")
         pool = sheet.get("pool_per_entry_usd")
@@ -780,6 +837,11 @@ def event_detail(ev, base=""):
         extra.append(f"pays the top {ev['payout_pct_of_field']}% of the field")
     if ev.get("guarantee_from_sheet_text"):
         extra.append("guarantee wording on the sheet: " + E(ev["guarantee_from_sheet_text"]))
+    discount = ev.get("conditional_entry_fee")
+    if discount:
+        extra.append("<strong>Conditional entry fee:</strong> " + E(discount["excerpt"]) +
+                     f' <a href="{E(discount["source"])}" target="_blank" rel="noopener">official structure sheet ↗</a>' +
+                     f' (retrieved {E(discount["retrieved"] or "")})')
     for s in (ev.get("spend_advantage_evidence") or []):
         extra.append("<strong>excluded from the single-entry list:</strong> " + E(s))
     if ev.get("notes"):
@@ -809,10 +871,18 @@ def event_row(ev, base=""):
     tags = "".join(chip(t, "chip chip-tag") for t in (ev.get("tags") or [])[:3])
     flags = "".join(chip("⚑ " + f, "chip chip-warn") for f in (ev.get("flags") or [])[:3])
     gtd = money_cell(ev["guarantee_usd"]) if ev.get("guarantee_usd") else unk("no guarantee printed")
+    buy_cell = money_cell(ev['buy_in_usd'], 'total buy-in incl. fee') if ev.get('buy_in_usd') else unk('not printed')
+    discount = ev.get("conditional_entry_fee")
+    if discount:
+        buy_cell += (f'<small class="muted">{money(discount["early_usd"])} if registered '
+                     f'{E(discount["deadline"])} (official $40 fee discount)</small>')
+        if ev.get("guarantee_usd") and discount.get("early_usd"):
+            ratio_txt += (f'<small class="muted">early-fee ratio: '
+                          f'{ev["guarantee_usd"] / discount["early_usd"]:.1f}×</small>')
     return f"""<tr class="ev-row" id="{E(ev['id'])}" data-date="{E(ev.get('date') or '')}" data-venue="{E(ev['venue'])}" data-single="{1 if ev.get('single_entry_confirmed') else 0}" data-rankable="{1 if ev.get('rankable') else 0}" data-id="{E(ev['id'])}">
 <td class="when">{head}<span class="time">{E(ev.get('weekday') or '')}{tail}</span></td>
 <td class="ev">{link}<span class="evname">{E(ev['name'])}</span>{tags}{flags}</td>
-<td class="num">{money_cell(ev['buy_in_usd'], 'total buy-in incl. fee') if ev.get('buy_in_usd') else unk('not printed')}</td>
+<td class="num">{buy_cell}</td>
 <td class="num">{money_cell(ev['pool_per_entry_usd'], 'into the prize pool') if ev.get('pool_per_entry_usd') else unk('not printed')}</td>
 <td class="num">{gtd}</td>
 <td class="num">{ratio_txt}</td>

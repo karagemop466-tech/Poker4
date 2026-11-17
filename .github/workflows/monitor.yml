@@ -1,14 +1,19 @@
-name: Monitor official sources
+name: Legacy planner source monitor (manual)
+
+# Kept available for the preserved planner sub-site. The root site's scheduled
+# URL monitoring is owned by url-check.yml, while maintenance.yml captures the
+# multi-room daily schedule feed. No cron trigger here avoids duplicate writes
+# and overlapping bots committing to main.
 
 on:
-  schedule:
-    # Daily at 07:00 UTC — pulls each Strip room's official schedule each morning
-    # and re-checks every official source URL for changes.
-    - cron: "0 7 * * *"
   workflow_dispatch:
 
 permissions:
   contents: write
+
+concurrency:
+  group: legacy-planner-monitor
+  cancel-in-progress: false
 
 jobs:
   recheck:
@@ -16,31 +21,28 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
-        with:
-          # need a token-backed ref to push the updated snapshot
-          ref: main
-          persist-credentials: false
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.x"
 
-      - name: Re-check every official source URL
+      - name: Re-check preserved planner source URLs
         run: python3 tools/check_sources.py
 
-      - name: Pull each Strip room's official daily schedule
+      - name: Fetch preserved planner schedule snapshot
         run: python3 tools/scrape_schedule.py
         continue-on-error: true
 
-      - name: Commit updated monitoring state if changed
+      - name: Commit planner monitoring state if changed
         run: |
           git config user.name "Poker4 Monitor"
           git config user.email "monitor@users.noreply.github.com"
-          if git diff --quiet; then
+          git add planner/assets/data.js planner/data planner/assets/snapshots.json
+          if git diff --cached --quiet; then
             echo "No changes to monitoring state."
           else
-            git add planner/assets/data.js planner/data planner/assets/snapshots.json
-            git commit -m "chore(monitor): refresh official-source last-checked dates and change log"
-            git push
+            git commit -m "chore(monitor): manual planner source re-check"
+            git pull --rebase origin main
+            git push origin main
           fi
