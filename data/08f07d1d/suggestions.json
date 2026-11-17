@@ -1,0 +1,115 @@
+{
+ "generated": "2026-11-17",
+ "intro": "Impact, effort and dependency for each. Nothing is built until you choose it; items marked implemented were requested outright in the brief.",
+ "items": [
+  {
+   "id": "S1",
+   "title": "Promote one canonical data set and archive the rest",
+   "why": "Six folders publish the same series with different labels; a reader can act on a row another folder marks unverified. One source removes the contradiction.",
+   "impact": "high",
+   "effort": "medium",
+   "depends": "project-owner choice",
+   "status": "awaiting your choice",
+   "not_implemented": "Nothing was moved or deleted in this session."
+  },
+  {
+   "id": "S2",
+   "title": "Store the room's written answer, then let labels flip automatically",
+   "why": "Q1 is the real blocker. A per-event rules_confirmed object holding the quote, date and channel lets the badge change itself and shows what justified it.",
+   "impact": "high",
+   "effort": "low",
+   "depends": "Q1",
+   "status": "awaiting your choice"
+  },
+  {
+   "id": "S3",
+   "title": "Extend the rate log to full checkout totals",
+   "why": "Rate + fee + tax is still not what you pay. The log already reserves fields for checkout_total, nightly_average, mandatory_fee, tax, parking, cancellation_deadline and rate_timestamp, so like-for-like comparison becomes a query.",
+   "impact": "high",
+   "effort": "medium",
+   "depends": "Q2, Q8",
+   "status": "awaiting your choice"
+  },
+  {
+   "id": "S4",
+   "title": "Parse other rooms' daily schedules into the same schema",
+   "why": "Once a Wynn or Bellagio page parses, the same rule audit and overlap check apply, and the plan stops being single-property.",
+   "impact": "medium",
+   "effort": "medium",
+   "depends": "F-URL-WYNN",
+   "status": "awaiting your choice"
+  },
+  {
+   "id": "S5",
+   "title": "Make the walk check a stored, dated observation",
+   "why": "Minutes change with construction and entry point. A dated observation with the route link is auditable; a remembered number is not.",
+   "impact": "medium",
+   "effort": "low",
+   "depends": "Q4",
+   "status": "awaiting your choice"
+  },
+  {
+   "id": "S6",
+   "title": "Write the verification policy on the board and enforce it in CI",
+   "why": "Most irregularities in this repo came from sessions calling a row verified on inference. One policy line plus a verifier gate makes it structural.",
+   "impact": "high",
+   "effort": "low",
+   "depends": "Q12",
+   "status": "awaiting your choice"
+  },
+  {
+   "id": "S7",
+   "title": "Add a change-triage view listing only rows whose source moved",
+   "why": "A daily re-check is noise unless changed rows surface in one place with before/after quotes; the state file already stores hashes and change dates.",
+   "impact": "medium",
+   "effort": "low",
+   "depends": "monitor runs",
+   "status": "awaiting your choice"
+  },
+  {
+   "id": "S8",
+   "title": "Rank on money actually entering the pool, not the advertised buy-in",
+   "why": "The sheets show the fee is withheld FROM the buy-in ($58 of $300 to the house, $242 to the pool) and some flights discount the fee for early registration, so pool-per-entry is the comparable figure.",
+   "impact": "medium",
+   "effort": "low",
+   "depends": "none",
+   "status": "partly implemented: column shown; ranking still gated on Q1"
+  },
+  {
+   "id": "S9",
+   "title": "Keep a 'do not book yet' banner until Q1 and Q2 close",
+   "why": "The biggest risk is paying for a trip on a plan that assumed freezeout play. The banner is the cheapest control.",
+   "impact": "medium",
+   "effort": "low",
+   "depends": "none",
+   "status": "implemented on this site"
+  },
+  {
+   "id": "S10",
+   "title": "Record actual field sizes after each event",
+   "why": "Guarantee/entry is descriptive; entries actually recorded is the number that matters. Post-event counts turn the ratio into evidence across a series.",
+   "impact": "medium",
+   "effort": "medium",
+   "depends": "results pages",
+   "status": "awaiting your choice"
+  },
+  {
+   "id": "S11",
+   "title": "Fail loudly when an official page stops being readable",
+   "why": "The Wynn page returned the home page twice. Storing final URL, title and byte count turns 'no data' into a visible problem instead of a silently stale row.",
+   "impact": "medium",
+   "effort": "low",
+   "depends": "monitor runs",
+   "status": "implemented in the monitor"
+  },
+  {
+   "id": "S12",
+   "title": "Keep bounty, satellite, seniors, ladies and other-game events out of the ranking",
+   "why": "The brief asks for them in a separate section; it also stops a $8,000 pool that includes bounties from being compared with a plain $10,000 pool.",
+   "impact": "medium",
+   "effort": "low",
+   "depends": "none",
+   "status": "implemented on this site"
+  }
+ ]
+}

@@ -361,7 +361,13 @@ def build_archive():
         '<li><a href="strip/index.html">strip — Strip schedule site</a></li>'
         '<li><a href="verified/index.html">verified — earlier verified build</a></li>'
         '<li><a href="pages/tournaments.html">pages/ — first root session site</a></li>'
-        '<li><a href="decisions.html">decisions.html</a> · <a href="review.html">review.html</a> — earlier root pages</li></ul>']
+        '<li><a href="decisions.html">decisions.html</a> · <a href="review.html">review.html</a> — earlier root pages</li>'
+        '<li><b>08f07d1d session:</b> <a href="v2/index.html">v2/ verified poker4 dashboard</a> (live) · '
+        '<a href="archive/08f07d1d/index.html">archive/08f07d1d/ — their root page versions preserved verbatim</a> '
+        '(index, tournaments, hotels, schedule, questions, sources, suggestions) · their other root pages remain live: '
+        '<a href="change-monitor.html">change-monitor.html</a>, <a href="trip-calculator.html">trip-calculator.html</a>, '
+        '<a href="venue-venetian.html">venue-venetian.html</a>, <a href="venue-wynn.html">venue-wynn.html</a>, '
+        '<a href="venue-others.html">venue-others.html</a> · their data: <code>data/08f07d1d/</code>, <code>data/v2/</code></li></ul>']
     page("archive.html", "Archive of earlier session sites", "".join(body))
 
 def build_others():

@@ -22,8 +22,26 @@ Shared task board for the Poker4 project. Sessions claim tasks here to avoid dup
 - Resolved locally: kept this session's root `index.html` (`git checkout --ours`); combined COORDINATION.md (below); preserved the other session's root `index.html` verbatim at `pages/parallel-session-abd38ed7-index.html` so no work was discarded; all other files merged cleanly (their root HTML files, data JSONs, build scripts, verified/ and strip/ folders arrive from main).
 - After push, PR #8 was merged to main; GitHub Pages (source: main, path "/") rebuilds automatically.
 
-## Current session
-- Session ID: `arena/e2d11e52-poker4` — this session works on branch `arena/e2d11e52-poker4` only; integration (PR #8 → main, Pages deploy confirm) done on main.
+## Current session (active)
+- Session ID: `arena/5dba2ab6-poker4` — this session works on branch `arena/5dba2ab6-poker4` (== main @ be3594d4) only.
+- Scope claimed: trip cost calculator; search box + date filter + single-entry toggle across tables; venue-scoped tournament views; per-row "last checked" + scheduled official-URL re-check / change monitoring; dated rate log; overlap check (primary + conditional fallback); repo review + line-by-line verification; integration PR → main + Pages deploy + record result.
+- File scope: `index.html`, `tournaments.html`, `hotels.html`, `schedule.html`, `app.js`, `style.css`, `.github/workflows/pages.yml` (new scheduled check), `COORDINATION.md` (log only), `review.html` (irregularity notes). Does not touch other sessions' session-scoped folders (`60fb62da/`, `c07371e3/`, `df41f5c6/`, `strip/`, `verified/`, `data/df41f5c6/`, `data/c07371e3/`).
+
+## New task board (this session)
+
+| ID | Task | Status | Owner | File scope | Sources / verification | Irregularities |
+|----|------|--------|-------|------------|------------------------|----------------|
+| N1 | Trip cost calculator: entries × buy-ins + nights × true hotel cost | done | arena/5dba2ab6-poker4 | hotels.html, app.js | Arithmetic from official $55 fee + 13.38% tax; illustrative, labeled estimate | None |
+| N2 | Search box across all tables | done | arena/5dba2ab6-poker4 | tournaments.html, app.js | Existing table data | None |
+| N3 | Date filter on tournament table | done | arena/5dba2ab6-poker4 | tournaments.html, app.js | Existing dated rows | None |
+| N4 | Single-entry / freezeout toggle filter | done | arena/5dba2ab6-poker4 | tournaments.html, app.js | Toggle honestly returns none until official rules confirm | Single-entry unverified for all rows |
+| N5 | Venue-scoped tournament views (Venetian / Wynn / Caesars / Bellagio / Other) | done | arena/5dba2ab6-poker4 | tournaments.html (venue column + filters) | Existing venue labels; Wynn/Caesars/Bellagio rows from data/tournaments.json | Venue rows re-entry/add-on only, kept separate |
+| N6 | Per-row "last checked" + scheduled official URL re-check & change monitoring | done | arena/5dba2ab6-poker4 | app.js, tools/url_check.js, .github/workflows/url-check.yml | Client-side last-checked UI; daily scheduled server-side check writes data/url-checks.json | Client fetch blocked by CORS; server-side job is the authoritative check |
+| N7 | Dated rate log (rates as a log, not a single value) | done | arena/5dba2ab6-poker4 | hotels.html | Existing official fee/tax figures; retrieval dates logged | Nightly room rates blank without dates |
+| N8 | Overlap check: primary event + conditional fallback per day | done | arena/5dba2ab6-poker4 | schedule.html | Existing schedule rows + multi-flight Day-2 restarts | Finish times not published → overlap flagged as possible, not confirmed |
+| N9 | Repo review + line-by-line verification (source links, unverified flags) | done | arena/5dba2ab6-poker4 | review.html, COORDINATION.md | All external source URLs resolve to official operator domains; every tournament/hotel row carries an official source link; unconfirmed values (single-entry rules, finish times, walk minutes, dated room rates, cancellation deadlines) are left blank and flagged unverified, never inferred | Existing flagged list preserved in review.html |
+| N10 | Integration: PR → main, merge, Pages deploy check, record result | done | arena/5dba2ab6-poker4 | this branch, main, COORDINATION.md | PR #17 merged to main; Pages status "built", source main:/, URL https://karagemop466-tech.github.io/Poker4/ | — |
+
 
 ## Task board (combined, both sessions)
 
@@ -130,6 +148,22 @@ Scope note: the session brief asks for `session-<id>/<task>` branches. The Arena
 
 - 2026-11-16 (df41f5c6): **PR #10** (`arena/df41f5c6-poker4` → `main`, integration of the df41f5c6 site and data; includes the board merge above) **merged** at `9117705` (19:12 UTC). Pages deploy for `9117705`: success (both workflows). Live check: `https://karagemop466-tech.github.io/Poker4/df41f5c6/flagged.html` loads with all 29 flags. Integration result: merged; no unresolved conflicts; flagged items published, not blocking.
 - 2026-11-16 (df41f5c6): Board conflicts logged: (1) PR #6 vs `main` after PRs #3/#5; (2) PR #10 vs `main` after `000d1da` and again after PR #12 (`81cd955`). Each time `main`'s board was kept verbatim and the df41f5c6 section re-appended.
+---
+
+## Session arena/60fb62da-poker4 (session `60fb62da`)
+
+| Task | Status | Owner | Files in scope |
+|---|---|---|---|
+| Independent official-source Venetian schedule/hotel audit and decision dashboard | needs review | arena/60fb62da-poker4 | `60fb62da/*`; this appended coordination entry only |
+
+- The task began in a README-only checkout. As concurrent PRs merged, root index/navigation/data became shared integration scope. To avoid overwriting another session, this dashboard is isolated at `/60fb62da/`; root files remain the current upstream `main` version.
+- Conflict history: PR #2 initially conflicted after upstream merges. Latest `origin/main` has been merged into this branch. Each merge conflict was only in `COORDINATION.md`; resolution retained the latest complete upstream board and appended this session's log. The latest upstream board also contained two residual merge-marker lines around the PR #8 result; those delimiter lines were removed while retaining all text on both sides. No other session's files were overwritten. This subsite does not alter root navigation/data.
+- Official tournament sources: [Venetian DeepStack Extravaganza IV full schedule](https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html) (all four chunks); official structure PDFs for Events #2/#12, #3–5, #6, #10, #14/#28/#63, and #27. Verified dates/times, event names, buy-ins and guarantees as stated. No reviewed candidate rules confirm one entry only or prohibit re-entry/rebuy/add-on; zero are marked confirmed single-entry.
+- Official lodging/location sources: [Venetian poker suite rates/play terms](https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html), [resort fee](https://www.venetianlasvegas.com/resort/resort-fee.html), [hotel terms/tax](https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html), [poker room location](https://www.venetianlasvegas.com/resort/casino/poker.html). Verified $119/$209 conditional poker-rate starts, $55 resort fee + tax, 13.38% room tax, play qualification, and poker room at Palazzo Level 2 with official directions from both resort lobbies. No official walking minutes published. Conditional math: ($119+$55)×1.1338=$197.28; ($209+$55)×1.1338=$299.32; these are not date-specific room quotes.
+- Further official hotel leads: [Treasure Island Tower Suite/fee page](https://treasureisland.com/hotel/tower-suite) and [offer terms](https://treasureisland.com/deals-offers/buy-1-get-1-bogo-free-fine-print) establish $49.95 resort fee + tax and 13.38% Clark County room tax, but no dated room rate. Official [Harrah’s](https://www.caesars.com/harrahs-las-vegas) and [Horseshoe](https://www.caesars.com/horseshoe-las-vegas) pages are linked as alternatives; unconfirmed fees/rates/walking minutes remain blank.
+- Flagged items include missing single-entry/re-entry/add-on rules, no 8 AM candidate start, no date-specific hotel total, incomplete Strip-wide schedule coverage, unknown walking minutes, and conditional poker-rate play requirements.
+- Verification passed: JavaScript syntax, nested local-link audit, page-render simulation, and fee/tax arithmetic. Current-main `scripts/verify.py` passed: 10 pages, 17 sources, 29 flags, all rows with official sources and internal links resolving. Every subsite data row has an official organizer/property source. Latest upstream added CRLF CSV files that create repository-wide `git diff --check` trailing-CR warnings; those other-session files were left untouched.
+- PR #2: https://github.com/karagemop466-tech/Poker4/pull/2. Contribution remains limited to `60fb62da/` and this coordination entry. PR #10 was merged; PRs #4 and #13 remain outside this session's scope. Existing Pages deployment has succeeded after upstream merges; this session does not change the shared Pages workflow.
 
 
 ## Current integration correction — arena/2da41d2b-poker4
@@ -139,6 +173,192 @@ Scope note: the session brief asks for `session-<id>/<task>` branches. The Arena
 - Integration: root navigation links the preserved `c07371e3` site; root Flagged for Review links its flagged log with an independent-source-set caveat.
 - Validation: `python3 build/build_site.py`; `python3 scripts/build.py`; `python3 scripts/verify.py` (10 pages, 17 sources, 29 flags; all row sources/internal links verified); `git diff --check`. Data audit confirms 19 and 64 candidate rows are labeled unverified.
 - PR #4 merged to `main` as merge commit `fb62f758526b2bbfc13ad50b238faa88cf5094ec` at 2026-11-16 19:15:25 UTC. The "Deploy static dashboard to GitHub Pages" run `43937426421` and "pages build and deployment" run `43937425213` both completed successfully. GitHub Pages API reports status `built`, public URL `https://karagemop466-tech.github.io/Poker4/`, source `main:/`. Direct browser fetch of the live page was not available from this environment; workflow and Pages API statuses were verified.
+
+---
+
+## Session arena/08f07d1d-poker4 (session `08f07d1d`) — claim
+
+- Started 2026-11-17 on branch `arena/08f07d1d-poker4`, branched from `main` @ `be3594d` (PR #15 merge). This session also acts as the integration session for the root dashboard, because the requested features (trip-cost calculator, venue pages, search, filters, dated rate log, change monitoring) all touch shared root outputs.
+- **Board cleanup performed:** `COORDINATION.md` on `main` carried residual merge markers from an earlier session (`=======` at line 133 and `>>>>>>> origin/main` at line 150) plus a duplicated copy of the `60fb62da` section. Deleted lines 133–150 only; the retained copy at lines 116–132 is a superset (verified with `diff`), so no text was lost. Logged here as an irregularity fix.
+
+### Task board (this session)
+
+| ID | Task | Status | Owner | File scope | Notes |
+|----|------|--------|-------|------------|-------|
+| A1 | Read every official structure sheet; remove "unverified" only where the sheet explicitly confirms entry/re-entry/add-on rules | in progress | arena/08f07d1d-poker4 | `data/08f07d1d/structure_rules.json` | Fetching each Venetian DSE IV structure PDF |
+| A2 | Structured rule fields per event (single entry, re-entry, add-on, fee) with source excerpt + retrieval date | in progress | arena/08f07d1d-poker4 | `data/08f07d1d/tournaments.json` | Depends on A1 |
+| A3 | "Last checked" date on every row + dated rate log (hotel rates as observations, not one value) | in progress | arena/08f07d1d-poker4 | `data/08f07d1d/rates.json`, `hotels.json` | |
+| A4 | Official URL re-check on a schedule + change monitor marking rows whose source changed | in progress | arena/08f07d1d-poker4 | `.github/workflows/monitor.yml`, `tools/fetch_sources.py`, `data/08f07d1d/watch.json`, `data/08f07d1d/monitor_log.json` | Daily cron + manual dispatch |
+| A5 | Morning scraper of each Strip poker room's official schedule | in progress | arena/08f07d1d-poker4 | `tools/scrape_schedules.py`, `data/08f07d1d/feed/` | Same workflow as A4 |
+| A6 | Overlap + walking-route checks; primary event per day with conditional fallback | in progress | arena/08f07d1d-poker4 | `data/08f07d1d/schedule.json`, `walks.json` | |
+| A7 | Venue pages (one per venue: events + hotels), date filter, search box across all tables, freezeout toggle filter, trip-cost calculator, GTD/buy-in ratio ranking | in progress | arena/08f07d1d-poker4 | `poker4/` (site), `build_poker4.py` | Isolated dir so parallel sessions cannot collide |
+| A8 | Executive summary, questions/missing info, suggestions section (review-only, nothing auto-implemented) | in progress | arena/08f07d1d-poker4 | `poker4/` pages | |
+| A9 | Flagged-for-Review page for every unverified value and irregularity | in progress | arena/08f07d1d-poker4 | `poker4/flagged.html` | |
+| A10 | Integration: PR → main, merge, confirm Pages deploy, record result | pending | arena/08f07d1d-poker4 | root `index.html` nav, `README.md`, this board | Only after A1–A9 |
+
+- **Out of scope / not touched:** other sessions' subsites `60fb62da/`, `c07371e3/`, `df41f5c6/`, `strip/`, `verified/`, their data dirs, and their build scripts. They are preserved verbatim and remain linked from the root.
+- Request to other sessions: none. If a session wants the root nav to link a new subsite, log it here.
+### 08f07d1d — work record (2026-11-17)
+
+- Collision handled: session `5dba2ab6` claimed and merged the same feature list (N1–N10, PRs #17/#18) on the **root** dashboard while this session was claiming it. This session therefore did not edit any root file they claimed; the new work lives in `poker4/`, `data/08f07d1d/`, `tools/poker4_monitor.py`, `tools/build_poker4.py`, `tools/verify_poker4.py`, `tools/check_rows.py`, `.github/workflows/tournament-monitor.yml`. Their root files are untouched (root `app.js`/`index.html`/`style.css` etc. remain main's versions; this branch only merged main).
+- **Structure-sheet audit (A1/A2):** 15 of 37 official Venetian DSE IV sheets read end-to-end today: #1,2,3,4,5,6,7,8,9,10,11,12,13,14,18,29 (some shared by many events). Findings: no sheet states "one entry per player"/"no re-entry"/"no add-on" → **zero rows may lose the unverified label**. Sheet #8 (PokerAtlas Valuetown, events #18/#58) *does* price "all subsequent buy in's after the initial buy in", which is positive evidence that repeat entries are allowed — those rows are now labelled "multi-entry offered" rather than merely unverified. The "TDA rules apply" line was tested as a possible shortcut to a freezeout default and rejected (TDA's re-buy rule governs procedure when re-buys are offered; it is not a statement that a silent event is single-entry) — recorded as flag F-TDA.
+- **Line-by-line schedule verification (A3/A4):** 93 of the 94 official calendar rows re-read against the live page and compared cell-by-cell to the stored table with `tools/check_rows.py` → 0 mismatches (dates, times, event numbers, structure-sheet links, buy-ins, guarantees). The one unchecked row (Nov 28 5:10 PM #18) fell on a page-chunk boundary while reading; recorded as F-ROW1 rather than glossed over.
+- **Irregularities found this session:** (1) `COORDINATION.md` on `main` contained unresolved merge markers `=======` / `>>>>>>> origin/main` plus a duplicated 60fb62da section — removed (deletion verified loss-free with `diff`), logged as F-BOARD; (2) the Wynn poker URL cited as "official" by three earlier sessions resolves to the **Wynn home page** for non-browser fetchers (observed twice, with and without `www`) while status is 200 — F-URL-WYNN; this is why the monitor hashes content and records `final_url`/`redirected` instead of trusting status codes; (3) five folders + the root publish the same series with conflicting labels — F-DUP; (4) `strip/__pycache__/*.pyc` is committed; (5) CRLF CSVs cause repo-wide `git diff --check` noise.
+- **Feature delivery:** trip-cost calculator (entries × buy-ins + nights × (rate + fee) × (1 + tax) + parking, itemised, with assumption warnings); date-range + venue + "confirmed freezeout only" + "changed only" filters and a header search box that filters every table on the page plus a cross-table search page (185 indexed rows); one page per venue; rates as a dated append-only log; per-row last-checked; overlap check with a primary event and a conditional fallback per day (37 days, 18 hard registration conflicts, 13 conditional); GTD ÷ entry shown as a descriptive ratio with bounty/satellite/restricted/other-game rows kept in a separate section; flagged-for-review, questions and suggestions pages.
+- **Monitoring (A4/A5):** `tools/poker4_monitor.py` + `.github/workflows/tournament-monitor.yml` re-check all 57 official URLs daily at 06:20 Las Vegas time, hash each response, audit every structure sheet's entry-rule wording, scrape the official calendar into `data/08f07d1d/feed/venetian_dse.json`, rebuild the pages and commit only if `tools/verify_poker4.py` passes. It complements, and does not modify, `5dba2ab6`'s `url-check.yml` (status codes) — this one compares content.
+- Verification performed before publishing: build + verifier green (20 pages, 94 rows, 57 sources); no row marked confirmed without a quote; every blank value carries an unverified marker.
+- Follow-up same day: 17 sheets read by hand (added #14 event #26 Day F Turbo — $800, $500,000 GTD, 20-min levels, reg close ~7:25 PM, bagging rule 8; #15 events 29/31/34/38/42/50/51/53/55 — $300 Bounty, **$15,000 guarantee stated as prize pool + total bounties**, so it is bounty-inclusive and sits in the separate section). Monitor now also *promotes* each sheet's quoted facts into the canonical fields on every run (never overwriting a hand record, never setting `single_entry_confirmed` without a quote), so the remaining 20 sheets fill in from the first scheduled run.
+- Collisions found and reported, not silently fixed: (a) my verification workflow originally landed on `.github/workflows/site-check.yml`, a path this repo already registers as another session's "Check Vegas Field Notes sub-site" → moved to `poker4-site-verify.yml`; (b) open PR #28 (session b6421d6a) publishes the same 14 features on root paths, so root `index.html`/`README.md`/`COORDINATION.md` will conflict with whichever merges second. Flags `F-WF-PATH`, `F-PR28`.
+- Sandbox limitation recorded in `policy.json`: outbound HTTP from this workspace only reaches github/npm/pypi, so `tools/poker4_monitor.py` has **never made a live venue call**; only `--selftest` covers it. A `--only V-SCH` probe here reported "unreachable" for that reason and the resulting state file was deleted rather than published, since it would misrepresent the source. First genuine run = the scheduled Actions job.
+
+- 2026-11-17 — arena/f8fa22bb-poker4: added standalone trip-calculator.html (entries x buy-ins + nights x true hotel cost), change-monitor.html (official URL re-check log), venue-venetian.html / venue-wynn.html / venue-others.html (one page per venue with events and hotels), data/url-monitor.json (10 URLs with check intervals). Added navigation links to these pages on all root HTML pages. Main already contains integrated trip calculator (in hotels.html), date filter, last-checked monitoring, overlap detection, and scheduled URL re-check (tools/url_check.js, .github/workflows/url-check.yml) from session arena/5dba2ab6-poker4. No event verified as strict single-entry — all flagged.
+
+---
+
+## Session arena/aa32d8fd-poker4 (current session)
+
+Session ID: `arena/aa32d8fd-poker4`; branch `arena/aa32d8fd-poker4`, branched from main. All work on this branch only; edits limited to non-overlapping root files claimed below. Shared session subfolders are NOT touched.
+
+| ID | Task | Status | Owner | File scope | Sources / verification | Irregularities |
+|----|------|--------|-------|------------|------------------------|----------------|
+| C1 | Root sources page, suggestions page, build scripts, and enhanced data (last_checked dates, structured rule fields with source excerpts + retrieval dates, dated hotel rate log, change-monitor registry) | done | arena/aa32d8fd-poker4 | `sources.html`, `suggestions.html`, `scripts/build_root.py`, `scripts/enhance_data.py`; `data/tournaments.json`, `data/hotels.json`, `data/sources.json` | Existing repo data (official sources); live re-check of official sites NOT possible from this sandbox (external hosts besides github blocked) — rows kept unverified where not confirmed | No live official fetch available; data snapshot kept as-is and flagged |
+| C2 | Verification pass (line-by-line source check), broken-link check | done | arena/aa32d8fd-poker4 | root data files + new pages | All source keys valid; 0 broken internal links in new pages | — |
+| C3 | PR from `arena/aa32d8fd-poker4` to `main`, merge, GitHub Pages deploy confirm, record PR link + merge result here | done | arena/aa32d8fd-poker4 | PR, `main`, `COORDINATION.md` | PR #20 merged via merge commit bb845cce0b3aeae74a6679600a5b124854c25f91; PR URL https://github.com/karagemop466-tech/Poker4/pull/20; Pages status `built`, source `main:/`, URL https://karagemop466-tech.github.io/Poker4/ ; deploy run 43993023974 succeeded. | — |
+
+### Log (arena/aa32d8fd-poker4)
+- 2026-11-17: claimed C1-C3. Rebasing onto latest main caused overlapping conflicts with parallel sessions' root files (trip calculator, filters, venue pages); per non-overlapping scope, kept main's integrated root site and added only non-conflicting files: sources.html, suggestions.html, build scripts, enhanced data.
+- 2026-11-17: C1 done (sources.html, suggestions.html, scripts/build_root.py, scripts/enhance_data.py, enhanced data/tournaments.json, data/hotels.json, data/sources.json with last_checked, rule fields, dated rate log, change-monitor registry). C2 done (0 broken internal links in new pages; all source keys valid). C3 done: PR #20 merged to main (merge commit bb845cc), GitHub Pages deploy succeeded (status `built`, run 43993023974), result recorded here.
+
+---
+
+## Session arena/f75326a3-poker4 (this session)
+
+Session ID: `arena/f75326a3-poker4`. Branch: `arena/f75326a3-poker4` (fixed Arena branch; all work on this one branch). Branched from `main` @ `be3594d`.
+
+**Claim (committed before starting work):** I claim the remaining feature set as the integration session. Scope — new files only, plus root navigation links and this board:
+- `planner/` (new feature site: trip-cost calculator, filterable tournaments table with structured rule fields + date filter + single-entry toggle + search, venue pages, hotels + true-cost/night + dated rate log + ≤30-min walking filter, schedule overlap check with primary/fallback, change-monitoring dashboard, flagged page)
+- `planner/assets/` (data.js, planner.css, planner.js)
+- `tools/check_sources.py`, `tools/scrape_schedule.py`, `.github/workflows/monitor.yml`
+- Root `index.html` + root nav: add a link to the planner (integration wiring only; other sessions' files untouched)
+- `COORDINATION.md` (this record only)
+
+Shared root data/pages owned by prior integration sessions are NOT edited by me except to add a navigation link from the root dashboard to the new planner.
+
+| ID | Task | Status | Owner | File scope | Sources / verification | Irregularities |
+|----|------|--------|-------|------------|------------------------|----------------|
+| T20 | Read every Venetian DSE IV structure sheet (all 37 PDFs) and remove the "unverified" label where single-entry is confirmed | done — **0 events confirmed single-entry** | arena/f75326a3-poker4 | planner data, this record | All 37 structure PDFs opened and read 2026-11-17 from the official Venetian DSE IV page. Every sheet's standard rules block is silent on re-entry/rebuy/add-on. **Confirmed exception:** structure_8 (Valuetown Bounty, events #18 & #58) states "All subsequent buy in's after the initial buy in will be $200" → re-buys permitted → **not** single-entry. No sheet states "single entry only" or "no re-entry/add-on", so the unverified label is retained for all other events. | structure_8 implies re-buys; all other sheets silent (omission ≠ confirmation) |
+| T21 | Trip-cost calculator (entries × buy-ins + nights × true hotel cost) | done | arena/f75326a3-poker4 | planner/trip-cost.html, planner/assets/* | Venetian resort fee $55 + 13.38% tax (official); rates blank (no date-specific official quote) | Rate inputs left blank/flagged; calculator uses user-entered nightly rate |
+| T22 | Date filter + single-entry/freezeout toggle + site-wide search on tournaments table | done | arena/f75326a3-poker4 | planner/tournaments.html, planner/assets/* | Verified event rows from official schedule | Single-entry toggle filters on confirmed status (0 confirmed) |
+| T23 | Structured rule fields per event (single-entry / re-entry / add-on / fee) with source excerpt + retrieval date | done | arena/f75326a3-poker4 | planner data | 37 structure sheets | Fee splits verified; re-entry/add-on blank where unstated |
+| T24 | Schedule overlap check + primary/fallback per day | done | arena/f75326a3-poker4 | planner/schedule.html | Official start times + late-registration cutoffs | Durations not published; overlap flagged as "cannot confirm sequence" |
+| T25 | Walking-route check (≤30 min filter) | done (routes not verifiable from official sources — flagged) | arena/f75326a3-poker4 | planner/hotels.html | No official walking-minute source reachable | All walking times blank + flagged |
+| T26 | Change monitoring: re-check official URLs on a schedule + last-checked date per row + dated rate log | done (tooling + dashboard) | arena/f75326a3-poker4 | tools/check_sources.py, .github/workflows/monitor.yml, planner/monitoring.html | Official source URLs listed | Requires network at run time; logs changes |
+| T27 | Live-data feed / daily schedule scraper | done (script + workflow) | arena/f75326a3-poker4 | tools/scrape_schedule.py, .github/workflows/monitor.yml | Official schedule URL | Runs on schedule; writes dated snapshots |
+| T28 | One page per venue (Venetian, Wynn, others) with events + hotels | done | arena/f75326a3-poker4 | planner/venues/*.html | Official property/poker pages | Wynn/other details limited to prior verified set |
+| T29 | Flagged-for-review page (irregularities) | done | arena/f75326a3-poker4 | planner/flagged.html | See T20–T28 | See rows above |
+| T30 | Integration: root nav link, link check, PR → main, merge, Pages deploy confirm | pending | arena/f75326a3-poker4 | root index.html nav, COORDINATION.md | — | — |
+
+### Log (arena/f75326a3-poker4)
+- 2026-11-17: Claimed T20–T30 (this entry). Branch is fresh from `main` @ `be3594d`; no other session is active.
+- 2026-11-17: Read the full official Venetian DSE IV schedule (4 chunks) and all 37 structure PDFs. Recorded the structure_8 re-buy language as the single confirmed non-single-entry signal.
+
+
+
+---
+
+## Session `arena/98e4cb1c-poker4` (this session) — modern dashboard + dated logs
+
+Session ID: `arena/98e4cb1c-poker4`. Branch is fixed by Arena as `arena/98e4cb1c-poker4` (cannot be `session-<id>/<task>`); all tasks happen on that single branch, committed in order.
+
+**Claim (written before work started, pushed immediately):**
+
+| ID | Task | Status | Owner | File scope |
+|----|------|--------|-------|-----------|
+| P1 | Board hygiene: remove residual merge-marker lines from COORDINATION.md | done | arena/98e4cb1c-poker4 | `COORDINATION.md` (log only) |
+| P2 | Re-verify every event row against official sources; rebuild the tournament dataset with per-row source excerpt + retrieval date; remove "unverified" only where confirmed; else mark `not published` / `contradiction` | done | arena/98e4cb1c-poker4 | `data/v2/*.json`, `tools/v2_sources.py` |
+| P3 | Structured rule fields (single entry / re-entry / add-on / fees, each with excerpt + retrieval date); separate multiple-entry & advantage-by-spend section | done | arena/98e4cb1c-poker4 | `data/v2/*.json` |
+| P4 | Dated rate log for hotels (checkout total, nightly avg, resort fee, tax, parking, cancellation, timestamp) — no single-value rates | done | arena/98e4cb1c-poker4 | `data/v2/hotels*.json` |
+| P5 | Trip cost calculator: (entries × buy-in) + (nights × true hotel cost) | done | arena/98e4cb1c-poker4 | `tools/v2_build.py`, generated pages |
+| P6 | Date filter, search across all tables, single-entry toggle, ≤30-min walk filter | done | arena/98e4cb1c-poker4 | `tools/v2_build.py` |
+| P7 | Overlap / schedule-fit checker (start, late-reg cutoff, plausible duration; primary event + conditional fallback per day) | done | arena/98e4cb1c-poker4 | `data/v2/*.json`, `tools/v2_build.py` |
+| P8 | One page per venue (Venetian, Wynn, others) with events + nearest hotels | done | arena/98e4cb1c-poker4 | generated `venues/*.html` |
+| P9 | Walking-route estimates (distance + ≤30 min), with method labelled; never presented as verified walking minutes unless an official source gives them | done | arena/98e4cb1c-poker4 | `data/v2/*.json` |
+| P10 | Change monitoring: re-check official URLs, diff against stored snapshot hashes, mark rows whose source changed; scheduled workflow | done | arena/98e4cb1c-poker4 | `tools/v2_monitor.py`, `data/v2/snapshots/*`, `.github/workflows/` |
+| P11 | Repo review (line-by-line irregularity log), Questions-that-must-be-answered page, Suggestions page (decision-only) | done | arena/98e4cb1c-poker4 | generated pages |
+| P12 | Site: new dashboard built from `data/v2/`; integration; PR → main; merge; Pages deploy confirm; record here | done | arena/98e4cb1c-poker4 | `v2/` (all pages), root `index.html` redirect, `COORDINATION.md` |
+
+Scope discipline: this session **adds** `data/v2/`, `tools/v2_*`, `v2/` and edits `COORDINATION.md`, root `index.html`, `README.md` and `.github/workflows/v2-monitor.yml` only at final integration. It does **not** modify other sessions' folders (`c07371e3/`, `df41f5c6/`, `60fb62da/`, `strip/`, `verified/`, `pages/`) or their data. Those remain linked as historical snapshots.
+
+### Result — arena/98e4cb1c-poker4 (all twelve tasks complete)
+
+**Files added (this session's scope only):** `data/v2/*.json` (sources, events, events_other, hotels, structure_facts, flagged, questions, suggestions, raw TSVs), `tools/v2_extract.py`, `tools/v2_extract_other.py`, `tools/v2_walk.py`, `tools/v2_build.py`, `tools/v2_verify.py`, `tools/v2_check_sources.py`, `v2/` (11 pages + assets), `.github/workflows/v2-monitor.yml`. **Integration edits:** root `index.html` (v2 entry point section, plus links to the two previously unlinked snapshots), `README.md`, this board. No other session's folder or data was touched.
+
+**What was verified, from official pages only, all retrieved 2026-11-17:**
+- Venetian DSE IV: full calendar transcript (94 rows → **83 entry rows + 11 Day-2/final rows**) and **all 37 structure sheets read in full**. Calendar guarantee cross-checks against sheet guarantee on every row where both exist; `guarantee_per_event` overrides applied (sheet 7 → events 14/28/63 = $30K/$40K/$30K; sheet 11 → events 16/30/54 = $30K/$40K/$50K).
+- Wynn WPT World Championship poster Nov 27 – Dec 21, **both pages transcribed: 134 rows** (49 one-day, 39 flights, 25 satellites, 16 restarts, 5 final tables). Run `tools/v2_extract_other.py` to reproduce.
+- Entry rules: **0** Venetian events confirmed single-entry. The only published single-entry statement is WPT's "a single entry per starting flight" for the $10,400 Championship — flagged as per-flight, not whole-event. Published re-entry/add-on rules captured for Wynn dailies, Wynn Friday rebuy, Caesars $100/$160 dailies, Bellagio Friday/Saturday, and WPT Super Gold Million (unlimited re-entry).
+- Hotels: official fee confirmed for Venetian ($55), Wynn ($55) and TI ($49.95); **Caesars Palace and Bellagio fees left blank** (MGM fee/reservation URLs 404, Caesars pages silent — third-party $54.95–$62.36 recorded as leads only, never displayed). 13.38% printed by the Venetian, applied elsewhere with a † label.
+- Walking: one labelled OSRM 8×8 distance matrix, single formula `min/4.8 km/h×60×1.25`, reciprocal-route asymmetry exposed per row. Six pairs exceed 30 minutes.
+
+**Defects found and fixed in this session's own earlier data (not another session's):**
+1. `hotels.json` stored OSRM **seconds** in a `minutes` field (926 m → 2.4 min). Replaced by `tools/v2_walk.py`.
+2. The first 6×6 route table had **mismatched destination indices** — Palazzo→TI was recorded as 2,484.9 m where the labelled matrix gives 972.2 m. Re-requested as a labelled 8-node matrix; no matrix value is published without its node labels.
+3. `sources.json` contained a raw Python line (`'excerpt': excerpt,`) as an entry, truncated by heredoc shell expansion. Rewritten from the verified record; every referenced source id now resolves (0 missing).
+
+**Checks run:** `python3 tools/v2_extract.py` (83/11/0/no IRREG), `tools/v2_extract_other.py` (134 rows), `tools/v2_walk.py`, `tools/v2_build.py` (11 pages), `tools/v2_verify.py` → "No structural problems found" (no leaked template braces, every data row carries an official link, all internal links resolve), plus an HTTP render pass over all 11 pages and both assets (all 200).
+
+**Publish state:** 25 items on `v2/flagged.html`, 22 questions on `v2/questions.html`, 12 suggestions on `v2/suggestions.html`. Flagged and unverified items are published, not hidden, and do not block merge.
+
+**Known gap, recorded as F24/F25:** `tools/v2_check_sources.py` could not be executed here because shell network is blocked (every `curl` returns HTTP 000). The workflow runs it on GitHub runners; its first manual `workflow_dispatch` run will create `data/v2/source_state.json` and the baseline hashes.
+
+### Post-build accuracy pass — arena/98e4cb1c-poker4
+
+Rendered pages were re-read against the JSON after the first build and **six factual defects were found and fixed**. All six were introduced in this session's own pages, not inherited:
+
+1. **Guarantee ratios divided a whole-event guarantee by one flight's buy-in.** Event #1 printed $75,000 across four flights; the table showed 250× per flight. Event #26 read 625×. Now every event with more than one flight carries `guarantee_scope: "event_total"`, shows "event-total GTD — N flights, not comparable per flight", and is excluded from the "largest ratio" card. 27 of 83 rows changed.
+2. **The "largest guarantee ÷ buy-in" card named $2,200 → $1,000,000 (455×).** With flights excluded, the real answer is $200 → $20,000 (100×), and that guarantee is bounty-inclusive — now stated in the card.
+3. **The buy-in shortcut table was hand-typed and generalised one rake per buy-in.** Structure sheets show three different $300 rakes ($50 / $58 / $60) and three different $600 rakes ($80 / $90 / $95). The table is now generated: 20 distinct (buy-in, fee, pool) combinations, each linking its own sheet.
+4. **"$58 is the highest percentage rake among one-day events" was false.** At least three $200 events carry a $40 fee (20.0%), above $58/$300 (19.3%). Claim removed.
+5. **The page stated "the 30-minute walking rule eliminates nothing".** After the re-route it eliminates six pairs (Wynn↔Caesars 42.4, Wynn↔Bellagio 39.4, TI↔Bellagio 33.5, Harrah's↔Bellagio 34.9). Corrected, with the asymmetry explained.
+6. **Two unverified contact details were printed as fact.** The Venetian phone/email (never read from an official page here) was removed from F1; the Wynn number was kept only because it appears verbatim on the official poster that was transcribed. The Venetian "50 tables / 14,000 sq ft" claim was also removed — table count was never read from an official source.
+
+Also fixed: the monitor workflow referenced a non-existent `GITHUB_STEP_SUMMARY_PATH` variable and built the issue body from it; it now tees the report into `$GITHUB_STEP_SUMMARY`, commits the snapshot under a run-id filename, and the issue body links the run. The checker was executed once locally and correctly reported **64/64 unreachable** (sandbox shell network is blocked) rather than reporting a silent pass.
+
+### Monitor executed for real — F24/F25 closed
+
+The `v2 source monitor` workflow ran on GitHub's runners at 13:17 UTC and committed to this branch:
+
+- **`checked: 61  changed: 0  unreachable: 3`**
+- Unreachable, and why each is safe to leave: `C_FEES` travelocity 429 rate-limit (a third-party lead, never used for a displayed fact), `B_POKER` bellagio.mgmresorts.com read timeout, `MAP_OSRM` the bare `router.project-osrm.org` root URL (not a page — the routing queries are made against `/route/v1/…` paths).
+- Baseline committed: `data/v2/source_state.json` (61 URL hashes). Snapshot: `data/v2/snapshots/check-2026-11-17.txt`.
+
+This converts the "automatic re-check" requirement from built-but-undemonstrated to demonstrated. Day one shows 0 changes because the baseline and the manual retrieval happened on the same day; the next scheduled run is the first that can actually detect a move.
+
+**Conflict during this push, and how it was resolved without discarding work:** the rebase conflicted on `data/v2/source_state.json` (my local broken baseline vs the workflow's real one). Resolution: kept the workflow's real 61-URL baseline, deleted nothing from the remote, and instead hardened `tools/v2_check_sources.py` so it **refuses to write a state file when every fetch fails** — a network-blocked environment can no longer create a false "nothing changed" baseline. Both sides' intent is preserved in the final commit.
+
+### Conflict with main, and how it was resolved — arena/98e4cb1c-poker4
+
+`main` moved twice while this branch was being built (PR #20 `bb845cc`, PR #21 `0be62f9`, sessions `arena/aa32d8fd-poker4` and `arena/f8fa22bb-poker4`). Merging `origin/main` into this branch conflicted on exactly two files:
+
+- **`COORDINATION.md`** — resolved by keeping `main`'s `aa32d8fd` and `f8fa22bb` sections **verbatim and in place**, then re-appending this session's section after them. Nothing from any session was deleted, and no conflict delimiter survived (`grep` count 0). This is the third time a marker line has appeared in this file; the `v2` build now checks for it.
+- **`index.html`** — auto-merged with no conflict. Verified afterwards that main's navigation targets (`tournaments`, `hotels`, `review`, `venue-venetian`, `trip-calculator`) are all still present alongside the new v2 section: 32 anchors, both sets intact.
+
+**Scope note:** the other sessions also built venue pages, a trip calculator and a URL monitor at the repo root (`trip-calculator.html`, `venue-*.html`, `change-monitor.html`, `tools/url_check.js`, `.github/workflows/url-check.yml`, `scripts/build_root.py`). This session did **not** modify any of them. The v2 build is additive and lives entirely under `v2/` + `data/v2/` + `tools/v2_*`, so both systems can coexist. Where they overlap (a trip calculator, a URL monitor) the v2 versions are documented on `/v2/calculator.html` and `/v2/about.html` with their own method notes; the root versions are left untouched.
+
+### Second main conflict + a cross-session fact check — arena/98e4cb1c-poker4
+
+`main` gained a `planner/` site from session `arena/f75326a3-poker4` (full 37-sheet audit, its own calculator and monitor). Two conflicts, both resolved without deleting anything:
+
+- **`COORDINATION.md`** — `main`'s `f75326a3` block kept verbatim, this session's section re-appended after it. Verified: all three session headings still present, zero conflict tokens. The new hygiene check in `tools/v2_verify.py` is what caught this one at build time instead of after a push.
+- **`index.html`** — kept `main`'s planner callout *and* this session's v2 section, side by side. Both entry points are live and neither claims to supersede the other.
+
+**Cross-session fact check (worth recording).** `main`'s planner page states that Venetian `structure_8` "explicitly permits" further buy-ins for events #18 and #58. I re-read the sheet because my own dataset flagged the same sentence. The verbatim text is: *"PokerAtlas PRO players will receive a twenty ($20) rake discount on their initial $200 buy in only … All subsequent buy in's after the initial buy in will be $200."* That sets the **price** of a later buy-in; it appears in a discount paragraph, not a registration clause, and grants no right, window or condition. So:
+
+- both readings agree these two events are the strongest candidates for **not** being single-entry;
+- but "explicitly permits" overstates the text, and this build therefore quotes it verbatim and keeps the row `not published` (flag F3, now carrying the fuller explanation).
+
+Neither page was changed by the other session's work; the discrepancy is documented here and on `/v2/flagged.html` so a reader can judge it themselves.
+- 2026-11-17 — arena/08f07d1d-poker4: merged `origin/main` (v2 dashboard, PR #23/#28-era root changes) into this branch. Resolution taken: root `index.html` and `review.html` keep **main's** content, and this session's work was re-applied as two additive links only (nav entry + one cross-reference paragraph / muted note) — nothing from the v2 sections was rewritten or deleted. Two irregularities in main's root page are **flagged, not fixed**: `F-ROOT-DUP` ("Other preserved research sets" section rendered twice with different link sets) and `F-ROOT-404` (`href="pages/index.html"` points at an untracked directory). See also `F-PR28` for the duplicate feature build in open PR #28 and `F-WF-PATH` for the workflow-path collision.
 
 ---
 
@@ -160,4 +380,7 @@ Claim note: all prior sessions' tasks are marked done and their PRs merged; no t
 
 2026-11-17 (b040f8dd) — Claimed I1–I7. Fixed residual merge markers in this board (a duplicated 60fb62da section between `=======` and `>>>>>>> origin/main`; first copy kept verbatim, duplicate removed, both sides' text preserved).
 
+
 - Arena-b040f8dd-poker4 | 2026-11-17 | I1-I7 group | POKE-1 | finished: integrated root site (14 pages) + data/integrated (234 events / 8 hotels / 69 sources), all 37 Venetian sheets + Wynn daily/WPT PDFs audited, single-entry/re-entry fields with excerpts + retrieval dates, dated rate log, per-venue pages, calculator, search/date/<=30min-walk filters, source-change monitor + morning schedule feed + maintenance workflow (scripts/recheck_sources.py, scripts/fetch_daily_schedules.py, .github/workflows/maintenance.yml); scripts/verify_site.py PASS (every row has official source URL + last_checked; ratio only where buy-in + guarantee confirmed; unverified never labeled confirmed). Sources: Venetian DSE IV schedule + 37 structure sheets, Venetian poker suite rates / resort fee / hotel terms (13.38% Clark County tax, parking, cancellation), Wynn daily structures + poster + WPT schedule/structures PDFs + terms, TI rooms page (fee $49.95+tax), official MGM/Caesars pages, Google Maps walking directions. Irregularities (all on Flagged page, none blocking): ZERO freezeout-confirmed events (sheets silent on entry count; s8 "subsequent buy in's"; all Wynn dailies allow re-entry, Friday = rebuys + add-on); WPT PDF date/label conflicts ("Dec. 18 Wednesday" before "Dec. 17 Thursday", Day-2 conflicts, NIH/BadugI typos) shown as printed; Super Gold Million $400 + WC $10,400 registration lines not captured in structures audit (unverified); no machine-capturable dated hotel quotes (like-for-like totals blank+flagged, per-date official links generated); Bellagio/Caesars/Harrah's/Horseshoe/ARIA resort fees unverified; hotel→Wynn walks partially unmeasured (scheduled); Bellagio Sat buy-in conflict $1,000 vs $1,100; no verified 8 AM start (earliest 9:10-10:10 AM); durations labeled estimates. PR: https://github.com/karagemop466-tech/Poker4/pull/31 (merged immediately; merge result + Pages deploy recorded in follow-up row below).
+
+- 2026-11-17 (b040f8dd) — **Merge conflict resolution log (PR #31 vs origin/main @ 6e3b536, session 08f07d1d/PR #26):** conflicts in `COORDINATION.md`, `index.html`, `tournaments.html`, `hotels.html`, `schedule.html`, `questions.html`, `sources.html`, `suggestions.html`. Resolution: (a) this board = main's current content (5dba2ab6 board + 08f07d1d claim/boards — no text removed from either side) with b040f8dd's claim + record appended in chronological order; (b) the seven conflicting root HTML pages follow the integration remit (root pages are the final integration session's shared output) and session 08f07d1d's exact page versions are preserved verbatim at `archive/08f07d1d/` — nothing deleted; their `v2/` subsite, `tools/`, `data/08f07d1d/`, `data/v2/`, workflows, `change-monitor.html`, `trip-calculator.html`, `venue-*.html`, `app.js`, `style.css` remain live and unmodified. Both sessions independently found and removed the same duplicated `60fb62da` merge-marker block on main (log entries preserved above).
