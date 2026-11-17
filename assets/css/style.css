@@ -1,0 +1,130 @@
+/* Poker4 — Las Vegas Strip poker tournament & hotel planner
+   Clean dashboard styles. Static HTML for GitHub Pages. */
+:root {
+  --ink: #111827;
+  --muted: #6b7280;
+  --line: #e5e7eb;
+  --bg: #ffffff;
+  --panel: #f9fafb;
+  --accent: #7c3aed;
+  --accent-hover: #6d28d9;
+  --green: #15803d;
+  --red: #b91c1c;
+  --amber: #b45309;
+  --blue: #1d4ed8;
+  --max-width: 1100px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  color: var(--ink); background: var(--bg); line-height: 1.5;
+}
+a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+a:hover { color: var(--accent-hover); }
+img { max-width: 100%; display: block; }
+
+/* Header */
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  background: #ffffff; border-bottom: 1px solid var(--line);
+}
+.header-inner {
+  max-width: var(--max-width); margin: 0 auto; padding: 12px 18px;
+  display: flex; align-items: center; gap: 16px; flex-wrap: wrap; justify-content: space-between;
+}
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 1.25rem; text-decoration: none; color: var(--ink); }
+.brand .mark { width: 28px; height: 28px; border-radius: 8px; background: var(--accent); display: grid; place-items: center; color: #fff; font-weight: 900; font-size: 1.1rem; line-height: 1; }
+.tagline { color: var(--muted); font-size: 0.85rem; }
+nav { display: flex; gap: 6px; flex-wrap: wrap; margin-left: auto; }
+nav a {
+  padding: 6px 12px; border-radius: 6px; font-size: 0.9rem; text-decoration: none; color: var(--ink);
+  border: 1px solid transparent;
+}
+nav a:hover { background: var(--panel); border-color: var(--line); }
+nav a.active { background: #ede9fe; color: var(--accent); border-color: #c7b2fe; }
+
+/* Layout */
+.container { max-width: var(--max-width); margin: 0 auto; padding: 24px 18px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 24px 0; }
+.card {
+  border: 1px solid var(--line); border-radius: 10px; padding: 18px; background: var(--panel);
+  display: flex; flex-direction: column;
+}
+.card h3 { margin: 0 0 8px; font-size: 1rem; color: var(--ink); }
+.card p { margin: 0 0 14px; color: var(--muted); font-size: 0.92rem; }
+.card .btn {
+  display: inline-block; margin-top: auto; padding: 8px 12px; background: var(--ink); color: #fff;
+  border-radius: 6px; text-decoration: none; font-size: 0.88rem; font-weight: 600; text-align: center;
+}
+.card .btn:hover { background: var(--accent); }
+
+.section { margin: 32px 0; }
+.section h2 { font-size: 1.25rem; margin: 0 0 10px; display: flex; align-items: center; gap: 8px; }
+.section h2 .num { width: 24px; height: 24px; border-radius: 50%; background: var(--accent); color: #fff; font-weight: 700; font-size: 0.85rem; display: grid; place-items: center; flex-shrink: 0; }
+.intro { color: var(--muted); font-size: 0.95rem; margin: 0 0 14px; }
+
+/* Tables */
+table { width: 100%; border-collapse: collapse; margin: 12px 0 6px; font-size: 0.86rem; }
+th { text-align: left; background: var(--panel); color: var(--ink); font-weight: 600; padding: 8px 6px; border-bottom: 2px solid var(--line); font-size: 0.8rem; }
+td { padding: 7px 6px; border-bottom: 1px solid var(--line); vertical-align: top; }
+tr:nth-child(even) { background: #fbfcfd; }
+tr:hover { background: #f3f4f6; }
+td.source, th.source { width: 22%; }
+td.nowrap, th.nowrap { white-space: nowrap; }
+.center { text-align: center; }
+
+/* Badges */
+.badge { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 0.72rem; font-weight: 700; text-decoration: none; white-space: nowrap; }
+.badge-ok { background: #e7f7ea; color: var(--green); border: 1px solid #b7e4c7; }
+.badge-agg { background: #fdf3e3; color: var(--amber); border: 1px solid #f2d49c; }
+.badge-unverified { background: #fbecec; color: var(--red); border: 1px solid #f6c6c6; }
+.badge-sep { background: #eef2ff; color: var(--blue); border: 1px solid #cfd8ff; }
+
+.callout {
+  border-left: 4px solid var(--accent); background: #f5f3ff; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0;
+}
+.callout.red { border-left-color: var(--red); background: #fbf3f3; }
+.callout.amber { border-left-color: var(--amber); background: #fdf7ec; }
+.callout p { margin: 0 0 6px; font-size: 0.92rem; }
+.callout p:last-child { margin-bottom: 0; }
+
+/* Source links */
+.src-link { font-size: 0.8rem; color: var(--muted); word-break: break-all; }
+.src-link a { color: var(--accent); font-size: 0.8rem; }
+
+/* Hero */
+.hero { border: 1px solid var(--line); border-radius: 12px; padding: 30px; background: var(--panel); margin-bottom: 26px; }
+.hero h1 { font-size: 2rem; margin: 0 0 8px; letter-spacing: -0.2px; }
+.hero .sub { color: var(--muted); font-size: 1.05rem; margin: 0 0 16px; }
+.hero .meta { font-size: 0.85rem; color: var(--muted); }
+
+/* Stats */
+.stat { font-size: 1.5rem; font-weight: 800; color: var(--ink); }
+.stat .label { font-size: 0.78rem; color: var(--muted); font-weight: 500; display: block; margin-top: 4px; }
+
+/* Footer */
+footer { border-top: 1px solid var(--line); margin-top: 40px; padding: 26px 18px; font-size: 0.82rem; color: var(--muted); }
+footer a { color: var(--ink); }
+
+/* Utility */
+.tag { font-weight: 700; font-size: 0.78rem; }
+.small { font-size: 0.84rem; color: var(--muted); }
+.kicker { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin: 0 0 4px; font-weight: 600; }
+.nav-row { display: flex; gap: 8px; flex-wrap: wrap; margin: 10px 0 4px; }
+.btn-outline {
+  display: inline-block; padding: 6px 12px; border: 1px solid var(--line); border-radius: 6px;
+  text-decoration: none; color: var(--ink); font-size: 0.88rem; background: #fff;
+}
+.btn-outline:hover { border-color: var(--accent); background: #f5f3ff; }
+
+/* Mobile */
+@media (max-width: 640px) {
+  .header-inner { flex-direction: column; align-items: stretch; gap: 10px; }
+  nav { margin-left: 0; justify-content: center; }
+  .hero { padding: 20px; }
+  .hero h1 { font-size: 1.5rem; }
+  th, td { font-size: 0.78rem; padding: 6px 4px; }
+  td.source { width: 26%; }
+  .card h3 { font-size: 0.95rem; }
+}
