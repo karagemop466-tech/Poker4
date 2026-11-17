@@ -466,3 +466,27 @@ Claim note: all prior sessions' tasks are marked done and their PRs merged; no t
 ### Integration log (0f6c627b) — round 2
 
 - 2026-11-17: **Second merge conflict on PR #33** after main gained PRs #31/#35/#36/#37/#39/#40 (b040f8dd, 722a84d2, 08f07d1d). Conflict set: root pages + `flagged.html` + `venues/*` + `COORDINATION.md`. **Resolution (nothing discarded):** main's 722a84d2 "Rebuild verified dashboard" root pages preserved verbatim under `archive/722a84d2_root/` (following the `archive/` convention); root pages remain this session's integrated dashboard (identical builder/verification as round 1: `tools/build_root_site.py` + `tools/verify_root_site.py`, 16 pages, 0 errors). All other-session files untouched.
+
+---
+
+## Session arena/d1d02f59-poker4 (session `d1d02f59`) — feature + re-verification + integration
+
+Branch: `arena/d1d02f59-poker4` (from `main` @ be3594d). Acting as the final integration session for the Nov 17, 2026 feature round (user instructed: complete all tasks, PR, merge, and Pages deploy in one session without waiting for review).
+
+| ID | Task | Status | Owner | File scope |
+|----|------|--------|-------|------------|
+| F1 | Re-verify Venetian DSE IV against official schedule page; read ALL structure sheets; structured entry-rule fields with excerpts + retrieval dates | in progress | d1d02f59 | `data/feature/*` |
+| F2 | Venue pages (Venetian, Wynn, others) with events + hotels | unclaimed | d1d02f59 | `venues/*` |
+| F3 | Trip-cost calculator (entries × buy-ins + nights × true hotel cost) | unclaimed | d1d02f59 | `trip.html`, `assets/app.js` |
+| F4 | Search box + date filter + single-entry/freezeout toggle across tables | unclaimed | d1d02f59 | `assets/app.js` |
+| F5 | Hotel capture fields (checkout total, nightly avg, resort fee+tax, parking, cancellation deadline, rate timestamp) + dated rate log + true-cost/night math | unclaimed | d1d02f59 | `hotels.html`, `data/feature/*` |
+| F6 | Overlap flagging (start, late-reg cutoff, plausible duration) + per-day primary/fallback plan | unclaimed | d1d02f59 | `schedule.html` |
+| F7 | Walking-route data (official addresses; ≤30 min filter) + note on Google/Apple Maps verification | unclaimed | d1d02f59 | `hotels.html`, `data/feature/*` |
+| F8 | Change monitoring: scheduled official-URL re-check (daily GH Action) + changed-row marking + "last checked" per row | unclaimed | d1d02f59 | `scripts/*`, `.github/workflows/recheck.yml`, `data/feature/*` |
+| F9 | Executive summary, suggestions (decision-only), questions/answers, flagged page | unclaimed | d1d02f59 | `index.html`, `suggestions.html`, `questions.html`, `flagged.html` |
+| F10 | Integration: root site rebuild, link check, PR → main, merge, Pages deploy confirm | unclaimed | d1d02f59 | root `*.html`, `assets/*`, this board |
+
+Policy: every data row must link an official source; values not confirmed from an official source stay blank and flagged; no inference. Prior sessions' folders (`60fb62da/`, `c07371e3/`, `df41f5c6/`, `strip/`, `verified/`, `pages/`) are not modified. Shared root outputs are updated by this integration session per the user's instruction that this session finish end-to-end.
+
+### Log (d1d02f59)
+- 2026-11-17: Claimed F1–F10. Removed two leftover merge-conflict delimiter lines and one duplicated 60fb62da block from the board (text of every session's record preserved; the duplicated block was an artifact of PR merge conflicts, kept in full once). Re-fetched the official Venetian DSE IV schedule (all 4 chunks, 64 events) and structure sheet `structure_10` (Event 1): late-reg "6 levels + Break (~3:40 PM)", $60/$300 house fee, no re-entry/add-on language on the sheet.
