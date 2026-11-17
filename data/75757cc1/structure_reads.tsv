@@ -1,0 +1,39 @@
+# Venetian DSE IV structure sheets read in full by session arena/75757cc1-poker4 on 2026-11-17 via fetch of the official PDF URL
+# sheet	title_as_printed	events_printed_on_sheet	single_entry_stated	reentry_rebuy_addon_stated	entry_related_verbatim
+1	$200 No Limit Hold'em Bounty (1Day)	9,11,13,15,21,22,23,25,60,61,62,64	no	no	"TDA rules apply to all Venetian Poker Room tournaments." ; "Must be 21+ years of age and have a Venetian Rewards card to participate." ; bounty $50 per elimination
+2	$400 No Limit Hold'em (Day A+B @ 11:10 AM, Day 2 @ 11:00 AM)	7	no	no	"Each starting flight will play until we are down to approximately 12.5% of the field remaining. Day 2 will resume at 11:00 AM combining all remaining players from 1A and 1B..." ; "Any player who bags chips for Day 2 may not play a subsequent flight."
+3	$400 No Limit Hold'em (Day A+B+C @ 11:10 AM, Day 2 @ 11:00 AM)	19	no	no	Same flight wording as sheet 2, combining 1A, 1B, and 1C ; "Any player who bags chips for Day 2 may not play a subsequent flight."
+4	$600 No Limit Hold'em (Day A+B+C @ 11:10 AM, Day 2 @ 11:00 AM)	59	no	no	Flight wording combining 1A, 1B and 1C ; "Any player who bags chips for Day 2 may not play a subsequent flight." ; "On Day 1A only ... $20 discount on house fees"
+10	$300 No Limit Hold'em (Day A+C @ 11:10 AM, Day 2 @ 12:00 PM)	1 (1A/1C), 18/1 Day 2 restart	no	no	Flight wording combining 1A, 1B, 1C, 1D ; "Any player who bags chips for Day 2 may not play a subsequent flight."
+5	$300 No Limit Hold'em (1Day)	2,12	no	no	Standard rules only (TDA; 21+ with Venetian Rewards; pays 12.5%); no entry-count sentence ; late registration 10 levels + break (~4:55 PM)
+6	$400 No Limit Hold'em (1Day)	10	no	no	Standard rules only ; no entry-count sentence
+7	$600 No Limit Hold'em (1Day)	14,28,63 (GTD $30K for 14/63; $40K for 28)	no	no	Standard rules only ; no entry-count sentence
+8	$200 NLH Valuetown Bounty (1Day) - PokerAtlas PRO $20 rake discount	18,58	no	YES - re-entry priced	"PokerAtlas PRO players will receive a twenty ($20) rake discount on their initial $200 buy in only ... All subsequent buy in's after the initial buy in will be $200." (=> repeat entries are sold; NOT single-entry)
+9	$300 No Limit Hold'em (Day B+D @ 5:10 PM, Day 2 @ 12:00 PM)	1 (1B/1D)	no	no	Flight wording combining 1A-1D ; "Any player who bags chips for Day 2 may not play a subsequent flight."
+11	$600 NLH Bounty (1Day)	16,30,54	no	no	$200 bounty to start, $500 once in the money (bounty money is part of guarantee) ; no entry-count sentence
+12	$800 No Limit Hold'em (Day A+C+E @ 11:10 AM, Day 2 @ 12:00 PM)	26 (1A/1C/1E)	no	no	Flight wording combining 1A-1F ; "Any player who bags chips for Day 2 may not play a subsequent flight."
+13	$800 No Limit Hold'em (Day B+D @ 5:10 PM, Day 2 @ 12:00 PM)	26 (1B/1D)	no	no	Flight wording combining 1A-1F ; "Any player who bags chips for Day 2 may not play a subsequent flight."
+14	$800 No Limit Hold'em Day F (Turbo) @ 5:10 PM, Day 2 @ 12:00 PM	26 (1F Turbo)	no	no	Flight wording combining 1A-1F ; "Any player who bags chips for Day 2 may not play a subsequent flight." ; 20-min levels
+15	$300 No Limit Hold'em Bounty (1Day)	29,31,34,38,42,50,51,53,55	no	no	$100 bounty per elimination; guarantee $15,000 = prize pool + total bounties ; no entry-count sentence
+16	$800 No Limit Hold'em Bounty (1Day)	36	no	no	$200 bounty, $500 once in the money; guarantee $75,000 = prize pool + total bounties ; no entry-count sentence
+17	$600 NLH Seniors (1Day)	24,32	no	no	"Must be 50+ years of age and have a Venetian Rewards card to participate. Any player who buys into this event that is not 50+ years of age will not be entitled to any prize money or a refund of their buy in." (eligibility, not entry count)
+18	$200 NLH RaceDay Stack (1Day) - race to finish before the Race	3,4,5	no	no	Standard rules; 21+ with Venetian Rewards; pays 12.5%; no entry-count sentence ; late registration 6 levels + break (~12:25 PM)
+19	$100 NLH LIPS Ladies Milestone Satellite (1Day)	33,37	no	no	Prizes = direct entry to Event #39 (satellite, awards seats not cash) ; "Open to Female players" ; no entry-count sentence
+20	$1,100 NLH Seniors (Day A+B @10:10 AM, Day 2 @ 10:00 AM)	49	no	no	"Must be 50+ ... Any player who buys into this event that is not 50+ years of age will not be entitled to any prize money or a refund of their buy in." ; "Any player who bags chips for Day 2 may not play a subsequent flight." (sheet text 08)
+21	$2,200 NLH PokerAtlas Championship Title Event (Day 1A @10:10 AM, Day 2 @ 1:00 PM, Day 3 @ 11:00 AM)	47	no	no	Flight wording combining 1A and 1B ; "Any player who bags chips for Day 2 may not play a subsequent flight." ; "$1,000,000" guarantee stated
+22	$300 Pot Limit Omaha Double Board Bomb Pot (1Day)	20	no	no	Standard rules; 21+; pays 12.5%; no entry-count sentence ; start 12:10 PM
+23	$600 Pot Limit Omaha Double Board Bomb Pot (1Day)	57	no	no	Standard rules; 21+; no entry-count sentence ; start 12:10 PM ; $25,000 guarantee
+24	$260 NLH (1Day) Milestone Satellite to Event #47	41,44	no	no	"Winners will be awarded direct entry to Event #47" (satellite seat, not cash) ; no entry-count sentence
+25	$260 NLH Turbo (1Day) Milestone Satellite to Event #47	45,46,48	no	no	Start times: #45 8:10 PM ; #46 9:10 AM ; #48 12:10 PM ; "Winners will be awarded direct entry to Event #47" ; no entry-count sentence
+26	$400 Pot Limit Omaha Bounty (1Day)	17	no	no	$100 bounty per elimination; guarantee $15,000 = prize + total bounties ; no entry-count sentence ; start 12:10 PM
+27	$600 Pot Limit Omaha Bounty (1Day)	40	no	no	$200 bounty per elimination; guarantee $25,000 = prize + total bounties ; no entry-count sentence
+28	$600 BIG O (1Day)	27	no	no	Standard rules; no entry-count sentence ; $25,000 guarantee
+29	$200 NLH (1Day)	6	no	no	Standard rules; no entry-count sentence ; start 11:10 AM
+30	$200 NLH (1Day) Progressive Knock-Out Bounty (PKO)	8	no	no	PKO bounty split rule (text 09) ; guarantee $8,000 = prize + total bounty prize money ; no entry-count sentence ; start 5:10 PM
+31	$600 NLH LIPS Poker Jingle Tag Team (1Day)	35	no	no	Team event (Female/Female or Female/Male); teams rotate players each level ; no entry-count sentence
+32	$800 NLH LIPS Ladies (2Day) Women in Poker Main Event	39	no	no	"Must be a female 21+ years of age..." (eligibility) ; no entry-count sentence ; $40,000 guarantee
+33	$600 NLH LIPS (1Day) Kings and Queens Bounty	43	no	no	$200 bounty per elimination, open to all ; guarantee $30,000 = prize + total bounties ; no entry-count sentence
+34	$1,100 NLH PKO (1Day)	52	no	no	$200 starting bounty, bounty prize money ; guarantee $75,000 = prize + bounty prize money ; no entry-count sentence
+35	$1,100 NLH (Day A+C+E @10:10 AM, Day 2 @ 11:00 AM)	56 (1A/1C/1E)	no	no	Flight wording combining 1A-1E ; "Any player who bags chips for Day 2 may not play a subsequent flight." ; $40 rake discount for pre-start registrants on 1A
+36	$1,100 NLH (Day B+D @ 6:10 PM, Day 2 @ 11:00 AM)	56 (1B/1D)	no	no	Flight wording combining 1A-1E ; "Any player who bags chips for Day 2 may not play a subsequent flight." ; $40 rake discount for pre-start registrants on 1B
+37	$2,200 NLH PokerAtlas Championship Title Event (Day 1B @ 6:10 PM, Day 2 @ 1:00 PM, Day 3 @ 11:00 AM)	47 (1B)	no	no	Flight wording combining 1A and 1B ; "Any player who bags chips for Day 2 may not play a subsequent flight."
