@@ -482,6 +482,9 @@ def page_hotels():
 
 
 def page_calculator():
+    NIGHT = "%.2f" % ((119 + 55) * 1.1338)
+    HOTEL = "%.2f" % (5 * float(NIGHT))
+    TOTAL = "{:,.2f}".format(1200 + float(HOTEL))
     body = f"""
 <div class="breadcrumb"><a href="index.html">Dashboard</a> / Trip calculator</div>
 <h1>Trip calculator: entries × buy-ins + nights × true hotel cost</h1>
@@ -513,11 +516,11 @@ def page_calculator():
 <div class="card">
 <p><strong>Plan:</strong> 4 Venetian entries at $300, 5 nights at The Venetian's published poker-rate floor.</p>
 <p class="mono">Entries&nbsp;&nbsp; 4 × $300 = $1,200<br>
-True night ($119 + $55) × 1.1338 = $197.28<br>
-Hotel&nbsp;&nbsp;&nbsp;&nbsp; 5 × $197.28 = $986.42<br>
+True night ($119 + $55) × 1.1338 = ${NIGHT}<br>
+Hotel&nbsp;&nbsp;&nbsp;&nbsp; 5 × ${NIGHT} = ${HOTEL}<br>
 Parking&nbsp;&nbsp; waived if you play 3+ hours per day (else 5 × $20 = $100)<br>
-<strong>Total&nbsp;&nbsp;&nbsp; $2,186.42</strong> before food, travel and the incidental hold.</p>
-<p class="small muted">The play requirement matters twice here: the poker rate itself needs 6 hours of cash play or a $300+ buy-in per night, and free parking needs 3 hours of play. Four $300 tournaments over five nights satisfies both on paper — but the rate reverts to the prevailing rate for any night you miss.</p>
+<strong>Total&nbsp;&nbsp;&nbsp; ${TOTAL}</strong> before food, travel and the incidental hold.</p>
+<p class="small muted">The play requirement matters twice here: the poker rate itself needs 6 hours of cash play or a $300+ buy-in per night, and free parking needs 3 hours of play. Four $300 tournaments over five nights satisfies both on paper — but the rate reverts to the prevailing rate for any night you miss. These three numbers are computed when the page is built, not typed.</p>
 </div>
 <h2>What the calculator still cannot tell you</h2>
 <ul class="tight">
