@@ -264,3 +264,12 @@ The `v2 source monitor` workflow ran on GitHub's runners at 13:17 UTC and commit
 This converts the "automatic re-check" requirement from built-but-undemonstrated to demonstrated. Day one shows 0 changes because the baseline and the manual retrieval happened on the same day; the next scheduled run is the first that can actually detect a move.
 
 **Conflict during this push, and how it was resolved without discarding work:** the rebase conflicted on `data/v2/source_state.json` (my local broken baseline vs the workflow's real one). Resolution: kept the workflow's real 61-URL baseline, deleted nothing from the remote, and instead hardened `tools/v2_check_sources.py` so it **refuses to write a state file when every fetch fails** — a network-blocked environment can no longer create a false "nothing changed" baseline. Both sides' intent is preserved in the final commit.
+
+### Conflict with main, and how it was resolved — arena/98e4cb1c-poker4
+
+`main` moved twice while this branch was being built (PR #20 `bb845cc`, PR #21 `0be62f9`, sessions `arena/aa32d8fd-poker4` and `arena/f8fa22bb-poker4`). Merging `origin/main` into this branch conflicted on exactly two files:
+
+- **`COORDINATION.md`** — resolved by keeping `main`'s `aa32d8fd` and `f8fa22bb` sections **verbatim and in place**, then re-appending this session's section after them. Nothing from any session was deleted, and no conflict delimiter survived (`grep` count 0). This is the third time a marker line has appeared in this file; the `v2` build now checks for it.
+- **`index.html`** — auto-merged with no conflict. Verified afterwards that main's navigation targets (`tournaments`, `hotels`, `review`, `venue-venetian`, `trip-calculator`) are all still present alongside the new v2 section: 32 anchors, both sets intact.
+
+**Scope note:** the other sessions also built venue pages, a trip calculator and a URL monitor at the repo root (`trip-calculator.html`, `venue-*.html`, `change-monitor.html`, `tools/url_check.js`, `.github/workflows/url-check.yml`, `scripts/build_root.py`). This session did **not** modify any of them. The v2 build is additive and lives entirely under `v2/` + `data/v2/` + `tools/v2_*`, so both systems can coexist. Where they overlap (a trip calculator, a URL monitor) the v2 versions are documented on `/v2/calculator.html` and `/v2/about.html` with their own method notes; the root versions are left untouched.

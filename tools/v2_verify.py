@@ -41,6 +41,19 @@ for p in pages:
     # count of UNVERIFIED markers
     print("%-20s %6d bytes  %3d tables  %3d UNVERIFIED markers" % (name, len(h), h.count("<table"), h.count("UNVERIFIED")))
 
+# ---- repository hygiene: no residual merge markers anywhere we own -------
+scan = [os.path.join(ROOT, "COORDINATION.md"),
+        os.path.join(ROOT, "README.md"),
+        os.path.join(ROOT, "index.html")]
+scan += glob.glob(os.path.join(ROOT, "v2", "*.html"))
+scan += glob.glob(os.path.join(ROOT, "tools", "v2_*.py"))
+for f in scan:
+    if not os.path.exists(f):
+        continue
+    for n, line in enumerate(open(f, errors="replace"), 1):
+        if line.startswith("<<<<<<< ") or line.startswith(">>>>>>> ") or line.strip() == "=======":
+            problems.append((os.path.basename(f), "line %d: residual merge marker" % n))
+
 print()
 if problems:
     print("PROBLEMS (%d):" % len(problems))
