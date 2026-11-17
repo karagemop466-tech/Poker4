@@ -1,0 +1,33 @@
+<!-- captured 2026-11-17T22:35:00Z from https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf (sha256 0d9a2daded5c52e23f5974854838c55778128f21816e76d6b61e6355a25b0de3)
+     text layer only, taken from the PDF as rendered by the session's fetch tool; the PDF bytes
+     were not stored, so the sha256 above is of this capture, not of the file on the venue's host.
+     the rules list (items 01-28 of the house rules) and the payout grid are omitted: no row on this
+     site cites them. Session f0d7de66. -->
+CAESARS PALACE LAS VEGAS
+Daily No-Limit Texas Hold'em Tournament Schedule
+
+| Time | Buy-In | Add-On Optional | Starting Chips | Level Times | Guarantee |
+| --- | --- | --- | --- | --- | --- |
+| 10 AM | $100 | $50 | 20,000 | 20 Minutes | $1,000 |
+| 2 PM | $160 | $50 | 20,000 | 20 Minutes | $1,000 |
+| 6 PM | $100 | $50 | 20,000 | 20 Minutes | $1,000 |
+| 9 PM | $160 | $50 | 20,000 | 20 Minutes | $1,000 |
+
+All Tournaments feature a $50 add-on for 15,000 tournament chips that can only be taken at the first break. Registration will close at
+the start of level seven. All tournaments will have a 10-minute break every six levels.
+
+--Registration Closes At The Start Of Level Seven--
+
+Sign Up
+1. Sign-ups start one hour before the scheduled start of the event.
+2. Registration is open until the start of level seven.
+3. Participants may only register themselves, but may re-enter, by paying the entry fee, upon elimination within the first break of play.
+4. Foreign players from treaty countries must provide a valid ITIN or will face 30% withholding. Refusal to present an ITIN will result in 30% withholding.
+5. Caesars Palace reserves the right to modify or cancel these tournaments at its sole discretion and without prior notice.
+6. Of the $100 buy in, $70 goes to the prize pool and $30 is held by Caesars Palace as a maintenance fee.
+7. Of the $160 buy in, $115 goes to the prize pool and $45 is held by Caesars Palace as a maintenance fee.
+8. Of the $50 add-on, $45 goes to the prize pool and $5 is held by Caesars Palace as a maintenance fee.
+9. Once registration is closed all tournament fees will be calculated.
+26. Must have at least 6 players to start a tournament. If a tournament does not have at least 6 players at the scheduled start time the tournament will be canceled, and refunds will be issued
+27. Prize pool may not be chopped until the end of registration.
+28. Players must be 21 years of age and over.

@@ -59,6 +59,20 @@ def time24(s: str) -> str | None:
     return f"{(h % 12) or 12}:{mins} {ampm}"
 
 
+def hm_to_min(t: str | None):
+    """'3:40 PM' -> 220, or None. Mirrors scripts/integrate_data.py: to_min()."""
+    m = re.match(r"(\d{1,2}):(\d{2})\s*(AM|PM)", (t or "").upper())
+    if not m:
+        return None
+    return (int(m.group(1)) % 12 + (12 if m.group(3) == "PM" else 0)) * 60 + int(m.group(2))
+
+
+def min_to_hm(mins: int) -> str:
+    h, mi = divmod(mins % (24 * 60), 60)
+    ampm = "AM" if h < 12 else "PM"
+    return f"{(h % 12) or 12}:{mi:02d} {ampm}"
+
+
 def clean_name(txt: str) -> str:
     """Trim the boilerplate off the sheet's own sentence so the row shows the event name."""
     t = normalise(txt)
@@ -342,6 +356,16 @@ def main() -> int:
         starts = ev["days"] or [{}]
         for k, d in enumerate(starts):
             is_cont = bool(d.get("label") and re.match(r"(Day\s*[2-9]|Final Table|Semifinal)", d["label"], re.I))
+            rc_printed = ev.get("registration_closes")
+            rc, rc_basis = rc_printed, None
+            m_lvl = re.search(r"start of level (\d+)", rc_printed or "", re.I)
+            start_min = hm_to_min(time24(d.get("time_display") or ""))
+            if m_lvl and start_min is not None and ev.get("level_minutes"):
+                cut = start_min + (int(m_lvl.group(1)) - 1) * int(ev["level_minutes"])
+                rc = min_to_hm(cut)
+                rc_basis = (f"derived arithmetic, not a printed clock time: the sheet closes entries at the "
+                            f"start of level {m_lvl.group(1)}, i.e. after {int(m_lvl.group(1)) - 1} levels of "
+                            f"{ev['level_minutes']} minutes from the {time24(d['time_display'])} start = {rc}")
             rid = (f"WPT-{ev['sheet_index']}-{d.get('date', 'nd')}-"
                    + (d.get('time_display') or 'na').replace(':', '').replace(' ', '').lower())
             row = {
@@ -351,7 +375,8 @@ def main() -> int:
                 "name_printed": ev["name"] + (f" — {d['label']}" if d.get("label") else ""),
                 "date": d.get("date"), "weekday": d.get("weekday_printed"),
                 "printed_date": None, "time": (d.get("time_display") or None),
-                "registration_closes": ev.get("registration_closes"),
+                "registration_closes": rc,
+                "registration_closes_printed": rc_printed, "registration_closes_basis": rc_basis,
                 "buy_in_usd": ev["buy_in_usd"], "guarantee_usd": ev["guarantee_usd"],
                 "guarantee_printed": ev["guarantee_usd"] is not None,
                 "starting_chips": ev["starting_chips"], "level_duration": ev["level_minutes"],
@@ -369,12 +394,13 @@ def main() -> int:
                 "rankable": bool(ev["buy_in_usd"] and ev["guarantee_usd"]),
                 "gtd_ratio": (round(ev["guarantee_usd"] / ev["buy_in_usd"], 2)
                               if ev["buy_in_usd"] and ev["guarantee_usd"] else None),
-                "flags": ([f"weekday printed on the sheet does not match {d.get('date')} — do not schedule this row"
-                           if not d.get("weekday_ok", True) else None],),
+                "flags": [f"weekday printed on the sheet does not match {d.get('date')} — do not schedule this row"
+                          for _ in () if not d.get("weekday_ok", True)],
+                "single_entry_confirmed": False,
                 "notes": None,
                 "last_checked": retrieved, "source_changed": False,
             }
-            row["flags"] = [f for f in row["flags"] if f]
+            row["flags"] = [f for f in row["flags"] if f]     # flat list of strings, never nested
             if not row["rankable"]:
                 row["flags"].append("no guarantee printed on this event sheet — not ranked")
             if "bounty" in tags:
@@ -424,7 +450,16 @@ def main() -> int:
             "id": nid, "venue": "wynn", "venue_name": "Wynn Las Vegas Poker (daily tournaments)",
             "event_no": None, "name": d["name"], "name_printed": d["name"],
             "date": None, "weekday": None, "printed_date": d.get("days_offered") or "",
-            "time": d.get("start_time"), "registration_closes": None,
+            "time": d.get("start_time"),
+            "registration_closes": (time24(_m_app.group(1)) if (_m_app := re.search(
+                r"\(approximately\s+([0-9]{1,2}(?::[0-9]{2})?\s*[ap]\.m\.)\)", reg or "", re.I)) else None),
+            "registration_closes_printed": (reg or None),
+            "registration_closes_basis": ("the sheet prints this clock time itself, as an approximation"
+                                          if re.search(r"\(approximately\s+[0-9]{1,2}(?::[0-9]{2})?\s*[ap]\.m\.",
+                                                       reg or "", re.I) else None),
+            "single_entry_confirmed": False,
+            "gtd_ratio": (round(d["guarantee_usd"] / d["buy_in_usd"], 2)
+                          if d.get("guarantee_usd") and d.get("buy_in_usd") else None),
             "buy_in_usd": d["buy_in_usd"], "guarantee_usd": d["guarantee_usd"],
             "guarantee_printed": d["guarantee_usd"] is not None,
             "starting_chips": d.get("starting_chips"), "kind": "Recurring daily",

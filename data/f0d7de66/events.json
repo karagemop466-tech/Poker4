@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-17T22:27:01Z",
+ "generated": "2026-11-17T22:29:13Z",
  "session": "f0d7de66",
  "policy": "Rows extracted mechanically from the venue's own PDF text captured by the source monitor. Every rule excerpt stored here is verified to be a verbatim substring of that capture; the extractor aborts otherwise. A sheet that says nothing about entries is recorded as 'not_stated_in_sheet', never as single-entry.",
  "captures": {
@@ -30,7 +30,9 @@
    "weekday": "Friday",
    "printed_date": null,
    "time": "11:00 AM",
-   "registration_closes": "start of level 9",
+   "registration_closes": "3:00 PM",
+   "registration_closes_printed": "start of level 9",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 9, i.e. after 8 levels of 30 minutes from the 11:00 AM start = 3:00 PM",
    "buy_in_usd": 600,
    "guarantee_usd": 400000,
    "guarantee_printed": true,
@@ -91,11 +93,8 @@
    ],
    "rankable": true,
    "gtd_ratio": 666.67,
-   "flags": [
-    [
-     null
-    ]
-   ],
+   "flags": [],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -111,7 +110,9 @@
    "weekday": "Friday",
    "printed_date": null,
    "time": "5:00 PM",
-   "registration_closes": "start of level 9",
+   "registration_closes": "9:00 PM",
+   "registration_closes_printed": "start of level 9",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 9, i.e. after 8 levels of 30 minutes from the 5:00 PM start = 9:00 PM",
    "buy_in_usd": 600,
    "guarantee_usd": 400000,
    "guarantee_printed": true,
@@ -172,11 +173,8 @@
    ],
    "rankable": true,
    "gtd_ratio": 666.67,
-   "flags": [
-    [
-     null
-    ]
-   ],
+   "flags": [],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -192,7 +190,9 @@
    "weekday": "Saturday",
    "printed_date": null,
    "time": "11:00 AM",
-   "registration_closes": "start of level 9",
+   "registration_closes": "3:00 PM",
+   "registration_closes_printed": "start of level 9",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 9, i.e. after 8 levels of 30 minutes from the 11:00 AM start = 3:00 PM",
    "buy_in_usd": 600,
    "guarantee_usd": 400000,
    "guarantee_printed": true,
@@ -253,11 +253,8 @@
    ],
    "rankable": true,
    "gtd_ratio": 666.67,
-   "flags": [
-    [
-     null
-    ]
-   ],
+   "flags": [],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -273,7 +270,9 @@
    "weekday": "Saturday",
    "printed_date": null,
    "time": "5:00 PM",
-   "registration_closes": "start of level 9",
+   "registration_closes": "9:00 PM",
+   "registration_closes_printed": "start of level 9",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 9, i.e. after 8 levels of 30 minutes from the 5:00 PM start = 9:00 PM",
    "buy_in_usd": 600,
    "guarantee_usd": 400000,
    "guarantee_printed": true,
@@ -334,11 +333,8 @@
    ],
    "rankable": true,
    "gtd_ratio": 666.67,
-   "flags": [
-    [
-     null
-    ]
-   ],
+   "flags": [],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -354,7 +350,9 @@
    "weekday": "Sunday",
    "printed_date": null,
    "time": "11:00 AM",
-   "registration_closes": "start of level 9",
+   "registration_closes": "3:00 PM",
+   "registration_closes_printed": "start of level 9",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 9, i.e. after 8 levels of 30 minutes from the 11:00 AM start = 3:00 PM",
    "buy_in_usd": 600,
    "guarantee_usd": 400000,
    "guarantee_printed": true,
@@ -415,11 +413,8 @@
    ],
    "rankable": true,
    "gtd_ratio": 666.67,
-   "flags": [
-    [
-     null
-    ]
-   ],
+   "flags": [],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -435,7 +430,9 @@
    "weekday": "Sunday",
    "printed_date": null,
    "time": "6:00 PM",
-   "registration_closes": "start of level 9",
+   "registration_closes": "10:00 PM",
+   "registration_closes_printed": "start of level 9",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 9, i.e. after 8 levels of 30 minutes from the 6:00 PM start = 10:00 PM",
    "buy_in_usd": 600,
    "guarantee_usd": 400000,
    "guarantee_printed": true,
@@ -496,11 +493,8 @@
    ],
    "rankable": true,
    "gtd_ratio": 666.67,
-   "flags": [
-    [
-     null
-    ]
-   ],
+   "flags": [],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -516,7 +510,9 @@
    "weekday": "Monday",
    "printed_date": null,
    "time": "1:00 PM",
-   "registration_closes": "start of level 9",
+   "registration_closes": "5:00 PM",
+   "registration_closes_printed": "start of level 9",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 9, i.e. after 8 levels of 30 minutes from the 1:00 PM start = 5:00 PM",
    "buy_in_usd": 600,
    "guarantee_usd": 400000,
    "guarantee_printed": true,
@@ -577,11 +573,8 @@
    ],
    "rankable": true,
    "gtd_ratio": 666.67,
-   "flags": [
-    [
-     null
-    ]
-   ],
+   "flags": [],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -597,7 +590,9 @@
    "weekday": "Friday",
    "printed_date": null,
    "time": "12:00 PM",
-   "registration_closes": "start of level 9",
+   "registration_closes": "4:00 PM",
+   "registration_closes_printed": "start of level 9",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 9, i.e. after 8 levels of 30 minutes from the 12:00 PM start = 4:00 PM",
    "buy_in_usd": 600,
    "guarantee_usd": null,
    "guarantee_printed": false,
@@ -658,11 +653,9 @@
    "rankable": false,
    "gtd_ratio": null,
    "flags": [
-    [
-     null
-    ],
     "no guarantee printed on this event sheet \u2014 not ranked"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -679,6 +672,8 @@
    "printed_date": null,
    "time": "1:00 PM",
    "registration_closes": "5:30 PM",
+   "registration_closes_printed": "5:30 PM",
+   "registration_closes_basis": null,
    "buy_in_usd": 400,
    "guarantee_usd": null,
    "guarantee_printed": false,
@@ -739,11 +734,9 @@
    "rankable": false,
    "gtd_ratio": null,
    "flags": [
-    [
-     null
-    ],
     "no guarantee printed on this event sheet \u2014 not ranked"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -759,7 +752,9 @@
    "weekday": "Saturday",
    "printed_date": null,
    "time": "12:00 PM",
-   "registration_closes": "start of level 9",
+   "registration_closes": "4:00 PM",
+   "registration_closes_printed": "start of level 9",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 9, i.e. after 8 levels of 30 minutes from the 12:00 PM start = 4:00 PM",
    "buy_in_usd": 600,
    "guarantee_usd": null,
    "guarantee_printed": false,
@@ -820,11 +815,9 @@
    "rankable": false,
    "gtd_ratio": null,
    "flags": [
-    [
-     null
-    ],
     "no guarantee printed on this event sheet \u2014 not ranked"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -840,7 +833,9 @@
    "weekday": "Sunday",
    "printed_date": null,
    "time": "1:00 PM",
-   "registration_closes": "start of level 9",
+   "registration_closes": "5:00 PM",
+   "registration_closes_printed": "start of level 9",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 9, i.e. after 8 levels of 30 minutes from the 1:00 PM start = 5:00 PM",
    "buy_in_usd": 600,
    "guarantee_usd": null,
    "guarantee_printed": false,
@@ -901,11 +896,9 @@
    "rankable": false,
    "gtd_ratio": null,
    "flags": [
-    [
-     null
-    ],
     "no guarantee printed on this event sheet \u2014 not ranked"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -921,7 +914,9 @@
    "weekday": "Monday",
    "printed_date": null,
    "time": "11:00 AM",
-   "registration_closes": "start of level 9",
+   "registration_closes": "3:00 PM",
+   "registration_closes_printed": "start of level 9",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 9, i.e. after 8 levels of 30 minutes from the 11:00 AM start = 3:00 PM",
    "buy_in_usd": 800,
    "guarantee_usd": 1000000,
    "guarantee_printed": true,
@@ -982,11 +977,8 @@
    ],
    "rankable": true,
    "gtd_ratio": 1250.0,
-   "flags": [
-    [
-     null
-    ]
-   ],
+   "flags": [],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -1002,7 +994,9 @@
    "weekday": "Monday",
    "printed_date": null,
    "time": "5:00 PM",
-   "registration_closes": "start of level 9",
+   "registration_closes": "9:00 PM",
+   "registration_closes_printed": "start of level 9",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 9, i.e. after 8 levels of 30 minutes from the 5:00 PM start = 9:00 PM",
    "buy_in_usd": 800,
    "guarantee_usd": 1000000,
    "guarantee_printed": true,
@@ -1063,11 +1057,8 @@
    ],
    "rankable": true,
    "gtd_ratio": 1250.0,
-   "flags": [
-    [
-     null
-    ]
-   ],
+   "flags": [],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -1083,7 +1074,9 @@
    "weekday": "Tuesday",
    "printed_date": null,
    "time": "11:00 AM",
-   "registration_closes": "start of level 9",
+   "registration_closes": "3:00 PM",
+   "registration_closes_printed": "start of level 9",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 9, i.e. after 8 levels of 30 minutes from the 11:00 AM start = 3:00 PM",
    "buy_in_usd": 800,
    "guarantee_usd": 1000000,
    "guarantee_printed": true,
@@ -1144,11 +1137,8 @@
    ],
    "rankable": true,
    "gtd_ratio": 1250.0,
-   "flags": [
-    [
-     null
-    ]
-   ],
+   "flags": [],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -1164,7 +1154,9 @@
    "weekday": "Tuesday",
    "printed_date": null,
    "time": "5:00 PM",
-   "registration_closes": "start of level 9",
+   "registration_closes": "9:00 PM",
+   "registration_closes_printed": "start of level 9",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 9, i.e. after 8 levels of 30 minutes from the 5:00 PM start = 9:00 PM",
    "buy_in_usd": 800,
    "guarantee_usd": 1000000,
    "guarantee_printed": true,
@@ -1225,11 +1217,8 @@
    ],
    "rankable": true,
    "gtd_ratio": 1250.0,
-   "flags": [
-    [
-     null
-    ]
-   ],
+   "flags": [],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -1245,7 +1234,9 @@
    "weekday": "Wednesday",
    "printed_date": null,
    "time": "11:00 AM",
-   "registration_closes": "start of level 9",
+   "registration_closes": "3:00 PM",
+   "registration_closes_printed": "start of level 9",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 9, i.e. after 8 levels of 30 minutes from the 11:00 AM start = 3:00 PM",
    "buy_in_usd": 800,
    "guarantee_usd": 1000000,
    "guarantee_printed": true,
@@ -1306,11 +1297,8 @@
    ],
    "rankable": true,
    "gtd_ratio": 1250.0,
-   "flags": [
-    [
-     null
-    ]
-   ],
+   "flags": [],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -1326,7 +1314,9 @@
    "weekday": "Wednesday",
    "printed_date": null,
    "time": "6:00 PM",
-   "registration_closes": "start of level 9",
+   "registration_closes": "10:00 PM",
+   "registration_closes_printed": "start of level 9",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 9, i.e. after 8 levels of 30 minutes from the 6:00 PM start = 10:00 PM",
    "buy_in_usd": 800,
    "guarantee_usd": 1000000,
    "guarantee_printed": true,
@@ -1387,11 +1377,8 @@
    ],
    "rankable": true,
    "gtd_ratio": 1250.0,
-   "flags": [
-    [
-     null
-    ]
-   ],
+   "flags": [],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -1407,7 +1394,9 @@
    "weekday": "Thursday",
    "printed_date": null,
    "time": "1:00 PM",
-   "registration_closes": "start of level 9",
+   "registration_closes": "5:00 PM",
+   "registration_closes_printed": "start of level 9",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 9, i.e. after 8 levels of 30 minutes from the 1:00 PM start = 5:00 PM",
    "buy_in_usd": 800,
    "guarantee_usd": 1000000,
    "guarantee_printed": true,
@@ -1468,11 +1457,8 @@
    ],
    "rankable": true,
    "gtd_ratio": 1250.0,
-   "flags": [
-    [
-     null
-    ]
-   ],
+   "flags": [],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -1488,7 +1474,9 @@
    "weekday": "Friday",
    "printed_date": null,
    "time": "1:00 PM",
-   "registration_closes": "start of level 9",
+   "registration_closes": "5:00 PM",
+   "registration_closes_printed": "start of level 9",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 9, i.e. after 8 levels of 30 minutes from the 1:00 PM start = 5:00 PM",
    "buy_in_usd": 800,
    "guarantee_usd": 1000000,
    "guarantee_printed": true,
@@ -1549,11 +1537,8 @@
    ],
    "rankable": true,
    "gtd_ratio": 1250.0,
-   "flags": [
-    [
-     null
-    ]
-   ],
+   "flags": [],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -1569,7 +1554,9 @@
    "weekday": "Monday",
    "printed_date": null,
    "time": "12:00 PM",
-   "registration_closes": "start of level 9",
+   "registration_closes": "4:00 PM",
+   "registration_closes_printed": "start of level 9",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 9, i.e. after 8 levels of 30 minutes from the 12:00 PM start = 4:00 PM",
    "buy_in_usd": 600,
    "guarantee_usd": null,
    "guarantee_printed": false,
@@ -1630,11 +1617,9 @@
    "rankable": false,
    "gtd_ratio": null,
    "flags": [
-    [
-     null
-    ],
     "no guarantee printed on this event sheet \u2014 not ranked"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -1650,7 +1635,9 @@
    "weekday": "Tuesday",
    "printed_date": null,
    "time": "12:00 PM",
-   "registration_closes": "start of level 9",
+   "registration_closes": "4:00 PM",
+   "registration_closes_printed": "start of level 9",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 9, i.e. after 8 levels of 30 minutes from the 12:00 PM start = 4:00 PM",
    "buy_in_usd": 600,
    "guarantee_usd": null,
    "guarantee_printed": false,
@@ -1711,11 +1698,9 @@
    "rankable": false,
    "gtd_ratio": null,
    "flags": [
-    [
-     null
-    ],
     "no guarantee printed on this event sheet \u2014 not ranked"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -1732,6 +1717,8 @@
    "printed_date": null,
    "time": "1:00 PM",
    "registration_closes": "5:30 PM",
+   "registration_closes_printed": "5:30 PM",
+   "registration_closes_basis": null,
    "buy_in_usd": 1100,
    "guarantee_usd": null,
    "guarantee_printed": false,
@@ -1792,11 +1779,9 @@
    "rankable": false,
    "gtd_ratio": null,
    "flags": [
-    [
-     null
-    ],
     "no guarantee printed on this event sheet \u2014 not ranked"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -1812,7 +1797,9 @@
    "weekday": "Thursday",
    "printed_date": null,
    "time": "11:00 AM",
-   "registration_closes": "start of level 10",
+   "registration_closes": "5:00 PM",
+   "registration_closes_printed": "start of level 10",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 10, i.e. after 9 levels of 40 minutes from the 11:00 AM start = 5:00 PM",
    "buy_in_usd": 1600,
    "guarantee_usd": 1000000,
    "guarantee_printed": true,
@@ -1873,11 +1860,8 @@
    ],
    "rankable": true,
    "gtd_ratio": 625.0,
-   "flags": [
-    [
-     null
-    ]
-   ],
+   "flags": [],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -1893,7 +1877,9 @@
    "weekday": "Friday",
    "printed_date": null,
    "time": "11:00 AM",
-   "registration_closes": "start of level 10",
+   "registration_closes": "5:00 PM",
+   "registration_closes_printed": "start of level 10",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 10, i.e. after 9 levels of 40 minutes from the 11:00 AM start = 5:00 PM",
    "buy_in_usd": 1600,
    "guarantee_usd": 1000000,
    "guarantee_printed": true,
@@ -1954,11 +1940,8 @@
    ],
    "rankable": true,
    "gtd_ratio": 625.0,
-   "flags": [
-    [
-     null
-    ]
-   ],
+   "flags": [],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -1974,7 +1957,9 @@
    "weekday": "Saturday",
    "printed_date": null,
    "time": "11:00 AM",
-   "registration_closes": "start of level 10",
+   "registration_closes": "5:00 PM",
+   "registration_closes_printed": "start of level 10",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 10, i.e. after 9 levels of 40 minutes from the 11:00 AM start = 5:00 PM",
    "buy_in_usd": 1600,
    "guarantee_usd": 1000000,
    "guarantee_printed": true,
@@ -2035,11 +2020,8 @@
    ],
    "rankable": true,
    "gtd_ratio": 625.0,
-   "flags": [
-    [
-     null
-    ]
-   ],
+   "flags": [],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -2056,6 +2038,8 @@
    "printed_date": null,
    "time": "12:00 PM",
    "registration_closes": "4:30 PM",
+   "registration_closes_printed": "4:30 PM",
+   "registration_closes_basis": null,
    "buy_in_usd": 600,
    "guarantee_usd": null,
    "guarantee_printed": false,
@@ -2116,11 +2100,9 @@
    "rankable": false,
    "gtd_ratio": null,
    "flags": [
-    [
-     null
-    ],
     "no guarantee printed on this event sheet \u2014 not ranked"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -2137,6 +2119,8 @@
    "printed_date": null,
    "time": "11:00 AM",
    "registration_closes": "6:45 PM",
+   "registration_closes_printed": "6:45 PM",
+   "registration_closes_basis": null,
    "buy_in_usd": 1100,
    "guarantee_usd": 5000000,
    "guarantee_printed": true,
@@ -2197,11 +2181,8 @@
    ],
    "rankable": true,
    "gtd_ratio": 4545.45,
-   "flags": [
-    [
-     null
-    ]
-   ],
+   "flags": [],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -2218,6 +2199,8 @@
    "printed_date": null,
    "time": "11:00 AM",
    "registration_closes": "6:45 PM",
+   "registration_closes_printed": "6:45 PM",
+   "registration_closes_basis": null,
    "buy_in_usd": 1100,
    "guarantee_usd": 5000000,
    "guarantee_printed": true,
@@ -2278,11 +2261,8 @@
    ],
    "rankable": true,
    "gtd_ratio": 4545.45,
-   "flags": [
-    [
-     null
-    ]
-   ],
+   "flags": [],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -2299,6 +2279,8 @@
    "printed_date": null,
    "time": "11:00 AM",
    "registration_closes": "6:45 PM",
+   "registration_closes_printed": "6:45 PM",
+   "registration_closes_basis": null,
    "buy_in_usd": 1100,
    "guarantee_usd": 5000000,
    "guarantee_printed": true,
@@ -2359,11 +2341,8 @@
    ],
    "rankable": true,
    "gtd_ratio": 4545.45,
-   "flags": [
-    [
-     null
-    ]
-   ],
+   "flags": [],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -2380,6 +2359,8 @@
    "printed_date": null,
    "time": "11:00 AM",
    "registration_closes": "6:45 PM",
+   "registration_closes_printed": "6:45 PM",
+   "registration_closes_basis": null,
    "buy_in_usd": 1100,
    "guarantee_usd": 5000000,
    "guarantee_printed": true,
@@ -2440,11 +2421,8 @@
    ],
    "rankable": true,
    "gtd_ratio": 4545.45,
-   "flags": [
-    [
-     null
-    ]
-   ],
+   "flags": [],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -2461,6 +2439,8 @@
    "printed_date": null,
    "time": "12:00 PM",
    "registration_closes": "6:45 PM",
+   "registration_closes_printed": "6:45 PM",
+   "registration_closes_basis": null,
    "buy_in_usd": 1100,
    "guarantee_usd": 5000000,
    "guarantee_printed": true,
@@ -2521,11 +2501,8 @@
    ],
    "rankable": true,
    "gtd_ratio": 4545.45,
-   "flags": [
-    [
-     null
-    ]
-   ],
+   "flags": [],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -2542,6 +2519,8 @@
    "printed_date": null,
    "time": "12:00 PM",
    "registration_closes": "6:45 PM",
+   "registration_closes_printed": "6:45 PM",
+   "registration_closes_basis": null,
    "buy_in_usd": 1100,
    "guarantee_usd": 5000000,
    "guarantee_printed": true,
@@ -2602,11 +2581,8 @@
    ],
    "rankable": true,
    "gtd_ratio": 4545.45,
-   "flags": [
-    [
-     null
-    ]
-   ],
+   "flags": [],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -2623,6 +2599,8 @@
    "printed_date": null,
    "time": "12:00 PM",
    "registration_closes": "6:45 PM",
+   "registration_closes_printed": "6:45 PM",
+   "registration_closes_basis": null,
    "buy_in_usd": 1100,
    "guarantee_usd": 5000000,
    "guarantee_printed": true,
@@ -2683,11 +2661,8 @@
    ],
    "rankable": true,
    "gtd_ratio": 4545.45,
-   "flags": [
-    [
-     null
-    ]
-   ],
+   "flags": [],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -2704,6 +2679,8 @@
    "printed_date": null,
    "time": "2:00 PM",
    "registration_closes": "6:45 PM",
+   "registration_closes_printed": "6:45 PM",
+   "registration_closes_basis": null,
    "buy_in_usd": 1100,
    "guarantee_usd": 5000000,
    "guarantee_printed": true,
@@ -2764,11 +2741,8 @@
    ],
    "rankable": true,
    "gtd_ratio": 4545.45,
-   "flags": [
-    [
-     null
-    ]
-   ],
+   "flags": [],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -2784,7 +2758,9 @@
    "weekday": "Saturday",
    "printed_date": null,
    "time": "9:00 PM",
-   "registration_closes": "start of level 9",
+   "registration_closes": "11:40 PM",
+   "registration_closes_printed": "start of level 9",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 9, i.e. after 8 levels of 20 minutes from the 9:00 PM start = 11:40 PM",
    "buy_in_usd": 600,
    "guarantee_usd": 50000,
    "guarantee_printed": true,
@@ -2847,11 +2823,9 @@
    "rankable": true,
    "gtd_ratio": 83.33,
    "flags": [
-    [
-     null
-    ],
     "bounty event: the guaranteed pool includes bounty money \u2014 not comparable with a flat prize pool, kept in its own section"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -2867,7 +2841,9 @@
    "weekday": "Sunday",
    "printed_date": null,
    "time": "9:00 PM",
-   "registration_closes": "start of level 9",
+   "registration_closes": "11:40 PM",
+   "registration_closes_printed": "start of level 9",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 9, i.e. after 8 levels of 20 minutes from the 9:00 PM start = 11:40 PM",
    "buy_in_usd": 600,
    "guarantee_usd": 50000,
    "guarantee_printed": true,
@@ -2930,11 +2906,9 @@
    "rankable": true,
    "gtd_ratio": 83.33,
    "flags": [
-    [
-     null
-    ],
     "bounty event: the guaranteed pool includes bounty money \u2014 not comparable with a flat prize pool, kept in its own section"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -2950,7 +2924,9 @@
    "weekday": "Monday",
    "printed_date": null,
    "time": "9:00 PM",
-   "registration_closes": "start of level 9",
+   "registration_closes": "11:40 PM",
+   "registration_closes_printed": "start of level 9",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 9, i.e. after 8 levels of 20 minutes from the 9:00 PM start = 11:40 PM",
    "buy_in_usd": 600,
    "guarantee_usd": 50000,
    "guarantee_printed": true,
@@ -3013,11 +2989,9 @@
    "rankable": true,
    "gtd_ratio": 83.33,
    "flags": [
-    [
-     null
-    ],
     "bounty event: the guaranteed pool includes bounty money \u2014 not comparable with a flat prize pool, kept in its own section"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -3033,7 +3007,9 @@
    "weekday": "Tuesday",
    "printed_date": null,
    "time": "9:00 PM",
-   "registration_closes": "start of level 9",
+   "registration_closes": "11:40 PM",
+   "registration_closes_printed": "start of level 9",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 9, i.e. after 8 levels of 20 minutes from the 9:00 PM start = 11:40 PM",
    "buy_in_usd": 600,
    "guarantee_usd": 50000,
    "guarantee_printed": true,
@@ -3096,11 +3072,9 @@
    "rankable": true,
    "gtd_ratio": 83.33,
    "flags": [
-    [
-     null
-    ],
     "bounty event: the guaranteed pool includes bounty money \u2014 not comparable with a flat prize pool, kept in its own section"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -3116,7 +3090,9 @@
    "weekday": "Wednesday",
    "printed_date": null,
    "time": "9:00 PM",
-   "registration_closes": "start of level 9",
+   "registration_closes": "11:40 PM",
+   "registration_closes_printed": "start of level 9",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 9, i.e. after 8 levels of 20 minutes from the 9:00 PM start = 11:40 PM",
    "buy_in_usd": 600,
    "guarantee_usd": 50000,
    "guarantee_printed": true,
@@ -3179,11 +3155,9 @@
    "rankable": true,
    "gtd_ratio": 83.33,
    "flags": [
-    [
-     null
-    ],
     "bounty event: the guaranteed pool includes bounty money \u2014 not comparable with a flat prize pool, kept in its own section"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -3199,7 +3173,9 @@
    "weekday": "Saturday",
    "printed_date": null,
    "time": "9:00 PM",
-   "registration_closes": "start of level 9",
+   "registration_closes": "11:40 PM",
+   "registration_closes_printed": "start of level 9",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 9, i.e. after 8 levels of 20 minutes from the 9:00 PM start = 11:40 PM",
    "buy_in_usd": 600,
    "guarantee_usd": 50000,
    "guarantee_printed": true,
@@ -3262,11 +3238,9 @@
    "rankable": true,
    "gtd_ratio": 83.33,
    "flags": [
-    [
-     null
-    ],
     "bounty event: the guaranteed pool includes bounty money \u2014 not comparable with a flat prize pool, kept in its own section"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -3282,7 +3256,9 @@
    "weekday": "Monday",
    "printed_date": null,
    "time": "9:00 PM",
-   "registration_closes": "start of level 9",
+   "registration_closes": "11:40 PM",
+   "registration_closes_printed": "start of level 9",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 9, i.e. after 8 levels of 20 minutes from the 9:00 PM start = 11:40 PM",
    "buy_in_usd": 600,
    "guarantee_usd": 50000,
    "guarantee_printed": true,
@@ -3345,11 +3321,9 @@
    "rankable": true,
    "gtd_ratio": 83.33,
    "flags": [
-    [
-     null
-    ],
     "bounty event: the guaranteed pool includes bounty money \u2014 not comparable with a flat prize pool, kept in its own section"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -3365,7 +3339,9 @@
    "weekday": "Monday",
    "printed_date": null,
    "time": "6:00 PM",
-   "registration_closes": "start of level 9",
+   "registration_closes": "8:40 PM",
+   "registration_closes_printed": "start of level 9",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 9, i.e. after 8 levels of 20 minutes from the 6:00 PM start = 8:40 PM",
    "buy_in_usd": 600,
    "guarantee_usd": 50000,
    "guarantee_printed": true,
@@ -3428,11 +3404,9 @@
    "rankable": true,
    "gtd_ratio": 83.33,
    "flags": [
-    [
-     null
-    ],
     "bounty event: the guaranteed pool includes bounty money \u2014 not comparable with a flat prize pool, kept in its own section"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -3448,7 +3422,9 @@
    "weekday": "Sunday",
    "printed_date": null,
    "time": "11:00 AM",
-   "registration_closes": "start of level 10",
+   "registration_closes": "5:00 PM",
+   "registration_closes_printed": "start of level 10",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 10, i.e. after 9 levels of 40 minutes from the 11:00 AM start = 5:00 PM",
    "buy_in_usd": 1600,
    "guarantee_usd": 500000,
    "guarantee_printed": true,
@@ -3511,11 +3487,9 @@
    "rankable": true,
    "gtd_ratio": 312.5,
    "flags": [
-    [
-     null
-    ],
     "bounty event: the guaranteed pool includes bounty money \u2014 not comparable with a flat prize pool, kept in its own section"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -3531,7 +3505,9 @@
    "weekday": "Sunday",
    "printed_date": null,
    "time": "6:00 PM",
-   "registration_closes": "start of level 10",
+   "registration_closes": "12:00 AM",
+   "registration_closes_printed": "start of level 10",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 10, i.e. after 9 levels of 40 minutes from the 6:00 PM start = 12:00 AM",
    "buy_in_usd": 1600,
    "guarantee_usd": 500000,
    "guarantee_printed": true,
@@ -3594,11 +3570,9 @@
    "rankable": true,
    "gtd_ratio": 312.5,
    "flags": [
-    [
-     null
-    ],
     "bounty event: the guaranteed pool includes bounty money \u2014 not comparable with a flat prize pool, kept in its own section"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -3614,7 +3588,9 @@
    "weekday": "Monday",
    "printed_date": null,
    "time": "12:00 PM",
-   "registration_closes": "start of level 10",
+   "registration_closes": "6:00 PM",
+   "registration_closes_printed": "start of level 10",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 10, i.e. after 9 levels of 40 minutes from the 12:00 PM start = 6:00 PM",
    "buy_in_usd": 1600,
    "guarantee_usd": 500000,
    "guarantee_printed": true,
@@ -3677,11 +3653,9 @@
    "rankable": true,
    "gtd_ratio": 312.5,
    "flags": [
-    [
-     null
-    ],
     "bounty event: the guaranteed pool includes bounty money \u2014 not comparable with a flat prize pool, kept in its own section"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -3698,6 +3672,8 @@
    "printed_date": null,
    "time": "11:00 AM",
    "registration_closes": "6:30 PM",
+   "registration_closes_printed": "6:30 PM",
+   "registration_closes_basis": null,
    "buy_in_usd": 1100,
    "guarantee_usd": null,
    "guarantee_printed": false,
@@ -3760,12 +3736,10 @@
    "rankable": false,
    "gtd_ratio": null,
    "flags": [
-    [
-     null
-    ],
     "no guarantee printed on this event sheet \u2014 not ranked",
     "bounty event: the guaranteed pool includes bounty money \u2014 not comparable with a flat prize pool, kept in its own section"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -3782,6 +3756,8 @@
    "printed_date": null,
    "time": "11:00 AM",
    "registration_closes": "6:30 PM",
+   "registration_closes_printed": "6:30 PM",
+   "registration_closes_basis": null,
    "buy_in_usd": 1100,
    "guarantee_usd": null,
    "guarantee_printed": false,
@@ -3844,12 +3820,10 @@
    "rankable": false,
    "gtd_ratio": null,
    "flags": [
-    [
-     null
-    ],
     "no guarantee printed on this event sheet \u2014 not ranked",
     "bounty event: the guaranteed pool includes bounty money \u2014 not comparable with a flat prize pool, kept in its own section"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -3866,6 +3840,8 @@
    "printed_date": null,
    "time": "1:00 PM",
    "registration_closes": "5:30 PM",
+   "registration_closes_printed": "5:30 PM",
+   "registration_closes_basis": null,
    "buy_in_usd": 1600,
    "guarantee_usd": 100000,
    "guarantee_printed": true,
@@ -3927,11 +3903,9 @@
    "rankable": true,
    "gtd_ratio": 62.5,
    "flags": [
-    [
-     null
-    ],
     "bounty event: the guaranteed pool includes bounty money \u2014 not comparable with a flat prize pool, kept in its own section"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -3947,7 +3921,9 @@
    "weekday": "Wednesday",
    "printed_date": null,
    "time": "11:00 AM",
-   "registration_closes": "start of level 10",
+   "registration_closes": "5:00 PM",
+   "registration_closes_printed": "start of level 10",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 10, i.e. after 9 levels of 40 minutes from the 11:00 AM start = 5:00 PM",
    "buy_in_usd": 1600,
    "guarantee_usd": 1000000,
    "guarantee_printed": true,
@@ -4010,11 +3986,9 @@
    "rankable": true,
    "gtd_ratio": 625.0,
    "flags": [
-    [
-     null
-    ],
     "bounty event: the guaranteed pool includes bounty money \u2014 not comparable with a flat prize pool, kept in its own section"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -4030,7 +4004,9 @@
    "weekday": "Thursday",
    "printed_date": null,
    "time": "11:00 AM",
-   "registration_closes": "start of level 10",
+   "registration_closes": "5:00 PM",
+   "registration_closes_printed": "start of level 10",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 10, i.e. after 9 levels of 40 minutes from the 11:00 AM start = 5:00 PM",
    "buy_in_usd": 1600,
    "guarantee_usd": 1000000,
    "guarantee_printed": true,
@@ -4093,11 +4069,9 @@
    "rankable": true,
    "gtd_ratio": 625.0,
    "flags": [
-    [
-     null
-    ],
     "bounty event: the guaranteed pool includes bounty money \u2014 not comparable with a flat prize pool, kept in its own section"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -4114,6 +4088,8 @@
    "printed_date": null,
    "time": "1:00 PM",
    "registration_closes": "5:30 PM",
+   "registration_closes_printed": "5:30 PM",
+   "registration_closes_basis": null,
    "buy_in_usd": 3000,
    "guarantee_usd": 250000,
    "guarantee_printed": true,
@@ -4175,11 +4151,9 @@
    "rankable": true,
    "gtd_ratio": 83.33,
    "flags": [
-    [
-     null
-    ],
     "bounty event: the guaranteed pool includes bounty money \u2014 not comparable with a flat prize pool, kept in its own section"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -4195,7 +4169,9 @@
    "weekday": "Wednesday",
    "printed_date": null,
    "time": "1:00 PM",
-   "registration_closes": "start of level 9",
+   "registration_closes": "5:00 PM",
+   "registration_closes_printed": "start of level 9",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 9, i.e. after 8 levels of 30 minutes from the 1:00 PM start = 5:00 PM",
    "buy_in_usd": 800,
    "guarantee_usd": null,
    "guarantee_printed": false,
@@ -4256,11 +4232,9 @@
    "rankable": false,
    "gtd_ratio": null,
    "flags": [
-    [
-     null
-    ],
     "no guarantee printed on this event sheet \u2014 not ranked"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -4276,7 +4250,9 @@
    "weekday": "Thursday",
    "printed_date": null,
    "time": "10:00 AM",
-   "registration_closes": "start of level 9",
+   "registration_closes": "2:00 PM",
+   "registration_closes_printed": "start of level 9",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 9, i.e. after 8 levels of 30 minutes from the 10:00 AM start = 2:00 PM",
    "buy_in_usd": 400,
    "guarantee_usd": 3000000,
    "guarantee_printed": true,
@@ -4339,11 +4315,9 @@
    "rankable": true,
    "gtd_ratio": 7500.0,
    "flags": [
-    [
-     null
-    ],
     "bounty event: the guaranteed pool includes bounty money \u2014 not comparable with a flat prize pool, kept in its own section"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -4359,7 +4333,9 @@
    "weekday": "Thursday",
    "printed_date": null,
    "time": "6:00 PM",
-   "registration_closes": "start of level 9",
+   "registration_closes": "10:00 PM",
+   "registration_closes_printed": "start of level 9",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 9, i.e. after 8 levels of 30 minutes from the 6:00 PM start = 10:00 PM",
    "buy_in_usd": 400,
    "guarantee_usd": 3000000,
    "guarantee_printed": true,
@@ -4422,11 +4398,9 @@
    "rankable": true,
    "gtd_ratio": 7500.0,
    "flags": [
-    [
-     null
-    ],
     "bounty event: the guaranteed pool includes bounty money \u2014 not comparable with a flat prize pool, kept in its own section"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -4442,7 +4416,9 @@
    "weekday": "Friday",
    "printed_date": null,
    "time": "10:00 AM",
-   "registration_closes": "start of level 9",
+   "registration_closes": "2:00 PM",
+   "registration_closes_printed": "start of level 9",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 9, i.e. after 8 levels of 30 minutes from the 10:00 AM start = 2:00 PM",
    "buy_in_usd": 400,
    "guarantee_usd": 3000000,
    "guarantee_printed": true,
@@ -4505,11 +4481,9 @@
    "rankable": true,
    "gtd_ratio": 7500.0,
    "flags": [
-    [
-     null
-    ],
     "bounty event: the guaranteed pool includes bounty money \u2014 not comparable with a flat prize pool, kept in its own section"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -4525,7 +4499,9 @@
    "weekday": "Friday",
    "printed_date": null,
    "time": "6:00 PM",
-   "registration_closes": "start of level 9",
+   "registration_closes": "10:00 PM",
+   "registration_closes_printed": "start of level 9",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 9, i.e. after 8 levels of 30 minutes from the 6:00 PM start = 10:00 PM",
    "buy_in_usd": 400,
    "guarantee_usd": 3000000,
    "guarantee_printed": true,
@@ -4588,11 +4564,9 @@
    "rankable": true,
    "gtd_ratio": 7500.0,
    "flags": [
-    [
-     null
-    ],
     "bounty event: the guaranteed pool includes bounty money \u2014 not comparable with a flat prize pool, kept in its own section"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -4608,7 +4582,9 @@
    "weekday": "Saturday",
    "printed_date": null,
    "time": "2:00 PM",
-   "registration_closes": "start of level 9",
+   "registration_closes": "6:00 PM",
+   "registration_closes_printed": "start of level 9",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 9, i.e. after 8 levels of 30 minutes from the 2:00 PM start = 6:00 PM",
    "buy_in_usd": 400,
    "guarantee_usd": 3000000,
    "guarantee_printed": true,
@@ -4671,11 +4647,9 @@
    "rankable": true,
    "gtd_ratio": 7500.0,
    "flags": [
-    [
-     null
-    ],
     "bounty event: the guaranteed pool includes bounty money \u2014 not comparable with a flat prize pool, kept in its own section"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -4691,7 +4665,9 @@
    "weekday": "Sunday",
    "printed_date": null,
    "time": "1:00 PM",
-   "registration_closes": "start of level 9",
+   "registration_closes": "5:00 PM",
+   "registration_closes_printed": "start of level 9",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 9, i.e. after 8 levels of 30 minutes from the 1:00 PM start = 5:00 PM",
    "buy_in_usd": 400,
    "guarantee_usd": 3000000,
    "guarantee_printed": true,
@@ -4754,11 +4730,9 @@
    "rankable": true,
    "gtd_ratio": 7500.0,
    "flags": [
-    [
-     null
-    ],
     "bounty event: the guaranteed pool includes bounty money \u2014 not comparable with a flat prize pool, kept in its own section"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -4774,7 +4748,9 @@
    "weekday": "Monday",
    "printed_date": null,
    "time": "2:00 PM",
-   "registration_closes": "start of level 9",
+   "registration_closes": "6:00 PM",
+   "registration_closes_printed": "start of level 9",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 9, i.e. after 8 levels of 30 minutes from the 2:00 PM start = 6:00 PM",
    "buy_in_usd": 400,
    "guarantee_usd": 3000000,
    "guarantee_printed": true,
@@ -4837,11 +4813,9 @@
    "rankable": true,
    "gtd_ratio": 7500.0,
    "flags": [
-    [
-     null
-    ],
     "bounty event: the guaranteed pool includes bounty money \u2014 not comparable with a flat prize pool, kept in its own section"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -4858,6 +4832,8 @@
    "printed_date": null,
    "time": "10:00 AM",
    "registration_closes": "2:30 PM",
+   "registration_closes_printed": "2:30 PM",
+   "registration_closes_basis": null,
    "buy_in_usd": 800,
    "guarantee_usd": 100000,
    "guarantee_printed": true,
@@ -4917,11 +4893,8 @@
    ],
    "rankable": true,
    "gtd_ratio": 125.0,
-   "flags": [
-    [
-     null
-    ]
-   ],
+   "flags": [],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -4938,6 +4911,8 @@
    "printed_date": null,
    "time": "1:00 PM",
    "registration_closes": "5:30 PM",
+   "registration_closes_printed": "5:30 PM",
+   "registration_closes_basis": null,
    "buy_in_usd": 3000,
    "guarantee_usd": 250000,
    "guarantee_printed": true,
@@ -4997,11 +4972,8 @@
    ],
    "rankable": true,
    "gtd_ratio": 83.33,
-   "flags": [
-    [
-     null
-    ]
-   ],
+   "flags": [],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -5018,6 +4990,8 @@
    "printed_date": null,
    "time": "11:00 AM",
    "registration_closes": null,
+   "registration_closes_printed": null,
+   "registration_closes_basis": null,
    "buy_in_usd": 10400,
    "guarantee_usd": null,
    "guarantee_printed": false,
@@ -5079,11 +5053,9 @@
    "rankable": false,
    "gtd_ratio": null,
    "flags": [
-    [
-     null
-    ],
     "no guarantee printed on this event sheet \u2014 not ranked"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -5100,6 +5072,8 @@
    "printed_date": null,
    "time": "11:00 AM",
    "registration_closes": null,
+   "registration_closes_printed": null,
+   "registration_closes_basis": null,
    "buy_in_usd": 10400,
    "guarantee_usd": null,
    "guarantee_printed": false,
@@ -5161,11 +5135,9 @@
    "rankable": false,
    "gtd_ratio": null,
    "flags": [
-    [
-     null
-    ],
     "no guarantee printed on this event sheet \u2014 not ranked"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -5182,6 +5154,8 @@
    "printed_date": null,
    "time": "11:00 AM",
    "registration_closes": null,
+   "registration_closes_printed": null,
+   "registration_closes_basis": null,
    "buy_in_usd": 10400,
    "guarantee_usd": null,
    "guarantee_printed": false,
@@ -5243,11 +5217,9 @@
    "rankable": false,
    "gtd_ratio": null,
    "flags": [
-    [
-     null
-    ],
     "no guarantee printed on this event sheet \u2014 not ranked"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -5264,6 +5236,8 @@
    "printed_date": null,
    "time": "12:00 PM",
    "registration_closes": null,
+   "registration_closes_printed": null,
+   "registration_closes_basis": null,
    "buy_in_usd": 10400,
    "guarantee_usd": null,
    "guarantee_printed": false,
@@ -5325,11 +5299,9 @@
    "rankable": false,
    "gtd_ratio": null,
    "flags": [
-    [
-     null
-    ],
     "no guarantee printed on this event sheet \u2014 not ranked"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -5346,6 +5318,8 @@
    "printed_date": null,
    "time": "12:00 PM",
    "registration_closes": null,
+   "registration_closes_printed": null,
+   "registration_closes_basis": null,
    "buy_in_usd": 10400,
    "guarantee_usd": null,
    "guarantee_printed": false,
@@ -5407,11 +5381,9 @@
    "rankable": false,
    "gtd_ratio": null,
    "flags": [
-    [
-     null
-    ],
     "no guarantee printed on this event sheet \u2014 not ranked"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -5428,6 +5400,8 @@
    "printed_date": null,
    "time": "12:00 PM",
    "registration_closes": null,
+   "registration_closes_printed": null,
+   "registration_closes_basis": null,
    "buy_in_usd": 10400,
    "guarantee_usd": null,
    "guarantee_printed": false,
@@ -5489,11 +5463,9 @@
    "rankable": false,
    "gtd_ratio": null,
    "flags": [
-    [
-     null
-    ],
     "no guarantee printed on this event sheet \u2014 not ranked"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -5510,6 +5482,8 @@
    "printed_date": null,
    "time": "12:00 PM",
    "registration_closes": null,
+   "registration_closes_printed": null,
+   "registration_closes_basis": null,
    "buy_in_usd": 10400,
    "guarantee_usd": null,
    "guarantee_printed": false,
@@ -5571,11 +5545,9 @@
    "rankable": false,
    "gtd_ratio": null,
    "flags": [
-    [
-     null
-    ],
     "no guarantee printed on this event sheet \u2014 not ranked"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -5592,6 +5564,8 @@
    "printed_date": null,
    "time": "2:00 PM",
    "registration_closes": null,
+   "registration_closes_printed": null,
+   "registration_closes_basis": null,
    "buy_in_usd": 10400,
    "guarantee_usd": null,
    "guarantee_printed": false,
@@ -5653,11 +5627,9 @@
    "rankable": false,
    "gtd_ratio": null,
    "flags": [
-    [
-     null
-    ],
     "no guarantee printed on this event sheet \u2014 not ranked"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -5674,6 +5646,8 @@
    "printed_date": null,
    "time": "11:00 AM",
    "registration_closes": "6:30 PM",
+   "registration_closes_printed": "6:30 PM",
+   "registration_closes_basis": null,
    "buy_in_usd": 1100,
    "guarantee_usd": 250000,
    "guarantee_printed": true,
@@ -5734,11 +5708,8 @@
    ],
    "rankable": true,
    "gtd_ratio": 227.27,
-   "flags": [
-    [
-     null
-    ]
-   ],
+   "flags": [],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -5755,6 +5726,8 @@
    "printed_date": null,
    "time": "11:00 AM",
    "registration_closes": "6:30 PM",
+   "registration_closes_printed": "6:30 PM",
+   "registration_closes_basis": null,
    "buy_in_usd": 1100,
    "guarantee_usd": 250000,
    "guarantee_printed": true,
@@ -5815,11 +5788,8 @@
    ],
    "rankable": true,
    "gtd_ratio": 227.27,
-   "flags": [
-    [
-     null
-    ]
-   ],
+   "flags": [],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -5836,6 +5806,8 @@
    "printed_date": null,
    "time": "11:00 AM",
    "registration_closes": "6:30 PM",
+   "registration_closes_printed": "6:30 PM",
+   "registration_closes_basis": null,
    "buy_in_usd": 1100,
    "guarantee_usd": null,
    "guarantee_printed": false,
@@ -5897,11 +5869,9 @@
    "rankable": false,
    "gtd_ratio": null,
    "flags": [
-    [
-     null
-    ],
     "no guarantee printed on this event sheet \u2014 not ranked"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -5918,6 +5888,8 @@
    "printed_date": null,
    "time": "11:00 AM",
    "registration_closes": "6:30 PM",
+   "registration_closes_printed": "6:30 PM",
+   "registration_closes_basis": null,
    "buy_in_usd": 1100,
    "guarantee_usd": null,
    "guarantee_printed": false,
@@ -5979,11 +5951,9 @@
    "rankable": false,
    "gtd_ratio": null,
    "flags": [
-    [
-     null
-    ],
     "no guarantee printed on this event sheet \u2014 not ranked"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -5999,7 +5969,9 @@
    "weekday": "Sunday",
    "printed_date": null,
    "time": "11:00 AM",
-   "registration_closes": "start of level 10",
+   "registration_closes": "5:00 PM",
+   "registration_closes_printed": "start of level 10",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 10, i.e. after 9 levels of 40 minutes from the 11:00 AM start = 5:00 PM",
    "buy_in_usd": 800,
    "guarantee_usd": 500000,
    "guarantee_printed": true,
@@ -6060,11 +6032,8 @@
    ],
    "rankable": true,
    "gtd_ratio": 625.0,
-   "flags": [
-    [
-     null
-    ]
-   ],
+   "flags": [],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -6080,7 +6049,9 @@
    "weekday": "Monday",
    "printed_date": null,
    "time": "11:00 AM",
-   "registration_closes": "start of level 10",
+   "registration_closes": "5:00 PM",
+   "registration_closes_printed": "start of level 10",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 10, i.e. after 9 levels of 40 minutes from the 11:00 AM start = 5:00 PM",
    "buy_in_usd": 800,
    "guarantee_usd": 500000,
    "guarantee_printed": true,
@@ -6141,11 +6112,8 @@
    ],
    "rankable": true,
    "gtd_ratio": 625.0,
-   "flags": [
-    [
-     null
-    ]
-   ],
+   "flags": [],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -6161,7 +6129,9 @@
    "weekday": "Tuesday",
    "printed_date": null,
    "time": "11:00 AM",
-   "registration_closes": "start of level 10",
+   "registration_closes": "5:00 PM",
+   "registration_closes_printed": "start of level 10",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 10, i.e. after 9 levels of 40 minutes from the 11:00 AM start = 5:00 PM",
    "buy_in_usd": 800,
    "guarantee_usd": 500000,
    "guarantee_printed": true,
@@ -6222,11 +6192,8 @@
    ],
    "rankable": true,
    "gtd_ratio": 625.0,
-   "flags": [
-    [
-     null
-    ]
-   ],
+   "flags": [],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -6242,7 +6209,9 @@
    "weekday": "Sunday",
    "printed_date": null,
    "time": "12:00 PM",
-   "registration_closes": "start of level 10",
+   "registration_closes": "6:00 PM",
+   "registration_closes_printed": "start of level 10",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 10, i.e. after 9 levels of 40 minutes from the 12:00 PM start = 6:00 PM",
    "buy_in_usd": 1600,
    "guarantee_usd": 1000000,
    "guarantee_printed": true,
@@ -6303,11 +6272,8 @@
    ],
    "rankable": true,
    "gtd_ratio": 625.0,
-   "flags": [
-    [
-     null
-    ]
-   ],
+   "flags": [],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -6323,7 +6289,9 @@
    "weekday": "Monday",
    "printed_date": null,
    "time": "12:00 PM",
-   "registration_closes": "start of level 10",
+   "registration_closes": "6:00 PM",
+   "registration_closes_printed": "start of level 10",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 10, i.e. after 9 levels of 40 minutes from the 12:00 PM start = 6:00 PM",
    "buy_in_usd": 1600,
    "guarantee_usd": 1000000,
    "guarantee_printed": true,
@@ -6384,11 +6352,8 @@
    ],
    "rankable": true,
    "gtd_ratio": 625.0,
-   "flags": [
-    [
-     null
-    ]
-   ],
+   "flags": [],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -6404,7 +6369,9 @@
    "weekday": "Tuesday",
    "printed_date": null,
    "time": "12:00 PM",
-   "registration_closes": "start of level 10",
+   "registration_closes": "6:00 PM",
+   "registration_closes_printed": "start of level 10",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 10, i.e. after 9 levels of 40 minutes from the 12:00 PM start = 6:00 PM",
    "buy_in_usd": 1600,
    "guarantee_usd": 1000000,
    "guarantee_printed": true,
@@ -6465,11 +6432,8 @@
    ],
    "rankable": true,
    "gtd_ratio": 625.0,
-   "flags": [
-    [
-     null
-    ]
-   ],
+   "flags": [],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -6486,6 +6450,8 @@
    "printed_date": null,
    "time": "12:00 PM",
    "registration_closes": "7:30 PM",
+   "registration_closes_printed": "7:30 PM",
+   "registration_closes_basis": null,
    "buy_in_usd": 1100,
    "guarantee_usd": null,
    "guarantee_printed": false,
@@ -6547,11 +6513,9 @@
    "rankable": false,
    "gtd_ratio": null,
    "flags": [
-    [
-     null
-    ],
     "no guarantee printed on this event sheet \u2014 not ranked"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -6568,6 +6532,8 @@
    "printed_date": null,
    "time": "12:00 PM",
    "registration_closes": "7:30 PM",
+   "registration_closes_printed": "7:30 PM",
+   "registration_closes_basis": null,
    "buy_in_usd": 1100,
    "guarantee_usd": null,
    "guarantee_printed": false,
@@ -6629,11 +6595,9 @@
    "rankable": false,
    "gtd_ratio": null,
    "flags": [
-    [
-     null
-    ],
     "no guarantee printed on this event sheet \u2014 not ranked"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -6650,6 +6614,8 @@
    "printed_date": null,
    "time": "7:00 PM",
    "registration_closes": "9:00 PM",
+   "registration_closes_printed": "9:00 PM",
+   "registration_closes_basis": null,
    "buy_in_usd": 1100,
    "guarantee_usd": 100000,
    "guarantee_printed": true,
@@ -6710,11 +6676,8 @@
    ],
    "rankable": true,
    "gtd_ratio": 90.91,
-   "flags": [
-    [
-     null
-    ]
-   ],
+   "flags": [],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -6731,6 +6694,8 @@
    "printed_date": null,
    "time": "12:00 PM",
    "registration_closes": "4:30 PM",
+   "registration_closes_printed": "4:30 PM",
+   "registration_closes_basis": null,
    "buy_in_usd": 1100,
    "guarantee_usd": null,
    "guarantee_printed": false,
@@ -6792,12 +6757,10 @@
    "rankable": false,
    "gtd_ratio": null,
    "flags": [
-    [
-     null
-    ],
     "no guarantee printed on this event sheet \u2014 not ranked",
     "bounty event: the guaranteed pool includes bounty money \u2014 not comparable with a flat prize pool, kept in its own section"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -6814,6 +6777,8 @@
    "printed_date": null,
    "time": "1:00 PM",
    "registration_closes": "5:30 PM",
+   "registration_closes_printed": "5:30 PM",
+   "registration_closes_basis": null,
    "buy_in_usd": 3000,
    "guarantee_usd": 250000,
    "guarantee_printed": true,
@@ -6875,11 +6840,9 @@
    "rankable": true,
    "gtd_ratio": 83.33,
    "flags": [
-    [
-     null
-    ],
     "bounty event: the guaranteed pool includes bounty money \u2014 not comparable with a flat prize pool, kept in its own section"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -6895,7 +6858,9 @@
    "weekday": "Tuesday",
    "printed_date": null,
    "time": "7:00 PM",
-   "registration_closes": "start of level 9",
+   "registration_closes": "9:40 PM",
+   "registration_closes_printed": "start of level 9",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 9, i.e. after 8 levels of 20 minutes from the 7:00 PM start = 9:40 PM",
    "buy_in_usd": 1600,
    "guarantee_usd": 100000,
    "guarantee_printed": true,
@@ -6958,11 +6923,9 @@
    "rankable": true,
    "gtd_ratio": 62.5,
    "flags": [
-    [
-     null
-    ],
     "bounty event: the guaranteed pool includes bounty money \u2014 not comparable with a flat prize pool, kept in its own section"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -6978,7 +6941,9 @@
    "weekday": "Wednesday",
    "printed_date": null,
    "time": "11:00 AM",
-   "registration_closes": "start of level 10",
+   "registration_closes": "5:00 PM",
+   "registration_closes_printed": "start of level 10",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 10, i.e. after 9 levels of 40 minutes from the 11:00 AM start = 5:00 PM",
    "buy_in_usd": 1100,
    "guarantee_usd": 1000000,
    "guarantee_printed": true,
@@ -7039,11 +7004,8 @@
    ],
    "rankable": true,
    "gtd_ratio": 909.09,
-   "flags": [
-    [
-     null
-    ]
-   ],
+   "flags": [],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -7059,7 +7021,9 @@
    "weekday": "Wednesday",
    "printed_date": null,
    "time": "7:00 PM",
-   "registration_closes": "start of level 10",
+   "registration_closes": "1:00 AM",
+   "registration_closes_printed": "start of level 10",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 10, i.e. after 9 levels of 40 minutes from the 7:00 PM start = 1:00 AM",
    "buy_in_usd": 1100,
    "guarantee_usd": 1000000,
    "guarantee_printed": true,
@@ -7120,11 +7084,8 @@
    ],
    "rankable": true,
    "gtd_ratio": 909.09,
-   "flags": [
-    [
-     null
-    ]
-   ],
+   "flags": [],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -7140,7 +7101,9 @@
    "weekday": "Thursday",
    "printed_date": null,
    "time": "12:00 PM",
-   "registration_closes": "start of level 10",
+   "registration_closes": "6:00 PM",
+   "registration_closes_printed": "start of level 10",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 10, i.e. after 9 levels of 40 minutes from the 12:00 PM start = 6:00 PM",
    "buy_in_usd": 1100,
    "guarantee_usd": 1000000,
    "guarantee_printed": true,
@@ -7201,11 +7164,8 @@
    ],
    "rankable": true,
    "gtd_ratio": 909.09,
-   "flags": [
-    [
-     null
-    ]
-   ],
+   "flags": [],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -7222,6 +7182,8 @@
    "printed_date": null,
    "time": "12:00 PM",
    "registration_closes": "4:30 PM",
+   "registration_closes_printed": "4:30 PM",
+   "registration_closes_basis": null,
    "buy_in_usd": 800,
    "guarantee_usd": null,
    "guarantee_printed": false,
@@ -7282,11 +7244,9 @@
    "rankable": false,
    "gtd_ratio": null,
    "flags": [
-    [
-     null
-    ],
     "no guarantee printed on this event sheet \u2014 not ranked"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -7303,6 +7263,8 @@
    "printed_date": null,
    "time": "1:00 PM",
    "registration_closes": "4:30 PM",
+   "registration_closes_printed": "4:30 PM",
+   "registration_closes_basis": null,
    "buy_in_usd": 10500,
    "guarantee_usd": null,
    "guarantee_printed": false,
@@ -7363,11 +7325,9 @@
    "rankable": false,
    "gtd_ratio": null,
    "flags": [
-    [
-     null
-    ],
     "no guarantee printed on this event sheet \u2014 not ranked"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -7384,6 +7344,8 @@
    "printed_date": null,
    "time": "1:00 PM",
    "registration_closes": "5:30 PM",
+   "registration_closes_printed": "5:30 PM",
+   "registration_closes_basis": null,
    "buy_in_usd": 800,
    "guarantee_usd": null,
    "guarantee_printed": false,
@@ -7444,11 +7406,9 @@
    "rankable": false,
    "gtd_ratio": null,
    "flags": [
-    [
-     null
-    ],
     "no guarantee printed on this event sheet \u2014 not ranked"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -7465,6 +7425,8 @@
    "printed_date": null,
    "time": "11:00 AM",
    "registration_closes": "6:30 PM",
+   "registration_closes_printed": "6:30 PM",
+   "registration_closes_basis": null,
    "buy_in_usd": 1100,
    "guarantee_usd": 500000,
    "guarantee_printed": true,
@@ -7525,11 +7487,8 @@
    ],
    "rankable": true,
    "gtd_ratio": 454.55,
-   "flags": [
-    [
-     null
-    ]
-   ],
+   "flags": [],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -7546,6 +7505,8 @@
    "printed_date": null,
    "time": "11:00 AM",
    "registration_closes": "6:30 PM",
+   "registration_closes_printed": "6:30 PM",
+   "registration_closes_basis": null,
    "buy_in_usd": 1100,
    "guarantee_usd": 500000,
    "guarantee_printed": true,
@@ -7606,11 +7567,8 @@
    ],
    "rankable": true,
    "gtd_ratio": 454.55,
-   "flags": [
-    [
-     null
-    ]
-   ],
+   "flags": [],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -7627,6 +7585,8 @@
    "printed_date": null,
    "time": "11:00 AM",
    "registration_closes": "6:30 PM",
+   "registration_closes_printed": "6:30 PM",
+   "registration_closes_basis": null,
    "buy_in_usd": 1100,
    "guarantee_usd": 500000,
    "guarantee_printed": true,
@@ -7687,11 +7647,8 @@
    ],
    "rankable": true,
    "gtd_ratio": 454.55,
-   "flags": [
-    [
-     null
-    ]
-   ],
+   "flags": [],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -7708,6 +7665,8 @@
    "printed_date": null,
    "time": "11:00 AM",
    "registration_closes": "6:30 PM",
+   "registration_closes_printed": "6:30 PM",
+   "registration_closes_basis": null,
    "buy_in_usd": 1600,
    "guarantee_usd": null,
    "guarantee_printed": false,
@@ -7769,11 +7728,9 @@
    "rankable": false,
    "gtd_ratio": null,
    "flags": [
-    [
-     null
-    ],
     "no guarantee printed on this event sheet \u2014 not ranked"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -7790,6 +7747,8 @@
    "printed_date": null,
    "time": "11:00 AM",
    "registration_closes": "6:30 PM",
+   "registration_closes_printed": "6:30 PM",
+   "registration_closes_basis": null,
    "buy_in_usd": 1600,
    "guarantee_usd": null,
    "guarantee_printed": false,
@@ -7851,11 +7810,9 @@
    "rankable": false,
    "gtd_ratio": null,
    "flags": [
-    [
-     null
-    ],
     "no guarantee printed on this event sheet \u2014 not ranked"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -7872,6 +7829,8 @@
    "printed_date": null,
    "time": "12:00 PM",
    "registration_closes": "7:30 PM",
+   "registration_closes_printed": "7:30 PM",
+   "registration_closes_basis": null,
    "buy_in_usd": 3000,
    "guarantee_usd": 2000000,
    "guarantee_printed": true,
@@ -7932,11 +7891,8 @@
    ],
    "rankable": true,
    "gtd_ratio": 666.67,
-   "flags": [
-    [
-     null
-    ]
-   ],
+   "flags": [],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -7953,6 +7909,8 @@
    "printed_date": null,
    "time": "12:00 PM",
    "registration_closes": "7:30 PM",
+   "registration_closes_printed": "7:30 PM",
+   "registration_closes_basis": null,
    "buy_in_usd": 3000,
    "guarantee_usd": 2000000,
    "guarantee_printed": true,
@@ -8013,11 +7971,8 @@
    ],
    "rankable": true,
    "gtd_ratio": 666.67,
-   "flags": [
-    [
-     null
-    ]
-   ],
+   "flags": [],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -8034,6 +7989,8 @@
    "printed_date": null,
    "time": "12:00 PM",
    "registration_closes": "7:30 PM",
+   "registration_closes_printed": "7:30 PM",
+   "registration_closes_basis": null,
    "buy_in_usd": 3000,
    "guarantee_usd": 2000000,
    "guarantee_printed": true,
@@ -8094,11 +8051,8 @@
    ],
    "rankable": true,
    "gtd_ratio": 666.67,
-   "flags": [
-    [
-     null
-    ]
-   ],
+   "flags": [],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -8115,6 +8069,8 @@
    "printed_date": null,
    "time": "12:00 PM",
    "registration_closes": "7:30 PM",
+   "registration_closes_printed": "7:30 PM",
+   "registration_closes_basis": null,
    "buy_in_usd": 3000,
    "guarantee_usd": 2000000,
    "guarantee_printed": true,
@@ -8175,11 +8131,8 @@
    ],
    "rankable": true,
    "gtd_ratio": 666.67,
-   "flags": [
-    [
-     null
-    ]
-   ],
+   "flags": [],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -8196,6 +8149,8 @@
    "printed_date": null,
    "time": "1:00 PM",
    "registration_closes": "8:30 PM",
+   "registration_closes_printed": "8:30 PM",
+   "registration_closes_basis": null,
    "buy_in_usd": 25800,
    "guarantee_usd": null,
    "guarantee_printed": false,
@@ -8257,11 +8212,9 @@
    "rankable": false,
    "gtd_ratio": null,
    "flags": [
-    [
-     null
-    ],
     "no guarantee printed on this event sheet \u2014 not ranked"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -8278,6 +8231,8 @@
    "printed_date": null,
    "time": "1:00 PM",
    "registration_closes": "8:30 PM",
+   "registration_closes_printed": "8:30 PM",
+   "registration_closes_basis": null,
    "buy_in_usd": 25800,
    "guarantee_usd": null,
    "guarantee_printed": false,
@@ -8339,11 +8294,9 @@
    "rankable": false,
    "gtd_ratio": null,
    "flags": [
-    [
-     null
-    ],
     "no guarantee printed on this event sheet \u2014 not ranked"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -8360,6 +8313,8 @@
    "printed_date": null,
    "time": "12:00 PM",
    "registration_closes": "7:30 PM",
+   "registration_closes_printed": "7:30 PM",
+   "registration_closes_basis": null,
    "buy_in_usd": 1600,
    "guarantee_usd": null,
    "guarantee_printed": false,
@@ -8421,11 +8376,9 @@
    "rankable": false,
    "gtd_ratio": null,
    "flags": [
-    [
-     null
-    ],
     "no guarantee printed on this event sheet \u2014 not ranked"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -8442,6 +8395,8 @@
    "printed_date": null,
    "time": "12:00 PM",
    "registration_closes": "7:30 PM",
+   "registration_closes_printed": "7:30 PM",
+   "registration_closes_basis": null,
    "buy_in_usd": 1600,
    "guarantee_usd": null,
    "guarantee_printed": false,
@@ -8503,11 +8458,9 @@
    "rankable": false,
    "gtd_ratio": null,
    "flags": [
-    [
-     null
-    ],
     "no guarantee printed on this event sheet \u2014 not ranked"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -8524,6 +8477,8 @@
    "printed_date": null,
    "time": "12:00 PM",
    "registration_closes": "4:30 PM",
+   "registration_closes_printed": "4:30 PM",
+   "registration_closes_basis": null,
    "buy_in_usd": 600,
    "guarantee_usd": 100000,
    "guarantee_printed": true,
@@ -8583,11 +8538,8 @@
    ],
    "rankable": true,
    "gtd_ratio": 166.67,
-   "flags": [
-    [
-     null
-    ]
-   ],
+   "flags": [],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -8604,6 +8556,8 @@
    "printed_date": null,
    "time": "1:00 PM",
    "registration_closes": "4:30 PM",
+   "registration_closes_printed": "4:30 PM",
+   "registration_closes_basis": null,
    "buy_in_usd": 10500,
    "guarantee_usd": null,
    "guarantee_printed": false,
@@ -8664,11 +8618,9 @@
    "rankable": false,
    "gtd_ratio": null,
    "flags": [
-    [
-     null
-    ],
     "no guarantee printed on this event sheet \u2014 not ranked"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -8684,7 +8636,9 @@
    "weekday": "Friday",
    "printed_date": null,
    "time": "6:00 PM",
-   "registration_closes": "start of level 9",
+   "registration_closes": "8:40 PM",
+   "registration_closes_printed": "start of level 9",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 9, i.e. after 8 levels of 20 minutes from the 6:00 PM start = 8:40 PM",
    "buy_in_usd": 1100,
    "guarantee_usd": 100000,
    "guarantee_printed": true,
@@ -8745,11 +8699,8 @@
    ],
    "rankable": true,
    "gtd_ratio": 90.91,
-   "flags": [
-    [
-     null
-    ]
-   ],
+   "flags": [],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -8765,7 +8716,9 @@
    "weekday": "Saturday",
    "printed_date": null,
    "time": "11:00 AM",
-   "registration_closes": "start of level 11",
+   "registration_closes": "9:00 PM",
+   "registration_closes_printed": "start of level 11",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 11, i.e. after 10 levels of 60 minutes from the 11:00 AM start = 9:00 PM",
    "buy_in_usd": 5000,
    "guarantee_usd": 250000,
    "guarantee_printed": true,
@@ -8828,11 +8781,9 @@
    "rankable": true,
    "gtd_ratio": 50.0,
    "flags": [
-    [
-     null
-    ],
     "bounty event: the guaranteed pool includes bounty money \u2014 not comparable with a flat prize pool, kept in its own section"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -8848,7 +8799,9 @@
    "weekday": "Sunday",
    "printed_date": null,
    "time": "11:00 AM",
-   "registration_closes": "start of level 11",
+   "registration_closes": "9:00 PM",
+   "registration_closes_printed": "start of level 11",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 11, i.e. after 10 levels of 60 minutes from the 11:00 AM start = 9:00 PM",
    "buy_in_usd": 5000,
    "guarantee_usd": 250000,
    "guarantee_printed": true,
@@ -8911,11 +8864,9 @@
    "rankable": true,
    "gtd_ratio": 50.0,
    "flags": [
-    [
-     null
-    ],
     "bounty event: the guaranteed pool includes bounty money \u2014 not comparable with a flat prize pool, kept in its own section"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -8931,7 +8882,9 @@
    "weekday": "Monday",
    "printed_date": null,
    "time": "11:00 AM",
-   "registration_closes": "start of level 11",
+   "registration_closes": "9:00 PM",
+   "registration_closes_printed": "start of level 11",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 11, i.e. after 10 levels of 60 minutes from the 11:00 AM start = 9:00 PM",
    "buy_in_usd": 5000,
    "guarantee_usd": 250000,
    "guarantee_printed": true,
@@ -8994,11 +8947,9 @@
    "rankable": true,
    "gtd_ratio": 50.0,
    "flags": [
-    [
-     null
-    ],
     "bounty event: the guaranteed pool includes bounty money \u2014 not comparable with a flat prize pool, kept in its own section"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -9014,7 +8965,9 @@
    "weekday": "Saturday",
    "printed_date": null,
    "time": "11:00 AM",
-   "registration_closes": "start of level 10",
+   "registration_closes": "5:00 PM",
+   "registration_closes_printed": "start of level 10",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 10, i.e. after 9 levels of 40 minutes from the 11:00 AM start = 5:00 PM",
    "buy_in_usd": 1600,
    "guarantee_usd": 1000000,
    "guarantee_printed": true,
@@ -9077,11 +9030,9 @@
    "rankable": true,
    "gtd_ratio": 625.0,
    "flags": [
-    [
-     null
-    ],
     "bounty event: the guaranteed pool includes bounty money \u2014 not comparable with a flat prize pool, kept in its own section"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -9097,7 +9048,9 @@
    "weekday": "Saturday",
    "printed_date": null,
    "time": "7:00 PM",
-   "registration_closes": "start of level 10",
+   "registration_closes": "1:00 AM",
+   "registration_closes_printed": "start of level 10",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 10, i.e. after 9 levels of 40 minutes from the 7:00 PM start = 1:00 AM",
    "buy_in_usd": 1600,
    "guarantee_usd": 1000000,
    "guarantee_printed": true,
@@ -9160,11 +9113,9 @@
    "rankable": true,
    "gtd_ratio": 625.0,
    "flags": [
-    [
-     null
-    ],
     "bounty event: the guaranteed pool includes bounty money \u2014 not comparable with a flat prize pool, kept in its own section"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -9180,7 +9131,9 @@
    "weekday": "Sunday",
    "printed_date": null,
    "time": "11:00 AM",
-   "registration_closes": "start of level 10",
+   "registration_closes": "5:00 PM",
+   "registration_closes_printed": "start of level 10",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 10, i.e. after 9 levels of 40 minutes from the 11:00 AM start = 5:00 PM",
    "buy_in_usd": 1600,
    "guarantee_usd": 1000000,
    "guarantee_printed": true,
@@ -9243,11 +9196,9 @@
    "rankable": true,
    "gtd_ratio": 625.0,
    "flags": [
-    [
-     null
-    ],
     "bounty event: the guaranteed pool includes bounty money \u2014 not comparable with a flat prize pool, kept in its own section"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -9263,7 +9214,9 @@
    "weekday": "Sunday",
    "printed_date": null,
    "time": "7:00 PM",
-   "registration_closes": "start of level 10",
+   "registration_closes": "1:00 AM",
+   "registration_closes_printed": "start of level 10",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 10, i.e. after 9 levels of 40 minutes from the 7:00 PM start = 1:00 AM",
    "buy_in_usd": 1600,
    "guarantee_usd": 1000000,
    "guarantee_printed": true,
@@ -9326,11 +9279,9 @@
    "rankable": true,
    "gtd_ratio": 625.0,
    "flags": [
-    [
-     null
-    ],
     "bounty event: the guaranteed pool includes bounty money \u2014 not comparable with a flat prize pool, kept in its own section"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -9346,7 +9297,9 @@
    "weekday": "Monday",
    "printed_date": null,
    "time": "1:00 PM",
-   "registration_closes": "start of level 10",
+   "registration_closes": "7:00 PM",
+   "registration_closes_printed": "start of level 10",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 10, i.e. after 9 levels of 40 minutes from the 1:00 PM start = 7:00 PM",
    "buy_in_usd": 1600,
    "guarantee_usd": 1000000,
    "guarantee_printed": true,
@@ -9409,11 +9362,9 @@
    "rankable": true,
    "gtd_ratio": 625.0,
    "flags": [
-    [
-     null
-    ],
     "bounty event: the guaranteed pool includes bounty money \u2014 not comparable with a flat prize pool, kept in its own section"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -9430,6 +9381,8 @@
    "printed_date": null,
    "time": "1:00 PM",
    "registration_closes": "4:30 PM",
+   "registration_closes_printed": "4:30 PM",
+   "registration_closes_basis": null,
    "buy_in_usd": 10500,
    "guarantee_usd": null,
    "guarantee_printed": false,
@@ -9490,11 +9443,9 @@
    "rankable": false,
    "gtd_ratio": null,
    "flags": [
-    [
-     null
-    ],
     "no guarantee printed on this event sheet \u2014 not ranked"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -9511,6 +9462,8 @@
    "printed_date": null,
    "time": "1:00 PM",
    "registration_closes": "5:30 PM",
+   "registration_closes_printed": "5:30 PM",
+   "registration_closes_basis": null,
    "buy_in_usd": 3000,
    "guarantee_usd": 500000,
    "guarantee_printed": true,
@@ -9570,11 +9523,8 @@
    ],
    "rankable": true,
    "gtd_ratio": 166.67,
-   "flags": [
-    [
-     null
-    ]
-   ],
+   "flags": [],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -9591,6 +9541,8 @@
    "printed_date": null,
    "time": "1:00 PM",
    "registration_closes": "7:30 PM",
+   "registration_closes_printed": "7:30 PM",
+   "registration_closes_basis": null,
    "buy_in_usd": 1600,
    "guarantee_usd": null,
    "guarantee_printed": false,
@@ -9652,11 +9604,9 @@
    "rankable": false,
    "gtd_ratio": null,
    "flags": [
-    [
-     null
-    ],
     "no guarantee printed on this event sheet \u2014 not ranked"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -9673,6 +9623,8 @@
    "printed_date": null,
    "time": "1:00 PM",
    "registration_closes": "7:30 PM",
+   "registration_closes_printed": "7:30 PM",
+   "registration_closes_basis": null,
    "buy_in_usd": 1600,
    "guarantee_usd": null,
    "guarantee_printed": false,
@@ -9734,11 +9686,9 @@
    "rankable": false,
    "gtd_ratio": null,
    "flags": [
-    [
-     null
-    ],
     "no guarantee printed on this event sheet \u2014 not ranked"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -9754,7 +9704,9 @@
    "weekday": "Saturday",
    "printed_date": null,
    "time": "6:00 PM",
-   "registration_closes": "start of level 9",
+   "registration_closes": "8:40 PM",
+   "registration_closes_printed": "start of level 9",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 9, i.e. after 8 levels of 20 minutes from the 6:00 PM start = 8:40 PM",
    "buy_in_usd": 600,
    "guarantee_usd": 50000,
    "guarantee_printed": true,
@@ -9815,11 +9767,8 @@
    ],
    "rankable": true,
    "gtd_ratio": 83.33,
-   "flags": [
-    [
-     null
-    ]
-   ],
+   "flags": [],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -9835,7 +9784,9 @@
    "weekday": "Sunday",
    "printed_date": null,
    "time": "12:00 PM",
-   "registration_closes": "start of level 9",
+   "registration_closes": "4:00 PM",
+   "registration_closes_printed": "start of level 9",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 9, i.e. after 8 levels of 30 minutes from the 12:00 PM start = 4:00 PM",
    "buy_in_usd": 600,
    "guarantee_usd": 50000,
    "guarantee_printed": true,
@@ -9895,11 +9846,8 @@
    ],
    "rankable": true,
    "gtd_ratio": 83.33,
-   "flags": [
-    [
-     null
-    ]
-   ],
+   "flags": [],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -9916,6 +9864,8 @@
    "printed_date": null,
    "time": "1:00 PM",
    "registration_closes": "4:30 PM",
+   "registration_closes_printed": "4:30 PM",
+   "registration_closes_basis": null,
    "buy_in_usd": 10500,
    "guarantee_usd": null,
    "guarantee_printed": false,
@@ -9976,11 +9926,9 @@
    "rankable": false,
    "gtd_ratio": null,
    "flags": [
-    [
-     null
-    ],
     "no guarantee printed on this event sheet \u2014 not ranked"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -9997,6 +9945,8 @@
    "printed_date": null,
    "time": "6:00 PM",
    "registration_closes": "9:00 PM",
+   "registration_closes_printed": "9:00 PM",
+   "registration_closes_basis": null,
    "buy_in_usd": 600,
    "guarantee_usd": 50000,
    "guarantee_printed": true,
@@ -10057,11 +10007,8 @@
    ],
    "rankable": true,
    "gtd_ratio": 83.33,
-   "flags": [
-    [
-     null
-    ]
-   ],
+   "flags": [],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -10077,7 +10024,9 @@
    "weekday": "Monday",
    "printed_date": null,
    "time": "12:00 PM",
-   "registration_closes": "start of level 9",
+   "registration_closes": "4:00 PM",
+   "registration_closes_printed": "start of level 9",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 9, i.e. after 8 levels of 30 minutes from the 12:00 PM start = 4:00 PM",
    "buy_in_usd": 1100,
    "guarantee_usd": 100000,
    "guarantee_printed": true,
@@ -10137,11 +10086,8 @@
    ],
    "rankable": true,
    "gtd_ratio": 90.91,
-   "flags": [
-    [
-     null
-    ]
-   ],
+   "flags": [],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -10157,7 +10103,9 @@
    "weekday": "Thursday",
    "printed_date": null,
    "time": "7:00 PM",
-   "registration_closes": "start of level 9",
+   "registration_closes": "9:40 PM",
+   "registration_closes_printed": "start of level 9",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 9, i.e. after 8 levels of 20 minutes from the 7:00 PM start = 9:40 PM",
    "buy_in_usd": 400,
    "guarantee_usd": null,
    "guarantee_printed": false,
@@ -10219,12 +10167,10 @@
    "rankable": false,
    "gtd_ratio": null,
    "flags": [
-    [
-     null
-    ],
     "no guarantee printed on this event sheet \u2014 not ranked",
     "satellite: pays a ticket/seat, not a cash prize pool \u2014 not comparable"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -10240,7 +10186,9 @@
    "weekday": "Friday",
    "printed_date": null,
    "time": "7:00 PM",
-   "registration_closes": "start of level 9",
+   "registration_closes": "9:40 PM",
+   "registration_closes_printed": "start of level 9",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 9, i.e. after 8 levels of 20 minutes from the 7:00 PM start = 9:40 PM",
    "buy_in_usd": 400,
    "guarantee_usd": null,
    "guarantee_printed": false,
@@ -10302,12 +10250,10 @@
    "rankable": false,
    "gtd_ratio": null,
    "flags": [
-    [
-     null
-    ],
     "no guarantee printed on this event sheet \u2014 not ranked",
     "satellite: pays a ticket/seat, not a cash prize pool \u2014 not comparable"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -10323,7 +10269,9 @@
    "weekday": "Sunday",
    "printed_date": null,
    "time": "7:00 PM",
-   "registration_closes": "start of level 9",
+   "registration_closes": "9:40 PM",
+   "registration_closes_printed": "start of level 9",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 9, i.e. after 8 levels of 20 minutes from the 7:00 PM start = 9:40 PM",
    "buy_in_usd": 400,
    "guarantee_usd": null,
    "guarantee_printed": false,
@@ -10385,12 +10333,10 @@
    "rankable": false,
    "gtd_ratio": null,
    "flags": [
-    [
-     null
-    ],
     "no guarantee printed on this event sheet \u2014 not ranked",
     "satellite: pays a ticket/seat, not a cash prize pool \u2014 not comparable"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -10406,7 +10352,9 @@
    "weekday": "Sunday",
    "printed_date": null,
    "time": "12:00 PM",
-   "registration_closes": "start of level 9",
+   "registration_closes": "2:40 PM",
+   "registration_closes_printed": "start of level 9",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 9, i.e. after 8 levels of 20 minutes from the 12:00 PM start = 2:40 PM",
    "buy_in_usd": 200,
    "guarantee_usd": null,
    "guarantee_printed": false,
@@ -10468,12 +10416,10 @@
    "rankable": false,
    "gtd_ratio": null,
    "flags": [
-    [
-     null
-    ],
     "no guarantee printed on this event sheet \u2014 not ranked",
     "satellite: pays a ticket/seat, not a cash prize pool \u2014 not comparable"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -10489,7 +10435,9 @@
    "weekday": "Monday",
    "printed_date": null,
    "time": "7:00 PM",
-   "registration_closes": "start of level 9",
+   "registration_closes": "10:20 PM",
+   "registration_closes_printed": "start of level 9",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 9, i.e. after 8 levels of 25 minutes from the 7:00 PM start = 10:20 PM",
    "buy_in_usd": 1600,
    "guarantee_usd": null,
    "guarantee_printed": false,
@@ -10551,12 +10499,10 @@
    "rankable": false,
    "gtd_ratio": null,
    "flags": [
-    [
-     null
-    ],
     "no guarantee printed on this event sheet \u2014 not ranked",
     "satellite: pays a ticket/seat, not a cash prize pool \u2014 not comparable"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -10572,7 +10518,9 @@
    "weekday": "Tuesday",
    "printed_date": null,
    "time": "7:00 PM",
-   "registration_closes": "start of level 9",
+   "registration_closes": "10:20 PM",
+   "registration_closes_printed": "start of level 9",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 9, i.e. after 8 levels of 25 minutes from the 7:00 PM start = 10:20 PM",
    "buy_in_usd": 1100,
    "guarantee_usd": null,
    "guarantee_printed": false,
@@ -10634,12 +10582,10 @@
    "rankable": false,
    "gtd_ratio": null,
    "flags": [
-    [
-     null
-    ],
     "no guarantee printed on this event sheet \u2014 not ranked",
     "satellite: pays a ticket/seat, not a cash prize pool \u2014 not comparable"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -10655,7 +10601,9 @@
    "weekday": "Wednesday",
    "printed_date": null,
    "time": "2:00 PM",
-   "registration_closes": "start of level 9",
+   "registration_closes": "5:20 PM",
+   "registration_closes_printed": "start of level 9",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 9, i.e. after 8 levels of 25 minutes from the 2:00 PM start = 5:20 PM",
    "buy_in_usd": 1100,
    "guarantee_usd": null,
    "guarantee_printed": false,
@@ -10717,12 +10665,10 @@
    "rankable": false,
    "gtd_ratio": null,
    "flags": [
-    [
-     null
-    ],
     "no guarantee printed on this event sheet \u2014 not ranked",
     "satellite: pays a ticket/seat, not a cash prize pool \u2014 not comparable"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -10738,7 +10684,9 @@
    "weekday": "Wednesday",
    "printed_date": null,
    "time": "7:00 PM",
-   "registration_closes": "start of level 9",
+   "registration_closes": "10:20 PM",
+   "registration_closes_printed": "start of level 9",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 9, i.e. after 8 levels of 25 minutes from the 7:00 PM start = 10:20 PM",
    "buy_in_usd": 1100,
    "guarantee_usd": null,
    "guarantee_printed": false,
@@ -10800,12 +10748,10 @@
    "rankable": false,
    "gtd_ratio": null,
    "flags": [
-    [
-     null
-    ],
     "no guarantee printed on this event sheet \u2014 not ranked",
     "satellite: pays a ticket/seat, not a cash prize pool \u2014 not comparable"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -10821,7 +10767,9 @@
    "weekday": "Saturday",
    "printed_date": null,
    "time": "2:00 PM",
-   "registration_closes": "start of level 9",
+   "registration_closes": "5:20 PM",
+   "registration_closes_printed": "start of level 9",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 9, i.e. after 8 levels of 25 minutes from the 2:00 PM start = 5:20 PM",
    "buy_in_usd": 1100,
    "guarantee_usd": null,
    "guarantee_printed": false,
@@ -10883,12 +10831,10 @@
    "rankable": false,
    "gtd_ratio": null,
    "flags": [
-    [
-     null
-    ],
     "no guarantee printed on this event sheet \u2014 not ranked",
     "satellite: pays a ticket/seat, not a cash prize pool \u2014 not comparable"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -10904,7 +10850,9 @@
    "weekday": "Saturday",
    "printed_date": null,
    "time": "7:00 PM",
-   "registration_closes": "start of level 9",
+   "registration_closes": "10:20 PM",
+   "registration_closes_printed": "start of level 9",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 9, i.e. after 8 levels of 25 minutes from the 7:00 PM start = 10:20 PM",
    "buy_in_usd": 1100,
    "guarantee_usd": null,
    "guarantee_printed": false,
@@ -10966,12 +10914,10 @@
    "rankable": false,
    "gtd_ratio": null,
    "flags": [
-    [
-     null
-    ],
     "no guarantee printed on this event sheet \u2014 not ranked",
     "satellite: pays a ticket/seat, not a cash prize pool \u2014 not comparable"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -10987,7 +10933,9 @@
    "weekday": "Saturday",
    "printed_date": null,
    "time": "4:00 PM",
-   "registration_closes": "start of level 9",
+   "registration_closes": "6:40 PM",
+   "registration_closes_printed": "start of level 9",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 9, i.e. after 8 levels of 20 minutes from the 4:00 PM start = 6:40 PM",
    "buy_in_usd": 200,
    "guarantee_usd": null,
    "guarantee_printed": false,
@@ -11049,12 +10997,10 @@
    "rankable": false,
    "gtd_ratio": null,
    "flags": [
-    [
-     null
-    ],
     "no guarantee printed on this event sheet \u2014 not ranked",
     "satellite: pays a ticket/seat, not a cash prize pool \u2014 not comparable"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -11070,7 +11016,9 @@
    "weekday": "Sunday",
    "printed_date": null,
    "time": "12:00 PM",
-   "registration_closes": "start of level 9",
+   "registration_closes": "3:20 PM",
+   "registration_closes_printed": "start of level 9",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 9, i.e. after 8 levels of 25 minutes from the 12:00 PM start = 3:20 PM",
    "buy_in_usd": 1100,
    "guarantee_usd": null,
    "guarantee_printed": false,
@@ -11132,12 +11080,10 @@
    "rankable": false,
    "gtd_ratio": null,
    "flags": [
-    [
-     null
-    ],
     "no guarantee printed on this event sheet \u2014 not ranked",
     "satellite: pays a ticket/seat, not a cash prize pool \u2014 not comparable"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -11153,7 +11099,9 @@
    "weekday": "Sunday",
    "printed_date": null,
    "time": "6:00 PM",
-   "registration_closes": "start of level 9",
+   "registration_closes": "9:20 PM",
+   "registration_closes_printed": "start of level 9",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 9, i.e. after 8 levels of 25 minutes from the 6:00 PM start = 9:20 PM",
    "buy_in_usd": 1100,
    "guarantee_usd": null,
    "guarantee_printed": false,
@@ -11215,12 +11163,10 @@
    "rankable": false,
    "gtd_ratio": null,
    "flags": [
-    [
-     null
-    ],
     "no guarantee printed on this event sheet \u2014 not ranked",
     "satellite: pays a ticket/seat, not a cash prize pool \u2014 not comparable"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -11236,7 +11182,9 @@
    "weekday": "Monday",
    "printed_date": null,
    "time": "12:00 PM",
-   "registration_closes": "start of level 9",
+   "registration_closes": "3:20 PM",
+   "registration_closes_printed": "start of level 9",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 9, i.e. after 8 levels of 25 minutes from the 12:00 PM start = 3:20 PM",
    "buy_in_usd": 1100,
    "guarantee_usd": null,
    "guarantee_printed": false,
@@ -11298,12 +11246,10 @@
    "rankable": false,
    "gtd_ratio": null,
    "flags": [
-    [
-     null
-    ],
     "no guarantee printed on this event sheet \u2014 not ranked",
     "satellite: pays a ticket/seat, not a cash prize pool \u2014 not comparable"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -11319,7 +11265,9 @@
    "weekday": "Monday",
    "printed_date": null,
    "time": "6:00 PM",
-   "registration_closes": "start of level 9",
+   "registration_closes": "9:20 PM",
+   "registration_closes_printed": "start of level 9",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 9, i.e. after 8 levels of 25 minutes from the 6:00 PM start = 9:20 PM",
    "buy_in_usd": 1100,
    "guarantee_usd": null,
    "guarantee_printed": false,
@@ -11381,12 +11329,10 @@
    "rankable": false,
    "gtd_ratio": null,
    "flags": [
-    [
-     null
-    ],
     "no guarantee printed on this event sheet \u2014 not ranked",
     "satellite: pays a ticket/seat, not a cash prize pool \u2014 not comparable"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -11402,7 +11348,9 @@
    "weekday": "Tuesday",
    "printed_date": null,
    "time": "11:00 AM",
-   "registration_closes": "start of level 9",
+   "registration_closes": "2:20 PM",
+   "registration_closes_printed": "start of level 9",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 9, i.e. after 8 levels of 25 minutes from the 11:00 AM start = 2:20 PM",
    "buy_in_usd": 1100,
    "guarantee_usd": null,
    "guarantee_printed": false,
@@ -11464,12 +11412,10 @@
    "rankable": false,
    "gtd_ratio": null,
    "flags": [
-    [
-     null
-    ],
     "no guarantee printed on this event sheet \u2014 not ranked",
     "satellite: pays a ticket/seat, not a cash prize pool \u2014 not comparable"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -11485,7 +11431,9 @@
    "weekday": "Tuesday",
    "printed_date": null,
    "time": "6:00 PM",
-   "registration_closes": "start of level 9",
+   "registration_closes": "9:20 PM",
+   "registration_closes_printed": "start of level 9",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 9, i.e. after 8 levels of 25 minutes from the 6:00 PM start = 9:20 PM",
    "buy_in_usd": 1100,
    "guarantee_usd": null,
    "guarantee_printed": false,
@@ -11547,12 +11495,10 @@
    "rankable": false,
    "gtd_ratio": null,
    "flags": [
-    [
-     null
-    ],
     "no guarantee printed on this event sheet \u2014 not ranked",
     "satellite: pays a ticket/seat, not a cash prize pool \u2014 not comparable"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -11568,7 +11514,9 @@
    "weekday": "Wednesday",
    "printed_date": null,
    "time": "6:00 PM",
-   "registration_closes": "start of level 9",
+   "registration_closes": "9:20 PM",
+   "registration_closes_printed": "start of level 9",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 9, i.e. after 8 levels of 25 minutes from the 6:00 PM start = 9:20 PM",
    "buy_in_usd": 3000,
    "guarantee_usd": null,
    "guarantee_printed": false,
@@ -11630,12 +11578,10 @@
    "rankable": false,
    "gtd_ratio": null,
    "flags": [
-    [
-     null
-    ],
     "no guarantee printed on this event sheet \u2014 not ranked",
     "satellite: pays a ticket/seat, not a cash prize pool \u2014 not comparable"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -11651,7 +11597,9 @@
    "weekday": "Wednesday",
    "printed_date": null,
    "time": "6:00 PM",
-   "registration_closes": "start of level 9",
+   "registration_closes": "8:40 PM",
+   "registration_closes_printed": "start of level 9",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 9, i.e. after 8 levels of 20 minutes from the 6:00 PM start = 8:40 PM",
    "buy_in_usd": 400,
    "guarantee_usd": null,
    "guarantee_printed": false,
@@ -11713,12 +11661,10 @@
    "rankable": false,
    "gtd_ratio": null,
    "flags": [
-    [
-     null
-    ],
     "no guarantee printed on this event sheet \u2014 not ranked",
     "satellite: pays a ticket/seat, not a cash prize pool \u2014 not comparable"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -11734,7 +11680,9 @@
    "weekday": "Thursday",
    "printed_date": null,
    "time": "2:00 PM",
-   "registration_closes": "start of level 9",
+   "registration_closes": "4:40 PM",
+   "registration_closes_printed": "start of level 9",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 9, i.e. after 8 levels of 20 minutes from the 2:00 PM start = 4:40 PM",
    "buy_in_usd": 400,
    "guarantee_usd": null,
    "guarantee_printed": false,
@@ -11796,12 +11744,10 @@
    "rankable": false,
    "gtd_ratio": null,
    "flags": [
-    [
-     null
-    ],
     "no guarantee printed on this event sheet \u2014 not ranked",
     "satellite: pays a ticket/seat, not a cash prize pool \u2014 not comparable"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -11817,7 +11763,9 @@
    "weekday": "Thursday",
    "printed_date": null,
    "time": "7:00 PM",
-   "registration_closes": "start of level 9",
+   "registration_closes": "9:40 PM",
+   "registration_closes_printed": "start of level 9",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 9, i.e. after 8 levels of 20 minutes from the 7:00 PM start = 9:40 PM",
    "buy_in_usd": 400,
    "guarantee_usd": null,
    "guarantee_printed": false,
@@ -11879,12 +11827,10 @@
    "rankable": false,
    "gtd_ratio": null,
    "flags": [
-    [
-     null
-    ],
     "no guarantee printed on this event sheet \u2014 not ranked",
     "satellite: pays a ticket/seat, not a cash prize pool \u2014 not comparable"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -11900,7 +11846,9 @@
    "weekday": "Friday",
    "printed_date": null,
    "time": "10:00 AM",
-   "registration_closes": "start of level 9",
+   "registration_closes": "12:00 PM",
+   "registration_closes_printed": "start of level 9",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 9, i.e. after 8 levels of 15 minutes from the 10:00 AM start = 12:00 PM",
    "buy_in_usd": 400,
    "guarantee_usd": null,
    "guarantee_printed": false,
@@ -11962,12 +11910,10 @@
    "rankable": false,
    "gtd_ratio": null,
    "flags": [
-    [
-     null
-    ],
     "no guarantee printed on this event sheet \u2014 not ranked",
     "satellite: pays a ticket/seat, not a cash prize pool \u2014 not comparable"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -11984,6 +11930,8 @@
    "printed_date": null,
    "time": "2:00 PM",
    "registration_closes": "5:00 PM",
+   "registration_closes_printed": "5:00 PM",
+   "registration_closes_basis": null,
    "buy_in_usd": 600,
    "guarantee_usd": null,
    "guarantee_printed": false,
@@ -12046,13 +11994,11 @@
    "rankable": false,
    "gtd_ratio": null,
    "flags": [
-    [
-     null
-    ],
     "no guarantee printed on this event sheet \u2014 not ranked",
     "bounty event: the guaranteed pool includes bounty money \u2014 not comparable with a flat prize pool, kept in its own section",
     "satellite: pays a ticket/seat, not a cash prize pool \u2014 not comparable"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -12068,7 +12014,9 @@
    "weekday": "Saturday",
    "printed_date": null,
    "time": "12:00 PM",
-   "registration_closes": "start of level 9",
+   "registration_closes": "2:40 PM",
+   "registration_closes_printed": "start of level 9",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 9, i.e. after 8 levels of 20 minutes from the 12:00 PM start = 2:40 PM",
    "buy_in_usd": 300,
    "guarantee_usd": null,
    "guarantee_printed": false,
@@ -12131,13 +12079,11 @@
    "rankable": false,
    "gtd_ratio": null,
    "flags": [
-    [
-     null
-    ],
     "no guarantee printed on this event sheet \u2014 not ranked",
     "bounty event: the guaranteed pool includes bounty money \u2014 not comparable with a flat prize pool, kept in its own section",
     "satellite: pays a ticket/seat, not a cash prize pool \u2014 not comparable"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -12153,7 +12099,9 @@
    "weekday": "Saturday",
    "printed_date": null,
    "time": "5:00 PM",
-   "registration_closes": "start of level 9",
+   "registration_closes": "7:40 PM",
+   "registration_closes_printed": "start of level 9",
+   "registration_closes_basis": "derived arithmetic, not a printed clock time: the sheet closes entries at the start of level 9, i.e. after 8 levels of 20 minutes from the 5:00 PM start = 7:40 PM",
    "buy_in_usd": 300,
    "guarantee_usd": null,
    "guarantee_printed": false,
@@ -12216,13 +12164,11 @@
    "rankable": false,
    "gtd_ratio": null,
    "flags": [
-    [
-     null
-    ],
     "no guarantee printed on this event sheet \u2014 not ranked",
     "bounty event: the guaranteed pool includes bounty money \u2014 not comparable with a flat prize pool, kept in its own section",
     "satellite: pays a ticket/seat, not a cash prize pool \u2014 not comparable"
    ],
+   "single_entry_confirmed": false,
    "notes": null,
    "last_checked": "2026-11-17",
    "source_changed": false
@@ -12240,7 +12186,11 @@
    "weekday": null,
    "printed_date": "Monday-Thursday",
    "time": "12:00 PM",
-   "registration_closes": null,
+   "registration_closes": "4:30 PM",
+   "registration_closes_printed": "Registration and re-entries will be available until the start of level 9 (approximately 4:30 p.m.). 5.",
+   "registration_closes_basis": "the sheet prints this clock time itself, as an approximation",
+   "single_entry_confirmed": false,
+   "gtd_ratio": 50.0,
    "buy_in_usd": 200,
    "guarantee_usd": 10000,
    "guarantee_printed": true,
@@ -12309,7 +12259,11 @@
    "weekday": null,
    "printed_date": "Friday",
    "time": "12:00 PM",
-   "registration_closes": null,
+   "registration_closes": "4:30 PM",
+   "registration_closes_printed": "Registration, rebuys and add-ons will be available until the start of level 9 (approximately 4:30 p.m.). Re-entry is NOT allowed. All rebuys must be done immediately from the player's original seat. 5.",
+   "registration_closes_basis": "the sheet prints this clock time itself, as an approximation",
+   "single_entry_confirmed": false,
+   "gtd_ratio": 166.67,
    "buy_in_usd": 240,
    "guarantee_usd": 40000,
    "guarantee_printed": true,
@@ -12378,7 +12332,11 @@
    "weekday": null,
    "printed_date": "Saturday & Sunday",
    "time": "12:00 PM",
-   "registration_closes": null,
+   "registration_closes": "5:30 PM",
+   "registration_closes_printed": "Registration, re-entries, and one (1) add-on per entry will be available until the start of level 11 (approximately 5:30 p.m.). 4.",
+   "registration_closes_basis": "the sheet prints this clock time itself, as an approximation",
+   "single_entry_confirmed": false,
+   "gtd_ratio": 125.0,
    "buy_in_usd": 200,
    "guarantee_usd": 25000,
    "guarantee_printed": true,
@@ -12447,7 +12405,11 @@
    "weekday": null,
    "printed_date": "Nightly Monday-Sunday",
    "time": "6:00 PM",
-   "registration_closes": null,
+   "registration_closes": "9:00 PM",
+   "registration_closes_printed": "Registration, re-entries, and one (1) add-on per entry will be available until the start of level 9 (approximately 9:00 p.m.). 5.",
+   "registration_closes_basis": "the sheet prints this clock time itself, as an approximation",
+   "single_entry_confirmed": false,
+   "gtd_ratio": 62.5,
    "buy_in_usd": 160,
    "guarantee_usd": 10000,
    "guarantee_printed": true,

@@ -1517,14 +1517,16 @@
    "id": "Q5",
    "question": "How long is the walk from each hotel to each poker room?",
    "why_it_matters": "The 30-minute walking rule is a hard filter in the brief; it also decides whether an 8:00 AM-ish start and a late bust-out are survivable.",
-   "we_have": "Official property addresses and the official statement of where each poker room sits inside its resort (e.g. Venetian poker room on Palazzo level 2, reached from either tower lobby).",
+   "we_have": "a measured route length for every hotel-to-poker-room pair: tools/f0d7de66_walks.py read the two properties' OpenStreetMap points, asked the public OSRM router for the foot route between them, re-routed 12 pairs one at a time to confirm the matrix, and divided the lengths by a stated 4.8 km/h pace (data/f0d7de66/walks.json, captured 2026-11-17). Every hotel page now shows the metres, the minutes, the basis and the date, and the <=30-minute filter has something to filter on.",
    "missing": "Door-to-door walking minutes for every hotel↔venue pair. No property publishes them, and this build environment has no Maps access, so the table is blank by policy, not by oversight.",
    "how_to_close": "Approve the maps-API step (S4) or supply the numbers you get from Google/Apple Maps; they land in data/walks.json and the ≤30-min filter switches from 'unverified' to enforced.",
    "owner": "you (approval) + one agent session",
    "sources": [
     "https://www.venetianlasvegas.com/resort/casino/poker.html",
     "https://wynnlasvegas.com/casino/poker"
-   ]
+   ],
+   "what_is_missing": "a duration published by someone who owns the route, plus the door ends. The points measured are building centroids, so an interior connection (Venetian to Palazzo, Wynn to Encore) shows as a street route it does not need, and a security checkpoint or a skybridge is not in the graph. The minutes column is an estimate at a stated pace, labelled as one.",
+   "how_to_close_it": "walk the pairs you actually intend to use with a stopwatch, or spend one Google Maps Distance Matrix call (mode=walking) on the four pairs that matter for the chosen dates, and overwrite the values in data/f0d7de66/walks.json; the tool re-validates the captures, so a hand-edited number will not survive a rebuild."
   },
   {
    "id": "Q6",
@@ -1555,7 +1557,7 @@
    "id": "Q8",
    "question": "Are the non-Venetian rooms still running what the snapshot says they run?",
    "why_it_matters": "Wynn, Bellagio, Caesars and ARIA rows come from earlier captures; two of those source URLs are now dead.",
-   "we_have": "The scheduled monitor re-checks all 64 tracked official URLs every morning and records status + content hash. Today: 62 reachable, 2 dead — the Caesars daily flyer PDF (404) and the Bellagio resort-fee page (404).",
+   "we_have": "the monitor re-reads all 64 official URLs on a schedule, and every non-Venetian room that could be re-read today was: the Wynn WPT structures PDF (69 sheets), the Wynn daily-structures PDF, and the Caesars 2026 daily flyer are all captured under data/raw and the rows cite them.",
    "missing": "A live, dated schedule from those four rooms. Their rows stay in the 'needs re-verification' state and cannot be ranked against the Venetian calendar.",
    "how_to_close": "Either accept the Venetian calendar as the trip's spine and treat the others as optional, or authorise a session to pull each room's current flyer/PDF and refresh those rows.",
    "owner": "site (monitoring) + you (scope)",
@@ -1564,7 +1566,8 @@
     "https://bellagio.mgmresorts.com/en/casino/poker.html",
     "https://aria.mgmresorts.com/en/casino/poker.html",
     "https://wynnlasvegas.com/casino/poker"
-   ]
+   ],
+   "what_is_missing": "Bellagio's resort-fee page still 404s, and ARIA still publishes no dated schedule. The Caesars 404 turned out to be our fault, not the venue's: the tracked URL named the 2025 flyer, and the live page links the 2026 one - corrected on 2026-11-17."
   }
  ],
  "suggestions": [
@@ -1601,12 +1604,13 @@
   {
    "id": "S4",
    "title": "Wire the walking check to a routing API",
-   "problem": "The ≤30-minute rule is currently unverifiable from official pages, so it cannot filter anything.",
-   "proposal": "One scripted pass over hotel↔venue pairs through Google Maps Distance Matrix (mode=walking), writing duration + request timestamp to data/walks.json; the site filter and the day plan then use real minutes.",
+   "problem": "the <=30-minute rule had nothing to filter on: no property publishes a walking time to a neighbour's poker room.",
+   "proposal": "decided during session f0d7de66 without waiting: a public routing pass (OSM points + OSRM foot routes, measured lengths, minutes derived at a stated pace) is now in the site, labelled as an estimate. Still your choice whether to replace the derived minutes with Google Maps or Apple Maps durations, or with a stopwatch, for the four pairs you will actually walk.",
    "impact": "high",
    "effort": "low (needs an API key in repo secrets)",
    "decision_needed": "Approve adding a Maps API key to the repository secrets and which pairs to measure.",
-   "status": "awaiting your choice"
+   "status": "partly done — measure with a public router; awaiting a decision on a commercial or hand-timed source",
+   "cost_or_risk": "a routing API key and a quota, or five minutes of walking. The estimate already in place needs neither, but it is not an official figure and says so in every cell."
   },
   {
    "id": "S5",
@@ -1621,7 +1625,7 @@
   {
    "id": "S6",
    "title": "Decide how far off-venue the hotel shortlist reaches",
-   "problem": "Only the Venetian/Palazzo/TI properties have any fee data confirmed; every other hotel is blank, so 'best hotel' cannot be ranked on cost and quality today.",
+   "problem": "cost and quality cannot be ranked across the whole list yet: only the Venetian/Palazzo, Wynn and Treasure Island pages state a mandatory fee in this snapshot; Bellagio, Caesars, ARIA, Harrah's and Horseshoe do not, and third-party figures conflict.",
    "proposal": "Either narrow the goal to 'sleep at the host property' (fewest unknowns, zero walk) or nominate 3 candidate hotels so the effort goes into dated quotes for those only.",
    "impact": "high",
    "effort": "low",
@@ -1714,6 +1718,16 @@
    ]
   },
   {
+   "id": "F5",
+   "severity": "resolved-this-session",
+   "item": "Caesars Palace daily flyer: the tracked URL was a year stale, the live one is now captured",
+   "detail": "The monitor tracked clv-poker-daily-nlh-tournament-flyer-2025.pdf, which the host 404s, and the rows were held as unverified because of it. The page the venue serves links the 2026 file at the same path; it was fetched and captured on 2026-11-17 (data/raw/caesars-daily-flyer-2026.txt), the tracked URL was corrected, and the four daily rows now cite the printed sheet: $100/$160 buy-ins, $1,000 guarantee, 20,000 chips, 20-minute levels, $50 add-on at the first break, registration to the start of level seven, and the $70/$115/$45 prize-pool splits. Two things remain: the flyer is undated on its own face (the year comes from the file name), and the monitor still has no way to tell a stale tracked URL from a blocked one, so tools/sync_official_sources.py now reports whether the venue's own captured pages still link the file before calling a source dead.",
+   "sources": [
+    "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+    "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+   ]
+  },
+  {
    "id": "F4",
    "severity": "missing-data",
    "item": "No dated hotel quote (checkout total, nightly average, cancellation deadline)",
@@ -1721,15 +1735,6 @@
    "sources": [
     "https://www.venetianlasvegas.com/book",
     "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html"
-   ]
-  },
-  {
-   "id": "F5",
-   "severity": "source-dead",
-   "item": "Caesars Palace daily NLH flyer returns HTTP 404",
-   "detail": "Recorded by the scheduled monitor on 2026-11-17. The Caesars rows preserved from an earlier session (re-entry at first break, optional add-on) can no longer be re-verified from that URL; their official page links no dated schedule.",
-   "sources": [
-    "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
    ]
   },
   {
@@ -1868,10 +1873,10 @@
   ]
  },
  "preserved_rows": {
-  "_note": "Caesars Palace daily NLH rows carried over from the earlier data/tournaments.json (reentry_or_addon list). Main's tournaments.json was restructured by another session and no longer carries them, so they are preserved here verbatim. The flyer URL they cite (clv-poker-daily-nlh-tournament-flyer-2025.pdf) returns 404 on the official host (see data/url-checks.json), so these rows are shown as unverified and need re-verification against a live official page.",
+  "_note": "Caesars Palace daily NLH rows, re-verified on 2026-11-17 against the venue's own 2026 flyer (data/raw/caesars-daily-flyer-2026.txt). The flyer URL the repository used to track (clv-poker-daily-nlh-tournament-flyer-2025.pdf) is gone; the page the venue serves links the 2026 file, which is what every row below cites. The four start times, the $1,000 guarantee, the 20,000-chip stacks, the 20-minute levels, the $50 add-on, the level-seven registration close and the three fee splits are printed on that sheet; nothing here is carried over from the 2025 copy.",
   "caesars": [
    {
-    "day": "Daily (per undated 2026 flyer)",
+    "day": "Daily (2026 flyer, captured 2026-11-17)",
     "time": "10:00 AM",
     "event": "NLH",
     "name": "Caesars Palace Daily NLH — $100 entry",
@@ -1885,14 +1890,22 @@
      "C_FLYER",
      "C_PAGE"
     ],
-    "notes": "Flyer: $70 of $100 to prize pool, $30 house fee. Registration closes at start of level 7.",
+    "notes": "Of the $100 buy in, $70 goes to the prize pool and $30 is held by Caesars Palace as a maintenance fee. Registration closes at the start of level seven and re-entry is allowed within the first break, so this is not a single-entry event. All four start times carry the same printed $1,000 guarantee, 20,000 starting chips and 20-minute levels.",
     "source_urls": [
      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
      "https://www.caesars.com/caesars-palace/casino"
-    ]
+    ],
+    "fee": "Of the $100 buy in, $70 goes to the prize pool and $30 is held by Caesars Palace as a maintenance fee.",
+    "pool_per_entry": 70,
+    "re_entry_excerpt": "Participants may only register themselves, but may re-enter, by paying the entry fee, upon elimination within the first break of play.",
+    "add_on_excerpt": "All Tournaments feature a $50 add-on for 15,000 tournament chips that can only be taken at the first break.",
+    "reg_excerpt": "Registration is open until the start of level seven.",
+    "retrieved": "2026-11-17",
+    "capture": "data/raw/caesars-daily-flyer-2026.txt",
+    "verified": true
    },
    {
-    "day": "Daily (per undated 2026 flyer)",
+    "day": "Daily (2026 flyer, captured 2026-11-17)",
     "time": "2:00 PM",
     "event": "NLH",
     "name": "Caesars Palace Daily NLH — $160 entry",
@@ -1906,14 +1919,22 @@
      "C_FLYER",
      "C_PAGE"
     ],
-    "notes": "Flyer: $115 of $160 to prize pool, $45 house fee.",
+    "notes": "Of the $160 buy in, $115 goes to the prize pool and $45 is held by Caesars Palace as a maintenance fee. Registration closes at the start of level seven and re-entry is allowed within the first break, so this is not a single-entry event. All four start times carry the same printed $1,000 guarantee, 20,000 starting chips and 20-minute levels.",
     "source_urls": [
      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
      "https://www.caesars.com/caesars-palace/casino"
-    ]
+    ],
+    "fee": "Of the $160 buy in, $115 goes to the prize pool and $45 is held by Caesars Palace as a maintenance fee.",
+    "pool_per_entry": 115,
+    "re_entry_excerpt": "Participants may only register themselves, but may re-enter, by paying the entry fee, upon elimination within the first break of play.",
+    "add_on_excerpt": "All Tournaments feature a $50 add-on for 15,000 tournament chips that can only be taken at the first break.",
+    "reg_excerpt": "Registration is open until the start of level seven.",
+    "retrieved": "2026-11-17",
+    "capture": "data/raw/caesars-daily-flyer-2026.txt",
+    "verified": true
    },
    {
-    "day": "Daily (per undated 2026 flyer)",
+    "day": "Daily (2026 flyer, captured 2026-11-17)",
     "time": "6:00 PM",
     "event": "NLH",
     "name": "Caesars Palace Daily NLH — $100 entry",
@@ -1927,14 +1948,22 @@
      "C_FLYER",
      "C_PAGE"
     ],
-    "notes": "Same format as 10:00 AM event.",
+    "notes": "Of the $100 buy in, $70 goes to the prize pool and $30 is held by Caesars Palace as a maintenance fee. Registration closes at the start of level seven and re-entry is allowed within the first break, so this is not a single-entry event. All four start times carry the same printed $1,000 guarantee, 20,000 starting chips and 20-minute levels.",
     "source_urls": [
      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
      "https://www.caesars.com/caesars-palace/casino"
-    ]
+    ],
+    "fee": "Of the $100 buy in, $70 goes to the prize pool and $30 is held by Caesars Palace as a maintenance fee.",
+    "pool_per_entry": 70,
+    "re_entry_excerpt": "Participants may only register themselves, but may re-enter, by paying the entry fee, upon elimination within the first break of play.",
+    "add_on_excerpt": "All Tournaments feature a $50 add-on for 15,000 tournament chips that can only be taken at the first break.",
+    "reg_excerpt": "Registration is open until the start of level seven.",
+    "retrieved": "2026-11-17",
+    "capture": "data/raw/caesars-daily-flyer-2026.txt",
+    "verified": true
    },
    {
-    "day": "Daily (per undated 2026 flyer)",
+    "day": "Daily (2026 flyer, captured 2026-11-17)",
     "time": "9:00 PM",
     "event": "NLH",
     "name": "Caesars Palace Daily NLH — $160 entry",
@@ -1948,11 +1977,19 @@
      "C_FLYER",
      "C_PAGE"
     ],
-    "notes": "Same format as 2:00 PM event.",
+    "notes": "Of the $160 buy in, $115 goes to the prize pool and $45 is held by Caesars Palace as a maintenance fee. Registration closes at the start of level seven and re-entry is allowed within the first break, so this is not a single-entry event. All four start times carry the same printed $1,000 guarantee, 20,000 starting chips and 20-minute levels.",
     "source_urls": [
      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
      "https://www.caesars.com/caesars-palace/casino"
-    ]
+    ],
+    "fee": "Of the $160 buy in, $115 goes to the prize pool and $45 is held by Caesars Palace as a maintenance fee.",
+    "pool_per_entry": 115,
+    "re_entry_excerpt": "Participants may only register themselves, but may re-enter, by paying the entry fee, upon elimination within the first break of play.",
+    "add_on_excerpt": "All Tournaments feature a $50 add-on for 15,000 tournament chips that can only be taken at the first break.",
+    "reg_excerpt": "Registration is open until the start of level seven.",
+    "retrieved": "2026-11-17",
+    "capture": "data/raw/caesars-daily-flyer-2026.txt",
+    "verified": true
    }
   ]
  }

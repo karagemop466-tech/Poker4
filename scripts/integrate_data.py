@@ -37,6 +37,18 @@ VENUES_OUT = ROOT / "venues"
 E = html.escape
 
 
+_SEEN_IDS: dict[str, int] = {}
+
+
+def _unique_id(base: str) -> str:
+    """Anchors have to be one per row. The printed calendar lists a few events on two rows with
+    the same number, date and start time, so the second copy gets a suffix instead of stealing
+    the first row's anchor."""
+    n = _SEEN_IDS.get(base, 0) + 1
+    _SEEN_IDS[base] = n
+    return base if n == 1 else f"{base}-{n}"
+
+
 def load(name, default=None):
     path = DATA / name
     if not path.exists():
@@ -177,7 +189,7 @@ for row in SCHED["rows"]:
     sources = [row["source"]] + ([sheet_url] if sheet_url else [])
     kind, tags = classify(name)
     entry = {
-        "id": f"V{row['event_no']}-{row.get('date')}-{(row.get('time') or '').replace(' ', '').lower()}",
+        "id": _unique_id(f"V{row['event_no']}-{row.get('date')}-{(row.get('time') or '').replace(' ', '').lower()}"),
         "venue": "venetian",
         "venue_name": "The Venetian Poker Room",
         "event_no": row["event_no"],
@@ -298,7 +310,8 @@ BELLAGIO = list(csv.DictReader(open(DATA / "c07371e3" / "bellagio.csv", newline=
 
 
 def add_room_row(venue_id, venue_name, *, when, time, name, buy, gtd, reentry, addon, fee_txt,
-                 srcs, note=None, reg_closes=None, chips=None):
+                 srcs, note=None, reg_closes=None, chips=None, retrieved=None, capture=None,
+                 pool_per_entry=None):
     entry = {
         # stable id: a per-process hash() would move every anchor on every rebuild
         "id": f"{venue_id}-{when}-{(time or '').replace(' ', '').lower()}-{hashlib.sha1(name.encode()).hexdigest()[:5]}",
@@ -326,35 +339,84 @@ def add_room_row(venue_id, venue_name, *, when, time, name, buy, gtd, reentry, a
         "flags": ["schedule not re-published in this snapshot's dated calendar", "single-entry excluded (entry rules allow more)"] if (reentry or addon)
                  else ["single-entry unverified"],
     }
+    if retrieved:
+        for f in entry["rules"].values():
+            f["retrieved"] = retrieved
+    if capture:
+        entry["capture"] = capture
+    if pool_per_entry:
+        entry["pool_per_entry_usd"] = pool_per_entry
+    if fee_txt and not entry.get("is_continuation"):
+        entry["rankable"] = bool(buy and gtd)
+        if entry["rankable"] and pool_per_entry and gtd:
+            entry["gtd_over_pool_contribution"] = round(gtd / pool_per_entry, 2)
     if buy and gtd:
         entry["gtd_ratio"] = round(gtd / buy, 2)
     checked, changed = last_checked_for(srcs)
-    entry["last_checked"] = checked
+    # a row whose document is not in the monitor's list yet falls back to the date it was read,
+    # so "last checked" never shows a date the source itself was not verified against
+    entry["last_checked"] = checked or retrieved or ""
     entry["source_changed"] = changed
     events.append(entry)
 
 
-for r in WYNN_DAILY:
-    add_room_row("wynn", "Wynn Las Vegas Poker", when=r["schedule"], time=r["time"],
-                 name=r["event_name"], buy=int(r["buy_in_usd"]) if r["buy_in_usd"] else None,
-                 gtd=int(r["guarantee_usd"]) if r["guarantee_usd"] else None,
-                 reentry=None if r["re_entry"].lower().startswith("not") else r["re_entry"],
-                 addon=None if r["rebuy_addon"].lower().startswith("none") else r["rebuy_addon"],
-                 fee_txt=r["fees_and_staff"] or None, reg_closes=r.get("registration_end"),
-                 srcs=[r["source"],
-                       "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf"],
-                 note=r.get("flag") or None)
-for r in WYNN_WPT:
-    add_room_row("wynn", "Wynn Las Vegas Poker", when=r["dates"], time=None, name=r["event_name"],
-                 buy=int(r["buy_in_usd"]) if r["buy_in_usd"] else None,
-                 gtd=int(r["guarantee_usd"]) if r["guarantee_usd"] else None,
-                 reentry=None if "NOT CAPTURED" in r["re_entry"].upper() else r["re_entry"],
-                 addon=None, fee_txt=None,
-                 srcs=[r["source"],
-                       "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
-                       "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"],
-                 note="WPT World Championship series row (Nov 27 – Dec 21, 2026) from the venue's own PDFs" if "NOT CAPTURED" not in r["re_entry"].upper()
-                      else "entry terms not captured from the official PDFs — treated as unverified, not as single-entry")
+# The machine extraction of the venue's own PDFs replaces the 18 rows that were typed from them
+# by hand: tools/f0d7de66_extract_official.py reads data/raw/wynn-wpt-terms.txt (all 69 WPT event
+# sheets) and data/raw/wynn-daily-structures.txt (the four recurring tournaments), refuses to write
+# unless every excerpt it quotes appears verbatim in that capture, and carries the capture's sha256.
+# Each dated flight is its own row, so a day-plan can place it against the printed start time and
+# the printed registration cutoff instead of a whole series sitting on one vague line.
+WYNN_OFFICIAL = load("f0d7de66/events.json", None)
+
+
+def add_official_row(r):
+    """One extracted row, normalised into the shape every table and the day plan read."""
+    e = dict(r)
+    for key in ("printed_date", "sheet_note", "notes", "single_entry_confirmed", "gtd_ratio",
+                "pool_per_entry_usd", "level_duration", "sheet_key", "house_fee_usd",
+                "staff_charge_usd", "bounty_pool_usd", "sheet_late_registration",
+                "length_of_play", "payout_structure", "spend_advantage_evidence",
+                "registration_closes_printed", "registration_closes_basis"):
+        e.setdefault(key, None)
+    e["single_entry_confirmed"] = bool(e.get("single_entry_confirmed"))
+    checked, changed = last_checked_for(e.get("sources") or [])
+    e["last_checked"] = checked or e.get("last_checked")
+    e["source_changed"] = bool(changed) or bool(e.get("source_changed"))
+    if (e["rules"]["fee"]["status"] == "confirmed" and e.get("pool_per_entry_usd")
+            and e.get("guarantee_usd")):
+        e["gtd_over_pool_contribution"] = round(e["guarantee_usd"] / e["pool_per_entry_usd"], 2)
+    e["flags"] = list(e.get("flags") or [])
+    if not e["single_entry_confirmed"] and not e.get("spend_advantage") \
+            and "single-entry unverified" not in e["flags"]:
+        e["flags"].append("single-entry unverified")
+    events.append(e)
+
+
+if WYNN_OFFICIAL:
+    for r in list(WYNN_OFFICIAL.get("events") or []) + list(WYNN_OFFICIAL.get("dailies") or []):
+        add_official_row(r)
+else:                       # the earlier hand-captured CSV detail, used only when nothing was extracted
+    for r in WYNN_DAILY:
+        add_room_row("wynn", "Wynn Las Vegas Poker", when=r["schedule"], time=r["time"],
+                     name=r["event_name"], buy=int(r["buy_in_usd"]) if r["buy_in_usd"] else None,
+                     gtd=int(r["guarantee_usd"]) if r["guarantee_usd"] else None,
+                     reentry=None if r["re_entry"].lower().startswith("not") else r["re_entry"],
+                     addon=None if r["rebuy_addon"].lower().startswith("none") else r["rebuy_addon"],
+                     fee_txt=r["fees_and_staff"] or None, reg_closes=r.get("registration_end"),
+                     srcs=[r["source"],
+                           "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf"],
+                     note=r.get("flag") or None)
+    for r in WYNN_WPT:
+        add_room_row("wynn", "Wynn Las Vegas Poker", when=r["dates"], time=None, name=r["event_name"],
+                     buy=int(r["buy_in_usd"]) if r["buy_in_usd"] else None,
+                     gtd=int(r["guarantee_usd"]) if r["guarantee_usd"] else None,
+                     reentry=None if "NOT CAPTURED" in r["re_entry"].upper() else r["re_entry"],
+                     addon=None, fee_txt=None,
+                     srcs=[r["source"],
+                           "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+                           "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"],
+                     note="WPT World Championship series row (Nov 27 – Dec 21, 2026) from the venue's own PDFs" if "NOT CAPTURED" not in r["re_entry"].upper()
+                          else "entry terms not captured from the official PDFs — treated as unverified, not as single-entry")
 for r in BELLAGIO:
     srcs = [r["source"]]
     add_room_row("bellagio", "Bellagio Poker Room", when=r["day"], time="11:00 AM",
@@ -368,12 +430,17 @@ for r in BELLAGIO:
                  chips=int(r["starting_chips"]) if r["starting_chips"].isdigit() else None)
 for r in (CFG.get("preserved_rows", {}).get("caesars") or LEGACY.get("reentry_or_addon", [])):
     if r.get("venue", "").startswith("Caesars"):
+        # every value below is printed on the venue's own 2026 flyer, captured under data/raw
         add_room_row("caesars", "Caesars Palace Poker Room", when=r["day"], time=r["time"],
                      name=r["name"], buy=r.get("buy_in"), gtd=r.get("guarantee"),
-                     reentry=(r.get("reentry_addon") or "").split(";")[0] or None,
-                     addon=(r["reentry_addon"].split("add-on")[1].strip(" ;") if "add-on" in (r.get("reentry_addon") or "").lower() else None),
-                     fee_txt=None, srcs=r.get("source_urls") or [LEGACY["sources"][k]["url"] for k in r.get("sources", []) if k in LEGACY.get("sources", {})],
-                     note="Preserved from the earlier capture; the official daily flyer URL now returns 404, so this row needs re-verification")
+                     reentry=r.get("re_entry_excerpt") or (r.get("reentry_addon") or "").split(";")[0] or None,
+                     addon=r.get("add_on_excerpt") or (r["reentry_addon"].split("add-on")[1].strip(" ;")
+                                                        if "add-on" in (r.get("reentry_addon") or "").lower() else None),
+                     fee_txt=r.get("fee"), srcs=r.get("source_urls")
+                     or [LEGACY["sources"][k]["url"] for k in r.get("sources", []) if k in LEGACY.get("sources", {})],
+                     note=r.get("notes"), reg_closes=r.get("reg_excerpt"), chips=r.get("chips"),
+                     retrieved=r.get("retrieved"), capture=r.get("capture"),
+                     pool_per_entry=r.get("pool_per_entry"))
 
 events.sort(key=lambda e: (e.get("date") or "9999-99-99", e.get("time") or "", e["venue"]))
 
@@ -958,7 +1025,7 @@ def page_index():
 def page_tournaments():
     ven = [e for e in events if e["venue"] == "venetian" and not e.get("is_continuation")]
     confirmed = [e for e in events if e.get("single_entry_confirmed")]
-    spend = [e for e in events if e.get("spend_advantage")]
+    spend = [e for e in events if e.get("spend_advantage") and not e.get("is_continuation")]
     other = [e for e in events if not e.get("single_entry_confirmed") and not e.get("spend_advantage")
              and not e.get("is_continuation")]
     cont = [e for e in events if e.get("is_continuation")]

@@ -73,6 +73,47 @@ def today_utc() -> str:
     return dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d")
 
 
+RAW_DIR = os.path.join(DATA, "raw")
+
+
+def linked_elsewhere(url: str, skip: str) -> list[str]:
+    """Which official pages captured under data/raw still link this document.
+
+    A 404 from our own identifying user agent is not the same statement as "the venue took the
+    page down". If a page the venue does serve still links the file, the honest verdict is
+    "this monitor cannot read it", not "the source is dead" - and the difference decides whether
+    a row is flagged as changed or as needing a browser check. Deliberately no user-agent
+    spoofing: a bot that pretends to be a browser to get past a block is not something this
+    repository should automate.
+    """
+    name = url.rsplit("/", 1)[-1]
+    hits: list[str] = []
+    if not name or len(name) < 6:
+        return hits
+    try:
+        files = sorted(os.listdir(RAW_DIR))
+    except OSError:
+        return hits
+    for fn in files:
+        if not fn.endswith(".txt"):
+            continue
+        path = os.path.join(RAW_DIR, fn)
+        try:
+            text = open(path, encoding="utf-8", errors="replace").read()
+        except OSError:
+            continue
+        if name in text:
+            m = re.search(r"captured\s+\S+\s+from\s+(\S+)", text[:400])
+            src = m.group(1) if m else ""
+            if src and src != skip and src != name:
+                hits.append(src)
+            else:
+                hits.append(f"data/raw/{fn}")
+        if len(hits) >= 3:
+            break
+    return hits
+
+
 # ------------------------------------------------------------------------ fetch
 def fetch(url: str) -> dict:
     """GET with retries. Returns a status dict; never raises."""
@@ -672,6 +713,14 @@ def main() -> int:
             rec["content_changed"] = None
             if (prev.get(url) or {}).get("sha256"):
                 rec["previously_ok"] = True
+            if rec.get("status") in (403, 404, 410, 429):
+                still = linked_elsewhere(url, url)
+                if still:
+                    rec["still_linked_from"] = still
+                    rec["verdict"] = ("unreachable by this monitor, still linked from an official page "
+                                      "it serves - check in a browser before calling the source dead")
+                else:
+                    rec["verdict"] = "unreachable and not linked from any captured official page"
         checks[url] = rec
 
     change_log["entries"] = change_log["entries"][:400]
