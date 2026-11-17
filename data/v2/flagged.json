@@ -298,6 +298,20 @@
    "how_to_settle": "Resolved for execution. The first genuinely useful run is the next scheduled one.",
    "sources": [],
    "repo_link": "https://github.com/karagemop466-tech/Poker4/blob/main/.github/workflows/v2-monitor.yml"
+  },
+  {
+   "id": "F26",
+   "category": "Monitoring",
+   "severity": "material",
+   "title": "The monitor's first real detection was churn, not a fact change \u2014 and that is the point",
+   "detail": "On its second scheduled run the monitor reported 'checked: 61, changed: 3'. All three were re-read by hand: W_TC_FEE still states a $55 plus tax daily resort fee (the page changed only because a new Concours package offer was inserted above it); W_POKER redirected to the Wynn homepage with its dining and show promos (no poker fact changed); M_FEES_UNVERIFIED is a third-party page that is never used for a displayed value. No published number on this site needed to move.",
+   "how_to_settle": "Nothing to fix \u2014 this is the designed behaviour. It also calibrates expectations: these pages carry rotating marketing content, so a non-zero 'changed' count will be common and each hit still needs a human read. Adding per-page content selectors would cut the noise if that ever becomes annoying.",
+   "sources": [
+    "W_TC_FEE",
+    "W_POKER",
+    "M_FEES_UNVERIFIED"
+   ],
+   "repo_link": "https://github.com/karagemop466-tech/Poker4/blob/main/data/v2/snapshots/check-43993946834.txt"
   }
  ]
 }
