@@ -35,7 +35,7 @@
      "dated_quote": false
     }
    ],
-   "booking_url": "https://www.venetianlasvegas.com/booking?adults[]=2&arrival_date={in}&children[]=0&departure_date={out}&view=calendar",
+   "booking_url": "https://www.venetianlasvegas.com/booking?adults[]={adults}&arrival_date={in}&children[]=0&departure_date={out}&view=calendar",
    "booking_note": "Official booking engine accepts arrival/departure dates in the URL; per-date links generated on the Hotels page.",
    "notes": "Best verified data quality: fee, tax, parking, cancellation and conditional poker rates all on official pages. TRUE cost examples (conditional): ($119+$55)x1.1338 = $197.28/night; ($209+$55)x1.1338 = $299.32/night."
   },
@@ -246,56 +246,56 @@
   {
    "hotel": "Bellagio",
    "venue": "Wynn",
-   "minutes": null,
-   "distance": null,
-   "note": "Not yet measured \u2014 scheduled.",
+   "minutes": 32,
+   "distance": "1.4 mi",
+   "note": "Best via Las Vegas Blvd S (32 min); alternate via Las Vegas Blvd Overpass (33 min) or Bellagio Dr (36 min); over 30-minute limit.",
    "url": "https://www.google.com/maps/dir/?api=1&origin=Bellagio,+3600+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&destination=Wynn+Las+Vegas,+3131+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&travelmode=walking",
-   "verified": false
+   "verified": true
   },
   {
    "hotel": "ARIA",
    "venue": "Wynn",
-   "minutes": null,
-   "distance": null,
-   "note": "Not yet measured \u2014 scheduled.",
+   "minutes": 42,
+   "distance": "1.9 mi",
+   "note": "Best via Las Vegas Blvd S (42 min); over 30-minute limit.",
    "url": "https://www.google.com/maps/dir/?api=1&origin=Aria+Resort+%26+Casino,+3730+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&destination=Wynn+Las+Vegas,+3131+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&travelmode=walking",
-   "verified": false
+   "verified": true
   },
   {
    "hotel": "Caesars Palace",
    "venue": "Wynn",
-   "minutes": null,
-   "distance": null,
-   "note": "Not yet measured \u2014 scheduled.",
+   "minutes": 23,
+   "distance": "1.0 mi",
+   "note": "Best via Las Vegas Blvd S (23 min); alternate via Caesars Palace Dr (24 min).",
    "url": "https://www.google.com/maps/dir/?api=1&origin=Caesars+Palace,+3570+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&destination=Wynn+Las+Vegas,+3131+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&travelmode=walking",
-   "verified": false
+   "verified": true
   },
   {
    "hotel": "Treasure Island",
    "venue": "Wynn",
-   "minutes": null,
-   "distance": null,
-   "note": "Not yet measured \u2014 scheduled.",
+   "minutes": 11,
+   "distance": "0.5 mi",
+   "note": "Best via Las Vegas Blvd S (11 min); alternate via Wynn Main Gate Dr (13 min).",
    "url": "https://www.google.com/maps/dir/?api=1&origin=Treasure+Island+Las+Vegas,+3300+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&destination=Wynn+Las+Vegas,+3131+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&travelmode=walking",
-   "verified": false
+   "verified": true
   },
   {
    "hotel": "Harrah's Las Vegas",
    "venue": "Wynn",
-   "minutes": null,
-   "distance": null,
-   "note": "Not yet measured \u2014 scheduled.",
+   "minutes": 18,
+   "distance": "0.8 mi",
+   "note": "Best via Las Vegas Blvd S (18 min); alternate via Wynn Main Gate Dr (18 min).",
    "url": "https://www.google.com/maps/dir/?api=1&origin=Harrah%27s+Las+Vegas,+3475+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&destination=Wynn+Las+Vegas,+3131+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&travelmode=walking",
-   "verified": false
+   "verified": true
   },
   {
    "hotel": "Horseshoe Las Vegas",
    "venue": "Wynn",
-   "minutes": null,
-   "distance": null,
-   "note": "Not yet measured \u2014 scheduled.",
+   "minutes": 29,
+   "distance": "1.3 mi",
+   "note": "Best via Las Vegas Blvd S (29 min); alternate via E Flamingo Rd (29 min), at the 30-minute limit.",
    "url": "https://www.google.com/maps/dir/?api=1&origin=Horseshoe+Las+Vegas,+3645+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&destination=Wynn+Las+Vegas,+3131+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&travelmode=walking",
-   "verified": false
+   "verified": true
   }
  ]
 }

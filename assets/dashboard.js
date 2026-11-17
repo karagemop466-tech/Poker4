@@ -32,6 +32,18 @@
       var cnt = scope && scope.querySelector('[data-rowcount]');
       if (cnt) cnt.textContent = shown + ' rows visible in this table (of ' + rows(tbl).length + ')';
     });
+    // The schedule page uses day cards rather than a table; apply the same
+    // page-level search and selected-date control to those cards.
+    document.querySelectorAll('.daycard').forEach(function (card) {
+      var scope = card.closest('main');
+      var input = scope && scope.querySelector('[data-search]');
+      var date = scope && scope.querySelector('[data-datefilter]');
+      var q = input ? input.value.trim().toLowerCase() : '';
+      var selected = date ? date.value : '';
+      var ok = (!q || card.innerText.toLowerCase().indexOf(q) !== -1) &&
+               (!selected || card.getAttribute('data-day') === selected);
+      card.style.display = ok ? '' : 'none';
+    });
   }
 
   function applyWalkFilter() {
@@ -48,7 +60,7 @@
 
   document.addEventListener('input', function (e) {
     if (e.target.matches('[data-search]')) applyFilters();
-    if (e.target.matches('#bk-in,#bk-out')) renderBookingLinks();
+    if (e.target.matches('#bk-in,#bk-out,#bk-adults')) renderBookingLinks();
   });
   document.addEventListener('change', function (e) {
     if (e.target.matches('[data-datefilter],[data-freezeout]')) applyFilters();
@@ -56,8 +68,8 @@
     if (e.target.matches('#c-hotel')) {
       var opt = e.target.selectedOptions[0];
       if (opt) {
-        if (opt.dataset.rate) document.getElementById('c-rate').value = opt.dataset.rate;
-        if (opt.dataset.fee) document.getElementById('c-fee').value = opt.dataset.fee;
+        // Never auto-fill a date-specific rate from a conditional starting-rate log.
+        document.getElementById('c-fee').value = opt.dataset.fee || '';
       }
     }
     if (e.target.matches('#c-entries,#c-buyin,#c-nights,#c-rate,#c-fee,#c-tax,#c-park,#c-hotel')) calc();
@@ -93,10 +105,11 @@
     var box = document.getElementById('bk-links');
     if (!box) return;
     var i = document.getElementById('bk-in').value, o = document.getElementById('bk-out').value;
-    if (!i || !o) { box.innerHTML = '<p class="muted">Pick both dates.</p>'; return; }
+    var adults = (document.getElementById('bk-adults') || {}).value || '';
+    if (!i || !o || !adults) { box.innerHTML = '<p class="muted">Enter check-in, check-out, and occupancy to generate a date-specific official booking link.</p>'; return; }
     box.innerHTML = BOOKINGS.map(function (b) {
-      var u = b.url.replace('{in}', i).replace('{out}', o);
-      return '<p>' + b.name + ': <a href="' + u + '" target="_blank" rel="noopener">official booking link for ' + i + ' → ' + o + '</a></p>';
+      var u = b.url.replace('{in}', i).replace('{out}', o).replace('{adults}', encodeURIComponent(adults));
+      return '<p>' + b.name + ': <a href="' + u + '" target="_blank" rel="noopener">official booking link for ' + i + ' → ' + o + ', ' + adults + ' adults</a></p>';
     }).join('');
   }
 

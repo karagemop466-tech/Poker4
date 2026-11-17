@@ -42,17 +42,25 @@ def main():
         try:
             h = norm_hash(fetch(s["url"]))
             prev = history.get(s["url"], {})
-            if prev.get("hash") and prev["hash"] != h:
-                row["status"] = "CHANGED since %s" % prev.get("date", "?")
+            newly_changed = bool(prev.get("hash") and prev["hash"] != h)
+            pending = bool(prev.get("pending_review") or newly_changed)
+            changed_on = TODAY if newly_changed else prev.get("changed_on")
+            if pending:
+                row["status"] = "CHANGED since %s — review pending" % (changed_on or "unknown")
                 row["changed"] = "YES — review required"
                 changed.append(s["label"])
             else:
                 row["status"] = "unchanged (baseline)" if not prev.get("hash") else "unchanged"
                 row["changed"] = "no"
-            history[s["url"]] = dict(hash=h, date=TODAY)
+            history[s["url"]] = dict(hash=h, date=TODAY, pending_review=pending, changed_on=changed_on)
         except Exception as ex:
-            row["status"] = "FETCH ERROR: %s" % ex
-            row["changed"] = "unknown — fetch failed"
+            prev = history.get(s["url"], {})
+            if prev.get("pending_review"):
+                row["status"] = "FETCH ERROR; CHANGED review pending since %s" % prev.get("changed_on", "unknown")
+                row["changed"] = "YES — review required (fetch failed)"
+            else:
+                row["status"] = "FETCH ERROR: %s" % ex
+                row["changed"] = "unknown — fetch failed"
             errors.append("%s (%s)" % (s["label"], ex))
         checks.append(row)
     with open(hist_path, "w") as f:
