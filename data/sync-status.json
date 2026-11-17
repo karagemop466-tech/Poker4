@@ -1,31 +1,14 @@
 {
- "generated_at": "2026-11-17T01:23:30Z",
+ "generated_at": "2026-11-17T01:27:15Z",
  "urls_checked": 64,
  "urls_failed": [
   "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2025.pdf",
   "https://bellagio.mgmresorts.com/en/hotel/resort-fee.html"
  ],
- "changed_this_run": [
-  "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
-  "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament.html",
-  "https://www.venetianlasvegas.com/resort/casino/poker.html",
-  "https://wynnlasvegas.com/casino/poker",
-  "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
-  "https://www.caesars.com/horseshoe-las-vegas/casino/poker",
-  "https://www.venetianlasvegas.com/resort/resort-fee.html",
-  "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
-  "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
-  "https://www.venetianlasvegas.com/resort/casino/poker/player-parking.html",
-  "https://www.venetianlasvegas.com/venetian-rewards/terms-and-conditions.html",
-  "https://www.wynnlasvegas.com/terms-and-conditions/850257",
-  "https://www.caesars.com/caesars-palace/resort-fee",
-  "https://www.caesars.com/harrahs-las-vegas",
-  "https://www.caesars.com/horseshoe-las-vegas",
-  "https://www.wsop.com/schedule/"
- ],
+ "changed_this_run": [],
  "sheets_audited": 42,
  "schedule_rows": 93,
  "schedule_rows_with_date": 0,
  "date_head_sample": " Room @VenetianPoker IN GUARANTEED PRIZE POOLS $3.6 MILLION NOVEMBER 16- DECEMBER 23, 2026 MORE THAN DATE EVENT # EVENT TIME REG CLOSES GUARANTEE CHIPS LEVEL CHA",
- "hotel_fact_sources": 0
+ "hotel_fact_sources": 16
 }
