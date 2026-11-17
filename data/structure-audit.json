@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generated_at": "2026-11-17T01:11:27Z",
+  "generated_at": "2026-11-17T01:14:50Z",
   "generator": "tools/sync_official_sources.py",
   "policy": "Field values are matched from the fetched sheet text only. entry_policy='not_stated_in_sheet' means the sheet contains no clause about entries/re-entries/add-ons — that is NOT confirmation of single-entry play."
  },
@@ -15,6 +15,7 @@
    "late_registration": null,
    "guarantee": "D PRIZE POOLS",
    "day2": "DAY 2 RESTART 12:00 PM 40 TROPHY + BRONZE COIN",
+   "flight_start": null,
    "bagging": null,
    "title": "The Venetian® and other trademarks are used under license.",
    "house_fee_usd": null,
@@ -45,6 +46,7 @@
    "late_registration": null,
    "guarantee": "$200 Entry Fee",
    "day2": null,
+   "flight_start": null,
    "bagging": null,
    "title": "Wynn Daily Poker Tournaments",
    "house_fee_usd": null,
@@ -77,6 +79,7 @@
    "late_registration": null,
    "guarantee": "Monday–Thursday • $200 NLH • 12 p.m.",
    "day2": null,
+   "flight_start": null,
    "bagging": null,
    "title": "DAILY TOURNAMENTS",
    "house_fee_usd": null,
@@ -107,6 +110,7 @@
    "late_registration": null,
    "guarantee": "$400,000",
    "day2": "Day 2",
+   "flight_start": null,
    "bagging": null,
    "title": "NOVEMBER 27 - DECEMBER 21, 2026",
    "house_fee_usd": null,
@@ -137,6 +141,7 @@
    "late_registration": null,
    "guarantee": "Level Small Blind Big Blind Ante",
    "day2": "Day 2: Monday, November 30, 2026 at 1 p",
+   "flight_start": null,
    "bagging": null,
    "title": "WPT World Championship",
    "house_fee_usd": null,
@@ -167,6 +172,7 @@
    "late_registration": "8 levels + Break (9:40 PM)",
    "guarantee": "$8,000 (prize pool + total bounties)",
    "day2": null,
+   "flight_start": null,
    "bagging": null,
    "title": "$200 No Limit Hold’em Bounty (1Day)",
    "house_fee_usd": 40,
@@ -191,17 +197,19 @@
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_2.pdf",
    "retrieved": "2026-11-17",
    "event_numbers": "07",
-   "start_time": null,
+   "start_time": "11:10 AM",
    "starting_chips": "40,000",
    "level_duration": "40 minutes",
    "late_registration": "9 levels + Break (5:55 PM)",
    "guarantee": "$75,000",
    "day2": "Day 2 @ 11:00 AM",
+   "flight_start": "Day A+B @ 11:10 AM",
    "bagging": "Any player who bags chips for Day 2 may not play a subsequent flight",
    "title": "$400 No Limit Hold’em",
    "house_fee_usd": 70,
    "buy_in_usd": 400,
    "pool_per_entry_usd": 330,
+   "start_time_basis": "printed as the Day-A flight start on the sheet",
    "payout_pct_of_field": null,
    "clauses": {
     "single_entry_confirmed": [],
@@ -215,23 +223,31 @@
    "entry_policy": "not_stated_in_sheet",
    "levels_listed": null,
    "breaks_listed": 9,
-   "pdf_sha256": "8cee0c84b4a8971a6648ffad137628c5e063e178c4f2ed6fbf00dfacf74418da"
+   "pdf_sha256": "8cee0c84b4a8971a6648ffad137628c5e063e178c4f2ed6fbf00dfacf74418da",
+   "changed_fields": {
+    "start_time": {
+     "was": null,
+     "now": "11:10 AM"
+    }
+   }
   },
   "V_S3": {
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_3.pdf",
    "retrieved": "2026-11-17",
    "event_numbers": "19",
-   "start_time": null,
+   "start_time": "11:10 AM",
    "starting_chips": "40,000",
    "level_duration": "40 minutes",
    "late_registration": "9 levels + Break (5:55 PM)",
    "guarantee": "$75,000",
    "day2": "Day 2 @ 11:00 AM",
+   "flight_start": "Day A+B+C @ 11:10 AM",
    "bagging": "Any player who bags chips for Day 2 may not play a subsequent flight",
    "title": "$400 No Limit Hold’em",
    "house_fee_usd": 70,
    "buy_in_usd": 400,
    "pool_per_entry_usd": 330,
+   "start_time_basis": "printed as the Day-A flight start on the sheet",
    "payout_pct_of_field": null,
    "clauses": {
     "single_entry_confirmed": [],
@@ -245,23 +261,31 @@
    "entry_policy": "not_stated_in_sheet",
    "levels_listed": null,
    "breaks_listed": 9,
-   "pdf_sha256": "f9721bcaa36df2e83c1efd1277abee82f169a84087502b00ab374522db00cd78"
+   "pdf_sha256": "f9721bcaa36df2e83c1efd1277abee82f169a84087502b00ab374522db00cd78",
+   "changed_fields": {
+    "start_time": {
+     "was": null,
+     "now": "11:10 AM"
+    }
+   }
   },
   "V_S4": {
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf",
    "retrieved": "2026-11-17",
    "event_numbers": "59",
-   "start_time": null,
+   "start_time": "11:10 AM",
    "starting_chips": "40,000",
    "level_duration": "40 minutes",
    "late_registration": "9 levels + Break (5:55 PM)",
    "guarantee": "$150,000",
    "day2": "Day 2 @ 11:00 AM",
+   "flight_start": "Day A+B+C @ 11:10 AM",
    "bagging": "Any player who bags chips for Day 2 may not play a subsequent flight",
    "title": "$600 No Limit Hold’em",
    "house_fee_usd": 95,
    "buy_in_usd": 600,
    "pool_per_entry_usd": 505,
+   "start_time_basis": "printed as the Day-A flight start on the sheet",
    "payout_pct_of_field": null,
    "clauses": {
     "single_entry_confirmed": [],
@@ -275,7 +299,13 @@
    "entry_policy": "not_stated_in_sheet",
    "levels_listed": null,
    "breaks_listed": 9,
-   "pdf_sha256": "8cd8c57d75648a9ade4d774e723a214824b61d3e85302ede0944cdadd1b0896f"
+   "pdf_sha256": "8cd8c57d75648a9ade4d774e723a214824b61d3e85302ede0944cdadd1b0896f",
+   "changed_fields": {
+    "start_time": {
+     "was": null,
+     "now": "11:10 AM"
+    }
+   }
   },
   "V_S5": {
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf",
@@ -287,6 +317,7 @@
    "late_registration": "10 levels + Break (~ 4:55 PM)",
    "guarantee": "$10,000",
    "day2": null,
+   "flight_start": null,
    "bagging": null,
    "title": "$300 No Limit Hold’em (1Day)",
    "house_fee_usd": 58,
@@ -317,6 +348,7 @@
    "late_registration": "10 levels + Break (~ 4:55 PM)",
    "guarantee": "$15,000",
    "day2": null,
+   "flight_start": null,
    "bagging": null,
    "title": "$400 No Limit Hold’em (1Day)",
    "house_fee_usd": 65,
@@ -347,6 +379,7 @@
    "late_registration": "10 levels + Break (~ 4:55 PM)",
    "guarantee": "$30,000 for Event #14 and #63",
    "day2": null,
+   "flight_start": null,
    "bagging": null,
    "title": "$600 No Limit Hold’em (1Day)",
    "house_fee_usd": 90,
@@ -377,6 +410,7 @@
    "late_registration": "8 levels + Break (9:40 PM)",
    "guarantee": "$20,000 (prize pool + total bounties)",
    "day2": null,
+   "flight_start": null,
    "bagging": null,
    "title": "$200 No Limit Hold’em Valuetown™ Bounty (1Day)",
    "house_fee_usd": 40,
@@ -391,7 +425,7 @@
     "addon_allowed": [],
     "addon_forbidden": []
    },
-   "subsequent_entry_excerpt": null,
+   "subsequent_entry_excerpt": "ker cage window and show confirmation to The Venetian Poker Room cage team member when registering for the event. All subsequent buy in’s after the initial buy in will be $200. 8. This event pays 12.5% of the field 9. Ante will come from the Big Blind O",
    "entry_policy": "not_stated_in_sheet",
    "levels_listed": null,
    "breaks_listed": 6,
@@ -401,17 +435,19 @@
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_9.pdf",
    "retrieved": "2026-11-17",
    "event_numbers": "01",
-   "start_time": null,
+   "start_time": "5:10 PM",
    "starting_chips": "30,000",
    "level_duration": "30 minutes",
    "late_registration": "6 levels + Break (~ 8:40 PM)",
    "guarantee": "$75,000",
    "day2": "Day 2 @ 12:00 PM",
+   "flight_start": "Day B+D @ 5:10 PM",
    "bagging": "Any player who bags chips for Day 2 may not play a subsequent flight",
    "title": "$300 No Limit Hold’em",
    "house_fee_usd": 60,
    "buy_in_usd": 300,
    "pool_per_entry_usd": 240,
+   "start_time_basis": "printed as the Day-A flight start on the sheet",
    "payout_pct_of_field": null,
    "clauses": {
     "single_entry_confirmed": [],
@@ -425,23 +461,31 @@
    "entry_policy": "not_stated_in_sheet",
    "levels_listed": null,
    "breaks_listed": 7,
-   "pdf_sha256": "1e25900a50b3db8b955c672343d812b4e51696fb199a6fc037fbc4c55c7e8ce9"
+   "pdf_sha256": "1e25900a50b3db8b955c672343d812b4e51696fb199a6fc037fbc4c55c7e8ce9",
+   "changed_fields": {
+    "start_time": {
+     "was": null,
+     "now": "5:10 PM"
+    }
+   }
   },
   "V_S10": {
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf",
    "retrieved": "2026-11-17",
    "event_numbers": "01",
-   "start_time": null,
+   "start_time": "11:10 AM",
    "starting_chips": "30,000",
    "level_duration": "40 minutes",
    "late_registration": "6 levels + Break (~ 3:40 PM)",
    "guarantee": "$75,000",
    "day2": "Day 2 @ 12:00 PM",
+   "flight_start": "Day A+C @ 11:10 AM",
    "bagging": "Any player who bags chips for Day 2 may not play a subsequent flight",
    "title": "$300 No Limit Hold’em",
    "house_fee_usd": 60,
    "buy_in_usd": 300,
    "pool_per_entry_usd": 240,
+   "start_time_basis": "printed as the Day-A flight start on the sheet",
    "payout_pct_of_field": null,
    "clauses": {
     "single_entry_confirmed": [],
@@ -455,7 +499,13 @@
    "entry_policy": "not_stated_in_sheet",
    "levels_listed": null,
    "breaks_listed": 9,
-   "pdf_sha256": "32fccc9ec29fa00c71f6fee4fc3ada9c02e39a49243c29d3cc2df99ddb07016c"
+   "pdf_sha256": "32fccc9ec29fa00c71f6fee4fc3ada9c02e39a49243c29d3cc2df99ddb07016c",
+   "changed_fields": {
+    "start_time": {
+     "was": null,
+     "now": "11:10 AM"
+    }
+   }
   },
   "V_S11": {
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf",
@@ -467,6 +517,7 @@
    "late_registration": "10 levels + Break (4:55 PM)",
    "guarantee": "$30,000 (prize pool + total bounties) Event #16",
    "day2": null,
+   "flight_start": null,
    "bagging": null,
    "title": "$600 No Limit Hold’em Bounty (1Day)",
    "house_fee_usd": 90,
@@ -491,17 +542,19 @@
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf",
    "retrieved": "2026-11-17",
    "event_numbers": "26",
-   "start_time": null,
+   "start_time": "11:10 AM",
    "starting_chips": "40,000",
    "level_duration": "40 minutes",
    "late_registration": "6 levels + Break (~ 3:40 PM)",
    "guarantee": "$500,000",
    "day2": "Day 2 @ 12:00 PM",
+   "flight_start": "Day A+C+E @ 11:10 AM",
    "bagging": "Any player who bags chips for Day 2 may not play a subsequent flight",
    "title": "$800 No Limit Hold’em",
    "house_fee_usd": 110,
    "buy_in_usd": 800,
    "pool_per_entry_usd": 690,
+   "start_time_basis": "printed as the Day-A flight start on the sheet",
    "payout_pct_of_field": null,
    "clauses": {
     "single_entry_confirmed": [],
@@ -515,23 +568,31 @@
    "entry_policy": "not_stated_in_sheet",
    "levels_listed": null,
    "breaks_listed": 9,
-   "pdf_sha256": "7d5e0a03a5e4b90c760b75db2a80c3a69ff1d70bc8137698f2eaf0b620108b52"
+   "pdf_sha256": "7d5e0a03a5e4b90c760b75db2a80c3a69ff1d70bc8137698f2eaf0b620108b52",
+   "changed_fields": {
+    "start_time": {
+     "was": null,
+     "now": "11:10 AM"
+    }
+   }
   },
   "V_S13": {
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_13.pdf",
    "retrieved": "2026-11-17",
    "event_numbers": "26",
-   "start_time": null,
+   "start_time": "5:10 PM",
    "starting_chips": "40,000",
    "level_duration": "30 minutes",
    "late_registration": "6 levels + Break (~ 8:40 PM)",
    "guarantee": "$500,000",
    "day2": "Day 2 @ 12:00 PM",
+   "flight_start": "Day B+D @ 5:10 PM",
    "bagging": "Any player who bags chips for Day 2 may not play a subsequent flight",
    "title": "$800 No Limit Hold’em",
    "house_fee_usd": 110,
    "buy_in_usd": 800,
    "pool_per_entry_usd": 690,
+   "start_time_basis": "printed as the Day-A flight start on the sheet",
    "payout_pct_of_field": null,
    "clauses": {
     "single_entry_confirmed": [],
@@ -545,7 +606,13 @@
    "entry_policy": "not_stated_in_sheet",
    "levels_listed": null,
    "breaks_listed": 7,
-   "pdf_sha256": "7a1ffb8af0e30bcf7e248ee7a0c53fddfe062c98a4b260183988d1e36b247416"
+   "pdf_sha256": "7a1ffb8af0e30bcf7e248ee7a0c53fddfe062c98a4b260183988d1e36b247416",
+   "changed_fields": {
+    "start_time": {
+     "was": null,
+     "now": "5:10 PM"
+    }
+   }
   },
   "V_S14": {
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_14.pdf",
@@ -557,6 +624,7 @@
    "late_registration": "6 levels + Break (~ 7:25 PM)",
    "guarantee": "$500,000",
    "day2": "Day 2 @ 12:00 PM",
+   "flight_start": null,
    "bagging": "Any player who bags chips for Day 2 may not play a subsequent flight",
    "title": "$800 No Limit Hold’em",
    "house_fee_usd": 110,
@@ -587,6 +655,7 @@
    "late_registration": "8 levels + Break (9:40 PM)",
    "guarantee": "$15,000 (prize pool + total bounties)",
    "day2": null,
+   "flight_start": null,
    "bagging": null,
    "title": "$300 No Limit Hold’em Bounty (1Day)",
    "house_fee_usd": 50,
@@ -617,6 +686,7 @@
    "late_registration": "10 levels + Break (4:55 PM)",
    "guarantee": "$75,000 (prize pool + total bounties)",
    "day2": null,
+   "flight_start": null,
    "bagging": null,
    "title": "$800 No Limit Hold’em Bounty (1Day)",
    "house_fee_usd": 100,
@@ -647,6 +717,7 @@
    "late_registration": "10 levels + Break (~ 3:55 PM)",
    "guarantee": "$40,000",
    "day2": null,
+   "flight_start": null,
    "bagging": null,
    "title": "$600 No Limit Hold’em Seniors (1Day)",
    "house_fee_usd": 90,
@@ -677,6 +748,7 @@
    "late_registration": "6 levels + Break (~ 12:25 PM)",
    "guarantee": null,
    "day2": null,
+   "flight_start": null,
    "bagging": null,
    "title": "$200 No Limit Hold’em (1Day)",
    "house_fee_usd": 35,
@@ -707,6 +779,7 @@
    "late_registration": "6 levels + Break (~6:25 PM)",
    "guarantee": "2 Seats",
    "day2": null,
+   "flight_start": null,
    "bagging": null,
    "title": "$100 NLH LIPS Ladies (1Day)",
    "house_fee_usd": 20,
@@ -731,17 +804,19 @@
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_20.pdf",
    "retrieved": "2026-11-17",
    "event_numbers": "49",
-   "start_time": null,
+   "start_time": "10:10 AM",
    "starting_chips": "40,000",
    "level_duration": "40 minutes",
    "late_registration": "9 levels + Break (~ 4:55 PM)",
    "guarantee": "$300,000",
    "day2": "Day 2 @ 10:00 AM",
+   "flight_start": "Day A+B @ 10:10 AM",
    "bagging": "Any player who bags chips for Day 2 may not play a subsequent flight",
    "title": "$1,100 No Limit Hold’em Seniors",
    "house_fee_usd": 140,
    "buy_in_usd": 1100,
    "pool_per_entry_usd": 960,
+   "start_time_basis": "printed as the Day-A flight start on the sheet",
    "payout_pct_of_field": null,
    "clauses": {
     "single_entry_confirmed": [],
@@ -755,7 +830,13 @@
    "entry_policy": "not_stated_in_sheet",
    "levels_listed": null,
    "breaks_listed": 9,
-   "pdf_sha256": "157f6b19a5673cf42547e8cfde68209051949a595c44dd296a7a6f724193016b"
+   "pdf_sha256": "157f6b19a5673cf42547e8cfde68209051949a595c44dd296a7a6f724193016b",
+   "changed_fields": {
+    "start_time": {
+     "was": null,
+     "now": "10:10 AM"
+    }
+   }
   },
   "V_S21": {
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf",
@@ -767,6 +848,7 @@
    "late_registration": "9 levels + Break (~ 4:55 PM)",
    "guarantee": "$1,000,000",
    "day2": "Day 2 @ 1:00 PM @ Day 3 @ 11:00 AM",
+   "flight_start": null,
    "bagging": "Any player who bags chips for Day 2 may not play a subsequent flight",
    "title": "$2,200 No Limit Hold’em",
    "house_fee_usd": 225,
@@ -797,6 +879,7 @@
    "late_registration": "8 levels + break (~ 4:40 PM)",
    "guarantee": "$10,000",
    "day2": null,
+   "flight_start": null,
    "bagging": null,
    "title": "$300 Pot Limit Omaha",
    "house_fee_usd": 58,
@@ -827,6 +910,7 @@
    "late_registration": "8 levels + break (~ 4:40 PM)",
    "guarantee": "$25,000",
    "day2": null,
+   "flight_start": null,
    "bagging": null,
    "title": "$600 Pot Limit Omaha",
    "house_fee_usd": 90,
@@ -857,6 +941,7 @@
    "late_registration": "6 levels + Break (~6:25 PM)",
    "guarantee": "2 Seats",
    "day2": null,
+   "flight_start": null,
    "bagging": null,
    "title": "$260 No Limit Hold’em (1Day)",
    "house_fee_usd": 40,
@@ -887,6 +972,7 @@
    "late_registration": "6 levels",
    "guarantee": "2 Seats",
    "day2": null,
+   "flight_start": null,
    "bagging": null,
    "title": "$260 No Limit Hold’em Turbo (1Day)",
    "house_fee_usd": 35,
@@ -917,6 +1003,7 @@
    "late_registration": "8 levels + break (~ 4:40 PM)",
    "guarantee": "$15,000 (prize pool + total bounties)",
    "day2": null,
+   "flight_start": null,
    "bagging": null,
    "title": "$400 Pot Limit Omaha Bounty (1Day)",
    "house_fee_usd": 60,
@@ -947,6 +1034,7 @@
    "late_registration": "8 levels + break (~ 4:40 PM)",
    "guarantee": "$25,000 (prize pool + total bounties)",
    "day2": null,
+   "flight_start": null,
    "bagging": null,
    "title": "$600 Pot Limit Omaha Bounty (1Day)",
    "house_fee_usd": 90,
@@ -977,6 +1065,7 @@
    "late_registration": "8 levels + break (~ 4:40 PM)",
    "guarantee": "$25,000",
    "day2": null,
+   "flight_start": null,
    "bagging": null,
    "title": "$600 BIG O (1Day)",
    "house_fee_usd": 90,
@@ -1007,6 +1096,7 @@
    "late_registration": "8 levels + Break (~ 3:40 PM)",
    "guarantee": null,
    "day2": null,
+   "flight_start": null,
    "bagging": null,
    "title": "$200 No Limit Hold’em (1Day)",
    "house_fee_usd": 40,
@@ -1037,6 +1127,7 @@
    "late_registration": "8 levels + Break (9:40 PM)",
    "guarantee": "$8,000 (prize pool + total bounties)",
    "day2": null,
+   "flight_start": null,
    "bagging": null,
    "title": "$200 No Limit Hold’em (1Day)",
    "house_fee_usd": 40,
@@ -1067,11 +1158,12 @@
    "late_registration": "8 levels + Break (~ 2:40 PM)",
    "guarantee": "$10,000",
    "day2": null,
+   "flight_start": null,
    "bagging": null,
    "title": "$600 No Limit Hold’em (1Day)",
-   "house_fee_usd": null,
-   "buy_in_usd": null,
-   "pool_per_entry_usd": null,
+   "house_fee_usd": 80,
+   "buy_in_usd": 600,
+   "pool_per_entry_usd": 510,
    "payout_pct_of_field": "12.5%",
    "clauses": {
     "single_entry_confirmed": [],
@@ -1085,7 +1177,21 @@
    "entry_policy": "not_stated_in_sheet",
    "levels_listed": null,
    "breaks_listed": 6,
-   "pdf_sha256": "9223f61d108c40e2bb11a261620689ff0aea3591178314709051fe38adbf2bd2"
+   "pdf_sha256": "9223f61d108c40e2bb11a261620689ff0aea3591178314709051fe38adbf2bd2",
+   "changed_fields": {
+    "buy_in_usd": {
+     "was": null,
+     "now": 600
+    },
+    "house_fee_usd": {
+     "was": null,
+     "now": 80
+    },
+    "pool_per_entry_usd": {
+     "was": null,
+     "now": 510
+    }
+   }
   },
   "V_S32": {
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_32.pdf",
@@ -1097,11 +1203,12 @@
    "late_registration": "9 levels + Break (~ 4:55 PM)",
    "guarantee": "$40,000",
    "day2": "Day 2 Dec 11 @ 10:00 AM",
+   "flight_start": null,
    "bagging": null,
    "title": "$800 NLH LIPS Ladies (2Day)",
-   "house_fee_usd": null,
-   "buy_in_usd": null,
-   "pool_per_entry_usd": null,
+   "house_fee_usd": 90,
+   "buy_in_usd": 800,
+   "pool_per_entry_usd": 690,
    "payout_pct_of_field": null,
    "clauses": {
     "single_entry_confirmed": [],
@@ -1115,7 +1222,21 @@
    "entry_policy": "not_stated_in_sheet",
    "levels_listed": null,
    "breaks_listed": 9,
-   "pdf_sha256": "3187c282dab371da436172d0d43fea84e151f8426a91b470cec63ab57eeb4b99"
+   "pdf_sha256": "3187c282dab371da436172d0d43fea84e151f8426a91b470cec63ab57eeb4b99",
+   "changed_fields": {
+    "buy_in_usd": {
+     "was": null,
+     "now": 800
+    },
+    "house_fee_usd": {
+     "was": null,
+     "now": 90
+    },
+    "pool_per_entry_usd": {
+     "was": null,
+     "now": 690
+    }
+   }
   },
   "V_S33": {
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_33.pdf",
@@ -1127,11 +1248,12 @@
    "late_registration": "10 levels + Break (4:55 PM)",
    "guarantee": "$30,000 (prize pool + total bounties)",
    "day2": null,
+   "flight_start": null,
    "bagging": null,
    "title": "$600 No Limit Hold’em LIPS (1Day)",
-   "house_fee_usd": null,
-   "buy_in_usd": null,
-   "pool_per_entry_usd": null,
+   "house_fee_usd": 80,
+   "buy_in_usd": 600,
+   "pool_per_entry_usd": 510,
    "payout_pct_of_field": "12.5%",
    "clauses": {
     "single_entry_confirmed": [],
@@ -1145,7 +1267,21 @@
    "entry_policy": "not_stated_in_sheet",
    "levels_listed": null,
    "breaks_listed": 7,
-   "pdf_sha256": "735f978d1acd82fe06333a289c6eac7c0047c97446817d6a6904b42c65d20ab4"
+   "pdf_sha256": "735f978d1acd82fe06333a289c6eac7c0047c97446817d6a6904b42c65d20ab4",
+   "changed_fields": {
+    "buy_in_usd": {
+     "was": null,
+     "now": 600
+    },
+    "house_fee_usd": {
+     "was": null,
+     "now": 80
+    },
+    "pool_per_entry_usd": {
+     "was": null,
+     "now": 510
+    }
+   }
   },
   "V_S34": {
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_34.pdf",
@@ -1157,6 +1293,7 @@
    "late_registration": "10 levels + Break (4:55 PM)",
    "guarantee": "$75,000 (prize pool + total bounties)",
    "day2": null,
+   "flight_start": null,
    "bagging": null,
    "title": "$1,100 No Limit Hold’em (1Day)",
    "house_fee_usd": 130,
@@ -1181,17 +1318,19 @@
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf",
    "retrieved": "2026-11-17",
    "event_numbers": "56",
-   "start_time": null,
+   "start_time": "10:10 AM",
    "starting_chips": "40,000",
    "level_duration": "40 minutes",
    "late_registration": "9 levels + Break (~ 4:55 PM)",
    "guarantee": "$500,000",
    "day2": "Day 2 @ 11:00 AM",
+   "flight_start": "Day A+C+E @ 10:10 AM",
    "bagging": "Any player who bags chips for Day 2 may not play a subsequent flight",
    "title": "$1,100 No Limit Hold’em",
    "house_fee_usd": 140,
    "buy_in_usd": 1100,
    "pool_per_entry_usd": 960,
+   "start_time_basis": "printed as the Day-A flight start on the sheet",
    "payout_pct_of_field": null,
    "clauses": {
     "single_entry_confirmed": [],
@@ -1205,23 +1344,31 @@
    "entry_policy": "not_stated_in_sheet",
    "levels_listed": null,
    "breaks_listed": 9,
-   "pdf_sha256": "9773f4da5c3099edb8cea8dd68430551faa9362f2a95fe20043b7fdf3c19fb24"
+   "pdf_sha256": "9773f4da5c3099edb8cea8dd68430551faa9362f2a95fe20043b7fdf3c19fb24",
+   "changed_fields": {
+    "start_time": {
+     "was": null,
+     "now": "10:10 AM"
+    }
+   }
   },
   "V_S36": {
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_36.pdf",
    "retrieved": "2026-11-17",
    "event_numbers": "56",
-   "start_time": null,
+   "start_time": "6:10 PM",
    "starting_chips": "40,000",
    "level_duration": "30 minutes",
    "late_registration": "9 levels + Break (~ 11:10 PM)",
    "guarantee": "$500,000",
    "day2": "Day 2 @ 11:00 AM",
+   "flight_start": "Day B+D @ 6:10 PM",
    "bagging": "Any player who bags chips for Day 2 may not play a subsequent flight",
    "title": "$1,100 No Limit Hold’em",
    "house_fee_usd": 140,
    "buy_in_usd": 1100,
    "pool_per_entry_usd": 960,
+   "start_time_basis": "printed as the Day-A flight start on the sheet",
    "payout_pct_of_field": null,
    "clauses": {
     "single_entry_confirmed": [],
@@ -1235,7 +1382,13 @@
    "entry_policy": "not_stated_in_sheet",
    "levels_listed": null,
    "breaks_listed": 6,
-   "pdf_sha256": "6d56c06996af1b37fe7a1dbe3b25c80a432d14f44253b103e994d82d29a58e98"
+   "pdf_sha256": "6d56c06996af1b37fe7a1dbe3b25c80a432d14f44253b103e994d82d29a58e98",
+   "changed_fields": {
+    "start_time": {
+     "was": null,
+     "now": "6:10 PM"
+    }
+   }
   },
   "V_S37": {
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_37.pdf",
@@ -1247,6 +1400,7 @@
    "late_registration": "9 levels + Break (~ 11:10 PM)",
    "guarantee": "$1,000,000",
    "day2": "Day 2 @ 1:00 PM @ Day 3 @ 11:00 AM",
+   "flight_start": null,
    "bagging": "Any player who bags chips for Day 2 may not play a subsequent flight",
    "title": "$2,200 No Limit Hold’em",
    "house_fee_usd": 225,
