@@ -362,6 +362,63 @@
   "sheet": 15
  },
  {
+  "title": "$800 No Limit Hold'em Bounty (1Day) — Event #36",
+  "events": [
+   36
+  ],
+  "start": "11:10 AM",
+  "chips": 40000,
+  "level": "30 minutes",
+  "reg_close": "10 levels + Break (4:55 PM)",
+  "guarantee_usd": 75000,
+  "guarantee_note": "Guarantee: $75,000 (prize pool + total bounties) — the guaranteed figure INCLUDES bounties",
+  "fee_usd": 100,
+  "to_pool_usd": 700,
+  "payout": "12.5% of the field",
+  "entry_rule_excerpt": null,
+  "reentry": "not stated",
+  "addon": "not stated",
+  "single_entry_confirmed": false,
+  "bagging_restriction": false,
+  "other": "Rule 07: $200 bounty per elimination, rising to $500 per elimination once in the money; split among same-hand killers; winner keeps own bounty. no sentence about one entry per player, re-entry or add-ons appears anywhere on this sheet",
+  "early_discount_usd": null,
+  "early_discount_condition": null,
+  "last_checked": "2026-11-17",
+  "read": "first-hand human read of the official PDF",
+  "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_16.pdf",
+  "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_16.pdf",
+  "sheet": 16
+ },
+ {
+  "title": "$600 No Limit Hold'em Seniors (1Day) — Events #24 and #32",
+  "events": [
+   24,
+   32
+  ],
+  "start": "10:10 AM",
+  "chips": 40000,
+  "level": "30 minutes",
+  "reg_close": "10 levels + Break (~ 3:55 PM)",
+  "guarantee_usd": 40000,
+  "guarantee_note": "Guarantee: $40,000 (not marked bounty-inclusive)",
+  "fee_usd": 90,
+  "to_pool_usd": 510,
+  "payout": "15% of the field",
+  "entry_rule_excerpt": "02. Must be 50+ years of age and have a Venetian Rewards card to participate. Any player who buys into this event that is not 50+ years of age will not be entitled to any prize money or a refund of their buy in.",
+  "reentry": "not stated",
+  "addon": "not stated",
+  "single_entry_confirmed": false,
+  "bagging_restriction": false,
+  "other": "Eligibility-restricted field (50+ only) — headline says 'MUST BE 50+ YEARS OF AGE TO PARTICIPATE'; kept out of the open-field candidate shortlist. no sentence about one entry per player, re-entry or add-ons appears anywhere on this sheet",
+  "early_discount_usd": null,
+  "early_discount_condition": null,
+  "last_checked": "2026-11-17",
+  "read": "first-hand human read of the official PDF",
+  "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_17.pdf",
+  "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_17.pdf",
+  "sheet": 17
+ },
+ {
   "sheet": 18,
   "title": "$200 No Limit Hold'em (1Day) RaceDay Stack",
   "events": [
