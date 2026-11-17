@@ -1,0 +1,44 @@
+{
+ "note": "Dated log. A rate is an observation with a timestamp, never a single stored value. New runs append; nothing overwrites a past row.",
+ "log": [
+  {
+   "id": "R1",
+   "hotel": "venetian",
+   "observed": "2026-11-17",
+   "kind": "advertised starting point (conditional poker rate)",
+   "value": 119,
+   "unit": "USD/night",
+   "occupancy": "not stated on the page",
+   "terms": "poker rate, subject to availability and qualifying play",
+   "source": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
+   "status": "carried from 2026-11-16 reading; re-check pending",
+   "not_a_quote": true
+  },
+  {
+   "id": "R2",
+   "hotel": "venetian",
+   "observed": "2026-11-17",
+   "kind": "advertised starting point (conditional poker rate)",
+   "value": 209,
+   "unit": "USD/night",
+   "occupancy": "not stated on the page",
+   "terms": "poker rate, subject to availability and qualifying play",
+   "source": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
+   "status": "carried from 2026-11-16 reading; re-check pending",
+   "not_a_quote": true
+  },
+  {
+   "id": "R3",
+   "hotel": "venetian",
+   "observed": "2026-11-17",
+   "kind": "official date-picker default window",
+   "value": null,
+   "unit": "no price shown",
+   "occupancy": "2 adults",
+   "terms": "the official page exposes a quote link for Nov 17-19 and Nov 19-22 windows; a price only appears inside the booking engine",
+   "source": "https://www.venetianlasvegas.com/book",
+   "status": "confirmed that the engine link exists; no price captured",
+   "not_a_quote": true
+  }
+ ]
+}

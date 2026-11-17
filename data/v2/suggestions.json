@@ -1,0 +1,160 @@
+{
+ "meta": {
+  "retrieved": "2026-11-17",
+  "note": "None of these are implemented. Each is scoped to be independently approvable."
+ },
+ "tier_order": [
+  "Do these first",
+  "Worth doing",
+  "Needs a decision",
+  "Explicitly deferred"
+ ],
+ "suggestions": [
+  {
+   "id": "S1",
+   "tier": "Do these first",
+   "recommended": true,
+   "title": "Get the Venetian entry rule in writing for the specific event numbers",
+   "detail": "One email or phone call to the poker room, recorded with the reply date, converts 83 unverified rows into a real single-entry list \u2014 or into a confirmed re-entry list. It is the single highest-leverage action in the entire project.",
+   "impact": "Decides whether a single-entry shortlist exists at all.",
+   "effort": "One phone call + one data-file edit + rebuild (30 min).",
+   "sources": [
+    "V_POKER",
+    "V_S05"
+   ]
+  },
+  {
+   "id": "S2",
+   "tier": "Do these first",
+   "recommended": true,
+   "title": "Read the Wynn WPT per-event structure sheets to fill 134 missing fees",
+   "detail": "Every WPT row currently shows a buy-in with no house fee. The poster explicitly defers fees to those sheets, so they are the authoritative next document.",
+   "impact": "Turns a buy-in into a true cost and makes WPT comparable with the Venetian.",
+   "effort": "14\u201320 PDF reads + a data update (2\u20133 h).",
+   "sources": [
+    "W_WPT"
+   ]
+  },
+  {
+   "id": "S3",
+   "tier": "Do these first",
+   "recommended": true,
+   "title": "Capture one real date-specific checkout total per property",
+   "detail": "Pick representative dates (e.g. a Tue\u2013Sun in December), open each booking page, and record room, fee, tax and total with a timestamp. This replaces every 'floor' figure with an actual observation.",
+   "impact": "Makes the trip total real instead of a lower bound.",
+   "effort": "4 booking flows, screenshots, one data update (1 h).",
+   "sources": [
+    "V_BOOK",
+    "V_RATES"
+   ]
+  },
+  {
+   "id": "S4",
+   "tier": "Worth doing",
+   "recommended": true,
+   "title": "Add the remaining Strip rooms with daily tournaments",
+   "detail": "MGM Grand, ARIA, Horseshoe, Harrah's, Planet Hollywood, Flamingo, The Linq, Mandalay Bay and others run dailies. Several are cheaper than anything currently listed and would change the 'cheapest entry' answer.",
+   "impact": "May produce the first genuinely cheap, confirmed single-entry option.",
+   "effort": "One official page per room (4\u20136 h).",
+   "sources": [
+    "C_FLYER",
+    "B_POKER"
+   ]
+  },
+  {
+   "id": "S5",
+   "tier": "Worth doing",
+   "recommended": false,
+   "title": "Replace the duration heuristic with observed finishes",
+   "detail": "Collect actual finish times for equivalent events from a prior series and use them to score same-day pairs. Removes the one estimate currently used in scheduling.",
+   "impact": "Turns 'conditional fallback' into a real plan.",
+   "effort": "Results pages + a small model change (2 h).",
+   "sources": [
+    "V_CAL"
+   ]
+  },
+  {
+   "id": "S6",
+   "tier": "Worth doing",
+   "recommended": false,
+   "title": "Add a per-event detail modal with the full structure excerpt",
+   "detail": "Each row already links its structure sheet; a modal would show the verbatim fee, blind-level and late-reg text without leaving the page. Improves manual review, which the brief asked for.",
+   "impact": "Faster human verification of any row.",
+   "effort": "Small JS + already-collected text (1 h).",
+   "sources": [
+    "V_S05"
+   ]
+  },
+  {
+   "id": "S7",
+   "tier": "Needs a decision",
+   "recommended": false,
+   "title": "Scheduled re-check workflow that flags changed rows",
+   "detail": "A GitHub Action runs on a cron, fetches each official URL, hashes the relevant text, and opens an issue when a hash changes. It cannot re-verify a value automatically \u2014 a human still reads the diff \u2014 but it catches silent edits.",
+   "impact": "Prevents stale values from looking current.",
+   "effort": "A workflow file + a hash store (1\u20132 h).",
+   "sources": [
+    "V_CAL",
+    "W_WPT"
+   ]
+  },
+  {
+   "id": "S8",
+   "tier": "Needs a decision",
+   "recommended": false,
+   "title": "Live data feed / scraper for tournament schedules",
+   "detail": "Would parse the Venetian calendar and Wynn PDFs automatically. Risky: both are human-formatted, neither has an API, and a silent failure would manufacture false confidence.",
+   "impact": "Freshness, if it works; a new failure mode, if it does not.",
+   "effort": "High (1\u20132 days) plus ongoing monitoring.",
+   "sources": [
+    "V_CAL"
+   ]
+  },
+  {
+   "id": "S9",
+   "tier": "Needs a decision",
+   "recommended": false,
+   "title": "Decide which of the six parallel sites is canonical",
+   "detail": "The repo currently publishes six overlapping snapshots. Either retire the older ones, or keep them explicitly as dated history with a banner. Mixed claims across sites is the main repo-level risk.",
+   "impact": "Removes the chance of contradictory advice on the same domain.",
+   "effort": "A decision, then link/redirect work (1 h).",
+   "sources": []
+  },
+  {
+   "id": "S10",
+   "tier": "Explicitly deferred",
+   "recommended": false,
+   "title": "Trip-cost optimiser across venues",
+   "detail": "A solver that picks the cheapest combination of events + hotel + parking under a walking constraint. It would be impressive and, today, precisely wrong \u2014 the inputs include several unverified fees and an unresolved entry rule.",
+   "impact": "Meaningful only after S1\u2013S3 land.",
+   "effort": "High, and wasted if the inputs change.",
+   "sources": [
+    "V_RATES"
+   ]
+  },
+  {
+   "id": "S11",
+   "tier": "Explicitly deferred",
+   "recommended": false,
+   "title": "Map view with drawn walking routes",
+   "detail": "Plot each hotel and poker room and draw the OSRM route. Nice for confidence, but the distances are all under 6 minutes and the real friction is indoors, which a map cannot show.",
+   "impact": "Cosmetic; does not change a decision.",
+   "effort": "Medium.",
+   "sources": [
+    "MAP_OSRM"
+   ]
+  },
+  {
+   "id": "S12",
+   "tier": "Explicitly deferred",
+   "recommended": false,
+   "title": "Email alerts for new series announcements",
+   "detail": "Venetian publishes future DeepStack series ~3 months out. An alert would help planning a longer trip, but only after date-specific rates exist.",
+   "impact": "Low today.",
+   "effort": "Low, but needs a mail provider.",
+   "sources": [
+    "V_SERIES"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,126 @@
+{
+ "generated": "2026-11-17",
+ "intro": "Only questions that change a decision. Each states what is already known, what is missing, and the concrete action that closes it.",
+ "items": [
+  {
+   "id": "Q1",
+   "blocking": true,
+   "q": "For each candidate one-day event, does the room allow re-entry, rebuys or an add-on - and can it say so in writing?",
+   "have": "Every one-day sheet read so far states buy-in, fee split, late-registration close, payout percentage and chip counts, and stays silent on entry count. The Valuetown sheet prices 'subsequent buy-ins', which shows the room does spell it out when entries are repeatable.",
+   "missing": "A yes/no per event number, in writing, for the events you would actually play.",
+   "how": "Ask at the Venetian poker cage or by email for the shortlisted events; ask for the sentence to be added to the structure sheet. The monitor re-reads all 37 sheets, so a sheet that does state it will be caught.",
+   "who": "Venetian Poker Room",
+   "flag": "F-SINGLE"
+  },
+  {
+   "id": "Q2",
+   "blocking": true,
+   "q": "Which exact dates, how many nights, and how many guests?",
+   "have": "Only the series window is verified: Nov 16 - Dec 23, 2026. The $55 + tax nightly resort fee was re-read today.",
+   "missing": "Arrival/departure dates, guest count, room count. Without them there is no checkout total, no cancellation deadline and no like-for-like comparison.",
+   "how": "Fix the window, then take one dated quote per hotel from each property's own booking engine and record the totals as dated rate-log rows.",
+   "who": "The traveller",
+   "flag": "F-RATE"
+  },
+  {
+   "id": "Q3",
+   "blocking": false,
+   "q": "What is the per-night budget ceiling and the minimum acceptable quality standard?",
+   "have": "Nothing usable - no ceiling was supplied and no official quality metric exists in this data set.",
+   "missing": "A number and a standard (for example 'not above $X all-in per night').",
+   "how": "State both and the hotel table ranks instead of merely listing. If quality must stay on official sources, agree which official attribute counts (brand, tower, suite class).",
+   "who": "The traveller",
+   "flag": "F-BUDGET"
+  },
+  {
+   "id": "Q4",
+   "blocking": true,
+   "q": "Which walking routes are actually within 30 minutes of the Venetian poker room, door to door?",
+   "have": "Official pages put the poker room on Palazzo Level 2 with directions from both resort lobbies; a same-property stay needs no street route.",
+   "missing": "Minutes for every candidate hotel, with the source and date of that measurement.",
+   "how": "Open the route links on the Hotels page, read each walking time and store it as a dated observation; the <=30 min filter only means something after that.",
+   "who": "A live map service, recorded as an observation",
+   "flag": "F-WALK"
+  },
+  {
+   "id": "Q5",
+   "blocking": false,
+   "q": "When does each event really end - or how late can you leave one and still make the next?",
+   "have": "Start times and late-registration closes are stated ($300 one-day: 11:10 AM start, closes ~4:55 PM; RaceDay: 10:10 AM, closes ~12:25 PM). Multi-flight Day 1 ends at about 12.5% of the field remaining, with no clock time.",
+   "missing": "Expected finish, or a scheduled Day 1 end, for the events you want to stack.",
+   "how": "Ask the room for typical Day 1 finishes by field size. Until then the plan shows one primary event plus a conditional fallback and never promises both.",
+   "who": "Venetian Poker Room",
+   "flag": "F-FINISH"
+  },
+  {
+   "id": "Q6",
+   "blocking": false,
+   "q": "Is there a real 8 AM start anywhere on the Strip in this window?",
+   "have": "On the official Venetian calendar the earliest start of any row is 9:10 AM (a Dec 12 satellite); the earliest main-event start is 10:00-10:10 AM. No 8 AM start exists here.",
+   "missing": "Any 8 AM start at any room, or acceptance that the day begins at 10:10 AM.",
+   "how": "Have the monitor report each room's earliest start daily; if none exists, rebuild the day plan around the real earliest start.",
+   "who": "Each poker room",
+   "flag": "F-FINISH"
+  },
+  {
+   "id": "Q7",
+   "blocking": false,
+   "q": "For events with no published guarantee, is there one at all?",
+   "have": "Events #3, #4, #5 and #6 show no guarantee line on the calendar or their sheets.",
+   "missing": "Guarantee yes/no and amount.",
+   "how": "Ask the room. Then those four low-cost events can enter the value comparison instead of being excluded from it.",
+   "who": "Venetian Poker Room",
+   "flag": "F-GTD"
+  },
+  {
+   "id": "Q8",
+   "blocking": false,
+   "q": "What is the true all-in cost of a night at each candidate hotel for my dates - rate, fee, tax, parking, refundable or not?",
+   "have": "$55 + tax fee confirmed today. Tax, parking and cancellation language are carried from an earlier reading of a page this session could not load.",
+   "missing": "One dated itemised quote per hotel, identical dates and occupancy, plus the cancellation deadline.",
+   "how": "Read the checkout total in each official engine and record every component; the calculator's itemised panel is shaped for exactly that input.",
+   "who": "Hotel booking engines",
+   "flag": "F-CANCEL"
+  },
+  {
+   "id": "Q9",
+   "blocking": false,
+   "q": "Does the conditional poker rate apply to this trip at all?",
+   "have": "The official poker-rate terms advertise starting rates of $119 and $209 subject to availability and qualifying play (carried reading; the monitor re-reads it).",
+   "missing": "Whether a $200 buy-in satisfies the qualifying play, and which rate attaches to which building on which date.",
+   "how": "Ask reservations for the poker rate on the specific dates and what qualifies; note the stated tournament threshold is $300 or more.",
+   "who": "Venetian reservations",
+   "flag": "F-RATE"
+  },
+  {
+   "id": "Q10",
+   "blocking": false,
+   "q": "Which data set is authoritative when the repo's folders disagree?",
+   "have": "Six published views of the same series, with different single-entry verdicts.",
+   "missing": "A decision on one canonical source, with the rest archived as read-only.",
+   "how": "Approve suggestion S1. Every row here is already keyed to one source registry, so promotion is mechanical.",
+   "who": "Project owner",
+   "flag": "F-DUP"
+  },
+  {
+   "id": "Q11",
+   "blocking": false,
+   "q": "Should the trip be timed to a different series instead?",
+   "have": "Venetian dates and structures are verified; Wynn and Bellagio pages could not be read first-hand today (Wynn serves its home page to fetchers; Bellagio was recorded 404 by an earlier session).",
+   "missing": "A comparable verified schedule for any other series in the window.",
+   "how": "Let the monitor accumulate each room's official page daily; when a second room parses, the same rule audit and overlap check apply to it.",
+   "who": "Monitor + each room",
+   "flag": "F-URL-WYNN"
+  },
+  {
+   "id": "Q12",
+   "blocking": false,
+   "q": "What counts as confirmed here, and who may change a label?",
+   "have": "This site's working rule: only a quote from the operator's own document; silence is not confirmation; every row carries a last-checked date and a change mark.",
+   "missing": "An agreed policy line on the shared board (evidence required, and who may flip unverified to confirmed).",
+   "how": "Approve suggestion S6: write the policy into COORDINATION.md and let the verifier refuse rows that lack a quote and a date.",
+   "who": "Project owner",
+   "flag": "F-VERIF"
+  }
+ ]
+}

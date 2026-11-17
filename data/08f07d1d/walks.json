@@ -1,0 +1,54 @@
+{
+ "limit_minutes": 30,
+ "note": "No official page publishes door-to-door walking minutes for these routes, and this session did not accept a third-party estimate as a verified value. Minutes are therefore blank, with a one-click route link so the number can be read from a live map and entered as a dated observation by the monitor.",
+ "pairs": [
+  {
+   "hotel": "venetian",
+   "venue": "venetian",
+   "minutes": null,
+   "distance_mi": null,
+   "status": "same property - in-resort walk only; official directions place the poker room on Palazzo Level 2, exact minutes not published",
+   "route": {
+    "google": "https://www.google.com/maps/dir/The+Venetian+Resort+Las+Vegas/The+Venetian+Poker+Room/data=!4m2!3m1!1sThe+Venetian+Poker+Room",
+    "apple": "https://maps.apple.com/?daddr=The%20Venetian%20Poker%20Room,%20Las%20Vegas"
+   },
+   "flag": "F-WALK"
+  },
+  {
+   "hotel": "palazzo",
+   "venue": "venetian",
+   "minutes": null,
+   "distance_mi": null,
+   "status": "same resort complex; no official minutes published",
+   "route": {
+    "google": "https://www.google.com/maps/dir/The+Palazzo+Las+Vegas/The+Venetian+Poker+Room",
+    "apple": "https://maps.apple.com/?daddr=The%20Venetian%20Poker%20Room,%20Las%20Vegas"
+   },
+   "flag": "F-WALK"
+  },
+  {
+   "hotel": "wynn",
+   "venue": "venetian",
+   "minutes": null,
+   "distance_mi": null,
+   "status": "not verified - no official minute figure; Wynn is north of Venetian on the Strip",
+   "route": {
+    "google": "https://www.google.com/maps/dir/Wynn+Las+Vegas/The+Venetian+Poker+Room/data=!4m2!4m1!3e2",
+    "apple": "https://maps.apple.com/?saddr=Wynn%20Las%20Vegas&daddr=The%20Venetian%20Poker%20Room,%20Las%20Vegas&dirflg=w"
+   },
+   "flag": "F-WALK"
+  },
+  {
+   "hotel": "treasure-island",
+   "venue": "venetian",
+   "minutes": null,
+   "distance_mi": null,
+   "status": "not verified - across Las Vegas Blvd; no official minute figure",
+   "route": {
+    "google": "https://www.google.com/maps/dir/Treasure+Island+Las+Vegas/The+Venetian+Poker+Room/data=!4m2!4m1!3e2",
+    "apple": "https://maps.apple.com/?saddr=Treasure%20Island%20Las%20Vegas&daddr=The%20Venetian%20Poker%20Room,%20Las%20Vegas&dirflg=w"
+   },
+   "flag": "F-WALK"
+  }
+ ]
+}

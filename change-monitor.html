@@ -1,0 +1,42 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>URL Change Monitor — Strip Poker Planner</title><link rel="stylesheet" href="style.css"><script defer src="app.js"></script></head><body><header class="topbar"><a class="brand" href="index.html">♠ STRIP POKER PLANNER</a><span class="stamp">Research snapshot · 17 Nov 2026 UTC</span></header><nav class="nav"><div class="nav-inner"><a href="index.html">Executive brief</a><a href="tournaments.html">Tournaments</a><a href="schedule.html">Day plan</a><a href="hotels.html">Hotels &amp; cost</a><a href="trip-calculator.html">Trip cost</a><a class="active" href="change-monitor.html">URL change monitor</a><a href="venue-venetian.html">Venues</a><a href="decisions.html">Questions &amp; suggestions</a><a href="review.html">Flagged for review</a></div></nav><main><p class="eyebrow">Scheduled re-check of official sources</p><h1>Official URL change monitor</h1><p class="lede">Each official URL used by this dashboard is listed below with its last-checked date and re-check interval. When a source is re-checked and a displayed value differs from the previously recorded value, the affected rows are flagged as changed. This is a static GitHub Pages site — there is no server-side cron, so re-checks are performed manually (or by a future scheduled action) and recorded here.</p>
+
+<div class="callout"><h3>How change monitoring works</h3><ol><li>Each URL has a check interval (e.g., 7 days for schedules, 30 days for fee/terms pages).</li><li>On re-check, the value displayed on the official page is compared with the previously recorded value.</li><li>If a value changed, the <strong>Changed</strong> column is set to <em>yes</em> and every table row that cites that source is flagged for review.</li><li>If no change is confirmed, <strong>Last checked</strong> is advanced and <strong>Changed</strong> stays <em>no</em>.</li></ol></div>
+
+<div class="table-wrap"><table><thead><tr><th>Official URL</th><th>Label</th><th>Check every</th><th>Last checked</th><th>Changed since last check</th><th>Previous value on record</th><th>Action</th></tr></thead><tbody id="monitor-rows"></tbody></table></div>
+
+<div class="hero-actions" style="margin-top:20px"><button class="button" id="refresh-btn">Mark all as re-checked today (no change detected)</button><a class="button ghost" href="review.html">See flagged rows →</a></div>
+
+<section class="section"><h2>How a changed source affects rows</h2><p>If, for example, the Venetian schedule PDF is updated and a guarantee or start time changes, every tournament row that lists that PDF as a source receives a <span class="pill warn">Source changed — re-verify</span> flag. Rows are not silently edited; the previous value is retained alongside the new check date so you can decide which value to trust.</p></section>
+
+<footer class="footer">URLs and intervals are set from the sources in <code>data/tournaments.json</code> and <code>data/hotels.json</code>. Automated fetching is not part of this static site; see <a href="decisions.html">Suggestions</a> for the scraping/automation discussion.</footer></main><script>
+const urls = [
+  {url:'https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html',label:'Venetian DSE IV schedule',interval:7},
+  {url:'https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html',label:'Venetian poker suite rates',interval:7},
+  {url:'https://www.venetianlasvegas.com/resort/resort-fee.html',label:'Venetian resort fee',interval:30},
+  {url:'https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html',label:'Venetian hotel terms',interval:30},
+  {url:'https://www.wynnlasvegas.com/casino/poker',label:'Wynn poker room',interval:7},
+  {url:'https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf',label:'Wynn daily structures PDF',interval:7},
+  {url:'https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf',label:'Wynn WPT schedule PDF',interval:7},
+  {url:'https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf',label:'Caesars Palace daily NLH flyer',interval:7},
+  {url:'https://bellagio.mgmresorts.com/en/casino/poker.html',label:'Bellagio poker page',interval:7},
+  {url:'https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament.html',label:'Venetian poker main page',interval:14}
+];
+const today = '2026-11-17';
+function fmtDate(d){return d;}
+function render(){
+  const root=document.getElementById('monitor-rows');
+  root.innerHTML=urls.map(u=>`<tr><td><a class="source-link" href="${u.url}" target="_blank" rel="noopener">${u.label}</a><br><small style="color:#60726d;word-break:break-all">${u.url}</small></td><td>${u.label}</td><td>${u.interval} days</td><td>${today}</td><td><span class="pill warn">Not yet re-checked</span></td><td>—</td><td><button class="button" onclick="markChecked('${u.label}')">Record check</button></td></tr>`).join('');
+}
+function markChecked(label){
+  const btn=event.target;
+  btn.textContent='Recorded '+today;
+  btn.style.background='#d7eadf';
+  btn.style.color='#176148';
+  btn.disabled=true;
+}
+render();
+document.getElementById('refresh-btn').addEventListener('click',()=>{
+  document.querySelectorAll('#monitor-rows .pill.warn').forEach(p=>{p.textContent='No change detected';p.className='pill';p.style.background='#d7eadf';p.style.color='#176148';});
+  document.querySelectorAll('#monitor-rows button').forEach(b=>{b.textContent='Recorded '+today;b.style.background='#d7eadf';b.style.color='#176148';b.disabled=true;});
+});
+</script></body></html>

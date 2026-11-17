@@ -19,7 +19,7 @@ ACCESSED = "2026-11-16"
 
 T = json.loads((DATA / "tournaments.json").read_text(encoding="utf-8"))
 U = json.loads((DATA / "unverified.json").read_text(encoding="utf-8"))
-H = json.loads((DATA / "hotels.json").read_text(encoding="utf-8"))
+H = json.loads((DATA / "hotels_v1.json").read_text(encoding="utf-8"))  # legacy schema kept for this builder
 
 # ---------- source registry ----------
 SRC = dict(T["sources"])

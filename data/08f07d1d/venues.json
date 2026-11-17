@@ -1,0 +1,137 @@
+{
+ "venues": [
+  {
+   "id": "venetian",
+   "name": "The Venetian Poker Room",
+   "property": "The Venetian Resort / The Palazzo",
+   "official_pages": [
+    {
+     "label": "Poker room (official)",
+     "url": "https://www.venetianlasvegas.com/resort/casino/poker.html"
+    },
+    {
+     "label": "DeepStack Extravaganza IV calendar (Nov 16 - Dec 23, 2026)",
+     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
+    },
+    {
+     "label": "Series landing page",
+     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament.html"
+    }
+   ],
+   "schedule_status": "Machine-parsable official calendar table; 94 dated rows, 93 verified line-by-line against the live page on 2026-11-17 (tools/check_rows.py).",
+   "rooms_location": "Poker room is on Palazzo Level 2 per the official poker page (directions from both resort lobbies).",
+   "hotels": [
+    "venetian",
+    "palazzo"
+   ],
+   "structure_sheets": 37,
+   "sheets_audited_this_pass": 15,
+   "series_claim": {
+    "quote": "More than $3.6 Million in guaranteed tournament prize pools",
+    "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "note": "Series aggregate, not a per-event guarantee and not a forecast of payouts."
+   }
+  },
+  {
+   "id": "wynn",
+   "name": "Wynn Las Vegas Poker Room",
+   "property": "Wynn Las Vegas",
+   "official_pages": [
+    {
+     "label": "Wynn poker page (official)",
+     "url": "https://www.wynnlasvegas.com/casino/poker"
+    },
+    {
+     "label": "WPT World Championship schedule PDF (official CDN)",
+     "url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+    }
+   ],
+   "schedule_status": "FLAGGED: the official poker URL returns the Wynn home page to this fetcher (redirect observed twice on 2026-11-17). No daily schedule could be captured first-hand by this session, so this site shows NO Wynn rows rather than carrying rows it cannot re-verify. An earlier session's search-index snippet describes a $40,000 guaranteed NLH 'Rebuy' Friday event - which would disqualify that event under the single-entry rule - but that is not a first-hand read and is not used as a table row.",
+   "hotels": [
+    "wynn"
+   ],
+   "structure_sheets": 0,
+   "sheets_audited_this_pass": 0
+  },
+  {
+   "id": "bellagio",
+   "name": "Bellagio",
+   "property": "Bellagio (MGM)",
+   "official_pages": [
+    {
+     "label": "Bellagio poker page (official)",
+     "url": "https://bellagio.mgmresorts.com/en/casino/poker.html"
+    }
+   ],
+   "schedule_status": "NOT VERIFIED by this session: an earlier session recorded https://bellagio.mgmresorts.com/en/poker.html as 'Page not found'. This session did not load either URL, so no Bellagio rows are published. Monitor will re-check and report.",
+   "hotels": [],
+   "structure_sheets": 0,
+   "sheets_audited_this_pass": 0
+  },
+  {
+   "id": "aria",
+   "name": "ARIA Poker Room",
+   "property": "ARIA (MGM)",
+   "official_pages": [
+    {
+     "label": "ARIA poker page (official)",
+     "url": "https://aria.mgmresorts.com/en/casino/poker.html"
+    }
+   ],
+   "schedule_status": "NOT VERIFIED by this session; carried sources disagree on the ARIA resort fee ($50 vs $55 per earlier sessions). No ARIA rows published.",
+   "hotels": [],
+   "structure_sheets": 0,
+   "sheets_audited_this_pass": 0
+  },
+  {
+   "id": "caesars",
+   "name": "Caesars Palace / Horseshoe / Harrah's (Caesars Entertainment)",
+   "property": "Caesars Entertainment Strip properties",
+   "official_pages": [
+    {
+     "label": "Caesars Strip poker tournaments page (official)",
+     "url": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+    },
+    {
+     "label": "Horseshoe poker (official)",
+     "url": "https://www.caesars.com/horseshoe-las-vegas/casino/poker"
+    }
+   ],
+   "schedule_status": "NOT VERIFIED by this session. The Caesars page states a flyer governs over the page content, so a page-only reading is not sufficient evidence for a row. No rows published.",
+   "hotels": [],
+   "structure_sheets": 0,
+   "sheets_audited_this_pass": 0
+  },
+  {
+   "id": "other-rooms",
+   "name": "Other rooms checked by earlier sessions (status not re-confirmed here)",
+   "property": "Planet Hollywood, Resorts World, Golden Nugget, Orleans, South Point",
+   "official_pages": [
+    {
+     "label": "Planet Hollywood poker",
+     "url": "https://planethollywoodresort.com/casino/poker"
+    },
+    {
+     "label": "Resorts World poker",
+     "url": "https://rwlasvegas.com/casino/poker"
+    },
+    {
+     "label": "Golden Nugget poker",
+     "url": "https://www.goldennugget.com/las-vegas/casino/poker"
+    },
+    {
+     "label": "Orleans poker",
+     "url": "https://www.orleanscasino.com/casino/poker"
+    },
+    {
+     "label": "South Point poker",
+     "url": "https://www.southpointcasino.com/casino/poker"
+    }
+   ],
+   "schedule_status": "Earlier sessions recorded HTTP 500 / template-only / empty / 404 responses for several of these. The monitor now re-checks each one and publishes per-URL status, so a dead source is visible instead of silently omitted.",
+   "hotels": [],
+   "structure_sheets": 0,
+   "sheets_audited_this_pass": 0
+  }
+ ]
+}
