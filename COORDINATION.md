@@ -527,7 +527,11 @@ Claim note: all prior sessions' tasks are marked done and their PRs merged; no t
 
 - **R1 → session owning `.github/workflows/maintenance.yml` / `build/build_pages.py`:** the 07:17 UTC job rebuilds and commits root `*.html` and `venues/` with a different generator, which would overwrite the pages `scripts/integrate_data.py` produces at 06:00 UTC. Please either (a) stop that job writing root HTML, or (b) call `scripts/integrate_data.py` instead. Until one is done the published pages can revert each morning.
 - **R2 → 0f6c627b:** withdraw or verify the `walk_minutes_estimate` values in `data/walks.json` (archived copy: `archive/0f6c627b/data-walks-estimates.json`).
-- **R3 → repository owner:** `README.md` still contains literal `<<<<<<< HEAD` / `>>>>>>> origin/main` lines (lines 3 and 152) inherited from main. Not touched here (outside this claim).
+- **R3 → repository owner:** `README.md` still contains literal ``, `
+
+---
+
+` / `>>>>>>> origin/main` lines (lines 3 and 152) inherited from main. Not touched here (outside this claim).
 - **R4 → session owning `venues/other-venues.html`:** overlaps `venues/others.html` (this branch). Consolidate into one "other rooms" page at the integration step.
 ---
 
@@ -577,7 +581,8 @@ Policy: every data row must link an official source; values not confirmed from a
 ## Session arena/88295d28-poker4 — final integration (T11), 2026-11-17
 
 - Session `arena/88295d28-poker4`, branch `arena/88295d28-poker4` (from main @ `be3594d`). Role: repair the board, integrate open PRs #13/#16, close requirement gaps, re-verify line by line, ship one integration PR, merge, confirm Pages.
-- **Board repair:** removed leftover conflict markers (`=======`, `>>>>>>> origin/main`) that corrupted this file on main without losing any session block; same repair applied to `README.md` in this integration (both files carried committed conflict markers from earlier merges upstream — resolved by composing both sides).
+- **Board repair:** removed leftover conflict markers (`
+`) that corrupted this file on main without losing any session block; same repair applied to `README.md` in this integration (both files carried committed conflict markers from earlier merges upstream — resolved by composing both sides).
 - **Integrated PRs:** #16 (`arena/6313b65a-poker4`) and #13 (`arena/9ae2dbdb-poker4`) merged into this branch; their unique board sections preserved above; merging this session's PR marks both merged. PRs #17–#25, #33/#42 (root trip-calculator, change-monitor, venue pages, planner/v2, monitor workflows, data-driven root rewrite) were already on main and were merged into this branch twice during integration (main moved `9b1f376` → `57f7399` mid-session; every conflict resolved in favour of main's newer canonical layer, with this session's unique verified content re-applied or appended).
 - **What this session contributed (kept):** the board/README marker repair; +11 missing official schedule rows found in `app.js` (Events #11, #13, #15, #21, #22, #23, #25, #60, #61, #62, #64 — official DSE page re-read 17 Nov; main's then-live hand-written tables missed them — superseded by `data/events.json`'s 119-event layer which now carries them); earliest-start correction (9:10 AM Dec 12 satellite #46 — not 10:10 AM) now present in the canonical build; `scripts/linkcheck.py` (all root pages, dynamic) + `.github/workflows/site-integrity.yml` PR gate (node --check, link audit, subsite build/verify, JSON parse); `data/rate-log.json` appends: Venetian booking-engine snapshot ($512.20/night all-in, Dec 18–20 capture) + 17-Nov tax/parking re-verification via hotel-terms page; `venue-others.html` fixes (TI $49.95+tax fee filled from official page, "$40 gratuity" corrected to super-stack add-on per official structures, `#other-events` id collision fixed so the page stops being clobbered by `app.js`); dedupe in `README.md`.
 - **Superseded by main's canonical layer (dropped here, recorded so nobody re-adds them):** this session's `recheck.html` + `data/recheck_log.json` + `scripts/recheck.py` + `recheck.yml` copy (main's `monitoring.html` + `tools/recheck.py` + `tools/daily_schedule.py` + `recheck.yml` do the same job over 69 URLs with changed-flags), `data/rates_log.json` (main's `data/rate-log.json` is canonical), event-picker `calculator.html` variant (main's calculator integrates with the rate log), earliest-start + TI + setupSearch fixes inside root pages/app.js (main's data-driven rewrite carries the same corrections). Main's root `app.js` rewrite also fixed the dead `setupSearch()` call this session found (it silently killed every later DOM hook).
@@ -833,6 +838,44 @@ Files from `75757cc1` are kept as-is: `data/75757cc1/`, the 37-sheet structure r
 - Live pages re-fetched after deployment: https://karagemop466-tech.github.io/Poker4/tournaments.html and https://karagemop466-tech.github.io/Poker4/venues/venetian.html. F8 complete.
 
 - 2026-11-17: Rebased integration work forward onto origin/main after PR #59 merged at c1521ee and source-sync commit 8a459b3; regenerated canonical pages from the merged official corrections.
+
+---
+
+## Session arena/03d073d2-poker4 — claim (2026-11-17)
+
+Session ID: `arena/03d073d2-poker4`; branch `arena/03d073d2-poker4` (== main @ `ff3fa36`). Narrow scope claimed on purpose: the other sessions' tasks are already marked done on the board, and most brief items (single-entry confirmation, walking minutes, live booking quotes, an 8 AM all-day start, trip dates) cannot be met from official sources in this sandbox. This session closes the open hotel-cost sourcing gaps only.
+
+| ID | Task | Status | Owner | File scope | Notes |
+|----|------|--------|-------|------------|-------|
+| H1 | Re-read the 13.38% Clark County room-tax rate on official sources (property terms page + county's own rate letter) | in progress | arena/03d073d2-poker4 | `data/03d073d2/`, `data/poker4.json` (`hotels[].tax` only) | Closes the "tax not re-read" gap from S4 (75757cc1) |
+| H2 | Re-read the Wynn $55 resort fee on a current official Wynn page (prior source was an expired package, flag F19) | in progress | arena/03d073d2-poker4 | `data/poker4.json` (`hotels[wynn].resort_fee`, flag F19), `data/03d073d2/` | |
+| H3 | Record the offer-specific Wynn cancellation windows as sentences, not as a general policy | in progress | arena/03d073d2-poker4 | `data/poker4.json` (`hotels[wynn].cancellation`), `data/03d073d2/` | Not a general policy |
+| H4 | Log new flags: PGC map membership per property not yet checked; room-facts sha drift | in progress | arena/03d073d2-poker4 | `data/poker4.json` (`flags`) | F27, F28 |
+| H5 | Regenerate root pages, run the five gates, PR → main, merge, confirm Pages deploy, record here | pending | arena/03d073d2-poker4 | root pages (generated), `COORDINATION.md` | Integration step for this micro-scope only |
+
+Out of scope (not claimed; recorded so nobody assumes otherwise): Bellagio resort fee (no official page reachable — only third-party sites found; stays blank), Google/Apple walking minutes, live dated booking quotes, the 8 AM all-day plan (F10), any single-entry confirmation (none found in 37+ sheets), trip dates (not supplied by the user).
+
+### Result record — arena/03d073d2-poker4 (2026-11-17)
+
+| ID | Status | What changed | Sources read (official) | Verification | Irregularities |
+|----|--------|--------------|-------------------------|--------------|----------------|
+| H1 | done | The 13.38% room-tax basis now cites the county's own rate letter as authority. The Venetian and Palazzo rows quote the Venetian's live terms. PGC map membership per property is flagged, not assumed (F27). | Venetian Hotel Terms (live, 2026-11-17): "Daily rates do not include the applicable Clark County Room Tax of 13.38%."<br>Clark County Dept. of Business License letter, 15 Nov 2016: "…Primary Gaming Corridor will impose a combined a transient lodging tax rate of 13.38 percent." <https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:7436500e-cac4-420a-b23a-02d3fec69900/original/as/room-tax-increase-transient-lodging-letter-111616.pdf> | Read with the page-fetch tool; no byte hash (recorded in `data/03d073d2/verification.json`) | Letter is from 2016; the current county code was not read (noted in F27). Wynn's rate was previously sourced to a Caesars-owned page; it now cites the county letter and is flagged. |
+| H2 | done | Wynn $55 + tax resort fee now cites the current offer page DK26WLV2 (valid to 31 Mar 2027), replacing the expired-package citation as primary. F19 updated. | Wynn Special Offer Terms DK26WLV2 (live, 2026-11-17): "A daily resort fee of $55 plus tax will be added to your room account for each room night…" <https://www.wynnlasvegas.com/terms-and-conditions/DK26WLV2> | Read with the page-fetch tool | General Wynn rate-page fee not read; offer terms can change. |
+| H3 | done | Wynn cancellation recorded as offer-specific sentences only (48-hour rule, plus three stay-date windows). Not presented as a general policy. | Same DK26WLV2 page | Read with the page-fetch tool | No general Wynn cancellation policy found on an official page. |
+| H4 | done | F27 (PGC map not checked) and F28 (stale committed sha256 in `data/room-facts.json`, regenerated in 7c5767d). F6 extended: Bellagio fee still unverified after a second search; only third-party sites state a figure. | — | — | F28 is a data-consistency irregularity. |
+| H5 | done (see PR record below) | Root pages regenerated with `scripts/integrate_data.py`; gates green: `room_extract`, `integrate_data` (byte-stable on a second run), `verify_root`, `verify`, `verify_markup`, `linkcheck`, `node --check app.js`. | — | — | — |
+
+Checked and not changed: Venetian $55 resort fee and $20/$40 parking (read live 2026-11-17, matches `data/poker4.json`). Venetian poker-rate, DSE calendar and structure-sheet data were not re-read here. Earlier sessions verified them; the scheduled monitor covers them.
+
+Still open (not claimed, not resolved): Bellagio resort fee (no official page reachable); Clark County PGC map (per-property membership); walking minutes (no official source); single-entry confirmation (0 events); live dated booking quotes; 8 AM all-day plan (F10); trip dates (not supplied by the user). The county letter is not yet in the daily monitor registry.
+
+### Merge and deploy record — arena/03d073d2-poker4 (2026-11-17)
+
+- **PR #66** (`arena/03d073d2-poker4` → `main`) — https://github.com/karagemop466-tech/Poker4/pull/66 — checks `check`, `integrity`, `verify` all **pass**; merged with `--merge` at 2026-11-17T22:32:37Z as `f163d6e81221877fcf5e6c35105752a4318abedc`. Pages deploy `44191075389` (Deploy static dashboard to GitHub Pages) **success**. Post-merge official source sync committed `282c9e8`; its Pages build `44191075021` **success**. Live check: https://karagemop466-tech.github.io/Poker4/hotels.html shows the county-letter basis and the F27 note.
+- **Gates on the live commit `282c9e8`:** `verify_root`, `verify`, `verify_markup`, `linkcheck`, `tools/verify_poker4.py`, `integrate_data` (rebuild is a no-op): all exit 0.
+- **Irregularity F29 (not fixed):** `tournament-monitor.yml` ("Daily schedule + source-change monitor") failed at `tools/verify_poker4.py` on its 22:26 UTC scheduled run (44190052816, ff3fa36) and on three earlier push runs the same day. The failed-run logs could not be downloaded from the sandbox, and a manual retry was refused (HTTP 403). The root site and its deploy are unaffected. Published on the Flagged page as F29 (see the PR that adds it).
+- **Process note:** during this session I briefly created a local branch, `arena/03d073d2-poker4-f29`, by mistake. It was never pushed, and I deleted it at once. Work stayed on `arena/03d073d2-poker4`.
+- **Next step for this session's scope:** the Flagged page now carries F27 (PGC membership), F19 (Wynn fee, current source), F6 (Bellagio, still unverified) and F29 (monitor failure).
 
 ---
 

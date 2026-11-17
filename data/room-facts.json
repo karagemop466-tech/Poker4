@@ -59,7 +59,7 @@
  },
  "wynn_wpt": {
   "file": "data/raw/wynn-wpt-terms.txt",
-  "sha256": "58e3eaa9ba7fa0bf6c0564d3ffbce3bcd549ead6d43f27933bd922a60ce4b794",
+  "sha256": "9d3bf67f11d8436d7d9badc0fbdad629d8262dad6016487caa4db9ec4763a323",
   "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
   "events": [
    {
@@ -4705,7 +4705,7 @@
  },
  "wynn_daily": {
   "file": "data/raw/wynn-daily-structures.txt",
-  "sha256": "af4aa5c8a4f857030555e88510aa234920cbf8c59332a7753e6332f4f29a4857",
+  "sha256": "8f45508f48bec6fc4a9d2b5c07ba4db4ba1ed14c2dd488b31a93f8e0912f4229",
   "url": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
   "poster_file": "data/raw/wynn-daily-poster.txt",
   "poster_url": "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf",
