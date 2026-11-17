@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated_at": "2026-11-17T23:11:19Z",
+  "generated_at": "2026-11-17T23:18:11Z",
   "rows": 94,
-  "note": "Rows read from the official schedule page at run time; blank fields were not printed on the page."
+  "note": "Rows read from the official schedule text captured in data/raw; blank fields were not printed."
  },
  "rows": [
   {
@@ -999,6 +999,22 @@
   },
   {
    "parse_notes": null,
+   "registration_closes": "10:55 AM",
+   "date": "2026-12-12",
+   "weekday": "Saturday",
+   "time": "9:10 AM",
+   "event_no": 46,
+   "event_name": "NLH TURBO MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47",
+   "buy_in_usd": 260,
+   "guarantee_usd": null,
+   "guarantee_text": "2 SEAT",
+   "starting_chips": 20000,
+   "level_duration": "15",
+   "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+   "retrieved": "2026-11-17"
+  },
+  {
+   "parse_notes": null,
    "registration_closes": "4:55 PM",
    "date": "2026-12-12",
    "weekday": "Saturday",
@@ -1042,22 +1058,6 @@
    "guarantee_text": null,
    "starting_chips": 40000,
    "level_duration": "30",
-   "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-17"
-  },
-  {
-   "parse_notes": null,
-   "registration_closes": "10:55 AM",
-   "date": "2026-12-12",
-   "weekday": "Saturday",
-   "time": "9:10 AM",
-   "event_no": 46,
-   "event_name": "NLH TURBO MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47",
-   "buy_in_usd": 260,
-   "guarantee_usd": null,
-   "guarantee_text": "2 SEAT",
-   "starting_chips": 20000,
-   "level_duration": "15",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
    "retrieved": "2026-11-17"
   },
@@ -1246,14 +1246,23 @@
    "weekday": "Thursday",
    "time": "10:10 AM",
    "event_no": 56,
-   "event_name": "NO LIMIT HOLD'EM 1A $40 RAKE DISCOUNT FOR ENTRIES BEFORE",
+   "event_name": "NO LIMIT HOLD'EM 1A $500K GTD",
    "buy_in_usd": 1100,
    "guarantee_usd": 500000,
    "guarantee_text": null,
    "starting_chips": 40000,
    "level_duration": "40",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-17"
+   "retrieved": "2026-11-17",
+   "conditional_entry_fee": {
+    "standard_usd": 1100,
+    "early_usd": 1060,
+    "discount_usd": 40,
+    "deadline": "before the start of the event (10:10 a.m.), Day 1A only",
+    "excerpt": "$140 of the $1,100 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $960 of every $1,100 Buy In. On Day 1A, players who register before the start of the event (10:10 a.m.) will receive a forty ($40) discount on house fees for a total buy in of $1,060 instead of $1,100. $40 discounts will no longer be applied once the event has started and played one hand.",
+    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf",
+    "retrieved": "2026-11-17"
+   }
   },
   {
    "parse_notes": null,
@@ -1280,14 +1289,23 @@
    "weekday": "Thursday",
    "time": "6:10 PM",
    "event_no": 56,
-   "event_name": "NO LIMIT HOLD'EM 1B $40 RAKE DISCOUNT FOR ENTRIES BEFORE",
+   "event_name": "NO LIMIT HOLD'EM 1B $500K GTD",
    "buy_in_usd": 1100,
    "guarantee_usd": 500000,
    "guarantee_text": null,
    "starting_chips": 40000,
    "level_duration": "30",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-17"
+   "retrieved": "2026-11-17",
+   "conditional_entry_fee": {
+    "standard_usd": 1100,
+    "early_usd": 1060,
+    "discount_usd": 40,
+    "deadline": "before the start of the event (6:10 PM), Day 1B only",
+    "excerpt": "$140 of the $1,100 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $960 of every $1,100 Buy In. On Day 1B, players who register before the start of the event (6:10 PM.) will receive a forty ($40) discount on house fees for a total buy in of $1,060 instead of $1,100. $40 discounts will no longer be applied once the event has started and played one hand.",
+    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_36.pdf",
+    "retrieved": "2026-11-17"
+   }
   },
   {
    "parse_notes": null,
@@ -1296,7 +1314,7 @@
    "weekday": "Friday",
    "time": "10:10 AM",
    "event_no": 56,
-   "event_name": "NO LIMIT HOLD'EM 1C",
+   "event_name": "NO LIMIT HOLD'EM 1C $500K GTD",
    "buy_in_usd": 1100,
    "guarantee_usd": 500000,
    "guarantee_text": null,
@@ -1312,7 +1330,7 @@
    "weekday": "Friday",
    "time": "6:10 PM",
    "event_no": 56,
-   "event_name": "NO LIMIT HOLD'EM 1D",
+   "event_name": "NO LIMIT HOLD'EM 1D $500K GTD",
    "buy_in_usd": 1100,
    "guarantee_usd": 500000,
    "guarantee_text": null,
@@ -1328,7 +1346,7 @@
    "weekday": "Saturday",
    "time": "10:10 AM",
    "event_no": 56,
-   "event_name": "NO LIMIT HOLD'EM 1E",
+   "event_name": "NO LIMIT HOLD'EM 1E $500K GTD",
    "buy_in_usd": 1100,
    "guarantee_usd": 500000,
    "guarantee_text": null,
@@ -1378,14 +1396,23 @@
    "weekday": "Sunday",
    "time": "11:10 AM",
    "event_no": 59,
-   "event_name": "NO LIMIT HOLD'EM 1A $20 RAKE DISCOUNT FOR ENTRIES BEFORE",
+   "event_name": "NO LIMIT HOLD'EM 1A $150K GTD",
    "buy_in_usd": 600,
    "guarantee_usd": 150000,
    "guarantee_text": null,
    "starting_chips": 40000,
    "level_duration": "40",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-17"
+   "retrieved": "2026-11-17",
+   "conditional_entry_fee": {
+    "standard_usd": 600,
+    "early_usd": 580,
+    "discount_usd": 20,
+    "deadline": "before the event starts (11:10 a.m.)",
+    "excerpt": "On Day 1A only, players who register before the start of the event (11:10 a.m.), will receive a $20 discount on house fees for a total buy in of $580 instead of $600.",
+    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf",
+    "retrieved": "2026-11-17"
+   }
   },
   {
    "parse_notes": null,
@@ -1410,7 +1437,7 @@
    "weekday": "Monday",
    "time": "11:10 AM",
    "event_no": 59,
-   "event_name": "NO LIMIT HOLD'EM 1B",
+   "event_name": "NO LIMIT HOLD'EM 1B $150K GTD",
    "buy_in_usd": 600,
    "guarantee_usd": 150000,
    "guarantee_text": null,
@@ -1442,7 +1469,7 @@
    "weekday": "Tuesday",
    "time": "11:10 AM",
    "event_no": 59,
-   "event_name": "NO LIMIT HOLD'EM 1C",
+   "event_name": "NO LIMIT HOLD'EM 1C $150K GTD",
    "buy_in_usd": 600,
    "guarantee_usd": 150000,
    "guarantee_text": null,

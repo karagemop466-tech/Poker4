@@ -135,6 +135,18 @@ if _OVR_PATH.exists():
             raise SystemExit(f"unknown override op: {_op['op']}")
     SCHED = {**SCHED, "rows": _rows}
 AUDIT = load("structure-audit.json", {"sheets": {}})
+
+
+def sheets_label() -> str:
+    """Audit-record breakdown (flag F20): the audit mixes Venetian DSE IV
+    structure sheets with other official documents; say which is which."""
+    keys = AUDIT.get("sheets") or {}
+    ven = sum(1 for k in keys if re.match(r"V_S\d+$", k or ""))
+    other = len(keys) - ven
+    return f"{ven} Venetian structure sheets audited + {other} other official documents"
+
+
+VEN_SHEETS = sum(1 for k in (AUDIT.get("sheets") or {}) if re.match(r"V_S\d+$", k or ""))
 FACTS = load("hotel-facts.json", {"sources": {}})
 CHECKS = load("url-checks.json", {})
 CHANGELOG = load("change-log.json", {"entries": []})
@@ -357,6 +369,12 @@ for row in SCHED["rows"]:
             "source": sheet_url,
             "retrieved": (sheet or {}).get("retrieved"),
         }
+    # Verified conditional entry fees carried on the snapshot row itself
+    # (data/c2242cb1/venetian_overrides.json), e.g. Event 59 Day 1A's $20 early
+    # discount from structure sheet 4 rule 7. Each dict carries its own source,
+    # excerpt and retrieval date.
+    if row.get("conditional_entry_fee") and "conditional_entry_fee" not in entry:
+        entry["conditional_entry_fee"] = row["conditional_entry_fee"]
     if sheet:
         fee = sheet.get("house_fee_usd")
         pool = sheet.get("pool_per_entry_usd")
@@ -1518,7 +1536,7 @@ def status_banner():
     # outage, so only still-tracked failures count here; the review page lists the superseded ones apart
     unreach = [s for s in source_rows if not s["ok"] and s["url"] in TRACKED_URLS]
     changed = [s for s in source_rows if s["values_changed"]]
-    bits = [f'{len(SCHED["rows"])} calendar rows parsed', f'{len(AUDIT["sheets"])} structure sheets audited',
+    bits = [f'{len(SCHED["rows"])} calendar rows parsed', sheets_label(),
             f'{len(events)} events on this site', f'{sum(1 for e in events if e.get("single_entry_confirmed"))} confirmed single-entry',
             f'{len(unreach)} official URLs unreachable', f'{len(changed)} sources with value changes']
     inner = "".join(f'<span class="stat">{E(b)}</span>' for b in bits)
@@ -1605,7 +1623,7 @@ def _exec_stats():
                         if not sum(1 for e in events if e.get("single_entry_confirmed"))
                         else "each of these rows carries the official sentence that says so"),
         "n_ranked": len(ranked), "n_spend": sum(1 for e in events if e.get("spend_advantage")),
-        "n_sources": len(source_rows), "n_sheets": len(AUDIT.get("sheets") or {}),
+        "n_sources": len(source_rows), "n_sheets": len(AUDIT.get("sheets") or {}), "n_sheets_detail": sheets_label(),
         "n_unreach": sum(1 for s in source_rows if not s["ok"]),
         "n_hotels": len(CFG["hotels"]), "n_rates": len(rate_log), "n_walks": len(walks),
         "median_entry": money(int(_stats.median(buys))) if buys else "not computable",
@@ -1636,7 +1654,7 @@ EXEC_BLOCK = """<section class="exec">
 <div class="exec-card"><span class="k">Confirmed single-entry / freezeout</span><span class="v">{n_single}</span><span class="s">{single_note}</span></div>
 <div class="exec-card"><span class="k">Ranked (fee split + guarantee both printed)</span><span class="v">{n_ranked}</span><span class="s">guarantee ÷ total entry fee is shown beside each; it is descriptive, never a forecast</span></div>
 <div class="exec-card"><span class="k">Kept out: more money buys an advantage</span><span class="v">{n_spend}</span><span class="s">printed re-entry, rebuy, add-on or a priced second buy-in</span></div>
-<div class="exec-card"><span class="k">Official sources read</span><span class="v">{n_sources}</span><span class="s">{n_sheets} structure sheets audited; {n_unreach} URL(s) unreachable in the last run, listed on the review page</span></div>
+<div class="exec-card"><span class="k">Official sources read</span><span class="v">{n_sources}</span><span class="s">{n_sheets_detail}; {n_unreach} URL(s) unreachable in the last run, listed on the review page</span></div>
 <div class="exec-card"><span class="k">Trip-cost inputs</span><span class="v">{n_hotels}</span><span class="s">hotels with a published fee/tax chain; {n_rates} dated rate-log lines, {n_walks} measured walks</span></div>
 </div>
 <h3>The three things this site changes about the plan</h3>
@@ -1711,7 +1729,7 @@ def page_index():
 {exec_html}
 <section class="cards">
 <div class="card finding"><h2>The finding that changes the plan</h2><p>{findings}</p>
-<p class="srcline">Evidence: <a href="review.html">the clause audit of all {len(AUDIT['sheets'])} sheets</a> · <a href="data/structure-audit.json">structure-audit.json</a> · <a href="data/venetian_structures.json">the manual read of 12 sheets</a> · <a href="flagged.html#F1">flag F1</a></p></div>
+<p class="srcline">Evidence: <a href="review.html">the clause audit of all {len(AUDIT['sheets'])} documents ({VEN_SHEETS} Venetian structure sheets)</a> · <a href="data/structure-audit.json">structure-audit.json</a> · <a href="data/venetian_structures.json">the manual read of 12 sheets</a> · <a href="flagged.html#F1">flag F1</a></p></div>
 <div class="card"><h2>Best screening ratios among rows that can be ranked</h2>
 <p class="mini-note">Guarantee ÷ total entry fee, descriptive only — it is not a forecast of expected value, and none of these rows is confirmed single-entry. Ranking needs the fee split and the guarantee both confirmed; rows without them are excluded here and say why.</p>
 <table class="compact"><thead><tr><th>Event</th><th>When</th><th class="num">Entry</th><th class="num">Pool/entry</th><th class="num">Guarantee</th><th class="num">Ratio</th></tr></thead><tbody>
@@ -2141,7 +2159,7 @@ def page_review():
 {status_banner()}</section>
 <div class="runstats"><div><h3>Last run</h3><ul>
 <li>{E(st.get('urls_checked', len(source_rows)))} official URLs checked · {len(st.get('urls_failed') or [])} failed</li>
-<li>{E(st.get('sheets_audited', len(AUDIT['sheets'])))} structure sheets audited · {E(st.get('schedule_rows', len(SCHED['rows'])))} calendar rows · {E(st.get('schedule_rows_with_date', sum(1 for r in SCHED['rows'] if r.get('date'))))} rows carrying a date</li>
+<li>{sheets_label()} · {E(st.get('schedule_rows', len(SCHED['rows'])))} calendar rows · {E(st.get('schedule_rows_with_date', sum(1 for r in SCHED['rows'] if r.get('date'))))} rows carrying a date</li>
 <li>{len(st.get('changed_this_run') or [])} URLs changed on this run (cosmetic byte changes are counted separately from value changes)</li>
 <li>{E(st.get('hotel_fact_sources', len(FACTS.get('sources') or {})))} property pages yielded a fee / tax / parking / cancellation sentence</li>
 <li>{parsed} sources parsed into rows · {saved} sources kept as captured text under <code>data/raw/</code></li></ul>

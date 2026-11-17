@@ -3919,7 +3919,7 @@
    "primary_id": "V56-2026-12-18-10:10am",
    "primary": {
     "id": "V56-2026-12-18-10:10am",
-    "name": "$1,100 No Limit Hold'Em 1C",
+    "name": "$1,100 No Limit Hold'Em 1C $500K Gtd",
     "date": "2026-12-18",
     "time": "10:10 AM",
     "registration_closes": "4:55 PM",
@@ -4049,7 +4049,7 @@
    "primary_id": "V56-2026-12-19-10:10am",
    "primary": {
     "id": "V56-2026-12-19-10:10am",
-    "name": "$1,100 No Limit Hold'Em 1E",
+    "name": "$1,100 No Limit Hold'Em 1E $500K Gtd",
     "date": "2026-12-19",
     "time": "10:10 AM",
     "registration_closes": "4:55 PM",
@@ -4175,14 +4175,14 @@
    ],
    "overlap_notes": [
     "2 ranked entries share this day (starts 11:10 AM, 5:10 PM); entering one rules out the others, and no sheet prints a finish time to settle it",
-    "$600 No Limit Hold'Em 1A $20 Rake Discount For Entries Before keeps registration open until 5:55 PM, after $200 No Limit Hold'Em Bounty (1Day) starts at 5:10 PM \u2014 playable in sequence only if you are out of the first event before that deadline, which the sheet does not promise"
+    "$600 No Limit Hold'Em 1A $150K Gtd keeps registration open until 5:55 PM, after $200 No Limit Hold'Em Bounty (1Day) starts at 5:10 PM \u2014 playable in sequence only if you are out of the first event before that deadline, which the sheet does not promise"
    ],
    "distinct_ranked_events": 2,
    "entries_usd": 800,
    "primary_id": "V59-2026-12-20-11:10am",
    "primary": {
     "id": "V59-2026-12-20-11:10am",
-    "name": "$600 No Limit Hold'Em 1A $20 Rake Discount For Entries Before",
+    "name": "$600 No Limit Hold'Em 1A $150K Gtd",
     "date": "2026-12-20",
     "time": "11:10 AM",
     "registration_closes": "5:55 PM",
@@ -4293,14 +4293,14 @@
    "restarts": [],
    "overlap_notes": [
     "2 ranked entries share this day (starts 11:10 AM, 5:10 PM); entering one rules out the others, and no sheet prints a finish time to settle it",
-    "$600 No Limit Hold'Em 1B keeps registration open until 5:55 PM, after $200 No Limit Hold'Em Bounty (1Day) starts at 5:10 PM \u2014 playable in sequence only if you are out of the first event before that deadline, which the sheet does not promise"
+    "$600 No Limit Hold'Em 1B $150K Gtd keeps registration open until 5:55 PM, after $200 No Limit Hold'Em Bounty (1Day) starts at 5:10 PM \u2014 playable in sequence only if you are out of the first event before that deadline, which the sheet does not promise"
    ],
    "distinct_ranked_events": 2,
    "entries_usd": 800,
    "primary_id": "V59-2026-12-21-11:10am",
    "primary": {
     "id": "V59-2026-12-21-11:10am",
-    "name": "$600 No Limit Hold'Em 1B",
+    "name": "$600 No Limit Hold'Em 1B $150K Gtd",
     "date": "2026-12-21",
     "time": "11:10 AM",
     "registration_closes": "5:55 PM",
@@ -4411,14 +4411,14 @@
    "restarts": [],
    "overlap_notes": [
     "2 ranked entries share this day (starts 11:10 AM, 5:10 PM); entering one rules out the others, and no sheet prints a finish time to settle it",
-    "$600 No Limit Hold'Em 1C keeps registration open until 5:55 PM, after $200 No Limit Hold'Em Bounty (1Day) starts at 5:10 PM \u2014 playable in sequence only if you are out of the first event before that deadline, which the sheet does not promise"
+    "$600 No Limit Hold'Em 1C $150K Gtd keeps registration open until 5:55 PM, after $200 No Limit Hold'Em Bounty (1Day) starts at 5:10 PM \u2014 playable in sequence only if you are out of the first event before that deadline, which the sheet does not promise"
    ],
    "distinct_ranked_events": 2,
    "entries_usd": 800,
    "primary_id": "V59-2026-12-22-11:10am",
    "primary": {
     "id": "V59-2026-12-22-11:10am",
-    "name": "$600 No Limit Hold'Em 1C",
+    "name": "$600 No Limit Hold'Em 1C $150K Gtd",
     "date": "2026-12-22",
     "time": "11:10 AM",
     "registration_closes": "5:55 PM",

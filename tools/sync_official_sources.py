@@ -799,7 +799,7 @@ FACT_PATTERNS = {
     # room cost once a third or fourth player joins the room, so the clause is captured verbatim.
     "occupancy_charge": r"[^.\n]{0,90}(?:additional\s+(?:occupant\s+)?charge|per\s+occupant[^.\n]{0,60}per\s+night)[^.\n]{0,240}",
     "parking": r"[^.\n]{0,90}(?:self[- ]?parking|valet\s+parking|parking\s+(?:fee|rate|is))[^.\n]{0,240}",
-    "cancellation": r"[^.\n]{0,90}(?:cancellation|cancel\s+your|no[- ]show|non[- ]refundable)[^.\n]{0,240}",
+    "cancellation": r"[^.\n]{0,90}(?:cancel\w*|no[- ]?show)[^.\n]{0,240}",
     "check_in_out": r"[^.\n]{0,90}(?:check[- ]in|check[- ]out)\s+(?:time|is|at|after|by)[^.\n]{0,240}",
     "walk": r"[^.\n]{0,90}(?:minutes?\s+(?:walk|walking)|walking\s+distance|skybridge|monorail)[^.\n]{0,240}",
 }
@@ -834,6 +834,51 @@ def extract_facts(text: str) -> dict:
     return out
 
 
+# --------------------------------------------------------------- venetian overrides
+VENETIAN_OVERRIDES = os.path.join(DATA, "c2242cb1", "venetian_overrides.json")
+
+
+def apply_venetian_overrides(rows: list[dict]) -> list[dict]:
+    """Apply data/c2242cb1/venetian_overrides.json to parsed Venetian schedule rows.
+
+    Row-level corrections where the PDF extraction disagrees with the official
+    schedule page and its structure sheets (page-style event names, conditional
+    entry fees, rows a broken parse dropped). Applied here at scrape time AND by
+    scripts/integrate_data.py at build time, so neither a re-scrape nor a stale
+    snapshot can silently undo them. Each "set" must match exactly one row — or
+    find a row already carrying the corrected values — otherwise the run stops
+    rather than publishing a row that disagrees with the official page.
+    """
+    if not os.path.exists(VENETIAN_OVERRIDES):
+        return rows
+    ovr = read_json(VENETIAN_OVERRIDES, {})
+    rows = [dict(r) for r in rows]
+    for op in ovr.get("operations", []):
+        if op["op"] == "set":
+            m = op["match"]
+            hits = [r for r in rows if r.get("date") == m["date"] and r.get("time") == m["time"]
+                    and r.get("event_no") == m["event_no"]
+                    and (not m.get("name_contains") or m["name_contains"] in (r.get("event_name") or "").upper())]
+            if len(hits) == 1:
+                hits[0].update(op["set"])
+            elif len(hits) == 0:
+                done = [r for r in rows if r.get("date") == m["date"] and r.get("event_no") == m["event_no"]
+                        and all(r.get(k) == v for k, v in op["set"].items())]
+                if not done:
+                    raise SystemExit(f"venetian override matched no row and no corrected row exists: {m}")
+            else:
+                raise SystemExit(f"venetian override matched {len(hits)} rows (need exactly 1): {m}")
+        elif op["op"] == "add":
+            r = op["row"]
+            if any(x.get("date") == r.get("date") and x.get("time") == r.get("time")
+                   and x.get("event_no") == r.get("event_no") for x in rows):
+                continue
+            rows.append(dict(r))
+        else:
+            raise SystemExit(f"unknown override op: {op['op']}")
+    return rows
+
+
 # --------------------------------------------------------------------------- main
 def from_raw(cfg: dict) -> int:
     """Offline re-derivation: rebuild the audit + schedule snapshots from the text
@@ -857,7 +902,8 @@ def from_raw(cfg: dict) -> int:
         url = entry["url"]
         checked = (prev.get(url) or {}).get("checked_at") or now_utc()
         if entry.get("parse") == "venetian-schedule-pdf":
-            snapshot_rows.extend(parse_schedule_pdf(text, url, entry.get("default_year")))
+            snapshot_rows.extend(apply_venetian_overrides(
+                parse_schedule_pdf(text, url, entry.get("default_year"))))
         if entry.get("kind") == "pdf" and re.search(r"structure", url, re.I):
             key = entry.get("key") or url.rsplit("/", 1)[-1]
             audit = audit_structure(text, url)
@@ -968,7 +1014,7 @@ def main() -> int:
                     snapshot_rows.extend(rows)
                     rec["schedule_rows_parsed"] = len(rows)
             if entry.get("parse") == "venetian-schedule-pdf" and text:
-                rows = parse_schedule_pdf(text, url, entry.get("default_year"))
+                rows = apply_venetian_overrides(parse_schedule_pdf(text, url, entry.get("default_year")))
                 key = entry.get("key") or url.rsplit("/", 1)[-1]
                 diff = diff_schedule((prev_audit.get("schedule_rows") or {}).get(key), rows)
                 if diff:

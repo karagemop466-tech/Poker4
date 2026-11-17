@@ -5,7 +5,7 @@
   "owner": "arena/e74e00fd-poker4",
   "rule": "Only official operator/property domains are tracked. A tracked URL that 404s is reported as unreachable — it is never replaced by a third-party mirror.",
   "touch": "retrigger-sync · 60ade3e8: registry merged (union of both sessions' repoints, 2 additional official pages) on 2026-11-17",
-  "sources": 66
+  "sources": 68
  },
  "sources": [
   {
@@ -517,6 +517,22 @@
    "venue": "WSOP",
    "key": "WSOP",
    "save_text_to": "data/raw/wsop-schedule.txt"
+  },
+  {
+   "key": "W_TERMS_GEN",
+   "label": "Wynn standing hotel terms — resort fee $55 + tax, parking, cancellation sections",
+   "url": "https://www.wynnlasvegas.com/terms-and-conditions/850070",
+   "kind": "page",
+   "venue": "wynn",
+   "extract_facts": true
+  },
+  {
+   "key": "W_OFFER_DK26",
+   "label": "Wynn offer terms valid Oct 2 2026 – Mar 31 2027 — resort fee $55 + tax, deposit and cancellation policy",
+   "url": "https://www.wynnlasvegas.com/terms-and-conditions/DK26WLV2",
+   "kind": "page",
+   "venue": "wynn",
+   "extract_facts": true
   },
   {
    "url": "https://aria.mgmresorts.com/en/terms-and-conditions.html",

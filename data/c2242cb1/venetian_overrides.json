@@ -1,6 +1,6 @@
 {
  "retrieved": "2026-11-17",
- "purpose": "Row-level corrections where schedule-snapshot.json (PDF parse) disagrees with the official schedule page. Applied by scripts/integrate_data.py on every build so a re-scrape cannot silently undo them.",
+ "purpose": "Row-level corrections where schedule-snapshot.json (PDF parse) disagrees with the official schedule page and its structure sheets. Applied by scripts/integrate_data.py on every build AND by tools/sync_official_sources.py to the snapshot at scrape time, so a re-scrape cannot silently undo them.",
  "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
  "operations": [
   {
@@ -70,6 +70,157 @@
     "guarantee_usd": 150000
    },
    "why": "Official page event name prints '$600 No Limit Hold'em 1A $150K GTD'; parsed snapshot had no guarantee."
+  },
+  {
+   "op": "set",
+   "match": {
+    "date": "2026-12-17",
+    "time": "10:10 AM",
+    "event_no": 56
+   },
+   "set": {
+    "event_name": "NO LIMIT HOLD'EM 1A $500K GTD",
+    "level_duration": "40",
+    "registration_closes": "4:55 PM"
+   },
+   "why": "b808eea0 2026-11-17 line-by-line check: official page prints '$1,100 No Limit Hold'em 1A $500K GTD'; structure sheet 35 (https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf, read live 2026-11-17) prints 'Level Duration: 40 minutes' and 'Late Registration: 9 levels + Break (~ 4:55 PM)'. PDF parse dropped the printed guarantee from the name and left level/reg blank."
+  },
+  {
+   "op": "set",
+   "match": {
+    "date": "2026-12-17",
+    "time": "6:10 PM",
+    "event_no": 56
+   },
+   "set": {
+    "event_name": "NO LIMIT HOLD'EM 1B $500K GTD",
+    "level_duration": "30",
+    "registration_closes": "11:10 PM"
+   },
+   "why": "b808eea0 2026-11-17 line-by-line check: official page prints '$1,100 No Limit Hold'em 1B $500K GTD'; structure sheet 36 (https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_36.pdf, read live 2026-11-17) prints 'Level Duration: 30 minutes' and 'Late Registration: 9 levels + Break (~ 11:10 PM)'. PDF parse filed the registration-closes figure as level_duration '11'."
+  },
+  {
+   "op": "set",
+   "match": {
+    "date": "2026-12-18",
+    "time": "10:10 AM",
+    "event_no": 56
+   },
+   "set": {
+    "event_name": "NO LIMIT HOLD'EM 1C $500K GTD"
+   },
+   "why": "b808eea0 2026-11-17: official page prints '$1,100 No Limit Hold'em 1C $500K GTD'; PDF parse dropped the printed guarantee from the name (guarantee_usd field already correct)."
+  },
+  {
+   "op": "set",
+   "match": {
+    "date": "2026-12-18",
+    "time": "6:10 PM",
+    "event_no": 56
+   },
+   "set": {
+    "event_name": "NO LIMIT HOLD'EM 1D $500K GTD"
+   },
+   "why": "b808eea0 2026-11-17: official page prints '$1,100 No Limit Hold'em 1D $500K GTD'; PDF parse dropped the printed guarantee from the name (guarantee_usd field already correct)."
+  },
+  {
+   "op": "set",
+   "match": {
+    "date": "2026-12-19",
+    "time": "10:10 AM",
+    "event_no": 56
+   },
+   "set": {
+    "event_name": "NO LIMIT HOLD'EM 1E $500K GTD"
+   },
+   "why": "b808eea0 2026-11-17: official page prints '$1,100 No Limit Hold'em 1E $500K GTD'; PDF parse dropped the printed guarantee from the name (guarantee_usd field already correct)."
+  },
+  {
+   "op": "set",
+   "match": {
+    "date": "2026-12-20",
+    "time": "11:10 AM",
+    "event_no": 59
+   },
+   "set": {
+    "event_name": "NO LIMIT HOLD'EM 1A $150K GTD",
+    "level_duration": "40",
+    "registration_closes": "5:55 PM",
+    "conditional_entry_fee": {
+     "standard_usd": 600,
+     "early_usd": 580,
+     "discount_usd": 20,
+     "deadline": "before the event starts (11:10 a.m.)",
+     "excerpt": "On Day 1A only, players who register before the start of the event (11:10 a.m.), will receive a $20 discount on house fees for a total buy in of $580 instead of $600.",
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf",
+     "retrieved": "2026-11-17"
+    }
+   },
+   "why": "b808eea0 2026-11-17 line-by-line check: official page prints '$600 No Limit Hold'em 1A $150K GTD - $20 Rake Discount for Entries Before 11:10 a.m.'; structure sheet 4 (https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf, read live 2026-11-17) prints 'Level Duration: 40 minutes', 'Late Registration: 9 levels + Break (5:55 PM)', 'Guarantee: $150,000' and rule 7 ($95 house fee of $600; $505 to the prize pool; Day 1A-only $20 discount = $580). PDF parse truncated the name at the rake-discount note and filed a registration figure as level_duration '5'."
+  },
+  {
+   "op": "set",
+   "match": {
+    "date": "2026-12-21",
+    "time": "11:10 AM",
+    "event_no": 59
+   },
+   "set": {
+    "event_name": "NO LIMIT HOLD'EM 1B $150K GTD"
+   },
+   "why": "b808eea0 2026-11-17: official page prints '$600 No Limit Hold'em 1B $150K GTD'; PDF parse dropped the printed guarantee from the name (guarantee_usd field already correct)."
+  },
+  {
+   "op": "set",
+   "match": {
+    "date": "2026-12-22",
+    "time": "11:10 AM",
+    "event_no": 59
+   },
+   "set": {
+    "event_name": "NO LIMIT HOLD'EM 1C $150K GTD"
+   },
+   "why": "b808eea0 2026-11-17: official page prints '$600 No Limit Hold'em 1C $150K GTD'; PDF parse dropped the printed guarantee from the name (guarantee_usd field already correct)."
+  },
+  {
+   "op": "set",
+   "match": {
+    "date": "2026-12-17",
+    "time": "10:10 AM",
+    "event_no": 56
+   },
+   "set": {
+    "conditional_entry_fee": {
+     "standard_usd": 1100,
+     "early_usd": 1060,
+     "discount_usd": 40,
+     "deadline": "before the start of the event (10:10 a.m.), Day 1A only",
+     "excerpt": "$140 of the $1,100 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $960 of every $1,100 Buy In. On Day 1A, players who register before the start of the event (10:10 a.m.) will receive a forty ($40) discount on house fees for a total buy in of $1,060 instead of $1,100. $40 discounts will no longer be applied once the event has started and played one hand.",
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf",
+     "retrieved": "2026-11-17"
+    }
+   },
+   "why": "b808eea0 2026-11-17: structure sheet 35 rule 7 read live (twice: B2 pass + merge re-check). The $40 early house-fee discount ($1,100 -> $1,060 before 10:10 a.m.) is printed only on this sheet; without this op the snapshot carries no entry-fee rule for the row."
+  },
+  {
+   "op": "set",
+   "match": {
+    "date": "2026-12-17",
+    "time": "6:10 PM",
+    "event_no": 56
+   },
+   "set": {
+    "conditional_entry_fee": {
+     "standard_usd": 1100,
+     "early_usd": 1060,
+     "discount_usd": 40,
+     "deadline": "before the start of the event (6:10 PM), Day 1B only",
+     "excerpt": "$140 of the $1,100 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $960 of every $1,100 Buy In. On Day 1B, players who register before the start of the event (6:10 PM.) will receive a forty ($40) discount on house fees for a total buy in of $1,060 instead of $1,100. $40 discounts will no longer be applied once the event has started and played one hand.",
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_36.pdf",
+     "retrieved": "2026-11-17"
+    }
+   },
+   "why": "b808eea0 2026-11-17: structure sheet 36 rule 7 read live (twice: B2 pass + merge re-check). The $40 early house-fee discount ($1,100 -> $1,060 before 6:10 PM) is printed only on this sheet; without this op the snapshot carries no entry-fee rule for the row."
   }
  ]
 }
