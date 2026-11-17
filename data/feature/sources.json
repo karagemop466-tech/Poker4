@@ -136,5 +136,23 @@
   "title": "Golden Nugget official poker page (returned empty content on 2026-11-17)",
   "url": "https://www.goldennugget.com/las-vegas/casino/poker/",
   "last_checked": "2026-11-17"
+ },
+ {
+  "id": "WPT-PR",
+  "title": "WPT official press release 2026-09-14 (Main Event single entry per starting flight; Super Gold unlimited re-entry; $1M mystery-bounty overlay)",
+  "url": "https://www.worldpokertour.com/article/wpt-world-championship-at-wynn-las-vegas-set-for-season-24-finale-with-over-85-events-and-20m-in-gte",
+  "last_checked": "2026-11-17"
+ },
+ {
+  "id": "B-TERMS",
+  "title": "Bellagio official hotel terms (resort fee $55+tax, 72-hour cancellation, $50 extra occupant)",
+  "url": "https://bellagio.mgmresorts.com/en/terms-and-conditions.html",
+  "last_checked": "2026-11-17"
+ },
+ {
+  "id": "A-TERMS",
+  "title": "ARIA official hotel terms (resort fee $55+tax, 72-hour cancellation, tiered incidentals)",
+  "url": "https://aria.mgmresorts.com/en/terms-and-conditions.html",
+  "last_checked": "2026-11-17"
  }
 ]

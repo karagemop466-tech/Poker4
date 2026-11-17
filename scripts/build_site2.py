@@ -12,7 +12,7 @@ import dataset as D
 ROOT = os.path.join(os.path.dirname(__file__), "..")
 OFFICIAL_HOSTS = ("venetianlasvegas.com", "cdn.wynnresorts.com", "wynnlasvegas.com", "wptmedia-mig.s3.amazonaws.com",
                   "bellagio.mgmresorts.com", "assets.contentstack.io", "caesars.com", "aria.mgmresorts.com",
-                  "mgmgrand.mgmresorts.com", "treasureisland.com", "goldennugget.com")
+                  "mgmgrand.mgmresorts.com", "treasureisland.com", "goldennugget.com", "worldpokertour.com")
 
 def official(url):
     return url.startswith("https://") and any(h in url for h in OFFICIAL_HOSTS)
@@ -67,17 +67,24 @@ for w in D.WYNN_DAILY:
 for (date, time, name, buy_in, gtd, chips, lvl, kind, note) in D.WYNN_WPT:
     lvlmin = int(lvl.split("/")[0])
     ratio = round(gtd / buy_in, 1) if (gtd and buy_in) else None
-    section = "satellite" if "satellite" in kind else ("bounty" if ("bounty" in kind or "pko" in kind) else
-               ("flighted" if "flight" in kind else "standard"))
+    rules, fee, gtd_incl = D.wpt_rules_for(date, name)
+    multi = rules.get("single_entry", {}).get("status") == "confirmed-no"
+    section = "multi-entry" if multi else (
+        "satellite" if "satellite" in kind else (
+        "bounty" if ("bounty" in kind or "pko" in kind) else (
+        "flighted" if "flight" in kind else "standard")))
     events.append(base_row(
         id=f"wynn-wpt-{date}-{time}", venue="Wynn", series="WPT World Championship festival (Nov 27 – Dec 21, 2026)",
         date=date, time=time, event_no=None, flight="", name=name,
-        buy_in=buy_in, prize_pool_per_entry=None, house_fee=None, staff_fee=None,
-        guarantee=gtd, guarantee_includes_bounties=None if ("bounty" in kind) else False,
-        ratio=ratio, chips=chips, level_min=lvlmin, late_reg="per-event structure sheet (not verified this pass)",
+        buy_in=buy_in, prize_pool_per_entry=(fee[0] if fee else None), house_fee=(fee[1] if fee else None),
+        staff_fee=(fee[2] if fee else None),
+        guarantee=gtd, guarantee_includes_bounties=gtd_incl,
+        ratio=ratio, chips=chips, level_min=lvlmin, late_reg="per-event structure sheet (see entry rules)",
         late_reg_time=None, kind=kind, section=section, multi_day=("2 Day" in name or "3 Day" in name or "flight" in kind),
-        restart=False, entry_rules=D.WPT_RULES, note=note,
-        sources=["W-WPT", "WPT-TC"], structure_url=None,
+        restart=False, entry_rules=rules, note=note,
+        sources=(["W-WPT", "WPT-TC"] + (["WPT-PR"] if any(v.get("source") == "WPT-PR" for v in rules.values()) else [])
+                 if (date, name) in D._WPT else ["W-WPT", "WPT-TC"]),
+        structure_url=None,
         status="past" if date < D.TODAY else "upcoming"))
 
 # ---- Bellagio

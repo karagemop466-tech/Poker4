@@ -52,12 +52,21 @@ SOURCES = {
                  "https://treasureisland.com/hotel/tower-suite"),
     "GN-POKER": ("Golden Nugget official poker page (returned empty content on 2026-11-17)",
                  "https://www.goldennugget.com/las-vegas/casino/poker/"),
+    "WPT-PR": ("WPT official press release 2026-09-14 (Main Event single entry per starting flight; Super Gold unlimited re-entry; $1M mystery-bounty overlay)",
+               "https://www.worldpokertour.com/article/wpt-world-championship-at-wynn-las-vegas-set-for-season-24-finale-with-over-85-events-and-20m-in-gte"),
+    "B-TERMS": ("Bellagio official hotel terms (resort fee $55+tax, 72-hour cancellation, $50 extra occupant)",
+                "https://bellagio.mgmresorts.com/en/terms-and-conditions.html"),
+    "A-TERMS": ("ARIA official hotel terms (resort fee $55+tax, 72-hour cancellation, tiered incidentals)",
+                "https://aria.mgmresorts.com/en/terms-and-conditions.html"),
 }
 
 # ---------------------------------------------------------------- structured rule templates
 # status values: "unverified" | "confirmed" | "confirmed-no"
-def rule(status, excerpt=None, note=None):
-    return {"status": status, "excerpt": excerpt, "retrieved": RETRIEVED, "note": note}
+def rule(status, excerpt=None, note=None, source=None):
+    d = {"status": status, "excerpt": excerpt, "retrieved": RETRIEVED, "note": note}
+    if source:
+        d["source"] = source
+    return d
 
 UNSTATED = {
     "single_entry": rule("unverified", note="Structure sheet states no entry-count terms."),
@@ -416,7 +425,7 @@ WYNN_WPT = [
  ("2026-12-12","13:00","WPT PLO — $250,000 GTD",3000,250000,30000,"30",["plo"],""),
  ("2026-12-12","14:00","Milestone Satellite to $10,400 World Championship",1100,None,20000,"25",["satellite"],"75 seats (2 PM) & 25 seats (7 PM)."),
  ("2026-12-12","16:00","Milestone Satellite to $10,400 Ladies Championship",200,None,20000,"20",["satellite","ladies"],"10 seats."),
- ("2026-12-13","11:00","WPT World Championship Day 1A — $1,000,000 ADDED (ClubWPT Gold)",10400,None,100000,"60/90",["nlh","flight"],"NOT a guarantee — $1M added cash. Flights Dec 13–15 11am. Day 2 Dec 16 (registration open until start of Day 2), FT Dec 20 2 PM."),
+ ("2026-12-13","11:00","WPT World Championship Day 1A — $1,000,000 ADDED (ClubWPT Gold)",10400,None,100000,"60/90",["nlh","flight"],"Official press release: ClubWPT Gold adds $1M in cash and prizes EXCLUSIVELY for mystery bounties, separate from and in addition to the prize pool — NOT a guarantee. Three starting flights Dec 13–15 11:00; single entry per starting flight; final entry window runs until the start of Day 2 (Dec 16). FT Dec 20 2 PM."),
  ("2026-12-13","11:00","WPT Ladies NLH Championship (2 Day) — $250,000 GTD",1100,250000,40000,"40",["nlh","ladies"],"Entry $11,100 for non-ladies; ladies discounted entry $1,100 (official footnote)."),
  ("2026-12-13","11:00","WPT T.O.R.S.E. (2 Day)",1100,None,40000,"40",["mixed"],""),
  ("2026-12-13","11:00","WPT NLH Day 1A — $500,000 GTD",800,500000,40000,"40",["nlh","flight"],"Flights Dec 13–14 (11am)."),
@@ -529,17 +538,21 @@ HOTELS = [
       poker_rate=None,
       last_checked=RETRIEVED),
  dict(id="bellagio", name="Bellagio", address=None,
-      resort_fee=None, resort_fee_src=None, tax_rate=0.1338, tax_src="V-TERMS",
-      parking=None, parking_src=None,
-      cancellation=None, cancellation_src=None,
+      resort_fee=55.0, resort_fee_src="B-TERMS", tax_rate=0.1338, tax_src="V-TERMS",
+      parking="MGM Las Vegas shared parking: self $20/day Mon–Thu, $25/day Fri–Sun; valet $40/day; 24-hour in/out within same parking type. (Amounts from secondary sources — verify on-site.)",
+      parking_src=None,
+      cancellation="First night's deposit fully refundable if cancelled at least 72 hours before arrival (unless excluded by booked offer); later cancellation or no-show forfeits the first night. Complimentary stays: $165 midweek / $200 weekend cancellation fee. $150/day incidental authorization at check-in. Extra occupant above 2: $50+tax/night.",
+      cancellation_src="B-TERMS",
       walk_to_venetian=None, walk_note="Not verified — use route link.",
       walk_src=None,
-      booking_link="https://www.bellagio.com/en/hotel.html",
+      booking_link="https://bellagio.mgmresorts.com/en/hotel.html",
       rate_log=[], poker_rate=None, last_checked=RETRIEVED),
  dict(id="aria", name="ARIA Resort & Casino", address=None,
-      resort_fee=None, resort_fee_src=None, tax_rate=0.1338, tax_src="V-TERMS",
-      parking=None, parking_src=None,
-      cancellation=None, cancellation_src=None,
+      resort_fee=55.0, resort_fee_src="A-TERMS", tax_rate=0.1338, tax_src="V-TERMS",
+      parking="MGM Las Vegas shared parking: self $20/day Mon–Thu, $25/day Fri–Sun; valet $40/day. (Amounts from secondary sources — verify on-site.)",
+      parking_src=None,
+      cancellation="First night's deposit fully refundable if cancelled at least 72 hours before arrival (unless excluded by booked offer); later cancellation or no-show forfeits the first night. Complimentary stays: $165 midweek / $200 weekend cancellation fee. Incidentals authorization: $150/day Deluxe, $250 Tower Suites, $350 Sky Suites, $500 Villas. Extra occupant above 2: $50+tax/night.",
+      cancellation_src="A-TERMS",
       walk_to_venetian=None, walk_note="Not verified — use route link.",
       walk_src=None,
       booking_link="https://aria.mgmresorts.com/en/hotel.html",
@@ -590,3 +603,60 @@ HOTELS = [
 
 # true-cost helper constants
 TAX_RATE = 0.1338  # Clark County room tax per Venetian official terms
+
+# ---------------------------------------------------------------- WPT per-event entry rules (verified 2026-11-17)
+# Source A: official WPT structures PDF (WPT-TC) per-event T&C sections.
+# Source B: official WPT press release (WPT-PR).
+WPT_RULES_MAIN = {
+    "single_entry": rule("confirmed-no",
+        "The marquee championship event will offer three starting flights, with players allowed a single entry per starting flight with the final opportunity to enter being prior to the start of Day 2.",
+        "Whole-event single-entry is NOT established: one entry per starting flight x 3 flights = up to 3 entries; final entry window runs until Day 2.", "WPT-PR"),
+    "re_entry": rule("confirmed-no", "players allowed a single entry per starting flight", "No re-entry within a flight; next flight = another entry.", "WPT-PR"),
+    "rebuy": rule("confirmed-no", note="No rebuys."),
+    "addon": rule("confirmed-no", note="No add-on."),
+    "entry_fee": rule("unverified", note="Fee split not printed on the press release or the side-event structures PDF."),
+}
+WPT_RULES_1_1_FLIGHT = {
+    "single_entry": rule("confirmed-no",
+        "One (1) Entry and One (1) re-entry for each starting flight will be available until the start of level 10 (approximately 6:45 p.m.). A player who advances to Day 2 is prohibited from entering a subsequent starting flight.",
+        "One entry + one re-entry per flight; bagged players barred from later flights.", "WPT-TC"),
+    "re_entry": rule("confirmed", "One (1) Entry and One (1) re-entry for each starting flight will be available until the start of level 10 (approximately 6:45 p.m.).", "One re-entry per flight through level 10.", "WPT-TC"),
+    "rebuy": rule("confirmed-no", note="No rebuys."), "addon": rule("confirmed-no", note="No add-on."),
+    "entry_fee": rule("confirmed", "$1,100 Buy-in = $970 (Tournament Prize Pool) + $90 (Tournament Fee) + $40 (Poker Staff Service Charge)", "$970 pool + $90 + $40 staff.", "WPT-TC"),
+}
+def _wpt_unl(cutoff, cutoff_time, flight_clause, fee, fee_txt):
+    re_x = ("Unlimited re-entry for each starting flight will be available until the start of %s." % cutoff) if flight_clause \
+        else ("Unlimited re-entry will be available until the start of %s." % cutoff)
+    return {
+        "single_entry": rule("confirmed-no", re_x + (" A player who advances to Day 2 is prohibited from entering a subsequent starting flight." if flight_clause else ""), "Unlimited re-entry priced by the official T&C.", "WPT-TC"),
+        "re_entry": rule("confirmed", re_x, "Unlimited re-entry through %s%s." % (cutoff, (" (~%s)" % cutoff_time) if cutoff_time else ""), "WPT-TC"),
+        "rebuy": rule("confirmed-no", note="No rebuys."), "addon": rule("confirmed-no", note="No add-on."),
+        "entry_fee": rule("confirmed", fee_txt, fee, "WPT-TC"),
+    }
+_FEE600 = "$600 Buy-in = $510 (Tournament Prize Pool) + $65 (Tournament Fee) + $25 (Poker Staff Service Charge)"
+_WPT = {}
+_WPT[("2026-11-27","WPT NLH Day 1A — $400,000 GTD")] = (_wpt_unl("level 9", None, True, "510/65/25", _FEE600), (510,65,25), False)
+_WPT[("2026-11-27","WPT TORSE")] = (_wpt_unl("level 9", None, False, "510/65/25", _FEE600), (510,65,25), False)
+_WPT[("2026-11-27","WPT PLO")] = (_wpt_unl("level 9", "5:30 p.m.", False, "337/45/18", "$400 Buy-in = $337 (Tournament Prize Pool) + $45 (Tournament Fee) + $18 (Poker Staff Service Charge)"), (337,45,18), False)
+_WPT[("2026-11-28","WPT Mixed Triple Draw (A-5, 2-7, Badugi)")] = (_wpt_unl("level 9", None, False, "510/65/25", _FEE600), (510,65,25), False)
+_WPT[("2026-12-20","WPT Mixed Triple Draw")] = (_wpt_unl("level 9", None, False, "510/65/25", _FEE600), (510,65,25), False)
+_WPT[("2026-11-30","WPT NLH Day 1A — $1,000,000 GTD")] = (_wpt_unl("level 9", None, True, "695/72/33", "$800 Buy-in = $695 (Tournament Prize Pool) + $72 (Tournament Fee) + $33 (Poker Staff Service Charge)"), (695,72,33), False)
+_WPT[("2026-11-30","WPT Limit Omaha 8")] = (_wpt_unl("level 9", None, False, "510/65/25", _FEE600), (510,65,25), False)
+_WPT[("2026-12-01","WPT Limit Omaha 8/5/Stud 8")] = (_wpt_unl("level 9", None, False, "510/65/25", _FEE600), (510,65,25), False)
+_WPT[("2026-12-01","WPT PLO")] = (_wpt_unl("level 9", "5:30 p.m.", False, "975/85/45", "$1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $45 (Poker Staff Service Charge)"), (975,85,45), False)
+_WPT[("2026-12-03","WPT NLH Day 1A — $1,000,000 GTD")] = (_wpt_unl("level 10", None, True, "1430/120/50", "$1,600 Buy-in = $1,430 (Tournament Prize Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge)"), (1430,120,50), False)
+_WPT[("2026-12-04","WPT HORSE")] = (_wpt_unl("level 9", "4:30 p.m.", False, "510/65/25", _FEE600), (510,65,25), False)
+_WPT[("2026-12-05","WPT Prime Championship Day 1A — $5,000,000 GTD")] = (WPT_RULES_1_1_FLIGHT, (970,90,40), False)
+_WPT[("2026-12-05","WPT NLH Turbo — $50,000 GTD")] = (_wpt_unl("level 9", None, False, "515/60/25", "$600 Buy-in = $515 (Tournament Prize Pool) + $60 (Tournament Fee) + $25 (Poker Staff Service Charge)"), (515,60,25), False)
+_WPT[("2026-12-06","WPT PLO Mystery Bounty Day 1A — $500,000 GTD")] = (_wpt_unl("level 10", None, True, "930/120/50", "$1,600 Buy-in = $930 (Tournament Prize Pool) + $500 (Mystery Bounty Prize Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge)"), (930,120,50), True)
+_WPT[("2026-12-10","Super Gold Million Mystery Bounty Day 1A — $3,000,000 GTD")] = ({
+    "single_entry": rule("confirmed-no", "The event will offer four starting flights and unlimited re-entry.", "Unlimited re-entry (official press release).", "WPT-PR"),
+    "re_entry": rule("confirmed", "The event will offer four starting flights and unlimited re-entry.", "Unlimited re-entry.", "WPT-PR"),
+    "rebuy": rule("confirmed-no", note="No rebuys."), "addon": rule("confirmed-no", note="No add-on."),
+    "entry_fee": rule("unverified", note="Fee split not stated on the press release or side-event structures PDF."),
+}, None, None)
+_WPT[("2026-12-13","WPT World Championship Day 1A — $1,000,000 ADDED (ClubWPT Gold)")] = (WPT_RULES_MAIN, None, None)
+
+def wpt_rules_for(date, name):
+    """Return (rules, fee_tuple_or_None, gtd_includes_bounties_or_None) for a Wynn WPT row."""
+    return _WPT.get((date, name), (WPT_RULES, None, None))

@@ -1,11 +1,34 @@
 [
- {"id": "C1", "date": "2026-11-17", "source": "https://www.wynnlasvegas.com/casino/poker",
-  "field": "Wynn poker landing URL", "change": "URL now redirects to the Wynn homepage (previously hosted the daily-tournament poster and structures links; cited by the 2026-11-16 sessions).",
-  "action": "Rows now cite the CDN documents directly (cdn.wynnresorts.com). Flag F5."},
- {"id": "C2", "date": "2026-11-17", "source": "https://www.venetianlasvegas.com/resort/casino/poker.html",
-  "field": "Venetian 'Current Series' banner", "change": "Banner still says WPT Fall Festival (ended Nov 15) although DSE IV started Nov 16.",
-  "action": "Stale content on official page — flagged F6; schedule rows sourced from the DSE IV page."},
- {"id": "C3", "date": "2026-11-17", "source": "https://www.venetianlasvegas.com/book",
-  "field": "Venetian dated rate (Nov 27–30, Palazzo Luxury King)", "change": "Baseline capture: nightly $1,274.25 / $426.75 / $164.25 + $55 fee, tax $271.65, total $2,301.90.",
-  "action": "First entry in the dated rate log; future checks append new dated rows rather than overwriting."}
+ {
+  "id": "C1",
+  "date": "2026-11-17",
+  "source": "https://www.wynnlasvegas.com/casino/poker",
+  "field": "Wynn poker landing URL",
+  "change": "URL now redirects to the Wynn homepage (previously hosted the daily-tournament poster and structures links; cited by the 2026-11-16 sessions).",
+  "action": "Rows now cite the CDN documents directly (cdn.wynnresorts.com). Flag F5."
+ },
+ {
+  "id": "C2",
+  "date": "2026-11-17",
+  "source": "https://www.venetianlasvegas.com/resort/casino/poker.html",
+  "field": "Venetian 'Current Series' banner",
+  "change": "Banner still says WPT Fall Festival (ended Nov 15) although DSE IV started Nov 16.",
+  "action": "Stale content on official page \u2014 flagged F6; schedule rows sourced from the DSE IV page."
+ },
+ {
+  "id": "C3",
+  "date": "2026-11-17",
+  "source": "https://www.venetianlasvegas.com/book",
+  "field": "Venetian dated rate (Nov 27\u201330, Palazzo Luxury King)",
+  "change": "Baseline capture: nightly $1,274.25 / $426.75 / $164.25 + $55 fee, tax $271.65, total $2,301.90.",
+  "action": "First entry in the dated rate log; future checks append new dated rows rather than overwriting."
+ },
+ {
+  "id": "C4",
+  "date": "2026-11-17",
+  "source": "https://www.worldpokertour.com/article/wpt-world-championship-at-wynn-las-vegas-set-for-season-24-finale-with-over-85-events-and-20m-in-gte",
+  "field": "Verification addendum: WPT entry rules + Bellagio/ARIA resort fees",
+  "change": "Filled previously blank fields from newly read official documents: WPT per-event entry rules + fee splits (structures PDF), Main Event single-entry-per-flight cap and Super Gold unlimited re-entry (press release), Bellagio & ARIA resort fee $55+tax and 72-hour cancellation (property terms pages).",
+  "action": "Rows updated with verbatim excerpts + retrieval dates; F1/F10 rewritten; F16/F17 added. No prior value contradicted \u2014 all changes fill blanks or refine the $1M-added note."
+ }
 ]

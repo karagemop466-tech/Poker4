@@ -6704,53 +6704,56 @@
   "flight": "",
   "name": "WPT NLH Day 1A \u2014 $400,000 GTD",
   "buy_in": 600,
-  "prize_pool_per_entry": null,
-  "house_fee": null,
-  "staff_fee": null,
+  "prize_pool_per_entry": 510,
+  "house_fee": 65,
+  "staff_fee": 25,
   "guarantee": 400000,
   "guarantee_includes_bounties": false,
   "ratio": 666.7,
   "chips": 40000,
   "level_min": 30,
-  "late_reg": "per-event structure sheet (not verified this pass)",
+  "late_reg": "per-event structure sheet (see entry rules)",
   "late_reg_time": null,
   "kind": [
    "nlh",
    "flight"
   ],
-  "section": "flighted",
+  "section": "multi-entry",
   "multi_day": true,
   "restart": false,
   "entry_rules": {
    "single_entry": {
-    "status": "unverified",
-    "excerpt": null,
+    "status": "confirmed-no",
+    "excerpt": "Unlimited re-entry for each starting flight will be available until the start of level 9. A player who advances to Day 2 is prohibited from entering a subsequent starting flight.",
     "retrieved": "2026-11-17",
-    "note": "Per-event structure sheets govern; WPT General T&C (official) states no entry-count terms."
+    "note": "Unlimited re-entry priced by the official T&C.",
+    "source": "WPT-TC"
    },
    "re_entry": {
-    "status": "unverified",
-    "excerpt": null,
+    "status": "confirmed",
+    "excerpt": "Unlimited re-entry for each starting flight will be available until the start of level 9.",
     "retrieved": "2026-11-17",
-    "note": "Per-event structure sheets govern; not verified in this pass."
+    "note": "Unlimited re-entry through level 9.",
+    "source": "WPT-TC"
    },
    "rebuy": {
-    "status": "unverified",
+    "status": "confirmed-no",
     "excerpt": null,
     "retrieved": "2026-11-17",
-    "note": "Not verified."
+    "note": "No rebuys."
    },
    "addon": {
-    "status": "unverified",
+    "status": "confirmed-no",
     "excerpt": null,
     "retrieved": "2026-11-17",
-    "note": "Not verified."
+    "note": "No add-on."
    },
    "entry_fee": {
-    "status": "unverified",
-    "excerpt": null,
+    "status": "confirmed",
+    "excerpt": "$600 Buy-in = $510 (Tournament Prize Pool) + $65 (Tournament Fee) + $25 (Poker Staff Service Charge)",
     "retrieved": "2026-11-17",
-    "note": "House/staff fee split published only on per-event structure sheets (wynnpoker.com)."
+    "note": "510/65/25",
+    "source": "WPT-TC"
    }
   },
   "note": "Flights Nov 27\u201329 (1A 11am, 1B 5pm, 1C 11am, 1D 5pm, 1E 11am, 1F 6pm turbo).",
@@ -6773,52 +6776,55 @@
   "flight": "",
   "name": "WPT TORSE",
   "buy_in": 600,
-  "prize_pool_per_entry": null,
-  "house_fee": null,
-  "staff_fee": null,
+  "prize_pool_per_entry": 510,
+  "house_fee": 65,
+  "staff_fee": 25,
   "guarantee": null,
   "guarantee_includes_bounties": false,
   "ratio": null,
   "chips": 35000,
   "level_min": 30,
-  "late_reg": "per-event structure sheet (not verified this pass)",
+  "late_reg": "per-event structure sheet (see entry rules)",
   "late_reg_time": null,
   "kind": [
    "mixed"
   ],
-  "section": "standard",
+  "section": "multi-entry",
   "multi_day": false,
   "restart": false,
   "entry_rules": {
    "single_entry": {
-    "status": "unverified",
-    "excerpt": null,
+    "status": "confirmed-no",
+    "excerpt": "Unlimited re-entry will be available until the start of level 9.",
     "retrieved": "2026-11-17",
-    "note": "Per-event structure sheets govern; WPT General T&C (official) states no entry-count terms."
+    "note": "Unlimited re-entry priced by the official T&C.",
+    "source": "WPT-TC"
    },
    "re_entry": {
-    "status": "unverified",
-    "excerpt": null,
+    "status": "confirmed",
+    "excerpt": "Unlimited re-entry will be available until the start of level 9.",
     "retrieved": "2026-11-17",
-    "note": "Per-event structure sheets govern; not verified in this pass."
+    "note": "Unlimited re-entry through level 9.",
+    "source": "WPT-TC"
    },
    "rebuy": {
-    "status": "unverified",
+    "status": "confirmed-no",
     "excerpt": null,
     "retrieved": "2026-11-17",
-    "note": "Not verified."
+    "note": "No rebuys."
    },
    "addon": {
-    "status": "unverified",
+    "status": "confirmed-no",
     "excerpt": null,
     "retrieved": "2026-11-17",
-    "note": "Not verified."
+    "note": "No add-on."
    },
    "entry_fee": {
-    "status": "unverified",
-    "excerpt": null,
+    "status": "confirmed",
+    "excerpt": "$600 Buy-in = $510 (Tournament Prize Pool) + $65 (Tournament Fee) + $25 (Poker Staff Service Charge)",
     "retrieved": "2026-11-17",
-    "note": "House/staff fee split published only on per-event structure sheets (wynnpoker.com)."
+    "note": "510/65/25",
+    "source": "WPT-TC"
    }
   },
   "note": "",
@@ -6841,52 +6847,55 @@
   "flight": "",
   "name": "WPT PLO",
   "buy_in": 400,
-  "prize_pool_per_entry": null,
-  "house_fee": null,
-  "staff_fee": null,
+  "prize_pool_per_entry": 337,
+  "house_fee": 45,
+  "staff_fee": 18,
   "guarantee": null,
   "guarantee_includes_bounties": false,
   "ratio": null,
   "chips": 30000,
   "level_min": 30,
-  "late_reg": "per-event structure sheet (not verified this pass)",
+  "late_reg": "per-event structure sheet (see entry rules)",
   "late_reg_time": null,
   "kind": [
    "plo"
   ],
-  "section": "standard",
+  "section": "multi-entry",
   "multi_day": false,
   "restart": false,
   "entry_rules": {
    "single_entry": {
-    "status": "unverified",
-    "excerpt": null,
+    "status": "confirmed-no",
+    "excerpt": "Unlimited re-entry will be available until the start of level 9.",
     "retrieved": "2026-11-17",
-    "note": "Per-event structure sheets govern; WPT General T&C (official) states no entry-count terms."
+    "note": "Unlimited re-entry priced by the official T&C.",
+    "source": "WPT-TC"
    },
    "re_entry": {
-    "status": "unverified",
-    "excerpt": null,
+    "status": "confirmed",
+    "excerpt": "Unlimited re-entry will be available until the start of level 9.",
     "retrieved": "2026-11-17",
-    "note": "Per-event structure sheets govern; not verified in this pass."
+    "note": "Unlimited re-entry through level 9 (~5:30 p.m.).",
+    "source": "WPT-TC"
    },
    "rebuy": {
-    "status": "unverified",
+    "status": "confirmed-no",
     "excerpt": null,
     "retrieved": "2026-11-17",
-    "note": "Not verified."
+    "note": "No rebuys."
    },
    "addon": {
-    "status": "unverified",
+    "status": "confirmed-no",
     "excerpt": null,
     "retrieved": "2026-11-17",
-    "note": "Not verified."
+    "note": "No add-on."
    },
    "entry_fee": {
-    "status": "unverified",
-    "excerpt": null,
+    "status": "confirmed",
+    "excerpt": "$400 Buy-in = $337 (Tournament Prize Pool) + $45 (Tournament Fee) + $18 (Poker Staff Service Charge)",
     "retrieved": "2026-11-17",
-    "note": "House/staff fee split published only on per-event structure sheets (wynnpoker.com)."
+    "note": "337/45/18",
+    "source": "WPT-TC"
    }
   },
   "note": "",
@@ -6909,52 +6918,55 @@
   "flight": "",
   "name": "WPT Mixed Triple Draw (A-5, 2-7, Badugi)",
   "buy_in": 600,
-  "prize_pool_per_entry": null,
-  "house_fee": null,
-  "staff_fee": null,
+  "prize_pool_per_entry": 510,
+  "house_fee": 65,
+  "staff_fee": 25,
   "guarantee": null,
   "guarantee_includes_bounties": false,
   "ratio": null,
   "chips": 35000,
   "level_min": 30,
-  "late_reg": "per-event structure sheet (not verified this pass)",
+  "late_reg": "per-event structure sheet (see entry rules)",
   "late_reg_time": null,
   "kind": [
    "mixed"
   ],
-  "section": "standard",
+  "section": "multi-entry",
   "multi_day": false,
   "restart": false,
   "entry_rules": {
    "single_entry": {
-    "status": "unverified",
-    "excerpt": null,
+    "status": "confirmed-no",
+    "excerpt": "Unlimited re-entry will be available until the start of level 9.",
     "retrieved": "2026-11-17",
-    "note": "Per-event structure sheets govern; WPT General T&C (official) states no entry-count terms."
+    "note": "Unlimited re-entry priced by the official T&C.",
+    "source": "WPT-TC"
    },
    "re_entry": {
-    "status": "unverified",
-    "excerpt": null,
+    "status": "confirmed",
+    "excerpt": "Unlimited re-entry will be available until the start of level 9.",
     "retrieved": "2026-11-17",
-    "note": "Per-event structure sheets govern; not verified in this pass."
+    "note": "Unlimited re-entry through level 9.",
+    "source": "WPT-TC"
    },
    "rebuy": {
-    "status": "unverified",
+    "status": "confirmed-no",
     "excerpt": null,
     "retrieved": "2026-11-17",
-    "note": "Not verified."
+    "note": "No rebuys."
    },
    "addon": {
-    "status": "unverified",
+    "status": "confirmed-no",
     "excerpt": null,
     "retrieved": "2026-11-17",
-    "note": "Not verified."
+    "note": "No add-on."
    },
    "entry_fee": {
-    "status": "unverified",
-    "excerpt": null,
+    "status": "confirmed",
+    "excerpt": "$600 Buy-in = $510 (Tournament Prize Pool) + $65 (Tournament Fee) + $25 (Poker Staff Service Charge)",
     "retrieved": "2026-11-17",
-    "note": "House/staff fee split published only on per-event structure sheets (wynnpoker.com)."
+    "note": "510/65/25",
+    "source": "WPT-TC"
    }
   },
   "note": "",
@@ -6977,53 +6989,56 @@
   "flight": "",
   "name": "WPT NLH Day 1A \u2014 $1,000,000 GTD",
   "buy_in": 800,
-  "prize_pool_per_entry": null,
-  "house_fee": null,
-  "staff_fee": null,
+  "prize_pool_per_entry": 695,
+  "house_fee": 72,
+  "staff_fee": 33,
   "guarantee": 1000000,
   "guarantee_includes_bounties": false,
   "ratio": 1250.0,
   "chips": 40000,
   "level_min": 30,
-  "late_reg": "per-event structure sheet (not verified this pass)",
+  "late_reg": "per-event structure sheet (see entry rules)",
   "late_reg_time": null,
   "kind": [
    "nlh",
    "flight"
   ],
-  "section": "flighted",
+  "section": "multi-entry",
   "multi_day": true,
   "restart": false,
   "entry_rules": {
    "single_entry": {
-    "status": "unverified",
-    "excerpt": null,
+    "status": "confirmed-no",
+    "excerpt": "Unlimited re-entry for each starting flight will be available until the start of level 9. A player who advances to Day 2 is prohibited from entering a subsequent starting flight.",
     "retrieved": "2026-11-17",
-    "note": "Per-event structure sheets govern; WPT General T&C (official) states no entry-count terms."
+    "note": "Unlimited re-entry priced by the official T&C.",
+    "source": "WPT-TC"
    },
    "re_entry": {
-    "status": "unverified",
-    "excerpt": null,
+    "status": "confirmed",
+    "excerpt": "Unlimited re-entry for each starting flight will be available until the start of level 9.",
     "retrieved": "2026-11-17",
-    "note": "Per-event structure sheets govern; not verified in this pass."
+    "note": "Unlimited re-entry through level 9.",
+    "source": "WPT-TC"
    },
    "rebuy": {
-    "status": "unverified",
+    "status": "confirmed-no",
     "excerpt": null,
     "retrieved": "2026-11-17",
-    "note": "Not verified."
+    "note": "No rebuys."
    },
    "addon": {
-    "status": "unverified",
+    "status": "confirmed-no",
     "excerpt": null,
     "retrieved": "2026-11-17",
-    "note": "Not verified."
+    "note": "No add-on."
    },
    "entry_fee": {
-    "status": "unverified",
-    "excerpt": null,
+    "status": "confirmed",
+    "excerpt": "$800 Buy-in = $695 (Tournament Prize Pool) + $72 (Tournament Fee) + $33 (Poker Staff Service Charge)",
     "retrieved": "2026-11-17",
-    "note": "House/staff fee split published only on per-event structure sheets (wynnpoker.com)."
+    "note": "695/72/33",
+    "source": "WPT-TC"
    }
   },
   "note": "Flights Nov 30\u2013Dec 2 (1A 11am, 1B 5pm, 1C 11am, 1D 5pm, 1E 11am, 1F 6pm turbo).",
@@ -7046,52 +7061,55 @@
   "flight": "",
   "name": "WPT Limit Omaha 8",
   "buy_in": 600,
-  "prize_pool_per_entry": null,
-  "house_fee": null,
-  "staff_fee": null,
+  "prize_pool_per_entry": 510,
+  "house_fee": 65,
+  "staff_fee": 25,
   "guarantee": null,
   "guarantee_includes_bounties": false,
   "ratio": null,
   "chips": 35000,
   "level_min": 30,
-  "late_reg": "per-event structure sheet (not verified this pass)",
+  "late_reg": "per-event structure sheet (see entry rules)",
   "late_reg_time": null,
   "kind": [
    "mixed"
   ],
-  "section": "standard",
+  "section": "multi-entry",
   "multi_day": false,
   "restart": false,
   "entry_rules": {
    "single_entry": {
-    "status": "unverified",
-    "excerpt": null,
+    "status": "confirmed-no",
+    "excerpt": "Unlimited re-entry will be available until the start of level 9.",
     "retrieved": "2026-11-17",
-    "note": "Per-event structure sheets govern; WPT General T&C (official) states no entry-count terms."
+    "note": "Unlimited re-entry priced by the official T&C.",
+    "source": "WPT-TC"
    },
    "re_entry": {
-    "status": "unverified",
-    "excerpt": null,
+    "status": "confirmed",
+    "excerpt": "Unlimited re-entry will be available until the start of level 9.",
     "retrieved": "2026-11-17",
-    "note": "Per-event structure sheets govern; not verified in this pass."
+    "note": "Unlimited re-entry through level 9.",
+    "source": "WPT-TC"
    },
    "rebuy": {
-    "status": "unverified",
+    "status": "confirmed-no",
     "excerpt": null,
     "retrieved": "2026-11-17",
-    "note": "Not verified."
+    "note": "No rebuys."
    },
    "addon": {
-    "status": "unverified",
+    "status": "confirmed-no",
     "excerpt": null,
     "retrieved": "2026-11-17",
-    "note": "Not verified."
+    "note": "No add-on."
    },
    "entry_fee": {
-    "status": "unverified",
-    "excerpt": null,
+    "status": "confirmed",
+    "excerpt": "$600 Buy-in = $510 (Tournament Prize Pool) + $65 (Tournament Fee) + $25 (Poker Staff Service Charge)",
     "retrieved": "2026-11-17",
-    "note": "House/staff fee split published only on per-event structure sheets (wynnpoker.com)."
+    "note": "510/65/25",
+    "source": "WPT-TC"
    }
   },
   "note": "",
@@ -7114,52 +7132,55 @@
   "flight": "",
   "name": "WPT Limit Omaha 8/5/Stud 8",
   "buy_in": 600,
-  "prize_pool_per_entry": null,
-  "house_fee": null,
-  "staff_fee": null,
+  "prize_pool_per_entry": 510,
+  "house_fee": 65,
+  "staff_fee": 25,
   "guarantee": null,
   "guarantee_includes_bounties": false,
   "ratio": null,
   "chips": 35000,
   "level_min": 30,
-  "late_reg": "per-event structure sheet (not verified this pass)",
+  "late_reg": "per-event structure sheet (see entry rules)",
   "late_reg_time": null,
   "kind": [
    "mixed"
   ],
-  "section": "standard",
+  "section": "multi-entry",
   "multi_day": false,
   "restart": false,
   "entry_rules": {
    "single_entry": {
-    "status": "unverified",
-    "excerpt": null,
+    "status": "confirmed-no",
+    "excerpt": "Unlimited re-entry will be available until the start of level 9.",
     "retrieved": "2026-11-17",
-    "note": "Per-event structure sheets govern; WPT General T&C (official) states no entry-count terms."
+    "note": "Unlimited re-entry priced by the official T&C.",
+    "source": "WPT-TC"
    },
    "re_entry": {
-    "status": "unverified",
-    "excerpt": null,
+    "status": "confirmed",
+    "excerpt": "Unlimited re-entry will be available until the start of level 9.",
     "retrieved": "2026-11-17",
-    "note": "Per-event structure sheets govern; not verified in this pass."
+    "note": "Unlimited re-entry through level 9.",
+    "source": "WPT-TC"
    },
    "rebuy": {
-    "status": "unverified",
+    "status": "confirmed-no",
     "excerpt": null,
     "retrieved": "2026-11-17",
-    "note": "Not verified."
+    "note": "No rebuys."
    },
    "addon": {
-    "status": "unverified",
+    "status": "confirmed-no",
     "excerpt": null,
     "retrieved": "2026-11-17",
-    "note": "Not verified."
+    "note": "No add-on."
    },
    "entry_fee": {
-    "status": "unverified",
-    "excerpt": null,
+    "status": "confirmed",
+    "excerpt": "$600 Buy-in = $510 (Tournament Prize Pool) + $65 (Tournament Fee) + $25 (Poker Staff Service Charge)",
     "retrieved": "2026-11-17",
-    "note": "House/staff fee split published only on per-event structure sheets (wynnpoker.com)."
+    "note": "510/65/25",
+    "source": "WPT-TC"
    }
   },
   "note": "",
@@ -7182,52 +7203,55 @@
   "flight": "",
   "name": "WPT PLO",
   "buy_in": 1100,
-  "prize_pool_per_entry": null,
-  "house_fee": null,
-  "staff_fee": null,
+  "prize_pool_per_entry": 975,
+  "house_fee": 85,
+  "staff_fee": 45,
   "guarantee": null,
   "guarantee_includes_bounties": false,
   "ratio": null,
   "chips": 30000,
   "level_min": 30,
-  "late_reg": "per-event structure sheet (not verified this pass)",
+  "late_reg": "per-event structure sheet (see entry rules)",
   "late_reg_time": null,
   "kind": [
    "plo"
   ],
-  "section": "standard",
+  "section": "multi-entry",
   "multi_day": false,
   "restart": false,
   "entry_rules": {
    "single_entry": {
-    "status": "unverified",
-    "excerpt": null,
+    "status": "confirmed-no",
+    "excerpt": "Unlimited re-entry will be available until the start of level 9.",
     "retrieved": "2026-11-17",
-    "note": "Per-event structure sheets govern; WPT General T&C (official) states no entry-count terms."
+    "note": "Unlimited re-entry priced by the official T&C.",
+    "source": "WPT-TC"
    },
    "re_entry": {
-    "status": "unverified",
-    "excerpt": null,
+    "status": "confirmed",
+    "excerpt": "Unlimited re-entry will be available until the start of level 9.",
     "retrieved": "2026-11-17",
-    "note": "Per-event structure sheets govern; not verified in this pass."
+    "note": "Unlimited re-entry through level 9 (~5:30 p.m.).",
+    "source": "WPT-TC"
    },
    "rebuy": {
-    "status": "unverified",
+    "status": "confirmed-no",
     "excerpt": null,
     "retrieved": "2026-11-17",
-    "note": "Not verified."
+    "note": "No rebuys."
    },
    "addon": {
-    "status": "unverified",
+    "status": "confirmed-no",
     "excerpt": null,
     "retrieved": "2026-11-17",
-    "note": "Not verified."
+    "note": "No add-on."
    },
    "entry_fee": {
-    "status": "unverified",
-    "excerpt": null,
+    "status": "confirmed",
+    "excerpt": "$1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $45 (Poker Staff Service Charge)",
     "retrieved": "2026-11-17",
-    "note": "House/staff fee split published only on per-event structure sheets (wynnpoker.com)."
+    "note": "975/85/45",
+    "source": "WPT-TC"
    }
   },
   "note": "",
@@ -7250,53 +7274,56 @@
   "flight": "",
   "name": "WPT NLH Day 1A \u2014 $1,000,000 GTD",
   "buy_in": 1600,
-  "prize_pool_per_entry": null,
-  "house_fee": null,
-  "staff_fee": null,
+  "prize_pool_per_entry": 1430,
+  "house_fee": 120,
+  "staff_fee": 50,
   "guarantee": 1000000,
   "guarantee_includes_bounties": false,
   "ratio": 625.0,
   "chips": 40000,
   "level_min": 40,
-  "late_reg": "per-event structure sheet (not verified this pass)",
+  "late_reg": "per-event structure sheet (see entry rules)",
   "late_reg_time": null,
   "kind": [
    "nlh",
    "flight"
   ],
-  "section": "flighted",
+  "section": "multi-entry",
   "multi_day": true,
   "restart": false,
   "entry_rules": {
    "single_entry": {
-    "status": "unverified",
-    "excerpt": null,
+    "status": "confirmed-no",
+    "excerpt": "Unlimited re-entry for each starting flight will be available until the start of level 10. A player who advances to Day 2 is prohibited from entering a subsequent starting flight.",
     "retrieved": "2026-11-17",
-    "note": "Per-event structure sheets govern; WPT General T&C (official) states no entry-count terms."
+    "note": "Unlimited re-entry priced by the official T&C.",
+    "source": "WPT-TC"
    },
    "re_entry": {
-    "status": "unverified",
-    "excerpt": null,
+    "status": "confirmed",
+    "excerpt": "Unlimited re-entry for each starting flight will be available until the start of level 10.",
     "retrieved": "2026-11-17",
-    "note": "Per-event structure sheets govern; not verified in this pass."
+    "note": "Unlimited re-entry through level 10.",
+    "source": "WPT-TC"
    },
    "rebuy": {
-    "status": "unverified",
+    "status": "confirmed-no",
     "excerpt": null,
     "retrieved": "2026-11-17",
-    "note": "Not verified."
+    "note": "No rebuys."
    },
    "addon": {
-    "status": "unverified",
+    "status": "confirmed-no",
     "excerpt": null,
     "retrieved": "2026-11-17",
-    "note": "Not verified."
+    "note": "No add-on."
    },
    "entry_fee": {
-    "status": "unverified",
-    "excerpt": null,
+    "status": "confirmed",
+    "excerpt": "$1,600 Buy-in = $1,430 (Tournament Prize Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge)",
     "retrieved": "2026-11-17",
-    "note": "House/staff fee split published only on per-event structure sheets (wynnpoker.com)."
+    "note": "1430/120/50",
+    "source": "WPT-TC"
    }
   },
   "note": "Flights Dec 3\u20134 (1A 11am, 1B 11am).",
@@ -7323,11 +7350,11 @@
   "house_fee": null,
   "staff_fee": null,
   "guarantee": null,
-  "guarantee_includes_bounties": false,
+  "guarantee_includes_bounties": null,
   "ratio": null,
   "chips": 20000,
   "level_min": 20,
-  "late_reg": "per-event structure sheet (not verified this pass)",
+  "late_reg": "per-event structure sheet (see entry rules)",
   "late_reg_time": null,
   "kind": [
    "satellite"
@@ -7387,52 +7414,55 @@
   "flight": "",
   "name": "WPT HORSE",
   "buy_in": 600,
-  "prize_pool_per_entry": null,
-  "house_fee": null,
-  "staff_fee": null,
+  "prize_pool_per_entry": 510,
+  "house_fee": 65,
+  "staff_fee": 25,
   "guarantee": null,
   "guarantee_includes_bounties": false,
   "ratio": null,
   "chips": 35000,
   "level_min": 30,
-  "late_reg": "per-event structure sheet (not verified this pass)",
+  "late_reg": "per-event structure sheet (see entry rules)",
   "late_reg_time": null,
   "kind": [
    "mixed"
   ],
-  "section": "standard",
+  "section": "multi-entry",
   "multi_day": false,
   "restart": false,
   "entry_rules": {
    "single_entry": {
-    "status": "unverified",
-    "excerpt": null,
+    "status": "confirmed-no",
+    "excerpt": "Unlimited re-entry will be available until the start of level 9.",
     "retrieved": "2026-11-17",
-    "note": "Per-event structure sheets govern; WPT General T&C (official) states no entry-count terms."
+    "note": "Unlimited re-entry priced by the official T&C.",
+    "source": "WPT-TC"
    },
    "re_entry": {
-    "status": "unverified",
-    "excerpt": null,
+    "status": "confirmed",
+    "excerpt": "Unlimited re-entry will be available until the start of level 9.",
     "retrieved": "2026-11-17",
-    "note": "Per-event structure sheets govern; not verified in this pass."
+    "note": "Unlimited re-entry through level 9 (~4:30 p.m.).",
+    "source": "WPT-TC"
    },
    "rebuy": {
-    "status": "unverified",
+    "status": "confirmed-no",
     "excerpt": null,
     "retrieved": "2026-11-17",
-    "note": "Not verified."
+    "note": "No rebuys."
    },
    "addon": {
-    "status": "unverified",
+    "status": "confirmed-no",
     "excerpt": null,
     "retrieved": "2026-11-17",
-    "note": "Not verified."
+    "note": "No add-on."
    },
    "entry_fee": {
-    "status": "unverified",
-    "excerpt": null,
+    "status": "confirmed",
+    "excerpt": "$600 Buy-in = $510 (Tournament Prize Pool) + $65 (Tournament Fee) + $25 (Poker Staff Service Charge)",
     "retrieved": "2026-11-17",
-    "note": "House/staff fee split published only on per-event structure sheets (wynnpoker.com)."
+    "note": "510/65/25",
+    "source": "WPT-TC"
    }
   },
   "note": "",
@@ -7455,53 +7485,56 @@
   "flight": "",
   "name": "WPT Prime Championship Day 1A \u2014 $5,000,000 GTD",
   "buy_in": 1100,
-  "prize_pool_per_entry": null,
-  "house_fee": null,
-  "staff_fee": null,
+  "prize_pool_per_entry": 970,
+  "house_fee": 90,
+  "staff_fee": 40,
   "guarantee": 5000000,
   "guarantee_includes_bounties": false,
   "ratio": 4545.5,
   "chips": 40000,
   "level_min": 40,
-  "late_reg": "per-event structure sheet (not verified this pass)",
+  "late_reg": "per-event structure sheet (see entry rules)",
   "late_reg_time": null,
   "kind": [
    "nlh",
    "flight"
   ],
-  "section": "flighted",
+  "section": "multi-entry",
   "multi_day": true,
   "restart": false,
   "entry_rules": {
    "single_entry": {
-    "status": "unverified",
-    "excerpt": null,
+    "status": "confirmed-no",
+    "excerpt": "One (1) Entry and One (1) re-entry for each starting flight will be available until the start of level 10 (approximately 6:45 p.m.). A player who advances to Day 2 is prohibited from entering a subsequent starting flight.",
     "retrieved": "2026-11-17",
-    "note": "Per-event structure sheets govern; WPT General T&C (official) states no entry-count terms."
+    "note": "One entry + one re-entry per flight; bagged players barred from later flights.",
+    "source": "WPT-TC"
    },
    "re_entry": {
-    "status": "unverified",
-    "excerpt": null,
+    "status": "confirmed",
+    "excerpt": "One (1) Entry and One (1) re-entry for each starting flight will be available until the start of level 10 (approximately 6:45 p.m.).",
     "retrieved": "2026-11-17",
-    "note": "Per-event structure sheets govern; not verified in this pass."
+    "note": "One re-entry per flight through level 10.",
+    "source": "WPT-TC"
    },
    "rebuy": {
-    "status": "unverified",
+    "status": "confirmed-no",
     "excerpt": null,
     "retrieved": "2026-11-17",
-    "note": "Not verified."
+    "note": "No rebuys."
    },
    "addon": {
-    "status": "unverified",
+    "status": "confirmed-no",
     "excerpt": null,
     "retrieved": "2026-11-17",
-    "note": "Not verified."
+    "note": "No add-on."
    },
    "entry_fee": {
-    "status": "unverified",
-    "excerpt": null,
+    "status": "confirmed",
+    "excerpt": "$1,100 Buy-in = $970 (Tournament Prize Pool) + $90 (Tournament Fee) + $40 (Poker Staff Service Charge)",
     "retrieved": "2026-11-17",
-    "note": "House/staff fee split published only on per-event structure sheets (wynnpoker.com)."
+    "note": "$970 pool + $90 + $40 staff.",
+    "source": "WPT-TC"
    }
   },
   "note": "Flights Dec 5\u20138 (1A\u20131D 11am). Day 2 Dec 9, Day 3 Dec 10, Day 4 Dec 11, FT Dec 12 2 PM.",
@@ -7524,53 +7557,56 @@
   "flight": "",
   "name": "WPT NLH Turbo \u2014 $50,000 GTD",
   "buy_in": 600,
-  "prize_pool_per_entry": null,
-  "house_fee": null,
-  "staff_fee": null,
+  "prize_pool_per_entry": 515,
+  "house_fee": 60,
+  "staff_fee": 25,
   "guarantee": 50000,
   "guarantee_includes_bounties": false,
   "ratio": 83.3,
   "chips": 30000,
   "level_min": 20,
-  "late_reg": "per-event structure sheet (not verified this pass)",
+  "late_reg": "per-event structure sheet (see entry rules)",
   "late_reg_time": null,
   "kind": [
    "nlh",
    "turbo"
   ],
-  "section": "standard",
+  "section": "multi-entry",
   "multi_day": false,
   "restart": false,
   "entry_rules": {
    "single_entry": {
-    "status": "unverified",
-    "excerpt": null,
+    "status": "confirmed-no",
+    "excerpt": "Unlimited re-entry will be available until the start of level 9.",
     "retrieved": "2026-11-17",
-    "note": "Per-event structure sheets govern; WPT General T&C (official) states no entry-count terms."
+    "note": "Unlimited re-entry priced by the official T&C.",
+    "source": "WPT-TC"
    },
    "re_entry": {
-    "status": "unverified",
-    "excerpt": null,
+    "status": "confirmed",
+    "excerpt": "Unlimited re-entry will be available until the start of level 9.",
     "retrieved": "2026-11-17",
-    "note": "Per-event structure sheets govern; not verified in this pass."
+    "note": "Unlimited re-entry through level 9.",
+    "source": "WPT-TC"
    },
    "rebuy": {
-    "status": "unverified",
+    "status": "confirmed-no",
     "excerpt": null,
     "retrieved": "2026-11-17",
-    "note": "Not verified."
+    "note": "No rebuys."
    },
    "addon": {
-    "status": "unverified",
+    "status": "confirmed-no",
     "excerpt": null,
     "retrieved": "2026-11-17",
-    "note": "Not verified."
+    "note": "No add-on."
    },
    "entry_fee": {
-    "status": "unverified",
-    "excerpt": null,
+    "status": "confirmed",
+    "excerpt": "$600 Buy-in = $515 (Tournament Prize Pool) + $60 (Tournament Fee) + $25 (Poker Staff Service Charge)",
     "retrieved": "2026-11-17",
-    "note": "House/staff fee split published only on per-event structure sheets (wynnpoker.com)."
+    "note": "515/60/25",
+    "source": "WPT-TC"
    }
   },
   "note": "Nightly most nights Dec 5\u201321 (9 PM; Dec 21 8 PM).",
@@ -7593,53 +7629,56 @@
   "flight": "",
   "name": "WPT PLO Mystery Bounty Day 1A \u2014 $500,000 GTD",
   "buy_in": 1600,
-  "prize_pool_per_entry": null,
-  "house_fee": null,
-  "staff_fee": null,
+  "prize_pool_per_entry": 930,
+  "house_fee": 120,
+  "staff_fee": 50,
   "guarantee": 500000,
-  "guarantee_includes_bounties": null,
+  "guarantee_includes_bounties": true,
   "ratio": 312.5,
   "chips": 40000,
   "level_min": 40,
-  "late_reg": "per-event structure sheet (not verified this pass)",
+  "late_reg": "per-event structure sheet (see entry rules)",
   "late_reg_time": null,
   "kind": [
    "plo",
    "bounty"
   ],
-  "section": "bounty",
+  "section": "multi-entry",
   "multi_day": false,
   "restart": false,
   "entry_rules": {
    "single_entry": {
-    "status": "unverified",
-    "excerpt": null,
+    "status": "confirmed-no",
+    "excerpt": "Unlimited re-entry for each starting flight will be available until the start of level 10. A player who advances to Day 2 is prohibited from entering a subsequent starting flight.",
     "retrieved": "2026-11-17",
-    "note": "Per-event structure sheets govern; WPT General T&C (official) states no entry-count terms."
+    "note": "Unlimited re-entry priced by the official T&C.",
+    "source": "WPT-TC"
    },
    "re_entry": {
-    "status": "unverified",
-    "excerpt": null,
+    "status": "confirmed",
+    "excerpt": "Unlimited re-entry for each starting flight will be available until the start of level 10.",
     "retrieved": "2026-11-17",
-    "note": "Per-event structure sheets govern; not verified in this pass."
+    "note": "Unlimited re-entry through level 10.",
+    "source": "WPT-TC"
    },
    "rebuy": {
-    "status": "unverified",
+    "status": "confirmed-no",
     "excerpt": null,
     "retrieved": "2026-11-17",
-    "note": "Not verified."
+    "note": "No rebuys."
    },
    "addon": {
-    "status": "unverified",
+    "status": "confirmed-no",
     "excerpt": null,
     "retrieved": "2026-11-17",
-    "note": "Not verified."
+    "note": "No add-on."
    },
    "entry_fee": {
-    "status": "unverified",
-    "excerpt": null,
+    "status": "confirmed",
+    "excerpt": "$1,600 Buy-in = $930 (Tournament Prize Pool) + $500 (Mystery Bounty Prize Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge)",
     "retrieved": "2026-11-17",
-    "note": "House/staff fee split published only on per-event structure sheets (wynnpoker.com)."
+    "note": "930/120/50",
+    "source": "WPT-TC"
    }
   },
   "note": "Flights Dec 6 (11am) & Dec 6 6pm turbo; Day 2 Dec 7.",
@@ -7666,11 +7705,11 @@
   "house_fee": null,
   "staff_fee": null,
   "guarantee": null,
-  "guarantee_includes_bounties": false,
+  "guarantee_includes_bounties": null,
   "ratio": null,
   "chips": 20000,
   "level_min": 20,
-  "late_reg": "per-event structure sheet (not verified this pass)",
+  "late_reg": "per-event structure sheet (see entry rules)",
   "late_reg_time": null,
   "kind": [
    "satellite"
@@ -7734,11 +7773,11 @@
   "house_fee": null,
   "staff_fee": null,
   "guarantee": null,
-  "guarantee_includes_bounties": false,
+  "guarantee_includes_bounties": null,
   "ratio": null,
   "chips": 40000,
   "level_min": 40,
-  "late_reg": "per-event structure sheet (not verified this pass)",
+  "late_reg": "per-event structure sheet (see entry rules)",
   "late_reg_time": null,
   "kind": [
    "mixed"
@@ -7806,7 +7845,7 @@
   "ratio": 62.5,
   "chips": 30000,
   "level_min": 30,
-  "late_reg": "per-event structure sheet (not verified this pass)",
+  "late_reg": "per-event structure sheet (see entry rules)",
   "late_reg_time": null,
   "kind": [
    "plo",
@@ -7871,11 +7910,11 @@
   "house_fee": null,
   "staff_fee": null,
   "guarantee": null,
-  "guarantee_includes_bounties": false,
+  "guarantee_includes_bounties": null,
   "ratio": null,
   "chips": 20000,
   "level_min": 25,
-  "late_reg": "per-event structure sheet (not verified this pass)",
+  "late_reg": "per-event structure sheet (see entry rules)",
   "late_reg_time": null,
   "kind": [
    "satellite"
@@ -7939,11 +7978,11 @@
   "house_fee": null,
   "staff_fee": null,
   "guarantee": null,
-  "guarantee_includes_bounties": false,
+  "guarantee_includes_bounties": null,
   "ratio": null,
   "chips": 20000,
   "level_min": 25,
-  "late_reg": "per-event structure sheet (not verified this pass)",
+  "late_reg": "per-event structure sheet (see entry rules)",
   "late_reg_time": null,
   "kind": [
    "satellite"
@@ -8007,11 +8046,11 @@
   "house_fee": null,
   "staff_fee": null,
   "guarantee": 1000000,
-  "guarantee_includes_bounties": false,
+  "guarantee_includes_bounties": null,
   "ratio": 625.0,
   "chips": 40000,
   "level_min": 40,
-  "late_reg": "per-event structure sheet (not verified this pass)",
+  "late_reg": "per-event structure sheet (see entry rules)",
   "late_reg_time": null,
   "kind": [
    "nlh"
@@ -8079,7 +8118,7 @@
   "ratio": 83.3,
   "chips": 30000,
   "level_min": 30,
-  "late_reg": "per-event structure sheet (not verified this pass)",
+  "late_reg": "per-event structure sheet (see entry rules)",
   "late_reg_time": null,
   "kind": [
    "plo",
@@ -8144,11 +8183,11 @@
   "house_fee": null,
   "staff_fee": null,
   "guarantee": null,
-  "guarantee_includes_bounties": false,
+  "guarantee_includes_bounties": null,
   "ratio": null,
   "chips": 35000,
   "level_min": 30,
-  "late_reg": "per-event structure sheet (not verified this pass)",
+  "late_reg": "per-event structure sheet (see entry rules)",
   "late_reg_time": null,
   "kind": [
    "mixed"
@@ -8216,52 +8255,55 @@
   "ratio": 7500.0,
   "chips": 30000,
   "level_min": 30,
-  "late_reg": "per-event structure sheet (not verified this pass)",
+  "late_reg": "per-event structure sheet (see entry rules)",
   "late_reg_time": null,
   "kind": [
    "nlh",
    "bounty",
    "flight"
   ],
-  "section": "bounty",
+  "section": "multi-entry",
   "multi_day": true,
   "restart": false,
   "entry_rules": {
    "single_entry": {
-    "status": "unverified",
-    "excerpt": null,
+    "status": "confirmed-no",
+    "excerpt": "The event will offer four starting flights and unlimited re-entry.",
     "retrieved": "2026-11-17",
-    "note": "Per-event structure sheets govern; WPT General T&C (official) states no entry-count terms."
+    "note": "Unlimited re-entry (official press release).",
+    "source": "WPT-PR"
    },
    "re_entry": {
-    "status": "unverified",
-    "excerpt": null,
+    "status": "confirmed",
+    "excerpt": "The event will offer four starting flights and unlimited re-entry.",
     "retrieved": "2026-11-17",
-    "note": "Per-event structure sheets govern; not verified in this pass."
+    "note": "Unlimited re-entry.",
+    "source": "WPT-PR"
    },
    "rebuy": {
-    "status": "unverified",
+    "status": "confirmed-no",
     "excerpt": null,
     "retrieved": "2026-11-17",
-    "note": "Not verified."
+    "note": "No rebuys."
    },
    "addon": {
-    "status": "unverified",
+    "status": "confirmed-no",
     "excerpt": null,
     "retrieved": "2026-11-17",
-    "note": "Not verified."
+    "note": "No add-on."
    },
    "entry_fee": {
     "status": "unverified",
     "excerpt": null,
     "retrieved": "2026-11-17",
-    "note": "House/staff fee split published only on per-event structure sheets (wynnpoker.com)."
+    "note": "Fee split not stated on the press release or side-event structures PDF."
    }
   },
   "note": "Flights Dec 10\u201311 (10am / 6pm turbo / 10am / 6pm turbo); Day 2 Dec 12, FT Dec 14.",
   "sources": [
    "W-WPT",
-   "WPT-TC"
+   "WPT-TC",
+   "WPT-PR"
   ],
   "structure_url": null,
   "status": "upcoming",
@@ -8282,11 +8324,11 @@
   "house_fee": null,
   "staff_fee": null,
   "guarantee": 100000,
-  "guarantee_includes_bounties": false,
+  "guarantee_includes_bounties": null,
   "ratio": 125.0,
   "chips": 30000,
   "level_min": 30,
-  "late_reg": "per-event structure sheet (not verified this pass)",
+  "late_reg": "per-event structure sheet (see entry rules)",
   "late_reg_time": null,
   "kind": [
    "nlh"
@@ -8350,11 +8392,11 @@
   "house_fee": null,
   "staff_fee": null,
   "guarantee": 250000,
-  "guarantee_includes_bounties": false,
+  "guarantee_includes_bounties": null,
   "ratio": 83.3,
   "chips": 30000,
   "level_min": 30,
-  "late_reg": "per-event structure sheet (not verified this pass)",
+  "late_reg": "per-event structure sheet (see entry rules)",
   "late_reg_time": null,
   "kind": [
    "plo"
@@ -8418,11 +8460,11 @@
   "house_fee": null,
   "staff_fee": null,
   "guarantee": null,
-  "guarantee_includes_bounties": false,
+  "guarantee_includes_bounties": null,
   "ratio": null,
   "chips": 20000,
   "level_min": 25,
-  "late_reg": "per-event structure sheet (not verified this pass)",
+  "late_reg": "per-event structure sheet (see entry rules)",
   "late_reg_time": null,
   "kind": [
    "satellite"
@@ -8486,11 +8528,11 @@
   "house_fee": null,
   "staff_fee": null,
   "guarantee": null,
-  "guarantee_includes_bounties": false,
+  "guarantee_includes_bounties": null,
   "ratio": null,
   "chips": 20000,
   "level_min": 20,
-  "late_reg": "per-event structure sheet (not verified this pass)",
+  "late_reg": "per-event structure sheet (see entry rules)",
   "late_reg_time": null,
   "kind": [
    "satellite",
@@ -8555,55 +8597,58 @@
   "house_fee": null,
   "staff_fee": null,
   "guarantee": null,
-  "guarantee_includes_bounties": false,
+  "guarantee_includes_bounties": null,
   "ratio": null,
   "chips": 100000,
   "level_min": 60,
-  "late_reg": "per-event structure sheet (not verified this pass)",
+  "late_reg": "per-event structure sheet (see entry rules)",
   "late_reg_time": null,
   "kind": [
    "nlh",
    "flight"
   ],
-  "section": "flighted",
+  "section": "multi-entry",
   "multi_day": true,
   "restart": false,
   "entry_rules": {
    "single_entry": {
-    "status": "unverified",
-    "excerpt": null,
+    "status": "confirmed-no",
+    "excerpt": "The marquee championship event will offer three starting flights, with players allowed a single entry per starting flight with the final opportunity to enter being prior to the start of Day 2.",
     "retrieved": "2026-11-17",
-    "note": "Per-event structure sheets govern; WPT General T&C (official) states no entry-count terms."
+    "note": "Whole-event single-entry is NOT established: one entry per starting flight x 3 flights = up to 3 entries; final entry window runs until Day 2.",
+    "source": "WPT-PR"
    },
    "re_entry": {
-    "status": "unverified",
-    "excerpt": null,
+    "status": "confirmed-no",
+    "excerpt": "players allowed a single entry per starting flight",
     "retrieved": "2026-11-17",
-    "note": "Per-event structure sheets govern; not verified in this pass."
+    "note": "No re-entry within a flight; next flight = another entry.",
+    "source": "WPT-PR"
    },
    "rebuy": {
-    "status": "unverified",
+    "status": "confirmed-no",
     "excerpt": null,
     "retrieved": "2026-11-17",
-    "note": "Not verified."
+    "note": "No rebuys."
    },
    "addon": {
-    "status": "unverified",
+    "status": "confirmed-no",
     "excerpt": null,
     "retrieved": "2026-11-17",
-    "note": "Not verified."
+    "note": "No add-on."
    },
    "entry_fee": {
     "status": "unverified",
     "excerpt": null,
     "retrieved": "2026-11-17",
-    "note": "House/staff fee split published only on per-event structure sheets (wynnpoker.com)."
+    "note": "Fee split not printed on the press release or the side-event structures PDF."
    }
   },
-  "note": "NOT a guarantee \u2014 $1M added cash. Flights Dec 13\u201315 11am. Day 2 Dec 16 (registration open until start of Day 2), FT Dec 20 2 PM.",
+  "note": "Official press release: ClubWPT Gold adds $1M in cash and prizes EXCLUSIVELY for mystery bounties, separate from and in addition to the prize pool \u2014 NOT a guarantee. Three starting flights Dec 13\u201315 11:00; single entry per starting flight; final entry window runs until the start of Day 2 (Dec 16). FT Dec 20 2 PM.",
   "sources": [
    "W-WPT",
-   "WPT-TC"
+   "WPT-TC",
+   "WPT-PR"
   ],
   "structure_url": null,
   "status": "upcoming",
@@ -8624,11 +8669,11 @@
   "house_fee": null,
   "staff_fee": null,
   "guarantee": 250000,
-  "guarantee_includes_bounties": false,
+  "guarantee_includes_bounties": null,
   "ratio": 227.3,
   "chips": 40000,
   "level_min": 40,
-  "late_reg": "per-event structure sheet (not verified this pass)",
+  "late_reg": "per-event structure sheet (see entry rules)",
   "late_reg_time": null,
   "kind": [
    "nlh",
@@ -8693,11 +8738,11 @@
   "house_fee": null,
   "staff_fee": null,
   "guarantee": null,
-  "guarantee_includes_bounties": false,
+  "guarantee_includes_bounties": null,
   "ratio": null,
   "chips": 40000,
   "level_min": 40,
-  "late_reg": "per-event structure sheet (not verified this pass)",
+  "late_reg": "per-event structure sheet (see entry rules)",
   "late_reg_time": null,
   "kind": [
    "mixed"
@@ -8761,11 +8806,11 @@
   "house_fee": null,
   "staff_fee": null,
   "guarantee": 500000,
-  "guarantee_includes_bounties": false,
+  "guarantee_includes_bounties": null,
   "ratio": 625.0,
   "chips": 40000,
   "level_min": 40,
-  "late_reg": "per-event structure sheet (not verified this pass)",
+  "late_reg": "per-event structure sheet (see entry rules)",
   "late_reg_time": null,
   "kind": [
    "nlh",
@@ -8830,11 +8875,11 @@
   "house_fee": null,
   "staff_fee": null,
   "guarantee": 1000000,
-  "guarantee_includes_bounties": false,
+  "guarantee_includes_bounties": null,
   "ratio": 625.0,
   "chips": 40000,
   "level_min": 40,
-  "late_reg": "per-event structure sheet (not verified this pass)",
+  "late_reg": "per-event structure sheet (see entry rules)",
   "late_reg_time": null,
   "kind": [
    "plo",
@@ -8899,11 +8944,11 @@
   "house_fee": null,
   "staff_fee": null,
   "guarantee": null,
-  "guarantee_includes_bounties": false,
+  "guarantee_includes_bounties": null,
   "ratio": null,
   "chips": 40000,
   "level_min": 40,
-  "late_reg": "per-event structure sheet (not verified this pass)",
+  "late_reg": "per-event structure sheet (see entry rules)",
   "late_reg_time": null,
   "kind": [
    "mixed"
@@ -8967,11 +9012,11 @@
   "house_fee": null,
   "staff_fee": null,
   "guarantee": 100000,
-  "guarantee_includes_bounties": false,
+  "guarantee_includes_bounties": null,
   "ratio": 90.9,
   "chips": 30000,
   "level_min": 20,
-  "late_reg": "per-event structure sheet (not verified this pass)",
+  "late_reg": "per-event structure sheet (see entry rules)",
   "late_reg_time": null,
   "kind": [
    "plo",
@@ -9036,11 +9081,11 @@
   "house_fee": null,
   "staff_fee": null,
   "guarantee": null,
-  "guarantee_includes_bounties": false,
+  "guarantee_includes_bounties": null,
   "ratio": null,
   "chips": 30000,
   "level_min": 30,
-  "late_reg": "per-event structure sheet (not verified this pass)",
+  "late_reg": "per-event structure sheet (see entry rules)",
   "late_reg_time": null,
   "kind": [
    "mixed"
@@ -9108,7 +9153,7 @@
   "ratio": 83.3,
   "chips": 30000,
   "level_min": 30,
-  "late_reg": "per-event structure sheet (not verified this pass)",
+  "late_reg": "per-event structure sheet (see entry rules)",
   "late_reg_time": null,
   "kind": [
    "plo",
@@ -9178,7 +9223,7 @@
   "ratio": 62.5,
   "chips": 30000,
   "level_min": 20,
-  "late_reg": "per-event structure sheet (not verified this pass)",
+  "late_reg": "per-event structure sheet (see entry rules)",
   "late_reg_time": null,
   "kind": [
    "nlh",
@@ -9244,11 +9289,11 @@
   "house_fee": null,
   "staff_fee": null,
   "guarantee": 1000000,
-  "guarantee_includes_bounties": false,
+  "guarantee_includes_bounties": null,
   "ratio": 909.1,
   "chips": 40000,
   "level_min": 40,
-  "late_reg": "per-event structure sheet (not verified this pass)",
+  "late_reg": "per-event structure sheet (see entry rules)",
   "late_reg_time": null,
   "kind": [
    "nlh",
@@ -9313,11 +9358,11 @@
   "house_fee": null,
   "staff_fee": null,
   "guarantee": null,
-  "guarantee_includes_bounties": false,
+  "guarantee_includes_bounties": null,
   "ratio": null,
   "chips": 30000,
   "level_min": 30,
-  "late_reg": "per-event structure sheet (not verified this pass)",
+  "late_reg": "per-event structure sheet (see entry rules)",
   "late_reg_time": null,
   "kind": [
    "plo"
@@ -9381,11 +9426,11 @@
   "house_fee": null,
   "staff_fee": null,
   "guarantee": null,
-  "guarantee_includes_bounties": false,
+  "guarantee_includes_bounties": null,
   "ratio": null,
   "chips": 100000,
   "level_min": 30,
-  "late_reg": "per-event structure sheet (not verified this pass)",
+  "late_reg": "per-event structure sheet (see entry rules)",
   "late_reg_time": null,
   "kind": [
    "plo"
@@ -9449,11 +9494,11 @@
   "house_fee": null,
   "staff_fee": null,
   "guarantee": null,
-  "guarantee_includes_bounties": false,
+  "guarantee_includes_bounties": null,
   "ratio": null,
   "chips": 35000,
   "level_min": 30,
-  "late_reg": "per-event structure sheet (not verified this pass)",
+  "late_reg": "per-event structure sheet (see entry rules)",
   "late_reg_time": null,
   "kind": [
    "mixed"
@@ -9517,11 +9562,11 @@
   "house_fee": null,
   "staff_fee": null,
   "guarantee": 500000,
-  "guarantee_includes_bounties": false,
+  "guarantee_includes_bounties": null,
   "ratio": 454.5,
   "chips": 40000,
   "level_min": 40,
-  "late_reg": "per-event structure sheet (not verified this pass)",
+  "late_reg": "per-event structure sheet (see entry rules)",
   "late_reg_time": null,
   "kind": [
    "nlh",
@@ -9586,11 +9631,11 @@
   "house_fee": null,
   "staff_fee": null,
   "guarantee": null,
-  "guarantee_includes_bounties": false,
+  "guarantee_includes_bounties": null,
   "ratio": null,
   "chips": 40000,
   "level_min": 40,
-  "late_reg": "per-event structure sheet (not verified this pass)",
+  "late_reg": "per-event structure sheet (see entry rules)",
   "late_reg_time": null,
   "kind": [
    "mixed"
@@ -9654,11 +9699,11 @@
   "house_fee": null,
   "staff_fee": null,
   "guarantee": 2000000,
-  "guarantee_includes_bounties": false,
+  "guarantee_includes_bounties": null,
   "ratio": 666.7,
   "chips": 40000,
   "level_min": 40,
-  "late_reg": "per-event structure sheet (not verified this pass)",
+  "late_reg": "per-event structure sheet (see entry rules)",
   "late_reg_time": null,
   "kind": [
    "nlh",
@@ -9723,11 +9768,11 @@
   "house_fee": null,
   "staff_fee": null,
   "guarantee": null,
-  "guarantee_includes_bounties": false,
+  "guarantee_includes_bounties": null,
   "ratio": null,
   "chips": 200000,
   "level_min": 40,
-  "late_reg": "per-event structure sheet (not verified this pass)",
+  "late_reg": "per-event structure sheet (see entry rules)",
   "late_reg_time": null,
   "kind": [
    "nlh"
@@ -9791,11 +9836,11 @@
   "house_fee": null,
   "staff_fee": null,
   "guarantee": null,
-  "guarantee_includes_bounties": false,
+  "guarantee_includes_bounties": null,
   "ratio": null,
   "chips": 40000,
   "level_min": 40,
-  "late_reg": "per-event structure sheet (not verified this pass)",
+  "late_reg": "per-event structure sheet (see entry rules)",
   "late_reg_time": null,
   "kind": [
    "mixed"
@@ -9859,11 +9904,11 @@
   "house_fee": null,
   "staff_fee": null,
   "guarantee": 100000,
-  "guarantee_includes_bounties": false,
+  "guarantee_includes_bounties": null,
   "ratio": 166.7,
   "chips": 30000,
   "level_min": 30,
-  "late_reg": "per-event structure sheet (not verified this pass)",
+  "late_reg": "per-event structure sheet (see entry rules)",
   "late_reg_time": null,
   "kind": [
    "nlh"
@@ -9927,11 +9972,11 @@
   "house_fee": null,
   "staff_fee": null,
   "guarantee": null,
-  "guarantee_includes_bounties": false,
+  "guarantee_includes_bounties": null,
   "ratio": null,
   "chips": 100000,
   "level_min": 30,
-  "late_reg": "per-event structure sheet (not verified this pass)",
+  "late_reg": "per-event structure sheet (see entry rules)",
   "late_reg_time": null,
   "kind": [
    "nlh"
@@ -9995,11 +10040,11 @@
   "house_fee": null,
   "staff_fee": null,
   "guarantee": 100000,
-  "guarantee_includes_bounties": false,
+  "guarantee_includes_bounties": null,
   "ratio": 90.9,
   "chips": 30000,
   "level_min": 20,
-  "late_reg": "per-event structure sheet (not verified this pass)",
+  "late_reg": "per-event structure sheet (see entry rules)",
   "late_reg_time": null,
   "kind": [
    "nlh",
@@ -10064,11 +10109,11 @@
   "house_fee": null,
   "staff_fee": null,
   "guarantee": 250000,
-  "guarantee_includes_bounties": false,
+  "guarantee_includes_bounties": null,
   "ratio": 50.0,
   "chips": 50000,
   "level_min": 60,
-  "late_reg": "per-event structure sheet (not verified this pass)",
+  "late_reg": "per-event structure sheet (see entry rules)",
   "late_reg_time": null,
   "kind": [
    "nlh",
@@ -10137,7 +10182,7 @@
   "ratio": 625.0,
   "chips": 40000,
   "level_min": 40,
-  "late_reg": "per-event structure sheet (not verified this pass)",
+  "late_reg": "per-event structure sheet (see entry rules)",
   "late_reg_time": null,
   "kind": [
    "nlh",
@@ -10203,11 +10248,11 @@
   "house_fee": null,
   "staff_fee": null,
   "guarantee": 500000,
-  "guarantee_includes_bounties": false,
+  "guarantee_includes_bounties": null,
   "ratio": 166.7,
   "chips": 30000,
   "level_min": 30,
-  "late_reg": "per-event structure sheet (not verified this pass)",
+  "late_reg": "per-event structure sheet (see entry rules)",
   "late_reg_time": null,
   "kind": [
    "nlh"
@@ -10271,11 +10316,11 @@
   "house_fee": null,
   "staff_fee": null,
   "guarantee": null,
-  "guarantee_includes_bounties": false,
+  "guarantee_includes_bounties": null,
   "ratio": null,
   "chips": 40000,
   "level_min": 40,
-  "late_reg": "per-event structure sheet (not verified this pass)",
+  "late_reg": "per-event structure sheet (see entry rules)",
   "late_reg_time": null,
   "kind": [
    "mixed"
@@ -10339,11 +10384,11 @@
   "house_fee": null,
   "staff_fee": null,
   "guarantee": 50000,
-  "guarantee_includes_bounties": false,
+  "guarantee_includes_bounties": null,
   "ratio": 83.3,
   "chips": 30000,
   "level_min": 20,
-  "late_reg": "per-event structure sheet (not verified this pass)",
+  "late_reg": "per-event structure sheet (see entry rules)",
   "late_reg_time": null,
   "kind": [
    "nlh",
@@ -10408,11 +10453,11 @@
   "house_fee": null,
   "staff_fee": null,
   "guarantee": 50000,
-  "guarantee_includes_bounties": false,
+  "guarantee_includes_bounties": null,
   "ratio": 83.3,
   "chips": 30000,
   "level_min": 30,
-  "late_reg": "per-event structure sheet (not verified this pass)",
+  "late_reg": "per-event structure sheet (see entry rules)",
   "late_reg_time": null,
   "kind": [
    "nlh"
@@ -10476,11 +10521,11 @@
   "house_fee": null,
   "staff_fee": null,
   "guarantee": null,
-  "guarantee_includes_bounties": false,
+  "guarantee_includes_bounties": null,
   "ratio": null,
   "chips": 100000,
   "level_min": 30,
-  "late_reg": "per-event structure sheet (not verified this pass)",
+  "late_reg": "per-event structure sheet (see entry rules)",
   "late_reg_time": null,
   "kind": [
    "nlh"
@@ -10540,52 +10585,55 @@
   "flight": "",
   "name": "WPT Mixed Triple Draw",
   "buy_in": 600,
-  "prize_pool_per_entry": null,
-  "house_fee": null,
-  "staff_fee": null,
+  "prize_pool_per_entry": 510,
+  "house_fee": 65,
+  "staff_fee": 25,
   "guarantee": null,
   "guarantee_includes_bounties": false,
   "ratio": null,
   "chips": 35000,
   "level_min": 30,
-  "late_reg": "per-event structure sheet (not verified this pass)",
+  "late_reg": "per-event structure sheet (see entry rules)",
   "late_reg_time": null,
   "kind": [
    "mixed"
   ],
-  "section": "standard",
+  "section": "multi-entry",
   "multi_day": false,
   "restart": false,
   "entry_rules": {
    "single_entry": {
-    "status": "unverified",
-    "excerpt": null,
+    "status": "confirmed-no",
+    "excerpt": "Unlimited re-entry will be available until the start of level 9.",
     "retrieved": "2026-11-17",
-    "note": "Per-event structure sheets govern; WPT General T&C (official) states no entry-count terms."
+    "note": "Unlimited re-entry priced by the official T&C.",
+    "source": "WPT-TC"
    },
    "re_entry": {
-    "status": "unverified",
-    "excerpt": null,
+    "status": "confirmed",
+    "excerpt": "Unlimited re-entry will be available until the start of level 9.",
     "retrieved": "2026-11-17",
-    "note": "Per-event structure sheets govern; not verified in this pass."
+    "note": "Unlimited re-entry through level 9.",
+    "source": "WPT-TC"
    },
    "rebuy": {
-    "status": "unverified",
+    "status": "confirmed-no",
     "excerpt": null,
     "retrieved": "2026-11-17",
-    "note": "Not verified."
+    "note": "No rebuys."
    },
    "addon": {
-    "status": "unverified",
+    "status": "confirmed-no",
     "excerpt": null,
     "retrieved": "2026-11-17",
-    "note": "Not verified."
+    "note": "No add-on."
    },
    "entry_fee": {
-    "status": "unverified",
-    "excerpt": null,
+    "status": "confirmed",
+    "excerpt": "$600 Buy-in = $510 (Tournament Prize Pool) + $65 (Tournament Fee) + $25 (Poker Staff Service Charge)",
     "retrieved": "2026-11-17",
-    "note": "House/staff fee split published only on per-event structure sheets (wynnpoker.com)."
+    "note": "510/65/25",
+    "source": "WPT-TC"
    }
   },
   "note": "",
@@ -10612,11 +10660,11 @@
   "house_fee": null,
   "staff_fee": null,
   "guarantee": 50000,
-  "guarantee_includes_bounties": false,
+  "guarantee_includes_bounties": null,
   "ratio": 83.3,
   "chips": 30000,
   "level_min": 20,
-  "late_reg": "per-event structure sheet (not verified this pass)",
+  "late_reg": "per-event structure sheet (see entry rules)",
   "late_reg_time": null,
   "kind": [
    "plo",
@@ -10681,11 +10729,11 @@
   "house_fee": null,
   "staff_fee": null,
   "guarantee": 100000,
-  "guarantee_includes_bounties": false,
+  "guarantee_includes_bounties": null,
   "ratio": 90.9,
   "chips": 30000,
   "level_min": 30,
-  "late_reg": "per-event structure sheet (not verified this pass)",
+  "late_reg": "per-event structure sheet (see entry rules)",
   "late_reg_time": null,
   "kind": [
    "nlh"
