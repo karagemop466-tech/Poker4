@@ -38,6 +38,7 @@ NAV = [
 
 RET = "2026-11-17"
 NOFEE = '<span class="blank">—</span>'
+SEV_CLASS = {"blocking": "bad", "material": "warn", "resolved": "ok"}
 UNV = '<span class="blank">UNVERIFIED</span>'
 NA_ = "—"
 DAGGER = "\u2020"
@@ -662,25 +663,31 @@ def page_separate():
 
 
 def page_flagged():
+    BLOCKING = sum(1 for i in FLAG["items"] if i["severity"] == "blocking")
+    MATERIAL = sum(1 for i in FLAG["items"] if i["severity"] == "material")
+    RESOLVED = sum(1 for i in FLAG["items"] if i["severity"] == "resolved")
     cats = {}
     for item in FLAG["items"]:
         cats.setdefault(item["category"], []).append(item)
     blocks = []
-    for cat in sorted(cats):
+    for cat in sorted(cats, key=lambda c: (c == "Reproduction", c)):
         rows = []
         for it in cats[cat]:
             srcs = " ".join(src_link(s) for s in it.get("sources", []))
             rows.append(
                 f'<tr data-search="{E((it["id"] + " " + it["title"] + " " + it["detail"]).lower())}">'
                 f'<td class="mono">{E(it["id"])}</td><td><strong>{E(it["title"])}</strong><br><span class="small muted">{E(it["detail"])}</span></td>'
-                f'<td><span class="tag {"bad" if it["severity"]=="blocking" else "warn"}">{E(it["severity"])}</span></td>'
+                f'<td><span class="tag {SEV_CLASS.get(it["severity"], "warn")}">{E(it["severity"])}</span></td>'
                 f'<td class="small">{E(it["how_to_settle"])}</td><td>{srcs}{(" " + src_link(it["repo_link"], "repo file")) if it.get("repo_link") else ""}</td></tr>')
         blocks.append(f"<h2>{E(cat)}</h2>" + table(["#ID","Item","#Severity","How to settle it","Source"], rows, caption=f"{len(rows)} items in {E(cat)}", table_id="f-" + re.sub(r'[^a-z]', '', cat.lower())))
     body = f"""
 <div class="breadcrumb"><a href="index.html">Dashboard</a> / Flagged for review</div>
 <h1>Flagged for review — {len(FLAG['items'])} items</h1>
 <p class="lede">These are the things this session could not confirm, could not find, or found to contradict each other. They do not block publication, and they are the most useful part of the site: each one names the exact step that would settle it.</p>
-<div class="callout"><strong>Severity key.</strong> <span class="tag bad">blocking</span> = a decision the user asked for cannot be made correctly until this is resolved. <span class="tag warn">material</span> = it changes a cost or a ranking but a reasonable estimate exists. Everything here has a source link so you can check it yourself in a browser.</div>
+<div class="callout"><strong>Severity key.</strong> <span class="tag bad">blocking</span> = a decision you asked for cannot be made correctly until this is resolved. <span class="tag warn">material</span> = it changes a cost or a ranking but a reasonable estimate exists. <span class="tag ok">resolved</span> = it was open earlier in this session and is now closed; kept visible so the trail is complete rather than quietly deleted. Everything here has a source link so you can check it yourself in a browser.</div>
+<div class="kpis"><div class="kpi"><span>Open and blocking</span><b>{BLOCKING}</b><span>the shortlist cannot be finished without these</span></div>
+<div class="kpi"><span>Open, material</span><b>{MATERIAL}</b><span>they change a number, not a verdict</span></div>
+<div class="kpi"><span>Resolved this session</span><b>{RESOLVED}</b><span>kept for the record</span></div></div>
 {controls(show_date=False, show_se=False)}
 {''.join(blocks)}
 <h2>What was deliberately left blank rather than estimated</h2>

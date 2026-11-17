@@ -282,20 +282,20 @@
   {
    "id": "F24",
    "category": "Reproduction",
-   "severity": "material",
-   "title": "The new monitor script cannot be executed inside this session",
-   "detail": "Shell-level network access is blocked in this sandbox \u2014 every curl returns HTTP 000 \u2014 so tools/v2_check_sources.py was written and syntax-checked but never executed against the live URLs. The scheduled workflow runs it on GitHub's own runners, where outbound HTTP works.",
-   "how_to_settle": "Trigger 'v2 source monitor' once from the Actions tab (workflow_dispatch) and read the first snapshot in data/v2/snapshots/. That will also create data/v2/source_state.json with the first baseline hashes.",
+   "severity": "resolved",
+   "title": "Monitor script was executed and worked \u2014 61 of 64 sources reached",
+   "detail": "Shell network is blocked in the authoring sandbox (every curl returns HTTP 000), so the script could not be smoke-tested there. It was then run by GitHub Actions on a real runner: 'checked: 61 changed: 0 unreachable: 3'. The three failures are one 429 rate-limit (travelocity, a lead-only third party), one timeout (bellagio MGM poker PDF host) and one 400 (the bare router.project-osrm.org root URL, which is not a page).",
+   "how_to_settle": "Resolved. Baseline committed at data/v2/source_state.json (61 URLs).",
    "sources": [],
    "repo_link": "https://github.com/karagemop466-tech/Poker4/blob/main/tools/v2_check_sources.py"
   },
   {
    "id": "F25",
    "category": "Reproduction",
-   "severity": "material",
-   "title": "The scheduled monitor has never produced a baseline",
-   "detail": "data/v2/source_state.json does not exist yet, which is correct for a first run but means no change has ever been detected. Until one scheduled run completes, the 'automatic re-check' requirement is built but not demonstrated.",
-   "how_to_settle": "Run the workflow once manually; confirm it commits data/v2/source_state.json.",
+   "severity": "resolved",
+   "title": "Monitor produced its first baseline; 0 changes on day one",
+   "detail": "data/v2/source_state.json now holds 61 URL hashes and data/v2/snapshots/check-2026-11-17.txt records the first run. Change detection is therefore proven to execute but has not yet observed a real change \u2014 day one and the retrieval day are the same day.",
+   "how_to_settle": "Resolved for execution. The first genuinely useful run is the next scheduled one.",
    "sources": [],
    "repo_link": "https://github.com/karagemop466-tech/Poker4/blob/main/.github/workflows/v2-monitor.yml"
   }

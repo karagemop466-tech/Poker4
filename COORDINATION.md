@@ -216,3 +216,15 @@ Rendered pages were re-read against the JSON after the first build and **six fac
 6. **Two unverified contact details were printed as fact.** The Venetian phone/email (never read from an official page here) was removed from F1; the Wynn number was kept only because it appears verbatim on the official poster that was transcribed. The Venetian "50 tables / 14,000 sq ft" claim was also removed — table count was never read from an official source.
 
 Also fixed: the monitor workflow referenced a non-existent `GITHUB_STEP_SUMMARY_PATH` variable and built the issue body from it; it now tees the report into `$GITHUB_STEP_SUMMARY`, commits the snapshot under a run-id filename, and the issue body links the run. The checker was executed once locally and correctly reported **64/64 unreachable** (sandbox shell network is blocked) rather than reporting a silent pass.
+
+### Monitor executed for real — F24/F25 closed
+
+The `v2 source monitor` workflow ran on GitHub's runners at 13:17 UTC and committed to this branch:
+
+- **`checked: 61  changed: 0  unreachable: 3`**
+- Unreachable, and why each is safe to leave: `C_FEES` travelocity 429 rate-limit (a third-party lead, never used for a displayed fact), `B_POKER` bellagio.mgmresorts.com read timeout, `MAP_OSRM` the bare `router.project-osrm.org` root URL (not a page — the routing queries are made against `/route/v1/…` paths).
+- Baseline committed: `data/v2/source_state.json` (61 URL hashes). Snapshot: `data/v2/snapshots/check-2026-11-17.txt`.
+
+This converts the "automatic re-check" requirement from built-but-undemonstrated to demonstrated. Day one shows 0 changes because the baseline and the manual retrieval happened on the same day; the next scheduled run is the first that can actually detect a move.
+
+**Conflict during this push, and how it was resolved without discarding work:** the rebase conflicted on `data/v2/source_state.json` (my local broken baseline vs the workflow's real one). Resolution: kept the workflow's real 61-URL baseline, deleted nothing from the remote, and instead hardened `tools/v2_check_sources.py` so it **refuses to write a state file when every fetch fails** — a network-blocked environment can no longer create a false "nothing changed" baseline. Both sides' intent is preserved in the final commit.
