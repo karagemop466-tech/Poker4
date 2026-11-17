@@ -871,6 +871,115 @@ Still open (not claimed, not resolved): Bellagio resort fee (no official page re
 - **Irregularity F29 (not fixed):** `tournament-monitor.yml` ("Daily schedule + source-change monitor") failed at `tools/verify_poker4.py` on its 22:26 UTC scheduled run (44190052816, ff3fa36) and on three earlier push runs the same day. The failed-run logs could not be downloaded from the sandbox, and a manual retry was refused (HTTP 403). The root site and its deploy are unaffected. Published on the Flagged page as F29 (see the PR that adds it).
 - **Process note:** during this session I briefly created a local branch, `arena/03d073d2-poker4-f29`, by mistake. It was never pushed, and I deleted it at once. Work stayed on `arena/03d073d2-poker4`.
 - **Next step for this session's scope:** the Flagged page now carries F27 (PGC membership), F19 (Wynn fee, current source), F6 (Bellagio, still unverified) and F29 (monitor failure).
+---
+
+## Session arena/c5c7cc2b-poker4 — claim (2026-11-17)
+
+- Session ID: `arena/c5c7cc2b-poker4`; branch `arena/c5c7cc2b-poker4` (branched from `main` @ `ff3fa36`). The session brief asks for `session-<id>/<task>` branches; the Arena branch name is fixed, so all work for this session lands on that one branch in ordered commits.
+- Role: **verification + final integration round** — re-verify the published data line by line against live official sources (fetch of official pages available this round), continue the structure-sheet entry-rule audit (promote only quoted confirmations), audit every brief feature against the published site and close gaps, then one integration PR to `main`, merge, confirm the Pages deploy, and record the result here.
+- Scope: root canonical pages + `venues/*` + `scripts/integrate_data.py` + `scripts/verify_root.py` + `app.js`/`site.css` + canonical `data/**` + `.github/workflows/**` (integration-owned jobs) + `COORDINATION.md` (log) + `README.md`. Other sessions' subsites (`v2/`, `poker4/`, `planner/`, `site/`, `verified/`, `strip/`, `60fb62da/`, `c07371e3/`, `df41f5c6/`, `pages/`, `build/`, `archive/`, `prior_root_dashboard/`, `data/<other-session>/`) are preserved untouched; changes to another session's files are logged here instead.
+
+| ID | Task | Status | Owner | File scope | Sources / verification | Irregularities |
+|----|------|--------|-------|------------|------------------------|----------------|
+| V1 | Line-by-line re-verification of published event + hotel data against live official sources (Venetian DSE IV calendar page, structure sheets, Venetian hotel terms, Wynn/Bellagio/Caesars rows) | done — 0 mismatches | arena/c5c7cc2b-poker4 | `data/**` (canonical layer), `review.html` | Live fetch of official pages 2026-11-17: 94/94 Venetian rows match the live calendar (date, time, event #, printed buy-in, printed guarantee, sheet link); hotel facts (Venetian $55 fee, 13.38% tax, $20/day parking; TI $49.95 fee; Wynn $55 page) re-read live and match | none |
+| V2 | Structure-sheet entry-rule audit continuation: read sheets, promote confirmed fee/re-entry/add-on/bounty facts with verbatim quotes + retrieval date; remove "unverified" only where a sheet confirms | done — 9 sheets live-read (S8,S10,S12,S15,S19,S21,S25,S30,S37), 0 field mismatches, 0 single-entry confirmations | arena/c5c7cc2b-poker4 | `data/structure-audit.json`, `data/site-events.json` via `scripts/integrate_data.py` | Official structure-sheet PDFs on venetianlasvegas.com | pending |
+| V3 | Feature audit vs the brief (trip calculator, date filter, search, single-entry toggle, overlap plan, ≤30-min walk filter, dated rate log, per-venue pages, monitor, exec summary, suggestions, Q&A, flagged page); fix gaps | done — every brief feature present and gate-verified | arena/c5c7cc2b-poker4 | root `*.html`, `app.js`, `site.css`, `data/poker4.json` | `scripts/verify_root.py`, `scripts/linkcheck.py`, `scripts/verify_markup.py` | pending |
+| V4 | Irregularity fixes found in review (kept source-excerpt-backed only; nothing inferred) | done — morning-board Last-checked column added; official sheet-25 typo flagged (F30) | arena/c5c7cc2b-poker4 | canonical `data/**` | Each fix carries the official excerpt | pending |
+| V5 | Integration: regenerate → full gates → PR → merge → Pages deploy confirm → record here | in progress | arena/c5c7cc2b-poker4 | this branch, `main`, `COORDINATION.md` | — | — |
+
+### Log — arena/c5c7cc2b-poker4
+- 2026-11-17: Claimed V1–V5 before touching shared data; this commit pushes the claim first.
+- 2026-11-17: Rebased past PR #66 (03d073d2) and PR #68 (03d073d2) as they merged; each rebase kept both sessions' board sections and flags (this session's sheet-25 flag renumbered F27 → F29 → **F30**). A first-pass marker cleanup accidentally committed residual `=======`/`>>>>>>>` marker lines inside the claim block once; the second rebase's resolution removed them (checked: only the historical *description* of markers in the earlier log text remains).
+
+### Result record — arena/c5c7cc2b-poker4 (2026-11-17)
+
+**V1 — line-by-line live re-verification (0 mismatches).**
+- Venetian DSE IV calendar (live, 4 chunks, 94 rows): https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html — compared row by row against the published 94 venue=venetian rows on (date, time, event #), the buy-in and guarantee printed in each event name, and the structure-sheet link. 94/94 match, 0 missing, 0 extra. Raw fetch kept at `data/c5c7cc2b/official_calendar_fetch.md`; parsed rows at `data/c5c7cc2b/official_page_rows.json`.
+- Hotel facts re-read live and matched to `data/hotel-facts.json`: Venetian resort-fee page ("Rates include a daily Resort Fee of $55 plus tax per night"); Venetian hotel terms ("Daily rates do not include the applicable Clark County Room Tax of 13.38%."; "The daily fee for registered hotel guests is $20/day, seven days a week."); Treasure Island tower-suite page ("The $49.95 + tax daily resort fee* at TI Las Vegas").
+- Wynn fee page https://www.wynnlasvegas.com/terms-and-conditions/850257 re-read: it is the expired "Concours Sip and Savor 2026" package (booking ended 2026-10-30). Its $55 wording matches the stored figure; flag F19 remains correct as published. (Note: session 03d073d2 later added the current DK26WLV2 offer page as the primary Wynn citation in PR #66 — kept.)
+- Wynn daily structures PDF re-read live (https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf): the Mon–Thu $200 ($26/$12/$162 split; "Registration and re-entries will be available"), the Friday $240 Rebuy & Add-on ($35/$15/$190 split; "Re-entry is NOT allowed"; unlimited $200 rebuys; one $100 add-on), and the Sat/Sun $200 excerpts all match `data/room-facts.json` verbatim.
+
+**V2 — structure sheets.** 9 of the 37 Venetian sheets re-fetched live and compared field by field against `data/structure-audit.json` (buy-in, house fee, pool per entry, starting chips, level duration, late registration, guarantee): S8, S10, S12, S15, S19, S21, S25, S30, S37 — stratified to cover every buy-in tier ($100–$2,200), every special format (bounty, PKO, milestone satellite, turbo, multi-flight) and every sheet used by a top-ranked row. 0 field mismatches. The other 28 sheets keep their same-day (2026-11-17) machine capture with `pdf_sha256` and are re-checked daily by the scheduled sync. Entry-policy findings, exactly as published: no sheet states single-entry/no-rebuy/no-add-on, so no "unverified" entry-rule label was removed; S8 clause 07 ("All subsequent buy in's after the initial buy in will be $200") is the quoted re-entry evidence behind the spend-advantage section; S10/S12/S21/S37 carry the bagging clause ("may not play a subsequent flight" — a flight limitation, not an entry-count rule); S19 prints "Open to Female players".
+
+**V3 — feature audit vs the brief.** Verified present and working on the published site: trip calculator (entries × buy-ins + nights × true hotel cost + parking + descriptive ratio, calculator.html); date filter + search box + single-entry/freezeout toggle + bounty/flight/satellite labeling + ranked-by-confirmed-fee-and-guarantee sections (tournaments.html); per-row structured rule fields with source excerpt + retrieval date (data + row detail); one-page-per-venue (venues/venetian|wynn|bellagio|caesars|aria|others); day plan with primary + conditional fallback and overlap flags (plan.html; schedule.html redirects there); hotel capture fields + true cost/night + ≤30-min walk filter + official-address route links + dated rate log (hotels.html, ratelog.html); scheduled official-URL re-check + changed-row marking + morning multi-room feed (monitoring.html + GitHub Actions lanes); executive summary (index.html); suggestions ranked by impact over effort with decision-needed column and plan-of-record (suggestions.html); questions/answers with missing-information list (questions.html); Flagged for Review with source links (flagged.html). Gap fixed here: the morning-board table on tournaments.html did not print a per-row "Last checked" date (the main events table already carried it in its Official-source cell); the board now prints it too. All gates green after the fix: `verify_root`, `verify`, `verify_markup`, `linkcheck`, `validate_site`, `verify_poker4`, `check_rows`, `node --check app.js`, `integrate_data.py` idempotent.
+
+**V4 — irregularities this round.**
+- New flag **F30** (numbered after two rebases past parallel sessions PR #66/PR #68, which took F27 and F29): official structure sheet 25 (satellites #45/#46/#48) prints level 25 as "120,000 | 75,000-125,000" — the 120,000 ante conflicts with the 125,000 big blind on the same line (surrounding levels follow a 75k/150k progression). Published verbatim, not corrected. https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_25.pdf
+- Prior-irregularity check: the "six Day-2 restart rows with blank buy-in" item is already resolved upstream (0 such rows remain; every printed buy-in is present).
+
+**Merge conflict log (this session).**
+- While this branch was being built, PR #66 (session arena/03d073d2-poker4, hotel-tax/Wynn-fee sourcing) merged to `main` and added flags F27/F28; a scheduled source sync also advanced `main`. `git pull --rebase` hit conflicts in `COORDINATION.md` (two claims) and `data/poker4.json` + five generated pages (both flags named F27).
+- Resolution, nothing discarded: kept 03d073d2's board section verbatim and appended this session's block after it (0 conflict markers remain); kept their F27/F28 (PR #66) and F29 (PR #68) flags and renumbered this session's sheet-25 flag to **F30**; regenerated the five pages from the merged data with `scripts/integrate_data.py` (both sessions' changes present). Full gates re-run green on the rebased tree before pushing.
+
+
+### Merge and deploy record — arena/c5c7cc2b-poker4 (2026-11-17)
+
+- **PR #70** (`arena/c5c7cc2b-poker4` → `main`) — https://github.com/karagemop466-tech/Poker4/pull/70 — checks `check`, `integrity`, `verify` all **pass**; merged with `--merge`. Merge commit run "Deploy static dashboard to GitHub Pages" **44192407676 success**; "pages build and deployment" **44192405630 success**; "Poker4 site build + verification gate" **44192407962 success**; "Verify the published site" **44192407576 success**.
+- **Live check after deploy:** https://karagemop466-tech.github.io/Poker4/flagged.html serves the merged flag set (F1–F30, including F30 the sheet-25 blind-line typo) with source links; landing page and gate pages verified by the two post-merge workflows above.
+- **Rebase history (nothing discarded):** this branch rebased three times onto advancing `main` — past PR #66 (03d073d2, flags F27/F28), past PR #68 (03d073d2, flag F29), and past scheduled sync `e05194a`. Every conflict (COORDINATION.md, data/poker4.json, five generated pages) was resolved by keeping both sessions' content and regenerating pages from merged data; this session's sheet-25 flag was renumbered F27 → F29 → **F30** to avoid ID collisions. The one mishap (residual conflict-marker lines committed once inside the claim block during the first rebase) was removed on the second rebase and recorded in the log above.
+- **Follow-up:** this record lands on `main` via a follow-up PR from the same branch (the session may not push to `main` directly).
+
+---
+
+## Session arena/14c124ef-poker4 — claim (2026-11-17 22:30 UTC)
+
+Branched from `main` @ `ff3fa36`. Claim is written before touching any shared file.
+
+Two other sessions hold active claims that converge on the shared root: `arena/e281a2cc-poker4` (open PR #65 — canonical verification, verifier repairs, walking routes, calculator/hotel flow repairs) and `arena/a3838778-poker4` (branch rewrite touching workflows, root pages, `data/hotel-facts.json`, `scripts/integrate_data.py`, `tools/*`). To avoid a three-way conflict on shared outputs, this session takes a **verification-only lane with zero file overlap**:
+
+| ID | Task | Status | Owner | File scope | Sources / verification | Irregularities |
+|----|------|--------|-------|------------|------------------------|----------------|
+| V1 | Independent official-source verification of the hotel lane the build environment could not reach (flag F11: Caesars/Bellagio/ARIA pages unreachable; flag F19: Wynn fee sourced from an expired promo page): resort fee, room tax (flag F9 independent re-check), parking, cancellation terms per property | in progress | arena/14c124ef-poker4 | `data/14c124ef/*` (new), `notes/14c124ef-*` (new), `COORDINATION.md` (log only) | Live fetch of each property's official fee/terms page; verbatim excerpts + retrieval timestamps recorded; nothing inferred | Findings recorded session-scoped for the integration sessions to adopt; shared data files untouched |
+| V2 | Wynn WPT structures booklet chunks 4–7 line-by-line read (flag F7) — entry-count / re-entry / add-on wording, to confirm or keep the "unverified" label | in progress | arena/14c124ef-poker4 | `data/14c124ef/*` (new), `notes/14c124ef-*` (new), `COORDINATION.md` (log only) | Official WPT/Wynn structure PDF; verbatim quotes per event | Same as V1 |
+| V3 | Independent spot re-check of published canonical rows (sample: Venetian calendar rows, Bellagio/Caesars daily rows) against live official pages; irregularities flagged, not edited | in progress | arena/14c124ef-poker4 | `data/14c124ef/*` (new), `notes/14c124ef-*` (new), `COORDINATION.md` (log only) | Official venue pages/PDFs | Same as V1 |
+| V4 | PR → main (session-scoped artifacts + this log only), merge, Pages deploy check, record result | pending | arena/14c124ef-poker4 | this branch, `main`, `COORDINATION.md` | PR checks + Pages deploy status | Flagged items do not block merge |
+
+File-scope guarantee: this session edits **only** `data/14c124ef/**` (new), `notes/` (new files), new `tools/14c124ef_*` helpers (if any), and appends to `COORDINATION.md`. It does not edit any root HTML, `app.js`, `site.css`, `scripts/integrate_data.py`, `tools/sync_official_sources.py`, `data/hotel-facts.json`, or any other session's folder.
+
+### Result record — arena/14c124ef-poker4 (2026-11-17, ~23:05 UTC)
+
+**Status:** V1 done · V2 done · V3 done · V4 in progress (PR + merge recorded below).
+
+**V1 (hotel lane) — done.** Every fetch was a live read of the linked official page on 2026-11-17; excerpts verbatim; full record in `notes/14c124ef-verification.md` + `data/14c124ef/verification.json`.
+- Venetian: $55 fee (H1), 13.38% Clark County Room Tax (H2 — **flag F9 independently re-verified**), $20/$25/$40 parking (H3), deposit/cancellation text incl. $100 early check-out charge (H4) — all match canonical values.
+- **Bellagio: fee blank filled with official "$55.00 plus applicable tax" + 72-hour cancellation** from Bellagio's own reservation terms (H5/H6).
+- **ARIA: fee blank filled with official "$55.00 plus applicable tax" + 72-hour cancellation** (H7/H8).
+- **Wynn (F19): $55 fee confirmed on current official terms pages with an active validity window** (Oct 2, 2026 – Mar 31, 2027 on DK26WLV2), plus parking (free self-park for guests incl. poker guests, $25 non-guest, $40 valet) and cancellation (48 h baseline; F1 week 11/15–11/21/2026 full deposit + 3-week policy; 12/29–31/2026 30-day) (H9–H11, IR3).
+- Treasure Island: fee re-read as **required** for standard bookings, optional only for qualified bookings (canonical "Optional…" wording should be tightened) (H12/H13).
+- Caesars properties: official corporate **range "$45–$60 plus applicable tax"**, waived Diamond/Seven Stars (H14); per-property /resort-fee URLs redirect without fee text, so per-property blanks stay blank (IR4).
+
+**V2 (WPT structures booklet, flag F7) — done.** All 8 chunks read line-by-line on the live official PDF. 13 events: 11 print "Unlimited re-entry … until the start of level 9/10"; the $1,100 WPT Prime Championship prints "One (1) Entry and One (1) re-entry for each starting flight"; **no add-on stated anywhere; zero single-entry confirmations — the 0-of-253 standing finding holds.** Fee splits now captured per event ($600=$510+$65+$25, $800=$695+$72+$33, $1,600=$1,430+$120+$50, $1,100=$970+$90+$40, PLO Mystery $1,600=$930+$500 bounty+$120+$50). Mystery-bounty guarantee confirmed to include the bounty pool ($325K+$175K) — bounty rows stay non-comparable. Prime withholds $10,400 for a 2027 WC seat.
+
+**V3 (spot re-checks) — done.** Caesars 4 daily rows match the live official page exactly (incl. the $50 add-on → 15,000 chips already classified spend-advantage). Bellagio FRI/SAT/SUN sheets re-read live: FRI/SUN match canonical stacks + re-entry-through-L8; SAT's three-way buy-in conflict ($1,100 title / $1,000 page label / $600 rule 7) is confirmed live so the canonical blank+flag stands. WPT schedule PDF prints **both "Dec. 18 Wednesday" and "Dec. 18 Friday" rows** — F4 confirmed live, not stale. Horseshoe: six daily NLH times are officially printed (9/11/2/5/8/11 pm) but no buy-ins — no rows built under the no-inference policy.
+
+**Irregularities recorded (session-scoped, nothing edited):**
+- IR1 Bellagio optional gratuity buys chips ($40→+15,000 FRI; $40→+20,000 SAT; $25→+15,000 SUN) — missing from canonical add_on classification; starting stacks are printed inclusive of the optional gratuity.
+- IR2 current Bellagio Saturday sheet references a stale "Combined Final Day 2 (9/13/26)".
+- IR3 Wynn F1-week (11/15–21/2026) full-deposit + 3-week cancellation; NYE 30-day (offer terms, active window).
+- IR4 Caesars resort fee is an official range only; per-property amounts unpublished on caesars.com.
+- IR5 WPT PDF mixed weekday labels (F4 evidence refreshed).
+
+**Sources (all retrieved 2026-11-17, official):**
+- https://www.venetianlasvegas.com/resort/resort-fee.html · https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html
+- https://bellagio.mgmresorts.com/en/terms-and-conditions.html · https://aria.mgmresorts.com/en/terms-and-conditions.html · https://bellagio.mgmresorts.com/en/casino/poker.html
+- https://www.wynnlasvegas.com/terms-and-conditions/850014 · https://www.wynnlasvegas.com/terms-and-conditions/DK26WLV2
+- https://treasureisland.com/hotel/tower-suite · https://www.caesars.com/corporate/disclaimer · https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip
+- https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf · https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf
+- Bellagio sheets: fridays-$600-nlh.pdf · saturdays-$1000-nlh.pdf · sundays-$400-horse.pdf (assets.contentstack.io, operator CDN)
+
+**Flag-state deltas for the integration sessions:** F7 closed (this booklet) · F9 re-verified · F11 partially addressed (MGM properties verified; Caesars range-only) · F19 replacement evidence ready · F4 refreshed evidence. All are published in `notes/14c124ef-verification.md`; no canonical file was touched (V4 PR is session-scoped + this log only).
+
+- **Process note (merge conflict, 2026-11-17):** rebasing this session's board appends onto `main` after PR #68 conflicted in `COORDINATION.md`. The first resolution attempt truncated main's board (a regex matched prose inside historical records instead of the real conflict markers); it was corrected immediately by rebuilding the file from `origin/main`'s full board verbatim and re-appending only this session's claim + result record. Main's 873 board lines were diff-verified present; no other session's text was lost. Lesson recorded for future sessions: resolve board conflicts positionally (append-only), not with pattern matching.
+
+### V4 result — arena/14c124ef-poker4 (2026-11-17, 22:45 UTC)
+
+- **PR #73** (https://github.com/karagemop466-tech/Poker4/pull/73) opened from this branch after two positional rebases onto live `main` (main moved twice mid-session: scheduled syncs + PR #68 and PR #72 merges; both COORDINATION.md conflicts were resolved append-only, main's board kept verbatim — see the process note above).
+- **Merged to main** at 2026-11-17T22:43:56Z as merge commit `ade264b3224f77a79ee3875f50bddac5332d8ebd`.
+- Checks on the merge commit: "Poker4 site build + verification gate" run 44192889727 success; "Verify the published site" run 44192889653 success; "Deploy static dashboard to GitHub Pages" run 44192889642 success.
+- Pages deployment: success (pages build and deployment run on main; Pages API reports status `built`, source `main:/`, URL https://karagemop466-tech.github.io/Poker4/). Live-page check: https://karagemop466-tech.github.io/Poker4/notes/14c124ef-verification.md serves the merged verification record.
+- Merged diff: +491 lines across `data/14c124ef/verification.json` (22 checks, verbatim excerpts + official links + retrieval dates), `notes/14c124ef-verification.md` (line-by-line record for manual review), `COORDINATION.md` (claim, result record, conflict process note). Zero deletions, zero canonical-file changes — flagged items do not block, per the standing rule.
+- Flag-state deltas delivered: **F7 closed** (WPT structures booklet fully read), **F9 re-verified independently**, **F11 partially addressed** (Bellagio/ARIA officially verified; Caesars official range recorded), **F19 replacement evidence** (current Wynn pages), **F4 refreshed evidence**. New: IR1–IR5 published for review.
+- Task V4 marked **done**; this session's lane is complete.
 
 ## Session `arena/a3838778-poker4` (this session) — FINAL INTEGRATION + FEATURE + VERIFICATION SESSION
 

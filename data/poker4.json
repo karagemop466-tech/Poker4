@@ -1250,6 +1250,16 @@
     "https://github.com/karagemop466-tech/Poker4/actions/runs/44190052816",
     "https://github.com/karagemop466-tech/Poker4/blob/main/.github/workflows/tournament-monitor.yml"
    ]
+  },
+  {
+   "id": "F30",
+   "severity": "official-source-typo",
+   "item": "Venetian DSE IV structure sheet 25 (satellites #45/#46/#48) prints an inconsistent blind line at level 25: big blind ante 120,000 with blinds 75,000-125,000",
+   "detail": "Live re-read of the official sheet (https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_25.pdf) on 2026-11-17 shows level 25 as '25 | 15 | 120,000 | 75,000-125,000'. Every surrounding level follows the 75k/150k-style progression (26 is 150,000 / 75,000-150,000), so the printed 125,000 big blind conflicts with the 120,000 ante on the same line. Published rows copy the sheet verbatim; no correction is inferred. The satellite structure past level 24 rarely matters (registration closes after level 6), but the sheet itself is internally inconsistent and is flagged for room confirmation.",
+   "sources": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_25.pdf"
+   ],
+   "note": "found by arena/c5c7cc2b-poker4 during the 2026-11-17 line-by-line live re-read (V1/V2); renumbered twice on rebase (F27 then F29 were taken by parallel sessions) — final ID F30"
   }
  ],
  "trip_example": {

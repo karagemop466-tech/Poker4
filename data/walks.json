@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generated_at": "2026-11-17T22:37:51Z",
+  "generated_at": "2026-11-17T22:41:07Z",
   "rule": "A hotel is usable for an 8 AM\u2013close day only if the walk from the lobby to the poker room can be completed inside 30 minutes.",
   "how_to_close": "For an official-grade figure: run the same pairs through the Google Maps Distance Matrix API (mode=walking, departure_time=now) with a billed key, or walk the route and time it, and store the duration with the timestamp. Until a property states a walking time itself, these stay labelled as measurements and the \u226430-minute filter stays a measured cut rather than a verified claim.",
   "measurement_source": {
