@@ -1,0 +1,63 @@
+{
+ "generated": "2026-11-17",
+ "session": "f0d7de66",
+ "policy": "Conflicts between two documents from the same venue, quoted verbatim, with what the site does about each. Nothing is silently resolved: where two official pages disagree, the row keeps the structure-sheet value and the disagreement is published here and on the Flagged page.",
+ "items": [
+  {
+   "id": "FX1",
+   "what": "WPT $1,100 No Limit Hold'em ($1,000,000 GTD): the festival poster dates the two starting flights to a day that does not exist as printed, the structure sheet dates them correctly",
+   "poster": {"url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+              "quote": "Dec. 18 Wednesday | 11 a.m. | No Limit Hold'em Day 1A | $1,100 | $1,000,000",
+              "note": "and the same block repeats 'Dec. 18 Wednesday' at 7 p.m. for Day 1B, then lists a separate 'Dec. 17 Thursday … No Limit Hold'em Day 2' row"},
+   "structure": {"url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+                 "quote": "Day 1A: Wednesday, December 16, 2026 at 11 a.m. / Day 1B: Wednesday, December 16, 2026 at 7 p.m. / Day 2: Thursday, December 17, 2026 at 12 p.m.",
+                 "note": "the sheet's own header prints 'December 16-17, 2026'"},
+   "how_we_know_which": "December 18, 2026 is a Friday and December 16, 2026 is the Wednesday, so only the structure sheet's dates agree with their own weekday labels; the poster's 'Dec. 18 Wednesday' cannot be a real date.",
+   "site_behaviour": "Rows are published on the structure-sheet dates (Dec 16 flights, Dec 17 Day 2). The poster wording is quoted here in full; a player who reads only the poster would show up two days late, so this stays on the Flagged page until the room corrects it.",
+   "retrieved": "2026-11-17"
+  },
+  {
+   "id": "FX2",
+   "what": "Bellagio Saturday NLH: the poker page, the PDF heading and the PDF's own rules text print three different buy-ins for the same event",
+   "links": [
+    {"where": "official Bellagio poker page link label", "url": "https://bellagio.mgmresorts.com/en/casino/poker.html", "quote": "SATURDAYS | $1,000 NLH"},
+    {"where": "heading of the linked structure PDF", "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt6d47974bf5a7d9b6/6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf", "quote": "NLH $1100 BUY-IN"},
+    {"where": "same PDF, general rules 7 and 8", "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt6d47974bf5a7d9b6/6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf", "quote": "Of the $600 Buy-in, $510 goes to the Prize Pool, $50 is Admin Fees and $40 is optional staff gratuity. / Bellagio guarantees that the total Combined Prize Pool will be at least $50,000."}
+   ],
+   "site_behaviour": "The Saturday row is shown with the buy-in blank and the guarantee $50,000 (the only figure stated in the rules text), and it is excluded from the ranking because the total entry fee is not settled. Calling any of the three numbers 'the' price would be a guess.",
+   "retrieved": "2026-11-17"
+  },
+  {
+   "id": "FX3",
+   "what": "Bellagio Saturday structure sheet carries a Day-2 date in the past",
+   "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt6d47974bf5a7d9b6/6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf",
+   "quote": "Combined Final Day 2 (9/13/26) will begin at 12pm at Bellagio.",
+   "site_behaviour": "The 2026-11-17 snapshot is a reused sheet: the September Day-2 date is quoted on the row and the row is marked 'schedule re-uses a past date — confirm with the room', never used to build a day plan.",
+   "retrieved": "2026-11-17"
+  },
+  {
+   "id": "FX4",
+   "what": "Caesars Palace daily flyer: the URL the monitor tracks returns 404 while the poker page links a live 2026 flyer",
+   "tracked": {"url": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2025.pdf", "status": "404"},
+   "live_link_from_official_page": {"url": "https://www.caesars.com/caesars-palace/casino", "quote": "Caesars Palace Poker Room — The Poker Room at Caesars Palace is open 24/7 with both live-action cash games and daily tournaments. [View Schedule] → clv-poker-daily-nlh-tournament-flyer-2026.pdf"},
+   "site_behaviour": "Rows are now built from the 2026 flyer (read 2026-11-17); the dead 2025 URL is kept in the tracker as unreachable so the change is visible in the log rather than edited away.",
+   "retrieved": "2026-11-17"
+  },
+  {
+   "id": "FX5",
+   "what": "ARIA's poker page URL returns 404, so no ARIA tournament row can be sourced at all this week",
+   "url": "https://aria.mgmresorts.com/en/casino/poker.html",
+   "quote": "Oops! We can't find that page",
+   "site_behaviour": "ARIA stays on the venue list with no rows and an explicit 'no official page reachable' note; nothing is carried over from the earlier capture as if it were current.",
+   "retrieved": "2026-11-17"
+  },
+  {
+   "id": "FX6",
+   "what": "Wynn daily tournaments are suspended during some series, and the WPT festival overlaps the trip window",
+   "url": "https://www.wynnlasvegas.com/casino/poker",
+   "quote": "*Please note that the Daily Tournament schedule will be suspended during each Wynn Signature, Wynn Millions, and Classic tournament series. Thank you.",
+   "site_behaviour": "The suspension list names Signature / Millions / Classic, not the WPT World Championship, and no page states whether the dailies run during WPT (Nov 27 – Dec 21). Each Wynn daily row therefore carries 'runs only outside listed series — WPT interaction not stated' and the day plan never pairs a daily with a WPT flight on the same day.",
+   "retrieved": "2026-11-17"
+  }
+ ]
+}
