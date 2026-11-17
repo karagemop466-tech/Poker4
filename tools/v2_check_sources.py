@@ -51,7 +51,7 @@ def main():
             digest = hashlib.sha256(fetch(url).encode("utf-8", "replace")).hexdigest()
         except Exception as e:                                  # noqa: BLE001
             failed.append((sid, url, "%s: %s" % (type(e).__name__, e)))
-            continue
+            continue        # deliberately NOT recorded in state: a failed fetch must never become a baseline
         checked += 1
         prev = state["urls"].get(url, {}).get("sha256")
         state["urls"].setdefault(url, {})["sha256"] = digest
@@ -60,7 +60,10 @@ def main():
         if prev and prev != digest:
             changed.append((sid, url))
 
-    json.dump(state, open(a.state, "w"), indent=1, sort_keys=True)
+    if checked == 0:
+        print("\nNOT writing %s: every source was unreachable, so there is no baseline to record." % a.state)
+    else:
+        json.dump(state, open(a.state, "w"), indent=1, sort_keys=True)
 
     lines = ["# v2 source monitor", "", "checked: %d  changed: %d  unreachable: %d" % (checked, len(changed), len(failed)), ""]
     if changed:
