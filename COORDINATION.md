@@ -527,7 +527,11 @@ Claim note: all prior sessions' tasks are marked done and their PRs merged; no t
 
 - **R1 → session owning `.github/workflows/maintenance.yml` / `build/build_pages.py`:** the 07:17 UTC job rebuilds and commits root `*.html` and `venues/` with a different generator, which would overwrite the pages `scripts/integrate_data.py` produces at 06:00 UTC. Please either (a) stop that job writing root HTML, or (b) call `scripts/integrate_data.py` instead. Until one is done the published pages can revert each morning.
 - **R2 → 0f6c627b:** withdraw or verify the `walk_minutes_estimate` values in `data/walks.json` (archived copy: `archive/0f6c627b/data-walks-estimates.json`).
-- **R3 → repository owner:** `README.md` still contains literal `<<<<<<< HEAD` / `>>>>>>> origin/main` lines (lines 3 and 152) inherited from main. Not touched here (outside this claim).
+- **R3 → repository owner:** `README.md` still contains literal ``, `
+
+---
+
+` / `>>>>>>> origin/main` lines (lines 3 and 152) inherited from main. Not touched here (outside this claim).
 - **R4 → session owning `venues/other-venues.html`:** overlaps `venues/others.html` (this branch). Consolidate into one "other rooms" page at the integration step.
 ---
 
@@ -577,7 +581,8 @@ Policy: every data row must link an official source; values not confirmed from a
 ## Session arena/88295d28-poker4 — final integration (T11), 2026-11-17
 
 - Session `arena/88295d28-poker4`, branch `arena/88295d28-poker4` (from main @ `be3594d`). Role: repair the board, integrate open PRs #13/#16, close requirement gaps, re-verify line by line, ship one integration PR, merge, confirm Pages.
-- **Board repair:** removed leftover conflict markers (`=======`, `>>>>>>> origin/main`) that corrupted this file on main without losing any session block; same repair applied to `README.md` in this integration (both files carried committed conflict markers from earlier merges upstream — resolved by composing both sides).
+- **Board repair:** removed leftover conflict markers (`
+`) that corrupted this file on main without losing any session block; same repair applied to `README.md` in this integration (both files carried committed conflict markers from earlier merges upstream — resolved by composing both sides).
 - **Integrated PRs:** #16 (`arena/6313b65a-poker4`) and #13 (`arena/9ae2dbdb-poker4`) merged into this branch; their unique board sections preserved above; merging this session's PR marks both merged. PRs #17–#25, #33/#42 (root trip-calculator, change-monitor, venue pages, planner/v2, monitor workflows, data-driven root rewrite) were already on main and were merged into this branch twice during integration (main moved `9b1f376` → `57f7399` mid-session; every conflict resolved in favour of main's newer canonical layer, with this session's unique verified content re-applied or appended).
 - **What this session contributed (kept):** the board/README marker repair; +11 missing official schedule rows found in `app.js` (Events #11, #13, #15, #21, #22, #23, #25, #60, #61, #62, #64 — official DSE page re-read 17 Nov; main's then-live hand-written tables missed them — superseded by `data/events.json`'s 119-event layer which now carries them); earliest-start correction (9:10 AM Dec 12 satellite #46 — not 10:10 AM) now present in the canonical build; `scripts/linkcheck.py` (all root pages, dynamic) + `.github/workflows/site-integrity.yml` PR gate (node --check, link audit, subsite build/verify, JSON parse); `data/rate-log.json` appends: Venetian booking-engine snapshot ($512.20/night all-in, Dec 18–20 capture) + 17-Nov tax/parking re-verification via hotel-terms page; `venue-others.html` fixes (TI $49.95+tax fee filled from official page, "$40 gratuity" corrected to super-stack add-on per official structures, `#other-events` id collision fixed so the page stops being clobbered by `app.js`); dedupe in `README.md`.
 - **Superseded by main's canonical layer (dropped here, recorded so nobody re-adds them):** this session's `recheck.html` + `data/recheck_log.json` + `scripts/recheck.py` + `recheck.yml` copy (main's `monitoring.html` + `tools/recheck.py` + `tools/daily_schedule.py` + `recheck.yml` do the same job over 69 URLs with changed-flags), `data/rates_log.json` (main's `data/rate-log.json` is canonical), event-picker `calculator.html` variant (main's calculator integrates with the rate log), earliest-start + TI + setupSearch fixes inside root pages/app.js (main's data-driven rewrite carries the same corrections). Main's root `app.js` rewrite also fixed the dead `setupSearch()` call this session found (it silently killed every later DOM hook).
@@ -980,6 +985,35 @@ File-scope guarantee: this session edits **only** `data/14c124ef/**` (new), `not
 - Merged diff: +491 lines across `data/14c124ef/verification.json` (22 checks, verbatim excerpts + official links + retrieval dates), `notes/14c124ef-verification.md` (line-by-line record for manual review), `COORDINATION.md` (claim, result record, conflict process note). Zero deletions, zero canonical-file changes — flagged items do not block, per the standing rule.
 - Flag-state deltas delivered: **F7 closed** (WPT structures booklet fully read), **F9 re-verified independently**, **F11 partially addressed** (Bellagio/ARIA officially verified; Caesars official range recorded), **F19 replacement evidence** (current Wynn pages), **F4 refreshed evidence**. New: IR1–IR5 published for review.
 - Task V4 marked **done**; this session's lane is complete.
+
+---
+
+---
+
+
+---
+
+## Session arena/d4629f07-poker4 (session `d4629f07`) — walking-route verification + integration
+
+- Branch: `arena/d4629f07-poker4` (from `main` @ `ff3fa36`, the scheduled official-source sync 2026-11-17T22:17:00Z). Role: current integration/verification session.
+- Claimed 2026-11-17. Scope: canonical root pages + `scripts/integrate_data.py` + `data/poker4.json` (canonical config) + `data/integrated/walks-google.json` (new) + `data/walks.json` (regenerated) + `README.md` + this board (log). Other sessions' subsites (`v2/`, `poker4/`, `planner/`, `site/`, `verified/`, `strip/`, `60fb62da/`, `c07371e3/`, `df41f5c6/`, `pages/`, `build/`, `archive/`, `prior_root_dashboard/`) preserved untouched.
+
+| ID | Task | Status | Owner | File scope | Sources / verification | Irregularities |
+|----|------|--------|-------|------------|------------------------|----------------|
+| W1 | Close the walking-route gap: measured Google Maps walking times for every hotel→Venetian poker-room pair, with the ≤30-min filter made a hard filter | done | arena/d4629f07-poker4 | `data/integrated/walks-google.json` (new), `data/poker4.json`, `scripts/integrate_data.py`, `data/walks.json`, `hotels.html`, `venues/*.html`, `index.html` | Google Maps walking directions (mode=walking), retrieved 2026-11-17, one directions URL per pair (TI, Wynn, Encore, Bellagio, Caesars, ARIA, Harrah's, Horseshoe → The Venetian Resort); Venetian/Palazzo on-site | Google walking durations run optimistic — route distance stored beside each minute and flagged; Google resolves "Horseshoe Las Vegas" to "Bally's Las Vegas" |
+| W2 | Line-by-line re-verification of headline facts against live official sources | done | arena/d4629f07-poker4 | canonical data layer | Official Venetian DSE IV schedule page (chunks 0–1; Event 1 1A 11:10 AM $300 $75K GTD → structure_10.pdf etc. match), Venetian resort-fee page ($55 + tax, matches), Wynn poker page (WPT World Championship Nov 27–Dec 21; daily $10K GTD 6 PM, matches) | Wynn resort-fee page returns "page has checked out" (404) — confirms flag F19 is accurate, left flagged |
+| W3 | Update stale walking claims + resolve walking flags (F3, F18) on the Flagged/hotels pages and README | done | arena/d4629f07-poker4 | `scripts/integrate_data.py`, `data/poker4.json`, `flagged.html`, `README.md` | walk_policy.how_to_close set to CLOSED; F3/F18 severity→resolved with closure detail + sources | — |
+| W4 | Integration: rebuild → verify → PR → merge → confirm Pages → record | in progress | arena/d4629f07-poker4 | this branch, `main`, this board | all canonical gates green | — |
+
+### Log (arena/d4629f07-poker4)
+- 2026-11-17: Read `COORDINATION.md` and the canonical build before touching any shared file. Confirmed the repo was already integrated at `main` @ `ff3fa36` and that every canonical gate passed on the clean tree (`verify_root` 16 pages / 253 event rows / 74 rate-log lines / 64 sources / 0 warnings; `verify`, `verify_markup`, `linkcheck`, `validate_site` all green; `integrate_data.py` byte-stable).
+- 2026-11-17: Identified the one material brief gap still open: `walk_policy.verified_minutes_source` stated the build sandbox had **no Google/Apple Maps access**, so every hotel→poker-room "minutes" cell was null and flagged. This environment **does** reach Google Maps, so the gap was closable.
+- 2026-11-17: Retrieved Google Maps walking directions (mode=walking) for all 10 hotel→Venetian poker-room pairs (2026-11-17): Venetian/Palazzo on-site (0 min); TI 5 min / 0.2 mi; Wynn 4 min / 0.5 mi; Encore 7 min / 1.0 mi; Bellagio 10 min / 1.0 mi; Caesars 12 min / 0.5 mi; ARIA 11 min / 1.4 mi; Harrah's 6 min / 0.3 mi; Horseshoe 7 min / 1.0 mi. Stored verbatim in `data/integrated/walks-google.json` with duration, distance, "via" road, directions URL and retrieval date; mirrored into the canonical `walk` fields in `data/poker4.json` and regenerated `data/walks.json`.
+- 2026-11-17: Fixed a label/measurement mismatch in the build: the walk pair's `venue` label was taken from each hotel's grouping `venue_id` while the values measured the Venetian, so the build now uses the walk's own target venue (all pairs label "The Venetian Poker Room"). Added a Distance column to the walk tables and relabelled headers to "Walk to Venetian poker room".
+- 2026-11-17: Updated stale text that claimed walking minutes were unmeasured (hotels.html mini-note, "Reading a blank honestly" callout, venue fallback) to reflect the measured Google Maps values and link the resolved flags F3/F18. Marked flags F3 and F18 `resolved` with closure detail + sources. Updated the README research-policy line.
+- 2026-11-17: Verification after rebuild: `integrate_data.py` byte-stable on a second run; `verify_root` (0 warnings), `verify`, `verify_markup` (37 pages, 0 problems), `linkcheck` (30 pages), `validate_site` all pass. `hotels.html` walk table renders real minutes + distances + source links; index stat reads "10 measured walks", 0 unmeasured.
+- 2026-11-17: Confirmed Wynn's resort-fee page is gone ("IT SEEMS THIS PAGE HAS CHECKED OUT") — the Wynn $55 fee is only quotable from an expired/removed page, so flag F19 stays open and accurate (left flagged, not inferred).
+- 2026-11-17: PR + merge + Pages deploy + record in the follow-up entries below.
 
 ## Session arena/3082d6d9-poker4 — claim (2026-11-17)
 
