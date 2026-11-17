@@ -833,3 +833,29 @@ Files from `75757cc1` are kept as-is: `data/75757cc1/`, the 37-sheet structure r
 - Live pages re-fetched after deployment: https://karagemop466-tech.github.io/Poker4/tournaments.html and https://karagemop466-tech.github.io/Poker4/venues/venetian.html. F8 complete.
 
 - 2026-11-17: Rebased integration work forward onto origin/main after PR #59 merged at c1521ee and source-sync commit 8a459b3; regenerated canonical pages from the merged official corrections.
+
+---
+
+## Session arena/60ade3e8-poker4 — claim (2026-11-17)
+
+- Session ID: `arena/60ade3e8-poker4`; branch `arena/60ade3e8-poker4` (from `main` @ `ff3fa36`).
+- Role: **source-health + canonical-data correction round**. A scheduled sync ran at 22:17Z and reported two
+  official URLs failing; re-checking them live turned up a factual error in the published Caesars rows. This
+  session fixes those from the official documents, then re-verifies the feature set the brief asks for and
+  ships one integration PR.
+- Findings that started this session (all reproduced from the official pages, 2026-11-17):
+  1. `data/sync-status.json` lists 2 failing URLs: the Caesars Palace daily flyer (tracked as the **2025**
+     PDF, now 404) and `https://bellagio.mgmresorts.com/en/hotel/resort-fee.html` (live 404, confirmed).
+  2. The **2026** Caesars daily flyer is live at
+     `https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf`
+     and it prints four start times at **two different buy-ins** (10 AM $100 · 2 PM $160 · 6 PM $100 · 9 PM $160),
+     a **re-entry** clause and the **fee split** per buy-in. The published rows say "$100" for all four times and
+     "fee split not printed — not ranked". That is a data error caused by citing the marketing article
+     (`/las-vegas/explore/...`, which does print a blanket "$100") instead of the property's schedule document.
+- Scope claimed (canonical pipeline only; not touching PR #65's files `assets/dashboard.js`, `build/*`,
+  `data/integrated/*`, `monitoring.html`, `scripts/verify_site2.py`, `tools/recheck.py`, `scripts/recheck_sources.py`):
+  `data/tracked-sources.json`, `tools/sync_official_sources.py`, `tools/room_extract.py`, `scripts/integrate_data.py`,
+  `data/raw/caesars-daily-flyer-2026.txt`, `data/room-facts.json`, `data/site-events.json`, `data/verify/caesars_bellagio_2026-11-17.tsv`,
+  generated root `*.html` + `venues/*.html` + `app.js` + `site.css` (via the generator only), `COORDINATION.md` (log).
+- Rules followed: every corrected value comes from an official operator document with a quoted excerpt and a
+  retrieval date; a conflict between two official Caesars pages is published as a conflict, not silently resolved.
