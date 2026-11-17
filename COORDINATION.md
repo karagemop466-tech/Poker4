@@ -615,3 +615,20 @@ Policy: every data row must link an official source; values not confirmed from a
 
 
 - 2026-11-17 — **ae1abd73 (X1) done.** Read all 37 official Venetian DSE IV structure sheets; saved `data/ae1abd73/structure_recheck.json` + `README.md`. Confirms the d1d02f59 entry-rule verdict (0 confirmed single-entry). No edits to `data/feature/*` or root pages. Discrepancies: none found in the fields compared. Flagged for the integration session: (a) flight-rule events (13 sheets) keep single-entry unverified; (b) sheet 8 subsequent-buy-in line for events 18 & 58.
+
+---
+
+## Session arena/511d43ab-poker4 (session `511d43ab`) — dated Wynn/Bellagio/Caesars rows + rule extraction
+
+- Session ID: `511d43ab`. Branch: `arena/511d43ab-poker4`. Base: `main` @ `2172b40` (rebased, current).
+- Why this scope: the integrated table holds 118 event rows, and **only the 94 Venetian rows carry dates**. All Wynn rows (18), Bellagio (3) and Caesars (4) are undated placeholders, so the date filter, the 38-day plan and the trip calculator are blind to them. The official Wynn WPT structure PDF (`data/raw/wynn-wpt-terms.txt`, already captured and hashed by the scheduled sync) prints **69 event blocks**, each with an exact entry-fee split, a re-entry/add-on rule and the printed day/time of every flight. That is the single largest block of verified, datable, official event data still missing from the site.
+
+| ID | Task | Status | Owner | File scope | Notes |
+|----|------|--------|-------|------------|-------|
+| A1 | Parse the committed official Wynn captures into dated, rule-complete event rows (entry fee split, re-entry wording + excerpt, add-on wording, start date/time per flight, chips, level length, late-registration point), each field carrying its official URL and retrieval date | in progress | 511d43ab | `tools/room_extract.py` (new), `data/room-facts.json` (new) | Sources: Wynn `WPT_World_Championship_Structures.pdf` and `Poker-All_Daily_Structures.pdf` via the tracked copies in `data/raw/` (SHA-256 pinned; re-read 2026-11-17). Nothing typed from memory: every value comes from the captured text. |
+| A2 | Add Bellagio Fri/Sat/Sun and Caesars/Horseshoe daily rows with verbatim rule excerpts, and flag the official Bellagio Saturday sheet's internal contradiction | in progress | 511d43ab | `data/room-facts.json` | Sources: Bellagio poker page + the three official structure PDFs, Caesars "Poker Tournaments in Las Vegas" page, all read 2026-11-17. |
+| A3 | Merge A1/A2 into the integrated event table without touching the shared renderer's Venetian contract; rebuild; run every committed verifier; PR → main; confirm Pages; record result | in progress | 511d43ab | `scripts/integrate_data.py` (merge hook only), `data/*`, root pages via the canonical builder, this board (log only) | Verification: `scripts/verify_root.py`, `scripts/verify.py`, `scripts/verify_markup.py`, `scripts/linkcheck.py`, plus the Pages build. |
+
+Files NOT touched: `data/feature/*`, `data/ae1abd73/*`, `data/c07371e3/*` (read-only inputs), the preserved session folders (`60fb62da/`, `df41f5c6/`, `c07371e3/`, `pages/`, `planner/`, `prior_root_dashboard/`), and every other session's claim.
+
+- 2026-11-17 — 511d43ab claimed A1–A3. Claim pushed before any file edit.
