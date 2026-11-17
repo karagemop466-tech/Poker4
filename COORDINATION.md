@@ -1378,3 +1378,53 @@ and combined rather than overwritten:
   `verify_root` (16 pages · 253 rows · 108 rate-log lines · 66 tracked sources · 0 warnings), `verify_markup`
   (37 pages · 0 problems), `linkcheck` (30 pages), `verify.py`, `validate_site.py`, `node --check app.js` and
   `node --check site/app.js` are all green on the merged tree, with a clean rebuild afterwards.
+
+---
+
+## arena/8ba759ca-poker4 — V3 final integration (2026-11-17 ~23:10 UTC)
+
+Consolidated every remaining branch head into `arena/8ba759ca-poker4`, union-resolving conflicts
+(no side discarded; `data/8ba759ca/resolve_coord.py` for board conflicts), regenerated the canonical
+pages from the merged inputs, and ran the full gate suite.
+
+**Merged, in order (all pushed):**
+
+- PR #72 head `c5c7cc2b` → clean; PR #73 head `14c124ef` → 1 board conflict, union; PR #69 head
+  `3082d6d9` → 1 board conflict, union; `origin/main` @ `202d061` → 7 conflicts (board union;
+  hotels/index/venue pages regenerated; `integrate_data.py` prose composed keeping both the
+  re-anchored-URL and the measured-walk hard-filter paragraphs).
+- PR #65 head `e281a2cc` (14 conflicts): the #65 verifier rewrite validated the older
+  `data/integrated` page family, so `scripts/verify_root.py` stays on the canonical
+  `site-events` contract (recorded, not discarded); #65's monitor token-backed push config,
+  `tools/recheck.py` stale-badge clearing (composed onto the canonical `site-events` URL path —
+  row `sources` are URLs there) and the fetch-failure warning were adopted; their
+  `data/verify/walking_routes_2026-11-17.tsv` retained; `tools/verify_root_site.py` structural
+  checks accept both page families (`type="search"` + `app.js` or `assets/dashboard.js`).
+- PR #67 head `3e5cd61e` (17 conflicts): their build-time Wynn structure-sheet overlay
+  (`data/wynn-official-2026-11-17.json` + `integrate_data` overlay code + `extract_wynn_sheets.py`
+  + `sync_official_sources.py`) adopted in full — every Wynn row now carries the room's own
+  printed fee split/stack/level/reg-cutoff with per-field PDF quotes; 27 Venetian chips/level
+  gap-fills applied field-by-field (0 conflicts with existing values); the wrong Bellagio street
+  address that sat on the Venetian venue record was cleared with #67's honest note.
+- `origin/main` @ `708c868` (45 commits, PRs #75/#76/#77 + syncs) (30 conflicts): main's
+  corrected ARIA/F5 hotel prose and finalized one-page-family REDIRECTS taken; `recheck.py`
+  exit-code policy (fail only when the run is worthless/unreliable) taken; `monitor.yml`
+  comment/config taken; `sync_official_sources.py` docstring unioned (line-parser + trailing-peel
+  both documented; the merged code contains both parsers, syntax-checked); `poker4.json` = main's
+  version + the Venetian address fix re-applied; a3838778's head was already fully on main
+  (verified `--is-ancestor`), so no separate merge was needed.
+
+**Walking reconciliation (the #71 discrepancy):** PR #71's merged minutes were pace-impossible
+driving times (ARIA 1.4 mi/11 min, Wynn 0.5 mi/4 min). Two independent Google Maps walking
+captures agree with each other and with a3838778's measured `data/walks.json`
+(22:23:55Z): wynn 13, encore 19, bellagio 21, caesars 12, ti 6, harrahs 6, horseshoe 16,
+**aria 31 → over_30, excluded by the hard filter**. `data/walks.json`,
+`data/walk-measurements.json` and `data/integrated/hotels.json` already carried the measured
+values; `data/integrated/walks-google.json` (the file the hotels page prose links) still held the
+short set and was rewritten to the measured capture, with the discrepancy recorded in its
+`meta.previous_state` / `meta.reconciled`.
+
+**Gates on the merged tree (all exit 0):** `scripts/verify_root.py` (16 pages · 253 rows ·
+111 rate-log lines · 66 sources · 0 warnings), `tools/verify_root_site.py`, `scripts/verify.py`,
+`scripts/linkcheck.py` (30 pages), `scripts/verify_markup.py`, `node --check app.js`,
+`tools/verify_poker4.py`, `poker4_monitor --selftest`, plus a walk-reconciliation assertion.
