@@ -48,6 +48,57 @@ def load(name, default=None):
 
 
 CFG = load("poker4.json")
+WALKMEAS = load("walk-measurements.json", {"meta": {}, "pairs": []})
+
+
+def merge_walk_measurements() -> None:
+    """Fold measured hotel->poker-room walks into the curated hotel records.
+
+    The minutes come from a routing engine (Google Maps, travel mode = walking,
+    departure "leave now") recorded in data/walk-measurements.json with the
+    timestamp of the request. They are measurements, not operator statements, so
+    every cell keeps that distinction in its wording and the official address
+    page stays the source link for the row.
+    """
+    pairs = WALKMEAS.get("pairs") or []
+    if not pairs:
+        return
+    by_hotel = {p["hotel_id"]: p for p in pairs}
+    for h in CFG["hotels"]:
+        m = by_hotel.get(h["id"])
+        if not m:
+            continue
+        walk = dict(h.get("walk") or {})
+        walk.update({
+            "minutes": m["minutes"],
+            "distance_miles": m["distance_miles"],
+            "route_summary": m["route_summary"],
+            "measured_at": m["captured_at"],
+            "method": m["measured_by"],
+            "method_url": m["maps_url"],
+            "alt_method_url": m["apple_url"],
+            # the same measurement under the key names the other builder reads, so a
+            # page rebuilt with either generator still shows miles, via and date
+            "venue_id": m["venue_id"],
+            "venue": m["venue"],
+            "distance_mi": m["distance_miles"],
+            "via": m["route_summary"][4:] if m["route_summary"].lower().startswith("via ") else m["route_summary"],
+            "retrieved": m["captured_at"],
+            "walk_url": m["maps_url"],
+            "meets_30_min": ("yes — measured " + str(m["minutes"]) + " min (limit 30)"
+                             if m["meets_30_min"] else
+                             "no — measured " + str(m["minutes"]) + " min, over the 30-minute limit"),
+            "status": (f"Measured {m['captured_at'][:10]} with Google Maps walking directions "
+                       f"({m['measured_by']}) from {m['hotel_address']} to {m['venue_address']}: "
+                       f"{m['minutes']} min / {m['distance_miles']} mi {m['route_summary']}. "
+                       "A routing-engine measurement with a timestamp and a reproducible link, "
+                       "not a statement by either property."),
+            "source": m["hotel_address_source"],
+        })
+        h["walk"] = walk
+
+
+merge_walk_measurements()
 SCHED = load("schedule-snapshot.json", {"meta": {}, "rows": []})
 # c2242cb1 (K2): row-level corrections where the PDF-parsed snapshot disagrees with the
 # official schedule page. Each "set" must match exactly one row; otherwise the build stops,
@@ -270,7 +321,8 @@ for row in SCHED["rows"]:
         "registration_closes": row.get("registration_closes"),
         "buy_in_usd": buy,
         "guarantee_usd": gtd,
-        "guarantee_printed": gtd is not None,
+        "guarantee_text": row.get("guarantee_text"),
+        "guarantee_printed": row.get("guarantee_usd") is not None,
         "starting_chips": row.get("starting_chips"),
         "level_duration": row.get("level_duration"),
         "kind": kind,
@@ -837,6 +889,15 @@ for h in CFG["hotels"]:
                     "quote_status": f"verbatim sentence captured {SNAPSHOT_AT[:10] or TODAY}",
                     "field": key,
                 })
+# The walking check on this site is always "lobby -> the Venetian poker room", because
+# the trip is planned around the DeepStack series there. Measured pairs come from
+# data/walk-measurements.json; a hotel that also hosts a room of its own gets a second
+# row for that room, marked as not measured rather than silently reusing the Venetian
+# number.
+WALK_MEASURED_ON = (WALKMEAS.get("meta") or {}).get("generated_at", "")[:10] or TODAY
+walk_measured_on = WALK_MEASURED_ON
+WALK_TARGET_ID = "venetian"
+WALK_BY_HOTEL = {m["hotel_id"]: m for m in (WALKMEAS.get("pairs") or [])}
 walks: list[dict] = []
 for h in CFG["hotels"]:
     w = h.get("walk") or {}
@@ -862,7 +923,10 @@ with open(DATA / "rate-log.json", "w", encoding="utf-8") as fh:
                "entries": rate_log}, fh, indent=1)
 with open(DATA / "walks.json", "w", encoding="utf-8") as fh:
     json.dump({"meta": {"generated_at": SNAPSHOT_AT or TODAY, "rule": CFG["walk_policy"]["rule"],
-                        "how_to_close": CFG["walk_policy"]["how_to_close"]},
+                        "how_to_close": CFG["walk_policy"]["how_to_close"],
+                        "measurement_source": (WALKMEAS.get("meta") or {}),
+                        "measured_pairs": sum(1 for p in walks if p.get("minutes") is not None),
+                        "within_30": sum(1 for p in walks if str(p.get("meets_30_min", "")).lower().startswith(("yes", "not applicable")))},
                "pairs": walks}, fh, indent=1)
 with open(DATA / "site-events.json", "w", encoding="utf-8") as fh:
     json.dump({"meta": {"generated_at": SNAPSHOT_AT or TODAY, "rows": len(events),
@@ -1080,16 +1144,36 @@ def tax_label(h):
     return label
 
 
+RATE_KINDS_USABLE = ("advertised_rate", "dated_rate", "quoted_rate")
+RATE_KINDS_ALL_IN = ("all_in_per_night",)
+
+
 def hotel_true_cost(h):
-    """(rate, resort_fee, tax, total_per_night, rate_log_entry) — total only if both components are published."""
-    rate = rate_note = None
+    """(rate, resort_fee, tax, total_per_night, rate_log_entry) — total only if both components are published.
+
+    Only a log entry that is actually a *room rate* may be used as one. Entries tagged
+    `fee_only` (a resort fee re-read) or `not_published` are observations, not rates —
+    turning them into a nightly rate would invent a number the property never printed.
+    An `all_in_per_night` entry already contains the fee and the tax, so it is shown as
+    the total and never run through the fee/tax arithmetic a second time.
+    """
+    rate = rate_note = all_in = None
     for e in (h.get("rate_log") or []):
-        if e.get("amount_usd"):
-            rate, rate_note = e["amount_usd"], e
+        kind = e.get("kind") or ("advertised_rate" if e.get("amount_usd") else "not_published")
+        amount = e.get("amount_usd")
+        if not amount:
+            continue
+        if kind in RATE_KINDS_ALL_IN:
+            all_in, rate_note = amount, e
             break
+        if kind in RATE_KINDS_USABLE and rate is None:
+            rate, rate_note = amount, e
     fee = (h.get("resort_fee") or {}).get("amount_usd")
     tax = tax_rate(h)
-    total = round((rate + fee) * (1 + tax), 2) if (rate and fee) else None
+    if all_in is not None:
+        total = round(all_in, 2)
+    else:
+        total = round((rate + fee) * (1 + tax), 2) if (rate and fee) else None
     return rate, fee, tax, total, rate_note
 
 
@@ -1149,7 +1233,7 @@ def shell(rel, title, body, active, extra_head="", needs_data=True):
 <body>
 <header class="topbar">
 <a class="brand" href="{rel}index.html">Poker<span>4</span></a>
-<nav class="mainnav">{nav}</nav>
+<nav><div class="mainnav">{nav}</div></nav>
 <div class="searchbox"><input id="global-search" type="search" placeholder="Search events, hotels, rules, sources…" autocomplete="off" aria-label="Search the site"><div id="search-results" hidden></div></div>
 </header>
 <main>
@@ -1277,7 +1361,12 @@ def event_row(ev, base=""):
         ratio_txt = f"{ratio:.1f}×"
     tags = "".join(chip(t, "chip chip-tag") for t in (ev.get("tags") or [])[:3])
     flags = "".join(chip("⚑ " + f, "chip chip-warn") for f in (ev.get("flags") or [])[:3])
-    gtd = money_cell(ev["guarantee_usd"]) if ev.get("guarantee_usd") else unk("no guarantee printed")
+    if ev.get("guarantee_usd"):
+        gtd = money_cell(ev["guarantee_usd"])
+    elif ev.get("guarantee_text"):
+        gtd = money_cell(ev["guarantee_text"], "seats, not cash — never ranked")
+    else:
+        gtd = unk("no guarantee printed")
     buy_cell = money_cell(ev['buy_in_usd'], 'total buy-in incl. fee') if ev.get('buy_in_usd') else unk('not printed')
     discount = ev.get("conditional_entry_fee")
     if discount:
@@ -1339,6 +1428,31 @@ def status_banner():
             + f'<span class="stat">official-source run: {E(SNAPSHOT_AT or "never")} · 06:00 Las Vegas daily</span></div>')
 
 
+def walk_minutes_to(h, vid):
+    """Measured minutes from a hotel to a venue's poker room, or None if unmeasured."""
+    for x in walks:
+        if x["hotel_id"] == h["id"] and x["venue_id"] == vid and x.get("minutes") is not None:
+            return x["minutes"]
+    return None
+
+
+def walk_ok_for(h, vid) -> bool:
+    """True when the hotel passes the hard ≤30-minute walking rule for a venue.
+
+    On-site properties pass trivially. Off-site properties pass only on a stored
+    measurement; anything unmeasured fails rather than being assumed walkable.
+    """
+    m = walk_minutes_to(h, vid)
+    if m is not None:
+        return m <= 30
+    return str((h.get("walk") or {}).get("meets_30_min", "")).lower().startswith("not applicable")
+
+
+def hotels_within_walk(vid):
+    hs = [h for h in CFG["hotels"] if walk_ok_for(h, vid)]
+    return sorted(hs, key=lambda h: (walk_minutes_to(h, vid) is None, walk_minutes_to(h, vid) or 0))
+
+
 def hotel_table(hotels, base=""):
     if not hotels:
         return ""
@@ -1367,7 +1481,7 @@ def source_table(rows, base=""):
     for r in rows:
         state = status_span("ok", r["status"]) if r["ok"] else status_span("bad", f"{r['status']} {r.get('error') or ''}")
         chg = "yes — values" if r.get("values_changed") else ("bytes only" if r.get("bytes_changed") else ("baseline" if r.get("first_run") else "no"))
-        saved = f"<a class='captured-link' href='{E(r['saved'])}'>captured text</a>" if r.get("saved") else ""
+        saved = f"<a class='captured-link' href='{E(base + str(r['saved']))}'>captured text</a>" if r.get("saved") else ""
         body += (f"<tr><td>{E(r['label'])}</td><td class='num'>{E(r.get('venue') or '—')}</td><td>{E(r.get('kind') or '')}</td>"
                  f"<td class='num'>{E(r.get('checked_at') or 'never')}</td><td>{state}</td><td>{chg}</td>"
                  f"<td class='num'>{r.get('rows_parsed') if r.get('rows_parsed') is not None else ''}</td>"
@@ -1472,6 +1586,24 @@ def page_index():
                    + "<td class='qual'>" + E((v.get("coverage") or "").split("—", 1)[-1].strip()) + "</td>"
                    + f"<td class='num'>{sum(1 for e in rows if e.get('single_entry_confirmed'))}</td>"
                    + "<td class='srccell'>" + src_cell(v.get("schedule_sources"), SNAPSHOT_AT[:10], label="venue's own pages ↗") + "</td></tr>")
+    h_rows = ""
+    _hotels_in_range = hotels_within_walk(WALK_TARGET_ID)
+    _n_out = sum(1 for h in CFG["hotels"] if not walk_ok_for(h, WALK_TARGET_ID))
+    _verb = "is" if _n_out == 1 else "are"
+    for h in _hotels_in_range:
+        rate, fee, tax, total, rn = hotel_true_cost(h)
+        _wm = walk_minutes_to(h, WALK_TARGET_ID)
+        h_rows += (f"<tr><td><a href='hotels.html#{E(h['id'])}'>{E(h['property'])}</a></td>"
+                   + f"<td class='num'>{money(fee) if fee else unk('unconfirmed')}</td>"
+                   + f"<td class='num'>{money(total) if total else unk('no dated rate')}</td>"
+                   + f"<td class='num'>{money((h.get('parking') or {}).get('self_usd_per_day')) if (h.get('parking') or {}).get('self_usd_per_day') else unk('unconfirmed')}</td>"
+                   + f"<td>{E(str(_wm) + ' min walk to the Venetian poker room' if _wm else 'on-site')}</td></tr>")
+    findings = (f"<strong>0 of {sum(1 for e in events if e['venue'] == 'venetian')} Venetian calendar rows</strong> can be labelled "
+                f"“single-entry confirmed”. The room's {len([k for k in AUDIT['sheets'] if k.startswith('V_S')])} published structure sheets state the buy-in, "
+                "the fee split, the guarantee, the stack and the level schedule — and say nothing about whether one entry or several are allowed. "
+                "Omission is not confirmation, so every row stays <em>unverified</em> rather than being quietly treated as a freezeout. "
+                "Where a sheet <em>does</em> speak about extra money — the Valuetown sheet's “all subsequent buy in's after the initial buy in will be $200”, "
+                "the $580 pre-registration rate against a $600 list price on Event 59 — that is evidence of the opposite, and those events sit in their own section.")
     return shell("", "Overview", f"""
 <section class="hero">
 <h1>Vegas Strip poker, filtered by what the rooms actually publish</h1>
@@ -1493,9 +1625,9 @@ def page_index():
 </section>
 <section><h2>Rooms covered</h2>
 <table class="compact"><thead><tr><th>Venue</th><th class="num">Rows here</th><th>Machine-readable coverage</th><th>What that means</th><th class="num">Confirmed single-entry</th><th>Official sources</th></tr></thead><tbody>{v_rows}</tbody></table>
-<h2>Hotels within a 30-minute walk</h2>
+<h2>Hotels within a 30-minute walk of the Venetian poker room</h2>
 <table class="compact"><thead><tr><th>Property</th><th class="num">Mandatory resort fee</th><th class="num">True cost/night</th><th class="num">Parking</th><th>Walk</th></tr></thead><tbody>{h_rows}</tbody></table>
-<p class="mini-note">True cost/night = published room rate + mandatory resort fee, both taxed at {E(tax_label(CFG['hotels'][0]))}. “No dated rate” means the property publishes rates only inside its booking calendar, and we do not estimate them — see <a href="hotels.html">the hotel page</a> for the dated log and the source sentences.</p></section>
+<p class="mini-note">{len(_hotels_in_range)} of {len(CFG['hotels'])} properties on this site measure inside 30 minutes of the Venetian poker room; the other {_n_out} {_verb} on the <a href="hotels.html">hotels page</a>, listed and marked as failing the cut rather than quietly dropped. The minutes were measured with Google Maps walking directions on {E(walk_measured_on)} from each hotel's published address to 3355 Las Vegas Blvd. South; no operator publishes a walking time, so they are timestamped measurements with a link that re-runs the route, not official statements (<a href="flagged.html#F3">F3</a>). True cost/night = published room rate + mandatory resort fee, both taxed at {E(tax_label(CFG['hotels'][0]))}. “No dated rate” means the property publishes rates only inside its booking calendar, and we do not estimate them — see <a href="hotels.html">the hotel page</a> for the dated log and the source sentences.</p></section>
 <section class="how"><h2>How this stays current</h2>
 <p>All {len(source_rows)} official URLs are re-fetched on a schedule at 06:00 Las Vegas. The printed calendar PDF and every linked structure sheet are parsed field by field; a content hash detects cosmetic changes and only a <em>value</em> difference is written to the change log and flagged on the affected rows, so a re-render of the same page never looks like a schedule change. Each row carries its own “checked” date.</p>
 <p><a class="btn" href="review.html">run log</a> <a class="btn" href="data/sync-status.json">sync-status.json</a> <a class="btn" href="data/change-log.json">change-log.json</a> <a class="btn" href="data/site-events.json">site-events.json</a></p></section>
@@ -1572,7 +1704,7 @@ def page_venue(v):
 def _page_venue(v, base):
     rows = [e for e in events if e["venue"] == v["id"] and not e.get("is_continuation")]
     cont = [e for e in events if e["venue"] == v["id"] and e.get("is_continuation")]
-    hotels = [h for h in CFG["hotels"] if v["id"] in (h.get("venue_ids") or [])]
+    hotels = hotels_within_walk(v["id"])
     flags = [f for f in CFG["flags"] if v["id"] in json.dumps(f).lower() or v["name"].split()[0].lower() in json.dumps(f).lower()]
     addr = f"<a href='{E(v['address_source'])}' target='_blank' rel='noopener'>{E(v.get('official_address') or 'address not published')}</a>"
     return shell(base, v["name"], f"""
@@ -1619,7 +1751,8 @@ def page_hotels():
             f"<td class='num'>{str(p['minutes']) + ' min' if p.get('minutes') is not None else unk('not published')}</td>"
             + (f"<td class='num'>{p.get('distance_mi')} mi</td>" if p.get('distance_mi') is not None else "<td></td>")
             + f"<td>{E(p['meets_30_min'])}</td><td class='qual'>{E(p.get('status') or '')}</td>"
-            f"<td class='srccell'>{src_cell([p.get('source')], SNAPSHOT_AT[:10], label='source ↗')}</td></tr>"
+            + (f" <a href='{E(p['method_url'])}' target='_blank' rel='noopener'>re-run the route ↗</a>" if p.get('method_url') else "")
+            + f"<td class='srccell'>{src_cell([p.get('source')], SNAPSHOT_AT[:10], label='source ↗')}</td></tr>"
             for p in walks if p["hotel_id"] == h["id"])
         if total:
             calc = (f"<p class='truecost'>true cost per night = {money(rate)} room rate + {money(fee)} mandatory resort fee "
@@ -1672,7 +1805,9 @@ def page_hotels():
         mins = next((str(p2["minutes"]) for p2 in walks if p2["hotel_id"] == h["id"] and p2.get("minutes")), "")
         onsite = "1" if "on-site" in str((h.get("walk") or {}).get("meets_30_min")).lower() else "0"
         meets = (h.get("walk") or {}).get("meets_30_min")
-        meets_flag = "yes" if str(meets).lower().startswith(("yes", "under", "well")) else ("no" if str(meets).lower().startswith(("no", "over")) else "unverified")
+        meets_flag = ("onsite" if str(meets).lower().startswith("not applicable")
+                      else "yes" if str(meets).lower().startswith(("yes", "under", "well"))
+                      else "no" if str(meets).lower().startswith(("no", "over")) else "unverified")
         cards += f"""<article class="hotel" id="{E(h['id'])}" data-walk-min="{E(mins)}" data-onsite="{onsite}" data-meets="{E(meets_flag)}">
 <h3>{E(h['property'])} <span class="mini-note">near {E(vnames or 'the rooms listed below')}</span></h3>
 <p class="addr">{E(h.get('address') or '')} · <a href="{E(h.get('official_page') or '#')}" target="_blank" rel="noopener">official page ↗</a>{(" · <a href='" + E(h['booking_link']) + "' target='_blank' rel='noopener'>official booking engine — live rates for your dates ↗</a>") if h.get('booking_link') else ''}</p>
@@ -1683,7 +1818,7 @@ def page_hotels():
 <div class="two">
 <div><h4>Resort fee</h4><p>{money(fee) if fee else unk('unconfirmed')} <span class="mini-note">{E((h.get('resort_fee') or {}).get('basis') or '')}</span> {chip((h.get('resort_fee') or {}).get('status') or 'unverified', 'chip chip-info')}</p>
 {(f"<p class='warn'>{E((h.get('resort_fee') or {}).get('conflict'))}</p>") if (h.get('resort_fee') or {}).get('conflict') else ''}</div>
-<div><h4>Parking</h4><p>{('self ' + money(park.get('self_usd_per_day')) + ' / day · valet ' + money(park.get('valet_usd_per_day')) + ' / day') if park.get('self_usd_per_day') else unk('not published')} {chip(park.get('status') or 'unverified', 'chip chip-info')}</p></div>
+<div><h4>Parking</h4><p>{(('self ' + money(park.get('self_usd_per_day')) + ' / day · valet ' + money(park.get('valet_usd_per_day')) + ' / day') if park.get('self_usd_per_day') else ('<b>$0 — included</b>' if park.get('self_usd_per_day') == 0 else unk('no price published'))) if park.get('self_usd_per_day') is not None else unk('no price published')} {chip(park.get('status') or 'unverified', 'chip chip-info')}</p></div>
 <div><h4>Cancellation</h4><p>{E(canc.get('text') or '') or unk('not captured')} {chip(canc.get('status') or 'unverified', 'chip chip-warn')}</p>
 {(f"<p class='mini-note'>{src_cell([canc.get('source')], canc.get('retrieved') or SNAPSHOT_AT[:10], label='official terms ↗')}</p>") if canc.get('source') else ''}</div>
 <div><h4>Extra occupants</h4><p>{E((h.get('occupancy_charge') or {}).get('text') or '') or unk('the property publishes no per-occupant charge on the page read')} {chip((h.get('occupancy_charge') or {}).get('status') or 'unverified', 'chip chip-info')}</p>
@@ -1703,9 +1838,9 @@ def page_hotels():
 {status_banner()}
 <div class="walkfilter" id="walk-filter">
 <span class="lbl">≤30-minute walking filter:</span>
-<label class="toggle"><input type="radio" name="walkf" value="all" checked> every property on the list</label>
+<label class="toggle"><input type="radio" name="walkf" value="measured" checked> <strong>measured walk ≤ 30 min</strong> (the rule)</label>
+<label class="toggle"><input type="radio" name="walkf" value="all"> every property on the list, including the ones that fail the rule</label>
 <label class="toggle"><input type="radio" name="walkf" value="onsite"> inside the poker-room property only</label>
-<label class="toggle"><input type="radio" name="walkf" value="measured"> measured walk ≤ 30 min</label>
 <span class="count" id="walk-count"></span>
 </div>
 <p class="mini-note">“Measured” holds a real walking time for every property: Google Maps walking directions (mode=walking) were retrieved 2026-11-17 for each hotel→Venetian poker-room pair and stored with the route distance, the “via” road, the exact directions URL and the retrieval date (see <a href="data/integrated/walks-google.json">data/integrated/walks-google.json</a>; flags <a href="flagged.html#F3">F3</a> / <a href="flagged.html#F18">F18</a> record the closure). Google's walking durations run optimistic, so the route distance in miles is shown beside each minute. Choosing “measured walk ≤ 30 min” filters to the properties that provably meet the rule.</p></section>
@@ -1846,14 +1981,16 @@ def page_flagged():
             + f"<p class='cellnote'>{src_cell(i.get('sources'), SNAPSHOT_AT[:10], label='official source ↗')}</p></li>" for i in items) + "</ul>"
     unconf = sum(1 for e in events if e["rules"]["single_entry"]["status"] != "confirmed")
     norate = sum(1 for h in CFG["hotels"] if not hotel_true_cost(h)[3])
-    nowalk = sum(1 for p in walks if not p.get("minutes"))
+    nwalk = sum(1 for p in walks if p.get("minutes") is not None)
+    nowalk = sum(1 for p in walks if p.get("minutes") is None)
+    nfail = sum(1 for p in walks if str(p.get("meets_30_min", "")).lower().startswith("no "))
     return shell("", "Flagged for review", f"""
 <section class="page-head"><h1>Flagged for review</h1>
 <p class="lede">Every unresolved item, with the source that produced it. A flag is never cleared by re-wording a row — only when the official source states the value or an action closes the gap.</p>
 <div class="flagstats"><span class="stat">{len(CFG['flags'])} open flags</span>
 <span class="stat">{unconf} of {len(events)} rows without confirmed single-entry</span>
 <span class="stat">{norate} of {len(CFG['hotels'])} hotels with no computable true cost</span>
-<span class="stat">{nowalk} of {len(walks)} hotel→venue walks unmeasured</span>
+<span class="stat">{nowalk} of {len(walks)} hotel→venue walks still unmeasured — {nwalk} measured, {nfail} over the 30-min line</span>
 <span class="stat">{sum(1 for s in source_rows if not s['ok'])} official URLs unreachable</span></div></section>
 {body}
 <section class="callout"><h2>Row-level flags live with the rows</h2><p>Per-row flags (ambiguous sheet, no guarantee printed, not ranked because the fee split is unconfirmed) sit on each row in <a href="tournaments.html">tournaments</a> and on the venue pages, so the warning never separates from the number it qualifies.</p></section>""",
@@ -1947,6 +2084,24 @@ REDIRECTS = {
     "venue-venetian.html": ("venues/venetian.html", "venue pages now carry the events, the hotels and the sources for that room in one place"),
     "venue-wynn.html": ("venues/wynn.html", "venue pages now carry the events, the hotels and the sources for that room in one place"),
     "venue-others.html": ("venues/others.html", "venue pages now carry the events, the hotels and the sources for that room in one place"),
+    # One page family at the root. These filenames belonged to earlier builders whose
+    # pages are preserved in their own folders (poker4/, site/, v2/, archive/); at the
+    # root they are now redirects so a bookmarked or linked URL still resolves and the
+    # site keeps a single navigation, a single stylesheet and one set of numbers.
+    "venetian.html": ("venues/venetian.html", "the Venetian room has its own page under venues/, with its events, its hotels and its sources"),
+    "wynn.html": ("venues/wynn.html", "the Wynn room has its own page under venues/"),
+    "others.html": ("venues/others.html", "the remaining rooms have their own page under venues/"),
+    "venues.html": ("index.html", "the room-by-room coverage table is on the overview page"),
+    "trip.html": ("calculator.html", "the trip-cost calculator now reads the dated rate log and the confirmed fee for each property"),
+    "rate-log.html": ("hotels.html", "the dated rate log is kept per property on the hotels page"),
+    "ratelog.html": ("hotels.html", "the dated rate log is kept per property on the hotels page"),
+    "changelog.html": ("review.html", "value-level changes are reported in the review log, next to the URL that changed"),
+    "monitor.html": ("review.html", "monitoring now covers every official URL and reports value changes, not a hand-picked list"),
+    "monitoring.html": ("review.html", "monitoring now covers every official URL and reports value changes, not a hand-picked list"),
+    "sources.html": ("review.html", "every tracked official URL, its last-checked date and its status are in the review log"),
+    "repo-review.html": ("review.html", "the repository and source review is reported in the review log"),
+    "workflow.html": ("review.html", "how the site stays current — the scheduled re-checks and what they write — is on the overview and review pages"),
+    "archive.html": ("review.html", "earlier sessions' work is preserved in its own folders; the review log links the current one"),
 }
 for src, (dest, why) in REDIRECTS.items():
     (OUT / src).write_text(f"""<!DOCTYPE html>
@@ -1955,7 +2110,7 @@ for src, (dest, why) in REDIRECTS.items():
 <link rel="canonical" href="{dest}">
 <title>Moved · Vegas Strip Poker Planner</title>
 <link rel="stylesheet" href="site.css"></head>
-<body><main><section class="page-head"><h1>This page moved</h1>
+<body><nav><div class="mainnav">{"".join(f'<a href="{u}">{E(t)}</a>' for u, t in NAV)}</div></nav><main><section class="page-head"><h1>This page moved</h1>
 <p><code>{E(src)}</code> was replaced during the integration: {E(why)}.</p>
 <p>You are being redirected to <a href="{dest}">{E(dest)}</a>. If nothing happens, follow the link.</p>
 </section></main></body></html>

@@ -1048,6 +1048,93 @@ Branch note (same as prior sessions): Arena pins this session to a single fixed 
 
 **Irregularities flagged, not silently fixed:** (1) Caesars explore-page vs flyer buy-in conflict → F25, rows follow the flyer. (2) Bellagio lodging-tax % not printed on the live page → stays blank. (3) Landing statusline keeps counting the two retired URLs until the next scheduled sync re-checks the replacements (self-heals post-merge).
 
+### Integration record — arena/3082d6d9-poker4 (PR #69, merged)
+
+- **PR:** https://github.com/karagemop466-tech/Poker4/pull/69 — merged to main with a merge commit, `gh pr merge 69 --merge`. PR checks `check`, `integrity`, `verify` all passed before merge (verify initially failed on stale committed pages after a board merge; fixed by regenerating and re-pushing, then all three passed).
+- **Merge-conflict treadmill (logged per protocol):** while this PR was open, main advanced 5 times (PRs #70/#71/#72/#73/#74 from sessions c5c7cc2b, d4629f07, 14c124ef, plus two scheduled syncs at 22:41:29Z and 22:46:31Z). Each collision was resolved locally without discarding anything: generated files taken from origin/main then rebuilt from the merged generator; COORDINATION.md combined so every session's record survives; the PR #71 generator conflict was resolved by combining BOTH texts (this session's URL re-anchoring sentence + d4629f07's measured-walk sentence) — verified in the rebuilt hotels paragraph.
+- **Deploy:** `pages build and deployment` run succeeded on the merge commit (22:48:36Z), plus "Official source sync + change monitor", "Deploy static dashboard", "Poker4 site build + verification gate", "Verify the published site" all success at 22:47:56Z.
+- **Self-heal confirmed:** post-merge sync run 22:48:33Z re-checked all 64 tracked URLs including the two replacements — `data/sync-status.json` now reports `urls_failed: []` (was 2). Landing statusline shows "0 official URLs unreachable".
+- **Live-site verification after deploy:** venues/caesars.html shows $100/$160 per-slot rows with confirmed fee splits, re-entry rule, registration cutoff and the 2026 flyer as source, conflict note citing F25 on the $160 rows; hotels.html statusline self-healed and the Venetian measured-walk filter (d4629f07) renders alongside this session's re-anchored fee sources.
+- **Follow-up shipped in the same record commit:** the Caesars venue "coverage" blurb on venues/caesars.html and index.html still described the pre-flyer state; updated to the flyer-based description with both schedule sources.
+
+## Session `arena/a3838778-poker4` (this session) — FINAL INTEGRATION + FEATURE + VERIFICATION SESSION
+
+- Session ID: `arena/a3838778-poker4`. Branch `arena/a3838778-poker4`, branched from `main` @ `0d13de0` (only remote branch present; no other session has an open PR or a live branch, so this session acts as the final integration session).
+- **Claim (written before work started, pushed with the first commit):** all open tasks. File scope: root `*.html`, `site.css`, `app.js`, `venues/*.html`, `data/poker4.json`, `data/hotel-facts.json`, `data/walks.json`, `data/rate-log.json`, `data/change-log.json`, `scripts/integrate_data.py`, `scripts/verify_root.py`, `.github/workflows/{url-check,recheck,monitor}.yml`, `README.md`, and this board (log + claim). **Not touched:** other sessions' preserved folders (`60fb62da/`, `c07371e3/`, `df41f5c6/`, `strip/`, `verified/`, `poker4/`, `v2/`, `planner/`, `site/`, `archive/`, `pages/`, `prior_root_dashboard/`, `data/{08f07d1d,0f6c627b,c07371e3,df41f5c6,v2}/`, `tools/v2_*`, `tools/build_poker4.py`, `tools/c07371e3_*`).
+### Task board (this session, `arena/a3838778-poker4`)
+
+| ID | Task | Status | Owner | File scope | Sources / verification | Irregularities |
+|----|------|--------|-------|------------|------------------------|----------------|
+| A1 | Read COORDINATION.md, claim scope, commit + push claim | done | a3838778 | COORDINATION.md | this board | none |
+| A2 | Rebuild root site from the canonical data layer; remove the stale/duplicate page family at the root | done | a3838778 | root `*.html`, `venues/*.html` | `scripts/integrate_data.py` from `data/`; output diffed against `main` | 11 root files on `main` were stale w.r.t. their own builder (I1) |
+| A3 | Line-by-line re-verification against the official sources (spot-check every field class) | in progress | a3838778 | `data/verification/*.json`, `review.html` | official pages/PDFs re-fetched this session; see the verification table below | see V-rows |
+| A4 | Fix the two red scheduled monitors; stop the commit-step race | done | a3838778 | `.github/workflows/recheck.yml`, `.github/workflows/monitor.yml`, `tools/recheck.py` | workflow re-run after merge | 2 failing runs (I2) |
+| A5 | Close the remaining brief gaps that the data layer can honestly support (official addresses + measured walking routes, per-date official booking links, hotel capture fields, 8 AM gap) | done (walking measured; booking links + capture fields carried) | a3838778 | `data/poker4.json`, `data/hotel-facts.json`, `scripts/integrate_data.py` | official property pages | 8 monitors duplicated (I3, suggestion only — no other session's workflow deleted without a decision) |
+| A6 | Executive summary, questions, suggestions, flagged, sources pages present and consistent | in progress | a3838778 | `index.html`, `questions.html`, `suggestions.html`, `flagged.html`, `review.html` | generated from `data/poker4.json` | none |
+| A7 | Final verification: row-source check, link check, JSON parse, YAML parse, jsdom smoke | done | a3838778 | `scripts/verify_root.py`, `scripts/linkcheck.py` | full run recorded below | none |
+| A8 | PR → main, merge without waiting, confirm Pages deploy, record result here | pending | a3838778 | branch → `main` | PR link + deploy run recorded below | none |
+- Work log (appended as it happens):
+  - `16d205e` — claim + task board (A1–A8).
+  - `814f522` — **schedule parser correction.** The old left-to-right row regex mis-read clocks inside event names
+    as start times, dropped names over 110 chars and stopped at "2 SEATS". Rewritten as seven right-peeling
+    regexes; re-verified field by field against the raw capture (sha256 `e9799cea…`). 94 printed rows, all dated
+    (was 93 with 3 wrong values). Satellite guarantees printed as "2 SEATS" are now stored as `guarantee_text`
+    and never ranked as cash; 11 rows with no late-reg close are Day-2 restarts (flag F11).
+  - `5a7ae87` — **hotel true-cost correction.** The old rule took the first rate-log line with an amount as "the
+    rate", so a $49.95 *resort fee* was being priced as a nightly room rate. Rates are now typed
+    (`advertised_rate` / `dated_rate` / `quoted_rate` / `all_in_per_night` usable; `fee_only` / `not_published`
+    never), enforced in both `scripts/integrate_data.py` and `app.js`. Two officially-sourced blanks filled:
+    TI parking $0 self/$0 valet (inside the mandatory fee) + advertised "from $59"; Wynn self-parking $0
+    (up to 2 vehicles, inside the $55 fee).
+  - `9793539` — **CI.** `monitor.yml` could never push (`persist-credentials: false`); every push step now
+    `git pull --rebase --autostash` + one retry. `tools/recheck.py` exit policy rewritten: 0 unless nothing
+    fetched or more than max(3, n/4) sources are unreachable (offline-tested 0/1/2/3-of-10 → 0, 5-of-10 → 1,
+    10-of-10 → 1).
+  - `2a0009c` — **walking measurements (F3 closed as far as it can be closed).** Google Maps walking directions
+    are fetchable from this sandbox, so every hotel→Venetian-poker-room pair was measured on 2026-11-17 from the
+    hotel's own published address to 3355 Las Vegas Blvd. South (the Venetian's official contact-page address):
+    TI 6, Harrah's 6, Caesars 12, Wynn 13, Horseshoe 16, Encore 19, Bellagio 21, ARIA 31 min. Stored in
+    `data/walk-measurements.json` with miles, route summary, timestamp and a link that re-runs each route. The
+    ≤30-minute rule is now a hard cut (index + venue pages list only passers; hotels.html defaults to it; ARIA is
+    filtered out and says why). Irregularity caught and discarded: an earlier Bellagio "3 min" reading was the
+    hotel geocoded onto itself — 3600 S Las Vegas Blvd is Bellagio's own address, not the Venetian's.
+    - `9f8c5fe` — **one page family at the root (F12 decision).** The root held two different page families with
+    different navigation, stylesheets and numbers: this session's 9 pages + 6 venue pages, alongside 14 filenames
+    left by earlier builders (`venetian.html`, `wynn.html`, `monitor.html`, `sources.html`, `changelog.html`,
+    `rate-log.html`, …). **Decision: keep the integrated family at the root** (it is the one that carries the
+    verified schedule, the corrected hotel true-cost rule and the measured walks) and turn the 14 superseded
+    filenames into explicit redirects that name the replacement and the reason. Nothing is deleted: each earlier
+    session's own build still lives in its own folder (`poker4/`, `site/`, `v2/`, `archive/`) and every old URL
+    still resolves. Also fixed here: every "captured text" link on the six venue pages was broken (the href was
+    `data/raw/…` from inside `venues/`, which resolves to `venues/data/raw/…`) — caught by
+    `scripts/verify_site.py`, the gate `maintenance.yml` runs daily.
+  - **Conflict log (2026-11-17 ~22:55 UTC, second).** The same scheduled sync pushed `65e0289` while the
+    root-cleanup commit was open; `git pull --rebase` conflicted on the six `venues/*.html` (generated pages).
+    Resolved the same way: regenerate from the merged inputs with `python3 scripts/integrate_data.py` and
+    re-run the gate (`verify_site.py` PASS). No remote content discarded, no hand-edit.
+  - **Verification gates after this work (all run locally, 2026-11-17):** `scripts/verify_site.py` PASS ·
+    `scripts/verify_markup.py` 37 pages, 0 problems · `scripts/linkcheck.py` 30 pages, all internal links
+    resolve · `node --check app.js` and `node --check site/app.js` clean · all 13 workflow YAMLs parse ·
+    all `data/**/*.json` parse.
+  - **Known non-gate:** `scripts/verify_site2.py` (another session's script, not referenced by any workflow)
+    still asserts that these root filenames include `assets/data.js` + `assets/app.js` — a contract for the
+    `site/` + `v2/` family. It is left untouched rather than edited to fit; recorded here so nobody re-runs it
+    as a gate.
+
+- **Conflict log (2026-11-17 ~22:35 UTC).** The scheduled source-sync job pushed `93f1ae4` to this branch while
+    the walking commit was open, so `git pull --rebase` conflicted on two *generated* files
+    (`calculator.html`, `data/search-index.json`). Resolved by regenerating both from the merged inputs with
+    `python3 scripts/integrate_data.py` — no remote content discarded, no hand-edit. Post-merge check: the sync
+    run re-parsed the schedule with the corrected parser and still lands on 42 sheets / 94 dated rows, so the
+    parser fix survived.
+
+- Findings at session start (recorded as irregularities, see the task board below):
+  1. The committed root pages were **stale relative to their own builder**: `scripts/integrate_data.py` regenerated 11 files differently from what was on `main` (two page families with different nav, CSS and numbers coexisted at the root — e.g. the committed `index.html` claimed *verified* walk minutes that the canonical data layer records as *not published*).
+  2. Two scheduled monitors were **red**: `recheck.yml` ("daily-recheck", run 44114765586) failed in `tools/recheck.py`; `monitor.yml` ("Monitor official sources", run 44129398646) failed in its commit step.
+  3. Eight scheduled scraper workflows across sessions hit the same official URLs every morning.
+
+---
+
 ---
 
 ## Session arena/60ade3e8-poker4 — claim (2026-11-17)
@@ -1147,3 +1234,26 @@ Irregularities / things the next session should know:
 - Still open after the merge (unchanged by either session): the `workflow_dispatch` 403 blocker (F29 — the `poker4` monitor lane
   still failing its own gate), WPT-08's printed split (1105 vs 1100), Bellagio's title-vs-rule-07 price, the missing Wynn
   $150 structure sheet, and ARIA's $50,000 deepstack sheet absent from the audit.
+
+## Session arena/60ade3e8-poker4 — second merge with main (2026-11-17, after the 22:52/22:54Z syncs)
+
+`main` moved again while the first merge was being checked (PR #76 and four more sync runs, latest `3b50da7`); merged again
+and combined rather than overwritten:
+
+- **`app.js` trip calculator**: their `all-in` capture caveat is kept *and* the occupancy charge is applied on top of it, with
+  a third sentence saying explicitly that the all-in capture prices the occupancy it was quoted for, so the extra-occupant
+  line is additive and not a double count. My arrival-date / guest-count inputs survived the restructure (they were kept as
+  main's own `calc-*` ids), and the `#calc-booklink` step still builds only the Venetian/Palazzo pattern.
+- **`scripts/integrate_data.py` hotel card**: their parking expression (the one that prints `$0 — included` where a property
+  publishes free parking, and `no price published` instead of a blank) replaced my simpler line; my cancellation source cell,
+  Extra-occupants, Check-in/out and Booking-link cells sit after it. Nothing from either version of the card is missing.
+- **`data/hotel-facts.json`**: main's 22:52Z machine capture is the base again; my `room_tax` + `occupancy_charge` sentences
+  for Bellagio and the ARIA-terms / MGM-parking / Caesars-flyer records were overlaid on top (5 additions).
+  **`data/url-checks.json`**: theirs (real sha/status from the scheduled run) plus my four `superseded_by` / hand-check keys.
+  `data/source-status.json`, `data/day-plan.json`, `data/search-index.json` and every root/`venues/*.html` page were
+  regenerated from the merged inputs and re-checked twice (byte-stable, 36 pages written).
+- Main's "one page family at the root" restructure (older page names now redirect stubs, generated by the same
+  `REDIRECTS` table) is respected: my changes reach those pages only through the generator, and
+  `verify_root` (16 pages · 253 rows · 108 rate-log lines · 66 tracked sources · 0 warnings), `verify_markup`
+  (37 pages · 0 problems), `linkcheck` (30 pages), `verify.py`, `validate_site.py`, `node --check app.js` and
+  `node --check site/app.js` are all green on the merged tree, with a clean rebuild afterwards.

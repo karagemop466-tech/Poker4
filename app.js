@@ -188,21 +188,23 @@
     var cards = $$(".hotel"), wc = $("#walk-count");
     function applyWalk() {
       var mode = (wf.querySelector("input[name=walkf]:checked") || {}).value || "all";
-      var shown = 0, provable = 0;
+      var shown = 0, provable = 0, failed = 0;
       cards.forEach(function (el) {
         var ok = true;
-        if (mode === "onsite") ok = el.getAttribute("data-onsite") === "1";
-        else if (mode === "measured") {
-          var m = parseInt(el.getAttribute("data-walk-min"), 10);
-          ok = !isNaN(m) && m <= 30;
-        }
+        var m = parseInt(el.getAttribute("data-walk-min"), 10);
+        var onsite = el.getAttribute("data-onsite") === "1";
+        if (mode === "onsite") ok = onsite;
+        else if (mode === "measured") ok = onsite || (!isNaN(m) && m <= 30);
         el.classList.toggle("hidden", !ok);
         if (ok) shown++;
-        if (!isNaN(parseInt(el.getAttribute("data-walk-min"), 10))) provable++;
+        if (!isNaN(m)) provable++;
+        if (!isNaN(m) && m > 30) failed++;
       });
       if (wc) {
         wc.textContent = shown + " of " + cards.length + " properties" +
-          (mode === "measured" && !provable ? " — no property has an official measured walking time yet, so nothing passes this filter" : "");
+          (mode === "measured"
+            ? " — " + provable + " measured with Google Maps walking directions, " + failed + " over the 30-minute line and hidden"
+            : "");
       }
     }
     $$("input[name=walkf]", wf).forEach(function (r) { r.addEventListener("change", applyWalk); });
@@ -239,14 +241,23 @@
     function fillRates(h) {
       var keep = rSel.value;
       rSel.innerHTML = "<option value=''>no official dated rate for this property</option>";
+      // a rate-log line is only offered as a room rate if it IS one: a resort-fee
+      // re-read (kind "fee_only") or a "value not published" line is an observation,
+      // and pricing a stay off it would invent a rate the property never printed.
+      var RATE_KINDS = { advertised_rate: 1, dated_rate: 1, quoted_rate: 1, all_in_per_night: 1 };
       (h.rate_log || []).forEach(function (e, i) {
         if (!e.amount_usd) return;
+        var kind = e.kind || "advertised_rate";
+        if (!RATE_KINDS[kind]) return;
+        var allIn = kind === "all_in_per_night";
         var o = document.createElement("option");
         o.value = String(e.amount_usd);
         o.textContent = e.amount_usd + " USD · " + (e.observed_on || "date not stated") + " · " +
+          (allIn ? "ALL-IN per night (fee + tax already inside) · " : "") +
           String(e.label || e.qualifier || "").slice(0, 58);
         o.setAttribute("data-note", String(e.qualifier || ""));
         o.setAttribute("data-src", e.source || "");
+        if (allIn) o.setAttribute("data-allin", "1");
         rSel.appendChild(o);
       });
       rSel.value = keep && rSel.querySelector("option[value='" + keep + "']") ? keep : "";
@@ -280,22 +291,29 @@
         if (c.checked) { entries += num(c.getAttribute("data-cost")) || 0; count++; }
       });
       $("#t-entries").textContent = count ? money(entries) + " (" + count + " entr" + (count === 1 ? "y" : "ies") + ")" : "no events selected";
-      var night = (rate != null && fee != null) ? Math.round((rate + fee) * (1 + TAX) * 100) / 100 : null;
+      var rOpt = rSel.options[rSel.selectedIndex];
+      var allIn = !!(rOpt && rOpt.getAttribute("data-allin") === "1");
+      var night = allIn && rate != null ? rate
+        : (rate != null && fee != null) ? Math.round((rate + fee) * (1 + TAX) * 100) / 100 : null;
       var notes = [];
       if (night == null) {
         $("#t-night").textContent = "cannot compute";
         if (rate == null) notes.push("the property publishes room rates only inside its booking calendar for specific dates — pick a dated rate or use the booking link");
         if (fee == null) notes.push("the mandatory resort fee is not confirmed for this property (its official fee page is unreachable or contradicts itself)");
       } else {
-        $("#t-night").textContent = money(night) + " (" + money(rate) + " rate + " + money(fee) + " fee, ×1.1338 room tax)";
+        $("#t-night").textContent = allIn
+          ? money(night) + " (all-in per night from the dated booking-engine capture — resort fee and room tax are already inside it)"
+          : money(night) + " (" + money(rate) + " rate + " + money(fee) + " fee, ×1.1338 room tax)";
       }
       var occ = h.occupancy_charge && h.occupancy_charge.amount_usd;
       var occNight = (guests > 2 && occ) ? (guests - 2) * occ * (1 + TAX) : 0;
       var hotelTotal = night == null ? null
         : night * nights * rooms + (park == null ? 0 : park * nights) + occNight * nights * rooms;
+      if (allIn && rate != null) notes.push("this rate is all-in — the resort fee and the 13.38% room tax are already inside the captured figure, so they are not added again");
       if (occNight) notes.push((guests - 2) + " extra occupant(s) at the published $" + occ +
         " each, per night, plus room tax = " + money(Math.round(occNight * 100) / 100) + " a night, x" +
         nights + " night(s) x " + rooms + " room(s) — the property's own terms, not an estimate");
+      if (occNight && allIn) notes.push("the all-in capture prices the occupancy it was quoted for; a third or fourth guest is charged separately under the property's own terms, so that line is additive, not double-counted");
       if (guests > 2 && !occ) notes.push("more than two guests in the room, but this property publishes no per-occupant charge on the page read — nothing was added");
       var bookLink = $("#calc-booklink");
       if (bookLink) {

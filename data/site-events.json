@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generated_at": "2026-11-17T22:48:11Z",
+  "generated_at": "2026-11-17T22:53:45Z",
   "rows": 253,
   "verified_single_entry": 0,
   "rankable": 72,
@@ -20,6 +20,7 @@
    "registration_closes": "3:40 PM",
    "buy_in_usd": 300,
    "guarantee_usd": 75000,
+   "guarantee_text": null,
    "guarantee_printed": true,
    "starting_chips": 30000,
    "level_duration": "40",
@@ -80,7 +81,7 @@
    "gtd_ratio": 250.0,
    "gtd_over_pool_contribution": 312.5,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -98,6 +99,7 @@
    "registration_closes": "8:40 PM",
    "buy_in_usd": 300,
    "guarantee_usd": 75000,
+   "guarantee_text": null,
    "guarantee_printed": true,
    "starting_chips": 30000,
    "level_duration": "30",
@@ -158,7 +160,7 @@
    "gtd_ratio": 250.0,
    "gtd_over_pool_contribution": 312.5,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -176,6 +178,7 @@
    "registration_closes": "3:40 PM",
    "buy_in_usd": 300,
    "guarantee_usd": 75000,
+   "guarantee_text": null,
    "guarantee_printed": true,
    "starting_chips": 30000,
    "level_duration": "40",
@@ -236,7 +239,7 @@
    "gtd_ratio": 250.0,
    "gtd_over_pool_contribution": 312.5,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -254,6 +257,7 @@
    "registration_closes": "8:40 PM",
    "buy_in_usd": 300,
    "guarantee_usd": 75000,
+   "guarantee_text": null,
    "guarantee_printed": true,
    "starting_chips": 30000,
    "level_duration": "30",
@@ -314,7 +318,7 @@
    "gtd_ratio": 250.0,
    "gtd_over_pool_contribution": 312.5,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -332,6 +336,7 @@
    "registration_closes": "4:55 PM",
    "buy_in_usd": 300,
    "guarantee_usd": 10000,
+   "guarantee_text": null,
    "guarantee_printed": true,
    "starting_chips": 40000,
    "level_duration": "30",
@@ -392,7 +397,7 @@
    "gtd_ratio": 33.33,
    "gtd_over_pool_contribution": 41.32,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -410,6 +415,7 @@
    "registration_closes": null,
    "buy_in_usd": 300,
    "guarantee_usd": null,
+   "guarantee_text": null,
    "guarantee_printed": false,
    "starting_chips": null,
    "level_duration": "40",
@@ -469,7 +475,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -487,6 +493,7 @@
    "registration_closes": "12:25 PM",
    "buy_in_usd": 200,
    "guarantee_usd": null,
+   "guarantee_text": null,
    "guarantee_printed": false,
    "starting_chips": 30000,
    "level_duration": "20/15",
@@ -545,7 +552,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified",
     "not ranked \u2014 entry fee or guarantee unconfirmed"
@@ -564,6 +571,7 @@
    "registration_closes": "12:25 PM",
    "buy_in_usd": 200,
    "guarantee_usd": null,
+   "guarantee_text": null,
    "guarantee_printed": false,
    "starting_chips": 30000,
    "level_duration": "20/15",
@@ -622,7 +630,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified",
     "not ranked \u2014 entry fee or guarantee unconfirmed"
@@ -641,6 +649,7 @@
    "registration_closes": "12:25 PM",
    "buy_in_usd": 200,
    "guarantee_usd": null,
+   "guarantee_text": null,
    "guarantee_printed": false,
    "starting_chips": 30000,
    "level_duration": "20/15",
@@ -699,7 +708,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified",
     "not ranked \u2014 entry fee or guarantee unconfirmed"
@@ -718,6 +727,7 @@
    "registration_closes": "3:40 PM",
    "buy_in_usd": 200,
    "guarantee_usd": null,
+   "guarantee_text": null,
    "guarantee_printed": false,
    "starting_chips": 30000,
    "level_duration": "30",
@@ -776,7 +786,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified",
     "not ranked \u2014 entry fee or guarantee unconfirmed"
@@ -795,6 +805,7 @@
    "registration_closes": "5:55 PM",
    "buy_in_usd": 400,
    "guarantee_usd": 75000,
+   "guarantee_text": null,
    "guarantee_printed": true,
    "starting_chips": 40000,
    "level_duration": "40",
@@ -855,7 +866,7 @@
    "gtd_ratio": 187.5,
    "gtd_over_pool_contribution": 227.27,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -873,6 +884,7 @@
    "registration_closes": "9:40 PM",
    "buy_in_usd": 200,
    "guarantee_usd": 8000,
+   "guarantee_text": null,
    "guarantee_printed": true,
    "starting_chips": 25000,
    "level_duration": "30",
@@ -933,7 +945,7 @@
    "gtd_ratio": 40.0,
    "gtd_over_pool_contribution": 50.0,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -951,6 +963,7 @@
    "registration_closes": "5:55 PM",
    "buy_in_usd": 400,
    "guarantee_usd": 75000,
+   "guarantee_text": null,
    "guarantee_printed": true,
    "starting_chips": 40000,
    "level_duration": "40",
@@ -1011,7 +1024,7 @@
    "gtd_ratio": 187.5,
    "gtd_over_pool_contribution": 227.27,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -1029,6 +1042,7 @@
    "registration_closes": "9:40 PM",
    "buy_in_usd": 200,
    "guarantee_usd": 8000,
+   "guarantee_text": null,
    "guarantee_printed": true,
    "starting_chips": 25000,
    "level_duration": "30",
@@ -1089,7 +1103,7 @@
    "gtd_ratio": 40.0,
    "gtd_over_pool_contribution": 50.0,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -1107,6 +1121,7 @@
    "registration_closes": null,
    "buy_in_usd": 400,
    "guarantee_usd": null,
+   "guarantee_text": null,
    "guarantee_printed": false,
    "starting_chips": null,
    "level_duration": null,
@@ -1166,7 +1181,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -1184,6 +1199,7 @@
    "registration_closes": "4:55 PM",
    "buy_in_usd": 400,
    "guarantee_usd": 15000,
+   "guarantee_text": null,
    "guarantee_printed": true,
    "starting_chips": 40000,
    "level_duration": "30",
@@ -1244,7 +1260,7 @@
    "gtd_ratio": 37.5,
    "gtd_over_pool_contribution": 44.78,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -1262,6 +1278,7 @@
    "registration_closes": "9:40 PM",
    "buy_in_usd": 200,
    "guarantee_usd": 8000,
+   "guarantee_text": null,
    "guarantee_printed": true,
    "starting_chips": 25000,
    "level_duration": "30",
@@ -1322,7 +1339,7 @@
    "gtd_ratio": 40.0,
    "gtd_over_pool_contribution": 50.0,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -1340,6 +1357,7 @@
    "registration_closes": "4:55 PM",
    "buy_in_usd": 300,
    "guarantee_usd": 10000,
+   "guarantee_text": null,
    "guarantee_printed": true,
    "starting_chips": 40000,
    "level_duration": "30",
@@ -1400,7 +1418,7 @@
    "gtd_ratio": 33.33,
    "gtd_over_pool_contribution": 41.32,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -1418,6 +1436,7 @@
    "registration_closes": "9:40 PM",
    "buy_in_usd": 200,
    "guarantee_usd": 8000,
+   "guarantee_text": null,
    "guarantee_printed": true,
    "starting_chips": 25000,
    "level_duration": "30",
@@ -1478,7 +1497,7 @@
    "gtd_ratio": 40.0,
    "gtd_over_pool_contribution": 50.0,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -1569,6 +1588,7 @@
    "registration_closes": "4:55 PM",
    "buy_in_usd": 600,
    "guarantee_usd": 30000,
+   "guarantee_text": null,
    "guarantee_printed": true,
    "starting_chips": 40000,
    "level_duration": "30",
@@ -1629,7 +1649,7 @@
    "gtd_ratio": 50.0,
    "gtd_over_pool_contribution": 58.82,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -1862,6 +1882,7 @@
    "registration_closes": "9:40 PM",
    "buy_in_usd": 200,
    "guarantee_usd": 8000,
+   "guarantee_text": null,
    "guarantee_printed": true,
    "starting_chips": 25000,
    "level_duration": "30",
@@ -1922,7 +1943,7 @@
    "gtd_ratio": 40.0,
    "gtd_over_pool_contribution": 50.0,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -2013,6 +2034,7 @@
    "registration_closes": "4:55 PM",
    "buy_in_usd": 600,
    "guarantee_usd": 30000,
+   "guarantee_text": null,
    "guarantee_printed": true,
    "starting_chips": 40000,
    "level_duration": "30",
@@ -2073,7 +2095,7 @@
    "gtd_ratio": 50.0,
    "gtd_over_pool_contribution": 58.82,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -2162,6 +2184,7 @@
    "registration_closes": "4:40 PM",
    "buy_in_usd": 400,
    "guarantee_usd": 15000,
+   "guarantee_text": null,
    "guarantee_printed": true,
    "starting_chips": 30000,
    "level_duration": "30",
@@ -2223,7 +2246,7 @@
    "gtd_ratio": 37.5,
    "gtd_over_pool_contribution": 44.12,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -2314,6 +2337,7 @@
    "registration_closes": "9:40 PM",
    "buy_in_usd": 200,
    "guarantee_usd": 20000,
+   "guarantee_text": null,
    "guarantee_printed": true,
    "starting_chips": 25000,
    "level_duration": "30",
@@ -2377,7 +2401,7 @@
    "gtd_ratio": 100.0,
    "gtd_over_pool_contribution": 125.0,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "spend-advantage format \u2014 excluded from the single-entry list"
    ]
@@ -2468,6 +2492,7 @@
    "registration_closes": "5:55 PM",
    "buy_in_usd": 400,
    "guarantee_usd": 75000,
+   "guarantee_text": null,
    "guarantee_printed": true,
    "starting_chips": 40000,
    "level_duration": "40",
@@ -2528,7 +2553,7 @@
    "gtd_ratio": 187.5,
    "gtd_over_pool_contribution": 227.27,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -2546,6 +2571,7 @@
    "registration_closes": "4:40 PM",
    "buy_in_usd": 300,
    "guarantee_usd": 10000,
+   "guarantee_text": null,
    "guarantee_printed": true,
    "starting_chips": 30000,
    "level_duration": "30",
@@ -2606,7 +2632,7 @@
    "gtd_ratio": 33.33,
    "gtd_over_pool_contribution": 41.32,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -2624,6 +2650,7 @@
    "registration_closes": "9:40 PM",
    "buy_in_usd": 200,
    "guarantee_usd": 8000,
+   "guarantee_text": null,
    "guarantee_printed": true,
    "starting_chips": 25000,
    "level_duration": "30",
@@ -2684,7 +2711,7 @@
    "gtd_ratio": 40.0,
    "gtd_over_pool_contribution": 50.0,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -2848,6 +2875,7 @@
    "registration_closes": "5:55 PM",
    "buy_in_usd": 400,
    "guarantee_usd": 75000,
+   "guarantee_text": null,
    "guarantee_printed": true,
    "starting_chips": 40000,
    "level_duration": "40",
@@ -2908,7 +2936,7 @@
    "gtd_ratio": 187.5,
    "gtd_over_pool_contribution": 227.27,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -3143,6 +3171,7 @@
    "registration_closes": "9:40 PM",
    "buy_in_usd": 200,
    "guarantee_usd": 8000,
+   "guarantee_text": null,
    "guarantee_printed": true,
    "starting_chips": 25000,
    "level_duration": "30",
@@ -3203,7 +3232,7 @@
    "gtd_ratio": 40.0,
    "gtd_over_pool_contribution": 50.0,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -3294,6 +3323,7 @@
    "registration_closes": "5:55 PM",
    "buy_in_usd": 400,
    "guarantee_usd": 75000,
+   "guarantee_text": null,
    "guarantee_printed": true,
    "starting_chips": 40000,
    "level_duration": "40",
@@ -3354,7 +3384,7 @@
    "gtd_ratio": 187.5,
    "gtd_over_pool_contribution": 227.27,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -3588,6 +3618,7 @@
    "registration_closes": "9:40 PM",
    "buy_in_usd": 200,
    "guarantee_usd": 8000,
+   "guarantee_text": null,
    "guarantee_printed": true,
    "starting_chips": 25000,
    "level_duration": "30",
@@ -3648,7 +3679,7 @@
    "gtd_ratio": 40.0,
    "gtd_over_pool_contribution": 50.0,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -3666,6 +3697,7 @@
    "registration_closes": "3:55 PM",
    "buy_in_usd": 600,
    "guarantee_usd": 40000,
+   "guarantee_text": null,
    "guarantee_printed": true,
    "starting_chips": 40000,
    "level_duration": "30",
@@ -3726,7 +3758,7 @@
    "gtd_ratio": 66.67,
    "gtd_over_pool_contribution": 78.43,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -3744,6 +3776,7 @@
    "registration_closes": null,
    "buy_in_usd": 400,
    "guarantee_usd": null,
+   "guarantee_text": null,
    "guarantee_printed": false,
    "starting_chips": null,
    "level_duration": null,
@@ -3803,7 +3836,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -3894,6 +3927,7 @@
    "registration_closes": "9:40 PM",
    "buy_in_usd": 200,
    "guarantee_usd": 8000,
+   "guarantee_text": null,
    "guarantee_printed": true,
    "starting_chips": 25000,
    "level_duration": "30",
@@ -3954,7 +3988,7 @@
    "gtd_ratio": 40.0,
    "gtd_over_pool_contribution": 50.0,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -4118,6 +4152,7 @@
    "registration_closes": "3:40 PM",
    "buy_in_usd": 800,
    "guarantee_usd": 500000,
+   "guarantee_text": null,
    "guarantee_printed": true,
    "starting_chips": 40000,
    "level_duration": "40",
@@ -4178,7 +4213,7 @@
    "gtd_ratio": 625.0,
    "gtd_over_pool_contribution": 724.64,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -4196,6 +4231,7 @@
    "registration_closes": "4:40 PM",
    "buy_in_usd": 600,
    "guarantee_usd": 25000,
+   "guarantee_text": null,
    "guarantee_printed": true,
    "starting_chips": 30000,
    "level_duration": "30",
@@ -4256,7 +4292,7 @@
    "gtd_ratio": 41.67,
    "gtd_over_pool_contribution": 49.02,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -4347,6 +4383,7 @@
    "registration_closes": "8:40 PM",
    "buy_in_usd": 800,
    "guarantee_usd": 500000,
+   "guarantee_text": null,
    "guarantee_printed": true,
    "starting_chips": 40000,
    "level_duration": "30",
@@ -4407,7 +4444,7 @@
    "gtd_ratio": 625.0,
    "gtd_over_pool_contribution": 724.64,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -4569,6 +4606,7 @@
    "registration_closes": "3:40 PM",
    "buy_in_usd": 800,
    "guarantee_usd": 500000,
+   "guarantee_text": null,
    "guarantee_printed": true,
    "starting_chips": 40000,
    "level_duration": "40",
@@ -4629,7 +4667,7 @@
    "gtd_ratio": 625.0,
    "gtd_over_pool_contribution": 724.64,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -4791,6 +4829,7 @@
    "registration_closes": "8:40 PM",
    "buy_in_usd": 800,
    "guarantee_usd": 500000,
+   "guarantee_text": null,
    "guarantee_printed": true,
    "starting_chips": 40000,
    "level_duration": "30",
@@ -4851,7 +4890,7 @@
    "gtd_ratio": 625.0,
    "gtd_over_pool_contribution": 724.64,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -5086,6 +5125,7 @@
    "registration_closes": "3:40 PM",
    "buy_in_usd": 800,
    "guarantee_usd": 500000,
+   "guarantee_text": null,
    "guarantee_printed": true,
    "starting_chips": 40000,
    "level_duration": "40",
@@ -5146,7 +5186,7 @@
    "gtd_ratio": 625.0,
    "gtd_over_pool_contribution": 724.64,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -5164,6 +5204,7 @@
    "registration_closes": "7:25 PM",
    "buy_in_usd": 800,
    "guarantee_usd": 500000,
+   "guarantee_text": null,
    "guarantee_printed": true,
    "starting_chips": 40000,
    "level_duration": "20",
@@ -5224,7 +5265,7 @@
    "gtd_ratio": 625.0,
    "gtd_over_pool_contribution": 724.64,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -5461,6 +5502,7 @@
    "registration_closes": "4:55 PM",
    "buy_in_usd": 600,
    "guarantee_usd": 40000,
+   "guarantee_text": null,
    "guarantee_printed": true,
    "starting_chips": 40000,
    "level_duration": "30",
@@ -5521,7 +5563,7 @@
    "gtd_ratio": 66.67,
    "gtd_over_pool_contribution": 78.43,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -5539,6 +5581,7 @@
    "registration_closes": null,
    "buy_in_usd": 800,
    "guarantee_usd": null,
+   "guarantee_text": null,
    "guarantee_printed": false,
    "starting_chips": null,
    "level_duration": null,
@@ -5598,7 +5641,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -5687,6 +5730,7 @@
    "registration_closes": "9:40 PM",
    "buy_in_usd": 300,
    "guarantee_usd": 15000,
+   "guarantee_text": null,
    "guarantee_printed": true,
    "starting_chips": 25000,
    "level_duration": "30",
@@ -5747,7 +5791,7 @@
    "gtd_ratio": 50.0,
    "gtd_over_pool_contribution": 60.0,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -6126,6 +6170,7 @@
    "registration_closes": "4:55 PM",
    "buy_in_usd": 600,
    "guarantee_usd": 40000,
+   "guarantee_text": null,
    "guarantee_printed": true,
    "starting_chips": 40000,
    "level_duration": "30",
@@ -6186,7 +6231,7 @@
    "gtd_ratio": 66.67,
    "gtd_over_pool_contribution": 78.43,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -6350,6 +6395,7 @@
    "registration_closes": "9:40 PM",
    "buy_in_usd": 300,
    "guarantee_usd": 15000,
+   "guarantee_text": null,
    "guarantee_printed": true,
    "starting_chips": 25000,
    "level_duration": "30",
@@ -6410,7 +6456,7 @@
    "gtd_ratio": 50.0,
    "gtd_over_pool_contribution": 60.0,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -6572,6 +6618,7 @@
    "registration_closes": "3:55 PM",
    "buy_in_usd": 600,
    "guarantee_usd": 40000,
+   "guarantee_text": null,
    "guarantee_printed": true,
    "starting_chips": 40000,
    "level_duration": "30",
@@ -6632,7 +6679,7 @@
    "gtd_ratio": 66.67,
    "gtd_over_pool_contribution": 78.43,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -6794,9 +6841,10 @@
    "registration_closes": "6:25 PM",
    "buy_in_usd": 100,
    "guarantee_usd": null,
+   "guarantee_text": "2 seats",
    "guarantee_printed": false,
-   "starting_chips": null,
-   "level_duration": null,
+   "starting_chips": 20000,
+   "level_duration": "20",
    "kind": "Satellite",
    "tags": [
     "Satellite",
@@ -6854,7 +6902,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified",
     "not ranked \u2014 entry fee or guarantee unconfirmed"
@@ -6873,6 +6921,7 @@
    "registration_closes": "9:40 PM",
    "buy_in_usd": 300,
    "guarantee_usd": 15000,
+   "guarantee_text": null,
    "guarantee_printed": true,
    "starting_chips": 25000,
    "level_duration": "30",
@@ -6933,7 +6982,7 @@
    "gtd_ratio": 50.0,
    "gtd_over_pool_contribution": 60.0,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -7095,6 +7144,7 @@
    "registration_closes": "2:40 PM",
    "buy_in_usd": 600,
    "guarantee_usd": 10000,
+   "guarantee_text": null,
    "guarantee_printed": true,
    "starting_chips": 40000,
    "level_duration": "30",
@@ -7155,7 +7205,7 @@
    "gtd_ratio": 16.67,
    "gtd_over_pool_contribution": 19.61,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -7246,6 +7296,7 @@
    "registration_closes": "4:55 PM",
    "buy_in_usd": 800,
    "guarantee_usd": 75000,
+   "guarantee_text": null,
    "guarantee_printed": true,
    "starting_chips": 40000,
    "level_duration": "30",
@@ -7306,7 +7357,7 @@
    "gtd_ratio": 93.75,
    "gtd_over_pool_contribution": 107.14,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -7612,9 +7663,10 @@
    "registration_closes": "6:25 PM",
    "buy_in_usd": 100,
    "guarantee_usd": null,
+   "guarantee_text": "2 seats",
    "guarantee_printed": false,
-   "starting_chips": null,
-   "level_duration": null,
+   "starting_chips": 20000,
+   "level_duration": "20",
    "kind": "Satellite",
    "tags": [
     "Satellite",
@@ -7672,7 +7724,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified",
     "not ranked \u2014 entry fee or guarantee unconfirmed"
@@ -7691,6 +7743,7 @@
    "registration_closes": "9:40 PM",
    "buy_in_usd": 300,
    "guarantee_usd": 15000,
+   "guarantee_text": null,
    "guarantee_printed": true,
    "starting_chips": 25000,
    "level_duration": "30",
@@ -7751,7 +7804,7 @@
    "gtd_ratio": 50.0,
    "gtd_over_pool_contribution": 60.0,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -7986,6 +8039,7 @@
    "registration_closes": "4:55 PM",
    "buy_in_usd": 800,
    "guarantee_usd": 40000,
+   "guarantee_text": null,
    "guarantee_printed": true,
    "starting_chips": 40000,
    "level_duration": "40",
@@ -8046,7 +8100,7 @@
    "gtd_ratio": 50.0,
    "gtd_over_pool_contribution": 57.97,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -8210,6 +8264,7 @@
    "registration_closes": "4:40 PM",
    "buy_in_usd": 600,
    "guarantee_usd": 25000,
+   "guarantee_text": null,
    "guarantee_printed": true,
    "starting_chips": 30000,
    "level_duration": "30",
@@ -8271,7 +8326,7 @@
    "gtd_ratio": 41.67,
    "gtd_over_pool_contribution": 49.02,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -8289,9 +8344,10 @@
    "registration_closes": "6:25 PM",
    "buy_in_usd": 260,
    "guarantee_usd": null,
+   "guarantee_text": "2 seats",
    "guarantee_printed": false,
-   "starting_chips": null,
-   "level_duration": null,
+   "starting_chips": 20000,
+   "level_duration": "20",
    "kind": "Satellite",
    "tags": [
     "Satellite"
@@ -8348,7 +8404,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified",
     "not ranked \u2014 entry fee or guarantee unconfirmed"
@@ -8367,6 +8423,7 @@
    "registration_closes": "9:40 PM",
    "buy_in_usd": 300,
    "guarantee_usd": 15000,
+   "guarantee_text": null,
    "guarantee_printed": true,
    "starting_chips": 25000,
    "level_duration": "30",
@@ -8427,7 +8484,7 @@
    "gtd_ratio": 50.0,
    "gtd_over_pool_contribution": 60.0,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -8518,6 +8575,7 @@
    "registration_closes": null,
    "buy_in_usd": 800,
    "guarantee_usd": null,
+   "guarantee_text": null,
    "guarantee_printed": false,
    "starting_chips": null,
    "level_duration": null,
@@ -8577,7 +8635,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -8668,6 +8726,7 @@
    "registration_closes": "4:55 PM",
    "buy_in_usd": 600,
    "guarantee_usd": 30000,
+   "guarantee_text": null,
    "guarantee_printed": true,
    "starting_chips": 40000,
    "level_duration": "30",
@@ -8728,7 +8787,7 @@
    "gtd_ratio": 50.0,
    "gtd_over_pool_contribution": 58.82,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -8819,9 +8878,10 @@
    "registration_closes": "6:25 PM",
    "buy_in_usd": 260,
    "guarantee_usd": null,
+   "guarantee_text": "2 seats",
    "guarantee_printed": false,
-   "starting_chips": null,
-   "level_duration": null,
+   "starting_chips": 20000,
+   "level_duration": "20",
    "kind": "Satellite",
    "tags": [
     "Satellite"
@@ -8878,7 +8938,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified",
     "not ranked \u2014 entry fee or guarantee unconfirmed"
@@ -8970,6 +9030,7 @@
    "registration_closes": null,
    "buy_in_usd": 800,
    "guarantee_usd": null,
+   "guarantee_text": null,
    "guarantee_printed": false,
    "starting_chips": null,
    "level_duration": null,
@@ -9029,7 +9090,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -9047,9 +9108,10 @@
    "registration_closes": "9:55 PM",
    "buy_in_usd": 260,
    "guarantee_usd": null,
+   "guarantee_text": "2 seats",
    "guarantee_printed": false,
-   "starting_chips": null,
-   "level_duration": null,
+   "starting_chips": 20000,
+   "level_duration": "15",
    "kind": "Satellite",
    "tags": [
     "Satellite"
@@ -9106,7 +9168,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified",
     "not ranked \u2014 entry fee or guarantee unconfirmed"
@@ -9198,9 +9260,10 @@
    "registration_closes": "4:55 PM",
    "buy_in_usd": 2200,
    "guarantee_usd": 1000000,
+   "guarantee_text": null,
    "guarantee_printed": true,
-   "starting_chips": null,
-   "level_duration": null,
+   "starting_chips": 40000,
+   "level_duration": "40",
    "kind": "Tournament",
    "tags": [
     "Multi-flight"
@@ -9258,7 +9321,7 @@
    "gtd_ratio": 454.55,
    "gtd_over_pool_contribution": 506.33,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -9276,9 +9339,10 @@
    "registration_closes": "1:55 PM",
    "buy_in_usd": 260,
    "guarantee_usd": null,
+   "guarantee_text": "2 seats",
    "guarantee_printed": false,
-   "starting_chips": null,
-   "level_duration": null,
+   "starting_chips": 20000,
+   "level_duration": "15",
    "kind": "Satellite",
    "tags": [
     "Satellite"
@@ -9335,7 +9399,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified",
     "not ranked \u2014 entry fee or guarantee unconfirmed"
@@ -9715,9 +9779,10 @@
    "registration_closes": "11:10 PM",
    "buy_in_usd": 2200,
    "guarantee_usd": 1000000,
+   "guarantee_text": null,
    "guarantee_printed": true,
-   "starting_chips": null,
-   "level_duration": null,
+   "starting_chips": 40000,
+   "level_duration": "30",
    "kind": "Tournament",
    "tags": [
     "Multi-flight"
@@ -9775,7 +9840,7 @@
    "gtd_ratio": 454.55,
    "gtd_over_pool_contribution": 506.33,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -9937,9 +10002,10 @@
    "registration_closes": "10:55 AM",
    "buy_in_usd": 260,
    "guarantee_usd": null,
+   "guarantee_text": "2 seats",
    "guarantee_printed": false,
-   "starting_chips": null,
-   "level_duration": null,
+   "starting_chips": 20000,
+   "level_duration": "15",
    "kind": "Satellite",
    "tags": [
     "Satellite"
@@ -9996,7 +10062,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified",
     "not ranked \u2014 entry fee or guarantee unconfirmed"
@@ -10015,6 +10081,7 @@
    "registration_closes": "4:55 PM",
    "buy_in_usd": 1100,
    "guarantee_usd": 300000,
+   "guarantee_text": null,
    "guarantee_printed": true,
    "starting_chips": 40000,
    "level_duration": "40",
@@ -10076,7 +10143,7 @@
    "gtd_ratio": 272.73,
    "gtd_over_pool_contribution": 312.5,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -10527,6 +10594,7 @@
    "registration_closes": null,
    "buy_in_usd": 2200,
    "guarantee_usd": null,
+   "guarantee_text": null,
    "guarantee_printed": false,
    "starting_chips": null,
    "level_duration": null,
@@ -10586,7 +10654,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -10677,6 +10745,7 @@
    "registration_closes": "9:40 PM",
    "buy_in_usd": 300,
    "guarantee_usd": 15000,
+   "guarantee_text": null,
    "guarantee_printed": true,
    "starting_chips": 25000,
    "level_duration": "30",
@@ -10737,7 +10806,7 @@
    "gtd_ratio": 50.0,
    "gtd_over_pool_contribution": 60.0,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -10826,6 +10895,7 @@
    "registration_closes": "4:55 PM",
    "buy_in_usd": 1100,
    "guarantee_usd": 300000,
+   "guarantee_text": null,
    "guarantee_printed": true,
    "starting_chips": 40000,
    "level_duration": "40",
@@ -10887,7 +10957,7 @@
    "gtd_ratio": 272.73,
    "gtd_over_pool_contribution": 312.5,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -10905,6 +10975,7 @@
    "registration_closes": null,
    "buy_in_usd": 2200,
    "guarantee_usd": null,
+   "guarantee_text": null,
    "guarantee_printed": false,
    "starting_chips": null,
    "level_duration": null,
@@ -10964,7 +11035,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -11559,6 +11630,7 @@
    "registration_closes": "9:40 PM",
    "buy_in_usd": 300,
    "guarantee_usd": 15000,
+   "guarantee_text": null,
    "guarantee_printed": true,
    "starting_chips": 25000,
    "level_duration": "30",
@@ -11619,7 +11691,7 @@
    "gtd_ratio": 50.0,
    "gtd_over_pool_contribution": 60.0,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -11854,6 +11926,7 @@
    "registration_closes": null,
    "buy_in_usd": 1100,
    "guarantee_usd": null,
+   "guarantee_text": null,
    "guarantee_printed": false,
    "starting_chips": null,
    "level_duration": null,
@@ -11914,7 +11987,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -12147,6 +12220,7 @@
    "registration_closes": "4:55 PM",
    "buy_in_usd": 1100,
    "guarantee_usd": 75000,
+   "guarantee_text": null,
    "guarantee_printed": true,
    "starting_chips": 40000,
    "level_duration": "30",
@@ -12207,7 +12281,7 @@
    "gtd_ratio": 68.18,
    "gtd_over_pool_contribution": 77.32,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -12513,6 +12587,7 @@
    "registration_closes": "9:40 PM",
    "buy_in_usd": 300,
    "guarantee_usd": 15000,
+   "guarantee_text": null,
    "guarantee_printed": true,
    "starting_chips": 25000,
    "level_duration": "30",
@@ -12573,7 +12648,7 @@
    "gtd_ratio": 50.0,
    "gtd_over_pool_contribution": 60.0,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -12808,6 +12883,7 @@
    "registration_closes": "4:55 PM",
    "buy_in_usd": 600,
    "guarantee_usd": 50000,
+   "guarantee_text": null,
    "guarantee_printed": true,
    "starting_chips": 40000,
    "level_duration": "30",
@@ -12868,7 +12944,7 @@
    "gtd_ratio": 83.33,
    "gtd_over_pool_contribution": 98.04,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -13170,6 +13246,7 @@
    "registration_closes": "9:40 PM",
    "buy_in_usd": 300,
    "guarantee_usd": 15000,
+   "guarantee_text": null,
    "guarantee_printed": true,
    "starting_chips": 25000,
    "level_duration": "30",
@@ -13230,7 +13307,7 @@
    "gtd_ratio": 50.0,
    "gtd_over_pool_contribution": 60.0,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -13460,12 +13537,13 @@
    "date": "2026-12-17",
    "weekday": "Thursday",
    "time": "10:10 AM",
-   "registration_closes": null,
+   "registration_closes": "4:55 PM",
    "buy_in_usd": 1100,
    "guarantee_usd": 500000,
+   "guarantee_text": null,
    "guarantee_printed": true,
-   "starting_chips": null,
-   "level_duration": null,
+   "starting_chips": 40000,
+   "level_duration": "40",
    "kind": "Tournament",
    "tags": [
     "Multi-flight"
@@ -13533,7 +13611,7 @@
    "gtd_ratio": 454.55,
    "gtd_over_pool_contribution": 520.83,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -13912,6 +13990,7 @@
    "registration_closes": "4:40 PM",
    "buy_in_usd": 600,
    "guarantee_usd": 25000,
+   "guarantee_text": null,
    "guarantee_printed": true,
    "starting_chips": 30000,
    "level_duration": "30",
@@ -13972,7 +14051,7 @@
    "gtd_ratio": 41.67,
    "gtd_over_pool_contribution": 49.02,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -14058,12 +14137,13 @@
    "date": "2026-12-17",
    "weekday": "Thursday",
    "time": "6:10 PM",
-   "registration_closes": null,
+   "registration_closes": "11:10 PM",
    "buy_in_usd": 1100,
    "guarantee_usd": 500000,
+   "guarantee_text": null,
    "guarantee_printed": true,
-   "starting_chips": null,
-   "level_duration": "11",
+   "starting_chips": 40000,
+   "level_duration": "30",
    "kind": "Tournament",
    "tags": [
     "Multi-flight"
@@ -14131,7 +14211,7 @@
    "gtd_ratio": 454.55,
    "gtd_over_pool_contribution": 520.83,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -14291,6 +14371,7 @@
    "registration_closes": "4:55 PM",
    "buy_in_usd": 1100,
    "guarantee_usd": 500000,
+   "guarantee_text": null,
    "guarantee_printed": true,
    "starting_chips": 40000,
    "level_duration": "40",
@@ -14351,7 +14432,7 @@
    "gtd_ratio": 454.55,
    "gtd_over_pool_contribution": 520.83,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -15087,6 +15168,7 @@
    "registration_closes": "11:10 PM",
    "buy_in_usd": 1100,
    "guarantee_usd": 500000,
+   "guarantee_text": null,
    "guarantee_printed": true,
    "starting_chips": 40000,
    "level_duration": "30",
@@ -15147,7 +15229,7 @@
    "gtd_ratio": 454.55,
    "gtd_over_pool_contribution": 520.83,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -15165,6 +15247,7 @@
    "registration_closes": "4:55 PM",
    "buy_in_usd": 1100,
    "guarantee_usd": 500000,
+   "guarantee_text": null,
    "guarantee_printed": true,
    "starting_chips": 40000,
    "level_duration": "40",
@@ -15225,7 +15308,7 @@
    "gtd_ratio": 454.55,
    "gtd_over_pool_contribution": 520.83,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -16034,6 +16117,7 @@
    "registration_closes": "9:40 PM",
    "buy_in_usd": 200,
    "guarantee_usd": 20000,
+   "guarantee_text": null,
    "guarantee_printed": true,
    "starting_chips": 25000,
    "level_duration": "30",
@@ -16097,7 +16181,7 @@
    "gtd_ratio": 100.0,
    "gtd_over_pool_contribution": 125.0,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "spend-advantage format \u2014 excluded from the single-entry list"
    ]
@@ -16261,6 +16345,7 @@
    "registration_closes": null,
    "buy_in_usd": 1100,
    "guarantee_usd": null,
+   "guarantee_text": null,
    "guarantee_printed": false,
    "starting_chips": null,
    "level_duration": null,
@@ -16320,7 +16405,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -16476,17 +16561,18 @@
    "venue": "venetian",
    "venue_name": "The Venetian Poker Room",
    "event_no": 59,
-   "name": "$600 No Limit Hold'Em 1A $20 Rake Discount For Entries Before",
-   "name_printed": "NO LIMIT HOLD'EM 1A $20 RAKE DISCOUNT FOR ENTRIES BEFORE",
+   "name": "$600 No Limit Hold'Em 1A $20 Rake Discount For Entries Before 11:10 Am",
+   "name_printed": "NO LIMIT HOLD'EM 1A $20 RAKE DISCOUNT FOR ENTRIES BEFORE 11:10 AM",
    "date": "2026-12-20",
    "weekday": "Sunday",
    "time": "11:10 AM",
-   "registration_closes": null,
+   "registration_closes": "5:55 PM",
    "buy_in_usd": 600,
    "guarantee_usd": 150000,
+   "guarantee_text": null,
    "guarantee_printed": true,
-   "starting_chips": null,
-   "level_duration": "5",
+   "starting_chips": 40000,
+   "level_duration": "40",
    "kind": "Tournament",
    "tags": [
     "Multi-flight"
@@ -16544,7 +16630,7 @@
    "gtd_ratio": 250.0,
    "gtd_over_pool_contribution": 297.03,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -16992,6 +17078,7 @@
    "registration_closes": "9:40 PM",
    "buy_in_usd": 200,
    "guarantee_usd": 8000,
+   "guarantee_text": null,
    "guarantee_printed": true,
    "starting_chips": 25000,
    "level_duration": "30",
@@ -17052,7 +17139,7 @@
    "gtd_ratio": 40.0,
    "gtd_over_pool_contribution": 50.0,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -17289,6 +17376,7 @@
    "registration_closes": "5:55 PM",
    "buy_in_usd": 600,
    "guarantee_usd": 150000,
+   "guarantee_text": null,
    "guarantee_printed": true,
    "starting_chips": 40000,
    "level_duration": "40",
@@ -17349,7 +17437,7 @@
    "gtd_ratio": 250.0,
    "gtd_over_pool_contribution": 297.03,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -17513,6 +17601,7 @@
    "registration_closes": "9:40 PM",
    "buy_in_usd": 200,
    "guarantee_usd": 8000,
+   "guarantee_text": null,
    "guarantee_printed": true,
    "starting_chips": 25000,
    "level_duration": "30",
@@ -17573,7 +17662,7 @@
    "gtd_ratio": 40.0,
    "gtd_over_pool_contribution": 50.0,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -17664,6 +17753,7 @@
    "registration_closes": "5:55 PM",
    "buy_in_usd": 600,
    "guarantee_usd": 150000,
+   "guarantee_text": null,
    "guarantee_printed": true,
    "starting_chips": 40000,
    "level_duration": "40",
@@ -17724,7 +17814,7 @@
    "gtd_ratio": 250.0,
    "gtd_over_pool_contribution": 297.03,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -17742,6 +17832,7 @@
    "registration_closes": "9:40 PM",
    "buy_in_usd": 200,
    "guarantee_usd": 8000,
+   "guarantee_text": null,
    "guarantee_printed": true,
    "starting_chips": 25000,
    "level_duration": "30",
@@ -17802,7 +17893,7 @@
    "gtd_ratio": 40.0,
    "gtd_over_pool_contribution": 50.0,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -17820,6 +17911,7 @@
    "registration_closes": null,
    "buy_in_usd": 600,
    "guarantee_usd": null,
+   "guarantee_text": null,
    "guarantee_printed": false,
    "starting_chips": null,
    "level_duration": null,
@@ -17879,7 +17971,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -17897,6 +17989,7 @@
    "registration_closes": "4:55 PM",
    "buy_in_usd": 600,
    "guarantee_usd": 30000,
+   "guarantee_text": null,
    "guarantee_printed": true,
    "starting_chips": 40000,
    "level_duration": "30",
@@ -17957,7 +18050,7 @@
    "gtd_ratio": 50.0,
    "gtd_over_pool_contribution": 58.82,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]
@@ -17975,6 +18068,7 @@
    "registration_closes": "9:40 PM",
    "buy_in_usd": 200,
    "guarantee_usd": 8000,
+   "guarantee_text": null,
    "guarantee_printed": true,
    "starting_chips": 25000,
    "level_duration": "30",
@@ -18035,7 +18129,7 @@
    "gtd_ratio": 40.0,
    "gtd_over_pool_contribution": 50.0,
    "last_checked": "2026-11-17",
-   "source_changed": false,
+   "source_changed": true,
    "flags": [
     "single-entry unverified"
    ]

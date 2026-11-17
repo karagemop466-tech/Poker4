@@ -1,8 +1,18 @@
 {
  "meta": {
-  "generated_at": "2026-11-17T22:48:11Z",
+  "generated_at": "2026-11-17T22:53:45Z",
   "rule": "A hotel is usable for an 8 AM\u2013close day only if the walk from the lobby to the Venetian poker room can be completed inside 30 minutes.",
-  "how_to_close": "CLOSED 2026-11-17. Measured via Google Maps walking directions for all 10 hotel\u2192Venetian pairs (data/integrated/walks-google.json). The \u226430-minute filter is now a hard filter driven by these measured values. Re-run each directions URL to refresh; a moved route is a change-monitor trigger."
+  "how_to_close": "CLOSED 2026-11-17. Measured via Google Maps walking directions for all 10 hotel\u2192Venetian pairs (data/integrated/walks-google.json). The \u226430-minute filter is now a hard filter driven by these measured values. Re-run each directions URL to refresh; a moved route is a change-monitor trigger.",
+  "measurement_source": {
+   "generated_at": "2026-11-17T22:23:55Z",
+   "method": "Google Maps directions, travel mode = walking, departure 'leave now'. Each pair was opened as a directions URL built from the hotel's official address and the poker room's official address; the duration, the distance and the route summary printed by Google were copied verbatim into this file with the time of the request. Re-capture with: python3 tools/walk_capture.py",
+   "why_measured_not_published": "No Strip operator publishes a door-to-door walking time to another property's poker room, so a minute count can only come from a routing engine. These are measurements with a timestamp and a source URL \u2014 they are labelled as such and never presented as an official statement.",
+   "limit_minutes": 30,
+   "pairs": 8,
+   "within_limit": 7
+  },
+  "measured_pairs": 10,
+  "within_30": 9
  },
  "pairs": [
   {
@@ -38,42 +48,42 @@
    "hotel": "Wynn Las Vegas",
    "venue_id": "venetian",
    "venue": "The Venetian Poker Room",
-   "minutes": 4,
-   "distance_mi": 0.5,
-   "via": "Las Vegas Blvd S",
-   "meets_30_min": "yes (4 min, Google Maps)",
-   "status": "Google Maps walking route, retrieved 2026-11-17: 4 min (0.5 mi) via Las Vegas Blvd S to the Venetian poker room. Google's walking durations run optimistic; the route distance is the more reliable figure.",
-   "method": "Google Maps walking directions",
-   "retrieved": "2026-11-17",
-   "source": "https://www.google.com/maps/dir/Wynn+Las+Vegas/The+Venetian+Resort+Las+Vegas/?force=walking"
+   "minutes": 13,
+   "distance_mi": 0.6,
+   "via": "Wynn Main Gate Dr",
+   "meets_30_min": "yes \u2014 measured 13 min (limit 30)",
+   "status": "Measured 2026-11-17 with Google Maps walking directions (Google Maps directions (web), travel mode = walking, departure = \u201cleave now\u201d) from 3131 Las Vegas Blvd. South, Las Vegas, NV 89109 to 3355 Las Vegas Blvd. South, Las Vegas, NV 89109: 13 min / 0.6 mi via Wynn Main Gate Dr. A routing-engine measurement with a timestamp and a reproducible link, not a statement by either property.",
+   "method": "Google Maps directions (web), travel mode = walking, departure = \u201cleave now\u201d",
+   "retrieved": "2026-11-17T22:23:55Z",
+   "source": "https://www.wynnlasvegas.com/about-us/contact-information"
   },
   {
    "hotel_id": "encore",
    "hotel": "Encore (Wynn resort campus)",
    "venue_id": "venetian",
    "venue": "The Venetian Poker Room",
-   "minutes": 7,
-   "distance_mi": 1.0,
+   "minutes": 19,
+   "distance_mi": 0.9,
    "via": "Las Vegas Blvd S",
-   "meets_30_min": "yes (7 min, Google Maps)",
-   "status": "Google Maps walking route, retrieved 2026-11-17: 7 min (1.0 mi) via Las Vegas Blvd S to the Venetian poker room. Google's walking durations run optimistic; the route distance is the more reliable figure.",
-   "method": "Google Maps walking directions",
-   "retrieved": "2026-11-17",
-   "source": "https://www.google.com/maps/dir/Encore+Las+Vegas/The+Venetian+Resort+Las+Vegas/?force=walking"
+   "meets_30_min": "yes \u2014 measured 19 min (limit 30)",
+   "status": "Measured 2026-11-17 with Google Maps walking directions (Google Maps directions (web), travel mode = walking, departure = \u201cleave now\u201d) from 3131 Las Vegas Blvd. South, Las Vegas, NV 89109 (Wynn's own contact page lists Wynn and Encore at one address) to 3355 Las Vegas Blvd. South, Las Vegas, NV 89109: 19 min / 0.9 mi via Las Vegas Blvd S. A routing-engine measurement with a timestamp and a reproducible link, not a statement by either property.",
+   "method": "Google Maps directions (web), travel mode = walking, departure = \u201cleave now\u201d",
+   "retrieved": "2026-11-17T22:23:55Z",
+   "source": "https://www.wynnlasvegas.com/about-us/contact-information"
   },
   {
    "hotel_id": "bellagio",
    "hotel": "Bellagio",
    "venue_id": "venetian",
    "venue": "The Venetian Poker Room",
-   "minutes": 10,
-   "distance_mi": 1.0,
+   "minutes": 21,
+   "distance_mi": 0.9,
    "via": "Las Vegas Blvd S",
-   "meets_30_min": "yes (10 min, Google Maps)",
-   "status": "Google Maps walking route, retrieved 2026-11-17: 10 min (1.0 mi) via Las Vegas Blvd S to the Venetian poker room. Google's walking durations run optimistic; the route distance is the more reliable figure.",
-   "method": "Google Maps walking directions",
-   "retrieved": "2026-11-17",
-   "source": "https://www.google.com/maps/dir/Bellagio+Las+Vegas/The+Venetian+Resort+Las+Vegas/?force=walking"
+   "meets_30_min": "yes \u2014 measured 21 min (limit 30)",
+   "status": "Measured 2026-11-17 with Google Maps walking directions (Google Maps directions (web), travel mode = walking, departure = \u201cleave now\u201d) from 3600 S Las Vegas Blvd, Las Vegas, NV 89109 to 3355 Las Vegas Blvd. South, Las Vegas, NV 89109: 21 min / 0.9 mi via Las Vegas Blvd S. A routing-engine measurement with a timestamp and a reproducible link, not a statement by either property.",
+   "method": "Google Maps directions (web), travel mode = walking, departure = \u201cleave now\u201d",
+   "retrieved": "2026-11-17T22:23:55Z",
+   "source": "https://bellagio.mgmresorts.com/en/casino/poker.html"
   },
   {
    "hotel_id": "caesars",
@@ -83,53 +93,53 @@
    "minutes": 12,
    "distance_mi": 0.5,
    "via": "Las Vegas Blvd S",
-   "meets_30_min": "yes (12 min, Google Maps)",
-   "status": "Google Maps walking route, retrieved 2026-11-17: 12 min (0.5 mi) via Las Vegas Blvd S to the Venetian poker room. Google's walking durations run optimistic; the route distance is the more reliable figure.",
-   "method": "Google Maps walking directions",
-   "retrieved": "2026-11-17",
-   "source": "https://www.google.com/maps/dir/Caesars+Palace+Las+Vegas/The+Venetian+Resort+Las+Vegas/?force=walking"
+   "meets_30_min": "yes \u2014 measured 12 min (limit 30)",
+   "status": "Measured 2026-11-17 with Google Maps walking directions (Google Maps directions (web), travel mode = walking, departure = \u201cleave now\u201d) from 3570 Las Vegas Blvd South, Las Vegas, NV 89109 to 3355 Las Vegas Blvd. South, Las Vegas, NV 89109: 12 min / 0.5 mi via Las Vegas Blvd S. A routing-engine measurement with a timestamp and a reproducible link, not a statement by either property.",
+   "method": "Google Maps directions (web), travel mode = walking, departure = \u201cleave now\u201d",
+   "retrieved": "2026-11-17T22:23:55Z",
+   "source": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
   },
   {
    "hotel_id": "aria",
    "hotel": "ARIA",
    "venue_id": "venetian",
    "venue": "The Venetian Poker Room",
-   "minutes": 11,
+   "minutes": 31,
    "distance_mi": 1.4,
    "via": "Las Vegas Blvd S",
-   "meets_30_min": "yes (11 min, Google Maps)",
-   "status": "Google Maps walking route, retrieved 2026-11-17: 11 min (1.4 mi) via Las Vegas Blvd S to the Venetian poker room. Google's walking durations run optimistic; the route distance is the more reliable figure.",
-   "method": "Google Maps walking directions",
-   "retrieved": "2026-11-17",
-   "source": "https://www.google.com/maps/dir/ARIA+Las+Vegas/The+Venetian+Resort+Las+Vegas/?force=walking"
+   "meets_30_min": "no \u2014 measured 31 min, over the 30-minute limit",
+   "status": "Measured 2026-11-17 with Google Maps walking directions (Google Maps directions (web), travel mode = walking, departure = \u201cleave now\u201d) from 3730 S Las Vegas Blvd, Las Vegas, NV 89158 to 3355 Las Vegas Blvd. South, Las Vegas, NV 89109: 31 min / 1.4 mi via Las Vegas Blvd S. A routing-engine measurement with a timestamp and a reproducible link, not a statement by either property.",
+   "method": "Google Maps directions (web), travel mode = walking, departure = \u201cleave now\u201d",
+   "retrieved": "2026-11-17T22:23:55Z",
+   "source": "https://aria.mgmresorts.com/en/casino/poker.html"
   },
   {
    "hotel_id": "ti",
    "hotel": "Treasure Island",
    "venue_id": "venetian",
    "venue": "The Venetian Poker Room",
-   "minutes": 5,
+   "minutes": 6,
    "distance_mi": 0.2,
    "via": "Las Vegas Blvd S",
-   "meets_30_min": "yes (5 min, Google Maps)",
-   "status": "Google Maps walking route, retrieved 2026-11-17: 5 min (0.2 mi) via Las Vegas Blvd S to the Venetian poker room. Google's walking durations run optimistic; the route distance is the more reliable figure.",
-   "method": "Google Maps walking directions",
-   "retrieved": "2026-11-17",
-   "source": "https://www.google.com/maps/dir/Treasure+Island+Las+Vegas/The+Venetian+Resort+Las+Vegas/?force=walking"
+   "meets_30_min": "yes \u2014 measured 6 min (limit 30)",
+   "status": "Measured 2026-11-17 with Google Maps walking directions (Google Maps directions (web), travel mode = walking, departure = \u201cleave now\u201d) from 3300 Las Vegas Blvd S, Las Vegas, NV 89109 to 3355 Las Vegas Blvd. South, Las Vegas, NV 89109: 6 min / 0.2 mi via Las Vegas Blvd S. A routing-engine measurement with a timestamp and a reproducible link, not a statement by either property.",
+   "method": "Google Maps directions (web), travel mode = walking, departure = \u201cleave now\u201d",
+   "retrieved": "2026-11-17T22:23:55Z",
+   "source": "https://treasureisland.com/amenities/guest-services"
   },
   {
    "hotel_id": "horseshoe",
    "hotel": "Horseshoe Las Vegas",
    "venue_id": "venetian",
    "venue": "The Venetian Poker Room",
-   "minutes": 7,
-   "distance_mi": 1.0,
-   "via": "E Flamingo Rd / Las Vegas Blvd S",
-   "meets_30_min": "yes (7 min, Google Maps)",
-   "status": "Google Maps walking route, retrieved 2026-11-17: 7 min (1.0 mi) via E Flamingo Rd / Las Vegas Blvd S to the Venetian poker room. Google's walking durations run optimistic; the route distance is the more reliable figure.",
-   "method": "Google Maps walking directions",
-   "retrieved": "2026-11-17",
-   "source": "https://www.google.com/maps/dir/Horseshoe+Las+Vegas/The+Venetian+Resort+Las+Vegas/?force=walking"
+   "minutes": 16,
+   "distance_mi": 0.7,
+   "via": "Linq Ln",
+   "meets_30_min": "yes \u2014 measured 16 min (limit 30)",
+   "status": "Measured 2026-11-17 with Google Maps walking directions (Google Maps directions (web), travel mode = walking, departure = \u201cleave now\u201d) from 3645 Las Vegas Blvd South, Las Vegas, NV 89109 to 3355 Las Vegas Blvd. South, Las Vegas, NV 89109: 16 min / 0.7 mi via Linq Ln. A routing-engine measurement with a timestamp and a reproducible link, not a statement by either property.",
+   "method": "Google Maps directions (web), travel mode = walking, departure = \u201cleave now\u201d",
+   "retrieved": "2026-11-17T22:23:55Z",
+   "source": "https://www.caesars.com/sportsbook-and-casino/nv/"
   },
   {
    "hotel_id": "harrahs",
@@ -139,11 +149,11 @@
    "minutes": 6,
    "distance_mi": 0.3,
    "via": "Las Vegas Blvd S",
-   "meets_30_min": "yes (6 min, Google Maps)",
-   "status": "Google Maps walking route, retrieved 2026-11-17: 6 min (0.3 mi) via Las Vegas Blvd S to the Venetian poker room. Google's walking durations run optimistic; the route distance is the more reliable figure.",
-   "method": "Google Maps walking directions",
-   "retrieved": "2026-11-17",
-   "source": "https://www.google.com/maps/dir/Harrah%27s+Las+Vegas/The+Venetian+Resort+Las+Vegas/?force=walking"
+   "meets_30_min": "yes \u2014 measured 6 min (limit 30)",
+   "status": "Measured 2026-11-17 with Google Maps walking directions (Google Maps directions (web), travel mode = walking, departure = \u201cleave now\u201d) from 3475 Las Vegas Blvd South, Las Vegas, NV 89109 to 3355 Las Vegas Blvd. South, Las Vegas, NV 89109: 6 min / 0.3 mi via Las Vegas Blvd S. A routing-engine measurement with a timestamp and a reproducible link, not a statement by either property.",
+   "method": "Google Maps directions (web), travel mode = walking, departure = \u201cleave now\u201d",
+   "retrieved": "2026-11-17T22:23:55Z",
+   "source": "https://www.caesars.com/sportsbook-and-casino/nv/"
   }
  ]
 }
