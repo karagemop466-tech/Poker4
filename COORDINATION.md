@@ -615,11 +615,43 @@ Policy: every data row must link an official source; values not confirmed from a
 | A1 | Read COORDINATION.md, claim scope, commit + push claim | done | a3838778 | COORDINATION.md | this board | none |
 | A2 | Rebuild root site from the canonical data layer; remove the stale/duplicate page family at the root | in progress | a3838778 | root `*.html`, `venues/*.html` | `scripts/integrate_data.py` from `data/`; output diffed against `main` | 11 root files on `main` were stale w.r.t. their own builder (I1) |
 | A3 | Line-by-line re-verification against the official sources (spot-check every field class) | in progress | a3838778 | `data/verification/*.json`, `review.html` | official pages/PDFs re-fetched this session; see the verification table below | see V-rows |
-| A4 | Fix the two red scheduled monitors; stop the commit-step race | in progress | a3838778 | `.github/workflows/recheck.yml`, `.github/workflows/monitor.yml`, `tools/recheck.py` | workflow re-run after merge | 2 failing runs (I2) |
-| A5 | Close the remaining brief gaps that the data layer can honestly support (official addresses + one-click walking routes, per-date official booking links, hotel capture fields, 8 AM gap) | in progress | a3838778 | `data/poker4.json`, `data/hotel-facts.json`, `scripts/integrate_data.py` | official property pages | 8 monitors duplicated (I3, suggestion only — no other session's workflow deleted without a decision) |
+| A4 | Fix the two red scheduled monitors; stop the commit-step race | done | a3838778 | `.github/workflows/recheck.yml`, `.github/workflows/monitor.yml`, `tools/recheck.py` | workflow re-run after merge | 2 failing runs (I2) |
+| A5 | Close the remaining brief gaps that the data layer can honestly support (official addresses + measured walking routes, per-date official booking links, hotel capture fields, 8 AM gap) | done (walking measured; booking links + capture fields carried) | a3838778 | `data/poker4.json`, `data/hotel-facts.json`, `scripts/integrate_data.py` | official property pages | 8 monitors duplicated (I3, suggestion only — no other session's workflow deleted without a decision) |
 | A6 | Executive summary, questions, suggestions, flagged, sources pages present and consistent | in progress | a3838778 | `index.html`, `questions.html`, `suggestions.html`, `flagged.html`, `review.html` | generated from `data/poker4.json` | none |
 | A7 | Final verification: row-source check, link check, JSON parse, YAML parse, jsdom smoke | pending | a3838778 | `scripts/verify_root.py`, `scripts/linkcheck.py` | full run recorded below | none |
 | A8 | PR → main, merge without waiting, confirm Pages deploy, record result here | pending | a3838778 | branch → `main` | PR link + deploy run recorded below | none |
+- Work log (appended as it happens):
+  - `16d205e` — claim + task board (A1–A8).
+  - `814f522` — **schedule parser correction.** The old left-to-right row regex mis-read clocks inside event names
+    as start times, dropped names over 110 chars and stopped at "2 SEATS". Rewritten as seven right-peeling
+    regexes; re-verified field by field against the raw capture (sha256 `e9799cea…`). 94 printed rows, all dated
+    (was 93 with 3 wrong values). Satellite guarantees printed as "2 SEATS" are now stored as `guarantee_text`
+    and never ranked as cash; 11 rows with no late-reg close are Day-2 restarts (flag F11).
+  - `5a7ae87` — **hotel true-cost correction.** The old rule took the first rate-log line with an amount as "the
+    rate", so a $49.95 *resort fee* was being priced as a nightly room rate. Rates are now typed
+    (`advertised_rate` / `dated_rate` / `quoted_rate` / `all_in_per_night` usable; `fee_only` / `not_published`
+    never), enforced in both `scripts/integrate_data.py` and `app.js`. Two officially-sourced blanks filled:
+    TI parking $0 self/$0 valet (inside the mandatory fee) + advertised "from $59"; Wynn self-parking $0
+    (up to 2 vehicles, inside the $55 fee).
+  - `9793539` — **CI.** `monitor.yml` could never push (`persist-credentials: false`); every push step now
+    `git pull --rebase --autostash` + one retry. `tools/recheck.py` exit policy rewritten: 0 unless nothing
+    fetched or more than max(3, n/4) sources are unreachable (offline-tested 0/1/2/3-of-10 → 0, 5-of-10 → 1,
+    10-of-10 → 1).
+  - `2a0009c` — **walking measurements (F3 closed as far as it can be closed).** Google Maps walking directions
+    are fetchable from this sandbox, so every hotel→Venetian-poker-room pair was measured on 2026-11-17 from the
+    hotel's own published address to 3355 Las Vegas Blvd. South (the Venetian's official contact-page address):
+    TI 6, Harrah's 6, Caesars 12, Wynn 13, Horseshoe 16, Encore 19, Bellagio 21, ARIA 31 min. Stored in
+    `data/walk-measurements.json` with miles, route summary, timestamp and a link that re-runs each route. The
+    ≤30-minute rule is now a hard cut (index + venue pages list only passers; hotels.html defaults to it; ARIA is
+    filtered out and says why). Irregularity caught and discarded: an earlier Bellagio "3 min" reading was the
+    hotel geocoded onto itself — 3600 S Las Vegas Blvd is Bellagio's own address, not the Venetian's.
+  - **Conflict log (2026-11-17 ~22:35 UTC).** The scheduled source-sync job pushed `93f1ae4` to this branch while
+    the walking commit was open, so `git pull --rebase` conflicted on two *generated* files
+    (`calculator.html`, `data/search-index.json`). Resolved by regenerating both from the merged inputs with
+    `python3 scripts/integrate_data.py` — no remote content discarded, no hand-edit. Post-merge check: the sync
+    run re-parsed the schedule with the corrected parser and still lands on 42 sheets / 94 dated rows, so the
+    parser fix survived.
+
 - Findings at session start (recorded as irregularities, see the task board below):
   1. The committed root pages were **stale relative to their own builder**: `scripts/integrate_data.py` regenerated 11 files differently from what was on `main` (two page families with different nav, CSS and numbers coexisted at the root — e.g. the committed `index.html` claimed *verified* walk minutes that the canonical data layer records as *not published*).
   2. Two scheduled monitors were **red**: `recheck.yml` ("daily-recheck", run 44114765586) failed in `tools/recheck.py`; `monitor.yml` ("Monitor official sources", run 44129398646) failed in its commit step.
