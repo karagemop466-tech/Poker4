@@ -1,0 +1,29 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Official-source Las Vegas Strip poker tournament and hotel decision dashboard">
+<title>Source monitor — Strip Poker Planner</title>
+<link rel="stylesheet" href="assets/site.css">
+</head><body>
+<header class="topbar"><a class="brand" href="index.html">♠ STRIP POKER PLANNER</a>
+<span class="stamp">Verified snapshot · 17 Nov 2026 UTC · every row links its official source</span></header>
+<nav class="nav"><div class="nav-inner"><a class="" href="index.html">Executive summary</a><a class="" href="tournaments.html">Tournaments</a><a class="" href="schedule.html">Day plan</a><a class="" href="hotels.html">Hotels &amp; true cost</a><a class="" href="trip-calculator.html">Trip calculator</a><a class="" href="rate-log.html">Rate log</a><a class="" href="venues/venetian.html">Venues</a><a class="active" href="monitor.html">Source monitor</a><a class="" href="questions.html">Questions</a><a class="" href="suggestions.html">Suggestions</a><a class="" href="flagged.html">Flagged for review</a><a class="" href="sources.html">Sources</a></div></nav>
+<main>
+<div class="hero"><p class="eyebrow">Change monitoring</p><h1>Source monitor.</h1>
+<p class="sub">Each official URL is re-checked on a daily schedule (GitHub Actions · tools/recheck.py). The checker stores a content hash per URL,
+refreshes <b>last-checked</b> dates, and marks rows whose source changed since the previous run.</p></div>
+<p id="monitor-live" class="mut">Loading live monitor file…</p>
+<div class="callout"><b>How to read this:</b> "changed" means the official page text or PDF bytes differ from the previous check — not necessarily that
+a value you care about changed. Open the source link, compare against the row, update the row (and its last-checked date) if needed.</div>
+<table><thead><tr><th>URL group</th><th>What is monitored</th><th>Where results land</th><th>Schedule</th></tr></thead><tbody>
+<tr><td>Venetian DSE IV page + schedule PDF + 37 structure sheets</td><td>schedule rows, buy-ins, guarantees, rule text</td><td class="small">data/0f6c627b/monitor/status.json + Flagged page</td><td>daily, ~06:00 UTC (recheck.yml)</td></tr>
+<tr><td>Wynn poker page + daily structures + WPT PDFs</td><td>daily/weekly tournament terms, WPT schedule</td><td class="small">same</td><td>daily</td></tr>
+<tr><td>Bellagio poker page + 3 structure PDFs; Caesars flyer</td><td>weekly events and rule text</td><td class="small">same</td><td>daily</td></tr>
+<tr><td>Hotel terms: Venetian fee/terms/rates, Wynn terms, TI fee</td><td>fees, tax, parking, cancellation text</td><td class="small">same</td><td>daily</td></tr>
+</tbody></table>
+<p class="small mut">Daily-schedule snapshots (tools/daily_schedule.py) are stored under data/v2/monitor/snapshots/ for diffing; the daily run also
+rebuilds this page's data when a change is detected.</p>
+
+<footer>Values read from official operator sources only, with retrieval dates. Unverified values are blank and flagged on the
+<a href="flagged.html">Flagged for Review</a> page. This is a decision dashboard, not a booking engine or a forecast.
+Re-checked automatically (see <a href="monitor.html">Source monitor</a>).</footer>
+</main><script src="assets/site.js"></script></body></html>

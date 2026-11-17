@@ -1024,5 +1024,94 @@
     "buy_in_usd": 300
    }
   ]
+ },
+ "preserved_rows": {
+  "_note": "Caesars Palace daily NLH rows carried over from the earlier data/tournaments.json (reentry_or_addon list). Main's tournaments.json was restructured by another session and no longer carries them, so they are preserved here verbatim. The flyer URL they cite (clv-poker-daily-nlh-tournament-flyer-2025.pdf) returns 404 on the official host (see data/url-checks.json), so these rows are shown as unverified and need re-verification against a live official page.",
+  "caesars": [
+   {
+    "day": "Daily (per undated 2026 flyer)",
+    "time": "10:00 AM",
+    "event": "NLH",
+    "name": "Caesars Palace Daily NLH — $100 entry",
+    "venue": "Caesars Palace – Poker Room",
+    "buy_in": 100,
+    "guarantee": 1000,
+    "chips": 20000,
+    "reg_closes": "Start of level 7",
+    "reentry_addon": "Re-entry allowed at first break ($100); optional $50 add-on for 15,000 chips at first break",
+    "sources": [
+     "C_FLYER",
+     "C_PAGE"
+    ],
+    "notes": "Flyer: $70 of $100 to prize pool, $30 house fee. Registration closes at start of level 7.",
+    "source_urls": [
+     "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+     "https://www.caesars.com/caesars-palace/casino"
+    ]
+   },
+   {
+    "day": "Daily (per undated 2026 flyer)",
+    "time": "2:00 PM",
+    "event": "NLH",
+    "name": "Caesars Palace Daily NLH — $160 entry",
+    "venue": "Caesars Palace – Poker Room",
+    "buy_in": 160,
+    "guarantee": 1000,
+    "chips": 20000,
+    "reg_closes": "Start of level 7",
+    "reentry_addon": "Re-entry allowed at first break; optional $50 add-on for 15,000 chips",
+    "sources": [
+     "C_FLYER",
+     "C_PAGE"
+    ],
+    "notes": "Flyer: $115 of $160 to prize pool, $45 house fee.",
+    "source_urls": [
+     "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+     "https://www.caesars.com/caesars-palace/casino"
+    ]
+   },
+   {
+    "day": "Daily (per undated 2026 flyer)",
+    "time": "6:00 PM",
+    "event": "NLH",
+    "name": "Caesars Palace Daily NLH — $100 entry",
+    "venue": "Caesars Palace – Poker Room",
+    "buy_in": 100,
+    "guarantee": 1000,
+    "chips": 20000,
+    "reg_closes": "Start of level 7",
+    "reentry_addon": "Re-entry allowed at first break; optional $50 add-on for 15,000 chips",
+    "sources": [
+     "C_FLYER",
+     "C_PAGE"
+    ],
+    "notes": "Same format as 10:00 AM event.",
+    "source_urls": [
+     "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+     "https://www.caesars.com/caesars-palace/casino"
+    ]
+   },
+   {
+    "day": "Daily (per undated 2026 flyer)",
+    "time": "9:00 PM",
+    "event": "NLH",
+    "name": "Caesars Palace Daily NLH — $160 entry",
+    "venue": "Caesars Palace – Poker Room",
+    "buy_in": 160,
+    "guarantee": 1000,
+    "chips": 20000,
+    "reg_closes": "Start of level 7",
+    "reentry_addon": "Re-entry allowed at first break; optional $50 add-on for 15,000 chips",
+    "sources": [
+     "C_FLYER",
+     "C_PAGE"
+    ],
+    "notes": "Same format as 2:00 PM event.",
+    "source_urls": [
+     "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+     "https://www.caesars.com/caesars-palace/casino"
+    ]
+   }
+  ]
  }
 }

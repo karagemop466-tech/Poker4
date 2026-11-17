@@ -1,0 +1,32 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Strip Poker Planner — The Venetian Resort</title><link rel="stylesheet" href="../assets/planner.css"></head>
+<body>
+<header class="topbar"><a class="brand" href="../index.html">♠ Strip Poker Planner</a><span class="stamp">The Venetian Resort · verified 17 Nov 2026</span></header>
+<nav class="nav"><div class="nav-inner">
+<a href="../index.html">Hub</a><a href="../tournaments.html">Tournaments</a><a href="../trip-cost.html">Trip cost calculator</a><a href="../hotels.html">Hotels &amp; walking</a>
+<a href="../schedule.html">Day plan &amp; overlap</a><a class="active" href="../venues.html">Venues</a>
+<a href="../monitoring.html">Change monitoring</a><a href="../flagged.html">Flagged for review</a></div></nav>
+<main>
+<section class="hero"><p class="eyebrow">Venue · The Venetian Resort (Venetian / Palazzo)</p>
+<h1>The Venetian Resort — events &amp; hotels.</h1>
+<p>Host of DeepStack Extravaganza IV. All 93 verified events below come from the official schedule and structure sheets. Poker room: Palazzo Level 2. Resort fee $55 + tax verified.</p>
+<p><a class="button" href="https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html" target="_blank" rel="noopener">Official schedule ↗</a></p></section>
+
+<div class="toolbar">
+  <label>Date <select id="f-date"></select></label>
+  <label>Format <select id="f-cat"></select></label>
+  <label><input type="checkbox" id="f-single"> Single-entry / freezeout confirmed only</label>
+  <label class="grow">Search <input type="text" id="f-q" placeholder="name, date, #, buy-in, guarantee…"></label>
+</div>
+<p class="muted" id="row-count"></p>
+<div class="tablewrap"><table>
+<thead><tr><th>Date</th><th>Start</th><th>#</th><th>Event</th><th>Format</th><th>Buy-in</th><th>House fee</th><th>Pool / entry</th><th>Guarantee</th><th>Gtd÷buyin</th><th>Chips</th><th>Late reg</th><th>Single-entry</th><th>Re-entry</th><th>Add-on</th><th>Last checked</th><th>Source</th></tr></thead>
+<tbody id="t-body"></tbody></table></div>
+
+<section class="section"><h2>Hotels at this venue</h2>
+<div class="grid" id="hotel-rows"></div>
+<p class="muted">Walking times to the Venetian poker room are unverified (no official source); see <a href="../flagged.html">Flagged for review</a>.</p></section>
+</main>
+<footer><a href="../flagged.html">Flagged for review →</a></footer>
+<script src="../assets/data.js"></script><script src="../assets/planner.js"></script>
+</body></html>

@@ -366,13 +366,13 @@ for r in BELLAGIO:
                  fee_txt=(r["house_fee_usd"] + (" + optional gratuity " + r["optional_gratuity_usd"] if r["optional_gratuity_usd"] else "")) if r["house_fee_usd"] else None,
                  srcs=srcs, note=r["flag"] or None,
                  chips=int(r["starting_chips"]) if r["starting_chips"].isdigit() else None)
-for r in LEGACY.get("reentry_or_addon", []):
+for r in (CFG.get("preserved_rows", {}).get("caesars") or LEGACY.get("reentry_or_addon", [])):
     if r.get("venue", "").startswith("Caesars"):
         add_room_row("caesars", "Caesars Palace Poker Room", when=r["day"], time=r["time"],
                      name=r["name"], buy=r.get("buy_in"), gtd=r.get("guarantee"),
                      reentry=(r.get("reentry_addon") or "").split(";")[0] or None,
                      addon=(r["reentry_addon"].split("add-on")[1].strip(" ;") if "add-on" in (r.get("reentry_addon") or "").lower() else None),
-                     fee_txt=None, srcs=[LEGACY["sources"][k]["url"] for k in r["sources"] if k in LEGACY["sources"]],
+                     fee_txt=None, srcs=r.get("source_urls") or [LEGACY["sources"][k]["url"] for k in r.get("sources", []) if k in LEGACY.get("sources", {})],
                      note="Preserved from the earlier capture; the official daily flyer URL now returns 404, so this row needs re-verification")
 
 events.sort(key=lambda e: (e.get("date") or "9999-99-99", e.get("time") or "", e["venue"]))

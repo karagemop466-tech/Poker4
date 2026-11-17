@@ -73,6 +73,10 @@ for page in PAGES:
         continue
     doc = open(path, encoding="utf-8").read()
     here = os.path.dirname(path) or "."
+    # honour <base href>: a page that declares its own base resolves links from there
+    bm = re.search(r'<base\s+href="([^"]*)"', doc)
+    if bm:
+        here = os.path.normpath(os.path.join(here, bm.group(1)))
     for pat, kind in ((r'href="([^"]+)"', "href"), (r'src="([^"]+)"', "src")):
         for target in re.findall(pat, doc):
             if target.startswith(("http:", "https:", "mailto:", "#", "data:")):

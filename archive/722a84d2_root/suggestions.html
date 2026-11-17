@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Suggestions — Poker4</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site"><div class="wrap">
+  <span class="logo">♠ Poker4</span>
+  <nav>
+    <a href="index.html">Summary</a>
+    <a href="tournaments.html">Tournaments</a>
+    <a href="schedule.html">Schedule planner</a>
+    <a href="hotels.html">Hotels &amp; cost</a>
+    <a href="venues/venetian.html">Venetian</a>
+    <a href="venues/wynn.html">Wynn</a>
+    <a href="venues/other-venues.html">Other rooms</a>
+    <a href="questions.html">Questions</a>
+    <a href="suggestions.html" class="active">Suggestions</a>
+    <a href="review.html">Flagged for review</a>
+    <a href="sources.html">Sources</a>
+  </nav>
+</div></header>
+<main class="wrap">
+  <h1>Suggestions — for review before implementation</h1>
+  <div class="callout warn">Nothing below is implemented. Each suggestion is a choice for you; pick one (or none) and the next session applies it exactly as specified.</div>
+
+  <div class="card">
+    <h3 style="margin-top:0">S1 — Direct confirmation pipeline for entry policy (resolves Q2, the core blocker)</h3>
+    <p class="small muted">Add a per-event “policy status” that can only be set from (a) a written reply from the poker room, or (b) registration T&amp;Cs printed at the cage — stored as dated entries with the responder/excerpt. Until then the site keeps saying “unverified”. Trade-off: honest but slow; requires one human contact per venue.</p>
+  </div>
+  <div class="card">
+    <h3 style="margin-top:0">S2 — Finish the WPT structures read (resolves Q3)</h3>
+    <p class="small muted">Read chunks 4–7 of the official WPT structures PDF and set re-entry fields for the December events (incl. the $400 Super Gold Million Mystery Bounty, $3M GTD — the biggest ratio on the board). Cheap, no user input needed beyond approval.</p>
+  </div>
+  <div class="card">
+    <h3 style="margin-top:0">S3 — Booking-page rate capture button</h3>
+    <p class="small muted">Add a small “log a rate” form on the hotels page that appends a dated, sourced entry (property, dates, occupancy, checkout total, fee, tax, cancellation deadline) to data/rate-log.json via a PR. Keeps rates as a history without scraping booking engines (which block robots and would violate their terms).</p>
+  </div>
+  <div class="card">
+    <h3 style="margin-top:0">S4 — Morning-scraper scope decision (resolves the “live daily schedule feed” idea)</h3>
+    <p class="small muted">Option A (recommended): extend the existing daily GitHub Action to also parse the Venetian/Wynn official pages and commit a normalized snapshot JSON; the site then shows “schedule as of HH:MM today”. Option B: client-side only (blocked by CORS). Option C: skip — the daily URL re-check already flags changes. A is ~1 hour of work; choose A, B, or C.</p>
+  </div>
+  <div class="card">
+    <h3 style="margin-top:0">S5 — Widen the room set</h3>
+    <p class="small muted">Caesars/Bellagio/ARIA/Horseshoe pages were unreachable from the build sandbox (Flagged F11). Suggestion: a normal-browser pass to capture their official daily schedules + resort fees into the same data format, or formally scope this dashboard to Venetian+Wynn only. Choose one.</p>
+  </div>
+  <div class="card">
+    <h3 style="margin-top:0">S6 — Ranking policy choice</h3>
+    <p class="small muted">Currently: rank by GTD÷buy-in only for prize-pool-basis guarantees, bounty rows ranked separately. Alternative: rank by pool contribution ÷ buy-in (house-take efficiency: e.g., $300 events keep 80.7% in play vs $200 events 80%/$82.5% RaceDay) — more decision-useful for a budget player. Approve A (current), B (house-take), or both columns.</p>
+  </div>
+  <div class="card">
+    <h3 style="margin-top:0">S7 — Itinerary export</h3>
+    <p class="small muted">Add “copy day plan” (ICS/CSV) export from the schedule planner once Q1 dates are fixed, so the plan can go straight into a calendar. Low effort; approve or defer.</p>
+  </div>
+</main>
+<footer class="site"><div class="wrap">
+  <span>Built from official operator documents only · last data build 2026-11-17</span>
+  <span><a href="sources.html">Sources</a> · <a href="review.html">Flagged for review</a></span>
+</div></footer>
+<script src="app.js"></script>
+</body>
+</html>

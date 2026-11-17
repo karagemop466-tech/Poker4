@@ -51,11 +51,13 @@ for path in pages:
     if leftover or bal.problems:
         print(f"{rel}: markup problems {bal.problems[:3]} unclosed={leftover[:4]}")
         bad += 1
+    bm = re.search(r'<base\s+href="([^"]*)"', doc)
+    base_dir = os.path.normpath(os.path.join(os.path.dirname(path), bm.group(1))) if bm else os.path.dirname(path)
     for target in re.findall(r'(?:href|src)="([^"]+)"', doc):
         if target.startswith(("http:", "https:", "mailto:", "#", "data:")):
             continue
         f = target.split("#")[0]
-        if f and not os.path.exists(os.path.normpath(os.path.join(os.path.dirname(path), f))):
+        if f and not os.path.exists(os.path.normpath(os.path.join(base_dir, f))):
             print(f"{rel}: broken internal link -> {target}")
             bad += 1
     if re.search(r"\bundefined\b|\[object Object\]|>None<", doc):
