@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-17T22:08:23Z",
+ "generated": "2026-11-17T22:27:01Z",
  "session": "f0d7de66",
  "policy": "Rows extracted mechanically from the venue's own PDF text captured by the source monitor. Every rule excerpt stored here is verified to be a verbatim substring of that capture; the extractor aborts otherwise. A sheet that says nothing about entries is recorded as 'not_stated_in_sheet', never as single-entry.",
  "captures": {

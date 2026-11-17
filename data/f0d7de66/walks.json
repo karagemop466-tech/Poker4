@@ -1,0 +1,906 @@
+{
+ "meta": {
+  "generated": "2026-11-17T22:26:53Z",
+  "session": "f0d7de66",
+  "task": "Y3 - walking-route check feeding the 30-minute rule",
+  "rule": "a hotel is usable for a day only if the walk to the room hosting that day's events fits inside 30 minutes",
+  "method": "OpenStreetMap foot-route length between each property's building point and each event room's building point, converted to minutes at a stated pace",
+  "pace_m_per_min": 80.0,
+  "limit_minutes": 30,
+  "why_not_the_server_durations": "the demo router's foot durations came back at 4-8 m/s, which is not walking speed, so only its route lengths were used",
+  "official": false,
+  "official_note": "no Strip property publishes a door-to-door walking time to another property's poker room, so nothing here is an official figure: it is a measurement from public mapping data, dated, and reproducible from the two captures",
+  "venues_with_events_in_the_snapshot": [
+   "bellagio",
+   "caesars",
+   "venetian",
+   "wynn"
+  ],
+  "cross_checks": {
+   "pairs_rerouted_independently": 12,
+   "tolerance_m": 0.05,
+   "all_agreed": true
+  },
+  "captures": [
+   "data/raw/f0d7de66-geocode.txt",
+   "data/raw/f0d7de66-osrm.txt"
+  ],
+  "credits": "Map data (c) OpenStreetMap contributors, ODbL, http://osm.org/copyright"
+ },
+ "pairs": [
+  {
+   "hotel_id": "venetian",
+   "hotel": "The Venetian Las Vegas",
+   "venue_id": "venetian",
+   "venue": "The Venetian Poker Room",
+   "measured_between": "The Venetian Las Vegas point -> The Palazzo point",
+   "distance_m": 410.0,
+   "minutes": null,
+   "meets_30_min": "not applicable (on-site)",
+   "status": "same complex, no public-way route to measure",
+   "basis": "OpenStreetMap foot-route length 410.0 m between the two property points, recorded for completeness only",
+   "official": false,
+   "source": "https://router.project-osrm.org",
+   "point_source": "https://nominatim.openstreetmap.org/search.php?q=The%20Venetian%20Las%20Vegas&format=jsonv2&limit=1",
+   "retrieved": "2026-11-17",
+   "caveats": [
+    "one complex: the route is inside the property, so it is not a street walk and the distance is building-point to building-point"
+   ]
+  },
+  {
+   "hotel_id": "venetian",
+   "hotel": "The Venetian Las Vegas",
+   "venue_id": "wynn",
+   "venue": "Wynn Las Vegas Poker",
+   "measured_between": "The Venetian Las Vegas point -> Wynn Las Vegas point",
+   "distance_m": 1163.3,
+   "minutes": 15,
+   "meets_30_min": "yes",
+   "status": "route length measured from the property points in the geocode capture (building centroids, not doors); minutes are an estimate at a stated pace",
+   "basis": "OpenStreetMap foot-route length 1163.3 m between the two property points, divided by 80 m/min (4.8 km/h) and rounded up",
+   "official": false,
+   "source": "https://router.project-osrm.org",
+   "point_source": "https://nominatim.openstreetmap.org/search.php?q=The%20Venetian%20Las%20Vegas&format=jsonv2&limit=1",
+   "retrieved": "2026-11-17",
+   "caveats": []
+  },
+  {
+   "hotel_id": "venetian",
+   "hotel": "The Venetian Las Vegas",
+   "venue_id": "bellagio",
+   "venue": "Bellagio Poker Room",
+   "measured_between": "The Venetian Las Vegas point -> Bellagio Las Vegas point",
+   "distance_m": 1829.6,
+   "minutes": 23,
+   "meets_30_min": "yes",
+   "status": "route length measured from the property points in the geocode capture (building centroids, not doors); minutes are an estimate at a stated pace",
+   "basis": "OpenStreetMap foot-route length 1829.6 m between the two property points, divided by 80 m/min (4.8 km/h) and rounded up",
+   "official": false,
+   "source": "https://router.project-osrm.org",
+   "point_source": "https://nominatim.openstreetmap.org/search.php?q=The%20Venetian%20Las%20Vegas&format=jsonv2&limit=1",
+   "retrieved": "2026-11-17",
+   "caveats": [
+    "the route's end at the poker room's building was snapped 178 m from the recorded property point, so the length includes that detour"
+   ]
+  },
+  {
+   "hotel_id": "venetian",
+   "hotel": "The Venetian Las Vegas",
+   "venue_id": "caesars",
+   "venue": "Caesars Palace Poker Room",
+   "measured_between": "The Venetian Las Vegas point -> Caesars Palace Hotel and Casino point",
+   "distance_m": 1402.5,
+   "minutes": 18,
+   "meets_30_min": "yes",
+   "status": "route length measured from the property points in the geocode capture (building centroids, not doors); minutes are an estimate at a stated pace",
+   "basis": "OpenStreetMap foot-route length 1402.5 m between the two property points, divided by 80 m/min (4.8 km/h) and rounded up",
+   "official": false,
+   "source": "https://router.project-osrm.org",
+   "point_source": "https://nominatim.openstreetmap.org/search.php?q=The%20Venetian%20Las%20Vegas&format=jsonv2&limit=1",
+   "retrieved": "2026-11-17",
+   "caveats": []
+  },
+  {
+   "hotel_id": "palazzo",
+   "hotel": "The Palazzo",
+   "venue_id": "venetian",
+   "venue": "The Venetian Poker Room",
+   "measured_between": "The Palazzo point -> The Palazzo point",
+   "distance_m": 0.0,
+   "minutes": null,
+   "meets_30_min": "not applicable (on-site)",
+   "status": "same complex, no public-way route to measure",
+   "basis": "OpenStreetMap foot-route length 0.0 m between the two property points, recorded for completeness only",
+   "official": false,
+   "source": "https://router.project-osrm.org",
+   "point_source": "https://nominatim.openstreetmap.org/search.php?q=The%20Palazzo%20Las%20Vegas&format=jsonv2&limit=1",
+   "retrieved": "2026-11-17",
+   "caveats": [
+    "one complex: the route is inside the property, so it is not a street walk and the distance is building-point to building-point"
+   ]
+  },
+  {
+   "hotel_id": "palazzo",
+   "hotel": "The Palazzo",
+   "venue_id": "wynn",
+   "venue": "Wynn Las Vegas Poker",
+   "measured_between": "The Palazzo point -> Wynn Las Vegas point",
+   "distance_m": 1021.5,
+   "minutes": 13,
+   "meets_30_min": "yes",
+   "status": "route length measured from the property points in the geocode capture (building centroids, not doors); minutes are an estimate at a stated pace",
+   "basis": "OpenStreetMap foot-route length 1021.5 m between the two property points, divided by 80 m/min (4.8 km/h) and rounded up",
+   "official": false,
+   "source": "https://router.project-osrm.org",
+   "point_source": "https://nominatim.openstreetmap.org/search.php?q=The%20Palazzo%20Las%20Vegas&format=jsonv2&limit=1",
+   "retrieved": "2026-11-17",
+   "caveats": []
+  },
+  {
+   "hotel_id": "palazzo",
+   "hotel": "The Palazzo",
+   "venue_id": "bellagio",
+   "venue": "Bellagio Poker Room",
+   "measured_between": "The Palazzo point -> Bellagio Las Vegas point",
+   "distance_m": 2532.1,
+   "minutes": 32,
+   "meets_30_min": "no",
+   "status": "route length measured from the property points in the geocode capture (building centroids, not doors); minutes are an estimate at a stated pace",
+   "basis": "OpenStreetMap foot-route length 2532.1 m between the two property points, divided by 80 m/min (4.8 km/h) and rounded up",
+   "official": false,
+   "source": "https://router.project-osrm.org",
+   "point_source": "https://nominatim.openstreetmap.org/search.php?q=The%20Palazzo%20Las%20Vegas&format=jsonv2&limit=1",
+   "retrieved": "2026-11-17",
+   "caveats": [
+    "the route's end at the poker room's building was snapped 178 m from the recorded property point, so the length includes that detour"
+   ]
+  },
+  {
+   "hotel_id": "palazzo",
+   "hotel": "The Palazzo",
+   "venue_id": "caesars",
+   "venue": "Caesars Palace Poker Room",
+   "measured_between": "The Palazzo point -> Caesars Palace Hotel and Casino point",
+   "distance_m": 2484.9,
+   "minutes": 32,
+   "meets_30_min": "no",
+   "status": "route length measured from the property points in the geocode capture (building centroids, not doors); minutes are an estimate at a stated pace",
+   "basis": "OpenStreetMap foot-route length 2484.9 m between the two property points, divided by 80 m/min (4.8 km/h) and rounded up",
+   "official": false,
+   "source": "https://router.project-osrm.org",
+   "point_source": "https://nominatim.openstreetmap.org/search.php?q=The%20Palazzo%20Las%20Vegas&format=jsonv2&limit=1",
+   "retrieved": "2026-11-17",
+   "caveats": []
+  },
+  {
+   "hotel_id": "wynn",
+   "hotel": "Wynn Las Vegas",
+   "venue_id": "venetian",
+   "venue": "The Venetian Poker Room",
+   "measured_between": "Wynn Las Vegas point -> The Palazzo point",
+   "distance_m": 1126.1,
+   "minutes": 15,
+   "meets_30_min": "yes",
+   "status": "route length measured from the property points in the geocode capture (building centroids, not doors); minutes are an estimate at a stated pace",
+   "basis": "OpenStreetMap foot-route length 1126.1 m between the two property points, divided by 80 m/min (4.8 km/h) and rounded up",
+   "official": false,
+   "source": "https://router.project-osrm.org",
+   "point_source": "https://nominatim.openstreetmap.org/search.php?q=Wynn%20Las%20Vegas&format=jsonv2&limit=1",
+   "retrieved": "2026-11-17",
+   "caveats": []
+  },
+  {
+   "hotel_id": "wynn",
+   "hotel": "Wynn Las Vegas",
+   "venue_id": "wynn",
+   "venue": "Wynn Las Vegas Poker",
+   "measured_between": "Wynn Las Vegas point -> Wynn Las Vegas point",
+   "distance_m": 0.0,
+   "minutes": null,
+   "meets_30_min": "not applicable (on-site)",
+   "status": "same complex, no public-way route to measure",
+   "basis": "OpenStreetMap foot-route length 0.0 m between the two property points, recorded for completeness only",
+   "official": false,
+   "source": "https://router.project-osrm.org",
+   "point_source": "https://nominatim.openstreetmap.org/search.php?q=Wynn%20Las%20Vegas&format=jsonv2&limit=1",
+   "retrieved": "2026-11-17",
+   "caveats": [
+    "one complex: the route is inside the property, so it is not a street walk and the distance is building-point to building-point"
+   ]
+  },
+  {
+   "hotel_id": "wynn",
+   "hotel": "Wynn Las Vegas",
+   "venue_id": "bellagio",
+   "venue": "Bellagio Poker Room",
+   "measured_between": "Wynn Las Vegas point -> Bellagio Las Vegas point",
+   "distance_m": 2791.8,
+   "minutes": 35,
+   "meets_30_min": "no",
+   "status": "route length measured from the property points in the geocode capture (building centroids, not doors); minutes are an estimate at a stated pace",
+   "basis": "OpenStreetMap foot-route length 2791.8 m between the two property points, divided by 80 m/min (4.8 km/h) and rounded up",
+   "official": false,
+   "source": "https://router.project-osrm.org",
+   "point_source": "https://nominatim.openstreetmap.org/search.php?q=Wynn%20Las%20Vegas&format=jsonv2&limit=1",
+   "retrieved": "2026-11-17",
+   "caveats": [
+    "the route's end at the poker room's building was snapped 178 m from the recorded property point, so the length includes that detour"
+   ]
+  },
+  {
+   "hotel_id": "wynn",
+   "hotel": "Wynn Las Vegas",
+   "venue_id": "caesars",
+   "venue": "Caesars Palace Poker Room",
+   "measured_between": "Wynn Las Vegas point -> Caesars Palace Hotel and Casino point",
+   "distance_m": 2744.7,
+   "minutes": 35,
+   "meets_30_min": "no",
+   "status": "route length measured from the property points in the geocode capture (building centroids, not doors); minutes are an estimate at a stated pace",
+   "basis": "OpenStreetMap foot-route length 2744.7 m between the two property points, divided by 80 m/min (4.8 km/h) and rounded up",
+   "official": false,
+   "source": "https://router.project-osrm.org",
+   "point_source": "https://nominatim.openstreetmap.org/search.php?q=Wynn%20Las%20Vegas&format=jsonv2&limit=1",
+   "retrieved": "2026-11-17",
+   "caveats": []
+  },
+  {
+   "hotel_id": "encore",
+   "hotel": "Encore Las Vegas",
+   "venue_id": "venetian",
+   "venue": "The Venetian Poker Room",
+   "measured_between": "Encore Las Vegas point -> The Palazzo point",
+   "distance_m": 1537.1,
+   "minutes": 20,
+   "meets_30_min": "yes",
+   "status": "route length measured from the property points in the geocode capture (building centroids, not doors); minutes are an estimate at a stated pace",
+   "basis": "OpenStreetMap foot-route length 1537.1 m between the two property points, divided by 80 m/min (4.8 km/h) and rounded up",
+   "official": false,
+   "source": "https://router.project-osrm.org",
+   "point_source": "https://nominatim.openstreetmap.org/search.php?q=Encore%20Las%20Vegas&format=jsonv2&limit=1",
+   "retrieved": "2026-11-17",
+   "caveats": []
+  },
+  {
+   "hotel_id": "encore",
+   "hotel": "Encore Las Vegas",
+   "venue_id": "wynn",
+   "venue": "Wynn Las Vegas Poker",
+   "measured_between": "Encore Las Vegas point -> Wynn Las Vegas point",
+   "distance_m": 914.3,
+   "minutes": null,
+   "meets_30_min": "not applicable (on-site)",
+   "status": "same complex, no public-way route to measure",
+   "basis": "OpenStreetMap foot-route length 914.3 m between the two property points, recorded for completeness only",
+   "official": false,
+   "source": "https://router.project-osrm.org",
+   "point_source": "https://nominatim.openstreetmap.org/search.php?q=Encore%20Las%20Vegas&format=jsonv2&limit=1",
+   "retrieved": "2026-11-17",
+   "caveats": [
+    "one complex: the route is inside the property, so it is not a street walk and the distance is building-point to building-point"
+   ]
+  },
+  {
+   "hotel_id": "encore",
+   "hotel": "Encore Las Vegas",
+   "venue_id": "bellagio",
+   "venue": "Bellagio Poker Room",
+   "measured_between": "Encore Las Vegas point -> Bellagio Las Vegas point",
+   "distance_m": 3202.9,
+   "minutes": 41,
+   "meets_30_min": "no",
+   "status": "route length measured from the property points in the geocode capture (building centroids, not doors); minutes are an estimate at a stated pace",
+   "basis": "OpenStreetMap foot-route length 3202.9 m between the two property points, divided by 80 m/min (4.8 km/h) and rounded up",
+   "official": false,
+   "source": "https://router.project-osrm.org",
+   "point_source": "https://nominatim.openstreetmap.org/search.php?q=Encore%20Las%20Vegas&format=jsonv2&limit=1",
+   "retrieved": "2026-11-17",
+   "caveats": [
+    "the route's end at the poker room's building was snapped 178 m from the recorded property point, so the length includes that detour"
+   ]
+  },
+  {
+   "hotel_id": "encore",
+   "hotel": "Encore Las Vegas",
+   "venue_id": "caesars",
+   "venue": "Caesars Palace Poker Room",
+   "measured_between": "Encore Las Vegas point -> Caesars Palace Hotel and Casino point",
+   "distance_m": 3110.7,
+   "minutes": 39,
+   "meets_30_min": "no",
+   "status": "route length measured from the property points in the geocode capture (building centroids, not doors); minutes are an estimate at a stated pace",
+   "basis": "OpenStreetMap foot-route length 3110.7 m between the two property points, divided by 80 m/min (4.8 km/h) and rounded up",
+   "official": false,
+   "source": "https://router.project-osrm.org",
+   "point_source": "https://nominatim.openstreetmap.org/search.php?q=Encore%20Las%20Vegas&format=jsonv2&limit=1",
+   "retrieved": "2026-11-17",
+   "caveats": []
+  },
+  {
+   "hotel_id": "bellagio",
+   "hotel": "Bellagio Las Vegas",
+   "venue_id": "venetian",
+   "venue": "The Venetian Poker Room",
+   "measured_between": "Bellagio Las Vegas point -> The Palazzo point",
+   "distance_m": 1861.9,
+   "minutes": 24,
+   "meets_30_min": "yes",
+   "status": "route length measured from the property points in the geocode capture (building centroids, not doors); minutes are an estimate at a stated pace",
+   "basis": "OpenStreetMap foot-route length 1861.9 m between the two property points, divided by 80 m/min (4.8 km/h) and rounded up",
+   "official": false,
+   "source": "https://router.project-osrm.org",
+   "point_source": "https://nominatim.openstreetmap.org/search.php?q=Bellagio%20Las%20Vegas&format=jsonv2&limit=1",
+   "retrieved": "2026-11-17",
+   "caveats": [
+    "the route's end at the hotel was snapped 178 m from the recorded property point, so the length includes that detour"
+   ]
+  },
+  {
+   "hotel_id": "bellagio",
+   "hotel": "Bellagio Las Vegas",
+   "venue_id": "wynn",
+   "venue": "Wynn Las Vegas Poker",
+   "measured_between": "Bellagio Las Vegas point -> Wynn Las Vegas point",
+   "distance_m": 2615.2,
+   "minutes": 33,
+   "meets_30_min": "no",
+   "status": "route length measured from the property points in the geocode capture (building centroids, not doors); minutes are an estimate at a stated pace",
+   "basis": "OpenStreetMap foot-route length 2615.2 m between the two property points, divided by 80 m/min (4.8 km/h) and rounded up",
+   "official": false,
+   "source": "https://router.project-osrm.org",
+   "point_source": "https://nominatim.openstreetmap.org/search.php?q=Bellagio%20Las%20Vegas&format=jsonv2&limit=1",
+   "retrieved": "2026-11-17",
+   "caveats": [
+    "the route's end at the hotel was snapped 178 m from the recorded property point, so the length includes that detour"
+   ]
+  },
+  {
+   "hotel_id": "bellagio",
+   "hotel": "Bellagio Las Vegas",
+   "venue_id": "bellagio",
+   "venue": "Bellagio Poker Room",
+   "measured_between": "Bellagio Las Vegas point -> Bellagio Las Vegas point",
+   "distance_m": 0.0,
+   "minutes": null,
+   "meets_30_min": "not applicable (on-site)",
+   "status": "same complex, no public-way route to measure",
+   "basis": "OpenStreetMap foot-route length 0.0 m between the two property points, recorded for completeness only",
+   "official": false,
+   "source": "https://router.project-osrm.org",
+   "point_source": "https://nominatim.openstreetmap.org/search.php?q=Bellagio%20Las%20Vegas&format=jsonv2&limit=1",
+   "retrieved": "2026-11-17",
+   "caveats": [
+    "one complex: the route is inside the property, so it is not a street walk and the distance is building-point to building-point",
+    "the route's end at the hotel was snapped 178 m from the recorded property point, so the length includes that detour",
+    "the route's end at the poker room's building was snapped 178 m from the recorded property point, so the length includes that detour"
+   ]
+  },
+  {
+   "hotel_id": "bellagio",
+   "hotel": "Bellagio Las Vegas",
+   "venue_id": "caesars",
+   "venue": "Caesars Palace Poker Room",
+   "measured_between": "Bellagio Las Vegas point -> Caesars Palace Hotel and Casino point",
+   "distance_m": 1745.8,
+   "minutes": 22,
+   "meets_30_min": "yes",
+   "status": "route length measured from the property points in the geocode capture (building centroids, not doors); minutes are an estimate at a stated pace",
+   "basis": "OpenStreetMap foot-route length 1745.8 m between the two property points, divided by 80 m/min (4.8 km/h) and rounded up",
+   "official": false,
+   "source": "https://router.project-osrm.org",
+   "point_source": "https://nominatim.openstreetmap.org/search.php?q=Bellagio%20Las%20Vegas&format=jsonv2&limit=1",
+   "retrieved": "2026-11-17",
+   "caveats": [
+    "the route's end at the hotel was snapped 178 m from the recorded property point, so the length includes that detour"
+   ]
+  },
+  {
+   "hotel_id": "caesars",
+   "hotel": "Caesars Palace Hotel and Casino",
+   "venue_id": "venetian",
+   "venue": "The Venetian Poker Room",
+   "measured_between": "Caesars Palace Hotel and Casino point -> The Palazzo point",
+   "distance_m": 1656.8,
+   "minutes": 21,
+   "meets_30_min": "yes",
+   "status": "route length measured from the property points in the geocode capture (building centroids, not doors); minutes are an estimate at a stated pace",
+   "basis": "OpenStreetMap foot-route length 1656.8 m between the two property points, divided by 80 m/min (4.8 km/h) and rounded up",
+   "official": false,
+   "source": "https://router.project-osrm.org",
+   "point_source": "https://nominatim.openstreetmap.org/search.php?q=Caesars%20Palace%20Las%20Vegas&format=jsonv2&limit=1",
+   "retrieved": "2026-11-17",
+   "caveats": []
+  },
+  {
+   "hotel_id": "caesars",
+   "hotel": "Caesars Palace Hotel and Casino",
+   "venue_id": "wynn",
+   "venue": "Wynn Las Vegas Poker",
+   "measured_between": "Caesars Palace Hotel and Casino point -> Wynn Las Vegas point",
+   "distance_m": 2807.9,
+   "minutes": 36,
+   "meets_30_min": "no",
+   "status": "route length measured from the property points in the geocode capture (building centroids, not doors); minutes are an estimate at a stated pace",
+   "basis": "OpenStreetMap foot-route length 2807.9 m between the two property points, divided by 80 m/min (4.8 km/h) and rounded up",
+   "official": false,
+   "source": "https://router.project-osrm.org",
+   "point_source": "https://nominatim.openstreetmap.org/search.php?q=Caesars%20Palace%20Las%20Vegas&format=jsonv2&limit=1",
+   "retrieved": "2026-11-17",
+   "caveats": []
+  },
+  {
+   "hotel_id": "caesars",
+   "hotel": "Caesars Palace Hotel and Casino",
+   "venue_id": "bellagio",
+   "venue": "Bellagio Poker Room",
+   "measured_between": "Caesars Palace Hotel and Casino point -> Bellagio Las Vegas point",
+   "distance_m": 1903.8,
+   "minutes": 24,
+   "meets_30_min": "yes",
+   "status": "route length measured from the property points in the geocode capture (building centroids, not doors); minutes are an estimate at a stated pace",
+   "basis": "OpenStreetMap foot-route length 1903.8 m between the two property points, divided by 80 m/min (4.8 km/h) and rounded up",
+   "official": false,
+   "source": "https://router.project-osrm.org",
+   "point_source": "https://nominatim.openstreetmap.org/search.php?q=Caesars%20Palace%20Las%20Vegas&format=jsonv2&limit=1",
+   "retrieved": "2026-11-17",
+   "caveats": [
+    "the route's end at the poker room's building was snapped 178 m from the recorded property point, so the length includes that detour"
+   ]
+  },
+  {
+   "hotel_id": "caesars",
+   "hotel": "Caesars Palace Hotel and Casino",
+   "venue_id": "caesars",
+   "venue": "Caesars Palace Poker Room",
+   "measured_between": "Caesars Palace Hotel and Casino point -> Caesars Palace Hotel and Casino point",
+   "distance_m": 0.0,
+   "minutes": null,
+   "meets_30_min": "not applicable (on-site)",
+   "status": "same complex, no public-way route to measure",
+   "basis": "OpenStreetMap foot-route length 0.0 m between the two property points, recorded for completeness only",
+   "official": false,
+   "source": "https://router.project-osrm.org",
+   "point_source": "https://nominatim.openstreetmap.org/search.php?q=Caesars%20Palace%20Las%20Vegas&format=jsonv2&limit=1",
+   "retrieved": "2026-11-17",
+   "caveats": [
+    "one complex: the route is inside the property, so it is not a street walk and the distance is building-point to building-point"
+   ]
+  },
+  {
+   "hotel_id": "aria",
+   "hotel": "Aria Resort & Casino",
+   "venue_id": "venetian",
+   "venue": "The Venetian Poker Room",
+   "measured_between": "Aria Resort & Casino point -> The Palazzo point",
+   "distance_m": 3048.8,
+   "minutes": 39,
+   "meets_30_min": "no",
+   "status": "route length measured from the property points in the geocode capture (building centroids, not doors); minutes are an estimate at a stated pace",
+   "basis": "OpenStreetMap foot-route length 3048.8 m between the two property points, divided by 80 m/min (4.8 km/h) and rounded up",
+   "official": false,
+   "source": "https://router.project-osrm.org",
+   "point_source": "https://nominatim.openstreetmap.org/search.php?q=ARIA%20Resort%20%26%20Casino%20Las%20Vegas&format=jsonv2&limit=1",
+   "retrieved": "2026-11-17",
+   "caveats": []
+  },
+  {
+   "hotel_id": "aria",
+   "hotel": "Aria Resort & Casino",
+   "venue_id": "wynn",
+   "venue": "Wynn Las Vegas Poker",
+   "measured_between": "Aria Resort & Casino point -> Wynn Las Vegas point",
+   "distance_m": 3872.6,
+   "minutes": 49,
+   "meets_30_min": "no",
+   "status": "route length measured from the property points in the geocode capture (building centroids, not doors); minutes are an estimate at a stated pace",
+   "basis": "OpenStreetMap foot-route length 3872.6 m between the two property points, divided by 80 m/min (4.8 km/h) and rounded up",
+   "official": false,
+   "source": "https://router.project-osrm.org",
+   "point_source": "https://nominatim.openstreetmap.org/search.php?q=ARIA%20Resort%20%26%20Casino%20Las%20Vegas&format=jsonv2&limit=1",
+   "retrieved": "2026-11-17",
+   "caveats": []
+  },
+  {
+   "hotel_id": "aria",
+   "hotel": "Aria Resort & Casino",
+   "venue_id": "bellagio",
+   "venue": "Bellagio Poker Room",
+   "measured_between": "Aria Resort & Casino point -> Bellagio Las Vegas point",
+   "distance_m": 2483.0,
+   "minutes": 32,
+   "meets_30_min": "no",
+   "status": "route length measured from the property points in the geocode capture (building centroids, not doors); minutes are an estimate at a stated pace",
+   "basis": "OpenStreetMap foot-route length 2483.0 m between the two property points, divided by 80 m/min (4.8 km/h) and rounded up",
+   "official": false,
+   "source": "https://router.project-osrm.org",
+   "point_source": "https://nominatim.openstreetmap.org/search.php?q=ARIA%20Resort%20%26%20Casino%20Las%20Vegas&format=jsonv2&limit=1",
+   "retrieved": "2026-11-17",
+   "caveats": [
+    "the route's end at the poker room's building was snapped 178 m from the recorded property point, so the length includes that detour"
+   ]
+  },
+  {
+   "hotel_id": "aria",
+   "hotel": "Aria Resort & Casino",
+   "venue_id": "caesars",
+   "venue": "Caesars Palace Poker Room",
+   "measured_between": "Aria Resort & Casino point -> Caesars Palace Hotel and Casino point",
+   "distance_m": 1858.0,
+   "minutes": 24,
+   "meets_30_min": "yes",
+   "status": "route length measured from the property points in the geocode capture (building centroids, not doors); minutes are an estimate at a stated pace",
+   "basis": "OpenStreetMap foot-route length 1858.0 m between the two property points, divided by 80 m/min (4.8 km/h) and rounded up",
+   "official": false,
+   "source": "https://router.project-osrm.org",
+   "point_source": "https://nominatim.openstreetmap.org/search.php?q=ARIA%20Resort%20%26%20Casino%20Las%20Vegas&format=jsonv2&limit=1",
+   "retrieved": "2026-11-17",
+   "caveats": []
+  },
+  {
+   "hotel_id": "ti",
+   "hotel": "Treasure Island Hotel and Casino",
+   "venue_id": "venetian",
+   "venue": "The Venetian Poker Room",
+   "measured_between": "Treasure Island Hotel and Casino point -> The Palazzo point",
+   "distance_m": 1099.5,
+   "minutes": 14,
+   "meets_30_min": "yes",
+   "status": "route length measured from the property points in the geocode capture (building centroids, not doors); minutes are an estimate at a stated pace",
+   "basis": "OpenStreetMap foot-route length 1099.5 m between the two property points, divided by 80 m/min (4.8 km/h) and rounded up",
+   "official": false,
+   "source": "https://router.project-osrm.org",
+   "point_source": "https://nominatim.openstreetmap.org/search.php?q=3300+South+Las+Vegas+Boulevard%2C+Las+Vegas%2C+NV&format=jsonv2&limit=3&addressdetails=0",
+   "retrieved": "2026-11-17",
+   "caveats": []
+  },
+  {
+   "hotel_id": "ti",
+   "hotel": "Treasure Island Hotel and Casino",
+   "venue_id": "wynn",
+   "venue": "Wynn Las Vegas Poker",
+   "measured_between": "Treasure Island Hotel and Casino point -> Wynn Las Vegas point",
+   "distance_m": 1364.1,
+   "minutes": 18,
+   "meets_30_min": "yes",
+   "status": "route length measured from the property points in the geocode capture (building centroids, not doors); minutes are an estimate at a stated pace",
+   "basis": "OpenStreetMap foot-route length 1364.1 m between the two property points, divided by 80 m/min (4.8 km/h) and rounded up",
+   "official": false,
+   "source": "https://router.project-osrm.org",
+   "point_source": "https://nominatim.openstreetmap.org/search.php?q=3300+South+Las+Vegas+Boulevard%2C+Las+Vegas%2C+NV&format=jsonv2&limit=3&addressdetails=0",
+   "retrieved": "2026-11-17",
+   "caveats": []
+  },
+  {
+   "hotel_id": "ti",
+   "hotel": "Treasure Island Hotel and Casino",
+   "venue_id": "bellagio",
+   "venue": "Bellagio Poker Room",
+   "measured_between": "Treasure Island Hotel and Casino point -> Bellagio Las Vegas point",
+   "distance_m": 2401.1,
+   "minutes": 31,
+   "meets_30_min": "no",
+   "status": "route length measured from the property points in the geocode capture (building centroids, not doors); minutes are an estimate at a stated pace",
+   "basis": "OpenStreetMap foot-route length 2401.1 m between the two property points, divided by 80 m/min (4.8 km/h) and rounded up",
+   "official": false,
+   "source": "https://router.project-osrm.org",
+   "point_source": "https://nominatim.openstreetmap.org/search.php?q=3300+South+Las+Vegas+Boulevard%2C+Las+Vegas%2C+NV&format=jsonv2&limit=3&addressdetails=0",
+   "retrieved": "2026-11-17",
+   "caveats": [
+    "the route's end at the poker room's building was snapped 178 m from the recorded property point, so the length includes that detour"
+   ]
+  },
+  {
+   "hotel_id": "ti",
+   "hotel": "Treasure Island Hotel and Casino",
+   "venue_id": "caesars",
+   "venue": "Caesars Palace Poker Room",
+   "measured_between": "Treasure Island Hotel and Casino point -> Caesars Palace Hotel and Casino point",
+   "distance_m": 1713.3,
+   "minutes": 22,
+   "meets_30_min": "yes",
+   "status": "route length measured from the property points in the geocode capture (building centroids, not doors); minutes are an estimate at a stated pace",
+   "basis": "OpenStreetMap foot-route length 1713.3 m between the two property points, divided by 80 m/min (4.8 km/h) and rounded up",
+   "official": false,
+   "source": "https://router.project-osrm.org",
+   "point_source": "https://nominatim.openstreetmap.org/search.php?q=3300+South+Las+Vegas+Boulevard%2C+Las+Vegas%2C+NV&format=jsonv2&limit=3&addressdetails=0",
+   "retrieved": "2026-11-17",
+   "caveats": []
+  },
+  {
+   "hotel_id": "harrahs",
+   "hotel": "Harrah's Las Vegas",
+   "venue_id": "venetian",
+   "venue": "The Venetian Poker Room",
+   "measured_between": "Harrah's Las Vegas point -> The Palazzo point",
+   "distance_m": 832.9,
+   "minutes": 11,
+   "meets_30_min": "yes",
+   "status": "route length measured from the property points in the geocode capture (building centroids, not doors); minutes are an estimate at a stated pace",
+   "basis": "OpenStreetMap foot-route length 832.9 m between the two property points, divided by 80 m/min (4.8 km/h) and rounded up",
+   "official": false,
+   "source": "https://router.project-osrm.org",
+   "point_source": "https://nominatim.openstreetmap.org/search.php?q=Harrah%27s%20Las%20Vegas&format=jsonv2&limit=1",
+   "retrieved": "2026-11-17",
+   "caveats": []
+  },
+  {
+   "hotel_id": "harrahs",
+   "hotel": "Harrah's Las Vegas",
+   "venue_id": "wynn",
+   "venue": "Wynn Las Vegas Poker",
+   "measured_between": "Harrah's Las Vegas point -> Wynn Las Vegas point",
+   "distance_m": 1586.2,
+   "minutes": 20,
+   "meets_30_min": "yes",
+   "status": "route length measured from the property points in the geocode capture (building centroids, not doors); minutes are an estimate at a stated pace",
+   "basis": "OpenStreetMap foot-route length 1586.2 m between the two property points, divided by 80 m/min (4.8 km/h) and rounded up",
+   "official": false,
+   "source": "https://router.project-osrm.org",
+   "point_source": "https://nominatim.openstreetmap.org/search.php?q=Harrah%27s%20Las%20Vegas&format=jsonv2&limit=1",
+   "retrieved": "2026-11-17",
+   "caveats": []
+  },
+  {
+   "hotel_id": "harrahs",
+   "hotel": "Harrah's Las Vegas",
+   "venue_id": "bellagio",
+   "venue": "Bellagio Poker Room",
+   "measured_between": "Harrah's Las Vegas point -> Bellagio Las Vegas point",
+   "distance_m": 2232.9,
+   "minutes": 28,
+   "meets_30_min": "yes",
+   "status": "route length measured from the property points in the geocode capture (building centroids, not doors); minutes are an estimate at a stated pace",
+   "basis": "OpenStreetMap foot-route length 2232.9 m between the two property points, divided by 80 m/min (4.8 km/h) and rounded up",
+   "official": false,
+   "source": "https://router.project-osrm.org",
+   "point_source": "https://nominatim.openstreetmap.org/search.php?q=Harrah%27s%20Las%20Vegas&format=jsonv2&limit=1",
+   "retrieved": "2026-11-17",
+   "caveats": [
+    "the route's end at the poker room's building was snapped 178 m from the recorded property point, so the length includes that detour"
+   ]
+  },
+  {
+   "hotel_id": "harrahs",
+   "hotel": "Harrah's Las Vegas",
+   "venue_id": "caesars",
+   "venue": "Caesars Palace Poker Room",
+   "measured_between": "Harrah's Las Vegas point -> Caesars Palace Hotel and Casino point",
+   "distance_m": 1805.8,
+   "minutes": 23,
+   "meets_30_min": "yes",
+   "status": "route length measured from the property points in the geocode capture (building centroids, not doors); minutes are an estimate at a stated pace",
+   "basis": "OpenStreetMap foot-route length 1805.8 m between the two property points, divided by 80 m/min (4.8 km/h) and rounded up",
+   "official": false,
+   "source": "https://router.project-osrm.org",
+   "point_source": "https://nominatim.openstreetmap.org/search.php?q=Harrah%27s%20Las%20Vegas&format=jsonv2&limit=1",
+   "retrieved": "2026-11-17",
+   "caveats": []
+  },
+  {
+   "hotel_id": "horseshoe",
+   "hotel": "Horseshoe Las Vegas Hotel & Casino - A Caesars Rewards Destination",
+   "venue_id": "venetian",
+   "venue": "The Venetian Poker Room",
+   "measured_between": "Horseshoe Las Vegas Hotel & Casino - A Caesars Rewards Destination point -> The Palazzo point",
+   "distance_m": 1672.1,
+   "minutes": 21,
+   "meets_30_min": "yes",
+   "status": "route length measured from the property points in the geocode capture (building centroids, not doors); minutes are an estimate at a stated pace",
+   "basis": "OpenStreetMap foot-route length 1672.1 m between the two property points, divided by 80 m/min (4.8 km/h) and rounded up",
+   "official": false,
+   "source": "https://router.project-osrm.org",
+   "point_source": "https://nominatim.openstreetmap.org/search.php?q=Horseshoe%20Las%20Vegas&format=jsonv2&limit=1",
+   "retrieved": "2026-11-17",
+   "caveats": []
+  },
+  {
+   "hotel_id": "horseshoe",
+   "hotel": "Horseshoe Las Vegas Hotel & Casino - A Caesars Rewards Destination",
+   "venue_id": "wynn",
+   "venue": "Wynn Las Vegas Poker",
+   "measured_between": "Horseshoe Las Vegas Hotel & Casino - A Caesars Rewards Destination point -> Wynn Las Vegas point",
+   "distance_m": 2425.4,
+   "minutes": 31,
+   "meets_30_min": "no",
+   "status": "route length measured from the property points in the geocode capture (building centroids, not doors); minutes are an estimate at a stated pace",
+   "basis": "OpenStreetMap foot-route length 2425.4 m between the two property points, divided by 80 m/min (4.8 km/h) and rounded up",
+   "official": false,
+   "source": "https://router.project-osrm.org",
+   "point_source": "https://nominatim.openstreetmap.org/search.php?q=Horseshoe%20Las%20Vegas&format=jsonv2&limit=1",
+   "retrieved": "2026-11-17",
+   "caveats": []
+  },
+  {
+   "hotel_id": "horseshoe",
+   "hotel": "Horseshoe Las Vegas Hotel & Casino - A Caesars Rewards Destination",
+   "venue_id": "bellagio",
+   "venue": "Bellagio Poker Room",
+   "measured_between": "Horseshoe Las Vegas Hotel & Casino - A Caesars Rewards Destination point -> Bellagio Las Vegas point",
+   "distance_m": 1377.6,
+   "minutes": 18,
+   "meets_30_min": "yes",
+   "status": "route length measured from the property points in the geocode capture (building centroids, not doors); minutes are an estimate at a stated pace",
+   "basis": "OpenStreetMap foot-route length 1377.6 m between the two property points, divided by 80 m/min (4.8 km/h) and rounded up",
+   "official": false,
+   "source": "https://router.project-osrm.org",
+   "point_source": "https://nominatim.openstreetmap.org/search.php?q=Horseshoe%20Las%20Vegas&format=jsonv2&limit=1",
+   "retrieved": "2026-11-17",
+   "caveats": [
+    "the route's end at the poker room's building was snapped 178 m from the recorded property point, so the length includes that detour"
+   ]
+  },
+  {
+   "hotel_id": "horseshoe",
+   "hotel": "Horseshoe Las Vegas Hotel & Casino - A Caesars Rewards Destination",
+   "venue_id": "caesars",
+   "venue": "Caesars Palace Poker Room",
+   "measured_between": "Horseshoe Las Vegas Hotel & Casino - A Caesars Rewards Destination point -> Caesars Palace Hotel and Casino point",
+   "distance_m": 1556.0,
+   "minutes": 20,
+   "meets_30_min": "yes",
+   "status": "route length measured from the property points in the geocode capture (building centroids, not doors); minutes are an estimate at a stated pace",
+   "basis": "OpenStreetMap foot-route length 1556.0 m between the two property points, divided by 80 m/min (4.8 km/h) and rounded up",
+   "official": false,
+   "source": "https://router.project-osrm.org",
+   "point_source": "https://nominatim.openstreetmap.org/search.php?q=Horseshoe%20Las%20Vegas&format=jsonv2&limit=1",
+   "retrieved": "2026-11-17",
+   "caveats": []
+  }
+ ],
+ "per_hotel": [
+  {
+   "hotel_id": "venetian",
+   "hotel": "The Venetian Las Vegas",
+   "on_site_at": [
+    "venetian"
+   ],
+   "venues_within_30_min": [
+    "bellagio",
+    "caesars",
+    "wynn"
+   ],
+   "venues_over_30_min": [],
+   "min_minutes": 15,
+   "max_minutes": 23
+  },
+  {
+   "hotel_id": "palazzo",
+   "hotel": "The Palazzo",
+   "on_site_at": [
+    "venetian"
+   ],
+   "venues_within_30_min": [
+    "wynn"
+   ],
+   "venues_over_30_min": [
+    "bellagio",
+    "caesars"
+   ],
+   "min_minutes": 13,
+   "max_minutes": 32
+  },
+  {
+   "hotel_id": "wynn",
+   "hotel": "Wynn Las Vegas",
+   "on_site_at": [
+    "wynn"
+   ],
+   "venues_within_30_min": [
+    "venetian"
+   ],
+   "venues_over_30_min": [
+    "bellagio",
+    "caesars"
+   ],
+   "min_minutes": 15,
+   "max_minutes": 35
+  },
+  {
+   "hotel_id": "encore",
+   "hotel": "Encore Las Vegas",
+   "on_site_at": [
+    "wynn"
+   ],
+   "venues_within_30_min": [
+    "venetian"
+   ],
+   "venues_over_30_min": [
+    "bellagio",
+    "caesars"
+   ],
+   "min_minutes": 20,
+   "max_minutes": 41
+  },
+  {
+   "hotel_id": "bellagio",
+   "hotel": "Bellagio Las Vegas",
+   "on_site_at": [
+    "bellagio"
+   ],
+   "venues_within_30_min": [
+    "caesars",
+    "venetian"
+   ],
+   "venues_over_30_min": [
+    "wynn"
+   ],
+   "min_minutes": 22,
+   "max_minutes": 33
+  },
+  {
+   "hotel_id": "caesars",
+   "hotel": "Caesars Palace Hotel and Casino",
+   "on_site_at": [
+    "caesars"
+   ],
+   "venues_within_30_min": [
+    "bellagio",
+    "venetian"
+   ],
+   "venues_over_30_min": [
+    "wynn"
+   ],
+   "min_minutes": 21,
+   "max_minutes": 36
+  },
+  {
+   "hotel_id": "aria",
+   "hotel": "Aria Resort & Casino",
+   "on_site_at": [],
+   "venues_within_30_min": [
+    "caesars"
+   ],
+   "venues_over_30_min": [
+    "bellagio",
+    "venetian",
+    "wynn"
+   ],
+   "min_minutes": 24,
+   "max_minutes": 49
+  },
+  {
+   "hotel_id": "ti",
+   "hotel": "Treasure Island Hotel and Casino",
+   "on_site_at": [],
+   "venues_within_30_min": [
+    "caesars",
+    "venetian",
+    "wynn"
+   ],
+   "venues_over_30_min": [
+    "bellagio"
+   ],
+   "min_minutes": 14,
+   "max_minutes": 31
+  },
+  {
+   "hotel_id": "harrahs",
+   "hotel": "Harrah's Las Vegas",
+   "on_site_at": [],
+   "venues_within_30_min": [
+    "bellagio",
+    "caesars",
+    "venetian",
+    "wynn"
+   ],
+   "venues_over_30_min": [],
+   "min_minutes": 11,
+   "max_minutes": 28
+  },
+  {
+   "hotel_id": "horseshoe",
+   "hotel": "Horseshoe Las Vegas Hotel & Casino - A Caesars Rewards Destination",
+   "on_site_at": [],
+   "venues_within_30_min": [
+    "bellagio",
+    "caesars",
+    "venetian"
+   ],
+   "venues_over_30_min": [
+    "wynn"
+   ],
+   "min_minutes": 18,
+   "max_minutes": 31
+  }
+ ]
+}

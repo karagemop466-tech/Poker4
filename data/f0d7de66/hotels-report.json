@@ -1,0 +1,336 @@
+{
+ "session": "f0d7de66",
+ "task": "Y3 - hotel fee/tax/parking/cancellation + measured walks",
+ "written_at": "2026-11-17T22:26:16Z",
+ "walk_pairs_measured": 40,
+ "walk_cross_checks": {
+  "pairs_rerouted_independently": 12,
+  "tolerance_m": 0.05,
+  "all_agreed": true
+ },
+ "hotels_within_30_of_a_room_with_events": [
+  "venetian",
+  "palazzo",
+  "wynn",
+  "encore",
+  "bellagio",
+  "caesars",
+  "aria",
+  "ti",
+  "harrahs",
+  "horseshoe"
+ ],
+ "hotels_over_30_only": [],
+ "fields_now_bound_to_an_official_sentence": [
+  {
+   "hotel": "venetian",
+   "field": "resort_fee",
+   "status": "verified from official page",
+   "retrieved": "2026-11-17"
+  },
+  {
+   "hotel": "palazzo",
+   "field": "resort_fee",
+   "status": "verified from official page",
+   "retrieved": "2026-11-17"
+  },
+  {
+   "hotel": "wynn",
+   "field": "resort_fee",
+   "status": "verified from official terms",
+   "retrieved": "2026-11-17"
+  },
+  {
+   "hotel": "wynn",
+   "field": "parking",
+   "status": "verified from official terms: the resort fee itself states complimentary self-parking for up to two vehicles, so no separate self-parking charge is li",
+   "retrieved": "2026-11-17"
+  },
+  {
+   "hotel": "ti",
+   "field": "resort_fee",
+   "status": "verified from official page",
+   "retrieved": "2026-11-17"
+  },
+  {
+   "hotel": "ti",
+   "field": "parking",
+   "status": "verified from official page: free valet and self parking are listed as resort fee amenities, so a guest paying the fee is not charged again to park",
+   "retrieved": "2026-11-17"
+  }
+ ],
+ "fields_still_open": [
+  {
+   "hotel": "venetian",
+   "field": "parking",
+   "status": "amounts retained from an earlier session; the parking sentences captured on 2026-11-17 cover who parks free, not the $20/$40 rates — see flag F15",
+   "retrieved": "2026-11-17"
+  },
+  {
+   "hotel": "venetian",
+   "field": "tax",
+   "status": "rate retained from an earlier session: the sentence captured on 2026-11-17 stops at 'Clark County Room Tax of 13' because the capture's sentence split",
+   "retrieved": "2026-11-17"
+  },
+  {
+   "hotel": "venetian",
+   "field": "cancellation",
+   "status": "unverified for a specific stay",
+   "retrieved": null
+  },
+  {
+   "hotel": "venetian",
+   "field": "walk",
+   "status": "410 m foot route measured through OpenStreetMap routing on 2026-11-17; on-site, so no public-way walk applies",
+   "retrieved": "2026-11-17"
+  },
+  {
+   "hotel": "palazzo",
+   "field": "parking",
+   "status": "amounts retained from an earlier session; the parking sentences captured on 2026-11-17 cover who parks free, not the $20/$40 rates — see flag F15",
+   "retrieved": "2026-11-17"
+  },
+  {
+   "hotel": "palazzo",
+   "field": "tax",
+   "status": "rate retained from an earlier session: the sentence captured on 2026-11-17 stops at 'Clark County Room Tax of 13' because the capture's sentence split",
+   "retrieved": "2026-11-17"
+  },
+  {
+   "hotel": "palazzo",
+   "field": "cancellation",
+   "status": "unverified for a specific stay",
+   "retrieved": null
+  },
+  {
+   "hotel": "palazzo",
+   "field": "walk",
+   "status": "0 m foot route measured through OpenStreetMap routing on 2026-11-17; on-site, so no public-way walk applies",
+   "retrieved": "2026-11-17"
+  },
+  {
+   "hotel": "wynn",
+   "field": "tax",
+   "status": "third-party-of-record: verified on a Caesars-owned property page, not on the Wynn page — flagged",
+   "retrieved": null
+  },
+  {
+   "hotel": "wynn",
+   "field": "cancellation",
+   "status": "unverified for a specific stay",
+   "retrieved": "2026-11-17"
+  },
+  {
+   "hotel": "wynn",
+   "field": "walk",
+   "status": "0 m foot route measured through OpenStreetMap routing on 2026-11-17; on-site, so no public-way walk applies",
+   "retrieved": "2026-11-17"
+  },
+  {
+   "hotel": "encore",
+   "field": "resort_fee",
+   "status": "still unconfirmed for Encore: the only resort-fee document captured today is the Wynn Las Vegas terms page, and it names 'Wynn Resort King and Wynn Re",
+   "retrieved": "2026-11-17"
+  },
+  {
+   "hotel": "encore",
+   "field": "parking",
+   "status": "not confirmed",
+   "retrieved": null
+  },
+  {
+   "hotel": "encore",
+   "field": "tax",
+   "status": "not confirmed",
+   "retrieved": null
+  },
+  {
+   "hotel": "encore",
+   "field": "cancellation",
+   "status": "unverified",
+   "retrieved": null
+  },
+  {
+   "hotel": "encore",
+   "field": "walk",
+   "status": "914 m foot route measured through OpenStreetMap routing on 2026-11-17; on-site, so no public-way walk applies",
+   "retrieved": "2026-11-17"
+  },
+  {
+   "hotel": "bellagio",
+   "field": "resort_fee",
+   "status": "official fee page returns HTTP 404 (still 404 in the 2026-11-17 scheduled check); third-party figures conflict and are not used",
+   "retrieved": null
+  },
+  {
+   "hotel": "bellagio",
+   "field": "parking",
+   "status": "not confirmed",
+   "retrieved": null
+  },
+  {
+   "hotel": "bellagio",
+   "field": "tax",
+   "status": "not confirmed",
+   "retrieved": null
+  },
+  {
+   "hotel": "bellagio",
+   "field": "cancellation",
+   "status": "unverified",
+   "retrieved": null
+  },
+  {
+   "hotel": "bellagio",
+   "field": "walk",
+   "status": "0 m foot route measured through OpenStreetMap routing on 2026-11-17; on-site, so no public-way walk applies",
+   "retrieved": "2026-11-17"
+  },
+  {
+   "hotel": "caesars",
+   "field": "resort_fee",
+   "status": "page carries no fee amount (marketing copy); third-party figures conflict ($49.95 vs $54.95) and are not used",
+   "retrieved": null
+  },
+  {
+   "hotel": "caesars",
+   "field": "parking",
+   "status": "not confirmed",
+   "retrieved": null
+  },
+  {
+   "hotel": "caesars",
+   "field": "tax",
+   "status": "not confirmed",
+   "retrieved": null
+  },
+  {
+   "hotel": "caesars",
+   "field": "cancellation",
+   "status": "unverified",
+   "retrieved": null
+  },
+  {
+   "hotel": "caesars",
+   "field": "walk",
+   "status": "0 m foot route measured through OpenStreetMap routing on 2026-11-17; on-site, so no public-way walk applies",
+   "retrieved": "2026-11-17"
+  },
+  {
+   "hotel": "aria",
+   "field": "resort_fee",
+   "status": "not published on the fetched official page; an earlier session recorded conflicting third-party values ($50 vs $55) and they are not used",
+   "retrieved": null
+  },
+  {
+   "hotel": "aria",
+   "field": "parking",
+   "status": "not confirmed",
+   "retrieved": null
+  },
+  {
+   "hotel": "aria",
+   "field": "tax",
+   "status": "not confirmed",
+   "retrieved": null
+  },
+  {
+   "hotel": "aria",
+   "field": "cancellation",
+   "status": "unverified",
+   "retrieved": null
+  },
+  {
+   "hotel": "aria",
+   "field": "walk",
+   "status": "ARIA to the Venetian runs along the Strip through CityCenter; no official minute count. The Aria Express tram is free but does not reach the Venetian.",
+   "retrieved": null
+  },
+  {
+   "hotel": "ti",
+   "field": "tax",
+   "status": "not stated on the official TI page captured 2026-11-17 — left blank and flagged rather than carried over from an earlier session",
+   "retrieved": "2026-11-17"
+  },
+  {
+   "hotel": "ti",
+   "field": "cancellation",
+   "status": "unverified",
+   "retrieved": null
+  },
+  {
+   "hotel": "ti",
+   "field": "walk",
+   "status": "1100 m foot route measured through OpenStreetMap routing on 2026-11-17; 14 min at the stated 4.8 km/h pace. Neither property publishes a door-to-door ",
+   "retrieved": "2026-11-17"
+  },
+  {
+   "hotel": "horseshoe",
+   "field": "resort_fee",
+   "status": "not published",
+   "retrieved": null
+  },
+  {
+   "hotel": "horseshoe",
+   "field": "parking",
+   "status": "not confirmed",
+   "retrieved": null
+  },
+  {
+   "hotel": "horseshoe",
+   "field": "tax",
+   "status": "not confirmed",
+   "retrieved": null
+  },
+  {
+   "hotel": "horseshoe",
+   "field": "cancellation",
+   "status": "unverified",
+   "retrieved": null
+  },
+  {
+   "hotel": "horseshoe",
+   "field": "walk",
+   "status": "no official walking-time source",
+   "retrieved": null
+  },
+  {
+   "hotel": "harrahs",
+   "field": "resort_fee",
+   "status": "not published on the fetched official page",
+   "retrieved": null
+  },
+  {
+   "hotel": "harrahs",
+   "field": "parking",
+   "status": "not confirmed",
+   "retrieved": null
+  },
+  {
+   "hotel": "harrahs",
+   "field": "tax",
+   "status": "not confirmed",
+   "retrieved": null
+  },
+  {
+   "hotel": "harrahs",
+   "field": "cancellation",
+   "status": "unverified",
+   "retrieved": null
+  },
+  {
+   "hotel": "harrahs",
+   "field": "walk",
+   "status": "Harrah's sits between Planet Hollywood and The LINQ, opposite the Venetian side of the Strip; no official minute count.",
+   "retrieved": null
+  }
+ ],
+ "not_closed": [
+  "encore resort fee: only the Wynn terms page was capturable and it names Wynn room types",
+  "bellagio / caesars / harrahs / horseshoe resort fees: no official page in this snapshot states an amount; third-party figures conflict and were not used",
+  "room tax rate: the Venetian sentence breaks at \"Room Tax of 13\" (extractor splits on the decimal point); the pattern is fixed in tools/sync_official_sources.py for the next capture, and F15 carries it until then",
+  "cancellation deadline per stay: still only readable on each booking page for specific dates",
+  "dated room rates: only the Venetian has a dated checkout-total capture; every other property publishes rates inside its calendar only",
+  "door-end coordinates for each walk (F6 / F16)"
+ ]
+}

@@ -471,13 +471,19 @@ def audit_structure(text: str, url: str) -> dict:
     return out
 
 
+# A sentence stops at a period - except a period with a digit on both sides, which is a decimal
+# point. Without that exception the Venetian terms sentence came out as "the applicable Clark
+# County Room Tax of 13", silently truncating 13.38% and making a real official figure
+# unverifiable from its own capture (session f0d7de66, flag F15).
+_TAIL = r"(?:[^.\n]|\.(?=\d)){0,240}"
+_HEAD = r"(?:[^.\n]|\.(?=\d)){0,90}"
 FACT_PATTERNS = {
-    "resort_fee": r"[^.\n]{0,90}resort\s*fee[^.\n]{0,240}",
-    "room_tax": r"[^.\n]{0,90}(?:13\.38|room\s+tax|state\s+room)[^.\n]{0,240}",
-    "parking": r"[^.\n]{0,90}(?:self[- ]?parking|valet\s+parking|parking\s+(?:fee|rate|is))[^.\n]{0,240}",
-    "cancellation": r"[^.\n]{0,90}(?:cancellation|cancel\s+your|no[- ]show|non[- ]refundable)[^.\n]{0,240}",
-    "check_in_out": r"[^.\n]{0,90}(?:check[- ]in|check[- ]out)\s+(?:time|is|at|after|by)[^.\n]{0,240}",
-    "walk": r"[^.\n]{0,90}(?:minutes?\s+(?:walk|walking)|walking\s+distance|skybridge|monorail)[^.\n]{0,240}",
+    "resort_fee": _HEAD + r"resort\s*fee" + _TAIL,
+    "room_tax": _HEAD + r"(?:13\.\d|room\s+tax|state\s+room)" + _TAIL,
+    "parking": _HEAD + r"(?:self[- ]?parking|valet\s+parking|parking\s+(?:fee|rate|is))" + _TAIL,
+    "cancellation": _HEAD + r"(?:cancellation|cancel\s+your|no[- ]show|non[- ]refundable)" + _TAIL,
+    "check_in_out": _HEAD + r"(?:check[- ]in|check[- ]out)\s+(?:time|is|at|after|by)" + _TAIL,
+    "walk": _HEAD + r"(?:minutes?\s+(?:walk|walking)|walking\s+distance|skybridge|monorail)" + _TAIL,
 }
 
 
