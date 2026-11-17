@@ -864,6 +864,7 @@ Checked and not changed: Venetian $55 resort fee and $20/$40 parking (read live 
 
 Still open (not claimed, not resolved): Bellagio resort fee (no official page reachable); Clark County PGC map (per-property membership); walking minutes (no official source); single-entry confirmation (0 events); live dated booking quotes; 8 AM all-day plan (F10); trip dates (not supplied by the user). The county letter is not yet in the daily monitor registry.
 
+<<<<<<< HEAD
 ### Merge and deploy record — arena/03d073d2-poker4 (2026-11-17)
 
 - **PR #66** (`arena/03d073d2-poker4` → `main`) — https://github.com/karagemop466-tech/Poker4/pull/66 — checks `check`, `integrity`, `verify` all **pass**; merged with `--merge` at 2026-11-17T22:32:37Z as `f163d6e81221877fcf5e6c35105752a4318abedc`. Pages deploy `44191075389` (Deploy static dashboard to GitHub Pages) **success**. Post-merge official source sync committed `282c9e8`; its Pages build `44191075021` **success**. Live check: https://karagemop466-tech.github.io/Poker4/hotels.html shows the county-letter basis and the F27 note.
@@ -871,3 +872,23 @@ Still open (not claimed, not resolved): Bellagio resort fee (no official page re
 - **Irregularity F29 (not fixed):** `tournament-monitor.yml` ("Daily schedule + source-change monitor") failed at `tools/verify_poker4.py` on its 22:26 UTC scheduled run (44190052816, ff3fa36) and on three earlier push runs the same day. The failed-run logs could not be downloaded from the sandbox, and a manual retry was refused (HTTP 403). The root site and its deploy are unaffected. Published on the Flagged page as F29 (see the PR that adds it).
 - **Process note:** during this session I briefly created a local branch, `arena/03d073d2-poker4-f29`, by mistake. It was never pushed, and I deleted it at once. Work stayed on `arena/03d073d2-poker4`.
 - **Next step for this session's scope:** the Flagged page now carries F27 (PGC membership), F19 (Wynn fee, current source), F6 (Bellagio, still unverified) and F29 (monitor failure).
+=======
+---
+
+## Session arena/c5c7cc2b-poker4 — claim (2026-11-17)
+
+- Session ID: `arena/c5c7cc2b-poker4`; branch `arena/c5c7cc2b-poker4` (branched from `main` @ `ff3fa36`). The session brief asks for `session-<id>/<task>` branches; the Arena branch name is fixed, so all work for this session lands on that one branch in ordered commits.
+- Role: **verification + final integration round** — re-verify the published data line by line against live official sources (fetch of official pages available this round), continue the structure-sheet entry-rule audit (promote only quoted confirmations), audit every brief feature against the published site and close gaps, then one integration PR to `main`, merge, confirm the Pages deploy, and record the result here.
+- Scope: root canonical pages + `venues/*` + `scripts/integrate_data.py` + `scripts/verify_root.py` + `app.js`/`site.css` + canonical `data/**` + `.github/workflows/**` (integration-owned jobs) + `COORDINATION.md` (log) + `README.md`. Other sessions' subsites (`v2/`, `poker4/`, `planner/`, `site/`, `verified/`, `strip/`, `60fb62da/`, `c07371e3/`, `df41f5c6/`, `pages/`, `build/`, `archive/`, `prior_root_dashboard/`, `data/<other-session>/`) are preserved untouched; changes to another session's files are logged here instead.
+
+| ID | Task | Status | Owner | File scope | Sources / verification | Irregularities |
+|----|------|--------|-------|------------|------------------------|----------------|
+| V1 | Line-by-line re-verification of published event + hotel data against live official sources (Venetian DSE IV calendar page, structure sheets, Venetian hotel terms, Wynn/Bellagio/Caesars rows) | in progress | arena/c5c7cc2b-poker4 | `data/**` (canonical layer), `review.html` | Live fetch of official pages 2026-11-17; every changed value carries its source + retrieval date | pending |
+| V2 | Structure-sheet entry-rule audit continuation: read sheets, promote confirmed fee/re-entry/add-on/bounty facts with verbatim quotes + retrieval date; remove "unverified" only where a sheet confirms | in progress | arena/c5c7cc2b-poker4 | `data/structure-audit.json`, `data/site-events.json` via `scripts/integrate_data.py` | Official structure-sheet PDFs on venetianlasvegas.com | pending |
+| V3 | Feature audit vs the brief (trip calculator, date filter, search, single-entry toggle, overlap plan, ≤30-min walk filter, dated rate log, per-venue pages, monitor, exec summary, suggestions, Q&A, flagged page); fix gaps | in progress | arena/c5c7cc2b-poker4 | root `*.html`, `app.js`, `site.css`, `data/poker4.json` | `scripts/verify_root.py`, `scripts/linkcheck.py`, `scripts/verify_markup.py` | pending |
+| V4 | Irregularity fixes found in review (kept source-excerpt-backed only; nothing inferred) | in progress | arena/c5c7cc2b-poker4 | canonical `data/**` | Each fix carries the official excerpt | pending |
+| V5 | Integration: regenerate → full gates → PR → merge → Pages deploy confirm → record here | pending | arena/c5c7cc2b-poker4 | this branch, `main`, `COORDINATION.md` | — | — |
+
+### Log — arena/c5c7cc2b-poker4
+- 2026-11-17: Claimed V1–V5 before touching shared data; this commit pushes the claim first.
+>>>>>>> 2acd94b (coord: claim V1-V5 for arena/c5c7cc2b-poker4 (verification + integration round))
