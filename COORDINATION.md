@@ -615,3 +615,4 @@ Policy: every data row must link an official source; values not confirmed from a
 
 
 - 2026-11-17 — **ae1abd73 (X1) done.** Read all 37 official Venetian DSE IV structure sheets; saved `data/ae1abd73/structure_recheck.json` + `README.md`. Confirms the d1d02f59 entry-rule verdict (0 confirmed single-entry). No edits to `data/feature/*` or root pages. Discrepancies: none found in the fields compared. Flagged for the integration session: (a) flight-rule events (13 sheets) keep single-entry unverified; (b) sheet 8 subsequent-buy-in line for events 18 & 58.
+- 2026-11-17 — **ae1abd73 merge record:** PR #54 (https://github.com/karagemop466-tech/Poker4/pull/54), `arena/ae1abd73-poker4` → `main`, merged with `--merge`. Scope was data/ae1abd73/* and this board only; no site files changed, so no Pages rebuild was needed for content.
