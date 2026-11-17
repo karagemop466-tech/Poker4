@@ -1073,6 +1073,20 @@
    "a": "F-PR28"
   },
   {
+   "t": "F-ROOT-DUP Root `index.html` renders the \"Other preserved research sets\" section twice",
+   "k": "Flag",
+   "d": "Present on `main` after the 2026-11-17 merges (one copy carries the v2/planner links, the other an older set). Both list the same subsites with different link sets, so a reader can",
+   "u": "@@/flagged.html",
+   "a": "F-ROOT-DUP"
+  },
+  {
+   "t": "F-ROOT-404 Root `index.html` links `pages/index.html`, which does not exist in the repository",
+   "k": "Flag",
+   "d": "Detected by the link check while resolving the merge of `origin/main` into this branch. `pages/` is not tracked, so the link 404s on GitHub Pages. Not created and not removed here:",
+   "u": "@@/flagged.html",
+   "a": "F-ROOT-404"
+  },
+  {
    "t": "For each candidate one-day event, does the room allow re-entry, rebuys or an add-on - and can it say so in writing?",
    "k": "Question",
    "d": "A yes/no per event number, in writing, for the events you would actually play.",

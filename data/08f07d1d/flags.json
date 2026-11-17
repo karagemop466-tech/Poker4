@@ -304,7 +304,33 @@
     "COORDINATION.md"
    ],
    "how_to_close": "Owner picks which dashboard is canonical; the other becomes an archive link."
+  },
+  {
+   "id": "F-ROOT-DUP",
+   "title": "Root `index.html` renders the \"Other preserved research sets\" section twice",
+   "detail": "Present on `main` after the 2026-11-17 merges (one copy carries the v2/planner links, the other an older set). Both list the same subsites with different link sets, so a reader cannot tell which is current. Left exactly as `main` has it — this session only inserted its own link into the first copy — because silently editing another session's published section would hide the duplication.",
+   "severity": "minor",
+   "status": "flagged for review, not fixed",
+   "no_official_source": true,
+   "sources": [],
+   "affects": [
+    "index.html"
+   ],
+   "how_to_close": "Owner (or the root-page session) deletes one of the two sections."
+  },
+  {
+   "id": "F-ROOT-404",
+   "title": "Root `index.html` links `pages/index.html`, which does not exist in the repository",
+   "detail": "Detected by the link check while resolving the merge of `origin/main` into this branch. `pages/` is not tracked, so the link 404s on GitHub Pages. Not created and not removed here: it belongs to another session's snapshot section, and inventing a page to satisfy it would be worse than the dead link.",
+   "severity": "minor",
+   "status": "flagged for review, not fixed",
+   "no_official_source": true,
+   "sources": [],
+   "affects": [
+    "index.html"
+   ],
+   "how_to_close": "The owning session either publishes pages/index.html or drops the link."
   }
  ],
- "count": 22
+ "count": 24
 }
