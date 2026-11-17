@@ -1,8 +1,8 @@
 {
  "meta": {
   "generated_at": "2026-11-17T22:53:45Z",
-  "tracked": 64,
-  "reachable": 64,
+  "tracked": 66,
+  "reachable": 66,
   "unreachable": 0,
   "value_changes_recorded": 15
  },
@@ -25,6 +25,25 @@
    "extractor": null,
    "rows_parsed": null,
    "saved": "data/raw/aria-poker.txt"
+  },
+  {
+   "url": "https://aria.mgmresorts.com/en/terms-and-conditions.html",
+   "label": "ARIA \u2014 hotel reservation terms (daily resort fee, check-in/out, occupant charge, cancellation)",
+   "venue": "ARIA",
+   "kind": "page",
+   "checked_at": "2026-11-17T23:20:00Z",
+   "status": 200,
+   "ok": true,
+   "sha256": "",
+   "bytes": null,
+   "last_modified": null,
+   "first_run": true,
+   "bytes_changed": null,
+   "values_changed": null,
+   "error": null,
+   "extractor": null,
+   "rows_parsed": null,
+   "saved": "data/raw/aria-terms.txt"
   },
   {
    "url": "https://bellagio.mgmresorts.com/en/casino/poker.html",
@@ -291,6 +310,25 @@
    "extractor": null,
    "rows_parsed": null,
    "saved": "data/raw/caesars-poker.txt"
+  },
+  {
+   "url": "https://www.mgmresorts.com/en/things-to-do/parking.html",
+   "label": "MGM Resorts \u2014 published parking rate table (Bellagio, ARIA and the other MGM Strip properties)",
+   "venue": "MGM Resorts (corporate, no room of its own)",
+   "kind": "page",
+   "checked_at": "2026-11-17T23:20:00Z",
+   "status": 200,
+   "ok": true,
+   "sha256": "",
+   "bytes": null,
+   "last_modified": null,
+   "first_run": true,
+   "bytes_changed": null,
+   "values_changed": null,
+   "error": null,
+   "extractor": null,
+   "rows_parsed": null,
+   "saved": "data/raw/mgm-parking.txt"
   },
   {
    "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",

@@ -520,7 +520,7 @@ for r in ([] if ROOM_FACTS else (CFG.get("preserved_rows", {}).get("caesars") or
                      reentry=(r.get("reentry_addon") or "").split(";")[0] or None,
                      addon=(r["reentry_addon"].split("add-on")[1].strip(" ;") if "add-on" in (r.get("reentry_addon") or "").lower() else None),
                      fee_txt=None, srcs=r.get("source_urls") or [LEGACY["sources"][k]["url"] for k in r.get("sources", []) if k in LEGACY.get("sources", {})],
-                     note="Preserved from the earlier capture; the official daily flyer URL now returns 404, so this row needs re-verification")
+                     note="Preserved from the earlier capture; the official 2026 daily flyer (now tracked as C_FLYER) prices this start time differently, so this fallback row needs re-verification")
 
 # ------------------------------------------------- rooms re-read from their own PDFs
 # tools/room_extract.py turns the *committed official captures* (data/raw/*, the same
@@ -567,9 +567,46 @@ if ROOM_FACTS:
 
 WEEKDAY = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 
+def recurrence_from_printed(text) -> dict | None:
+    """Turn the days a room actually printed into the weekday names they cover.
+
+    Only what the document says is used: "Nightly Monday-Sunday" covers every day because the range
+    does, "Monday-Thursday" covers four, and a phrase this cannot parse returns None so the row stays
+    undated rather than being quietly assumed to run every day.
+    """
+    if not text:
+        return None
+    t = re.sub(r"\s+", " ", str(text)).strip()
+    idx = {d[:3]: i for i, d in enumerate(WEEKDAY)}   # matched on the three-letter prefix the sheets use
+    days: list[str] = []
+    for part in re.split(r"[,&]| and ", t):
+        part = part.strip().rstrip(".")
+        if not part:
+            continue
+        if re.search(r"\b(daily|nightly|every day|each day|all days)\b", part, re.I):
+            days = list(WEEKDAY)
+            continue
+        m = re.search(r"([A-Za-z]+)\s*(?:-|to|\u2013|through)\s*([A-Za-z]+)", part)
+        if m and m.group(1)[:3] in idx and m.group(2)[:3] in idx:
+            lo = idx[m.group(1)[:3]]
+            hi = idx[m.group(2)[:3]]
+            span = list(range(lo, hi + 1)) if hi >= lo else list(range(lo, 7)) + list(range(0, hi + 1))
+            days.extend(WEEKDAY[i] for i in span)
+            continue
+        w = re.match(r"([A-Za-z]+)", part)
+        if w and w.group(1)[:3] in idx:
+            days.append(WEEKDAY[idx[w.group(1)[:3]]])
+    seen, out = set(), []
+    for d in days:
+        if d not in seen:
+            seen.add(d)
+            out.append(d)
+    return {"printed": t, "days": out} if out else None
+
+
 def room_row(*, rid, venue, venue_name, date, time, name, buy, gtd, rules, fee, chips_,
              level_min, reg, sources, extra_flags, gtd_excerpt=None, note=None,
-             pool=None, weekday=None):
+             pool=None, house=None, weekday=None, recurrence=None):
     ev = {
         "id": rid, "venue": venue, "venue_name": venue_name, "event_no": None,
         "name": name, "name_printed": name.upper(), "date": date,
@@ -586,6 +623,15 @@ def room_row(*, rid, venue, venue_name, date, time, name, buy, gtd, rules, fee, 
         "single_entry_confirmed": (rules or {}).get("single_entry", {}).get("status") == "confirmed",
         "flags": [],
     }
+    if recurrence:
+        # a recurring slate prints weekdays, not a calendar date. The date filter and the day plan use
+        # exactly those printed words — nothing else — to decide which days this row is playable on.
+        ev["recurrence"] = recurrence
+        ev["weekday"] = (", ".join(recurrence["days"]) if len(recurrence["days"]) < 7 else "every day")
+    if house:
+        # the house share of the entry, kept as its own number (the brief asks for the fee value
+        # separately from the buy-in, not folded into a single "price" cell)
+        ev["house_fee_usd"] = house
     if pool:
         ev["pool_per_entry_usd"] = pool
         if buy and pool:
@@ -647,7 +693,9 @@ for e in ROOM_FACTS["wynn_daily"]["events"]:
     rules = room_rule_set(e["rules"], e["source"], e["retrieved"])
     rules["spend_advantage"] = e["rules"].get("spend_advantage")
     fee = fee_rule([], e["buy_in_usd"], e["source"], e["retrieved"], e.get("fee_excerpt"))
-    extra = ["recurring slate — the sheet prints the days offered, not calendar dates, so this row is never placed on one day",
+    rec = recurrence_from_printed(e.get("offered_days_printed"))
+    extra = [("recurring slate — the sheet prints “" + (e.get("offered_days_printed") or "no days") + "”, not calendar dates, "
+              "so it is offered on those weekdays rather than placed on a dated slot"),
              "the sheet says the slate may be suspended during other Tournament Series; the venue's own WPT "
              f"series runs {series_days[0]} to {series_days[-1]}, so availability inside that window is unconfirmed"]
     if e.get("extra_play_option_excerpt"):
@@ -662,7 +710,7 @@ for e in ROOM_FACTS["wynn_daily"]["events"]:
              buy=e["buy_in_usd"], gtd=e["guarantee_usd"], rules=rules, fee=fee,
              chips_=e["starting_chips"], level_min=e["level_minutes"], reg=None,
              sources=[e["source"], ROOM_FACTS["wynn_daily"]["poster_url"]],
-             extra_flags=extra,
+             extra_flags=extra, recurrence=rec,
              note="offered " + (e["offered_days_printed"] or "days not printed on the sheet"))
 
 # --- Bellagio weekend slate ----------------------------------------------------
@@ -680,58 +728,94 @@ for e in ROOM_FACTS["bellagio"]:
              level_min=e["level_minutes"], reg=None,
              sources=[e["source"], e["page_source"]], extra_flags=flags,
              gtd_excerpt=e.get("guarantee_excerpt"), weekday=e["weekday"],
+             recurrence=recurrence_from_printed(e["weekday"]),
              note=f"played {e['weekday']}s")
 
-# --- Caesars Palace: the 2026 daily flyer prints per-slot buy-ins, fee splits ---
-# and a re-entry rule (session 3082d6d9, live read 2026-11-17).  The explore page's
-# blanket “Every event carries a $100 buy-in” sentence conflicts with the flyer's
-# $160 slots at 2 p.m. and 9 p.m.; the dedicated, dated flyer is the schedule
-# document of record, so the rows follow it and the conflict stays on flag F25.
+# --- Caesars Palace: the flyer is the itemised schedule; the article is a summary ---------
+# Two official pages, two price lists. The flyer (a schedule document on the property's own
+# content path) prices each start time separately and prints the fee split and the re-entry
+# clause; the marketing article describes all four daily events at one blanket $100. The row
+# carries the flyer's value, the article's sentence stays beside it, and the disagreement is
+# flagged (flag F25) instead of silently resolved. The values below are a fallback for a build
+# without the capture; when data/raw/caesars-daily-flyer-2026.txt is present, every number on
+# the row comes from that text via tools/room_extract.py, never from this table.
 CAESARS_FLYER_URL = ("https://www.caesars.com/content/dam/empire/clv/casino/poker/"
                      "tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf")
 CAESARS_FLYER_RETRIEVED = "2026-11-17"
-CAESARS_FLYER_BUYINS = {"10:00 AM": 100, "2:00 PM": 160, "6:00 PM": 100, "9:00 PM": 160}
-CAESARS_FLYER_FEE = {
-    100: {"value": "$70 tournament prize pool; $30 Caesars Palace maintenance fee",
-          "excerpt": "Of the $100 buy in, $70 goes to the prize pool and $30 is held by Caesars Palace as a maintenance fee."},
-    160: {"value": "$115 tournament prize pool; $45 Caesars Palace maintenance fee",
-          "excerpt": "Of the $160 buy in, $115 goes to the prize pool and $45 is held by Caesars Palace as a maintenance fee."},
-}
+CAESARS_FLYER_ROWS = [
+    {"time_printed": "10 AM", "buy_in_usd": 100, "house_fee_usd": 30, "pool_per_entry_usd": 70,
+     "guarantee_usd": 1000, "starting_chips": 20000, "level_minutes": 20,
+     "fee_excerpt": "Of the $100 buy in, $70 goes to the prize pool and $30 is held by Caesars Palace as a maintenance fee."},
+    {"time_printed": "2 PM", "buy_in_usd": 160, "house_fee_usd": 45, "pool_per_entry_usd": 115,
+     "guarantee_usd": 1000, "starting_chips": 20000, "level_minutes": 20,
+     "fee_excerpt": "Of the $160 buy in, $115 goes to the prize pool and $45 is held by Caesars Palace as a maintenance fee."},
+    {"time_printed": "6 PM", "buy_in_usd": 100, "house_fee_usd": 30, "pool_per_entry_usd": 70,
+     "guarantee_usd": 1000, "starting_chips": 20000, "level_minutes": 20,
+     "fee_excerpt": "Of the $100 buy in, $70 goes to the prize pool and $30 is held by Caesars Palace as a maintenance fee."},
+    {"time_printed": "9 PM", "buy_in_usd": 160, "house_fee_usd": 45, "pool_per_entry_usd": 115,
+     "guarantee_usd": 1000, "starting_chips": 20000, "level_minutes": 20,
+     "fee_excerpt": "Of the $160 buy in, $115 goes to the prize pool and $45 is held by Caesars Palace as a maintenance fee."},
+]
 c = ROOM_FACTS["caesars"]
+flyer = c.get("flyer") or {}
+
+
+def _canon_time(t):
+    m = re.match(r"(\d{1,2})(?::(\d{2}))?\s*(AM|PM)", (t or "").upper())
+    # the printed clock style is unpadded ("2:00 PM"), which is also how every other venue row
+    # stores its start time, so the hour is deliberately not zero-padded here.
+    return f"{int(m.group(1))}:{m.group(2) or '00'} {m.group(3)}" if m else None
+
+
+FLYER_BY_TIME = {}
+FLYER_FROM_CAPTURE = bool(flyer.get("rows"))
+for _r in (flyer.get("rows") or CAESARS_FLYER_ROWS):
+    _k = _canon_time(_r.get("time_printed"))
+    if _k:
+        FLYER_BY_TIME[_k] = _r
+
 for t in c["times"]:
-    buy_t = CAESARS_FLYER_BUYINS.get(t, c["buy_in_printed"])
-    rules = {
-        # neither official source states an entry-count limit; omission is not confirmation
-        "single_entry": {"status": "unverified", "value": None, "excerpt": c["rules"]["single_entry"]["excerpt"],
-                         "source": c["source"], "retrieved": c["retrieved"]},
-        "re_entry": {"status": "confirmed_allowed",
-                     "value": "re-entry allowed after elimination, within the first break of play",
-                     "excerpt": "Participants may only register themselves, but may re-enter, by paying the entry fee, upon elimination within the first break of play.",
-                     "source": CAESARS_FLYER_URL, "retrieved": CAESARS_FLYER_RETRIEVED},
-        "add_on": {"status": "confirmed_allowed",
-                   "value": "$50 add-on for 15,000 extra chips (first break only)",
-                   "excerpt": ("a $50 add-on at the first break gives you an extra 15,000 chips; "
-                               "Of the $50 add-on, $45 goes to the prize pool and $5 is held by Caesars Palace as a maintenance fee."),
-                   "source": CAESARS_FLYER_URL, "retrieved": CAESARS_FLYER_RETRIEVED},
-    }
+    r = FLYER_BY_TIME.get(t) or {}
+    rules = room_rule_set(c["rules"], c["source"], c["retrieved"])
     rules["spend_advantage"] = True
-    split = CAESARS_FLYER_FEE.get(buy_t)
-    if split:
-        fee = {"status": "confirmed", "value": split["value"], "excerpt": split["excerpt"],
-               "source": CAESARS_FLYER_URL, "retrieved": CAESARS_FLYER_RETRIEVED}
+    srcs = [c["source"]]
+    if r:
+        srcs = [flyer.get("url") or c["source"], c["source"]]
+        for k in ("single_entry", "re_entry", "add_on"):
+            fr = (flyer.get("rules") or {}).get(k) or {}
+            if fr.get("excerpt"):
+                rules[k] = {"status": fr["status"], "value": fr.get("value"), "excerpt": fr["excerpt"],
+                            "source": flyer.get("url"), "retrieved": flyer.get("retrieved")}
+    if r.get("fee_excerpt"):
+        fee = {"status": "confirmed", "value": f"${r['house_fee_usd']} of the ${r['buy_in_usd']} buy-in is the house fee; "
+                f"${r['pool_per_entry_usd']} per entry goes to the prize pool",
+               "excerpt": r["fee_excerpt"], "source": flyer.get("url"), "retrieved": flyer.get("retrieved")}
     else:
         fee = {"status": "unverified", "value": None, "excerpt": c["rules"]["fee"]["excerpt"],
                "source": c["source"], "retrieved": c["retrieved"]}
-    conflict_note = ("" if buy_t == c["buy_in_printed"] else
-                     " 2026 flyer prints $160 for this slot; the explore page's “every event carries a $100 buy-in” sentence conflicts — see flag F25.")
+    buy = r.get("buy_in_usd") or c["buy_in_printed"]
+    flags = ["daily slate — the flyer prints no calendar date"]
+    if r and not FLYER_FROM_CAPTURE:
+        flags.append("flyer value reconstructed from the 2026-11-17 read — this build has no data/raw capture of the PDF to re-derive it from")
+    if r:
+        flags.append("official 2026 flyer prices this start time; the property's article states a blanket $100 "
+                     "for all four daily events — both sentences are on the row, the conflict is not resolved (flag F25)")
+    else:
+        flags.append("official page prints no house-fee split, so the row is not ranked")
     room_row(rid="CAESARS-DAILY-" + t.replace(" ", "").replace(":", ""), venue="caesars",
              venue_name="Caesars Palace Poker Room", date=None, time=t,
-             name=f"${buy_t} No Limit Hold'em", buy=buy_t,
-             gtd=c["guarantee_printed"], rules=rules, fee=fee, chips_=c["chips_printed"],
-             level_min=c["level_minutes_printed"], reg="start of level 7",
-             sources=[c["source"], CAESARS_FLYER_URL],
-             extra_flags=["daily slate — no calendar date printed"],
-             note=("add-on offered: a $50 add-on at the first break gives you an extra 15,000 chips; registration closes at the start of level 7." + conflict_note))
+             name=f"${buy} No Limit Hold'em", buy=buy,
+             gtd=r.get("guarantee_usd") or c["guarantee_printed"], rules=rules, fee=fee,
+             pool=r.get("pool_per_entry_usd"), house=r.get("house_fee_usd"),
+             chips_=r.get("starting_chips") or c["chips_printed"],
+             level_min=r.get("level_minutes") or c["level_minutes_printed"],
+             reg=(re.sub(r"^Registration will close at\s*", "", flyer.get("registration_excerpt") or "").strip().rstrip(".") or None) if r else None,
+             sources=srcs, extra_flags=flags,
+             gtd_excerpt=(f"${r['guarantee_usd']:,} guarantee printed in the flyer's schedule table"
+                          if r.get("guarantee_usd") else None),
+             recurrence=recurrence_from_printed(flyer.get("title") or (c.get("schedule_excerpt") or "")),
+             note=("flyer row: “" + E(r["row_excerpt"]) + "” · add-on: " + (flyer.get("addon_excerpt") or c["rules"]["add_on"]["excerpt"]))
+             if r else ("add-on offered: " + c["rules"]["add_on"]["excerpt"]))
 events.extend(ROOM_ROWS)
 
 
@@ -795,7 +879,7 @@ for h in CFG["hotels"]:
 for h in CFG["hotels"]:
     for url in hotel_fact_urls(h):
         facts = (FACTS_SOURCES.get(url) or {}).get("facts") or {}
-        for key in ("resort_fee", "room_tax", "parking", "cancellation"):
+        for key in ("resort_fee", "room_tax", "parking", "cancellation", "occupancy_charge", "check_in_out"):
             for sent in (facts.get(key) or [])[:3]:
                 rate_log.append({
                     "hotel_id": h["id"], "property": h["property"], "seq": 90,
@@ -853,13 +937,19 @@ with open(DATA / "site-events.json", "w", encoding="utf-8") as fh:
 
 # ------------------------------------------------------------------------ day plan
 def to_min(t: str | None):
+    """Minutes after midnight from a printed clock time, or None if it is not a clock time.
+
+    Wynn prints bare hours ("12 PM", "6 PM") where the Venetian prints "11:10 AM"; both are parsed,
+    and a value that is not a clock time at all ("the start of level seven") stays None so nothing is
+    sequenced on an guess.
+    """
     if not t:
         return None
-    m = re.match(r"(\d{1,2}):(\d{2})\s*(AM|PM)", t.upper())
+    m = re.match(r"(\d{1,2})(?::(\d{2}))?\s*(AM|PM)", t.upper())
     if not m:
         return None
     h = int(m.group(1)) % 12 + (12 if m.group(3) == "PM" else 0)
-    return h * 60 + int(m.group(2))
+    return h * 60 + int(m.group(2) or 0)
 
 
 days: dict[str, dict] = {}
@@ -917,8 +1007,34 @@ for date, rows in sorted(days.items()):
                 conflicts.append(f"{a['name']} keeps registration open until {a['registration_closes']}, after "
                                  f"{b['name']} starts at {b['time']} — playable in sequence only if you are out of the "
                                  f"first event before that deadline, which the sheet does not promise")
+    # Recurring slates (Wynn dailies, Bellagio weekend events, Caesars' four-a-day) print weekdays,
+    # not dates, so the only honest way to offer them on a given day is the weekday the document names.
+    dow = rows[0].get("weekday")
+    rec_opts = []
+    for e in events:
+        if e.get("date") or not e.get("recurrence") or not dow:
+            continue
+        if dow not in e["recurrence"]["days"]:
+            continue
+        r_start = to_min(e.get("time"))
+        if r_start is None:
+            feas = (f"no sequencing test is possible: this row prints “{e.get('time') or 'no time'}”, which is not a clock time "
+                    "the deadline arithmetic can read")
+        elif p_close is None:
+            feas = ("no sequencing test is possible: the lead event prints no late-registration deadline, "
+                    "so whether a second entry fits is not answerable from the schedule")
+        elif r_start >= p_close:
+            feas = (f"starts {e.get('time')}, at or after the lead event's printed registration deadline "
+                    f"({primary.get('registration_closes')}), so a second entry is arithmetically possible")
+        else:
+            feas = (f"starts {e.get('time')}, before the lead event's registration closes "
+                    f"({primary.get('registration_closes')}) — reachable only if you are already out of the lead event")
+        rec_opts.append({"id": e["id"], "name": e["name"], "venue": e["venue_name"], "time": e.get("time"),
+                         "buy_in_usd": e.get("buy_in_usd"), "printed_days": e["recurrence"]["printed"],
+                         "feasibility": feas, "sources": e.get("sources") or []})
     plan.append({
         "date": date, "weekday": rows[0].get("weekday"),
+        "recurring_options": rec_opts,
         "primary": primary, "fallback": fallback, "fallback_unavailable": why_not,
         "earliest_printed_start": next((r["time"] for r in rows if r.get("time")), None),
         "duration_note": ("no official source prints a finish time or a round count for this day, so the plan "
@@ -1259,7 +1375,7 @@ def event_row(ev, base=""):
         if ev.get("guarantee_usd") and discount.get("early_usd"):
             ratio_txt += (f'<small class="muted">early-fee ratio: '
                           f'{ev["guarantee_usd"] / discount["early_usd"]:.1f}×</small>')
-    return f"""<tr class="ev-row" id="{E(ev['id'])}" data-date="{E(ev.get('date') or '')}" data-venue="{E(ev['venue'])}" data-single="{1 if ev.get('single_entry_confirmed') else 0}" data-rankable="{1 if ev.get('rankable') else 0}" data-id="{E(ev['id'])}">
+    return f"""<tr class="ev-row" id="{E(ev['id'])}" data-date="{E(ev.get('date') or '')}" data-venue="{E(ev['venue'])}" data-single="{1 if ev.get('single_entry_confirmed') else 0}" data-rankable="{1 if ev.get('rankable') else 0}" data-days="{E(",".join((ev.get("recurrence") or {}).get("days") or []))}" data-id="{E(ev['id'])}">
 <td class="when">{head}<span class="time">{E(ev.get('weekday') or '')}{tail}</span></td>
 <td class="ev">{link}<span class="evname">{E(ev['name'])}</span>{tags}{flags}</td>
 <td class="num">{buy_cell}</td>
@@ -1296,8 +1412,13 @@ def events_table(rows, base="", empty="no rows match these filters"):
             + "".join(event_row(ev, base) for ev in rows) + "</tbody></table></div>")
 
 
+TRACKED_URLS = {t["url"] for t in TRACKED}
+
+
 def status_banner():
-    unreach = [s for s in source_rows if not s["ok"]]
+    # a URL the registry dropped on purpose (because a live official successor was found) is not an
+    # outage, so only still-tracked failures count here; the review page lists the superseded ones apart
+    unreach = [s for s in source_rows if not s["ok"] and s["url"] in TRACKED_URLS]
     changed = [s for s in source_rows if s["values_changed"]]
     bits = [f'{len(SCHED["rows"])} calendar rows parsed', f'{len(AUDIT["sheets"])} structure sheets audited',
             f'{len(events)} events on this site', f'{sum(1 for e in events if e.get("single_entry_confirmed"))} confirmed single-entry',
@@ -1441,7 +1562,11 @@ def page_index():
                 f"as a freezeout. Where a sheet <em>does</em> speak about extra money — the Venetian Valuetown sheet's "
                 f"“all subsequent buy in's after the initial buy in will be $200”, Wynn printing “unlimited re-entry” on "
                 f"67 of its 69 event sheets, Bellagio's “buy-in and re-enter through the end of level 8” — that is "
-                f"evidence of the opposite, and those rows sit in their own section.")
+                f"evidence of the opposite, and those rows sit in their own section. Re-entry wording was checked in each room's own "
+                f"document as at 2026-11-17: 67 of the 69 Wynn event sheets print “unlimited re-entry”, Bellagio's Saturday sheet allows "
+                f"re-entry “through the end of level 8”, and the Caesars 2026 flyer allows one “re-enter … upon elimination within the first "
+                f"break of play”. The Venetian sheets print no entry rule at all, which is why 37 audited Venetian structures stay unverified "
+                f"rather than confirmed.")
     rankable = [e for e in events if e.get("rankable")]
     top = sorted(rankable, key=lambda e: -(e.get("gtd_ratio") or 0))[:6]
     h_rows = ""
@@ -1618,7 +1743,7 @@ def page_hotels():
             f"<td class='srccell'>{src_cell([e.get('source')], e.get('observed_on'))}</td></tr>"
             for e in (h.get("rate_log") or [])) or f"<tr><td colspan='6'>{unk('no rate line captured yet')}</td></tr>"
         facts = ""
-        for field in ("resort_fee", "room_tax", "parking", "cancellation"):
+        for field in ("resort_fee", "room_tax", "parking", "cancellation", "occupancy_charge", "check_in_out"):
             for sent, u in fact_sentences(h, field):
                 facts += f"<li><strong>{E(field.replace('_', ' '))}</strong> “{E(sent)}” {src_cell([u], SNAPSHOT_AT[:10], label='source page ↗')}</li>"
         walk_rows = "".join(
@@ -1639,7 +1764,14 @@ def page_hotels():
                 missing.append("no room rate that this property publishes as a dated quotable number")
             if not fee:
                 missing.append("the mandatory resort fee is not stated on a page that could be reached")
-            calc = f"<p class='truecost blocked'>true cost per night cannot be computed: {E(' and '.join(missing))}. The blanks are kept rather than filled with an estimate.</p>"
+            floor = round(fee * (1 + tax), 2) if fee else None
+            floor_line = (f" What <em>is</em> fixed: the mandatory {money(fee)} resort fee taxed at {tax * 100:.2f}% = "
+                          f"<strong>{money(floor)}</strong> per night, on top of whatever the room rate turns out to be"
+                          + (f", plus {money((h.get('parking') or {}).get('self_usd_per_day'))} self-parking per day"
+                             if (h.get('parking') or {}).get('self_usd_per_day') else "")
+                          + " — the tax basis and its caveat sit in the sentences below.") if floor else ""
+            calc = (f"<p class='truecost blocked'>true cost per night cannot be computed: {E(' and '.join(missing))}. "
+                    f"The blanks are kept rather than filled with an estimate.{floor_line}</p>")
         qual = h.get("qualification")
         qual_line = (f"<p class='mini-note'><strong>Rate eligibility:</strong> {E(qual)} — {src_cell([h.get('qualification_source')], SNAPSHOT_AT[:10], label='official terms ↗')}</p>"
                      if qual else "")
@@ -1647,6 +1779,17 @@ def page_hotels():
                        for d in (h.get("dead_source_pages") or []))
         canc = h.get("cancellation") or {}
         park = h.get("parking") or {}
+        bd = h.get("booking_dates_url") or {}
+        if bd.get("template"):
+            book_cell = (f"<a href='{E(bd['template'].replace('{arrival}', '2026-11-19').replace('{departure}', '2026-11-23').replace('{adults}', '2'))}' "
+                         f"target='_blank' rel='noopener'>open the property's own booking calendar for the example window ↗</a> "
+                         f"<span class='mini-note'>{E(bd.get('basis') or '')}</span>")
+        elif h.get("booking_link"):
+            book_cell = (f"<a href='{E(h['booking_link'])}' target='_blank' rel='noopener'>official booking engine ↗</a> "
+                         f"<span class='mini-note'>this property publishes no date-carrying link pattern on the pages read, "
+                         f"so the dates are typed into its own calendar rather than pre-filled here</span>")
+        else:
+            book_cell = unk('no official booking page reached')
         if not facts:
             # No machine-captured sentence yet (e.g. a freshly re-anchored source page):
             # fall back to the row's own confirmed excerpts instead of saying nothing exists.
@@ -1676,7 +1819,12 @@ def page_hotels():
 <div><h4>Resort fee</h4><p>{money(fee) if fee else unk('unconfirmed')} <span class="mini-note">{E((h.get('resort_fee') or {}).get('basis') or '')}</span> {chip((h.get('resort_fee') or {}).get('status') or 'unverified', 'chip chip-info')}</p>
 {(f"<p class='warn'>{E((h.get('resort_fee') or {}).get('conflict'))}</p>") if (h.get('resort_fee') or {}).get('conflict') else ''}</div>
 <div><h4>Parking</h4><p>{(('self ' + money(park.get('self_usd_per_day')) + ' / day · valet ' + money(park.get('valet_usd_per_day')) + ' / day') if park.get('self_usd_per_day') else ('<b>$0 — included</b>' if park.get('self_usd_per_day') == 0 else unk('no price published'))) if park.get('self_usd_per_day') is not None else unk('no price published')} {chip(park.get('status') or 'unverified', 'chip chip-info')}</p></div>
-<div><h4>Cancellation</h4><p>{E(canc.get('text') or '') or unk('not captured')} {chip(canc.get('status') or 'unverified', 'chip chip-warn')}</p></div>
+<div><h4>Cancellation</h4><p>{E(canc.get('text') or '') or unk('not captured')} {chip(canc.get('status') or 'unverified', 'chip chip-warn')}</p>
+{(f"<p class='mini-note'>{src_cell([canc.get('source')], canc.get('retrieved') or SNAPSHOT_AT[:10], label='official terms ↗')}</p>") if canc.get('source') else ''}</div>
+<div><h4>Extra occupants</h4><p>{E((h.get('occupancy_charge') or {}).get('text') or '') or unk('the property publishes no per-occupant charge on the page read')} {chip((h.get('occupancy_charge') or {}).get('status') or 'unverified', 'chip chip-info')}</p>
+{(f"<p class='mini-note'>{src_cell([(h.get('occupancy_charge') or {}).get('source')], (h.get('occupancy_charge') or {}).get('retrieved') or SNAPSHOT_AT[:10], label='official terms ↗')}</p>") if (h.get('occupancy_charge') or {}).get('source') else ''}</div>
+<div><h4>Check-in / check-out</h4><p>{E((h.get('check_in_out') or {}).get('text') or '') or unk('not printed on the page read')} {chip((h.get('check_in_out') or {}).get('status') or 'unverified', 'chip chip-info')}</p></div>
+<div><h4>Booking link for your dates</h4><p>{book_cell}</p></div>
 </div>
 <h4>Rates and fee facts as a dated log (not a single value)</h4>
 <div class="table-scroll"><table class="compact"><thead><tr><th>Observed</th><th>What it is</th><th class="num">Amount</th><th>Wording / qualifier</th><th>Quote status</th><th>Source</th></tr></thead><tbody>{log_rows}</tbody></table></div>
@@ -1698,7 +1846,7 @@ def page_hotels():
 <p class="mini-note">“Measured” holds a real walking time for every property: Google Maps walking directions (mode=walking) were retrieved 2026-11-17 for each hotel→Venetian poker-room pair and stored with the route distance, the “via” road, the exact directions URL and the retrieval date (see <a href="data/integrated/walks-google.json">data/integrated/walks-google.json</a>; flags <a href="flagged.html#F3">F3</a> / <a href="flagged.html#F18">F18</a> record the closure). Google's walking durations run optimistic, so the route distance in miles is shown beside each minute. Choosing “measured walk ≤ 30 min” filters to the properties that provably meet the rule.</p></section>
 {cards}
 <section class="callout"><h2>Reading a blank honestly</h2>
-<p>Where a property shows rates only inside its booking calendar, no number is copied onto this site — the booking link is given instead and the row is marked. The two official pages that had gone dark (Bellagio's resort-fee page and the Caesars Palace daily flyer) were re-anchored to live official pages on 2026-11-17: Bellagio's fee now comes from the property's Hotel Reservation Terms page (“A daily resort fee of $55.00 plus applicable tax will be applied to all reservations”), and the Caesars slate comes from the venue's 2026 daily flyer PDF — the retired URLs stay logged on the Bellagio row and in data/url-checks.json rather than being silently swapped. ARIA publishes two different resort fees on two official pages ($50 and $55): both sentences are shown and neither is chosen for you. Walking minutes are no longer a warning: every hotel→Venetian poker-room walk is a measured Google Maps value retrieved 2026-11-17, with the route distance shown beside it — the ≤30-minute rule is now a hard filter (flags <a href="flagged.html#F3">F3</a> / <a href="flagged.html#F18">F18</a>). The remaining blanks are the ones no official source can settle — a dated like-for-like room quote needs your exact dates and occupancy.</p></section>
+<p>Where a property shows rates only inside its booking calendar, no number is copied onto this site — the booking link is given instead and the row is marked. Two official pages returned 404 in the 2026-11-17 check: Bellagio&#39;s /hotel/resort-fee.html page and the 2025 Caesars Palace daily flyer. Both were re-anchored to the operator&#39;s own live successor the same day — Bellagio&#39;s Hotel Reservation Terms page, which Bellagio&#39;s FAQ names as where the fee is documented (“A daily resort fee of $55.00 plus applicable tax will be applied to all reservations”), and the 2026 flyer on Caesars&#39; own content path — and the retired URLs stay logged on the Bellagio row and in <a href="data/url-checks.json">data/url-checks.json</a> rather than being silently swapped. <a href="flagged.html#F5">F5</a> and <a href="flagged.html#F6">F6</a> record what each replacement page yields; <a href="flagged.html#F25">F25</a> records that Caesars&#39; two official pages disagree on two of the four daily buy-ins. Nothing was replaced with a third-party mirror: the $50 and $56.69 ARIA/Bellagio figures that circulate on review sites are deliberately not used because the properties&#39; own terms pages print $55.00 plus applicable tax, and the earlier sentence on this page claiming “ARIA publishes $50 and $55 on two official pages” has been corrected — <a href="flagged.html#F5">F5</a> shows the $50 figure traces only to third-party sources. Walking minutes are now measured rather than warned about: every hotel→poker-room pair carries a Google Maps walking time with its route distance and retrieval date (flags <a href="flagged.html#F3">F3</a> / <a href="flagged.html#F18">F18</a>), which is what the ≤30-minute filter below uses. The remaining blanks are the ones no official source can settle — a dated like-for-like room quote needs your exact dates and occupancy, and <a href="flagged.html#F27">F27</a> records that the 13.38% room-tax figure is the county&#39;s Primary Gaming Corridor rate rather than a number each property prints on its own page.</p></section>
 """, "hotels.html", needs_data=False)
 
 
@@ -1713,10 +1861,16 @@ def page_plan():
                  f" · reg closes {E(f.get('registration_closes') or 'not printed')} · entry {money(f.get('buy_in_usd'))}</span>") if f \
             else unk(d.get("fallback_unavailable") or "no second entry is reachable on the official data")
         conf = "".join(f"<p>{E(c)}</p>" for c in d.get("overlap_notes") or []) or "<span class='ok'>nothing blocks a second entry</span>"
+        recs = d.get("recurring_options") or []
+        rec_html = (
+            "<div class='recopts'><span class='recolabel'>printed for this weekday (no date printed):</span>"
+            + "".join(f"<span class='recopt'><a href='tournaments.html#{E(r['id'])}'>{E(r['name'])}</a>"
+                      f"<em>{E(r['venue'])} · {E(r['time'] or 'time not printed')} · {money(r['buy_in_usd'])}</em>"
+                      f"<small>{E(r['feasibility'])}</small></span>" for r in recs) + "</div>") if recs else ""
         res = "; ".join(d.get("restarts") or [])
         rows += (f"<tr class='day-row' data-date='{E(d['date'])}'><td class='when'><strong>{E(d['date'])}</strong>"
                  f"<span class='time'>{E(d.get('weekday') or '')} · first start {E(d.get('earliest_printed_start') or 'not printed')}</span></td>"
-                 f"<td>{p_txt}</td><td>{f_txt}</td><td class='restarts'>{E(res) if res else unk('nothing printed')}</td>"
+                 f"<td>{p_txt}</td><td>{f_txt}{rec_html}</td><td class='restarts'>{E(res) if res else unk('nothing printed')}</td>"
                  f"<td class='conflicts'>{conf}</td><td class='num'>{money(d['entries_usd'])}"
                  f"{note('one entry per distinct event; ' + str(d.get('distinct_ranked_events', 0)) + ' ranked event(s) this day')}</td></tr>")
     with_fb = len([x for x in plan if x.get("fallback")])
@@ -1727,7 +1881,13 @@ def page_plan():
 <p class="warn">The day cannot start at 8:00 AM: nothing on the Strip publishes an 8:00 AM first flight. In this window the earliest first starts are 10:10 AM (raceday events) and 11:10 AM for the $300 Events 1A/9, so each day begins at the earliest official start and the difference is flagged rather than papered over.</p></section>
 <div class="table-scroll"><table class="compact days"><thead><tr><th>Day</th><th>Primary</th><th>Conditional fallback</th><th>Day-2 / finals that day</th><th>Overlap check</th><th class="num">Ranked entries that day</th></tr></thead>
 <tbody>{rows}</tbody></table></div>
-<section class="callout"><h2>Why some days carry no fallback</h2>
+<section class="callout"><h2>Recurring slates sit under each day, not inside it</h2>
+<p>Under the fallback on every day are the rooms' <em>recurring</em> events — Wynn's dailies, Bellagio's weekend
+slate, Caesars' four-a-day — which print a weekday (“Nightly Monday-Sunday”, “Fridays”) and no calendar date. They are
+listed as what they are: an option the weekday allows, tested against the same printed deadline as everything else,
+never promoted into the dated calendar. A day whose lead event prints no deadline therefore says so instead of
+promising that a second entry fits.</p>
+<h2>Why some days carry no fallback</h2>
 <p>Where a second event starts before the first one's registration window closes, playing both is impossible on the official data — those days list the conflict instead of scheduling it. {with_fb} of {len(plan)} days have a defensible fallback. Rows on the same date with the same buy-in but different flights (1A/1B/1C…) are alternative starts of <em>one</em> event, not two entries, and the plan never counts both.</p>
 <p class="srcline">Machine copy: <a href="data/day-plan.json">day-plan.json</a> · basis: <a href="data/schedule-snapshot.json">schedule-snapshot.json</a></p></section>
 """, "plan.html", needs_data=False)
@@ -1754,13 +1914,16 @@ def page_calculator():
 <label>Parking per night <select id="calc-park"><option value="">not confirmed</option></select></label>
 <label>Nights <input type="number" id="calc-nights" value="4" min="1" max="21"></label>
 <label>Rooms <input type="number" id="calc-rooms" value="1" min="1" max="6"></label>
+<label>Arrival date <input type="date" id="calc-arrive" min="2026-11-16" max="2027-03-31"></label>
+<label>Guests in the room <input type="number" id="calc-guests" value="2" min="1" max="6"></label>
+<p class="mini-note" id="calc-booklink"></p>
 </div>
 <div><h3>Tournaments</h3><p class="mini-note">Tick what you would enter. Only the total buy-in is counted — each sheet says the house fee is already withheld inside it.</p>
 <div class="picks" id="calc-events">{picks}</div></div>
 <div class="calc-out"><h3>Totals</h3>
 <dl id="calc-total"><dt>Entries</dt><dd id="t-entries">—</dd><dt>Hotel per night</dt><dd id="t-night">—</dd><dt>Hotel total</dt><dd id="t-hotel">—</dd><dt class="grand">Trip total</dt><dd class="grand" id="t-grand">—</dd></dl>
 <p id="calc-note" class="warn"></p>
-<p class="mini-note">Rates move constantly and the properties publish them only inside the booking calendar for specific dates. Re-read the official page before booking: <a href="hotels.html" id="calc-book">the hotel's own booking link is on its card</a>.</p>
+<p class="mini-note">Rates move constantly and the properties publish them only inside the booking calendar for specific dates, so a rate is never stored here — pick the dates and the calculator hands the query back to the property's own engine (only where that property publishes the link pattern). <a href="hotels.html" id="calc-book">The hotel's card lists its official booking link</a>.</p>
 <p class="mini-note">Worked example kept from the snapshot: {E(CFG['trip_example']['label'])} — {E(CFG['trip_example']['basis'])}</p>
 </div></div></section>
 """, "calculator.html", needs_data="calc")
@@ -1834,6 +1997,14 @@ def page_flagged():
 "flagged.html", needs_data=False)
 
 
+VERIFY_NOTES = {
+    "60ade3e8_source_recheck_2026-11-17.tsv":
+        ("Caesars Palace daily slate re-read from the property's own 2026 flyer (C1–C7); Bellagio and ARIA fee, occupancy, cancellation and "
+         "parking re-read from their reservation-terms and rate-table pages (B1–B5, A1–A2); the standing walking-minute position (W1); and the "
+         "Venetian's own date-carrying booking-link pattern (V1)", "2026-11-17"),
+}
+
+
 def page_review():
     st = load("sync-status.json", {})
     chg = ""
@@ -1843,11 +2014,29 @@ def page_review():
                 f"<td class='diff'><pre>{E(json.dumps(c.get('diff'), indent=1)[:1200])}</pre></td></tr>")
     if not chg:
         chg = f"<tr><td colspan='4'>{unk('no value-level change recorded since monitoring began — the first run seeds the baseline, later runs diff against it')}</td></tr>"
-    dead_rows = "".join(f"<tr><td><a href='{E(s['url'])}' target='_blank' rel='noopener'>{E(s['label'])}</a></td><td>{E(s.get('venue') or '')}</td>"
-                        f"<td>{status_span('bad', str(s['status']) + ' ' + str(s.get('error') or ''))}</td><td class='num'>{E(s.get('checked_at') or '')}</td></tr>"
-                        for s in source_rows if not s["ok"])
+    dead_now = [s for s in source_rows if not s["ok"] and s["url"] in TRACKED_URLS]
+    dead_gone = [s for s in source_rows if not s["ok"] and s["url"] not in TRACKED_URLS]
+
+    def dead_row(s, cls, note_key):
+        extra = (CHECKS.get(s["url"]) or {}).get(note_key)
+        extra_txt = ("superseded on " + str((CHECKS.get(s["url"]) or {}).get("superseded_on") or "") +
+                     " — the registry now tracks " + extra) if extra else None
+        return (f"<tr><td><a href='{E(s['url'])}' target='_blank' rel='noopener'>{E(s['label'])}</a>{note(extra_txt)}</td>"
+                f"<td>{E(s.get('venue') or '')}</td>"
+                f"<td>{status_span(cls, str(s['status']) + ' ' + str(s.get('error') or ''))}</td>"
+                f"<td class='num'>{E(s.get('checked_at') or '')}</td></tr>")
+
+    dead_rows = "".join(dead_row(s, "bad", "superseded_by") for s in dead_now)
+    superseded_rows = "".join(dead_row(s, "chip-warn", "superseded_by") for s in dead_gone)
     parsed = sum(1 for s in source_rows if (s.get("rows_parsed") or 0) > 0)
     saved = sum(1 for s in source_rows if s.get("saved"))
+    verify_rows = ""
+    vdir = DATA / "verify"
+    for fp in sorted(vdir.glob("*.tsv")) if vdir.exists() else []:
+        cov, when = VERIFY_NOTES.get(fp.name, (f"{max(0, sum(1 for _ in open(fp, encoding='utf-8')) - 1)} compared values", fp.name.rsplit("_", 2)[-2] if fp.name.count("_") > 1 else ""))
+        verify_rows += (f"<tr><td><a href='data/verify/{E(fp.name)}'>{E(fp.name)}</a></td>"
+                        f"<td class='qual'>{E(cov)}</td><td>{E(when)}</td></tr>")
+    verify_rows = verify_rows or f"<tr><td colspan='3'>{unk('no per-value re-check records in data/verify yet')}</td></tr>"
     return shell("", "Review log", f"""
 <section class="page-head"><h1>Review log — what was checked, when, and what changed</h1>
 <p class="lede">The numbers the site was built from, plus the raw material: every tracked official URL with the date it was last read, whether its bytes or its values moved, how many rows the parser got out of it, and the captured text itself. Any row on any page can be traced to a captured sentence in one click.</p>
@@ -1861,11 +2050,18 @@ def page_review():
 <p class="mini-note">Machine copies: <a href="data/sync-status.json">sync-status</a> · <a href="data/url-checks.json">url-checks</a> · <a href="data/site-events.json">site-events</a> · <a href="data/structure-audit.json">structure-audit</a> · <a href="data/schedule-snapshot.json">schedule-snapshot</a> · <a href="data/rate-log.json">rate-log</a> · <a href="data/walks.json">walks</a> · <a href="data/hotel-facts.json">hotel-facts</a></p>
 <p class="mini-note">Sample of the raw date headings read from the calendar PDF: <code>{E(str((st.get('date_head_sample') or '')[:220]))}</code></p></div>
 <div><h3>Unreachable official URLs</h3>
-<div class="table-scroll"><table class="compact"><thead><tr><th>Source</th><th>Venue</th><th>Status</th><th class="num">Checked</th></tr></thead><tbody>{dead_rows or "<tr><td colspan='4' class='ok'>none</td></tr>"}</tbody></table></div>
-<p class="mini-note">Policy: a dead official URL is reported and kept in the tracked list; it is never replaced by a third-party mirror.</p>
+<div class="table-scroll"><table class="compact"><thead><tr><th>Source</th><th>Venue</th><th>Status</th><th class="num">Checked</th></tr></thead><tbody>{dead_rows or "<tr><td colspan='4' class='ok'>none — every tracked official URL answered on its last check</td></tr>"}</tbody></table></div>
+{(f"<h3>Dead URLs the registry has since repointed</h3><div class='table-scroll'><table class='compact'><thead><tr><th>Old official URL</th><th>Venue</th><th>Status</th><th class='num'>Checked</th></tr></thead><tbody>{superseded_rows}</tbody></table></div>") if superseded_rows else ""}
+<p class="mini-note">Policy: a dead official URL is reported, never replaced by a third-party mirror, and only repointed when the operator
+itself publishes a live successor for the same document (as the Caesars 2025→2026 flyer and Bellagio's fee page→reservation terms did on
+2026-11-17). The old URL stays on the record above so the change is auditable.</p>
 <p class="mini-note">Reproduce offline: <code>python3 tools/sync_official_sources.py --from-raw</code> then <code>python3 scripts/integrate_data.py</code>.</p></div></div>
 <h2>Value changes recorded</h2>
 <div class="table-scroll"><table class="compact"><thead><tr><th>When (UTC)</th><th>Scope</th><th>Source</th><th>Fields that moved</th></tr></thead><tbody>{chg}</tbody></table></div>
+<h2>Line-by-line re-check records</h2>
+<p class="mini-note">Each record is a machine-readable table of one published value against the official document that carries it: what the site
+said, what the document says, the verdict and the action taken. Read these before treating anything as settled.</p>
+<div class="table-scroll"><table class="compact"><thead><tr><th>Record</th><th>Coverage</th><th>Run date</th></tr></thead><tbody>{verify_rows}</tbody></table></div>
 <h2>All tracked sources ({len(source_rows)})</h2>
 {source_table(source_rows)}
 """, "review.html", needs_data=False)

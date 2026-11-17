@@ -4,7 +4,8 @@
   "generated": "2026-11-17",
   "owner": "arena/e74e00fd-poker4",
   "rule": "Only official operator/property domains are tracked. A tracked URL that 404s is reported as unreachable — it is never replaced by a third-party mirror.",
-  "touch": "retrigger-sync"
+  "touch": "retrigger-sync · 60ade3e8: registry merged (union of both sessions' repoints, 2 additional official pages) on 2026-11-17",
+  "sources": 66
  },
  "sources": [
   {
@@ -147,7 +148,8 @@
    "kind": "pdf",
    "venue": "Caesars Palace",
    "key": "C_FLYER",
-   "note": "2025 flyer 404s (retired by the venue); replaced with the 2026 flyer on 2026-11-17 by session arena/3082d6d9-poker4 after a live fetch confirmed it loads and prints the per-slot buy-ins, fee splits and re-entry rule."
+   "note": "2025 flyer 404s (retired by the venue); replaced with the 2026 flyer on 2026-11-17 by session arena/3082d6d9-poker4 after a live fetch confirmed it loads and prints the per-slot buy-ins, fee splits and re-entry rule.",
+   "save_text_to": "data/raw/caesars-daily-flyer-2026.txt"
   },
   {
    "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
@@ -515,6 +517,24 @@
    "venue": "WSOP",
    "key": "WSOP",
    "save_text_to": "data/raw/wsop-schedule.txt"
+  },
+  {
+   "url": "https://aria.mgmresorts.com/en/terms-and-conditions.html",
+   "label": "ARIA — hotel reservation terms (daily resort fee, check-in/out, occupant charge, cancellation)",
+   "kind": "page",
+   "venue": "ARIA",
+   "key": "A_TERMS",
+   "extract_facts": true,
+   "save_text_to": "data/raw/aria-terms.txt"
+  },
+  {
+   "url": "https://www.mgmresorts.com/en/things-to-do/parking.html",
+   "label": "MGM Resorts — published parking rate table (Bellagio, ARIA and the other MGM Strip properties)",
+   "kind": "page",
+   "venue": "MGM Resorts (corporate, no room of its own)",
+   "key": "MGM_PARKING",
+   "save_text_to": "data/raw/mgm-parking.txt",
+   "extract_facts": true
   }
  ]
 }

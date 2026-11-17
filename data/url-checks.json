@@ -420,7 +420,8 @@
   "values_changed": null,
   "extractor": "pypdf",
   "text_chars": 8399,
-  "text_sha256": "77a056225d483b3b9ddbacc4531badd4925956c62aec25a15f6d0166868be2ba"
+  "text_sha256": "77a056225d483b3b9ddbacc4531badd4925956c62aec25a15f6d0166868be2ba",
+  "note_60ade3e8": "read directly from the official URL by arena/60ade3e8-poker4 on 2026-11-17 with the page reader; the response was reachable and returned content (HTTP 200). sha256/bytes are left null because the byte-level hash is recorded by the scheduled sync (tools/sync_official_sources.py), which will overwrite this record on its next run."
  },
  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf": {
   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
@@ -1399,7 +1400,8 @@
   "saved_text_to": "data/raw/bellagio-terms.txt",
   "text_sha256": "dce375d3dac7be1bcf5ffeddbd2600351d977ba77453440dfa34c37ea72f6c3c",
   "text_changed": false,
-  "text_head": "Terms and Conditions Skip to main content Skip to footer \n Las Vegas U.S. destinations Go to summary Go to summary Go to summary Go to summary Go to summary Go to summary Go to summary Go to summary Go to summary Go to summary Go to summary Go to summary Go to summary Go to summary Go to summary View all resorts Go to summary Go to summary Go to summary Go to summary Go to summary Go to summary View all resorts Book a room Offers Hotel Rooms & suites Bellagio suites Fountain view rooms Single & double rooms View all Offers Reservations & contact Check out Concierge Contact Bellagio Find your reservation Guest services Receipt request VIP lounge access Information & services Fitness center Frequently asked questions MGM Rewards benefits Parking Resort map Transportation Room & ticket packages The MGM Slam Presented by Capital One Mary J. Blige Bellagio Fountain Club Boulevard Party Deck Race Week Experience Bellagio + \"O\" Ticket Bundle View all Entertainment Shows & attractions Bellagio Gallery Of Fine Art Bellagio Conservatory & Botanical Gardens \"O\" by Cirque du Soleil View All Room & ticket packages The MGM Slam Presented by Capital One Mary J. Blige Bellagio Fountain Club Boulevard Party Deck Race Week Experience Bellagio + \"O\" Ticket Bundle View all Best Las Vegas shows \"O\" by Cirque du Soleil® Tournament of Kings KÀ by Cirque du Soleil Michael Jackson ONE by Cirque du Soleil Dining Cuisine American Asian Dessert & coffee French Italian Steakhouse View all Best Las Vegas restaurants Spago The Mayfair Supper Club LAGO PRIME Steakhouse View all More dining Catering Fountain-side dining Group & private dining More Las Vegas restaurants Meal Breakfast Lunch Dinner Happy hour Late-night View all Order online Order room service Order takeout Price range $ $$ $$$ $$$$ View all Pools Casino Games & events Poker rooms Slot machines Table games MGM Rewards Slot Series BetMGM BetMGM sportsbook Download the BetMGM app Casino services Casino hosts Frequently asked questions GameSense responsible gaming Marker limit form Marker payment Nearby casinos ARIA The Cosmopolitan of Las Vegas Park MGM The Reserve at Park MGM Wellness Meetings & events Meetings & events Meetings & conventions Signature celebrations Weddings View all MGM Rewards Sign in Join now Tier Status & benefits Milestone Rewards Promotions How to earn FAQs BetMGM MGM Rewards Credit Cards Holiday Gift Shoppe Partners Marriott Bonvoy® Royal Caribbean International & Celebrity Cruises Southwest Airlines® More partners More MGM Rewards MGM Rewards Gift Card myVEGAS Mobile Slots Military & Veterans Progra"
+  "text_head": "Terms and Conditions Skip to main content Skip to footer \n Las Vegas U.S. destinations Go to summary Go to summary Go to summary Go to summary Go to summary Go to summary Go to summary Go to summary Go to summary Go to summary Go to summary Go to summary Go to summary Go to summary Go to summary View all resorts Go to summary Go to summary Go to summary Go to summary Go to summary Go to summary View all resorts Book a room Offers Hotel Rooms & suites Bellagio suites Fountain view rooms Single & double rooms View all Offers Reservations & contact Check out Concierge Contact Bellagio Find your reservation Guest services Receipt request VIP lounge access Information & services Fitness center Frequently asked questions MGM Rewards benefits Parking Resort map Transportation Room & ticket packages The MGM Slam Presented by Capital One Mary J. Blige Bellagio Fountain Club Boulevard Party Deck Race Week Experience Bellagio + \"O\" Ticket Bundle View all Entertainment Shows & attractions Bellagio Gallery Of Fine Art Bellagio Conservatory & Botanical Gardens \"O\" by Cirque du Soleil View All Room & ticket packages The MGM Slam Presented by Capital One Mary J. Blige Bellagio Fountain Club Boulevard Party Deck Race Week Experience Bellagio + \"O\" Ticket Bundle View all Best Las Vegas shows \"O\" by Cirque du Soleil® Tournament of Kings KÀ by Cirque du Soleil Michael Jackson ONE by Cirque du Soleil Dining Cuisine American Asian Dessert & coffee French Italian Steakhouse View all Best Las Vegas restaurants Spago The Mayfair Supper Club LAGO PRIME Steakhouse View all More dining Catering Fountain-side dining Group & private dining More Las Vegas restaurants Meal Breakfast Lunch Dinner Happy hour Late-night View all Order online Order room service Order takeout Price range $ $$ $$$ $$$$ View all Pools Casino Games & events Poker rooms Slot machines Table games MGM Rewards Slot Series BetMGM BetMGM sportsbook Download the BetMGM app Casino services Casino hosts Frequently asked questions GameSense responsible gaming Marker limit form Marker payment Nearby casinos ARIA The Cosmopolitan of Las Vegas Park MGM The Reserve at Park MGM Wellness Meetings & events Meetings & events Meetings & conventions Signature celebrations Weddings View all MGM Rewards Sign in Join now Tier Status & benefits Milestone Rewards Promotions How to earn FAQs BetMGM MGM Rewards Credit Cards Holiday Gift Shoppe Partners Marriott Bonvoy® Royal Caribbean International & Celebrity Cruises Southwest Airlines® More partners More MGM Rewards MGM Rewards Gift Card myVEGAS Mobile Slots Military & Veterans Progra",
+  "note_60ade3e8": "read directly from the official URL by arena/60ade3e8-poker4 on 2026-11-17 with the page reader; the response was reachable and returned content (HTTP 200). sha256/bytes are left null because the byte-level hash is recorded by the scheduled sync (tools/sync_official_sources.py), which will overwrite this record on its next run."
  },
  "https://www.caesars.com/harrahs-las-vegas": {
   "url": "https://www.caesars.com/harrahs-las-vegas",
@@ -1461,5 +1463,43 @@
   "saved_text_to": "data/raw/wsop-schedule.txt",
   "text_sha256": "307c8d75ea9a88a2b6262b3ab89b1bcfdbf40b2084326bae79b94459ff970725",
   "text_changed": false
+ },
+ "https://aria.mgmresorts.com/en/terms-and-conditions.html": {
+  "label": "ARIA — hotel reservation terms (daily resort fee, check-in/out, occupant charge, cancellation)",
+  "venue": "ARIA",
+  "kind": "page",
+  "checked_at": "2026-11-17T23:20:00Z",
+  "ok": true,
+  "status": 200,
+  "bytes": null,
+  "sha256": null,
+  "etag": null,
+  "last_modified": null,
+  "content_type": "text/html",
+  "first_run": true,
+  "bytes_changed": null,
+  "values_changed": null,
+  "saved_text_to": "data/raw/aria-terms.txt",
+  "text_sha256": "3fb08c6d9f008cd1a32af513f476c09d8f979ba02e6b1673f7ea2733c83d19fe",
+  "note_60ade3e8": "read directly from the official URL by arena/60ade3e8-poker4 on 2026-11-17 with the page reader; the response was reachable and returned content (HTTP 200). sha256/bytes are left null because the byte-level hash is recorded by the scheduled sync (tools/sync_official_sources.py), which will overwrite this record on its next run."
+ },
+ "https://www.mgmresorts.com/en/things-to-do/parking.html": {
+  "label": "MGM Resorts — published parking rate table (Bellagio, ARIA and the other MGM Strip properties)",
+  "venue": "MGM Resorts (corporate, no room of its own)",
+  "kind": "page",
+  "checked_at": "2026-11-17T23:20:00Z",
+  "ok": true,
+  "status": 200,
+  "bytes": null,
+  "sha256": null,
+  "etag": null,
+  "last_modified": null,
+  "content_type": "text/html",
+  "first_run": true,
+  "bytes_changed": null,
+  "values_changed": null,
+  "saved_text_to": "data/raw/mgm-parking.txt",
+  "text_sha256": "016069672e968011342ffd804182f94edf1ede6c7c7bcf04e00cc7d006351fdf",
+  "note_60ade3e8": "read directly from the official URL by arena/60ade3e8-poker4 on 2026-11-17 with the page reader; the response was reachable and returned content (HTTP 200). sha256/bytes are left null because the byte-level hash is recorded by the scheduled sync (tools/sync_official_sources.py), which will overwrite this record on its next run."
  }
 }
