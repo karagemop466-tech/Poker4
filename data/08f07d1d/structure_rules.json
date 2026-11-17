@@ -632,5 +632,36 @@
   "addon": "not stated",
   "single_entry_confirmed": false,
   "last_checked": "2026-11-17"
+ },
+ {
+  "sheet": 30,
+  "title": "$200 No Limit Hold'em PKO — Event #08 only",
+  "events": [
+   8
+  ],
+  "start": "5:10 PM",
+  "chips": null,
+  "level": null,
+  "reg_close": "8 levels + Break (9:40 PM)",
+  "guarantee_usd": 8000,
+  "guarantee_note": "Guarantee: $8,000 for this PKO event (bounty format; starting bounty $50 per player)",
+  "fee_usd": 40,
+  "to_pool_usd": 160,
+  "payout": "½ of the field (top half) / ½ to bounties",
+  "entry_rule_excerpt": null,
+  "reentry": "not stated",
+  "addon": "not stated",
+  "single_entry_confirmed": false,
+  "bagging_restriction": false,
+  "read": "first-hand read earlier this session; the record was rebuilt from that read, so fields not retained in the read are left null",
+  "unread_fields": [
+   "chips",
+   "level",
+   "payout exact wording"
+  ],
+  "other": "Covers event #08 alone. $40 of the $200 buy-in withheld for house fees, $160 to the prize pool; $50 starting bounty per player; paid ½/½ (half of the pool as normal payout, half as bounties). No sentence about one entry per player, re-entry or add-ons appears on this sheet.",
+  "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_30.pdf",
+  "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_30.pdf",
+  "last_checked": "2026-11-17"
  }
 ]
