@@ -601,3 +601,24 @@ Policy: every data row must link an official source; values not confirmed from a
 - **Post-merge on `main`:** "Verify the published site" SUCCESS · "Poker4 site build + verification gate" SUCCESS · "Deploy static dashboard to GitHub Pages" SUCCESS (run 43999859321) · "pages build and deployment" (run 43999857621) queued/completed · "Official source sync + change monitor" running.
 - **Pages:** https://karagemop466-tech.github.io/Poker4/ (source: main, path `/`) — deploy succeeded at 02:01 UTC 2026-11-17.
 - **Race notes:** `main` advanced four times during this session (`be3594d` → `9b1f376` → `57f7399` → `1221f53` → `6fd824b` → `fa1dbad`); every round merged forward, never discarding others' work; the v2-monitor bot also pushed a snapshot commit to this session's branch (merged back). Final head `59a6c51` contains `origin/main` `fa1dbad`.
+
+---
+
+## Session arena/84872981-poker4 (this session) — live re-verification + root integration, 2026-11-17
+
+- **Session ID:** `arena/84872981-poker4`. Branch `arena/84872981-poker4` (from `main` @ `0d13de0`). No other open PRs at session start (open-PR list empty; last merged PR #52).
+- **Claim (commit immediately, per convention).** Tasks claimed below; file scope is session-exclusive for this round. Parallel-session folders are not touched: `60fb62da/`, `c07371e3/`, `df41f5c6/`, `data/df41f5c6/`, `data/c07371e3/`, `v2/`, `data/v2/`, `poker4/`, `planner/`, `verified/`, `strip/`, `pages/`, `archive/`, `prior_root_dashboard/`, `build/`, `tools/`.
+- **File scope (this session):** `index.html`, `tournaments.html`, `schedule.html`, `hotels.html`, `calculator.html`, `rate-log.html`, `monitoring.html`, `questions.html`, `suggestions.html`, `flagged.html`, `sources.html`, `review.html`, `changelog.html`, `venues/*.html`, `assets/site.css`, `assets/session.js`, `assets/site-data.js`, `data/session/` (new), `scripts/session_build.py` (new), `scripts/session_verify.py` (new), `.github/workflows/live-recheck.yml` (new), `COORDINATION.md` (log + claim), `README.md`.
+
+| ID | Task | Status | Owner | Scope |
+|----|------|--------|-------|-------|
+| P4-01 | Board claim + repo state audit | in progress | arena/84872981-poker4 | COORDINATION.md, README.md |
+| P4-02 | Live re-read of every official source cited by the root site; record retrieval date + result | in progress | arena/84872981-poker4 | data/session/, sources.html |
+| P4-03 | Caesars Palace daily flyer verified rows (4 dailies, re-entry + $50 add-on) added with excerpts | in progress | arena/84872981-poker4 | data/session/, tournaments.html |
+| P4-04 | True-cost hotel picture (fee + tax + parking + cancellation + dated rate log) with per-field source | unclaimed→in progress | arena/84872981-poker4 | hotels.html, rate-log.html |
+| P4-05 | Overlap check from start time + late-reg cutoff + plausible duration; primary + fallback per day | in progress | arena/84872981-poker4 | schedule.html |
+| P4-06 | Questions & answers page (what is known, unknown, how to resolve) | in progress | arena/84872981-poker4 | questions.html |
+| P4-07 | Suggestions decision queue (nothing implemented without a choice) | in progress | arena/84872981-poker4 | suggestions.html |
+| P4-08 | Repository review + flagged irregularities with source links | in progress | arena/84872981-poker4 | review.html, flagged.html |
+| P4-09 | Fix the two failing scheduled monitor workflows; add one live re-check workflow for this site | in progress | arena/84872981-poker4 | .github/workflows/live-recheck.yml |
+| P4-10 | Integration: verify build, PR → main, merge, confirm Pages deploy, record result | in progress | arena/84872981-poker4 | this file |
