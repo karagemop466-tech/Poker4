@@ -44,10 +44,10 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          if git diff --quiet -- data/url-checks.json data/structure-audit.json data/schedule-snapshot.json data/change-log.json; then
+          git add -A -- data/url-checks.json data/structure-audit.json data/schedule-snapshot.json data/change-log.json
+          if git diff --cached --quiet; then
             echo "No source changes to record."
           else
-            git add data/url-checks.json data/structure-audit.json data/schedule-snapshot.json data/change-log.json
             git commit -m "chore(sources): scheduled official-source sync $(date -u +%FT%TZ)"
             git push
           fi
