@@ -57,6 +57,11 @@ The data snapshot for the pages below is dated **November 16, 2026 (UTC)**. They
 - `decisions.html` — questions, missing information, and staged suggestions
 - `questions.html` — compact companion decision checklist, retained from the first integration and now source-linked row by row
 - `review.html` — flagged items and verification limitations
+- `trip-calculator.html` — trip cost form (entries × buy-in + nights × true nightly cost)
+- `calculator.html` — event-picker trip calculator built from the verified schedule rows
+- `change-monitor.html` / `recheck.html` — URL change monitor and the daily automated re-check log
+- `venue-venetian.html`, `venue-wynn.html`, `venue-others.html` — one page per venue with its events and hotels
+- `sources.html`, `suggestions.html` — source list and improvement suggestions
 
 ## Run locally
 

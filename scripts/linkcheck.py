@@ -16,7 +16,9 @@ ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_PAGES = [
     "index.html", "tournaments.html", "schedule.html", "hotels.html",
     "decisions.html", "questions.html", "review.html", "calculator.html",
-    "venue-venetian.html", "venue-wynn.html", "venue-other.html", "recheck.html",
+    "trip-calculator.html", "change-monitor.html",
+    "venue-venetian.html", "venue-wynn.html", "venue-others.html",
+    "recheck.html", "sources.html", "suggestions.html",
 ]
 
 ATTR = re.compile(r'(?:href|src)\s*=\s*"([^"]+)"')
@@ -27,6 +29,8 @@ def check(path: Path) -> list[str]:
     text = path.read_text(encoding="utf-8", errors="replace")
     for raw in ATTR.findall(text):
         if raw.startswith(("http://", "https://", "mailto:", "tel:", "#", "data:")):
+            continue
+        if "${" in raw:  # template literal inside an inline script, not a real link
             continue
         target = unquote(urlparse(raw).path)
         if not target:

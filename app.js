@@ -24,8 +24,19 @@ const events = [
   {date:'2026-11-27',time:'11:10 AM',id:'14',name:'$600 NLH (1 day)',buy:600,guarantee:30000,format:'One day',pdf:7,group:'candidate',venue:'The Venetian',note:'No re-entry wording found in the linked structure; single-entry is unverified.'},
   {date:'2026-11-23',time:'5:10 PM',id:'8',name:'$200 NLH Progressive Knock-Out Bounty (1 day)',buy:200,guarantee:8000,format:'PKO bounty',pdf:30,group:'secondary',venue:'The Venetian',note:'Bounty payout model; $8,000 guarantee includes bounty amounts. Re-entry status unverified.'},
   {date:'2026-11-24',time:'5:10 PM',id:'9',name:'$200 NLH Bounty (1 day)',buy:200,guarantee:8000,format:'Bounty',pdf:1,group:'secondary',venue:'The Venetian',note:'$8,000 guarantee includes bounty amounts; separate from plain NLH shortlist. Re-entry status unverified.'},
+  {date:'2026-11-25',time:'5:10 PM',id:'11',name:'$200 NLH Bounty (1 day)',buy:200,guarantee:8000,format:'Bounty',pdf:1,group:'secondary',venue:'The Venetian',note:'Same-day 5:10 PM bounty; $8,000 guarantee includes bounty amounts. Overlaps Event 10 (11:10 AM) unless bust-out timing permits. Re-entry status unverified.'},
+  {date:'2026-11-26',time:'5:10 PM',id:'13',name:'$200 NLH Bounty (1 day)',buy:200,guarantee:8000,format:'Bounty',pdf:1,group:'secondary',venue:'The Venetian',note:'Same-day 5:10 PM bounty after Event 12 (11:10 AM). $8,000 guarantee includes bounty amounts. Re-entry status unverified.'},
+  {date:'2026-11-27',time:'5:10 PM',id:'15',name:'$200 NLH Bounty (1 day)',buy:200,guarantee:8000,format:'Bounty',pdf:1,group:'secondary',venue:'The Venetian',note:'Same-day 5:10 PM bounty after Event 14 (11:10 AM). $8,000 guarantee includes bounty amounts. Re-entry status unverified.'},
   {date:'2026-11-28',time:'11:10 AM',id:'16',name:'$600 NLH Bounty (1 day)',buy:600,guarantee:30000,format:'Bounty',pdf:11,group:'secondary',venue:'The Venetian',note:'Bounty structure changes payout design; include only if bounty play is acceptable. Re-entry is unverified.'},
   {date:'2026-11-28',time:'5:10 PM',id:'18',name:'$200 PokerAtlas Valuetown Bounty',buy:200,guarantee:20000,format:'Bounty / conditional discount',pdf:8,group:'secondary',venue:'The Venetian',note:'PokerAtlas PRO membership + claiming the offer in its app is required; first $200 buy-in drops to $180; subsequent entries cost $200. Membership price is not stated.'},
+  {date:'2026-11-29',time:'5:10 PM',id:'21',name:'$200 NLH Bounty (1 day)',buy:200,guarantee:8000,format:'Bounty',pdf:1,group:'secondary',venue:'The Venetian',note:'Same day as Event 19 flight 1A (11:10 AM) and Event 20 PLO (12:10 PM). $8,000 guarantee includes bounty amounts. Re-entry status unverified.'},
+  {date:'2026-11-30',time:'5:10 PM',id:'22',name:'$200 NLH Bounty (1 day)',buy:200,guarantee:8000,format:'Bounty',pdf:1,group:'secondary',venue:'The Venetian',note:'Same day as Event 19 flight 1B (11:10 AM). Re-entry status unverified.'},
+  {date:'2026-12-01',time:'5:10 PM',id:'23',name:'$200 NLH Bounty (1 day)',buy:200,guarantee:8000,format:'Bounty',pdf:1,group:'secondary',venue:'The Venetian',note:'Same day as Event 19 flight 1C (11:10 AM). Re-entry status unverified.'},
+  {date:'2026-12-02',time:'5:10 PM',id:'25',name:'$200 NLH Bounty (1 day)',buy:200,guarantee:8000,format:'Bounty',pdf:1,group:'secondary',venue:'The Venetian',note:'Same day as Event 24 Seniors (10:10 AM) and Event 19 Day-2 restart (11:00 AM) — hard overlap with the restart. Re-entry status unverified.'},
+  {date:'2026-12-20',time:'5:10 PM',id:'60',name:'$200 NLH Bounty (1 day)',buy:200,guarantee:8000,format:'Bounty',pdf:1,group:'secondary',venue:'The Venetian',note:'Same day as Event 59 flight 1A (11:10 AM) and Event 56 Day-2 restart (11:00 AM) — hard overlap with the restart. Re-entry status unverified.'},
+  {date:'2026-12-21',time:'5:10 PM',id:'61',name:'$200 NLH Bounty (1 day)',buy:200,guarantee:8000,format:'Bounty',pdf:1,group:'secondary',venue:'The Venetian',note:'Same day as Event 59 flight 1B (11:10 AM). Re-entry status unverified.'},
+  {date:'2026-12-22',time:'5:10 PM',id:'62',name:'$200 NLH Bounty (1 day)',buy:200,guarantee:8000,format:'Bounty',pdf:1,group:'secondary',venue:'The Venetian',note:'Same day as Event 59 flight 1C (11:10 AM). Re-entry status unverified.'},
+  {date:'2026-12-23',time:'5:10 PM',id:'64',name:'$200 NLH Bounty (1 day)',buy:200,guarantee:8000,format:'Bounty',pdf:1,group:'secondary',venue:'The Venetian',note:'Same day as Event 63 (11:10 AM) and Event 59 Day-2 restart (11:00 AM) — hard overlap with the restart. Re-entry status unverified.'},
   {date:'2026-11-29',time:'11:10 AM',id:'19A',name:'$400 NLH — Event 19, Flight 1A',buy:400,guarantee:75000,format:'Multi-flight / multiday',pdf:3,group:'review',venue:'The Venetian',note:'Flights 1A–1C combine on Day 2. Structure forbids a player who bags Day 2 from entering a later flight; re-entry before bagging is not stated.'},
   {date:'2026-11-30',time:'11:10 AM',id:'19B',name:'$400 NLH — Event 19, Flight 1B',buy:400,guarantee:75000,format:'Multi-flight / multiday',pdf:3,group:'review',venue:'The Venetian',note:'Flights 1A–1C combine on Day 2. Structure forbids a player who bags Day 2 from entering a later flight; re-entry before bagging is not stated.'},
   {date:'2026-12-01',time:'11:10 AM',id:'19C',name:'$400 NLH — Event 19, Flight 1C',buy:400,guarantee:75000,format:'Multi-flight / multiday',pdf:3,group:'review',venue:'The Venetian',note:'Flights 1A–1C combine on Day 2. Structure forbids a player who bags Day 2 from entering a later flight; re-entry before bagging is not stated.'},
@@ -284,14 +295,15 @@ function setupTripCalculator(){
   if (!form) return;
   const outTotal = document.getElementById('calc-total');
   const outBreakdown = document.getElementById('calc-breakdown');
+  const val = (n, d) => { const el = form.elements.namedItem(n) || form.querySelector('[name="'+n+'"]'); return el && el.value !== '' ? parseFloat(el.value) : d; };
   const calculate = ()=>{
-    const entries = parseInt(form.entries.value) || 0;
-    const buyin = parseFloat(form.buyin.value) || 0;
-    const nights = parseInt(form.nights.value) || 0;
-    const rate = parseFloat(form.rate.value) || 0;
-    const resortFee = parseFloat(form.resortFee.value) || 0;
-    const tax = parseFloat(form.tax.value) || 13.38;
-    const parking = parseFloat(form.parking.value) || 0;
+    const entries = parseInt(val('entries', 0)) || 0;
+    const buyin = parseFloat(val('buyin', 0)) || 0;
+    const nights = parseInt(val('nights', 0)) || 0;
+    const rate = parseFloat(val('rate', 0)) || 0;
+    const resortFee = parseFloat(val('resortFee', 0)) || 0;
+    const tax = parseFloat(val('tax', 13.38)) || 13.38;
+    const parking = parseFloat(val('parking', 0)) || 0;
     const nightlyTotal = (rate + resortFee) * (1 + tax/100) + parking;
     const hotelTotal = nightlyTotal * nights;
     const entryTotal = entries * buyin;
@@ -308,13 +320,137 @@ function setupTripCalculator(){
   calculate();
 }
 
+
+// ---------- T11 additions (session arena/88295d28-poker4) ----------
+// Wire the trip-calculator.html form (ids differ from the hotels.html form).
+function setupTripFormPage(){
+  const form = document.getElementById('trip-form');
+  if (!form) return;
+  const btn = document.getElementById('calc-btn');
+  const val = (n, d) => { const el = form.elements.namedItem(n) || form.querySelector('[name="'+n+'"]'); return el && el.value !== '' ? parseFloat(el.value) : d; };
+  const calculate = ()=>{
+    const entries = parseInt(val('entries', 0)) || 0;
+    const buyin = parseFloat(val('buyin', 0)) || 0;
+    const nights = parseInt(val('nights', 0)) || 0;
+    const rate = parseFloat(val('baserate', 0)) || 0;
+    const resortFee = parseFloat(val('resortfee', 0)) || 0;
+    const tax = parseFloat(val('taxrate', 13.38)) || 13.38;
+    const nightly = (rate + resortFee) * (1 + tax/100);
+    const entryTotal = entries * buyin;
+    const hotelTotal = nightly * nights;
+    const grand = entryTotal + hotelTotal;
+    const set = (id,v)=>{ const el=document.getElementById(id); if(el) el.textContent=v; };
+    set('t-buyins', `$${entryTotal.toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2})}`);
+    set('t-hotel-base', `$${(nights*rate).toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2})}`);
+    set('t-resort-fee', `$${(nights*resortFee).toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2})}`);
+    set('t-tax', `$${(nights*(rate+resortFee)*tax/100).toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2})}`);
+    set('t-hotel-night', `$${nightly.toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2})}`);
+    set('t-hotel-total', `$${hotelTotal.toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2})}`);
+    set('t-grand', `$${grand.toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2})}`);
+    const res = document.getElementById('result');
+    if (res) res.style.display = '';
+  };
+  if (btn) btn.addEventListener('click', calculate);
+  form.addEventListener('input', calculate);
+  calculate();
+}
+
+// Dated rate log + URL re-check status (recheck.html loads data/recheck_log.json).
+function loadRecheck(){
+  const root = document.getElementById('recheck-body');
+  if (!root) return;
+  fetch('data/recheck_log.json').then(r=>r.json()).then(log=>{
+    const urls = log.urls || [];
+    const meta = document.getElementById('recheck-meta');
+    if (meta) meta.textContent = `Last run: ${log.checked_at} · ${urls.length} official URLs · ${urls.filter(u=>u.status==='changed').length} changed since previous run`;
+    root.innerHTML = urls.map(u=>`<tr><td>${u.label}</td><td><a class="source-link" href="${u.url}" target="_blank" rel="noopener">${u.url}</a></td><td><span class="pill ${u.status==='changed'?'danger':''}">${u.status}</span></td><td><time datetime="${u.checked_at}">${u.checked_at}</time></td></tr>`).join('');
+  }).catch(()=>{ root.innerHTML = '<tr><td colspan="4">recheck log not loaded (open this page over HTTP, e.g. the GitHub Pages site).</td></tr>'; });
+}
+
+// calculator.html: pick verified events, entries x buy-ins + nights x true hotel cost.
+function initCalculator(){
+  const pick = document.getElementById('calc-events');
+  if (!pick) return;
+  const sorted = [...events].sort((a,b)=>a.date.localeCompare(b.date)||a.time.localeCompare(b.time));
+  pick.innerHTML = sorted.map(e=>`<label class="calc-row" style="display:flex;gap:10px;align-items:flex-start;padding:8px 10px;border-top:1px solid #e8eeea"><input type="checkbox" data-calc-buy="${e.buy}" style="margin-top:4px"><span><strong>${dateText(e.date)} · ${e.time} · ${e.id}</strong> — ${e.name}</span><b style="margin-left:auto">${money(e.buy)}</b></label>`).join('');
+  const nights = document.getElementById('calc-nights');
+  const rate = document.getElementById('calc-rate');
+  const parking = document.getElementById('calc-parking');
+  const out = document.getElementById('calc-output');
+  const FEE = 55, TAX = 0.1338;
+  const calc = ()=>{
+    const checked = [...pick.querySelectorAll('input:checked')];
+    const entryCost = checked.reduce((sum,el)=>sum+Number(el.dataset.calcBuy),0);
+    const n = Number(nights.value)||0;
+    const r = rate.value===''?null:Number(rate.value);
+    const p = parking.value===''?0:Number(parking.value);
+    let hotel = '—', total = null, warn = '';
+    if (r !== null){
+      const perNight = (r+FEE)*(1+TAX)+p;
+      hotel = `$${perNight.toFixed(2)} / night × ${n} = $${(perNight*n).toFixed(2)}`;
+      total = entryCost + perNight*n;
+    } else {
+      warn = 'Nightly base rate missing: hotel portion cannot be computed. Enter a rate verified for your dates (official booking quote), or use a conditional preset below.';
+    }
+    out.innerHTML = `<table><tbody>
+      <tr><td>Entries selected</td><td>${checked.length}</td></tr>
+      <tr><td>Entry cost (Σ buy-ins)</td><td>$${entryCost.toLocaleString('en-US')}</td></tr>
+      <tr><td>Hotel (rate + $55 fee + 13.38% tax + parking) × nights</td><td>${hotel}</td></tr>
+      <tr><td><strong>Estimated trip cost</strong></td><td><strong>${total!==null?'$'+total.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2}):'entries only — '+warn}</strong></td></tr>
+    </tbody></table>${warn?`<p class="callout danger">${warn}</p>`:''}<p class="muted">Formula: entries × buy-ins + nights × true hotel cost/night. Presets are advertised starting endpoints, not quotes for any date.</p>`;
+  };
+  [nights,rate,parking].forEach(el=>el.addEventListener('input',calc));
+  pick.addEventListener('change',calc);
+  document.querySelectorAll('[data-rate-preset]').forEach(b=>b.addEventListener('click',()=>{ rate.value = b.dataset.ratePreset; calc(); }));
+  calc();
+}
+
+// schedule.html: same-day overlap table generated from the verified events array.
+function renderOverlap(){
+  const root = document.getElementById('overlap-events');
+  if (!root) return;
+  const byDate = {};
+  events.forEach(e=>{ (byDate[e.date] = byDate[e.date] || []).push(e); });
+  const rows = Object.keys(byDate).sort().filter(d=>byDate[d].length>1).map(d=>{
+    const list = byDate[d].sort((a,b)=>a.time.localeCompare(b.time));
+    const primary = list[0];
+    const fallbacks = list.slice(1);
+    const flag = list.some(e=>e.format.includes('Multi-flight')||e.format.includes('multiday'))
+      ? 'Hard conflict: multi-flight / Day-2 restart shares the day'
+      : 'Conditional: same-day sequence not guaranteed (no finish times published)';
+    return `<tr data-date="${d}"><td>${dateText(d)}</td><td>${primary.time} · ${primary.id} — ${primary.name}</td><td>${fallbacks.map(e=>`${e.time} · ${e.id} — ${e.name}`).join('<br>')}</td><td><span class="pill warn">${flag}</span></td><td>${officialLink(OFFICIAL.schedule,'Official schedule')}</td></tr>`;
+  }).join('');
+  root.innerHTML = rows || '<tr><td colspan="5">No multi-event days in this dataset.</td></tr>';
+}
+
+// Search across static (non-event) tables on pages that carry a search box.
+function setupStaticSearch(){
+  const input = document.querySelector('[data-table-search][data-scope="page"]');
+  if (!input) return;
+  input.addEventListener('input', ()=>{
+    const q = input.value.toLowerCase();
+    document.querySelectorAll('main table tbody tr').forEach(row=>{
+      if (row.closest('#candidate-events,#other-events,#reentry-events')) return; // these event tables are re-rendered by the state filters
+      row.hidden = q && !row.textContent.toLowerCase().includes(q);
+    });
+  });
+}
+
+const safe = (fn)=>{ try{ fn(); }catch(e){ console.error('hook failed:', e); } };
 document.addEventListener('DOMContentLoaded', async ()=>{
   await loadUrlChecks();
   renderEvents('candidate-events','candidate');
   renderEvents('other-events',['review','secondary']);
   renderReview();
   await loadReentry();
-  setupFilters();
-  setupSearch();
-  setupTripCalculator();
+  safe(setupFilters);
+  // note: an earlier version called setupSearch() here, but that function was
+  // never defined — the ReferenceError silently killed every hook after it
+  // (trip calculator, etc.). setupFilters() already binds the search box.
+  safe(setupTripCalculator);
+  safe(setupTripFormPage);
+  safe(setupStaticSearch);
+  safe(renderOverlap);
+  safe(initCalculator);
+  safe(loadRecheck);
 });
