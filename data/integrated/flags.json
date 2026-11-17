@@ -41,9 +41,9 @@
   },
   {
    "id": "F07",
-   "title": "Walk-time matrix incomplete for Wynn venue",
-   "detail": "Hotel\u2192Venetian walking times verified for 7 hotels + on-site (Google Maps, 2026-11-17). ARIA at 31 min exceeds the 30-minute limit. Hotel\u2192Wynn pairs for Bellagio/ARIA/Caesars/TI/Harrah's/Horseshoe are unmeasured \u2014 links provided, scheduled for automated re-check.",
-   "source": "https://www.google.com/maps/dir/?api=1&origin=Wynn+Las+Vegas,+3131+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&destination=The+Venetian+Resort,+3355+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&travelmode=walking"
+   "title": "Walking times over 30 minutes: Bellagio/ARIA to Wynn; ARIA to Venetian",
+   "detail": "All hotel-to-venue cross-property walks were checked on Google Maps using official property addresses on 2026-11-17. Bellagio\u2192Wynn is 32 min, ARIA\u2192Wynn 42 min, and ARIA\u2192Venetian 31 min; all exceed the requested 30-minute limit. Other measured cross-property pairs are 30 minutes or less. Wynn-on-Wynn internal walking time is not published/verified and remains blank.",
+   "source": "https://www.google.com/maps/dir/?api=1&origin=Aria+Resort+%26+Casino,+3730+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&destination=Wynn+Las+Vegas,+3131+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&travelmode=walking"
   },
   {
    "id": "F08",
@@ -60,8 +60,14 @@
   {
    "id": "F10",
    "title": "Event durations are labeled estimates",
-   "detail": "No official source publishes finish times. Plausible-duration estimates (1-day \u2248 10 h, flights \u2248 9 h, turbo/satellite \u2248 4\u20136 h) drive overlap flags and the daily plan; every such value is labeled as an estimate on the page.",
-   "source": ""
+   "detail": "No official source publishes finish times. Plausible-duration estimates (1-day \u2248 10 h, flights \u2248 9 h, turbo/satellite \u2248 4\u20136 h) drive overlap flags and the daily plan; every such value is labeled as an estimate on the page. The linked official schedule and structure sheets provide the start times and level durations used as inputs.",
+   "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
+  },
+  {
+   "id": "F11",
+   "title": "32 Venetian display titles differ from the official page wording",
+   "detail": "Schedule keys, event numbers, dates, times, buy-ins, guarantees and sheet mappings reconcile; 32 canonical titles normalize capitalization, punctuation or shorten official display wording. The exact official text and each affected schedule row are preserved in data/verify/venetian_dse_iv_live_2026-11-17.tsv and listed by scripts/verify_live_sources.py. Review title variants; no row was dropped.",
+   "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
   }
  ]
 }

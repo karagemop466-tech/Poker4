@@ -19,7 +19,7 @@ jobs:
         with:
           # need a token-backed ref to push the updated snapshot
           ref: main
-          persist-credentials: false
+          persist-credentials: true
 
       - name: Set up Python
         uses: actions/setup-python@v5

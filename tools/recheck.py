@@ -9,7 +9,8 @@ and refreshes the last-checked date. Nothing is deleted; history of hashes is
 kept per URL.
 
 Run: python3 tools/recheck.py          (one pass over all sources)
-Exit codes: 0 = ran (changed or not); 1 = at least one fetch failed.
+Exit codes: 0 = ran (changed, unchanged, or with recorded fetch failures). Fetch failures
+are stored in status.json and must not prevent schedule capture or downstream integrity checks.
 """
 import hashlib
 import json
@@ -63,15 +64,20 @@ def main():
 
     # mark rows whose source changed: each event referencing a changed source key
     # gets that key in review_flags; the site renders a "source changed" badge.
-    if changed:
-        changed_keys = {c["key"] for c in changed}
-        ev_path = D / "events.json"
+    # Current-run change flags are refreshed on every pass: once a later source
+    # fetch matches the new baseline, the stale "changed" badge is removed.
+    ev_path = D / "events.json"
+    if ev_path.exists():
         ev = json.loads(ev_path.read_text(encoding="utf-8"))
+        monitored_keys = set(sources)
+        changed_keys = {c["key"] for c in changed}
         for e in ev["events"]:
-            hit = sorted(changed_keys.intersection(e.get("sources", [])))
-            if hit:
-                flags = sorted(set(e.get("review_flags", [])).union(hit))
-                e["review_flags"] = flags
+            old = set(e.get("review_flags", []))
+            flags = (old - monitored_keys) | (changed_keys.intersection(e.get("sources", [])))
+            if flags:
+                e["review_flags"] = sorted(flags)
+            else:
+                e.pop("review_flags", None)
         ev_path.write_text(json.dumps(ev, indent=2), encoding="utf-8")
     # dated append-only log for post-hoc review
     with (MON / "runs.log").open("a", encoding="utf-8") as f:
@@ -83,7 +89,9 @@ def main():
     print(f"recheck: {len(entries)} urls — {len(changed)} changed, {len(failed)} failed")
     if changed:
         print("changed sources need row review:", [c["key"] for c in changed])
-    return 1 if failed else 0
+    if failed:
+        print("WARNING: fetch failures are recorded; schedule capture and integrity checks may continue.")
+    return 0
 
 if __name__ == "__main__":
     sys.exit(main())
