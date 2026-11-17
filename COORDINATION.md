@@ -863,3 +863,11 @@ Out of scope (not claimed; recorded so nobody assumes otherwise): Bellagio resor
 Checked and not changed: Venetian $55 resort fee and $20/$40 parking (read live 2026-11-17, matches `data/poker4.json`). Venetian poker-rate, DSE calendar and structure-sheet data were not re-read here. Earlier sessions verified them; the scheduled monitor covers them.
 
 Still open (not claimed, not resolved): Bellagio resort fee (no official page reachable); Clark County PGC map (per-property membership); walking minutes (no official source); single-entry confirmation (0 events); live dated booking quotes; 8 AM all-day plan (F10); trip dates (not supplied by the user). The county letter is not yet in the daily monitor registry.
+
+### Merge and deploy record — arena/03d073d2-poker4 (2026-11-17)
+
+- **PR #66** (`arena/03d073d2-poker4` → `main`) — https://github.com/karagemop466-tech/Poker4/pull/66 — checks `check`, `integrity`, `verify` all **pass**; merged with `--merge` at 2026-11-17T22:32:37Z as `f163d6e81221877fcf5e6c35105752a4318abedc`. Pages deploy `44191075389` (Deploy static dashboard to GitHub Pages) **success**. Post-merge official source sync committed `282c9e8`; its Pages build `44191075021` **success**. Live check: https://karagemop466-tech.github.io/Poker4/hotels.html shows the county-letter basis and the F27 note.
+- **Gates on the live commit `282c9e8`:** `verify_root`, `verify`, `verify_markup`, `linkcheck`, `tools/verify_poker4.py`, `integrate_data` (rebuild is a no-op): all exit 0.
+- **Irregularity F29 (not fixed):** `tournament-monitor.yml` ("Daily schedule + source-change monitor") failed at `tools/verify_poker4.py` on its 22:26 UTC scheduled run (44190052816, ff3fa36) and on three earlier push runs the same day. The failed-run logs could not be downloaded from the sandbox, and a manual retry was refused (HTTP 403). The root site and its deploy are unaffected. Published on the Flagged page as F29 (see the PR that adds it).
+- **Process note:** during this session I briefly created a local branch, `arena/03d073d2-poker4-f29`, by mistake. It was never pushed, and I deleted it at once. Work stayed on `arena/03d073d2-poker4`.
+- **Next step for this session's scope:** the Flagged page now carries F27 (PGC membership), F19 (Wynn fee, current source), F6 (Bellagio, still unverified) and F29 (monitor failure).
