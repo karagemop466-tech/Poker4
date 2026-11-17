@@ -25,7 +25,7 @@
    "data/c07371e3/*.csv"
   ],
   "rebuild": "python3 tools/sync_official_sources.py --from-raw && python3 scripts/integrate_data.py",
-  "last_update": "2026-11-17 session arena/3082d6d9-poker4: Bellagio fee + cancellation confirmed from the property's live Hotel Reservation Terms page; Caesars rows re-anchored to the 2026 daily flyer"
+  "last_update": "2026-11-17 session arena/3082d6d9-poker4: Caesars rows + venue coverage re-anchored to the 2026 daily flyer (per-slot buy-ins, fee splits, re-entry rule); Bellagio fee $55 + 72-hour cancellation confirmed from the live terms page"
  },
  "venues": [
   {
@@ -84,8 +84,9 @@
    "property": "Caesars Palace",
    "official_address": "3570 S Las Vegas Blvd, Las Vegas, NV 89109",
    "address_source": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
-   "coverage": "No structure sheet is published. The official Caesars page prints four daily $100 NLH start times, 20,000 chips, a $1,000 guarantee, 20-minute levels and a $50 add-on, with no house-fee split and no entry rule (flag F18). The rows are published with what is printed and excluded from ranking.",
+   "coverage": "No structure sheet is published. The venue's own 2026 daily flyer PDF prints four daily NLH slots — 10 AM $100, 2 PM $160, 6 PM $100, 9 PM $160 — each with 20,000 chips, 20-minute levels and a $1,000 guarantee, plus the fee splits ($70/$30 and $115/$45), the $50 add-on split ($45/$5), registration closing at the start of level 7, and a re-entry rule (re-enter within the first break after elimination). The explore page's blanket 'every event carries a $100 buy-in' sentence conflicts with the flyer's $160 slots — flag F25 records the conflict and the rows follow the dedicated, dated flyer. Rows stay excluded from ranking because the slate prints no calendar dates.",
    "schedule_sources": [
+    "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
     "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
    ],
    "hotel_ids": [
