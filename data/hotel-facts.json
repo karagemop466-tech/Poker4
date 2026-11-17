@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generated_at": "2026-11-17T01:57:00Z",
+  "generated_at": "2026-11-17T02:01:47Z",
   "policy": "Sentences are copied verbatim from the fetched official page/PDF. A fact is only recorded when the wording is actually present; nothing is summarised, rounded or inferred."
  },
  "sources": {
@@ -8,8 +8,8 @@
    "label": "Venetian poker room (location + contact)",
    "venue": "The Venetian",
    "url": "https://www.venetianlasvegas.com/resort/casino/poker.html",
-   "retrieved": "2026-11-17T01:56:16Z",
-   "sha256": "b8e4bd67583e861c7cfe44d2b02f40d28c3f4045a236d7a68129791d8a79b6ba",
+   "retrieved": "2026-11-17T02:01:13Z",
+   "sha256": "b13c3abad6514f66833969370df0e93926f397a802427a2ec0b9f267cd61426c",
    "facts": {
     "parking": [
      "> <p><b>From The Palazzo Lobby:</b></p> <p>Proceed across The Palazzo Casino Floor to the self-parking elevators",
@@ -23,23 +23,23 @@
    "label": "Wynn Las Vegas poker room page",
    "venue": "Wynn Las Vegas",
    "url": "https://wynnlasvegas.com/casino/poker",
-   "retrieved": "2026-11-17T01:56:25Z",
-   "sha256": "f8dee971a8b49bf52c3458a864b9a6f17ec54033cd4b4bc63c64619146c4689f",
+   "retrieved": "2026-11-17T02:01:21Z",
+   "sha256": "90c7edf28cd83effd4973625d3b57c3c34be6ee790f872fc616b7836c435ddb0",
    "facts": {}
   },
   "https://bellagio.mgmresorts.com/en/casino/poker.html": {
    "label": "Bellagio poker room page",
    "venue": "Bellagio",
    "url": "https://bellagio.mgmresorts.com/en/casino/poker.html",
-   "retrieved": "2026-11-17T01:56:26Z",
-   "sha256": "f7f1db04bc25f61f92ed4e4092784f48b367269a7f9dfd027db05275e4dac97e",
+   "retrieved": "2026-11-17T02:01:21Z",
+   "sha256": "b9e6a9d66e231adc1a1ed49c78ad5b4df743f2ec1b2bac8d417e9c2722f28e1e",
    "facts": {}
   },
   "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip": {
    "label": "Caesars Palace — poker tournaments page",
    "venue": "Caesars Palace",
    "url": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
-   "retrieved": "2026-11-17T01:56:26Z",
+   "retrieved": "2026-11-17T02:01:22Z",
    "sha256": "cf51b4a1774895f0a784d1b4e34863dc8063696ebc90bb0ef08b07fe0c4c7db3",
    "facts": {}
   },
@@ -47,16 +47,16 @@
    "label": "ARIA poker room page",
    "venue": "ARIA",
    "url": "https://aria.mgmresorts.com/en/casino/poker.html",
-   "retrieved": "2026-11-17T01:56:27Z",
-   "sha256": "82f18d0c1161de33e3b8e6ab43715587ee014c16bddfaa5c3244d314749b0ff6",
+   "retrieved": "2026-11-17T02:01:23Z",
+   "sha256": "683c5d44f79ddf41aa69f23974e3fe025f1874103f09031ec519f20fb60fb591",
    "facts": {}
   },
   "https://www.venetianlasvegas.com/resort/resort-fee.html": {
    "label": "Venetian — resort fee page",
    "venue": "The Venetian",
    "url": "https://www.venetianlasvegas.com/resort/resort-fee.html",
-   "retrieved": "2026-11-17T01:56:54Z",
-   "sha256": "797c99b1e5412d0e9b7fa74c98c931e4ada8546a7008f108b590093a627ca7f7",
+   "retrieved": "2026-11-17T02:01:41Z",
+   "sha256": "52e6ad132818e8169cc4f24c93fa32d613bb9ee59510734bebcc2bee1eb95bb1",
    "facts": {
     "resort_fee": [
      "Resort Fee | Resort Fee Inclusions | The Venetian Resort Las Vegas Skip to main content --> Menu Offers Search Account Account Sign In {{ loginStatus",
@@ -70,8 +70,8 @@
    "label": "Venetian — hotel terms (tax, parking, cancellation)",
    "venue": "The Venetian",
    "url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
-   "retrieved": "2026-11-17T01:56:54Z",
-   "sha256": "49dd0ce69649618949eaa7857a67cbd8780260a67dfbefe2b7a796d6b36f88e5",
+   "retrieved": "2026-11-17T02:01:41Z",
+   "sha256": "3bf5c027240335a8b40c9e45145ac69752b60f5b835e2dd41e4169a855c949b2",
    "facts": {
     "resort_fee": [
      "Taxes, Surcharges, and Resort Fee Daily rates do not include the applicable Clark County Room Tax of 13",
@@ -104,8 +104,8 @@
    "label": "Venetian — poker suite rates + play requirements",
    "venue": "The Venetian",
    "url": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
-   "retrieved": "2026-11-17T01:56:55Z",
-   "sha256": "6b21e34a53b7f0e0610fe6931d79455e59b8fb88d9444762ece04addc286aff4",
+   "retrieved": "2026-11-17T02:01:42Z",
+   "sha256": "2d0dfc9b50ba637e44f8763379d08a6d8e7d0b442f528092e551ba18f7066919",
    "facts": {
     "resort_fee": [
      "There is a $55 resort fee per night stayed"
@@ -116,8 +116,8 @@
    "label": "Venetian — poker player parking",
    "venue": "The Venetian",
    "url": "https://www.venetianlasvegas.com/resort/casino/poker/player-parking.html",
-   "retrieved": "2026-11-17T01:56:55Z",
-   "sha256": "515645488d22d215b86518c470b3bb3a8271be3e3e2d15d53503c600e807a3d6",
+   "retrieved": "2026-11-17T02:01:42Z",
+   "sha256": "cad0a12165db213aff083fc9926d16582bf382bbc5c450ca52679f24684894c9",
    "facts": {
     "parking": [
      "MOBILE CHECK-IN VENETIAN REWARDS - SIGN IN Home Resort Casino Poker Poker Players Parking Self-Parking Info Venetian Rewards Sapphire members and above receive complimentary self-parking",
@@ -133,8 +133,8 @@
    "label": "Venetian Rewards terms (fee waiver language)",
    "venue": "The Venetian",
    "url": "https://www.venetianlasvegas.com/venetian-rewards/terms-and-conditions.html",
-   "retrieved": "2026-11-17T01:56:56Z",
-   "sha256": "df3a3eccd4107bf8b3fafef3d8efd6a02c4fb850efbbd23544d393bc8c2e2d72",
+   "retrieved": "2026-11-17T02:01:42Z",
+   "sha256": "a5fd8d894ead35312e2824c83dba36c2b45fa35d1f42140ff3ee5e6f2200a4b4",
    "facts": {
     "resort_fee": [
      "Complimentary Resort Fees Member will receive complimentary resort fees for one (1) suite per stay",
@@ -154,7 +154,7 @@
    "label": "Wynn — resort fee / terms of stay",
    "venue": "Wynn Las Vegas",
    "url": "https://www.wynnlasvegas.com/terms-and-conditions/850257",
-   "retrieved": "2026-11-17T01:56:57Z",
+   "retrieved": "2026-11-17T02:01:43Z",
    "sha256": "79d1a1e9c3350516aa8cee544d5b158c5b1517ce3d33e8933eaa4e0c7052695b",
    "facts": {
     "resort_fee": [
@@ -179,7 +179,7 @@
    "label": "Treasure Island — rooms + resort fee",
    "venue": "Treasure Island",
    "url": "https://treasureisland.com/hotel/deluxe-rooms",
-   "retrieved": "2026-11-17T01:56:57Z",
+   "retrieved": "2026-11-17T02:01:43Z",
    "sha256": "64d18a208d7befcedca7d5c49ec5f0679c355b8df12c017a809f505eeefb62eb",
    "facts": {
     "resort_fee": [
@@ -199,32 +199,32 @@
    "label": "Caesars Palace — resort fee page (status tracked)",
    "venue": "Caesars Palace",
    "url": "https://www.caesars.com/caesars-palace/resort-fee",
-   "retrieved": "2026-11-17T01:56:58Z",
-   "sha256": "675ab1b85412ff253f544b0ccf71817aed1d2ab85fd7c417caf4c4b16a87fb8b",
+   "retrieved": "2026-11-17T02:01:44Z",
+   "sha256": "cce7f8e0a2a252db0f1bbe4acb21d4707db0dd4ea041e3581879b15032cbfae0",
    "facts": {}
   },
   "https://bellagio.mgmresorts.com/en/hotel.html": {
    "label": "Bellagio hotel page",
    "venue": "Bellagio",
    "url": "https://bellagio.mgmresorts.com/en/hotel.html",
-   "retrieved": "2026-11-17T01:56:59Z",
-   "sha256": "60b19428ed97e59fb62eb31f11114942184a023f5927768b8da53b531a63353a",
+   "retrieved": "2026-11-17T02:01:44Z",
+   "sha256": "86b43f4bc3d0ea17c0a07684871bce47e78b099c8c7a0c181396bc5003107f49",
    "facts": {}
   },
   "https://www.caesars.com/harrahs-las-vegas": {
    "label": "Harrah's Las Vegas (status tracked)",
    "venue": "Harrah's",
    "url": "https://www.caesars.com/harrahs-las-vegas",
-   "retrieved": "2026-11-17T01:56:59Z",
-   "sha256": "4a4bd378f39734716112b8baa2380e9faa17976164adc896cd6cf8656ab22ef5",
+   "retrieved": "2026-11-17T02:01:46Z",
+   "sha256": "1513512346a42f11ef02206bda11cae4505e610df84e6df2e57da2d9d46a0830",
    "facts": {}
   },
   "https://www.caesars.com/horseshoe-las-vegas": {
    "label": "Horseshoe Las Vegas (status tracked)",
    "venue": "Horseshoe",
    "url": "https://www.caesars.com/horseshoe-las-vegas",
-   "retrieved": "2026-11-17T01:57:00Z",
-   "sha256": "c74e2929b7f84b6453acfc97044f2a926a577d3b2a39e5896440438f73db6290",
+   "retrieved": "2026-11-17T02:01:46Z",
+   "sha256": "c251a8813af23d4432853a2ee09087a9dde82b09f2e5b182470b3f54050b5475",
    "facts": {}
   }
  }
