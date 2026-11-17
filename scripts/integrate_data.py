@@ -202,7 +202,7 @@ for row in SCHED["rows"]:
         "venue": "venetian",
         "venue_name": "The Venetian Poker Room",
         "event_no": row["event_no"],
-        "name": f"${buy:,} {name.title()}" if buy else name.title(),
+        "name": (f"${buy:,} {name.title()}" if buy and not name.lstrip().startswith("$") else name.title()),
         "name_printed": name,
         "date": row.get("date"),
         "weekday": row.get("weekday"),

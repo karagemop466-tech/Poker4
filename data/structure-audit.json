@@ -1422,7 +1422,7 @@
   ]
  },
  "meta": {
-  "generated_at": "2026-11-17T02:01:47Z",
+  "generated_at": "2026-11-17T22:03:00Z",
   "generator": "tools/sync_official_sources.py",
   "policy": "Field values are matched from the fetched sheet text only. entry_policy='not_stated_in_sheet' means the sheet contains no clause about entries/re-entries/add-ons — that is NOT confirmation of single-entry play."
  },
