@@ -344,7 +344,20 @@
     "data/v2/snapshots/"
    ],
    "how_to_close": "Pin that workflow's commit target to `main`, or add `[skip ci]` plus a branch allowlist."
+  },
+  {
+   "id": "F-SHEET-PARTIAL",
+   "title": "Four sheets were read with lines lost to an elided page region",
+   "detail": "Sheets #19, #20, #21 and #23 came back with their middle (or top) inside a chunk boundary while the page was being read, so their guarantee/house-fee or start-time lines were not visible. Those fields are recorded as null with an `unread_fields` list naming exactly what is missing, and each row shows \"read pending\" rather than a number copied from the calendar — a calendar buy-in is not a house-fee figure. The scheduled monitor reads each PDF whole and will fill them.",
+   "severity": "minor",
+   "status": "open — closes on the next monitor run",
+   "no_official_source": true,
+   "sources": [],
+   "affects": [
+    "data/08f07d1d/structure_rules.json"
+   ],
+   "how_to_close": "Monitor run, or re-read sheets 19/20/21/23 individually."
   }
  ],
- "count": 25
+ "count": 26
 }
