@@ -1,0 +1,624 @@
+{
+ "_meta": {
+  "session": "ae1abd73",
+  "task": "X1 — independent re-check of Venetian DSE IV structure-sheet entry-rule verdict",
+  "retrieved": "2026-11-17",
+  "method": "fetch_page on each official structure PDF (sheets 1–37); visual search of every sheet for single-entry / freezeout / re-entry / rebuy / re-buy / add-on wording; start time, chips, level length, late-registration, guarantee and house fee compared with data/feature/structure-extract.md",
+  "url_pattern": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_N.pdf",
+  "official_source": "Venetian Las Vegas official DSE IV structure sheets (venetianlasvegas.com)",
+  "result": {
+   "sheets_read": 37,
+   "sheets_stating_single_entry_freezeout_or_no_rebuy": 0,
+   "sheets_stating_re_entry_rebuy_or_add_on_as_such": 0,
+   "sheets_with_subsequent_buy_in_wording": [
+    8
+   ],
+   "sheets_with_bag_rule_flighted": [
+    2,
+    3,
+    4,
+    9,
+    10,
+    12,
+    13,
+    14,
+    20,
+    21,
+    35,
+    36,
+    37
+   ],
+   "discrepancies_vs_structure_extract": 0,
+   "single_entry_confirmed_events": 0
+  }
+ },
+ "sheets": [
+  {
+   "sheet": 1,
+   "events": [
+    "09",
+    "11",
+    "13",
+    "15",
+    "21",
+    "22",
+    "23",
+    "25",
+    "60",
+    "61",
+    "62",
+    "64"
+   ],
+   "title": "$200 NLH Bounty (1Day)",
+   "start": "5:10 PM",
+   "chips": 25000,
+   "level_min": 30,
+   "late_reg": "8 levels + Break (9:40 PM)",
+   "guarantee": "$8,000 (prize pool + bounties)",
+   "house_fee": "$40 of $200",
+   "entry_wording": "none",
+   "flighted": false
+  },
+  {
+   "sheet": 2,
+   "events": [
+    "07"
+   ],
+   "title": "$400 NLH (Day A+B, D2 11:00 AM)",
+   "start": "11:10 AM",
+   "chips": 40000,
+   "level_min": 40,
+   "late_reg": "9 levels + Break (5:55 PM)",
+   "guarantee": "$75,000",
+   "house_fee": "$70 of $400",
+   "entry_wording": "bag rule: Day-2 baggers may not play a subsequent flight",
+   "flighted": true
+  },
+  {
+   "sheet": 3,
+   "events": [
+    "19"
+   ],
+   "title": "$400 NLH (Day A+B+C)",
+   "start": "11:10 AM",
+   "chips": 40000,
+   "level_min": 40,
+   "late_reg": "9 levels + Break (5:55 PM)",
+   "guarantee": "$75,000",
+   "house_fee": "$70 of $400",
+   "entry_wording": "bag rule",
+   "flighted": true
+  },
+  {
+   "sheet": 4,
+   "events": [
+    "59"
+   ],
+   "title": "$600 NLH (Day A+B+C)",
+   "start": "11:10 AM",
+   "chips": 40000,
+   "level_min": 40,
+   "late_reg": "9 levels + Break (5:55 PM)",
+   "guarantee": "$150,000",
+   "house_fee": "$95 of $600; 1A pre-start $580",
+   "entry_wording": "bag rule",
+   "flighted": true
+  },
+  {
+   "sheet": 5,
+   "events": [
+    "02",
+    "12"
+   ],
+   "title": "$300 NLH (1Day)",
+   "start": "11:10 AM",
+   "chips": 40000,
+   "level_min": 30,
+   "late_reg": "10 levels + Break (~4:55 PM)",
+   "guarantee": "$10,000",
+   "house_fee": "$58 of $300",
+   "entry_wording": "none",
+   "flighted": false
+  },
+  {
+   "sheet": 6,
+   "events": [
+    "10"
+   ],
+   "title": "$400 NLH (1Day)",
+   "start": "11:10 AM",
+   "chips": 40000,
+   "level_min": 30,
+   "late_reg": "10 levels + Break (~4:55 PM)",
+   "guarantee": "$15,000",
+   "house_fee": "$65 of $400",
+   "entry_wording": "none",
+   "flighted": false
+  },
+  {
+   "sheet": 7,
+   "events": [
+    "14",
+    "28",
+    "63"
+   ],
+   "title": "$600 NLH (1Day)",
+   "start": "11:10 AM",
+   "chips": 40000,
+   "level_min": 30,
+   "late_reg": "10 levels + Break (~4:55 PM)",
+   "guarantee": "$30,000 (#14, #63); $40,000 (#28)",
+   "house_fee": "$90 of $600",
+   "entry_wording": "none",
+   "flighted": false
+  },
+  {
+   "sheet": 8,
+   "events": [
+    "18",
+    "58"
+   ],
+   "title": "$200 NLH Valuetown Bounty (1Day)",
+   "start": "5:10 PM",
+   "chips": 25000,
+   "level_min": 30,
+   "late_reg": "8 levels + Break (9:40 PM)",
+   "guarantee": "$20,000 (prize pool + bounties)",
+   "house_fee": "$40 of $200; PokerAtlas PRO $20 discount on initial buy-in",
+   "entry_wording": "Rule 7: \"All subsequent buy in's after the initial buy in will be $200.\"",
+   "flighted": false
+  },
+  {
+   "sheet": 9,
+   "events": [
+    "01"
+   ],
+   "title": "$300 NLH (Day B+D, D2 12:00 PM)",
+   "start": "5:10 PM",
+   "chips": 30000,
+   "level_min": 30,
+   "late_reg": "6 levels + Break (~8:40 PM)",
+   "guarantee": "$75,000",
+   "house_fee": "$60 of $300",
+   "entry_wording": "bag rule",
+   "flighted": true
+  },
+  {
+   "sheet": 10,
+   "events": [
+    "01"
+   ],
+   "title": "$300 NLH (Day A+C, D2 12:00 PM)",
+   "start": "11:10 AM",
+   "chips": 30000,
+   "level_min": 40,
+   "late_reg": "6 levels + Break (~3:40 PM)",
+   "guarantee": "$75,000",
+   "house_fee": "$60 of $300",
+   "entry_wording": "bag rule",
+   "flighted": true
+  },
+  {
+   "sheet": 11,
+   "events": [
+    "16",
+    "30",
+    "54"
+   ],
+   "title": "$600 NLH Bounty (1Day)",
+   "start": "11:10 AM",
+   "chips": 40000,
+   "level_min": 30,
+   "late_reg": "10 levels + Break (4:55 PM)",
+   "guarantee": "$30,000 (#16), $40,000 (#30), $50,000 (#54), incl. bounties",
+   "house_fee": "$90 of $600; $50 start bounty not stated here",
+   "entry_wording": "none",
+   "flighted": false
+  },
+  {
+   "sheet": 12,
+   "events": [
+    "26"
+   ],
+   "title": "$800 NLH (Day A+C+E, D2 12:00 PM)",
+   "start": "11:10 AM",
+   "chips": 40000,
+   "level_min": 40,
+   "late_reg": "6 levels + Break (~3:40 PM)",
+   "guarantee": "$500,000",
+   "house_fee": "$110 of $800",
+   "entry_wording": "bag rule",
+   "flighted": true
+  },
+  {
+   "sheet": 13,
+   "events": [
+    "26"
+   ],
+   "title": "$800 NLH (Day B+D, D2 12:00 PM)",
+   "start": "5:10 PM",
+   "chips": 40000,
+   "level_min": 30,
+   "late_reg": "6 levels + Break (~8:40 PM)",
+   "guarantee": "$500,000",
+   "house_fee": "$110 of $800",
+   "entry_wording": "bag rule",
+   "flighted": true
+  },
+  {
+   "sheet": 14,
+   "events": [
+    "26"
+   ],
+   "title": "$800 NLH (Day F Turbo, D2 12:00 PM)",
+   "start": "5:10 PM",
+   "chips": 40000,
+   "level_min": 20,
+   "late_reg": "6 levels + Break (~7:25 PM)",
+   "guarantee": "$500,000",
+   "house_fee": "$110 of $800",
+   "entry_wording": "bag rule",
+   "flighted": true
+  },
+  {
+   "sheet": 15,
+   "events": [
+    "29",
+    "31",
+    "34",
+    "38",
+    "42",
+    "50",
+    "51",
+    "53",
+    "55"
+   ],
+   "title": "$300 NLH Bounty (1Day)",
+   "start": "5:10 PM",
+   "chips": 25000,
+   "level_min": 30,
+   "late_reg": "8 levels + Break (9:40 PM)",
+   "guarantee": "$15,000 (incl. $100 bounties)",
+   "house_fee": "$50 of $300",
+   "entry_wording": "none",
+   "flighted": false
+  },
+  {
+   "sheet": 16,
+   "events": [
+    "36"
+   ],
+   "title": "$800 NLH Bounty (1Day)",
+   "start": "11:10 AM",
+   "chips": 40000,
+   "level_min": 30,
+   "late_reg": "10 levels + Break (4:55 PM)",
+   "guarantee": "$75,000 (incl. bounties)",
+   "house_fee": "$100 of $800",
+   "entry_wording": "none",
+   "flighted": false
+  },
+  {
+   "sheet": 17,
+   "events": [
+    "24",
+    "32"
+   ],
+   "title": "$600 NLH Seniors 50+ (1Day)",
+   "start": "10:10 AM",
+   "chips": 40000,
+   "level_min": 30,
+   "late_reg": "10 levels + Break (~3:55 PM)",
+   "guarantee": "$40,000",
+   "house_fee": "$90 of $600",
+   "entry_wording": "none",
+   "flighted": false
+  },
+  {
+   "sheet": 18,
+   "events": [
+    "03",
+    "04",
+    "05"
+   ],
+   "title": "$200 NLH RaceDay Stack (1Day)",
+   "start": "10:10 AM",
+   "chips": 30000,
+   "level_min": "20/15",
+   "late_reg": "6 levels + Break (~12:25 PM)",
+   "guarantee": "none stated",
+   "house_fee": "$35 of $200",
+   "entry_wording": "none",
+   "flighted": false
+  },
+  {
+   "sheet": 19,
+   "events": [
+    "33",
+    "37"
+   ],
+   "title": "$100 LIPS Ladies Milestone Satellite to #39",
+   "start": "4:10 PM",
+   "chips": 20000,
+   "level_min": 20,
+   "late_reg": "6 levels + Break (~6:25 PM)",
+   "guarantee": "2 seats",
+   "house_fee": "$20 of $100",
+   "entry_wording": "none (prize = direct entry to #39)",
+   "flighted": false
+  },
+  {
+   "sheet": 20,
+   "events": [
+    "49"
+   ],
+   "title": "$1,100 NLH Seniors 50+ (Day A+B, D2 10:00 AM)",
+   "start": "10:10 AM",
+   "chips": 40000,
+   "level_min": 40,
+   "late_reg": "9 levels + Break (~4:55 PM)",
+   "guarantee": "$300,000",
+   "house_fee": "$140 of $1,100",
+   "entry_wording": "bag rule",
+   "flighted": true
+  },
+  {
+   "sheet": 21,
+   "events": [
+    "47"
+   ],
+   "title": "$2,200 NLH Championship (Day 1A, D2 1:00 PM, D3 11:00 AM)",
+   "start": "10:10 AM",
+   "chips": 40000,
+   "level_min": 40,
+   "late_reg": "9 levels + Break (~4:55 PM)",
+   "guarantee": "$1,000,000",
+   "house_fee": "$225 of $2,200",
+   "entry_wording": "bag rule",
+   "flighted": true
+  },
+  {
+   "sheet": 22,
+   "events": [
+    "20"
+   ],
+   "title": "$300 PLO Double Board Bomb Pot (1Day)",
+   "start": "12:10 PM",
+   "chips": 30000,
+   "level_min": 30,
+   "late_reg": "8 levels + break (~4:40 PM)",
+   "guarantee": "$10,000",
+   "house_fee": "$58 of $300",
+   "entry_wording": "none",
+   "flighted": false
+  },
+  {
+   "sheet": 23,
+   "events": [
+    "57"
+   ],
+   "title": "$600 PLO Double Board Bomb Pot (1Day)",
+   "start": "12:10 PM",
+   "chips": 30000,
+   "level_min": 30,
+   "late_reg": "8 levels + break (~4:40 PM)",
+   "guarantee": "$25,000",
+   "house_fee": "$90 of $600",
+   "entry_wording": "none",
+   "flighted": false
+  },
+  {
+   "sheet": 24,
+   "events": [
+    "41",
+    "44"
+   ],
+   "title": "$260 NLH Milestone Satellite to #47",
+   "start": "4:10 PM",
+   "chips": 20000,
+   "level_min": 20,
+   "late_reg": "6 levels + Break (~6:25 PM)",
+   "guarantee": "2 seats",
+   "house_fee": "$40 of $260",
+   "entry_wording": "none (prize = direct entry to #47)",
+   "flighted": false
+  },
+  {
+   "sheet": 25,
+   "events": [
+    "45",
+    "46",
+    "48"
+   ],
+   "title": "$260 NLH Turbo Milestone Satellite to #47",
+   "start": "#45 8:10 PM; #46 9:10 AM; #48 12:10 PM",
+   "chips": 20000,
+   "level_min": 15,
+   "late_reg": "6 levels (no clock time)",
+   "guarantee": "2 seats",
+   "house_fee": "$35 of $260",
+   "entry_wording": "none (prize = direct entry to #47)",
+   "flighted": false
+  },
+  {
+   "sheet": 26,
+   "events": [
+    "17"
+   ],
+   "title": "$400 PLO Bounty (1Day)",
+   "start": "12:10 PM",
+   "chips": 30000,
+   "level_min": 30,
+   "late_reg": "8 levels + break (~4:40 PM)",
+   "guarantee": "$15,000 (incl. $100 bounties)",
+   "house_fee": "$60 of $400",
+   "entry_wording": "none",
+   "flighted": false
+  },
+  {
+   "sheet": 27,
+   "events": [
+    "40"
+   ],
+   "title": "$600 PLO Bounty (1Day)",
+   "start": "12:10 PM",
+   "chips": 30000,
+   "level_min": 30,
+   "late_reg": "8 levels + break (~4:40 PM)",
+   "guarantee": "$25,000 (incl. $200 bounties)",
+   "house_fee": "$90 of $600",
+   "entry_wording": "none",
+   "flighted": false
+  },
+  {
+   "sheet": 28,
+   "events": [
+    "27"
+   ],
+   "title": "$600 BIG O (1Day)",
+   "start": "12:10 PM",
+   "chips": 30000,
+   "level_min": 30,
+   "late_reg": "8 levels + break (~4:40 PM)",
+   "guarantee": "$25,000",
+   "house_fee": "$90 of $600",
+   "entry_wording": "none",
+   "flighted": false
+  },
+  {
+   "sheet": 29,
+   "events": [
+    "06"
+   ],
+   "title": "$200 NLH (1Day)",
+   "start": "11:10 AM",
+   "chips": 30000,
+   "level_min": 30,
+   "late_reg": "8 levels + Break (~3:40 PM)",
+   "guarantee": "none stated",
+   "house_fee": "$40 of $200",
+   "entry_wording": "none",
+   "flighted": false
+  },
+  {
+   "sheet": 30,
+   "events": [
+    "08"
+   ],
+   "title": "$200 NLH Progressive Knock-Out Bounty (1Day)",
+   "start": "5:10 PM",
+   "chips": 25000,
+   "level_min": 30,
+   "late_reg": "8 levels + Break (9:40 PM)",
+   "guarantee": "$8,000 (prize pool + bounty money)",
+   "house_fee": "$40 of $200",
+   "entry_wording": "none",
+   "flighted": false
+  },
+  {
+   "sheet": 31,
+   "events": [
+    "35"
+   ],
+   "title": "$600 NLH LIPS Poker Jingle Tag Team",
+   "start": "10:10 AM",
+   "chips": 40000,
+   "level_min": 30,
+   "late_reg": "8 levels + Break (~2:40 PM)",
+   "guarantee": "$10,000",
+   "house_fee": "$80 house + $10 LIPS of $600",
+   "entry_wording": "team event; players rotate each level",
+   "flighted": false
+  },
+  {
+   "sheet": 32,
+   "events": [
+    "39"
+   ],
+   "title": "$800 NLH LIPS Ladies Main (2-day; D1 Dec 10, D2 Dec 11)",
+   "start": "10:10 AM (D1); 10:00 AM (D2)",
+   "chips": 40000,
+   "level_min": 40,
+   "late_reg": "9 levels + Break (~4:55 PM)",
+   "guarantee": "$40,000",
+   "house_fee": "$90 house + $20 LIPS of $800",
+   "entry_wording": "none (2-day event; Day 2 at 10:00 AM; no bag rule on sheet)",
+   "flighted": false
+  },
+  {
+   "sheet": 33,
+   "events": [
+    "43"
+   ],
+   "title": "$600 NLH LIPS Kings and Queens Bounty (1Day)",
+   "start": "11:10 AM",
+   "chips": 40000,
+   "level_min": 30,
+   "late_reg": "10 levels + Break (4:55 PM)",
+   "guarantee": "$30,000 (incl. $200 bounties)",
+   "house_fee": "$80 house + $10 LIPS of $600",
+   "entry_wording": "none",
+   "flighted": false
+  },
+  {
+   "sheet": 34,
+   "events": [
+    "52"
+   ],
+   "title": "$1,100 NLH Progressive Knock-Out Bounty (1Day)",
+   "start": "11:10 AM",
+   "chips": 40000,
+   "level_min": 30,
+   "late_reg": "10 levels + Break (4:55 PM)",
+   "guarantee": "$75,000 (incl. bounty money)",
+   "house_fee": "$130 of $1,100",
+   "entry_wording": "none",
+   "flighted": false
+  },
+  {
+   "sheet": 35,
+   "events": [
+    "56"
+   ],
+   "title": "$1,100 NLH (Day A+C+E, D2 11:00 AM)",
+   "start": "10:10 AM",
+   "chips": 40000,
+   "level_min": 40,
+   "late_reg": "9 levels + Break (~4:55 PM)",
+   "guarantee": "$500,000",
+   "house_fee": "$140 of $1,100",
+   "entry_wording": "bag rule",
+   "flighted": true
+  },
+  {
+   "sheet": 36,
+   "events": [
+    "56"
+   ],
+   "title": "$1,100 NLH (Day B+D, D2 11:00 AM)",
+   "start": "6:10 PM",
+   "chips": 40000,
+   "level_min": 30,
+   "late_reg": "9 levels + Break (~11:10 PM)",
+   "guarantee": "$500,000",
+   "house_fee": "$140 of $1,100",
+   "entry_wording": "bag rule",
+   "flighted": true
+  },
+  {
+   "sheet": 37,
+   "events": [
+    "47"
+   ],
+   "title": "$2,200 NLH Championship (Day 1B, D2 1:00 PM, D3 11:00 AM)",
+   "start": "6:10 PM",
+   "chips": 40000,
+   "level_min": 30,
+   "late_reg": "9 levels + Break (~11:10 PM)",
+   "guarantee": "$1,000,000",
+   "house_fee": "$225 of $2,200",
+   "entry_wording": "bag rule",
+   "flighted": true
+  }
+ ]
+}
