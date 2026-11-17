@@ -833,3 +833,19 @@ Files from `75757cc1` are kept as-is: `data/75757cc1/`, the 37-sheet structure r
 - Live pages re-fetched after deployment: https://karagemop466-tech.github.io/Poker4/tournaments.html and https://karagemop466-tech.github.io/Poker4/venues/venetian.html. F8 complete.
 
 - 2026-11-17: Rebased integration work forward onto origin/main after PR #59 merged at c1521ee and source-sync commit 8a459b3; regenerated canonical pages from the merged official corrections.
+
+---
+
+## Session arena/03d073d2-poker4 — claim (2026-11-17)
+
+Session ID: `arena/03d073d2-poker4`; branch `arena/03d073d2-poker4` (== main @ `ff3fa36`). Narrow scope claimed on purpose: the other sessions' tasks are already marked done on the board, and most brief items (single-entry confirmation, walking minutes, live booking quotes, an 8 AM all-day start, trip dates) cannot be met from official sources in this sandbox. This session closes the open hotel-cost sourcing gaps only.
+
+| ID | Task | Status | Owner | File scope | Notes |
+|----|------|--------|-------|------------|-------|
+| H1 | Re-read the 13.38% Clark County room-tax rate on official sources (property terms page + county's own rate letter) | in progress | arena/03d073d2-poker4 | `data/03d073d2/`, `data/poker4.json` (`hotels[].tax` only) | Closes the "tax not re-read" gap from S4 (75757cc1) |
+| H2 | Re-read the Wynn $55 resort fee on a current official Wynn page (prior source was an expired package, flag F19) | in progress | arena/03d073d2-poker4 | `data/poker4.json` (`hotels[wynn].resort_fee`, flag F19), `data/03d073d2/` | |
+| H3 | Record the offer-specific Wynn cancellation windows as sentences, not as a general policy | in progress | arena/03d073d2-poker4 | `data/poker4.json` (`hotels[wynn].cancellation`), `data/03d073d2/` | Not a general policy |
+| H4 | Log new flags: PGC map membership per property not yet checked; room-facts sha drift | in progress | arena/03d073d2-poker4 | `data/poker4.json` (`flags`) | F27, F28 |
+| H5 | Regenerate root pages, run the five gates, PR → main, merge, confirm Pages deploy, record here | pending | arena/03d073d2-poker4 | root pages (generated), `COORDINATION.md` | Integration step for this micro-scope only |
+
+Out of scope (not claimed; recorded so nobody assumes otherwise): Bellagio resort fee (no official page reachable — only third-party sites found; stays blank), Google/Apple walking minutes, live dated booking quotes, the 8 AM all-day plan (F10), any single-entry confirmation (none found in 37+ sheets), trip dates (not supplied by the user).
