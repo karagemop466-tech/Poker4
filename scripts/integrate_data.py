@@ -588,16 +588,36 @@ def tax_label(h):
     return label
 
 
+RATE_KINDS_USABLE = ("advertised_rate", "dated_rate", "quoted_rate")
+RATE_KINDS_ALL_IN = ("all_in_per_night",)
+
+
 def hotel_true_cost(h):
-    """(rate, resort_fee, tax, total_per_night, rate_log_entry) — total only if both components are published."""
-    rate = rate_note = None
+    """(rate, resort_fee, tax, total_per_night, rate_log_entry) — total only if both components are published.
+
+    Only a log entry that is actually a *room rate* may be used as one. Entries tagged
+    `fee_only` (a resort fee re-read) or `not_published` are observations, not rates —
+    turning them into a nightly rate would invent a number the property never printed.
+    An `all_in_per_night` entry already contains the fee and the tax, so it is shown as
+    the total and never run through the fee/tax arithmetic a second time.
+    """
+    rate = rate_note = all_in = None
     for e in (h.get("rate_log") or []):
-        if e.get("amount_usd"):
-            rate, rate_note = e["amount_usd"], e
+        kind = e.get("kind") or ("advertised_rate" if e.get("amount_usd") else "not_published")
+        amount = e.get("amount_usd")
+        if not amount:
+            continue
+        if kind in RATE_KINDS_ALL_IN:
+            all_in, rate_note = amount, e
             break
+        if kind in RATE_KINDS_USABLE and rate is None:
+            rate, rate_note = amount, e
     fee = (h.get("resort_fee") or {}).get("amount_usd")
     tax = tax_rate(h)
-    total = round((rate + fee) * (1 + tax), 2) if (rate and fee) else None
+    if all_in is not None:
+        total = round(all_in, 2)
+    else:
+        total = round((rate + fee) * (1 + tax), 2) if (rate and fee) else None
     return rate, fee, tax, total, rate_note
 
 
@@ -1070,7 +1090,7 @@ def page_hotels():
 <div class="two">
 <div><h4>Resort fee</h4><p>{money(fee) if fee else unk('unconfirmed')} <span class="mini-note">{E((h.get('resort_fee') or {}).get('basis') or '')}</span> {chip((h.get('resort_fee') or {}).get('status') or 'unverified', 'chip chip-info')}</p>
 {(f"<p class='warn'>{E((h.get('resort_fee') or {}).get('conflict'))}</p>") if (h.get('resort_fee') or {}).get('conflict') else ''}</div>
-<div><h4>Parking</h4><p>{('self ' + money(park.get('self_usd_per_day')) + ' / day · valet ' + money(park.get('valet_usd_per_day')) + ' / day') if park.get('self_usd_per_day') else unk('not published')} {chip(park.get('status') or 'unverified', 'chip chip-info')}</p></div>
+<div><h4>Parking</h4><p>{(('self ' + money(park.get('self_usd_per_day')) + ' / day · valet ' + money(park.get('valet_usd_per_day')) + ' / day') if park.get('self_usd_per_day') else ('<b>$0 — included</b>' if park.get('self_usd_per_day') == 0 else unk('no price published'))) if park.get('self_usd_per_day') is not None else unk('no price published')} {chip(park.get('status') or 'unverified', 'chip chip-info')}</p></div>
 <div><h4>Cancellation</h4><p>{E(canc.get('text') or '') or unk('not captured')} {chip(canc.get('status') or 'unverified', 'chip chip-warn')}</p></div>
 </div>
 <h4>Rates and fee facts as a dated log (not a single value)</h4>

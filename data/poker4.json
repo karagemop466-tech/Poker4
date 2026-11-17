@@ -172,7 +172,8 @@
      "amount_usd": 119,
      "qualifier": "'as low as' starting price for a suite at The Venetian or The Palazzo under the poker-rate offer; not assigned to one tower, not a dated quote",
      "source": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
-     "quote_status": "advertised starting point — not a rate for specific dates"
+     "quote_status": "advertised starting point — not a rate for specific dates",
+     "kind": "advertised_rate"
     },
     {
      "observed_on": "2026-11-16",
@@ -180,7 +181,8 @@
      "amount_usd": 209,
      "qualifier": "second 'as low as' endpoint on the same official page; same caveats",
      "source": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
-     "quote_status": "advertised starting point — not a rate for specific dates"
+     "quote_status": "advertised starting point — not a rate for specific dates",
+     "kind": "advertised_rate"
     },
     {
      "observed_on": "2026-11-17",
@@ -188,7 +190,8 @@
      "amount_usd": null,
      "qualifier": "requires a dated booking session (dates, occupancy, rate class); deliberately left blank rather than estimated",
      "source": "https://www.venetianlasvegas.com/book",
-     "quote_status": "not obtainable from a static page"
+     "quote_status": "not obtainable from a static page",
+     "kind": "not_published"
     },
     {
      "observed_on": "2026-11-16",
@@ -196,7 +199,8 @@
      "amount_usd": 512.2,
      "qualifier": "Official booking page capture for Dec 18-20, 2026 (2 nights, Luxury King, 2 adults): $1,024.39 all-in incl. $55 fee + 13.38% tax = $512.20/night; recorded from an earlier session's dated capture (data carried this figure before integration) - re-quote before booking",
      "source": "https://www.venetianlasvegas.com/book",
-     "quote_status": "dated snapshot - not a live quote; re-quote before booking"
+     "quote_status": "dated snapshot - not a live quote; re-quote before booking",
+     "kind": "all_in_per_night"
     }
    ],
    "qualification": "Keeping the poker rate requires qualifying play every night (six hours of live cash, or a buy-in of $300 or more per night) — a $200 event does not qualify. Failing that, the rate adjusts to the prevailing rate.",
@@ -257,7 +261,8 @@
      "amount_usd": null,
      "qualifier": "the official copy quotes $119 and $209 without assigning either endpoint to a named tower, so no Palazzo-specific rate is recorded",
      "source": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
-     "quote_status": "unassigned"
+     "quote_status": "unassigned",
+     "kind": "not_published"
     }
    ],
    "qualification": "Same play requirement as the Venetian tower.",
@@ -286,14 +291,14 @@
     "status": "third-party-of-record: verified on a Caesars-owned property page, not on the Wynn page — flagged"
    },
    "parking": {
-    "self_usd_per_day": null,
+    "self_usd_per_day": 0,
     "valet_usd_per_day": null,
     "source": "https://www.wynnlasvegas.com/terms-and-conditions/850257",
-    "status": "not printed on the fetched official page — left blank"
+    "status": "self-parking is included in the mandatory $55 resort fee — “complimentary self-parking for up to two (2) vehicles”. Valet is included for Tower Suite bookings only (“complimentary valet or self-parking for up to two vehicles”), a different room class, so no valet price is recorded."
    },
    "cancellation": {
-    "text": "not captured",
-    "status": "unverified",
+    "text": "The official terms page prints “Reservations are non-cancellable, non-refundable, and non-changeable” in the section it labels ADDITIONAL FEES, DEPOSIT AND CANCELLATION POLICIES. The sentence's surrounding clause was not captured, so it is quoted as printed and not applied to any rate: the deadline for a specific booking still has to be read on the booking page.",
+    "status": "partial — rate-specific clause captured verbatim; general deadline unverified",
     "source": "https://www.wynnlasvegas.com/terms-and-conditions/850257"
    },
    "walk": {
@@ -437,9 +442,9 @@
     "status": "not confirmed"
    },
    "cancellation": {
-    "text": "not captured",
-    "status": "unverified",
-    "source": null
+    "text": "The official Caesars Palace page advertises “FREE 48-Hour Cancellation*” under “Why Book With Us”. The asterisk is not expanded on that page, so this is the resort's advertised general policy, not the deadline attached to one rate: the deadline for specific dates still has to be read on the booking page.",
+    "status": "advertised general policy — per-rate deadline unverified",
+    "source": "https://www.caesars.com/caesars-palace"
    },
    "walk": {
     "status": "no official walking-time source",
@@ -450,14 +455,18 @@
    "rate_log": [],
    "qualification": null,
    "qualification_source": null,
-   "source_keys": [],
+   "source_keys": [
+    "C_PAGE",
+    "C_FLYER"
+   ],
    "dead_source_pages": [
     {
      "url": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2025.pdf",
      "status": "404 on 2026-11-17 (see data/url-checks.json)",
      "what_was_needed": "the official page for this value"
     }
-   ]
+   ],
+   "fee_source_note": "the tracked resort-fee URL (caesars-palace/resort-fee) redirects to the property home page and prints no fee amount, so no Caesars fee is shown; the 48-hour cancellation line below comes from that same official page."
   },
   {
    "id": "aria",
@@ -528,10 +537,10 @@
     "status": "verified from official page"
    },
    "parking": {
-    "self_usd_per_day": null,
-    "valet_usd_per_day": null,
+    "self_usd_per_day": 0,
+    "valet_usd_per_day": 0,
     "source": "https://treasureisland.com/hotel/deluxe-rooms",
-    "status": "not printed on the fetched page"
+    "status": "included with the mandatory resort fee — “Always Free Valet Parking & Self Park Garage” is listed under Resort Fee Amenities on the official Deluxe Rooms page (re-read 2026-11-17). No separate parking price is charged."
    },
    "cancellation": {
     "text": "not captured",
@@ -551,7 +560,17 @@
      "amount_usd": 49.95,
      "qualifier": "'Total Resort Fee Plus Tax $49.95' collected at check-out; free self & valet parking (tower-suite page re-read 2026-11-17; cross-checks the resort_fee already verified from the TI offers page)",
      "source": "https://treasureisland.com/hotel/tower-suite",
-     "quote_status": "verbatim sentence captured 2026-11-17"
+     "quote_status": "verbatim sentence captured 2026-11-17",
+     "kind": "fee_only"
+    },
+    {
+     "observed_on": "2026-11-17",
+     "label": "Advertised “from” price — Deluxe Room",
+     "amount_usd": 59,
+     "kind": "advertised_rate",
+     "qualifier": "“Deluxe Rooms From $59” is the headline “from” price on the official room page; the same page's promo rail advertises “Rooms from $186 $139” for a Cyber Monday offer. Neither is a rate for specific dates.",
+     "source": "https://treasureisland.com/hotel/deluxe-rooms",
+     "quote_status": "advertised starting point — not a rate for specific dates"
     }
    ],
    "qualification": null,
