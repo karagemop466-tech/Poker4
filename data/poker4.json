@@ -1184,6 +1184,16 @@
    "sources": [
     "https://github.com/karagemop466-tech/Poker4/blob/main/data/room-facts.json"
    ]
+  },
+  {
+   "id": "F29",
+   "severity": "monitor-failure",
+   "item": "Daily poker4 monitor (tournament-monitor.yml) failed its verification gate on 2026-11-17; not yet fixed",
+   "detail": "The workflow 'Daily schedule + source-change monitor' failed at its step 'Verify the site before committing' (tools/verify_poker4.py). This happened on the 22:26 UTC scheduled run (run 44190052816, commit ff3fa36) and on three push runs earlier the same day (43994467535, 43994447808, 43994391262). The sandbox could not download the failed-run logs (EOF), so the exact failing check was not read. Run offline on the committed tree, verify_poker4.py passes (20 pages, 94 tournament rows, 57 sources). A manual retry was refused (HTTP 403, 'Resource not accessible by integration'). The root site and its Pages deploy are not affected: that job commits only the poker4/ sub-site data, and the root deploy succeeded on the merge commit. Action for the owner: open the failed run's 'Verify the site' step log and fix the cause, or re-run the schedule after the cause is fixed.",
+   "sources": [
+    "https://github.com/karagemop466-tech/Poker4/actions/runs/44190052816",
+    "https://github.com/karagemop466-tech/Poker4/blob/main/.github/workflows/tournament-monitor.yml"
+   ]
   }
  ],
  "trip_example": {
