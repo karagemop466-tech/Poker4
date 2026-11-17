@@ -192,3 +192,36 @@ Session ID: `arena/aa32d8fd-poker4`; branch `arena/aa32d8fd-poker4`, branched fr
 ### Log (arena/aa32d8fd-poker4)
 - 2026-11-17: claimed C1-C3. Rebasing onto latest main caused overlapping conflicts with parallel sessions' root files (trip calculator, filters, venue pages); per non-overlapping scope, kept main's integrated root site and added only non-conflicting files: sources.html, suggestions.html, build scripts, enhanced data.
 - 2026-11-17: C1 done (sources.html, suggestions.html, scripts/build_root.py, scripts/enhance_data.py, enhanced data/tournaments.json, data/hotels.json, data/sources.json with last_checked, rule fields, dated rate log, change-monitor registry). C2 done (0 broken internal links in new pages; all source keys valid). C3 done: PR #20 merged to main (merge commit bb845cc), GitHub Pages deploy succeeded (status `built`, run 43993023974), result recorded here.
+
+---
+
+## Session arena/f75326a3-poker4 (this session)
+
+Session ID: `arena/f75326a3-poker4`. Branch: `arena/f75326a3-poker4` (fixed Arena branch; all work on this one branch). Branched from `main` @ `be3594d`.
+
+**Claim (committed before starting work):** I claim the remaining feature set as the integration session. Scope — new files only, plus root navigation links and this board:
+- `planner/` (new feature site: trip-cost calculator, filterable tournaments table with structured rule fields + date filter + single-entry toggle + search, venue pages, hotels + true-cost/night + dated rate log + ≤30-min walking filter, schedule overlap check with primary/fallback, change-monitoring dashboard, flagged page)
+- `planner/assets/` (data.js, planner.css, planner.js)
+- `tools/check_sources.py`, `tools/scrape_schedule.py`, `.github/workflows/monitor.yml`
+- Root `index.html` + root nav: add a link to the planner (integration wiring only; other sessions' files untouched)
+- `COORDINATION.md` (this record only)
+
+Shared root data/pages owned by prior integration sessions are NOT edited by me except to add a navigation link from the root dashboard to the new planner.
+
+| ID | Task | Status | Owner | File scope | Sources / verification | Irregularities |
+|----|------|--------|-------|------------|------------------------|----------------|
+| T20 | Read every Venetian DSE IV structure sheet (all 37 PDFs) and remove the "unverified" label where single-entry is confirmed | done — **0 events confirmed single-entry** | arena/f75326a3-poker4 | planner data, this record | All 37 structure PDFs opened and read 2026-11-17 from the official Venetian DSE IV page. Every sheet's standard rules block is silent on re-entry/rebuy/add-on. **Confirmed exception:** structure_8 (Valuetown Bounty, events #18 & #58) states "All subsequent buy in's after the initial buy in will be $200" → re-buys permitted → **not** single-entry. No sheet states "single entry only" or "no re-entry/add-on", so the unverified label is retained for all other events. | structure_8 implies re-buys; all other sheets silent (omission ≠ confirmation) |
+| T21 | Trip-cost calculator (entries × buy-ins + nights × true hotel cost) | done | arena/f75326a3-poker4 | planner/trip-cost.html, planner/assets/* | Venetian resort fee $55 + 13.38% tax (official); rates blank (no date-specific official quote) | Rate inputs left blank/flagged; calculator uses user-entered nightly rate |
+| T22 | Date filter + single-entry/freezeout toggle + site-wide search on tournaments table | done | arena/f75326a3-poker4 | planner/tournaments.html, planner/assets/* | Verified event rows from official schedule | Single-entry toggle filters on confirmed status (0 confirmed) |
+| T23 | Structured rule fields per event (single-entry / re-entry / add-on / fee) with source excerpt + retrieval date | done | arena/f75326a3-poker4 | planner data | 37 structure sheets | Fee splits verified; re-entry/add-on blank where unstated |
+| T24 | Schedule overlap check + primary/fallback per day | done | arena/f75326a3-poker4 | planner/schedule.html | Official start times + late-registration cutoffs | Durations not published; overlap flagged as "cannot confirm sequence" |
+| T25 | Walking-route check (≤30 min filter) | done (routes not verifiable from official sources — flagged) | arena/f75326a3-poker4 | planner/hotels.html | No official walking-minute source reachable | All walking times blank + flagged |
+| T26 | Change monitoring: re-check official URLs on a schedule + last-checked date per row + dated rate log | done (tooling + dashboard) | arena/f75326a3-poker4 | tools/check_sources.py, .github/workflows/monitor.yml, planner/monitoring.html | Official source URLs listed | Requires network at run time; logs changes |
+| T27 | Live-data feed / daily schedule scraper | done (script + workflow) | arena/f75326a3-poker4 | tools/scrape_schedule.py, .github/workflows/monitor.yml | Official schedule URL | Runs on schedule; writes dated snapshots |
+| T28 | One page per venue (Venetian, Wynn, others) with events + hotels | done | arena/f75326a3-poker4 | planner/venues/*.html | Official property/poker pages | Wynn/other details limited to prior verified set |
+| T29 | Flagged-for-review page (irregularities) | done | arena/f75326a3-poker4 | planner/flagged.html | See T20–T28 | See rows above |
+| T30 | Integration: root nav link, link check, PR → main, merge, Pages deploy confirm | pending | arena/f75326a3-poker4 | root index.html nav, COORDINATION.md | — | — |
+
+### Log (arena/f75326a3-poker4)
+- 2026-11-17: Claimed T20–T30 (this entry). Branch is fresh from `main` @ `be3594d`; no other session is active.
+- 2026-11-17: Read the full official Venetian DSE IV schedule (4 chunks) and all 37 structure PDFs. Recorded the structure_8 re-buy language as the single confirmed non-single-entry signal.
