@@ -1,0 +1,24 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Strip Poker Planner — Change monitoring</title><link rel="stylesheet" href="assets/planner.css"></head>
+<body>
+<header class="topbar"><a class="brand" href="index.html">♠ Strip Poker Planner</a><span class="stamp">Verified snapshot · 17 Nov 2026 UTC</span></header>
+<nav class="nav"><div class="nav-inner">
+<a href="index.html">Hub</a><a href="tournaments.html">Tournaments</a><a href="trip-cost.html">Trip cost calculator</a><a href="hotels.html">Hotels &amp; walking</a>
+<a href="schedule.html">Day plan &amp; overlap</a><a href="venues.html">Venues</a><a class="active" href="monitoring.html">Change monitoring</a>
+<a href="flagged.html">Flagged for review</a><a href="../index.html">↑ Main dashboard</a></div></nav>
+<main>
+<section class="hero"><p class="eyebrow">Change monitoring</p>
+<h1>Official URLs re-checked on a schedule — changes flagged.</h1>
+<p>Each official source is re-checked automatically and a <b>last-checked date</b> is recorded per row. When a value changes, the change is appended to the dated log below and the affected row is flagged. Run <code>python3 tools/check_sources.py</code> locally, or let the scheduled GitHub Actions workflow run it each morning.</p></section>
+
+<div class="callout"><strong>How it runs:</strong> <code>.github/workflows/monitor.yml</code> runs <code>tools/check_sources.py</code> on a schedule (cron). The script fetches each source URL, compares the response to the stored snapshot, writes a dated change log, and updates each row's last-checked date. <code>tools/scrape_schedule.py</code> pulls each Strip room's official daily schedule each morning and stores a dated snapshot.</div>
+
+<h2>Monitored sources</h2>
+<div class="srclist" id="mon-sources"></div>
+
+<h2>Change log</h2>
+<div id="change-log"></div>
+</main>
+<footer>Monitoring requires network access at run time. A change here means "re-verify", not automatically a booking change. <a href="flagged.html">Flagged for review →</a></footer>
+<script src="assets/data.js"></script><script src="assets/planner.js"></script>
+</body></html>

@@ -1,0 +1,20 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Strip Poker Planner — Day plan &amp; overlap</title><link rel="stylesheet" href="assets/planner.css"></head>
+<body>
+<header class="topbar"><a class="brand" href="index.html">♠ Strip Poker Planner</a><span class="stamp">Verified snapshot · 17 Nov 2026 UTC</span></header>
+<nav class="nav"><div class="nav-inner">
+<a href="index.html">Hub</a><a href="tournaments.html">Tournaments</a><a href="trip-cost.html">Trip cost calculator</a><a href="hotels.html">Hotels &amp; walking</a><a class="active" href="schedule.html">Day plan &amp; overlap</a>
+<a href="venues.html">Venues</a><a href="monitoring.html">Change monitoring</a><a href="flagged.html">Flagged for review</a>
+<a href="../index.html">↑ Main dashboard</a></div></nav>
+<main>
+<section class="hero"><p class="eyebrow">Sequence &amp; overlap</p>
+<h1>One primary event per day — plus a conditional fallback.</h1>
+<p>Each day gets a <b>primary</b> event (the best single-day candidate) and, where one exists, a <b>conditional fallback</b> for later that day. Because official finish times are not published, two same-day entries cannot be confirmed playable in sequence — so no day is shown as an impossible back-to-back. An 8 AM-to-all-day schedule is not available: the earliest verified start is 9:10 AM (satellite #46, Dec 12).</p></section>
+
+<div class="callout warn"><strong>Overlap rule:</strong> flagged when two events on the same day cannot be confirmed to run in sequence. Start time and late-registration cutoff are verified from structure sheets, but plausible event duration is not published, so the fallback is always labeled conditional.</div>
+
+<div id="schedule-days"></div>
+</main>
+<footer>Build one event per day first; add an evening event only where the player can realistically exit the earlier one. <a href="flagged.html">Flagged for review →</a></footer>
+<script src="assets/data.js"></script><script src="assets/planner.js"></script>
+</body></html>

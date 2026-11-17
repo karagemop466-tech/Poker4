@@ -1,0 +1,276 @@
+{
+ "meta": {
+  "retrieved": "2026-11-17",
+  "note": "Answers are limited to what an official page states. An unanswered question is a real open item, not an omission."
+ },
+ "group_order": [
+  "Trip parameters",
+  "Entry rules",
+  "Costs and rates",
+  "Schedule and play",
+  "Coverage and data quality"
+ ],
+ "questions": [
+  {
+   "id": "Q1",
+   "group": "Trip parameters",
+   "status": "open",
+   "q": "What are your exact travel dates?",
+   "why": "Every hotel price is date-specific. Without dates the site can only show published floors and confirmed fees.",
+   "settle": "Book or state the dates. Then the booking page for those dates yields a real checkout total to replace the floor figures.",
+   "sources": [
+    "V_RATES"
+   ]
+  },
+  {
+   "id": "Q2",
+   "group": "Trip parameters",
+   "status": "open",
+   "q": "Is 'a single entry per starting flight' acceptable, or must it be one entry for the whole event?",
+   "why": "This single choice decides whether the WPT $10,400 World Championship qualifies. Under a per-flight reading it is the only officially confirmed single-entry event found; under a whole-event reading nothing on the Strip qualifies on current evidence.",
+   "settle": "Answer yes or no. If yes, the Championship moves to the top of the shortlist with its $10,400 buy-in and three-flight structure noted.",
+   "sources": [
+    "W_WPT_PR"
+   ]
+  },
+  {
+   "id": "Q3",
+   "group": "Trip parameters",
+   "status": "open",
+   "q": "How many nights, and are you driving or flying in?",
+   "why": "Parking is $20/day at the Venetian unless you play three hours of poker, free at Wynn and Treasure Island, and unread at Caesars and Bellagio. Driving also changes which properties are reachable within 30 minutes.",
+   "settle": "State nights and transport. The trip calculator then produces a complete total.",
+   "sources": [
+    "V_PARK",
+    "W_TC_FEE"
+   ]
+  },
+  {
+   "id": "Q4",
+   "group": "Trip parameters",
+   "status": "open",
+   "q": "What is your budget per tournament, and what is your total bankroll for the trip?",
+   "why": "The Strip slate ranges from $100 (Caesars) to $25,800 (Wynn high roller). Ranking is only meaningful against a budget.",
+   "settle": "Give a per-entry ceiling. The tournaments table can be filtered by buy-in.",
+   "sources": [
+    "C_FLYER",
+    "W_WPT"
+   ]
+  },
+  {
+   "id": "Q5",
+   "group": "Entry rules",
+   "status": "open",
+   "q": "Does any Venetian 2026 event actually allow re-entry?",
+   "why": "All 37 sheets are silent. Prior-season sheets explicitly allow re-entry for nine or ten levels, so silence cannot be read as a freezeout. This blocks the entire single-entry list.",
+   "settle": "Call the Venetian Poker Room and get the rule in writing for the specific event numbers. One reply converts 83 rows.",
+   "sources": [
+    "V_S05",
+    "V_OLD_2023_1",
+    "V_OLD_2024_1"
+   ]
+  },
+  {
+   "id": "Q6",
+   "group": "Entry rules",
+   "status": "open",
+   "q": "Is a rebuy-and-add-on event acceptable if re-entry itself is barred?",
+   "why": "Wynn's Friday $240 bars re-entry but allows unlimited $200 rebuys plus a $100 add-on. A strict 'no spending advantage' rule must exclude it even though the re-entry box is ticked 'no'.",
+   "settle": "Decide whether the exclusion criterion is re-entry specifically or any spend-for-chips mechanism.",
+   "sources": [
+    "W_DAILY"
+   ]
+  },
+  {
+   "id": "Q7",
+   "group": "Entry rules",
+   "status": "answered",
+   "q": "Which events are confirmed single-entry today?",
+   "answer": "One, and only under a per-flight reading: the $10,400 WPT World Championship at Wynn (Dec 13/14/15 flights), where the organiser states players are allowed 'a single entry per starting flight'. Zero Venetian events are confirmed. Zero Bellagio or Caesars events are confirmed.",
+   "why": "Defines the entire shortlist.",
+   "settle": "Already settled as far as the official record goes.",
+   "sources": [
+    "W_WPT_PR"
+   ]
+  },
+  {
+   "id": "Q8",
+   "group": "Entry rules",
+   "status": "answered",
+   "q": "Do the structure sheets state the house fee?",
+   "answer": "Yes for the Venetian: the printed buy-in is the total and the sheet itemises the house fee and the amount to the prize pool (e.g. $300 = $58 house + $242 pool). For Wynn's WPT festival the fee is deferred to per-event structure sheets that were not read. Bellagio's Friday $600 = $50 house + $510 pool + optional $40 gratuity.",
+   "why": "Determines the real cost of entry and the value reaching the prize pool.",
+   "settle": "Settled for Venetian and Bellagio; open for WPT (F5).",
+   "sources": [
+    "V_S05",
+    "B_FRI",
+    "W_WPT"
+   ]
+  },
+  {
+   "id": "Q9",
+   "group": "Costs and rates",
+   "status": "open",
+   "q": "What will the hotel actually cost for your dates?",
+   "why": "No booking engine rendered a price to this session. Every hotel figure is a floor or a fee, never a quote.",
+   "settle": "Read the checkout total for your dates, then enter rate, fee and tax in the trip calculator.",
+   "sources": [
+    "V_BOOK",
+    "V_RATES"
+   ]
+  },
+  {
+   "id": "Q10",
+   "group": "Costs and rates",
+   "status": "open",
+   "q": "What are the Caesars Palace and Bellagio resort fees?",
+   "why": "Neither property printed a figure on any official page reachable here; MGM's fee pages 404. Third-party quotes conflict between $54.95 and $62.36, so none is shown.",
+   "settle": "Read the fee from each property's own checkout, or from its live resort-fee page.",
+   "sources": [
+    "C_FEES",
+    "M_FEES_UNVERIFIED"
+   ]
+  },
+  {
+   "id": "Q11",
+   "group": "Costs and rates",
+   "status": "answered",
+   "q": "How is the true nightly cost computed?",
+   "answer": "(room rate + resort fee) \u00d7 (1 + 13.38%), plus parking if driving. 13.38% is printed on The Venetian's own hotel terms; for the other properties it is the same Clark County rate applied as a labelled assumption.",
+   "why": "Makes totals comparable across properties.",
+   "settle": "Settled as a formula; the inputs are the open part.",
+   "sources": [
+    "V_TERMS",
+    "V_FEE"
+   ]
+  },
+  {
+   "id": "Q12",
+   "group": "Costs and rates",
+   "status": "answered",
+   "q": "Can the Venetian poker rate be relied on?",
+   "answer": "Only if you play 6 hours of live cash per night or buy into a $300+ tournament each night, book by phone with code EPOKR25, avoid blackout dates and stay within the 150-day booking window. Otherwise the rate reverts to the prevailing rate.",
+   "why": "The cheapest confirmed Venetian night ($197.28 all-in) depends entirely on meeting it.",
+   "settle": "Settled as a condition; your ability to meet it is the open part.",
+   "sources": [
+    "V_RATES"
+   ]
+  },
+  {
+   "id": "Q13",
+   "group": "Costs and rates",
+   "status": "open",
+   "q": "What is parking at Caesars Palace and Bellagio?",
+   "why": "Both charge for self-parking and neither page was read in this session. The Venetian's $20/$25/$40 tiers with a 3-hour poker waiver are confirmed; Wynn and TI are free.",
+   "settle": "Read each property's parking page.",
+   "sources": [
+    "V_PARK"
+   ]
+  },
+  {
+   "id": "Q14",
+   "group": "Schedule and play",
+   "status": "answered",
+   "q": "Can a trip start at 8 AM?",
+   "answer": "No, not with the schedules verified here. The earliest start found is 9:10 AM and the earliest main event is 10:10 AM. An 8 AM trip would need a room outside this set.",
+   "why": "The brief asked for an 8 AM start; the data cannot support one honestly.",
+   "settle": "Settled \u2014 the schedule page plans from the earliest verified start instead.",
+   "sources": [
+    "V_CAL",
+    "W_WPT"
+   ]
+  },
+  {
+   "id": "Q15",
+   "group": "Schedule and play",
+   "status": "open",
+   "q": "Will the same player be able to play two events on one day?",
+   "why": "No event publishes a finish time. The site scores pairs using an estimator from the structure (late-reg doubled + breaks), which is a heuristic, not a published fact.",
+   "settle": "Record actual finishes for equivalent events in a prior series and replace the estimator.",
+   "sources": [
+    "V_CAL",
+    "V_S05"
+   ]
+  },
+  {
+   "id": "Q16",
+   "group": "Schedule and play",
+   "status": "answered",
+   "q": "Do any events on the same day overlap by start time?",
+   "answer": "Yes \u2014 45 same-day pairs in the Venetian series. Most are 10:10 AM main events with a 5:10 PM or later second event, or a 12:10 PM event with an evening event. The day-plans page scores every pair as plausible or not plausible.",
+   "why": "Prevents impossible itineraries.",
+   "settle": "Settled for start-time overlap; duration remains the heuristic in Q15.",
+   "sources": [
+    "V_CAL"
+   ]
+  },
+  {
+   "id": "Q17",
+   "group": "Schedule and play",
+   "status": "open",
+   "q": "Is a Day-2 return compatible with your flight home?",
+   "why": "11 calendar rows are restarts or final tables. Surviving Day 1 means returning on a specific date, and several restarts fall on the same day as other events.",
+   "settle": "Check the restart date for any multi-day event you enter before booking flights.",
+   "sources": [
+    "V_CAL"
+   ]
+  },
+  {
+   "id": "Q18",
+   "group": "Schedule and play",
+   "status": "open",
+   "q": "Is the Wynn daily actually running during your dates?",
+   "why": "Dailies are suspended during series; the WPT World Championship occupies Wynn from Nov 27 to Dec 21, 2026, which overlaps almost the entire Venetian series.",
+   "settle": "Confirm with the Wynn poker desk for the specific dates.",
+   "sources": [
+    "W_POKER",
+    "W_DAILY"
+   ]
+  },
+  {
+   "id": "Q19",
+   "group": "Coverage and data quality",
+   "status": "open",
+   "q": "Should the other Strip rooms be added?",
+   "why": "Twelve-plus rooms on the Strip were not checked: Harrah's, Horseshoe, Paris, Planet Hollywood, Flamingo, The Linq, MGM Grand, ARIA, Mandalay Bay, Park MGM, New York-New York, Luxor, Excalibur, Treasure Island. Several run daily tournaments that may be the best fit for a low buy-in trip.",
+   "settle": "Approve a coverage pass; each room needs one official page read the same way.",
+   "sources": [
+    "C_FLYER",
+    "B_POKER"
+   ]
+  },
+  {
+   "id": "Q20",
+   "group": "Coverage and data quality",
+   "status": "open",
+   "q": "How often should the re-check run?",
+   "why": "Schedules and rates change. A daily check on the Venetian calendar and each hotel's booking page would catch price moves; a weekly check is enough for structure sheets.",
+   "settle": "Choose daily or weekly. The workflow skeleton is in .github/workflows/v2-monitor.yml.",
+   "sources": [
+    "V_CAL",
+    "V_RATES"
+   ]
+  },
+  {
+   "id": "Q21",
+   "group": "Coverage and data quality",
+   "status": "answered",
+   "q": "Is the earlier repo data usable as-is?",
+   "answer": "No. Earlier snapshots mix entry-rule labels, omit retrieval dates on many rows, and use different schemas. data/v2/ is the current source of truth; the parallel sites are linked as historical snapshots.",
+   "why": "Prevents a future session from re-publishing a corrected claim.",
+   "settle": "Settled by declaring data/v2/ canonical.",
+   "sources": []
+  },
+  {
+   "id": "Q22",
+   "group": "Coverage and data quality",
+   "status": "open",
+   "q": "Where should a live feed come from?",
+   "why": "No operator exposes a machine-readable tournament API. Any scraper would be brittle and, if it fails silently, would turn 'unverified' into 'looks verified'.",
+   "settle": "Decide whether a scraper with explicit failure states is worth building; the suggestion page ranks this below manual checks.",
+   "sources": [
+    "V_CAL"
+   ]
+  }
+ ]
+}
