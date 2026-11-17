@@ -1,0 +1,11 @@
+[
+ {"id": "C1", "date": "2026-11-17", "source": "https://www.wynnlasvegas.com/casino/poker",
+  "field": "Wynn poker landing URL", "change": "URL now redirects to the Wynn homepage (previously hosted the daily-tournament poster and structures links; cited by the 2026-11-16 sessions).",
+  "action": "Rows now cite the CDN documents directly (cdn.wynnresorts.com). Flag F5."},
+ {"id": "C2", "date": "2026-11-17", "source": "https://www.venetianlasvegas.com/resort/casino/poker.html",
+  "field": "Venetian 'Current Series' banner", "change": "Banner still says WPT Fall Festival (ended Nov 15) although DSE IV started Nov 16.",
+  "action": "Stale content on official page — flagged F6; schedule rows sourced from the DSE IV page."},
+ {"id": "C3", "date": "2026-11-17", "source": "https://www.venetianlasvegas.com/book",
+  "field": "Venetian dated rate (Nov 27–30, Palazzo Luxury King)", "change": "Baseline capture: nightly $1,274.25 / $426.75 / $164.25 + $55 fee, tax $271.65, total $2,301.90.",
+  "action": "First entry in the dated rate log; future checks append new dated rows rather than overwriting."}
+]
