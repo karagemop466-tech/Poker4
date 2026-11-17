@@ -24,7 +24,8 @@
    "data/tournaments.json",
    "data/c07371e3/*.csv"
   ],
-  "rebuild": "python3 tools/sync_official_sources.py --from-raw && python3 scripts/integrate_data.py"
+  "rebuild": "python3 tools/sync_official_sources.py --from-raw && python3 scripts/integrate_data.py",
+  "last_update": "2026-11-17 session arena/3082d6d9-poker4: Bellagio fee + cancellation confirmed from the property's live Hotel Reservation Terms page; Caesars rows re-anchored to the 2026 daily flyer"
  },
  "venues": [
   {
@@ -391,16 +392,18 @@
    "official_page": "https://bellagio.mgmresorts.com/en/hotel.html",
    "booking_link": "https://bellagio.mgmresorts.com/en/hotel.html",
    "resort_fee": {
-    "amount_usd": null,
-    "basis": null,
-    "source": "https://bellagio.mgmresorts.com/en/hotel/resort-fee.html",
-    "status": "official fee page returns HTTP 404 (still 404 in the 2026-11-17 scheduled check); third-party figures conflict and are not used"
+    "amount_usd": 55,
+    "basis": "per room, per night, plus applicable tax — applied to all reservations",
+    "excerpt": "A daily resort fee of $55.00 plus applicable tax will be applied to all reservations. The resort fee includes: In-room wireless internet access; unlimited local, domestic long distance (the 50 United States and DC) and toll-free calls; access to Paramount+ with SHOWTIME On Demand via in-room television; airline boarding pass printing; digital newspaper and magazine access; and fitness center access for guests 18+.",
+    "source": "https://bellagio.mgmresorts.com/en/terms-and-conditions.html",
+    "retrieved": "2026-11-17",
+    "status": "confirmed on the property's Hotel Reservation Terms page (the former bellagio.mgmresorts.com/en/hotel/resort-fee.html page is retired; that URL stays logged below)"
    },
    "tax": {
     "rate_pct": null,
     "basis": null,
     "source": null,
-    "status": "not confirmed"
+    "status": "the terms page states that lodging taxes apply to the room rate and the resort fee but does not print the percentage for Bellagio — left blank rather than copied from another property"
    },
    "parking": {
     "self_usd_per_day": null,
@@ -409,9 +412,11 @@
     "status": "not confirmed"
    },
    "cancellation": {
-    "text": "not captured",
-    "status": "unverified",
-    "source": null
+    "text": "first night's deposit fully refundable when cancelled at least 72 hours before arrival; later cancellation or no-show forfeits the first night's deposit (booked offer terms can override)",
+    "status": "confirmed",
+    "source": "https://bellagio.mgmresorts.com/en/terms-and-conditions.html",
+    "retrieved": "2026-11-17",
+    "excerpt": "The first night's deposit is fully refundable provided a timely notice of cancellation is received by Room Reservations at 888.987.6667 at least 72 hours prior to the arrival date, unless specifically excluded by booked offer."
    },
    "walk": {
     "venue_id": "venetian",
@@ -438,7 +443,8 @@
     {
      "url": "https://bellagio.mgmresorts.com/en/hotel/resort-fee.html",
      "status": "404 on 2026-11-17 (see data/url-checks.json)",
-     "what_was_needed": "the official page for this value"
+     "what_was_needed": "the official page for this value",
+     "superseded_by": "https://bellagio.mgmresorts.com/en/terms-and-conditions.html (replaced 2026-11-17 by session arena/3082d6d9-poker4; fee value taken from the live page)"
     }
    ]
   },
@@ -1211,13 +1217,14 @@
   },
   {
    "id": "F25",
-   "severity": "unverified-pricing",
-   "item": "Caesars Palace's daily $100 slate is printed only in a marketing article: no house-fee split, no entry rule, no structure sheet",
-   "detail": "The Caesars page states four daily $100 NLH tournaments (10 a.m., 2 p.m., 6 p.m., 9 p.m.), 20,000 starting chips, a $1,000 guarantee, 20-minute levels and a $50 add-on for 15,000 chips. It prints no house-fee split and no re-entry rule, and the older Caesars/Horseshoe flyer that used to be linked now returns HTTP 404. The four rows are published with the printed prices, marked unverified for fee and entry rule, and excluded from ranking.",
+   "severity": "conflicting-official-values",
+   "item": "Caesars Palace's two official pages disagree on the daily buy-in: the explore page says every event carries $100, the 2026 daily flyer prints $160 at 2 PM and 9 PM",
+   "detail": "The Caesars explore page states four daily NLH tournaments at 10 a.m., 2 p.m., 6 p.m. and 9 p.m., 'every event carries a $100 buy-in', 20,000 chips, a $1,000 guarantee, 20-minute levels and a $50 add-on. The dedicated 2026 daily flyer PDF (re-checked live 2026-11-17 after the 2025 flyer was retired and 404ing) prints per-slot buy-ins — $100 at 10 a.m. and 6 p.m., $160 at 2 p.m. and 9 p.m. — plus the fee splits ($70/$30 and $115/$45), the add-on split ($45/$5), registration closing at the start of level 7, and rule 3: 'Participants may only register themselves, but may re-enter, by paying the entry fee, upon elimination within the first break of play.' The rows follow the dedicated, dated flyer (document of record for the schedule) and carry its excerpts; the explore page's blanket $100 sentence stays quoted on the row as the conflicting official statement. Single-entry status remains unverified on both sources — the printed re-entry rule is evidence of the opposite, so the rows stay in the spend-advantage section. Rows stay unranked because the slate prints no calendar dates.",
    "sources": [
+    "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
     "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
    ],
-   "note": "renumbered from F18 on merge with main, where that id was already used by another session"
+   "note": "updated 2026-11-17 (session arena/3082d6d9-poker4): the retired 2025 flyer (HTTP 404) was replaced by the live 2026 flyer; per-slot buy-ins, fee splits, the re-entry rule and the explore-page conflict are now recorded on the rows. Earlier note: renumbered from F18 on merge with main, where that id was already used by another session."
   },
   {
    "id": "F26",
