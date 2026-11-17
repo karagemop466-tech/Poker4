@@ -1578,3 +1578,17 @@ PR + Pages deploy result are recorded in the next entry.
 - All B1–B6 tasks are closed. Open items for future sessions remain on the flagged page (F1/F15 entry-policy
   silence, F27 tax-rate provenance, WPT-08 fee-split irregularity) and in the suggestions list, which still
   awaits user decisions row by row.
+
+### Irregularity (2026-11-17 23:2xZ): custom Pages deploy lane hit the artifact race
+
+The `Deploy static dashboard to GitHub Pages` run for the PR #82 merge (run 44198564813) failed at
+`actions/deploy-pages@v4` with "No artifacts named \"github-pages\" were found for this workflow run"
+even though its own `upload-pages-artifact` step had succeeded — the same workflow had succeeded on the
+four preceding pushes. The 23:19:13Z scheduled sync pushed into the same minute and both runs share the
+`concurrency: group: pages` with `cancel-in-progress: true`, which cancels a run mid-deploy and orphans
+the artifact lookup. The built-in `pages build and deployment` for the same commit succeeded, and the live
+site was re-read after the PR #81 deploy with all merged markers present, so the site itself was never
+broken. Fix applied here: `cancel-in-progress: false` in `.github/workflows/pages.yml` (deploys are
+idempotent; queued runs deploy the newer commit). `workflow_dispatch` re-triggering is not available to
+this token (HTTP 403 — same limitation recorded in F21), so the confirmation run is the push trigger of
+this PR.
