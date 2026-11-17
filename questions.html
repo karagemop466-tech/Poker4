@@ -1,8 +1,55 @@
-<!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Questions before decisions — Poker4</title><link rel="stylesheet" href="assets/dashboard.css"></head>
-<body><header><div class="wrap"><h1>Questions before decisions</h1><p class="sub">Poker4 — Las Vegas Strip tournament &amp; hotel research · data last checked 2026-11-17 · every row links an official source</p>
-<nav><a href="index.html">Overview</a><a href="tournaments.html">Tournaments</a><a href="schedule.html">Daily plan</a><a href="hotels.html">Hotels</a><a href="calculator.html">Trip calculator</a><a href="venues/venetian.html">Venetian</a><a href="venues/wynn.html">Wynn</a><a href="venues/others.html">Other venues</a><a href="monitoring.html">Change monitor</a><a href="questions.html" class="active">Questions</a><a href="suggestions.html">Suggestions</a><a href="flagged.html">Flagged</a><a href="sources.html">Sources</a><a href="archive.html">Archive</a></nav></div></header>
-<main class="wrap"><p class="note">A clear list of questions, information and answers that must be addressed before decisions can reasonably be made — based on what we have and what we do not have. Each row says what it blocks and how to discover the missing information (suggestions live on the Suggestions page).</p><table class="tbl" ><thead><tr><th>#</th><th>Topic</th><th>Question / needed information</th><th>Why it matters / how to discover it</th><th>Status</th></tr></thead><tbody><tr><td>Q1</td><td>Trip dates and budget</td><td>Are the trip dates fixed to any subset of Nov 16 – Dec 23, 2026, and is there a nightly budget ceiling?</td><td>Needed before any hotel is chosen. Blocks: booking.</td><td><span class="badge warn">open</span></td></tr><tr><td>Q2</td><td>Single-entry policy hard requirement</td><td>Must every played event be confirmed single-entry/freezeout, or is &#x27;entry rule unverified&#x27; acceptable for candidates?</td><td>Current verified data contains ZERO confirmed freezeouts — a hard policy would leave nothing to play until rooms confirm rules in writing.</td><td><span class="badge warn">open — decisive</span></td></tr><tr><td>Q3</td><td>Venetian entry rules in writing</td><td>Can the Venetian poker room provide written maximum-entry / no-rebuy / no-add-on rules for the specific events of interest (email lv_cas_poker@venetianlasvegas.com or call 700.414.7657)?</td><td>This is the single missing fact that flips rows from unverified to confirmed or disqualified.</td><td><span class="badge warn">open</span></td></tr><tr><td>Q4</td><td>Bounty tolerance</td><td>Are bounty/mystery-bounty events acceptable (their guarantees include bounty pools, so pool÷entry is not comparable)?</td><td>Determines whether the Super Gold Million ($400/$3M) and Venetian bounty dailies are candidates.</td><td><span class="badge warn">open</span></td></tr><tr><td>Q5</td><td>Occupancy</td><td>How many guests per room?</td><td>Rates captured assume single/double occupancy; extra guests add $50+/night at the Venetian (verified).</td><td><span class="badge warn">open</span></td></tr><tr><td>Q6</td><td>Hotel dated quotes</td><td>What do the official booking engines show for the exact dates/occupancy?</td><td>No dated quotes were machine-capturable; per-date official links are generated on the Hotels page. Needed for like-for-like totals.</td><td><span class="badge warn">open</span></td></tr><tr><td>Q7</td><td>Walk-time completion</td><td>Should the remaining hotel→Wynn walk pairs be measured now, or is the scheduled re-check acceptable?</td><td>Venetian-venue pairs are complete (7 measured + on-site); Wynn pairs partially measured.</td><td><span class="badge warn">open</span></td></tr><tr><td>Q8</td><td>Poker-rate qualification</td><td>Will the player do 6 hrs cash play or a $300+ tournament buy-in per night to qualify for the Venetian $119/$209 poker rates?</td><td>Qualification terms are verified; failing them rebills the prevailing rate.</td><td><span class="badge warn">open</span></td></tr><tr><td>Q9</td><td>Bust-out tolerance</td><td>If playing bounty/flight events, is re-entering (spending more) acceptable at all, even where allowed?</td><td>Sets whether re-entry-confirmed events are excluded entirely or just ranked separately.</td><td><span class="badge warn">open</span></td></tr><tr><td>Q10</td><td>8 AM start</td><td>Is the 8 AM start a hard requirement?</td><td>No verified event in the window starts before 9:10 AM. A hard requirement conflicts with the official schedules as published.</td><td><span class="badge warn">open — conflict</span></td></tr><tr><td>Q11</td><td>Bellagio buy-in conflict</td><td>Which is correct for the Bellagio Saturday NLH: $1,000 or $1,100?</td><td>Official sources conflict; row is labeled with the conflict. Bellagio poker desk can settle it.</td><td><span class="badge warn">open</span></td></tr><tr><td>Q12</td><td>WPT schedule date labels</td><td>Do the &#x27;Dec. 18 Wednesday&#x27; rows on the official WPT PDF actually mean Dec. 16?</td><td>Official PDF date/weekday labels conflict internally; rows are shown as printed and flagged. Wynn poker room (702) 770-7654 can settle it.</td><td><span class="badge warn">open</span></td></tr></tbody></table></main>
-<footer class="wrap"><p>Poker4 · built 2026-11-17 · verified values come from official property/organizer sources only. Unverified values are left blank and listed on the <a href="flagged.html">Flagged for Review</a> page. Guaranteed-pool ratios are descriptive arithmetic, not forecasts.</p></footer>
-<script src="assets/dashboard.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Questions, information &amp; answers — Poker4</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site"><div class="wrap">
+  <span class="logo">♠ Poker4</span>
+  <nav>
+    <a href="index.html">Summary</a>
+    <a href="tournaments.html">Tournaments</a>
+    <a href="schedule.html">Schedule planner</a>
+    <a href="hotels.html">Hotels &amp; cost</a>
+    <a href="venues/venetian.html">Venetian</a>
+    <a href="venues/wynn.html">Wynn</a>
+    <a href="venues/other-venues.html">Other rooms</a>
+    <a href="questions.html" class="active">Questions</a>
+    <a href="suggestions.html">Suggestions</a>
+    <a href="review.html">Flagged for review</a>
+    <a href="sources.html">Sources</a>
+  </nav>
+</div></header>
+<main class="wrap">
+  <h1>Questions · Information · Answers</h1>
+  <p class="lead">What must be settled before a booking decision is reasonable. Each item lists the information we already have (with sources), what is missing, and how to get it. Suggestions for how to resolve them are on the <a href="suggestions.html">Suggestions</a> page and are not implemented until you choose.</p>
+
+  <h2>Answered from official sources (no further action needed)</h2>
+  <div class="card"><ul class="tight small">
+    <li><strong>Q: Which Strip series overlap a Nov–Dec 2026 trip?</strong> A: Venetian DeepStack Extravaganza IV, Nov 16 – Dec 23 (“More than $3.6 Million in guaranteed tournament prize pools” — official series page) and Wynn’s WPT World Championship series, Nov 27 – Dec 21 (printed on the official structures PDF).</li>
+    <li><strong>Q: What does each Venetian event cost and guarantee?</strong> A: Buy-in, house fee, pool contribution, guarantee (incl. whether it counts bounty money), stack, level time and LR cutoff are printed on the 37 official structure sheets — all captured per row with excerpts.</li>
+    <li><strong>Q: Are any Wynn dailies single-entry?</strong> A: No — official terms confirm re-entry (Mon–Thu $200, Sat/Sun $200, nightly $160) or unlimited rebuys + add-on (Fri $240, where re-entry is explicitly “NOT allowed”).</li>
+    <li><strong>Q: What is the Venetian resort fee?</strong> A: $55 per room per night + tax (official resort-fee page, retrieved 2026-11-16).</li>
+  </ul></div>
+
+  <h2>Open questions that block a final decision</h2>
+  <div class="card"><ul class="tight small">
+    <li><strong>Q1 — Exact trip dates?</strong> Info needed: your fixed dates + nightly budget/quality floor. Why it blocks: hotel totals, which dailies run (Wynn dailies may be suspended during the WPT series — Flagged F3), and F1-week pricing (Nov 19–21) all depend on it. How to resolve: fix dates, then capture itemized checkout totals from the official booking engines.</li>
+    <li><strong>Q2 — Written single-entry policy per Venetian event?</strong> Info: all 37 structure sheets are silent on max entries / no re-entry (Flagged F1). Why it blocks: the core filter of this project cannot be switched on. How to resolve: email/call the Venetian poker room for written per-event entry policy, or read the registration T&amp;Cs at the cage before entering.</li>
+    <li><strong>Q3 — Re-entry rules for the December Wynn events we haven’t fully read?</strong> Info: structures chunks 0–3 of 8 read — every event read says “Unlimited re-entry … until the start of level 9”; chunks 4–7 (incl. $400 Super Gold Million Mystery Bounty $3M GTD, WPT Prime $5M) pending (Flagged F7). How to resolve: finish reading the structures PDF (it is official and linked) before counting those events as candidates.</li>
+    <li><strong>Q4 — Real room tax rate?</strong> Info: 13.38% is user-provided, not verified against an official government page (Flagged F9). How to resolve: read the tax line printed on any real checkout total and correct the constant.</li>
+    <li><strong>Q5 — Walking routes you would accept?</strong> Info: mapping estimates only (Flagged F10). How to resolve: open the Maps links at the times you would actually walk; confirm bridge/elevator paths.</li>
+    <li><strong>Q6 — TI package fine print?</strong> Info: “$69* NIGHT + NO RESORT FEE**” headline verified on the official homepage, footnotes not visible in the fetched extract (Flagged F8). How to resolve: capture the itemized total for your dates from TI’s official booking engine.</li>
+    <li><strong>Q7 — Other rooms (Caesars, Bellagio, ARIA, Horseshoe): what runs daily?</strong> Info: their official pages were unreachable from this environment (Flagged F11), so no values are shown. How to resolve: check their official poker pages from a normal browser, or wait for the daily URL checker to capture changes.</li>
+  </ul></div>
+</main>
+<footer class="site"><div class="wrap">
+  <span>Built from official operator documents only · last data build 2026-11-17</span>
+  <span><a href="sources.html">Sources</a> · <a href="review.html">Flagged for review</a></span>
+</div></footer>
+<script src="app.js"></script>
+</body>
+</html>

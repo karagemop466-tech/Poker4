@@ -80,13 +80,22 @@ Prior research sets from parallel sessions are preserved under `c07371e3/`, `60f
 ## Build & verify
 
 ```bash
-python3 tools/build_data.py    # regenerate data/*.json from verified facts
-python3 tools/build_site.py    # regenerate the dashboard HTML
-python3 tools/verify_site.py   # internal-link + row-source verification
+python3 tools/build_data.py     # canonical data generator (722a84d2): data/tournaments.json,
+                                # data/flagged.json, data/rate-log.json — official facts only
+python3 tools/build_site.py     # regenerate the parallel dashboard HTML (08f07d1d)
+python3 tools/verify_site.py    # internal-link + row-source verification
 ```
 
 No third-party dependencies. Deployed on GitHub Pages (source: `main`, path `/`) via `.github/workflows/pages.yml`;
 the source monitor runs daily via `.github/workflows/monitor.yml`.
+
+The canonical root dashboard (index/tournaments/schedule/hotels/venues/…) is the fully verified build from
+session `arena/722a84d2-poker4`: all 37 Venetian DSE IV structure sheets read line-by-line, Wynn daily +
+WPT official PDFs, 97 events + 7 satellites, every row with official source excerpts, retrieval dates and
+last-checked. Parallel research sites from other sessions are preserved and linked from the root index
+(`planner/`, `poker4/`, `v2/`, `venues.html`, `calculator.html`, `change-monitor.html`, `ratelog.html`,
+`monitor.html`, `repo-review.html`), with their superseded root-page snapshots kept in `pages/parallel-main-*`.
+The previous consolidated-data generator is preserved at `tools/build_data_consolidated.py`.
 
 ## Research policy
 

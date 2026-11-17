@@ -1,0 +1,44 @@
+{
+ "meta": {
+  "rule": "Rates are a dated log, never a single value. Each entry: date recorded, property, item, value as printed, official source URL, retrieval method. Room rates are dynamic booking-engine values; when a rate is captured (manually from the official booking page), append a dated entry \u2014 do not overwrite old ones.",
+  "tax_note": "True nightly cost formula used by the calculator: nightly rate + mandatory resort fee + Clark County room tax. The 13.38% tax rate was provided by the site owner and is NOT yet verified against an official government page \u2014 see Flagged for Review."
+ },
+ "entries": [
+  {
+   "date": "2026-11-16",
+   "property": "The Venetian Resort (incl. Palazzo)",
+   "item": "Mandatory resort fee",
+   "value": "$55 per room per night + tax",
+   "source": "https://www.venetianlasvegas.com/resort/resort-fee.html",
+   "retrieved": "2026-11-16",
+   "method": "Official Venetian resort-fee page"
+  },
+  {
+   "date": "2026-11-16",
+   "property": "The Venetian Resort (incl. Palazzo)",
+   "item": "Conditional poker-rate program (not a date quote)",
+   "value": "$119 / $209 conditional poker-rate starts (requires qualifying play); recorded by session 60fb62da \u2014 re-verify on the official page before relying",
+   "source": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
+   "retrieved": "2026-11-16",
+   "method": "Official Venetian poker suite-rates page (session 60fb62da capture, shared board)"
+  },
+  {
+   "date": "2026-11-16",
+   "property": "Treasure Island",
+   "item": "Optional resort fee",
+   "value": "$49.95 per day + tax (optional/opt-in fee) \u2014 recorded by session 60fb62da from official TI tower-suite/fee + offer-terms pages; homepage package headlines \"NO RESORT FEE\" (fee is optional)",
+   "source": "https://treasureisland.com/hotel/tower-suite",
+   "retrieved": "2026-11-16",
+   "method": "Official TI pages (session 60fb62da capture, shared board)"
+  },
+  {
+   "date": "2026-11-17",
+   "property": "Treasure Island",
+   "item": "Package headline (not a booked rate)",
+   "value": "\"$69* NIGHT + NO RESORT FEE**\" package; \"Always Free Parking\"; footnotes * / ** not visible in fetched extract \u2014 confirm on official booking page",
+   "source": "https://treasureisland.com/",
+   "retrieved": "2026-11-17",
+   "method": "Official TI homepage"
+  }
+ ]
+}
