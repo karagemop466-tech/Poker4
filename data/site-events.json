@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generated_at": "2026-11-17T22:02:42Z",
+  "generated_at": "2026-11-17T22:07:53Z",
   "rows": 119,
   "verified_single_entry": 0,
   "rankable": 72,
@@ -5240,8 +5240,8 @@
    "venue": "venetian",
    "venue_name": "The Venetian Poker Room",
    "event_no": 47,
-   "name": "$2,200 Nlh Pokeratlas Championship Title Event Day 2 Restart",
-   "name_printed": "$2,200 NLH POKERATLAS CHAMPIONSHIP TITLE EVENT DAY 2 RESTART",
+   "name": "$2,200 Nlh Pokeratlas Championship Title Event Day 2 Restart - Play Down To Final 7, Streamed Final Table (Pokergo)",
+   "name_printed": "NLH POKERATLAS CHAMPIONSHIP TITLE EVENT DAY 2 RESTART - PLAY DOWN TO FINAL 7, STREAMED FINAL TABLE (POKERGO)",
    "date": "2026-12-13",
    "weekday": "Sunday",
    "time": "1:00 PM",
@@ -5288,7 +5288,7 @@
     }
    },
    "sources": [
-    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+    "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
     "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf"
    ],
    "sheet_key": "V_S21",
@@ -6187,7 +6187,7 @@
    "guarantee_usd": 500000,
    "guarantee_printed": true,
    "starting_chips": null,
-   "level_duration": "30",
+   "level_duration": "11",
    "kind": "Tournament",
    "tags": [
     "Multi-flight"
@@ -6658,7 +6658,7 @@
    "guarantee_usd": 150000,
    "guarantee_printed": true,
    "starting_chips": null,
-   "level_duration": "40",
+   "level_duration": "5",
    "kind": "Tournament",
    "tags": [
     "Multi-flight"

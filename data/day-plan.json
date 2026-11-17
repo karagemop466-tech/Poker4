@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generated_at": "2026-11-17T22:02:42Z",
+  "generated_at": "2026-11-17T22:07:53Z",
   "basis": "start time + printed registration-closes deadline + Day-2 restart rows on the official calendar",
   "days": 38
  },
@@ -3894,7 +3894,7 @@
     ]
    },
    "restarts": [
-    "$2,200 Nlh Pokeratlas Championship Title Event Day 2 Restart"
+    "$2,200 Nlh Pokeratlas Championship Title Event Day 2 Restart - Play Down To Final 7, Streamed Final Table (Pokergo)"
    ],
    "overlap_notes": [],
    "entries_usd": 1400,
@@ -4920,7 +4920,7 @@
     "guarantee_usd": 150000,
     "guarantee_printed": true,
     "starting_chips": null,
-    "level_duration": "40",
+    "level_duration": "5",
     "kind": "Tournament",
     "tags": [
      "Multi-flight"
