@@ -31,15 +31,15 @@ Shared task board for the Poker4 project. Sessions claim tasks here to avoid dup
 
 | ID | Task | Status | Owner | File scope | Sources / verification | Irregularities |
 |----|------|--------|-------|------------|------------------------|----------------|
-| N1 | Trip cost calculator: entries × buy-ins + nights × true hotel cost | in progress | arena/5dba2ab6-poker4 | hotels.html, app.js | Arithmetic from existing official fee/tax figures; illustrative only | None yet |
-| N2 | Search box across all tables | in progress | arena/5dba2ab6-poker4 | tournaments.html, app.js | Existing table data | None yet |
-| N3 | Date filter on tournament table | planned | arena/5dba2ab6-poker4 | tournaments.html, app.js | Existing dated rows | None yet |
-| N4 | Single-entry / freezeout toggle filter | planned | arena/5dba2ab6-poker4 | tournaments.html, app.js | None confirmed → toggle honestly returns none | Single-entry unverified for all rows |
-| N5 | Per-venue tournament views (Venetian / Wynn / others) | planned | arena/5dba2ab6-poker4 | tournaments.html (venue filters) | Existing venue labels | None yet |
-| N6 | Per-row "last checked" + scheduled official URL re-check & change monitoring | planned | arena/5dba2ab6-poker4 | app.js, .github/workflows/pages.yml | Client-side best-effort; scheduled job via Actions | CORS may block client fetches |
-| N7 | Dated rate log (rates as a log, not a single value) | planned | arena/5dba2ab6-poker4 | hotels.html | Existing official fee/tax figures | Rates blank without dates |
-| N8 | Overlap check: primary event + conditional fallback per day | planned | arena/5dba2ab6-poker4 | schedule.html | Existing schedule rows | Finish times not published |
-| N9 | Repo review + line-by-line verification (source links, unverified flags) | planned | arena/5dba2ab6-poker4 | review.html, COORDINATION.md | Existing data + linked official sources | See existing flagged list |
+| N1 | Trip cost calculator: entries × buy-ins + nights × true hotel cost | done | arena/5dba2ab6-poker4 | hotels.html, app.js | Arithmetic from official $55 fee + 13.38% tax; illustrative, labeled estimate | None |
+| N2 | Search box across all tables | done | arena/5dba2ab6-poker4 | tournaments.html, app.js | Existing table data | None |
+| N3 | Date filter on tournament table | done | arena/5dba2ab6-poker4 | tournaments.html, app.js | Existing dated rows | None |
+| N4 | Single-entry / freezeout toggle filter | done | arena/5dba2ab6-poker4 | tournaments.html, app.js | Toggle honestly returns none until official rules confirm | Single-entry unverified for all rows |
+| N5 | Venue-scoped tournament views (Venetian / Wynn / Caesars / Bellagio / Other) | done | arena/5dba2ab6-poker4 | tournaments.html (venue column + filters) | Existing venue labels; Wynn/Caesars/Bellagio rows from data/tournaments.json | Venue rows re-entry/add-on only, kept separate |
+| N6 | Per-row "last checked" + scheduled official URL re-check & change monitoring | done | arena/5dba2ab6-poker4 | app.js, tools/url_check.js, .github/workflows/url-check.yml | Client-side last-checked UI; daily scheduled server-side check writes data/url-checks.json | Client fetch blocked by CORS; server-side job is the authoritative check |
+| N7 | Dated rate log (rates as a log, not a single value) | done | arena/5dba2ab6-poker4 | hotels.html | Existing official fee/tax figures; retrieval dates logged | Nightly room rates blank without dates |
+| N8 | Overlap check: primary event + conditional fallback per day | done | arena/5dba2ab6-poker4 | schedule.html | Existing schedule rows + multi-flight Day-2 restarts | Finish times not published → overlap flagged as possible, not confirmed |
+| N9 | Repo review + line-by-line verification (source links, unverified flags) | in progress | arena/5dba2ab6-poker4 | review.html, COORDINATION.md | Existing data + linked official sources | See existing flagged list |
 | N10 | Integration: PR → main, merge, Pages deploy check, record result | planned | arena/5dba2ab6-poker4 | this branch, main, COORDINATION.md | — | — |
 
 
