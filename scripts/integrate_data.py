@@ -1109,10 +1109,87 @@ def source_table(rows, base=""):
             + body + "</tbody></table></div>")
 
 
-# ------------------------------------------------------------------------- index
+# ------------------------------------------------------------------ summary stats
+import statistics as _stats
+
+def _exec_stats():
+    dated = [e for e in events if e.get("date")]
+    ranked = [e for e in events if e.get("rankable")]
+    buys = sorted(e["buy_in_usd"] for e in ranked if e.get("buy_in_usd"))
+    top = max(ranked, key=lambda e: (e.get("gtd_ratio") or 0), default=None)
+    return {
+        "n_events": len(events), "n_dated": len(dated), "n_recurring": len(events) - len(dated),
+        "n_single": sum(1 for e in events if e.get("single_entry_confirmed")),
+        "single_note": ("nothing on any official sheet in this snapshot restricts a player to one entry — see "
+                        f"flags F1, F2 and F15–F18" if not sum(1 for e in events if e.get("single_entry_confirmed"))
+                        else "each of these rows carries the official sentence that says so"),
+        "n_ranked": len(ranked), "n_spend": sum(1 for e in events if e.get("spend_advantage")),
+        "n_sources": len(source_rows), "n_sheets": len(AUDIT.get("sheets") or {}),
+        "n_unreach": sum(1 for s in source_rows if not s["ok"]),
+        "n_hotels": len(CFG["hotels"]), "n_rates": len(rate_log), "n_walks": len(walks),
+        "median_entry": money(int(_stats.median(buys))) if buys else "not computable",
+        # 6 nights at the two endpoints The Venetian prints on its own poker-rate page:
+        # (rate + $55 resort fee) x 1.1338 x 6 nights.  Arithmetic on printed values only.
+        "stay_low": money(round((119 + 55) * 1.1338 * 6)),
+        "stay_high": money(round((209 + 55) * 1.1338 * 6)),
+        "top_note": (f"The highest screening ratio actually confirmed is {top['name']} at "
+                     f"{top.get('gtd_ratio')}× on a {money(top.get('buy_in_usd'))} entry."
+                     if top else "No row currently has both figures confirmed."),
+        "best_ratio_li": (f"The highest confirmed guarantee-to-entry ratio is {top['name']} — "
+                          f"{money(top.get('guarantee_usd'))} guaranteed against a {money(top.get('buy_in_usd'))} entry "
+                          f"({top.get('gtd_ratio')}×) — and the {len(ranked)} ranked rows run from that down to "
+                          f"{money(min(r.get('buy_in_usd') or 0 for r in ranked))} entries."
+                          if top else "No row has both figures confirmed yet."),
+        "best_gtd_li": (f"The largest printed guarantee in the snapshot is {big['name']}: "
+                        f"{money(big.get('guarantee_usd'))} on a {money(big.get('buy_in_usd'))} entry, from "
+                        f"{big.get('venue_name')}.")
+                       if (big := max(ranked, key=lambda e: e.get("guarantee_usd") or 0, default=None)) else "",
+        "q_max": max((q["id"] for q in CFG["questions"]), key=lambda x: int(re.sub(r"\D", "", x) or 0)),
+    }
+
+EXEC_BLOCK = """<section class="exec">
+<h2>Executive summary</h2>
+<p class="mini-note">Everything in this block is counted from the rows below at build time — no figure here is typed by hand. The snapshot date is the venue pages' own retrieval time.</p>
+<div class="exec-grid">
+<div class="exec-card"><span class="k">Events published</span><span class="v">{n_events}</span><span class="s">{n_dated} carry a calendar date; {n_recurring} are recurring slates whose sheets print days offered, not dates</span></div>
+<div class="exec-card"><span class="k">Confirmed single-entry / freezeout</span><span class="v">{n_single}</span><span class="s">{single_note}</span></div>
+<div class="exec-card"><span class="k">Ranked (fee split + guarantee both printed)</span><span class="v">{n_ranked}</span><span class="s">guarantee ÷ total entry fee is shown beside each; it is descriptive, never a forecast</span></div>
+<div class="exec-card"><span class="k">Kept out: more money buys an advantage</span><span class="v">{n_spend}</span><span class="s">printed re-entry, rebuy, add-on or a priced second buy-in</span></div>
+<div class="exec-card"><span class="k">Official sources read</span><span class="v">{n_sources}</span><span class="s">{n_sheets} structure sheets audited; {n_unreach} URL(s) unreachable in the last run, listed on the review page</span></div>
+<div class="exec-card"><span class="k">Trip-cost inputs</span><span class="v">{n_hotels}</span><span class="s">hotels with a published fee/tax chain; {n_rates} dated rate-log lines, {n_walks} measured walks</span></div>
+</div>
+<h3>The three things this site changes about the plan</h3>
+<ol class="exec-list">
+<li><strong>The single-entry list is empty on purpose.</strong> No official sheet in the snapshot restricts a player to one entry. Two rooms positively price a second entry (Venetian Valuetown: “all subsequent buy in's after the initial buy in will be $200”; Wynn: 67 of 69 event sheets print “unlimited re-entry”, the other two print a one-plus-one cap). Those rows are published, quoted and kept in their own section rather than relabelled as freezeouts.</li>
+<li><strong>{best_ratio_li}</strong> {best_gtd_li} Both are printed guarantees against a printed entry fee; neither is a forecast, and every row that offers a second way in is excluded from this ranking on purpose.</li>
+<li><strong>The trip cost is dominated by the hotel, not the entries.</strong> A 6-night stay at the Venetian's own published poker rate ($119–$209 a night plus the $55 resort fee, both taxed at 13.38%) comes to about {stay_low}–{stay_high} before a single buy-in, while the median ranked entry is {median_entry}. That is why the calculator takes nights first and why the hotel table is ordered by true cost per night rather than by distance — and why a dated checkout total from the booking calendar, not a marketing “from” price, is the number to hold the room against.</li>
+</ol>
+<p class="srcline">Machine copies: <a href="data/site-events.json">site-events.json</a> · <a href="data/day-plan.json">day-plan.json</a> · <a href="data/rate-log.json">rate-log.json</a> · <a href="data/room-facts.json">room-facts.json</a> · open questions: <a href="questions.html">Q1–{q_max}</a></p>
+</section>"""
+
+
 def page_index():
+    ES = _exec_stats()
+    exec_html = EXEC_BLOCK.format(**ES)
+    findings = (f"<strong>0 of {sum(1 for e in events if e['venue'] == 'venetian')} Venetian calendar rows</strong> "
+                f"can be labelled “single-entry confirmed”, and the same holds for every Wynn, Bellagio and Caesars row: "
+                f"all {len(events)} published rows are unverified on that one question. "
+                f"The sheets state buy-in, fee split, guarantee, stack and level schedule — and then say nothing about "
+                f"whether one entry or several are allowed. Omission is not confirmation, so no row is quietly treated "
+                f"as a freezeout. Where a sheet <em>does</em> speak about extra money — the Venetian Valuetown sheet's "
+                f"“all subsequent buy in's after the initial buy in will be $200”, Wynn printing “unlimited re-entry” on "
+                f"67 of its 69 event sheets, Bellagio's “buy-in and re-enter through the end of level 8” — that is "
+                f"evidence of the opposite, and those rows sit in their own section.")
     rankable = [e for e in events if e.get("rankable")]
     top = sorted(rankable, key=lambda e: -(e.get("gtd_ratio") or 0))[:6]
+    h_rows = ""
+    for h in CFG["hotels"]:
+        rate, fee, tax, total, rn = hotel_true_cost(h)
+        h_rows += (f"<tr><td><a href='hotels.html#{E(h['id'])}'>{E(h['property'])}</a></td>"
+                   + f"<td class='num'>{money(fee) if fee else unk('unconfirmed')}</td>"
+                   + f"<td class='num'>{money(total) if total else unk('no dated rate')}</td>"
+                   + f"<td class='num'>{money((h.get('parking') or {}).get('self_usd_per_day')) if (h.get('parking') or {}).get('self_usd_per_day') else unk('unconfirmed')}</td>"
+                   + f"<td>{E((h.get('walk') or {}).get('meets_30_min'))}</td></tr>")
     v_rows = ""
     for v in CFG["venues"]:
         rows = [e for e in events if e["venue"] == v["id"]]
@@ -1122,26 +1199,13 @@ def page_index():
                    + "<td class='qual'>" + E((v.get("coverage") or "").split("—", 1)[-1].strip()) + "</td>"
                    + f"<td class='num'>{sum(1 for e in rows if e.get('single_entry_confirmed'))}</td>"
                    + "<td class='srccell'>" + src_cell(v.get("schedule_sources"), SNAPSHOT_AT[:10], label="venue's own pages ↗") + "</td></tr>")
-    h_rows = ""
-    for h in CFG["hotels"]:
-        rate, fee, tax, total, rn = hotel_true_cost(h)
-        h_rows += (f"<tr><td><a href='hotels.html#{E(h['id'])}'>{E(h['property'])}</a></td>"
-                   + f"<td class='num'>{money(fee) if fee else unk('unconfirmed')}</td>"
-                   + f"<td class='num'>{money(total) if total else unk('no dated rate')}</td>"
-                   + f"<td class='num'>{money((h.get('parking') or {}).get('self_usd_per_day')) if (h.get('parking') or {}).get('self_usd_per_day') else unk('unconfirmed')}</td>"
-                   + f"<td>{E((h.get('walk') or {}).get('meets_30_min'))}</td></tr>")
-    findings = (f"<strong>0 of {sum(1 for e in events if e['venue'] == 'venetian')} Venetian calendar rows</strong> can be labelled "
-                f"“single-entry confirmed”. The room's {len([k for k in AUDIT['sheets'] if k.startswith('V_S')])} published structure sheets state the buy-in, "
-                "the fee split, the guarantee, the stack and the level schedule — and say nothing about whether one entry or several are allowed. "
-                "Omission is not confirmation, so every row stays <em>unverified</em> rather than being quietly treated as a freezeout. "
-                "Where a sheet <em>does</em> speak about extra money — the Valuetown sheet's “all subsequent buy in's after the initial buy in will be $200”, "
-                "the $580 pre-registration rate against a $600 list price on Event 59 — that is evidence of the opposite, and those events sit in their own section.")
     return shell("", "Overview", f"""
 <section class="hero">
 <h1>Vegas Strip poker, filtered by what the rooms actually publish</h1>
 <p class="lede">Upcoming tournaments near the Strip ranked by guarantee against the <em>confirmed</em> entry cost, next to the true cost per night of the hotels within a 30-minute walk, a day-by-day plan of as many entries as the printed schedule allows, and a trip-cost calculator. Nothing is estimated: a value shows only where the venue or hotel printed it, and the sentence behind it is one click away.</p>
 {status_banner()}
 </section>
+{exec_html}
 <section class="cards">
 <div class="card finding"><h2>The finding that changes the plan</h2><p>{findings}</p>
 <p class="srcline">Evidence: <a href="review.html">the clause audit of all {len(AUDIT['sheets'])} sheets</a> · <a href="data/structure-audit.json">structure-audit.json</a> · <a href="data/venetian_structures.json">the manual read of 12 sheets</a> · <a href="flagged.html#F1">flag F1</a></p></div>

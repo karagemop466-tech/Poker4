@@ -50,7 +50,7 @@
    "property": "Wynn Las Vegas",
    "official_address": "3131 S Las Vegas Blvd, Las Vegas, NV 89109",
    "address_source": "https://wynnlasvegas.com/casino/poker",
-   "coverage": "Daily recurring schedule + WPT World Championship series PDFs (fetched; the daily sheets state re-entry/add-on terms explicitly).",
+   "coverage": "Re-read 2026-11-17 from the venue's own PDFs: the WPT World Championship structure booklet (69 event sheets, every printed play day captured with its fee split and re-entry rule) and the daily-tournament structures. The daily slate prints days offered but no calendar dates, and the sheet itself says the slate may be suspended during other series, so those rows carry no date.",
    "schedule_sources": [
     "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
     "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf",
@@ -68,7 +68,7 @@
    "property": "Bellagio",
    "official_address": "3600 S Las Vegas Blvd, Las Vegas, NV 89109",
    "address_source": "https://bellagio.mgmresorts.com/en/casino/poker.html",
-   "coverage": "Three weekly events captured from the room's own structure PDFs in an earlier session; the official resort-fee page returns 404.",
+   "coverage": "Three weekly events captured 2026-11-17 from the room's own structure PDFs linked on the Bellagio poker page. Each sheet prints its fee split and its re-entry window; the Saturday sheet is internally inconsistent on the buy-in and on its Day-2 date (flag F16), so that row is published unranked.",
    "schedule_sources": [
     "https://bellagio.mgmresorts.com/en/casino/poker.html"
    ],
@@ -83,7 +83,7 @@
    "property": "Caesars Palace",
    "official_address": "3570 S Las Vegas Blvd, Las Vegas, NV 89109",
    "address_source": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
-   "coverage": "No dated, machine-readable schedule page. The daily NLH flyer URL recorded in the repository returns HTTP 404, so its re-entry/add-on terms could not be re-confirmed today.",
+   "coverage": "No structure sheet is published. The official Caesars page prints four daily $100 NLH start times, 20,000 chips, a $1,000 guarantee, 20-minute levels and a $50 add-on, with no house-fee split and no entry rule (flag F18). The rows are published with what is printed and excluded from ranking.",
    "schedule_sources": [
     "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
    ],
