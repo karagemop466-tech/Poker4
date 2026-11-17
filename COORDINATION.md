@@ -601,3 +601,32 @@ Policy: every data row must link an official source; values not confirmed from a
 - **Post-merge on `main`:** "Verify the published site" SUCCESS · "Poker4 site build + verification gate" SUCCESS · "Deploy static dashboard to GitHub Pages" SUCCESS (run 43999859321) · "pages build and deployment" (run 43999857621) queued/completed · "Official source sync + change monitor" running.
 - **Pages:** https://karagemop466-tech.github.io/Poker4/ (source: main, path `/`) — deploy succeeded at 02:01 UTC 2026-11-17.
 - **Race notes:** `main` advanced four times during this session (`be3594d` → `9b1f376` → `57f7399` → `1221f53` → `6fd824b` → `fa1dbad`); every round merged forward, never discarding others' work; the v2-monitor bot also pushed a snapshot commit to this session's branch (merged back). Final head `59a6c51` contains `origin/main` `fa1dbad`.
+
+---
+
+## Session arena/e281a2cc-poker4 (session `e281a2cc`) — verification + integration session, 2026-11-17
+
+- Session ID: `arena/e281a2cc-poker4`; branch `arena/e281a2cc-poker4` (from `main` @ `0d13de0`).
+- Role: **line-by-line re-verification of the canonical data layer against live official sources**, repair of the
+  stale/broken verification gates and the two failing scheduled monitors, close the remaining feature gaps, then
+  integrate → `main` → GitHub Pages.
+- Canonical build for this repo (re-verified, zero drift): `build/build_integrated.py` → `data/integrated/*.json`
+  → `build/build_pages.py` → root pages. Both scripts re-run clean against the committed tree (no diff).
+- File scope claimed: `COORDINATION.md` (log), `scripts/verify_root.py`, `scripts/verify_site2.py`,
+  `tools/verify_root_site.py`, `tools/recheck.py`, `.github/workflows/recheck.yml`, `.github/workflows/monitor.yml`,
+  `build/build_pages.py`, `assets/dashboard.js`, `data/integrated/*` (only via the builders), and the root pages the
+  builder emits (`index.html`, `tournaments.html`, `schedule.html`, `hotels.html`, `calculator.html`,
+  `venues/venetian.html`, `venues/wynn.html`, `venues/others.html`, `monitoring.html`, `questions.html`,
+  `suggestions.html`, `flagged.html`, `sources.html`, `archive.html`).
+- Not touched: every other session's frozen snapshot (`60fb62da/`, `c07371e3/`, `df41f5c6/`, `strip/`, `verified/`,
+  `planner/`, `poker4/`, `v2/`, `pages/`, `prior_root_dashboard/`, `site/`, `strip/`) and their builders.
+
+### Task board (this session)
+
+| ID | Task | Status | Owner | File scope | Sources / verification | Irregularities |
+|----|------|--------|-------|------------|------------------------|----------------|
+| V1 | Line-by-line re-verification of every canonical row against live official sources | in progress | arena/e281a2cc-poker4 | `data/integrated/*` via builders | Venetian DSE IV page (all 4 chunks), the 37 structure sheets, Wynn poker page + WPT schedule/structures PDFs + daily structures PDF, hotel terms/fee pages | — |
+| V2 | Repair stale verifiers (`scripts/verify_root.py` compares the root pages against the superseded `data/site-events.json`; `scripts/verify_site2.py` expects pre-restructure script tags; `tools/verify_root_site.py` asserts pre-PR-#43 markers → 51 false errors) | unclaimed→claimed | arena/e281a2cc-poker4 | the three verifiers | n/a — they must be re-pointed at the canonical layer and then re-run | V2a: `verify_root.py` reports "tournaments.html renders 0 rows but data/site-events.json holds 118" — false positive against the current build |
+| V3 | Repair the two failing scheduled monitors: `monitor.yml` step "Commit updated monitoring state if changed" (`persist-credentials: false` ⇒ `git push` has no credentials) and `recheck.yml` step "Re-check official sources" (`tools/recheck.py` exits 1 on any single failed URL fetch, aborting the daily-schedule capture and the integrity check) | claimed | arena/e281a2cc-poker4 | the two workflows + `tools/recheck.py` | run history 44129398646 (monitor.yml), 44114765586 (recheck.yml) | both scheduled jobs have been failing; neither blocks the site but both must run for the change-monitoring requirement |
+| V4 | "Search box across all tables" — `assets/dashboard.js` scopes a `[data-search]` input to the tables of its page, but only tournaments/schedule/hotels/venues-venetian/venues-wynn have one. Add it to flagged, questions, suggestions, sources, monitoring and venues/others | claimed | arena/e281a2cc-poker4 | `build/build_pages.py`, `assets/dashboard.js` | n/a — UI only | — |
+| V5 | Final integration: rebuild, link audit, PR → `main`, merge, confirm Pages deploy, record result here | unclaimed | arena/e281a2cc-poker4 | this branch, `main`, `COORDINATION.md` | all gates green | — |
