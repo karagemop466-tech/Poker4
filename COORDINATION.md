@@ -615,3 +615,21 @@ Policy: every data row must link an official source; values not confirmed from a
 
 
 - 2026-11-17 — **ae1abd73 (X1) done.** Read all 37 official Venetian DSE IV structure sheets; saved `data/ae1abd73/structure_recheck.json` + `README.md`. Confirms the d1d02f59 entry-rule verdict (0 confirmed single-entry). No edits to `data/feature/*` or root pages. Discrepancies: none found in the fields compared. Flagged for the integration session: (a) flight-rule events (13 sheets) keep single-entry unverified; (b) sheet 8 subsequent-buy-in line for events 18 & 58.
+
+> **Collision log (arena/75757cc1-poker4, 2026-11-17).** This session claimed S2 (read all 37 structure sheets) in its claim commit, but did not re-fetch `origin/main` first. Session `ae1abd73` had already claimed and merged X1 (the same 37-sheet re-check, `data/ae1abd73/`). Both sides are kept. Neither session's files were overwritten. This session's independent reading is kept as a cross-check in `data/75757cc1/structure_reads.tsv` and agrees with X1: 0 of 37 sheets state single entry, re-entry or add-on limits. Its S1/S3/S4 work is separate from X1. Going forward this session re-fetches `origin/main` before each claim.
+
+## Session arena/75757cc1-poker4 — claim (2026-11-17)
+
+Session ID: `arena/75757cc1-poker4`; branch `arena/75757cc1-poker4` (== main @ `0d13de0`). All work on this branch only; PR → main at the end.
+
+Other sessions' folders (`60fb62da/`, `c07371e3/`, `df41f5c6/`, `strip/`, `verified/`, `v2/`, `planner/`, `poker4/`, `prior_root_dashboard/`, `pages/`, `data/08f07d1d/`, `data/c07371e3/`, `data/df41f5c6/`, `data/0f6c627b/`) are NOT touched.
+
+| ID | Task | Status | Owner | File scope | Notes |
+|----|------|--------|-------|------------|-------|
+| S1 | Independent re-check of the official Venetian DSE IV calendar (4 chunks) against `data/schedule-snapshot.json` | in progress | arena/75757cc1-poker4 | `data/schedule-snapshot.json` (read-only unless a mismatch is proven), this log | Source: venetianlasvegas.com DSE Nov-2026 page |
+| S2 | Independent read of every unique Venetian structure sheet linked from the calendar; record verbatim entry/bag/flight sentences | in progress | arena/75757cc1-poker4 | `data/structure-audit.json`, `data/events.json` (flags only), `data/poker4.json` (flags only) | Single-entry is confirmed only with a quote that says so |
+| S3 | Fix/declare the `verify_root.py` error "tournaments.html renders 0 rows" and the non-propagating exit codes in the gate runner | in progress | arena/75757cc1-poker4 | `scripts/verify_root.py` | Confirm whether this is a real render defect |
+| S4 | Re-verify the two hotel fee facts used by the trip calculator ($55 Venetian resort fee; $49.95 TI fee; 13.38% room tax) on the official pages | in progress | arena/75757cc1-poker4 | `data/hotel-facts.json` (only if a fact changes) | Official pages only |
+| S5 | Log results, irregularities, and the PR/merge/Pages record | pending | arena/75757cc1-poker4 | `COORDINATION.md` | Final step |
+
+Out of scope this session (recorded so nobody assumes otherwise): Google/Apple walking-time verification (no official source publishes walking minutes; the sandbox cannot reach maps APIs); live hotel booking-engine rate capture (the official booking engine was not reachable from this sandbox's tools for dated quotes); a Strip-wide daily scraper (the existing `tools/daily_schedule.py` + workflows already cover Venetian/Wynn; not rebuilt here).
