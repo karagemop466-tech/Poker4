@@ -1,13 +1,11 @@
 {
- "generated_at": "2026-11-17T22:11:48Z",
+ "generated_at": "2026-11-17T22:17:00Z",
  "urls_checked": 64,
  "urls_failed": [
   "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2025.pdf",
   "https://bellagio.mgmresorts.com/en/hotel/resort-fee.html"
  ],
- "changed_this_run": [
-  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
- ],
+ "changed_this_run": [],
  "sheets_audited": 42,
  "schedule_rows": 94,
  "schedule_rows_with_date": 94,
