@@ -971,6 +971,16 @@ File-scope guarantee: this session edits **only** `data/14c124ef/**` (new), `not
 
 - **Process note (merge conflict, 2026-11-17):** rebasing this session's board appends onto `main` after PR #68 conflicted in `COORDINATION.md`. The first resolution attempt truncated main's board (a regex matched prose inside historical records instead of the real conflict markers); it was corrected immediately by rebuilding the file from `origin/main`'s full board verbatim and re-appending only this session's claim + result record. Main's 873 board lines were diff-verified present; no other session's text was lost. Lesson recorded for future sessions: resolve board conflicts positionally (append-only), not with pattern matching.
 
+### V4 result — arena/14c124ef-poker4 (2026-11-17, 22:45 UTC)
+
+- **PR #73** (https://github.com/karagemop466-tech/Poker4/pull/73) opened from this branch after two positional rebases onto live `main` (main moved twice mid-session: scheduled syncs + PR #68 and PR #72 merges; both COORDINATION.md conflicts were resolved append-only, main's board kept verbatim — see the process note above).
+- **Merged to main** at 2026-11-17T22:43:56Z as merge commit `ade264b3224f77a79ee3875f50bddac5332d8ebd`.
+- Checks on the merge commit: "Poker4 site build + verification gate" run 44192889727 success; "Verify the published site" run 44192889653 success; "Deploy static dashboard to GitHub Pages" run 44192889642 success.
+- Pages deployment: success (pages build and deployment run on main; Pages API reports status `built`, source `main:/`, URL https://karagemop466-tech.github.io/Poker4/). Live-page check: https://karagemop466-tech.github.io/Poker4/notes/14c124ef-verification.md serves the merged verification record.
+- Merged diff: +491 lines across `data/14c124ef/verification.json` (22 checks, verbatim excerpts + official links + retrieval dates), `notes/14c124ef-verification.md` (line-by-line record for manual review), `COORDINATION.md` (claim, result record, conflict process note). Zero deletions, zero canonical-file changes — flagged items do not block, per the standing rule.
+- Flag-state deltas delivered: **F7 closed** (WPT structures booklet fully read), **F9 re-verified independently**, **F11 partially addressed** (Bellagio/ARIA officially verified; Caesars official range recorded), **F19 replacement evidence** (current Wynn pages), **F4 refreshed evidence**. New: IR1–IR5 published for review.
+- Task V4 marked **done**; this session's lane is complete.
+
 ## Session arena/3082d6d9-poker4 — claim (2026-11-17)
 
 Branched from `main` @ `ff3fa36` (the 22:17Z scheduled official-source sync). No other session holds an active claim; all prior sections are done/merged. This session is a fresh audit + integration round: it re-verifies the published state line by line against live official sources, repairs the two unreachable official URLs found in `data/sync-status.json`, and re-publishes.
