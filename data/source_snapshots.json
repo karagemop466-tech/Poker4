@@ -1,0 +1,213 @@
+{
+ "generated": "2026-11-17",
+ "snapshots": {
+  "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html": {
+   "source_id": "V_PAGE",
+   "label": "Venetian DeepStack Extravaganza IV official series page",
+   "fetched_at": "2026-11-17T00:00:00Z",
+   "sha256": null,
+   "excerpt": null,
+   "note": "baseline manifest created by this research pass; hash filled by first monitor run"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf": {
+   "source_id": "V_SCHED",
+   "label": "Venetian DSE IV schedule (PDF)",
+   "fetched_at": "2026-11-17T00:00:00Z",
+   "sha256": null,
+   "excerpt": null,
+   "note": "baseline manifest created by this research pass; hash filled by first monitor run"
+  },
+  "https://www.venetianlasvegas.com/resort/resort-fee.html": {
+   "source_id": "V_FEE",
+   "label": "Venetian resort fee page",
+   "fetched_at": "2026-11-17T00:00:00Z",
+   "sha256": null,
+   "excerpt": null,
+   "note": "baseline manifest created by this research pass; hash filled by first monitor run"
+  },
+  "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html": {
+   "source_id": "V_TERMS",
+   "label": "Venetian hotel terms and conditions (tax 13.38%, parking, cancellation)",
+   "fetched_at": "2026-11-17T00:00:00Z",
+   "sha256": null,
+   "excerpt": null,
+   "note": "baseline manifest created by this research pass; hash filled by first monitor run"
+  },
+  "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html": {
+   "source_id": "V_POKER_RATE",
+   "label": "Venetian 2026 poker suite rates and play requirements",
+   "fetched_at": "2026-11-17T00:00:00Z",
+   "sha256": null,
+   "excerpt": null,
+   "note": "baseline manifest created by this research pass; hash filled by first monitor run"
+  },
+  "https://www.venetianlasvegas.com/resort/casino/poker.html": {
+   "source_id": "V_POKER",
+   "label": "Venetian poker room page (room location)",
+   "fetched_at": "2026-11-17T00:00:00Z",
+   "sha256": null,
+   "excerpt": null,
+   "note": "baseline manifest created by this research pass; hash filled by first monitor run"
+  },
+  "https://www.wynnlasvegas.com/casino/poker": {
+   "source_id": "W_PAGE",
+   "label": "Wynn Las Vegas poker room page",
+   "fetched_at": "2026-11-17T00:00:00Z",
+   "sha256": null,
+   "excerpt": null,
+   "note": "baseline manifest created by this research pass; hash filled by first monitor run"
+  },
+  "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf": {
+   "source_id": "W_DAILY",
+   "label": "Wynn daily tournament structures / terms (PDF)",
+   "fetched_at": "2026-11-17T00:00:00Z",
+   "sha256": null,
+   "excerpt": null,
+   "note": "baseline manifest created by this research pass; hash filled by first monitor run"
+  },
+  "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf": {
+   "source_id": "W_WPT_TC",
+   "label": "Wynn WPT World Championship structures / terms (PDF)",
+   "fetched_at": "2026-11-17T00:00:00Z",
+   "sha256": null,
+   "excerpt": null,
+   "note": "baseline manifest created by this research pass; hash filled by first monitor run"
+  },
+  "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf": {
+   "source_id": "W_WPT_SCHED",
+   "label": "Wynn WPT World Championship schedule (PDF)",
+   "fetched_at": "2026-11-17T00:00:00Z",
+   "sha256": null,
+   "excerpt": null,
+   "note": "baseline manifest created by this research pass; hash filled by first monitor run"
+  },
+  "https://www.wynnlasvegas.com/terms-and-conditions/850257": {
+   "source_id": "W_TERMS",
+   "label": "Wynn Las Vegas terms and conditions (resort fee $55 + tax)",
+   "fetched_at": "2026-11-17T00:00:00Z",
+   "sha256": null,
+   "excerpt": null,
+   "note": "baseline manifest created by this research pass; hash filled by first monitor run"
+  },
+  "https://bellagio.mgmresorts.com/en/casino/poker.html": {
+   "source_id": "B_PAGE",
+   "label": "Bellagio poker page",
+   "fetched_at": "2026-11-17T00:00:00Z",
+   "sha256": null,
+   "excerpt": null,
+   "note": "baseline manifest created by this research pass; hash filled by first monitor run"
+  },
+  "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt9cf95b0e60ec253e/6af491a3a9851d75c40be840/mgm-bellagio-poker-fridays-$600-nlh.pdf": {
+   "source_id": "B_FRI",
+   "label": "Bellagio Friday $600 NLH structure (PDF)",
+   "fetched_at": "2026-11-17T00:00:00Z",
+   "sha256": null,
+   "excerpt": null,
+   "note": "baseline manifest created by this research pass; hash filled by first monitor run"
+  },
+  "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt6d47974bf5a7d9b6/6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf": {
+   "source_id": "B_SAT",
+   "label": "Bellagio Saturday NLH structure (PDF, undated; buy-in conflict in sheet)",
+   "fetched_at": "2026-11-17T00:00:00Z",
+   "sha256": null,
+   "excerpt": null,
+   "note": "baseline manifest created by this research pass; hash filled by first monitor run"
+  },
+  "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt07fcf1244a6da661/6af491a339e2b4f6b76a86ad/mgm-bellagio-poker-sundays-$400-horse.pdf": {
+   "source_id": "B_SUN",
+   "label": "Bellagio Sunday $400 H.O.R.S.E. structure (PDF)",
+   "fetched_at": "2026-11-17T00:00:00Z",
+   "sha256": null,
+   "excerpt": null,
+   "note": "baseline manifest created by this research pass; hash filled by first monitor run"
+  },
+  "https://bellagio.mgmresorts.com/en/terms-and-conditions.html": {
+   "source_id": "B_TERMS",
+   "label": "Bellagio hotel reservation terms (resort fee $55 + tax, 72h cancellation)",
+   "fetched_at": "2026-11-17T00:00:00Z",
+   "sha256": null,
+   "excerpt": null,
+   "note": "baseline manifest created by this research pass; hash filled by first monitor run"
+  },
+  "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf": {
+   "source_id": "C_FLYER",
+   "label": "Caesars Palace daily NLH tournament flyer (PDF, 2026)",
+   "fetched_at": "2026-11-17T00:00:00Z",
+   "sha256": null,
+   "excerpt": null,
+   "note": "baseline manifest created by this research pass; hash filled by first monitor run"
+  },
+  "https://www.caesars.com/caesars-palace/casino": {
+   "source_id": "C_PAGE",
+   "label": "Caesars Palace casino page",
+   "fetched_at": "2026-11-17T00:00:00Z",
+   "sha256": null,
+   "excerpt": null,
+   "note": "baseline manifest created by this research pass; hash filled by first monitor run"
+  },
+  "https://www.caesars.com/caesars-palace": {
+   "source_id": "C_HOME",
+   "label": "Caesars Palace official homepage (published rate lead, cancellation banner)",
+   "fetched_at": "2026-11-17T00:00:00Z",
+   "sha256": null,
+   "excerpt": null,
+   "note": "baseline manifest created by this research pass; hash filled by first monitor run"
+  },
+  "https://aria.mgmresorts.com/en/terms-and-conditions.html": {
+   "source_id": "A_TERMS",
+   "label": "ARIA hotel reservation terms (resort fee $55 + tax, 72h cancellation)",
+   "fetched_at": "2026-11-17T00:00:00Z",
+   "sha256": null,
+   "excerpt": null,
+   "note": "baseline manifest created by this research pass; hash filled by first monitor run"
+  },
+  "https://aria.mgmresorts.com/en/casino/poker.html": {
+   "source_id": "A_PAGE",
+   "label": "ARIA poker page",
+   "fetched_at": "2026-11-17T00:00:00Z",
+   "sha256": null,
+   "excerpt": null,
+   "note": "baseline manifest created by this research pass; hash filled by first monitor run"
+  },
+  "https://www.mgmresorts.com/en/things-to-do/parking.html": {
+   "source_id": "MGM_PARK",
+   "label": "MGM Resorts official parking rates page",
+   "fetched_at": "2026-11-17T00:00:00Z",
+   "sha256": null,
+   "excerpt": null,
+   "note": "baseline manifest created by this research pass; hash filled by first monitor run"
+  },
+  "https://treasureisland.com/hotel/deluxe-rooms": {
+   "source_id": "TI_ROOMS",
+   "label": "Treasure Island deluxe rooms page (resort fee $49.95 + tax, free parking)",
+   "fetched_at": "2026-11-17T00:00:00Z",
+   "sha256": null,
+   "excerpt": null,
+   "note": "baseline manifest created by this research pass; hash filled by first monitor run"
+  },
+  "https://treasureisland.com/deals-offers/buy-1-get-1-bogo-free-fine-print": {
+   "source_id": "TI_OFFERS",
+   "label": "Treasure Island offer terms",
+   "fetched_at": "2026-11-17T00:00:00Z",
+   "sha256": null,
+   "excerpt": null,
+   "note": "baseline manifest created by this research pass; hash filled by first monitor run"
+  },
+  "https://www.caesars.com/harrahs-las-vegas": {
+   "source_id": "HP_PAGE",
+   "label": "Harrah's Las Vegas official page",
+   "fetched_at": "2026-11-17T00:00:00Z",
+   "sha256": null,
+   "excerpt": null,
+   "note": "baseline manifest created by this research pass; hash filled by first monitor run"
+  },
+  "https://www.caesars.com/horseshoe-las-vegas": {
+   "source_id": "HS_PAGE",
+   "label": "Horseshoe Las Vegas official page",
+   "fetched_at": "2026-11-17T00:00:00Z",
+   "sha256": null,
+   "excerpt": null,
+   "note": "baseline manifest created by this research pass; hash filled by first monitor run"
+  }
+ }
+}
