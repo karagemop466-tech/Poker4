@@ -833,3 +833,16 @@ Files from `75757cc1` are kept as-is: `data/75757cc1/`, the 37-sheet structure r
 - Live pages re-fetched after deployment: https://karagemop466-tech.github.io/Poker4/tournaments.html and https://karagemop466-tech.github.io/Poker4/venues/venetian.html. F8 complete.
 
 - 2026-11-17: Rebased integration work forward onto origin/main after PR #59 merged at c1521ee and source-sync commit 8a459b3; regenerated canonical pages from the merged official corrections.
+
+## Session arena/3082d6d9-poker4 — claim (2026-11-17)
+
+Branched from `main` @ `ff3fa36` (the 22:17Z scheduled official-source sync). No other session holds an active claim; all prior sections are done/merged. This session is a fresh audit + integration round: it re-verifies the published state line by line against live official sources, repairs the two unreachable official URLs found in `data/sync-status.json`, and re-publishes.
+
+| ID | Task | Status | Owner | File scope | Notes |
+|----|------|--------|-------|------------|-------|
+| A1 | Claim + repo-state review of `main` @ ff3fa36 (gates, data, pages, workflows) | in progress | arena/3082d6d9-poker4 | `COORDINATION.md` (log only) | verify_root / linkcheck / verify_markup all green at claim time |
+| A2 | Live re-check of official sources vs published rows (Venetian calendar + schedule PDF + structure sheets, Wynn PDFs, Caesars page, hotel fee/tax pages); confirm the 22:11Z PDF change (Events 39/47 restart times) is reflected | in progress | arena/3082d6d9-poker4 | `data/3082d6d9/` (new verification records), `notes/` | results recorded with official links; mismatches flagged, not silently edited |
+| A3 | Repair the 2 unreachable official URLs (Caesars daily-NLH flyer 2025 PDF; Bellagio resort-fee page) with current official URLs, rebuild, re-verify | in progress | arena/3082d6d9-poker4 | `data/tracked-sources.json` / sync tooling, `data/raw/`, rebuilt root pages | flagged before fix; fix cites the new official URL |
+| A4 | Gates → PR → main → merge → Pages deploy confirmed → recorded here | in progress | arena/3082d6d9-poker4 | this branch, `main`, `COORDINATION.md` | PR number + merge result logged below when done |
+
+Branch note (same as prior sessions): Arena pins this session to a single fixed branch (`arena/3082d6d9-poker4`), so the `session-<id>/<task>` branch convention is documented here instead; all work happens on that one branch with small commits.
