@@ -1,0 +1,292 @@
+{
+ "meta": {
+  "generated_at": "2026-11-17T22:23:55Z",
+  "method": "Google Maps directions, travel mode = walking, departure 'leave now'. Each pair was opened as a directions URL built from the hotel's official address and the poker room's official address; the duration, the distance and the route summary printed by Google were copied verbatim into this file with the time of the request. Re-capture with: python3 tools/walk_capture.py",
+  "why_measured_not_published": "No Strip operator publishes a door-to-door walking time to another property's poker room, so a minute count can only come from a routing engine. These are measurements with a timestamp and a source URL — they are labelled as such and never presented as an official statement.",
+  "limit_minutes": 30,
+  "pairs": 8,
+  "within_limit": 7
+ },
+ "pairs": [
+  {
+   "hotel_id": "ti",
+   "hotel_query": "Treasure Island Las Vegas, 3300 S Las Vegas Blvd, Las Vegas, NV 89109",
+   "hotel_address": "3300 Las Vegas Blvd S, Las Vegas, NV 89109",
+   "hotel_address_source": "https://treasureisland.com/amenities/guest-services",
+   "venue_id": "venetian",
+   "venue": "The Venetian Poker Room",
+   "venue_address": "3355 Las Vegas Blvd. South, Las Vegas, NV 89109",
+   "venue_address_source": "https://www.venetianlasvegas.com/resort/contact.html",
+   "minutes": 6,
+   "distance_miles": 0.2,
+   "route_summary": "via Las Vegas Blvd S",
+   "travel_mode": "walking",
+   "measured_by": "Google Maps directions (web), travel mode = walking, departure = “leave now”",
+   "captured_at": "2026-11-17T22:23:55Z",
+   "captured_by": "session arena/a3838778-poker4",
+   "maps_url": "https://www.google.com/maps/dir/Treasure%20Island%20Las%20Vegas,3300%20S%20Las%20Vegas%20Blvd,Las%20Vegas,NV%2089109/The%20Venetian%20Resort%20Las%20Vegas,3355%20Las%20Vegas%20Blvd.%20South,Las%20Vegas,NV%2089109/data=!4m2!4m1!3e2?hl=en&gl=us",
+   "apple_url": "https://maps.apple.com/?saddr=Treasure+Island+Las+Vegas%2C+3300+S+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV+89109&daddr=The+Venetian+Resort+Las+Vegas%2C+3355+Las+Vegas+Blvd.+South%2C+Las+Vegas%2C+NV+89109&dirflg=w",
+   "meets_30_min": true,
+   "history": [
+    {
+     "captured_at": "2026-11-17T22:23:55Z",
+     "minutes": 6,
+     "distance_miles": 0.2,
+     "route_summary": "via Las Vegas Blvd S",
+     "source": "google-maps-walking"
+    }
+   ],
+   "via_text": "Las Vegas Blvd S"
+  },
+  {
+   "hotel_id": "harrahs",
+   "hotel_query": "Harrah's Las Vegas, 3475 S Las Vegas Blvd, Las Vegas, NV 89109",
+   "hotel_address": "3475 Las Vegas Blvd South, Las Vegas, NV 89109",
+   "hotel_address_source": "https://www.caesars.com/sportsbook-and-casino/nv/",
+   "venue_id": "venetian",
+   "venue": "The Venetian Poker Room",
+   "venue_address": "3355 Las Vegas Blvd. South, Las Vegas, NV 89109",
+   "venue_address_source": "https://www.venetianlasvegas.com/resort/contact.html",
+   "minutes": 6,
+   "distance_miles": 0.3,
+   "route_summary": "via Las Vegas Blvd S",
+   "travel_mode": "walking",
+   "measured_by": "Google Maps directions (web), travel mode = walking, departure = “leave now”",
+   "captured_at": "2026-11-17T22:23:55Z",
+   "captured_by": "session arena/a3838778-poker4",
+   "maps_url": "https://www.google.com/maps/dir/Harrah%27s%20Las%20Vegas,3475%20S%20Las%20Vegas%20Blvd,Las%20Vegas,NV%2089109/The%20Venetian%20Resort%20Las%20Vegas,3355%20Las%20Vegas%20Blvd.%20South,Las%20Vegas,NV%2089109/data=!4m2!4m1!3e2?hl=en&gl=us",
+   "apple_url": "https://maps.apple.com/?saddr=Harrah%27s+Las+Vegas%2C+3475+S+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV+89109&daddr=The+Venetian+Resort+Las+Vegas%2C+3355+Las+Vegas+Blvd.+South%2C+Las+Vegas%2C+NV+89109&dirflg=w",
+   "meets_30_min": true,
+   "history": [
+    {
+     "captured_at": "2026-11-17T22:23:55Z",
+     "minutes": 6,
+     "distance_miles": 0.3,
+     "route_summary": "via Las Vegas Blvd S",
+     "source": "google-maps-walking"
+    }
+   ],
+   "via_text": "Las Vegas Blvd S"
+  },
+  {
+   "hotel_id": "caesars",
+   "hotel_query": "Caesars Palace, 3570 S Las Vegas Blvd, Las Vegas, NV 89109",
+   "hotel_address": "3570 Las Vegas Blvd South, Las Vegas, NV 89109",
+   "hotel_address_source": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
+   "venue_id": "venetian",
+   "venue": "The Venetian Poker Room",
+   "venue_address": "3355 Las Vegas Blvd. South, Las Vegas, NV 89109",
+   "venue_address_source": "https://www.venetianlasvegas.com/resort/contact.html",
+   "minutes": 12,
+   "distance_miles": 0.5,
+   "route_summary": "via Las Vegas Blvd S",
+   "travel_mode": "walking",
+   "measured_by": "Google Maps directions (web), travel mode = walking, departure = “leave now”",
+   "captured_at": "2026-11-17T22:23:55Z",
+   "captured_by": "session arena/a3838778-poker4",
+   "maps_url": "https://www.google.com/maps/dir/Caesars%20Palace,3570%20S%20Las%20Vegas%20Blvd,Las%20Vegas,NV%2089109/The%20Venetian%20Resort%20Las%20Vegas,3355%20Las%20Vegas%20Blvd.%20South,Las%20Vegas,NV%2089109/data=!4m2!4m1!3e2?hl=en&gl=us",
+   "apple_url": "https://maps.apple.com/?saddr=Caesars+Palace%2C+3570+S+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV+89109&daddr=The+Venetian+Resort+Las+Vegas%2C+3355+Las+Vegas+Blvd.+South%2C+Las+Vegas%2C+NV+89109&dirflg=w",
+   "meets_30_min": true,
+   "history": [
+    {
+     "captured_at": "2026-11-17T22:23:55Z",
+     "minutes": 12,
+     "distance_miles": 0.5,
+     "route_summary": "via Las Vegas Blvd S",
+     "source": "google-maps-walking"
+    }
+   ],
+   "via_text": "Las Vegas Blvd S"
+  },
+  {
+   "hotel_id": "wynn",
+   "hotel_query": "Wynn Las Vegas, 3131 S Las Vegas Blvd, Las Vegas, NV 89109",
+   "hotel_address": "3131 Las Vegas Blvd. South, Las Vegas, NV 89109",
+   "hotel_address_source": "https://www.wynnlasvegas.com/about-us/contact-information",
+   "venue_id": "venetian",
+   "venue": "The Venetian Poker Room",
+   "venue_address": "3355 Las Vegas Blvd. South, Las Vegas, NV 89109",
+   "venue_address_source": "https://www.venetianlasvegas.com/resort/contact.html",
+   "minutes": 13,
+   "distance_miles": 0.6,
+   "route_summary": "via Wynn Main Gate Dr",
+   "travel_mode": "walking",
+   "measured_by": "Google Maps directions (web), travel mode = walking, departure = “leave now”",
+   "captured_at": "2026-11-17T22:23:55Z",
+   "captured_by": "session arena/a3838778-poker4",
+   "maps_url": "https://www.google.com/maps/dir/Wynn%20Las%20Vegas,3131%20S%20Las%20Vegas%20Blvd,Las%20Vegas,NV%2089109/The%20Venetian%20Resort%20Las%20Vegas,3355%20Las%20Vegas%20Blvd.%20South,Las%20Vegas,NV%2089109/data=!4m2!4m1!3e2?hl=en&gl=us",
+   "apple_url": "https://maps.apple.com/?saddr=Wynn+Las+Vegas%2C+3131+S+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV+89109&daddr=The+Venetian+Resort+Las+Vegas%2C+3355+Las+Vegas+Blvd.+South%2C+Las+Vegas%2C+NV+89109&dirflg=w",
+   "meets_30_min": true,
+   "history": [
+    {
+     "captured_at": "2026-11-17T22:23:55Z",
+     "minutes": 13,
+     "distance_miles": 0.6,
+     "route_summary": "via Wynn Main Gate Dr",
+     "source": "google-maps-walking"
+    }
+   ],
+   "via_text": "Wynn Main Gate Dr"
+  },
+  {
+   "hotel_id": "horseshoe",
+   "hotel_query": "Horseshoe Las Vegas, 3645 S Las Vegas Blvd, Las Vegas, NV 89109",
+   "hotel_address": "3645 Las Vegas Blvd South, Las Vegas, NV 89109",
+   "hotel_address_source": "https://www.caesars.com/sportsbook-and-casino/nv/",
+   "venue_id": "venetian",
+   "venue": "The Venetian Poker Room",
+   "venue_address": "3355 Las Vegas Blvd. South, Las Vegas, NV 89109",
+   "venue_address_source": "https://www.venetianlasvegas.com/resort/contact.html",
+   "minutes": 16,
+   "distance_miles": 0.7,
+   "route_summary": "via Linq Ln",
+   "travel_mode": "walking",
+   "measured_by": "Google Maps directions (web), travel mode = walking, departure = “leave now”",
+   "captured_at": "2026-11-17T22:23:55Z",
+   "captured_by": "session arena/a3838778-poker4",
+   "maps_url": "https://www.google.com/maps/dir/Horseshoe%20Las%20Vegas,3645%20S%20Las%20Vegas%20Blvd,Las%20Vegas,NV%2089109/The%20Venetian%20Resort%20Las%20Vegas,3355%20Las%20Vegas%20Blvd.%20South,Las%20Vegas,NV%2089109/data=!4m2!4m1!3e2?hl=en&gl=us",
+   "apple_url": "https://maps.apple.com/?saddr=Horseshoe+Las+Vegas%2C+3645+S+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV+89109&daddr=The+Venetian+Resort+Las+Vegas%2C+3355+Las+Vegas+Blvd.+South%2C+Las+Vegas%2C+NV+89109&dirflg=w",
+   "meets_30_min": true,
+   "history": [
+    {
+     "captured_at": "2026-11-17T22:23:55Z",
+     "minutes": 16,
+     "distance_miles": 0.7,
+     "route_summary": "via Linq Ln",
+     "source": "google-maps-walking"
+    }
+   ],
+   "via_text": "Linq Ln"
+  },
+  {
+   "hotel_id": "encore",
+   "hotel_query": "Encore at Wynn Las Vegas, 3121 S Las Vegas Blvd, Las Vegas, NV 89109",
+   "hotel_address": "3131 Las Vegas Blvd. South, Las Vegas, NV 89109 (Wynn's own contact page lists Wynn and Encore at one address)",
+   "hotel_address_source": "https://www.wynnlasvegas.com/about-us/contact-information",
+   "venue_id": "venetian",
+   "venue": "The Venetian Poker Room",
+   "venue_address": "3355 Las Vegas Blvd. South, Las Vegas, NV 89109",
+   "venue_address_source": "https://www.venetianlasvegas.com/resort/contact.html",
+   "minutes": 19,
+   "distance_miles": 0.9,
+   "route_summary": "via Las Vegas Blvd S",
+   "travel_mode": "walking",
+   "measured_by": "Google Maps directions (web), travel mode = walking, departure = “leave now”",
+   "captured_at": "2026-11-17T22:23:55Z",
+   "captured_by": "session arena/a3838778-poker4",
+   "maps_url": "https://www.google.com/maps/dir/Encore%20at%20Wynn%20Las%20Vegas,3121%20S%20Las%20Vegas%20Blvd,Las%20Vegas,NV%2089109/The%20Venetian%20Resort%20Las%20Vegas,3355%20Las%20Vegas%20Blvd.%20South,Las%20Vegas,NV%2089109/data=!4m2!4m1!3e2?hl=en&gl=us",
+   "apple_url": "https://maps.apple.com/?saddr=Encore+at+Wynn+Las+Vegas%2C+3121+S+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV+89109&daddr=The+Venetian+Resort+Las+Vegas%2C+3355+Las+Vegas+Blvd.+South%2C+Las+Vegas%2C+NV+89109&dirflg=w",
+   "meets_30_min": true,
+   "history": [
+    {
+     "captured_at": "2026-11-17T22:23:55Z",
+     "minutes": 19,
+     "distance_miles": 0.9,
+     "route_summary": "via Las Vegas Blvd S",
+     "source": "google-maps-walking"
+    }
+   ],
+   "via_text": "Las Vegas Blvd S"
+  },
+  {
+   "hotel_id": "bellagio",
+   "hotel_query": "Bellagio, 3600 S Las Vegas Blvd, Las Vegas, NV 89109",
+   "hotel_address": "3600 S Las Vegas Blvd, Las Vegas, NV 89109",
+   "hotel_address_source": "https://bellagio.mgmresorts.com/en/casino/poker.html",
+   "venue_id": "venetian",
+   "venue": "The Venetian Poker Room",
+   "venue_address": "3355 Las Vegas Blvd. South, Las Vegas, NV 89109",
+   "venue_address_source": "https://www.venetianlasvegas.com/resort/contact.html",
+   "minutes": 21,
+   "distance_miles": 0.9,
+   "route_summary": "via Las Vegas Blvd S",
+   "travel_mode": "walking",
+   "measured_by": "Google Maps directions (web), travel mode = walking, departure = “leave now”",
+   "captured_at": "2026-11-17T22:23:55Z",
+   "captured_by": "session arena/a3838778-poker4",
+   "maps_url": "https://www.google.com/maps/dir/Bellagio,3600%20S%20Las%20Vegas%20Blvd,Las%20Vegas,NV%2089109/The%20Venetian%20Resort%20Las%20Vegas,3355%20Las%20Vegas%20Blvd.%20South,Las%20Vegas,NV%2089109/data=!4m2!4m1!3e2?hl=en&gl=us",
+   "apple_url": "https://maps.apple.com/?saddr=Bellagio%2C+3600+S+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV+89109&daddr=The+Venetian+Resort+Las+Vegas%2C+3355+Las+Vegas+Blvd.+South%2C+Las+Vegas%2C+NV+89109&dirflg=w",
+   "meets_30_min": true,
+   "history": [
+    {
+     "captured_at": "2026-11-17T22:23:55Z",
+     "minutes": 21,
+     "distance_miles": 0.9,
+     "route_summary": "via Las Vegas Blvd S",
+     "source": "google-maps-walking"
+    }
+   ],
+   "via_text": "Las Vegas Blvd S"
+  },
+  {
+   "hotel_id": "aria",
+   "hotel_query": "ARIA Resort & Casino, 3730 S Las Vegas Blvd, Las Vegas, NV 89158",
+   "hotel_address": "3730 S Las Vegas Blvd, Las Vegas, NV 89158",
+   "hotel_address_source": "https://aria.mgmresorts.com/en/casino/poker.html",
+   "venue_id": "venetian",
+   "venue": "The Venetian Poker Room",
+   "venue_address": "3355 Las Vegas Blvd. South, Las Vegas, NV 89109",
+   "venue_address_source": "https://www.venetianlasvegas.com/resort/contact.html",
+   "minutes": 31,
+   "distance_miles": 1.4,
+   "route_summary": "via Las Vegas Blvd S",
+   "travel_mode": "walking",
+   "measured_by": "Google Maps directions (web), travel mode = walking, departure = “leave now”",
+   "captured_at": "2026-11-17T22:23:55Z",
+   "captured_by": "session arena/a3838778-poker4",
+   "maps_url": "https://www.google.com/maps/dir/ARIA%20Resort%20%26%20Casino,3730%20S%20Las%20Vegas%20Blvd,Las%20Vegas,NV%2089158/The%20Venetian%20Resort%20Las%20Vegas,3355%20Las%20Vegas%20Blvd.%20South,Las%20Vegas,NV%2089109/data=!4m2!4m1!3e2?hl=en&gl=us",
+   "apple_url": "https://maps.apple.com/?saddr=ARIA+Resort+%26+Casino%2C+3730+S+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV+89158&daddr=The+Venetian+Resort+Las+Vegas%2C+3355+Las+Vegas+Blvd.+South%2C+Las+Vegas%2C+NV+89109&dirflg=w",
+   "meets_30_min": false,
+   "history": [
+    {
+     "captured_at": "2026-11-17T22:23:55Z",
+     "minutes": 31,
+     "distance_miles": 1.4,
+     "route_summary": "via Las Vegas Blvd S",
+     "source": "google-maps-walking"
+    }
+   ],
+   "via_text": "Las Vegas Blvd S"
+  }
+ ],
+ "comparison": {
+  "other_session_2026-11-17": {
+   "source": "data/poker4.json on origin/main (PR #71), hotel walk blocks",
+   "note": "Same pairs, same day, shorter durations that imply 6–8 mph. Kept for comparison only; not the values published on the site.",
+   "pairs": {
+    "wynn": {
+     "minutes": 4,
+     "distance_mi": 0.5
+    },
+    "encore": {
+     "minutes": 7,
+     "distance_mi": 1.0
+    },
+    "bellagio": {
+     "minutes": 10,
+     "distance_mi": 1.0
+    },
+    "caesars": {
+     "minutes": 12,
+     "distance_mi": 0.5
+    },
+    "aria": {
+     "minutes": 11,
+     "distance_mi": 1.4
+    },
+    "ti": {
+     "minutes": 5,
+     "distance_mi": 0.2
+    },
+    "horseshoe": {
+     "minutes": 7,
+     "distance_mi": 1.0
+    },
+    "harrahs": {
+     "minutes": 6,
+     "distance_mi": 0.3
+    }
+   }
+  }
+ }
+}

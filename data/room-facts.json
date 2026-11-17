@@ -49,6 +49,11 @@
     "url": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
     "label": "Caesars Palace + Horseshoe daily tournament description",
     "venue": "Caesars Palace"
+   },
+   {
+    "url": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+    "label": "Caesars Palace — daily NLH tournament flyer 2026 (itemised schedule, fee split, re-entry clause)",
+    "venue": "Caesars Palace"
    }
   ],
   "problems": [],
@@ -59,7 +64,7 @@
  },
  "wynn_wpt": {
   "file": "data/raw/wynn-wpt-terms.txt",
-  "sha256": "9d3bf67f11d8436d7d9badc0fbdad629d8262dad6016487caa4db9ec4763a323",
+  "sha256": "4b84170296024bf49a3481b8d6c43b30d1751af9ae2f179f6faf96deba63d1d4",
   "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
   "events": [
    {
@@ -4705,7 +4710,7 @@
  },
  "wynn_daily": {
   "file": "data/raw/wynn-daily-structures.txt",
-  "sha256": "8f45508f48bec6fc4a9d2b5c07ba4db4ba1ed14c2dd488b31a93f8e0912f4229",
+  "sha256": "34323a88c5a2b62dfcc4e5f02940277f890832a23cbfb31b330093a2f618002c",
   "url": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
   "poster_file": "data/raw/wynn-daily-poster.txt",
   "poster_url": "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf",
@@ -5051,6 +5056,121 @@
     "excerpt": "the page prints the $100 buy-in but not the house-fee split"
    },
    "spend_advantage": true
-  }
+  },
+  "flyer": {
+   "url": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+   "retrieved": "2026-11-17",
+   "capture": "data/raw/caesars-daily-flyer-2026.txt",
+   "capture_sha256": "cf42b037a7b8af23c4e060d1df4c52290356f40c600d366951df876843588ac2",
+   "title": "Daily No-Limit Texas Hold'em Tournament Schedule",
+   "addon_excerpt": "All Tournaments feature a $50 add-on for 15,000 tournament chips that can only be taken at the first break.",
+   "registration_excerpt": "Registration will close at the start of level seven.",
+   "break_excerpt": "All tournaments will have a 10-minute break every six levels.",
+   "signup_excerpt": "Sign-ups start one hour before the scheduled start of the event.",
+   "re_entry_excerpt": "Participants may only register themselves, but may re-enter, by paying the entry fee, upon elimination within the first break of play.",
+   "fielded_excerpt": "Caesars Palace reserves the right to modify or cancel these tournaments at its sole discretion and without prior notice.",
+   "min_players_excerpt": "Must have at least 6 players to start a tournament.",
+   "chop_excerpt": "Prize pool may not be chopped until the end of registration.",
+   "rows": [
+    {
+     "time_printed": "10 AM",
+     "buy_in_usd": 100,
+     "addon_usd": 50,
+     "starting_chips": 20000,
+     "level_minutes": 20,
+     "guarantee_usd": 1000,
+     "house_fee_usd": 30,
+     "pool_per_entry_usd": 70,
+     "fee_excerpt": "Of the $100 buy in, $70 goes to the prize pool and $30 is held by Caesars Palace as a maintenance fee.",
+     "row_excerpt": "10 AM | $100 | $50 | 20,000 | 20 Minutes | $1,000"
+    },
+    {
+     "time_printed": "2 PM",
+     "buy_in_usd": 160,
+     "addon_usd": 50,
+     "starting_chips": 20000,
+     "level_minutes": 20,
+     "guarantee_usd": 1000,
+     "house_fee_usd": 45,
+     "pool_per_entry_usd": 115,
+     "fee_excerpt": "Of the $160 buy in, $115 goes to the prize pool and $45 is held by Caesars Palace as a maintenance fee.",
+     "row_excerpt": "2 PM | $160 | $50 | 20,000 | 20 Minutes | $1,000"
+    },
+    {
+     "time_printed": "6 PM",
+     "buy_in_usd": 100,
+     "addon_usd": 50,
+     "starting_chips": 20000,
+     "level_minutes": 20,
+     "guarantee_usd": 1000,
+     "house_fee_usd": 30,
+     "pool_per_entry_usd": 70,
+     "fee_excerpt": "Of the $100 buy in, $70 goes to the prize pool and $30 is held by Caesars Palace as a maintenance fee.",
+     "row_excerpt": "6 PM | $100 | $50 | 20,000 | 20 Minutes | $1,000"
+    },
+    {
+     "time_printed": "9 PM",
+     "buy_in_usd": 160,
+     "addon_usd": 50,
+     "starting_chips": 20000,
+     "level_minutes": 20,
+     "guarantee_usd": 1000,
+     "house_fee_usd": 45,
+     "pool_per_entry_usd": 115,
+     "fee_excerpt": "Of the $160 buy in, $115 goes to the prize pool and $45 is held by Caesars Palace as a maintenance fee.",
+     "row_excerpt": "9 PM | $160 | $50 | 20,000 | 20 Minutes | $1,000"
+    }
+   ],
+   "fee_splits": {
+    "100": {
+     "kind": "buy in",
+     "pool_usd": 70,
+     "house_fee_usd": 30,
+     "excerpt": "Of the $100 buy in, $70 goes to the prize pool and $30 is held by Caesars Palace as a maintenance fee."
+    },
+    "160": {
+     "kind": "buy in",
+     "pool_usd": 115,
+     "house_fee_usd": 45,
+     "excerpt": "Of the $160 buy in, $115 goes to the prize pool and $45 is held by Caesars Palace as a maintenance fee."
+    },
+    "50": {
+     "kind": "add-on",
+     "pool_usd": 45,
+     "house_fee_usd": 5,
+     "excerpt": "Of the $50 add-on, $45 goes to the prize pool and $5 is held by Caesars Palace as a maintenance fee."
+    }
+   },
+   "rules": {
+    "single_entry": {
+     "status": "confirmed_not_single_entry",
+     "value": "one entry per player per field, plus one re-entry within the first break",
+     "excerpt": "Participants may only register themselves, but may re-enter, by paying the entry fee, upon elimination within the first break of play."
+    },
+    "re_entry": {
+     "status": "confirmed_allowed",
+     "value": "re-entry for the entry fee, only upon elimination within the first break",
+     "excerpt": "Participants may only register themselves, but may re-enter, by paying the entry fee, upon elimination within the first break of play."
+    },
+    "add_on": {
+     "status": "confirmed_allowed",
+     "value": "$50 add-on for 15,000 chips, first break only",
+     "excerpt": "All Tournaments feature a $50 add-on for 15,000 tournament chips that can only be taken at the first break."
+    },
+    "fielded": {
+     "status": "confirmed",
+     "value": "the room may modify or cancel the slate at its discretion",
+     "excerpt": "Caesars Palace reserves the right to modify or cancel these tournaments at its sole discretion and without prior notice."
+    },
+    "min_field": {
+     "status": "confirmed",
+     "value": "Must have at least 6 players to start a tournament.",
+     "excerpt": "Must have at least 6 players to start a tournament."
+    }
+   }
+  },
+  "page_vs_flyer_conflict": [
+   "the property's 2026 daily flyer prints 10 AM $100, 2 PM $160, 6 PM $100, 9 PM $160, while the Caesars poker article describes all four daily events at a blanket $100 buy-in (\"Every event carries a $100 buy-in\"). Both are official; the flyer is the itemised schedule, so its per-time price is shown on the row and the disagreement is flagged here rather than resolved."
+  ]
  }
 }

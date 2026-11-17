@@ -18,6 +18,42 @@
   "last_checked": "2026-11-17"
  },
  {
+  "id": "V-ADDR",
+  "title": "Venetian official contact page (hotel street address: 3355 Las Vegas Blvd. South)",
+  "url": "https://www.venetianlasvegas.com/resort/contact.html",
+  "last_checked": "2026-11-17"
+ },
+ {
+  "id": "TI-ADDR",
+  "title": "Treasure Island official guest-services page (hotel street address: 3300 Las Vegas Blvd S)",
+  "url": "https://treasureisland.com/amenities/guest-services",
+  "last_checked": "2026-11-17"
+ },
+ {
+  "id": "W-ADDR",
+  "title": "Wynn official contact page (hotel street address: 3131 Las Vegas Blvd. South)",
+  "url": "https://www.wynnlasvegas.com/about-us/contact-information",
+  "last_checked": "2026-11-17"
+ },
+ {
+  "id": "CP-ADDR",
+  "title": "Caesars Entertainment official Nevada locations page (Caesars Palace 3570 / Harrah's 3475 / Horseshoe 3645 Las Vegas Blvd South)",
+  "url": "https://www.caesars.com/sportsbook-and-casino/nv/",
+  "last_checked": "2026-11-17"
+ },
+ {
+  "id": "B-ADDR",
+  "title": "Bellagio official poker room page (3600 S Las Vegas Blvd)",
+  "url": "https://bellagio.mgmresorts.com/en/casino/poker.html",
+  "last_checked": "2026-11-17"
+ },
+ {
+  "id": "A-ADDR",
+  "title": "ARIA official poker room page (3730 S Las Vegas Blvd)",
+  "url": "https://aria.mgmresorts.com/en/casino/poker.html",
+  "last_checked": "2026-11-17"
+ },
+ {
   "id": "V-SUITE",
   "title": "Venetian official poker suite rates & play requirements",
   "url": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",

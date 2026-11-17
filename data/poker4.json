@@ -25,7 +25,7 @@
       "data/c07371e3/*.csv"
     ],
     "rebuild": "python3 tools/sync_official_sources.py --from-raw && python3 scripts/integrate_data.py",
-    "last_update": "2026-11-17 session arena/3082d6d9-poker4: Bellagio fee + cancellation confirmed from the property's live Hotel Reservation Terms page; Caesars rows re-anchored to the 2026 daily flyer"
+    "last_update": "2026-11-17 session arena/3082d6d9-poker4: Caesars rows + venue coverage re-anchored to the 2026 daily flyer (per-slot buy-ins, fee splits, re-entry rule); Bellagio fee $55 + 72-hour cancellation confirmed from the live terms page"
   },
   "venues": [
     {
@@ -85,8 +85,9 @@
       "property": "Caesars Palace",
       "official_address": "3570 S Las Vegas Blvd, Las Vegas, NV 89109",
       "address_source": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
-      "coverage": "No structure sheet is published. The official Caesars page prints four daily $100 NLH start times, 20,000 chips, a $1,000 guarantee, 20-minute levels and a $50 add-on, with no house-fee split and no entry rule (flag F18). The rows are published with what is printed and excluded from ranking.",
+      "coverage": "No structure sheet is published. The venue's own 2026 daily flyer PDF prints four daily NLH slots — 10 AM $100, 2 PM $160, 6 PM $100, 9 PM $160 — each with 20,000 chips, 20-minute levels and a $1,000 guarantee, plus the fee splits ($70/$30 and $115/$45), the $50 add-on split ($45/$5), registration closing at the start of level 7, and a re-entry rule (re-enter within the first break after elimination). The explore page's blanket 'every event carries a $100 buy-in' sentence conflicts with the flyer's $160 slots — flag F25 records the conflict and the rows follow the dedicated, dated flyer. Rows stay excluded from ranking because the slate prints no calendar dates.",
       "schedule_sources": [
+        "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
         "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
       ],
       "hotel_ids": [
@@ -220,7 +221,16 @@
         "V_PKG_2758168755",
         "V_PKG_1388595424"
       ],
-      "dead_source_pages": []
+      "dead_source_pages": [],
+      "booking_dates_url": {
+        "template": "https://www.venetianlasvegas.com/booking?adults[]={adults}&arrival_date={arrival}&children[]=0&departure_date={departure}&view=calendar",
+        "basis": "the query-string pattern is the one The Venetian's own pages emit from their “Check Rates” widget (read on the DSE IV series page on 2026-11-17: adults[]=2&arrival_date=2026-11-18&children[]=0&departure_date=2026-11-20&view=calendar). The site only builds the link — the price still comes from the property's calendar, never from here.",
+        "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+        "retrieved": "2026-11-17"
+      },
+      "occupancy_charge": {
+        "status": null
+      }
     },
     {
       "id": "palazzo",
@@ -279,7 +289,16 @@
       "qualification": "Same play requirement as the Venetian tower.",
       "qualification_source": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
       "source_keys": [],
-      "dead_source_pages": []
+      "dead_source_pages": [],
+      "booking_dates_url": {
+        "template": "https://www.venetianlasvegas.com/booking?adults[]={adults}&arrival_date={arrival}&children[]=0&departure_date={departure}&view=calendar",
+        "basis": "the query-string pattern is the one The Venetian's own pages emit from their “Check Rates” widget (read on the DSE IV series page on 2026-11-17: adults[]=2&arrival_date=2026-11-18&children[]=0&departure_date=2026-11-20&view=calendar). The site only builds the link — the price still comes from the property's calendar, never from here.",
+        "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+        "retrieved": "2026-11-17"
+      },
+      "occupancy_charge": {
+        "status": null
+      }
     },
     {
       "id": "wynn",
@@ -315,14 +334,20 @@
       "walk": {
         "venue_id": "venetian",
         "venue": "The Venetian Poker Room",
-        "minutes": 4,
-        "distance_mi": 0.5,
-        "via": "Las Vegas Blvd S",
-        "meets_30_min": "yes (4 min, Google Maps)",
-        "status": "Google Maps walking route, retrieved 2026-11-17: 4 min (0.5 mi) via Las Vegas Blvd S to the Venetian poker room. Google's walking durations run optimistic; the route distance is the more reliable figure.",
-        "method": "Google Maps walking directions",
-        "retrieved": "2026-11-17",
-        "source": "https://www.google.com/maps/dir/Wynn+Las+Vegas/The+Venetian+Resort+Las+Vegas/?force=walking"
+        "minutes": 13,
+        "distance_mi": 0.6,
+        "via": "Wynn Main Gate Dr",
+        "meets_30_min": "yes — measured 13 min (limit 30)",
+        "status": "Measured 2026-11-17 with Google Maps walking directions (Google Maps directions (web), travel mode = walking, departure = “leave now”) from 3131 Las Vegas Blvd. South, Las Vegas, NV 89109 to 3355 Las Vegas Blvd. South, Las Vegas, NV 89109: 13 min / 0.6 mi via Wynn Main Gate Dr. A routing-engine measurement with a timestamp and a reproducible link, not a statement by either property.",
+        "method": "Google Maps directions (web), travel mode = walking, departure = “leave now”",
+        "retrieved": "2026-11-17T22:23:55Z",
+        "source": "https://www.wynnlasvegas.com/about-us/contact-information",
+        "distance_miles": 0.6,
+        "route_summary": "via Wynn Main Gate Dr",
+        "measured_at": "2026-11-17T22:23:55Z",
+        "method_url": "https://www.google.com/maps/dir/Wynn%20Las%20Vegas,3131%20S%20Las%20Vegas%20Blvd,Las%20Vegas,NV%2089109/The%20Venetian%20Resort%20Las%20Vegas,3355%20Las%20Vegas%20Blvd.%20South,Las%20Vegas,NV%2089109/data=!4m2!4m1!3e2?hl=en&gl=us",
+        "alt_method_url": "https://maps.apple.com/?saddr=Wynn+Las+Vegas%2C+3131+S+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV+89109&daddr=The+Venetian+Resort+Las+Vegas%2C+3355+Las+Vegas+Blvd.+South%2C+Las+Vegas%2C+NV+89109&dirflg=w",
+        "walk_url": "https://www.google.com/maps/dir/Wynn%20Las%20Vegas,3131%20S%20Las%20Vegas%20Blvd,Las%20Vegas,NV%2089109/The%20Venetian%20Resort%20Las%20Vegas,3355%20Las%20Vegas%20Blvd.%20South,Las%20Vegas,NV%2089109/data=!4m2!4m1!3e2?hl=en&gl=us"
       },
       "rate_log": [],
       "qualification": null,
@@ -369,14 +394,20 @@
       "walk": {
         "venue_id": "venetian",
         "venue": "The Venetian Poker Room",
-        "minutes": 7,
-        "distance_mi": 1.0,
+        "minutes": 19,
+        "distance_mi": 0.9,
         "via": "Las Vegas Blvd S",
-        "meets_30_min": "yes (7 min, Google Maps)",
-        "status": "Google Maps walking route, retrieved 2026-11-17: 7 min (1.0 mi) via Las Vegas Blvd S to the Venetian poker room. Google's walking durations run optimistic; the route distance is the more reliable figure.",
-        "method": "Google Maps walking directions",
-        "retrieved": "2026-11-17",
-        "source": "https://www.google.com/maps/dir/Encore+Las+Vegas/The+Venetian+Resort+Las+Vegas/?force=walking"
+        "meets_30_min": "yes — measured 19 min (limit 30)",
+        "status": "Measured 2026-11-17 with Google Maps walking directions (Google Maps directions (web), travel mode = walking, departure = “leave now”) from 3131 Las Vegas Blvd. South, Las Vegas, NV 89109 (Wynn's own contact page lists Wynn and Encore at one address) to 3355 Las Vegas Blvd. South, Las Vegas, NV 89109: 19 min / 0.9 mi via Las Vegas Blvd S. A routing-engine measurement with a timestamp and a reproducible link, not a statement by either property.",
+        "method": "Google Maps directions (web), travel mode = walking, departure = “leave now”",
+        "retrieved": "2026-11-17T22:23:55Z",
+        "source": "https://www.wynnlasvegas.com/about-us/contact-information",
+        "distance_miles": 0.9,
+        "route_summary": "via Las Vegas Blvd S",
+        "measured_at": "2026-11-17T22:23:55Z",
+        "method_url": "https://www.google.com/maps/dir/Encore%20at%20Wynn%20Las%20Vegas,3121%20S%20Las%20Vegas%20Blvd,Las%20Vegas,NV%2089109/The%20Venetian%20Resort%20Las%20Vegas,3355%20Las%20Vegas%20Blvd.%20South,Las%20Vegas,NV%2089109/data=!4m2!4m1!3e2?hl=en&gl=us",
+        "alt_method_url": "https://maps.apple.com/?saddr=Encore+at+Wynn+Las+Vegas%2C+3121+S+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV+89109&daddr=The+Venetian+Resort+Las+Vegas%2C+3355+Las+Vegas+Blvd.+South%2C+Las+Vegas%2C+NV+89109&dirflg=w",
+        "walk_url": "https://www.google.com/maps/dir/Encore%20at%20Wynn%20Las%20Vegas,3121%20S%20Las%20Vegas%20Blvd,Las%20Vegas,NV%2089109/The%20Venetian%20Resort%20Las%20Vegas,3355%20Las%20Vegas%20Blvd.%20South,Las%20Vegas,NV%2089109/data=!4m2!4m1!3e2?hl=en&gl=us"
       },
       "rate_log": [],
       "qualification": null,
@@ -394,42 +425,52 @@
       "booking_link": "https://bellagio.mgmresorts.com/en/hotel.html",
       "resort_fee": {
         "amount_usd": 55,
-        "basis": "per room, per night, plus applicable tax — applied to all reservations",
-        "excerpt": "A daily resort fee of $55.00 plus applicable tax will be applied to all reservations. The resort fee includes: In-room wireless internet access; unlimited local, domestic long distance (the 50 United States and DC) and toll-free calls; access to Paramount+ with SHOWTIME On Demand via in-room television; airline boarding pass printing; digital newspaper and magazine access; and fitness center access for guests 18+.",
+        "basis": "per room, per night, plus applicable tax — stated in the property's own Hotel Reservation Terms (page footer: “Updated on August 26, 2026”)",
         "source": "https://bellagio.mgmresorts.com/en/terms-and-conditions.html",
+        "status": "verified from official hotel terms",
+        "excerpt": "A daily resort fee of $55.00 plus applicable tax will be applied to all reservations. The resort fee includes: In-room wireless internet access; unlimited local, domestic long distance (the 50 United States and DC) and toll-free calls; access to Paramount+ with SHOWTIME On Demand via in-room television; airline boarding pass printing; digital newspaper and magazine access; and fitness center access for guests 18+.",
         "retrieved": "2026-11-17",
-        "status": "confirmed on the property's Hotel Reservation Terms page (the former bellagio.mgmresorts.com/en/hotel/resort-fee.html page is retired; that URL stays logged below)"
+        "waiver": "Daily resort fees will be waived (i.e., removed from the bill at check out) for eligible members with Gold+ Tier Level status with eligible reservations",
+        "conflict": "The /hotel/resort-fee.html page this row used to cite is a live 404 as of 2026-11-17, so the amount now comes from the property's Hotel Reservation Terms page — the document a guest agrees to at booking, which the Bellagio/ARIA FAQ names as the place to find the fee. Earlier third-party figures ($45, $50, $56.69) are not used."
       },
       "tax": {
-        "rate_pct": null,
-        "basis": null,
-        "source": null,
-        "status": "the terms page states that lodging taxes apply to the room rate and the resort fee but does not print the percentage for Bellagio — left blank rather than copied from another property"
+        "rate_pct": 13.38,
+        "basis": "the property's terms confirm lodging tax is charged on the room rate and on the resort fee but print no percentage; 13.38% is the Clark County Strip corridor figure this site already cites from operator fine print — flagged, not measured on this page — carried from operator fine print, not measured on this page (flag F27 records that the county letter sets 13.38% only inside the Primary Gaming Corridor); see flagged F27",
+        "source": "https://bellagio.mgmresorts.com/en/terms-and-conditions.html",
+        "status": "tax base confirmed on the official page; the percentage is carried from the site-wide citation and flagged"
       },
       "parking": {
-        "self_usd_per_day": null,
-        "valet_usd_per_day": null,
-        "source": null,
-        "status": "not confirmed"
+        "self_usd_per_day": 20,
+        "valet_usd_per_day": 40,
+        "source": "https://www.mgmresorts.com/en/things-to-do/parking.html",
+        "status": "verified from the operator's published rate table (registered hotel guest $20 any day; valet $40); complimentary self-parking for MGM Rewards Pearl and above",
+        "excerpt": "Registered Hotel Guest | $20 | $20 — Valet Parking Daily Rates, Bellagio, ARIA, … : Mon - Thurs (Weekdays): $40, Fri - Sun (Weekends): $40",
+        "retrieved": "2026-11-17"
       },
       "cancellation": {
-        "text": "first night's deposit fully refundable when cancelled at least 72 hours before arrival; later cancellation or no-show forfeits the first night's deposit (booked offer terms can override)",
-        "status": "confirmed",
+        "text": "The first night's deposit is fully refundable provided a timely notice of cancellation is received by Room Reservations at 888.987.6667 at least 72 hours prior to the arrival date, unless specifically excluded by booked offer. Cancellations less than 72 hours before your scheduled arrival (and no shows) will result in a forfeiture of the first night's deposit. If you have a complimentary stay (or at least the first night is complimentary) and do not cancel at least 72 hours prior to your scheduled arrival (or do not show up), then you will be charged a $165 mid-week or $200 weekend cancellation fee, plus applicable taxes.",
+        "status": "verified from official hotel terms",
         "source": "https://bellagio.mgmresorts.com/en/terms-and-conditions.html",
-        "retrieved": "2026-11-17",
-        "excerpt": "The first night's deposit is fully refundable provided a timely notice of cancellation is received by Room Reservations at 888.987.6667 at least 72 hours prior to the arrival date, unless specifically excluded by booked offer."
+        "deadline_hours_before_arrival": 72,
+        "retrieved": "2026-11-17"
       },
       "walk": {
         "venue_id": "venetian",
         "venue": "The Venetian Poker Room",
-        "minutes": 10,
-        "distance_mi": 1.0,
+        "minutes": 21,
+        "distance_mi": 0.9,
         "via": "Las Vegas Blvd S",
-        "meets_30_min": "yes (10 min, Google Maps)",
-        "status": "Google Maps walking route, retrieved 2026-11-17: 10 min (1.0 mi) via Las Vegas Blvd S to the Venetian poker room. Google's walking durations run optimistic; the route distance is the more reliable figure.",
-        "method": "Google Maps walking directions",
-        "retrieved": "2026-11-17",
-        "source": "https://www.google.com/maps/dir/Bellagio+Las+Vegas/The+Venetian+Resort+Las+Vegas/?force=walking"
+        "meets_30_min": "yes — measured 21 min (limit 30)",
+        "status": "Measured 2026-11-17 with Google Maps walking directions (Google Maps directions (web), travel mode = walking, departure = “leave now”) from 3600 S Las Vegas Blvd, Las Vegas, NV 89109 to 3355 Las Vegas Blvd. South, Las Vegas, NV 89109: 21 min / 0.9 mi via Las Vegas Blvd S. A routing-engine measurement with a timestamp and a reproducible link, not a statement by either property.",
+        "method": "Google Maps directions (web), travel mode = walking, departure = “leave now”",
+        "retrieved": "2026-11-17T22:23:55Z",
+        "source": "https://bellagio.mgmresorts.com/en/casino/poker.html",
+        "distance_miles": 0.9,
+        "route_summary": "via Las Vegas Blvd S",
+        "measured_at": "2026-11-17T22:23:55Z",
+        "method_url": "https://www.google.com/maps/dir/Bellagio,3600%20S%20Las%20Vegas%20Blvd,Las%20Vegas,NV%2089109/The%20Venetian%20Resort%20Las%20Vegas,3355%20Las%20Vegas%20Blvd.%20South,Las%20Vegas,NV%2089109/data=!4m2!4m1!3e2?hl=en&gl=us",
+        "alt_method_url": "https://maps.apple.com/?saddr=Bellagio%2C+3600+S+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV+89109&daddr=The+Venetian+Resort+Las+Vegas%2C+3355+Las+Vegas+Blvd.+South%2C+Las+Vegas%2C+NV+89109&dirflg=w",
+        "walk_url": "https://www.google.com/maps/dir/Bellagio,3600%20S%20Las%20Vegas%20Blvd,Las%20Vegas,NV%2089109/The%20Venetian%20Resort%20Las%20Vegas,3355%20Las%20Vegas%20Blvd.%20South,Las%20Vegas,NV%2089109/data=!4m2!4m1!3e2?hl=en&gl=us"
       },
       "rate_log": [],
       "qualification": null,
@@ -443,11 +484,24 @@
       "dead_source_pages": [
         {
           "url": "https://bellagio.mgmresorts.com/en/hotel/resort-fee.html",
-          "status": "404 on 2026-11-17 (see data/url-checks.json)",
-          "what_was_needed": "the official page for this value",
-          "superseded_by": "https://bellagio.mgmresorts.com/en/terms-and-conditions.html (replaced 2026-11-17 by session arena/3082d6d9-poker4; fee value taken from the live page)"
+          "status": "404 on 2026-11-17 (see data/url-checks.json) — replaced in the source registry by the property's Hotel Reservation Terms page, which prints the fee",
+          "what_was_needed": "the official page for this value"
         }
-      ]
+      ],
+      "check_in_out": {
+        "text": "The Bellagio terms page prints no check-in time; it states only that rooms are not assigned until check-in and that a check-out before the confirmed departure date is billed for the night you leave.",
+        "source": "https://bellagio.mgmresorts.com/en/terms-and-conditions.html",
+        "status": "not printed on the official terms page",
+        "retrieved": "2026-11-17"
+      },
+      "occupancy_charge": {
+        "text": "There is an additional charge of $50 plus tax per occupant, per night, above 2 occupants per room.",
+        "amount_usd": 50,
+        "basis": "per occupant, per night, above two occupants in the room — the number a third or fourth player adds to the room cost",
+        "source": "https://bellagio.mgmresorts.com/en/terms-and-conditions.html",
+        "status": "verified from official hotel terms",
+        "retrieved": "2026-11-17"
+      }
     },
     {
       "id": "caesars",
@@ -486,11 +540,17 @@
         "minutes": 12,
         "distance_mi": 0.5,
         "via": "Las Vegas Blvd S",
-        "meets_30_min": "yes (12 min, Google Maps)",
-        "status": "Google Maps walking route, retrieved 2026-11-17: 12 min (0.5 mi) via Las Vegas Blvd S to the Venetian poker room. Google's walking durations run optimistic; the route distance is the more reliable figure.",
-        "method": "Google Maps walking directions",
-        "retrieved": "2026-11-17",
-        "source": "https://www.google.com/maps/dir/Caesars+Palace+Las+Vegas/The+Venetian+Resort+Las+Vegas/?force=walking"
+        "meets_30_min": "yes — measured 12 min (limit 30)",
+        "status": "Measured 2026-11-17 with Google Maps walking directions (Google Maps directions (web), travel mode = walking, departure = “leave now”) from 3570 Las Vegas Blvd South, Las Vegas, NV 89109 to 3355 Las Vegas Blvd. South, Las Vegas, NV 89109: 12 min / 0.5 mi via Las Vegas Blvd S. A routing-engine measurement with a timestamp and a reproducible link, not a statement by either property.",
+        "method": "Google Maps directions (web), travel mode = walking, departure = “leave now”",
+        "retrieved": "2026-11-17T22:23:55Z",
+        "source": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
+        "distance_miles": 0.5,
+        "route_summary": "via Las Vegas Blvd S",
+        "measured_at": "2026-11-17T22:23:55Z",
+        "method_url": "https://www.google.com/maps/dir/Caesars%20Palace,3570%20S%20Las%20Vegas%20Blvd,Las%20Vegas,NV%2089109/The%20Venetian%20Resort%20Las%20Vegas,3355%20Las%20Vegas%20Blvd.%20South,Las%20Vegas,NV%2089109/data=!4m2!4m1!3e2?hl=en&gl=us",
+        "alt_method_url": "https://maps.apple.com/?saddr=Caesars+Palace%2C+3570+S+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV+89109&daddr=The+Venetian+Resort+Las+Vegas%2C+3355+Las+Vegas+Blvd.+South%2C+Las+Vegas%2C+NV+89109&dirflg=w",
+        "walk_url": "https://www.google.com/maps/dir/Caesars%20Palace,3570%20S%20Las%20Vegas%20Blvd,Las%20Vegas,NV%2089109/The%20Venetian%20Resort%20Las%20Vegas,3355%20Las%20Vegas%20Blvd.%20South,Las%20Vegas,NV%2089109/data=!4m2!4m1!3e2?hl=en&gl=us"
       },
       "rate_log": [],
       "qualification": null,
@@ -513,39 +573,53 @@
       "official_page": "https://aria.mgmresorts.com/en/casino/poker.html",
       "booking_link": "https://aria.mgmresorts.com/en/hotel.html",
       "resort_fee": {
-        "amount_usd": null,
-        "basis": null,
-        "source": "https://aria.mgmresorts.com/en/casino/poker.html",
-        "status": "not published on the fetched official page; an earlier session recorded conflicting third-party values ($50 vs $55) and they are not used"
+        "amount_usd": 55,
+        "basis": "per room, per night, plus applicable tax — stated in the property's own Hotel Reservation Terms (page footer: “Updated on August 26, 2026”)",
+        "source": "https://aria.mgmresorts.com/en/terms-and-conditions.html",
+        "status": "verified from official hotel terms",
+        "excerpt": "A daily resort fee of $55.00 plus applicable tax will be applied to all reservations. The resort fee includes: In-room wireless internet access; unlimited local, domestic long distance (the 50 United States and DC) and toll-free calls; access to Paramount+ with SHOWTIME On Demand via in-room television; airline boarding pass printing; digital newspaper and magazine access; and 24-hour cardio center access for guests 18+.",
+        "retrieved": "2026-11-17",
+        "waiver": "Daily resort fees will be waived (i.e., removed from the bill at check out) for eligible members with Gold+ Tier Level status with eligible reservations",
+        "conflict": "The /hotel/resort-fee.html page this row used to cite is a live 404 as of 2026-11-17, so the amount now comes from the property's Hotel Reservation Terms page — the document a guest agrees to at booking, which the Bellagio/ARIA FAQ names as the place to find the fee. Earlier third-party figures ($45, $50, $56.69) are not used."
       },
       "tax": {
-        "rate_pct": null,
-        "basis": null,
-        "source": null,
-        "status": "not confirmed"
+        "rate_pct": 13.38,
+        "basis": "the property's terms confirm lodging tax is charged on the room rate and on the resort fee but print no percentage; 13.38% is the Clark County Strip corridor figure this site already cites from operator fine print — flagged, not measured on this page — carried from operator fine print, not measured on this page (flag F27 records that the county letter sets 13.38% only inside the Primary Gaming Corridor); see flagged F27",
+        "source": "https://aria.mgmresorts.com/en/terms-and-conditions.html",
+        "status": "tax base confirmed on the official page; the percentage is carried from the site-wide citation and flagged"
       },
       "parking": {
-        "self_usd_per_day": null,
-        "valet_usd_per_day": null,
-        "source": null,
-        "status": "not confirmed"
+        "self_usd_per_day": 20,
+        "valet_usd_per_day": 40,
+        "source": "https://www.mgmresorts.com/en/things-to-do/parking.html",
+        "status": "verified from the operator's published rate table (registered hotel guest $20 any day; valet $40); complimentary self-parking for MGM Rewards Pearl and above",
+        "excerpt": "Registered Hotel Guest | $20 | $20 — Valet Parking Daily Rates, Bellagio, ARIA, … : Mon - Thurs (Weekdays): $40, Fri - Sun (Weekends): $40",
+        "retrieved": "2026-11-17"
       },
       "cancellation": {
-        "text": "not captured",
-        "status": "unverified",
-        "source": null
+        "text": "The first night's deposit is fully refundable provided a timely notice of cancellation is received by Room Reservations at 866.359.7757 at least 72 hours prior to the arrival date, unless specifically excluded by booked offer. Cancellations less than 72 hours before your scheduled arrival (and no shows) will result in a forfeiture of the first night's deposit. If you have a complimentary stay (or at least the first night is complimentary) and do not cancel at least 72 hours prior to your scheduled arrival (or do not show up), then you will be charged a $165 mid-week or $200 weekend cancellation fee, plus applicable taxes.",
+        "status": "verified from official hotel terms",
+        "source": "https://aria.mgmresorts.com/en/terms-and-conditions.html",
+        "deadline_hours_before_arrival": 72,
+        "retrieved": "2026-11-17"
       },
       "walk": {
         "venue_id": "venetian",
         "venue": "The Venetian Poker Room",
-        "minutes": 11,
+        "minutes": 31,
         "distance_mi": 1.4,
         "via": "Las Vegas Blvd S",
-        "meets_30_min": "yes (11 min, Google Maps)",
-        "status": "Google Maps walking route, retrieved 2026-11-17: 11 min (1.4 mi) via Las Vegas Blvd S to the Venetian poker room. Google's walking durations run optimistic; the route distance is the more reliable figure.",
-        "method": "Google Maps walking directions",
-        "retrieved": "2026-11-17",
-        "source": "https://www.google.com/maps/dir/ARIA+Las+Vegas/The+Venetian+Resort+Las+Vegas/?force=walking"
+        "meets_30_min": "no — measured 31 min, over the 30-minute limit",
+        "status": "Measured 2026-11-17 with Google Maps walking directions (Google Maps directions (web), travel mode = walking, departure = “leave now”) from 3730 S Las Vegas Blvd, Las Vegas, NV 89158 to 3355 Las Vegas Blvd. South, Las Vegas, NV 89109: 31 min / 1.4 mi via Las Vegas Blvd S. A routing-engine measurement with a timestamp and a reproducible link, not a statement by either property.",
+        "method": "Google Maps directions (web), travel mode = walking, departure = “leave now”",
+        "retrieved": "2026-11-17T22:23:55Z",
+        "source": "https://aria.mgmresorts.com/en/casino/poker.html",
+        "distance_miles": 1.4,
+        "route_summary": "via Las Vegas Blvd S",
+        "measured_at": "2026-11-17T22:23:55Z",
+        "method_url": "https://www.google.com/maps/dir/ARIA%20Resort%20%26%20Casino,3730%20S%20Las%20Vegas%20Blvd,Las%20Vegas,NV%2089158/The%20Venetian%20Resort%20Las%20Vegas,3355%20Las%20Vegas%20Blvd.%20South,Las%20Vegas,NV%2089109/data=!4m2!4m1!3e2?hl=en&gl=us",
+        "alt_method_url": "https://maps.apple.com/?saddr=ARIA+Resort+%26+Casino%2C+3730+S+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV+89158&daddr=The+Venetian+Resort+Las+Vegas%2C+3355+Las+Vegas+Blvd.+South%2C+Las+Vegas%2C+NV+89109&dirflg=w",
+        "walk_url": "https://www.google.com/maps/dir/ARIA%20Resort%20%26%20Casino,3730%20S%20Las%20Vegas%20Blvd,Las%20Vegas,NV%2089158/The%20Venetian%20Resort%20Las%20Vegas,3355%20Las%20Vegas%20Blvd.%20South,Las%20Vegas,NV%2089109/data=!4m2!4m1!3e2?hl=en&gl=us"
       },
       "rate_log": [],
       "qualification": null,
@@ -556,7 +630,21 @@
         "A_VALET",
         "A_PAGE"
       ],
-      "dead_source_pages": []
+      "dead_source_pages": [],
+      "check_in_out": {
+        "text": "Check in time is 3:00 pm and check out time is 11:00 am.",
+        "source": "https://aria.mgmresorts.com/en/terms-and-conditions.html",
+        "status": "verified from official hotel terms",
+        "retrieved": "2026-11-17"
+      },
+      "occupancy_charge": {
+        "text": "There is an additional charge of $50 plus tax per occupant, per night, above 2 occupants per room.",
+        "amount_usd": 50,
+        "basis": "per occupant, per night, above two occupants in the room — the number a third or fourth player adds to the room cost",
+        "source": "https://aria.mgmresorts.com/en/terms-and-conditions.html",
+        "status": "verified from official hotel terms",
+        "retrieved": "2026-11-17"
+      }
     },
     {
       "id": "ti",
@@ -592,14 +680,20 @@
       "walk": {
         "venue_id": "venetian",
         "venue": "The Venetian Poker Room",
-        "minutes": 5,
+        "minutes": 6,
         "distance_mi": 0.2,
         "via": "Las Vegas Blvd S",
-        "meets_30_min": "yes (5 min, Google Maps)",
-        "status": "Google Maps walking route, retrieved 2026-11-17: 5 min (0.2 mi) via Las Vegas Blvd S to the Venetian poker room. Google's walking durations run optimistic; the route distance is the more reliable figure.",
-        "method": "Google Maps walking directions",
-        "retrieved": "2026-11-17",
-        "source": "https://www.google.com/maps/dir/Treasure+Island+Las+Vegas/The+Venetian+Resort+Las+Vegas/?force=walking"
+        "meets_30_min": "yes — measured 6 min (limit 30)",
+        "status": "Measured 2026-11-17 with Google Maps walking directions (Google Maps directions (web), travel mode = walking, departure = “leave now”) from 3300 Las Vegas Blvd S, Las Vegas, NV 89109 to 3355 Las Vegas Blvd. South, Las Vegas, NV 89109: 6 min / 0.2 mi via Las Vegas Blvd S. A routing-engine measurement with a timestamp and a reproducible link, not a statement by either property.",
+        "method": "Google Maps directions (web), travel mode = walking, departure = “leave now”",
+        "retrieved": "2026-11-17T22:23:55Z",
+        "source": "https://treasureisland.com/amenities/guest-services",
+        "distance_miles": 0.2,
+        "route_summary": "via Las Vegas Blvd S",
+        "measured_at": "2026-11-17T22:23:55Z",
+        "method_url": "https://www.google.com/maps/dir/Treasure%20Island%20Las%20Vegas,3300%20S%20Las%20Vegas%20Blvd,Las%20Vegas,NV%2089109/The%20Venetian%20Resort%20Las%20Vegas,3355%20Las%20Vegas%20Blvd.%20South,Las%20Vegas,NV%2089109/data=!4m2!4m1!3e2?hl=en&gl=us",
+        "alt_method_url": "https://maps.apple.com/?saddr=Treasure+Island+Las+Vegas%2C+3300+S+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV+89109&daddr=The+Venetian+Resort+Las+Vegas%2C+3355+Las+Vegas+Blvd.+South%2C+Las+Vegas%2C+NV+89109&dirflg=w",
+        "walk_url": "https://www.google.com/maps/dir/Treasure%20Island%20Las%20Vegas,3300%20S%20Las%20Vegas%20Blvd,Las%20Vegas,NV%2089109/The%20Venetian%20Resort%20Las%20Vegas,3355%20Las%20Vegas%20Blvd.%20South,Las%20Vegas,NV%2089109/data=!4m2!4m1!3e2?hl=en&gl=us"
       },
       "rate_log": [
         {
@@ -650,15 +744,21 @@
       "walk": {
         "venue_id": "venetian",
         "venue": "The Venetian Poker Room",
-        "minutes": 7,
-        "distance_mi": 1.0,
-        "via": "E Flamingo Rd / Las Vegas Blvd S",
-        "meets_30_min": "yes (7 min, Google Maps)",
-        "status": "Google Maps walking route, retrieved 2026-11-17: 7 min (1.0 mi) via E Flamingo Rd / Las Vegas Blvd S to the Venetian poker room. Google's walking durations run optimistic; the route distance is the more reliable figure.",
-        "method": "Google Maps walking directions",
-        "retrieved": "2026-11-17",
-        "source": "https://www.google.com/maps/dir/Horseshoe+Las+Vegas/The+Venetian+Resort+Las+Vegas/?force=walking",
-        "note": "Google Maps resolves 'Horseshoe Las Vegas' to 'Bally's Las Vegas' (Horseshoe LV is the rebranded Bally's). Route endpoint confirmed by the returned title 'Bally's Las Vegas à The Venetian'."
+        "minutes": 16,
+        "distance_mi": 0.7,
+        "via": "Linq Ln",
+        "meets_30_min": "yes — measured 16 min (limit 30)",
+        "status": "Measured 2026-11-17 with Google Maps walking directions (Google Maps directions (web), travel mode = walking, departure = “leave now”) from 3645 Las Vegas Blvd South, Las Vegas, NV 89109 to 3355 Las Vegas Blvd. South, Las Vegas, NV 89109: 16 min / 0.7 mi via Linq Ln. A routing-engine measurement with a timestamp and a reproducible link, not a statement by either property.",
+        "method": "Google Maps directions (web), travel mode = walking, departure = “leave now”",
+        "retrieved": "2026-11-17T22:23:55Z",
+        "source": "https://www.caesars.com/sportsbook-and-casino/nv/",
+        "note": "Google Maps resolves 'Horseshoe Las Vegas' to 'Bally's Las Vegas' (Horseshoe LV is the rebranded Bally's). Route endpoint confirmed by the returned title 'Bally's Las Vegas à The Venetian'.",
+        "distance_miles": 0.7,
+        "route_summary": "via Linq Ln",
+        "measured_at": "2026-11-17T22:23:55Z",
+        "method_url": "https://www.google.com/maps/dir/Horseshoe%20Las%20Vegas,3645%20S%20Las%20Vegas%20Blvd,Las%20Vegas,NV%2089109/The%20Venetian%20Resort%20Las%20Vegas,3355%20Las%20Vegas%20Blvd.%20South,Las%20Vegas,NV%2089109/data=!4m2!4m1!3e2?hl=en&gl=us",
+        "alt_method_url": "https://maps.apple.com/?saddr=Horseshoe+Las+Vegas%2C+3645+S+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV+89109&daddr=The+Venetian+Resort+Las+Vegas%2C+3355+Las+Vegas+Blvd.+South%2C+Las+Vegas%2C+NV+89109&dirflg=w",
+        "walk_url": "https://www.google.com/maps/dir/Horseshoe%20Las%20Vegas,3645%20S%20Las%20Vegas%20Blvd,Las%20Vegas,NV%2089109/The%20Venetian%20Resort%20Las%20Vegas,3355%20Las%20Vegas%20Blvd.%20South,Las%20Vegas,NV%2089109/data=!4m2!4m1!3e2?hl=en&gl=us"
       },
       "rate_log": [],
       "qualification": null,
@@ -707,11 +807,17 @@
         "minutes": 6,
         "distance_mi": 0.3,
         "via": "Las Vegas Blvd S",
-        "meets_30_min": "yes (6 min, Google Maps)",
-        "status": "Google Maps walking route, retrieved 2026-11-17: 6 min (0.3 mi) via Las Vegas Blvd S to the Venetian poker room. Google's walking durations run optimistic; the route distance is the more reliable figure.",
-        "method": "Google Maps walking directions",
-        "retrieved": "2026-11-17",
-        "source": "https://www.google.com/maps/dir/Harrah%27s+Las+Vegas/The+Venetian+Resort+Las+Vegas/?force=walking"
+        "meets_30_min": "yes — measured 6 min (limit 30)",
+        "status": "Measured 2026-11-17 with Google Maps walking directions (Google Maps directions (web), travel mode = walking, departure = “leave now”) from 3475 Las Vegas Blvd South, Las Vegas, NV 89109 to 3355 Las Vegas Blvd. South, Las Vegas, NV 89109: 6 min / 0.3 mi via Las Vegas Blvd S. A routing-engine measurement with a timestamp and a reproducible link, not a statement by either property.",
+        "method": "Google Maps directions (web), travel mode = walking, departure = “leave now”",
+        "retrieved": "2026-11-17T22:23:55Z",
+        "source": "https://www.caesars.com/sportsbook-and-casino/nv/",
+        "distance_miles": 0.3,
+        "route_summary": "via Las Vegas Blvd S",
+        "measured_at": "2026-11-17T22:23:55Z",
+        "method_url": "https://www.google.com/maps/dir/Harrah%27s%20Las%20Vegas,3475%20S%20Las%20Vegas%20Blvd,Las%20Vegas,NV%2089109/The%20Venetian%20Resort%20Las%20Vegas,3355%20Las%20Vegas%20Blvd.%20South,Las%20Vegas,NV%2089109/data=!4m2!4m1!3e2?hl=en&gl=us",
+        "alt_method_url": "https://maps.apple.com/?saddr=Harrah%27s+Las+Vegas%2C+3475+S+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV+89109&daddr=The+Venetian+Resort+Las+Vegas%2C+3355+Las+Vegas+Blvd.+South%2C+Las+Vegas%2C+NV+89109&dirflg=w",
+        "walk_url": "https://www.google.com/maps/dir/Harrah%27s%20Las%20Vegas,3475%20S%20Las%20Vegas%20Blvd,Las%20Vegas,NV%2089109/The%20Venetian%20Resort%20Las%20Vegas,3355%20Las%20Vegas%20Blvd.%20South,Las%20Vegas,NV%2089109/data=!4m2!4m1!3e2?hl=en&gl=us"
       },
       "rate_log": [],
       "qualification": null,
@@ -819,31 +925,46 @@
     },
     {
       "id": "Q8",
-      "question": "Are the non-Venetian rooms still running what the snapshot says they run?",
-      "why_it_matters": "Wynn, Bellagio, Caesars and ARIA rows come from earlier captures; two of those source URLs are now dead.",
-      "we_have": "The scheduled monitor re-checks all 64 tracked official URLs every morning and records status + content hash. Today: 62 reachable, 2 dead — the Caesars daily flyer PDF (404) and the Bellagio resort-fee page (404).",
-      "missing": "A live, dated schedule from those four rooms. Their rows stay in the 'needs re-verification' state and cannot be ranked against the Venetian calendar.",
-      "how_to_close": "Either accept the Venetian calendar as the trip's spine and treat the others as optional, or authorise a session to pull each room's current flyer/PDF and refresh those rows.",
+      "question": "Which rows moved from 'last verified' to current, and which official pages had to be repointed?",
+      "why_it_matters": "A row that is current-but-wrong is worse than a row that is stale: it looks checked. Two of this site's unreachable URLs turned out to hide live official successors that changed published values, so the gap is not cosmetic.",
+      "we_have": "Re-read on 2026-11-17 and updated: Caesars Palace's four daily rows (the 2026 flyer prices 2 PM and 9 PM at $160, not $100, and prints the fee split plus a first-break re-entry) and the Bellagio and ARIA hotel rows (the properties' own reservation terms confirm a $55.00 + tax resort fee, $50 + tax per extra occupant, a 72-hour cancellation deadline, and $20 registered-guest self-parking / $40 valet from the operator rate table). Bellagio's event rows are still unverified on price and re-entry count.",
+      "missing": "Bellagio's three events: the sheet titles Saturday at $1,100 while rule 07 of the same sheet prices 'the $600 Buy-in', and no official page settles it. Wynn's $150 Monday-Thursday turbo's structure URL 404s, so its add-on is unpublished and no structure sheet was re-audited against it. ARIA's own $50,000 November deepstack sheet is not in the 2026-11-14 audit.",
+      "how_to_close": "The 06:00 Las Vegas sync now tracks all of those URLs, including the two new official pages found today, and re-reads the 2026 Caesars flyer each morning. Bellagio's and ARIA's hotel figures are no longer blanks with a warning: they carry the terms-page excerpt and its retrieval date. What still needs a human is the room's answer on the price and entry-rule conflicts, which Q10 and S10 turn into a standing two-document diff.",
       "owner": "site (monitoring) + you (scope)",
       "sources": [
-        "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
+        "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+        "https://bellagio.mgmresorts.com/en/terms-and-conditions.html",
         "https://bellagio.mgmresorts.com/en/casino/poker.html",
-        "https://aria.mgmresorts.com/en/casino/poker.html",
-        "https://wynnlasvegas.com/casino/poker"
+        "https://aria.mgmresorts.com/en/terms-and-conditions.html"
       ]
     },
     {
       "id": "Q9",
       "question": "Does any Strip room actually forbid a second entry in writing, and will they put it in an e-mail?",
       "why_it_matters": "It is the difference between the brief's single-entry list being empty and being populated. The published sheets for the Venetian series, the Wynn series and the Bellagio weekend events all permit re-entries; the Wynn daily Friday event is the only one that forbids re-entry while still selling unlimited rebuys and an add-on.",
-      "we_have": "Read and quoted, 2026-11-17: 37 Venetian structure sheets (0 state single-entry; 13 carry the 'bag for Day 2 then no further flight' rule; sheet 8 prints 'All subsequent buy in's after the initial buy in will be $200'); the Wynn WPT booklet (69 event sheets: 67 print 'unlimited re-entry', 2 print a one-entry-plus-one-re-entry cap, including the $10,400 World Championship's 'Four (4) Entries maximum'); the three Bellagio sheets ('buy-in and re-enter through the end of level 8'); and the Caesars page (silent).",
-      "missing": "A room-written statement that a specific event is freezeout, plus which of those events the room will still be running on the trip dates.",
+      "we_have": "Document evidence only, now including the documents that changed published values today: Bellagio's sheet says players 'buy-in and re-enter through the end of level 8'; Wynn prints 'unlimited re-entry' on 67 of 69 event sheets and 'Four (4) Entries maximum' on the $10,400; the Caesars 2026 flyer allows one first-break re-entry plus a $50 add-on; the Valuetown sheet prices later flights ('all subsequent buy in's after the initial buy in will be $200'). The Venetian's 37 audited structures print no entry rule in any form.",
+      "missing": "One sentence from each of the six Strip rooms saying whether additional entries are permitted or prohibited in this series, plus a named rule document for the 71 'no structure sheet linked' Venetian rows.",
       "how_to_close": "One e-mail or phone call per room (The Venetian 702.414.7657, Wynn 702.770.7654, Bellagio 702.693.7291) asking: for event X on date Y, is a player limited to one entry, and are rebuys or add-ons offered? Quote the answer and its date on the row.",
       "owner": "you (one e-mail or call per room) — no agent can produce a room's written answer",
       "sources": [
         "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_8.pdf",
         "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
         "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt9cf95b0e60ec253e/6af491a3a9851d75c40be840/mgm-bellagio-poker-fridays-$600-nlh.pdf"
+      ]
+    },
+    {
+      "id": "Q10",
+      "question": "When a room publishes both a summary article and a schedule document, do they agree on price?",
+      "why_it_matters": "A row read from the friendly page can be wrong in a way the schedule document would have caught. Buy-in drives the trip cost, the ranking ratio and whether an entry fits a budget.",
+      "we_have": "For Caesars Palace they do not, and the disagreement was found on 2026-11-17. The property's 2026 daily flyer prices 10 AM $100, 2 PM $160, 6 PM $100 and 9 PM $160, prints the fee split for each price, and allows one re-entry inside the first break; the property's own July 2026 article says “Every event carries a $100 buy-in”. The four rows now show the flyer price with the article sentence quoted beside them. Bellagio is a second instance of the same failure mode: its Saturday sheet titles the event $1,100 while rule 07 of the same sheet prices “the $600 Buy-in”, so that buy-in is left blank and flagged rather than guessed.",
+      "missing": "A written answer from each room on which document governs when the two differ, plus the same two-document comparison for Wynn, ARIA, Horseshoe and Harrah's — those rooms publish an article or a poster but no fetched schedule document was compared against it in this pass.",
+      "how_to_close": "Fetch each room's schedule document and its summary page in the same sync run and diff buy-in, guarantee, registration close and entry rules mechanically — both texts are already stored under data/raw/, so the comparison is arithmetic, not research. S10 proposes wiring it into the build as a gate.",
+      "owner": "site (pipeline) — the diff exists for Caesars and Bellagio today; the other four rooms need a second document fetched",
+      "sources": [
+        "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+        "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
+        "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt6d47974bf5a7d9b6/6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf",
+        "data/verify/60ade3e8_source_recheck_2026-11-17.tsv"
       ]
     }
   ],
@@ -937,6 +1058,36 @@
       "effort": "medium — new field on every row, no new source needed",
       "status": "proposed",
       "decision_needed": "restores a defensible fallback on most Wynn days without inventing a duration"
+    },
+    {
+      "id": "S10",
+      "title": "Make the sync diff every room's summary page against its schedule document",
+      "problem": "Two official pages for the same room disagreed and the site published the wrong one for four rows: Caesars' article says a blanket $100 across the daily slate, its 2026 flyer prices 2 PM and 9 PM at $160. Nothing in the pipeline notices, because each URL is monitored on its own and no value is compared across documents from the same property.",
+      "proposal": "Add a cross-document check to tools/sync_official_sources.py: for each venue, compare buy-in, guarantee, registration close and entry-rule values extracted from every fetched document, and when two official sources disagree, mark the affected rows 'source conflict', show both sentences and refuse to rank the row until a human picks with a written reason. The Caesars and Bellagio cases become the two test fixtures.",
+      "impact": "high — it is the only check that catches a right-document-wrong-row error, which no single-URL monitor can see",
+      "effort": "medium — the extractions exist; the comparison and the row state are new",
+      "decision_needed": "Yes — confirm that a conflict should block ranking (recommended) rather than prefer the schedule document silently, and which document wins by default where a room publishes both.",
+      "status": "proposed — not implemented; this session corrected the four Caesars rows by hand and left both sentences visible"
+    },
+    {
+      "id": "S11",
+      "title": "Track each hotel's reservation-terms page as the fee source, not its marketing fee page",
+      "problem": "The figures the trip actually needs — mandatory resort fee, whether the fee is taxed, the per-occupant charge, the cancellation deadline — live on the property's Hotel Reservation Terms page, the document a guest agrees to. The pages called “resort fee” are marketing surfaces: Bellagio's 404s, Caesars' prints no amount, and one earlier pass carried a claim about ARIA publishing two fees on two official pages that could not be reproduced on any ARIA page.",
+      "proposal": "Standardise on <property>/en/terms-and-conditions.html (MGM) and the equivalent legal terms page elsewhere as the tracked source for fee, tax base, check-in/out, occupancy charge and cancellation, and read the operator's parking rate table for parking. That is how Bellagio and ARIA got filled in on 2026-11-17: $55.00 + tax, $50 + tax per extra occupant, 72-hour deadline, $20 self-park for registered guests, $40 valet.",
+      "impact": "medium-high — it turns blank hotel rows into comparable ones and removes the temptation to accept a third-party fee figure; the same page also settles whether the resort fee is taxed, which the true-cost formula depends on",
+      "effort": "low per property — one URL and the existing fact extractor",
+      "decision_needed": "Yes — approve extending the terms-page rule to Wynn/Encore, Caesars, Horseshoe, Harrah's and Treasure Island (Caesars-owned terms pages are worded per offer, so their deadline may only be readable inside a booking quote), and approve publishing the fee as a floor when no dated room rate exists.",
+      "status": "partly implemented — Bellagio and ARIA now read from their terms pages; the other properties still cite their fee pages"
+    },
+    {
+      "id": "S12",
+      "title": "Decide whether recurring evening slates count toward the trip total automatically",
+      "problem": "The day plan now lists each room's recurring events under the days their printed weekdays cover (111 of the placements in this window start at or after the lead event's registration deadline, so a second entry is arithmetically possible). But the trip calculator only counts events you tick, and the recurring rows are undated, so they cannot be scheduled into the total by date.",
+      "proposal": "Either (a) let the calculator accept “N evenings of this recurring slate” as a first-class line with the weekday constraint checked against the trip dates, or (b) leave it manual and print the weekday evidence on the row only. Option (a) makes the 8 AM–close day real; option (b) keeps every counted entry tied to one printed calendar row.",
+      "impact": "medium — it changes the trip cost materially (a Caesars evening adds $160 of entry and $50 of add-on per day) without any new data",
+      "effort": "low for (b), medium for (a)",
+      "decision_needed": "Yes — choose (a) or (b). Nothing was assumed here: the recurring rows stay unticked in the calculator and the plan lists them as options, not entries.",
+      "status": "awaiting your choice"
     }
   ],
   "decision_workflow": [
@@ -1027,21 +1178,30 @@
     },
     {
       "id": "F5",
-      "severity": "source-dead",
-      "item": "Caesars Palace daily NLH flyer returns HTTP 404",
-      "detail": "Recorded by the scheduled monitor on 2026-11-17. The Caesars rows preserved from an earlier session (re-entry at first break, optional add-on) can no longer be re-verified from that URL; their official page links no dated schedule.",
+      "severity": "resolved-2026-11-17",
+      "item": "Caesars Palace daily flyer: the tracked 2025 PDF 404s — the live 2026 flyer is now the tracked source and the four daily rows were re-read from it",
+      "detail": "The scheduled monitor recorded a 404 on the 2025 flyer on 2026-11-17. The successor document on the same official path (clv-poker-daily-nlh-tournament-flyer-2026.pdf) was fetched the same day and reads: 10 AM $100, 2 PM $160, 6 PM $100, 9 PM $160, each $1,000 guaranteed, 20,000 chips, 20-minute levels, a $50 add-on for 15,000 chips at the first break, re-entry allowed on elimination within the first break, registration closing at the start of level seven, and the fee splits ($100 to $70 pool / $30 house; $160 to $115 / $45; $50 add-on to $45 / $5). Two things follow. (1) The rows that carried the marketing article's blanket 100-dollars-every-event were wrong for the 2 PM and 9 PM seats and now print the flyer price with the article sentence beside them. (2) The flyer re-entry and add-on clauses confirm these are more-money-buys-chips formats, so they stay out of the single-entry list. This re-point was found independently by session 3082d6d9 the same day, whose flag F25 records the two-page disagreement; the row-level flag sentence cross-references it.",
       "sources": [
+        "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
         "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
-      ]
+      ],
+      "verification": {
+        "data/verify/60ade3e8_source_recheck_2026-11-17.tsv": "line-by-line record of the flyer read (C1–C7)"
+      }
     },
     {
       "id": "F6",
-      "severity": "source-dead",
-      "item": "Bellagio resort-fee page returns HTTP 404",
-      "detail": "Confirmed again by the scheduled monitor on 2026-11-17, matching the earlier session's finding. Bellagio's true nightly cost stays blank. Second search on 2026-11-17 (session 03d073d2): only third-party sites (hoteltiplasvegas.com, feelingvegas.com, vacations.united.com, applevacations.com) state a Bellagio fee, and none is an official MGM page, so the Bellagio fee stays blank.",
+      "severity": "resolved-2026-11-17",
+      "item": "Bellagio resort-fee page: 404 — the fee, the occupancy charge and the cancellation deadline now come from the property Hotel Reservation Terms page",
+      "detail": "The 404 was confirmed again on 2026-11-17. Bellagio's own FAQ says the daily resort fee is documented within the Hotel Reservation Terms and Conditions agreed to during booking and at mgmresorts.com/en/terms-and-conditions.html, so that page is now the tracked source: a $55.00 daily resort fee plus applicable tax (waived at check-out for Gold+ MGM Rewards members), $50 plus tax per occupant per night above two occupants, first night refundable up to 72 hours before arrival, a $165 mid-week / $200 weekend no-show fee on comped stays, and self-parking $20 a day for registered guests / valet $40 on MGM's published rate table. Bellagio's row is no longer blank. What is still missing is a dated room rate for specific dates and occupancy. Third-party pages (hoteltiplasvegas.com, feelingvegas.com, applevacations.com and others) also state a Bellagio fee; none is an official MGM document, so none of their figures was used, and the $55.00 sentence above is the only published value.",
       "sources": [
+        "https://bellagio.mgmresorts.com/en/terms-and-conditions.html",
+        "https://www.mgmresorts.com/en/things-to-do/parking.html",
         "https://bellagio.mgmresorts.com/en/hotel/resort-fee.html"
-      ]
+      ],
+      "verification": {
+        "data/verify/60ade3e8_source_recheck_2026-11-17.tsv": "line-by-line record of the terms-page read (B1–B5)"
+      }
     },
     {
       "id": "F7",
@@ -1314,7 +1474,7 @@
     ]
   },
   "preserved_rows": {
-    "_note": "Caesars Palace daily NLH rows carried over from the earlier data/tournaments.json (reentry_or_addon list). Main's tournaments.json was restructured by another session and no longer carries them, so they are preserved here verbatim. The flyer URL they cite (clv-poker-daily-nlh-tournament-flyer-2025.pdf) returns 404 on the official host (see data/url-checks.json), so these rows are shown as unverified and need re-verification against a live official page.",
+    "_note": "Caesars Palace daily NLH rows carried over from the earlier data/tournaments.json (reentry_or_addon list). They are superseded by rows built from the official 2026 daily flyer (tracked as C_FLYER, captured in data/raw/caesars-daily-flyer-2026.txt): the flyer prices 2 PM and 9 PM at $160, not the blanket $100 the marketing article states, and it prints the fee split and the re-entry clause. This list is kept only as a fallback for a build run without the capture, and the fallback rows are labelled as needing re-verification.",
     "caesars": [
       {
         "day": "Daily (per undated 2026 flyer)",

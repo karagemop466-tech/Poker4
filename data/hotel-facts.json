@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generated_at": "2026-11-17T22:46:30Z",
+  "generated_at": "2026-11-17T22:59:53Z",
   "policy": "Sentences are copied verbatim from the fetched official page/PDF. A fact is only recorded when the wording is actually present; nothing is summarised, rounded or inferred."
  },
  "sources": {
@@ -8,8 +8,8 @@
    "label": "Venetian poker room (location + contact)",
    "venue": "The Venetian",
    "url": "https://www.venetianlasvegas.com/resort/casino/poker.html",
-   "retrieved": "2026-11-17T22:46:10Z",
-   "sha256": "9aa2a159447419826461346a50fa3bda438f398c3ecda57999911c4e82f3f900",
+   "retrieved": "2026-11-17T22:59:20Z",
+   "sha256": "b81e46535df9ba32ad41ccf5285100b2c427a233e14fec13acbb1b095f01adf3",
    "facts": {
     "parking": [
      "> <p><b>From The Palazzo Lobby:</b></p> <p>Proceed across The Palazzo Casino Floor to the self-parking elevators",
@@ -23,15 +23,15 @@
    "label": "Wynn Las Vegas poker room page",
    "venue": "Wynn Las Vegas",
    "url": "https://wynnlasvegas.com/casino/poker",
-   "retrieved": "2026-11-17T22:46:18Z",
-   "sha256": "3da343e95bd59809065192ce7b7900b156a3e0ce2701436eeed0a93c5b0d373a",
+   "retrieved": "2026-11-17T22:59:29Z",
+   "sha256": "fa36ccda4137e0c5ec32dd9069a1999cef0e88a14875beb9afbd21b794941129",
    "facts": {}
   },
   "https://bellagio.mgmresorts.com/en/casino/poker.html": {
    "label": "Bellagio poker room page",
    "venue": "Bellagio",
    "url": "https://bellagio.mgmresorts.com/en/casino/poker.html",
-   "retrieved": "2026-11-17T22:46:19Z",
+   "retrieved": "2026-11-17T22:59:30Z",
    "sha256": "e31b606bfd330918af785d56eb7caeb0d66e754e8208f3c466dd495c81f749ec",
    "facts": {}
   },
@@ -39,7 +39,7 @@
    "label": "Caesars Palace — poker tournaments page",
    "venue": "Caesars Palace",
    "url": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
-   "retrieved": "2026-11-17T22:46:19Z",
+   "retrieved": "2026-11-17T22:59:30Z",
    "sha256": "b72a4ccb6920b635bfc1bea8346d6ef4f8a3d537bed3901e3fb909d4db9ab6bd",
    "facts": {}
   },
@@ -47,7 +47,7 @@
    "label": "ARIA poker room page",
    "venue": "ARIA",
    "url": "https://aria.mgmresorts.com/en/casino/poker.html",
-   "retrieved": "2026-11-17T22:46:21Z",
+   "retrieved": "2026-11-17T22:59:31Z",
    "sha256": "2ab783335732aa6b839c04296bf1cce766f134bd05411ef804b93148c4671edc",
    "facts": {}
   },
@@ -55,13 +55,13 @@
    "label": "Venetian — resort fee page",
    "venue": "The Venetian",
    "url": "https://www.venetianlasvegas.com/resort/resort-fee.html",
-   "retrieved": "2026-11-17T22:46:26Z",
-   "sha256": "146e0f43f4123b52e95bdb258736a6c8ddf1db306cb074f2b414013e962ae2f7",
+   "retrieved": "2026-11-17T22:59:45Z",
+   "sha256": "d3e02fa681e672ddc0a3055b7b867324aa44395d7658a439e886ecb2f06c8759",
    "facts": {
     "resort_fee": [
      "Resort Fee | Resort Fee Inclusions | The Venetian Resort Las Vegas Skip to main content --> Menu Offers Search Account Account Sign In {{ loginStatus",
      "ies Group Dining Exhibiting Meet Our Team FAQs MOBILE CHECK-IN VENETIAN REWARDS - SIGN IN Resort Fee Home Resort Resort Fee Resort Fee Rates include a daily Resort Fee of $55 plus tax per night, payable upon check-in",
-     "The Resort Fee includes: Access for two to the fitness facility within the Canyon Ranch ® spa + fitness In-suite internet access (WiFi or Ethernet) Boarding pass printing Unlimited local and toll-free calls Access to thousands of top newspapers and magaz",
+     "The Resort Fee includes: Access for two to the fitness facility within the Canyon Ranch ® spa + fitness In-suite internet access (WiFi or Ethernet) Boarding pass printing Unlimited local and toll-free calls Access to thousands of top…",
      "app while connected as guest to Venetian or Palazzo WiFi If you have questions about the Resort Fee, please inquire with the Front Desk Agent upon check-in"
     ]
    }
@@ -70,17 +70,20 @@
    "label": "Venetian — hotel terms (tax, parking, cancellation)",
    "venue": "The Venetian",
    "url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
-   "retrieved": "2026-11-17T22:46:26Z",
-   "sha256": "ddf92eba1ef85f3f06e0c0f3444b5d30068e603156ce0c385e4474f8c64410f3",
+   "retrieved": "2026-11-17T22:59:46Z",
+   "sha256": "8fab3799f2a90a8dbcaa521a6cdb3cb131eec1f56123a24c94926bbd9553b8ba",
    "facts": {
     "resort_fee": [
-     "Taxes, Surcharges, and Resort Fee Daily rates do not include the applicable Clark County Room Tax of 13",
+     "Taxes, Surcharges, and Resort Fee Daily rates do not include the applicable Clark County Room Tax of 13.38%",
      "The Venetian Resort has a standard Las Vegas Resort Fee of $55 plus applicable tax per night, payable upon check-in",
-     "The Resort Fee includes: Access for two to the fitness facility within the Canyon Ranch® spa + fitness In-suite internet access (WiFi or Ethernet) Boarding pass printing Unlimited local and toll-free calls Access to thousands of top newspapers and magazi",
+     "The Resort Fee includes: Access for two to the fitness facility within the Canyon Ranch® spa + fitness In-suite internet access (WiFi or Ethernet) Boarding pass printing Unlimited local and toll-free calls Access to thousands of top…",
      "app while connected as guest to Venetian or Palazzo WiFi If you have questions about the Resort Fee, please inquire with the Front Desk Agent upon check-in"
     ],
     "room_tax": [
-     "Taxes, Surcharges, and Resort Fee Daily rates do not include the applicable Clark County Room Tax of 13"
+     "Taxes, Surcharges, and Resort Fee Daily rates do not include the applicable Clark County Room Tax of 13.38%"
+    ],
+    "occupancy_charge": [
+     "Check-out prior to your scheduled departure date will result in an additional charge of $100 plus tax"
     ],
     "parking": [
      "Parking Fees Venetian Rewards Sapphire members and above receive complimentary self-parking",
@@ -104,8 +107,8 @@
    "label": "Venetian — poker suite rates + play requirements",
    "venue": "The Venetian",
    "url": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
-   "retrieved": "2026-11-17T22:46:27Z",
-   "sha256": "e6644c0125b023ad284b190a68c801780077701be114354e3b71fc1633fc0068",
+   "retrieved": "2026-11-17T22:59:46Z",
+   "sha256": "7922f0aa3fe1d913c92fde4a3c04aa6cc164fa63d60b0ea20cf9739f0ecbe7ca",
    "facts": {
     "resort_fee": [
      "There is a $55 resort fee per night stayed"
@@ -116,8 +119,8 @@
    "label": "Venetian — poker player parking",
    "venue": "The Venetian",
    "url": "https://www.venetianlasvegas.com/resort/casino/poker/player-parking.html",
-   "retrieved": "2026-11-17T22:46:27Z",
-   "sha256": "af8fffd034a7b852eff1b9f77fe75e68684630bb5032af065f99e08dc67fde0f",
+   "retrieved": "2026-11-17T22:59:46Z",
+   "sha256": "af56f734d11c2c1b35fad054da0b440e1467fa19bdbf3968b11a12f94d01638d",
    "facts": {
     "parking": [
      "MOBILE CHECK-IN VENETIAN REWARDS - SIGN IN Home Resort Casino Poker Poker Players Parking Self-Parking Info Venetian Rewards Sapphire members and above receive complimentary self-parking",
@@ -133,8 +136,8 @@
    "label": "Venetian Rewards terms (fee waiver language)",
    "venue": "The Venetian",
    "url": "https://www.venetianlasvegas.com/venetian-rewards/terms-and-conditions.html",
-   "retrieved": "2026-11-17T22:46:27Z",
-   "sha256": "7e42246f0e8923444b4b6c47722324deb21351f1e79591754ddf46654601b001",
+   "retrieved": "2026-11-17T22:59:46Z",
+   "sha256": "fee2a29fb2bc656a051cbccb2ceb562b3960100a708afb22cb4db2f5b2f0fc2f",
    "facts": {
     "resort_fee": [
      "Complimentary Resort Fees Member will receive complimentary resort fees for one (1) suite per stay",
@@ -154,19 +157,19 @@
    "label": "Wynn — resort fee / terms of stay",
    "venue": "Wynn Las Vegas",
    "url": "https://www.wynnlasvegas.com/terms-and-conditions/850257",
-   "retrieved": "2026-11-17T22:46:28Z",
-   "sha256": "ded6043ae60f3db83de660d37ef59344ea42d1d0a931481e002225569382f2c4",
+   "retrieved": "2026-11-17T22:59:47Z",
+   "sha256": "8c94a90644c61db1a53d13d80332e61081fe72bf30527d32b667ca7bdcd1ff4f",
    "facts": {
     "resort_fee": [
-     "RESORT FEE A daily resort fee of $55 plus tax will be added to your room account for each room night, which entitles you to receive complimentary self-parking for up to two (2) vehicles; in-room Wi-Fi of 15Mbps on an unlimited number of devices; complimentary bottled w",
+     "RESORT FEE A daily resort fee of $55 plus tax will be added to your room account for each room night, which entitles you to receive complimentary self-parking for up to two (2) vehicles; in-room Wi-Fi of 15Mbps on an unlimited number of…",
      "This Resort Fee is only applicable to reservations for the following room types: Wynn Resort King and Wynn Resort Two Queens",
-     "TOWER SUITES RESORT FEE A daily resort fee of $55 plus tax will be added to your room account for each room night, which entitles you to receive complimentary valet or self-parking for up to two vehicles; in-room Wi-Fi of 15 Mbps on an unlimited number of devices; complimentary bot",
+     "TOWER SUITES RESORT FEE A daily resort fee of $55 plus tax will be added to your room account for each room night, which entitles you to receive complimentary valet or self-parking for up to two vehicles; in-room Wi-Fi of 15 Mbps on an…",
      "The Tower Suite Resort Fee is only applicable to reservations for the following room types: Wynn Tower Suite King, Wynn Tower Suite Two Queens, Wynn Tower Suite Executive, Wynn Tower Suite Parlor, Wynn Tower Suite Salon",
      "A valid credit card authorized to cover room and resort fees and tax, plus $150 a night for incidentals must be presented upon check-in"
     ],
     "parking": [
-     "ded to your room account for each room night, which entitles you to receive complimentary self-parking for up to two (2) vehicles; in-room Wi-Fi of 15Mbps on an unlimited number of devices; complimentary bottled water, refreshed daily; unlimited local, domestic long distance (including HI and AK) and toll free calls; access for up to two pe",
-     "ur room account for each room night, which entitles you to receive complimentary valet or self-parking for up to two vehicles; in-room Wi-Fi of 15 Mbps on an unlimited number of devices; complimentary bottled water, refreshed daily; unlimited local, domestic long distance (including HI and AK) and toll free calls; access for up to two perso"
+     "ded to your room account for each room night, which entitles you to receive complimentary self-parking for up to two (2) vehicles; in-room Wi-Fi of 15Mbps on an unlimited number of devices; complimentary bottled water, refreshed daily…",
+     "ur room account for each room night, which entitles you to receive complimentary valet or self-parking for up to two vehicles; in-room Wi-Fi of 15 Mbps on an unlimited number of devices; complimentary bottled water, refreshed daily…"
     ],
     "cancellation": [
      "Tickets are non-refundable and non-exchangeable",
@@ -179,19 +182,19 @@
    "label": "Treasure Island — rooms + resort fee",
    "venue": "Treasure Island",
    "url": "https://treasureisland.com/hotel/deluxe-rooms",
-   "retrieved": "2026-11-17T22:46:28Z",
+   "retrieved": "2026-11-17T22:59:48Z",
    "sha256": "0e9f72c30289cd43645aff5d111dd73a2b5a67b38795a0e4f0e7956b6842ddb2",
    "facts": {
     "resort_fee": [
      "s Buy Tickets CASINO MEMBERS Visit Website 1-800-944-7444 Deluxe Rooms From $ 59 Upgrades Resort Fees Select Upgrades Resort Fees Deluxe Room Info Room Details Approx",
-     "easonal) High speed (≤ 20 Mbps) WiFi internet access for unlimited devices (included with resort fee ) Comfort Individual climate control Clock radio phone with alarm, 24-hour voicemail, and USB charging ports Mirrored wardrobe closet Full size iron and ironing board Services & Snacks In-Room Dining Available - Limited Hours Small refrige",
-     "ns This room category is only available by calling TI Room Reservations at 1-800-288-7206 Resort Fees Resort Fees* The $49",
-     "95 + tax daily resort fee at TI Las Vegas provides hotel guests with several commonly requested additional services at a package price",
-     "Resort fees are required and in addition to the room rates displayed online with the exception that resort fees are optional only for My TI Guestbook members that book our exclusive TV Ad Special offer or qualified Treasury Players Club casino member",
-     "Resort fees may be discounted for qualified groups that book directly with the TI Hotel Sales department"
+     "easonal) High speed (≤ 20 Mbps) WiFi internet access for unlimited devices (included with resort fee ) Comfort Individual climate control Clock radio phone with alarm, 24-hour voicemail, and USB charging ports Mirrored wardrobe closet…",
+     "ns This room category is only available by calling TI Room Reservations at 1-800-288-7206 Resort Fees Resort Fees* The $49.95 + tax daily resort fee at TI Las Vegas provides hotel guests with several commonly requested additional services…",
+     "Resort fees are required and in addition to the room rates displayed online with the exception that resort fees are optional only for My TI Guestbook members that book our exclusive TV Ad Special offer or qualified Treasury Players Club…",
+     "Resort fees may be discounted for qualified groups that book directly with the TI Hotel Sales department",
+     "For those who confirm a qualified optional resort fee offer, the resort fee amenities would then need to be purchased separately"
     ],
     "parking": [
-     "Resort Fee Amenities* Always Free Valet Parking & Self Park Garage High Speed (≤ 20 Mbps) WiFi Internet Access for Unlimited Devices 2-for-1 Cocktail Voucher Daily Use of Fitness Center Daily Multilingual Digital Newspapers & Magazines In Room Local/Toll Free Calls Airline Boarding Pass"
+     "Resort Fee Amenities* Always Free Valet Parking & Self Park Garage High Speed (≤ 20 Mbps) WiFi Internet Access for Unlimited Devices 2-for-1 Cocktail Voucher Daily Use of Fitness Center Daily Multilingual Digital Newspapers & Magazines In…"
     ]
    }
   },
@@ -199,33 +202,118 @@
    "label": "Caesars Palace — resort fee page (status tracked)",
    "venue": "Caesars Palace",
    "url": "https://www.caesars.com/caesars-palace/resort-fee",
-   "retrieved": "2026-11-17T22:46:29Z",
-   "sha256": "a9347e5e54f579b0c8ddcd7bf3ce76f1a1522bc1a706504cb25e49cd6326e626",
+   "retrieved": "2026-11-17T22:59:49Z",
+   "sha256": "bcb4efe80e19a0554bdfc63127791b5174090ec539bb378f6095dd1f13397bf9",
    "facts": {}
   },
   "https://bellagio.mgmresorts.com/en/hotel.html": {
    "label": "Bellagio hotel page",
    "venue": "Bellagio",
    "url": "https://bellagio.mgmresorts.com/en/hotel.html",
-   "retrieved": "2026-11-17T22:46:29Z",
+   "retrieved": "2026-11-17T22:59:49Z",
    "sha256": "27a5e0c33787628b2fc2ba9091a7fe81d8d9b067761cd63dc1f328a4e4416a83",
    "facts": {}
+  },
+  "https://bellagio.mgmresorts.com/en/terms-and-conditions.html": {
+   "label": "Bellagio hotel reservation terms — daily resort fee (status tracked)",
+   "venue": "Bellagio",
+   "url": "https://bellagio.mgmresorts.com/en/terms-and-conditions.html",
+   "retrieved": "2026-11-17T22:59:49Z",
+   "sha256": "86979d841ae37ca3721bfd63a13d7b4162a2ccfad16317f1ad9fcfb935c18c5f",
+   "facts": {
+    "resort_fee": [
+     "A daily resort fee of $55.00 plus applicable tax will be applied to all reservations",
+     "The resort fee includes: In-room wireless internet access; unlimited local, domestic long distance (the 50 United States and DC) and toll-free calls; access to Paramount+ with SHOWTIME On Demand via in-room television; airline boarding…",
+     "Daily resort fees will be waived (i",
+     "Lodging taxes apply to the basic room rate, any resort fee, additional per occupant charges, upgrades, as well as any other charges as required by applicable law",
+     "ace an authorization against this account to cover applicable charges for room, taxes and resort fees, as well as a $150 incidental amount per day to allow you access to room charging privileges and may result in additional authorizations…",
+     "Room rates, resort fees, additional occupant charges, cancellation fees, and cleaning fees are based on rates and fees applicable at time of booking your reservation, not at time of check-in (unless date of booking/check-in are the same…"
+    ],
+    "room_tax": [
+     "Taxes may include lodging tax, sales tax, entertainment tax, etc",
+     "Lodging taxes apply to the basic room rate, any resort fee, additional per occupant charges, upgrades, as well as any other charges as required by applicable law"
+    ],
+    "occupancy_charge": [
+     "html ) Additional Occupant Charge",
+     "There is an additional charge of $50 plus tax per occupant, per night, above 2 occupants per room",
+     "Room rates, resort fees, additional occupant charges, cancellation fees, and cleaning fees are based on rates and fees applicable at time of booking your reservation, not at time of check-in (unless date of booking/check-in are the same…"
+    ],
+    "cancellation": [
+     "The first night's deposit is fully refundable provided a timely notice of cancellation is received by Room Reservations at 888.987.6667 at least 72 hours prior to the arrival date, unless specifically excluded by booked offer",
+     "Cancellations less than 72 hours before your scheduled arrival (and no shows) will result in a forfeiture of the first night's deposit",
+     "e., Friday or Saturday night) cancellation fee (as determined by the first night of your scheduled stay), plus applicable taxes",
+     "Room rates, resort fees, additional occupant charges, cancellation fees, and cleaning fees are based on rates and fees applicable at time of booking your reservation, not at time of check-in (unless date of booking/check-in are the same…"
+    ]
+   }
   },
   "https://www.caesars.com/harrahs-las-vegas": {
    "label": "Harrah's Las Vegas (status tracked)",
    "venue": "Harrah's",
    "url": "https://www.caesars.com/harrahs-las-vegas",
-   "retrieved": "2026-11-17T22:46:30Z",
-   "sha256": "210e3e36d89aec8727cd6073780ccb3f41ac02e938cc9baa236cadbcfa6a8c08",
+   "retrieved": "2026-11-17T22:59:50Z",
+   "sha256": "4c592aec276fbfda23a821a30b43ab5d53ce88d89394da9269b9a8235732c67f",
    "facts": {}
   },
   "https://www.caesars.com/horseshoe-las-vegas": {
    "label": "Horseshoe Las Vegas (status tracked)",
    "venue": "Horseshoe",
    "url": "https://www.caesars.com/horseshoe-las-vegas",
-   "retrieved": "2026-11-17T22:46:30Z",
-   "sha256": "ac6ca3d1d9007a860d38747e8656d72771a973349eed0778fdca993da6c0403a",
+   "retrieved": "2026-11-17T22:59:51Z",
+   "sha256": "cf81647516e78dd46491194b87416eccc8434244a70c22b6b68d018b59b88d56",
    "facts": {}
+  },
+  "https://aria.mgmresorts.com/en/terms-and-conditions.html": {
+   "label": "ARIA — hotel reservation terms (daily resort fee, check-in/out, occupant charge, cancellation)",
+   "venue": "ARIA",
+   "url": "https://aria.mgmresorts.com/en/terms-and-conditions.html",
+   "retrieved": "2026-11-17T22:59:52Z",
+   "sha256": "11a42795996da095b6d2502b7e233ad492a312d27ae26738249270d00f4bcc25",
+   "facts": {
+    "resort_fee": [
+     "A daily resort fee of $55.00 plus applicable tax will be applied to all reservations",
+     "The resort fee includes: In-room wireless internet access; unlimited local, domestic long distance (the 50 United States and DC) and toll-free calls; access to Paramount+ with SHOWTIME On Demand via in-room television; airline boarding…",
+     "Daily resort fees will be waived (i",
+     "Lodging taxes apply to the basic room rate, any resort fee, additional per occupant charges, upgrades, as well as any other charges as required by applicable law",
+     "place an authorization against this account to cover applicable charges for room, tax and resort fees, as well as a per day incidental amount of $150 for Deluxe Rooms, $250 for Tower Suites, $350 for Sky Suites and $500 for Villas to…",
+     "Room rates, resort fees, additional occupant charges, cancellation fees, and cleaning fees are based on rates and fees applicable at time of booking your reservation, not at time of check-in (unless date of booking/check-in are the same…"
+    ],
+    "room_tax": [
+     "Taxes may include lodging tax, sales tax, entertainment tax, etc",
+     "Lodging taxes apply to the basic room rate, any resort fee, additional per occupant charges, upgrades, as well as any other charges as required by applicable law"
+    ],
+    "occupancy_charge": [
+     "Additional Occupant Charge",
+     "There is an additional charge of $50 plus tax per occupant, per night, above 2 occupants per room",
+     "Room rates, resort fees, additional occupant charges, cancellation fees, and cleaning fees are based on rates and fees applicable at time of booking your reservation, not at time of check-in (unless date of booking/check-in are the same…"
+    ],
+    "cancellation": [
+     "The first night's deposit is fully refundable provided a timely notice of cancellation is received by Room Reservations at 866.359.7757 at least 72 hours prior to the arrival date, unless specifically excluded by booked offer",
+     "Cancellations less than 72 hours before your scheduled arrival (and no shows) will result in a forfeiture of the first night's deposit",
+     "e., Friday, Saturday or Sunday night) cancellation fee (as determined by the first night of your scheduled stay), plus applicable taxes",
+     "Room rates, resort fees, additional occupant charges, cancellation fees, and cleaning fees are based on rates and fees applicable at time of booking your reservation, not at time of check-in (unless date of booking/check-in are the same…"
+    ],
+    "check_in_out": [
+     "Check in time is 3:00 pm and check out time is 11:00 am"
+    ]
+   }
+  },
+  "https://www.mgmresorts.com/en/things-to-do/parking.html": {
+   "label": "MGM Resorts — published parking rate table (Bellagio, ARIA and the other MGM Strip properties)",
+   "venue": "MGM Resorts (corporate, no room of its own)",
+   "url": "https://www.mgmresorts.com/en/things-to-do/parking.html",
+   "retrieved": "2026-11-17T22:59:52Z",
+   "sha256": "6e86374e2be3e351ebbe32ad7781ae656eed17cf29521751fc3715028fa57f77",
+   "facts": {
+    "parking": [
+     "life Art & culture Shopping Golf Parking at MGM Resorts MGM Resorts International Parking Parking Rates Valet Parking Daily Rates Bellagio, ARIA, Vdara, The Cosmopolitan of Las Vegas, MGM Grand, Mandalay Bay, W Las Vegas, Park MGM, The…",
+     "* Self Parking Rates Bellagio, ARIA, Vdara, The Cosmopolitan of Las Vegas, MGM Grand, Mandalay Bay, W Las Vegas, Park MGM, The Reserve at Park MGM, New York-New York, Luxor, and Excalibur Parking Duration | Mon - Thurs (Weekdays) | Fri -…",
+     "Learn more For each event, applicable Reserved Event Parking fee, arrival/departure times, and other terms and conditions are available at https://mgmresorts"
+    ],
+    "walk": [
+     "T-Mobile Arena Parking GETTING TO T-MOBILE ARENA Approximate walking distance and time to T-Mobile Arena: Park MGM: 0.2 miles - < 5 minutes New York-New York: 0.3 miles - < 5 minutes MGM Grand: 0.4 miles - 10 minutes The Signature: 0.5…",
+     "Taxi or Rideshare Monorail: lvmonorail"
+    ]
+   }
   }
  }
 }
