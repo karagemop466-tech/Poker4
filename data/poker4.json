@@ -1,1404 +1,1405 @@
 {
- "meta": {
-  "title": "Strip Poker Planner — integrated decision dashboard",
-  "session": "arena/e74e00fd-poker4",
-  "snapshot_utc": "2026-11-17",
-  "trip_window": "Nov 17 – Dec 23, 2026 (the dates still open on the official Venetian DeepStack Extravaganza IV calendar)",
-  "data_pipeline": [
-   "data/schedule-snapshot.json — every printed row of the official Venetian schedule PDF, re-parsed each morning by tools/sync_official_sources.py",
-   "data/structure-audit.json — every structure sheet the calendar links (37 Venetian sheets + Wynn daily/WPT PDFs), field-matched from the fetched PDF text",
-   "data/url-checks.json — last-checked date, HTTP status and content hash of each of the 64 tracked official URLs",
-   "data/hotel-facts.json — verbatim sentences about resort fee, room tax, parking and cancellation from the official property pages",
-   "data/change-log.json — append-only record of official values that moved between runs"
+  "meta": {
+    "title": "Strip Poker Planner — integrated decision dashboard",
+    "session": "arena/e74e00fd-poker4",
+    "snapshot_utc": "2026-11-17",
+    "trip_window": "Nov 17 – Dec 23, 2026 (the dates still open on the official Venetian DeepStack Extravaganza IV calendar)",
+    "data_pipeline": [
+      "data/schedule-snapshot.json — every printed row of the official Venetian schedule PDF, re-parsed each morning by tools/sync_official_sources.py",
+      "data/structure-audit.json — every structure sheet the calendar links (37 Venetian sheets + Wynn daily/WPT PDFs), field-matched from the fetched PDF text",
+      "data/url-checks.json — last-checked date, HTTP status and content hash of each of the 64 tracked official URLs",
+      "data/hotel-facts.json — verbatim sentences about resort fee, room tax, parking and cancellation from the official property pages",
+      "data/change-log.json — append-only record of official values that moved between runs"
+    ],
+    "verification_policy": "A value appears only when it was read on an official operator page or PDF. Anything not printed there is left blank and flagged. Omission of re-entry/add-on wording is never treated as confirmation of single-entry play.",
+    "ranking_policy": "Rows are ranked only when the total entry fee, the amount reaching the prize pool and the guarantee are all confirmed from the operator's own structure sheet. The guaranteed-pool ÷ entry-fee figure is descriptive arithmetic about the published numbers, not a forecast, expected value or win rate. Bounty, satellite, seniors, ladies, mixed-game and multi-flight rows are listed separately because their payout shape or entry structure changes the comparison.",
+    "no_manual_input": "Every table, filter and calculation on this site is filled from the data files; nothing here requires you to type anything to read the findings. The trip calculator is pre-loaded with a worked example and only changes if you choose to adjust it.",
+    "generated": "2026-11-17",
+    "inputs": [
+      "data/schedule-snapshot.json",
+      "data/structure-audit.json",
+      "data/hotel-facts.json",
+      "data/url-checks.json",
+      "data/change-log.json",
+      "data/tournaments.json",
+      "data/c07371e3/*.csv"
+    ],
+    "rebuild": "python3 tools/sync_official_sources.py --from-raw && python3 scripts/integrate_data.py",
+    "last_update": "2026-11-17 session arena/3082d6d9-poker4: Bellagio fee + cancellation confirmed from the property's live Hotel Reservation Terms page; Caesars rows re-anchored to the 2026 daily flyer"
+  },
+  "venues": [
+    {
+      "id": "venetian",
+      "name": "The Venetian Poker Room",
+      "property": "The Venetian Resort (poker room is on The Palazzo level 2)",
+      "official_address": null,
+      "address_source": "https://www.venetianlasvegas.com/resort/casino/poker.html",
+      "coverage": "Complete — every printed row of the series calendar and all 37 linked structure sheets were fetched and machine-read.",
+      "schedule_sources": [
+        "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+        "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
+      ],
+      "hotel_ids": [
+        "venetian",
+        "palazzo"
+      ],
+      "notes": "Host property for the only Strip series in the snapshot whose full structure sheets are published. The reviewed sheets print buy-in, house fee, per-entry pool contribution, guarantee, starting chips, level length and the late-registration deadline — and nothing about entries, re-entries or add-ons.",
+      "address_note": "the street address previously printed here (3600 S Las Vegas Blvd) is Bellagio's — Bellagio's own poker page publishes it. No captured official Venetian page prints the resort's street address, so the value was removed rather than replaced."
+    },
+    {
+      "id": "wynn",
+      "name": "Wynn Las Vegas Poker",
+      "property": "Wynn Las Vegas",
+      "official_address": "3131 S Las Vegas Blvd, Las Vegas, NV 89109",
+      "address_source": "https://wynnlasvegas.com/casino/poker",
+      "coverage": "Re-read 2026-11-17 from the venue's own PDFs: the WPT World Championship structure booklet (69 event sheets, every printed play day captured with its fee split and re-entry rule) and the daily-tournament structures. The daily slate prints days offered but no calendar dates, and the sheet itself says the slate may be suspended during other series, so those rows carry no date.",
+      "schedule_sources": [
+        "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+        "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf",
+        "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+      ],
+      "hotel_ids": [
+        "wynn",
+        "encore"
+      ],
+      "notes": "Wynn's own daily sheets publish re-entry and add-on allowances, which disqualifies those events from a strict single-entry list — but it means their entry rules are confirmed rather than unknown."
+    },
+    {
+      "id": "bellagio",
+      "name": "Bellagio Poker Room",
+      "property": "Bellagio",
+      "official_address": "3600 S Las Vegas Blvd, Las Vegas, NV 89109",
+      "address_source": "https://bellagio.mgmresorts.com/en/casino/poker.html",
+      "coverage": "Three weekly events captured 2026-11-17 from the room's own structure PDFs linked on the Bellagio poker page. Each sheet prints its fee split and its re-entry window; the Saturday sheet is internally inconsistent on the buy-in and on its Day-2 date (flag F16), so that row is published unranked.",
+      "schedule_sources": [
+        "https://bellagio.mgmresorts.com/en/casino/poker.html"
+      ],
+      "hotel_ids": [
+        "bellagio"
+      ],
+      "notes": "Saturday buy-in is printed inconsistently across the room's own files ($1,000 vs $1,100) — kept flagged, not averaged."
+    },
+    {
+      "id": "caesars",
+      "name": "Caesars Palace Poker Room",
+      "property": "Caesars Palace",
+      "official_address": "3570 S Las Vegas Blvd, Las Vegas, NV 89109",
+      "address_source": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
+      "coverage": "No structure sheet is published. The official Caesars page prints four daily $100 NLH start times, 20,000 chips, a $1,000 guarantee, 20-minute levels and a $50 add-on, with no house-fee split and no entry rule (flag F18). The rows are published with what is printed and excluded from ranking.",
+      "schedule_sources": [
+        "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+      ],
+      "hotel_ids": [
+        "caesars"
+      ],
+      "notes": "Rows preserved from the earlier snapshot are labelled 'needs re-verification' rather than deleted."
+    },
+    {
+      "id": "aria",
+      "name": "ARIA Poker Room",
+      "property": "ARIA Resort & Casino",
+      "official_address": "3730 S Las Vegas Blvd, Las Vegas, NV 89158",
+      "address_source": "https://aria.mgmresorts.com/en/casino/poker.html",
+      "coverage": "Room page fetched; no official public series schedule with dates, buy-ins and structures was retrievable.",
+      "schedule_sources": [
+        "https://aria.mgmresorts.com/en/casino/poker.html"
+      ],
+      "hotel_ids": [
+        "aria"
+      ],
+      "notes": "Nothing from ARIA is ranked; a phone/e-mail confirmation with the room is the only way to close it."
+    },
+    {
+      "id": "others",
+      "name": "Other rooms on and around the Strip",
+      "property": "Horseshoe, Harrah's, Paris, MGM Grand, Park MGM, Planet Hollywood, Resorts World, Treasure Island, Circus, Golden Nugget, South Point, Circa",
+      "official_address": "see each property page",
+      "address_source": "https://www.caesars.com/horseshoe-las-vegas/casino/poker",
+      "coverage": "Poker pages fetched where a live URL exists; none publishes a dated Strip-wide tournament calendar with structure sheets that could be machine-read.",
+      "schedule_sources": [
+        "https://www.caesars.com/horseshoe-las-vegas/casino/poker",
+        "https://www.caesars.com/harrahs-las-vegas",
+        "https://treasureisland.com/hotel/deluxe-rooms"
+      ],
+      "hotel_ids": [
+        "horseshoe",
+        "harrahs",
+        "ti"
+      ],
+      "notes": "Circa has no poker room (its own venue list does not include one) — recorded so it stops appearing as a candidate. Off-Strip rooms (Golden Nugget downtown, South Point) are listed for completeness only; they are not walkable to the Venetian."
+    }
   ],
-  "verification_policy": "A value appears only when it was read on an official operator page or PDF. Anything not printed there is left blank and flagged. Omission of re-entry/add-on wording is never treated as confirmation of single-entry play.",
-  "ranking_policy": "Rows are ranked only when the total entry fee, the amount reaching the prize pool and the guarantee are all confirmed from the operator's own structure sheet. The guaranteed-pool ÷ entry-fee figure is descriptive arithmetic about the published numbers, not a forecast, expected value or win rate. Bounty, satellite, seniors, ladies, mixed-game and multi-flight rows are listed separately because their payout shape or entry structure changes the comparison.",
-  "no_manual_input": "Every table, filter and calculation on this site is filled from the data files; nothing here requires you to type anything to read the findings. The trip calculator is pre-loaded with a worked example and only changes if you choose to adjust it.",
-  "generated": "2026-11-17",
-  "inputs": [
-   "data/schedule-snapshot.json",
-   "data/structure-audit.json",
-   "data/hotel-facts.json",
-   "data/url-checks.json",
-   "data/change-log.json",
-   "data/tournaments.json",
-   "data/c07371e3/*.csv"
+  "hotels": [
+    {
+      "id": "venetian",
+      "property": "The Venetian Resort — Venetian tower",
+      "venue_ids": [
+        "venetian"
+      ],
+      "official_page": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
+      "booking_link": "https://www.venetianlasvegas.com/book",
+      "resort_fee": {
+        "amount_usd": 55,
+        "basis": "per room, per night, before tax",
+        "source": "https://www.venetianlasvegas.com/resort/resort-fee.html",
+        "status": "verified from official page"
+      },
+      "tax": {
+        "rate_pct": 13.38,
+        "basis": "Clark County room tax 13.38%, printed on the Venetian's own terms; applied to room rate and to the resort fee. The county letter (15 Nov 2016) sets 13.38% for the Primary Gaming Corridor — this property's map membership is not yet checked (F27).",
+        "source": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+        "status": "verified from official terms (read live 2026-11-17: 'Daily rates do not include the applicable Clark County Room Tax of 13.38%') and the Clark County letter",
+        "authority": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:7436500e-cac4-420a-b23a-02d3fec69900/original/as/room-tax-increase-transient-lodging-letter-111616.pdf"
+      },
+      "parking": {
+        "self_usd_per_day": 20,
+        "valet_usd_per_day": 40,
+        "source": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+        "status": "verified from official terms; subject to change"
+      },
+      "cancellation": {
+        "text": "Not captured as a single dated deadline — the property terms describe rate-specific cancellation instead, so the deadline must be read on the booking page for the exact dates and rate.",
+        "status": "unverified for a specific stay",
+        "source": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html"
+      },
+      "walk": {
+        "venue_id": "venetian",
+        "venue": "The Venetian Poker Room",
+        "minutes": 0,
+        "distance_mi": 0.0,
+        "via": "on-site — poker room is inside The Venetian/Palazzo complex (Palazzo level 2)",
+        "meets_30_min": "yes (on-site)",
+        "status": "Google Maps walking route, retrieved 2026-11-17: 0 min (0.0 mi) via on-site — poker room is inside The Venetian/Palazzo complex (Palazzo level 2) to the Venetian poker room. Google's walking durations run optimistic; the route distance is the more reliable figure.",
+        "method": "Google Maps walking directions",
+        "retrieved": "2026-11-17",
+        "source": "https://www.venetianlasvegas.com/resort/casino/poker.html"
+      },
+      "rate_log": [
+        {
+          "observed_on": "2026-11-16",
+          "label": "Advertised poker rate, starting endpoint A",
+          "amount_usd": 119,
+          "qualifier": "'as low as' starting price for a suite at The Venetian or The Palazzo under the poker-rate offer; not assigned to one tower, not a dated quote",
+          "source": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
+          "quote_status": "advertised starting point — not a rate for specific dates"
+        },
+        {
+          "observed_on": "2026-11-16",
+          "label": "Advertised poker rate, starting endpoint B",
+          "amount_usd": 209,
+          "qualifier": "second 'as low as' endpoint on the same official page; same caveats",
+          "source": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
+          "quote_status": "advertised starting point — not a rate for specific dates"
+        },
+        {
+          "observed_on": "2026-11-17",
+          "label": "Checkout total / nightly average for the actual stay",
+          "amount_usd": null,
+          "qualifier": "requires a dated booking session (dates, occupancy, rate class); deliberately left blank rather than estimated",
+          "source": "https://www.venetianlasvegas.com/book",
+          "quote_status": "not obtainable from a static page"
+        },
+        {
+          "observed_on": "2026-11-16",
+          "label": "Dated booking-engine snapshot (checkout total / nightly average)",
+          "amount_usd": 512.2,
+          "qualifier": "Official booking page capture for Dec 18-20, 2026 (2 nights, Luxury King, 2 adults): $1,024.39 all-in incl. $55 fee + 13.38% tax = $512.20/night; recorded from an earlier session's dated capture (data carried this figure before integration) - re-quote before booking",
+          "source": "https://www.venetianlasvegas.com/book",
+          "quote_status": "dated snapshot - not a live quote; re-quote before booking"
+        }
+      ],
+      "qualification": "Keeping the poker rate requires qualifying play every night (six hours of live cash, or a buy-in of $300 or more per night) — a $200 event does not qualify. Failing that, the rate adjusts to the prevailing rate.",
+      "qualification_source": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
+      "source_keys": [
+        "V_RESORT_FEE",
+        "V_HOTEL_TERMS",
+        "V_POKER_PAGE",
+        "V_SUITERATES",
+        "V_PKG_416032304",
+        "V_PKG_2367627751",
+        "V_PKG_2758168755",
+        "V_PKG_1388595424"
+      ],
+      "dead_source_pages": []
+    },
+    {
+      "id": "palazzo",
+      "property": "The Palazzo (same resort, same poker-rate program)",
+      "venue_ids": [
+        "venetian"
+      ],
+      "official_page": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
+      "booking_link": "https://www.venetianlasvegas.com/book",
+      "resort_fee": {
+        "amount_usd": 55,
+        "basis": "per room, per night, before tax (resort-wide fee page)",
+        "source": "https://www.venetianlasvegas.com/resort/resort-fee.html",
+        "status": "verified from official page"
+      },
+      "tax": {
+        "rate_pct": 13.38,
+        "basis": "Clark County room tax 13.38%, printed on the Venetian's own terms; applied to room rate and to the resort fee. The county letter (15 Nov 2016) sets 13.38% for the Primary Gaming Corridor — this property's map membership is not yet checked (F27).",
+        "source": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+        "status": "verified from official terms (read live 2026-11-17: 'Daily rates do not include the applicable Clark County Room Tax of 13.38%') and the Clark County letter",
+        "authority": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:7436500e-cac4-420a-b23a-02d3fec69900/original/as/room-tax-increase-transient-lodging-letter-111616.pdf"
+      },
+      "parking": {
+        "self_usd_per_day": 20,
+        "valet_usd_per_day": 40,
+        "source": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+        "status": "verified from official terms"
+      },
+      "cancellation": {
+        "text": "Rate-specific; not published as one deadline.",
+        "status": "unverified for a specific stay",
+        "source": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html"
+      },
+      "walk": {
+        "venue_id": "venetian",
+        "venue": "The Venetian Poker Room",
+        "minutes": 0,
+        "distance_mi": 0.0,
+        "via": "on-site — same complex; poker room is on The Palazzo level 2",
+        "meets_30_min": "yes (on-site)",
+        "status": "Google Maps walking route, retrieved 2026-11-17: 0 min (0.0 mi) via on-site — same complex; poker room is on The Palazzo level 2 to the Venetian poker room. Google's walking durations run optimistic; the route distance is the more reliable figure.",
+        "method": "Google Maps walking directions",
+        "retrieved": "2026-11-17",
+        "source": "https://www.venetianlasvegas.com/resort/casino/poker.html"
+      },
+      "rate_log": [
+        {
+          "observed_on": "2026-11-16",
+          "label": "Poker-rate starting endpoints",
+          "amount_usd": null,
+          "qualifier": "the official copy quotes $119 and $209 without assigning either endpoint to a named tower, so no Palazzo-specific rate is recorded",
+          "source": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
+          "quote_status": "unassigned"
+        }
+      ],
+      "qualification": "Same play requirement as the Venetian tower.",
+      "qualification_source": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
+      "source_keys": [],
+      "dead_source_pages": []
+    },
+    {
+      "id": "wynn",
+      "property": "Wynn Las Vegas",
+      "venue_ids": [
+        "wynn"
+      ],
+      "official_page": "https://www.wynnlasvegas.com/terms-and-conditions/850257",
+      "booking_link": "https://www.wynnlasvegas.com/",
+      "resort_fee": {
+        "amount_usd": 55,
+        "basis": "per room night, plus tax (read on current Wynn offer terms DK26WLV2, 2026-11-17)",
+        "source": "https://www.wynnlasvegas.com/terms-and-conditions/DK26WLV2",
+        "status": "verified from current official Wynn offer terms (DK26WLV2: 'A daily resort fee of $55 plus tax will be added to your room account for each room night'). General Wynn rate-page fee not separately read."
+      },
+      "tax": {
+        "rate_pct": 13.38,
+        "basis": "Clark County room tax 13.38% per Clark County letter (15 Nov 2016), which sets 13.38% for the Primary Gaming Corridor. Wynn's own offer pages say only 'plus tax'. This property's map membership is not yet checked (F27).",
+        "source": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:7436500e-cac4-420a-b23a-02d3fec69900/original/as/room-tax-increase-transient-lodging-letter-111616.pdf",
+        "status": "rate from official county letter; not printed on a Wynn page; PGC map membership unverified (F27)"
+      },
+      "parking": {
+        "self_usd_per_day": null,
+        "valet_usd_per_day": null,
+        "source": "https://www.wynnlasvegas.com/terms-and-conditions/850257",
+        "status": "not printed on the fetched official page — left blank"
+      },
+      "cancellation": {
+        "text": "Offer-specific only (Wynn offer DK26WLV2): one night's room and tax is charged as a deposit at booking, and cancellations must be received at least 48 hours before arrival or the deposit is forfeited. Longer windows apply to stays 15–21 Nov 2026 (three-week policy), 29–31 Dec 2026 (30-day) and 4–6 Jan 2027 (two-week). No general Wynn cancellation policy was captured.",
+        "status": "offer-specific — not a general policy; read your own booking's terms",
+        "source": "https://www.wynnlasvegas.com/terms-and-conditions/DK26WLV2"
+      },
+      "walk": {
+        "venue_id": "venetian",
+        "venue": "The Venetian Poker Room",
+        "minutes": 4,
+        "distance_mi": 0.5,
+        "via": "Las Vegas Blvd S",
+        "meets_30_min": "yes (4 min, Google Maps)",
+        "status": "Google Maps walking route, retrieved 2026-11-17: 4 min (0.5 mi) via Las Vegas Blvd S to the Venetian poker room. Google's walking durations run optimistic; the route distance is the more reliable figure.",
+        "method": "Google Maps walking directions",
+        "retrieved": "2026-11-17",
+        "source": "https://www.google.com/maps/dir/Wynn+Las+Vegas/The+Venetian+Resort+Las+Vegas/?force=walking"
+      },
+      "rate_log": [],
+      "qualification": null,
+      "qualification_source": null,
+      "source_keys": [
+        "W_TERMS",
+        "W_POKER",
+        "W_POKER_REWARDS",
+        "W_DAILY"
+      ],
+      "dead_source_pages": []
+    },
+    {
+      "id": "encore",
+      "property": "Encore (Wynn resort campus)",
+      "venue_ids": [
+        "wynn"
+      ],
+      "official_page": "https://www.wynnlasvegas.com/casino/poker",
+      "booking_link": "https://www.wynnlasvegas.com/",
+      "resort_fee": {
+        "amount_usd": null,
+        "basis": null,
+        "source": "https://www.wynnlasvegas.com/casino/poker",
+        "status": "not confirmed on an official Encore page in this snapshot"
+      },
+      "tax": {
+        "rate_pct": null,
+        "basis": null,
+        "source": null,
+        "status": "not confirmed"
+      },
+      "parking": {
+        "self_usd_per_day": null,
+        "valet_usd_per_day": null,
+        "source": null,
+        "status": "not confirmed"
+      },
+      "cancellation": {
+        "text": "not captured",
+        "status": "unverified",
+        "source": null
+      },
+      "walk": {
+        "venue_id": "venetian",
+        "venue": "The Venetian Poker Room",
+        "minutes": 7,
+        "distance_mi": 1.0,
+        "via": "Las Vegas Blvd S",
+        "meets_30_min": "yes (7 min, Google Maps)",
+        "status": "Google Maps walking route, retrieved 2026-11-17: 7 min (1.0 mi) via Las Vegas Blvd S to the Venetian poker room. Google's walking durations run optimistic; the route distance is the more reliable figure.",
+        "method": "Google Maps walking directions",
+        "retrieved": "2026-11-17",
+        "source": "https://www.google.com/maps/dir/Encore+Las+Vegas/The+Venetian+Resort+Las+Vegas/?force=walking"
+      },
+      "rate_log": [],
+      "qualification": null,
+      "qualification_source": null,
+      "source_keys": [],
+      "dead_source_pages": []
+    },
+    {
+      "id": "bellagio",
+      "property": "Bellagio",
+      "venue_ids": [
+        "bellagio"
+      ],
+      "official_page": "https://bellagio.mgmresorts.com/en/hotel.html",
+      "booking_link": "https://bellagio.mgmresorts.com/en/hotel.html",
+      "resort_fee": {
+        "amount_usd": 55,
+        "basis": "per room, per night, plus applicable tax — applied to all reservations",
+        "excerpt": "A daily resort fee of $55.00 plus applicable tax will be applied to all reservations. The resort fee includes: In-room wireless internet access; unlimited local, domestic long distance (the 50 United States and DC) and toll-free calls; access to Paramount+ with SHOWTIME On Demand via in-room television; airline boarding pass printing; digital newspaper and magazine access; and fitness center access for guests 18+.",
+        "source": "https://bellagio.mgmresorts.com/en/terms-and-conditions.html",
+        "retrieved": "2026-11-17",
+        "status": "confirmed on the property's Hotel Reservation Terms page (the former bellagio.mgmresorts.com/en/hotel/resort-fee.html page is retired; that URL stays logged below)"
+      },
+      "tax": {
+        "rate_pct": null,
+        "basis": null,
+        "source": null,
+        "status": "the terms page states that lodging taxes apply to the room rate and the resort fee but does not print the percentage for Bellagio — left blank rather than copied from another property"
+      },
+      "parking": {
+        "self_usd_per_day": null,
+        "valet_usd_per_day": null,
+        "source": null,
+        "status": "not confirmed"
+      },
+      "cancellation": {
+        "text": "first night's deposit fully refundable when cancelled at least 72 hours before arrival; later cancellation or no-show forfeits the first night's deposit (booked offer terms can override)",
+        "status": "confirmed",
+        "source": "https://bellagio.mgmresorts.com/en/terms-and-conditions.html",
+        "retrieved": "2026-11-17",
+        "excerpt": "The first night's deposit is fully refundable provided a timely notice of cancellation is received by Room Reservations at 888.987.6667 at least 72 hours prior to the arrival date, unless specifically excluded by booked offer."
+      },
+      "walk": {
+        "venue_id": "venetian",
+        "venue": "The Venetian Poker Room",
+        "minutes": 10,
+        "distance_mi": 1.0,
+        "via": "Las Vegas Blvd S",
+        "meets_30_min": "yes (10 min, Google Maps)",
+        "status": "Google Maps walking route, retrieved 2026-11-17: 10 min (1.0 mi) via Las Vegas Blvd S to the Venetian poker room. Google's walking durations run optimistic; the route distance is the more reliable figure.",
+        "method": "Google Maps walking directions",
+        "retrieved": "2026-11-17",
+        "source": "https://www.google.com/maps/dir/Bellagio+Las+Vegas/The+Venetian+Resort+Las+Vegas/?force=walking"
+      },
+      "rate_log": [],
+      "qualification": null,
+      "qualification_source": null,
+      "source_keys": [
+        "B_HOTEL_TERMS",
+        "B_POKER_PAGE",
+        "B_TOUR",
+        "B_OVERTIME"
+      ],
+      "dead_source_pages": [
+        {
+          "url": "https://bellagio.mgmresorts.com/en/hotel/resort-fee.html",
+          "status": "404 on 2026-11-17 (see data/url-checks.json)",
+          "what_was_needed": "the official page for this value",
+          "superseded_by": "https://bellagio.mgmresorts.com/en/terms-and-conditions.html (replaced 2026-11-17 by session arena/3082d6d9-poker4; fee value taken from the live page)"
+        }
+      ]
+    },
+    {
+      "id": "caesars",
+      "property": "Caesars Palace",
+      "venue_ids": [
+        "caesars"
+      ],
+      "official_page": "https://www.caesars.com/caesars-palace/resort-fee",
+      "booking_link": "https://www.caesars.com/caesars-palace",
+      "resort_fee": {
+        "amount_usd": null,
+        "basis": null,
+        "source": "https://www.caesars.com/caesars-palace/resort-fee",
+        "status": "page carries no fee amount (marketing copy); third-party figures conflict ($49.95 vs $54.95) and are not used"
+      },
+      "tax": {
+        "rate_pct": null,
+        "basis": null,
+        "source": null,
+        "status": "not confirmed"
+      },
+      "parking": {
+        "self_usd_per_day": null,
+        "valet_usd_per_day": null,
+        "source": null,
+        "status": "not confirmed"
+      },
+      "cancellation": {
+        "text": "not captured",
+        "status": "unverified",
+        "source": null
+      },
+      "walk": {
+        "venue_id": "venetian",
+        "venue": "The Venetian Poker Room",
+        "minutes": 12,
+        "distance_mi": 0.5,
+        "via": "Las Vegas Blvd S",
+        "meets_30_min": "yes (12 min, Google Maps)",
+        "status": "Google Maps walking route, retrieved 2026-11-17: 12 min (0.5 mi) via Las Vegas Blvd S to the Venetian poker room. Google's walking durations run optimistic; the route distance is the more reliable figure.",
+        "method": "Google Maps walking directions",
+        "retrieved": "2026-11-17",
+        "source": "https://www.google.com/maps/dir/Caesars+Palace+Las+Vegas/The+Venetian+Resort+Las+Vegas/?force=walking"
+      },
+      "rate_log": [],
+      "qualification": null,
+      "qualification_source": null,
+      "source_keys": [],
+      "dead_source_pages": [
+        {
+          "url": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2025.pdf",
+          "status": "404 on 2026-11-17 (see data/url-checks.json)",
+          "what_was_needed": "the official page for this value"
+        }
+      ]
+    },
+    {
+      "id": "aria",
+      "property": "ARIA",
+      "venue_ids": [
+        "aria"
+      ],
+      "official_page": "https://aria.mgmresorts.com/en/casino/poker.html",
+      "booking_link": "https://aria.mgmresorts.com/en/hotel.html",
+      "resort_fee": {
+        "amount_usd": null,
+        "basis": null,
+        "source": "https://aria.mgmresorts.com/en/casino/poker.html",
+        "status": "not published on the fetched official page; an earlier session recorded conflicting third-party values ($50 vs $55) and they are not used"
+      },
+      "tax": {
+        "rate_pct": null,
+        "basis": null,
+        "source": null,
+        "status": "not confirmed"
+      },
+      "parking": {
+        "self_usd_per_day": null,
+        "valet_usd_per_day": null,
+        "source": null,
+        "status": "not confirmed"
+      },
+      "cancellation": {
+        "text": "not captured",
+        "status": "unverified",
+        "source": null
+      },
+      "walk": {
+        "venue_id": "venetian",
+        "venue": "The Venetian Poker Room",
+        "minutes": 11,
+        "distance_mi": 1.4,
+        "via": "Las Vegas Blvd S",
+        "meets_30_min": "yes (11 min, Google Maps)",
+        "status": "Google Maps walking route, retrieved 2026-11-17: 11 min (1.4 mi) via Las Vegas Blvd S to the Venetian poker room. Google's walking durations run optimistic; the route distance is the more reliable figure.",
+        "method": "Google Maps walking directions",
+        "retrieved": "2026-11-17",
+        "source": "https://www.google.com/maps/dir/ARIA+Las+Vegas/The+Venetian+Resort+Las+Vegas/?force=walking"
+      },
+      "rate_log": [],
+      "qualification": null,
+      "qualification_source": null,
+      "source_keys": [
+        "A_HOTEL_TERMS",
+        "A_PARKING",
+        "A_VALET",
+        "A_PAGE"
+      ],
+      "dead_source_pages": []
+    },
+    {
+      "id": "ti",
+      "property": "Treasure Island",
+      "venue_ids": [
+        "venetian"
+      ],
+      "official_page": "https://treasureisland.com/hotel/deluxe-rooms",
+      "booking_link": "https://treasureisland.com/",
+      "resort_fee": {
+        "amount_usd": 49.95,
+        "basis": "per night plus tax; the official offer terms describe it as optional for listed qualifying bookings",
+        "source": "https://treasureisland.com/deals-offers/buy-1-get-1-bogo-free-fine-print",
+        "status": "verified from official page"
+      },
+      "tax": {
+        "rate_pct": 13.38,
+        "basis": "Clark County room tax stated on the official offer-terms page",
+        "source": "https://treasureisland.com/deals-offers/buy-1-get-1-bogo-free-fine-print",
+        "status": "verified from official page"
+      },
+      "parking": {
+        "self_usd_per_day": null,
+        "valet_usd_per_day": null,
+        "source": "https://treasureisland.com/hotel/deluxe-rooms",
+        "status": "not printed on the fetched page"
+      },
+      "cancellation": {
+        "text": "not captured",
+        "status": "unverified",
+        "source": null
+      },
+      "walk": {
+        "venue_id": "venetian",
+        "venue": "The Venetian Poker Room",
+        "minutes": 5,
+        "distance_mi": 0.2,
+        "via": "Las Vegas Blvd S",
+        "meets_30_min": "yes (5 min, Google Maps)",
+        "status": "Google Maps walking route, retrieved 2026-11-17: 5 min (0.2 mi) via Las Vegas Blvd S to the Venetian poker room. Google's walking durations run optimistic; the route distance is the more reliable figure.",
+        "method": "Google Maps walking directions",
+        "retrieved": "2026-11-17",
+        "source": "https://www.google.com/maps/dir/Treasure+Island+Las+Vegas/The+Venetian+Resort+Las+Vegas/?force=walking"
+      },
+      "rate_log": [
+        {
+          "observed_on": "2026-11-17",
+          "label": "Mandatory resort fee, amount re-read on official page",
+          "amount_usd": 49.95,
+          "qualifier": "'Total Resort Fee Plus Tax $49.95' collected at check-out; free self & valet parking (tower-suite page re-read 2026-11-17; cross-checks the resort_fee already verified from the TI offers page)",
+          "source": "https://treasureisland.com/hotel/tower-suite",
+          "quote_status": "verbatim sentence captured 2026-11-17"
+        }
+      ],
+      "qualification": null,
+      "qualification_source": null,
+      "source_keys": [],
+      "dead_source_pages": []
+    },
+    {
+      "id": "horseshoe",
+      "property": "Horseshoe Las Vegas",
+      "venue_ids": [
+        "others"
+      ],
+      "official_page": "https://www.caesars.com/horseshoe-las-vegas/casino/poker",
+      "booking_link": "https://www.caesars.com/horseshoe-las-vegas",
+      "resort_fee": {
+        "amount_usd": null,
+        "basis": null,
+        "source": "https://www.caesars.com/horseshoe-las-vegas",
+        "status": "not published"
+      },
+      "tax": {
+        "rate_pct": null,
+        "basis": null,
+        "source": null,
+        "status": "not confirmed"
+      },
+      "parking": {
+        "self_usd_per_day": null,
+        "valet_usd_per_day": null,
+        "source": null,
+        "status": "not confirmed"
+      },
+      "cancellation": {
+        "text": "not captured",
+        "status": "unverified",
+        "source": null
+      },
+      "walk": {
+        "venue_id": "venetian",
+        "venue": "The Venetian Poker Room",
+        "minutes": 7,
+        "distance_mi": 1.0,
+        "via": "E Flamingo Rd / Las Vegas Blvd S",
+        "meets_30_min": "yes (7 min, Google Maps)",
+        "status": "Google Maps walking route, retrieved 2026-11-17: 7 min (1.0 mi) via E Flamingo Rd / Las Vegas Blvd S to the Venetian poker room. Google's walking durations run optimistic; the route distance is the more reliable figure.",
+        "method": "Google Maps walking directions",
+        "retrieved": "2026-11-17",
+        "source": "https://www.google.com/maps/dir/Horseshoe+Las+Vegas/The+Venetian+Resort+Las+Vegas/?force=walking",
+        "note": "Google Maps resolves 'Horseshoe Las Vegas' to 'Bally's Las Vegas' (Horseshoe LV is the rebranded Bally's). Route endpoint confirmed by the returned title 'Bally's Las Vegas à The Venetian'."
+      },
+      "rate_log": [],
+      "qualification": null,
+      "qualification_source": null,
+      "source_keys": [
+        "H_HOTEL_TERMS",
+        "H_PARKING",
+        "H_PAGE"
+      ],
+      "dead_source_pages": []
+    },
+    {
+      "id": "harrahs",
+      "property": "Harrah's Las Vegas",
+      "venue_ids": [
+        "others"
+      ],
+      "official_page": "https://www.caesars.com/harrahs-las-vegas",
+      "booking_link": "https://www.caesars.com/harrahs-las-vegas",
+      "resort_fee": {
+        "amount_usd": null,
+        "basis": null,
+        "source": "https://www.caesars.com/harrahs-las-vegas",
+        "status": "not published on the fetched official page"
+      },
+      "tax": {
+        "rate_pct": null,
+        "basis": null,
+        "source": null,
+        "status": "not confirmed"
+      },
+      "parking": {
+        "self_usd_per_day": null,
+        "valet_usd_per_day": null,
+        "source": null,
+        "status": "not confirmed"
+      },
+      "cancellation": {
+        "text": "not captured",
+        "status": "unverified",
+        "source": null
+      },
+      "walk": {
+        "venue_id": "venetian",
+        "venue": "The Venetian Poker Room",
+        "minutes": 6,
+        "distance_mi": 0.3,
+        "via": "Las Vegas Blvd S",
+        "meets_30_min": "yes (6 min, Google Maps)",
+        "status": "Google Maps walking route, retrieved 2026-11-17: 6 min (0.3 mi) via Las Vegas Blvd S to the Venetian poker room. Google's walking durations run optimistic; the route distance is the more reliable figure.",
+        "method": "Google Maps walking directions",
+        "retrieved": "2026-11-17",
+        "source": "https://www.google.com/maps/dir/Harrah%27s+Las+Vegas/The+Venetian+Resort+Las+Vegas/?force=walking"
+      },
+      "rate_log": [],
+      "qualification": null,
+      "qualification_source": null,
+      "source_keys": [],
+      "dead_source_pages": []
+    }
   ],
-  "rebuild": "python3 tools/sync_official_sources.py --from-raw && python3 scripts/integrate_data.py",
-  "last_update": "2026-11-17 session arena/3082d6d9-poker4: Bellagio fee + cancellation confirmed from the property's live Hotel Reservation Terms page; Caesars rows re-anchored to the 2026 daily flyer"
- },
- "venues": [
-  {
-   "id": "venetian",
-   "name": "The Venetian Poker Room",
-   "property": "The Venetian Resort (poker room is on The Palazzo level 2)",
-   "official_address": "3600 S Las Vegas Blvd, Las Vegas, NV 89109",
-   "address_source": "https://www.venetianlasvegas.com/resort/casino/poker.html",
-   "coverage": "Complete — every printed row of the series calendar and all 37 linked structure sheets were fetched and machine-read.",
-   "schedule_sources": [
-    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-    "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
-   ],
-   "hotel_ids": [
-    "venetian",
-    "palazzo"
-   ],
-   "notes": "Host property for the only Strip series in the snapshot whose full structure sheets are published. The reviewed sheets print buy-in, house fee, per-entry pool contribution, guarantee, starting chips, level length and the late-registration deadline — and nothing about entries, re-entries or add-ons."
+  "walk_policy": {
+    "rule": "A hotel is usable for an 8 AM–close day only if the walk from the lobby to the Venetian poker room can be completed inside 30 minutes.",
+    "verified_minutes_source": "Google Maps walking directions (mode=walking), retrieved 2026-11-17, for every hotel→Venetian poker room pair. Each row stores the returned duration, the route distance, the 'via' road, the exact directions URL and the retrieval date. Google's walking durations run optimistic; the route distance is stored alongside and is the more reliable figure.",
+    "how_to_close": "CLOSED 2026-11-17. Measured via Google Maps walking directions for all 10 hotel→Venetian pairs (data/integrated/walks-google.json). The ≤30-minute filter is now a hard filter driven by these measured values. Re-run each directions URL to refresh; a moved route is a change-monitor trigger."
   },
-  {
-   "id": "wynn",
-   "name": "Wynn Las Vegas Poker",
-   "property": "Wynn Las Vegas",
-   "official_address": "3131 S Las Vegas Blvd, Las Vegas, NV 89109",
-   "address_source": "https://wynnlasvegas.com/casino/poker",
-   "coverage": "Re-read 2026-11-17 from the venue's own PDFs: the WPT World Championship structure booklet (69 event sheets, every printed play day captured with its fee split and re-entry rule) and the daily-tournament structures. The daily slate prints days offered but no calendar dates, and the sheet itself says the slate may be suspended during other series, so those rows carry no date.",
-   "schedule_sources": [
-    "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
-    "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf",
-    "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
-   ],
-   "hotel_ids": [
-    "wynn",
-    "encore"
-   ],
-   "notes": "Wynn's own daily sheets publish re-entry and add-on allowances, which disqualifies those events from a strict single-entry list — but it means their entry rules are confirmed rather than unknown."
-  },
-  {
-   "id": "bellagio",
-   "name": "Bellagio Poker Room",
-   "property": "Bellagio",
-   "official_address": "3600 S Las Vegas Blvd, Las Vegas, NV 89109",
-   "address_source": "https://bellagio.mgmresorts.com/en/casino/poker.html",
-   "coverage": "Three weekly events captured 2026-11-17 from the room's own structure PDFs linked on the Bellagio poker page. Each sheet prints its fee split and its re-entry window; the Saturday sheet is internally inconsistent on the buy-in and on its Day-2 date (flag F16), so that row is published unranked.",
-   "schedule_sources": [
-    "https://bellagio.mgmresorts.com/en/casino/poker.html"
-   ],
-   "hotel_ids": [
-    "bellagio"
-   ],
-   "notes": "Saturday buy-in is printed inconsistently across the room's own files ($1,000 vs $1,100) — kept flagged, not averaged."
-  },
-  {
-   "id": "caesars",
-   "name": "Caesars Palace Poker Room",
-   "property": "Caesars Palace",
-   "official_address": "3570 S Las Vegas Blvd, Las Vegas, NV 89109",
-   "address_source": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
-   "coverage": "No structure sheet is published. The official Caesars page prints four daily $100 NLH start times, 20,000 chips, a $1,000 guarantee, 20-minute levels and a $50 add-on, with no house-fee split and no entry rule (flag F18). The rows are published with what is printed and excluded from ranking.",
-   "schedule_sources": [
-    "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
-   ],
-   "hotel_ids": [
-    "caesars"
-   ],
-   "notes": "Rows preserved from the earlier snapshot are labelled 'needs re-verification' rather than deleted."
-  },
-  {
-   "id": "aria",
-   "name": "ARIA Poker Room",
-   "property": "ARIA Resort & Casino",
-   "official_address": "3730 S Las Vegas Blvd, Las Vegas, NV 89158",
-   "address_source": "https://aria.mgmresorts.com/en/casino/poker.html",
-   "coverage": "Room page fetched; no official public series schedule with dates, buy-ins and structures was retrievable.",
-   "schedule_sources": [
-    "https://aria.mgmresorts.com/en/casino/poker.html"
-   ],
-   "hotel_ids": [
-    "aria"
-   ],
-   "notes": "Nothing from ARIA is ranked; a phone/e-mail confirmation with the room is the only way to close it."
-  },
-  {
-   "id": "others",
-   "name": "Other rooms on and around the Strip",
-   "property": "Horseshoe, Harrah's, Paris, MGM Grand, Park MGM, Planet Hollywood, Resorts World, Treasure Island, Circus, Golden Nugget, South Point, Circa",
-   "official_address": "see each property page",
-   "address_source": "https://www.caesars.com/horseshoe-las-vegas/casino/poker",
-   "coverage": "Poker pages fetched where a live URL exists; none publishes a dated Strip-wide tournament calendar with structure sheets that could be machine-read.",
-   "schedule_sources": [
-    "https://www.caesars.com/horseshoe-las-vegas/casino/poker",
-    "https://www.caesars.com/harrahs-las-vegas",
-    "https://treasureisland.com/hotel/deluxe-rooms"
-   ],
-   "hotel_ids": [
-    "horseshoe",
-    "harrahs",
-    "ti"
-   ],
-   "notes": "Circa has no poker room (its own venue list does not include one) — recorded so it stops appearing as a candidate. Off-Strip rooms (Golden Nugget downtown, South Point) are listed for completeness only; they are not walkable to the Venetian."
-  }
- ],
- "hotels": [
-  {
-   "id": "venetian",
-   "property": "The Venetian Resort — Venetian tower",
-   "venue_ids": [
-    "venetian"
-   ],
-   "official_page": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
-   "booking_link": "https://www.venetianlasvegas.com/book",
-   "resort_fee": {
-    "amount_usd": 55,
-    "basis": "per room, per night, before tax",
-    "source": "https://www.venetianlasvegas.com/resort/resort-fee.html",
-    "status": "verified from official page"
-   },
-   "tax": {
-    "rate_pct": 13.38,
-    "basis": "Clark County room tax 13.38%, printed on the Venetian's own terms; applied to room rate and to the resort fee. The county letter (15 Nov 2016) sets 13.38% for the Primary Gaming Corridor — this property's map membership is not yet checked (F27).",
-    "source": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
-    "status": "verified from official terms (read live 2026-11-17: 'Daily rates do not include the applicable Clark County Room Tax of 13.38%') and the Clark County letter",
-    "authority": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:7436500e-cac4-420a-b23a-02d3fec69900/original/as/room-tax-increase-transient-lodging-letter-111616.pdf"
-   },
-   "parking": {
-    "self_usd_per_day": 20,
-    "valet_usd_per_day": 40,
-    "source": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
-    "status": "verified from official terms; subject to change"
-   },
-   "cancellation": {
-    "text": "Not captured as a single dated deadline — the property terms describe rate-specific cancellation instead, so the deadline must be read on the booking page for the exact dates and rate.",
-    "status": "unverified for a specific stay",
-    "source": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html"
-   },
-   "walk": {
-    "venue_id": "venetian",
-    "venue": "The Venetian Poker Room",
-    "minutes": 0,
-    "distance_mi": 0.0,
-    "via": "on-site — poker room is inside The Venetian/Palazzo complex (Palazzo level 2)",
-    "meets_30_min": "yes (on-site)",
-    "status": "Google Maps walking route, retrieved 2026-11-17: 0 min (0.0 mi) via on-site — poker room is inside The Venetian/Palazzo complex (Palazzo level 2) to the Venetian poker room. Google's walking durations run optimistic; the route distance is the more reliable figure.",
-    "method": "Google Maps walking directions",
-    "retrieved": "2026-11-17",
-    "source": "https://www.venetianlasvegas.com/resort/casino/poker.html"
-   },
-   "rate_log": [
+  "questions": [
     {
-     "observed_on": "2026-11-16",
-     "label": "Advertised poker rate, starting endpoint A",
-     "amount_usd": 119,
-     "qualifier": "'as low as' starting price for a suite at The Venetian or The Palazzo under the poker-rate offer; not assigned to one tower, not a dated quote",
-     "source": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
-     "quote_status": "advertised starting point — not a rate for specific dates"
+      "id": "Q1",
+      "question": "Which of these events actually forbid a second entry?",
+      "why_it_matters": "The whole brief is 'single entry only'. A $300 buy-in becomes $600, $900 or more if re-entries are unlimited, and the guarantee-to-cost comparison changes completely.",
+      "we_have": "All 37 official structure sheets for the series, read cover to cover on 2026-11-17: each one prints buy-in, house-fee split, guarantee, chips, level length and the late-registration deadline — and no clause about entries, re-entries, rebuys or add-ons. Two sheets (Valuetown bounty events 18/58) instead say 'All subsequent buy in's after the initial buy in will be $200', which positively indicates more than one entry is possible.",
+      "missing": "A written answer from the Venetian Poker Room (or a rule update on the sheet) stating whether the one-day events are one-entry freezeouts.",
+      "how_to_close": "Ask the room directly (the poker page lists the contact) and keep the reply as a dated source; until then these rows are labelled 'single-entry unverified' and the toggle filter returns nothing.",
+      "owner": "you (one e-mail/call) — no agent can produce it",
+      "sources": [
+        "https://www.venetianlasvegas.com/resort/casino/poker.html",
+        "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_8.pdf"
+      ]
     },
     {
-     "observed_on": "2026-11-16",
-     "label": "Advertised poker rate, starting endpoint B",
-     "amount_usd": 209,
-     "qualifier": "second 'as low as' endpoint on the same official page; same caveats",
-     "source": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
-     "quote_status": "advertised starting point — not a rate for specific dates"
+      "id": "Q2",
+      "question": "What are the exact trip dates, nights and occupancy, and what is the nightly budget and quality floor?",
+      "why_it_matters": "Hotel rates, cancellation deadlines and 'quality vs cost' are all date- and occupancy-dependent; without them there is no like-for-like comparison and no true nightly cost.",
+      "we_have": "Mandatory fees that do not depend on dates: $55 + tax resort fee at the Venetian/Palazzo, 13.38% room tax, $20 self-parking / $40 valet per day; $55 + tax at Wynn; $49.95 + tax at Treasure Island.",
+      "missing": "A dated checkout total (nightly average, fee lines, tax lines) for each candidate hotel on your dates, plus your acceptable nightly ceiling and minimum quality tier.",
+      "how_to_close": "Price the same dates and occupancy in each official booking flow and paste the itemised totals into the rate log, or authorise a dated-quote step in a follow-up session; until then the calculator uses the advertised starting endpoints and labels them as such.",
+      "owner": "you",
+      "sources": [
+        "https://www.venetianlasvegas.com/resort/resort-fee.html",
+        "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+        "https://www.wynnlasvegas.com/terms-and-conditions/850257",
+        "https://treasureisland.com/deals-offers/buy-1-get-1-bogo-free-fine-print"
+      ]
     },
     {
-     "observed_on": "2026-11-17",
-     "label": "Checkout total / nightly average for the actual stay",
-     "amount_usd": null,
-     "qualifier": "requires a dated booking session (dates, occupancy, rate class); deliberately left blank rather than estimated",
-     "source": "https://www.venetianlasvegas.com/book",
-     "quote_status": "not obtainable from a static page"
+      "id": "Q3",
+      "question": "Can a day really start at 8 AM here?",
+      "why_it_matters": "The brief asks for an all-day schedule beginning at 8 AM.",
+      "we_have": "Every printed start time on the official calendar: the earliest recurring morning start in the series is 10:10 AM (RaceDay Stack events 3–5, the $1,100 flights and the seniors events); one 9:10 AM turbo satellite exists on Dec 12.",
+      "missing": "Any official 8:00 AM tournament start on the Strip in this window. None was found on any page checked, so an 8 AM start is not achievable from verified listings.",
+      "how_to_close": "Either relax the start-time requirement to 'first official flight' (10:10 AM at the Venetian) or name a property whose room opens earlier and have its schedule captured.",
+      "owner": "you",
+      "sources": [
+        "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+      ]
     },
     {
-     "observed_on": "2026-11-16",
-     "label": "Dated booking-engine snapshot (checkout total / nightly average)",
-     "amount_usd": 512.2,
-     "qualifier": "Official booking page capture for Dec 18-20, 2026 (2 nights, Luxury King, 2 adults): $1,024.39 all-in incl. $55 fee + 13.38% tax = $512.20/night; recorded from an earlier session's dated capture (data carried this figure before integration) - re-quote before booking",
-     "source": "https://www.venetianlasvegas.com/book",
-     "quote_status": "dated snapshot - not a live quote; re-quote before booking"
-    }
-   ],
-   "qualification": "Keeping the poker rate requires qualifying play every night (six hours of live cash, or a buy-in of $300 or more per night) — a $200 event does not qualify. Failing that, the rate adjusts to the prevailing rate.",
-   "qualification_source": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
-   "source_keys": [
-    "V_RESORT_FEE",
-    "V_HOTEL_TERMS",
-    "V_POKER_PAGE",
-    "V_SUITERATES",
-    "V_PKG_416032304",
-    "V_PKG_2367627751",
-    "V_PKG_2758168755",
-    "V_PKG_1388595424"
-   ],
-   "dead_source_pages": []
-  },
-  {
-   "id": "palazzo",
-   "property": "The Palazzo (same resort, same poker-rate program)",
-   "venue_ids": [
-    "venetian"
-   ],
-   "official_page": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
-   "booking_link": "https://www.venetianlasvegas.com/book",
-   "resort_fee": {
-    "amount_usd": 55,
-    "basis": "per room, per night, before tax (resort-wide fee page)",
-    "source": "https://www.venetianlasvegas.com/resort/resort-fee.html",
-    "status": "verified from official page"
-   },
-   "tax": {
-    "rate_pct": 13.38,
-    "basis": "Clark County room tax 13.38%, printed on the Venetian's own terms; applied to room rate and to the resort fee. The county letter (15 Nov 2016) sets 13.38% for the Primary Gaming Corridor — this property's map membership is not yet checked (F27).",
-    "source": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
-    "status": "verified from official terms (read live 2026-11-17: 'Daily rates do not include the applicable Clark County Room Tax of 13.38%') and the Clark County letter",
-    "authority": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:7436500e-cac4-420a-b23a-02d3fec69900/original/as/room-tax-increase-transient-lodging-letter-111616.pdf"
-   },
-   "parking": {
-    "self_usd_per_day": 20,
-    "valet_usd_per_day": 40,
-    "source": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
-    "status": "verified from official terms"
-   },
-   "cancellation": {
-    "text": "Rate-specific; not published as one deadline.",
-    "status": "unverified for a specific stay",
-    "source": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html"
-   },
-   "walk": {
-    "venue_id": "venetian",
-    "venue": "The Venetian Poker Room",
-    "minutes": 0,
-    "distance_mi": 0.0,
-    "via": "on-site — same complex; poker room is on The Palazzo level 2",
-    "meets_30_min": "yes (on-site)",
-    "status": "Google Maps walking route, retrieved 2026-11-17: 0 min (0.0 mi) via on-site — same complex; poker room is on The Palazzo level 2 to the Venetian poker room. Google's walking durations run optimistic; the route distance is the more reliable figure.",
-    "method": "Google Maps walking directions",
-    "retrieved": "2026-11-17",
-    "source": "https://www.venetianlasvegas.com/resort/casino/poker.html"
-   },
-   "rate_log": [
+      "id": "Q4",
+      "question": "When does each event actually end?",
+      "why_it_matters": "'Primary event + conditional fallback' only works if the earlier event can be finished or exited before the next registration deadline.",
+      "we_have": "Start time, the printed 'REG CLOSES' deadline for 80 of 93 rows, level count/length and the multi-flight Day-2 restart times from the official schedule and sheets.",
+      "missing": "Announced finish times — the operator publishes none. Structures with 28 levels at 30 minutes plus six 15-minute breaks describe a 15-hour worst case, so a 5:10 PM entry after an 11:10 AM event is only realistic if you bust out before its own registration closes.",
+      "how_to_close": "Decide the exit rule (e.g. 'evening event only if bust-out before 4:30 PM') and the schedule page will flag each pair automatically; the underlying math is already wired.",
+      "owner": "you",
+      "sources": [
+        "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+        "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf"
+      ]
+    },
     {
-     "observed_on": "2026-11-16",
-     "label": "Poker-rate starting endpoints",
-     "amount_usd": null,
-     "qualifier": "the official copy quotes $119 and $209 without assigning either endpoint to a named tower, so no Palazzo-specific rate is recorded",
-     "source": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
-     "quote_status": "unassigned"
-    }
-   ],
-   "qualification": "Same play requirement as the Venetian tower.",
-   "qualification_source": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
-   "source_keys": [],
-   "dead_source_pages": []
-  },
-  {
-   "id": "wynn",
-   "property": "Wynn Las Vegas",
-   "venue_ids": [
-    "wynn"
-   ],
-   "official_page": "https://www.wynnlasvegas.com/terms-and-conditions/850257",
-   "booking_link": "https://www.wynnlasvegas.com/",
-   "resort_fee": {
-    "amount_usd": 55,
-    "basis": "per room night, plus tax (read on current Wynn offer terms DK26WLV2, 2026-11-17)",
-    "source": "https://www.wynnlasvegas.com/terms-and-conditions/DK26WLV2",
-    "status": "verified from current official Wynn offer terms (DK26WLV2: 'A daily resort fee of $55 plus tax will be added to your room account for each room night'). General Wynn rate-page fee not separately read."
-   },
-   "tax": {
-    "rate_pct": 13.38,
-    "basis": "Clark County room tax 13.38% per Clark County letter (15 Nov 2016), which sets 13.38% for the Primary Gaming Corridor. Wynn's own offer pages say only 'plus tax'. This property's map membership is not yet checked (F27).",
-    "source": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:7436500e-cac4-420a-b23a-02d3fec69900/original/as/room-tax-increase-transient-lodging-letter-111616.pdf",
-    "status": "rate from official county letter; not printed on a Wynn page; PGC map membership unverified (F27)"
-   },
-   "parking": {
-    "self_usd_per_day": null,
-    "valet_usd_per_day": null,
-    "source": "https://www.wynnlasvegas.com/terms-and-conditions/850257",
-    "status": "not printed on the fetched official page — left blank"
-   },
-   "cancellation": {
-    "text": "Offer-specific only (Wynn offer DK26WLV2): one night's room and tax is charged as a deposit at booking, and cancellations must be received at least 48 hours before arrival or the deposit is forfeited. Longer windows apply to stays 15–21 Nov 2026 (three-week policy), 29–31 Dec 2026 (30-day) and 4–6 Jan 2027 (two-week). No general Wynn cancellation policy was captured.",
-    "status": "offer-specific — not a general policy; read your own booking's terms",
-    "source": "https://www.wynnlasvegas.com/terms-and-conditions/DK26WLV2"
-   },
-   "walk": {
-    "venue_id": "venetian",
-    "venue": "The Venetian Poker Room",
-    "minutes": 4,
-    "distance_mi": 0.5,
-    "via": "Las Vegas Blvd S",
-    "meets_30_min": "yes (4 min, Google Maps)",
-    "status": "Google Maps walking route, retrieved 2026-11-17: 4 min (0.5 mi) via Las Vegas Blvd S to the Venetian poker room. Google's walking durations run optimistic; the route distance is the more reliable figure.",
-    "method": "Google Maps walking directions",
-    "retrieved": "2026-11-17",
-    "source": "https://www.google.com/maps/dir/Wynn+Las+Vegas/The+Venetian+Resort+Las+Vegas/?force=walking"
-   },
-   "rate_log": [],
-   "qualification": null,
-   "qualification_source": null,
-   "source_keys": [
-    "W_TERMS",
-    "W_POKER",
-    "W_POKER_REWARDS",
-    "W_DAILY"
-   ],
-   "dead_source_pages": []
-  },
-  {
-   "id": "encore",
-   "property": "Encore (Wynn resort campus)",
-   "venue_ids": [
-    "wynn"
-   ],
-   "official_page": "https://www.wynnlasvegas.com/casino/poker",
-   "booking_link": "https://www.wynnlasvegas.com/",
-   "resort_fee": {
-    "amount_usd": null,
-    "basis": null,
-    "source": "https://www.wynnlasvegas.com/casino/poker",
-    "status": "not confirmed on an official Encore page in this snapshot"
-   },
-   "tax": {
-    "rate_pct": null,
-    "basis": null,
-    "source": null,
-    "status": "not confirmed"
-   },
-   "parking": {
-    "self_usd_per_day": null,
-    "valet_usd_per_day": null,
-    "source": null,
-    "status": "not confirmed"
-   },
-   "cancellation": {
-    "text": "not captured",
-    "status": "unverified",
-    "source": null
-   },
-   "walk": {
-    "venue_id": "venetian",
-    "venue": "The Venetian Poker Room",
-    "minutes": 7,
-    "distance_mi": 1.0,
-    "via": "Las Vegas Blvd S",
-    "meets_30_min": "yes (7 min, Google Maps)",
-    "status": "Google Maps walking route, retrieved 2026-11-17: 7 min (1.0 mi) via Las Vegas Blvd S to the Venetian poker room. Google's walking durations run optimistic; the route distance is the more reliable figure.",
-    "method": "Google Maps walking directions",
-    "retrieved": "2026-11-17",
-    "source": "https://www.google.com/maps/dir/Encore+Las+Vegas/The+Venetian+Resort+Las+Vegas/?force=walking"
-   },
-   "rate_log": [],
-   "qualification": null,
-   "qualification_source": null,
-   "source_keys": [],
-   "dead_source_pages": []
-  },
-  {
-   "id": "bellagio",
-   "property": "Bellagio",
-   "venue_ids": [
-    "bellagio"
-   ],
-   "official_page": "https://bellagio.mgmresorts.com/en/hotel.html",
-   "booking_link": "https://bellagio.mgmresorts.com/en/hotel.html",
-   "resort_fee": {
-    "amount_usd": 55,
-    "basis": "per room, per night, plus applicable tax — applied to all reservations",
-    "excerpt": "A daily resort fee of $55.00 plus applicable tax will be applied to all reservations. The resort fee includes: In-room wireless internet access; unlimited local, domestic long distance (the 50 United States and DC) and toll-free calls; access to Paramount+ with SHOWTIME On Demand via in-room television; airline boarding pass printing; digital newspaper and magazine access; and fitness center access for guests 18+.",
-    "source": "https://bellagio.mgmresorts.com/en/terms-and-conditions.html",
-    "retrieved": "2026-11-17",
-    "status": "confirmed on the property's Hotel Reservation Terms page (the former bellagio.mgmresorts.com/en/hotel/resort-fee.html page is retired; that URL stays logged below)"
-   },
-   "tax": {
-    "rate_pct": null,
-    "basis": null,
-    "source": null,
-    "status": "the terms page states that lodging taxes apply to the room rate and the resort fee but does not print the percentage for Bellagio — left blank rather than copied from another property"
-   },
-   "parking": {
-    "self_usd_per_day": null,
-    "valet_usd_per_day": null,
-    "source": null,
-    "status": "not confirmed"
-   },
-   "cancellation": {
-    "text": "first night's deposit fully refundable when cancelled at least 72 hours before arrival; later cancellation or no-show forfeits the first night's deposit (booked offer terms can override)",
-    "status": "confirmed",
-    "source": "https://bellagio.mgmresorts.com/en/terms-and-conditions.html",
-    "retrieved": "2026-11-17",
-    "excerpt": "The first night's deposit is fully refundable provided a timely notice of cancellation is received by Room Reservations at 888.987.6667 at least 72 hours prior to the arrival date, unless specifically excluded by booked offer."
-   },
-   "walk": {
-    "venue_id": "venetian",
-    "venue": "The Venetian Poker Room",
-    "minutes": 10,
-    "distance_mi": 1.0,
-    "via": "Las Vegas Blvd S",
-    "meets_30_min": "yes (10 min, Google Maps)",
-    "status": "Google Maps walking route, retrieved 2026-11-17: 10 min (1.0 mi) via Las Vegas Blvd S to the Venetian poker room. Google's walking durations run optimistic; the route distance is the more reliable figure.",
-    "method": "Google Maps walking directions",
-    "retrieved": "2026-11-17",
-    "source": "https://www.google.com/maps/dir/Bellagio+Las+Vegas/The+Venetian+Resort+Las+Vegas/?force=walking"
-   },
-   "rate_log": [],
-   "qualification": null,
-   "qualification_source": null,
-   "source_keys": [
-    "B_HOTEL_TERMS",
-    "B_POKER_PAGE",
-    "B_TOUR",
-    "B_OVERTIME"
-   ],
-   "dead_source_pages": [
+      "id": "Q5",
+      "question": "How long is the walk from each hotel to each poker room?",
+      "why_it_matters": "The 30-minute walking rule is a hard filter in the brief; it also decides whether an 8:00 AM-ish start and a late bust-out are survivable.",
+      "we_have": "Official property addresses and the official statement of where each poker room sits inside its resort (e.g. Venetian poker room on Palazzo level 2, reached from either tower lobby).",
+      "missing": "Door-to-door walking minutes for every hotel↔venue pair. No property publishes them, and this build environment has no Maps access, so the table is blank by policy, not by oversight.",
+      "how_to_close": "Approve the maps-API step (S4) or supply the numbers you get from Google/Apple Maps; they land in data/walks.json and the ≤30-min filter switches from 'unverified' to enforced.",
+      "owner": "you (approval) + one agent session",
+      "sources": [
+        "https://www.venetianlasvegas.com/resort/casino/poker.html",
+        "https://wynnlasvegas.com/casino/poker"
+      ]
+    },
     {
-     "url": "https://bellagio.mgmresorts.com/en/hotel/resort-fee.html",
-     "status": "404 on 2026-11-17 (see data/url-checks.json)",
-     "what_was_needed": "the official page for this value",
-     "superseded_by": "https://bellagio.mgmresorts.com/en/terms-and-conditions.html (replaced 2026-11-17 by session arena/3082d6d9-poker4; fee value taken from the live page)"
-    }
-   ]
-  },
-  {
-   "id": "caesars",
-   "property": "Caesars Palace",
-   "venue_ids": [
-    "caesars"
-   ],
-   "official_page": "https://www.caesars.com/caesars-palace/resort-fee",
-   "booking_link": "https://www.caesars.com/caesars-palace",
-   "resort_fee": {
-    "amount_usd": null,
-    "basis": null,
-    "source": "https://www.caesars.com/caesars-palace/resort-fee",
-    "status": "page carries no fee amount (marketing copy); third-party figures conflict ($49.95 vs $54.95) and are not used"
-   },
-   "tax": {
-    "rate_pct": null,
-    "basis": null,
-    "source": null,
-    "status": "not confirmed"
-   },
-   "parking": {
-    "self_usd_per_day": null,
-    "valet_usd_per_day": null,
-    "source": null,
-    "status": "not confirmed"
-   },
-   "cancellation": {
-    "text": "not captured",
-    "status": "unverified",
-    "source": null
-   },
-   "walk": {
-    "venue_id": "venetian",
-    "venue": "The Venetian Poker Room",
-    "minutes": 12,
-    "distance_mi": 0.5,
-    "via": "Las Vegas Blvd S",
-    "meets_30_min": "yes (12 min, Google Maps)",
-    "status": "Google Maps walking route, retrieved 2026-11-17: 12 min (0.5 mi) via Las Vegas Blvd S to the Venetian poker room. Google's walking durations run optimistic; the route distance is the more reliable figure.",
-    "method": "Google Maps walking directions",
-    "retrieved": "2026-11-17",
-    "source": "https://www.google.com/maps/dir/Caesars+Palace+Las+Vegas/The+Venetian+Resort+Las+Vegas/?force=walking"
-   },
-   "rate_log": [],
-   "qualification": null,
-   "qualification_source": null,
-   "source_keys": [],
-   "dead_source_pages": [
+      "id": "Q6",
+      "question": "Which guarantee figures are still safe to compare?",
+      "why_it_matters": "A guarantee that includes bounties, or one shared across several starting flights, is not the same object as a single-flight cash guarantee.",
+      "we_have": "Guarantee text for 69 of 93 printed rows, and the sheet-level split of buy-in → house fee vs prize-pool contribution for all 37 sheets. Bounty sheets say explicitly that the guarantee 'consists of the actual prize pool plus the total amount of $50 bounties'.",
+      "missing": "Nothing blocking — but the ratio column must always be read as arithmetic on published numbers, not as an expectation.",
+      "how_to_close": "Keep bounty/flight/satellite rows in their own section (already implemented) and re-run the morning sync before any booking decision, since guarantees and start times are subject to change at the venue's discretion.",
+      "owner": "site (already implemented)",
+      "sources": [
+        "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
+        "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf"
+      ]
+    },
     {
-     "url": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2025.pdf",
-     "status": "404 on 2026-11-17 (see data/url-checks.json)",
-     "what_was_needed": "the official page for this value"
-    }
-   ]
-  },
-  {
-   "id": "aria",
-   "property": "ARIA",
-   "venue_ids": [
-    "aria"
-   ],
-   "official_page": "https://aria.mgmresorts.com/en/casino/poker.html",
-   "booking_link": "https://aria.mgmresorts.com/en/hotel.html",
-   "resort_fee": {
-    "amount_usd": null,
-    "basis": null,
-    "source": "https://aria.mgmresorts.com/en/casino/poker.html",
-    "status": "not published on the fetched official page; an earlier session recorded conflicting third-party values ($50 vs $55) and they are not used"
-   },
-   "tax": {
-    "rate_pct": null,
-    "basis": null,
-    "source": null,
-    "status": "not confirmed"
-   },
-   "parking": {
-    "self_usd_per_day": null,
-    "valet_usd_per_day": null,
-    "source": null,
-    "status": "not confirmed"
-   },
-   "cancellation": {
-    "text": "not captured",
-    "status": "unverified",
-    "source": null
-   },
-   "walk": {
-    "venue_id": "venetian",
-    "venue": "The Venetian Poker Room",
-    "minutes": 11,
-    "distance_mi": 1.4,
-    "via": "Las Vegas Blvd S",
-    "meets_30_min": "yes (11 min, Google Maps)",
-    "status": "Google Maps walking route, retrieved 2026-11-17: 11 min (1.4 mi) via Las Vegas Blvd S to the Venetian poker room. Google's walking durations run optimistic; the route distance is the more reliable figure.",
-    "method": "Google Maps walking directions",
-    "retrieved": "2026-11-17",
-    "source": "https://www.google.com/maps/dir/ARIA+Las+Vegas/The+Venetian+Resort+Las+Vegas/?force=walking"
-   },
-   "rate_log": [],
-   "qualification": null,
-   "qualification_source": null,
-   "source_keys": [
-    "A_HOTEL_TERMS",
-    "A_PARKING",
-    "A_VALET",
-    "A_PAGE"
-   ],
-   "dead_source_pages": []
-  },
-  {
-   "id": "ti",
-   "property": "Treasure Island",
-   "venue_ids": [
-    "venetian"
-   ],
-   "official_page": "https://treasureisland.com/hotel/deluxe-rooms",
-   "booking_link": "https://treasureisland.com/",
-   "resort_fee": {
-    "amount_usd": 49.95,
-    "basis": "per night plus tax; the official offer terms describe it as optional for listed qualifying bookings",
-    "source": "https://treasureisland.com/deals-offers/buy-1-get-1-bogo-free-fine-print",
-    "status": "verified from official page"
-   },
-   "tax": {
-    "rate_pct": 13.38,
-    "basis": "Clark County room tax stated on the official offer-terms page",
-    "source": "https://treasureisland.com/deals-offers/buy-1-get-1-bogo-free-fine-print",
-    "status": "verified from official page"
-   },
-   "parking": {
-    "self_usd_per_day": null,
-    "valet_usd_per_day": null,
-    "source": "https://treasureisland.com/hotel/deluxe-rooms",
-    "status": "not printed on the fetched page"
-   },
-   "cancellation": {
-    "text": "not captured",
-    "status": "unverified",
-    "source": null
-   },
-   "walk": {
-    "venue_id": "venetian",
-    "venue": "The Venetian Poker Room",
-    "minutes": 5,
-    "distance_mi": 0.2,
-    "via": "Las Vegas Blvd S",
-    "meets_30_min": "yes (5 min, Google Maps)",
-    "status": "Google Maps walking route, retrieved 2026-11-17: 5 min (0.2 mi) via Las Vegas Blvd S to the Venetian poker room. Google's walking durations run optimistic; the route distance is the more reliable figure.",
-    "method": "Google Maps walking directions",
-    "retrieved": "2026-11-17",
-    "source": "https://www.google.com/maps/dir/Treasure+Island+Las+Vegas/The+Venetian+Resort+Las+Vegas/?force=walking"
-   },
-   "rate_log": [
+      "id": "Q7",
+      "question": "What happens to the hotel rate if the poker-rate qualification is missed?",
+      "why_it_matters": "The headline poker rate is conditional; the true nightly cost can jump to the prevailing rate mid-stay.",
+      "we_have": "The official qualification terms: six hours of live cash per night, or a $300+ buy-in per night, completed before 2 AM on the last night; otherwise the nightly rate adjusts to the prevailing rate.",
+      "missing": "The prevailing rate for your dates — which is the number the fallback actually uses.",
+      "how_to_close": "Get the dated prevailing rate alongside the poker rate in the same booking session and record both in the rate log; note that the $200 events on the calendar do not qualify for the poker rate at all.",
+      "owner": "you",
+      "sources": [
+        "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html"
+      ]
+    },
     {
-     "observed_on": "2026-11-17",
-     "label": "Mandatory resort fee, amount re-read on official page",
-     "amount_usd": 49.95,
-     "qualifier": "'Total Resort Fee Plus Tax $49.95' collected at check-out; free self & valet parking (tower-suite page re-read 2026-11-17; cross-checks the resort_fee already verified from the TI offers page)",
-     "source": "https://treasureisland.com/hotel/tower-suite",
-     "quote_status": "verbatim sentence captured 2026-11-17"
+      "id": "Q8",
+      "question": "Are the non-Venetian rooms still running what the snapshot says they run?",
+      "why_it_matters": "Wynn, Bellagio, Caesars and ARIA rows come from earlier captures; two of those source URLs are now dead.",
+      "we_have": "The scheduled monitor re-checks all 64 tracked official URLs every morning and records status + content hash. Today: 62 reachable, 2 dead — the Caesars daily flyer PDF (404) and the Bellagio resort-fee page (404).",
+      "missing": "A live, dated schedule from those four rooms. Their rows stay in the 'needs re-verification' state and cannot be ranked against the Venetian calendar.",
+      "how_to_close": "Either accept the Venetian calendar as the trip's spine and treat the others as optional, or authorise a session to pull each room's current flyer/PDF and refresh those rows.",
+      "owner": "site (monitoring) + you (scope)",
+      "sources": [
+        "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
+        "https://bellagio.mgmresorts.com/en/casino/poker.html",
+        "https://aria.mgmresorts.com/en/casino/poker.html",
+        "https://wynnlasvegas.com/casino/poker"
+      ]
+    },
+    {
+      "id": "Q9",
+      "question": "Does any Strip room actually forbid a second entry in writing, and will they put it in an e-mail?",
+      "why_it_matters": "It is the difference between the brief's single-entry list being empty and being populated. The published sheets for the Venetian series, the Wynn series and the Bellagio weekend events all permit re-entries; the Wynn daily Friday event is the only one that forbids re-entry while still selling unlimited rebuys and an add-on.",
+      "we_have": "Read and quoted, 2026-11-17: 37 Venetian structure sheets (0 state single-entry; 13 carry the 'bag for Day 2 then no further flight' rule; sheet 8 prints 'All subsequent buy in's after the initial buy in will be $200'); the Wynn WPT booklet (69 event sheets: 67 print 'unlimited re-entry', 2 print a one-entry-plus-one-re-entry cap, including the $10,400 World Championship's 'Four (4) Entries maximum'); the three Bellagio sheets ('buy-in and re-enter through the end of level 8'); and the Caesars page (silent).",
+      "missing": "A room-written statement that a specific event is freezeout, plus which of those events the room will still be running on the trip dates.",
+      "how_to_close": "One e-mail or phone call per room (The Venetian 702.414.7657, Wynn 702.770.7654, Bellagio 702.693.7291) asking: for event X on date Y, is a player limited to one entry, and are rebuys or add-ons offered? Quote the answer and its date on the row.",
+      "owner": "you (one e-mail or call per room) — no agent can produce a room's written answer",
+      "sources": [
+        "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_8.pdf",
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+        "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt9cf95b0e60ec253e/6af491a3a9851d75c40be840/mgm-bellagio-poker-fridays-$600-nlh.pdf"
+      ]
     }
-   ],
-   "qualification": null,
-   "qualification_source": null,
-   "source_keys": [],
-   "dead_source_pages": []
-  },
-  {
-   "id": "horseshoe",
-   "property": "Horseshoe Las Vegas",
-   "venue_ids": [
-    "others"
-   ],
-   "official_page": "https://www.caesars.com/horseshoe-las-vegas/casino/poker",
-   "booking_link": "https://www.caesars.com/horseshoe-las-vegas",
-   "resort_fee": {
-    "amount_usd": null,
-    "basis": null,
-    "source": "https://www.caesars.com/horseshoe-las-vegas",
-    "status": "not published"
-   },
-   "tax": {
-    "rate_pct": null,
-    "basis": null,
-    "source": null,
-    "status": "not confirmed"
-   },
-   "parking": {
-    "self_usd_per_day": null,
-    "valet_usd_per_day": null,
-    "source": null,
-    "status": "not confirmed"
-   },
-   "cancellation": {
-    "text": "not captured",
-    "status": "unverified",
-    "source": null
-   },
-   "walk": {
-    "venue_id": "venetian",
-    "venue": "The Venetian Poker Room",
-    "minutes": 7,
-    "distance_mi": 1.0,
-    "via": "E Flamingo Rd / Las Vegas Blvd S",
-    "meets_30_min": "yes (7 min, Google Maps)",
-    "status": "Google Maps walking route, retrieved 2026-11-17: 7 min (1.0 mi) via E Flamingo Rd / Las Vegas Blvd S to the Venetian poker room. Google's walking durations run optimistic; the route distance is the more reliable figure.",
-    "method": "Google Maps walking directions",
-    "retrieved": "2026-11-17",
-    "source": "https://www.google.com/maps/dir/Horseshoe+Las+Vegas/The+Venetian+Resort+Las+Vegas/?force=walking",
-    "note": "Google Maps resolves 'Horseshoe Las Vegas' to 'Bally's Las Vegas' (Horseshoe LV is the rebranded Bally's). Route endpoint confirmed by the returned title 'Bally's Las Vegas à The Venetian'."
-   },
-   "rate_log": [],
-   "qualification": null,
-   "qualification_source": null,
-   "source_keys": [
-    "H_HOTEL_TERMS",
-    "H_PARKING",
-    "H_PAGE"
-   ],
-   "dead_source_pages": []
-  },
-  {
-   "id": "harrahs",
-   "property": "Harrah's Las Vegas",
-   "venue_ids": [
-    "others"
-   ],
-   "official_page": "https://www.caesars.com/harrahs-las-vegas",
-   "booking_link": "https://www.caesars.com/harrahs-las-vegas",
-   "resort_fee": {
-    "amount_usd": null,
-    "basis": null,
-    "source": "https://www.caesars.com/harrahs-las-vegas",
-    "status": "not published on the fetched official page"
-   },
-   "tax": {
-    "rate_pct": null,
-    "basis": null,
-    "source": null,
-    "status": "not confirmed"
-   },
-   "parking": {
-    "self_usd_per_day": null,
-    "valet_usd_per_day": null,
-    "source": null,
-    "status": "not confirmed"
-   },
-   "cancellation": {
-    "text": "not captured",
-    "status": "unverified",
-    "source": null
-   },
-   "walk": {
-    "venue_id": "venetian",
-    "venue": "The Venetian Poker Room",
-    "minutes": 6,
-    "distance_mi": 0.3,
-    "via": "Las Vegas Blvd S",
-    "meets_30_min": "yes (6 min, Google Maps)",
-    "status": "Google Maps walking route, retrieved 2026-11-17: 6 min (0.3 mi) via Las Vegas Blvd S to the Venetian poker room. Google's walking durations run optimistic; the route distance is the more reliable figure.",
-    "method": "Google Maps walking directions",
-    "retrieved": "2026-11-17",
-    "source": "https://www.google.com/maps/dir/Harrah%27s+Las+Vegas/The+Venetian+Resort+Las+Vegas/?force=walking"
-   },
-   "rate_log": [],
-   "qualification": null,
-   "qualification_source": null,
-   "source_keys": [],
-   "dead_source_pages": []
-  }
- ],
- "walk_policy": {
-  "rule": "A hotel is usable for an 8 AM–close day only if the walk from the lobby to the Venetian poker room can be completed inside 30 minutes.",
-  "verified_minutes_source": "Google Maps walking directions (mode=walking), retrieved 2026-11-17, for every hotel→Venetian poker room pair. Each row stores the returned duration, the route distance, the 'via' road, the exact directions URL and the retrieval date. Google's walking durations run optimistic; the route distance is stored alongside and is the more reliable figure.",
-  "how_to_close": "CLOSED 2026-11-17. Measured via Google Maps walking directions for all 10 hotel→Venetian pairs (data/integrated/walks-google.json). The ≤30-minute filter is now a hard filter driven by these measured values. Re-run each directions URL to refresh; a moved route is a change-monitor trigger."
- },
- "questions": [
-  {
-   "id": "Q1",
-   "question": "Which of these events actually forbid a second entry?",
-   "why_it_matters": "The whole brief is 'single entry only'. A $300 buy-in becomes $600, $900 or more if re-entries are unlimited, and the guarantee-to-cost comparison changes completely.",
-   "we_have": "All 37 official structure sheets for the series, read cover to cover on 2026-11-17: each one prints buy-in, house-fee split, guarantee, chips, level length and the late-registration deadline — and no clause about entries, re-entries, rebuys or add-ons. Two sheets (Valuetown bounty events 18/58) instead say 'All subsequent buy in's after the initial buy in will be $200', which positively indicates more than one entry is possible.",
-   "missing": "A written answer from the Venetian Poker Room (or a rule update on the sheet) stating whether the one-day events are one-entry freezeouts.",
-   "how_to_close": "Ask the room directly (the poker page lists the contact) and keep the reply as a dated source; until then these rows are labelled 'single-entry unverified' and the toggle filter returns nothing.",
-   "owner": "you (one e-mail/call) — no agent can produce it",
-   "sources": [
-    "https://www.venetianlasvegas.com/resort/casino/poker.html",
-    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_8.pdf"
-   ]
-  },
-  {
-   "id": "Q2",
-   "question": "What are the exact trip dates, nights and occupancy, and what is the nightly budget and quality floor?",
-   "why_it_matters": "Hotel rates, cancellation deadlines and 'quality vs cost' are all date- and occupancy-dependent; without them there is no like-for-like comparison and no true nightly cost.",
-   "we_have": "Mandatory fees that do not depend on dates: $55 + tax resort fee at the Venetian/Palazzo, 13.38% room tax, $20 self-parking / $40 valet per day; $55 + tax at Wynn; $49.95 + tax at Treasure Island.",
-   "missing": "A dated checkout total (nightly average, fee lines, tax lines) for each candidate hotel on your dates, plus your acceptable nightly ceiling and minimum quality tier.",
-   "how_to_close": "Price the same dates and occupancy in each official booking flow and paste the itemised totals into the rate log, or authorise a dated-quote step in a follow-up session; until then the calculator uses the advertised starting endpoints and labels them as such.",
-   "owner": "you",
-   "sources": [
-    "https://www.venetianlasvegas.com/resort/resort-fee.html",
-    "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
-    "https://www.wynnlasvegas.com/terms-and-conditions/850257",
-    "https://treasureisland.com/deals-offers/buy-1-get-1-bogo-free-fine-print"
-   ]
-  },
-  {
-   "id": "Q3",
-   "question": "Can a day really start at 8 AM here?",
-   "why_it_matters": "The brief asks for an all-day schedule beginning at 8 AM.",
-   "we_have": "Every printed start time on the official calendar: the earliest recurring morning start in the series is 10:10 AM (RaceDay Stack events 3–5, the $1,100 flights and the seniors events); one 9:10 AM turbo satellite exists on Dec 12.",
-   "missing": "Any official 8:00 AM tournament start on the Strip in this window. None was found on any page checked, so an 8 AM start is not achievable from verified listings.",
-   "how_to_close": "Either relax the start-time requirement to 'first official flight' (10:10 AM at the Venetian) or name a property whose room opens earlier and have its schedule captured.",
-   "owner": "you",
-   "sources": [
-    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
-   ]
-  },
-  {
-   "id": "Q4",
-   "question": "When does each event actually end?",
-   "why_it_matters": "'Primary event + conditional fallback' only works if the earlier event can be finished or exited before the next registration deadline.",
-   "we_have": "Start time, the printed 'REG CLOSES' deadline for 80 of 93 rows, level count/length and the multi-flight Day-2 restart times from the official schedule and sheets.",
-   "missing": "Announced finish times — the operator publishes none. Structures with 28 levels at 30 minutes plus six 15-minute breaks describe a 15-hour worst case, so a 5:10 PM entry after an 11:10 AM event is only realistic if you bust out before its own registration closes.",
-   "how_to_close": "Decide the exit rule (e.g. 'evening event only if bust-out before 4:30 PM') and the schedule page will flag each pair automatically; the underlying math is already wired.",
-   "owner": "you",
-   "sources": [
-    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf"
-   ]
-  },
-  {
-   "id": "Q5",
-   "question": "How long is the walk from each hotel to each poker room?",
-   "why_it_matters": "The 30-minute walking rule is a hard filter in the brief; it also decides whether an 8:00 AM-ish start and a late bust-out are survivable.",
-   "we_have": "Official property addresses and the official statement of where each poker room sits inside its resort (e.g. Venetian poker room on Palazzo level 2, reached from either tower lobby).",
-   "missing": "Door-to-door walking minutes for every hotel↔venue pair. No property publishes them, and this build environment has no Maps access, so the table is blank by policy, not by oversight.",
-   "how_to_close": "Approve the maps-API step (S4) or supply the numbers you get from Google/Apple Maps; they land in data/walks.json and the ≤30-min filter switches from 'unverified' to enforced.",
-   "owner": "you (approval) + one agent session",
-   "sources": [
-    "https://www.venetianlasvegas.com/resort/casino/poker.html",
-    "https://wynnlasvegas.com/casino/poker"
-   ]
-  },
-  {
-   "id": "Q6",
-   "question": "Which guarantee figures are still safe to compare?",
-   "why_it_matters": "A guarantee that includes bounties, or one shared across several starting flights, is not the same object as a single-flight cash guarantee.",
-   "we_have": "Guarantee text for 69 of 93 printed rows, and the sheet-level split of buy-in → house fee vs prize-pool contribution for all 37 sheets. Bounty sheets say explicitly that the guarantee 'consists of the actual prize pool plus the total amount of $50 bounties'.",
-   "missing": "Nothing blocking — but the ratio column must always be read as arithmetic on published numbers, not as an expectation.",
-   "how_to_close": "Keep bounty/flight/satellite rows in their own section (already implemented) and re-run the morning sync before any booking decision, since guarantees and start times are subject to change at the venue's discretion.",
-   "owner": "site (already implemented)",
-   "sources": [
-    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
-    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf"
-   ]
-  },
-  {
-   "id": "Q7",
-   "question": "What happens to the hotel rate if the poker-rate qualification is missed?",
-   "why_it_matters": "The headline poker rate is conditional; the true nightly cost can jump to the prevailing rate mid-stay.",
-   "we_have": "The official qualification terms: six hours of live cash per night, or a $300+ buy-in per night, completed before 2 AM on the last night; otherwise the nightly rate adjusts to the prevailing rate.",
-   "missing": "The prevailing rate for your dates — which is the number the fallback actually uses.",
-   "how_to_close": "Get the dated prevailing rate alongside the poker rate in the same booking session and record both in the rate log; note that the $200 events on the calendar do not qualify for the poker rate at all.",
-   "owner": "you",
-   "sources": [
-    "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html"
-   ]
-  },
-  {
-   "id": "Q8",
-   "question": "Are the non-Venetian rooms still running what the snapshot says they run?",
-   "why_it_matters": "Wynn, Bellagio, Caesars and ARIA rows come from earlier captures; two of those source URLs are now dead.",
-   "we_have": "The scheduled monitor re-checks all 64 tracked official URLs every morning and records status + content hash. Today: 62 reachable, 2 dead — the Caesars daily flyer PDF (404) and the Bellagio resort-fee page (404).",
-   "missing": "A live, dated schedule from those four rooms. Their rows stay in the 'needs re-verification' state and cannot be ranked against the Venetian calendar.",
-   "how_to_close": "Either accept the Venetian calendar as the trip's spine and treat the others as optional, or authorise a session to pull each room's current flyer/PDF and refresh those rows.",
-   "owner": "site (monitoring) + you (scope)",
-   "sources": [
-    "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
-    "https://bellagio.mgmresorts.com/en/casino/poker.html",
-    "https://aria.mgmresorts.com/en/casino/poker.html",
-    "https://wynnlasvegas.com/casino/poker"
-   ]
-  },
-  {
-   "id": "Q9",
-   "question": "Does any Strip room actually forbid a second entry in writing, and will they put it in an e-mail?",
-   "why_it_matters": "It is the difference between the brief's single-entry list being empty and being populated. The published sheets for the Venetian series, the Wynn series and the Bellagio weekend events all permit re-entries; the Wynn daily Friday event is the only one that forbids re-entry while still selling unlimited rebuys and an add-on.",
-   "we_have": "Read and quoted, 2026-11-17: 37 Venetian structure sheets (0 state single-entry; 13 carry the 'bag for Day 2 then no further flight' rule; sheet 8 prints 'All subsequent buy in's after the initial buy in will be $200'); the Wynn WPT booklet (69 event sheets: 67 print 'unlimited re-entry', 2 print a one-entry-plus-one-re-entry cap, including the $10,400 World Championship's 'Four (4) Entries maximum'); the three Bellagio sheets ('buy-in and re-enter through the end of level 8'); and the Caesars page (silent).",
-   "missing": "A room-written statement that a specific event is freezeout, plus which of those events the room will still be running on the trip dates.",
-   "how_to_close": "One e-mail or phone call per room (The Venetian 702.414.7657, Wynn 702.770.7654, Bellagio 702.693.7291) asking: for event X on date Y, is a player limited to one entry, and are rebuys or add-ons offered? Quote the answer and its date on the row.",
-   "owner": "you (one e-mail or call per room) — no agent can produce a room's written answer",
-   "sources": [
-    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_8.pdf",
-    "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
-    "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt9cf95b0e60ec253e/6af491a3a9851d75c40be840/mgm-bellagio-poker-fridays-$600-nlh.pdf"
-   ]
-  }
- ],
- "suggestions": [
-  {
-   "id": "S1",
-   "title": "Accept 'structure silent = unverified' as the standing rule",
-   "problem": "Every earlier pass over these sheets produced the same answer: the sheets say nothing about entries, so no event qualifies as verified single-entry.",
-   "proposal": "Keep the single-entry toggle filtering on confirmed rows only (currently zero) and put the operator reply in a dated 'room confirmation' field per event, so one e-mail upgrades the rows instantly instead of a re-audit.",
-   "impact": "high",
-   "effort": "low",
-   "decision_needed": "Yes — approve the format of the room-confirmation evidence (e-mail/PDF) so it can be attached per event.",
-   "status": "awaiting your choice"
-  },
-  {
-   "id": "S2",
-   "title": "Rank by cost per entry that reaches the prize pool, not by headline buy-in",
-   "problem": "Buy-in comparison hides the fee split: $300 sends $242 to the pool, $200 sends $160, $600 sends $510.",
-   "proposal": "The tournaments table already computes guarantee ÷ per-entry pool contribution for rows whose fee split is confirmed on the sheet; make that the default sort and hide the ratio where the split is unconfirmed.",
-   "impact": "medium",
-   "effort": "done",
-   "decision_needed": "Confirm whether multi-flight events should be excluded from that ranking entirely (they pool entries across flights).",
-   "status": "built, one decision open"
-  },
-  {
-   "id": "S3",
-   "title": "Add a real dated-quote step for hotels",
-   "problem": "No static page can give a checkout total; the rate log currently holds advertised starting endpoints only.",
-   "proposal": "Two options: (a) you paste the three itemised quotes (Venetian, Palazzo, TI) for fixed dates into data/rate-log.csv, or (b) authorise a session to drive each official booking flow for one fixed date pair and store the itemised breakdown with timestamps.",
-   "impact": "high",
-   "effort": "medium",
-   "decision_needed": "Pick (a) or (b), and give the exact dates + occupancy.",
-   "status": "awaiting your choice"
-  },
-  {
-   "id": "S4",
-   "title": "Wire the walking check to a routing API",
-   "problem": "The ≤30-minute rule is currently unverifiable from official pages, so it cannot filter anything.",
-   "proposal": "One scripted pass over hotel↔venue pairs through Google Maps Distance Matrix (mode=walking), writing duration + request timestamp to data/walks.json; the site filter and the day plan then use real minutes.",
-   "impact": "high",
-   "effort": "low (needs an API key in repo secrets)",
-   "decision_needed": "Approve adding a Maps API key to the repository secrets and which pairs to measure.",
-   "status": "awaiting your choice"
-  },
-  {
-   "id": "S5",
-   "title": "Let the morning sync drive an 'exit window' alarm",
-   "problem": "Overlaps are flagged as possible, but the real planning question is whether you can leave event A in time for event B.",
-   "proposal": "Extend tools/sync_official_sources.py to publish, per day, the morning event's registration-close deadline and the evening event's start, and surface 'must be out by HH:MM' on the day plan.",
-   "impact": "medium",
-   "effort": "low",
-   "decision_needed": "Confirm the buffer you want (e.g. 20 minutes for walk + rebuy-free re-entry to the cage).",
-   "status": "awaiting your choice"
-  },
-  {
-   "id": "S6",
-   "title": "Decide how far off-venue the hotel shortlist reaches",
-   "problem": "Only the Venetian/Palazzo/TI properties have any fee data confirmed; every other hotel is blank, so 'best hotel' cannot be ranked on cost and quality today.",
-   "proposal": "Either narrow the goal to 'sleep at the host property' (fewest unknowns, zero walk) or nominate 3 candidate hotels so the effort goes into dated quotes for those only.",
-   "impact": "high",
-   "effort": "low",
-   "decision_needed": "Name the three hotels (or approve host-property-only) and the nightly ceiling.",
-   "status": "awaiting your choice"
-  },
-  {
-   "id": "S7",
-   "title": "Keep change monitoring as values, not bytes",
-   "problem": "Marketing pages re-render constantly; a hash-only monitor would flag everything and hide the things that matter.",
-   "proposal": "The monitor already compares extracted values (start time, guarantee, buy-in, fee split, entry-policy clause) and only marks rows whose official value moved; page-text drift is recorded separately as 'cosmetic'.",
-   "impact": "medium",
-   "effort": "done",
-   "decision_needed": "None — review the change log after a week of runs to confirm the noise level.",
-   "status": "built"
-  },
-  {
-   "id": "S8",
-   "title": "Publish a per-room 'ask list' generated from the gaps",
-   "problem": "The gaps are now specific (fee arithmetic on one Wynn sheet, a stale Bellagio Saturday sheet, Caesars' missing fee split) but they are buried in 252 rows.",
-   "proposal": "Generate the open-questions page directly from the flags that name a source and a field, so each room has a one-screen list of the exact sentences to request, with the quote already drafted.",
-   "impact": "turns a research backlog into three short calls",
-   "effort": "small — the flags already carry the source URL and the missing field",
-   "status": "proposed",
-   "decision_needed": "turns a research backlog into three short calls"
-  },
-  {
-   "id": "S9",
-   "title": "Treat 'printed level number' deadlines as first-class and add a per-event clock table",
-   "problem": "Wynn's late registration is printed as 'until the start of level 9', so the site cannot place a second entry after it, and 13 of 38 days lose their fallback (F19).",
-   "proposal": "Store the level number as its own field next to the clock time, and derive the clock time only from the sheet's own printed '(approximately 4:30 p.m.)' where it exists; where it does not, show the level and mark the clock unknown instead of leaving the plan silent.",
-   "impact": "restores a defensible fallback on most Wynn days without inventing a duration",
-   "effort": "medium — new field on every row, no new source needed",
-   "status": "proposed",
-   "decision_needed": "restores a defensible fallback on most Wynn days without inventing a duration"
-  }
- ],
- "decision_workflow": [
-  {
-   "step": 1,
-   "title": "Fix trip dates and a nightly budget / quality floor",
-   "status": "blocked",
-   "detail": "No dates or budget were supplied in the brief; every dated rate, cancellation deadline and quality comparison depends on them.",
-   "next_action": "Give dates + nights + occupancy + nightly ceiling (S3, S6)."
-  },
-  {
-   "step": 2,
-   "title": "Pull the official structure sheet for candidate events and read the entry rules",
-   "status": "done",
-   "detail": "All 37 sheets behind the calendar were fetched and machine-read on 2026-11-17; the entry/re-entry/add-on language is absent from every one of them, and one sheet family explicitly mentions subsequent buy-ins.",
-   "next_action": "Convert 'no clause' into a written answer from the room (Q1)."
-  },
-  {
-   "step": 3,
-   "title": "Compare survivors on pool, buy-in, stack/level speed, payout structure and schedule fit",
-   "status": "partially done",
-   "detail": "Comparison columns exist and are populated from the sheets (guarantee, house fee, per-entry pool contribution, chips, level length, payout share, registration deadline). Ranking is suppressed for any row whose entry count is still unknown, because total cost per player is the denominator.",
-   "next_action": "Unlock ranking with the Q1 answer."
-  },
-  {
-   "step": 4,
-   "title": "Itemised hotel totals for the same stay + walking route under 30 minutes",
-   "status": "blocked",
-   "detail": "Mandatory fees and taxes are confirmed for Venetian/Palazzo, Wynn and Treasure Island; dated itemised totals and walking minutes are not obtainable from official static pages.",
-   "next_action": "S3 and S4."
-  },
-  {
-   "step": 5,
-   "title": "One event per day first, evening events only where an exit is realistic",
-   "status": "done as a plan",
-   "detail": "The day plan lists a primary event and a conditional fallback per day, with the morning registration-close time as the exit gate and multi-flight Day-2 restarts shown as hard conflicts.",
-   "next_action": "Pick the exit buffer (S5)."
-  },
-  {
-   "step": 6,
-   "title": "Reconfirm schedules, rates and policies before any non-refundable payment",
-   "status": "automated",
-   "detail": "64 official URLs are re-checked every morning at 06:00 Las Vegas time; rows whose official value changed are flagged and the change is logged with before/after values.",
-   "next_action": "Look at the change monitor page right before booking."
-  }
- ],
- "flags": [
-  {
-   "id": "F1",
-   "severity": "blocking-for-single-entry-claim",
-   "item": "0 of 93 Venetian rows are confirmed single-entry",
-   "detail": "All 37 official structure sheets were read on 2026-11-17. None contains a clause confirming one entry, prohibiting re-entries, or prohibiting add-ons. Omission is not confirmation, so no row may be labelled single-entry and the toggle filter returns nothing.",
-   "sources": [
-    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf",
-    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
-   ]
-  },
-  {
-   "id": "F2",
-   "severity": "exclusion",
-   "item": "Valuetown bounty events (18 on Nov 28, 58 on Dec 19) explicitly contemplate multiple entries",
-   "detail": "The sheet grants the PokerAtlas PRO $20 rake discount to the initial buy-in only and states 'All subsequent buy in's after the initial buy in will be $200' — direct evidence that more than one entry can be purchased, which is the exact spend-advantage structure the brief excludes.",
-   "sources": [
-    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_8.pdf"
-   ]
-  },
-  {
-   "id": "F3",
-   "severity": "resolved",
-   "item": "Walking minutes for every hotel→Venetian pair — RESOLVED 2026-11-17",
-   "detail": "CLOSED. Google Maps walking directions (mode=walking) were retrieved 2026-11-17 for all 10 hotel→Venetian poker-room pairs and stored in data/integrated/walks-google.json with the returned duration, route distance, via road, exact directions URL and retrieval date; data/walks.json now carries the measured minutes, so the ≤30-minute filter is a hard filter. Caveat retained: Google Maps walking durations run optimistic (brisk pace, under-weight Strip crossings); the route distance in miles is stored alongside and is the more reliable figure. Google resolves 'Horseshoe Las Vegas' to 'Bally's Las Vegas' (the rebranded property); the route endpoint is confirmed.",
-   "sources": [
-    "https://www.google.com/maps/dir/Treasure+Island+Las+Vegas/The+Venetian+Resort+Las+Vegas/?force=walking",
-    "https://www.google.com/maps/dir/Wynn+Las+Vegas/The+Venetian+Resort+Las+Vegas/?force=walking",
-    "https://www.google.com/maps/dir/Bellagio+Las+Vegas/The+Venetian+Resort+Las+Vegas/?force=walking",
-    "https://www.venetianlasvegas.com/resort/casino/poker.html"
-   ]
-  },
-  {
-   "id": "F4",
-   "severity": "missing-data",
-   "item": "No dated hotel quote (checkout total, nightly average, cancellation deadline)",
-   "detail": "Dated pricing needs a booking session with specific dates and occupancy. Left blank by policy; only non-dated mandatory fee/tax/parking figures are shown as verified.",
-   "sources": [
-    "https://www.venetianlasvegas.com/book",
-    "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html"
-   ]
-  },
-  {
-   "id": "F5",
-   "severity": "source-dead",
-   "item": "Caesars Palace daily NLH flyer returns HTTP 404",
-   "detail": "Recorded by the scheduled monitor on 2026-11-17. The Caesars rows preserved from an earlier session (re-entry at first break, optional add-on) can no longer be re-verified from that URL; their official page links no dated schedule.",
-   "sources": [
-    "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
-   ]
-  },
-  {
-   "id": "F6",
-   "severity": "source-dead",
-   "item": "Bellagio resort-fee page returns HTTP 404",
-   "detail": "Confirmed again by the scheduled monitor on 2026-11-17, matching the earlier session's finding. Bellagio's true nightly cost stays blank. Second search on 2026-11-17 (session 03d073d2): only third-party sites (hoteltiplasvegas.com, feelingvegas.com, vacations.united.com, applevacations.com) state a Bellagio fee, and none is an official MGM page, so the Bellagio fee stays blank.",
-   "sources": [
-    "https://bellagio.mgmresorts.com/en/hotel/resort-fee.html"
-   ]
-  },
-  {
-   "id": "F7",
-   "severity": "conflict-unresolved",
-   "item": "Bellagio Saturday buy-in printed as $1,000 in one official file and $1,100 in another",
-   "detail": "Preserved as a conflict, not averaged; excluded from any cost comparison until the room confirms one number.",
-   "sources": [
-    "https://bellagio.mgmresorts.com/en/casino/poker.html"
-   ]
-  },
-  {
-   "id": "F8",
-   "severity": "conflict-unresolved",
-   "item": "ARIA resort fee recorded as $50 and $55 by different third-party sources",
-   "detail": "Not published on ARIA's own fetched pages, so no value is shown. Third-party numbers were deliberately not adopted.",
-   "sources": [
-    "https://aria.mgmresorts.com/en/casino/poker.html"
-   ]
-  },
-  {
-   "id": "F9",
-   "severity": "scope-correction",
-   "item": "Circa has no poker room",
-   "description": null,
-   "detail": "Its own venue listing carries no poker room, so it must not appear as a Strip poker lodging candidate.",
-   "sources": [
-    "https://www.circalasvegas.com/entertainment/"
-   ]
-  },
-  {
-   "id": "F10",
-   "severity": "structural",
-   "item": "The 8 AM start requirement cannot be met by any verified Strip listing in this window",
-   "detail": "Earliest morning start in the series is 10:10 AM (single 9:10 AM turbo satellite on Dec 12). Any plan that assumes 8:00 AM play is not supported by official schedules.",
-   "sources": [
-    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
-   ]
-  },
-  {
-   "id": "F11",
-   "severity": "data-quality",
-   "item": "13 of 93 printed schedule rows show no registration-closes value",
-   "detail": "Those are Day-2 restarts, final tables and one 6:10 PM flight where the calendar prints no deadline; overlap judgement for those rows falls back to the structure sheet's late-registration level count and is labelled as such.",
-   "sources": [
-    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
-   ]
-  },
-  {
-   "id": "F12",
-   "severity": "duplicate-work",
-   "item": "Five parallel sub-sites remain published on main",
-   "detail": "The root dashboard is now generated from one data pipeline; /60fb62da/, /c07371e3/, /df41f5c6/, /strip/ and /verified/ are preserved unchanged as prior snapshots and are linked from the sources page with a caveat that they are older point-in-time reads.",
-   "sources": []
-  },
-  {
-   "id": "F13",
-   "severity": "repo-hygiene",
-   "item": "COORDINATION.md carried residual git conflict markers on main",
-   "detail": "A '=======' and a '>>>>>>> origin/main' line (with a duplicated 60fb62da section) had been committed by an earlier merge. The marker lines were deleted in this session; both copies of the text were kept so nothing was lost.",
-   "sources": []
-  },
-  {
-   "id": "F14",
-   "severity": "method",
-   "item": "This environment's PDF proxy was intermittent, so structure sheets were verified twice by different means",
-   "detail": "Twelve sheets were read through the agent's own page fetcher and the same field values (buy-in, house fee, pool contribution, guarantee, registration window) were then matched by the Actions runner's independent fetch of the same PDFs. Both reads agree; where they would not, the row is flagged.",
-   "sources": [
-    "https://github.com/karagemop466-tech/Poker4/actions/workflows/url-check.yml"
-   ]
-  },
-  {
-   "id": "F15",
-   "severity": "blocking-for-single-entry-claim",
-   "item": "13 multi-flight structure sheets state that a player who bags for Day 2 'may not play a subsequent flight' — the sheet contemplates play in more than one starting flight",
-   "detail": "Read line by line on 2026-11-17 (session 75757cc1). Sheets #2, #3, #4, #9, #10, #12, #13, #14, #20, #21, #35, #36, #37 (Events 1, 7, 19, 26, 47, 49, 56, 59) contain the sentence 'Any player who bags chips for Day 2 may not play a subsequent flight.' The rule restricts only players who bagged; it does not state an entry count. It therefore neither confirms single entry nor confirms re-entry, and these rows stay 'single-entry unverified'. Full verbatim log: data/75757cc1/structure_reads.tsv.",
-   "sources": [
-    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf",
-    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf",
-    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf"
-   ]
-  },
-  {
-   "id": "F16",
-   "severity": "data-quality-corrected",
-   "item": "Schedule feed had 6 defects against the official calendar; corrected 2026-11-17 and proven by a checker",
-   "detail": "data/schedule-snapshot.json (the feed that builds the root tournaments table) (a) printed the Event 39 Day 2 restart on 11 Dec at 7:00 PM, the official time is 10:00 AM; (b) omitted the Event 47 Day 2 restart at 1:00 PM on 13 Dec; (c) left the $500,000 guarantee blank for Event 56 at 10:10 AM and 6:10 PM on 17 Dec; (d) left the $150,000 guarantee blank for Event 59 at 11:10 AM on 20 Dec; (e) recorded level duration 11 min for Event 56 (6:10 PM, sheet #36 says 30) and 5 min for Event 59 (11:10 AM, sheet #4 says 40). Now 94/94 rows match the official page (data/75757cc1/check_calendar.py, exit 0). Corrections are traceable in parse_notes.",
-   "sources": [
-    "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
-    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_36.pdf",
-    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf"
-   ]
-  },
-  {
-   "id": "F17",
-   "severity": "process",
-   "item": "Daily maintenance job overwrote the root pages with a stale build (fixed in session c2242cb1)",
-   "detail": "maintenance.yml ran build/build_pages.py every morning and committed *.html to main, reverting pages that scripts/integrate_data.py had generated (for example schedule.html went back to a 75 KB page instead of the redirect stub). Commit 6c94023 (16:57 UTC, 2026-11-17) is the visible instance. The job now runs only scripts/integrate_data.py and the current verifiers. Legacy build/ scripts still exist in the repo and should be retired by an owner.",
-   "sources": [
-    "https://github.com/karagemop466-tech/Poker4/blob/main/.github/workflows/maintenance.yml"
-   ]
-  },
-  {
-   "id": "F18",
-   "severity": "resolved",
-   "item": "Walking minutes — RESOLVED 2026-11-17 with sourced Google Maps measurements",
-   "detail": "CLOSED. The earlier landing page listed map-based timings with no source; the regenerated page showed nulls. As of 2026-11-17 every hotel→Venetian walking minute is a measured Google Maps value retrieved this date, stored with its directions URL and timestamp in data/integrated/walks-google.json and mirrored into data/walks.json. Retained note: Google walking durations are optimistic; route distance is stored alongside. Horseshoe is returned by Google as Bally's Las Vegas.",
-   "sources": [
-    "https://github.com/karagemop466-tech/Poker4/blob/main/data/integrated/walks-google.json",
-    "https://www.google.com/maps/dir/Horseshoe+Las+Vegas/The+Venetian+Resort+Las+Vegas/?force=walking"
-   ]
-  },
-  {
-   "id": "F19",
-   "severity": "caveat",
-   "item": "Wynn $55 resort fee: now read on a current official Wynn offer page (DK26WLV2)",
-   "detail": "The earlier citation (page 850257) covers the Concours Sip and Savor package (travel Oct 27 – Nov 1, 2026), which has expired. The current offer page DK26WLV2 (select dates Oct 2, 2026 – Mar 31, 2027; Wynn Resort King; call-centre booking only) states 'A daily resort fee of $55 plus tax', read 2026-11-17 in session 03d073d2. The general Wynn rate-page fee was not separately read, and offer terms change, so re-confirm on the booking page before paying.",
-   "sources": [
-    "https://www.wynnlasvegas.com/terms-and-conditions/DK26WLV2",
-    "https://www.wynnlasvegas.com/terms-and-conditions/850257"
-   ]
-  },
-  {
-   "id": "F20",
-   "severity": "data-label",
-   "item": "'42 structure sheets audited' overstates the Venetian audit",
-   "detail": "data/structure-audit.json holds 42 records, but they mix Venetian DSE IV sheets with Wynn, Bellagio and other documents. tools/verify_poker4.py reports 12 tracked sheets with no record yet. The landing-page label should count Venetian sheets separately and state the gap. Not changed in this session.",
-   "sources": [
-    "https://github.com/karagemop466-tech/Poker4/blob/main/data/structure-audit.json",
-    "https://github.com/karagemop466-tech/Poker4/blob/main/tools/verify_poker4.py"
-   ]
-  },
-  {
-   "id": "F21",
-   "severity": "monitoring",
-   "item": "Scheduled monitors: some runs failing; eight jobs commit to main",
-   "detail": "monitor.yml ('Monitor official sources') and recheck.yml ('daily-recheck') failed on their latest scheduled runs; logs were not retrievable from the session sandbox, so the cause is not confirmed. recheck.yml now runs the current root verifier (tools/verify_root_site.py is stale and reports 19 errors). Several overlapping scheduled jobs commit to main, which is a race risk. Consolidating them is a suggestion for review.",
-   "sources": [
-    "https://github.com/karagemop466-tech/Poker4/blob/main/.github/workflows/monitor.yml",
-    "https://github.com/karagemop466-tech/Poker4/blob/main/.github/workflows/recheck.yml",
-    "https://github.com/karagemop466-tech/Poker4/blob/main/tools/verify_root_site.py"
-   ]
-  },
-  {
-   "id": "F22",
-   "severity": "official-source-arithmetic",
-   "item": "Wynn's $1,100 PLO structure sheet prints a fee split that does not add up ($975 + $85 + $45 = $1,105 against a $1,100 buy-in)",
-   "detail": "Structure booklet, WPT World Championship, Tuesday December 1, 2026, 1 p.m., $1,100 PLO. The row keeps the sheet's own wording and the three components verbatim; nothing is adjusted. It is excluded from the ranked list until the venue confirms whether the fee is $80 or the pool slice is $970.",
-   "sources": [
-    "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
-   ],
-   "note": "renumbered from F15 on merge with main, where that id was already used by another session"
-  },
-  {
-   "id": "F23",
-   "severity": "stale-official-document",
-   "item": "Bellagio's Saturday NLH sheet contradicts itself on price and prints a Day-2 date (9/13/26) that is already in the past",
-   "detail": "The PDF's title block says 'NLH $1100 BUY-IN', the Bellagio poker page lists 'SATURDAYS | $1,000 NLH', and rule 07 on the same sheet says 'Of the $600 Buy-in'. Its rule 04 also schedules the 'Combined Final Day 2 (9/13/26)'. The buy-in is therefore left blank, the row is not scheduled, and it needs a fresh sheet from the room before any money is committed.",
-   "sources": [
-    "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt6d47974bf5a7d9b6/6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf",
-    "https://bellagio.mgmresorts.com/en/casino/poker.html"
-   ],
-   "note": "renumbered from F16 on merge with main, where that id was already used by another session"
-  },
-  {
-   "id": "F24",
-   "severity": "schedule-availability",
-   "item": "Wynn's daily slate is printed as a standing offer with no calendar dates, and the sheet itself says it may be suspended during other series",
-   "detail": "'The Tournament will be offered Monday-Thursday and may be suspended during Seniors Events, Classic Events, or other Tournament Series.' Wynn runs its own WPT series from 2026-11-27 to 2026-12-21, so whether the $200/$240/$160 dailies run on any given trip date is not established by either document. Those rows carry no date and are never placed in the day plan.",
-   "sources": [
-    "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
-    "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
-   ],
-   "note": "renumbered from F17 on merge with main, where that id was already used by another session"
-  },
-  {
-   "id": "F25",
-   "severity": "conflicting-official-values",
-   "item": "Caesars Palace's two official pages disagree on the daily buy-in: the explore page says every event carries $100, the 2026 daily flyer prints $160 at 2 PM and 9 PM",
-   "detail": "The Caesars explore page states four daily NLH tournaments at 10 a.m., 2 p.m., 6 p.m. and 9 p.m., 'every event carries a $100 buy-in', 20,000 chips, a $1,000 guarantee, 20-minute levels and a $50 add-on. The dedicated 2026 daily flyer PDF (re-checked live 2026-11-17 after the 2025 flyer was retired and 404ing) prints per-slot buy-ins — $100 at 10 a.m. and 6 p.m., $160 at 2 p.m. and 9 p.m. — plus the fee splits ($70/$30 and $115/$45), the add-on split ($45/$5), registration closing at the start of level 7, and rule 3: 'Participants may only register themselves, but may re-enter, by paying the entry fee, upon elimination within the first break of play.' The rows follow the dedicated, dated flyer (document of record for the schedule) and carry its excerpts; the explore page's blanket $100 sentence stays quoted on the row as the conflicting official statement. Single-entry status remains unverified on both sources — the printed re-entry rule is evidence of the opposite, so the rows stay in the spend-advantage section. Rows stay unranked because the slate prints no calendar dates.",
-   "sources": [
-    "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
-    "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
-   ],
-   "note": "updated 2026-11-17 (session arena/3082d6d9-poker4): the retired 2025 flyer (HTTP 404) was replaced by the live 2026 flyer; per-slot buy-ins, fee splits, the re-entry rule and the explore-page conflict are now recorded on the rows. Earlier note: renumbered from F18 on merge with main, where that id was already used by another session."
-  },
-  {
-   "id": "F26",
-   "severity": "planning-input-missing",
-   "item": "Wynn prints its late-registration deadlines as blind levels, not clock times, so a clock-based fallback cannot be computed for those rows",
-   "detail": "Most WPT sheets read 'available until the start of level 9' and only some add '(approximately 4:30 p.m.)'. The clock figure is missing on the majority of the 69 sheets. Consequence: the day plan can only offer a fallback where the printed deadline is a time, which is why 13 of the 38 planned days carry no defensible second entry.",
-   "sources": [
-    "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
-   ],
-   "note": "renumbered from F19 on merge with main, where that id was already used by another session"
-  },
-  {
-   "id": "F27",
-   "severity": "unverified",
-   "item": "Primary Gaming Corridor membership (13.38% vs 13.00%) not checked property by property",
-   "detail": "The Clark County letter of 15 Nov 2016 sets 13.38% for properties inside the Primary Gaming Corridor, 13.00% for stadium-district properties outside it, and only the 0.5% LVCVA increase outside both. It refers to the PGC map on the county website but does not reproduce it. The Venetian's own terms print 13.38% (read live 2026-11-17). Wynn's rate is now sourced to the county letter and Treasure Island's to its offer-terms page, but neither property's map membership has been checked. Action: open the county PGC map and confirm each property before its rate is treated as confirmed. The letter is dated 15 Nov 2016. The current Clark County code (CCC 4.08) was not read in this session; the 13.38% figure is corroborated by the Venetian's live 2026 terms page, not by a current county document.",
-   "sources": [
-    "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:7436500e-cac4-420a-b23a-02d3fec69900/original/as/room-tax-increase-transient-lodging-letter-111616.pdf",
-    "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
-    "https://treasureisland.com/deals-offers/buy-1-get-1-bogo-free-fine-print"
-   ]
-  },
-  {
-   "id": "F28",
-   "severity": "data-quality-corrected",
-   "item": "data/room-facts.json carried sha256 values that did not match the raw captures it cites",
-   "detail": "Re-running tools/room_extract.py recomputed the hashes of data/raw/wynn-wpt-terms.txt and data/raw/wynn-daily-structures.txt. The committed values were stale. The regenerated file changes only those sha256 fields (commit 7c5767d). The raw captures were not changed.",
-   "sources": [
-    "https://github.com/karagemop466-tech/Poker4/blob/main/data/room-facts.json"
-   ]
-  },
-  {
-   "id": "F29",
-   "severity": "monitor-failure",
-   "item": "Daily poker4 monitor (tournament-monitor.yml) failed its verification gate on 2026-11-17; not yet fixed",
-   "detail": "The workflow 'Daily schedule + source-change monitor' failed at its step 'Verify the site before committing' (tools/verify_poker4.py). This happened on the 22:26 UTC scheduled run (run 44190052816, commit ff3fa36) and on three push runs earlier the same day (43994467535, 43994447808, 43994391262). The sandbox could not download the failed-run logs (EOF), so the exact failing check was not read. Run offline on the committed tree, verify_poker4.py passes (20 pages, 94 tournament rows, 57 sources). A manual retry was refused (HTTP 403, 'Resource not accessible by integration'). The root site and its Pages deploy are not affected: that job commits only the poker4/ sub-site data, and the root deploy succeeded on the merge commit. Action for the owner: open the failed run's 'Verify the site' step log and fix the cause, or re-run the schedule after the cause is fixed.",
-   "sources": [
-    "https://github.com/karagemop466-tech/Poker4/actions/runs/44190052816",
-    "https://github.com/karagemop466-tech/Poker4/blob/main/.github/workflows/tournament-monitor.yml"
-   ]
-  },
-  {
-   "id": "F30",
-   "severity": "official-source-typo",
-   "item": "Venetian DSE IV structure sheet 25 (satellites #45/#46/#48) prints an inconsistent blind line at level 25: big blind ante 120,000 with blinds 75,000-125,000",
-   "detail": "Live re-read of the official sheet (https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_25.pdf) on 2026-11-17 shows level 25 as '25 | 15 | 120,000 | 75,000-125,000'. Every surrounding level follows the 75k/150k-style progression (26 is 150,000 / 75,000-150,000), so the printed 125,000 big blind conflicts with the 120,000 ante on the same line. Published rows copy the sheet verbatim; no correction is inferred. The satellite structure past level 24 rarely matters (registration closes after level 6), but the sheet itself is internally inconsistent and is flagged for room confirmation.",
-   "sources": [
-    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_25.pdf"
-   ],
-   "note": "found by arena/c5c7cc2b-poker4 during the 2026-11-17 line-by-line live re-read (V1/V2); renumbered twice on rebase (F27 then F29 were taken by parallel sessions) — final ID F30"
-  }
- ],
- "trip_example": {
-  "label": "Worked example — 4 nights at the host property, one cheap plain-NLH entry per day",
-  "basis": "Illustrative arithmetic from the official starting endpoints and fee/tax figures. Not a quote, not a booking, and the entry count assumes one entry per event (unverified).",
-  "nights": 4,
-  "hotel_base_rate_usd": 119,
-  "resort_fee_usd": 55,
-  "tax_rate_pct": 13.38,
-  "parking_usd_per_night": 0,
-  "entries": [
-   {
-    "date": "2026-11-18",
-    "event_no": 2,
-    "name": "$300 No Limit Hold'em (1Day) — $10,000 GTD",
-    "buy_in_usd": 300
-   },
-   {
-    "date": "2026-11-19",
-    "event_no": 3,
-    "name": "$200 NLH RaceDay Stack (1Day)",
-    "buy_in_usd": 200
-   },
-   {
-    "date": "2026-11-22",
-    "event_no": 6,
-    "name": "$200 No Limit Hold'em (1Day)",
-    "buy_in_usd": 200
-   },
-   {
-    "date": "2026-11-26",
-    "event_no": 12,
-    "name": "$300 No Limit Hold'em (1Day) — $10,000 GTD",
-    "buy_in_usd": 300
-   }
-  ]
- },
- "preserved_rows": {
-  "_note": "Caesars Palace daily NLH rows carried over from the earlier data/tournaments.json (reentry_or_addon list). Main's tournaments.json was restructured by another session and no longer carries them, so they are preserved here verbatim. The flyer URL they cite (clv-poker-daily-nlh-tournament-flyer-2025.pdf) returns 404 on the official host (see data/url-checks.json), so these rows are shown as unverified and need re-verification against a live official page.",
-  "caesars": [
-   {
-    "day": "Daily (per undated 2026 flyer)",
-    "time": "10:00 AM",
-    "event": "NLH",
-    "name": "Caesars Palace Daily NLH — $100 entry",
-    "venue": "Caesars Palace – Poker Room",
-    "buy_in": 100,
-    "guarantee": 1000,
-    "chips": 20000,
-    "reg_closes": "Start of level 7",
-    "reentry_addon": "Re-entry allowed at first break ($100); optional $50 add-on for 15,000 chips at first break",
-    "sources": [
-     "C_FLYER",
-     "C_PAGE"
-    ],
-    "notes": "Flyer: $70 of $100 to prize pool, $30 house fee. Registration closes at start of level 7.",
-    "source_urls": [
-     "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
-     "https://www.caesars.com/caesars-palace/casino"
+  ],
+  "suggestions": [
+    {
+      "id": "S1",
+      "title": "Accept 'structure silent = unverified' as the standing rule",
+      "problem": "Every earlier pass over these sheets produced the same answer: the sheets say nothing about entries, so no event qualifies as verified single-entry.",
+      "proposal": "Keep the single-entry toggle filtering on confirmed rows only (currently zero) and put the operator reply in a dated 'room confirmation' field per event, so one e-mail upgrades the rows instantly instead of a re-audit.",
+      "impact": "high",
+      "effort": "low",
+      "decision_needed": "Yes — approve the format of the room-confirmation evidence (e-mail/PDF) so it can be attached per event.",
+      "status": "awaiting your choice"
+    },
+    {
+      "id": "S2",
+      "title": "Rank by cost per entry that reaches the prize pool, not by headline buy-in",
+      "problem": "Buy-in comparison hides the fee split: $300 sends $242 to the pool, $200 sends $160, $600 sends $510.",
+      "proposal": "The tournaments table already computes guarantee ÷ per-entry pool contribution for rows whose fee split is confirmed on the sheet; make that the default sort and hide the ratio where the split is unconfirmed.",
+      "impact": "medium",
+      "effort": "done",
+      "decision_needed": "Confirm whether multi-flight events should be excluded from that ranking entirely (they pool entries across flights).",
+      "status": "built, one decision open"
+    },
+    {
+      "id": "S3",
+      "title": "Add a real dated-quote step for hotels",
+      "problem": "No static page can give a checkout total; the rate log currently holds advertised starting endpoints only.",
+      "proposal": "Two options: (a) you paste the three itemised quotes (Venetian, Palazzo, TI) for fixed dates into data/rate-log.csv, or (b) authorise a session to drive each official booking flow for one fixed date pair and store the itemised breakdown with timestamps.",
+      "impact": "high",
+      "effort": "medium",
+      "decision_needed": "Pick (a) or (b), and give the exact dates + occupancy.",
+      "status": "awaiting your choice"
+    },
+    {
+      "id": "S4",
+      "title": "Wire the walking check to a routing API",
+      "problem": "The ≤30-minute rule is currently unverifiable from official pages, so it cannot filter anything.",
+      "proposal": "One scripted pass over hotel↔venue pairs through Google Maps Distance Matrix (mode=walking), writing duration + request timestamp to data/walks.json; the site filter and the day plan then use real minutes.",
+      "impact": "high",
+      "effort": "low (needs an API key in repo secrets)",
+      "decision_needed": "Approve adding a Maps API key to the repository secrets and which pairs to measure.",
+      "status": "awaiting your choice"
+    },
+    {
+      "id": "S5",
+      "title": "Let the morning sync drive an 'exit window' alarm",
+      "problem": "Overlaps are flagged as possible, but the real planning question is whether you can leave event A in time for event B.",
+      "proposal": "Extend tools/sync_official_sources.py to publish, per day, the morning event's registration-close deadline and the evening event's start, and surface 'must be out by HH:MM' on the day plan.",
+      "impact": "medium",
+      "effort": "low",
+      "decision_needed": "Confirm the buffer you want (e.g. 20 minutes for walk + rebuy-free re-entry to the cage).",
+      "status": "awaiting your choice"
+    },
+    {
+      "id": "S6",
+      "title": "Decide how far off-venue the hotel shortlist reaches",
+      "problem": "Only the Venetian/Palazzo/TI properties have any fee data confirmed; every other hotel is blank, so 'best hotel' cannot be ranked on cost and quality today.",
+      "proposal": "Either narrow the goal to 'sleep at the host property' (fewest unknowns, zero walk) or nominate 3 candidate hotels so the effort goes into dated quotes for those only.",
+      "impact": "high",
+      "effort": "low",
+      "decision_needed": "Name the three hotels (or approve host-property-only) and the nightly ceiling.",
+      "status": "awaiting your choice"
+    },
+    {
+      "id": "S7",
+      "title": "Keep change monitoring as values, not bytes",
+      "problem": "Marketing pages re-render constantly; a hash-only monitor would flag everything and hide the things that matter.",
+      "proposal": "The monitor already compares extracted values (start time, guarantee, buy-in, fee split, entry-policy clause) and only marks rows whose official value moved; page-text drift is recorded separately as 'cosmetic'.",
+      "impact": "medium",
+      "effort": "done",
+      "decision_needed": "None — review the change log after a week of runs to confirm the noise level.",
+      "status": "built"
+    },
+    {
+      "id": "S8",
+      "title": "Publish a per-room 'ask list' generated from the gaps",
+      "problem": "The gaps are now specific (fee arithmetic on one Wynn sheet, a stale Bellagio Saturday sheet, Caesars' missing fee split) but they are buried in 252 rows.",
+      "proposal": "Generate the open-questions page directly from the flags that name a source and a field, so each room has a one-screen list of the exact sentences to request, with the quote already drafted.",
+      "impact": "turns a research backlog into three short calls",
+      "effort": "small — the flags already carry the source URL and the missing field",
+      "status": "proposed",
+      "decision_needed": "turns a research backlog into three short calls"
+    },
+    {
+      "id": "S9",
+      "title": "Treat 'printed level number' deadlines as first-class and add a per-event clock table",
+      "problem": "Wynn's late registration is printed as 'until the start of level 9', so the site cannot place a second entry after it, and 13 of 38 days lose their fallback (F19).",
+      "proposal": "Store the level number as its own field next to the clock time, and derive the clock time only from the sheet's own printed '(approximately 4:30 p.m.)' where it exists; where it does not, show the level and mark the clock unknown instead of leaving the plan silent.",
+      "impact": "restores a defensible fallback on most Wynn days without inventing a duration",
+      "effort": "medium — new field on every row, no new source needed",
+      "status": "proposed",
+      "decision_needed": "restores a defensible fallback on most Wynn days without inventing a duration"
+    }
+  ],
+  "decision_workflow": [
+    {
+      "step": 1,
+      "title": "Fix trip dates and a nightly budget / quality floor",
+      "status": "blocked",
+      "detail": "No dates or budget were supplied in the brief; every dated rate, cancellation deadline and quality comparison depends on them.",
+      "next_action": "Give dates + nights + occupancy + nightly ceiling (S3, S6)."
+    },
+    {
+      "step": 2,
+      "title": "Pull the official structure sheet for candidate events and read the entry rules",
+      "status": "done",
+      "detail": "All 37 sheets behind the calendar were fetched and machine-read on 2026-11-17; the entry/re-entry/add-on language is absent from every one of them, and one sheet family explicitly mentions subsequent buy-ins.",
+      "next_action": "Convert 'no clause' into a written answer from the room (Q1)."
+    },
+    {
+      "step": 3,
+      "title": "Compare survivors on pool, buy-in, stack/level speed, payout structure and schedule fit",
+      "status": "partially done",
+      "detail": "Comparison columns exist and are populated from the sheets (guarantee, house fee, per-entry pool contribution, chips, level length, payout share, registration deadline). Ranking is suppressed for any row whose entry count is still unknown, because total cost per player is the denominator.",
+      "next_action": "Unlock ranking with the Q1 answer."
+    },
+    {
+      "step": 4,
+      "title": "Itemised hotel totals for the same stay + walking route under 30 minutes",
+      "status": "blocked",
+      "detail": "Mandatory fees and taxes are confirmed for Venetian/Palazzo, Wynn and Treasure Island; dated itemised totals and walking minutes are not obtainable from official static pages.",
+      "next_action": "S3 and S4."
+    },
+    {
+      "step": 5,
+      "title": "One event per day first, evening events only where an exit is realistic",
+      "status": "done as a plan",
+      "detail": "The day plan lists a primary event and a conditional fallback per day, with the morning registration-close time as the exit gate and multi-flight Day-2 restarts shown as hard conflicts.",
+      "next_action": "Pick the exit buffer (S5)."
+    },
+    {
+      "step": 6,
+      "title": "Reconfirm schedules, rates and policies before any non-refundable payment",
+      "status": "automated",
+      "detail": "64 official URLs are re-checked every morning at 06:00 Las Vegas time; rows whose official value changed are flagged and the change is logged with before/after values.",
+      "next_action": "Look at the change monitor page right before booking."
+    }
+  ],
+  "flags": [
+    {
+      "id": "F1",
+      "severity": "blocking-for-single-entry-claim",
+      "item": "0 of 93 Venetian rows are confirmed single-entry",
+      "detail": "All 37 official structure sheets were read on 2026-11-17. None contains a clause confirming one entry, prohibiting re-entries, or prohibiting add-ons. Omission is not confirmation, so no row may be labelled single-entry and the toggle filter returns nothing.",
+      "sources": [
+        "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf",
+        "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+      ]
+    },
+    {
+      "id": "F2",
+      "severity": "exclusion",
+      "item": "Valuetown bounty events (18 on Nov 28, 58 on Dec 19) explicitly contemplate multiple entries",
+      "detail": "The sheet grants the PokerAtlas PRO $20 rake discount to the initial buy-in only and states 'All subsequent buy in's after the initial buy in will be $200' — direct evidence that more than one entry can be purchased, which is the exact spend-advantage structure the brief excludes.",
+      "sources": [
+        "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_8.pdf"
+      ]
+    },
+    {
+      "id": "F3",
+      "severity": "resolved",
+      "item": "Walking minutes for every hotel→Venetian pair — RESOLVED 2026-11-17",
+      "detail": "CLOSED. Google Maps walking directions (mode=walking) were retrieved 2026-11-17 for all 10 hotel→Venetian poker-room pairs and stored in data/integrated/walks-google.json with the returned duration, route distance, via road, exact directions URL and retrieval date; data/walks.json now carries the measured minutes, so the ≤30-minute filter is a hard filter. Caveat retained: Google Maps walking durations run optimistic (brisk pace, under-weight Strip crossings); the route distance in miles is stored alongside and is the more reliable figure. Google resolves 'Horseshoe Las Vegas' to 'Bally's Las Vegas' (the rebranded property); the route endpoint is confirmed.",
+      "sources": [
+        "https://www.google.com/maps/dir/Treasure+Island+Las+Vegas/The+Venetian+Resort+Las+Vegas/?force=walking",
+        "https://www.google.com/maps/dir/Wynn+Las+Vegas/The+Venetian+Resort+Las+Vegas/?force=walking",
+        "https://www.google.com/maps/dir/Bellagio+Las+Vegas/The+Venetian+Resort+Las+Vegas/?force=walking",
+        "https://www.venetianlasvegas.com/resort/casino/poker.html"
+      ]
+    },
+    {
+      "id": "F4",
+      "severity": "missing-data",
+      "item": "No dated hotel quote (checkout total, nightly average, cancellation deadline)",
+      "detail": "Dated pricing needs a booking session with specific dates and occupancy. Left blank by policy; only non-dated mandatory fee/tax/parking figures are shown as verified.",
+      "sources": [
+        "https://www.venetianlasvegas.com/book",
+        "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html"
+      ]
+    },
+    {
+      "id": "F5",
+      "severity": "source-dead",
+      "item": "Caesars Palace daily NLH flyer returns HTTP 404",
+      "detail": "Recorded by the scheduled monitor on 2026-11-17. The Caesars rows preserved from an earlier session (re-entry at first break, optional add-on) can no longer be re-verified from that URL; their official page links no dated schedule.",
+      "sources": [
+        "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+      ]
+    },
+    {
+      "id": "F6",
+      "severity": "source-dead",
+      "item": "Bellagio resort-fee page returns HTTP 404",
+      "detail": "Confirmed again by the scheduled monitor on 2026-11-17, matching the earlier session's finding. Bellagio's true nightly cost stays blank. Second search on 2026-11-17 (session 03d073d2): only third-party sites (hoteltiplasvegas.com, feelingvegas.com, vacations.united.com, applevacations.com) state a Bellagio fee, and none is an official MGM page, so the Bellagio fee stays blank.",
+      "sources": [
+        "https://bellagio.mgmresorts.com/en/hotel/resort-fee.html"
+      ]
+    },
+    {
+      "id": "F7",
+      "severity": "conflict-unresolved",
+      "item": "Bellagio Saturday buy-in printed as $1,000 in one official file and $1,100 in another",
+      "detail": "Preserved as a conflict, not averaged; excluded from any cost comparison until the room confirms one number.",
+      "sources": [
+        "https://bellagio.mgmresorts.com/en/casino/poker.html"
+      ]
+    },
+    {
+      "id": "F8",
+      "severity": "conflict-unresolved",
+      "item": "ARIA resort fee recorded as $50 and $55 by different third-party sources",
+      "detail": "Not published on ARIA's own fetched pages, so no value is shown. Third-party numbers were deliberately not adopted.",
+      "sources": [
+        "https://aria.mgmresorts.com/en/casino/poker.html"
+      ]
+    },
+    {
+      "id": "F9",
+      "severity": "scope-correction",
+      "item": "Circa has no poker room",
+      "description": null,
+      "detail": "Its own venue listing carries no poker room, so it must not appear as a Strip poker lodging candidate.",
+      "sources": [
+        "https://www.circalasvegas.com/entertainment/"
+      ]
+    },
+    {
+      "id": "F10",
+      "severity": "structural",
+      "item": "The 8 AM start requirement cannot be met by any verified Strip listing in this window",
+      "detail": "Earliest morning start in the series is 10:10 AM (single 9:10 AM turbo satellite on Dec 12). Any plan that assumes 8:00 AM play is not supported by official schedules.",
+      "sources": [
+        "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+      ]
+    },
+    {
+      "id": "F11",
+      "severity": "data-quality",
+      "item": "13 of 93 printed schedule rows show no registration-closes value",
+      "detail": "Those are Day-2 restarts, final tables and one 6:10 PM flight where the calendar prints no deadline; overlap judgement for those rows falls back to the structure sheet's late-registration level count and is labelled as such.",
+      "sources": [
+        "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+      ]
+    },
+    {
+      "id": "F12",
+      "severity": "duplicate-work",
+      "item": "Five parallel sub-sites remain published on main",
+      "detail": "The root dashboard is now generated from one data pipeline; /60fb62da/, /c07371e3/, /df41f5c6/, /strip/ and /verified/ are preserved unchanged as prior snapshots and are linked from the sources page with a caveat that they are older point-in-time reads.",
+      "sources": []
+    },
+    {
+      "id": "F13",
+      "severity": "repo-hygiene",
+      "item": "COORDINATION.md carried residual git conflict markers on main",
+      "detail": "A '=======' and a '>>>>>>> origin/main' line (with a duplicated 60fb62da section) had been committed by an earlier merge. The marker lines were deleted in this session; both copies of the text were kept so nothing was lost.",
+      "sources": []
+    },
+    {
+      "id": "F14",
+      "severity": "method",
+      "item": "This environment's PDF proxy was intermittent, so structure sheets were verified twice by different means",
+      "detail": "Twelve sheets were read through the agent's own page fetcher and the same field values (buy-in, house fee, pool contribution, guarantee, registration window) were then matched by the Actions runner's independent fetch of the same PDFs. Both reads agree; where they would not, the row is flagged.",
+      "sources": [
+        "https://github.com/karagemop466-tech/Poker4/actions/workflows/url-check.yml"
+      ]
+    },
+    {
+      "id": "F15",
+      "severity": "blocking-for-single-entry-claim",
+      "item": "13 multi-flight structure sheets state that a player who bags for Day 2 'may not play a subsequent flight' — the sheet contemplates play in more than one starting flight",
+      "detail": "Read line by line on 2026-11-17 (session 75757cc1). Sheets #2, #3, #4, #9, #10, #12, #13, #14, #20, #21, #35, #36, #37 (Events 1, 7, 19, 26, 47, 49, 56, 59) contain the sentence 'Any player who bags chips for Day 2 may not play a subsequent flight.' The rule restricts only players who bagged; it does not state an entry count. It therefore neither confirms single entry nor confirms re-entry, and these rows stay 'single-entry unverified'. Full verbatim log: data/75757cc1/structure_reads.tsv.",
+      "sources": [
+        "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf",
+        "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf",
+        "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf"
+      ]
+    },
+    {
+      "id": "F16",
+      "severity": "data-quality-corrected",
+      "item": "Schedule feed had 6 defects against the official calendar; corrected 2026-11-17 and proven by a checker",
+      "detail": "data/schedule-snapshot.json (the feed that builds the root tournaments table) (a) printed the Event 39 Day 2 restart on 11 Dec at 7:00 PM, the official time is 10:00 AM; (b) omitted the Event 47 Day 2 restart at 1:00 PM on 13 Dec; (c) left the $500,000 guarantee blank for Event 56 at 10:10 AM and 6:10 PM on 17 Dec; (d) left the $150,000 guarantee blank for Event 59 at 11:10 AM on 20 Dec; (e) recorded level duration 11 min for Event 56 (6:10 PM, sheet #36 says 30) and 5 min for Event 59 (11:10 AM, sheet #4 says 40). Now 94/94 rows match the official page (data/75757cc1/check_calendar.py, exit 0). Corrections are traceable in parse_notes.",
+      "sources": [
+        "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+        "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_36.pdf",
+        "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf"
+      ]
+    },
+    {
+      "id": "F17",
+      "severity": "process",
+      "item": "Daily maintenance job overwrote the root pages with a stale build (fixed in session c2242cb1)",
+      "detail": "maintenance.yml ran build/build_pages.py every morning and committed *.html to main, reverting pages that scripts/integrate_data.py had generated (for example schedule.html went back to a 75 KB page instead of the redirect stub). Commit 6c94023 (16:57 UTC, 2026-11-17) is the visible instance. The job now runs only scripts/integrate_data.py and the current verifiers. Legacy build/ scripts still exist in the repo and should be retired by an owner.",
+      "sources": [
+        "https://github.com/karagemop466-tech/Poker4/blob/main/.github/workflows/maintenance.yml"
+      ]
+    },
+    {
+      "id": "F18",
+      "severity": "resolved",
+      "item": "Walking minutes — RESOLVED 2026-11-17 with sourced Google Maps measurements",
+      "detail": "CLOSED. The earlier landing page listed map-based timings with no source; the regenerated page showed nulls. As of 2026-11-17 every hotel→Venetian walking minute is a measured Google Maps value retrieved this date, stored with its directions URL and timestamp in data/integrated/walks-google.json and mirrored into data/walks.json. Retained note: Google walking durations are optimistic; route distance is stored alongside. Horseshoe is returned by Google as Bally's Las Vegas.",
+      "sources": [
+        "https://github.com/karagemop466-tech/Poker4/blob/main/data/integrated/walks-google.json",
+        "https://www.google.com/maps/dir/Horseshoe+Las+Vegas/The+Venetian+Resort+Las+Vegas/?force=walking"
+      ]
+    },
+    {
+      "id": "F19",
+      "severity": "caveat",
+      "item": "Wynn $55 resort fee: now read on a current official Wynn offer page (DK26WLV2)",
+      "detail": "The earlier citation (page 850257) covers the Concours Sip and Savor package (travel Oct 27 – Nov 1, 2026), which has expired. The current offer page DK26WLV2 (select dates Oct 2, 2026 – Mar 31, 2027; Wynn Resort King; call-centre booking only) states 'A daily resort fee of $55 plus tax', read 2026-11-17 in session 03d073d2. The general Wynn rate-page fee was not separately read, and offer terms change, so re-confirm on the booking page before paying.",
+      "sources": [
+        "https://www.wynnlasvegas.com/terms-and-conditions/DK26WLV2",
+        "https://www.wynnlasvegas.com/terms-and-conditions/850257"
+      ]
+    },
+    {
+      "id": "F20",
+      "severity": "data-label",
+      "item": "'42 structure sheets audited' overstates the Venetian audit",
+      "detail": "data/structure-audit.json holds 42 records, but they mix Venetian DSE IV sheets with Wynn, Bellagio and other documents. tools/verify_poker4.py reports 12 tracked sheets with no record yet. The landing-page label should count Venetian sheets separately and state the gap. Not changed in this session.",
+      "sources": [
+        "https://github.com/karagemop466-tech/Poker4/blob/main/data/structure-audit.json",
+        "https://github.com/karagemop466-tech/Poker4/blob/main/tools/verify_poker4.py"
+      ]
+    },
+    {
+      "id": "F21",
+      "severity": "monitoring",
+      "item": "Scheduled monitors: some runs failing; eight jobs commit to main",
+      "detail": "monitor.yml ('Monitor official sources') and recheck.yml ('daily-recheck') failed on their latest scheduled runs; logs were not retrievable from the session sandbox, so the cause is not confirmed. recheck.yml now runs the current root verifier (tools/verify_root_site.py is stale and reports 19 errors). Several overlapping scheduled jobs commit to main, which is a race risk. Consolidating them is a suggestion for review.",
+      "sources": [
+        "https://github.com/karagemop466-tech/Poker4/blob/main/.github/workflows/monitor.yml",
+        "https://github.com/karagemop466-tech/Poker4/blob/main/.github/workflows/recheck.yml",
+        "https://github.com/karagemop466-tech/Poker4/blob/main/tools/verify_root_site.py"
+      ]
+    },
+    {
+      "id": "F22",
+      "severity": "official-source-arithmetic",
+      "item": "Wynn's $1,100 PLO structure sheet prints a fee split that does not add up ($975 + $85 + $45 = $1,105 against a $1,100 buy-in)",
+      "detail": "Structure booklet, WPT World Championship, Tuesday December 1, 2026, 1 p.m., $1,100 PLO. The row keeps the sheet's own wording and the three components verbatim; nothing is adjusted. It is excluded from the ranked list until the venue confirms whether the fee is $80 or the pool slice is $970.",
+      "sources": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ],
+      "note": "renumbered from F15 on merge with main, where that id was already used by another session"
+    },
+    {
+      "id": "F23",
+      "severity": "stale-official-document",
+      "item": "Bellagio's Saturday NLH sheet contradicts itself on price and prints a Day-2 date (9/13/26) that is already in the past",
+      "detail": "The PDF's title block says 'NLH $1100 BUY-IN', the Bellagio poker page lists 'SATURDAYS | $1,000 NLH', and rule 07 on the same sheet says 'Of the $600 Buy-in'. Its rule 04 also schedules the 'Combined Final Day 2 (9/13/26)'. The buy-in is therefore left blank, the row is not scheduled, and it needs a fresh sheet from the room before any money is committed.",
+      "sources": [
+        "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt6d47974bf5a7d9b6/6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf",
+        "https://bellagio.mgmresorts.com/en/casino/poker.html"
+      ],
+      "note": "renumbered from F16 on merge with main, where that id was already used by another session"
+    },
+    {
+      "id": "F24",
+      "severity": "schedule-availability",
+      "item": "Wynn's daily slate is printed as a standing offer with no calendar dates, and the sheet itself says it may be suspended during other series",
+      "detail": "'The Tournament will be offered Monday-Thursday and may be suspended during Seniors Events, Classic Events, or other Tournament Series.' Wynn runs its own WPT series from 2026-11-27 to 2026-12-21, so whether the $200/$240/$160 dailies run on any given trip date is not established by either document. Those rows carry no date and are never placed in the day plan.",
+      "sources": [
+        "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+        "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+      ],
+      "note": "renumbered from F17 on merge with main, where that id was already used by another session"
+    },
+    {
+      "id": "F25",
+      "severity": "conflicting-official-values",
+      "item": "Caesars Palace's two official pages disagree on the daily buy-in: the explore page says every event carries $100, the 2026 daily flyer prints $160 at 2 PM and 9 PM",
+      "detail": "The Caesars explore page states four daily NLH tournaments at 10 a.m., 2 p.m., 6 p.m. and 9 p.m., 'every event carries a $100 buy-in', 20,000 chips, a $1,000 guarantee, 20-minute levels and a $50 add-on. The dedicated 2026 daily flyer PDF (re-checked live 2026-11-17 after the 2025 flyer was retired and 404ing) prints per-slot buy-ins — $100 at 10 a.m. and 6 p.m., $160 at 2 p.m. and 9 p.m. — plus the fee splits ($70/$30 and $115/$45), the add-on split ($45/$5), registration closing at the start of level 7, and rule 3: 'Participants may only register themselves, but may re-enter, by paying the entry fee, upon elimination within the first break of play.' The rows follow the dedicated, dated flyer (document of record for the schedule) and carry its excerpts; the explore page's blanket $100 sentence stays quoted on the row as the conflicting official statement. Single-entry status remains unverified on both sources — the printed re-entry rule is evidence of the opposite, so the rows stay in the spend-advantage section. Rows stay unranked because the slate prints no calendar dates.",
+      "sources": [
+        "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+        "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+      ],
+      "note": "updated 2026-11-17 (session arena/3082d6d9-poker4): the retired 2025 flyer (HTTP 404) was replaced by the live 2026 flyer; per-slot buy-ins, fee splits, the re-entry rule and the explore-page conflict are now recorded on the rows. Earlier note: renumbered from F18 on merge with main, where that id was already used by another session."
+    },
+    {
+      "id": "F26",
+      "severity": "planning-input-missing",
+      "item": "Wynn prints its late-registration deadlines as blind levels, not clock times, so a clock-based fallback cannot be computed for those rows",
+      "detail": "Most WPT sheets read 'available until the start of level 9' and only some add '(approximately 4:30 p.m.)'. The clock figure is missing on the majority of the 69 sheets. Consequence: the day plan can only offer a fallback where the printed deadline is a time, which is why 13 of the 38 planned days carry no defensible second entry.",
+      "sources": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ],
+      "note": "renumbered from F19 on merge with main, where that id was already used by another session"
+    },
+    {
+      "id": "F27",
+      "severity": "unverified",
+      "item": "Primary Gaming Corridor membership (13.38% vs 13.00%) not checked property by property",
+      "detail": "The Clark County letter of 15 Nov 2016 sets 13.38% for properties inside the Primary Gaming Corridor, 13.00% for stadium-district properties outside it, and only the 0.5% LVCVA increase outside both. It refers to the PGC map on the county website but does not reproduce it. The Venetian's own terms print 13.38% (read live 2026-11-17). Wynn's rate is now sourced to the county letter and Treasure Island's to its offer-terms page, but neither property's map membership has been checked. Action: open the county PGC map and confirm each property before its rate is treated as confirmed. The letter is dated 15 Nov 2016. The current Clark County code (CCC 4.08) was not read in this session; the 13.38% figure is corroborated by the Venetian's live 2026 terms page, not by a current county document.",
+      "sources": [
+        "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:7436500e-cac4-420a-b23a-02d3fec69900/original/as/room-tax-increase-transient-lodging-letter-111616.pdf",
+        "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+        "https://treasureisland.com/deals-offers/buy-1-get-1-bogo-free-fine-print"
+      ]
+    },
+    {
+      "id": "F28",
+      "severity": "data-quality-corrected",
+      "item": "data/room-facts.json carried sha256 values that did not match the raw captures it cites",
+      "detail": "Re-running tools/room_extract.py recomputed the hashes of data/raw/wynn-wpt-terms.txt and data/raw/wynn-daily-structures.txt. The committed values were stale. The regenerated file changes only those sha256 fields (commit 7c5767d). The raw captures were not changed.",
+      "sources": [
+        "https://github.com/karagemop466-tech/Poker4/blob/main/data/room-facts.json"
+      ]
+    },
+    {
+      "id": "F29",
+      "severity": "monitor-failure",
+      "item": "Daily poker4 monitor (tournament-monitor.yml) failed its verification gate on 2026-11-17; not yet fixed",
+      "detail": "The workflow 'Daily schedule + source-change monitor' failed at its step 'Verify the site before committing' (tools/verify_poker4.py). This happened on the 22:26 UTC scheduled run (run 44190052816, commit ff3fa36) and on three push runs earlier the same day (43994467535, 43994447808, 43994391262). The sandbox could not download the failed-run logs (EOF), so the exact failing check was not read. Run offline on the committed tree, verify_poker4.py passes (20 pages, 94 tournament rows, 57 sources). A manual retry was refused (HTTP 403, 'Resource not accessible by integration'). The root site and its Pages deploy are not affected: that job commits only the poker4/ sub-site data, and the root deploy succeeded on the merge commit. Action for the owner: open the failed run's 'Verify the site' step log and fix the cause, or re-run the schedule after the cause is fixed.",
+      "sources": [
+        "https://github.com/karagemop466-tech/Poker4/actions/runs/44190052816",
+        "https://github.com/karagemop466-tech/Poker4/blob/main/.github/workflows/tournament-monitor.yml"
+      ]
+    },
+    {
+      "id": "F30",
+      "severity": "official-source-typo",
+      "item": "Venetian DSE IV structure sheet 25 (satellites #45/#46/#48) prints an inconsistent blind line at level 25: big blind ante 120,000 with blinds 75,000-125,000",
+      "detail": "Live re-read of the official sheet (https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_25.pdf) on 2026-11-17 shows level 25 as '25 | 15 | 120,000 | 75,000-125,000'. Every surrounding level follows the 75k/150k-style progression (26 is 150,000 / 75,000-150,000), so the printed 125,000 big blind conflicts with the 120,000 ante on the same line. Published rows copy the sheet verbatim; no correction is inferred. The satellite structure past level 24 rarely matters (registration closes after level 6), but the sheet itself is internally inconsistent and is flagged for room confirmation.",
+      "sources": [
+        "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_25.pdf"
+      ],
+      "note": "found by arena/c5c7cc2b-poker4 during the 2026-11-17 line-by-line live re-read (V1/V2); renumbered twice on rebase (F27 then F29 were taken by parallel sessions) — final ID F30"
+    }
+  ],
+  "trip_example": {
+    "label": "Worked example — 4 nights at the host property, one cheap plain-NLH entry per day",
+    "basis": "Illustrative arithmetic from the official starting endpoints and fee/tax figures. Not a quote, not a booking, and the entry count assumes one entry per event (unverified).",
+    "nights": 4,
+    "hotel_base_rate_usd": 119,
+    "resort_fee_usd": 55,
+    "tax_rate_pct": 13.38,
+    "parking_usd_per_night": 0,
+    "entries": [
+      {
+        "date": "2026-11-18",
+        "event_no": 2,
+        "name": "$300 No Limit Hold'em (1Day) — $10,000 GTD",
+        "buy_in_usd": 300
+      },
+      {
+        "date": "2026-11-19",
+        "event_no": 3,
+        "name": "$200 NLH RaceDay Stack (1Day)",
+        "buy_in_usd": 200
+      },
+      {
+        "date": "2026-11-22",
+        "event_no": 6,
+        "name": "$200 No Limit Hold'em (1Day)",
+        "buy_in_usd": 200
+      },
+      {
+        "date": "2026-11-26",
+        "event_no": 12,
+        "name": "$300 No Limit Hold'em (1Day) — $10,000 GTD",
+        "buy_in_usd": 300
+      }
     ]
-   },
-   {
-    "day": "Daily (per undated 2026 flyer)",
-    "time": "2:00 PM",
-    "event": "NLH",
-    "name": "Caesars Palace Daily NLH — $160 entry",
-    "venue": "Caesars Palace – Poker Room",
-    "buy_in": 160,
-    "guarantee": 1000,
-    "chips": 20000,
-    "reg_closes": "Start of level 7",
-    "reentry_addon": "Re-entry allowed at first break; optional $50 add-on for 15,000 chips",
-    "sources": [
-     "C_FLYER",
-     "C_PAGE"
-    ],
-    "notes": "Flyer: $115 of $160 to prize pool, $45 house fee.",
-    "source_urls": [
-     "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
-     "https://www.caesars.com/caesars-palace/casino"
+  },
+  "preserved_rows": {
+    "_note": "Caesars Palace daily NLH rows carried over from the earlier data/tournaments.json (reentry_or_addon list). Main's tournaments.json was restructured by another session and no longer carries them, so they are preserved here verbatim. The flyer URL they cite (clv-poker-daily-nlh-tournament-flyer-2025.pdf) returns 404 on the official host (see data/url-checks.json), so these rows are shown as unverified and need re-verification against a live official page.",
+    "caesars": [
+      {
+        "day": "Daily (per undated 2026 flyer)",
+        "time": "10:00 AM",
+        "event": "NLH",
+        "name": "Caesars Palace Daily NLH — $100 entry",
+        "venue": "Caesars Palace – Poker Room",
+        "buy_in": 100,
+        "guarantee": 1000,
+        "chips": 20000,
+        "reg_closes": "Start of level 7",
+        "reentry_addon": "Re-entry allowed at first break ($100); optional $50 add-on for 15,000 chips at first break",
+        "sources": [
+          "C_FLYER",
+          "C_PAGE"
+        ],
+        "notes": "Flyer: $70 of $100 to prize pool, $30 house fee. Registration closes at start of level 7.",
+        "source_urls": [
+          "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+          "https://www.caesars.com/caesars-palace/casino"
+        ]
+      },
+      {
+        "day": "Daily (per undated 2026 flyer)",
+        "time": "2:00 PM",
+        "event": "NLH",
+        "name": "Caesars Palace Daily NLH — $160 entry",
+        "venue": "Caesars Palace – Poker Room",
+        "buy_in": 160,
+        "guarantee": 1000,
+        "chips": 20000,
+        "reg_closes": "Start of level 7",
+        "reentry_addon": "Re-entry allowed at first break; optional $50 add-on for 15,000 chips",
+        "sources": [
+          "C_FLYER",
+          "C_PAGE"
+        ],
+        "notes": "Flyer: $115 of $160 to prize pool, $45 house fee.",
+        "source_urls": [
+          "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+          "https://www.caesars.com/caesars-palace/casino"
+        ]
+      },
+      {
+        "day": "Daily (per undated 2026 flyer)",
+        "time": "6:00 PM",
+        "event": "NLH",
+        "name": "Caesars Palace Daily NLH — $100 entry",
+        "venue": "Caesars Palace – Poker Room",
+        "buy_in": 100,
+        "guarantee": 1000,
+        "chips": 20000,
+        "reg_closes": "Start of level 7",
+        "reentry_addon": "Re-entry allowed at first break; optional $50 add-on for 15,000 chips",
+        "sources": [
+          "C_FLYER",
+          "C_PAGE"
+        ],
+        "notes": "Same format as 10:00 AM event.",
+        "source_urls": [
+          "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+          "https://www.caesars.com/caesars-palace/casino"
+        ]
+      },
+      {
+        "day": "Daily (per undated 2026 flyer)",
+        "time": "9:00 PM",
+        "event": "NLH",
+        "name": "Caesars Palace Daily NLH — $160 entry",
+        "venue": "Caesars Palace – Poker Room",
+        "buy_in": 160,
+        "guarantee": 1000,
+        "chips": 20000,
+        "reg_closes": "Start of level 7",
+        "reentry_addon": "Re-entry allowed at first break; optional $50 add-on for 15,000 chips",
+        "sources": [
+          "C_FLYER",
+          "C_PAGE"
+        ],
+        "notes": "Same format as 2:00 PM event.",
+        "source_urls": [
+          "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+          "https://www.caesars.com/caesars-palace/casino"
+        ]
+      }
     ]
-   },
-   {
-    "day": "Daily (per undated 2026 flyer)",
-    "time": "6:00 PM",
-    "event": "NLH",
-    "name": "Caesars Palace Daily NLH — $100 entry",
-    "venue": "Caesars Palace – Poker Room",
-    "buy_in": 100,
-    "guarantee": 1000,
-    "chips": 20000,
-    "reg_closes": "Start of level 7",
-    "reentry_addon": "Re-entry allowed at first break; optional $50 add-on for 15,000 chips",
-    "sources": [
-     "C_FLYER",
-     "C_PAGE"
-    ],
-    "notes": "Same format as 10:00 AM event.",
-    "source_urls": [
-     "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
-     "https://www.caesars.com/caesars-palace/casino"
-    ]
-   },
-   {
-    "day": "Daily (per undated 2026 flyer)",
-    "time": "9:00 PM",
-    "event": "NLH",
-    "name": "Caesars Palace Daily NLH — $160 entry",
-    "venue": "Caesars Palace – Poker Room",
-    "buy_in": 160,
-    "guarantee": 1000,
-    "chips": 20000,
-    "reg_closes": "Start of level 7",
-    "reentry_addon": "Re-entry allowed at first break; optional $50 add-on for 15,000 chips",
-    "sources": [
-     "C_FLYER",
-     "C_PAGE"
-    ],
-    "notes": "Same format as 2:00 PM event.",
-    "source_urls": [
-     "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
-     "https://www.caesars.com/caesars-palace/casino"
-    ]
-   }
-  ]
- }
+  }
 }
