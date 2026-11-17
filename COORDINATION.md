@@ -23,7 +23,8 @@ Shared task board for the Poker4 project. Sessions claim tasks here to avoid dup
 - After push, PR #8 was merged to main; GitHub Pages (source: main, path "/") rebuilds automatically.
 
 ## Current session
-- Session ID: `arena/e2d11e52-poker4` — this session works on branch `arena/e2d11e52-poker4` only; integration (PR #8 → main, Pages deploy confirm) done on main.
+- Session ID: `arena/88295d28-poker4` (this session), branch `arena/88295d28-poker4`, branched from main @ `be3594d`. Role: **final integration session** — claims T11 (integrate open PRs #13/#16, fix board conflict markers, fill remaining requirement gaps on the shared root site, re-verify, PR → main, merge, Pages deploy confirm).
+- Prior session `arena/e2d11e52-poker4` — integration (PR #8 → main, Pages deploy confirm) done on main.
 
 ## Task board (combined, both sessions)
 
@@ -39,6 +40,7 @@ Shared task board for the Poker4 project. Sessions claim tasks here to avoid dup
 | T6 | Integration: PR → main, merge, Pages deploy check | done | arena-abd38ed7 | PR #1 merged to main before this session | — | — |
 | T9 | Integration: this session's PR #8 → main, merge, Pages deploy check, record result | done | arena/e2d11e52-poker4 | PR #8, main, COORDINATION.md | PR merged; Pages deploy confirmed below | Flagged items do not block merge |
 | T10 | c07371e3: Strip poker re-verification from official sources (Venetian 94-row schedule, Wynn daily/WPT, Bellagio, resort fees), single-entry filter, add-on/re-entry section, repo review, flagged list | done (site built; PR pending merge) | arena/c07371e3-poker4 (session c07371e3) | `c07371e3/`, `data/c07371e3/`, `tools/c07371e3_build.py`, `tools/c07371e3_style.css`; COORDINATION.md (log only) | Venetian: official DSE IV page + structure sheets; Wynn: official poker page + daily/WPT PDFs; Bellagio: official poker page + PDFs; resort fees: official terms (Wynn, Treasure Island) | Single-entry status unverified for all Venetian events; Bellagio Sat $1,000/$1,100 conflict; Caesars/Venetian/Bellagio/Aria/Harrah's/Horseshoe fees unverified; no walk times; no 8 AM start on any official schedule checked |
+| T11 | **Final integration (this session):** repair COORDINATION.md conflict markers; integrate open PRs #13/#16; fill remaining requirement gaps on shared root site (trip-cost calculator, search box, date filter, per-row last-checked, dated rate log, venue pages, single-entry toggle, daily official-URL re-check workflow); line-by-line re-verify; PR → main; merge; Pages deploy confirm | in progress | arena/88295d28-poker4 | `COORDINATION.md`, root site files (`index.html`, `tournaments.html`, `hotels.html`, `schedule.html`, `decisions.html`, `questions.html`, `review.html`, `style.css`), `data/*.json`, `scripts/`, `.github/workflows/`, PR → main | Official sources already recorded per row (data/sources.json, pages/flagged-for-review.html#sources); re-check logged in `data/recheck_log.json` | Unverified values stay blank and flagged; walking times and dated room rates remain unconfirmed from official sources |
 
 ## Sources used (this session)
 S1 Venetian official DSE IV page · S2 Wynn official poker page · S3 WPT schedule PDF · S4 PokerNews WPT · S5 PokerFuse · S6 WPT official · S7 PokerNews ARIA room · S8 HendonMob ARIA · S9 BetMGM ARIA Open · S10–S15 PokerAtlas room listings · S16 Vegas Poker Calendar · S17 Orleans report · H1–H10 hotel fee sources (incl. H10 circalasvegas.com official — Circa has NO poker room). Full list: pages/flagged-for-review.html#sources.
@@ -130,24 +132,6 @@ Scope note: the session brief asks for `session-<id>/<task>` branches. The Arena
 
 - 2026-11-16 (df41f5c6): **PR #10** (`arena/df41f5c6-poker4` → `main`, integration of the df41f5c6 site and data; includes the board merge above) **merged** at `9117705` (19:12 UTC). Pages deploy for `9117705`: success (both workflows). Live check: `https://karagemop466-tech.github.io/Poker4/df41f5c6/flagged.html` loads with all 29 flags. Integration result: merged; no unresolved conflicts; flagged items published, not blocking.
 - 2026-11-16 (df41f5c6): Board conflicts logged: (1) PR #6 vs `main` after PRs #3/#5; (2) PR #10 vs `main` after `000d1da` and again after PR #12 (`81cd955`). Each time `main`'s board was kept verbatim and the df41f5c6 section re-appended.
-=======
----
-
-## Session arena/60fb62da-poker4 (session `60fb62da`)
-
-| Task | Status | Owner | Files in scope |
-|---|---|---|---|
-| Independent official-source Venetian schedule/hotel audit and decision dashboard | needs review | arena/60fb62da-poker4 | `60fb62da/*`; this appended coordination entry only |
-
-- The task began in a README-only checkout. As concurrent PRs merged, root index/navigation/data became shared integration scope. To avoid overwriting another session, this dashboard is isolated at `/60fb62da/`; root files remain the current upstream `main` version.
-- Conflict history: PR #2 initially conflicted after upstream merges. Latest `origin/main` has been merged into this branch. Each merge conflict was only in `COORDINATION.md`; resolution retained the latest complete upstream board and appended this session's log. The latest upstream board also contained two residual merge-marker lines around the PR #8 result; those delimiter lines were removed while retaining all text on both sides. No other session's files were overwritten. This subsite does not alter root navigation/data.
-- Official tournament sources: [Venetian DeepStack Extravaganza IV full schedule](https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html) (all four chunks); official structure PDFs for Events #2/#12, #3–5, #6, #10, #14/#28/#63, and #27. Verified dates/times, event names, buy-ins and guarantees as stated. No reviewed candidate rules confirm one entry only or prohibit re-entry/rebuy/add-on; zero are marked confirmed single-entry.
-- Official lodging/location sources: [Venetian poker suite rates/play terms](https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html), [resort fee](https://www.venetianlasvegas.com/resort/resort-fee.html), [hotel terms/tax](https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html), [poker room location](https://www.venetianlasvegas.com/resort/casino/poker.html). Verified $119/$209 conditional poker-rate starts, $55 resort fee + tax, 13.38% room tax, play qualification, and poker room at Palazzo Level 2 with official directions from both resort lobbies. No official walking minutes published. Conditional math: ($119+$55)×1.1338=$197.28; ($209+$55)×1.1338=$299.32; these are not date-specific room quotes.
-- Further official hotel leads: [Treasure Island Tower Suite/fee page](https://treasureisland.com/hotel/tower-suite) and [offer terms](https://treasureisland.com/deals-offers/buy-1-get-1-bogo-free-fine-print) establish $49.95 resort fee + tax and 13.38% Clark County room tax, but no dated room rate. Official [Harrah’s](https://www.caesars.com/harrahs-las-vegas) and [Horseshoe](https://www.caesars.com/horseshoe-las-vegas) pages are linked as alternatives; unconfirmed fees/rates/walking minutes remain blank.
-- Flagged items include missing single-entry/re-entry/add-on rules, no 8 AM candidate start, no date-specific hotel total, incomplete Strip-wide schedule coverage, unknown walking minutes, and conditional poker-rate play requirements.
-- Verification passed: JavaScript syntax, nested local-link audit, page-render simulation, and fee/tax arithmetic. Current-main `scripts/verify.py` passed: 10 pages, 17 sources, 29 flags, all rows with official sources and internal links resolving. Every subsite data row has an official organizer/property source. Latest upstream added CRLF CSV files that create repository-wide `git diff --check` trailing-CR warnings; those other-session files were left untouched.
-- PR #2: https://github.com/karagemop466-tech/Poker4/pull/2. Contribution remains limited to `60fb62da/` and this coordination entry. PR #10 was merged; PRs #4 and #13 remain outside this session's scope. Existing Pages deployment has succeeded after upstream merges; this session does not change the shared Pages workflow.
->>>>>>> origin/main
 
 
 ## Current integration correction — arena/2da41d2b-poker4
@@ -157,3 +141,10 @@ Scope note: the session brief asks for `session-<id>/<task>` branches. The Arena
 - Integration: root navigation links the preserved `c07371e3` site; root Flagged for Review links its flagged log with an independent-source-set caveat.
 - Validation: `python3 build/build_site.py`; `python3 scripts/build.py`; `python3 scripts/verify.py` (10 pages, 17 sources, 29 flags; all row sources/internal links verified); `git diff --check`. Data audit confirms 19 and 64 candidate rows are labeled unverified.
 - PR #4 merged to `main` as merge commit `fb62f758526b2bbfc13ad50b238faa88cf5094ec` at 2026-11-16 19:15:25 UTC. The "Deploy static dashboard to GitHub Pages" run `43937426421` and "pages build and deployment" run `43937425213` both completed successfully. GitHub Pages API reports status `built`, public URL `https://karagemop466-tech.github.io/Poker4/`, source `main:/`. Direct browser fetch of the live page was not available from this environment; workflow and Pages API statuses were verified.
+
+---
+
+## Session arena/88295d28-poker4 (integration)
+
+-2026-11-17 — Claimed T11 (final integration) on branch `arena/88295d28-poker4` (from main @ `be3594d`). Scope: `COORDINATION.md`, shared root site (`index.html`, `tournaments.html`, `hotels.html`, `schedule.html`, `decisions.html`, `questions.html`, `review.html`, `style.css`), `data/*.json`, `scripts/`, `.github/workflows/`, and the integration PR → main.
+- 2026-11-17 — Irregularity found and repaired: `COORDINATION.md` on `main` contained leftover conflict markers (`=======` at old line 133, `>>>>>>> origin/main` at old line 150) with a duplicated `60fb62da` section. Resolution: kept the first full copy (which contained every bullet, plus the two df41f5c6 log lines), deleted the duplicate section and both marker lines. No other session's content removed.
