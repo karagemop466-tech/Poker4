@@ -764,7 +764,7 @@ def shell(rel, title, body, active, extra_head="", needs_data=True):
 <body>
 <header class="topbar">
 <a class="brand" href="{rel}index.html">Poker<span>4</span></a>
-<nav class="mainnav">{nav}</nav>
+<nav><div class="mainnav">{nav}</div></nav>
 <div class="searchbox"><input id="global-search" type="search" placeholder="Search events, hotels, rules, sources…" autocomplete="off" aria-label="Search the site"><div id="search-results" hidden></div></div>
 </header>
 <main>
@@ -989,7 +989,7 @@ def source_table(rows, base=""):
     for r in rows:
         state = status_span("ok", r["status"]) if r["ok"] else status_span("bad", f"{r['status']} {r.get('error') or ''}")
         chg = "yes — values" if r.get("values_changed") else ("bytes only" if r.get("bytes_changed") else ("baseline" if r.get("first_run") else "no"))
-        saved = f"<a class='captured-link' href='{E(r['saved'])}'>captured text</a>" if r.get("saved") else ""
+        saved = f"<a class='captured-link' href='{E(base + str(r['saved']))}'>captured text</a>" if r.get("saved") else ""
         body += (f"<tr><td>{E(r['label'])}</td><td class='num'>{E(r.get('venue') or '—')}</td><td>{E(r.get('kind') or '')}</td>"
                  f"<td class='num'>{E(r.get('checked_at') or 'never')}</td><td>{state}</td><td>{chg}</td>"
                  f"<td class='num'>{r.get('rows_parsed') if r.get('rows_parsed') is not None else ''}</td>"
@@ -1424,6 +1424,24 @@ REDIRECTS = {
     "venue-venetian.html": ("venues/venetian.html", "venue pages now carry the events, the hotels and the sources for that room in one place"),
     "venue-wynn.html": ("venues/wynn.html", "venue pages now carry the events, the hotels and the sources for that room in one place"),
     "venue-others.html": ("venues/others.html", "venue pages now carry the events, the hotels and the sources for that room in one place"),
+    # One page family at the root. These filenames belonged to earlier builders whose
+    # pages are preserved in their own folders (poker4/, site/, v2/, archive/); at the
+    # root they are now redirects so a bookmarked or linked URL still resolves and the
+    # site keeps a single navigation, a single stylesheet and one set of numbers.
+    "venetian.html": ("venues/venetian.html", "the Venetian room has its own page under venues/, with its events, its hotels and its sources"),
+    "wynn.html": ("venues/wynn.html", "the Wynn room has its own page under venues/"),
+    "others.html": ("venues/others.html", "the remaining rooms have their own page under venues/"),
+    "venues.html": ("index.html", "the room-by-room coverage table is on the overview page"),
+    "trip.html": ("calculator.html", "the trip-cost calculator now reads the dated rate log and the confirmed fee for each property"),
+    "rate-log.html": ("hotels.html", "the dated rate log is kept per property on the hotels page"),
+    "ratelog.html": ("hotels.html", "the dated rate log is kept per property on the hotels page"),
+    "changelog.html": ("review.html", "value-level changes are reported in the review log, next to the URL that changed"),
+    "monitor.html": ("review.html", "monitoring now covers every official URL and reports value changes, not a hand-picked list"),
+    "monitoring.html": ("review.html", "monitoring now covers every official URL and reports value changes, not a hand-picked list"),
+    "sources.html": ("review.html", "every tracked official URL, its last-checked date and its status are in the review log"),
+    "repo-review.html": ("review.html", "the repository and source review is reported in the review log"),
+    "workflow.html": ("review.html", "how the site stays current — the scheduled re-checks and what they write — is on the overview and review pages"),
+    "archive.html": ("review.html", "earlier sessions' work is preserved in its own folders; the review log links the current one"),
 }
 for src, (dest, why) in REDIRECTS.items():
     (OUT / src).write_text(f"""<!DOCTYPE html>
@@ -1432,7 +1450,7 @@ for src, (dest, why) in REDIRECTS.items():
 <link rel="canonical" href="{dest}">
 <title>Moved · Vegas Strip Poker Planner</title>
 <link rel="stylesheet" href="site.css"></head>
-<body><main><section class="page-head"><h1>This page moved</h1>
+<body><nav><div class="mainnav">{"".join(f'<a href="{u}">{E(t)}</a>' for u, t in NAV)}</div></nav><main><section class="page-head"><h1>This page moved</h1>
 <p><code>{E(src)}</code> was replaced during the integration: {E(why)}.</p>
 <p>You are being redirected to <a href="{dest}">{E(dest)}</a>. If nothing happens, follow the link.</p>
 </section></main></body></html>

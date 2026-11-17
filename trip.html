@@ -1,57 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Trip calculator — Poker4</title>
-<link rel="stylesheet" href="assets/style.css">
-</head>
-<body>
-<header class="site">
-  <h1>Trip cost calculator <span class="gold">★</span> Poker4</h1>
-  <div class="sub">entries × buy-ins + nights × true hotel cost · no assumed values — every figure traces to a verified row or your own input</div>
-</header>
-<nav class="site">
-  <a href="index.html">Home</a>
-  <a href="tournaments.html">Tournaments</a>
-  <a href="schedule.html">Schedule &amp; day plan</a>
-  <a href="hotels.html">Hotels</a>
-  <a class="active" href="trip.html">Trip calculator</a>
-  <a href="venetian.html">Venetian</a>
-  <a href="wynn.html">Wynn</a>
-  <a href="others.html">Other venues</a>
-  <a href="flagged.html">Flagged for review</a>
-  <a href="questions.html">Questions</a>
-  <a href="suggestions.html">Suggestions</a>
-  <a href="sources.html">Sources</a>
-  <a href="changelog.html">Changelog</a>
-</nav>
-<main>
-  <h2>Inputs</h2>
-  <div class="controls">
-    <div><label for="trip-nights">Nights</label><input type="number" id="trip-nights" min="1" max="60" placeholder="e.g. 3"></div>
-    <div><label for="trip-entries">Tournament entries (incl. re-entries you plan to make)</label><input type="number" id="trip-entries" min="1" max="200" placeholder="e.g. 4"></div>
-    <div><label for="trip-event">Pick a verified event (fills buy-in)</label>
-      <select id="trip-event"><option value="">— choose —</option></select></div>
-    <div><label for="trip-buyin">Buy-in per entry ($)</label><input type="number" id="trip-buyin" min="1" step="1" placeholder="e.g. 400"></div>
-    <div><label for="trip-hotel">Hotel</label><select id="trip-hotel"></select></div>
-  </div>
-
-  <div id="trip-out"></div>
-
-  <div class="callout">
-    <div class="t">Formula and honesty rules</div>
-    <ul class="tight">
-      <li><b>Total = (entries × buy-in) + (nights × true nightly hotel cost)</b>, where true nightly cost = rate + mandatory resort fee + 13.38% tax on (rate + fee).</li>
-      <li>The hotel term uses the latest <b>dated</b> capture when one exists (shown with its capture date and stay window), otherwise the conditional poker rate when verified (marked "approx."). No rate is ever invented; if none exists the calculator refuses to total and says so.</li>
-      <li>Not included: airfare, food, ground transport, add-ons ($50 Caesars add-on etc.), re-entry beyond the entries you declare, and incidentals holds ($150/night at Wynn/Venetian — a hold, not a charge).</li>
-    </ul>
-  </div>
-</main>
-<footer class="site">
-  Poker4 · arithmetic mirrors the validation gate in scripts/build_site2.py (rate + fee + 13.38% tax must reproduce each logged checkout total).
-</footer>
-<script src="assets/data.js"></script>
-<script src="assets/app.js"></script>
-</body>
-</html>
+<html lang="en"><head><meta charset="utf-8">
+<meta http-equiv="refresh" content="0; url=calculator.html">
+<link rel="canonical" href="calculator.html">
+<title>Moved · Vegas Strip Poker Planner</title>
+<link rel="stylesheet" href="site.css"></head>
+<body><nav><div class="mainnav"><a href="index.html">Overview</a><a href="tournaments.html">Tournaments</a><a href="hotels.html">Hotels</a><a href="plan.html">Day plan</a><a href="calculator.html">Trip cost</a><a href="questions.html">Open questions</a><a href="suggestions.html">Suggestions</a><a href="flagged.html">Flagged</a><a href="review.html">Review log</a></div></nav><main><section class="page-head"><h1>This page moved</h1>
+<p><code>trip.html</code> was replaced during the integration: the trip-cost calculator now reads the dated rate log and the confirmed fee for each property.</p>
+<p>You are being redirected to <a href="calculator.html">calculator.html</a>. If nothing happens, follow the link.</p>
+</section></main></body></html>
