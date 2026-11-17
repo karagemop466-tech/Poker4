@@ -2,38 +2,56 @@
 
 Static, source-first planning dashboard for live poker tournaments on the Las Vegas Strip (Nov 16 – Dec 23, 2026) and the hotels around them. Every value shown as confirmed links to an official operator page or official PDF; unknown or conflicting values are **blank and flagged** — never inferred. Data snapshot dated **2026-11-17**.
 
-- `index.html` — executive summary, verified snapshot, honesty caveats
-- `tournaments.html` — master event table: search, date/venue/format filters, "single-entry confirmed only" toggle, brief-mandated sections (single-entry candidates · bounty/PKO · multi-entry & spending advantage · satellites), and the descriptive guarantee ÷ entry-fee ranking (not a forecast)
-- `schedule.html` — date picker + day plan: one primary event + conditional fallback, overlap flags from start times / late-reg cutoffs / plausible durations, 8 AM goal-gap disclosure
-- `hotels.html` — true nightly cost (rate + mandatory resort fee + 13.38% tax), dated rate logs, parking, cancellation deadlines, ≤30-min walk filter (verified walking times only), per-row Google Maps walking-route links
-- `trip.html` — trip cost calculator: entries × buy-ins + nights × true hotel cost, all inputs traceable
-- `venetian.html` / `wynn.html` / `others.html` — one page per venue with its events + hotels
-- `flagged.html` — flagged irregularities & unverified values (published, never silently resolved)
-- `questions.html` — open decisions/missing info with impact and resolution paths
-- `suggestions.html` — decision-only suggestions (nothing implemented until chosen)
-- `sources.html` — every official source with last-checked date
-- `changelog.html` — change-monitoring log (dated, with changed values flagged)
-- `decisions.html` / `review.html` — legacy redirects to `suggestions.html` / `flagged.html`
+- `index.html` — executive summary (every figure counted at build time), the ranked screening table, the hotels table, open questions/suggestions/flags entry points
+- `tournaments.html` — master event table: global search, date/venue filters, "single-entry confirmed only" toggle, and the four sections the brief asks for — single-entry/freezeout · not confirmed · more-money-buys-an-advantage · Day-2 restarts — with the descriptive guarantee ÷ entry-fee figure beside each row (never a forecast)
+- `plan.html` — day-by-day plan: one primary event and one conditional fallback per day, with the printed late-registration deadline as the only sequencing evidence and the printed Day-2 restart as the only end-of-day evidence
+- `hotels.html` — true cost per night (published rate + mandatory resort fee, both taxed at 13.38%), the dated rate log, parking, the ≤30-minute walk filter and per-row walking-route links
+- `calculator.html` — trip cost: entries × buy-ins + nights × true hotel cost
+- `venues/venetian.html`, `venues/wynn.html`, `venues/bellagio.html`, `venues/caesars.html` (plus `venues/aria.html`, `venues/others.html`) — one page per room with its events, hotels and sources
+- `questions.html` — what is known, what is missing, and how each gap gets closed
+- `suggestions.html` — decision-only proposals; nothing is adopted until chosen
+- `flagged.html` — every irregularity and unverified value, with its source link
+- `review.html` — source status, run log, value-change log
 
-## Data & build pipeline
+## Data & build pipeline (what actually produces the published pages)
 
 ```
-data/feature/dataset.py      canonical dataset: source registry, rule templates with verbatim
-                             excerpts + retrieval dates, 37 Venetian DSE IV structure-sheet
-                             groups (93 schedule rows), Wynn dailies + 58 WPT festival rows,
-                             Bellagio/Caesars rows, hotels with dated rate logs
+data/tracked-sources.json    the official URL registry (Venetian series calendar + 37 structure
+                             sheets, Wynn daily + WPT structure booklets, Bellagio sheets, hotel
+                             fee/terms pages, room pages) — re-fetched by the scheduled job
         │
-        ▼
-scripts/build_site2.py       expands + VALIDATES (hard gate): every row needs an official
-                             https source + last-checked date; every "confirmed" rule needs a
-                             verbatim excerpt; hotel totals must satisfy rate+fee+13.38% tax math
+tools/sync_official_sources.py   fetch → hash → verbatim capture in data/raw/*, field extraction
+        │                        → data/schedule-snapshot.json, structure-audit.json,
+        │                          hotel-facts.json, url-checks.json, change-log.json
         │
+tools/room_extract.py        reads the committed captures in data/raw/* and emits
+        │                    data/room-facts.json: one record per printed play day with the printed
+        │                    buy-in, the printed fee split, the printed entry/re-entry/add-on rule,
+        │                    the sentence behind each, and the retrieval date
+        │
+scripts/integrate_data.py    merges room-facts.json + schedule-snapshot.json + the audited
+        │                    structure sheets into data/site-events.json, data/day-plan.json,
+        │                    data/rate-log.json, data/walks.json, data/search-index.json, and renders
+        │                    every root page, venues/*.html, site.css and app.js
         ▼
-assets/data.js               embedded dataset consumed by assets/app.js (works on file:// too)
-data/feature/*.json          auditable artifacts (events, hotels, sources, flagged, changes…)
+root HTML + venues/*.html    published by GitHub Pages from the repository root
 ```
 
-Verify end-to-end with `python3 scripts/verify_site2.py` (rebuild + policy + link + element checks).
+Gates that must pass before a page is publishable (all run in CI and locally):
+
+```
+python3 tools/room_extract.py        extraction integrity: every WPT sheet must yield a play day,
+                                     a fee split and a registration clause; a failure stops the build
+python3 scripts/integrate_data.py    rebuild; must be byte-stable on a second run
+python3 scripts/verify_root.py       links, per-row official source, data files parse
+python3 scripts/verify.py            policy: every table row links an official source, no invented value
+python3 scripts/verify_markup.py     every page parses as HTML
+python3 scripts/linkcheck.py         every internal link resolves
+```
+
+`data/feature/*` and `scripts/build_site2.py` / `verify_site2.py` remain in the tree as an earlier,
+still-auditable dataset and validator; they do not build the pages that are published today.
+`tools/verify_root_site.py` checks the superseded pre-integration page set and is no longer used as a gate.
 
 ## Scheduled re-check (change monitoring)
 
@@ -42,7 +60,7 @@ Verify end-to-end with `python3 scripts/verify_site2.py` (rebuild + policy + lin
 ## Research policy
 
 - Official operator sources only (property pages, official CDN/PDF documents). Aggregators never feed rows.
-- **No tournament is labeled single-entry unless official rules say so.** As of 2026-11-17, zero events are confirmed single-entry/freezeout: all 37 Venetian structure sheets, Wynn structures, Bellagio PDFs and the Caesars flyer were read line by line; only Venetian Events #18/#58 state entry-count terms (they price subsequent buy-ins), and omission of re-entry language is not confirmation. Candidates with no contrary evidence are labeled "unverified".
+- **No tournament is labeled single-entry unless official rules say so.** As of 2026-11-17, zero events are confirmed single-entry/freezeout across all 252 published rows: the 37 Venetian structure sheets, the 69 Wynn WPT event sheets, the Wynn daily structures, the three Bellagio sheets and the Caesars page were read line by line. What those sheets *do* print is re-entry: Wynn prints unlimited re-entry on 67 of 69 WPT sheets and a one-entry-plus-one-re-entry cap on the other two (the $10,400 World Championship states "Four (4) Entries maximum"), Bellagio prints "buy-in and re-enter through the end of level 8", and the Venetian Valuetown sheet prices subsequent buy-ins. Those rows are published with the quote and kept out of the single-entry list. Omission is never confirmation, so a silent sheet is labelled "unverified", not "freezeout".
 - Guarantee ÷ entry-fee ratios are descriptive only. Bounty guarantees include bounty money where the official sheet says so and are labeled non-comparable; satellites pay seats, not cash.
 - The data is a point-in-time snapshot, not a live feed or booking quote.
 
