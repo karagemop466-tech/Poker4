@@ -1,0 +1,614 @@
+{
+  "meta": {
+    "title": "Vegas Field Notes",
+    "subtitle": "Strip poker tournaments & hotel costs",
+    "snapshot": "2026-11-16",
+    "snapshotLabel": "November 16, 2026",
+    "timezone": "Las Vegas local time (Pacific Time)",
+    "eventWindow": "November 16–December 23, 2026",
+    "scope": "Selected upcoming Strip-area tournaments and on-property hotel fees verified from official operator and hotel sources. This is a researched snapshot, not a complete room-by-room inventory.",
+    "strictEntryRule": "A qualifying tournament must explicitly allow only one paid entry per player for the whole event, with no re-entry, rebuy, add-on, or paid extra chips. Missing terms mean unknown, not single-entry.",
+    "reportUrl": "https://github.com/karagemop466-tech/Poker4/blob/arena/6313b65a-poker4/research/VERIFICATION.md"
+  },
+  "summary": {
+    "confirmedSingleEntry": 0,
+    "eightAmVerified": 0,
+    "reviewedCandidateCount": 8,
+    "statusLine": "No strict single-entry event confirmed in the reviewed official terms.",
+    "earliestStart": "9:00 a.m. — Horseshoe daily schedule; entry terms not published in the reviewed sources.",
+    "nextDatedCandidate": "Nov. 17, 11:10 a.m. — Venetian DeepStack Event #1, Flight 1C; multi-flight format, not single-entry overall."
+  },
+  "criteria": [
+    "One total paid entry per person for the entire event, not one entry per starting flight.",
+    "No re-entry, rebuy, add-on, or other paid route to additional chips or a second live entry.",
+    "The upcoming date, venue, start time, and buy-in are published for the event being considered."
+  ],
+  "events": [
+    {
+      "id": "ven-1c",
+      "date": "2026-11-17",
+      "time": "11:10 a.m.",
+      "venue": "The Venetian",
+      "series": "DeepStack Extravaganza IV",
+      "name": "Event #1 · $300 NLH · Flight 1C",
+      "buyIn": 300,
+      "guarantee": 75000,
+      "format": "Multi-flight, Day 2",
+      "status": "unknown",
+      "statusLabel": "Multi-flight · cap unverified",
+      "rule": "Four starting flights feed a combined Day 2. A player who bags cannot play a later flight, but that restriction does not establish a one-entry maximum across the event.",
+      "details": "30,000 starting chips; 30-minute levels for this flight; $240 of each $300 buy-in goes to the prize pool.",
+      "poolShare": 80,
+      "sources": ["venSchedule", "ven1AC"]
+    },
+    {
+      "id": "ven-1d",
+      "date": "2026-11-17",
+      "time": "5:10 p.m.",
+      "venue": "The Venetian",
+      "series": "DeepStack Extravaganza IV",
+      "name": "Event #1 · $300 NLH · Flight 1D",
+      "buyIn": 300,
+      "guarantee": 75000,
+      "format": "Multi-flight, Day 2",
+      "status": "unknown",
+      "statusLabel": "Multi-flight · cap unverified",
+      "rule": "Four starting flights feed a combined Day 2. A player who bags cannot play a later flight, but that restriction does not establish a one-entry maximum across the event.",
+      "details": "30,000 starting chips; 40-minute levels for this flight; $240 of each $300 buy-in goes to the prize pool.",
+      "poolShare": 80,
+      "sources": ["venSchedule", "ven1BD"]
+    },
+    {
+      "id": "ven-2",
+      "date": "2026-11-18",
+      "time": "11:10 a.m.",
+      "venue": "The Venetian",
+      "series": "DeepStack Extravaganza IV",
+      "name": "Event #2 · $300 NLH 1-Day",
+      "buyIn": 300,
+      "guarantee": 10000,
+      "format": "One day",
+      "status": "unknown",
+      "statusLabel": "Entry terms unknown",
+      "rule": "The reviewed structure does not say whether re-entry, rebuy, or add-on is allowed or prohibited. Do not treat silence as a freezeout.",
+      "details": "40,000 starting chips; late registration through Level 10 plus break (approximately 4:55 p.m.); $242 to the prize pool and $58 in fees.",
+      "poolShare": 80.7,
+      "sources": ["venSchedule", "ven2"]
+    },
+    {
+      "id": "ven-3",
+      "date": "2026-11-19",
+      "time": "10:10 a.m.",
+      "venue": "The Venetian",
+      "series": "DeepStack Extravaganza IV",
+      "name": "Event #3 · $200 NLH RaceDay Stack",
+      "buyIn": 200,
+      "guarantee": null,
+      "format": "One day · turbo",
+      "status": "unknown",
+      "statusLabel": "Entry terms unknown",
+      "rule": "The reviewed structure does not publish an event-wide entry cap or state whether re-entry, rebuy, or add-on is prohibited.",
+      "details": "30,000 starting chips; 20/15-minute levels; late registration through Level 6 plus break (approximately 12:25 p.m.); $165 to the prize pool and $35 in fees.",
+      "poolShare": 82.5,
+      "sources": ["venSchedule", "venRaceDay"]
+    },
+    {
+      "id": "ven-4",
+      "date": "2026-11-20",
+      "time": "10:10 a.m.",
+      "venue": "The Venetian",
+      "series": "DeepStack Extravaganza IV",
+      "name": "Event #4 · $200 NLH RaceDay Stack",
+      "buyIn": 200,
+      "guarantee": null,
+      "format": "One day · turbo",
+      "status": "unknown",
+      "statusLabel": "Entry terms unknown",
+      "rule": "The reviewed structure does not publish an event-wide entry cap or state whether re-entry, rebuy, or add-on is prohibited.",
+      "details": "30,000 starting chips; 20/15-minute levels; late registration through Level 6 plus break (approximately 12:25 p.m.); $165 to the prize pool and $35 in fees.",
+      "poolShare": 82.5,
+      "sources": ["venSchedule", "venRaceDay"]
+    },
+    {
+      "id": "ven-5",
+      "date": "2026-11-21",
+      "time": "10:10 a.m.",
+      "venue": "The Venetian",
+      "series": "DeepStack Extravaganza IV",
+      "name": "Event #5 · $200 NLH RaceDay Stack",
+      "buyIn": 200,
+      "guarantee": null,
+      "format": "One day · turbo",
+      "status": "unknown",
+      "statusLabel": "Entry terms unknown",
+      "rule": "The reviewed structure does not publish an event-wide entry cap or state whether re-entry, rebuy, or add-on is prohibited.",
+      "details": "30,000 starting chips; 20/15-minute levels; late registration through Level 6 plus break (approximately 12:25 p.m.); $165 to the prize pool and $35 in fees.",
+      "poolShare": 82.5,
+      "sources": ["venSchedule", "venRaceDay"]
+    },
+    {
+      "id": "ven-6",
+      "date": "2026-11-22",
+      "time": "11:10 a.m.",
+      "venue": "The Venetian",
+      "series": "DeepStack Extravaganza IV",
+      "name": "Event #6 · $200 NLH 1-Day",
+      "buyIn": 200,
+      "guarantee": null,
+      "format": "One day",
+      "status": "unknown",
+      "statusLabel": "Entry terms unknown",
+      "rule": "No entry cap or no-re-entry rule appears on the reviewed structure sheet.",
+      "details": "30,000 starting chips; 30-minute levels; late registration through Level 8 plus break (approximately 3:40 p.m.); $160 to the prize pool and $40 in fees.",
+      "poolShare": 80,
+      "sources": ["venSchedule", "ven6"]
+    },
+    {
+      "id": "ven-10",
+      "date": "2026-11-25",
+      "time": "11:10 a.m.",
+      "venue": "The Venetian",
+      "series": "DeepStack Extravaganza IV",
+      "name": "Event #10 · $400 NLH 1-Day",
+      "buyIn": 400,
+      "guarantee": 15000,
+      "format": "One day",
+      "status": "unknown",
+      "statusLabel": "Entry terms unknown",
+      "rule": "No entry cap or no-re-entry rule appears on the reviewed structure sheet.",
+      "details": "40,000 starting chips; late registration through Level 10 plus break (approximately 4:55 p.m.); $335 to the prize pool and $65 in fees.",
+      "poolShare": 83.75,
+      "sources": ["venSchedule", "ven10"]
+    },
+    {
+      "id": "ven-14",
+      "date": "2026-11-27",
+      "time": "11:10 a.m.",
+      "venue": "The Venetian",
+      "series": "DeepStack Extravaganza IV",
+      "name": "Event #14 · $600 NLH 1-Day",
+      "buyIn": 600,
+      "guarantee": 30000,
+      "format": "One day",
+      "status": "unknown",
+      "statusLabel": "Entry terms unknown",
+      "rule": "No entry cap or no-re-entry rule appears on the reviewed structure sheet.",
+      "details": "40,000 starting chips; 30-minute levels; $510 to the prize pool and $90 in fees.",
+      "poolShare": 85,
+      "sources": ["venSchedule", "ven14"]
+    }
+  ],
+  "recurring": [
+    {
+      "id": "horseshoe",
+      "venue": "Horseshoe Las Vegas",
+      "schedule": "9 a.m. · 11 a.m. · 2 p.m. · 5 p.m. · 8 p.m. · 11 p.m.",
+      "buyIn": "Not published in reviewed source",
+      "status": "unknown",
+      "headline": "Six daily tournaments listed",
+      "detail": "Official pages do not publish event-level buy-ins, guarantees, or entry/add-on terms. 9 a.m. is the earliest recurring start found in this review.",
+      "sources": ["horseshoeCasino", "caesarsTournamentGuide"]
+    },
+    {
+      "id": "caesars-palace",
+      "venue": "Caesars Palace",
+      "schedule": "10 a.m. · 2 p.m. · 6 p.m. · 9 p.m.",
+      "buyIn": "$100 or $160",
+      "status": "excluded",
+      "headline": "Re-entry + optional add-on",
+      "detail": "Re-entry is allowed after elimination during the first break. Every event offers a $50 add-on. The 10 a.m. game is not a strict-entry substitute.",
+      "sources": ["caesarsFlyer", "caesarsPoker"]
+    },
+    {
+      "id": "wynn-midweek",
+      "venue": "Wynn Las Vegas · Mon–Thu noon",
+      "schedule": "12 p.m.",
+      "buyIn": "$200 · $10,000 guarantee",
+      "status": "excluded",
+      "headline": "Re-entry allowed",
+      "detail": "Official daily structure permits re-entry.",
+      "sources": ["wynnDailyPoster", "wynnDailyStructures"]
+    },
+    {
+      "id": "wynn-weekend",
+      "venue": "Wynn Las Vegas · Sat–Sun noon",
+      "schedule": "12 p.m.",
+      "buyIn": "$200 · $25,000 guarantee",
+      "status": "excluded",
+      "headline": "Re-entry + one add-on",
+      "detail": "The official structure permits re-entry and one add-on.",
+      "sources": ["wynnDailyPoster", "wynnDailyStructures"]
+    },
+    {
+      "id": "wynn-evening",
+      "venue": "Wynn Las Vegas · nightly",
+      "schedule": "6 p.m.",
+      "buyIn": "$160 · $10,000 guarantee",
+      "status": "excluded",
+      "headline": "Re-entry + $100 add-on",
+      "detail": "The official structure permits re-entry and a $100 add-on.",
+      "sources": ["wynnDailyPoster", "wynnDailyStructures"]
+    },
+    {
+      "id": "wynn-friday",
+      "venue": "Wynn Las Vegas · Friday rebuy",
+      "schedule": "See official poster for current start time",
+      "buyIn": "$240 · $40,000 guarantee",
+      "status": "excluded",
+      "headline": "Rebuys + add-on",
+      "detail": "The Friday format expressly offers unlimited $200 rebuys and an add-on; start time not transcribed in this verification.",
+      "sources": ["wynnDailyPoster", "wynnDailyStructures"]
+    },
+    {
+      "id": "mgm-grand",
+      "venue": "MGM Grand",
+      "schedule": "11 a.m. · 7 p.m. · 11 p.m.",
+      "buyIn": "$120 structure reviewed",
+      "status": "unknown",
+      "headline": "Current entry terms unverified",
+      "detail": "The linked schedule is titled August. The $120 structure offers an optional $11 gratuity for 10,000 extra chips; no current no-re-entry rule is established.",
+      "sources": ["mgmPoker", "mgmSchedule", "mgmStructure"]
+    },
+    {
+      "id": "bellagio-friday",
+      "venue": "Bellagio · Friday NLH",
+      "schedule": "11 a.m. Fridays",
+      "buyIn": "$600",
+      "status": "excluded",
+      "headline": "Re-entry through Level 8",
+      "detail": "The structure also offers a voluntary $40 gratuity for 15,000 extra chips. Confirm the recurring card is still active before travel.",
+      "sources": ["bellagioPoker", "bellagioFriday"]
+    },
+    {
+      "id": "bellagio-sunday",
+      "venue": "Bellagio · Sunday H.O.R.S.E.",
+      "schedule": "11 a.m. Sundays",
+      "buyIn": "$400",
+      "status": "excluded",
+      "headline": "Re-entry through Level 8",
+      "detail": "The structure also offers a voluntary $25 gratuity for 15,000 extra chips. Confirm the recurring card is still active before travel.",
+      "sources": ["bellagioPoker", "bellagioSunday"]
+    },
+    {
+      "id": "aria",
+      "venue": "ARIA",
+      "schedule": "Daily / nightly; current times change",
+      "buyIn": "Not published in reviewed source",
+      "status": "unknown",
+      "headline": "Call the room for the live schedule",
+      "detail": "The official page confirms daily and nightly tournaments but does not establish current buy-ins, start times, or entry rules.",
+      "sources": ["ariaPoker"]
+    },
+    {
+      "id": "westgate",
+      "venue": "Westgate Las Vegas",
+      "schedule": "Daily; time not published",
+      "buyIn": "Not published in reviewed source",
+      "status": "unknown",
+      "headline": "Event details not published",
+      "detail": "The official poker page confirms daily tournaments but has no reviewed schedule or structure.",
+      "sources": ["westgatePoker", "westgateEvents"]
+    }
+  ],
+  "festivalEvents": [
+    {
+      "name": "WPT World Championship",
+      "date": "Dec. 13–20",
+      "buyIn": "$10,400",
+      "guarantee": "Not repeated here",
+      "status": "excluded",
+      "rule": "Four entries maximum: one per starting flight plus a Day 2 entry.",
+      "sources": ["wptMain", "wptStructures"]
+    },
+    {
+      "name": "WPT Prime Championship",
+      "date": "Dec. 5–12",
+      "buyIn": "$1,100",
+      "guarantee": "$5 million",
+      "status": "excluded",
+      "rule": "One entry and one re-entry per starting flight; multiple flights are available.",
+      "sources": ["wptPrime", "wptStructures"]
+    },
+    {
+      "name": "ClubWPT Gold Super Gold Million",
+      "date": "Dec. 10–14",
+      "buyIn": "$400",
+      "guarantee": "$3 million",
+      "status": "excluded",
+      "rule": "Unlimited re-entry is allowed for each starting flight.",
+      "sources": ["wptGold", "wptStructures"]
+    }
+  ],
+  "value": [
+    {
+      "name": "Venetian Event #10 · $400 NLH 1-Day",
+      "share": 83.75,
+      "math": "$335 / $400",
+      "note": "$15,000 guarantee. Entry limit is unknown; not a qualifying recommendation.",
+      "sources": ["ven10"]
+    },
+    {
+      "name": "Venetian $200 NLH RaceDay Stack · Events #3–5",
+      "share": 82.5,
+      "math": "$165 / $200",
+      "note": "No guarantee is listed on the reviewed structure; entry limit is unknown.",
+      "sources": ["venRaceDay"]
+    },
+    {
+      "name": "Venetian Event #2 · $300 NLH 1-Day",
+      "share": 80.67,
+      "math": "$242 / $300",
+      "note": "$10,000 guarantee. Entry limit is unknown.",
+      "sources": ["ven2"]
+    },
+    {
+      "name": "Venetian Event #6 · $200 NLH 1-Day",
+      "share": 80,
+      "math": "$160 / $200",
+      "note": "Entry limit is unknown.",
+      "sources": ["ven6"]
+    },
+    {
+      "name": "Venetian Event #14 · $600 NLH 1-Day",
+      "share": 85,
+      "math": "$510 / $600",
+      "note": "$30,000 guarantee. Highest share among the cited one-day Venetian candidates; entry limit is unknown.",
+      "sources": ["ven14"]
+    },
+    {
+      "name": "Venetian Event #26 · $800 NLH multi-flight",
+      "share": 86.25,
+      "math": "$690 / $800",
+      "note": "$500,000 guarantee. Multiple flights; does not pass the one-entry test.",
+      "sources": ["ven26ACE", "ven26BD"]
+    },
+    {
+      "name": "Caesars Palace daily NLH · $100",
+      "share": 70,
+      "math": "$70 / $100",
+      "note": "$50 add-on is optional; re-entry is allowed. Not single-entry.",
+      "sources": ["caesarsFlyer"]
+    },
+    {
+      "name": "Caesars Palace daily NLH · $160",
+      "share": 71.88,
+      "math": "$115 / $160",
+      "note": "$50 add-on is optional; re-entry is allowed. Not single-entry.",
+      "sources": ["caesarsFlyer"]
+    },
+    {
+      "name": "MGM Grand daily structure · $120",
+      "share": 76.67,
+      "math": "$92 / $120",
+      "note": "Optional $11 gratuity buys 10,000 extra chips; linked schedule is labeled August.",
+      "sources": ["mgmStructure", "mgmSchedule"]
+    }
+  ],
+  "valueCaveat": "Prize-pool share is the published prize-pool contribution divided by the base buy-in. It is fee allocation only—not expected value, ROI, payout equity, field size, or overlay probability. A high share does not make an event single-entry.",
+  "spendAdvantages": [
+    {
+      "name": "Caesars Palace daily NLH",
+      "advantage": "Re-entry during the first break + optional $50 add-on",
+      "extra": "The add-on contributes $45 to the prize pool.",
+      "sources": ["caesarsFlyer"]
+    },
+    {
+      "name": "Wynn daily tournaments",
+      "advantage": "Re-entry; format-dependent add-ons",
+      "extra": "Weekend noon permits one add-on; nightly permits a $100 add-on; Friday offers unlimited $200 rebuys and an add-on.",
+      "sources": ["wynnDailyStructures"]
+    },
+    {
+      "name": "MGM Grand $120 structure",
+      "advantage": "Optional $11 gratuity buys 10,000 extra starting chips",
+      "extra": "Linked schedule is labeled August; current entry rules are not verified.",
+      "sources": ["mgmStructure", "mgmSchedule"]
+    },
+    {
+      "name": "Bellagio Friday / Sunday structures",
+      "advantage": "Re-entry through Level 8 + optional extra-chip gratuity",
+      "extra": "$40 Friday or $25 Sunday gratuity buys 15,000 chips; recurring schedule should be reconfirmed.",
+      "sources": ["bellagioFriday", "bellagioSunday"]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "The Venetian / The Palazzo",
+      "venue": "Venetian DeepStack Extravaganza",
+      "fee": 55,
+      "feeLabel": "$55 + tax / night",
+      "feeVerified": true,
+      "rate": "2026 poker-player rates advertised from $119 at The Venetian and $209 at The Palazzo; not a date-specific quote.",
+      "perk": "Published Venetian Luxury King description: 650 sq ft. Poker rate requires 6 hours of active live cash or a $300+ tournament buy-in for each night; if the play requirement is missed, that night reverts to the prevailing rate.",
+      "caveat": "Rate depends on dates, availability, occupancy, and qualifying play; verify booking terms.",
+      "sources": ["venFee", "venRates"]
+    },
+    {
+      "name": "Wynn / Encore",
+      "venue": "Wynn daily tournaments + WPT festival",
+      "fee": 55,
+      "feeLabel": "$55 + tax / night",
+      "feeVerified": true,
+      "rate": "Date-specific room rate required.",
+      "perk": "Official resort information page lists the fee and inclusions.",
+      "caveat": "No stay total is shown without travel dates, room type, and occupancy.",
+      "sources": ["wynnFee"]
+    },
+    {
+      "name": "ARIA",
+      "venue": "ARIA poker room",
+      "fee": 55,
+      "feeLabel": "$55 + tax / night",
+      "feeVerified": true,
+      "rate": "Date-specific room rate required.",
+      "perk": "Official reservation terms list the nightly fee. Additional occupant charges may apply above two guests.",
+      "caveat": "No stay total is shown without travel dates, room type, and occupancy.",
+      "sources": ["ariaTerms"]
+    },
+    {
+      "name": "Bellagio",
+      "venue": "Bellagio poker room",
+      "fee": 55,
+      "feeLabel": "$55 + tax / night",
+      "feeVerified": true,
+      "rate": "Date-specific room rate required.",
+      "perk": "Official reservation terms list the nightly fee. Additional occupant charges may apply above two guests.",
+      "caveat": "No stay total is shown without travel dates, room type, and occupancy; recurring tournament cards should be reconfirmed.",
+      "sources": ["bellagioTerms"]
+    },
+    {
+      "name": "MGM Grand",
+      "venue": "MGM Grand poker room",
+      "fee": 50,
+      "feeLabel": "$50 + tax / night",
+      "feeVerified": true,
+      "rate": "Date-specific room rate required.",
+      "perk": "Official room page describes a 446 sq ft MGM King.",
+      "caveat": "No stay total is shown without travel dates, room type, and occupancy.",
+      "sources": ["mgmTerms", "mgmRooms"]
+    },
+    {
+      "name": "Westgate Las Vegas",
+      "venue": "Westgate poker room",
+      "fee": 49.99,
+      "feeLabel": "$49.99 + tax / night",
+      "feeVerified": true,
+      "rate": "Date-specific room rate required.",
+      "perk": "Official offer may waive the standard fee subject to its terms; Las Vegas Monorail station is on-site.",
+      "caveat": "An offer-based waiver is not the standard fee. No stay total is shown without travel dates and room details.",
+      "sources": ["westgateOverview", "westgateFeeFaq", "westgateNoFee"]
+    },
+    {
+      "name": "Caesars Palace / Horseshoe",
+      "venue": "Caesars Palace or Horseshoe poker rooms",
+      "fee": null,
+      "feeLabel": "$45–$60 + tax generic Caesars range",
+      "feeVerified": false,
+      "rate": "Date-specific room rate required.",
+      "perk": "Caesars corporate disclosure gives a portfolio range only; no exact property fee is confirmed here.",
+      "caveat": "Do not treat the corporate range as either property's quoted fee. No stay total is shown without dates and room details.",
+      "sources": ["caesarsDisclaimer", "caesarsHotel", "horseshoeHotel"]
+    }
+  ],
+  "flags": [
+    {
+      "level": "high",
+      "title": "Strict-entry count is zero confirmed",
+      "body": "No reviewed official event-specific terms explicitly cap total entries at one per player. Unknown is not a pass. Ask for written confirmation before booking around an event.",
+      "sources": []
+    },
+    {
+      "level": "high",
+      "title": "Venetian one-day sheets omit the entry cap",
+      "body": "Events #2, #3–5, #6, #10 and #14 are the strongest documented one-day candidates, but their reviewed sheets do not prove no re-entry or add-ons.",
+      "sources": ["venSchedule", "ven2", "venRaceDay", "ven6", "ven10", "ven14"]
+    },
+    {
+      "level": "medium",
+      "title": "8:00 a.m. is an empty slot in this evidence set",
+      "body": "No 8 a.m. tournament start was verified. The earliest recurring published start is 9 a.m. at Horseshoe; its buy-ins and entry terms are missing.",
+      "sources": ["horseshoeCasino", "caesarsTournamentGuide"]
+    },
+    {
+      "level": "medium",
+      "title": "Bellagio Saturday structure is internally inconsistent",
+      "body": "The official PDF title, filename, and fee allocation conflict on buy-in, and it contains past dates. Do not plan around this event without a corrected official sheet.",
+      "sources": ["bellagioSaturday"]
+    },
+    {
+      "level": "medium",
+      "title": "Some daily schedules are incomplete or stale",
+      "body": "MGM Grand's linked schedule is labeled August; Horseshoe, ARIA and Westgate lack event-level terms; Bellagio's main page contains old resumption wording. Reconfirm with the room.",
+      "sources": ["mgmSchedule", "horseshoeCasino", "ariaPoker", "westgatePoker", "bellagioPoker"]
+    },
+    {
+      "level": "medium",
+      "title": "Exact hotel totals need a trip search",
+      "body": "Travel dates, stay length, room type, and occupancy were not provided. Resort fees are shown separately; no made-up all-in nightly prices are included.",
+      "sources": ["venRates", "venFee", "wynnFee", "ariaTerms", "bellagioTerms", "mgmTerms", "westgateOverview", "caesarsDisclaimer"]
+    },
+    {
+      "level": "low",
+      "title": "SAHARA poker room closure announced",
+      "body": "SAHARA's current official page says the poker room closes November 16, 2026. Old schedule text on the page is not treated as a future event.",
+      "sources": ["saharaPoker"]
+    }
+  ],
+  "recommendations": [
+    {
+      "number": "01",
+      "title": "Get the entry rule in writing",
+      "body": "Ask the Venetian poker desk whether Event #2 and the $200 RaceDay Stack are one paid entry per player for the entire event, with no re-entry, rebuy, add-on, or optional extra chips. A blank structure sheet is not enough.",
+      "action": "Use the official Venetian event schedule",
+      "source": "venSchedule"
+    },
+    {
+      "number": "02",
+      "title": "Treat a high prize-pool share as fee data only",
+      "body": "Event #10 shows an 83.75% published prize-pool contribution and the RaceDay Stack 82.5%, but neither has confirmed entry restrictions. This is not expected value or proof of a good bet.",
+      "action": "Compare the verified contribution rows",
+      "section": "value"
+    },
+    {
+      "number": "03",
+      "title": "Do not plan for an 8 a.m. start",
+      "body": "None was verified. Horseshoe lists a 9 a.m. recurring tournament, but current buy-in and entry rules are not published in the reviewed official sources.",
+      "action": "Review the schedule limitations",
+      "section": "recurring"
+    },
+    {
+      "number": "04",
+      "title": "Price rooms for the exact nights",
+      "body": "The Venetian / Palazzo poker rates are the most detailed published price lead, not an unconditional quote: the play threshold applies each night and a $300+ tournament entry does not establish that the event is single-entry.",
+      "action": "Open Venetian poker-rate terms",
+      "source": "venRates"
+    }
+  ],
+  "sources": [
+    {"id":"venSchedule","group":"Tournaments · Venetian","label":"DeepStack Extravaganza IV schedule","url":"https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"},
+    {"id":"ven1AC","group":"Tournaments · Venetian","label":"Event #1 Day A / C structure","url":"https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf"},
+    {"id":"ven1BD","group":"Tournaments · Venetian","label":"Event #1 Day B / D structure","url":"https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_9.pdf"},
+    {"id":"ven2","group":"Tournaments · Venetian","label":"Events #2 / #12 structure","url":"https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf"},
+    {"id":"venRaceDay","group":"Tournaments · Venetian","label":"Events #3–5 RaceDay Stack structure","url":"https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf"},
+    {"id":"ven6","group":"Tournaments · Venetian","label":"Event #6 structure","url":"https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_29.pdf"},
+    {"id":"ven10","group":"Tournaments · Venetian","label":"Event #10 structure","url":"https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_6.pdf"},
+    {"id":"ven14","group":"Tournaments · Venetian","label":"Event #14 structure","url":"https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf"},
+    {"id":"ven26ACE","group":"Tournaments · Venetian","label":"Event #26 A / C / E structure","url":"https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf"},
+    {"id":"ven26BD","group":"Tournaments · Venetian","label":"Event #26 B / D structure","url":"https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_13.pdf"},
+    {"id":"caesarsFlyer","group":"Tournaments · Caesars","label":"Caesars Palace 2026 daily tournament flyer","url":"https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf"},
+    {"id":"caesarsPoker","group":"Tournaments · Caesars","label":"Caesars Palace poker-room page","url":"https://www.caesars.com/caesars-palace/casino"},
+    {"id":"caesarsTournamentGuide","group":"Tournaments · Caesars","label":"Caesars Las Vegas poker tournament guide","url":"https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"},
+    {"id":"horseshoeCasino","group":"Tournaments · Caesars","label":"Horseshoe Las Vegas poker-room page","url":"https://www.caesars.com/horseshoe-las-vegas/casino"},
+    {"id":"wynnDailyPoster","group":"Tournaments · Wynn","label":"Wynn daily tournament schedule","url":"https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"},
+    {"id":"wynnDailyStructures","group":"Tournaments · Wynn","label":"Wynn daily tournament structures","url":"https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf"},
+    {"id":"wynnPoker","group":"Tournaments · Wynn","label":"Wynn poker room and WPT information","url":"https://www.wynnlasvegas.com/casino/poker"},
+    {"id":"wptMain","group":"Tournaments · WPT","label":"WPT World Championship 2026 event details","url":"https://www.worldpokertour.com/event/main-tour-wpt-world-championship-at-wynn-las-vegas-season-2026/details"},
+    {"id":"wptPrime","group":"Tournaments · WPT","label":"WPT Prime Championship 2026 event details","url":"https://www.worldpokertour.com/event/prime-wpt-prime-championship-at-wynn-las-vegas-season-2026/details"},
+    {"id":"wptGold","group":"Tournaments · WPT","label":"ClubWPT Gold Super Gold Million 2026 details","url":"https://www.worldpokertour.com/event/special-events-special-event-clubwpt-gold-super-gold-million-season-2026/details"},
+    {"id":"wptStructures","group":"Tournaments · WPT","label":"Wynn-hosted WPT 2026 structure PDF","url":"https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"},
+    {"id":"mgmPoker","group":"Tournaments · MGM Grand","label":"MGM Grand official poker page","url":"https://mgmgrand.mgmresorts.com/en/casino/poker-tables.html"},
+    {"id":"mgmSchedule","group":"Tournaments · MGM Grand","label":"MGM Grand linked tournament schedule","url":"https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt5f25277b8918da08/mgm-grand-casino-poker-tournament_schedule.pdf"},
+    {"id":"mgmStructure","group":"Tournaments · MGM Grand","label":"MGM Grand $120 NLH structure","url":"https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/bltb2a45da7e8ee5621/mgm-grand-casino-poker-120_nlh.pdf"},
+    {"id":"bellagioPoker","group":"Tournaments · Bellagio","label":"Bellagio official poker-room page","url":"https://bellagio.mgmresorts.com/en/casino/poker.html"},
+    {"id":"bellagioFriday","group":"Tournaments · Bellagio","label":"Friday $600 NLH structure","url":"https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt9cf95b0e60ec253e/6af491a3a9851d75c40be840/mgm-bellagio-poker-fridays-$600-nlh.pdf"},
+    {"id":"bellagioSaturday","group":"Tournaments · Bellagio","label":"Saturday flyer with conflicting buy-in terms","url":"https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt6d47974bf5a7d9b6/6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf"},
+    {"id":"bellagioSunday","group":"Tournaments · Bellagio","label":"Sunday $400 H.O.R.S.E. structure","url":"https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt07fcf1244a6da661/6af491a339e2b4f6b76a86ad/mgm-bellagio-poker-sundays-$400-horse.pdf"},
+    {"id":"ariaPoker","group":"Tournaments · ARIA","label":"ARIA official poker-room page","url":"https://aria.mgmresorts.com/en/casino/poker.html"},
+    {"id":"westgatePoker","group":"Tournaments · Westgate","label":"Westgate official poker-room page","url":"https://www.westgateresorts.com/hotels/nevada/las-vegas/westgate-las-vegas-resort-casino/casino/poker/"},
+    {"id":"westgateEvents","group":"Tournaments · Westgate","label":"Westgate poker events page","url":"https://www.westgateresorts.com/hotels/nevada/las-vegas/westgate-las-vegas-resort-casino/casino/poker/events/"},
+    {"id":"saharaPoker","group":"Tournaments · SAHARA","label":"SAHARA poker-room closure notice","url":"https://www.saharalasvegas.com/casino/sahara-poker-room/1000"},
+    {"id":"venFee","group":"Hotels · Fees","label":"The Venetian resort fee","url":"https://www.venetianlasvegas.com/resort/resort-fee.html"},
+    {"id":"venRates","group":"Hotels · Rates","label":"The Venetian / Palazzo poker-player suite rates","url":"https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html"},
+    {"id":"wynnFee","group":"Hotels · Fees","label":"Wynn resort information and fee","url":"https://www.wynnlasvegas.com/about-us/resort-information"},
+    {"id":"ariaTerms","group":"Hotels · Fees","label":"ARIA reservation terms","url":"https://aria.mgmresorts.com/en/terms-and-conditions.html"},
+    {"id":"bellagioTerms","group":"Hotels · Fees","label":"Bellagio reservation terms","url":"https://bellagio.mgmresorts.com/en/terms-and-conditions.html"},
+    {"id":"mgmTerms","group":"Hotels · Fees","label":"MGM Grand reservation terms","url":"https://mgmgrand.mgmresorts.com/en/terms-and-conditions.html"},
+    {"id":"mgmRooms","group":"Hotels · Rooms","label":"MGM Grand room descriptions","url":"https://mgmgrand.mgmresorts.com/en/hotel.html"},
+    {"id":"westgateOverview","group":"Hotels · Fees","label":"Westgate overview and standard fee","url":"https://www.westgateresorts.com/hotels/nevada/las-vegas/westgate-las-vegas-resort-casino/overview/"},
+    {"id":"westgateFeeFaq","group":"Hotels · Fees","label":"Westgate resort-fee FAQ","url":"https://www.westgateresorts.com/hotels/nevada/las-vegas/westgate-las-vegas-resort-casino/faq/resort-fee/"},
+    {"id":"westgateNoFee","group":"Hotels · Offers","label":"Westgate no-resort-fee special offer","url":"https://www.westgateresorts.com/hotels/nevada/las-vegas/westgate-las-vegas-resort-casino/specials/no-resort-fees/"},
+    {"id":"caesarsDisclaimer","group":"Hotels · Fees","label":"Caesars corporate fee disclosure","url":"https://www.caesars.com/corporate/disclaimer"},
+    {"id":"caesarsHotel","group":"Hotels · Booking","label":"Caesars Palace hotel page","url":"https://www.caesars.com/caesars-palace/hotel"},
+    {"id":"horseshoeHotel","group":"Hotels · Booking","label":"Horseshoe Las Vegas hotel page","url":"https://www.caesars.com/horseshoe-las-vegas/hotel"}
+  ]
+}

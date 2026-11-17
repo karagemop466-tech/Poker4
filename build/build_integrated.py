@@ -325,7 +325,7 @@ def main():
     checks = []
     for e in ven:
         m = re.search(r"structure_(\d+)", e["structure_url"] or "")
-        if not m: 
+        if not m:
             checks.append("UNMAPPED %s %s" % (e["date"], e["name"][:30])); continue
         sh = V.SHEETS[m.group(1)]
         if e["event_no"] and int(e["event_no"]) not in sh["events"]:
