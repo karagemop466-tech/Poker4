@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generated_at": "2026-11-17T22:41:07Z",
+  "generated_at": "2026-11-17T22:45:28Z",
   "basis": "start time + printed registration-closes deadline + Day-2 restart rows on the official calendar",
   "days": 38
  },
@@ -1060,12 +1060,13 @@
   {
    "date": "2026-12-17",
    "weekday": "Thursday",
-   "fallback_unavailable": "the leading event prints no late-registration deadline, so no second entry can be shown to be reachable",
+   "fallback_unavailable": "",
    "earliest_printed_start": "10:10 AM",
    "duration_note": "no official source prints a finish time or a round count for this day, so the plan gives a start and a late-registration deadline rather than a predicted end",
    "restarts": [],
    "overlap_notes": [
-    "3 ranked entries share this day (starts 10:10 AM, 12:10 PM, 6:10 PM); entering one rules out the others, and no sheet prints a finish time to settle it"
+    "3 ranked entries share this day (starts 10:10 AM, 12:10 PM, 6:10 PM); entering one rules out the others, and no sheet prints a finish time to settle it",
+    "$1,100 No Limit Hold'Em 1A $500K Gtd keeps registration open until 4:55 PM, after $600 Pot Limit Omaha Double Board Bomb Pot (1Day) starts at 12:10 PM \u2014 playable in sequence only if you are out of the first event before that deadline, which the sheet does not promise"
    ],
    "distinct_ranked_events": 2,
    "entries_usd": 1700,
@@ -1075,14 +1076,24 @@
     "name": "$1,100 No Limit Hold'Em 1A $500K Gtd",
     "date": "2026-12-17",
     "time": "10:10 AM",
-    "registration_closes": null,
+    "registration_closes": "4:55 PM",
     "buy_in_usd": 1100,
     "guarantee_usd": 500000,
     "venue": "venetian",
     "weekday": "Thursday"
    },
-   "fallback": null,
-   "fallback_id": null
+   "fallback": {
+    "id": "WPT-66-2026-12-17-700PM",
+    "name": "$400 Milestone Satellite to $3,000 No Limit Hold\u2019em poker",
+    "date": "2026-12-17",
+    "time": "7:00 PM",
+    "registration_closes": null,
+    "buy_in_usd": 400,
+    "guarantee_usd": null,
+    "venue": "wynn",
+    "weekday": "Thursday"
+   },
+   "fallback_id": "WPT-66-2026-12-17-700PM"
   },
   {
    "date": "2026-12-18",
@@ -1161,31 +1172,42 @@
   {
    "date": "2026-12-20",
    "weekday": "Sunday",
-   "fallback_unavailable": "the leading event prints no late-registration deadline, so no second entry can be shown to be reachable",
+   "fallback_unavailable": "",
    "earliest_printed_start": "11:00 AM",
    "duration_note": "no official source prints a finish time or a round count for this day, so the plan gives a start and a late-registration deadline rather than a predicted end",
    "restarts": [
     "$1,100 No Limit Hold'Em Day 2 Restart"
    ],
    "overlap_notes": [
-    "2 ranked entries share this day (starts 11:10 AM, 5:10 PM); entering one rules out the others, and no sheet prints a finish time to settle it"
+    "2 ranked entries share this day (starts 11:10 AM, 5:10 PM); entering one rules out the others, and no sheet prints a finish time to settle it",
+    "$600 No Limit Hold'Em 1A $20 Rake Discount For Entries Before 11:10 Am keeps registration open until 5:55 PM, after $200 No Limit Hold'Em Bounty (1Day) starts at 5:10 PM \u2014 playable in sequence only if you are out of the first event before that deadline, which the sheet does not promise"
    ],
    "distinct_ranked_events": 2,
    "entries_usd": 800,
    "primary_id": "V59-2026-12-20-11:10am",
    "primary": {
     "id": "V59-2026-12-20-11:10am",
-    "name": "$600 No Limit Hold'Em 1A $20 Rake Discount For Entries Before",
+    "name": "$600 No Limit Hold'Em 1A $20 Rake Discount For Entries Before 11:10 Am",
     "date": "2026-12-20",
     "time": "11:10 AM",
-    "registration_closes": null,
+    "registration_closes": "5:55 PM",
     "buy_in_usd": 600,
     "guarantee_usd": 150000,
     "venue": "venetian",
     "weekday": "Sunday"
    },
-   "fallback": null,
-   "fallback_id": null
+   "fallback": {
+    "id": "WPT-52-2026-12-20-600PM",
+    "name": "$600 5-Card PLO Turbo",
+    "date": "2026-12-20",
+    "time": "6:00 PM",
+    "registration_closes": null,
+    "buy_in_usd": 600,
+    "guarantee_usd": 50000,
+    "venue": "wynn",
+    "weekday": "Sunday"
+   },
+   "fallback_id": "WPT-52-2026-12-20-600PM"
   },
   {
    "date": "2026-12-21",
