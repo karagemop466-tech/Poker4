@@ -248,13 +248,97 @@ def parse_schedule(text: str, source_url: str) -> list[dict]:
     return rows
 
 
-PDF_DATE_RE = re.compile(r"(?P<mon>Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\.?\s+(?P<day>\d{1,2})", re.I)
-PDF_TIME_RE = re.compile(r"(?P<t>\d{1,2}:\d{2}\s*(?:AM|PM))", re.I)
+PDF_DATE_RE = re.compile(
+    r"(?P<wd>MONDAY|TUESDAY|WEDNESDAY|THURSDAY|FRIDAY|SATURDAY|SUNDAY),?\s+"
+    r"(?P<mon>JANUARY|FEBRUARY|MARCH|APRIL|MAY|JUNE|JULY|AUGUST|SEPTEMBER|OCTOBER|NOVEMBER|DECEMBER)"
+    r"\s+(?P<day>\d{1,2})", re.I)
+PDF_ROW_RE = re.compile(
+    r"(?P<no>\d{1,3})\s+\$(?P<buy>[\d,]+)\s+(?P<name>.{3,110}?)\s+"
+    r"(?P<time>\d{1,2}:\d{2}\s*(?:AM|PM))"
+    r"(?:\s+(?P<close>\d{1,2}:\d{2}\s*(?:AM|PM)))?"
+    r"(?:\s+\$(?P<gtd>[\d,]+)(?P<gtdmult>\s*(?:K|MILL|MILLION))?)?"
+    r"(?:\s+(?P<chips>\d{1,3},\d{3}))?"
+    r"(?:\s+(?P<level>\d{1,2}(?:/\d{1,2})?))?", re.I)
+MONTHS = {m: i for i, m in enumerate(
+    ["JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE", "JULY",
+     "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER"], start=1)}
 
 
-def parse_schedule_pdf(text: str, source_url: str) -> list[dict]:
-    """Placeholder — refined once the printed layout of the sheet is recorded."""
-    return []
+def parse_schedule_pdf(text: str, source_url: str, default_year: int | None = None) -> list[dict]:
+    """Rows of the printed schedule table: DATE | EVENT # | EVENT | TIME | REG CLOSES | GUARANTEE | CHIPS | LEVEL.
+
+    Each row is attributed to the most recent printed date header. Fields the page
+    does not print stay null — they are never carried over from a neighbouring row.
+    """
+    flat = re.sub(r"\s+", " ", text).strip()
+    heads = list(PDF_DATE_RE.finditer(flat))
+    if not heads:
+        return []
+    bounds = [(m.start(), m) for m in heads] + [(len(flat), None)]
+    rows: list[dict] = []
+    for i, (start, head) in enumerate(bounds[:-1]):
+        end = bounds[i + 1][0]
+        seg = flat[start:end]
+        mon = MONTHS.get(head.group("mon").upper())
+        day = int(head.group("day"))
+        year = default_year
+        yr = re.search(r"\b(20\d{2})\b", seg)
+        if yr:
+            year = int(yr.group(1))
+        date_iso = None
+        if mon and day and year:
+            try:
+                date_iso = dt.date(year, mon, day).isoformat()
+            except ValueError:
+                date_iso = None
+        def clock(value):
+            if not value:
+                return None
+            h, rest = value.upper().split(":")
+            mm = rest.strip()[:2]
+            ap = "PM" if "PM" in rest.upper() else "AM"
+            hr = int(h) % 12 + (12 if ap == "PM" else 0)
+            return hr * 60 + int(mm)
+
+        for m in PDF_ROW_RE.finditer(seg):
+            name = re.sub(r"\s+", " ", m.group("name")).strip(" -|")
+            note = []
+            gtd = None
+            if m.group("gtd"):
+                gtd = int(m.group("gtd").replace(",", ""))
+                mult = (m.group("gtdmult") or "").strip()
+                if mult == "K":
+                    gtd *= 1000
+                elif mult:
+                    gtd *= 1_000_000
+            close = re.sub(r"\s+", " ", m.group("close")).upper() if m.group("close") else None
+            if close and clock(close) is not None and clock(close) <= clock(m.group("time")):
+                # a printed time that is not later than the start is table bleed from a
+                # neighbouring cell — drop it rather than mis-state a deadline
+                note.append(f"registration-closes cell “{close}” not later than the start time; not recorded")
+                close = None
+            level = m.group("level")
+            if level:
+                parts = [int(x) for x in re.split(r"/", level)]
+                if not all(5 <= x <= 120 for x in parts):
+                    note.append(f"LEVEL cell “{level}” is not a plausible blind level; not recorded")
+                    level = None
+            rows.append({
+                "parse_notes": note or None,
+                "registration_closes": close,
+                "date": date_iso,
+                "weekday": head.group("wd").title() if head else None,
+                "time": re.sub(r"\s+", " ", m.group("time")).upper(),
+                "event_no": int(m.group("no")),
+                "event_name": name,
+                "buy_in_usd": int(m.group("buy").replace(",", "")),
+                "guarantee_usd": gtd,
+                "starting_chips": int(m.group("chips").replace(",", "")) if m.group("chips") else None,
+                "level_duration": level,
+                "source": source_url,
+                "retrieved": today_utc(),
+            })
+    return rows
 
 
 # ------------------------------------------------------------------- structures
@@ -267,13 +351,16 @@ FIELD_PATTERNS = {
     "late_registration": r"Late\s*Registration\s*:?\s*(?P<v>.{0,60})",
     "guarantee": r"Guarantee\s*:?\s*(?P<v>.{0,90})",
     "day2": r"Day\s*2[^.\n]{0,120}",
+    "flight_start": r"Day\s*[A-Z](?:\s*\+\s*[A-Z])*\s*@\s*(\d{1,2}:\d{2}\s*[AP]M)",
     "bagging": r"Any\s*player\s*who\s*bags[^.\n]{0,120}",
 }
 FEE_RE = re.compile(
-    r"\$\s?([\d,]+)\s+of\s+the\s+\$\s?([\d,]+)\s+Buy-?In\s+is\s+withheld\s+for\s+house\s*fees?"
-    r"[\s\S]{0,140}?prize\s+pool\s+consists\s+of\s+\$\s?([\d,]+)",
+    r"\$\s?([\d,]+)\s+of\s+the\s+\$\s?([\d,]+)\s+Buy[-'\s]?In\s+is\s+withheld\s+for\s+house\s*fees?"
+    r"[\s\S]{0,300}?prize\s+pool\s+consists\s+of\s+\$\s?([\d,]+)",
     re.I,
 )
+FEE_ONLY_RE = re.compile(r"\$\s?([\d,]+)\s+of\s+the\s+\$\s?([\d,]+)\s+Buy[-'\s]?In\s+is\s+withheld", re.I)
+POOL_ONLY_RE = re.compile(r"prize\s+pool\s+consists\s+of\s+\$\s?([\d,]+)\s+of\s+every\s+\$\s?([\d,]+)", re.I)
 PAYOUT_RE = re.compile(r"pays\s+(?P<v>[\d.]+%)\s+of\s+the\s+field", re.I)
 # Clauses that would actually settle the single-entry question. Re-entry wording is
 # matched on purpose in BOTH directions: an explicit allowance is as decisive as an
@@ -286,7 +373,8 @@ CLAUSE_RULES = [
     ("addon_allowed", r"add-?\s?on\s*[:=]?\s*(?:allowed|permitted|available|optional|\$)|may\s+(?:purchase\s+an?\s+)?add-?\s?on|re-?buy\s+and\s+add-?\s?on"),
     ("addon_forbidden", r"no\s+add-?\s?ons?|add-?\s?ons?\s+(?:are\s+)?(?:not\s+allowed|prohibited|will\s+not\s+be)"),
 ]
-SUBSEQUENT_ENTRY_RE = re.compile(r"subsequent\s+buy-?ins?|all\s+subsequent\s+entr|additional\s+buy-?ins?\s+(?:will|are|cost)", re.I)
+SUBSEQUENT_ENTRY_RE = re.compile(
+    r"subsequent\s+buy\s*-?\s*in'?s?|subsequent\s+entr(?:y|ies)|additional\s+buy\s*-?\s*in'?s?", re.I)
 
 
 def audit_structure(text: str, url: str) -> dict:
@@ -305,10 +393,20 @@ def audit_structure(text: str, url: str) -> dict:
         out["house_fee_usd"] = int(fee.group(1).replace(",", ""))
         out["buy_in_usd"] = int(fee.group(2).replace(",", ""))
         out["pool_per_entry_usd"] = int(fee.group(3).replace(",", ""))
-    else:
-        out["house_fee_usd"] = None
-        out["buy_in_usd"] = None
-        out["pool_per_entry_usd"] = None
+    else:  # the two sentences are sometimes separated by a page-break artefact
+        f2, p2 = FEE_ONLY_RE.search(flat), POOL_ONLY_RE.search(flat)
+        out["house_fee_usd"] = int(f2.group(1).replace(",", "")) if f2 else None
+        out["buy_in_usd"] = int(f2.group(2).replace(",", "")) if f2 else None
+        if p2:
+            out["pool_per_entry_usd"] = int(p2.group(1).replace(",", ""))
+            out["buy_in_usd"] = out["buy_in_usd"] or int(p2.group(2).replace(",", ""))
+        else:
+            out["pool_per_entry_usd"] = None
+    if not out.get("start_time"):
+        fl = re.search(FIELD_PATTERNS["flight_start"], flat, re.I)
+        out["start_time"] = fl.group(1) if fl else out.get("start_time")
+        if fl:
+            out["start_time_basis"] = "printed as the Day-A flight start on the sheet"
     pay = PAYOUT_RE.search(flat)
     out["payout_pct_of_field"] = pay.group("v") if pay else None
 

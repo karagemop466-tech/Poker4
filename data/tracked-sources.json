@@ -24,7 +24,8 @@
    "key": "V_SCHED_PDF",
    "parse": "venetian-schedule-pdf",
    "keep_text_excerpt": true,
-   "excerpt_chars": 9000
+   "excerpt_chars": 9000,
+   "default_year": 2026
   },
   {
    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament.html",
@@ -38,70 +39,90 @@
    "label": "Venetian poker room (location + contact)",
    "kind": "page",
    "venue": "The Venetian",
-   "key": "V_POKER_PAGE"
+   "key": "V_POKER_PAGE",
+   "keep_text_excerpt": true,
+   "excerpt_chars": 2600
   },
   {
    "url": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
    "label": "Wynn \u2014 all daily tournament structures (PDF)",
    "kind": "pdf",
    "venue": "Wynn Las Vegas",
-   "key": "W_DAILY"
+   "key": "W_DAILY",
+   "keep_text_excerpt": true,
+   "excerpt_chars": 5200
   },
   {
    "url": "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf",
    "label": "Wynn \u2014 daily tournament poster (PDF)",
    "kind": "pdf",
    "venue": "Wynn Las Vegas",
-   "key": "W_POSTER"
+   "key": "W_POSTER",
+   "keep_text_excerpt": true,
+   "excerpt_chars": 5200
   },
   {
    "url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
    "label": "Wynn \u2014 WPT World Championship schedule (PDF)",
    "kind": "pdf",
    "venue": "Wynn Las Vegas",
-   "key": "W_WPT_SCHED"
+   "key": "W_WPT_SCHED",
+   "keep_text_excerpt": true,
+   "excerpt_chars": 5200
   },
   {
    "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
    "label": "Wynn \u2014 WPT World Championship structures / terms (PDF)",
    "kind": "pdf",
    "venue": "Wynn Las Vegas",
-   "key": "W_WPT_STRUCT"
+   "key": "W_WPT_STRUCT",
+   "keep_text_excerpt": true,
+   "excerpt_chars": 5200
   },
   {
    "url": "https://wynnlasvegas.com/casino/poker",
    "label": "Wynn Las Vegas poker room page",
    "kind": "page",
    "venue": "Wynn Las Vegas",
-   "key": "W_PAGE"
+   "key": "W_PAGE",
+   "keep_text_excerpt": true,
+   "excerpt_chars": 2600
   },
   {
    "url": "https://bellagio.mgmresorts.com/en/casino/poker.html",
    "label": "Bellagio poker room page",
    "kind": "page",
    "venue": "Bellagio",
-   "key": "B_PAGE"
+   "key": "B_PAGE",
+   "keep_text_excerpt": true,
+   "excerpt_chars": 2600
   },
   {
    "url": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
    "label": "Caesars Palace \u2014 poker tournaments page",
    "kind": "page",
    "venue": "Caesars Palace",
-   "key": "C_PAGE"
+   "key": "C_PAGE",
+   "keep_text_excerpt": true,
+   "excerpt_chars": 2600
   },
   {
    "url": "https://www.caesars.com/horseshoe-las-vegas/casino/poker",
    "label": "Horseshoe Las Vegas poker page",
    "kind": "page",
    "venue": "Horseshoe",
-   "key": "H_PAGE"
+   "key": "H_PAGE",
+   "keep_text_excerpt": true,
+   "excerpt_chars": 2600
   },
   {
    "url": "https://aria.mgmresorts.com/en/casino/poker.html",
    "label": "ARIA poker room page",
    "kind": "page",
    "venue": "ARIA",
-   "key": "A_PAGE"
+   "key": "A_PAGE",
+   "keep_text_excerpt": true,
+   "excerpt_chars": 2600
   },
   {
    "url": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2025.pdf",
