@@ -720,14 +720,22 @@ for h in CFG["hotels"]:
                 })
 walks: list[dict] = []
 for h in CFG["hotels"]:
-    for vid in h.get("venue_ids") or []:
+    w = h.get("walk") or {}
+    # The measured walk targets the Venetian poker room for every hotel (the brief's
+    # ≤30-min axis). Use the walk's own target venue/venue_id when present so the pair
+    # label matches the measurement, not the hotel's grouping venue_id.
+    for vid in ([w.get("venue_id")] if w.get("venue_id") else (h.get("venue_ids") or [])):
         walks.append({
             "hotel_id": h["id"], "hotel": h["property"], "venue_id": vid,
-            "venue": (VENUE_BY_ID.get(vid) or {}).get("name", vid),
-            "minutes": (h.get("walk") or {}).get("minutes"),
-            "meets_30_min": (h.get("walk") or {}).get("meets_30_min", "unverified"),
-            "status": (h.get("walk") or {}).get("status"),
-            "source": (h.get("walk") or {}).get("source"),
+            "venue": w.get("venue") or (VENUE_BY_ID.get(vid) or {}).get("name", vid),
+            "minutes": w.get("minutes"),
+            "distance_mi": w.get("distance_mi"),
+            "via": w.get("via"),
+            "meets_30_min": w.get("meets_30_min", "unverified"),
+            "status": w.get("status"),
+            "method": w.get("method"),
+            "retrieved": w.get("retrieved"),
+            "source": w.get("source"),
         })
 with open(DATA / "rate-log.json", "w", encoding="utf-8") as fh:
     json.dump({"meta": {"generated_at": SNAPSHOT_AT or TODAY,
@@ -1193,7 +1201,7 @@ def hotel_table(hotels, base=""):
                  + "<td class='srccell'>" + src_cell([h.get("official_page"), h.get("booking_link")], SNAPSHOT_AT[:10]) + "</td></tr>")
     return ("<div class='table-scroll'><table class='compact hotels'><thead><tr><th>Property</th><th class='num'>Room rate</th>"
             "<th class='num'>Resort fee</th><th class='num'>True cost/night</th><th class='num'>Parking</th>"
-            "<th>Walk to this room</th><th>Official source</th></tr></thead><tbody>" + body + "</tbody></table></div>")
+            "<th>Walk to Venetian poker room</th><th>Official source</th></tr></thead><tbody>" + body + "</tbody></table></div>")
 
 
 def source_table(rows, base=""):
@@ -1421,7 +1429,7 @@ def _page_venue(v, base):
 {events_table(rows, base, empty=(NO_ROWS_NOTE if not rows else ""))}
 {('<h3>Day-2 restarts and finals on the calendar (no new entry)</h3>' + events_table(cont, base)) if cont else ''}
 <h2>Hotels within a 30-minute walk</h2>
-{hotel_table(hotels, base) if hotels else unk("no hotel can be placed within 30 minutes of this room from an official measurement — see flag F6")}
+{hotel_table(hotels, base) if hotels else unk("no hotel is associated with this room in the data — see flags F3/F18 for the walking-minute measurement method")}
 {("<h2>Flagged for this venue</h2><ul class='flags'>" + "".join(f"<li><strong>{E(f['id'])}</strong> {E(f['item'])} — {E(f['detail'])}</li>" for f in flags) + "</ul>") if flags else ''}
 <h2>Sources checked for this venue</h2>
 {source_table([s for s in source_rows if str(s.get("venue")).replace(chr(39), "") in VENUE_ALIAS.get(v["id"], set())], base)}
@@ -1447,8 +1455,10 @@ def page_hotels():
             for sent, u in fact_sentences(h, field):
                 facts += f"<li><strong>{E(field.replace('_', ' '))}</strong> “{E(sent)}” {src_cell([u], SNAPSHOT_AT[:10], label='source page ↗')}</li>"
         walk_rows = "".join(
-            f"<tr><td>{E(p['venue'])}</td><td class='num'>{str(p['minutes']) + ' min' if p.get('minutes') else unk('not published')}</td>"
-            f"<td>{E(p['meets_30_min'])}</td><td class='qual'>{E(p.get('status') or '')}</td>"
+            f"<tr><td>{E(p['venue'])}</td>"
+            f"<td class='num'>{str(p['minutes']) + ' min' if p.get('minutes') is not None else unk('not published')}</td>"
+            + (f"<td class='num'>{p.get('distance_mi')} mi</td>" if p.get('distance_mi') is not None else "<td></td>")
+            + f"<td>{E(p['meets_30_min'])}</td><td class='qual'>{E(p.get('status') or '')}</td>"
             f"<td class='srccell'>{src_cell([p.get('source')], SNAPSHOT_AT[:10], label='source ↗')}</td></tr>"
             for p in walks if p["hotel_id"] == h["id"])
         if total:
@@ -1488,8 +1498,8 @@ def page_hotels():
 </div>
 <h4>Rates and fee facts as a dated log (not a single value)</h4>
 <div class="table-scroll"><table class="compact"><thead><tr><th>Observed</th><th>What it is</th><th class="num">Amount</th><th>Wording / qualifier</th><th>Quote status</th><th>Source</th></tr></thead><tbody>{log_rows}</tbody></table></div>
-<h4>Walk to the poker rooms</h4>
-<div class="table-scroll"><table class="compact"><thead><tr><th>Poker room</th><th class="num">Walk</th><th>Meets the 30-min rule</th><th>How we know</th><th>Source</th></tr></thead><tbody>{walk_rows}</tbody></table></div>
+<h4>Walk to the Venetian poker room (Google Maps, retrieved 2026-11-17)</h4>
+<div class="table-scroll"><table class="compact"><thead><tr><th>Poker-room target</th><th class="num">Walk</th><th class="num">Distance</th><th>Meets the 30-min rule</th><th>How we know</th><th>Source</th></tr></thead><tbody>{walk_rows}</tbody></table></div>
 {(f"<h4>Unresolved for this property</h4><ul class='flags'>{dead}</ul>") if dead else ''}
 </article>"""
     return shell("", "Hotels", f"""
@@ -1503,10 +1513,10 @@ def page_hotels():
 <label class="toggle"><input type="radio" name="walkf" value="measured"> measured walk ≤ 30 min</label>
 <span class="count" id="walk-count"></span>
 </div>
-<p class="mini-note">“Measured” is empty on purpose: no Strip property publishes a door-to-door walking time to another property's poker room, and the minutes cells are left blank rather than estimated — <a href="flagged.html#F6">F6</a> records the one API call that would fill them. Choosing it filters the list to what is actually provable today.</p></section>
+<p class="mini-note">“Measured” holds a real walking time for every property: Google Maps walking directions (mode=walking) were retrieved 2026-11-17 for each hotel→Venetian poker-room pair and stored with the route distance, the “via” road, the exact directions URL and the retrieval date (see <a href="data/integrated/walks-google.json">data/integrated/walks-google.json</a>; flags <a href="flagged.html#F3">F3</a> / <a href="flagged.html#F18">F18</a> record the closure). Google's walking durations run optimistic, so the route distance in miles is shown beside each minute. Choosing “measured walk ≤ 30 min” filters to the properties that provably meet the rule.</p></section>
 {cards}
 <section class="callout"><h2>Reading a blank honestly</h2>
-<p>Where a property shows rates only inside its booking calendar, no number is copied onto this site — the booking link is given instead and the row is marked. Two official pages currently return 404 (Bellagio's resort-fee page and the Caesars Palace daily flyer); they are reported as unreachable, never replaced by a third-party mirror. ARIA publishes two different resort fees on two official pages ($50 and $55): both sentences are shown and neither is chosen for you. No official walking-minute figure exists for any hotel→poker-room pair on the Strip, so the ≤30-minute rule is carried as a warning, not a green tick — <a href="flagged.html#F6">F6</a> explains how to close it.</p></section>
+<p>Where a property shows rates only inside its booking calendar, no number is copied onto this site — the booking link is given instead and the row is marked. Two official pages currently return 404 (Bellagio's resort-fee page and the Caesars Palace daily flyer); they are reported as unreachable, never replaced by a third-party mirror. ARIA publishes two different resort fees on two official pages ($50 and $55): both sentences are shown and neither is chosen for you. Walking minutes are no longer a warning: every hotel→Venetian poker-room walk is a measured Google Maps value retrieved 2026-11-17, with the route distance shown beside it — the ≤30-minute rule is now a hard filter (flags <a href="flagged.html#F3">F3</a> / <a href="flagged.html#F18">F18</a>). The remaining blanks are the ones no official source can settle — a dated like-for-like room quote needs your exact dates and occupancy.</p></section>
 """, "hotels.html", needs_data=False)
 
 
