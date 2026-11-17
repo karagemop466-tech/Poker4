@@ -72,18 +72,18 @@
    "a": "2026-11-22-6-11:10AM"
   },
   {
-   "t": "2026-11-23 5:10 PM #8 $200 No Limit Hold'em $8K GTD (1Day) - Progressive Knock-Out Bounty (PKO)",
-   "k": "Tournament",
-   "d": "$200 entry · $8,000 GTD · sheet not audited in this pass",
-   "u": "@@/tournaments.html",
-   "a": "2026-11-23-8-5:10PM"
-  },
-  {
    "t": "2026-11-23 11:10 AM #7 $400 No Limit Hold'em 1A $75K GTD",
    "k": "Tournament",
    "d": "$400 entry · $75,000 GTD · not stated on the sheet",
    "u": "@@/tournaments.html",
    "a": "2026-11-23-7-11:10AM"
+  },
+  {
+   "t": "2026-11-23 5:10 PM #8 $200 No Limit Hold'em $8K GTD (1Day) - Progressive Knock-Out Bounty (PKO)",
+   "k": "Tournament",
+   "d": "$200 entry · $8,000 GTD · not stated on the sheet",
+   "u": "@@/tournaments.html",
+   "a": "2026-11-23-8-5:10PM"
   },
   {
    "t": "2026-11-24 11:10 AM #7 $400 No Limit Hold'em 1B $75K GTD",
@@ -863,9 +863,9 @@
    "a": "sheet-29"
   },
   {
-   "t": "Structure sheet #30 ",
+   "t": "Structure sheet #30 $200 No Limit Hold'em PKO — Event #08 only",
    "k": "Structure sheet",
-   "d": "fees — · reg closes — · not audited in this pass",
+   "d": "fees $40 · reg closes 8 levels + Break (9:40 PM) · entry rule not stated",
    "u": "@@/structures.html",
    "a": "sheet-30"
   },

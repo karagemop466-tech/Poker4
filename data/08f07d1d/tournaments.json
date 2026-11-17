@@ -383,45 +383,6 @@
    "note": ""
   },
   {
-   "id": "2026-11-23-8-5:10PM",
-   "venue": "venetian",
-   "date": "2026-11-23",
-   "time": "5:10 PM",
-   "weekday": "Mon",
-   "event_no": "8",
-   "name": "$200 No Limit Hold'em $8K GTD (1Day) - Progressive Knock-Out Bounty (PKO)",
-   "listing_kind": "Tournament",
-   "buy_in": 200,
-   "guarantee": 8000,
-   "fee": null,
-   "to_pool": null,
-   "payout_pct": null,
-   "chips": null,
-   "level": null,
-   "start": null,
-   "reg_close": null,
-   "reg_close_min": null,
-   "sheet": 30,
-   "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_30.pdf",
-   "schedule_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
-   "entry_rule_note": "UNVERIFIED",
-   "audited": false,
-   "frozen_confirmed": false,
-   "multi_entry_confirmed": false,
-   "rule_excerpt": null,
-   "rule_status": "sheet not audited in this pass",
-   "last_checked": "2026-11-16",
-   "source_changed": false,
-   "source_checked_at": null,
-   "ratio": 40.0,
-   "group": "separate",
-   "tags": [
-    "one-day",
-    "bounty"
-   ],
-   "note": ""
-  },
-  {
    "id": "2026-11-23-7-11:10AM",
    "venue": "venetian",
    "date": "2026-11-23",
@@ -456,6 +417,45 @@
    "group": "separate",
    "tags": [
     "multi-flight"
+   ],
+   "note": ""
+  },
+  {
+   "id": "2026-11-23-8-5:10PM",
+   "venue": "venetian",
+   "date": "2026-11-23",
+   "time": "5:10 PM",
+   "weekday": "Mon",
+   "event_no": "8",
+   "name": "$200 No Limit Hold'em $8K GTD (1Day) - Progressive Knock-Out Bounty (PKO)",
+   "listing_kind": "Tournament",
+   "buy_in": 200,
+   "guarantee": 8000,
+   "fee": 40,
+   "to_pool": 160,
+   "payout_pct": "½ of the field (top half) / ½ to bounties",
+   "chips": null,
+   "level": null,
+   "start": "5:10 PM",
+   "reg_close": "8 levels + Break (9:40 PM)",
+   "reg_close_min": 1300,
+   "sheet": 30,
+   "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_30.pdf",
+   "schedule_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "entry_rule_note": "UNVERIFIED",
+   "audited": true,
+   "frozen_confirmed": false,
+   "multi_entry_confirmed": false,
+   "rule_excerpt": null,
+   "rule_status": "not stated on the sheet",
+   "last_checked": "2026-11-17",
+   "source_changed": false,
+   "source_checked_at": null,
+   "ratio": 40.0,
+   "group": "separate",
+   "tags": [
+    "one-day",
+    "bounty"
    ],
    "note": ""
   },
@@ -3712,18 +3712,18 @@
    "a": "2026-11-22-6-11:10AM"
   },
   {
-   "t": "2026-11-23 5:10 PM #8 $200 No Limit Hold'em $8K GTD (1Day) - Progressive Knock-Out Bounty (PKO)",
-   "k": "Tournament",
-   "d": "$200 entry · $8,000 GTD · sheet not audited in this pass",
-   "u": "@@/tournaments.html",
-   "a": "2026-11-23-8-5:10PM"
-  },
-  {
    "t": "2026-11-23 11:10 AM #7 $400 No Limit Hold'em 1A $75K GTD",
    "k": "Tournament",
    "d": "$400 entry · $75,000 GTD · not stated on the sheet",
    "u": "@@/tournaments.html",
    "a": "2026-11-23-7-11:10AM"
+  },
+  {
+   "t": "2026-11-23 5:10 PM #8 $200 No Limit Hold'em $8K GTD (1Day) - Progressive Knock-Out Bounty (PKO)",
+   "k": "Tournament",
+   "d": "$200 entry · $8,000 GTD · not stated on the sheet",
+   "u": "@@/tournaments.html",
+   "a": "2026-11-23-8-5:10PM"
   },
   {
    "t": "2026-11-24 11:10 AM #7 $400 No Limit Hold'em 1B $75K GTD",
@@ -4503,9 +4503,9 @@
    "a": "sheet-29"
   },
   {
-   "t": "Structure sheet #30 ",
+   "t": "Structure sheet #30 $200 No Limit Hold'em PKO — Event #08 only",
    "k": "Structure sheet",
-   "d": "fees — · reg closes — · not audited in this pass",
+   "d": "fees $40 · reg closes 8 levels + Break (9:40 PM) · entry rule not stated",
    "u": "@@/structures.html",
    "a": "sheet-30"
   },
