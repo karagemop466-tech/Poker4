@@ -1466,3 +1466,14 @@ Gates on the merged tree: `verify_root` 16 pages · 253 rows · **111** rate-log
 **Integration PR:** [#79](https://github.com/karagemop466-tech/Poker4/pull/79) — opened 2026-11-17 ~23:12 UTC,
 merging without waiting per the session brief. Merge result and Pages deploy confirmation to be
 recorded here immediately after the merge.
+
+**Merge result:** PR #79 merged 2026-11-17T23:10:55Z → merge commit
+[`1aff421`](https://github.com/karagemop466-tech/Poker4/commit/1aff42170a045d29e3bd6cac2a53ef1dbb08a5f7)
+(merge without waiting, per the brief). On `1aff421`: **Poker4 site build + verification gate = success**,
+**Verify the published site = success**, **Deploy static dashboard to GitHub Pages = success**,
+**Official source sync + change monitor = success** — Pages is live with the integration at
+https://karagemop466-tech.github.io/Poker4/ (the redundant built-in "pages build and deployment" run was
+cancelled in favour of the repo's deploy workflow; not a deploy failure). PR checks at merge time:
+check / integrity / verify all pass. V3 integration COMPLETE: every branch head consolidated
+(#65/#67/#69/#71/#72/#73/#74/#75/#76/#77/#78 heads, a3838778 already on main), walking values reconciled
+to the measured Google Maps capture, all gates green on the merged tree.
