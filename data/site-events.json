@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generated_at": "2026-11-17T22:36:45Z",
+  "generated_at": "2026-11-17T22:37:51Z",
   "rows": 253,
   "verified_single_entry": 0,
   "rankable": 72,
@@ -6841,10 +6841,10 @@
    "registration_closes": "6:25 PM",
    "buy_in_usd": 100,
    "guarantee_usd": null,
-   "guarantee_text": null,
+   "guarantee_text": "2 seats",
    "guarantee_printed": false,
-   "starting_chips": null,
-   "level_duration": null,
+   "starting_chips": 20000,
+   "level_duration": "20",
    "kind": "Satellite",
    "tags": [
     "Satellite",
@@ -7663,10 +7663,10 @@
    "registration_closes": "6:25 PM",
    "buy_in_usd": 100,
    "guarantee_usd": null,
-   "guarantee_text": null,
+   "guarantee_text": "2 seats",
    "guarantee_printed": false,
-   "starting_chips": null,
-   "level_duration": null,
+   "starting_chips": 20000,
+   "level_duration": "20",
    "kind": "Satellite",
    "tags": [
     "Satellite",
@@ -8344,10 +8344,10 @@
    "registration_closes": "6:25 PM",
    "buy_in_usd": 260,
    "guarantee_usd": null,
-   "guarantee_text": null,
+   "guarantee_text": "2 seats",
    "guarantee_printed": false,
-   "starting_chips": null,
-   "level_duration": null,
+   "starting_chips": 20000,
+   "level_duration": "20",
    "kind": "Satellite",
    "tags": [
     "Satellite"
@@ -8878,10 +8878,10 @@
    "registration_closes": "6:25 PM",
    "buy_in_usd": 260,
    "guarantee_usd": null,
-   "guarantee_text": null,
+   "guarantee_text": "2 seats",
    "guarantee_printed": false,
-   "starting_chips": null,
-   "level_duration": null,
+   "starting_chips": 20000,
+   "level_duration": "20",
    "kind": "Satellite",
    "tags": [
     "Satellite"
@@ -9108,10 +9108,10 @@
    "registration_closes": "9:55 PM",
    "buy_in_usd": 260,
    "guarantee_usd": null,
-   "guarantee_text": null,
+   "guarantee_text": "2 seats",
    "guarantee_printed": false,
-   "starting_chips": null,
-   "level_duration": null,
+   "starting_chips": 20000,
+   "level_duration": "15",
    "kind": "Satellite",
    "tags": [
     "Satellite"
@@ -9262,8 +9262,8 @@
    "guarantee_usd": 1000000,
    "guarantee_text": null,
    "guarantee_printed": true,
-   "starting_chips": null,
-   "level_duration": null,
+   "starting_chips": 40000,
+   "level_duration": "40",
    "kind": "Tournament",
    "tags": [
     "Multi-flight"
@@ -9339,10 +9339,10 @@
    "registration_closes": "1:55 PM",
    "buy_in_usd": 260,
    "guarantee_usd": null,
-   "guarantee_text": null,
+   "guarantee_text": "2 seats",
    "guarantee_printed": false,
-   "starting_chips": null,
-   "level_duration": null,
+   "starting_chips": 20000,
+   "level_duration": "15",
    "kind": "Satellite",
    "tags": [
     "Satellite"
@@ -9781,8 +9781,8 @@
    "guarantee_usd": 1000000,
    "guarantee_text": null,
    "guarantee_printed": true,
-   "starting_chips": null,
-   "level_duration": null,
+   "starting_chips": 40000,
+   "level_duration": "30",
    "kind": "Tournament",
    "tags": [
     "Multi-flight"
@@ -10002,10 +10002,10 @@
    "registration_closes": "10:55 AM",
    "buy_in_usd": 260,
    "guarantee_usd": null,
-   "guarantee_text": null,
+   "guarantee_text": "2 seats",
    "guarantee_printed": false,
-   "starting_chips": null,
-   "level_duration": null,
+   "starting_chips": 20000,
+   "level_duration": "15",
    "kind": "Satellite",
    "tags": [
     "Satellite"
@@ -13537,13 +13537,13 @@
    "date": "2026-12-17",
    "weekday": "Thursday",
    "time": "10:10 AM",
-   "registration_closes": null,
+   "registration_closes": "4:55 PM",
    "buy_in_usd": 1100,
    "guarantee_usd": 500000,
    "guarantee_text": null,
    "guarantee_printed": true,
-   "starting_chips": null,
-   "level_duration": null,
+   "starting_chips": 40000,
+   "level_duration": "40",
    "kind": "Tournament",
    "tags": [
     "Multi-flight"
@@ -14137,13 +14137,13 @@
    "date": "2026-12-17",
    "weekday": "Thursday",
    "time": "6:10 PM",
-   "registration_closes": null,
+   "registration_closes": "11:10 PM",
    "buy_in_usd": 1100,
    "guarantee_usd": 500000,
    "guarantee_text": null,
    "guarantee_printed": true,
-   "starting_chips": null,
-   "level_duration": "11",
+   "starting_chips": 40000,
+   "level_duration": "30",
    "kind": "Tournament",
    "tags": [
     "Multi-flight"
@@ -16561,18 +16561,18 @@
    "venue": "venetian",
    "venue_name": "The Venetian Poker Room",
    "event_no": 59,
-   "name": "$600 No Limit Hold'Em 1A $20 Rake Discount For Entries Before",
-   "name_printed": "NO LIMIT HOLD'EM 1A $20 RAKE DISCOUNT FOR ENTRIES BEFORE",
+   "name": "$600 No Limit Hold'Em 1A $20 Rake Discount For Entries Before 11:10 Am",
+   "name_printed": "NO LIMIT HOLD'EM 1A $20 RAKE DISCOUNT FOR ENTRIES BEFORE 11:10 AM",
    "date": "2026-12-20",
    "weekday": "Sunday",
    "time": "11:10 AM",
-   "registration_closes": null,
+   "registration_closes": "5:55 PM",
    "buy_in_usd": 600,
    "guarantee_usd": 150000,
    "guarantee_text": null,
    "guarantee_printed": true,
-   "starting_chips": null,
-   "level_duration": "5",
+   "starting_chips": 40000,
+   "level_duration": "40",
    "kind": "Tournament",
    "tags": [
     "Multi-flight"
