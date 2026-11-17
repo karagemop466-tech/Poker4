@@ -601,3 +601,17 @@ Policy: every data row must link an official source; values not confirmed from a
 - **Post-merge on `main`:** "Verify the published site" SUCCESS · "Poker4 site build + verification gate" SUCCESS · "Deploy static dashboard to GitHub Pages" SUCCESS (run 43999859321) · "pages build and deployment" (run 43999857621) queued/completed · "Official source sync + change monitor" running.
 - **Pages:** https://karagemop466-tech.github.io/Poker4/ (source: main, path `/`) — deploy succeeded at 02:01 UTC 2026-11-17.
 - **Race notes:** `main` advanced four times during this session (`be3594d` → `9b1f376` → `57f7399` → `1221f53` → `6fd824b` → `fa1dbad`); every round merged forward, never discarding others' work; the v2-monitor bot also pushed a snapshot commit to this session's branch (merged back). Final head `59a6c51` contains `origin/main` `fa1dbad`.
+
+---
+
+## Session arena/ae1abd73-poker4 (session `ae1abd73`) — independent re-check of entry-rule verdict
+
+- Session ID: `ae1abd73`. Branch: `arena/ae1abd73-poker4` (Arena-fixed name). Base: `main` @ `0d13de0`.
+- Claim (narrow scope, no overlap with the board's shared root outputs):
+
+| ID | Task | Status | Owner | File scope | Notes |
+|----|------|--------|-------|------------|-------|
+| X1 | Independent re-check of the Venetian DSE IV structure-sheet entry-rule verdict (`data/feature/structure-extract.md`, F1 from session d1d02f59): fetch the official structure PDFs, search each for single-entry / re-entry / add-on / rebuy wording, record hits and misses with retrieval date | done | ae1abd73 | `data/ae1abd73/*` (new folder only), this board (log entries) | Sources: official Venetian structure sheets 1–37, `dse_nov_2026-structure_N.pdf` on venetianlasvegas.com, read 2026-11-17. Result: 37/37 read; 0 sheets state single-entry/freezeout; 0 state re-entry/rebuy/add-on as such; 1 sheet (8, events 18 & 58) has "All subsequent buy in's after the initial buy in will be $200"; 13 sheets have the "bag for Day 2 → may not play a subsequent flight" rule (implies possible later-flight entry). Start/chips/level/late-reg/guarantee/fee: 0 discrepancies vs `data/feature/structure-extract.md`. | Verdict stands: 0 Venetian DSE IV events confirmed single-entry; flighted events and events 18/58 stay unverified. Schedule page and non-Venetian rooms not re-read in this pass. |
+
+
+- 2026-11-17 — **ae1abd73 (X1) done.** Read all 37 official Venetian DSE IV structure sheets; saved `data/ae1abd73/structure_recheck.json` + `README.md`. Confirms the d1d02f59 entry-rule verdict (0 confirmed single-entry). No edits to `data/feature/*` or root pages. Discrepancies: none found in the fields compared. Flagged for the integration session: (a) flight-rule events (13 sheets) keep single-entry unverified; (b) sheet 8 subsequent-buy-in line for events 18 & 58.
