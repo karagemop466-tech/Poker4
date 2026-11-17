@@ -1,37 +1,52 @@
-name: Scheduled official URL re-check
+name: Official source sync + change monitor
+
+# Each morning (06:00 Las Vegas time, Pacific) re-read every official URL the
+# dashboard cites, re-audit every structure sheet, and commit the results so the
+# published tables can stamp "last checked" and mark rows whose source changed.
 
 on:
   schedule:
-    - cron: '0 6 * * *'   # daily, 06:00 UTC
+    - cron: '0 14 * * *' # 14:00 UTC = 06:00 America/Los_Angeles (PST; 07:00 PDT)
+  push:
+    branches: [main]
+    paths:
+      - data/tracked-sources.json
+      - tools/sync_official_sources.py
   workflow_dispatch:
 
 permissions:
   contents: write
 
+concurrency:
+  group: source-sync
+  cancel-in-progress: false
+
 jobs:
-  check:
+  sync:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
 
-      - name: Set up Node
-        uses: actions/setup-node@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
-          node-version: '20'
+          python-version: '3.11'
 
-      - name: Run official URL re-check
-        id: check
-        run: node tools/url_check.js
+      - name: Install PDF text extraction fallback
+        run: python -m pip install --quiet pypdf
 
-      - name: Commit updated check log if anything changed
+      - name: Re-check official sources and audit structure sheets
+        run: python tools/sync_official_sources.py
+
+      - name: Commit the refreshed snapshots
         run: |
           git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          if git diff --quiet data/url-checks.json; then
-            echo "No changes to commit."
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet -- data/url-checks.json data/structure-audit.json data/schedule-snapshot.json data/change-log.json; then
+            echo "No source changes to record."
           else
-            git add data/url-checks.json
-            git commit -m "chore: scheduled official URL re-check $(date -u +%F)"
+            git add data/url-checks.json data/structure-audit.json data/schedule-snapshot.json data/change-log.json
+            git commit -m "chore(sources): scheduled official-source sync $(date -u +%FT%TZ)"
             git push
           fi
