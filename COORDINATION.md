@@ -217,7 +217,7 @@ Session ID: `arena/aa32d8fd-poker4`; branch `arena/aa32d8fd-poker4`, branched fr
 | M5 | Rank only on confirmed entry fee + guarantee; GTD ÷ entry as descriptive ratio; bounty/flight separated | done — see “Integration build” log below | arena/e74e00fd-poker4 | `app.js`, `tournaments.html` | M1 structure data | Ranking suppressed for any row with unconfirmed fee/guarantee |
 | M6 | Morning scrape + change monitoring of every official schedule source, row-level "source changed" marking | done — see “Integration build” log below | arena/e74e00fd-poker4 | `tools/sync_official_sources.py`, `.github/workflows/url-check.yml`, `data/url-checks.json`, `data/change-log.json` | HEAD + content hash + value extraction per row | Actions runner is the only place with network access; client fetch stays CORS-blocked |
 | M7 | Schedule overlap check from late-registration cutoff + plausible duration (primary + conditional fallback) | done — see “Integration build” log below | arena/e74e00fd-poker4 | `schedule.html`, `app.js` | M1 structures (levels, late reg, breaks) | Finish times not published → "possible overlap", never "confirmed" |
-| M8 | Integration: link check, PR → main, merge, Pages deploy confirm, record result | in progress (PR open, deploy pending) | arena/e74e00fd-poker4 | repo root, main, this board | — | — |
+| M8 | Integration: link check, PR → main, merge, Pages deploy confirm, record result | done — PR #43 merged (`1221f53`), follow-up PR #48 merged (`ea2b831`); Pages deploy success, live page checked | arena/e74e00fd-poker4 | repo root, main, this board | Live page fetched after deploy (tournaments.html, rev 6fd824b) | One interim merge commit (`787f52b`) pushed a conflict-marked `data/v2/source_state.json`; repaired forward in `5c991be` with the monitor's own version, no force-push |
 
 ## Prior integration correction — arena/2da41d2b-poker4
 
@@ -563,3 +563,12 @@ Policy: every data row must link an official source; values not confirmed from a
 - **Irregularities published on flagged.html:** F1–F18 (see page), incl. Bellagio Saturday 3-way buy-in conflict (F3), Wynn WPT "Dec. 18 Wednesday" typo (F4), no 8:00 AM starts anywhere (F15), unverified Caesars/Harrah's/Horseshoe fees (F10), board/README marker pollution on main (F18).
 
 - 2026-11-17 (d1d02f59): **PR #44 merged** to `main` as merge commit `648177dc00dc7d78d836e7909b435c2faab64fe8`. Workflows "Deploy static dashboard to GitHub Pages" (run 43998261038), "Poker4 site build + verification gate" (run 43998262439) and "pages build and deployment" (run 43998260096) all completed **success**; Pages API status `built`, URL https://karagemop466-tech.github.io/Poker4/. Live check with cache-buster confirmed the integrated dashboard (163 event rows, 0 confirmed single-entry, 28 multi-entry rows, dated rate log, day-plan with primary/fallback + overlap flags) — the bare root URL served a stale CDN copy of the previous build during the check and refreshes on next cache cycle. Merge result: **merged; no unresolved conflicts; flagged items (F1–F18) published on flagged.html, none blocking.**
+
+### Result record — arena/e74e00fd-poker4 (2026-11-17)
+
+- **Merged:** PR #43 "Integrate the dashboard" → `1221f53` (2026-11-17 01:53 UTC); PR #48 "Follow-up: morning board excludes Day-2 restarts; clearer empty-tab count" → `ea2b831`.
+- **Deploy:** "Deploy static dashboard to GitHub Pages" success on `ea2b831`; "pages build and deployment" success on `6fd824b` (built 01:57:21 UTC); Pages API reports `built`, source `main:/`.
+- **Live check:** `https://karagemop466-tech.github.io/Poker4/tournaments.html` serves the integrated build (118 event rows, 0 confirmed single-entry, morning board, four tabs, "no rows in this tab" on the empty tab).
+- **Irregularity recorded:** the interim merge commit `787f52b` pushed `data/v2/source_state.json` with conflict markers (invalid JSON). Repaired forward in `5c991be` by restoring the monitor's own committed version; no history was rewritten. All tracked JSON on the branch parses; no conflict markers remain in tracked files.
+- **Still open (requests R1–R4 above):** the daily maintenance job's root-HTML rewrite (R1) is the one to act on first; R2 (archived walk estimates) and R4 (page overlap) need their owners; R3 (README markers) is no longer present on this branch.
+
