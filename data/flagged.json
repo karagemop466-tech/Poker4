@@ -1,239 +1,210 @@
 {
-  "note": "Flagged items do not block the merge. Each item says what is unverified and how to close it.",
-  "items": [
-    {
-      "id": "F1",
-      "title": "Caesars Palace buy-in conflict",
-      "detail": "caesars.com page lists $100 for all four daily events; the official 2026 flyer lists $100 (10 AM, 6 PM) and $160 (2 PM, 9 PM). The flyer is used. Confirm at the poker room.",
-      "sources": [
-        "S7"
-      ]
-    },
-    {
-      "id": "F2",
-      "title": "MGM Grand daily tournaments: times and buy-ins",
-      "detail": "Official page lists NLH tournaments at 11 AM, 7 PM, 11 PM. A third-party source lists 11 AM, 3 PM, 7 PM, 11 PM and says tournaments were suspended until July 10, 2026. Buy-ins not on the official page. Left blank.",
-      "sources": [
-        "S9"
-      ]
-    },
-    {
-      "id": "F3",
-      "title": "Horseshoe daily tournaments: times and buy-ins",
-      "detail": "Official page confirms six daily tournament times, but the times and buy-ins are not on the page. Left blank.",
-      "sources": [
-        "S8"
-      ]
-    },
-    {
-      "id": "F4",
-      "title": "Wynn daily poster: guarantee-to-day mapping",
-      "detail": "The poster (June 2026 revision) shows Mon-Thu and Sat/Sun guarantees, but the day mapping is ambiguous and the poster was not checked against the current schedule. Daily rows have no dates.",
-      "sources": [
-        "S5"
-      ]
-    },
-    {
-      "id": "F5",
-      "title": "Wynn WPT schedule: formatting and footnotes",
-      "detail": "Rows for Dec 17-18 are out of order. The 'NIH' label on Ladies NLH is a typo, read as NLH. Footnoted events (*, **, ***, ****) need structure-sheet checks, which were not done.",
-      "sources": [
-        "S6"
-      ]
-    },
-    {
-      "id": "F6",
-      "title": "Wynn WPT World Championship eligibility",
-      "detail": "The source note lists the $10,400 events as ClubWPT Gold qualifier-style events, not Nevada entries. Confirm eligibility before entering.",
-      "sources": [
-        "S6"
-      ]
-    },
-    {
-      "id": "F7",
-      "title": "Venetian rows with missing or inferred dates",
-      "detail": "Several rows (events #47 1A, #49 1A, #58) have a tour label in the date column. Their dates were not captured and are left blank, or are inferred from block order and marked for confirmation.",
-      "sources": [
-        "S1"
-      ]
-    },
-    {
-      "id": "F8",
-      "title": "Venetian Dec 8 LIPS Ladies row",
-      "detail": "The event is listed on the Dec 8 row, but its buy-in and guarantee were not captured. Left blank.",
-      "sources": [
-        "S1"
-      ]
-    },
-    {
-      "id": "F9",
-      "title": "Venetian Dec 9 rows only partly captured",
-      "detail": "Only partial rows for Dec 9 were captured. Re-check the full schedule before using Dec 9 for planning.",
-      "sources": [
-        "S1"
-      ]
-    },
-    {
-      "id": "F10",
-      "title": "Venetian guarantees not captured",
-      "detail": "Events #3-5 RaceDay Stack and #6 ($200 NLH 1-day) show no guarantee in the captured rows. Left blank.",
-      "sources": [
-        "S1"
-      ]
-    },
-    {
-      "id": "F11",
-      "title": "Venetian later series not scheduled",
-      "detail": "DeepStack NYE (Dec 24, 2026 - Jan 10, 2027) and DeepStack Showdown (Jan 11 - Feb 14, 2027) are announced, but their event schedules were not read.",
-      "sources": [
-        "S1"
-      ]
-    },
-    {
-      "id": "F12",
-      "title": "Venetian structure sheets",
-      "detail": "Structure sheets read for $200 bounty (structure_1), $400 NLH with $75K GTD (structure_2) and $300 NLH 1-day with $10K GTD (structure_5). Event numbers were not confirmed on the sheets; the buy-in and GTD match the schedule rows for events #2 and #7.",
-      "sources": [
-        "S1"
-      ]
-    },
-    {
-      "id": "F13",
-      "title": "Venetian PKO label",
-      "detail": "Event #8 is labeled PKO on the schedule; structure_1 is a $200 bounty sheet. Format not confirmed.",
-      "sources": [
-        "S1"
-      ]
-    },
-    {
-      "id": "F14",
-      "title": "Venetian Turbo flight (1F)",
-      "detail": "The 1F Turbo flight ($800 NLH, $500K GTD, Dec 5) is part of event #26 (row V20 in tournaments.json). Its exact time was not re-checked against the PDF in this session.",
-      "sources": [
-        "S1"
-      ]
-    },
-    {
-      "id": "F15",
-      "title": "MGM Grand resort fee",
-      "detail": "Only third-party sources report $50 plus tax per night. Official MGM Grand terms not read. Left blank.",
-      "sources": [
-        "S9"
-      ]
-    },
-    {
-      "id": "F16",
-      "title": "Caesars Palace resort fee and event date range",
-      "detail": "No official resort-fee page read. The daily flyer does not give a date range in the captured text. Left blank.",
-      "sources": [
-        "S7"
-      ]
-    },
-    {
-      "id": "F17",
-      "title": "Wynn resort fee",
-      "detail": "Official resort-fee page could not be read. Left blank.",
-      "sources": [
-        "S5"
-      ]
-    },
-    {
-      "id": "F18",
-      "title": "Bellagio poker page",
-      "detail": "Official poker page returned 'Page not found'. No official current tournament data was found.",
-      "sources": [
-        "S12"
-      ]
-    },
-    {
-      "id": "F19",
-      "title": "ARIA tournaments",
-      "detail": "Official ARIA poker page has room information but no schedule or buy-in. Third-party sources mention a daily $200 NL and an Aria Poker Open. Unverified; not listed.",
-      "sources": [
-        "S10"
-      ]
-    },
-    {
-      "id": "F20",
-      "title": "Planet Hollywood poker",
-      "detail": "Official poker page returned HTTP 500. Third-party sources report the resort closed in January 2026. Not listed.",
-      "sources": [
-        "S13"
-      ]
-    },
-    {
-      "id": "F21",
-      "title": "Resorts World poker",
-      "detail": "No official tournament page found. Third-party sources conflict ($160 vs $200). Not listed.",
-      "sources": [
-        "S14"
-      ]
-    },
-    {
-      "id": "F22",
-      "title": "Golden Nugget, Orleans and South Point",
-      "detail": "Golden Nugget poker page returned empty content; Orleans poker page returned 404; South Point is in the southwest valley (off the Strip, per its home page) and its poker room page was not read. Not listed.",
-      "sources": [
-        "S11",
-        "S16",
-        "S17"
-      ]
-    },
-    {
-      "id": "F23",
-      "title": "No verified walking times",
-      "detail": "No walking-time source was read for any hotel or venue. The 30-minute walking limit is therefore unconfirmed for every hotel.",
-      "sources": [
-        "S2"
-      ]
-    },
-    {
-      "id": "F24",
-      "title": "Repo review: irregularities",
-      "detail": "Repo holds only README.md (one line) and one commit. No LICENSE, no .gitignore, no data or site files. GitHub Pages was set to a legacy build from main root, which had no site files, so the published page was empty. Fixed in this session by serving from /docs.",
-      "sources": [
-        "S15"
-      ]
-    },
-    {
-      "id": "F25",
-      "title": "Hotel snapshot is a single dated booking",
-      "detail": "The Venetian all-in figure is from one booking-page snapshot (Dec 18-20, 2026, 2 adults), not a live or confirmed rate.",
-      "sources": [
-        "S3"
-      ]
-    },
-    {
-      "id": "F26",
-      "title": "Wynn Signature Series",
-      "detail": "Jan 11-24, 2027 series is outside the current window. Its schedule PDF was not read.",
-      "sources": [
-        "S5"
-      ]
-    },
-    {
-      "id": "F27",
-      "title": "Live event timing",
-      "detail": "Venetian event #1 started Nov 16, 2026 (today). Registration close times for the Nov 16-17 flights are not captured.",
-      "sources": [
-        "S1"
-      ]
-    },
-    {
-      "id": "F28",
-      "title": "Wynn WPT structure sheets",
-      "detail": "Structure PDF was not read beyond its general terms. Blinds, levels and re-entry rules for the WPT events are unverified.",
-      "sources": [
-        "S6"
-      ]
-    },
-    {
-      "id": "F29",
-      "title": "Wynn Dec 5 label",
-      "detail": "The Dec 5 row reads 'NLH Day 2 / WPT Prime Day 1A'. The label is ambiguous; buy-in and guarantee are as shown in the official PDF.",
-      "sources": [
-        "S6"
-      ]
-    }
-  ]
+ "meta": {
+  "updated": "2026-11-17",
+  "rule": "Irregularities and unverified items are published here with sources. None of these block publication."
+ },
+ "items": [
+  {
+   "id": "F1",
+   "severity": "important",
+   "title": "No Venetian event is officially single-entry (yet)",
+   "detail": "All 37 official DSE IV structure sheets were read line-by-line. None states a maximum number of entries, 'no re-entry', 'freezeout', or any add-on policy. Sheet 8 (Events 18/58) prints \"All subsequent buy in's after the initial buy in will be $200\", implying re-entry is allowed there, and every multi-flight sheet prints \"Any player who bags chips for Day 2 may not play a subsequent flight\", implying re-entry into later flights is otherwise permitted. Per the site rules, no event is labeled confirmed single-entry without explicit wording.",
+   "sources": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_2.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_3.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_6.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_8.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_9.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_13.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_14.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_16.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_17.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_19.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_20.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_22.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_23.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_24.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_25.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_26.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_27.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_28.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_29.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_30.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_31.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_32.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_33.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_34.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_36.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_37.pdf"
+   ],
+   "action": "Ask the Venetian poker room (or check registration terms) for written single-entry/no-re-entry policy per event before paying non-refundable travel."
+  },
+  {
+   "id": "F2",
+   "severity": "important",
+   "title": "All Wynn daily tournaments officially allow re-entry and/or add-ons",
+   "detail": "Official structures PDF: Mon-Thu $200 and Nightly $160 print re-entry explicitly ('entry fee, as well as the re-entry fee, is ...'); Sat/Sun $200 allows re-entries + one $100 add-on; Friday $240 is a rebuy/add-on event with unlimited rebuys (re-entry explicitly NOT allowed). None qualifies as a single-entry event.",
+   "sources": [
+    "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf"
+   ],
+   "action": null
+  },
+  {
+   "id": "F3",
+   "severity": "important",
+   "title": "Wynn dailies may be suspended during the WPT series",
+   "detail": "Each Wynn daily structure states the event 'may be suspended during Seniors Events, Classic Events, or other Tournament Series.' During the WPT World Championship (Nov 27 - Dec 21), the usual dailies may not run as printed.",
+   "sources": [
+    "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+    "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+   ],
+   "action": "Confirm the daily calendar for your exact dates on wynnpoker.com before booking."
+  },
+  {
+   "id": "F4",
+   "severity": "moderate",
+   "title": "Official WPT schedule PDF prints impossible weekday: 'Dec. 18 Wednesday'",
+   "detail": "Six schedule rows (incl. $1,100 NLH $1M GTD Day 1A/1B, $800 PLO Double Board Bomb Pot, PLO 6-Max, HORSE, two satellite rows) are printed under 'Dec. 18 Wednesday'. In 2026, December 18 is a Friday and December 16 is the Wednesday. The adjacent rows print 'Dec. 17 Thursday' and 'Dec. 18 Friday' correctly. The dates for the mislabeled rows are ambiguous as printed and are NOT guessed on this site.",
+   "sources": [
+    "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+   ],
+   "action": "Verify intended dates with the Wynn poker room before registering."
+  },
+  {
+   "id": "F5",
+   "severity": "moderate",
+   "title": "Four Venetian events list no guarantee anywhere",
+   "detail": "Events #3, #4, #5 ($200 NLH RaceDay Stack, structure sheet 18) and #6 ($200 NLH 1Day, structure sheet 29) print no guarantee on their sheets, and the schedule page shows none for them. Guarantee fields are left blank and these rows are excluded from ratio ranking.",
+   "sources": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_29.pdf"
+   ],
+   "action": null
+  },
+  {
+   "id": "F6",
+   "severity": "moderate",
+   "title": "Bounty-event guarantees include bounty money",
+   "detail": "Venetian bounty sheets print the guarantee as 'prize pool + total bounties' (e.g., $8,000 for $200 bounties, $15,000 for $300 bounties). The displayed ratio (guarantee / buy-in) therefore mixes bounty and prize-pool money; bounty rows are labeled and ranked separately.",
+   "sources": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf"
+   ],
+   "action": null
+  },
+  {
+   "id": "F7",
+   "severity": "moderate",
+   "title": "WPT structures PDF chunks 4-7 not yet read line-by-line",
+   "detail": "Structures for $1,600 NLH $1M, WPT Prime $5M, Super Gold Million Mystery Bounty $400 $3M, $800 NLH $500K, $1,600 PLO $1M, Seniors, $3,000 NLH $2M, $1,100 NLH $1M, $1,600 Mystery Bounty, high rollers, Ladies, and remaining satellites were not read in this pass (chunks 0-3 of 8 were). Their re-entry rules are marked unverified. Every event whose structure WAS read states 'Unlimited re-entry ... until the start of level 9.'",
+   "sources": [
+    "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+   ],
+   "action": "Read remaining chunks before relying on re-entry policy for those events."
+  },
+  {
+   "id": "F8",
+   "severity": "moderate",
+   "title": "Hotel room rates cannot be statically verified",
+   "detail": "Strip hotels publish rates through dynamic booking engines (dates/occupancy-specific). No durable official static rate page exists. Room-rate fields are left blank; the site provides official booking links and a dated rate log. Logged dated items so far: Venetian resort fee $55/night + tax (official page, 2026-11-16); Venetian conditional poker-rate program $119/$209 starts (official suite-rates page, session 60fb62da); TI optional resort fee $49.95 + tax (official TI pages, session 60fb62da); TI \"$69 NIGHT + NO RESORT FEE\" package headline (official homepage, 2026-11-17; footnotes not visible in extract).",
+   "sources": [
+    "https://www.venetianlasvegas.com/resort/resort-fee.html",
+    "https://treasureisland.com/",
+    "https://www.venetianlasvegas.com/book",
+    "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
+    "https://treasureisland.com/hotel/tower-suite"
+   ],
+   "action": "Capture itemized checkout totals for exact dates/occupancy from the official booking engine and append to the rate log before paying."
+  },
+  {
+   "id": "F9",
+   "severity": "moderate",
+   "title": "13.38% room-tax rate is corroborated but not yet independently re-verified this session",
+   "detail": "The calculator applies 13.38% because the site owner specified it. The shared board records that session 60fb62da verified 13.38% Clark County room tax from official Treasure Island offer-terms pages (2026-11-16); no official government page was reachable from this session's build environment to re-confirm.",
+   "sources": [
+    "https://treasureisland.com/deals-offers/buy-1-get-1-bogo-free-fine-print"
+   ],
+   "action": "Verify the tax line on your actual booking checkout (it is printed there) and correct the constant in app.js if it differs."
+  },
+  {
+   "id": "F10",
+   "severity": "moderate",
+   "title": "Walking minutes are mapping estimates \u2014 no property publishes official walk times",
+   "detail": "Each hotel-venue row links Google Maps directions between the two official properties and shows a straight-line-distance-based estimate. No casino publishes an official walking-time figure. The \u226430-minute walk filter applies to these labeled estimates only.",
+   "sources": [],
+   "action": "Open the Maps links and confirm a route you would actually walk, at the time of day you would walk it."
+  },
+  {
+   "id": "F11",
+   "severity": "moderate",
+   "title": "Caesars / Bellagio / ARIA official pages unreachable from the build environment",
+   "detail": "caesars.com and mgmresorts.com pages did not load during this build (consistent with earlier sessions). Those rooms' tournaments are listed on this site only as pointers to their official pages, without values.",
+   "sources": [
+    "https://www.caesars.com/caesars-palace/casino",
+    "https://bellagio.mgmresorts.com/en/casino/poker.html",
+    "https://aria.mgmresorts.com/en/casino/poker.html"
+   ],
+   "action": null
+  },
+  {
+   "id": "F12",
+   "severity": "info",
+   "title": "No 8:00 AM start exists on any official schedule checked",
+   "detail": "The requested 8 AM day-start cannot be met officially: earliest Venetian starts are 9:10 AM (Turbo satellite #46) and 10:10 AM (RaceDay/Seniors/1A flights); Wynn dailies start at 12 PM and WPT morning flights at 10-11 AM. The schedule page builds the earliest possible day honestly instead of inventing an 8 AM event.",
+   "sources": [
+    "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+   ],
+   "action": null
+  },
+  {
+   "id": "F13",
+   "severity": "info",
+   "title": "Official-page typos preserved, not corrected",
+   "detail": "Venetian schedule page prints 'No LImit Hold'em' for events 2, 6, 10, 12; Wynn daily poster headline pairs are read from a two-column layout. Site rows use the official text; where layout pairing was ambiguous, the structures PDF (which is definitive) was used.",
+   "sources": [
+    "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+   ],
+   "action": null
+  },
+  {
+   "id": "F14",
+   "severity": "info",
+   "title": "Eligibility restrictions apply to some events",
+   "detail": "Venetian Seniors events (#24, #32, #49) require age 50+; LIPS Ladies events require female players; the LIPS tag team event requires teams; Wynn/WPT requires 21+ and venue rewards membership (Venetian Rewards card printed on every Venetian sheet; Wynn Rewards membership printed in Wynn terms).",
+   "sources": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_17.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_19.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_32.pdf",
+    "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf"
+   ],
+   "action": null
+  },
+  {
+   "id": "F15",
+   "severity": "info",
+   "title": "Discounted buy-ins exist and change the true entry cost",
+   "detail": "Official discounts printed: Venetian Event #59 1A pre-registration $20 off ($580), Event #56 1A/1B pre-registration $40 off ($1,060), PokerAtlas PRO $20 off first entry of Events 18/58 ($180), WPT pre-registration discount footnote (*****), Ladies Championship $11,100 entry with ladies discount. The table shows the standard buy-in; discounts are in each row's notes.",
+   "sources": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_8.pdf",
+    "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+   ],
+   "action": null
+  }
+ ]
 }

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sources &amp; re-check status — Poker4</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site"><div class="wrap">
+  <span class="logo">♠ Poker4</span>
+  <nav>
+    <a href="index.html">Summary</a>
+    <a href="tournaments.html">Tournaments</a>
+    <a href="schedule.html">Schedule planner</a>
+    <a href="hotels.html">Hotels &amp; cost</a>
+    <a href="venues/venetian.html">Venetian</a>
+    <a href="venues/wynn.html">Wynn</a>
+    <a href="venues/other-venues.html">Other rooms</a>
+    <a href="questions.html">Questions</a>
+    <a href="suggestions.html">Suggestions</a>
+    <a href="review.html">Flagged for review</a>
+    <a href="sources.html" class="active">Sources</a>
+  </nav>
+</div></header>
+<main class="wrap">
+  <h1>Sources &amp; re-check status</h1>
+  <p class="lead">Every official document and page used, with retrieval dates, a short excerpt, and the status of the scheduled daily re-check (runs via GitHub Actions; when a source changes, affected rows are flagged on the site).</p>
+  <div class="callout">Retrieval method: each Venetian structure PDF and each Wynn PDF was fetched and read in full on 2026-11-17 (UTC); the Venetian resort-fee page was read 2026-11-16. Where a page could not be fetched from the build environment, that is stated instead of guessed. Once the scheduled checker has run, per-URL status appears in the last column.</div>
+  <div class="tablewrap"><table>
+    <thead><tr><th>URL</th><th>Label</th><th>Excerpt (start)</th><th>Retrieved</th><th>Re-check status</th></tr></thead>
+    <tbody id="sources-body"><tr><td colspan="5" class="muted">Loading…</td></tr></tbody>
+  </table></div>
+</main>
+<footer class="site"><div class="wrap">
+  <span>Built from official operator documents only · last data build 2026-11-17</span>
+  <span><a href="review.html">Flagged for review</a></span>
+</div></footer>
+<script src="app.js"></script>
+</body>
+</html>

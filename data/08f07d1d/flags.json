@@ -112,7 +112,7 @@
    "id": "F-GTD",
    "severity": "moderate",
    "title": "Four upcoming events publish no guarantee",
-   "detail": "Events #3, #4, #5 (RaceDay Stack) and #6 have no guarantee line on their structure sheets and none in the calendar row, so guarantee/entry ratio is blank for them and they cannot be ranked on value. They are not assumed to be unguaranteed.",
+   "detail": "Events #3, #4, #5 (RaceDay Stack) and #6 have no guarantee line on their structure sheets and none in the calendar row, so guarantee/entry ratio is blank for them and they cannot be ranked on value. They are not assumed to be unguaranteed. Sheets #15 ($15,000 for events 29/31/34/38/42/50/51/53/55) and #16 ($75,000 for event #36) each state the guarantee as \"(prize pool + total bounties)\", so their guarantee is not comparable with a plain guarantee: those events stay in the separate bounty section and their GTD÷entry ratio is labelled bounty-inclusive. Sheets #18 and #29 print no guarantee line at all.",
    "how_to_close": "Ask the room whether a guarantee exists for those events.",
    "sources": [
     {
@@ -330,7 +330,34 @@
     "index.html"
    ],
    "how_to_close": "The owning session either publishes pages/index.html or drops the link."
+  },
+  {
+   "id": "F-BOT-BRANCH",
+   "title": "Another session's scheduled monitor commits to whichever branch triggers it, including this session's branch",
+   "detail": "`.github/workflows/v2-monitor.yml` (\"Re-check official sources\") ran on a push event to `arena/08f07d1d-poker4` and pushed commit dd37b41 \"chore(v2): source monitor run 43995086181\" onto that branch, touching only `data/v2/source_state.json` and a `data/v2/snapshots/` file. Nothing of mine was modified, so I merged it rather than dropping it — but a monitor that writes to the ref that happened to trigger it will land bot commits on other sessions' open branches, which is how a branch quietly diverges from what its author built. This branch's own monitor commits are restricted to the ref it resolves from its `ref` input and are labelled `[skip ci]`.",
+   "severity": "process",
+   "status": "merged here; owner should scope the workflow's commit target",
+   "no_official_source": true,
+   "sources": [],
+   "affects": [
+    "data/v2/source_state.json",
+    "data/v2/snapshots/"
+   ],
+   "how_to_close": "Pin that workflow's commit target to `main`, or add `[skip ci]` plus a branch allowlist."
+  },
+  {
+   "id": "F-SHEET-PARTIAL",
+   "title": "Four sheets were read with lines lost to an elided page region",
+   "detail": "Sheets #19, #20, #21 and #23 came back with their middle (or top) inside a chunk boundary while the page was being read, so their guarantee/house-fee or start-time lines were not visible. Those fields are recorded as null with an `unread_fields` list naming exactly what is missing, and each row shows \"read pending\" rather than a number copied from the calendar — a calendar buy-in is not a house-fee figure. The scheduled monitor reads each PDF whole and will fill them.",
+   "severity": "minor",
+   "status": "open — closes on the next monitor run",
+   "no_official_source": true,
+   "sources": [],
+   "affects": [
+    "data/08f07d1d/structure_rules.json"
+   ],
+   "how_to_close": "Monitor run, or re-read sheets 19/20/21/23 individually."
   }
  ],
- "count": 24
+ "count": 26
 }

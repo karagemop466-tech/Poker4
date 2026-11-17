@@ -803,6 +803,11 @@ dashboard supersedes them at the root and does not treat them as confirmation:</
 <a href="verified/index.html">verified candidates ↗</a> · <a href="strip/index.html">strip-wide review ↗</a> ·
 <a href="pages/executive-summary.html">first integration pages ↗</a> ·
 <a href="prior_root_dashboard/index.html">prior root dashboard (snapshot) ↗</a> ·
+<a href="archive.html">archive index of earlier session sites ↗</a> ·
+<a href="archive/722a84d2_root/index.html">722a84d2 verified root build (archived) ↗</a> ·
+<a href="archive/08f07d1d/index.html">08f07d1d dashboard (archived) ↗</a> ·
+<a href="research/raw/venetian_dse_iv_structures.md">research/raw (structure notes) ↗</a> ·
+<a href="monitoring.html">monitoring hub ↗</a> ·
 <a href="venues.html">prior root venue page ↗</a> · <a href="ratelog.html">prior root rate log ↗</a> ·
 <a href="change-monitor.html">prior root change monitor ↗</a></p>
 """

@@ -72,18 +72,18 @@
    "a": "2026-11-22-6-11:10AM"
   },
   {
-   "t": "2026-11-23 5:10 PM #8 $200 No Limit Hold'em $8K GTD (1Day) - Progressive Knock-Out Bounty (PKO)",
-   "k": "Tournament",
-   "d": "$200 entry · $8,000 GTD · sheet not audited in this pass",
-   "u": "@@/tournaments.html",
-   "a": "2026-11-23-8-5:10PM"
-  },
-  {
    "t": "2026-11-23 11:10 AM #7 $400 No Limit Hold'em 1A $75K GTD",
    "k": "Tournament",
    "d": "$400 entry · $75,000 GTD · not stated on the sheet",
    "u": "@@/tournaments.html",
    "a": "2026-11-23-7-11:10AM"
+  },
+  {
+   "t": "2026-11-23 5:10 PM #8 $200 No Limit Hold'em $8K GTD (1Day) - Progressive Knock-Out Bounty (PKO)",
+   "k": "Tournament",
+   "d": "$200 entry · $8,000 GTD · not stated on the sheet",
+   "u": "@@/tournaments.html",
+   "a": "2026-11-23-8-5:10PM"
   },
   {
    "t": "2026-11-24 11:10 AM #7 $400 No Limit Hold'em 1B $75K GTD",
@@ -172,7 +172,7 @@
   {
    "t": "2026-11-29 12:10 PM #20 $300 Pot Limit Omaha $10K GTD (1Day) - Double Board Bomb Pot",
    "k": "Tournament",
-   "d": "$300 entry · $10,000 GTD · sheet not audited in this pass",
+   "d": "$300 entry · $10,000 GTD · not stated on the sheet",
    "u": "@@/tournaments.html",
    "a": "2026-11-29-20-12:10PM"
   },
@@ -221,7 +221,7 @@
   {
    "t": "2026-12-02 10:10 AM #24 $600 No Limit Hold'em Seniors $40K GTD (1Day) - Must be 50+",
    "k": "Tournament",
-   "d": "$600 entry · $40,000 GTD · sheet not audited in this pass",
+   "d": "$600 entry · $40,000 GTD · not stated on the sheet",
    "u": "@@/tournaments.html",
    "a": "2026-12-02-24-10:10AM"
   },
@@ -326,14 +326,14 @@
   {
    "t": "2026-12-08 10:10 AM #32 $600 No Limit Hold'em Seniors $40K GTD (1Day) - Must be 50+",
    "k": "Tournament",
-   "d": "$600 entry · $40,000 GTD · sheet not audited in this pass",
+   "d": "$600 entry · $40,000 GTD · not stated on the sheet",
    "u": "@@/tournaments.html",
    "a": "2026-12-08-32-10:10AM"
   },
   {
    "t": "2026-12-08 4:10 PM #33 $100 NLH LIPS Ladies Milestone Satellite (1Day) - Awards Direct Entry to Event 39",
    "k": "Tournament",
-   "d": "$100 entry · — GTD · sheet not audited in this pass",
+   "d": "$100 entry · — GTD · not stated on the sheet",
    "u": "@@/tournaments.html",
    "a": "2026-12-08-33-4:10PM"
   },
@@ -354,14 +354,14 @@
   {
    "t": "2026-12-09 11:10 AM #36 $800 No Limit Hold'em Bounty $75K GTD (1Day) - $200 bounties to start and $500 bounties in the money",
    "k": "Tournament",
-   "d": "$800 entry · $75,000 GTD · sheet not audited in this pass",
+   "d": "$800 entry · $75,000 GTD · not stated on the sheet",
    "u": "@@/tournaments.html",
    "a": "2026-12-09-36-11:10AM"
   },
   {
    "t": "2026-12-09 4:10 PM #37 $100 NLH LIPS Ladies Milestone Satellite (1Day) - Awards Direct Entry to Event 39",
    "k": "Tournament",
-   "d": "$100 entry · — GTD · sheet not audited in this pass",
+   "d": "$100 entry · — GTD · not stated on the sheet",
    "u": "@@/tournaments.html",
    "a": "2026-12-09-37-4:10PM"
   },
@@ -436,13 +436,6 @@
    "a": "2026-12-11-45-8:10PM"
   },
   {
-   "t": "2026-12-12 10:10 AM #47 $2,200 No Limit Hold'em 1A $1 Mill GTD - PokerAtlas Championship Title Event",
-   "k": "Tournament",
-   "d": "$2,200 entry · $1,000,000 GTD · sheet not audited in this pass",
-   "u": "@@/tournaments.html",
-   "a": "2026-12-12-47-10:10AM"
-  },
-  {
    "t": "2026-12-12 12:10 PM #48 $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event 47",
    "k": "Tournament",
    "d": "$260 entry · — GTD · sheet not audited in this pass",
@@ -464,18 +457,25 @@
    "a": "2026-12-12-46-9:10AM"
   },
   {
-   "t": "2026-12-13 10:10 AM #49 $1,100 No Limit Hold'em Seniors 1A $300K GTD - Must be 50+",
+   "t": "2026-12-12 10:10 AM #47 $2,200 No Limit Hold'em 1A $1 Mill GTD - PokerAtlas Championship Title Event",
    "k": "Tournament",
-   "d": "$1,100 entry · $300,000 GTD · sheet not audited in this pass",
+   "d": "$2,200 entry · $1,000,000 GTD · not stated on the sheet",
    "u": "@@/tournaments.html",
-   "a": "2026-12-13-49-10:10AM"
+   "a": "2026-12-12-47-10:10AM"
   },
   {
    "t": "2026-12-13 1:00 PM #47 $2,200 NLH PokerAtlas Championship Title Event Day 2 Restart - Play down to Final 7, streamed final table (PokerGO)",
    "k": "Tournament",
-   "d": "$2,200 entry · — GTD · sheet not audited in this pass",
+   "d": "$2,200 entry · — GTD · not stated on the sheet",
    "u": "@@/tournaments.html",
    "a": "2026-12-13-47-1:00PM"
+  },
+  {
+   "t": "2026-12-13 10:10 AM #49 $1,100 No Limit Hold'em Seniors 1A $300K GTD - Must be 50+",
+   "k": "Tournament",
+   "d": "$1,100 entry · $300,000 GTD · not stated on the sheet",
+   "u": "@@/tournaments.html",
+   "a": "2026-12-13-49-10:10AM"
   },
   {
    "t": "2026-12-13 5:10 PM #50 $300 No Limit Hold'em Bounty $15K GTD (1Day)",
@@ -485,18 +485,18 @@
    "a": "2026-12-13-50-5:10PM"
   },
   {
-   "t": "2026-12-14 10:10 AM #49 $1,100 No Limit Hold'em Seniors 1B $300K GTD - Must be 50+",
-   "k": "Tournament",
-   "d": "$1,100 entry · $300,000 GTD · sheet not audited in this pass",
-   "u": "@@/tournaments.html",
-   "a": "2026-12-14-49-10:10AM"
-  },
-  {
    "t": "2026-12-14 11:00 AM #47 $2,200 NLH PokerAtlas Championship Title Event Day 3 Restart - Streamed final table (PokerGO)",
    "k": "Tournament",
-   "d": "$2,200 entry · — GTD · sheet not audited in this pass",
+   "d": "$2,200 entry · — GTD · not stated on the sheet",
    "u": "@@/tournaments.html",
    "a": "2026-12-14-47-11:00AM"
+  },
+  {
+   "t": "2026-12-14 10:10 AM #49 $1,100 No Limit Hold'em Seniors 1B $300K GTD - Must be 50+",
+   "k": "Tournament",
+   "d": "$1,100 entry · $300,000 GTD · not stated on the sheet",
+   "u": "@@/tournaments.html",
+   "a": "2026-12-14-49-10:10AM"
   },
   {
    "t": "2026-12-14 5:10 PM #51 $300 No Limit Hold'em Bounty $15K GTD (1Day)",
@@ -506,18 +506,18 @@
    "a": "2026-12-14-51-5:10PM"
   },
   {
-   "t": "2026-12-15 10:00 AM #49 $1,100 No Limit Hold'em Seniors Day 2 Restart",
-   "k": "Tournament",
-   "d": "$1,100 entry · — GTD · sheet not audited in this pass",
-   "u": "@@/tournaments.html",
-   "a": "2026-12-15-49-10:00AM"
-  },
-  {
    "t": "2026-12-15 11:10 AM #52 $1,100 No Limit Hold'em $75K GTD (1Day) - Progressive Knock-Out Bounty (PKO)",
    "k": "Tournament",
    "d": "$1,100 entry · $75,000 GTD · sheet not audited in this pass",
    "u": "@@/tournaments.html",
    "a": "2026-12-15-52-11:10AM"
+  },
+  {
+   "t": "2026-12-15 10:00 AM #49 $1,100 No Limit Hold'em Seniors Day 2 Restart",
+   "k": "Tournament",
+   "d": "$1,100 entry · — GTD · not stated on the sheet",
+   "u": "@@/tournaments.html",
+   "a": "2026-12-15-49-10:00AM"
   },
   {
    "t": "2026-12-15 5:10 PM #53 $300 No Limit Hold'em Bounty $15K GTD (1Day)",
@@ -548,18 +548,18 @@
    "a": "2026-12-17-56-10:10AM"
   },
   {
-   "t": "2026-12-17 12:10 PM #57 $600 Pot Limit Omaha $25K GTD (1Day) - Double Board Bomb Pot",
-   "k": "Tournament",
-   "d": "$600 entry · $25,000 GTD · sheet not audited in this pass",
-   "u": "@@/tournaments.html",
-   "a": "2026-12-17-57-12:10PM"
-  },
-  {
    "t": "2026-12-17 6:10 PM #56 $1,100 No Limit Hold'em 1B $500K GTD - $40 rake discount for entries before 6:10 p.m.",
    "k": "Tournament",
    "d": "$1,100 entry · $500,000 GTD · sheet not audited in this pass",
    "u": "@@/tournaments.html",
    "a": "2026-12-17-56-6:10PM"
+  },
+  {
+   "t": "2026-12-17 12:10 PM #57 $600 Pot Limit Omaha $25K GTD (1Day) - Double Board Bomb Pot",
+   "k": "Tournament",
+   "d": "$600 entry · $25,000 GTD · not stated on the sheet",
+   "u": "@@/tournaments.html",
+   "a": "2026-12-17-57-12:10PM"
   },
   {
    "t": "2026-12-18 10:10 AM #56 $1,100 No Limit Hold'em 1C $500K GTD",
@@ -765,16 +765,16 @@
    "a": "sheet-15"
   },
   {
-   "t": "Structure sheet #16 ",
+   "t": "Structure sheet #16 $800 No Limit Hold'em Bounty (1Day) — Event #36",
    "k": "Structure sheet",
-   "d": "fees — · reg closes — · not audited in this pass",
+   "d": "fees $100 · reg closes 10 levels + Break (4:55 PM) · entry rule not stated",
    "u": "@@/structures.html",
    "a": "sheet-16"
   },
   {
-   "t": "Structure sheet #17 ",
+   "t": "Structure sheet #17 $600 No Limit Hold'em Seniors (1Day) — Events #24 and #32",
    "k": "Structure sheet",
-   "d": "fees — · reg closes — · not audited in this pass",
+   "d": "fees $90 · reg closes 10 levels + Break (~ 3:55 PM) · entry rule not stated",
    "u": "@@/structures.html",
    "a": "sheet-17"
   },
@@ -786,37 +786,37 @@
    "a": "sheet-18"
   },
   {
-   "t": "Structure sheet #19 ",
+   "t": "Structure sheet #19 $1,500 No Limit Hold'em Bounty (1Day) — Event #37",
    "k": "Structure sheet",
-   "d": "fees — · reg closes — · not audited in this pass",
+   "d": "fees — · reg closes 10 levels + Break (~ 5:25 PM) · entry rule not stated",
    "u": "@@/structures.html",
    "a": "sheet-19"
   },
   {
-   "t": "Structure sheet #20 ",
+   "t": "Structure sheet #20 $800 No Limit Hold'em (1Day) — Events #33, #39, #43",
    "k": "Structure sheet",
-   "d": "fees — · reg closes — · not audited in this pass",
+   "d": "fees — · reg closes 8 levels + Break (~ 9:40 PM) · entry rule not stated",
    "u": "@@/structures.html",
    "a": "sheet-20"
   },
   {
-   "t": "Structure sheet #21 ",
+   "t": "Structure sheet #21 $500 No Limit Hold'em (1Day) — Events #35, #40, #46, #49, #52, #56, #57",
    "k": "Structure sheet",
-   "d": "fees — · reg closes — · not audited in this pass",
+   "d": "fees $110 · reg closes 10 levels + Break (4:55 PM) · entry rule not stated",
    "u": "@@/structures.html",
    "a": "sheet-21"
   },
   {
-   "t": "Structure sheet #22 ",
+   "t": "Structure sheet #22 $200 No Limit Hold'em Ladies Only (1Day) — Events #44 and #65",
    "k": "Structure sheet",
-   "d": "fees — · reg closes — · not audited in this pass",
+   "d": "fees $30 · reg closes 5 levels + Break (~ 1:10 PM) · entry rule not stated",
    "u": "@@/structures.html",
    "a": "sheet-22"
   },
   {
-   "t": "Structure sheet #23 ",
+   "t": "Structure sheet #23 Event #54 flight A structure — $200 buy-in PKO (RaceDay 1R Turbo), Day 1 Flight A",
    "k": "Structure sheet",
-   "d": "fees — · reg closes — · not audited in this pass",
+   "d": "fees $40 · reg closes 8 levels + Break (~ 2:50 PM) · entry rule not stated",
    "u": "@@/structures.html",
    "a": "sheet-23"
   },
@@ -863,9 +863,9 @@
    "a": "sheet-29"
   },
   {
-   "t": "Structure sheet #30 ",
+   "t": "Structure sheet #30 $200 No Limit Hold'em PKO — Event #08 only",
    "k": "Structure sheet",
-   "d": "fees — · reg closes — · not audited in this pass",
+   "d": "fees $40 · reg closes 8 levels + Break (9:40 PM) · entry rule not stated",
    "u": "@@/structures.html",
    "a": "sheet-30"
   },
@@ -1085,6 +1085,20 @@
    "d": "Detected by the link check while resolving the merge of `origin/main` into this branch. `pages/` is not tracked, so the link 404s on GitHub Pages. Not created and not removed here:",
    "u": "@@/flagged.html",
    "a": "F-ROOT-404"
+  },
+  {
+   "t": "F-BOT-BRANCH Another session's scheduled monitor commits to whichever branch triggers it, including this session's branch",
+   "k": "Flag",
+   "d": "`.github/workflows/v2-monitor.yml` (\"Re-check official sources\") ran on a push event to `arena/08f07d1d-poker4` and pushed commit dd37b41 \"chore(v2): source monitor run 43995086181",
+   "u": "@@/flagged.html",
+   "a": "F-BOT-BRANCH"
+  },
+  {
+   "t": "F-SHEET-PARTIAL Four sheets were read with lines lost to an elided page region",
+   "k": "Flag",
+   "d": "Sheets #19, #20, #21 and #23 came back with their middle (or top) inside a chunk boundary while the page was being read, so their guarantee/house-fee or start-time lines were not v",
+   "u": "@@/flagged.html",
+   "a": "F-SHEET-PARTIAL"
   },
   {
    "t": "For each candidate one-day event, does the room allow re-entry, rebuys or an add-on - and can it say so in writing?",

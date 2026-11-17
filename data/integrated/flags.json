@@ -1,0 +1,67 @@
+{
+ "meta": {
+  "built": "2026-11-17"
+ },
+ "flags": [
+  {
+   "id": "F01",
+   "title": "No Venetian event is confirmed single-entry / freezeout",
+   "detail": "All 37 DSE IV structure sheets were read on 2026-11-17. None states a re-entry or freezeout rule for single-flight events; omission is not confirmation. Rows remain 'entry rule unverified'. Events #18/#58 (Valuetown) reference 'subsequent buy in's' and are treated as multi-entry. Multi-flight events carry the bagging rule only.",
+   "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
+  },
+  {
+   "id": "F02",
+   "title": "Wynn daily events all allow re-entry (Friday adds rebuys + add-on)",
+   "detail": "Official daily terms confirm re-entry on Mon\u2013Thu $200, Sat/Sun $200 and Nightly $160; the Friday $240 confirms 'Re-entry is NOT allowed' but has unlimited $200 rebuys and one $100 add-on. No Wynn daily qualifies as single-entry.",
+   "source": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf"
+  },
+  {
+   "id": "F03",
+   "title": "WPT World Championship schedule has internal date/label conflicts",
+   "detail": "Row 'Nov. 30 Monday 1 p.m. No Limit Hold'em Day 2 $800 $1,000,000' conflicts with the structures T&C, which schedule the $800 event's Day 2 for Dec. 3 at 1 p.m. Shown as printed.; Row 'Dec. 5 Saturday 11 a.m. No Limit Hold'em Day 2 $1,100 $5,000,000' appears next to WPT Prime Day 1A; the $1,600 NLH T&C place its Day 2 on Dec. 5 at 11 a.m. Label conflict on the official PDF. Shown as printed.; Rows labeled 'Dec. 18 Wednesday' appear before rows labeled 'Dec. 17 Thursday'. Dec. 18, 2026 is a Friday; the weekday/date labels on the PDF are internally inconsistent. Shown as printed.; Typos on the official PDF: 'Ladies NIH Championship' (NLH), 'TORS E' (TORSE), 'BadugI' (Badugi).; Super Gold Million ($400 / $3,000,000 GTD) and WPT World Championship ($10,400 + $1,000,000 added) per-event Registration lines were not captured in the 2026-11-17 structures-PDF audit (text-extraction gap); their entry rules remain UNVERIFIED.",
+   "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+  },
+  {
+   "id": "F04",
+   "title": "Super Gold Million & WPT World Championship entry rules unverified",
+   "detail": "Per-event Registration lines for the $400/$3M Super Gold Million and the $10,400 World Championship were not captured in the structures-PDF audit (text-extraction gap). Flagged, not inferred.",
+   "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+  },
+  {
+   "id": "F05",
+   "title": "No date-specific hotel room quotes captured",
+   "detail": "Official booking engines did not yield dated totals in this session. Venetian $119/$209 are conditional starting rates with a play requirement, not quotes. All date-specific totals remain blank; per-date official booking links are provided and the scheduled re-check will log quotes when available.",
+   "source": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html"
+  },
+  {
+   "id": "F06",
+   "title": "Resort fees unverified for Bellagio, Caesars Palace, Harrah's, Horseshoe, ARIA",
+   "detail": "No official page states an amount (or the page is marketing copy). Third-party figures conflict and are not used. Venetian $55+tax, Wynn $55+tax (bookings on/after Jan 15 2025) and Treasure Island $49.95+tax are verified from official pages.",
+   "source": "https://www.caesars.com/caesars-palace"
+  },
+  {
+   "id": "F07",
+   "title": "Walk-time matrix incomplete for Wynn venue",
+   "detail": "Hotel\u2192Venetian walking times verified for 7 hotels + on-site (Google Maps, 2026-11-17). ARIA at 31 min exceeds the 30-minute limit. Hotel\u2192Wynn pairs for Bellagio/ARIA/Caesars/TI/Harrah's/Horseshoe are unmeasured \u2014 links provided, scheduled for automated re-check.",
+   "source": "https://www.google.com/maps/dir/?api=1&origin=Wynn+Las+Vegas,+3131+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&destination=The+Venetian+Resort,+3355+Las+Vegas+Blvd+S,+Las+Vegas,+NV+89109&travelmode=walking"
+  },
+  {
+   "id": "F08",
+   "title": "Bellagio Saturday buy-in conflict",
+   "detail": "Bellagio official sources conflict on the Saturday NLH buy-in ($1,000 vs $1,100) and prior audit could not capture start time/date. Row carried with conflict label; not resolved by inference.",
+   "source": "https://bellagio.mgmresorts.com/en/casino/poker.html"
+  },
+  {
+   "id": "F09",
+   "title": "8 AM start target not met by any verified event",
+   "detail": "The earliest verified starts are 9:10 AM (Venetian Event #46 satellite, Dec 12) and 10:00 AM/10:10 AM for most mains. No official schedule shows an 8:00 AM tournament in the window; the daily plan starts at the earliest verified start.",
+   "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
+  },
+  {
+   "id": "F10",
+   "title": "Event durations are labeled estimates",
+   "detail": "No official source publishes finish times. Plausible-duration estimates (1-day \u2248 10 h, flights \u2248 9 h, turbo/satellite \u2248 4\u20136 h) drive overlap flags and the daily plan; every such value is labeled as an estimate on the page.",
+   "source": ""
+  }
+ ]
+}
