@@ -1,5 +1,39 @@
 # Strip Poker Planner — Las Vegas Strip tournament & stay dashboard
 
+<<<<<<< HEAD
+Static, source-first planning dashboard for upcoming official poker-tournament listings around the Las Vegas Strip, integrated with hotel true-cost comparison, a day planner with honest overlap flags, a trip-cost calculator, and a daily change monitor. The verified data snapshot is dated **November 17, 2026 (UTC)** (rates captured Nov 16). Every value links its official operator source; unverified values are blank and flagged. The site never labels a tournament single-entry unless official rules say so.
+
+## Pages (GitHub Pages root)
+
+- `index.html` — executive summary, key constraints, recommended decision sequence
+- `tournaments.html` — all tournaments with search, date filter, "single-entry confirmed" toggle, ranking screen (guarantee ÷ total entry fee as a descriptive ratio only), and separate sections for re-entry/add-on, bounty/PKO, flight, and satellite events
+- `schedule.html` — day plan (Nov 17 – Dec 23, 2026): one primary event per day + conditional fallback, overlap flags from start time, late-reg cutoff and plausible duration
+- `hotels.html` — true cost/night = (rate + resort fee) × 1.1338, ≤30-min-walk filter (Google/Apple Maps verified), per-hotel calculators and official booking deep links
+- `trip-calculator.html` — entries × buy-ins + nights × true hotel cost
+- `rate-log.html` — dated hotel-rate log (never a single value): checkout total, nightly average, fee + tax, parking, cancellation deadline, timestamps
+- `venues/` — one page per venue (Venetian, Wynn, Bellagio, Caesars, other rooms) with its events and nearest hotels
+- `monitor.html` — source-change monitor status
+- `questions.html` — explicit questions / missing-information list with how to discover each value
+- `suggestions.html` — proposals awaiting review (nothing implemented from this page without approval)
+- `flagged.html` — "Flagged for Review" irregularities & unverified values (non-blocking)
+- `sources.html` — full official-source catalog with last-checked dates
+
+Preserved independent research sets (never treated as confirmation): `60fb62da/`, `c07371e3/`, `df41f5c6/`, `verified/`, `strip/`, `pages/`.
+
+## Data & tooling
+
+- `data/0f6c627b/*.json` — canonical datasets: `events.json` (per-event structured rule fields with source excerpts + retrieval dates), `hotels.json`, `walking.json`, `rate_log.json`, `flagged.json`, `sources.json`
+- `tools/build_data_v2.py` — rebuilds `data/0f6c627b/` from the verified research constants (Venetian DSE IV structure sheets 1–37, Wynn/WPT/Bellagio/Caesars structures, hotel terms, walking matrix)
+- `tools/build_root_site.py` — regenerates every root page from `data/0f6c627b/`
+- `tools/verify_root_site.py` — automated check: internal links resolve, every data row carries an official-source link, required features present (run before every publish)
+- `tools/recheck.py` + `tools/daily_schedule.py` + `.github/workflows/recheck.yml` — daily (06:00 UTC) hash-based re-check of each official URL and morning live-schedule snapshots; changed sources get rows marked "source changed — recheck row"
+
+Run locally: `python3 tools/build_data_v2.py && python3 tools/build_root_site.py && python3 tools/verify_root_site.py`, then open `index.html` or serve the repo root. No third-party dependencies.
+
+## Research policy
+
+All values shown as confirmed link to the official operator source, with retrieval dates. Unknown or ambiguous values are blank and flagged — never inferred. All 37 Venetian DeepStack Extravaganza IV structure sheets were read in full on 2026-11-17 and none states a single-entry, re-entry, or add-on limit; consequently **there is exactly one window-wide fact to plan around: no event is classified as verified single-entry.** Rooms that do publish rules (Wynn, Bellagio, Caesars) all allow some form of re-entry, rebuy, or add-on and are listed separately. The data is a point-in-time snapshot plus a daily change monitor — not a live feed or a booking quote.
+=======
 Source-first planning dashboard for live poker tournaments around the Las Vegas Strip and the hotels within walking
 distance of them. Snapshot dated **2026-11-17**. Every confirmed value links an official operator page or structure PDF;
 values that could not be confirmed from an official source are **left blank and flagged** — never inferred.
@@ -29,7 +63,7 @@ values that could not be confirmed from an official source are **left blank and 
 ## Parallel build: `v2/` (session 98e4cb1c)
 
 A parallel dashboard lives in **[`v2/`](v2/index.html)** and is generated from one verified data layer
-(`data/v2/*.json`, retrieval date **2026-11-17**). Everything below it in this README is the earlier,
+(`data/0f6c627b/*.json`, retrieval date **2026-11-17**). Everything below it in this README is the earlier,
 narrower snapshot, kept for comparison.
 
 | Page | What it answers |
@@ -49,14 +83,14 @@ narrower snapshot, kept for comparison.
 ### Rebuild it
 
 ```bash
-python3 tools/v2_extract.py        # Venetian TSV + structure sheets -> data/v2/events.json
-python3 tools/v2_extract_other.py  # Wynn WPT poster + hand rows    -> data/v2/events_other.json
+python3 tools/v2_extract.py        # Venetian TSV + structure sheets -> data/0f6c627b/events.json
+python3 tools/v2_extract_other.py  # Wynn WPT poster + hand rows    -> data/0f6c627b/events_other.json
 python3 tools/v2_walk.py           # labelled OSRM matrix           -> hotels.json walk pairs
 python3 tools/v2_build.py          # render                            -> v2/*.html
 python3 tools/v2_verify.py         # link / source / empty-table audit
 ```
 
-`.github/workflows/v2-monitor.yml` re-fetches every official URL in `data/v2/sources.json` daily,
+`.github/workflows/v2-monitor.yml` re-fetches every official URL in `data/0f6c627b/sources.json` daily,
 hashes the normalised page, and opens an issue when a hash moves. It never rewrites a value.
 
 ### The headline finding
@@ -115,3 +149,11 @@ parallel-session outputs kept at the root for their own navigation.
 Two scheduled workflows run side by side (both preserved): `.github/workflows/monitor.yml` ("Monitor official sources",
 session 98e4cb1c) and `.github/workflows/source-recheck.yml` (this dashboard's official-URL hash/excerpt re-check with
 `data/change_log.json` + `data/feeds/` snapshots).
+>>>>>>> origin/main
+
+## Parallel research sets & tooling (preserved, never treated as confirmation)
+
+- `planner/` — parallel planner site (session 98e4cb1c), `poker4/` — verified venue dashboard (session 98e4cb1c, CI-gated by `poker4-site-verify.yml`), `v2/` — parallel v2 dashboard (session 08f07d1d/b6421d6a) with its own `data/v2/` dataset and `v2-monitor.yml` change monitor
+- `prior_root_dashboard/` — the previous root dashboard exactly as it was on `main` before this integration (pages, `assets/`, its `data_v2_json/`, its README/COORDINATION snapshots); it is also still browsable at its original root URLs (`venues.html`, `calculator.html`, `ratelog.html`, `change-monitor.html`, `workflow.html`, `repo-review.html`, `review.html`, `decisions.html`, `style.css`, `app.js`)
+- `60fb62da/`, `c07371e3/`, `df41f5c6/`, `verified/`, `strip/`, `pages/` — earlier independent research sets
+- Builders: root dashboard = `tools/build_root_site.py` (this session); prior root dashboard = `tools/build_site.py` + `tools/build_data.py`; `v2/` subsite = `tools/v2_build.py`; `poker4/` = `tools/build_poker4.py`. Each builder owns its own outputs only.

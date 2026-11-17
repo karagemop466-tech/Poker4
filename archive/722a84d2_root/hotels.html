@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hotels &amp; cost — Poker4</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site"><div class="wrap">
+  <span class="logo">♠ Poker4</span>
+  <nav>
+    <a href="index.html">Summary</a>
+    <a href="tournaments.html">Tournaments</a>
+    <a href="schedule.html">Schedule planner</a>
+    <a href="hotels.html" class="active">Hotels &amp; cost</a>
+    <a href="venues/venetian.html">Venetian</a>
+    <a href="venues/wynn.html">Wynn</a>
+    <a href="venues/other-venues.html">Other rooms</a>
+    <a href="questions.html">Questions</a>
+    <a href="suggestions.html">Suggestions</a>
+    <a href="review.html">Flagged for review</a>
+    <a href="sources.html">Sources</a>
+  </nav>
+</div></header>
+<main class="wrap">
+  <h1>Hotels &amp; true cost</h1>
+  <p class="lead">Like-for-like comparisons: official booking link per property, mandatory resort fee where verified, taxes, parking, cancellation terms, and walking routes to the poker rooms. Blank = not officially verifiable right now (see <a href="review.html">Flagged F8–F11</a>). Room rates are dynamic — use the dated rate log, never a single number.</p>
+
+  <div class="card">
+    <h2 style="margin-top:0">Trip cost calculator</h2>
+    <p class="small muted">entries × buy-ins + nights × true hotel cost, where true nightly cost = (rate + mandatory resort fee) × (1 + tax). Tax constant is <strong>13.38%</strong> — user-provided, unverified (Flagged F9); replace with your real checkout tax line. Resort fee pre-filled with the Venetian’s verified $55.</p>
+    <div class="calcrow">
+      <label>Entries <input type="number" id="c-entries" value="5" min="0"></label>
+      <label>Avg buy-in $ <input type="number" id="c-buyin" value="400" min="0"></label>
+      <label>Nights <input type="number" id="c-nights" value="5" min="0"></label>
+      <label>Rate/night $ <input type="number" id="c-rate" value="69" min="0"></label>
+      <label>Resort fee $ <input type="number" id="c-fee" value="55" min="0"></label>
+      <label>Tax rate % <input type="number" id="c-tax" value="13.38" min="0" disabled></label>
+    </div>
+    <div class="calcrow">
+      <span class="muted">True nightly cost:</span> <span class="out" id="c-out-night">—</span>
+      <span class="muted" style="margin-left:18px">Estimated trip total:</span> <span class="out" id="c-out-trip">—</span>
+    </div>
+    <p class="small muted">Worked example (illustrative, not a quote): 5 entries × $400 + 5 nights × ($69 rate + $55 fee) × 1.1338 = $2,000 + $702.9 … adjust with your captured checkout numbers. TI’s package headline has no resort fee but the footnotes are pending (Flagged F8); Venetian always carries the verified $55.</p>
+  </div>
+
+  <div class="filters">
+    <label>Walk to <select id="f-walk-venue"><option value="venetian">Venetian poker room</option><option value="wynn">Wynn (Encore) poker room</option></select></label>
+    <label><input type="checkbox" id="f-walk30" checked> ≤ 30-minute walk only</label>
+    <span class="badge acc"><span id="h-count">0</span> hotels</span>
+  </div>
+  <div class="callout warn">Walking minutes are <strong>estimates</strong> — no casino publishes official walk times. Each row links Google Maps directions between the two official properties; open it and confirm the route you would actually walk. Cost/quality ranks first, distance second: the ≤30-minute filter is applied to labeled estimates only (Flagged F10).</div>
+
+  <div class="tablewrap"><table>
+    <thead><tr>
+      <th>Hotel</th><th>Poker room situation</th><th>Walk (est.)</th><th>Resort fee</th><th>Nightly rate</th>
+      <th>Parking</th><th>Cancellation</th><th>Booking</th><th>Notes</th>
+    </tr></thead>
+    <tbody id="hotels-body"><tr><td colspan="9" class="muted">Loading…</td></tr></tbody>
+  </table></div>
+
+  <h2>Dated rate log (never overwrite — append)</h2>
+  <p class="small muted">Each entry records the date captured, the value exactly as printed, and the official source. Append new rows whenever an official checkout total is captured; keep old rows so rate movement is visible.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Date</th><th>Property</th><th>Item</th><th>Value as printed</th><th>Source</th><th>Method</th></tr></thead>
+    <tbody id="ratelog-body"><tr><td colspan="6" class="muted">Loading…</td></tr></tbody>
+  </table></div>
+
+  <h2>Current shortlist (verified facts only)</h2>
+  <div class="card"><ul class="tight small">
+    <li><strong>Budget near Venetian:</strong> Treasure Island — official homepage headlines “$69* NIGHT + NO RESORT FEE**” + free parking; ~est. 6-min walk across the Strip. Confirm footnotes on the official booking page before paying (Flagged F8).</li>
+    <li><strong>On-site convenience:</strong> The Venetian/Palazzo — resort fee $55/night + tax verified on the official page (2026-11-16); zero walk; official booking at venetianlasvegas.com/book.</li>
+    <li><strong>For Wynn series play:</strong> Wynn/Encore — poker room officially “located in Encore”; fee/rates unverified this session; note F1-week (Nov 19–21, 2026) price spike per the official offer page.</li>
+    <li><strong>Avoid for the ≤30-min rule:</strong> Horseshoe (est. &gt;30 min to Venetian); ARIA borderline (est. ~30) — estimates flagged, Maps links provided.</li>
+  </ul></div>
+</main>
+<footer class="site"><div class="wrap">
+  <span>Built from official operator documents only · last data build 2026-11-17</span>
+  <span><a href="sources.html">Sources</a> · <a href="review.html">Flagged for review</a></span>
+</div></footer>
+<script src="app.js"></script>
+</body>
+</html>

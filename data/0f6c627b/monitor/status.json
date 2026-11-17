@@ -1,0 +1,8 @@
+{
+ "meta": {
+  "generated": "2026-11-17",
+  "explanation": "Refreshed by tools/recheck.py on a daily GitHub Actions schedule. Each monitored URL keeps a content hash; rows whose source changed since the previous run are marked changed=true."
+ },
+ "last_run": "2026-11-17",
+ "entries": []
+}

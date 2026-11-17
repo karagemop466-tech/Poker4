@@ -1,0 +1,602 @@
+{
+ "meta": {
+  "retrieved": "2026-11-17",
+  "rule": "Rates are a dated log. There is no single 'hotel price' value anywhere in this file. Each observation records what was seen, when, on which page, and whether it is a quote for specific dates.",
+  "tax_note": "Clark County room tax 13.38% is confirmed on The Venetian's own hotel terms (V_TERMS). Wynn's terms page states the resort fee but not the tax rate; 13.38% is a county-wide rate, not a Wynn statement, so Wynn totals use it and are labelled 'derived'.",
+  "walk_note": "One labelled OSRM 8x8 distance matrix (MAP_OSRM_8, 2026-11-17) supplies every route figure. Minutes = metres / 4.8 km/h * 60 * 1.25; the 25% allowance covers street crossings, the pedestrian bridges over Las Vegas Blvd, elevators and casino corridors. The same formula is applied to every pair. Each pair also records the reverse-direction route: where the two differ by more than 20% the row is marked route_asymmetric and the reverse distance is shown, because the difference can be a real one-way pedestrian funnel or a geocoder snap artefact, and silently choosing one number would hide that. These are NOT Google or Apple Maps numbers, no casino publishes walking times, and none of it models the indoor walk from your tower to the poker room.",
+  "true_cost_formula": "true_cost_per_night = (room_rate + resort_fee) x (1 + room_tax_rate). Parking is added separately when the user is driving and not covered by play.",
+  "walk_status_vocabulary": [
+   "route_consistent",
+   "route_asymmetric",
+   "same_property"
+  ],
+  "walk_formula": "minutes = osrm_m / 1000 / 4.8 * 60 * 1.25",
+  "default_tax_rate": 0.1338,
+  "default_tax_note": "Clark County room tax 13.38%, printed on The Venetian's hotel terms (V_TERMS). Applied to properties that do not print their own rate; labelled with a dagger wherever it appears."
+ },
+ "hotels": [
+  {
+   "id": "venetian",
+   "name": "The Venetian Resort Las Vegas",
+   "towers": "The Venetian and The Palazzo (one resort, two towers)",
+   "venue_served": "Venetian",
+   "official_site": "https://www.venetianlasvegas.com/",
+   "booking_link": "https://www.venetianlasvegas.com/book",
+   "resort_fee_usd": 55,
+   "resort_fee_source": "V_FEE",
+   "resort_fee_excerpt": "Rates include a daily Resort Fee of $55 plus tax per night, payable upon check-in.",
+   "room_tax_rate": 0.1338,
+   "room_tax_source": "V_TERMS",
+   "room_tax_excerpt": "Daily rates do not include the applicable Clark County Room Tax of 13.38%.",
+   "parking": {
+    "self_registered_guest_usd_per_day": 20,
+    "self_non_guest_usd_per_day_weekday": 20,
+    "self_non_guest_usd_per_day_weekend": 25,
+    "valet_usd_per_day": 40,
+    "poker_play_waiver": "3+ hours of tournament or cash play = complimentary self-parking for the day (supervisor must confirm)",
+    "source": "V_PARK",
+    "excerpt": "The daily fee for registered hotel guests is $20/day, seven days a week. For non-hotel guests, the fee is $20/day Monday \u2013 Thursday, and $25/day Friday \u2013 Sunday. Valet parking is $40/day. \u2026 Players in the poker room who play three hours or more in tournament or cash games will receive complimentary self-parking for the day."
+   },
+   "cancellation": {
+    "published": "Depends on the rate booked; the hotel terms describe a deposit at booking and prepaid offers being non-cancellable and non-refundable. The poker rate itself requires booking by phone (code EPOKR25) and the terms page does not print a poker-rate cancellation deadline.",
+    "source": "V_TERMS",
+    "excerpt": "A deposit for your stay, including suite, fee, and tax, will be billed upon reservation confirmation. \u2026 For prepaid offers, a deposit for the entire stay \u2026 will be charged at the time of booking. Unless stated otherwise in the offer, bookings made using a prepaid offer are non-cancellable and non-refundable.",
+    "deadline_hours": null
+   },
+   "incidental_hold": {
+    "usd_per_night": 150,
+    "source": "V_TERMS"
+   },
+   "check_in": "3:00 p.m.",
+   "check_out": "11:00 a.m.",
+   "check_times_source": "V_TERMS",
+   "rate_log": [
+    {
+     "observed": "2026-11-17",
+     "page": "V_RATES",
+     "kind": "published_floor_not_a_quote",
+     "nights": null,
+     "checkin": null,
+     "checkout": null,
+     "room_rate_usd": 119,
+     "room_rate_note": "Official poker suite rate 'starts as low as $119' and $209 in The Venetian/Palazzo; may be higher; subject to qualifying poker play and availability; blackout dates may apply; future rates only quoted up to 150 days ahead.",
+     "resort_fee_usd": 55,
+     "tax_rate": 0.1338,
+     "derived_true_cost_per_night": 197.28,
+     "derived_formula": "($119 + $55) x 1.1338 = $197.28",
+     "label": "derived from published floor \u2014 not a bookable quote",
+     "excerpt": "These rates will start as low as $119 and $209 and can be higher. \u2026 There is a $55 resort fee per night stayed."
+    },
+    {
+     "observed": "2026-11-17",
+     "page": "V_RATES",
+     "kind": "published_floor_not_a_quote",
+     "room_rate_usd": 209,
+     "resort_fee_usd": 55,
+     "tax_rate": 0.1338,
+     "derived_true_cost_per_night": 299.32,
+     "derived_formula": "($209 + $55) x 1.1338 = $299.32",
+     "label": "derived from the published upper 'from' figure \u2014 not a bookable quote"
+    },
+    {
+     "observed": "2026-11-17",
+     "page": "V_BOOK",
+     "kind": "attempted_live_quote",
+     "checkin": "2026-11-19",
+     "checkout": "2026-11-22",
+     "nights": 3,
+     "guests": 2,
+     "room_rate_usd": null,
+     "resort_fee_usd": null,
+     "tax_rate": null,
+     "checkout_total_usd": null,
+     "nightly_average_usd": null,
+     "label": "UNVERIFIED \u2014 the booking calendar returned placeholder '$XXX' for every night to the session runner, so no amount was read",
+     "excerpt": "Pricing shown is best available suite and rate, includes daily resort fee, excludes taxes."
+    }
+   ],
+   "poker_play_requirement": "Each night stayed requires 6 hours of live cash play OR a buy-in to a $300+ tournament; otherwise the room reverts to the prevailing rate (V_RATES).",
+   "quality_notes": "Largest poker room on the Strip (50 tables); resort with attached Grand Canal Shoppes; walking time to the poker room from The Palazzo lobby is the shortest of any property in this dataset on paper, but rooms can be a long walk inside the resort.",
+   "walk_to_venues": [
+    {
+     "venue": "Venetian",
+     "origin_node": "Venetian tower",
+     "venue_node": "Palazzo",
+     "osrm_m": 410,
+     "osrm_m_reverse": 1092.4,
+     "reciprocal_difference_pct": 62,
+     "great_circle_m": 292,
+     "minutes": 6.4,
+     "under_30": true,
+     "status": "route_asymmetric",
+     "method": "OSRM foot route Venetian tower -> Palazzo, 410 m; minutes = m / 4.8 km/h * 60 * 1.25"
+    },
+    {
+     "venue": "Wynn",
+     "origin_node": "Venetian tower",
+     "venue_node": "Encore",
+     "osrm_m": 1067.7,
+     "osrm_m_reverse": 1256.5,
+     "reciprocal_difference_pct": 15,
+     "great_circle_m": 879,
+     "minutes": 16.7,
+     "under_30": true,
+     "status": "route_consistent",
+     "method": "OSRM foot route Venetian tower -> Encore, 1,067.7 m; minutes = m / 4.8 km/h * 60 * 1.25"
+    },
+    {
+     "venue": "Caesars Palace",
+     "origin_node": "Venetian tower",
+     "venue_node": "Caesars",
+     "osrm_m": 1402.5,
+     "osrm_m_reverse": 1549.3,
+     "reciprocal_difference_pct": 9,
+     "great_circle_m": 874,
+     "minutes": 21.9,
+     "under_30": true,
+     "status": "route_consistent",
+     "method": "OSRM foot route Venetian tower -> Caesars, 1,402.5 m; minutes = m / 4.8 km/h * 60 * 1.25"
+    },
+    {
+     "venue": "Bellagio",
+     "origin_node": "Venetian tower",
+     "venue_node": "Bellagio",
+     "osrm_m": 1829.6,
+     "osrm_m_reverse": 1754.3,
+     "reciprocal_difference_pct": 4,
+     "great_circle_m": 1178,
+     "minutes": 28.6,
+     "under_30": true,
+     "status": "route_consistent",
+     "method": "OSRM foot route Venetian tower -> Bellagio, 1,829.6 m; minutes = m / 4.8 km/h * 60 * 1.25"
+    }
+   ]
+  },
+  {
+   "id": "wynn",
+   "name": "Wynn Las Vegas",
+   "towers": "Wynn and Encore (one resort, two towers)",
+   "venue_served": "Wynn",
+   "official_site": "https://www.wynnlasvegas.com/",
+   "booking_link": "https://www.wynnlasvegas.com/",
+   "resort_fee_usd": 55,
+   "resort_fee_source": "W_TC_FEE",
+   "resort_fee_excerpt": "A daily resort fee of $55 plus tax will be added to your room account for each room night.",
+   "room_tax_rate": 0.1338,
+   "room_tax_source": "Clark County rate as printed by The Venetian (V_TERMS); Wynn's own page did not print a tax percentage to the session runner",
+   "room_tax_is_derived": true,
+   "parking": {
+    "self_registered_guest_usd_per_day": 0,
+    "note": "Wynn's resort-fee description says the fee includes 'complimentary self-parking for up to two (2) vehicles' for Wynn Resort King/Two Queens room types (W_TC_FEE).",
+    "valet_usd_per_day": 40,
+    "valet_source": "third-party review; not confirmed on wynnlasvegas.com by this session",
+    "source": "W_TC_FEE",
+    "excerpt": "\u2026which entitles you to receive complimentary self-parking for up to two (2) vehicles\u2026"
+   },
+   "cancellation": {
+    "published": "Varies by offer. Wynn offer pages state either a 48-hour pre-arrival deadline (deposit of one night forfeited) or fully non-cancellable prepaid terms.",
+    "source": "W_TC_FEE",
+    "excerpt": "A full deposit of all room nights and tax will be charged at the time of booking. Reservations are non-cancellable, non-refundable and non-changeable.",
+    "deadline_hours": null
+   },
+   "incidental_hold": {
+    "usd_per_night": 150,
+    "source": "W_TC_FEE",
+    "excerpt": "A valid credit card authorized to cover room and resort fees and tax, plus $150 a night for incidentals must be presented upon check-in."
+   },
+   "rate_log": [
+    {
+     "observed": "2026-11-17",
+     "page": "W_TC_FEE",
+     "kind": "fee_only_no_rate",
+     "room_rate_usd": null,
+     "resort_fee_usd": 55,
+     "tax_rate": 0.1338,
+     "derived_true_cost_per_night": null,
+     "label": "UNVERIFIED room rate \u2014 no date-specific Wynn quote could be read by this session; only the fee is confirmed",
+     "excerpt": "A daily resort fee of $55 plus tax will be added to your room account for each room night."
+    }
+   ],
+   "poker_play_requirement": "None published. Wynn does not advertise a poker-play room rate on the pages read; the WPT press release only says 'preferred hotel rates \u2026 will be available for players' (W_WPT_PR) without amounts.",
+   "quality_notes": "Four-Star resort; poker room is in Encore, so a Wynn-tower room means crossing the resort. Friday daily is the only Wynn daily that is an add-on event.",
+   "walk_to_venues": [
+    {
+     "venue": "Venetian",
+     "origin_node": "Wynn",
+     "venue_node": "Palazzo",
+     "osrm_m": 1126.1,
+     "osrm_m_reverse": 1021.5,
+     "reciprocal_difference_pct": 9,
+     "great_circle_m": 374,
+     "minutes": 17.6,
+     "under_30": true,
+     "status": "route_consistent",
+     "method": "OSRM foot route Wynn -> Palazzo, 1,126.1 m; minutes = m / 4.8 km/h * 60 * 1.25"
+    },
+    {
+     "venue": "Wynn",
+     "origin_node": "Wynn",
+     "venue_node": "Encore",
+     "osrm_m": 95.6,
+     "osrm_m_reverse": 95.6,
+     "reciprocal_difference_pct": 0,
+     "great_circle_m": 257,
+     "minutes": 1.5,
+     "under_30": true,
+     "status": "route_consistent",
+     "method": "OSRM foot route Wynn -> Encore, 95.6 m; minutes = m / 4.8 km/h * 60 * 1.25"
+    },
+    {
+     "venue": "Caesars Palace",
+     "origin_node": "Wynn",
+     "venue_node": "Caesars",
+     "osrm_m": 2744.7,
+     "osrm_m_reverse": 2807.9,
+     "reciprocal_difference_pct": 2,
+     "great_circle_m": 1508,
+     "minutes": 42.9,
+     "under_30": false,
+     "status": "route_consistent",
+     "method": "OSRM foot route Wynn -> Caesars, 2,744.7 m; minutes = m / 4.8 km/h * 60 * 1.25"
+    },
+    {
+     "venue": "Bellagio",
+     "origin_node": "Wynn",
+     "venue_node": "Bellagio",
+     "osrm_m": 2791.8,
+     "osrm_m_reverse": 2615.2,
+     "reciprocal_difference_pct": 6,
+     "great_circle_m": 1828,
+     "minutes": 43.6,
+     "under_30": false,
+     "status": "route_consistent",
+     "method": "OSRM foot route Wynn -> Bellagio, 2,791.8 m; minutes = m / 4.8 km/h * 60 * 1.25"
+    }
+   ]
+  },
+  {
+   "id": "treasure_island",
+   "name": "Treasure Island (TI)",
+   "venue_served": "nearest to Wynn/Venetian; TI itself has no tournament poker room confirmed by this session",
+   "official_site": "https://treasureisland.com/",
+   "booking_link": "https://treasureisland.com/hotel/tower-suite",
+   "resort_fee_usd": 49.95,
+   "resort_fee_source": "I_FEE",
+   "resort_fee_excerpt": "The $49.95 + tax daily resort fee at TI Las Vegas provides hotel guests with several of the most commonly requested additional services at a package price.",
+   "room_tax_rate": 0.1338,
+   "room_tax_source": "Clark County rate as printed by The Venetian (V_TERMS); TI's page did not print the percentage",
+   "room_tax_is_derived": true,
+   "parking": {
+    "self_registered_guest_usd_per_day": 0,
+    "valet_usd_per_day": 0,
+    "source": "I_FEE",
+    "excerpt": "Always Free Valet Parking & Self Park Garage"
+   },
+   "cancellation": {
+    "published": null,
+    "source": null,
+    "deadline_hours": null,
+    "label": "not read on an official page \u2014 UNVERIFIED"
+   },
+   "rate_log": [
+    {
+     "observed": "2026-11-17",
+     "page": "I_FEE",
+     "kind": "promo_headline_not_a_quote",
+     "room_rate_usd": 69,
+     "resort_fee_usd": 0,
+     "tax_rate": 0.1338,
+     "derived_true_cost_per_night": 78.23,
+     "derived_formula": "($69 + $0) x 1.1338 = $78.23 \u2014 the offer explicitly bundles 'NO RESORT FEE'",
+     "label": "promotional 'from' headline on the official hotel page \u2014 NOT a date-specific quote",
+     "excerpt": "$69* NIGHT + NO RESORT FEE**. \u2026 this package includes Optional Resort Fee, 2 for 1 Draft Beers, Always Free Parking & More!"
+    }
+   ],
+   "poker_play_requirement": "None published.",
+   "quality_notes": "Cheapest headline of the properties read, and free parking, but it is across the street from the Wynn/Encore poker room and there is no TI tournament to play.",
+   "walk_to_venues": [
+    {
+     "venue": "Venetian",
+     "origin_node": "TI tram",
+     "venue_node": "Palazzo",
+     "osrm_m": 843.7,
+     "osrm_m_reverse": 972.2,
+     "reciprocal_difference_pct": 13,
+     "great_circle_m": 418,
+     "minutes": 13.2,
+     "under_30": true,
+     "status": "route_consistent",
+     "method": "OSRM foot route TI tram -> Palazzo, 843.7 m; minutes = m / 4.8 km/h * 60 * 1.25"
+    },
+    {
+     "venue": "Wynn",
+     "origin_node": "TI tram",
+     "venue_node": "Encore",
+     "osrm_m": 1012.7,
+     "osrm_m_reverse": 1136.3,
+     "reciprocal_difference_pct": 11,
+     "great_circle_m": 836,
+     "minutes": 15.8,
+     "under_30": true,
+     "status": "route_consistent",
+     "method": "OSRM foot route TI tram -> Encore, 1,012.7 m; minutes = m / 4.8 km/h * 60 * 1.25"
+    },
+    {
+     "venue": "Caesars Palace",
+     "origin_node": "TI tram",
+     "venue_node": "Caesars",
+     "osrm_m": 1869.1,
+     "osrm_m_reverse": 1837,
+     "reciprocal_difference_pct": 2,
+     "great_circle_m": 944,
+     "minutes": 29.2,
+     "under_30": true,
+     "status": "route_consistent",
+     "method": "OSRM foot route TI tram -> Caesars, 1,869.1 m; minutes = m / 4.8 km/h * 60 * 1.25"
+    },
+    {
+     "venue": "Bellagio",
+     "origin_node": "TI tram",
+     "venue_node": "Bellagio",
+     "osrm_m": 2145.3,
+     "osrm_m_reverse": 2042,
+     "reciprocal_difference_pct": 5,
+     "great_circle_m": 1322,
+     "minutes": 33.5,
+     "under_30": false,
+     "status": "route_consistent",
+     "method": "OSRM foot route TI tram -> Bellagio, 2,145.3 m; minutes = m / 4.8 km/h * 60 * 1.25"
+    }
+   ]
+  },
+  {
+   "id": "harrahs",
+   "name": "Harrah's Las Vegas",
+   "venue_served": "nearest to Venetian; Harrah's tournament schedule not confirmed by this session",
+   "official_site": "https://www.caesars.com/harrahs-las-vegas",
+   "booking_link": "https://www.caesars.com/book?propCode=HRV",
+   "resort_fee_usd": null,
+   "resort_fee_source": null,
+   "room_tax_rate": 0.1338,
+   "room_tax_is_derived": true,
+   "room_tax_source": "Clark County rate as printed by The Venetian (V_TERMS)",
+   "cancellation": {
+    "published": null,
+    "deadline_hours": null,
+    "label": "UNVERIFIED \u2014 no fee, rate or cancellation terms could be read on an official Caesars page by this session"
+   },
+   "rate_log": [
+    {
+     "observed": "2026-11-17",
+     "page": null,
+     "kind": "no_observation",
+     "room_rate_usd": null,
+     "resort_fee_usd": null,
+     "derived_true_cost_per_night": null,
+     "label": "UNVERIFIED \u2014 the Caesars property page did not expose a resort fee or a dated rate to the session runner"
+    }
+   ],
+   "quality_notes": "Value-tier Caesars property directly across from The Venetian. Included only because it is one of the closest beds to the Venetian poker room.",
+   "walk_to_venues": [
+    {
+     "venue": "Venetian",
+     "origin_node": "Harrah's",
+     "venue_node": "Palazzo",
+     "osrm_m": 832.9,
+     "osrm_m_reverse": 1808.8,
+     "reciprocal_difference_pct": 54,
+     "great_circle_m": 602,
+     "minutes": 13.0,
+     "under_30": true,
+     "status": "route_asymmetric",
+     "method": "OSRM foot route Harrah's -> Palazzo, 832.9 m; minutes = m / 4.8 km/h * 60 * 1.25"
+    },
+    {
+     "venue": "Wynn",
+     "origin_node": "Harrah's",
+     "venue_node": "Encore",
+     "osrm_m": 1490.6,
+     "osrm_m_reverse": 1972.9,
+     "reciprocal_difference_pct": 24,
+     "great_circle_m": 1191,
+     "minutes": 23.3,
+     "under_30": true,
+     "status": "route_asymmetric",
+     "method": "OSRM foot route Harrah's -> Encore, 1,490.6 m; minutes = m / 4.8 km/h * 60 * 1.25"
+    },
+    {
+     "venue": "Caesars Palace",
+     "origin_node": "Harrah's",
+     "venue_node": "Caesars",
+     "osrm_m": 1805.8,
+     "osrm_m_reverse": 1081.9,
+     "reciprocal_difference_pct": 40,
+     "great_circle_m": 584,
+     "minutes": 28.2,
+     "under_30": true,
+     "status": "route_asymmetric",
+     "method": "OSRM foot route Harrah's -> Caesars, 1,805.8 m; minutes = m / 4.8 km/h * 60 * 1.25"
+    },
+    {
+     "venue": "Bellagio",
+     "origin_node": "Harrah's",
+     "venue_node": "Bellagio",
+     "osrm_m": 2232.9,
+     "osrm_m_reverse": 1287,
+     "reciprocal_difference_pct": 42,
+     "great_circle_m": 865,
+     "minutes": 34.9,
+     "under_30": false,
+     "status": "route_asymmetric",
+     "method": "OSRM foot route Harrah's -> Bellagio, 2,232.9 m; minutes = m / 4.8 km/h * 60 * 1.25"
+    }
+   ]
+  },
+  {
+   "id": "caesars_palace",
+   "name": "Caesars Palace",
+   "venue_served": "Caesars Palace",
+   "official_site": "https://www.caesars.com/caesars-palace",
+   "booking_link": "https://www.caesars.com/book/?propcode=CLV&action=FindRooms",
+   "resort_fee_usd": null,
+   "resort_fee_source": null,
+   "resort_fee_note": "Neither caesars.com/caesars-palace, /hotel nor /hotel-policies printed a resort-fee amount to the session runner. Third-party listings disagree ($54.95, $55, $62.30), so no figure is shown.",
+   "room_tax_rate": 0.1338,
+   "room_tax_is_derived": true,
+   "room_tax_source": "Clark County rate as printed by The Venetian (V_TERMS)",
+   "parking": {
+    "self_registered_guest_usd_per_day": null,
+    "label": "UNVERIFIED"
+   },
+   "cancellation": {
+    "published": "Caesars advertises 'FREE 48-Hour Cancellation*' on its site header",
+    "source": "https://www.caesars.com/caesars-palace/hotel",
+    "excerpt": "FREE 48-Hour Cancellation*",
+    "deadline_hours": 48
+   },
+   "rate_log": [
+    {
+     "observed": "2026-11-17",
+     "page": "https://www.caesars.com/caesars-palace/hotel",
+     "kind": "promo_headline_not_a_quote",
+     "room_rate_usd": 139,
+     "room_rate_note": "site headline 'Rooms from $186 $139' under a Cyber Monday promo \u2014 a marketing floor, not a quote for poker dates",
+     "resort_fee_usd": null,
+     "derived_true_cost_per_night": null,
+     "label": "UNVERIFIED true cost \u2014 room floor only, fee unknown"
+    }
+   ],
+   "quality_notes": "Same operator as the Caesars daily tournaments, which are add-on events and therefore live in the separate section. Walking to the Venetian is ~5 minutes on the street grid.",
+   "walk_to_venues": [
+    {
+     "venue": "Venetian",
+     "origin_node": "Caesars",
+     "venue_node": "Palazzo",
+     "osrm_m": 1656.8,
+     "osrm_m_reverse": 2484.9,
+     "reciprocal_difference_pct": 33,
+     "great_circle_m": 1134,
+     "minutes": 25.9,
+     "under_30": true,
+     "status": "route_asymmetric",
+     "method": "OSRM foot route Caesars -> Palazzo, 1,656.8 m; minutes = m / 4.8 km/h * 60 * 1.25"
+    },
+    {
+     "venue": "Wynn",
+     "origin_node": "Caesars",
+     "venue_node": "Encore",
+     "osrm_m": 2712.3,
+     "osrm_m_reverse": 2649.1,
+     "reciprocal_difference_pct": 2,
+     "great_circle_m": 1709,
+     "minutes": 42.4,
+     "under_30": false,
+     "status": "route_consistent",
+     "method": "OSRM foot route Caesars -> Encore, 2,712.3 m; minutes = m / 4.8 km/h * 60 * 1.25"
+    },
+    {
+     "venue": "Caesars Palace",
+     "same_property": true,
+     "metres": 0,
+     "minutes": 0,
+     "under_30": true,
+     "status": "same_property",
+     "method": "same property \u2014 the poker room is inside this resort"
+    },
+    {
+     "venue": "Bellagio",
+     "origin_node": "Caesars",
+     "venue_node": "Bellagio",
+     "osrm_m": 1903.8,
+     "osrm_m_reverse": 1745.8,
+     "reciprocal_difference_pct": 8,
+     "great_circle_m": 391,
+     "minutes": 29.7,
+     "under_30": true,
+     "status": "route_consistent",
+     "method": "OSRM foot route Caesars -> Bellagio, 1,903.8 m; minutes = m / 4.8 km/h * 60 * 1.25"
+    }
+   ]
+  },
+  {
+   "id": "bellagio",
+   "name": "Bellagio",
+   "venue_served": "Bellagio",
+   "official_site": "https://bellagio.mgmresorts.com/",
+   "booking_link": "https://www.bellagio.com/",
+   "resort_fee_usd": null,
+   "resort_fee_source": null,
+   "resort_fee_note": "MGM's resort-fee and reservation-policy pages returned 404 to the session runner. Third-party figures ($55 + tax and a $62.36 all-in figure) could not be traced to an MGM page, so nothing is shown.",
+   "room_tax_rate": 0.1338,
+   "room_tax_is_derived": true,
+   "room_tax_source": "Clark County rate as printed by The Venetian (V_TERMS)",
+   "cancellation": {
+    "published": null,
+    "deadline_hours": null,
+    "label": "UNVERIFIED"
+   },
+   "rate_log": [
+    {
+     "observed": "2026-11-17",
+     "page": null,
+     "kind": "no_observation",
+     "room_rate_usd": null,
+     "resort_fee_usd": null,
+     "derived_true_cost_per_night": null,
+     "label": "UNVERIFIED \u2014 no official fee or dated rate could be read"
+    }
+   ],
+   "quality_notes": "Highest-quality property in the set by brand tier, but it is the farthest walk from the Venetian poker room of the hotels listed (~5.4 min on the street grid) and its fee is unconfirmed.",
+   "walk_to_venues": [
+    {
+     "venue": "Venetian",
+     "origin_node": "Bellagio",
+     "venue_node": "Palazzo",
+     "osrm_m": 1861.9,
+     "osrm_m_reverse": 2532.1,
+     "reciprocal_difference_pct": 26,
+     "great_circle_m": 1460,
+     "minutes": 29.1,
+     "under_30": true,
+     "status": "route_asymmetric",
+     "method": "OSRM foot route Bellagio -> Palazzo, 1,861.9 m; minutes = m / 4.8 km/h * 60 * 1.25"
+    },
+    {
+     "venue": "Wynn",
+     "origin_node": "Bellagio",
+     "venue_node": "Encore",
+     "osrm_m": 2519.6,
+     "osrm_m_reverse": 2696.2,
+     "reciprocal_difference_pct": 7,
+     "great_circle_m": 2047,
+     "minutes": 39.4,
+     "under_30": false,
+     "status": "route_consistent",
+     "method": "OSRM foot route Bellagio -> Encore, 2,519.6 m; minutes = m / 4.8 km/h * 60 * 1.25"
+    },
+    {
+     "venue": "Caesars Palace",
+     "origin_node": "Bellagio",
+     "venue_node": "Caesars",
+     "osrm_m": 1745.8,
+     "osrm_m_reverse": 1903.8,
+     "reciprocal_difference_pct": 8,
+     "great_circle_m": 391,
+     "minutes": 27.3,
+     "under_30": true,
+     "status": "route_consistent",
+     "method": "OSRM foot route Bellagio -> Caesars, 1,745.8 m; minutes = m / 4.8 km/h * 60 * 1.25"
+    },
+    {
+     "venue": "Bellagio",
+     "same_property": true,
+     "metres": 0,
+     "minutes": 0,
+     "under_30": true,
+     "status": "same_property",
+     "method": "same property \u2014 the poker room is inside this resort"
+    }
+   ]
+  }
+ ]
+}

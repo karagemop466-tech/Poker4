@@ -1,92 +1,84 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
+<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Poker4 — Las Vegas Strip poker trip dashboard</title>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-<header class="site"><div class="wrap">
-  <span class="logo">♠ Poker4</span>
-  <nav>
-    <a href="index.html" class="active">Summary</a>
-    <a href="tournaments.html">Tournaments</a>
-    <a href="schedule.html">Schedule planner</a>
-    <a href="hotels.html">Hotels &amp; cost</a>
-    <a href="venues/venetian.html">Venetian</a>
-    <a href="venues/wynn.html">Wynn</a>
-    <a href="venues/other-venues.html">Other rooms</a>
-    <a href="questions.html">Questions</a>
-    <a href="suggestions.html">Suggestions</a>
-    <a href="review.html">Flagged for review</a>
-    <a href="sources.html">Sources</a>
-  </nav>
-</div></header>
-<main class="wrap">
-  <h1>Las Vegas Strip poker trip dashboard</h1>
-  <p class="lead">Single-entry-first tournament &amp; hotel planner built only from official operator documents (Venetian structure sheets 1–37, Wynn structures PDFs, WPT series PDFs, property pages). Every table row links its source; anything not officially printed stays blank and is flagged — nothing is inferred.</p>
+<meta name="description" content="Official-source Las Vegas Strip poker tournament and hotel decision dashboard">
+<title>Executive summary — Strip Poker Planner</title>
+<link rel="stylesheet" href="assets/site.css">
+</head><body>
+<header class="topbar"><a class="brand" href="index.html">♠ STRIP POKER PLANNER</a>
+<span class="stamp">Verified snapshot · 17 Nov 2026 UTC · every row links its official source</span></header>
+<nav class="nav"><div class="nav-inner"><a class="active" href="index.html">Executive summary</a><a class="" href="tournaments.html">Tournaments</a><a class="" href="schedule.html">Day plan</a><a class="" href="hotels.html">Hotels &amp; true cost</a><a class="" href="trip-calculator.html">Trip calculator</a><a class="" href="rate-log.html">Rate log</a><a class="" href="venues/venetian.html">Venues</a><a class="" href="monitor.html">Source monitor</a><a class="" href="questions.html">Questions</a><a class="" href="suggestions.html">Suggestions</a><a class="" href="flagged.html">Flagged for review</a><a class="" href="sources.html">Sources</a></div></nav>
+<main>
+<div class="hero"><p class="eyebrow">Decision dashboard · official-source snapshot · 17 Nov 2026</p>
+<h1>Vegas poker, organized for a real decision.</h1>
+<p>Upcoming tournaments with verified buy-ins, guarantees and entry rules — plus hotels with true nightly cost, verified walking times,
+a day plan with honest overlap flags, a trip-cost calculator, and a dated rate log. Every table row links its official source.</p>
+<div class="hero-actions"><a class="button" href="tournaments.html">Review tournaments</a><a class="button ghost" href="flagged.html">See what is unverified</a></div></div>
 
-  <div class="grid3">
-    <div class="kpi"><div class="n" id="k-events">…</div><div class="l">events tracked with official sources</div></div>
-    <div class="kpi"><div class="n" id="k-single">0</div><div class="l">confirmed single-entry events (honest count)</div></div>
-    <div class="kpi"><div class="n" id="k-flags">…</div><div class="l">items flagged for review</div></div>
-  </div>
+<div class="stats">
+<div class="stat"><b>118</b><span>event rows verified against official sheets (Venetian DSE IV, Wynn daily &amp; WPT, Bellagio, Caesars)</span></div>
+<div class="stat"><b>37 / 37</b><span>Venetian structure sheets read in full — 0 state an entry limit</span></div>
+<div class="stat"><b>0</b><span>events with 'single-entry / freezeout confirmed' today (see note below)</span></div>
+<div class="stat"><b>23</b><span>events with CONFIRMED re-entry / add-on / rebuy rules (kept in their own section)</span></div>
+<div class="stat"><b>10:10 AM</b><span>earliest open-tournament start on the verified schedules (9:10 AM satellite)</span></div>
+<div class="stat"><b>$55 + tax</b><span>Venetian / Wynn resort fee per night (official pages); TI $49.95 + tax</span></div>
+<div class="stat"><b>13.38%</b><span>Clark County room tax applied in every true-cost calculation</span></div>
+<div class="stat"><b>14</b><span>hotel × venue walking pairs verified via Google Maps — all ≤ 30 min</span></div>
+</div>
 
-  <div class="card">
-    <h2 style="margin-top:0">Executive summary</h2>
-    <ul class="tight">
-      <li><strong>Series on the Strip, Nov 16 – Dec 23, 2026:</strong> Venetian <em>DeepStack Extravaganza IV</em> (official series line: “More than $3.6 Million in guaranteed tournament prize pools”) overlaps the Wynn <em>WPT World Championship</em> series (Nov 27 – Dec 21, printed on the official structures PDF).</li>
-      <li><strong>Single-entry status — the honest result:</strong> all 37 Venetian structure sheets and the Wynn daily/WPT structures were read line-by-line. <em>No document states a maximum-entry, no-re-entry, freezeout, or add-on policy</em> for any Venetian event, so no row can be labeled “confirmed single-entry”. Worse for the plan: every Wynn daily tournament <em>officially allows re-entry/add-ons</em>, and every WPT-series event read so far allows <em>unlimited re-entry</em>. The “single-entry / freezeout confirmed” filter therefore returns zero rows — displayed honestly instead of filled by inference (Flagged F1–F3, F7).</li>
-      <li><strong>What IS verified per row:</strong> buy-in, house fee, prize-pool contribution, guarantee (and whether it includes bounty money), starting stack, level duration, late-registration cutoff, start time and dates — all with the official excerpt and retrieval date, and a scheduled daily re-check of every source URL.</li>
-      <li><strong>Best verified value ratios</strong> (guarantee ÷ buy-in, descriptive only, prize-pool basis): Venetian $600 NLH 1-day events #28 ($40K GTD = 66.7×), #14/#63 ($30K = 50×); $400 NLH #10 ($15K = 37.5×); $300 NLH #2/#12 ($10K = 33.3×); $800 WPT event Nov 30–Dec 2 ($1M GTD = 1250×, but unlimited re-entry confirmed). Ranking exists only where buy-in + guarantee are both officially printed; four $200 events print no guarantee anywhere and are excluded (Flagged F5).</li>
-      <li><strong>Day planning:</strong> the earliest official starts are 9:10 AM (Turbo satellite #46), 10:10 AM (RaceDay/Seniors/Day-1A flights) and 11:10 AM for most 1-day events. <strong>No 8 AM event exists on any official schedule</strong> (Flagged F12). The schedule planner builds each day from the earliest official start, gives the primary anchor + conditional fallbacks, and flags possible overlaps using late-registration windows because finish times are never officially published.</li>
-      <li><strong>Hotels — true cost:</strong> verified so far: Venetian resort fee <strong>$55/night + tax</strong> (official page, 2026-11-16); Treasure Island officially headlines a “$69* NIGHT + NO RESORT FEE” package with free parking (footnotes pending — Flagged F8). Room rates are dynamic, so the site ships a <em>dated rate log</em> + official booking links instead of stale numbers. A ≤30-minute walking filter applies to labeled mapping estimates with Google Maps evidence links (Flagged F10).</li>
-      <li><strong>Trip calculator:</strong> entries × buy-in + nights × (rate + resort fee + tax). The 13.38% tax rate is user-provided and still needs verification against your real checkout total (Flagged F9).</li>
-    </ul>
-  </div>
+<div class="callout danger"><strong>Executive decision: do not book on the assumption of single-entry play.</strong>
+Every Venetian structure sheet for DSE IV (Nov 16 – Dec 23, 2026) was read line by line on 2026-11-17: none confirms a single-entry / freezeout limit,
+so the candidate events stay labeled "entry rules unverified". The rooms that do publish rules (Wynn, Bellagio, Caesars) all allow some form of
+re-entry, rebuy or add-on — those are quarantined in their own section. Get a written maximum-entry policy before nonrefundable payment.</div>
 
-  <div class="card">
-    <h2 style="margin-top:0">How to use this dashboard</h2>
-    <div class="grid2">
-      <div>
-        <h3>Pick tournaments</h3>
-        <p class="small muted">On <a href="tournaments.html">Tournaments</a>: search everything, filter by date or venue, toggle “single-entry / freezeout confirmed”, and read the separate sections for confirmed re-entry/add-on events and satellites. Every row carries its official source link and a last-checked date.</p>
-      </div>
-      <div>
-        <h3>Build days</h3>
-        <p class="small muted">On <a href="schedule.html">Schedule planner</a>: choose a date to get that day’s sessions in start-time order with the primary event, conditional fallback, late-registration cutoffs, and possible-overlap flags.</p>
-      </div>
-      <div>
-        <h3>Cost it out</h3>
-        <p class="small muted">On <a href="hotels.html">Hotels &amp; cost</a>: filter hotels by a ≤30-minute walk to the venue, use the true-cost and trip calculators (entries × buy-ins + nights × true hotel cost), and append dated entries to the rate log rather than trusting a single number.</p>
-      </div>
-      <div>
-        <h3>Check the fine print</h3>
-        <p class="small muted"><a href="review.html">Flagged for Review</a> lists every irregularity with sources (official-page typos, ambiguous WPT dates, missing guarantees, unreachable official pages). <a href="questions.html">Questions</a> lists what must be answered before money is committed; <a href="suggestions.html">Suggestions</a> awaits your choices before any change is implemented.</p>
-      </div>
-    </div>
-  </div>
+<h2>What looks most promising (conditional, ranked only where fee + guarantee are confirmed)</h2>
+<div class="grid">
+<article class="card"><span class="tag">Best confirmed ratio</span><h3>Wynn Friday NLH Rebuy &amp; Add-on $240 — $40,000 GTD</h3>
+<p>Guarantee ÷ total entry fee = 166.7× — descriptive arithmetic only.
+weekly:Friday 12:00 PM. Note the re-entry rules on the row before comparing against candidates.</p>
+<p><a href="tournaments.html">Ranking screen →</a></p></article>
+<article class="card"><span class="tag">Lowest-cost candidates (rules unverified)</span><h3>$200–$300 one-day events</h3>
+<p>Venetian $300 NLH $10K GTD (ratio 33.3×), $400 NLH $15K GTD (37.5×), $600 NLH $30K GTD (50×) — all with verified fee splits
+($58/$65/$90 house fee) but unverified entry rules. Numbers are sheet-verified; the single-entry question is not.</p>
+<p><a href="tournaments.html">Candidate table →</a></p></article>
+<article class="card"><span class="tag">Closest lodging with verified economics</span><h3>Stay at the Venetian / Palazzo</h3>
+<p>On-site to the poker room (Palazzo Level 2). Resort fee $55 + tax, tax 13.38%, poker suite rates from $119/$209 (conditional on
+6 hrs cash play or a $300+ buy-in per night). True cost/night at $119 = $197.28 all-in.</p>
+<p><a href="hotels.html">Hotel comparison →</a></p></article>
+</div>
 
-  <div class="callout warn"><strong>Read before paying anything:</strong> no event on this site is confirmed single-entry; several officially allow re-entry. Before non-refundable payment, get written per-event entry policy from the poker room, capture an itemized hotel checkout total, and re-check the official schedules (the site re-checks URLs daily; changed rows are flagged).</div>
+<h2>Planning constraints that change the answer</h2>
+<div class="grid">
+<article class="card"><h3>No 8 AM start exists</h3><p>Earliest verified open start is 10:10 AM (9:10 AM for a satellite). The day plan is built around that fact.</p></article>
+<article class="card"><h3>One event per day, fallback only if realistic</h3><p>Overlapping windows are flagged as impossible sequences; evening events are conditional on exiting the earlier one.</p></article>
+<article class="card"><h3>True hotel cost ≠ headline rate</h3><p>(rate + resort fee) × 1.1338. Two of five hotels still have unverified fees — flagged, not guessed.</p></article>
+</div>
 
-  <div class="card">
-    <h2 style="margin-top:0">Parallel research sites (preserved from other sessions)</h2>
-    <p class="small muted">This root dashboard is the canonical, fully verified build. Earlier/parallel sessions' research sites remain in place, untouched:</p>
-    <ul class="tight small">
-      <li><a href="planner/index.html">planner/</a> · <a href="poker4/index.html">poker4/</a> · <a href="v2/index.html">v2/</a> — three parallel dashboards (session 08f07d1d / b6421d6a)</li>
-      <li><a href="venues.html">venues.html</a> hub + <a href="venues/aria.html">ARIA</a> / <a href="venues/bellagio.html">Bellagio</a> / <a href="venues/caesars.html">Caesars</a> pages (08f07d1d)</li>
-      <li><a href="calculator.html">calculator.html</a> · <a href="change-monitor.html">change-monitor.html</a> · <a href="ratelog.html">ratelog.html</a> · <a href="monitor.html">monitor.html</a> · <a href="repo-review.html">repo-review.html</a> · <a href="trip-calculator.html">trip-calculator.html</a> (08f07d1d / f8fa22bb / 5dba2ab6)</li>
-      <li><a href="60fb62da/index.html">60fb62da/</a> · <a href="c07371e3/index.html">c07371e3/</a> · <a href="df41f5c6/index.html">df41f5c6/</a> · <a href="strip/index.html">strip/</a> · <a href="verified/index.html">verified/</a> — earlier research snapshots</li>
-      <li>Superseded root-page snapshots (08f07d1d build): <a href="pages/parallel-main-index.html.08f07d1d-2026-11-17.html">root index (08f07d1d)</a>, <a href="pages/parallel-main-tournaments.html.08f07d1d-2026-11-17.html">tournaments</a>, <a href="pages/parallel-main-hotels.html.08f07d1d-2026-11-17.html">hotels</a>, <a href="pages/parallel-main-schedule.html.08f07d1d-2026-11-17.html">schedule</a></li>
-      <li>Superseded root-page snapshots (b040f8dd integrated build, 119-row events.json kept at <a href="data/events.json">data/events.json</a>): <a href="pages/parallel-main-index.html.b040f8dd-2026-11-17.html">root index</a>, <a href="pages/parallel-main-tournaments.html.b040f8dd-2026-11-17.html">tournaments</a>, <a href="pages/parallel-main-hotels.html.b040f8dd-2026-11-17.html">hotels</a>, <a href="pages/parallel-main-schedule.html.b040f8dd-2026-11-17.html">schedule</a></li>
-    </ul>
-  </div>
-</main>
-<footer class="site"><div class="wrap">
-  <span>Built from official operator documents only · last data build 2026-11-17</span>
-  <span><a href="sources.html">All sources &amp; retrieval dates</a> · <a href="review.html">Flagged for review</a></span>
-</div></footer>
-<script src="app.js"></script>
-</body>
-</html>
+<h2>Recommended sequence (matches the project's trip workflow)</h2>
+<ol><li><b>Fix trip dates and the nightly budget/quality floor.</b> Everything else keys off this.</li>
+<li><b>For candidate events, obtain the written maximum-entry / no-rebuy / no-add-on rule</b> and drop any event that does not match a single-entry policy.</li>
+<li><b>Compare only surviving events</b> on guarantee, total entry fee, starting stack / blind duration, payout structure and daily fit.</li>
+<li><b>Capture itemized hotel totals for the same stay</b> and confirm the walking route is under 30 minutes (verified matrix already covers 14 pairs).</li>
+<li><b>Build one event per day first</b>; add an evening event only where you can realistically exit the earlier one.</li>
+<li><b>Reconfirm official schedules, rates and policies</b> right before any nonrefundable payment — the daily source monitor flags changes.</li></ol>
+
+<h2>Preserved independent research sets</h2>
+<p class="mut">Parallel sessions' dashboards survive untouched for comparison. They use their own snapshots and classifications; this integrated
+dashboard supersedes them at the root and does not treat them as confirmation:</p>
+<p class="small"><a href="planner/index.html">planner/ (98e4cb1c) ↗</a> · <a href="poker4/index.html">poker4/ (98e4cb1c, CI-gated) ↗</a> ·
+<a href="v2/index.html">v2/ (data/v2 lane + monitor) ↗</a> · <a href="c07371e3/index.html">c07371e3 research ↗</a> ·
+<a href="df41f5c6/index.html">df41f5c6 research ↗</a> · <a href="60fb62da/index.html">60fb62da research ↗</a> ·
+<a href="verified/index.html">verified candidates ↗</a> · <a href="strip/index.html">strip-wide review ↗</a> ·
+<a href="pages/executive-summary.html">first integration pages ↗</a> ·
+<a href="prior_root_dashboard/index.html">prior root dashboard (snapshot) ↗</a> ·
+<a href="archive.html">archive index of earlier session sites ↗</a> ·
+<a href="archive/722a84d2_root/index.html">722a84d2 verified root build (archived) ↗</a> ·
+<a href="archive/08f07d1d/index.html">08f07d1d dashboard (archived) ↗</a> ·
+<a href="research/raw/venetian_dse_iv_structures.md">research/raw (structure notes) ↗</a> ·
+<a href="monitoring.html">monitoring hub ↗</a> ·
+<a href="venues.html">prior root venue page ↗</a> · <a href="ratelog.html">prior root rate log ↗</a> ·
+<a href="change-monitor.html">prior root change monitor ↗</a></p>
+
+<footer>Values read from official operator sources only, with retrieval dates. Unverified values are blank and flagged on the
+<a href="flagged.html">Flagged for Review</a> page. This is a decision dashboard, not a booking engine or a forecast.
+Re-checked automatically (see <a href="monitor.html">Source monitor</a>).</footer>
+</main><script src="assets/site.js"></script></body></html>
