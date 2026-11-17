@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generated_at": "2026-11-17T22:53:45Z",
+  "generated_at": "2026-11-17T22:59:19Z",
   "rows": 253,
   "verified_single_entry": 0,
   "rankable": 72,
@@ -81,7 +81,7 @@
    "gtd_ratio": 250.0,
    "gtd_over_pool_contribution": 312.5,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -160,7 +160,7 @@
    "gtd_ratio": 250.0,
    "gtd_over_pool_contribution": 312.5,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -239,7 +239,7 @@
    "gtd_ratio": 250.0,
    "gtd_over_pool_contribution": 312.5,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -318,7 +318,7 @@
    "gtd_ratio": 250.0,
    "gtd_over_pool_contribution": 312.5,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -397,7 +397,7 @@
    "gtd_ratio": 33.33,
    "gtd_over_pool_contribution": 41.32,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -475,7 +475,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -552,7 +552,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified",
     "not ranked \u2014 entry fee or guarantee unconfirmed"
@@ -630,7 +630,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified",
     "not ranked \u2014 entry fee or guarantee unconfirmed"
@@ -708,7 +708,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified",
     "not ranked \u2014 entry fee or guarantee unconfirmed"
@@ -786,7 +786,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified",
     "not ranked \u2014 entry fee or guarantee unconfirmed"
@@ -866,7 +866,7 @@
    "gtd_ratio": 187.5,
    "gtd_over_pool_contribution": 227.27,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -945,7 +945,7 @@
    "gtd_ratio": 40.0,
    "gtd_over_pool_contribution": 50.0,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -1024,7 +1024,7 @@
    "gtd_ratio": 187.5,
    "gtd_over_pool_contribution": 227.27,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -1103,7 +1103,7 @@
    "gtd_ratio": 40.0,
    "gtd_over_pool_contribution": 50.0,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -1181,7 +1181,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -1260,7 +1260,7 @@
    "gtd_ratio": 37.5,
    "gtd_over_pool_contribution": 44.78,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -1339,7 +1339,7 @@
    "gtd_ratio": 40.0,
    "gtd_over_pool_contribution": 50.0,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -1418,7 +1418,7 @@
    "gtd_ratio": 33.33,
    "gtd_over_pool_contribution": 41.32,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -1497,7 +1497,7 @@
    "gtd_ratio": 40.0,
    "gtd_over_pool_contribution": 50.0,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -1649,7 +1649,7 @@
    "gtd_ratio": 50.0,
    "gtd_over_pool_contribution": 58.82,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -1943,7 +1943,7 @@
    "gtd_ratio": 40.0,
    "gtd_over_pool_contribution": 50.0,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -2095,7 +2095,7 @@
    "gtd_ratio": 50.0,
    "gtd_over_pool_contribution": 58.82,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -2246,7 +2246,7 @@
    "gtd_ratio": 37.5,
    "gtd_over_pool_contribution": 44.12,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -2401,7 +2401,7 @@
    "gtd_ratio": 100.0,
    "gtd_over_pool_contribution": 125.0,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "spend-advantage format \u2014 excluded from the single-entry list"
    ]
@@ -2553,7 +2553,7 @@
    "gtd_ratio": 187.5,
    "gtd_over_pool_contribution": 227.27,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -2632,7 +2632,7 @@
    "gtd_ratio": 33.33,
    "gtd_over_pool_contribution": 41.32,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -2711,7 +2711,7 @@
    "gtd_ratio": 40.0,
    "gtd_over_pool_contribution": 50.0,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -2936,7 +2936,7 @@
    "gtd_ratio": 187.5,
    "gtd_over_pool_contribution": 227.27,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -3232,7 +3232,7 @@
    "gtd_ratio": 40.0,
    "gtd_over_pool_contribution": 50.0,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -3384,7 +3384,7 @@
    "gtd_ratio": 187.5,
    "gtd_over_pool_contribution": 227.27,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -3679,7 +3679,7 @@
    "gtd_ratio": 40.0,
    "gtd_over_pool_contribution": 50.0,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -3758,7 +3758,7 @@
    "gtd_ratio": 66.67,
    "gtd_over_pool_contribution": 78.43,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -3836,7 +3836,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -3988,7 +3988,7 @@
    "gtd_ratio": 40.0,
    "gtd_over_pool_contribution": 50.0,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -4213,7 +4213,7 @@
    "gtd_ratio": 625.0,
    "gtd_over_pool_contribution": 724.64,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -4292,7 +4292,7 @@
    "gtd_ratio": 41.67,
    "gtd_over_pool_contribution": 49.02,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -4444,7 +4444,7 @@
    "gtd_ratio": 625.0,
    "gtd_over_pool_contribution": 724.64,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -4667,7 +4667,7 @@
    "gtd_ratio": 625.0,
    "gtd_over_pool_contribution": 724.64,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -4890,7 +4890,7 @@
    "gtd_ratio": 625.0,
    "gtd_over_pool_contribution": 724.64,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -5186,7 +5186,7 @@
    "gtd_ratio": 625.0,
    "gtd_over_pool_contribution": 724.64,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -5265,7 +5265,7 @@
    "gtd_ratio": 625.0,
    "gtd_over_pool_contribution": 724.64,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -5563,7 +5563,7 @@
    "gtd_ratio": 66.67,
    "gtd_over_pool_contribution": 78.43,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -5641,7 +5641,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -5791,7 +5791,7 @@
    "gtd_ratio": 50.0,
    "gtd_over_pool_contribution": 60.0,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -6231,7 +6231,7 @@
    "gtd_ratio": 66.67,
    "gtd_over_pool_contribution": 78.43,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -6456,7 +6456,7 @@
    "gtd_ratio": 50.0,
    "gtd_over_pool_contribution": 60.0,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -6679,7 +6679,7 @@
    "gtd_ratio": 66.67,
    "gtd_over_pool_contribution": 78.43,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -6902,7 +6902,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified",
     "not ranked \u2014 entry fee or guarantee unconfirmed"
@@ -6982,7 +6982,7 @@
    "gtd_ratio": 50.0,
    "gtd_over_pool_contribution": 60.0,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -7205,7 +7205,7 @@
    "gtd_ratio": 16.67,
    "gtd_over_pool_contribution": 19.61,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -7357,7 +7357,7 @@
    "gtd_ratio": 93.75,
    "gtd_over_pool_contribution": 107.14,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -7724,7 +7724,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified",
     "not ranked \u2014 entry fee or guarantee unconfirmed"
@@ -7804,7 +7804,7 @@
    "gtd_ratio": 50.0,
    "gtd_over_pool_contribution": 60.0,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -8100,7 +8100,7 @@
    "gtd_ratio": 50.0,
    "gtd_over_pool_contribution": 57.97,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -8326,7 +8326,7 @@
    "gtd_ratio": 41.67,
    "gtd_over_pool_contribution": 49.02,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -8404,7 +8404,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified",
     "not ranked \u2014 entry fee or guarantee unconfirmed"
@@ -8484,7 +8484,7 @@
    "gtd_ratio": 50.0,
    "gtd_over_pool_contribution": 60.0,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -8635,7 +8635,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -8787,7 +8787,7 @@
    "gtd_ratio": 50.0,
    "gtd_over_pool_contribution": 58.82,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -8938,7 +8938,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified",
     "not ranked \u2014 entry fee or guarantee unconfirmed"
@@ -9090,7 +9090,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -9168,7 +9168,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified",
     "not ranked \u2014 entry fee or guarantee unconfirmed"
@@ -9321,7 +9321,7 @@
    "gtd_ratio": 454.55,
    "gtd_over_pool_contribution": 506.33,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -9399,7 +9399,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified",
     "not ranked \u2014 entry fee or guarantee unconfirmed"
@@ -9840,7 +9840,7 @@
    "gtd_ratio": 454.55,
    "gtd_over_pool_contribution": 506.33,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -10062,7 +10062,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified",
     "not ranked \u2014 entry fee or guarantee unconfirmed"
@@ -10143,7 +10143,7 @@
    "gtd_ratio": 272.73,
    "gtd_over_pool_contribution": 312.5,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -10654,7 +10654,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -10806,7 +10806,7 @@
    "gtd_ratio": 50.0,
    "gtd_over_pool_contribution": 60.0,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -10957,7 +10957,7 @@
    "gtd_ratio": 272.73,
    "gtd_over_pool_contribution": 312.5,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -11035,7 +11035,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -11691,7 +11691,7 @@
    "gtd_ratio": 50.0,
    "gtd_over_pool_contribution": 60.0,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -11987,7 +11987,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -12281,7 +12281,7 @@
    "gtd_ratio": 68.18,
    "gtd_over_pool_contribution": 77.32,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -12648,7 +12648,7 @@
    "gtd_ratio": 50.0,
    "gtd_over_pool_contribution": 60.0,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -12944,7 +12944,7 @@
    "gtd_ratio": 83.33,
    "gtd_over_pool_contribution": 98.04,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -13307,7 +13307,7 @@
    "gtd_ratio": 50.0,
    "gtd_over_pool_contribution": 60.0,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -13611,7 +13611,7 @@
    "gtd_ratio": 454.55,
    "gtd_over_pool_contribution": 520.83,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -14051,7 +14051,7 @@
    "gtd_ratio": 41.67,
    "gtd_over_pool_contribution": 49.02,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -14211,7 +14211,7 @@
    "gtd_ratio": 454.55,
    "gtd_over_pool_contribution": 520.83,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -14432,7 +14432,7 @@
    "gtd_ratio": 454.55,
    "gtd_over_pool_contribution": 520.83,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -15229,7 +15229,7 @@
    "gtd_ratio": 454.55,
    "gtd_over_pool_contribution": 520.83,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -15308,7 +15308,7 @@
    "gtd_ratio": 454.55,
    "gtd_over_pool_contribution": 520.83,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -16181,7 +16181,7 @@
    "gtd_ratio": 100.0,
    "gtd_over_pool_contribution": 125.0,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "spend-advantage format \u2014 excluded from the single-entry list"
    ]
@@ -16405,7 +16405,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -16630,7 +16630,7 @@
    "gtd_ratio": 250.0,
    "gtd_over_pool_contribution": 297.03,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -17139,7 +17139,7 @@
    "gtd_ratio": 40.0,
    "gtd_over_pool_contribution": 50.0,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -17437,7 +17437,7 @@
    "gtd_ratio": 250.0,
    "gtd_over_pool_contribution": 297.03,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -17662,7 +17662,7 @@
    "gtd_ratio": 40.0,
    "gtd_over_pool_contribution": 50.0,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -17814,7 +17814,7 @@
    "gtd_ratio": 250.0,
    "gtd_over_pool_contribution": 297.03,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -17893,7 +17893,7 @@
    "gtd_ratio": 40.0,
    "gtd_over_pool_contribution": 50.0,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -17971,7 +17971,7 @@
    "single_entry_confirmed": false,
    "rankable": false,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -18050,7 +18050,7 @@
    "gtd_ratio": 50.0,
    "gtd_over_pool_contribution": 58.82,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
@@ -18129,7 +18129,7 @@
    "gtd_ratio": 40.0,
    "gtd_over_pool_contribution": 50.0,
    "last_checked": "2026-11-17",
-   "source_changed": true,
+   "source_changed": false,
    "flags": [
     "single-entry unverified"
    ]
