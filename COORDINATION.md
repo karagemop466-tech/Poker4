@@ -859,3 +859,43 @@ Files from `75757cc1` are kept as-is: `data/75757cc1/`, the 37-sheet structure r
   generated root `*.html` + `venues/*.html` + `app.js` + `site.css` (via the generator only), `COORDINATION.md` (log).
 - Rules followed: every corrected value comes from an official operator document with a quoted excerpt and a
   retrieval date; a conflict between two official Caesars pages is published as a conflict, not silently resolved.
+
+## Session arena/60ade3e8-poker4 — result (2026-11-17, 23:5xZ)
+
+Delivered on the claim above. Line-by-line evidence file: `data/verify/60ade3e8_source_recheck_2026-11-17.tsv`
+(17 records; also linked from `review.html` under "Line-by-line re-check records").
+
+| # | Item | Result |
+|---|---|---|
+| K1 | Caesars Palace daily rows rebuilt from the property's own **2026** flyer | `CAESARS-DAILY-{1000AM,200PM,600PM,900PM}` now carry the flyer's per-seat prices (**$100 / $160 / $100 / $160**), the printed fee split ($70/$30, $115/$45), $1,000 GTD, 20,000 chips, 20-min levels, $50 add-on, `registration_closes = "the start of level seven"`, first-break re-entry, and both official sources on the row. Rows stay in the spend-advantage section (the flyer prints re-entry + add-on). |
+| K2 | Two-official-pages conflict | Published, not resolved: every Caesars daily row carries the flag "official 2026 flyer prices this start time; the property's article states a blanket $100 for all four daily events — both sentences are on the row, the conflict is not resolved". New **Q10** (do a room's article and schedule document agree?) and **S10** (make the sync diff them mechanically). |
+| K3 | Caesars/Bellagio flyer parsing made reproducible | `tools/room_extract.py` gained a real `caesars_flyer()` parser (schedule table, fee splits, add-on / registration / re-entry / minimum-field / chop clauses, per-row `row_excerpt` + capture sha) → `data/room-facts.json → caesars.flyer` + `page_vs_flyer_conflict`. Regenerated values now come from the capture, not from prose. |
+| K4 | Bellagio + ARIA fee facts recovered from a dead marketing page | `bellagio.mgmresorts.com/en/hotel/resort-fee.html` is a live 404; the figures were instead taken from each property's own **Hotel Reservation Terms** page (`/en/terms-and-conditions.html`, footer "Updated on August 26, 2026"), which Bellagio's FAQ names as the governing document: **$55.00 + applicable tax** resort fee, **$50 + tax per occupant/night above 2**, **72-hour** cancellation with $165/$200 no-show, lodging-tax basis sentence. ARIA likewise, plus printed 3 pm / 11 am check-in-out. Parking $20 self (registered guest) / $25 weekend short-term / $40 valet from `mgmresorts.com/en/things-to-do/parking.html`, the page the terms point to. No third-party figure used ($45 / $50 / $56.69 / $62.36 third-party numbers explicitly rejected; $62.36 on the site is our own $55 × 1.1338 arithmetic, labelled as such). |
+| K5 | The unreproducible ARIA claim removed | The hotels page previously asserted "$50 and $55 on two different official ARIA pages". The fetched ARIA pages print only **$55.00**; the $50 sentence could not be reproduced on any ARIA page, so it was struck and the flag rewritten to record exactly that. |
+| K6 | Tax percentage honesty | `13.38%` stays on the rows, but the sentence now says it is **carried from operator fine print, not measured on the property's terms page** (which prints no percentage) — flagged rather than presented as property-confirmed. |
+| K7 | Date filter is now honest for recurring slates | `scripts/integrate_data.py` publishes each room slate's printed weekdays (`recurrence`, 11 rows) and a `data-days` attribute on the row; `app.js` `weekdaysIn()` keeps an undated row visible when the chosen range covers one of its printed weekdays (single-date range = that day), still hides rows with neither date nor weekday, and the count line explains why. Verified by executing `app.js` against a DOM stub: Nov 23 → dated row + all-week rows shown, Mon–Thu row hidden; Nov 16–17 (Mon–Tue) → Mon–Thu row shown, Nov-23-only Venetian row hidden; Nov 18 (Wed) → same. Bare "12 PM"/"6 PM" Wynn times now parse via `to_min`. |
+| K8 | Day plan: real second-nightly options, no invention | All **38** days of `plan.html` carry a labelled "printed for this weekday (no date printed)" option list under the conditional fallback, each with the arithmetic sentence computed from printed start vs printed registration deadline (111 placements at/after the deadline, 119 before it, 13 explicitly "no test is possible" because the row prints no deadline). No finish time, duration or minute count is invented anywhere. |
+| K9 | Calculator: occupancy and the property's own booking engine | `calculator.html` gained **arrival date** and **guests in the room**. A third/fourth guest adds the property's published per-occupant charge + tax when that property publishes one, and says so when it does not. Where a property publishes its own date-carrying URL pattern (only **The Venetian/Palazzo**, read from its own Check Rates control) the calculator builds that exact link for the chosen dates and occupancy; every other property gets a "dates are typed into its own engine" note + its booking link. No rate is ever inferred. |
+| K10 | Registry / monitoring | `data/tracked-sources.json` 64 → **66**: Caesars flyer repointed at the live 2026 PDF (now with a text capture), Bellagio fee URL → its terms page, plus `aria…/terms-and-conditions.html` and the MGM parking rate table. The two dead URLs are **kept** in `data/url-checks.json`, annotated `superseded_by`, and `review.html` now separates "still unreachable" from "dead URLs the registry has since repointed" — so the banner no longer reports an outage that was actually a repoint. `tools/sync_official_sources.py`: `room_tax` also matches "lodging tax", new `occupancy_charge` pattern, sentence extraction no longer splits `$55.00` (digit-period mask), abbreviation mask for `i.e./e.g./vs`, over-long hits truncated at a word boundary, leading-URL junk dropped. |
+| K11 | Deliverable questions/suggestions | `data/poker4.json`: **Q8** and **Q9** rewritten to what is now actually confirmed vs still missing; new **Q10**, **S10**, **S11** (standardise on reservation-terms pages as the fee source), **S12** (whether recurring evening slates may count automatically toward the trip total). All are proposals awaiting your choice — nothing from S10–S12 was implemented beyond the manual correction it describes. |
+
+Gates (all re-run on the exact committed state, twice, no drift): `integrate_data.py` → `events=253 days=38
+rate-log=108 walks=10 sources=68`, `pages=22 search=367`; `verify_root.py` → **pages: 16 · event rows: 253 ·
+rate-log lines: 108 · tracked sources: 66 · warnings: 0 / OK**; `verify_markup.py` → **37 pages, 0 problems**;
+`linkcheck.py` → **OK: 30 pages**; `verify.py` → **pages: 10; sources: 17; flags: 29 OK**; `validate_site.py` → OK;
+`node --check app.js`/`site/app.js` OK; every `data/**/*.json` parses. `git add -A` after a rebuild shows no diff,
+so the committed HTML is what the data produces (the `site-verify` reproducibility gate).
+
+Irregularities / things the next session should know:
+- **Headline finding unchanged:** no official 2026 Strip source confirms a whole-event single-entry tournament
+  (`0 confirmed` of 253 rows). Do not let the richer Caesars/hotel data make that look resolved.
+- Bellagio's own sheet still contradicts itself ($1,100 title vs rule 07 "the $600 Buy-in"); left blank + flagged, not averaged.
+- Walking minutes are still **not** published: no official source for hotel→poker-room pairs, so the ≤30-min filter
+  stays a warning row, not a claim. PR #65's Maps re-check figures (Bellagio→Wynn 32 min, ARIA→Wynn 42, ARIA→Venetian 31)
+  are not independently re-verified here — whoever owns walks should confirm them from a labelled matrix before they appear on the root pages.
+- Requests (not done here, different scope): **R5** to the walks owner — publish minutes only with the routing source and
+  timestamp per pair; **R6** to the monitoring owner — the next scheduled run should clear `urls_failed: 2` in
+  `data/sync-status.json` now that both URLs are repointed (if it still reports 2, the 404 is on the *new* URL and needs a fresh read,
+  not a re-run); the manual `workflow_dispatch` 403 blocker from earlier sessions is still open and unretested here.
+- PR #65 (`arena/e281a2cc-poker4`) still overlaps the canonical file set; if it lands after this PR, its generator
+  edits must be re-applied through `scripts/integrate_data.py` rather than kept as HTML.
