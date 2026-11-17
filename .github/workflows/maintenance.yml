@@ -20,12 +20,16 @@ jobs:
         run: python3 scripts/recheck_sources.py
       - name: Morning daily-schedule feed
         run: python3 scripts/fetch_daily_schedules.py
-      - name: Rebuild data + pages
+      - name: Rebuild data + pages (canonical generator only)
+        # Single source of truth for the root pages: scripts/integrate_data.py.
+        # build/build_pages.py used to run here and overwrote the root pages with a
+        # stale render every morning (see COORDINATION.md, session c2242cb1, K1).
         run: |
-          python3 build/build_integrated.py
-          python3 build/build_pages.py
+          python3 scripts/integrate_data.py
       - name: Verify site
-        run: python3 scripts/verify_site.py
+        run: |
+          python3 scripts/verify_root.py
+          python3 scripts/verify.py
       - name: Commit updated snapshots & monitoring data
         run: |
           git config user.name "poker4-maintenance"

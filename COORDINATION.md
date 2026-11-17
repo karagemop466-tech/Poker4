@@ -672,6 +672,72 @@ Out of scope this session (recorded so nobody assumes otherwise): Google/Apple w
 
 **Out of scope this session (not done, not claimed):** Google/Apple walking-time verification (no official source publishes walking minutes; map APIs unreachable from this sandbox); live hotel booking-engine quotes; a Strip-wide daily scraper beyond the existing Venetian/Wynn workflows; any 8 AM all-day schedule (remains unmet per flag F10).
 
+## Session arena/c2242cb1-poker4 (session `c2242cb1`) — claim (2026-11-17)
+
+Branched from `main` @ `0d13de0`. No other session holds an active claim on the board (every prior section is marked done/merged). This session takes the narrow integration-audit role for the existing root site; it does not create a new parallel dashboard.
+
+| ID | Task | Status | Owner | File scope | Notes |
+|----|------|--------|-------|------------|-------|
+| K1 | Repair false-positive/stale gates that make the scheduled `daily-recheck` (recheck.yml) and root verifier report failures on a correct site | in progress | c2242cb1 | `scripts/verify_root.py`, `tools/verify_root_site.py` | verify_root reports "renders 0 rows" although the static table holds 118 rows; verify_root_site asserts pre-PR-#43 markers (19 errors) |
+| K2 | Independent live re-read of key official values (Venetian DSE IV schedule page, Venetian resort fee/suite-rate terms, Treasure Island tower-suite fee, Wynn WPT schedule PDF) and comparison against `data/site-events.json` / hotel records | in progress | c2242cb1 | `data/c2242cb1/verification.json` (new) | Results recorded with official links; mismatches flagged, not silently edited |
+| K3 | Board log, verification record, PR → main, merge, Pages deploy check | in progress | c2242cb1 | `COORDINATION.md` (log only) | — |
+
+Irregularity noted at claim time: the `monitor.yml` ("Monitor official sources") and `recheck.yml` ("daily-recheck") scheduled runs failed on the latest cron (run logs not retrievable from the sandbox; to be diagnosed by re-running the scripts). Logged here, not yet resolved.
+
+### Result record — arena/c2242cb1-poker4 (2026-11-17)
+
+**Status:** K1 done · K2 done (with flagged caveats) · K3 in progress (PR + merge recorded below once complete).
+
+**Root cause found (K1).** `main` was publishing a stale root site. `.github/workflows/maintenance.yml` ran the legacy `build/build_pages.py` every morning and committed `*.html` to `main`. That overwrote the pages `scripts/integrate_data.py` generates. The visible instance is commit `6c94023` (16:57 UTC, 2026-11-17): `schedule.html` went back to a 75 KB page instead of the redirect stub, `tournaments.html` lost the tab layout, and the landing page stated walking minutes as "verified". Fix: maintenance now runs only `scripts/integrate_data.py` and the current verifiers. `recheck.yml` now runs `scripts/verify_root.py` instead of the stale `tools/verify_root_site.py` (19 errors on the current pages).
+
+**Other fixes in this branch**
+- `scripts/integrate_data.py`: tournaments default to the first tab that has rows. Before, the page opened on the empty "Single-entry / freezeout" tab and the date/venue filters appeared dead. This is a design change: the single-entry tab stays first and still says "nothing qualifies". Revert by restoring the `active` class logic if you disagree.
+- Venetian schedule (K2): the PDF-parsed `schedule-snapshot.json` disagreed with the official page in 3 ways. Corrected through `data/c2242cb1/venetian_overrides.json`, which the generator applies on every build. Each `set` must match exactly one row, or the build stops.
+- Flags F17–F21 added to `data/poker4.json` (published on the Flagged page).
+- `data/c2242cb1/`: official transcription of all 94 Venetian rows, the override file, and `verification.json` (each check, source link, retrieval date, outcome).
+- `tools/c2242cb1_check_dse.py`: re-runnable check. Passes on the corrected output; fails on the pre-fix output (6 problems), so it does catch these errors.
+
+**Sources read this session (retrieved 2026-11-17)**
+- S-V1 Venetian DeepStack IV schedule (4 chunks, 94 rows): https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html
+- S-V2 Venetian resort fee $55 + tax: https://www.venetianlasvegas.com/resort/resort-fee.html
+- S-V3 Venetian hotel terms (13.38% Clark County room tax; $20/day parking; $55 fee): https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html
+- S-V4 Venetian poker suite rates ($119/$209 "as low as", play rules): https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html
+- S-T1 Treasure Island tower suite ($49.95 + tax daily resort fee): https://treasureisland.com/hotel/tower-suite
+- S-W1 Wynn terms ($55 + tax, promotional package, expired Nov 1, 2026): https://www.wynnlasvegas.com/terms-and-conditions/850257
+
+**Verification performed**
+- Full Venetian table compared row by row: 94 official rows vs 94 published rows after correction; 0 field mismatches (date, time, event #, buy-in, printed guarantee).
+- Hotel values V2–V6 matched their official pages. V7 (Wynn $55) matches its page but the page is an expired promo, so it is flagged.
+- Walking minutes (V8): no official source; every value in `data/walks.json` is null. Previously published "verified" minutes removed by regeneration; flagged.
+- All gates green on the final tree: `verify_root.py` (16 pages, 119 event rows, 0 warnings); `verify.py`; `verify_markup.py` (37 pages); `linkcheck.py` (30 pages); `validate_site.py`; `verify_poker4.py`; `check_rows.py`; `poker4_monitor --selftest`; `build_poker4.py` (zero drift); `c2242cb1_check_dse.py`; `node --check app.js`; `integrate_data.py` idempotent (two consecutive builds byte-identical).
+- Headless browser (jsdom) smoke test of tournaments, venue, and other pages: 0 JS errors; date window, single-entry toggle and search behave correctly.
+
+**Irregularities (all published on the Flagged page)**
+- F17 stale-build overwrite (fixed here).
+- F16 (from session 75757cc1) PDF-parser errors. Corrected by the override layer, see the merge note below.
+- F18 walking minutes "verified" with no official source (removed).
+- F19 Wynn fee sourced from an expired promotional page.
+- F20 "42 structure sheets audited" mixes non-Venetian documents; `verify_poker4` reports 12 tracked sheets with no record.
+- F21 `monitor.yml` and `recheck.yml` failed on their last scheduled runs; logs are not retrievable from the sandbox, so the cause is unconfirmed. Eight overlapping scheduled jobs commit to `main`.
+
+**Not re-verified this session (left as flagged, not changed):** the 37 structure-sheet PDFs' entry rules, the Wynn WPT schedule/structure PDFs, Bellagio/Caesars/ARIA rows, date-specific hotel rates, and the scraper output. Single-entry remains unconfirmed for every event.
+
+**Live-site note:** the landing page now shows 119 events and 94 Venetian rows. The Dec 17 1A/1B and Dec 20 1A rows now show their printed guarantees, so they enter the descriptive ratio ranking (ratio arithmetic only, not a forecast).
+
+### Merge note — c2242cb1 × 75757cc1 (2026-11-17)
+
+Session `75757cc1` (`caa7af5`) found the same six Venetian defects and patched `data/schedule-snapshot.json` with `data/75757cc1/patch_snapshot.py`. The scheduled source sync `3a23c04` (22:03 UTC, github-actions) then re-scraped the PDF and **reverted all six corrections**. Confirmed on `origin/main`: Event 39 Day 2 restart is still 7:00 PM; the Dec 17 guarantees are still blank; Event 56 Dec 17 6:10 PM still shows level 11; Event 59 Dec 20 11:10 AM still shows level 5. The `75757cc1` patch is not durable.
+
+Resolution on this branch: the override layer from this session is kept. `scripts/integrate_data.py` re-applies `data/c2242cb1/venetian_overrides.json` on every build, so the corrections survive the next scheduled scrape. Each `set` must match exactly one row or the build stops. `tools/c2242cb1_check_dse.py` gates the result: 94/94, 0 problems (it fails on the reverted snapshot).
+
+Flag IDs: `75757cc1` already published F15 and F16. This branch's flags are renumbered to F17–F21. Our F16 (PDF-parse errors) duplicated `75757cc1`'s F16 and was dropped.
+
+Files from `75757cc1` are kept as-is: `data/75757cc1/`, the 37-sheet structure reads, and their F15/F16 text. Generated outputs (root pages, `site-events.json`, `search-index.json`) are regenerated from `scripts/integrate_data.py`.
+
+**Open for the next owner:** the scheduled sync (`3a23c04`) will keep rewriting `schedule-snapshot.json` and the other `data/raw/*` files. Until the scraper itself is fixed, the override layer is the only durable place for the Venetian corrections.
+
+**Merge verification (c2242cb1, after merging `main` @ `3a23c04`):** all gates re-run unpiped on the merged tree: `verify_root`, `verify`, `verify_markup`, `linkcheck`, `validate_site`, `verify_poker4`, `check_rows`, `c2242cb1_check_dse` exit 0; `poker4_monitor --selftest` exit 0; `node --check app.js` exit 0. Headless smoke: 0 JS errors on tournaments, index, hotels, flagged, plan, calculator.
+
 
 - **Merge result (648b3b83):** PR #55 — https://github.com/karagemop466-tech/Poker4/pull/55 — merged to main as `a29cf3b` at 2026-11-17 22:03 UTC (merge commit, no `--auto`). Checks on the final head `cbcc665`: `check` pass · `integrity` pass · `verify` pass. Post-merge on main: "Verify the published site" success · "Poker4 site build + verification gate" success · "Deploy static dashboard to GitHub Pages" success · "pages build and deployment" success. Pages: https://karagemop466-tech.github.io/Poker4/
 - **Two `main` races during this session:** main advanced twice (`0d13de0` → `2172b40` → `d9e0289`); each time the only conflict was `COORDINATION.md`, resolved by keeping both sides. No other session's work was discarded.

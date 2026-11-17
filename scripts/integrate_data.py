@@ -49,6 +49,40 @@ def load(name, default=None):
 
 CFG = load("poker4.json")
 SCHED = load("schedule-snapshot.json", {"meta": {}, "rows": []})
+# c2242cb1 (K2): row-level corrections where the PDF-parsed snapshot disagrees with the
+# official schedule page. Each "set" must match exactly one row; otherwise the build stops,
+# so a re-scrape can never silently drop or mis-time a row. See data/c2242cb1/.
+_OVR_PATH = DATA / "c2242cb1" / "venetian_overrides.json"
+if _OVR_PATH.exists():
+    _ovr = json.loads(_OVR_PATH.read_text(encoding="utf-8"))
+    _rows = [dict(r) for r in SCHED.get("rows", [])]
+    for _op in _ovr.get("operations", []):
+        if _op["op"] == "set":
+            _m = _op["match"]
+            _hits = [r for r in _rows if r.get("date") == _m["date"] and r.get("time") == _m["time"]
+                     and r.get("event_no") == _m["event_no"]
+                     and (not _m.get("name_contains") or _m["name_contains"] in (r.get("event_name") or "").upper())]
+            if len(_hits) == 1:
+                _hits[0].update(_op["set"])
+            elif len(_hits) == 0:
+                # Already corrected upstream (the snapshot may carry the fix): accept only if a row
+                # with the corrected values exists; otherwise the row is missing and the build stops.
+                _done = [r for r in _rows if r.get("date") == _m["date"] and r.get("event_no") == _m["event_no"]
+                         and all(r.get(k) == v for k, v in _op["set"].items())]
+                if not _done:
+                    raise SystemExit(f"venetian override matched no row and no corrected row exists: {_m}")
+            else:
+                raise SystemExit(f"venetian override matched {len(_hits)} rows (need exactly 1): {_m}")
+        elif _op["op"] == "add":
+            _r = _op["row"]
+            # Skip if the same row (date, time, event number) is already present upstream.
+            if any(r.get("date") == _r.get("date") and r.get("time") == _r.get("time")
+                   and r.get("event_no") == _r.get("event_no") for r in _rows):
+                continue
+            _rows.append(dict(_r))
+        else:
+            raise SystemExit(f"unknown override op: {_op['op']}")
+    SCHED = {**SCHED, "rows": _rows}
 AUDIT = load("structure-audit.json", {"sheets": {}})
 FACTS = load("hotel-facts.json", {"sources": {}})
 CHECKS = load("url-checks.json", {})
@@ -947,15 +981,15 @@ def page_tournaments():
 {feed}
 {filters}
 <div class="tabs" role="tablist">
-<button class="tab active" data-tab="confirmed" type="button">Single-entry / freezeout <span>{len(confirmed)}</span></button>
-<button class="tab" data-tab="notconfirmed" type="button">Not confirmed <span>{len(other)}</span></button>
+<button class="tab{' active' if confirmed else ''}" data-tab="confirmed" type="button">Single-entry / freezeout <span>{len(confirmed)}</span></button>
+<button class="tab{'' if confirmed else ' active'}" data-tab="notconfirmed" type="button">Not confirmed <span>{len(other)}</span></button>
 <button class="tab" data-tab="spend" type="button">More money buys an advantage <span>{len(spend)}</span></button>
 <button class="tab" data-tab="restarts" type="button">Day-2 restarts, not entries <span>{len(cont)}</span></button>
 </div>
-<section class="tabpanel active" data-panel="confirmed">
+<section class="tabpanel{' active' if confirmed else ''}" data-panel="confirmed">
 <p class="panel-note">Nothing qualifies. A row enters this list only when the venue's own sheet or page explicitly says one entry / no rebuy / no add-on. <a href="questions.html#Q1">Q1 describes the single question that would change this.</a></p>
 {events_table(confirmed, "", "no event on any official Strip sheet states single-entry-only play, so nothing qualifies yet")}</section>
-<section class="tabpanel" data-panel="notconfirmed">
+<section class="tabpanel{' active' if not confirmed else ''}" data-panel="notconfirmed">
 <p class="panel-note">Sorted by guarantee ÷ total entry fee (screening only). “Pool per entry” is what the sheet says reaches the prize pool, so two events with different fee splits stay comparable. Rows flagged <em>⚑ structure sheet ambiguous</em> share an event number with another sheet (different starting flights) and are never ranked off a fee split they may not belong to. {len(ven)} of these rows are the Venetian series calendar.</p>
 {events_table(sorted(other, key=lambda e: -(e.get('gtd_ratio') or 0)))}</section>
 <section class="tabpanel" data-panel="spend">
