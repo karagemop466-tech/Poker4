@@ -1,0 +1,75 @@
+{
+ "retrieved": "2026-11-17",
+ "purpose": "Row-level corrections where schedule-snapshot.json (PDF parse) disagrees with the official schedule page. Applied by scripts/integrate_data.py on every build so a re-scrape cannot silently undo them.",
+ "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+ "operations": [
+  {
+   "op": "set",
+   "match": {
+    "date": "2026-12-11",
+    "time": "7:00 PM",
+    "event_no": 39,
+    "name_contains": "DAY 2 RESTART"
+   },
+   "set": {
+    "time": "10:00 AM"
+   },
+   "why": "Official page lists 'LIPS Ladies Day 2 Restart' at 10:00 AM on Fri Dec 11; the parser merged it into the 7:00 PM row (parse_notes: registration-closes cell '10:00 AM' not later than start time)."
+  },
+  {
+   "op": "add",
+   "row": {
+    "parse_notes": null,
+    "registration_closes": null,
+    "date": "2026-12-13",
+    "weekday": "Sunday",
+    "time": "1:00 PM",
+    "event_no": 47,
+    "event_name": "NLH PokerAtlas Championship Title Event Day 2 Restart - PLAY DOWN TO FINAL 7, STREAMED FINAL TABLE (POKERGO)",
+    "buy_in_usd": 2200,
+    "guarantee_usd": null,
+    "starting_chips": null,
+    "level_duration": null,
+    "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "retrieved": "2026-11-17"
+   },
+   "why": "Official page row 'Sun Dec 13 1:00 PM | 47 | $2,200 NLH PokerAtlas Championship Title Event Day 2 Restart'. Absent from the parsed snapshot."
+  },
+  {
+   "op": "set",
+   "match": {
+    "date": "2026-12-17",
+    "time": "10:10 AM",
+    "event_no": 56
+   },
+   "set": {
+    "guarantee_usd": 500000
+   },
+   "why": "Official page event name prints '$1,100 No Limit Hold'em 1A $500K GTD'; parsed snapshot had no guarantee."
+  },
+  {
+   "op": "set",
+   "match": {
+    "date": "2026-12-17",
+    "time": "6:10 PM",
+    "event_no": 56
+   },
+   "set": {
+    "guarantee_usd": 500000
+   },
+   "why": "Official page event name prints '$1,100 No Limit Hold'em 1B $500K GTD'; parsed snapshot had no guarantee."
+  },
+  {
+   "op": "set",
+   "match": {
+    "date": "2026-12-20",
+    "time": "11:10 AM",
+    "event_no": 59
+   },
+   "set": {
+    "guarantee_usd": 150000
+   },
+   "why": "Official page event name prints '$600 No Limit Hold'em 1A $150K GTD'; parsed snapshot had no guarantee."
+  }
+ ]
+}

@@ -253,12 +253,16 @@ PDF_DATE_RE = re.compile(
     r"(?P<mon>JANUARY|FEBRUARY|MARCH|APRIL|MAY|JUNE|JULY|AUGUST|SEPTEMBER|OCTOBER|NOVEMBER|DECEMBER)"
     r"\s+(?P<day>\d{1,2})(?:ST|ND|RD|TH)?\b", re.I)
 PDF_ROW_RE = re.compile(
-    r"(?P<no>\d{1,3})\s+\$(?P<buy>[\d,]+)\s+(?P<name>.{3,110}?)\s+"
+    # The printed title column wraps over several lines (e.g. "… STREAMED FINAL TABLE
+    # (POKERGO) AT 7:00 PM" for the LIPS Ladies Day 2 restart). The title is allowed to
+    # run long so a wrapped title is captured whole instead of being dropped.
+    r"(?P<no>\d{1,3})\s+\$(?P<buy>[\d,]+)\s+(?P<name>.{3,190}?)\s+"
     r"(?P<time>\d{1,2}:\d{2}\s*(?:AM|PM))"
     r"(?:\s+(?P<close>\d{1,2}:\d{2}\s*(?:AM|PM)))?"
     r"(?:\s+\$(?P<gtd>[\d,]+)(?P<gtdmult>\s*(?:K|MILL|MILLION))?)?"
     r"(?:\s+(?P<chips>\d{1,3},\d{3}))?"
     r"(?:\s+(?P<level>\d{1,2}(?:/\d{1,2})?))?", re.I)
+CLOCK_RE = re.compile(r"\b\d{1,2}:\d{2}\s*(?:AM|PM)\b", re.I)
 
 # --- right-aligned row parser -------------------------------------------------
 # The printed table is column-based, but a PDF text dump flattens it into one

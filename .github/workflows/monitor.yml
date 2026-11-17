@@ -1,14 +1,19 @@
-name: Monitor official sources
+name: Legacy planner source monitor (manual)
+
+# Kept available for the preserved planner sub-site. The root site's scheduled
+# URL monitoring is owned by url-check.yml, while maintenance.yml captures the
+# multi-room daily schedule feed. No cron trigger here avoids duplicate writes
+# and overlapping bots committing to main.
 
 on:
-  schedule:
-    # Daily at 07:00 UTC — pulls each Strip room's official schedule each morning
-    # and re-checks every official source URL for changes.
-    - cron: "0 7 * * *"
   workflow_dispatch:
 
 permissions:
   contents: write
+
+concurrency:
+  group: legacy-planner-monitor
+  cancel-in-progress: false
 
 jobs:
   recheck:
@@ -27,22 +32,34 @@ jobs:
         with:
           python-version: "3.x"
 
-      - name: Re-check every official source URL
+      - name: Re-check preserved planner source URLs
         run: python3 tools/check_sources.py
 
-      - name: Pull each Strip room's official daily schedule
+      - name: Fetch preserved planner schedule snapshot
         run: python3 tools/scrape_schedule.py
         continue-on-error: true
+
+      # The live site's published state is data/url-checks.json (per-URL last-checked
+      # date, hash and value-change flag).  Earlier versions of this job committed only
+      # planner/ state, so the monitor ran and the page still showed stale dates.
+      - name: Rebuild the published pages from the refreshed sources
+        run: |
+          python3 tools/room_extract.py
+          python3 scripts/integrate_data.py
+          python3 scripts/verify_root.py
+          python3 scripts/verify.py
+          python3 scripts/verify_markup.py
+          python3 scripts/linkcheck.py
 
       - name: Commit updated monitoring state if changed
         run: |
           git config user.name "Poker4 Monitor"
           git config user.email "monitor@users.noreply.github.com"
           git pull --rebase --autostash origin main
-          git add -A planner/assets/data.js planner/data planner/assets/snapshots.json
+          git add -A data planner/assets/data.js planner/data planner/assets/snapshots.json
           if git diff --cached --quiet; then
             echo "No changes to monitoring state."
           else
-            git commit -m "chore(monitor): refresh official-source last-checked dates and change log"
+            git commit -m "chore(monitor): refresh official-source last-checked dates, change log and published pages"
             git push origin main || { git pull --rebase --autostash origin main && git push origin main; }
           fi
