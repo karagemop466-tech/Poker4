@@ -1,0 +1,362 @@
+{
+ "meta": {
+  "generated": "2026-11-17",
+  "true_cost_formula": "true cost/night = (nightly rate + mandatory resort fee) × (1 + 13.38% tax). Tax applies to room and fee in Clark County.",
+  "policy": "Only official-page values. Blank = unverified."
+ },
+ "tax_rate_pct": 13.38,
+ "tax_source": "V_TERMS",
+ "hotels": [
+  {
+   "id": "venetian",
+   "name": "The Venetian / The Palazzo",
+   "address": "3355 Las Vegas Blvd S, Las Vegas, NV 89109",
+   "poker_on_site": "Venetian Poker Room — The Palazzo, Level 2 (official poker page)",
+   "resort_fee_usd": 55.0,
+   "resort_fee_note": "$55 plus tax per night, payable at check-in (mandatory)",
+   "resort_fee_source": "V_RESORT",
+   "resort_fee_checked": "2026-11-17",
+   "tax_rate_pct": 13.38,
+   "tax_note": "Daily rates do not include the applicable Clark County Room Tax of 13.38%.",
+   "tax_source": "V_TERMS",
+   "tax_checked": "2026-11-17",
+   "parking": "$20/day registered hotel guests; $20 Mon–Thu / $25 Fri–Sun non-hotel; valet $40/day; Sapphire+ self-park free",
+   "parking_source": "V_TERMS",
+   "parking_checked": "2026-11-17",
+   "cancellation": "Deposit (first night or full stay) billed at booking. Prepaid offers non-cancellable/non-refundable. Check-out prior to scheduled departure: $100 + tax. Incidental deposit $150/night.",
+   "cancellation_source": "V_TERMS",
+   "cancellation_checked": "2026-11-17",
+   "poker_rate": "$119 / $209 starting rates (Luxury King Suite, single/double), code EPOKR25 by phone 866.255.8936; conditional on 6 hrs live cash play OR a $300+ tournament buy-in per night; blackout dates may apply",
+   "poker_rate_source": "V_RATES",
+   "poker_rate_checked": "2026-11-17",
+   "booking_url_template": "https://www.venetianlasvegas.com/booking?adults[]=2&arrival_date={in}&children[]=0&departure_date={out}&view=calendar",
+   "last_checked": "2026-11-17"
+  },
+  {
+   "id": "wynn",
+   "name": "Wynn Las Vegas / Encore",
+   "address": "3131 Las Vegas Blvd S, Las Vegas, NV 89109",
+   "poker_on_site": "Wynn Poker Room — located in Encore (official poker page / WPT terms)",
+   "resort_fee_usd": 55.0,
+   "resort_fee_note": "A daily resort fee of $55 plus tax for each room night (Resort rooms and Tower Suites)",
+   "resort_fee_source": "W_TERMS",
+   "resort_fee_checked": "2026-11-17",
+   "tax_rate_pct": 13.38,
+   "tax_note": "Clark County Room Tax of 13.38% applies county-wide (stated on official Venetian hotel terms; Wynn page states '$55 plus tax' without a rate)",
+   "tax_source": "V_TERMS",
+   "tax_checked": "2026-11-17",
+   "parking": "Complimentary self-parking for up to 2 vehicles included with resort fee (Tower Suites: valet or self-park)",
+   "parking_source": "W_TERMS",
+   "parking_checked": "2026-11-17",
+   "cancellation": "For the read offer: full deposit of all room nights and tax at booking; reservations non-cancellable/non-refundable/non-changeable; $150/night incidentals at check-in. Cancellation terms are rate-specific — confirm at booking.",
+   "cancellation_source": "W_TERMS",
+   "cancellation_checked": "2026-11-17",
+   "poker_rate": null,
+   "poker_rate_source": null,
+   "poker_rate_checked": null,
+   "booking_url_template": "https://www.wynnlasvegas.com/rooms/suites?checkInDate={in}&checkOutDate={out}",
+   "last_checked": "2026-11-17"
+  },
+  {
+   "id": "ti",
+   "name": "Treasure Island (TI)",
+   "address": "3300 Las Vegas Blvd S, Las Vegas, NV 89109",
+   "poker_on_site": null,
+   "resort_fee_usd": 49.95,
+   "resort_fee_note": "The $49.95 + tax daily resort fee; optional only for My TI Guestbook TV Ad Special / qualified Treasury Players Club / qualified meeting groups",
+   "resort_fee_source": "TI_FEE",
+   "resort_fee_checked": "2026-11-17",
+   "tax_rate_pct": 13.38,
+   "tax_note": "Clark County Room Tax of 13.38% applies county-wide (stated on official Venetian hotel terms; TI page states '+ tax' without a rate)",
+   "tax_source": "V_TERMS",
+   "tax_checked": "2026-11-17",
+   "parking": "Always free valet parking & self-park garage (official fee page)",
+   "parking_source": "TI_FEE",
+   "parking_checked": "2026-11-17",
+   "cancellation": null,
+   "cancellation_source": null,
+   "cancellation_checked": null,
+   "poker_rate": "$69* night + no resort fee TV Ad Special (conditional, as advertised on official page)",
+   "poker_rate_source": "TI_FEE",
+   "poker_rate_checked": "2026-11-17",
+   "booking_url_template": "https://all.accor.com/lien_externe.svlt?goto=rech_resa&destination=C598&origin=treasureisland",
+   "last_checked": "2026-11-17"
+  },
+  {
+   "id": "bellagio",
+   "name": "Bellagio",
+   "address": "3600 Las Vegas Blvd S, Las Vegas, NV 89109",
+   "poker_on_site": "Bellagio Poker Room (official poker page)",
+   "resort_fee_usd": null,
+   "resort_fee_note": "UNVERIFIED — official resort-fee page returned 404 on prior check; third-party figures conflict and are not used",
+   "resort_fee_source": null,
+   "resort_fee_checked": "2026-11-16",
+   "tax_rate_pct": 13.38,
+   "tax_note": "Clark County Room Tax of 13.38% applies county-wide (stated on official Venetian hotel terms)",
+   "tax_source": "V_TERMS",
+   "tax_checked": "2026-11-17",
+   "parking": null,
+   "parking_source": null,
+   "parking_checked": null,
+   "cancellation": null,
+   "cancellation_source": null,
+   "cancellation_checked": null,
+   "poker_rate": null,
+   "poker_rate_source": null,
+   "poker_rate_checked": null,
+   "booking_url_template": "https://www.bellagio.mgmresorts.com/en/booking/hotel.html?checkIn={in}&checkOut={out}",
+   "last_checked": "2026-11-16"
+  },
+  {
+   "id": "caesars",
+   "name": "Caesars Palace",
+   "address": "3570 Las Vegas Blvd S, Las Vegas, NV 89109",
+   "poker_on_site": "Caesars Palace Poker Room (official casino page)",
+   "resort_fee_usd": null,
+   "resort_fee_note": "UNVERIFIED — official resort-fee page is marketing copy with no fee amount; third-party figures conflict and are not used",
+   "resort_fee_source": null,
+   "resort_fee_checked": "2026-11-16",
+   "tax_rate_pct": 13.38,
+   "tax_note": "Clark County Room Tax of 13.38% applies county-wide (stated on official Venetian hotel terms)",
+   "tax_source": "V_TERMS",
+   "tax_checked": "2026-11-17",
+   "parking": null,
+   "parking_source": null,
+   "parking_checked": null,
+   "cancellation": null,
+   "cancellation_source": null,
+   "cancellation_checked": null,
+   "poker_rate": null,
+   "poker_rate_source": null,
+   "poker_rate_checked": null,
+   "booking_url_template": "https://www.caesars.com/book/rooms?checkInDate={in}&checkOutDate={out}",
+   "last_checked": "2026-11-16"
+  }
+ ],
+ "sources": {
+  "V_PAGE": {
+   "label": "Venetian DeepStack Extravaganza IV official series page (schedule)",
+   "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
+  },
+  "V_SCHED": {
+   "label": "Venetian DSE IV schedule PDF (official)",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+  },
+  "V_POKER": {
+   "label": "Venetian Poker Room official page (room at The Palazzo, Level 2)",
+   "url": "https://www.venetianlasvegas.com/resort/casino/poker.html"
+  },
+  "V_RATES": {
+   "label": "Venetian 2026 Poker Suite Rates official page",
+   "url": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html"
+  },
+  "V_RESORT": {
+   "label": "Venetian Resort Fee official page",
+   "url": "https://www.venetianlasvegas.com/resort/resort-fee.html"
+  },
+  "V_TERMS": {
+   "label": "Venetian Hotel Terms & Conditions (tax, parking, cancellation)",
+   "url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html"
+  },
+  "W_PAGE": {
+   "label": "Wynn Las Vegas Poker Room official page",
+   "url": "https://www.wynnlasvegas.com/casino/poker"
+  },
+  "W_DAILY": {
+   "label": "Wynn Daily Tournament Structures + General Terms PDF (official)",
+   "url": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf"
+  },
+  "W_WPT": {
+   "label": "Wynn WPT World Championship 2026 schedule PDF (official)",
+   "url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+  },
+  "W_WPT_TC": {
+   "label": "WPT World Championship General Terms + event structures PDF (official)",
+   "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+  },
+  "W_TERMS": {
+   "label": "Wynn Las Vegas Terms & Conditions (resort fee, parking, deposit)",
+   "url": "https://www.wynnlasvegas.com/terms-and-conditions/850257"
+  },
+  "B_PAGE": {
+   "label": "Bellagio Poker Room official page",
+   "url": "https://bellagio.mgmresorts.com/en/casino/poker.html"
+  },
+  "B_FRI": {
+   "label": "Bellagio Friday $600 NLH structure PDF (official)",
+   "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt9cf95b0e60ec253e/6af491a3a9851d75c40be840/mgm-bellagio-poker-fridays-$600-nlh.pdf"
+  },
+  "B_SAT": {
+   "label": "Bellagio Saturday NLH structure PDF (official; buy-in conflict inside)",
+   "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt6d47974bf5a7d9b6/6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf"
+  },
+  "B_SUN": {
+   "label": "Bellagio Sunday $400 H.O.R.S.E. structure PDF (official)",
+   "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt07fcf1244a6da661/6af491a339e2b4f6b76a86ad/mgm-bellagio-poker-sundays-$400-horse.pdf"
+  },
+  "C_FLYER": {
+   "label": "Caesars Palace Daily NLH tournament flyer PDF (official)",
+   "url": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf"
+  },
+  "C_PAGE": {
+   "label": "Caesars Palace casino page (links the flyer)",
+   "url": "https://www.caesars.com/caesars-palace/casino"
+  },
+  "TI_FEE": {
+   "label": "Treasure Island resort-fee section (Tower Suite page, official)",
+   "url": "https://treasureisland.com/hotel/tower-suite"
+  },
+  "GM": {
+   "label": "Google Maps walking directions (mode=walking, retrieved per row)",
+   "url": "https://www.google.com/maps"
+  },
+  "V_S1": {
+   "label": "Venetian DSE IV structure sheet #1 (official PDF)",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+  },
+  "V_S2": {
+   "label": "Venetian DSE IV structure sheet #2 (official PDF)",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_2.pdf"
+  },
+  "V_S3": {
+   "label": "Venetian DSE IV structure sheet #3 (official PDF)",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_3.pdf"
+  },
+  "V_S4": {
+   "label": "Venetian DSE IV structure sheet #4 (official PDF)",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf"
+  },
+  "V_S5": {
+   "label": "Venetian DSE IV structure sheet #5 (official PDF)",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf"
+  },
+  "V_S6": {
+   "label": "Venetian DSE IV structure sheet #6 (official PDF)",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_6.pdf"
+  },
+  "V_S7": {
+   "label": "Venetian DSE IV structure sheet #7 (official PDF)",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf"
+  },
+  "V_S8": {
+   "label": "Venetian DSE IV structure sheet #8 (official PDF)",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_8.pdf"
+  },
+  "V_S9": {
+   "label": "Venetian DSE IV structure sheet #9 (official PDF)",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_9.pdf"
+  },
+  "V_S10": {
+   "label": "Venetian DSE IV structure sheet #10 (official PDF)",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf"
+  },
+  "V_S11": {
+   "label": "Venetian DSE IV structure sheet #11 (official PDF)",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf"
+  },
+  "V_S12": {
+   "label": "Venetian DSE IV structure sheet #12 (official PDF)",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf"
+  },
+  "V_S13": {
+   "label": "Venetian DSE IV structure sheet #13 (official PDF)",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_13.pdf"
+  },
+  "V_S14": {
+   "label": "Venetian DSE IV structure sheet #14 (official PDF)",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_14.pdf"
+  },
+  "V_S15": {
+   "label": "Venetian DSE IV structure sheet #15 (official PDF)",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
+  },
+  "V_S16": {
+   "label": "Venetian DSE IV structure sheet #16 (official PDF)",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_16.pdf"
+  },
+  "V_S17": {
+   "label": "Venetian DSE IV structure sheet #17 (official PDF)",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_17.pdf"
+  },
+  "V_S18": {
+   "label": "Venetian DSE IV structure sheet #18 (official PDF)",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf"
+  },
+  "V_S19": {
+   "label": "Venetian DSE IV structure sheet #19 (official PDF)",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_19.pdf"
+  },
+  "V_S20": {
+   "label": "Venetian DSE IV structure sheet #20 (official PDF)",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_20.pdf"
+  },
+  "V_S21": {
+   "label": "Venetian DSE IV structure sheet #21 (official PDF)",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf"
+  },
+  "V_S22": {
+   "label": "Venetian DSE IV structure sheet #22 (official PDF)",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_22.pdf"
+  },
+  "V_S23": {
+   "label": "Venetian DSE IV structure sheet #23 (official PDF)",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_23.pdf"
+  },
+  "V_S24": {
+   "label": "Venetian DSE IV structure sheet #24 (official PDF)",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_24.pdf"
+  },
+  "V_S25": {
+   "label": "Venetian DSE IV structure sheet #25 (official PDF)",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_25.pdf"
+  },
+  "V_S26": {
+   "label": "Venetian DSE IV structure sheet #26 (official PDF)",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_26.pdf"
+  },
+  "V_S27": {
+   "label": "Venetian DSE IV structure sheet #27 (official PDF)",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_27.pdf"
+  },
+  "V_S28": {
+   "label": "Venetian DSE IV structure sheet #28 (official PDF)",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_28.pdf"
+  },
+  "V_S29": {
+   "label": "Venetian DSE IV structure sheet #29 (official PDF)",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_29.pdf"
+  },
+  "V_S30": {
+   "label": "Venetian DSE IV structure sheet #30 (official PDF)",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_30.pdf"
+  },
+  "V_S31": {
+   "label": "Venetian DSE IV structure sheet #31 (official PDF)",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_31.pdf"
+  },
+  "V_S32": {
+   "label": "Venetian DSE IV structure sheet #32 (official PDF)",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_32.pdf"
+  },
+  "V_S33": {
+   "label": "Venetian DSE IV structure sheet #33 (official PDF)",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_33.pdf"
+  },
+  "V_S34": {
+   "label": "Venetian DSE IV structure sheet #34 (official PDF)",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_34.pdf"
+  },
+  "V_S35": {
+   "label": "Venetian DSE IV structure sheet #35 (official PDF)",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf"
+  },
+  "V_S36": {
+   "label": "Venetian DSE IV structure sheet #36 (official PDF)",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_36.pdf"
+  },
+  "V_S37": {
+   "label": "Venetian DSE IV structure sheet #37 (official PDF)",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_37.pdf"
+  }
+ }
+}
