@@ -1,0 +1,25 @@
+<!-- captured 2026-11-17T23:05:00Z from https://aria.mgmresorts.com/en/terms-and-conditions.html (page footer: "Updated on August 26, 2026")
+     excerpt capture of the cost-bearing clauses. The scheduled sync (tools/sync_official_sources.py, key A_TERMS) rewrites this file with the
+     full page text and its byte hash on its next run. -->
+
+# Hotel Reservation Terms and Conditions
+
+By booking this reservation, you confirm your agreement to these terms and conditions. Other terms and conditions may also apply depending upon your specific offer. If you do not agree to all of these terms and conditions, please contact Room Reservations at 866.359.7757.
+
+Daily Resort Fee. A daily resort fee of $55.00 plus applicable tax will be applied to all reservations. The resort fee includes: In-room wireless internet access; unlimited local, domestic long distance (the 50 United States and DC) and toll-free calls; access to Paramount+ with SHOWTIME On Demand via in-room television; airline boarding pass printing; digital newspaper and magazine access; and 24-hour cardio center access for guests 18+. Amenities, such as cardio center access, are subject to availability and guest demand. *ARIA Sky Suite guests receive additional amenities, inclusive of exclusive access to Sky Pool. Daily resort fees will be waived (i.e., removed from the bill at check out) for eligible members with Gold+ Tier Level status with eligible reservations (subject to eligibility and other terms and conditions available at https://www.mgmresorts.com/en/mgm-rewards/daily-resort-fee-waiver.html)
+
+Check In/Check Out. Check in time is 3:00 pm and check out time is 11:00 am.
+
+Additional Occupant Charge. There is an additional charge of $50 plus tax per occupant, per night, above 2 occupants per room.
+
+* Taxes. Estimated taxes are based on current tax rates which are subject to change as required by applicable law. Taxes may include lodging tax, sales tax, entertainment tax, etc. Lodging taxes apply to the basic room rate, any resort fee, additional per occupant charges, upgrades, as well as any other charges as required by applicable law. Additional taxes, if any, will be due upon check-out.
+
+Refund of Deposit. The first night's deposit is fully refundable provided a timely notice of cancellation is received by Room Reservations at 866.359.7757 at least 72 hours prior to the arrival date, unless specifically excluded by booked offer. Cancellations less than 72 hours before your scheduled arrival (and no shows) will result in a forfeiture of the first night's deposit. If you have a complimentary stay (or at least the first night is complimentary) and do not cancel at least 72 hours prior to your scheduled arrival (or do not show up), then you will be charged a $165 mid-week or $200 weekend (i.e., Friday, Saturday or Sunday night) cancellation fee (as determined by the first night of your scheduled stay), plus applicable taxes.
+
+Credit/Debit Card Charges. We will place an authorization against this account to cover applicable charges for room, tax and resort fees, as well as a per day incidental amount of $150 for Deluxe Rooms, $250 for Tower Suites, $350 for Sky Suites and $500 for Villas to allow you access to room charging privileges.
+
+Parking. For information about parking, please visit https://www.aria.com/parking.
+
+Miscellaneous. Room rates, resort fees, additional occupant charges, cancellation fees, and cleaning fees are based on rates and fees applicable at time of booking your reservation, not at time of check-in (unless date of booking/check-in are the same or as otherwise provided herein). Applicable taxes are computed at the rate required by law at the time of the applicable transaction.
+
+Updated on August 26, 2026

@@ -1,0 +1,26 @@
+<!-- captured 2026-11-17T23:05:00Z from https://bellagio.mgmresorts.com/en/terms-and-conditions.html (page footer: "Updated on August 26, 2026")
+     excerpt capture of the cost-bearing clauses. The scheduled sync (tools/sync_official_sources.py, key B_FEE) rewrites this file with the
+     full page text and its byte hash on its next run. The page it replaces, https://bellagio.mgmresorts.com/en/hotel/resort-fee.html, is a
+     live 404 ("Oops! We can't find that page") as of 2026-11-17. -->
+
+# Hotel Reservation Terms and Conditions
+
+By booking this reservation, you confirm your agreement to these terms and conditions. Other terms and conditions may also apply depending upon your specific offer. If you do not agree to all of these terms and conditions, please contact Room Reservations at 888.987.6667.
+
+Daily Resort Fee. A daily resort fee of $55.00 plus applicable tax will be applied to all reservations. The resort fee includes: In-room wireless internet access; unlimited local, domestic long distance (the 50 United States and DC) and toll-free calls; access to Paramount+ with SHOWTIME On Demand via in-room television; airline boarding pass printing; digital newspaper and magazine access; and fitness center access for guests 18+. Amenities, such as fitness center access, are subject to availability and guest demand. Daily resort fees will be waived (i.e., removed from the bill at check out) for eligible members with Gold+ Tier Level status with eligible reservations https://www.mgmresorts.com/en/mgm-rewards/daily-resort-fee-waiver.html)
+
+Additional Occupant Charge. There is an additional charge of $50 plus tax per occupant, per night, above 2 occupants per room.
+
+* Taxes. Estimated taxes are based on current tax rates which are subject to change as required by applicable law. Taxes may include lodging tax, sales tax, entertainment tax, etc. Lodging taxes apply to the basic room rate, any resort fee, additional per occupant charges, upgrades, as well as any other charges as required by applicable law. In the event that lodging is part of a package offering that includes food & beverage, entertainment, or other taxable or nontaxable goods and services, the applicable taxes, if any, will be computed on each component of the package in accordance with applicable tax laws and will be shown on your final invoice at check-out. Additional taxes, if any, will be due upon check-out.
+
+Refund of Deposit. The first night's deposit is fully refundable provided a timely notice of cancellation is received by Room Reservations at 888.987.6667 at least 72 hours prior to the arrival date, unless specifically excluded by booked offer. Cancellations less than 72 hours before your scheduled arrival (and no shows) will result in a forfeiture of the first night's deposit. If you have a complimentary stay (or at least the first night is complimentary) and do not cancel at least 72 hours prior to your scheduled arrival (or do not show up), then you will be charged a $165 mid-week or $200 weekend (i.e., Friday or Saturday night) cancellation fee (as determined by the first night of your scheduled stay), plus applicable taxes.
+
+Credit/Debit Card Charges. We will place an authorization against this account to cover applicable charges for room, taxes and resort fees, as well as a $150 incidental amount per day to allow you access to room charging privileges.
+
+Smoking Charges. Rooms and suites are non-smoking (except for certain designated accommodations in the Bellagio Tower). If there is evidence of smoking in your non-smoking accommodation, you will incur a minimum deep cleaning fee of $500 for rooms and $1,000 for suites charged to your hotel account, plus applicable taxes.
+
+Parking. For information about parking, please visit https://www.bellagio.com/parking.
+
+Miscellaneous. Room rates, resort fees, additional occupant charges, cancellation fees, and cleaning fees are based on rates and fees applicable at time of booking your reservation, not at time of check-in (unless date of booking/check-in are the same or as otherwise provided herein). Applicable taxes are computed at the rate required by law at the time of the applicable transaction.
+
+Updated on August 26, 2026

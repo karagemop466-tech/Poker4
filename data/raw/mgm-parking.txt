@@ -1,0 +1,36 @@
+<!-- captured 2026-11-17T23:20:00Z from https://www.mgmresorts.com/en/things-to-do/parking.html (the page https://www.bellagio.com/parking and
+     the ARIA hotel terms page both send you here). Excerpt capture of the rate tables; the scheduled sync
+     (data/tracked-sources.json key MGM_PARKING) rewrites this file with the full page text and its byte hash. -->
+
+Parking Rates
+
+Valet Parking Daily Rates
+
+Bellagio, ARIA, Vdara, The Cosmopolitan of Las Vegas, MGM Grand, Mandalay Bay, W Las Vegas, Park MGM, The Reserve at Park MGM, New York-New York, and Luxor
+
+- Mon - Thurs (Weekdays): $40
+- Fri - Sun (Weekends): $40
+
+_Prices may be higher during special events._
+_Credit card and contactless payment only._
+
+Self Parking Rates
+
+Bellagio, ARIA, Vdara, The Cosmopolitan of Las Vegas, MGM Grand, Mandalay Bay, W Las Vegas, Park MGM, The Reserve at Park MGM, New York-New York, Luxor, and Excalibur
+
+| Parking Duration | Mon - Thurs (Weekdays) | Fri - Sun (Weekends) |
+| Over 0 to 24 hours | $20 | $25 |
+| Over 24 hours daily rate for each additional day or fraction thereof | $20 | $25 |
+| Registered Hotel Guest | $20 | $20 |
+
+_Prices may be higher during special events._
+_Subject to Parking Terms and Conditions below.* Terms and conditions vary for registered hotel guests vs. others (e.g. Weekend rates do not apply to registered hotel guests)._
+
+For MGM Rewards Members
+
+Self-parking is complimentary for MGM Rewards Members with current level of Pearl, Gold, Platinum and NOIR.
+Valet-parking is complimentary for current Gold, Platinum and NOIR MGM Rewards Members.
+
+For Registered Hotel Guests
+
+Your 24-hour parking fee provides you with in-out privileges within the same parking type (self or valet) across all MGM Resorts Las Vegas destinations within the same 24 hour period (subject to availability). Use your room key to access all parking facilities until 11:59 p.m. on the day of check out.
