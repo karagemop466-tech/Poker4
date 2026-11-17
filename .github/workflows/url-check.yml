@@ -44,7 +44,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A -- data/url-checks.json data/structure-audit.json data/schedule-snapshot.json data/change-log.json
+          git add -A -- data/url-checks.json data/structure-audit.json data/schedule-snapshot.json data/change-log.json data/hotel-facts.json data/raw
           if git diff --cached --quiet; then
             echo "No source changes to record."
           else

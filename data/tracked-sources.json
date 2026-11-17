@@ -3,7 +3,8 @@
   "purpose": "Every official URL the dashboard cites. tools/sync_official_sources.py re-checks each one on a schedule and records content changes.",
   "generated": "2026-11-17",
   "owner": "arena/e74e00fd-poker4",
-  "rule": "Only official operator/property domains are tracked. A tracked URL that 404s is reported as unreachable \u2014 it is never replaced by a third-party mirror."
+  "rule": "Only official operator/property domains are tracked. A tracked URL that 404s is reported as unreachable \u2014 it is never replaced by a third-party mirror.",
+  "touch": "retrigger-sync"
  },
  "sources": [
   {
