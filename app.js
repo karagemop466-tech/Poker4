@@ -50,6 +50,23 @@
     return $$(panel ? "tr.ev-row" : ".nope", panel || document);
   }
 
+  var WD = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+  /* Which weekdays a date range covers. Recurring rows print weekdays ("Nightly Monday-Sunday"),
+     never calendar dates, so they can only be matched against a range by the weekday names — and a
+     range with one end missing is read as that single day, never as an open-ended sweep. */
+  function weekdaysIn(from, to) {
+    var a = from || to, b = to || from;
+    if (!a || !b) return null;
+    var start = new Date(a + "T00:00:00Z"), end = new Date(b + "T00:00:00Z");
+    if (isNaN(start) || isNaN(end) || end < start) return null;
+    var out = {}, n = 0;
+    for (var d = new Date(start); d <= end && n < 400; d.setUTCDate(d.getUTCDate() + 1), n++) {
+      out[WD[d.getUTCDay()]] = 1;
+    }
+    return out;
+  }
+
   function val(id) { var el = $("#" + id); return el ? el.value : ""; }
   function chk(id) { var el = $("#" + id); return el ? el.checked : false; }
 
@@ -61,11 +78,22 @@
       total++;
       var ev = byId[tr.getAttribute("data-id")] || {};
       var date = tr.getAttribute("data-date") || "";
+      var days = (tr.getAttribute("data-days") || "").split(",").filter(Boolean);
       var ok = true;
       if (venue && tr.getAttribute("data-venue") !== venue) ok = false;
       if (ok && (from || to)) {
-        if (!date) { ok = false; undated++; }
-        else { if (from && date < from) ok = false; if (to && date > to) ok = false; }
+        if (date) {
+          if (from && date < from) ok = false;
+          if (to && date > to) ok = false;
+        } else if (days.length) {
+          var covered = weekdaysIn(from, to);
+          if (!covered) { ok = false; undated++; }
+          else {
+            var hit = false;
+            for (var di = 0; di < days.length; di++) if (covered[days[di]]) { hit = true; break; }
+            if (!hit) ok = false;
+          }
+        } else { ok = false; undated++; }
       }
       if (ok && singleOnly && tr.getAttribute("data-single") !== "1") ok = false;
       if (ok && hideUnconf && !ev.rankable && !(ev.rules && ev.rules.fee && ev.rules.fee.status === "confirmed") && !ev.guarantee_usd) ok = false;
@@ -80,7 +108,7 @@
     var c = $("#f-count");
     if (c) {
       c.textContent = (total === 0 ? "no rows in this tab" : shown + " of " + total + " rows shown") +
-        (undated ? " (" + undated + " row(s) hidden: no date printed on the calendar)" : "");
+        (undated ? " (" + undated + " row(s) hidden: no date and no printed weekday, so they cannot be placed on a day)" : "");
     }
   }
 
@@ -201,7 +229,8 @@
   if (calc && D && D.hotels) {
     var hotels = D.hotels || [];
     var hSel = $("#calc-hotel"), rSel = $("#calc-rate"), fSel = $("#calc-fee"),
-        pSel = $("#calc-park"), nIn = $("#calc-nights"), rIn = $("#calc-rooms");
+        pSel = $("#calc-park"), nIn = $("#calc-nights"), rIn = $("#calc-rooms"),
+        aIn = $("#calc-arrive"), gIn = $("#calc-guests");
 
     function hotelFor(id) {
       for (var i = 0; i < hotels.length; i++) if (hotels[i].id === id) return hotels[i];
@@ -245,6 +274,7 @@
       var h = hotelFor(hSel.value);
       var rate = num(rSel.value), fee = num(fSel.options[fSel.selectedIndex] ? fSel.options[fSel.selectedIndex].getAttribute("data-fee") : "");
       var park = num(pSel.value), nights = num(nIn.value) || 0, rooms = num(rIn.value) || 1;
+      var guests = num(gIn && gIn.value) || 2;
       var entries = 0, count = 0;
       $$(".ev-pick").forEach(function (c) {
         if (c.checked) { entries += num(c.getAttribute("data-cost")) || 0; count++; }
@@ -259,10 +289,36 @@
       } else {
         $("#t-night").textContent = money(night) + " (" + money(rate) + " rate + " + money(fee) + " fee, ×1.1338 room tax)";
       }
-      var hotelTotal = night == null ? null : night * nights * rooms + (park == null ? 0 : park * nights);
+      var occ = h.occupancy_charge && h.occupancy_charge.amount_usd;
+      var occNight = (guests > 2 && occ) ? (guests - 2) * occ * (1 + TAX) : 0;
+      var hotelTotal = night == null ? null
+        : night * nights * rooms + (park == null ? 0 : park * nights) + occNight * nights * rooms;
+      if (occNight) notes.push((guests - 2) + " extra occupant(s) at the published $" + occ +
+        " each, per night, plus room tax = " + money(Math.round(occNight * 100) / 100) + " a night, x" +
+        nights + " night(s) x " + rooms + " room(s) — the property's own terms, not an estimate");
+      if (guests > 2 && !occ) notes.push("more than two guests in the room, but this property publishes no per-occupant charge on the page read — nothing was added");
+      var bookLink = $("#calc-booklink");
+      if (bookLink) {
+        var tpl = h.booking_dates_url && h.booking_dates_url.template;
+        var arr = aIn && aIn.value;
+        if (tpl && arr && nights) {
+          var dep = new Date(arr + "T00:00:00Z"); dep.setUTCDate(dep.getUTCDate() + nights);
+          var url = tpl.replace("{adults}", guests).replace("{arrival}", arr)
+                       .replace("{departure}", dep.toISOString().slice(0, 10));
+          bookLink.innerHTML = "<a href='" + esc(url) + "' target='_blank' rel='noopener'>open this property's own booking calendar for " +
+            esc(arr) + " → " + esc(dep.toISOString().slice(0, 10)) + ", " + esc(String(guests)) + " guest(s) ↗</a>" +
+            "<span class='mini-note'> " + esc((h.booking_dates_url && h.booking_dates_url.basis) || "") + "</span>";
+        } else if (tpl && !arr) {
+          bookLink.innerHTML = "<span class='mini-note'>add an arrival date and the link to this property's booking calendar is built for your dates and occupancy.</span>";
+        } else {
+          bookLink.innerHTML = "<span class='mini-note'>" + esc(h.property) + " publishes no date-carrying booking-link pattern on the pages read, so dates are typed into its own engine: " +
+            (h.booking_link ? "<a href='" + esc(h.booking_link) + "' target='_blank' rel='noopener'>official booking engine ↗</a>" : "no official booking page reached") + "</span>";
+        }
+      }
       $("#t-hotel").textContent = hotelTotal == null ? "cannot compute"
         : money(Math.round(hotelTotal * 100) / 100) + " (" + nights + " night" + (nights === 1 ? "" : "s") + " × " + rooms + " room" + (rooms === 1 ? "" : "s") +
-          (park == null ? "" : " + " + money(park * nights) + " parking") + ")";
+          (park == null ? "" : " + " + money(park * nights) + " parking") +
+          (occNight ? " + " + money(Math.round(occNight * nights * rooms * 100) / 100) + " extra-occupant charge" : "") + ")";
       var grand = hotelTotal == null ? entries : hotelTotal + entries;
       $("#t-grand").textContent = money(Math.round(grand * 100) / 100) + (hotelTotal == null ? " (entries only — hotel incomplete)" : "");
       var rn = rSel.options[rSel.selectedIndex];
@@ -272,7 +328,7 @@
       if (book && h.booking_link) { book.href = h.booking_link; book.target = "_blank"; book.rel = "noopener"; }
     }
     hSel.addEventListener("change", function () { var h = hotelFor(hSel.value); fillRates(h); fillParking(h); recalc(); });
-    [rSel, fSel, pSel, nIn, rIn].forEach(function (el) {
+    [rSel, fSel, pSel, nIn, rIn, aIn, gIn].forEach(function (el) {
       if (el) { el.addEventListener("input", recalc); el.addEventListener("change", recalc); }
     });
     document.addEventListener("change", function (e) { if (e.target.classList.contains("ev-pick")) recalc(); });

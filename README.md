@@ -205,3 +205,26 @@ predecessor at `prior_root_dashboard/`). Nothing is deleted from history or from
 `README.md` on `main` briefly carried committed conflict-marker lines (an `<<<<<<< HEAD` / `>>>>>>> origin/main`
 pair inside the "Scheduled monitors" section). The integration README above supersedes it and is marker-free.
 Logged as irregularity F18 on the Flagged page.
+
+## 2026-11-17 policy notes added by this pass (source precedence and dead URLs)
+
+- **A fee published by a hotel is taken from the property's reservation-terms page, not its marketing fee page.**
+  Bellagio's and ARIA's `$55.00 plus applicable tax` daily resort fee, the `$50 plus tax per occupant, per night, above 2
+  occupants` charge and the 72-hour cancellation deadline come from `bellagio.mgmresorts.com/en/terms-and-conditions.html`
+  and `aria.mgmresorts.com/en/terms-and-conditions.html` (footer `Updated on August 26, 2026`); parking comes from the
+  operator rate table at `mgmresorts.com/en/things-to-do/parking.html` that those pages point to. Bellagio's
+  `/en/hotel/resort-fee.html` is a live HTTP 404 — the fee figure is *not* taken from a third-party site to fill it.
+- **When a room's summary article and its schedule document disagree, both sentences are published and the row is flagged.**
+  The Caesars Palace daily slate was rebuilt from the property's own 2026 flyer
+  (`clv-poker-daily-nlh-tournament-flyer-2026.pdf`), which prices 2 PM and 9 PM at **$160** and splits the fee
+  ($115/$45) while 10 AM and 6 PM stay $100 ($70/$30); Caesars' July 2026 article says "Every event carries a $100
+  buy-in". Nothing silently picked one.
+- **A dead official URL is repointed only to a live successor on the same operator's own path, and the dead one stays on the
+  record** in `data/url-checks.json` with a `superseded_by` note, so the change is auditable on `review.html`.
+- **Recurring slates publish their printed weekday.** Wynn's daily poster, Bellagio's weekend sheets and Caesars' flyer carry
+  no calendar date, so their rows now state the weekdays the document prints (`data.site-events.json` → `recurrence`) and
+  `tournaments.html`'s date filter can keep them when the chosen range covers one of those weekdays. A row with neither a
+  date nor a printed weekday is still hidden by a date filter and says so.
+- **The 8 AM–close plan lists the recurring evening slates as options, never as booked entries**: each day shows which
+  weekday-printed events start at or after the lead event's printed registration deadline, with the arithmetic sentence and
+  no invented finish time.
