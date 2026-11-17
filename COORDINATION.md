@@ -467,6 +467,9 @@ Claim note: all prior sessions' tasks are marked done and their PRs merged; no t
 
 - 2026-11-17: **Second merge conflict on PR #33** after main gained PRs #31/#35/#36/#37/#39/#40 (b040f8dd, 722a84d2, 08f07d1d). Conflict set: root pages + `flagged.html` + `venues/*` + `COORDINATION.md`. **Resolution (nothing discarded):** main's 722a84d2 "Rebuild verified dashboard" root pages preserved verbatim under `archive/722a84d2_root/` (following the `archive/` convention); root pages remain this session's integrated dashboard (identical builder/verification as round 1: `tools/build_root_site.py` + `tools/verify_root_site.py`, 16 pages, 0 errors). All other-session files untouched.
 
+- 2026-11-17: **PR #33 merged** (`arena/0f6c627b-poker4` → `main`): https://github.com/karagemop466-tech/Poker4/pull/33 — merge commit `9dee237b9a69b4e6b81726dbebaa66ba502126a2`, merged via `gh pr merge --merge` without waiting for approval. CI gate "Poker4 site build + verification gate" passed (run 43997697947). **Pages deploy confirmed**: "Deploy static dashboard to GitHub Pages" (run 43997697901) + "pages build and deployment" (run 43997697010) both success. Live check: https://karagemop466-tech.github.io/Poker4/ serves the integrated executive summary (118 verified rows, 37/37 sheets, 14 walking pairs, flags F-01..F-10 published on the Flagged page). Integration result: merged; conflicts resolved twice without discarding any session's work (see Integration logs); flagged items published, not blocking.
+
+
 ---
 
 ## Session arena/d1d02f59-poker4 (session `d1d02f59`) — feature + re-verification + integration
