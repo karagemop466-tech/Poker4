@@ -1428,3 +1428,37 @@ short set and was rewritten to the measured capture, with the discrepancy record
 111 rate-log lines · 66 sources · 0 warnings), `tools/verify_root_site.py`, `scripts/verify.py`,
 `scripts/linkcheck.py` (30 pages), `scripts/verify_markup.py`, `node --check app.js`,
 `tools/verify_poker4.py`, `poker4_monitor --selftest`, plus a walk-reconciliation assertion.
+## Session arena/60ade3e8-poker4 — merge + deploy record (2026-11-17)
+
+- **PR #77** (`arena/60ade3e8-poker4` → `main`) opened, CI `check` / `integrity` / `verify` all **pass** on the pushed head,
+  `mergeStateStatus: CLEAN`, merged with `gh pr merge 77 --merge` → merge commit **`d81f9ae30d55e7cca5920fd09758c391e42f9cc7`**
+  at 22:59:09Z. No `--auto`, no force, no other branch touched.
+- Post-merge Actions on `main`: `Deploy static dashboard to GitHub Pages` **success**, `Verify the published site` **success**,
+  `Poker4 site build + verification gate` **success**, `Official source sync + change monitor` **success** — all for `d81f9ae`;
+  `gh api repos/.../pages` reports `built`/`building` for the follow-on sync run (`708c868`), which is the normal queue.
+- Live check on Pages after deploy (`https://karagemop466-tech.github.io/Poker4/tournaments.html`): the banner now reads
+  **0 official URLs unreachable** with snapshot `2026-11-17T22:53:45Z`, i.e. the two repointed URLs are being answered by the
+  scheduled lane, so R6 is closed — `urls_failed` did clear on the next run rather than 404-ing on a new URL.
+- **Follow-up commit `af78ccf`** (second PR): the per-room "Sources behind these rows" sentence on `tournaments.html` printed
+  "0 Caesars daily rows" and a hard-coded "37 structure sheets" — both were counting only one tab / a stale constant while the
+  four corrected Caesars rows live on the spend-advantage tab. Numbers are now derived from the data (94 Venetian rows + their
+  38 linked sheets, 148 dated + 4 undated Wynn, 3 Bellagio, 4 Caesars) and the sentence says tab placement outright.
+  Gates re-run on that state: `verify_root` 16 pages · 253 rows · 108 rate-log lines · 66 sources · 0 warnings; `verify_markup`
+  37 pages 0 problems; `linkcheck` 30 pages; `verify.py` OK; `node --check app.js` OK.
+- Nothing in this round was adopted from S10–S12 or Q10: they stay proposals for you to choose, and the code contains no
+  cross-document diff, no automatic terms-page standardisation and no automatic recurring-slate counting.
+
+## Session arena/60ade3e8-poker4 — third merge + a capture-shape repair (2026-11-17, after 23:00Z)
+
+The 22:59:54Z scheduled sync (`708c868`) **re-captured** `data/raw/caesars-daily-flyer-2026.txt` over my hand-typed excerpt.
+Its `pdftotext` layout prints the schedule table **whitespace-separated** (`10 AM $100 $50 20,000 20 Minutes $1,000`) rather than
+pipe-separated, so `tools/room_extract.py` parsed 0 of 4 rows and hard-stopped, which is exactly what the guard is for. The parser
+now accepts both shapes (`sep = (?:\s*\|\s*|\s+)`) in the printed column order, and the rows are re-derived from the machine capture —
+provenance improved, because the published prices are now reproducible from what the scheduled lane fetches rather than from a
+transcription. Verified after the change: all four seats read back as `$100/$160/$100/$160` with `30/45` house fee, `70/115` to the
+pool and `$1,000` guarantee each, `row_excerpt` = the real PDF line. Recorded as an irregularity rather than fixed silently:
+**a hand-made `data/raw/*` file is not a capture** — from now on the sync's own output is the only thing the parser should be
+written against, and any new source should be added to `data/tracked-sources.json` and let one sync run create the file.
+
+Gates on the merged tree: `verify_root` 16 pages · 253 rows · **111** rate-log lines · 66 sources · 0 warnings; `verify_markup`
+37 pages 0 problems; `linkcheck` 30 pages; `verify.py` OK; `validate_site.py` OK; `node --check app.js` OK; rebuild → clean.
