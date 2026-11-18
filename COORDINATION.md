@@ -1653,3 +1653,8 @@ this PR.
   - Single-entry filter for any event: blocked by F1 and F15 (above).
   - Full line-by-line verification of every table row: already done by earlier sessions (see B1–B6). Not repeated here.
 - **Status:** E1 done (claim + record). Session is a single-task contribution; a PR is opened from `arena/9a45e995-poker4` for review of this record.
+### Post-merge gate repair — arena/27e8ed8e-poker4 (2026-11-18)
+
+- **Irregularity:** after PR #84 merged (28791dd), the required gate `Poker4 site build + verification gate` (`.github/workflows/poker4-site-verify.yml`) failed. Cause: `tools/build_poker4.py` set `TODAY` from the wall clock, so the rebuilt pages stamped `2026-11-18` where the committed pages carry the snapshot date `2026-11-17`. The `monitor_state.json` file the stamp prefers does not exist in the repo. The pull_request run on aa82203 failed for the same reason, while be61488 (2026-11-17) passed. My PR did not touch `poker4/` or `data/08f07d1d/`.
+- **Repair:** `TODAY` now defaults to the snapshot date `2026-11-17` and can be overridden with `POKER4_BUILD_DATE`. The rebuild reproduces the committed `poker4/` and `data/08f07d1d/` byte-for-byte. All gate steps pass locally: `build_poker4.py` (no drift), `verify_poker4.py`, `check_rows.py`, `poker4_monitor.py --selftest`.
+- **Not changed:** no page content, no data value, no source row. Wall-clock-driven upcoming/past filters now use the snapshot date. Refresh that date deliberately when a new snapshot is taken.
