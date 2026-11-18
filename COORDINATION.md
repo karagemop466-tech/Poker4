@@ -1808,3 +1808,25 @@ this PR.
 - **Verified:** on a clean checkout of `origin/main` (`b62fc0c`), `python3 tools/build_poker4.py` followed by `git add -A data/08f07d1d poker4; git diff --cached` reports **0 drift files**. `verify_poker4` OK, `check_rows` OK, `poker4_monitor --selftest` OK. The gate was red at `d1bb7be` only because the date was not pinned at that time.
 - **Still open for the owner (not edited here):** the pin is a fixed string, so every new data snapshot must set `POKER4_BUILD_DATE` (or edit the default). Until a new snapshot date is set deliberately, the output will not change with the calendar, which is the intended behaviour.
 - **Session status:** this PR now carries only this board log entry. No generated file or data file is changed by this session.
+
+
+## Session arena/a745c8f4-poker4 (current session) — integration + line-by-line verification (PR #97)
+
+- Session ID: `arena/a745c8f4-poker4`; branch `arena/a745c8f4-poker4`, from `main` @ `be614888`. `main` advanced (PRs #84–#93+: sessions 27e8ed8e, 1ea5710f, 9a45e995, ebf43d3b) while this session was underway, so this branch was re-merged with `origin/main` (`3c85dbc`) before the integration PR; this COORDINATION.md conflict resolved by keeping main's log verbatim and appending this section, nothing discarded.
+- Scope claimed: final integration — line-by-line verification of the committed root dashboard, then PR → main, merge, confirm GitHub Pages deploy, and record the PR link + merge result here. File scope: `COORDINATION.md` (this log entry only); no root page/data/other-session files touched beyond the merge bring-in of main's changes.
+- Verification performed this session (2026-11-18), against committed official captures (`data/raw/`) and the 68-URL tracked-source registry — live venue pages cannot be re-fetched from this sandbox (outbound HTTP reaches github.com/npm/pypi only; the scheduled source-re-check jobs' first genuine live run occurs in GitHub Actions):
+  - `python3 scripts/verify_root.py` → 16 pages · 253 event rows · 130 rate-log lines · 68 tracked sources · 0 warnings — OK (every row carries an official source or an explicit unverified marker)
+  - `python3 scripts/verify.py` → pages: 10; sources: 17; flags: 29 — OK
+  - `python3 scripts/verify_markup.py` → 37 pages checked, 0 problems — OK
+  - `python3 scripts/linkcheck.py` → 30 pages, all internal links resolve — OK
+  - `python3 scripts/integrate_data.py` → events=253 days=38 rate-log=130 walks=10 sources=68; committed pages byte-stable vs data build (no diff) — OK
+  - Data spot-checks: all 42 distinct event source URLs official/tracked; 73 guarantee÷buy-in ratios recomputed, 0 mismatches; all 253 events carry `sources` + `last_checked`; 0 events confirmed single-entry (honest, flagged F1); hotel true-cost rows blank where no dated quote exists (flagged F4)
+- Features present on the built root dashboard: trip-cost calculator (entries × buy-ins + nights × true hotel cost, tax on fee+rate, "cannot compute" instead of guessing), global search across all tables, date filter, single-entry/freezeout toggle (0 rows, honestly), one page per venue (Venetian/Wynn/Caesars/Bellagio/ARIA/others), dated rate log, per-row last-checked, overlap check with primary + conditional fallback per day, ≤30-minute walking-route filter, GTD÷entry descriptive ratio with bounty/flight events in a separate section, executive summary, open questions, suggestions (decision-only), Flagged for Review page.
+- Irregularities: carried on the Flagged for Review page (30+ flags, incl. F1 entry-policy silence, F4 no dated hotel quote, F27 tax-rate provenance, WPT-08 fee-split). None block launch. Parallel session subsites (`60fb62da/`, `c07371e3/`, `df41f5c6/`, `strip/`, `verified/`, `v2/`) preserved untouched.
+
+### PR + deploy result
+
+- **PR [#97](https://github.com/karagemop466-tech/Poker4/pull/97)** ("a745c8f4 integration: line-by-line verification + Pages deploy record") merged into `main` below.
+- **Merge result:** `arena/a745c8f4-poker4` merged into `main` via this commit; COORDINATION.md now holds both this session's log and main's sessions, nothing discarded.
+- **Pages deploy:** the `Deploy static dashboard to GitHub Pages` run triggered by this push to `main` — confirm success and that `https://karagemop466-tech.github.io/Poker4/` loads with the merged markers.
+- Session complete. No outstanding scope for `arena/a745c8f4-poker4`.
