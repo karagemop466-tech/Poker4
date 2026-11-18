@@ -1,0 +1,58 @@
+{
+ "meta": {
+  "session": "arena/75f8b185-poker4",
+  "retrieved": "2026-11-18"
+ },
+ "checks": [
+  {
+   "item": "DSE IV Event 47 ($2,200 PokerAtlas Championship Title Event) - schedule rows",
+   "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf (read 2026-11-18, chunks 1-2)",
+   "printed": [
+    "Dec 12 10:10 AM, reg closes 4:55 PM, $1 MILLION, 40,000 chips, 40 min (1A)",
+    "Dec 12 6:10 PM, reg closes 11:10 PM, $1 MILLION, 40,000 chips, 30 min (1B)",
+    "Dec 13 1:00 PM Day 2 restart",
+    "Dec 14 11:00 AM Day 3 restart"
+   ],
+   "stored_match": true
+  },
+  {
+   "item": "DSE IV Event 47 structure sheet 21 (1A) - fee, stack, late reg, rules",
+   "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf (read 2026-11-18)",
+   "printed": [
+    "Starting chips 40,000; level duration 40 min; late registration 9 levels + break (~4:55 PM); guarantee $1,000,000",
+    "Rule 7: $225 of the $2,200 buy-in withheld for house fees; prize pool $1,975",
+    "Rule 8: 'Any player who bags chips for Day 2 may not play a subsequent flight.' (a subsequent-flight clause, NOT a re-entry or add-on clause; the rule on re-entry stays 'not stated in sheet')"
+   ],
+   "stored_match": true
+  },
+  {
+   "item": "Hotel resort fee / tax context - Wynn official contact page",
+   "source": "https://www.wynnlasvegas.com/about-us/contact-information (read 2026-11-18)",
+   "printed": [
+    "'WYNN LAS VEGAS AND ENCORE HOTEL, 3131 Las Vegas Blvd. South'"
+   ],
+   "stored_match": true,
+   "note": "Official page lists one shared address for Wynn and Encore; third-party listings put Encore at 3121 (see F32)."
+  },
+  {
+   "item": "Clark County room tax 13.38% (Primary Gaming Corridor)",
+   "source": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:7436500e-cac4-420a-b23a-02d3fec69900/original/as/room-tax-increase-transient-lodging-letter-111616.pdf (Department of Business License letter, dated November 15, 2016; read 2026-11-18)",
+   "printed": [
+    "'Transient lodging establishments located within the Primary Gaming Corridor will impose a combined transient lodging tax rate of 13.38 percent. [12.0% + 0.5% + 0.88% = 13.38%]'",
+    "'Transient lodging establishments located within the stadium district but outside of the Primary Gaming Corridor ... 13.00 percent.'"
+   ],
+   "stored_match": true,
+   "note": "Letter is from 2016. It is the official county document that sets the rate, but the letter itself does not say the rate is current in 2026; property-by-property PGC map membership is still unchecked (F27)."
+  },
+  {
+   "item": "Wynn daily structures PDF - currency of the document",
+   "source": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+   "printed": [
+    "The PDF prints no revision or effective date. The CDN asset version (v1752011191) implies a July 2025 upload.",
+    "The live Wynn poker page (read 2026-11-18) links this same asset under 'Structures' for the Daily Tournaments."
+   ],
+   "stored_match": true,
+   "note": "Currency is supported by the live link only. The asset date is recorded as flag F33."
+  }
+ ]
+}
