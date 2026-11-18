@@ -1628,3 +1628,28 @@ this PR.
 | R2 | Live spot-check of official sources vs committed captures | done | arena/27e8ed8e-poker4 | `data/verify/27e8ed8e-spotcheck.md` | Venetian poker room page (venetianlasvegas.com/resort/casino/poker.html); Wynn WPT World Championship structures PDF (cdn.wynnresorts.com … WPT_World_Championship_Structures.pdf), 7 event fees and re-entry lines matched | Live PDF cannot be byte-hashed from sandbox; Caesars flyer not re-read live; WPT-08 fee split still flagged |
 
 - Scope note: no root HTML, `app.js`, `style.css` or other session folders changed. Pipeline output `data/room-facts.json` changed only in its three hash fields.
+
+## Session `arena/9a45e995-poker4` — claim (2026-11-18)
+
+- **Scope claimed (single task, E1):** independent re-check of the single-entry policy blocker (flags F1 and F15) against official Venetian sources. Re-read the 2026 structure sheets that carry the entry rules, and read the official 2023/2024 sheets for comparison. Record the verbatim clauses with source URLs and retrieval dates.
+- **File scope:** `data/9a45e995/` (new) and this board (claim + log only). Shared root outputs (`index.html`, `flagged.html`, `tournaments.html`, `data/poker4.json`, etc.) are NOT edited. Their regeneration is requested from the integration session (see the log entry).
+- **Not in this session's scope:** the full task brief (new calculators, live booking lookup, Maps API, 8 AM schedule plan, per-row rule audits). Those are either already covered by earlier sessions' work or need data this sandbox cannot reach. See the log entry for the detail.
+
+### 9a45e995 — E1 result (2026-11-18)
+
+- **Result: single entry NOT confirmed (F1 and F15 stay open; no change in verdict).** Record: `data/9a45e995/entry-policy-check.json`.
+- **Sources read this session (official, live fetch):**
+  - 2026 sheet `dse_nov_2026-structure_5.pdf` (Events 02 and 12, $300 NLH, $10K GTD): no entry-count or re-entry clause. Rule 9: "All pre-registered stacks will be in play at the start of the event."
+  - 2026 sheet `dse_nov_2026-structure_10.pdf` (Event 01, $300 NLH, $75K GTD): rule 8 "Any player who bags chips for Day 2 may not play a subsequent flight." No entry count.
+  - 2024 sheet `dse_apr_2024-structure_1.pdf`: rule 9 "Registration and Re-Entry is allowed for eight (8) levels & through the break." (fetched directly)
+  - 2024 sheet `dse_jan_2024-structure_4.pdf` ($800 UltimateStack): rule 10 "Registration and Re-Entry is allowed for nine (9) levels." (from the search extract of the official URL)
+  - Official series page `dse-nov-2026.html`: schedule table only (chunk 1 of 4 read).
+- **Verification:** the record was checked against the 2 sheets read above. Note that the 2024 UltimateStack clause came from the search extract, not a separate fetch. `verify_root`, `linkcheck`, and `verify` pass on the branch (no shared file changed).
+- **Irregularity:** the earlier official sheets show re-entry as an explicit term. The 2026 sheets are silent on re-entry. Silence is not evidence of single entry, so the "single-entry" toggle must stay empty. Rows must not be labelled single-entry on this basis.
+- **Request to the integration session (not edited here):** add the record to `flagged.html` / `data/poker4.json` flag F1 as "re-checked 2026-11-18 (9a45e995): sample of 2 sheets + 2024 comparison sheets; verdict unchanged."
+- **Not done in this session (brief items, with reasons):**
+  - Hotel live-rate lookup, true-cost calculation from live rates, and Google/Apple Maps walking routes: the sandbox can reach only github.com, npm, and PyPI, and the hotel and map sites are not reachable from bash. Earlier sessions measured walks on Google Maps and recorded the values in `data/integrated/walks-google.json`. Live rates were not captured for specific dates.
+  - An 8 AM all-day schedule: no verified Strip listing starts before 10:10 AM (flag F10), so this cannot be built from official data.
+  - Single-entry filter for any event: blocked by F1 and F15 (above).
+  - Full line-by-line verification of every table row: already done by earlier sessions (see B1–B6). Not repeated here.
+- **Status:** E1 done (claim + record). Session is a single-task contribution; a PR is opened from `arena/9a45e995-poker4` for review of this record.
