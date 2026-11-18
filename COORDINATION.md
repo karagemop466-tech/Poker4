@@ -1602,8 +1602,44 @@ this PR.
 
 | ID | Task | Status | Owner | File scope | Sources / verification | Irregularities |
 |----|------|--------|-------|------------|------------------------|----------------|
-| E1 | Live spot-check of official sources that drive trip-cost inputs (Venetian resort fee, Venetian hotel terms/tax, Venetian DSE structure sheet entry wording, Wynn daily structures) | in progress | arena/e1004114-poker4 | `data/e1004114/` (new), `data/poker4.json` flags only | see log | — |
-| E2 | Stored data integrity: `data/room-facts.json` cites raw-capture SHA-256 values that differ from the committed captures; regenerate so provenance matches | in progress | arena/e1004114-poker4 | `data/room-facts.json` | `tools/room_extract.py` | committed hashes stale vs `data/raw/*` (values unchanged) |
-| E3 | Scheduled-job health: two cron workflows fail every run on main (legacy writers to `poker4/`, `data/08f07d1d/`, `data/feature/`) | in progress | arena/e1004114-poker4 | `.github/workflows/tournament-monitor.yml`, `.github/workflows/feature-recheck.yml` | run logs 44190052816, 44185555543 | cron removed from both; manual dispatch kept; active daily monitors (url-check, source-recheck, maintenance) remain |
-| E4 | Flag new irregularities on the Flagged page (`data/poker4.json`) and re-integrate | in progress | arena/e1004114-poker4 | `data/poker4.json`, generated root pages | `scripts/integrate_data.py` | see E1–E3 |
+| E1 | Live spot-check of official sources that drive trip-cost inputs (Venetian resort fee, Venetian hotel terms/tax, Venetian DSE structure sheet entry wording, Wynn daily structures) | done | arena/e1004114-poker4 | `data/e1004114/` (new), `data/poker4.json` flags only | `data/e1004114/live-spot-check-2026-11-18.md` — 5 live reads (venetianlasvegas.com resort-fee + hotel-terms + poker-room pages; DSE structure sheet 12; Wynn daily structures PDF + T&C) | F31, F32 (new); F15 wording confirmed live |
+| E2 | Stored data integrity: `data/room-facts.json` cites raw-capture SHA-256 values that differ from the committed captures; regenerate so provenance matches | done | arena/e1004114-poker4 | `data/room-facts.json` | `tools/room_extract.py` | byte-stable on two runs; `room_extract`, `c2242cb1_check_dse`, `b808eea0_check_dse_live` green | committed hashes were stale vs `data/raw/*` (values unchanged; F28) |
+| E3 | Scheduled-job health: two cron workflows fail every run on main (legacy writers to `poker4/`, `data/08f07d1d/`, `data/feature/`) | done | arena/e1004114-poker4 | `.github/workflows/tournament-monitor.yml`, `.github/workflows/feature-recheck.yml` | run logs 44190052816, 44185555543; `gh api …/actions/runs?event=schedule` | cron removed from both; manual dispatch kept; active daily monitors (url-check, source-recheck, maintenance) succeed on main | CI log for 44190052816 unreadable (EOF); the same verify step passes locally (F29) |
+| E4 | Flag new irregularities on the Flagged page (`data/poker4.json`) and re-integrate | done | arena/e1004114-poker4 | `data/poker4.json`, generated root pages | `scripts/integrate_data.py` | see E1–E3 |
 | E5 | Integration: gates green → PR → merge → Pages deploy confirmed → record here | unclaimed | arena/e1004114-poker4 | this branch, `main`, `COORDINATION.md` | all canonical gates | — |
+
+### Log — `arena/e1004114-poker4` (2026-11-18)
+
+**What was checked and how**
+
+- Remote and branch state: `main` = `be614884` = branch base; all scheduled runs on main reviewed with `gh api …/actions/runs`.
+- Gates on the tree before any change: `tools/room_extract.py`, `scripts/integrate_data.py`, `scripts/verify_root.py` (16 pages, 253 rows, 68 sources, 0 warnings), `scripts/verify.py`, `scripts/verify_markup.py` (37/0), `scripts/linkcheck.py` (30), all green.
+- Live official reads (2026-11-18), recorded in full in `data/e1004114/live-spot-check-2026-11-18.md`:
+  - Venetian resort fee page: "daily Resort Fee of $55 plus tax per night" — matches stored value.
+  - Venetian hotel terms: "Clark County Room Tax of 13.38%" and "$55 plus applicable tax" — matches; parking rules recorded (F32).
+  - Venetian poker room page: free self-parking for non-registered hotel guests who play 3+ hours — matches the captured text.
+  - Venetian DSE structure sheet 12 (Event 26, $800, $500,000 GTD): no entry/re-entry/add-on clause; rule 08 bagging sentence present (F15 wording confirmed). Single-entry remains unverified.
+  - Wynn daily structures PDF + general T&C: nightly $160 NLH 6 PM sheet prints "re-entry fee" and "re-entries, and one (1) add-on per entry" — matches the published row WYNN-DAILY-4, which is excluded from the single-entry list.
+- Stored data vs. live: no published value changed. The live read found one **incomplete summary** (`data/structure-audit.json` W_DAILY — F31); the row-level data is correct.
+
+**What was changed (this branch only)**
+
+1. `data/room-facts.json` — regenerated; only the recorded SHA-256 provenance fields changed (F28). Byte-stable on second run.
+2. `.github/workflows/tournament-monitor.yml` and `.github/workflows/feature-recheck.yml` — scheduled triggers removed; manual dispatch kept (F21, F29). Both were failing on every cron run on main; the active daily jobs (`url-check.yml`, `source-recheck.yml`, `maintenance.yml`) succeed.
+3. `data/poker4.json` — F21, F28, F29 updated; F31 and F32 added. Root pages regenerated by `scripts/integrate_data.py` (byte-stable on second run).
+4. `data/e1004114/live-spot-check-2026-11-18.md` — new verification record.
+5. Legacy `poker4/` and `data/08f07d1d/` regenerations produced locally by `tools/build_poker4.py` were **reverted** (not committed) — those folders are not published from root.
+
+**Verification run on the final tree**
+
+`tools/room_extract.py` · `scripts/integrate_data.py` (byte-stable) · `scripts/verify_root.py` · `scripts/verify.py` · `scripts/verify_markup.py` · `scripts/linkcheck.py` · `scripts/validate_site.py` · `tools/check_rows.py` · `tools/verify_poker4.py` · `tools/c2242cb1_check_dse.py` · `tools/b808eea0_check_dse_live.py` · `node --check app.js` · `node --check site/app.js` · `data/b808eea0/ui_smoke.js` (jsdom 24: SMOKE OK, 24 checks).
+
+**Brief items NOT completed in this session (honest status)**
+
+- The brief asks for line-by-line verification of every row against official sources. This session did a **spot-check** (5 live reads, one structure sheet, the Wynn daily PDF). The full row-level re-read of 253 rows was last done on 2026-11-17 (b808eea0). It is not repeated here.
+- Single-entry: **0 rows confirmed**. This session did not change that conclusion; the one new piece of official text (sheet 12, rule 08) is a multi-flight question, not a confirmation.
+- Live nightly hotel rate lookup and Google/Apple walking-distance verification: not reachable from this sandbox (no API access; hotel booking pages are dynamic). They remain open items (flagged F4, F18/F3 record, questions page).
+- Trip dates and the nightly budget/quality floor are user decisions (Questions page); not decided here.
+- The `session-<id>/<task>` branch-naming convention above is superseded for this session by the branch rule (`arena/e1004114-poker4`).
+
+**Next (E5):** pull/rebase on `origin/main`, re-run the gates, open the PR → `main`, merge with `gh pr merge --merge`, confirm the Pages deploy, and record the PR number and merge result here.
