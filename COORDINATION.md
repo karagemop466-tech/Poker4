@@ -1712,3 +1712,10 @@ this PR.
 - **Repair:** added a step `python tools/room_extract.py` to `.github/workflows/url-check.yml` between the sync and `integrate_data.py`, so hashes are regenerated in the same run. The job's `git add -A` commit picks them up. Regenerated `data/room-facts.json` now matches the current captures; all gates pass (`room_extract`, `integrate_data`, `verify_root`, `verify`, `verify_markup`, `linkcheck`, `verify_poker4`, `check_rows`, `poker4_monitor --selftest`).
 - **Scope note:** this edits a sync workflow outside the R1/R2 claim. It is a single step; the workflow's own push trigger includes its path, so the merge will exercise it. No data value or source row changed.
 - **Gate status note:** the `Poker4 site build + verification gate` run on PR #91's merge (`b0c10be`) had failed on the reproducibility step; the current `main` (`f0a627c`) rebuilds with zero drift.
+
+### 9a45e995 — gate status correction (2026-11-18, supersedes the earlier "post-merge gate repair" note in this session's PR #90)
+
+- **Earlier note withdrawn.** The regeneration commit `a17b5d8` (rebuilding `poker4/` with today's date) was **not** the right fix and was dropped. It would have conflicted with the pin added on `main` by another session (`tools/build_poker4.py` now sets `TODAY = os.environ.get("POKER4_BUILD_DATE", "2026-11-17")`).
+- **Verified:** on a clean checkout of `origin/main` (`b62fc0c`), `python3 tools/build_poker4.py` followed by `git add -A data/08f07d1d poker4; git diff --cached` reports **0 drift files**. `verify_poker4` OK, `check_rows` OK, `poker4_monitor --selftest` OK. The gate was red at `d1bb7be` only because the date was not pinned at that time.
+- **Still open for the owner (not edited here):** the pin is a fixed string, so every new data snapshot must set `POKER4_BUILD_DATE` (or edit the default). Until a new snapshot date is set deliberately, the output will not change with the calendar, which is the intended behaviour.
+- **Session status:** this PR now carries only this board log entry. No generated file or data file is changed by this session.
