@@ -1638,7 +1638,7 @@ this PR.
 
 - The brief asks for line-by-line verification of every row against official sources. This session did a **spot-check** (5 live reads, one structure sheet, the Wynn daily PDF). The full row-level re-read of 253 rows was last done on 2026-11-17 (b808eea0). It is not repeated here.
 - Single-entry: **0 rows confirmed**. This session did not change that conclusion; the one new piece of official text (sheet 12, rule 08) is a multi-flight question, not a confirmation.
-- Live nightly hotel rate lookup and Google/Apple walking-distance verification: not reachable from this sandbox (no API access; hotel booking pages are dynamic). They remain open items (flagged F4, F18/F3 record, questions page).
+- Live nightly hotel rate lookup and Google/Apple walking-distance verification: **not attempted** in this session (out of the spot-check scope; no maps/booking data was pulled). They remain open items (flagged F4, F18/F3 record, questions page).
 - Trip dates and the nightly budget/quality floor are user decisions (Questions page); not decided here.
 - The `session-<id>/<task>` branch-naming convention above is superseded for this session by the branch rule (`arena/e1004114-poker4`).
 
