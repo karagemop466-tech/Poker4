@@ -43,6 +43,11 @@ jobs:
       - name: Re-check official sources and audit structure sheets
         run: python tools/sync_official_sources.py
 
+      - name: Refresh provenance hashes for the captured official sources
+        # room-facts.json records the SHA-256 of each data/raw capture; the sync rewrites those
+        # captures (capture header timestamps), so the hashes must be regenerated in the same run.
+        run: python tools/room_extract.py
+
       - name: Rebuild the dashboard pages from the refreshed snapshots
         run: python scripts/integrate_data.py
 
