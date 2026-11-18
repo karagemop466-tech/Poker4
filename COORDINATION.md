@@ -1592,3 +1592,13 @@ broken. Fix applied here: `cancel-in-progress: false` in `.github/workflows/page
 idempotent; queued runs deploy the newer commit). `workflow_dispatch` re-triggering is not available to
 this token (HTTP 403 — same limitation recorded in F21), so the confirmation run is the push trigger of
 this PR.
+
+---
+
+## Session arena/27e8ed8e-poker4 (session `27e8ed8e`) — claim (2026-11-18)
+
+- Branch: `arena/27e8ed8e-poker4` (from `main` @ be61488). Status: active.
+- Scope claimed (narrow, to avoid overlap with the integration owners):
+  - **R1 — provenance integrity:** `data/room-facts.json` records SHA-256 hashes for `data/raw/*` captures that do not match the captures currently committed. Re-run `tools/room_extract.py` so recorded hashes match the committed captures; confirm extracted facts are unchanged (diff limited to hash lines); rerun all gates.
+  - **R2 — live spot-check:** re-read three official sources (Venetian poker page, Wynn WPT General Terms PDF, Caesars daily flyer if reachable) and compare against the committed captures in `data/raw/`; log matches/mismatches.
+- File scope: `data/room-facts.json`, `COORDINATION.md` (this entry only), and a findings note `data/verify/27e8ed8e-spotcheck.md`. Does not edit root HTML, `app.js`, `style.css`, or other sessions' folders.
