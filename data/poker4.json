@@ -1252,7 +1252,7 @@
    "id": "F1",
    "severity": "blocking-for-single-entry-claim",
    "item": "0 of 93 Venetian rows are confirmed single-entry",
-   "detail": "All 37 official structure sheets were read on 2026-11-17. None contains a clause confirming one entry, prohibiting re-entries, or prohibiting add-ons. Omission is not confirmation, so no row may be labelled single-entry and the toggle filter returns nothing.",
+   "detail": "All 37 official structure sheets were read on 2026-11-17. None contains a clause confirming one entry, prohibiting re-entries, or prohibiting add-ons. Omission is not confirmation, so no row may be labelled single-entry and the toggle filter returns nothing. Re-checked 2026-11-18 by session 9a45e995 (data/9a45e995/entry-policy-check.json): sample of 2026 structure sheets plus earlier official sheets; verdict unchanged — NOT CONFIRMED. Silence is not confirmation; the 2026 sheets read there do not prohibit re-entry; earlier official Venetian sheets state re-entry is allowed.",
    "sources": [
     "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf",
     "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
@@ -1450,12 +1450,14 @@
   {
    "id": "F21",
    "severity": "monitoring",
-   "item": "Scheduled monitors: some runs failing; eight jobs commit to main",
-   "detail": "Re-checked 2026-11-17 (session b808eea0): monitor.yml ('Monitor official sources') and recheck.yml ('daily-recheck') are now workflow_dispatch only (manual), so their previously failing scheduled runs no longer occur; the 0f40cfac consolidation made url-check.yml the single scheduled sync + rebuild lane and maintenance.yml the daily multi-room feed. Remaining risk: several workflows can still commit to main (race on generated files), and the feed job's manual-dispatch test returned a GitHub API 403; the first scheduled feed run is still pending runtime confirmation. Consolidation of the remaining jobs is a suggestion for review.",
+   "item": "Scheduled monitors: two failing cron jobs disabled 2026-11-18; three daily jobs publish",
+   "detail": "Re-checked 2026-11-18 (session e1004114). Schedule runs on main: url-check.yml (official source sync + change monitor), source-recheck.yml (source re-check + daily schedule feed) and maintenance.yml (daily official poker-room schedule feed) succeed. Two cron jobs failed on every scheduled run and their scheduled triggers were removed (manual dispatch kept): tournament-monitor.yml (see F29) and feature-recheck.yml (its \"Commit changes if any\" step failed on run 44185555543; it writes the legacy data/feature/ folder). monitor.yml and recheck.yml are workflow_dispatch only. Remaining risk: several workflows still commit to main (race on generated files). Consolidation of the remaining jobs is a suggestion for review.",
    "sources": [
-    "https://github.com/karagemop466-tech/Poker4/blob/main/.github/workflows/monitor.yml",
-    "https://github.com/karagemop466-tech/Poker4/blob/main/.github/workflows/recheck.yml",
-    "https://github.com/karagemop466-tech/Poker4/blob/main/tools/verify_root_site.py"
+    "https://github.com/karagemop466-tech/Poker4/blob/main/.github/workflows/url-check.yml",
+    "https://github.com/karagemop466-tech/Poker4/blob/main/.github/workflows/source-recheck.yml",
+    "https://github.com/karagemop466-tech/Poker4/blob/main/.github/workflows/maintenance.yml",
+    "https://github.com/karagemop466-tech/Poker4/blob/main/.github/workflows/feature-recheck.yml",
+    "https://github.com/karagemop466-tech/Poker4/actions/runs/44185555543"
    ]
   },
   {
@@ -1526,7 +1528,7 @@
    "id": "F28",
    "severity": "data-quality-corrected",
    "item": "data/room-facts.json carried sha256 values that did not match the raw captures it cites",
-   "detail": "Re-running tools/room_extract.py recomputed the hashes of data/raw/wynn-wpt-terms.txt and data/raw/wynn-daily-structures.txt. The committed values were stale. The regenerated file changes only those sha256 fields (commit 7c5767d). The raw captures were not changed.",
+   "detail": "Re-running tools/room_extract.py recomputed the hashes of data/raw/wynn-wpt-terms.txt and data/raw/wynn-daily-structures.txt. The committed values were stale. The regenerated file changes only those sha256 fields (commit 7c5767d). The raw captures were not changed. Re-committed 2026-11-18 (session e1004114, E2): tools/room_extract.py output is byte-stable across two runs and the recorded hashes now equal the sha256 of the committed captures (wynn-wpt-terms.txt 89689651…, wynn-daily-structures.txt 856079fd…, caesars-daily-flyer-2026.txt cdcb4178…).",
    "sources": [
     "https://github.com/karagemop466-tech/Poker4/blob/main/data/room-facts.json"
    ]
@@ -1534,8 +1536,8 @@
   {
    "id": "F29",
    "severity": "monitor-failure",
-   "item": "Daily poker4 monitor (tournament-monitor.yml) failed its verification gate on 2026-11-17; not yet fixed",
-   "detail": "The workflow 'Daily schedule + source-change monitor' failed at its step 'Verify the site before committing' (tools/verify_poker4.py). This happened on the 22:26 UTC scheduled run (run 44190052816, commit ff3fa36) and on three push runs earlier the same day (43994467535, 43994447808, 43994391262). The sandbox could not download the failed-run logs (EOF), so the exact failing check was not read. Run offline on the committed tree, verify_poker4.py passes (20 pages, 94 tournament rows, 57 sources). A manual retry was refused (HTTP 403, 'Resource not accessible by integration'). The root site and its Pages deploy are not affected: that job commits only the poker4/ sub-site data, and the root deploy succeeded on the merge commit. Action for the owner: open the failed run's 'Verify the site' step log and fix the cause, or re-run the schedule after the cause is fixed.",
+   "item": "Daily poker4 monitor (tournament-monitor.yml) failed on its scheduled runs; cron removed 2026-11-18",
+   "detail": "The workflow \"Daily schedule + source-change monitor\" failed at its step \"Verify the site before committing\" on run 44190052816 (2026-11-17 22:26 UTC) and on three earlier push runs. The CI log could not be downloaded (EOF), so the exact failing check is unknown. On 2026-11-18 the same verify step (tools/verify_poker4.py) passes locally on the committed tree (20 pages, 94 tournament rows, 57 sources), and the same job rebuilds the legacy poker4/ sub-site, which is not the published root site. Decision (session e1004114, E3): the scheduled trigger was removed rather than repaired; manual dispatch remains. The published root site and its Pages deploy were not affected.",
    "sources": [
     "https://github.com/karagemop466-tech/Poker4/actions/runs/44190052816",
     "https://github.com/karagemop466-tech/Poker4/blob/main/.github/workflows/tournament-monitor.yml"
@@ -1578,6 +1580,25 @@
    "sources": [
     "https://www.caesars.com/linq",
     "https://www.caesars.com/flamingo-las-vegas"
+   ]
+  },
+  {
+   "id": "F34",
+   "severity": "data-quality",
+   "item": "structure-audit.json's Wynn daily summary omits the re-entry wording that the sheet prints",
+   "detail": "Read live 2026-11-18 from the Wynn daily structures PDF: the nightly $160 NLH $10,000 GTD sheet (6 PM, 'Nightly Monday-Sunday') prints 'The Tournament entry fee, as well as the re-entry fee, is $160' and 'Registration, re-entries, and one (1) add-on per entry will be available until the start of level 9 (approximately 9:00 p.m.)'. Another sheet earlier in the same PDF (title cut off at a capture boundary) prints the same re-entry clause. The Friday $240 sheet's re-entry clause ('Re-entry is NOT allowed') and the Monday–Thursday $200 sheet's wording were captured verbatim by the sync (data/room-facts.json) but were not re-read live in this session. The published rows WYNN-DAILY-1 to -4 (data/site-events.json) carry re-entry correctly (confirmed_allowed, or forbidden for the Friday sheet) and are excluded from the single-entry list. However data/structure-audit.json's W_DAILY record captures only the Friday 'Rebuy & Add on' line and the '$200 Entry Fee' guarantee text, so that summary is incomplete. Cite the room-facts rows, not the audit summary, for Wynn daily rules. The audit clause extractor should be re-run; not changed in this session.",
+   "sources": [
+    "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf"
+   ]
+  },
+  {
+   "id": "F35",
+   "severity": "scope-note",
+   "item": "Venetian parking: two official parking rules apply to different guests; a trip budget must say which one applies",
+   "detail": "Read live 2026-11-18. The Venetian poker room page: 'Non-registered hotel guests who play for three hours or more in our tournaments or cash games receive complimentary self-parking.' The Venetian hotel terms page: 'The daily fee for registered hotel guests is $20/day, seven days a week. For non-hotel guests, the fee is $20, Monday – Thursday, and $25/day Friday – Sunday. Valet parking is $40/day.' and 'Venetian Rewards Sapphire members and above receive complimentary self-parking'. The poker-room comp is play-dependent (three hours of play) and is not a hotel rate; a hotel-guest trip cost should use the hotel-terms fee unless the player qualifies for the Sapphire comp. The hotel terms page is the source for the $20/day figure.",
+   "sources": [
+    "https://www.venetianlasvegas.com/resort/casino/poker.html",
+    "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html"
    ]
   }
  ],

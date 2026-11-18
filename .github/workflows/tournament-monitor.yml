@@ -7,9 +7,11 @@ name: Daily schedule + source-change monitor
 #  - scrapes the official DeepStack calendar into a machine-readable daily feed
 #  - regenerates the poker4 pages and only commits when the site still verifies
 
+# E1004114 (2026-11-18): the scheduled trigger was removed. This workflow writes to the legacy
+# poker4/ and data/08f07d1d/ folders (not the published root pages) and its verify step failed on
+# every cron run on main (run 44190052816). The daily monitors that publish are url-check.yml,
+# source-recheck.yml and maintenance.yml. Manual dispatch is kept for reruns.
 on:
-  schedule:
-    - cron: "20 14 * * *"   # 14:20 UTC = 06:20 Las Vegas (PST) each morning
   workflow_dispatch:
     inputs:
       ref:
