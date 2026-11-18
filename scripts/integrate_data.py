@@ -2101,8 +2101,8 @@ def page_flagged():
     nwalk = sum(1 for p in walks if p.get("minutes") is not None)
     nowalk = sum(1 for p in walks if p.get("minutes") is None)
     nfail = sum(1 for p in walks if str(p.get("meets_30_min", "")).lower().startswith("no "))
-    return shell("", "Flagged for review", f"""
-<section class="page-head"><h1>Flagged for review</h1>
+    return shell("", "Flagged for Review", f"""
+<section class="page-head"><h1>Flagged for Review</h1>
 <p class="lede">Every unresolved item, with the source that produced it. A flag is never cleared by re-wording a row — only when the official source states the value or an action closes the gap.</p>
 <div class="flagstats"><span class="stat">{len(CFG['flags'])} open flags</span>
 <span class="stat">{unconf} of {len(events)} rows without confirmed single-entry</span>
