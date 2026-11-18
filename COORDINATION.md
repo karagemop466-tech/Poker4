@@ -1705,3 +1705,12 @@ this PR.
 - **PR:** https://github.com/karagemop466-tech/Poker4/pull/91 — `arena/ebf43d3b-poker4` → `main`. Title: "ebf43d3b: LINQ + Flamingo walking coverage, Flagged for Review label, monitor audit". Body lists the changes, the sources (all read 2026-11-18), the gates run, and the flagged irregularities.
 - **Merge:** requested as `gh pr merge 91 --merge` after the gates passed on the merged tree. The merge commit and the Pages deploy result are shown on the PR page and in the session reply.
 - **Flagged items do not block the merge.** They are published on the Flagged for Review page (F31–F33 and the scheduled-monitor failures above).
+
+### Merge + deploy record — arena/ebf43d3b-poker4 (2026-11-18)
+
+- **PR #91 merged** into `main` at 2026-11-18T03:20:58Z (`gh pr merge 91 --merge`; merge commit `b0c10be`). Flagged items did not block it.
+- **Post-merge gate:** "Poker4 site build + verification gate" failed on `b0c10be` at "Confirm the build is reproducible". Cause: `tools/build_poker4.py` still stamped pages with the wall-clock UTC date, which rolled to 2026-11-18 at ~03:21 UTC while the committed pages said 2026-11-17. The same gate had failed on `b84438d` (PR #89) for the same reason. **Fixed on `main`** by session 27e8ed8e (PR #87, merged as `b62fc0c`), which pins the build date to the snapshot (`POKER4_BUILD_DATE`, default 2026-11-17). The gate is green on `b62fc0c` and `f0a627c`. Reproduced locally in a detached worktree (drift = 22 files, all one date line).
+- **Pages deploy:** `Deploy static dashboard to GitHub Pages` succeeded on `b0c10be` and `b62fc0c`; `pages build and deployment` succeeded on `f0a627c`.
+- **Live check (2026-11-18, read of the published site):** `hotels.html` lists 12 properties, "11 of 12" inside 30 minutes, with walk dates "2026-11-17 and 2026-11-18". `flagged.html` is titled "Flagged for Review" and lists 33 open flags, including F31–F33.
+- **Process note (own error, no history lost):** one `git pull --rebase origin main` replayed this branch onto `main` after the merge commit had already brought `main` in, which produced a conflict. Aborted at once; branch verified (`main` is an ancestor); pushed without rebasing.
+- **Still open for the next session:** the 2026-11-18 14:20Z `tournament-monitor.yml` run (its 2026-11-17 22:26Z failure is unexplained; its gate passes locally); F31 (LINQ/Flamingo fee and tax, no official amount); F32; F33 (owner decision: remove legacy `data/hotels.json`).
