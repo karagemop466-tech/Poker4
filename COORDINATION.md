@@ -1653,3 +1653,9 @@ this PR.
   - Single-entry filter for any event: blocked by F1 and F15 (above).
   - Full line-by-line verification of every table row: already done by earlier sessions (see B1–B6). Not repeated here.
 - **Status:** E1 done (claim + record). Session is a single-task contribution; a PR is opened from `arena/9a45e995-poker4` for review of this record.
+
+### Merge record — arena/1ea5710f-poker4 (2026-11-18)
+
+- PR [#85](https://github.com/karagemop466-tech/Poker4/pull/85) (log-only) merged to `main` as merge commit `96431b5`, after one conflict in `COORDINATION.md` (both sides' logs kept, nothing discarded; the other session's 27e8ed8e block is intact).
+- Checks on `main` after merge: `Poker4 site build + verification gate` = success; `Verify the published site` = success; `Deploy static dashboard to GitHub Pages` = success; `pages build and deployment` = success.
+- Live site `https://karagemop466-tech.github.io/Poker4/` re-read after deploy: loads with the same dated figures.
