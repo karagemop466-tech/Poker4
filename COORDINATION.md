@@ -1606,7 +1606,7 @@ this PR.
 | E2 | Stored data integrity: `data/room-facts.json` cites raw-capture SHA-256 values that differ from the committed captures; regenerate so provenance matches | done | arena/e1004114-poker4 | `data/room-facts.json` | `tools/room_extract.py` | byte-stable on two runs; `room_extract`, `c2242cb1_check_dse`, `b808eea0_check_dse_live` green | committed hashes were stale vs `data/raw/*` (values unchanged; F28) |
 | E3 | Scheduled-job health: two cron workflows fail every run on main (legacy writers to `poker4/`, `data/08f07d1d/`, `data/feature/`) | done | arena/e1004114-poker4 | `.github/workflows/tournament-monitor.yml`, `.github/workflows/feature-recheck.yml` | run logs 44190052816, 44185555543; `gh api …/actions/runs?event=schedule` | cron removed from both; manual dispatch kept; active daily monitors (url-check, source-recheck, maintenance) succeed on main | CI log for 44190052816 unreadable (EOF); the same verify step passes locally (F29) |
 | E4 | Flag new irregularities on the Flagged page (`data/poker4.json`) and re-integrate | done | arena/e1004114-poker4 | `data/poker4.json`, generated root pages | `scripts/integrate_data.py` | see E1–E3 |
-| E5 | Integration: gates green → PR → merge → Pages deploy confirmed → record here | unclaimed | arena/e1004114-poker4 | this branch, `main`, `COORDINATION.md` | all canonical gates | — |
+| E5 | Integration: gates green → PR → merge → Pages deploy confirmed → record here | in progress | arena/e1004114-poker4 | this branch, `main`, `COORDINATION.md` | all canonical gates | — |
 
 ### Log — `arena/e1004114-poker4` (2026-11-18)
 
@@ -1756,3 +1756,26 @@ this PR.
 - **PR:** https://github.com/karagemop466-tech/Poker4/pull/91 — `arena/ebf43d3b-poker4` → `main`. Title: "ebf43d3b: LINQ + Flamingo walking coverage, Flagged for Review label, monitor audit". Body lists the changes, the sources (all read 2026-11-18), the gates run, and the flagged irregularities.
 - **Merge:** requested as `gh pr merge 91 --merge` after the gates passed on the merged tree. The merge commit and the Pages deploy result are shown on the PR page and in the session reply.
 - **Flagged items do not block the merge.** They are published on the Flagged for Review page (F31–F33 and the scheduled-monitor failures above).
+
+### Integration record — `arena/e1004114-poker4` (2026-11-18)
+
+**Main moved three times during this session** (PRs #84–#91 from other sessions, then a scheduled sync at 03:21Z). Each time `origin/main` was merged in, with both logs kept. Resolution policy:
+
+- Generated root pages (`*.html`, `venues/*.html`, `data/search-index.json`) were taken from main and then **regenerated** with `scripts/integrate_data.py`, which is byte-stable on a second run.
+- Raw captures (`data/raw/*`) and sync outputs (`data/site-events.json`, `data/url-checks.json`, `data/structure-audit.json` …) were taken from main as the sync wrote them. The 03:21Z sync changed **no published values**: it advanced `last_checked` to 2026-11-18 and rewrote the capture headers only. Verified by a field-level diff of all 253 rows (`data/site-events.json`): only `last_checked`, and `retrieved` on 94 Venetian rows and 2 conditional-fee rows, changed.
+- `data/poker4.json`: main's flags F31–F33 (from PR #91) were kept. My two new flags are therefore **F34** (Wynn daily audit summary) and **F35** (Venetian parking scope), not F31/F32 as first written. The F21/F28/F29 updates were reapplied on top of main's version. F1 gained the 9a45e995 re-check record, as that session requested.
+- `COORDINATION.md`: both logs kept verbatim (conflict resolved by keeping both sides; no marker left).
+
+**Recurring defect found and fixed (E2, durable):** the scheduled sync rewrites the header line of each raw capture (`<!-- captured … -->`), so the file's sha256 changes every morning, while `data/room-facts.json` keeps the old hash. This is why the hash drift came back within an hour of being fixed (F28; 27e8ed8e and ebf43d3b also fixed it by hand). **Fix:** `.github/workflows/url-check.yml` now runs `python3 tools/room_extract.py` immediately after `tools/sync_official_sources.py`, in the same job and commit. The YAML was parsed to confirm the trigger block is intact.
+
+**Open PRs from other sessions at the time of this integration (not merged here):**
+
+| PR | Branch | State | Action requested |
+|----|--------|-------|-----------------|
+| #92 | `arena/75f8b185-poker4` | CONFLICTING / DIRTY (35 files, includes `data/poker4.json` and generated `poker4/*` and root pages) | Its flags are also numbered F31–F33 and collide with main's F31–F33. **Request to owner:** rebase on `main` after this PR, renumber its flags to the next free IDs, and regenerate via `scripts/integrate_data.py`. Not merged here because it would overwrite regenerated shared outputs. |
+| #90 | `arena/9a45e995-poker4` | MERGEABLE / CLEAN (board log only) | Left for its owner; no conflict with this PR's content. |
+| #88 | `arena/a745c8f4-poker4` | CONFLICTING (board log only) | Owner to rebase the log onto `main`. |
+
+**Gates on the final tree (merge commit `8e15744` + this log commit):** `tools/room_extract.py` · `scripts/integrate_data.py` (byte-stable) · `scripts/verify_root.py` · `scripts/verify.py` · `scripts/verify_markup.py` · `scripts/linkcheck.py` · `scripts/validate_site.py` · `tools/check_rows.py` · `tools/verify_poker4.py` · `tools/c2242cb1_check_dse.py` · `tools/b808eea0_check_dse_live.py` · `node --check app.js` · `node --check site/app.js` · `data/b808eea0/ui_smoke.js` (SMOKE OK).
+
+**PR and merge result:** recorded in the PR itself and in the session reply (see the PR link in the next entry if the merge completed).
