@@ -1728,3 +1728,9 @@ this PR.
 - **Post-merge gate repair** (`tools/build_poker4.py` date pin) — PR [#87](https://github.com/karagemop466-tech/Poker4/pull/87) merged (`b62fc0c`); gate `Poker4 site build + verification gate` passed on that commit.
 - **Recurrence fix** (room-facts regeneration in `url-check.yml`) — PR [#93](https://github.com/karagemop466-tech/Poker4/pull/93) merged (`9406698`). Post-merge runs on `9406698`: scheduled sync success, Pages build and deploy success, site build gate success, site integrity success.
 - **Open items I did not change:** WPT-08 printed fee split (flagged); Caesars flyer not re-read live; "Four (4) Entries maximum" WPT sheet not re-read live; live PDF not byte-hashable from the sandbox.
+### 9a45e995 — gate status correction (2026-11-18, supersedes the earlier "post-merge gate repair" note in this session's PR #90)
+
+- **Earlier note withdrawn.** The regeneration commit `a17b5d8` (rebuilding `poker4/` with today's date) was **not** the right fix and was dropped. It would have conflicted with the pin added on `main` by another session (`tools/build_poker4.py` now sets `TODAY = os.environ.get("POKER4_BUILD_DATE", "2026-11-17")`).
+- **Verified:** on a clean checkout of `origin/main` (`b62fc0c`), `python3 tools/build_poker4.py` followed by `git add -A data/08f07d1d poker4; git diff --cached` reports **0 drift files**. `verify_poker4` OK, `check_rows` OK, `poker4_monitor --selftest` OK. The gate was red at `d1bb7be` only because the date was not pinned at that time.
+- **Still open for the owner (not edited here):** the pin is a fixed string, so every new data snapshot must set `POKER4_BUILD_DATE` (or edit the default). Until a new snapshot date is set deliberately, the output will not change with the calendar, which is the intended behaviour.
+- **Session status:** this PR now carries only this board log entry. No generated file or data file is changed by this session.
