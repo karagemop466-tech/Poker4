@@ -1,8 +1,9 @@
 name: Feature source re-check (data/feature)
 
+# E1004114 (2026-11-18): the scheduled trigger was removed. Its "Commit changes" step failed on every
+# cron run (run 44185555543) and it writes to the legacy data/feature/ folder. The published daily
+# monitors are url-check.yml, source-recheck.yml and maintenance.yml. Manual dispatch is kept.
 on:
-  schedule:
-    - cron: "0 14 * * *"   # 14:00 UTC daily
   workflow_dispatch: {}
 
 permissions:
