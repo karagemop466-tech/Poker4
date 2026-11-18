@@ -43,6 +43,10 @@ jobs:
       - name: Re-check official sources and audit structure sheets
         run: python tools/sync_official_sources.py
 
+      # E1004114: the sync rewrites capture headers, so room-facts sha256 values must be recomputed here.
+      - name: Re-record raw-capture hashes in room-facts
+        run: python3 tools/room_extract.py
+
       - name: Rebuild the dashboard pages from the refreshed snapshots
         run: python scripts/integrate_data.py
 
