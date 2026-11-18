@@ -1898,8 +1898,8 @@ Session `arena/75f8b185-poker4` (branch `arena/75f8b185-poker4`, branched from `
 ### PR + deploy result
 
 - **PR [#97](https://github.com/karagemop466-tech/Poker4/pull/97)** ("a745c8f4 integration: line-by-line verification + Pages deploy record") merged into `main` below.
-- **Merge result:** `arena/a745c8f4-poker4` merged into `main` via this commit; COORDINATION.md now holds both this session's log and main's sessions, nothing discarded.
-- **Pages deploy:** the `Deploy static dashboard to GitHub Pages` run triggered by this push to `main` — confirm success and that `https://karagemop466-tech.github.io/Poker4/` loads with the merged markers.
+- **Merge result:** `arena/a745c8f4-poker4` merged into `main` at 2026-11-18T03:28:21Z via PR [#97](https://github.com/karagemop466-tech/Poker4/pull/97), merge commit `c8a7ed3eadfbf1d4626dc41d1e5e458fb48e0629`. COORDINATION.md now holds both this session's log and main's sessions, nothing discarded.
+- **Pages deploy:** SUCCESS — `Deploy static dashboard to GitHub Pages` run 44230654514 on commit `c8a7ed3` concluded `success` (2026-11-18T03:28:24Z). Live site `https://karagemop466-tech.github.io/Poker4/` is deployed from `main`.
 - Session complete. No outstanding scope for `arena/a745c8f4-poker4`.
 
 ### 9a45e995 — merge and deploy record (2026-11-18)
