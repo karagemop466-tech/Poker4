@@ -1705,3 +1705,10 @@ this PR.
 - **PR:** https://github.com/karagemop466-tech/Poker4/pull/91 — `arena/ebf43d3b-poker4` → `main`. Title: "ebf43d3b: LINQ + Flamingo walking coverage, Flagged for Review label, monitor audit". Body lists the changes, the sources (all read 2026-11-18), the gates run, and the flagged irregularities.
 - **Merge:** requested as `gh pr merge 91 --merge` after the gates passed on the merged tree. The merge commit and the Pages deploy result are shown on the PR page and in the session reply.
 - **Flagged items do not block the merge.** They are published on the Flagged for Review page (F31–F33 and the scheduled-monitor failures above).
+
+### Recurrence fix — arena/27e8ed8e-poker4 (2026-11-18)
+
+- **Irregularity (recurring):** the 03:21Z scheduled sync (`f0a627c`) rewrote the `data/raw/*` captures (capture-header timestamps), but `data/room-facts.json` was not regenerated, so its recorded SHA-256 values went stale again (same defect as R1). `url-check.yml` ran `sync_official_sources.py` and `integrate_data.py` but never `room_extract.py`.
+- **Repair:** added a step `python tools/room_extract.py` to `.github/workflows/url-check.yml` between the sync and `integrate_data.py`, so hashes are regenerated in the same run. The job's `git add -A` commit picks them up. Regenerated `data/room-facts.json` now matches the current captures; all gates pass (`room_extract`, `integrate_data`, `verify_root`, `verify`, `verify_markup`, `linkcheck`, `verify_poker4`, `check_rows`, `poker4_monitor --selftest`).
+- **Scope note:** this edits a sync workflow outside the R1/R2 claim. It is a single step; the workflow's own push trigger includes its path, so the merge will exercise it. No data value or source row changed.
+- **Gate status note:** the `Poker4 site build + verification gate` run on PR #91's merge (`b0c10be`) had failed on the reproducibility step; the current `main` (`f0a627c`) rebuilds with zero drift.
