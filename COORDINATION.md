@@ -1593,6 +1593,23 @@ idempotent; queued runs deploy the newer commit). `workflow_dispatch` re-trigger
 this token (HTTP 403 — same limitation recorded in F21), so the confirmation run is the push trigger of
 this PR.
 
+## Session arena/1ea5710f-poker4 — claim + result (2026-11-18)
+
+- Session ID: `arena/1ea5710f-poker4`; branch `arena/1ea5710f-poker4` (from `main` @ `be61488`). Scope: log-only (`COORDINATION.md`). No generated page, data file, or workflow was changed.
+- Starting state checked: live Pages site `https://karagemop466-tech.github.io/Poker4/` loads; latest deploy run (PR #83 merge) = success; `verify_root` 16 pages / 253 rows / 0 warnings; `verify_markup` 37 pages 0 problems; `linkcheck` 30 pages OK; `validate_site` OK; `verify` OK; `node --check app.js` OK.
+- Line-by-line spot check of the headline ranked row (Venetian Event 26, "$800 No Limit Hold'Em 1A", row `V26-2026-12-03-11:10am`) against the official structure sheet `https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf` (fetched 2026-11-18):
+  - Buy-in $800, guarantee $500,000, starting chips 40,000, level duration 40 min, 11:10 AM start, registration closes ~3:40 PM: **match**.
+  - Fee split: rule 7 says $110 withheld, $690 to pool: **match** (row status "confirmed").
+  - Single-entry: sheet is silent on entry count: row correctly stays **unverified**, `single_entry_confirmed: false`.
+  - Irregularity (not a value error): rule 8 of this sheet says "Any player who bags chips for Day 2 may not play a subsequent flight." This is a flight-restriction clause, not a single-entry rule. The row records re-entry as "not stated in sheet", which is accurate, but a reviewer should decide whether rule 8 belongs in the rule fields as a separate item. Flagged for review; not changed here.
+- Ratio check: 500,000 ÷ 800 = 625× (row `gtd_ratio` 625.0): **match**. The row's `gtd_over_pool_contribution` (724) is a different descriptive metric and is not labelled as the headline ratio on the page.
+
+| ID | Task | Status | Owner | File scope | Sources / verification | Irregularities |
+|----|------|--------|-------|------------|------------------------|----------------|
+| Q1 | Health check of live site + gates on `main` @ `be61488` | done | arena/1ea5710f-poker4 | `COORDINATION.md` (log) | live URL + gates listed above | None |
+| Q2 | Line-by-line spot check of the headline ranked row vs official structure sheet 12 | done | arena/1ea5710f-poker4 | `COORDINATION.md` (log) | Venetian DSE structure sheet 12 (URL above) | Rule 8 (bagged chips → no subsequent flight) flagged for review, not changed |
+
+- Not done in this session (honest scope limits): live hotel booking rates and checkout totals (no dated booking data reachable from the sandbox); Google/Apple Maps walking times beyond the already-measured set; any new single-entry confirmation (none found in the sheets already read); user-level brief items already on the site (search, date filter, toggle, calculator, rate log, venue pages, change monitor, ratio ranking, suggestions/questions/flagged pages) were not re-built.
 ---
 
 ## Session arena/27e8ed8e-poker4 (session `27e8ed8e`) — claim (2026-11-18)
