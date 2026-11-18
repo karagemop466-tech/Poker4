@@ -1592,3 +1592,13 @@ broken. Fix applied here: `cancel-in-progress: false` in `.github/workflows/page
 idempotent; queued runs deploy the newer commit). `workflow_dispatch` re-triggering is not available to
 this token (HTTP 403 — same limitation recorded in F21), so the confirmation run is the push trigger of
 this PR.
+
+## Session arena/ebf43d3b-poker4 — claim (2026-11-18)
+
+- **Session:** `arena/ebf43d3b-poker4` (branch `arena/ebf43d3b-poker4`, branched from `main` @ `be61488`). Single-session run: the brief's open items are triaged below; nothing else on the board is claimed by this session.
+- **Triage of the brief against the published site (2026-11-18):** already built and gated on `main` — trip-cost calculator, search, date filter, single-entry toggle (0 rows, honest), dated rate log, per-row last-checked stamps, daily official-source sync (`url-check.yml`, `maintenance.yml`, `tournament-monitor.yml`), overlap check with primary + fallback, venue pages, Flagged for Review, questions, suggestions, executive summary. **Not yet covered (this session's scope):**
+  - **W1 — walking-route coverage.** The published hotel set has 10 properties; LINQ and Flamingo (Caesars, Strip-center, no poker room on property) are absent and have no measured walk to the Venetian poker room. Add both with official-address walks.
+  - **W2 — stored-hash integrity.** `data/room-facts.json` stores sha256 values for `data/raw/wynn-wpt-terms.txt`, `data/raw/wynn-daily-structures.txt` and `data/raw/caesars-daily-flyer-2026.txt` that no longer match the committed files; `tools/room_extract.py` rewrites them on each run. Refresh and record.
+  - **W3 — live re-read of official anchors.** Re-read the official Venetian resort-fee page, the Caesars Flamingo and LINQ address blocks, and the Venetian contact address via `fetch_page`; record retrieval date.
+- **File scope:** `data/poker4.json` (two hotel records), `data/walk-measurements.json` (two pairs), `data/room-facts.json` (hash refresh only), generated outputs of `scripts/integrate_data.py` (`*.html`, `venues/*.html`, `data/walks.json`, `data/search-index.json`, `data/rate-log.json`, `app.js`, `site.css`), `COORDINATION.md` (log only).
+- **Out of scope / logged, not edited:** the legacy `data/hotels.json` (unpublished, contains "mapping estimate" walk minutes labelled unverified — flagged, not deleted); `tools/walk_capture.py`, named as the re-capture tool in `data/walk-measurements.json` but absent from the repo (flagged).
