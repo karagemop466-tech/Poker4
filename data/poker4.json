@@ -1140,10 +1140,14 @@
    "id": "F1",
    "severity": "blocking-for-single-entry-claim",
    "item": "0 of 93 Venetian rows are confirmed single-entry",
-   "detail": "All 37 official structure sheets were read on 2026-11-17. None contains a clause confirming one entry, prohibiting re-entries, or prohibiting add-ons. Omission is not confirmation, so no row may be labelled single-entry and the toggle filter returns nothing.",
+   "detail": "All 37 official structure sheets were read on 2026-11-17. None contains a clause confirming one entry, prohibiting re-entries, or prohibiting add-ons. Omission is not confirmation, so no row may be labelled single-entry and the toggle filter returns nothing. Re-checked 2026-11-18 by session 9a45e995-poker4: 2026 sheets 5 and 10 read live (silent on entry count and re-entry; sheet 10 rule 8 is the Day 2 subsequent-flight clause); the 2024 sheets dse_apr_2024-structure_1 (rule 9) and dse_jan_2024-structure_4 (rule 10) print 'Registration and Re-Entry is allowed', so the 2024 series allowed re-entry and silence in 2026 is not evidence of single entry. Re-checked 2026-11-18 by session 75f8b185-poker4: sheet 21 (Event 47) and the DSE IV schedule PDF read live; search log in data/75f8b185/. Verdict unchanged: no event is confirmed single-entry.",
    "sources": [
     "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf",
-    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2024/structures/dse_apr_2024-structure_1.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2024/structures/dse_jan_2024-structure_4.pdf"
    ]
   },
   {

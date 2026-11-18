@@ -1633,3 +1633,77 @@ Session `arena/75f8b185-poker4` (branch `arena/75f8b185-poker4`, branched from `
 4. Wynn daily PDFs undated (F33).
 5. `data/walks.json` `measurement_source` counts (8 measured / 7 within) vs top-level counts (10 rows / 9 within): checked, consistent. The first counts cover only the eight Google-measured pairs; the top-level counts include the two on-site Venetian/Palazzo rows. Labelling was ambiguous; no value changed.
 6. About 40 "in progress" rows on this board belong to earlier sessions with no commits in the last 60 minutes. They are stale claims, not active work, and were left untouched rather than edited on another session's behalf.
+## Session arena/1ea5710f-poker4 — claim + result (2026-11-18)
+
+- Session ID: `arena/1ea5710f-poker4`; branch `arena/1ea5710f-poker4` (from `main` @ `be61488`). Scope: log-only (`COORDINATION.md`). No generated page, data file, or workflow was changed.
+- Starting state checked: live Pages site `https://karagemop466-tech.github.io/Poker4/` loads; latest deploy run (PR #83 merge) = success; `verify_root` 16 pages / 253 rows / 0 warnings; `verify_markup` 37 pages 0 problems; `linkcheck` 30 pages OK; `validate_site` OK; `verify` OK; `node --check app.js` OK.
+- Line-by-line spot check of the headline ranked row (Venetian Event 26, "$800 No Limit Hold'Em 1A", row `V26-2026-12-03-11:10am`) against the official structure sheet `https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf` (fetched 2026-11-18):
+  - Buy-in $800, guarantee $500,000, starting chips 40,000, level duration 40 min, 11:10 AM start, registration closes ~3:40 PM: **match**.
+  - Fee split: rule 7 says $110 withheld, $690 to pool: **match** (row status "confirmed").
+  - Single-entry: sheet is silent on entry count: row correctly stays **unverified**, `single_entry_confirmed: false`.
+  - Irregularity (not a value error): rule 8 of this sheet says "Any player who bags chips for Day 2 may not play a subsequent flight." This is a flight-restriction clause, not a single-entry rule. The row records re-entry as "not stated in sheet", which is accurate, but a reviewer should decide whether rule 8 belongs in the rule fields as a separate item. Flagged for review; not changed here.
+- Ratio check: 500,000 ÷ 800 = 625× (row `gtd_ratio` 625.0): **match**. The row's `gtd_over_pool_contribution` (724) is a different descriptive metric and is not labelled as the headline ratio on the page.
+
+| ID | Task | Status | Owner | File scope | Sources / verification | Irregularities |
+|----|------|--------|-------|------------|------------------------|----------------|
+| Q1 | Health check of live site + gates on `main` @ `be61488` | done | arena/1ea5710f-poker4 | `COORDINATION.md` (log) | live URL + gates listed above | None |
+| Q2 | Line-by-line spot check of the headline ranked row vs official structure sheet 12 | done | arena/1ea5710f-poker4 | `COORDINATION.md` (log) | Venetian DSE structure sheet 12 (URL above) | Rule 8 (bagged chips → no subsequent flight) flagged for review, not changed |
+
+- Not done in this session (honest scope limits): live hotel booking rates and checkout totals (no dated booking data reachable from the sandbox); Google/Apple Maps walking times beyond the already-measured set; any new single-entry confirmation (none found in the sheets already read); user-level brief items already on the site (search, date filter, toggle, calculator, rate log, venue pages, change monitor, ratio ranking, suggestions/questions/flagged pages) were not re-built.
+---
+
+## Session arena/27e8ed8e-poker4 (session `27e8ed8e`) — claim (2026-11-18)
+
+- Branch: `arena/27e8ed8e-poker4` (from `main` @ be61488). Status: active.
+- Scope claimed (narrow, to avoid overlap with the integration owners):
+  - **R1 — provenance integrity:** `data/room-facts.json` records SHA-256 hashes for `data/raw/*` captures that do not match the captures currently committed. Re-run `tools/room_extract.py` so recorded hashes match the committed captures; confirm extracted facts are unchanged (diff limited to hash lines); rerun all gates.
+  - **R2 — live spot-check:** re-read three official sources (Venetian poker page, Wynn WPT General Terms PDF, Caesars daily flyer if reachable) and compare against the committed captures in `data/raw/`; log matches/mismatches.
+- File scope: `data/room-facts.json`, `COORDINATION.md` (this entry only), and a findings note `data/verify/27e8ed8e-spotcheck.md`. Does not edit root HTML, `app.js`, `style.css`, or other sessions' folders.
+
+### Result record — arena/27e8ed8e-poker4 (2026-11-18)
+
+| ID | Task | Status | Owner | File scope | Sources / verification | Irregularities |
+|----|------|--------|-------|------------|------------------------|----------------|
+| R1 | Provenance: recorded SHA-256 in `data/room-facts.json` vs committed `data/raw/*` | done | arena/27e8ed8e-poker4 | `data/room-facts.json`, `data/verify/27e8ed8e-spotcheck.md` | Re-ran `tools/room_extract.py`; diff = 3 hash lines only; 6/6 recorded hashes equal file SHA-256; `integrate_data.py` byte-stable across two runs; all gates green | Committed hashes were stale before this session (repaired) |
+| R2 | Live spot-check of official sources vs committed captures | done | arena/27e8ed8e-poker4 | `data/verify/27e8ed8e-spotcheck.md` | Venetian poker room page (venetianlasvegas.com/resort/casino/poker.html); Wynn WPT World Championship structures PDF (cdn.wynnresorts.com … WPT_World_Championship_Structures.pdf), 7 event fees and re-entry lines matched | Live PDF cannot be byte-hashed from sandbox; Caesars flyer not re-read live; WPT-08 fee split still flagged |
+
+- Scope note: no root HTML, `app.js`, `style.css` or other session folders changed. Pipeline output `data/room-facts.json` changed only in its three hash fields.
+
+## Session `arena/9a45e995-poker4` — claim (2026-11-18)
+
+- **Scope claimed (single task, E1):** independent re-check of the single-entry policy blocker (flags F1 and F15) against official Venetian sources. Re-read the 2026 structure sheets that carry the entry rules, and read the official 2023/2024 sheets for comparison. Record the verbatim clauses with source URLs and retrieval dates.
+- **File scope:** `data/9a45e995/` (new) and this board (claim + log only). Shared root outputs (`index.html`, `flagged.html`, `tournaments.html`, `data/poker4.json`, etc.) are NOT edited. Their regeneration is requested from the integration session (see the log entry).
+- **Not in this session's scope:** the full task brief (new calculators, live booking lookup, Maps API, 8 AM schedule plan, per-row rule audits). Those are either already covered by earlier sessions' work or need data this sandbox cannot reach. See the log entry for the detail.
+
+### 9a45e995 — E1 result (2026-11-18)
+
+- **Result: single entry NOT confirmed (F1 and F15 stay open; no change in verdict).** Record: `data/9a45e995/entry-policy-check.json`.
+- **Sources read this session (official, live fetch):**
+  - 2026 sheet `dse_nov_2026-structure_5.pdf` (Events 02 and 12, $300 NLH, $10K GTD): no entry-count or re-entry clause. Rule 9: "All pre-registered stacks will be in play at the start of the event."
+  - 2026 sheet `dse_nov_2026-structure_10.pdf` (Event 01, $300 NLH, $75K GTD): rule 8 "Any player who bags chips for Day 2 may not play a subsequent flight." No entry count.
+  - 2024 sheet `dse_apr_2024-structure_1.pdf`: rule 9 "Registration and Re-Entry is allowed for eight (8) levels & through the break." (fetched directly)
+  - 2024 sheet `dse_jan_2024-structure_4.pdf` ($800 UltimateStack): rule 10 "Registration and Re-Entry is allowed for nine (9) levels." (from the search extract of the official URL)
+  - Official series page `dse-nov-2026.html`: schedule table only (chunk 1 of 4 read).
+- **Verification:** the record was checked against the 2 sheets read above. Note that the 2024 UltimateStack clause came from the search extract, not a separate fetch. `verify_root`, `linkcheck`, and `verify` pass on the branch (no shared file changed).
+- **Irregularity:** the earlier official sheets show re-entry as an explicit term. The 2026 sheets are silent on re-entry. Silence is not evidence of single entry, so the "single-entry" toggle must stay empty. Rows must not be labelled single-entry on this basis.
+- **Request to the integration session (not edited here):** add the record to `flagged.html` / `data/poker4.json` flag F1 as "re-checked 2026-11-18 (9a45e995): sample of 2 sheets + 2024 comparison sheets; verdict unchanged."
+- **Not done in this session (brief items, with reasons):**
+  - Hotel live-rate lookup, true-cost calculation from live rates, and Google/Apple Maps walking routes: the sandbox can reach only github.com, npm, and PyPI, and the hotel and map sites are not reachable from bash. Earlier sessions measured walks on Google Maps and recorded the values in `data/integrated/walks-google.json`. Live rates were not captured for specific dates.
+  - An 8 AM all-day schedule: no verified Strip listing starts before 10:10 AM (flag F10), so this cannot be built from official data.
+  - Single-entry filter for any event: blocked by F1 and F15 (above).
+  - Full line-by-line verification of every table row: already done by earlier sessions (see B1–B6). Not repeated here.
+- **Status:** E1 done (claim + record). Session is a single-task contribution; a PR is opened from `arena/9a45e995-poker4` for review of this record.
+
+### Merge record — arena/1ea5710f-poker4 (2026-11-18)
+
+- PR [#85](https://github.com/karagemop466-tech/Poker4/pull/85) (log-only) merged to `main` as merge commit `96431b5`, after one conflict in `COORDINATION.md` (both sides' logs kept, nothing discarded; the other session's 27e8ed8e block is intact).
+- Checks on `main` after merge: `Poker4 site build + verification gate` = success; `Verify the published site` = success; `Deploy static dashboard to GitHub Pages` = success; `pages build and deployment` = success.
+- Live site `https://karagemop466-tech.github.io/Poker4/` re-read after deploy: loads with the same dated figures.
+
+### Integration note — arena/75f8b185-poker4 merged with `origin/main` (2026-11-18)
+
+- **Parallel overlap found at merge time (log only, nothing discarded):** `main` moved through PRs #84–#89 while this branch was in progress. Two of this session's tasks had been done in parallel by other sessions today:
+  - Q1 (hash drift in `data/room-facts.json`): already fixed on `main` by **27e8ed8e R1** (identical three-line diff). This branch's version of that change was dropped in favour of main's.
+  - Q2 (single-entry search): re-checked on `main` by **9a45e995 E1** (2026 sheets 5 and 10 and 2024 comparison sheets). This branch's search adds the Wynn raw-capture grep and the WPT and WSOP scope notes, and reaches the same verdict.
+- **Integration action taken:** the 9a45e995 request ("add the record to flag F1") is applied in `data/poker4.json` (F1 detail and sources extended, verdict unchanged). This session's F31–F33 and F27 update are kept.
+- **Result of this integration:** regenerated with `scripts/integrate_data.py` and re-checked with the gates listed at the top of this board. Pages deploy and the merge result are recorded in the next entry.
