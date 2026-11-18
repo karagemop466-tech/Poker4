@@ -1606,7 +1606,7 @@ this PR.
 | E2 | Stored data integrity: `data/room-facts.json` cites raw-capture SHA-256 values that differ from the committed captures; regenerate so provenance matches | done | arena/e1004114-poker4 | `data/room-facts.json` | `tools/room_extract.py` | byte-stable on two runs; `room_extract`, `c2242cb1_check_dse`, `b808eea0_check_dse_live` green | committed hashes were stale vs `data/raw/*` (values unchanged; F28) |
 | E3 | Scheduled-job health: two cron workflows fail every run on main (legacy writers to `poker4/`, `data/08f07d1d/`, `data/feature/`) | done | arena/e1004114-poker4 | `.github/workflows/tournament-monitor.yml`, `.github/workflows/feature-recheck.yml` | run logs 44190052816, 44185555543; `gh api …/actions/runs?event=schedule` | cron removed from both; manual dispatch kept; active daily monitors (url-check, source-recheck, maintenance) succeed on main | CI log for 44190052816 unreadable (EOF); the same verify step passes locally (F29) |
 | E4 | Flag new irregularities on the Flagged page (`data/poker4.json`) and re-integrate | done | arena/e1004114-poker4 | `data/poker4.json`, generated root pages | `scripts/integrate_data.py` | see E1–E3 |
-| E5 | Integration: gates green → PR → merge → Pages deploy confirmed → record here | in progress | arena/e1004114-poker4 | this branch, `main`, `COORDINATION.md` | all canonical gates | — |
+| E5 | Integration: gates green → PR → merge → Pages deploy confirmed → record here | done | arena/e1004114-poker4 | this branch, `main`, `COORDINATION.md` | all canonical gates | — |
 
 ### Log — `arena/e1004114-poker4` (2026-11-18)
 
@@ -1808,3 +1808,20 @@ this PR.
 - **Verified:** on a clean checkout of `origin/main` (`b62fc0c`), `python3 tools/build_poker4.py` followed by `git add -A data/08f07d1d poker4; git diff --cached` reports **0 drift files**. `verify_poker4` OK, `check_rows` OK, `poker4_monitor --selftest` OK. The gate was red at `d1bb7be` only because the date was not pinned at that time.
 - **Still open for the owner (not edited here):** the pin is a fixed string, so every new data snapshot must set `POKER4_BUILD_DATE` (or edit the default). Until a new snapshot date is set deliberately, the output will not change with the calendar, which is the intended behaviour.
 - **Session status:** this PR now carries only this board log entry. No generated file or data file is changed by this session.
+
+### Merge and deploy record — `arena/e1004114-poker4` (E5, 2026-11-18)
+
+- **PR [#94](https://github.com/karagemop466-tech/Poker4/pull/94)** (`arena/e1004114-poker4` → `main`) **merged** at 2026-11-18T03:27:08Z, merge commit `34f0ed2`, via `gh pr merge 94 --merge`. Head at merge: `cc2355f` (contains `origin/main` as of the merge).
+- Main moved several times during the merge window (PR #93, #95, #96 and two scheduled syncs). Each time `origin/main` was merged into the branch and the gates re-run before the next attempt. The final merge was taken only after a check that the branch contained the current `origin/main` (`git merge-base --is-ancestor`).
+- **Gates on the merged head:** PR checks `check` / `integrity` / `verify` all `pass`; the post-merge `Poker4 site build + verification gate`, `Verify the published site` and `Deploy static dashboard to GitHub Pages` runs on `main` all `success`; the `pages build and deployment` run for the merge commit `success`.
+- **Live site read after deploy:** `https://karagemop466-tech.github.io/Poker4/flagged.html` shows the title "Flagged for Review", **35 open flags**, F1 with the 9a45e995 re-check record, and F34/F35 — the merged content is what is served.
+- **Post-merge scheduled sync** (`Official source sync + change monitor`, push run on main at 03:24Z-equivalent): `success`.
+
+**Requests left for other sessions (not edited here):**
+
+| PR | Branch | State at this record | Request |
+|----|--------|-----------------------|---------|
+| #92 | `arena/75f8b185-poker4` | open, not mergeable with main | Owner to rebase on `main`, renumber its flags (F31–F33 are now main's), and regenerate via `scripts/integrate_data.py`. It touches `data/poker4.json` and `poker4/*`. |
+| #97 | `arena/a745c8f4-poker4` | open | Board log only; owner to rebase. |
+
+**Note on PR #93 (27e8ed8e):** it branched before this session's E3 commit and, when merged, restored the two cron triggers that E3 removed (`tournament-monitor.yml`, `feature-recheck.yml`). This was not a deliberate reversal. Those triggers were reinstated, unintentionally, by merging that branch. The `main` version of those two files was restored to the E3 state by the 34f0ed2 merge. **Verify on `main`**: `grep -A1 '^on:' .github/workflows/tournament-monitor.yml .github/workflows/feature-recheck.yml` should show `workflow_dispatch` only. If a later merge re-adds `schedule:`, it should be removed again (F21/F29).
