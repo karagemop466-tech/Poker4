@@ -825,6 +825,118 @@
    "qualification_source": null,
    "source_keys": [],
    "dead_source_pages": []
+  },
+  {
+   "id": "linq",
+   "property": "The LINQ Hotel & Casino (Caesars Rewards)",
+   "venue_ids": [],
+   "official_page": "https://www.caesars.com/linq",
+   "booking_link": "https://www.caesars.com/linq",
+   "resort_fee": {
+    "amount_usd": null,
+    "basis": null,
+    "source": "https://www.caesars.com/linq",
+    "status": "not confirmed on an official page: the caesars.com/linq page (fetched 2026-11-18) prints no fee; third-party sites list figures that conflict and are not used"
+   },
+   "tax": {
+    "rate_pct": null,
+    "basis": null,
+    "source": null,
+    "status": "not confirmed"
+   },
+   "parking": {
+    "self_usd_per_day": null,
+    "valet_usd_per_day": null,
+    "source": null,
+    "status": "not confirmed"
+   },
+   "cancellation": {
+    "text": "Promotional banner on caesars.com/linq (fetched 2026-11-18): 'Reserve now. Pay at hotel. Free cancellation up to 48 hours before check-in.' Terms apply. Not a rate-specific policy.",
+    "status": "partial — promotional banner only; rate-specific terms not captured",
+    "source": "https://www.caesars.com/linq"
+   },
+   "poker_room_on_property": "not verified in this session (earlier record: none)",
+   "rate_log": [],
+   "qualification": null,
+   "qualification_source": null,
+   "source_keys": [],
+   "dead_source_pages": [],
+   "walk": {
+    "venue_id": "venetian",
+    "venue": "The Venetian Poker Room",
+    "minutes": 7,
+    "distance_mi": 0.3,
+    "via": "Las Vegas Blvd S",
+    "meets_30_min": "yes — measured 7 min (limit 30)",
+    "status": "Measured 2026-11-18 with Google Maps walking directions (Google Maps directions (web), travel mode = walking, departure = “leave now”) from 3535 Las Vegas Blvd South, Las Vegas, NV 89109 to 3355 Las Vegas Blvd. South, Las Vegas, NV 89109: 7 min / 0.3 mi Las Vegas Blvd S. A routing-engine measurement with a timestamp and a reproducible link, not a statement by either property.",
+    "method": "Google Maps directions (web), travel mode = walking, departure = “leave now”",
+    "retrieved": "2026-11-18",
+    "source": "https://www.caesars.com/linq",
+    "distance_miles": 0.3,
+    "route_summary": "via Las Vegas Blvd S",
+    "measured_at": "2026-11-18",
+    "method_url": "https://www.google.com/maps/dir/The%20LINQ%20Hotel%20%26%20Casino%2C3535%20Las%20Vegas%20Blvd%20South%2C%20Las%20Vegas%2C%20NV%2089109/The%20Venetian%20Resort%20Las%20Vegas%2C3355%20Las%20Vegas%20Blvd.%20South%2C%20Las%20Vegas%2C%20NV%2089109/data=!4m2!4m1!3e2?hl=en&gl=us",
+    "alt_method_url": "https://maps.apple.com/?saddr=The+LINQ+Hotel+%26+Casino%2C+3535+Las+Vegas+Blvd+South%2C+Las+Vegas%2C+NV+89109&daddr=The+Venetian+Resort+Las+Vegas%2C+3355+Las+Vegas+Blvd.+South%2C+Las+Vegas%2C+NV+89109&dirflg=w",
+    "walk_url": "https://www.google.com/maps/dir/The%20LINQ%20Hotel%20%26%20Casino%2C3535%20Las%20Vegas%20Blvd%20South%2C%20Las%20Vegas%2C%20NV%2089109/The%20Venetian%20Resort%20Las%20Vegas%2C3355%20Las%20Vegas%20Blvd.%20South%2C%20Las%20Vegas%2C%20NV%2089109/data=!4m2!4m1!3e2?hl=en&gl=us"
+   },
+   "hotel_address_official": "3535 Las Vegas Blvd South, Las Vegas, NV 89109",
+   "hotel_address_source": "https://www.caesars.com/linq"
+  },
+  {
+   "id": "flamingo",
+   "property": "Flamingo Las Vegas (Caesars Rewards)",
+   "venue_ids": [],
+   "official_page": "https://www.caesars.com/flamingo-las-vegas",
+   "booking_link": "https://www.caesars.com/flamingo-las-vegas",
+   "resort_fee": {
+    "amount_usd": null,
+    "basis": null,
+    "source": "https://www.caesars.com/flamingo-las-vegas",
+    "status": "not confirmed on an official page: the caesars.com/flamingo-las-vegas page (fetched 2026-11-18) prints no fee; third-party sites list $42, $50 and $56.63 and conflict, so none is used"
+   },
+   "tax": {
+    "rate_pct": null,
+    "basis": null,
+    "source": null,
+    "status": "not confirmed"
+   },
+   "parking": {
+    "self_usd_per_day": null,
+    "valet_usd_per_day": null,
+    "source": null,
+    "status": "not confirmed"
+   },
+   "cancellation": {
+    "text": "Promotional banner on caesars.com/flamingo-las-vegas (fetched 2026-11-18): 'Reserve now. Pay at hotel. Free cancellation up to 48 hours before check-in.' Terms apply. Not a rate-specific policy.",
+    "status": "partial — promotional banner only; rate-specific terms not captured",
+    "source": "https://www.caesars.com/flamingo-las-vegas"
+   },
+   "poker_room_on_property": "not verified in this session (earlier record: none)",
+   "rate_log": [],
+   "qualification": null,
+   "qualification_source": null,
+   "source_keys": [],
+   "dead_source_pages": [],
+   "walk": {
+    "venue_id": "venetian",
+    "venue": "The Venetian Poker Room",
+    "minutes": 10,
+    "distance_mi": 0.5,
+    "via": "Las Vegas Blvd S",
+    "meets_30_min": "yes — measured 10 min (limit 30)",
+    "status": "Measured 2026-11-18 with Google Maps walking directions (Google Maps directions (web), travel mode = walking, departure = “leave now”) from 3555 Las Vegas Blvd South, Las Vegas, NV 89109 to 3355 Las Vegas Blvd. South, Las Vegas, NV 89109: 10 min / 0.5 mi Las Vegas Blvd S. A routing-engine measurement with a timestamp and a reproducible link, not a statement by either property.",
+    "method": "Google Maps directions (web), travel mode = walking, departure = “leave now”",
+    "retrieved": "2026-11-18",
+    "source": "https://www.caesars.com/flamingo-las-vegas",
+    "distance_miles": 0.5,
+    "route_summary": "via Las Vegas Blvd S",
+    "measured_at": "2026-11-18",
+    "method_url": "https://www.google.com/maps/dir/Flamingo%20Las%20Vegas%2C3555%20Las%20Vegas%20Blvd%20South%2C%20Las%20Vegas%2C%20NV%2089109/The%20Venetian%20Resort%20Las%20Vegas%2C3355%20Las%20Vegas%20Blvd.%20South%2C%20Las%20Vegas%2C%20NV%2089109/data=!4m2!4m1!3e2?hl=en&gl=us",
+    "alt_method_url": "https://maps.apple.com/?saddr=Flamingo+Las+Vegas%2C+3555+Las+Vegas+Blvd+South%2C+Las+Vegas%2C+NV+89109&daddr=The+Venetian+Resort+Las+Vegas%2C+3355+Las+Vegas+Blvd.+South%2C+Las+Vegas%2C+NV+89109&dirflg=w",
+    "walk_url": "https://www.google.com/maps/dir/Flamingo%20Las%20Vegas%2C3555%20Las%20Vegas%20Blvd%20South%2C%20Las%20Vegas%2C%20NV%2089109/The%20Venetian%20Resort%20Las%20Vegas%2C3355%20Las%20Vegas%20Blvd.%20South%2C%20Las%20Vegas%2C%20NV%2089109/data=!4m2!4m1!3e2?hl=en&gl=us"
+   },
+   "hotel_address_official": "3555 Las Vegas Blvd South, Las Vegas, NV 89109",
+   "hotel_address_source": "https://www.caesars.com/flamingo-las-vegas"
   }
  ],
  "walk_policy": {
@@ -1438,6 +1550,35 @@
     "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_25.pdf"
    ],
    "note": "found by arena/c5c7cc2b-poker4 during the 2026-11-17 line-by-line live re-read (V1/V2); renumbered twice on rebase (F27 then F29 were taken by parallel sessions) — final ID F30"
+  },
+  {
+   "id": "F31",
+   "severity": "unverified",
+   "item": "LINQ and Flamingo (added 2026-11-18): resort fee, room tax, parking and rate-specific cancellation are not confirmed on an official page",
+   "detail": "Both properties were added to the walking set because they sit on the Strip about 7 and 10 walking minutes from the Venetian poker room. The official caesars.com pages (fetched 2026-11-18) print the addresses (3535 and 3555 Las Vegas Blvd South) and a promotional banner 'Free cancellation up to 48 hours before check-in. Terms apply.' — that banner is not a rate-specific policy. No official resort-fee amount was found on either page. Third-party listings give Flamingo fees of $42, $50 and $56.63 and conflict with each other, so none is used. Fee, tax and parking cells stay blank until a Caesars page prints them.",
+   "sources": [
+    "https://www.caesars.com/linq",
+    "https://www.caesars.com/flamingo-las-vegas"
+   ]
+  },
+  {
+   "id": "F32",
+   "severity": "irregularity",
+   "item": "Walk re-capture tool named in the walk data does not exist in the repository",
+   "detail": "data/walk-measurements.json and data/walks.json both give 'Re-capture with: python3 tools/walk_capture.py'. No such file is in tools/ (checked 2026-11-18). The 2026-11-17 and 2026-11-18 walks were copied from Google Maps directions pages by hand. Only the date of each capture is recorded, not the time.",
+   "sources": [
+    "https://www.google.com/maps/dir/The%20LINQ%20Hotel%20%26%20Casino,3535%20Las%20Vegas%20Blvd%20South,Las%20Vegas,NV%2089109/The%20Venetian%20Resort%20Las%20Vegas,3355%20Las%20Vegas%20Blvd.%20South,Las%20Vegas,NV%2089109/data=!4m2!4m1!3e2?hl=en&gl=us"
+   ]
+  },
+  {
+   "id": "F33",
+   "severity": "irregularity",
+   "item": "Legacy data/hotels.json holds unmeasured walking estimates for LINQ and Flamingo that conflict with the measured walks; they are not used",
+   "detail": "data/hotels.json (the first-generation hotel file; the current build does not read it) gives estimated walks of 13 min for LINQ and 18 min for Flamingo, described in that file as estimates from straight-line geography and not verified. The measured Google Maps walks are 7 min (LINQ) and 10 min (Flamingo). The estimates are kept only as an archive. The estimated minutes do not appear on the published pages (checked 2026-11-18 by searching the built HTML for those values in the LINQ and Flamingo rows). Removing the file is a decision for the owner (see suggestions).",
+   "sources": [
+    "https://www.caesars.com/linq",
+    "https://www.caesars.com/flamingo-las-vegas"
+   ]
   }
  ],
  "trip_example": {
