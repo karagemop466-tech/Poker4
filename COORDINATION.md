@@ -1592,3 +1592,34 @@ broken. Fix applied here: `cancel-in-progress: false` in `.github/workflows/page
 idempotent; queued runs deploy the newer commit). `workflow_dispatch` re-triggering is not available to
 this token (HTTP 403 — same limitation recorded in F21), so the confirmation run is the push trigger of
 this PR.
+
+
+## Session arena/a745c8f4-poker4 (current session) — integration + line-by-line verification
+
+- Session ID: `arena/a745c8f4-poker4`; branch `arena/a745c8f4-poker4`, from `main` @ `be614888` (PR #83 merge of `arena/b808eea0-poker4`). Branch is currently identical to `main`; this session adds the integration record only.
+- Scope claimed: final integration — line-by-line verification of the committed root dashboard, then PR → main, merge, confirm GitHub Pages deploy, and record the PR link + merge result here. No other session's files touched.
+- File scope: `COORDINATION.md` (this log entry only). Root pages/data/venues/ are unchanged because they are already complete and byte-stable (see verification below).
+
+Verification performed this session (2026-11-18), all against committed official captures (`data/raw/`) and the 68-URL tracked-source registry — no live venue fetch is possible from this sandbox (outbound HTTP reaches github.com/npm/pypi only; the scheduled source-re-check jobs' first genuine live run occurs in GitHub Actions):
+
+- `python3 scripts/verify_root.py` → 16 pages · 253 event rows · 130 rate-log lines · 68 tracked sources · 0 warnings — OK (every row carries an official source or an explicit unverified marker)
+- `python3 scripts/verify.py` → pages: 10; sources: 17; flags: 29 — OK (all table rows link official sources; internal links resolve; data references valid)
+- `python3 scripts/verify_markup.py` → 37 pages checked, 0 problems — OK
+- `python3 scripts/linkcheck.py` → 30 pages, all internal links resolve — OK
+- `python3 scripts/integrate_data.py` → events=253 days=38 rate-log=130 walks=10 sources=68; committed pages are byte-stable vs. the data build (no diff) — OK
+- Data spot-checks: all 42 distinct event source URLs resolve to official operator domains / tracked registry entries; 73 guarantee÷buy-in ratios recomputed, 0 mismatches; all 253 events carry `sources` and `last_checked`; 0 events confirmed single-entry (honest — the toggle returns nothing, flagged F1); hotel true-cost rows left blank where no dated quote exists, per never-infer policy (flagged F4).
+
+Features present on the built root dashboard: trip-cost calculator (entries × buy-ins + nights × true hotel cost, tax on fee+rate, "cannot compute" instead of guessing), global search box across all tables, date filter, single-entry/freezeout toggle (0 rows, honestly), one page per venue (Venetian/Wynn/Caesars/Bellagio/ARIA/others), dated rate log, per-row last-checked, overlap check with primary + conditional fallback per day, ≤30-minute walking-route filter, GTD÷entry descriptive ratio with bounty/flight events in a separate section, executive summary, open questions, suggestions (decision-only, await user choice), Flagged for Review page.
+
+Irregularities: carried on the Flagged for Review page (30 flags, incl. F1 entry-policy silence, F4 no dated hotel quote, F27 tax-rate provenance, WPT-08 fee-split). None block launch. Parallel session subsites (`60fb62da/`, `c07371e3/`, `df41f5c6/`, `strip/`, `verified/`, `v2/`) preserved untouched and linked from the root.
+
+PR + Pages deploy result: recorded below after the integration PR is merged.
+
+
+## Session arena/a745c8f4-poker4 — PR + deploy result
+
+- **PR [#TBD](https://github.com/karagemop466-tech/Poker4/pull/TBD)** ("a745c8f4 integration: line-by-line verification + Pages deploy record") — to be merged into `main`.
+- **Merge result:** pending.
+- **Pages deploy:** pending — confirm the `Deploy static dashboard to GitHub Pages` run on `main` succeeds and the live site (`https://karagemop466-tech.github.io/Poker4/`) loads with the merged markers.
+- Once confirmed, this entry is finalized with the PR number, merge commit, and deploy run.
+
