@@ -12,7 +12,9 @@ import csv, html, json, os, re, sys, datetime as dt
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 D = os.path.join(ROOT, "data", "08f07d1d")
 OUT = os.path.join(ROOT, "poker4")
-TODAY = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d")
+# Pinned to the data snapshot date so the reproducibility gate (poker4-site-verify.yml) does not
+# fail when the UTC calendar rolls over. Override with POKER4_BUILD_DATE=YYYY-MM-DD for a new snapshot.
+TODAY = os.environ.get("POKER4_BUILD_DATE", "2026-11-17")
 SCHED = "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
 
 def load(name, default=None):

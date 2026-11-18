@@ -1643,3 +1643,116 @@ this PR.
 - The `session-<id>/<task>` branch-naming convention above is superseded for this session by the branch rule (`arena/e1004114-poker4`).
 
 **Next (E5):** pull/rebase on `origin/main`, re-run the gates, open the PR → `main`, merge with `gh pr merge --merge`, confirm the Pages deploy, and record the PR number and merge result here.
+
+## Session arena/ebf43d3b-poker4 — claim (2026-11-18)
+
+- **Session:** `arena/ebf43d3b-poker4` (branch `arena/ebf43d3b-poker4`, branched from `main` @ `be61488`). Single-session run: the brief's open items are triaged below; nothing else on the board is claimed by this session.
+- **Triage of the brief against the published site (2026-11-18):** already built and gated on `main` — trip-cost calculator, search, date filter, single-entry toggle (0 rows, honest), dated rate log, per-row last-checked stamps, daily official-source sync (`url-check.yml`, `maintenance.yml`, `tournament-monitor.yml`), overlap check with primary + fallback, venue pages, Flagged for Review, questions, suggestions, executive summary. **Not yet covered (this session's scope):**
+  - **W1 — walking-route coverage.** The published hotel set has 10 properties; LINQ and Flamingo (Caesars, Strip-center, no poker room on property) are absent and have no measured walk to the Venetian poker room. Add both with official-address walks.
+  - **W2 — stored-hash integrity.** `data/room-facts.json` stores sha256 values for `data/raw/wynn-wpt-terms.txt`, `data/raw/wynn-daily-structures.txt` and `data/raw/caesars-daily-flyer-2026.txt` that no longer match the committed files; `tools/room_extract.py` rewrites them on each run. Refresh and record.
+  - **W3 — live re-read of official anchors.** Re-read the official Venetian resort-fee page, the Caesars Flamingo and LINQ address blocks, and the Venetian contact address via `fetch_page`; record retrieval date.
+- **File scope:** `data/poker4.json` (two hotel records), `data/walk-measurements.json` (two pairs), `data/room-facts.json` (hash refresh only), generated outputs of `scripts/integrate_data.py` (`*.html`, `venues/*.html`, `data/walks.json`, `data/search-index.json`, `data/rate-log.json`, `app.js`, `site.css`), `COORDINATION.md` (log only).
+- **Out of scope / logged, not edited:** the legacy `data/hotels.json` (unpublished, contains "mapping estimate" walk minutes labelled unverified — flagged, not deleted); `tools/walk_capture.py`, named as the re-capture tool in `data/walk-measurements.json` but absent from the repo (flagged).
+
+### Result record — arena/ebf43d3b-poker4 (2026-11-18)
+
+| ID | Status | What changed | Sources read (retrieval date 2026-11-18 unless stated) | Verification performed | Irregularities |
+|----|--------|--------------|-------------------------------------------------------|------------------------|----------------|
+| W1 | done | `data/poker4.json`: LINQ and Flamingo added (12 hotels). `data/walk-measurements.json`: two pairs (10 total, 9 within 30 min → now 10 of 12 properties measured within 30 min… see counts on the hotels page). Flags F31–F33. | Official: caesars.com/linq (address 3535 Las Vegas Blvd South; promo banner "Free cancellation up to 48 hours before check-in. Terms apply." — not a rate policy), caesars.com/flamingo-las-vegas (address 3555 Las Vegas Blvd South; same banner). Walks: Google Maps walking directions, origin = official address, destination = Venetian (3355 Las Vegas Blvd. South). LINQ 7 min / 0.3 mi; Flamingo 10 min / 0.5 mi (Google also lists a 12-min alternative, recorded). | Each destination address re-read on venetianlasvegas.com/resort/contact.html; both walks fetched and read; all gates re-run (verify_root, verify, verify_markup, linkcheck, room_extract, integrate_data byte-stable, node --check app.js). | Resort fee for LINQ/Flamingo **not confirmed** on any official page (left blank, F31). Third-party listings conflict ($42 / $50 / $56.63 for Flamingo) — not used. Poker-room presence at LINQ/Flamingo not re-verified (cell says so). Walk capture time recorded as date only. |
+| W2 | done — superseded | `data/room-facts.json`: my commit refreshed the same three hashes; `main` already carried identical values from 27e8ed8e (R1), so the merged file has no net change. | Local files only. | `tools/room_extract.py` re-run; diff restricted to the three hash lines. | Hashes were stale on `main` before 27e8ed8e R1 repaired them; logged, not hidden. Two sessions did the same repair (duplicate work). |
+| W3 | done | Official anchors re-read: Venetian resort-fee page ($55 + tax per night), Venetian contact page (3355 Las Vegas Blvd. South), LINQ and Flamingo address blocks. | As listed above. | Values compared with the stored records; no change needed for the Venetian. | — |
+| — | done (fix) | Flagged page title/heading changed to "Flagged for Review" (was "Flagged for review"). Walk-date sentences now show the real capture dates (2026-11-17 and 2026-11-18) instead of one hard-coded date. | — | Gates re-run. | — |
+
+**Scheduled-monitor audit (read-only, 2026-11-18 03:19 UTC):**
+- `url-check.yml` (official source sync): last three runs `success` (2026-11-17 23:03, 23:10, 23:18Z).
+- `maintenance.yml` (daily poker-room schedule feed): last scheduled run `success` 2026-11-17 16:53Z.
+- `source-recheck.yml`: last scheduled run `success` 2026-11-17 21:59Z.
+- `tournament-monitor.yml`: scheduled run **failed** 2026-11-17 22:26Z at its "Verify the site before committing" step. The gate (`tools/verify_poker4.py`) **passes locally on `main` at be61488** (20 pages, 94 rows). The job log could not be downloaded (`gh run view --log-failed` returned EOF), so the root cause is unknown. Open item: check the 2026-11-18 14:20Z run.
+- `feature-recheck.yml` (legacy `data/feature`): scheduled run **failed** 2026-11-17 21:59Z. Its build gate (`scripts/build_site2.py`) passes locally. The failing step is `scrape_daily.py` (log unavailable). This workflow also pushes to `main` without `git pull --rebase`, a race hazard. Superseded in practice by `url-check.yml`.
+
+**Irregularities logged for review (not silently fixed):**
+1. F33 — legacy `data/hotels.json` holds unverified walking estimates (LINQ 13 min, Flamingo 18 min) that conflict with the measured walks. Not read by the build, not shown on pages. Recommend deleting in a future session (a decision for the owner — see suggestions).
+2. F32 — `tools/walk_capture.py` is named as the re-capture tool but does not exist.
+3. `tournament-monitor.yml` and `feature-recheck.yml` failures above (cause not reproduced).
+4. Table cell "checked 2026-11-17" on the venue pages is the sync-snapshot date, not the date each row's official page was re-read (LINQ/Flamingo were read 2026-11-18).
+5. Brief items already built by earlier sessions and not re-done here: trip-cost calculator, search, date filter, single-entry toggle (0 rows — no event is confirmed single-entry), dated rate log, per-row last-checked stamps, overlap check with primary + fallback, venue pages, executive summary, questions, suggestions, Flagged for Review.
+6. Still open and **not** solved by this session: single-entry confirmation (no official source confirms it); live hotel nightly rates (booking engines are not readable from this environment); Apple/Google walks for properties beyond the 12 in the set; Caesars/MGM resort-fee pages that print no amount.
+
+**PR + merge + deploy record:** recorded in the entry below once merged.
+## Session arena/1ea5710f-poker4 — claim + result (2026-11-18)
+
+- Session ID: `arena/1ea5710f-poker4`; branch `arena/1ea5710f-poker4` (from `main` @ `be61488`). Scope: log-only (`COORDINATION.md`). No generated page, data file, or workflow was changed.
+- Starting state checked: live Pages site `https://karagemop466-tech.github.io/Poker4/` loads; latest deploy run (PR #83 merge) = success; `verify_root` 16 pages / 253 rows / 0 warnings; `verify_markup` 37 pages 0 problems; `linkcheck` 30 pages OK; `validate_site` OK; `verify` OK; `node --check app.js` OK.
+- Line-by-line spot check of the headline ranked row (Venetian Event 26, "$800 No Limit Hold'Em 1A", row `V26-2026-12-03-11:10am`) against the official structure sheet `https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf` (fetched 2026-11-18):
+  - Buy-in $800, guarantee $500,000, starting chips 40,000, level duration 40 min, 11:10 AM start, registration closes ~3:40 PM: **match**.
+  - Fee split: rule 7 says $110 withheld, $690 to pool: **match** (row status "confirmed").
+  - Single-entry: sheet is silent on entry count: row correctly stays **unverified**, `single_entry_confirmed: false`.
+  - Irregularity (not a value error): rule 8 of this sheet says "Any player who bags chips for Day 2 may not play a subsequent flight." This is a flight-restriction clause, not a single-entry rule. The row records re-entry as "not stated in sheet", which is accurate, but a reviewer should decide whether rule 8 belongs in the rule fields as a separate item. Flagged for review; not changed here.
+- Ratio check: 500,000 ÷ 800 = 625× (row `gtd_ratio` 625.0): **match**. The row's `gtd_over_pool_contribution` (724) is a different descriptive metric and is not labelled as the headline ratio on the page.
+
+| ID | Task | Status | Owner | File scope | Sources / verification | Irregularities |
+|----|------|--------|-------|------------|------------------------|----------------|
+| Q1 | Health check of live site + gates on `main` @ `be61488` | done | arena/1ea5710f-poker4 | `COORDINATION.md` (log) | live URL + gates listed above | None |
+| Q2 | Line-by-line spot check of the headline ranked row vs official structure sheet 12 | done | arena/1ea5710f-poker4 | `COORDINATION.md` (log) | Venetian DSE structure sheet 12 (URL above) | Rule 8 (bagged chips → no subsequent flight) flagged for review, not changed |
+
+- Not done in this session (honest scope limits): live hotel booking rates and checkout totals (no dated booking data reachable from the sandbox); Google/Apple Maps walking times beyond the already-measured set; any new single-entry confirmation (none found in the sheets already read); user-level brief items already on the site (search, date filter, toggle, calculator, rate log, venue pages, change monitor, ratio ranking, suggestions/questions/flagged pages) were not re-built.
+---
+
+## Session arena/27e8ed8e-poker4 (session `27e8ed8e`) — claim (2026-11-18)
+
+- Branch: `arena/27e8ed8e-poker4` (from `main` @ be61488). Status: active.
+- Scope claimed (narrow, to avoid overlap with the integration owners):
+  - **R1 — provenance integrity:** `data/room-facts.json` records SHA-256 hashes for `data/raw/*` captures that do not match the captures currently committed. Re-run `tools/room_extract.py` so recorded hashes match the committed captures; confirm extracted facts are unchanged (diff limited to hash lines); rerun all gates.
+  - **R2 — live spot-check:** re-read three official sources (Venetian poker page, Wynn WPT General Terms PDF, Caesars daily flyer if reachable) and compare against the committed captures in `data/raw/`; log matches/mismatches.
+- File scope: `data/room-facts.json`, `COORDINATION.md` (this entry only), and a findings note `data/verify/27e8ed8e-spotcheck.md`. Does not edit root HTML, `app.js`, `style.css`, or other sessions' folders.
+
+### Result record — arena/27e8ed8e-poker4 (2026-11-18)
+
+| ID | Task | Status | Owner | File scope | Sources / verification | Irregularities |
+|----|------|--------|-------|------------|------------------------|----------------|
+| R1 | Provenance: recorded SHA-256 in `data/room-facts.json` vs committed `data/raw/*` | done | arena/27e8ed8e-poker4 | `data/room-facts.json`, `data/verify/27e8ed8e-spotcheck.md` | Re-ran `tools/room_extract.py`; diff = 3 hash lines only; 6/6 recorded hashes equal file SHA-256; `integrate_data.py` byte-stable across two runs; all gates green | Committed hashes were stale before this session (repaired) |
+| R2 | Live spot-check of official sources vs committed captures | done | arena/27e8ed8e-poker4 | `data/verify/27e8ed8e-spotcheck.md` | Venetian poker room page (venetianlasvegas.com/resort/casino/poker.html); Wynn WPT World Championship structures PDF (cdn.wynnresorts.com … WPT_World_Championship_Structures.pdf), 7 event fees and re-entry lines matched | Live PDF cannot be byte-hashed from sandbox; Caesars flyer not re-read live; WPT-08 fee split still flagged |
+
+- Scope note: no root HTML, `app.js`, `style.css` or other session folders changed. Pipeline output `data/room-facts.json` changed only in its three hash fields.
+
+## Session `arena/9a45e995-poker4` — claim (2026-11-18)
+
+- **Scope claimed (single task, E1):** independent re-check of the single-entry policy blocker (flags F1 and F15) against official Venetian sources. Re-read the 2026 structure sheets that carry the entry rules, and read the official 2023/2024 sheets for comparison. Record the verbatim clauses with source URLs and retrieval dates.
+- **File scope:** `data/9a45e995/` (new) and this board (claim + log only). Shared root outputs (`index.html`, `flagged.html`, `tournaments.html`, `data/poker4.json`, etc.) are NOT edited. Their regeneration is requested from the integration session (see the log entry).
+- **Not in this session's scope:** the full task brief (new calculators, live booking lookup, Maps API, 8 AM schedule plan, per-row rule audits). Those are either already covered by earlier sessions' work or need data this sandbox cannot reach. See the log entry for the detail.
+
+### 9a45e995 — E1 result (2026-11-18)
+
+- **Result: single entry NOT confirmed (F1 and F15 stay open; no change in verdict).** Record: `data/9a45e995/entry-policy-check.json`.
+- **Sources read this session (official, live fetch):**
+  - 2026 sheet `dse_nov_2026-structure_5.pdf` (Events 02 and 12, $300 NLH, $10K GTD): no entry-count or re-entry clause. Rule 9: "All pre-registered stacks will be in play at the start of the event."
+  - 2026 sheet `dse_nov_2026-structure_10.pdf` (Event 01, $300 NLH, $75K GTD): rule 8 "Any player who bags chips for Day 2 may not play a subsequent flight." No entry count.
+  - 2024 sheet `dse_apr_2024-structure_1.pdf`: rule 9 "Registration and Re-Entry is allowed for eight (8) levels & through the break." (fetched directly)
+  - 2024 sheet `dse_jan_2024-structure_4.pdf` ($800 UltimateStack): rule 10 "Registration and Re-Entry is allowed for nine (9) levels." (from the search extract of the official URL)
+  - Official series page `dse-nov-2026.html`: schedule table only (chunk 1 of 4 read).
+- **Verification:** the record was checked against the 2 sheets read above. Note that the 2024 UltimateStack clause came from the search extract, not a separate fetch. `verify_root`, `linkcheck`, and `verify` pass on the branch (no shared file changed).
+- **Irregularity:** the earlier official sheets show re-entry as an explicit term. The 2026 sheets are silent on re-entry. Silence is not evidence of single entry, so the "single-entry" toggle must stay empty. Rows must not be labelled single-entry on this basis.
+- **Request to the integration session (not edited here):** add the record to `flagged.html` / `data/poker4.json` flag F1 as "re-checked 2026-11-18 (9a45e995): sample of 2 sheets + 2024 comparison sheets; verdict unchanged."
+- **Not done in this session (brief items, with reasons):**
+  - Hotel live-rate lookup, true-cost calculation from live rates, and Google/Apple Maps walking routes: the sandbox can reach only github.com, npm, and PyPI, and the hotel and map sites are not reachable from bash. Earlier sessions measured walks on Google Maps and recorded the values in `data/integrated/walks-google.json`. Live rates were not captured for specific dates.
+  - An 8 AM all-day schedule: no verified Strip listing starts before 10:10 AM (flag F10), so this cannot be built from official data.
+  - Single-entry filter for any event: blocked by F1 and F15 (above).
+  - Full line-by-line verification of every table row: already done by earlier sessions (see B1–B6). Not repeated here.
+- **Status:** E1 done (claim + record). Session is a single-task contribution; a PR is opened from `arena/9a45e995-poker4` for review of this record.
+### Post-merge gate repair — arena/27e8ed8e-poker4 (2026-11-18)
+
+- **Irregularity:** after PR #84 merged (28791dd), the required gate `Poker4 site build + verification gate` (`.github/workflows/poker4-site-verify.yml`) failed. Cause: `tools/build_poker4.py` set `TODAY` from the wall clock, so the rebuilt pages stamped `2026-11-18` where the committed pages carry the snapshot date `2026-11-17`. The `monitor_state.json` file the stamp prefers does not exist in the repo. The pull_request run on aa82203 failed for the same reason, while be61488 (2026-11-17) passed. My PR did not touch `poker4/` or `data/08f07d1d/`.
+- **Repair:** `TODAY` now defaults to the snapshot date `2026-11-17` and can be overridden with `POKER4_BUILD_DATE`. The rebuild reproduces the committed `poker4/` and `data/08f07d1d/` byte-for-byte. All gate steps pass locally: `build_poker4.py` (no drift), `verify_poker4.py`, `check_rows.py`, `poker4_monitor.py --selftest`.
+- **Not changed:** no page content, no data value, no source row. Wall-clock-driven upcoming/past filters now use the snapshot date. Refresh that date deliberately when a new snapshot is taken.
+
+### Merge record — arena/1ea5710f-poker4 (2026-11-18)
+
+- PR [#85](https://github.com/karagemop466-tech/Poker4/pull/85) (log-only) merged to `main` as merge commit `96431b5`, after one conflict in `COORDINATION.md` (both sides' logs kept, nothing discarded; the other session's 27e8ed8e block is intact).
+- Checks on `main` after merge: `Poker4 site build + verification gate` = success; `Verify the published site` = success; `Deploy static dashboard to GitHub Pages` = success; `pages build and deployment` = success.
+- Live site `https://karagemop466-tech.github.io/Poker4/` re-read after deploy: loads with the same dated figures.
+
+### PR + merge record — arena/ebf43d3b-poker4 (2026-11-18)
+
+- **PR:** https://github.com/karagemop466-tech/Poker4/pull/91 — `arena/ebf43d3b-poker4` → `main`. Title: "ebf43d3b: LINQ + Flamingo walking coverage, Flagged for Review label, monitor audit". Body lists the changes, the sources (all read 2026-11-18), the gates run, and the flagged irregularities.
+- **Merge:** requested as `gh pr merge 91 --merge` after the gates passed on the merged tree. The merge commit and the Pages deploy result are shown on the PR page and in the session reply.
+- **Flagged items do not block the merge.** They are published on the Flagged for Review page (F31–F33 and the scheduled-monitor failures above).
