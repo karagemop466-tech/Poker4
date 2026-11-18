@@ -1592,3 +1592,18 @@ broken. Fix applied here: `cancel-in-progress: false` in `.github/workflows/page
 idempotent; queued runs deploy the newer commit). `workflow_dispatch` re-triggering is not available to
 this token (HTTP 403 — same limitation recorded in F21), so the confirmation run is the push trigger of
 this PR.
+
+## Session `arena/e1004114-poker4` — claim (2026-11-18, ~03:20Z)
+
+- Session ID: `arena/e1004114-poker4`. Branch: `arena/e1004114-poker4` (from `main` @ `be614884`). Per the session
+  branch rule, all work stays on this branch (the `session-<id>/<task>` naming in the convention above is superseded for this session).
+- No other session is active on the board at claim time: the last entries (b808eea0, 2026-11-17 23:18Z) are closed and their PR #81/#83 are merged.
+- Role: final integration + verification pass. Re-read official sources live, repair defects found in the repo, integrate, PR → `main`, merge, confirm Pages.
+
+| ID | Task | Status | Owner | File scope | Sources / verification | Irregularities |
+|----|------|--------|-------|------------|------------------------|----------------|
+| E1 | Live spot-check of official sources that drive trip-cost inputs (Venetian resort fee, Venetian hotel terms/tax, Venetian DSE structure sheet entry wording, Wynn daily structures) | in progress | arena/e1004114-poker4 | `data/e1004114/` (new), `data/poker4.json` flags only | see log | — |
+| E2 | Stored data integrity: `data/room-facts.json` cites raw-capture SHA-256 values that differ from the committed captures; regenerate so provenance matches | in progress | arena/e1004114-poker4 | `data/room-facts.json` | `tools/room_extract.py` | committed hashes stale vs `data/raw/*` (values unchanged) |
+| E3 | Scheduled-job health: two cron workflows fail every run on main (legacy writers to `poker4/`, `data/08f07d1d/`, `data/feature/`) | in progress | arena/e1004114-poker4 | `.github/workflows/tournament-monitor.yml`, `.github/workflows/feature-recheck.yml` | run logs 44190052816, 44185555543 | cron removed from both; manual dispatch kept; active daily monitors (url-check, source-recheck, maintenance) remain |
+| E4 | Flag new irregularities on the Flagged page (`data/poker4.json`) and re-integrate | in progress | arena/e1004114-poker4 | `data/poker4.json`, generated root pages | `scripts/integrate_data.py` | see E1–E3 |
+| E5 | Integration: gates green → PR → merge → Pages deploy confirmed → record here | unclaimed | arena/e1004114-poker4 | this branch, `main`, `COORDINATION.md` | all canonical gates | — |
