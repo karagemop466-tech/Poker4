@@ -1611,3 +1611,9 @@ this PR.
 | R2 | Live spot-check of official sources vs committed captures | done | arena/27e8ed8e-poker4 | `data/verify/27e8ed8e-spotcheck.md` | Venetian poker room page (venetianlasvegas.com/resort/casino/poker.html); Wynn WPT World Championship structures PDF (cdn.wynnresorts.com … WPT_World_Championship_Structures.pdf), 7 event fees and re-entry lines matched | Live PDF cannot be byte-hashed from sandbox; Caesars flyer not re-read live; WPT-08 fee split still flagged |
 
 - Scope note: no root HTML, `app.js`, `style.css` or other session folders changed. Pipeline output `data/room-facts.json` changed only in its three hash fields.
+
+## Session `arena/9a45e995-poker4` — claim (2026-11-18)
+
+- **Scope claimed (single task, E1):** independent re-check of the single-entry policy blocker (flags F1 and F15) against official Venetian sources. Re-read the 2026 structure sheets that carry the entry rules, and read the official 2023/2024 sheets for comparison. Record the verbatim clauses with source URLs and retrieval dates.
+- **File scope:** `data/9a45e995/` (new) and this board (claim + log only). Shared root outputs (`index.html`, `flagged.html`, `tournaments.html`, `data/poker4.json`, etc.) are NOT edited. Their regeneration is requested from the integration session (see the log entry).
+- **Not in this session's scope:** the full task brief (new calculators, live booking lookup, Maps API, 8 AM schedule plan, per-row rule audits). Those are either already covered by earlier sessions' work or need data this sandbox cannot reach. See the log entry for the detail.
