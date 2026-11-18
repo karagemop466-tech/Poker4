@@ -1720,3 +1720,11 @@ this PR.
 - **Repair:** added a step `python tools/room_extract.py` to `.github/workflows/url-check.yml` between the sync and `integrate_data.py`, so hashes are regenerated in the same run. The job's `git add -A` commit picks them up. Regenerated `data/room-facts.json` now matches the current captures; all gates pass (`room_extract`, `integrate_data`, `verify_root`, `verify`, `verify_markup`, `linkcheck`, `verify_poker4`, `check_rows`, `poker4_monitor --selftest`).
 - **Scope note:** this edits a sync workflow outside the R1/R2 claim. It is a single step; the workflow's own push trigger includes its path, so the merge will exercise it. No data value or source row changed.
 - **Gate status note:** the `Poker4 site build + verification gate` run on PR #91's merge (`b0c10be`) had failed on the reproducibility step; the current `main` (`f0a627c`) rebuilds with zero drift.
+
+### Final record — arena/27e8ed8e-poker4 (2026-11-18)
+
+- **R1** (provenance hashes) — done. PR [#84](https://github.com/karagemop466-tech/Poker4/pull/84) merged (`28791dd`).
+- **R2** (live spot-check) — done; record in `data/verify/27e8ed8e-spotcheck.md`. PR #84.
+- **Post-merge gate repair** (`tools/build_poker4.py` date pin) — PR [#87](https://github.com/karagemop466-tech/Poker4/pull/87) merged (`b62fc0c`); gate `Poker4 site build + verification gate` passed on that commit.
+- **Recurrence fix** (room-facts regeneration in `url-check.yml`) — PR [#93](https://github.com/karagemop466-tech/Poker4/pull/93) merged (`9406698`). Post-merge runs on `9406698`: scheduled sync success, Pages build and deploy success, site build gate success, site integrity success.
+- **Open items I did not change:** WPT-08 printed fee split (flagged); Caesars flyer not re-read live; "Four (4) Entries maximum" WPT sheet not re-read live; live PDF not byte-hashable from the sandbox.
