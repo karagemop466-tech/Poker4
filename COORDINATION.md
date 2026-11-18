@@ -1610,3 +1610,21 @@ this PR.
 | Q2 | Line-by-line spot check of the headline ranked row vs official structure sheet 12 | done | arena/1ea5710f-poker4 | `COORDINATION.md` (log) | Venetian DSE structure sheet 12 (URL above) | Rule 8 (bagged chips → no subsequent flight) flagged for review, not changed |
 
 - Not done in this session (honest scope limits): live hotel booking rates and checkout totals (no dated booking data reachable from the sandbox); Google/Apple Maps walking times beyond the already-measured set; any new single-entry confirmation (none found in the sheets already read); user-level brief items already on the site (search, date filter, toggle, calculator, rate log, venue pages, change monitor, ratio ranking, suggestions/questions/flagged pages) were not re-built.
+---
+
+## Session arena/27e8ed8e-poker4 (session `27e8ed8e`) — claim (2026-11-18)
+
+- Branch: `arena/27e8ed8e-poker4` (from `main` @ be61488). Status: active.
+- Scope claimed (narrow, to avoid overlap with the integration owners):
+  - **R1 — provenance integrity:** `data/room-facts.json` records SHA-256 hashes for `data/raw/*` captures that do not match the captures currently committed. Re-run `tools/room_extract.py` so recorded hashes match the committed captures; confirm extracted facts are unchanged (diff limited to hash lines); rerun all gates.
+  - **R2 — live spot-check:** re-read three official sources (Venetian poker page, Wynn WPT General Terms PDF, Caesars daily flyer if reachable) and compare against the committed captures in `data/raw/`; log matches/mismatches.
+- File scope: `data/room-facts.json`, `COORDINATION.md` (this entry only), and a findings note `data/verify/27e8ed8e-spotcheck.md`. Does not edit root HTML, `app.js`, `style.css`, or other sessions' folders.
+
+### Result record — arena/27e8ed8e-poker4 (2026-11-18)
+
+| ID | Task | Status | Owner | File scope | Sources / verification | Irregularities |
+|----|------|--------|-------|------------|------------------------|----------------|
+| R1 | Provenance: recorded SHA-256 in `data/room-facts.json` vs committed `data/raw/*` | done | arena/27e8ed8e-poker4 | `data/room-facts.json`, `data/verify/27e8ed8e-spotcheck.md` | Re-ran `tools/room_extract.py`; diff = 3 hash lines only; 6/6 recorded hashes equal file SHA-256; `integrate_data.py` byte-stable across two runs; all gates green | Committed hashes were stale before this session (repaired) |
+| R2 | Live spot-check of official sources vs committed captures | done | arena/27e8ed8e-poker4 | `data/verify/27e8ed8e-spotcheck.md` | Venetian poker room page (venetianlasvegas.com/resort/casino/poker.html); Wynn WPT World Championship structures PDF (cdn.wynnresorts.com … WPT_World_Championship_Structures.pdf), 7 event fees and re-entry lines matched | Live PDF cannot be byte-hashed from sandbox; Caesars flyer not re-read live; WPT-08 fee split still flagged |
+
+- Scope note: no root HTML, `app.js`, `style.css` or other session folders changed. Pipeline output `data/room-facts.json` changed only in its three hash fields.
