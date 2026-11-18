@@ -1,0 +1,77 @@
+{
+  "session": "arena/9a45e995-poker4",
+  "task": "E1 — independent re-check of the single-entry / freezeout blocker (flags F1 and F15) against official Venetian sources",
+  "retrieved": "2026-11-18",
+  "retrieved_by": "session 9a45e995 (fetch of official URLs listed below)",
+  "question": "Does any official Venetian document confirm single entry (no re-entry, no add-on) for the 2026 DeepStack Extravaganza events?",
+  "verdict": "NOT CONFIRMED. The sheets read in this check are silent on the entry count; silence is not confirmation. The 2026 sheets also do not prohibit re-entry. Earlier official Venetian sheets state that re-entry is allowed. No row may be labelled single-entry on this evidence.",
+  "official_series_page": {
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "read": "Chunk 1 of 4 only (the schedule table: events, dates, times, structure links). Chunks 2-4 were NOT read in this session. Chunk 1 contains no entry-policy wording."
+  },
+  "official_2026_sheets_read": [
+    {
+      "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf",
+      "events": "02 and 12",
+      "title": "$300 No Limit Hold'em (1Day)",
+      "start_time": "11:10 AM",
+      "starting_chips": 40000,
+      "level_minutes": 30,
+      "late_registration": "10 levels + Break (~ 4:55 PM)",
+      "guarantee": "$10,000",
+      "entry_rules_verbatim": [
+        "2. Must be 21+ years of age and have a Venetian Rewards card to participate.",
+        "6. $58 of the $300 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $242 of every $300 Buy In.",
+        "9. All pre-registered stacks will be in play at the start of the event."
+      ],
+      "entry_count_clause_present": false,
+      "result": "Silent on re-entry, add-on and entry count. Does NOT confirm single entry."
+    },
+    {
+      "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf",
+      "events": "01 (Day A+C, Day 2 @ 12:00 PM)",
+      "title": "$300 No Limit Hold'em",
+      "start_time": "11:10 AM",
+      "starting_chips": 30000,
+      "level_minutes": 40,
+      "late_registration": "6 levels + Break (~ 3:40 PM)",
+      "guarantee": "$75,000",
+      "entry_rules_verbatim": [
+        "8. Any player who bags chips for Day 2 may not play a subsequent flight.",
+        "10. All pre-registered stacks will be in play at the start of the event."
+      ],
+      "entry_count_clause_present": false,
+      "result": "Restricts only players who bagged for Day 2. Does not state an entry count. Does NOT confirm single entry. Matches flag F15."
+    }
+  ],
+  "official_earlier_sheets_read_for_comparison": [
+    {
+      "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2024/structures/dse_apr_2024-structure_1.pdf",
+      "title": "$200 No Limit Hold'em Bounty $5,000 Guaranteed Prize Pool @ 6:10 PM (1Day)",
+      "entry_rules_verbatim": [
+        "9. Registration and Re-Entry is allowed for eight (8) levels & through the break."
+      ],
+      "result": "Official 2024 Venetian sheet states that re-entry is allowed. Series rules differ from 2026, so this does not set the 2026 policy, but it shows that re-entry is an explicit term on Venetian sheets, not an unstated default."
+    },
+    {
+      "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2024/structures/dse_jan_2024-structure_4.pdf",
+      "title": "$800 No Limit Hold'em UltimateStack (Day A+B+C @ 11:10 AM, Day 2 @ 11:00 AM)",
+      "entry_rules_verbatim": [
+        "10. Registration and Re-Entry is allowed for nine (9) levels and through the break.",
+        "11. Any player who bags chips for Day 2 may not play a subsequent flight."
+      ],
+      "result": "Official 2024 sheet: re-entry allowed (9 levels) plus the same Day 2 bagging clause used on 2026 multi-flight sheets. Shows that the 'may not play a subsequent flight' wording does not by itself mean single entry."
+    }
+  ],
+  "search_source_note": "The two 2023/2024 sheets above were located via web search. Their text was then read with fetch on the official venetianlasvegas.com URL (the 2024 Bounty sheet was fetched directly; the UltimateStack sheet's clauses come from the search extract of that same official URL and were not separately re-fetched in this session).",
+  "scope_of_this_check": "2 of 37 official 2026 sheets were re-read in this session. The full 37-sheet review was done earlier (session 75757cc1, data/75757cc1/structure_reads.tsv; flag F1/F15) and found no entry-count clause on any sheet. This check reproduces that conclusion on a sample. It does not replace the 37-sheet review.",
+  "decisions_unchanged": [
+    "Venetian rows remain 'single-entry unverified' (flag F1).",
+    "Multi-flight rows with the Day 2 bagging clause remain 'single-entry unverified' (flag F15).",
+    "The single-entry toggle filter stays empty until an official source states the entry count."
+  ],
+  "what_would_resolve_it": [
+    "An official 2026 Venetian rules document or sheet that states the entry count (for example 'single entry', 'one entry per player', or 'no re-entry'), or an explicit 'Registration and Re-Entry' clause that would show the events are not single entry.",
+    "A direct written answer from the Venetian poker room (tournament office) for each event number."
+  ]
+}
