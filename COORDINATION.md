@@ -1830,3 +1830,10 @@ this PR.
 - **Merge result:** `arena/a745c8f4-poker4` merged into `main` via this commit; COORDINATION.md now holds both this session's log and main's sessions, nothing discarded.
 - **Pages deploy:** the `Deploy static dashboard to GitHub Pages` run triggered by this push to `main` — confirm success and that `https://karagemop466-tech.github.io/Poker4/` loads with the merged markers.
 - Session complete. No outstanding scope for `arena/a745c8f4-poker4`.
+
+### 9a45e995 — merge and deploy record (2026-11-18)
+
+- **PR [#90](https://github.com/karagemop466-tech/Poker4/pull/90)** (`arena/9a45e995-poker4` → `main`) — merged as merge commit `6dcf6fe` (`gh pr merge 90 --merge`). The PR carried the E1 record (`data/9a45e995/entry-policy-check.json`) and the board log; no generated page or data file changed on the branch.
+- **Gate:** `Poker4 site build + verification gate` passed on the PR head (`c9b135c`) and on `main` after the merge (`34f0ed2`). Its drift step reports 0 files on a clean merge with `origin/main`.
+- **Pages:** `pages build and deployment` and `Deploy static dashboard to GitHub Pages` completed `success` on `34f0ed2`. The live site https://karagemop466-tech.github.io/Poker4/ was read after deploy: it loads, and it shows 0 confirmed single-entry, consistent with F1/F15.
+- **Result:** single-entry remains unconfirmed; no verdict changed.
