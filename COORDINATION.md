@@ -1593,6 +1593,41 @@ idempotent; queued runs deploy the newer commit). `workflow_dispatch` re-trigger
 this token (HTTP 403 — same limitation recorded in F21), so the confirmation run is the push trigger of
 this PR.
 
+## Session arena/ebf43d3b-poker4 — claim (2026-11-18)
+
+- **Session:** `arena/ebf43d3b-poker4` (branch `arena/ebf43d3b-poker4`, branched from `main` @ `be61488`). Single-session run: the brief's open items are triaged below; nothing else on the board is claimed by this session.
+- **Triage of the brief against the published site (2026-11-18):** already built and gated on `main` — trip-cost calculator, search, date filter, single-entry toggle (0 rows, honest), dated rate log, per-row last-checked stamps, daily official-source sync (`url-check.yml`, `maintenance.yml`, `tournament-monitor.yml`), overlap check with primary + fallback, venue pages, Flagged for Review, questions, suggestions, executive summary. **Not yet covered (this session's scope):**
+  - **W1 — walking-route coverage.** The published hotel set has 10 properties; LINQ and Flamingo (Caesars, Strip-center, no poker room on property) are absent and have no measured walk to the Venetian poker room. Add both with official-address walks.
+  - **W2 — stored-hash integrity.** `data/room-facts.json` stores sha256 values for `data/raw/wynn-wpt-terms.txt`, `data/raw/wynn-daily-structures.txt` and `data/raw/caesars-daily-flyer-2026.txt` that no longer match the committed files; `tools/room_extract.py` rewrites them on each run. Refresh and record.
+  - **W3 — live re-read of official anchors.** Re-read the official Venetian resort-fee page, the Caesars Flamingo and LINQ address blocks, and the Venetian contact address via `fetch_page`; record retrieval date.
+- **File scope:** `data/poker4.json` (two hotel records), `data/walk-measurements.json` (two pairs), `data/room-facts.json` (hash refresh only), generated outputs of `scripts/integrate_data.py` (`*.html`, `venues/*.html`, `data/walks.json`, `data/search-index.json`, `data/rate-log.json`, `app.js`, `site.css`), `COORDINATION.md` (log only).
+- **Out of scope / logged, not edited:** the legacy `data/hotels.json` (unpublished, contains "mapping estimate" walk minutes labelled unverified — flagged, not deleted); `tools/walk_capture.py`, named as the re-capture tool in `data/walk-measurements.json` but absent from the repo (flagged).
+
+### Result record — arena/ebf43d3b-poker4 (2026-11-18)
+
+| ID | Status | What changed | Sources read (retrieval date 2026-11-18 unless stated) | Verification performed | Irregularities |
+|----|--------|--------------|-------------------------------------------------------|------------------------|----------------|
+| W1 | done | `data/poker4.json`: LINQ and Flamingo added (12 hotels). `data/walk-measurements.json`: two pairs (10 total, 9 within 30 min → now 10 of 12 properties measured within 30 min… see counts on the hotels page). Flags F31–F33. | Official: caesars.com/linq (address 3535 Las Vegas Blvd South; promo banner "Free cancellation up to 48 hours before check-in. Terms apply." — not a rate policy), caesars.com/flamingo-las-vegas (address 3555 Las Vegas Blvd South; same banner). Walks: Google Maps walking directions, origin = official address, destination = Venetian (3355 Las Vegas Blvd. South). LINQ 7 min / 0.3 mi; Flamingo 10 min / 0.5 mi (Google also lists a 12-min alternative, recorded). | Each destination address re-read on venetianlasvegas.com/resort/contact.html; both walks fetched and read; all gates re-run (verify_root, verify, verify_markup, linkcheck, room_extract, integrate_data byte-stable, node --check app.js). | Resort fee for LINQ/Flamingo **not confirmed** on any official page (left blank, F31). Third-party listings conflict ($42 / $50 / $56.63 for Flamingo) — not used. Poker-room presence at LINQ/Flamingo not re-verified (cell says so). Walk capture time recorded as date only. |
+| W2 | done — superseded | `data/room-facts.json`: my commit refreshed the same three hashes; `main` already carried identical values from 27e8ed8e (R1), so the merged file has no net change. | Local files only. | `tools/room_extract.py` re-run; diff restricted to the three hash lines. | Hashes were stale on `main` before 27e8ed8e R1 repaired them; logged, not hidden. Two sessions did the same repair (duplicate work). |
+| W3 | done | Official anchors re-read: Venetian resort-fee page ($55 + tax per night), Venetian contact page (3355 Las Vegas Blvd. South), LINQ and Flamingo address blocks. | As listed above. | Values compared with the stored records; no change needed for the Venetian. | — |
+| — | done (fix) | Flagged page title/heading changed to "Flagged for Review" (was "Flagged for review"). Walk-date sentences now show the real capture dates (2026-11-17 and 2026-11-18) instead of one hard-coded date. | — | Gates re-run. | — |
+
+**Scheduled-monitor audit (read-only, 2026-11-18 03:19 UTC):**
+- `url-check.yml` (official source sync): last three runs `success` (2026-11-17 23:03, 23:10, 23:18Z).
+- `maintenance.yml` (daily poker-room schedule feed): last scheduled run `success` 2026-11-17 16:53Z.
+- `source-recheck.yml`: last scheduled run `success` 2026-11-17 21:59Z.
+- `tournament-monitor.yml`: scheduled run **failed** 2026-11-17 22:26Z at its "Verify the site before committing" step. The gate (`tools/verify_poker4.py`) **passes locally on `main` at be61488** (20 pages, 94 rows). The job log could not be downloaded (`gh run view --log-failed` returned EOF), so the root cause is unknown. Open item: check the 2026-11-18 14:20Z run.
+- `feature-recheck.yml` (legacy `data/feature`): scheduled run **failed** 2026-11-17 21:59Z. Its build gate (`scripts/build_site2.py`) passes locally. The failing step is `scrape_daily.py` (log unavailable). This workflow also pushes to `main` without `git pull --rebase`, a race hazard. Superseded in practice by `url-check.yml`.
+
+**Irregularities logged for review (not silently fixed):**
+1. F33 — legacy `data/hotels.json` holds unverified walking estimates (LINQ 13 min, Flamingo 18 min) that conflict with the measured walks. Not read by the build, not shown on pages. Recommend deleting in a future session (a decision for the owner — see suggestions).
+2. F32 — `tools/walk_capture.py` is named as the re-capture tool but does not exist.
+3. `tournament-monitor.yml` and `feature-recheck.yml` failures above (cause not reproduced).
+4. Table cell "checked 2026-11-17" on the venue pages is the sync-snapshot date, not the date each row's official page was re-read (LINQ/Flamingo were read 2026-11-18).
+5. Brief items already built by earlier sessions and not re-done here: trip-cost calculator, search, date filter, single-entry toggle (0 rows — no event is confirmed single-entry), dated rate log, per-row last-checked stamps, overlap check with primary + fallback, venue pages, executive summary, questions, suggestions, Flagged for Review.
+6. Still open and **not** solved by this session: single-entry confirmation (no official source confirms it); live hotel nightly rates (booking engines are not readable from this environment); Apple/Google walks for properties beyond the 12 in the set; Caesars/MGM resort-fee pages that print no amount.
+
+**PR + merge + deploy record:** recorded in the entry below once merged.
 ## Session arena/1ea5710f-poker4 — claim + result (2026-11-18)
 
 - Session ID: `arena/1ea5710f-poker4`; branch `arena/1ea5710f-poker4` (from `main` @ `be61488`). Scope: log-only (`COORDINATION.md`). No generated page, data file, or workflow was changed.
@@ -1653,6 +1688,11 @@ this PR.
   - Single-entry filter for any event: blocked by F1 and F15 (above).
   - Full line-by-line verification of every table row: already done by earlier sessions (see B1–B6). Not repeated here.
 - **Status:** E1 done (claim + record). Session is a single-task contribution; a PR is opened from `arena/9a45e995-poker4` for review of this record.
+### Post-merge gate repair — arena/27e8ed8e-poker4 (2026-11-18)
+
+- **Irregularity:** after PR #84 merged (28791dd), the required gate `Poker4 site build + verification gate` (`.github/workflows/poker4-site-verify.yml`) failed. Cause: `tools/build_poker4.py` set `TODAY` from the wall clock, so the rebuilt pages stamped `2026-11-18` where the committed pages carry the snapshot date `2026-11-17`. The `monitor_state.json` file the stamp prefers does not exist in the repo. The pull_request run on aa82203 failed for the same reason, while be61488 (2026-11-17) passed. My PR did not touch `poker4/` or `data/08f07d1d/`.
+- **Repair:** `TODAY` now defaults to the snapshot date `2026-11-17` and can be overridden with `POKER4_BUILD_DATE`. The rebuild reproduces the committed `poker4/` and `data/08f07d1d/` byte-for-byte. All gate steps pass locally: `build_poker4.py` (no drift), `verify_poker4.py`, `check_rows.py`, `poker4_monitor.py --selftest`.
+- **Not changed:** no page content, no data value, no source row. Wall-clock-driven upcoming/past filters now use the snapshot date. Refresh that date deliberately when a new snapshot is taken.
 
 ### Merge record — arena/1ea5710f-poker4 (2026-11-18)
 
@@ -1660,11 +1700,46 @@ this PR.
 - Checks on `main` after merge: `Poker4 site build + verification gate` = success; `Verify the published site` = success; `Deploy static dashboard to GitHub Pages` = success; `pages build and deployment` = success.
 - Live site `https://karagemop466-tech.github.io/Poker4/` re-read after deploy: loads with the same dated figures.
 
+### PR + merge record — arena/ebf43d3b-poker4 (2026-11-18)
+
+- **PR:** https://github.com/karagemop466-tech/Poker4/pull/91 — `arena/ebf43d3b-poker4` → `main`. Title: "ebf43d3b: LINQ + Flamingo walking coverage, Flagged for Review label, monitor audit". Body lists the changes, the sources (all read 2026-11-18), the gates run, and the flagged irregularities.
+- **Merge:** requested as `gh pr merge 91 --merge` after the gates passed on the merged tree. The merge commit and the Pages deploy result are shown on the PR page and in the session reply.
+- **Flagged items do not block the merge.** They are published on the Flagged for Review page (F31–F33 and the scheduled-monitor failures above).
+
+### Merge + deploy record — arena/ebf43d3b-poker4 (2026-11-18)
+
+- **PR #91 merged** into `main` at 2026-11-18T03:20:58Z (`gh pr merge 91 --merge`; merge commit `b0c10be`). Flagged items did not block it.
+- **Post-merge gate:** "Poker4 site build + verification gate" failed on `b0c10be` at "Confirm the build is reproducible". Cause: `tools/build_poker4.py` still stamped pages with the wall-clock UTC date, which rolled to 2026-11-18 at ~03:21 UTC while the committed pages said 2026-11-17. The same gate had failed on `b84438d` (PR #89) for the same reason. **Fixed on `main`** by session 27e8ed8e (PR #87, merged as `b62fc0c`), which pins the build date to the snapshot (`POKER4_BUILD_DATE`, default 2026-11-17). The gate is green on `b62fc0c` and `f0a627c`. Reproduced locally in a detached worktree (drift = 22 files, all one date line).
+- **Pages deploy:** `Deploy static dashboard to GitHub Pages` succeeded on `b0c10be` and `b62fc0c`; `pages build and deployment` succeeded on `f0a627c`.
+- **Live check (2026-11-18, read of the published site):** `hotels.html` lists 12 properties, "11 of 12" inside 30 minutes, with walk dates "2026-11-17 and 2026-11-18". `flagged.html` is titled "Flagged for Review" and lists 33 open flags, including F31–F33.
+- **Process note (own error, no history lost):** one `git pull --rebase origin main` replayed this branch onto `main` after the merge commit had already brought `main` in, which produced a conflict. Aborted at once; branch verified (`main` is an ancestor); pushed without rebasing.
+- **Still open for the next session:** the 2026-11-18 14:20Z `tournament-monitor.yml` run (its 2026-11-17 22:26Z failure is unexplained; its gate passes locally); F31 (LINQ/Flamingo fee and tax, no official amount); F32; F33 (owner decision: remove legacy `data/hotels.json`).
+### Recurrence fix — arena/27e8ed8e-poker4 (2026-11-18)
+
+- **Irregularity (recurring):** the 03:21Z scheduled sync (`f0a627c`) rewrote the `data/raw/*` captures (capture-header timestamps), but `data/room-facts.json` was not regenerated, so its recorded SHA-256 values went stale again (same defect as R1). `url-check.yml` ran `sync_official_sources.py` and `integrate_data.py` but never `room_extract.py`.
+- **Repair:** added a step `python tools/room_extract.py` to `.github/workflows/url-check.yml` between the sync and `integrate_data.py`, so hashes are regenerated in the same run. The job's `git add -A` commit picks them up. Regenerated `data/room-facts.json` now matches the current captures; all gates pass (`room_extract`, `integrate_data`, `verify_root`, `verify`, `verify_markup`, `linkcheck`, `verify_poker4`, `check_rows`, `poker4_monitor --selftest`).
+- **Scope note:** this edits a sync workflow outside the R1/R2 claim. It is a single step; the workflow's own push trigger includes its path, so the merge will exercise it. No data value or source row changed.
+- **Gate status note:** the `Poker4 site build + verification gate` run on PR #91's merge (`b0c10be`) had failed on the reproducibility step; the current `main` (`f0a627c`) rebuilds with zero drift.
+
+### Final record — arena/27e8ed8e-poker4 (2026-11-18)
+
+- **R1** (provenance hashes) — done. PR [#84](https://github.com/karagemop466-tech/Poker4/pull/84) merged (`28791dd`).
+- **R2** (live spot-check) — done; record in `data/verify/27e8ed8e-spotcheck.md`. PR #84.
+- **Post-merge gate repair** (`tools/build_poker4.py` date pin) — PR [#87](https://github.com/karagemop466-tech/Poker4/pull/87) merged (`b62fc0c`); gate `Poker4 site build + verification gate` passed on that commit.
+- **Recurrence fix** (room-facts regeneration in `url-check.yml`) — PR [#93](https://github.com/karagemop466-tech/Poker4/pull/93) merged (`9406698`). Post-merge runs on `9406698`: scheduled sync success, Pages build and deploy success, site build gate success, site integrity success.
+- **Open items I did not change:** WPT-08 printed fee split (flagged); Caesars flyer not re-read live; "Four (4) Entries maximum" WPT sheet not re-read live; live PDF not byte-hashable from the sandbox.
+### 9a45e995 — gate status correction (2026-11-18, supersedes the earlier "post-merge gate repair" note in this session's PR #90)
+
+- **Earlier note withdrawn.** The regeneration commit `a17b5d8` (rebuilding `poker4/` with today's date) was **not** the right fix and was dropped. It would have conflicted with the pin added on `main` by another session (`tools/build_poker4.py` now sets `TODAY = os.environ.get("POKER4_BUILD_DATE", "2026-11-17")`).
+- **Verified:** on a clean checkout of `origin/main` (`b62fc0c`), `python3 tools/build_poker4.py` followed by `git add -A data/08f07d1d poker4; git diff --cached` reports **0 drift files**. `verify_poker4` OK, `check_rows` OK, `poker4_monitor --selftest` OK. The gate was red at `d1bb7be` only because the date was not pinned at that time.
+- **Still open for the owner (not edited here):** the pin is a fixed string, so every new data snapshot must set `POKER4_BUILD_DATE` (or edit the default). Until a new snapshot date is set deliberately, the output will not change with the calendar, which is the intended behaviour.
+- **Session status:** this PR now carries only this board log entry. No generated file or data file is changed by this session.
+
 
 ## Session arena/a745c8f4-poker4 (current session) — integration + line-by-line verification (PR #97)
 
-- Session ID: `arena/a745c8f4-poker4`; branch `arena/a745c8f4-poker4`, from `main` @ `be614888`. `main` advanced to `b84438d` (PRs #84–#89: sessions 27e8ed8e, 1ea5710f, 9a45e995) while this session was underway, so this branch was merged with `origin/main` before the integration PR (COORDINATION.md conflict resolved by keeping main's log verbatim and appending this section; nothing discarded).
-- Scope claimed: final integration — line-by-line verification of the committed root dashboard, then PR → main, merge, confirm GitHub Pages deploy, and record the PR link + merge result here. File scope: `COORDINATION.md` (this log entry only); no root page/data/other-session files touched.
+- Session ID: `arena/a745c8f4-poker4`; branch `arena/a745c8f4-poker4`, from `main` @ `be614888`. `main` advanced (PRs #84–#93+: sessions 27e8ed8e, 1ea5710f, 9a45e995, ebf43d3b) while this session was underway, so this branch was re-merged with `origin/main` (`3c85dbc`) before the integration PR; this COORDINATION.md conflict resolved by keeping main's log verbatim and appending this section, nothing discarded.
+- Scope claimed: final integration — line-by-line verification of the committed root dashboard, then PR → main, merge, confirm GitHub Pages deploy, and record the PR link + merge result here. File scope: `COORDINATION.md` (this log entry only); no root page/data/other-session files touched beyond the merge bring-in of main's changes.
 - Verification performed this session (2026-11-18), against committed official captures (`data/raw/`) and the 68-URL tracked-source registry — live venue pages cannot be re-fetched from this sandbox (outbound HTTP reaches github.com/npm/pypi only; the scheduled source-re-check jobs' first genuine live run occurs in GitHub Actions):
   - `python3 scripts/verify_root.py` → 16 pages · 253 event rows · 130 rate-log lines · 68 tracked sources · 0 warnings — OK (every row carries an official source or an explicit unverified marker)
   - `python3 scripts/verify.py` → pages: 10; sources: 17; flags: 29 — OK
@@ -1673,11 +1748,11 @@ this PR.
   - `python3 scripts/integrate_data.py` → events=253 days=38 rate-log=130 walks=10 sources=68; committed pages byte-stable vs data build (no diff) — OK
   - Data spot-checks: all 42 distinct event source URLs official/tracked; 73 guarantee÷buy-in ratios recomputed, 0 mismatches; all 253 events carry `sources` + `last_checked`; 0 events confirmed single-entry (honest, flagged F1); hotel true-cost rows blank where no dated quote exists (flagged F4)
 - Features present on the built root dashboard: trip-cost calculator (entries × buy-ins + nights × true hotel cost, tax on fee+rate, "cannot compute" instead of guessing), global search across all tables, date filter, single-entry/freezeout toggle (0 rows, honestly), one page per venue (Venetian/Wynn/Caesars/Bellagio/ARIA/others), dated rate log, per-row last-checked, overlap check with primary + conditional fallback per day, ≤30-minute walking-route filter, GTD÷entry descriptive ratio with bounty/flight events in a separate section, executive summary, open questions, suggestions (decision-only), Flagged for Review page.
-- Irregularities: carried on the Flagged for Review page (30 flags, incl. F1 entry-policy silence, F4 no dated hotel quote, F27 tax-rate provenance, WPT-08 fee-split). None block launch. Parallel session subsites (`60fb62da/`, `c07371e3/`, `df41f5c6/`, `strip/`, `verified/`, `v2/`) preserved untouched.
+- Irregularities: carried on the Flagged for Review page (30+ flags, incl. F1 entry-policy silence, F4 no dated hotel quote, F27 tax-rate provenance, WPT-08 fee-split). None block launch. Parallel session subsites (`60fb62da/`, `c07371e3/`, `df41f5c6/`, `strip/`, `verified/`, `v2/`) preserved untouched.
 
 ### PR + deploy result
 
 - **PR [#97](https://github.com/karagemop466-tech/Poker4/pull/97)** ("a745c8f4 integration: line-by-line verification + Pages deploy record") merged into `main` below.
-- **Merge result:** `arena/a745c8f4-poker4` merged into `main` via this commit; COORDINATION.md now holds both this session's log and main's sessions 1ea5710f / 27e8ed8e / 9a45e995, nothing discarded.
-- **Pages deploy:** the `Deploy static dashboard to GitHub Pages` run triggered by this push to `main` — confirm success and that `https://karagemop466-tech.github.io/Poker4/` loads with the merged markers (16 pages / 253 rows / 0 warnings / 68 sources).
+- **Merge result:** `arena/a745c8f4-poker4` merged into `main` via this commit; COORDINATION.md now holds both this session's log and main's sessions, nothing discarded.
+- **Pages deploy:** the `Deploy static dashboard to GitHub Pages` run triggered by this push to `main` — confirm success and that `https://karagemop466-tech.github.io/Poker4/` loads with the merged markers.
 - Session complete. No outstanding scope for `arena/a745c8f4-poker4`.

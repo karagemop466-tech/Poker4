@@ -1010,7 +1010,8 @@ for h in CFG["hotels"]:
 # data/walk-measurements.json; a hotel that also hosts a room of its own gets a second
 # row for that room, marked as not measured rather than silently reusing the Venetian
 # number.
-WALK_MEASURED_ON = (WALKMEAS.get("meta") or {}).get("generated_at", "")[:10] or TODAY
+_walk_dates = sorted({(p.get("captured_at") or "")[:10] for p in (WALKMEAS.get("pairs") or []) if p.get("captured_at")})
+WALK_MEASURED_ON = " and ".join(_walk_dates) if _walk_dates else ((WALKMEAS.get("meta") or {}).get("generated_at", "")[:10] or TODAY)
 walk_measured_on = WALK_MEASURED_ON
 WALK_TARGET_ID = "venetian"
 WALK_BY_HOTEL = {m["hotel_id"]: m for m in (WALKMEAS.get("pairs") or [])}
@@ -1944,7 +1945,7 @@ def page_hotels():
 </div>
 <h4>Rates and fee facts as a dated log (not a single value)</h4>
 <div class="table-scroll"><table class="compact"><thead><tr><th>Observed</th><th>What it is</th><th class="num">Amount</th><th>Wording / qualifier</th><th>Quote status</th><th>Source</th></tr></thead><tbody>{log_rows}</tbody></table></div>
-<h4>Walk to the Venetian poker room (Google Maps, retrieved 2026-11-17)</h4>
+<h4>Walk to the Venetian poker room (Google Maps, retrieved {E(walk_measured_on)})</h4>
 <div class="table-scroll"><table class="compact"><thead><tr><th>Poker-room target</th><th class="num">Walk</th><th class="num">Distance</th><th>Meets the 30-min rule</th><th>How we know</th><th>Source</th></tr></thead><tbody>{walk_rows}</tbody></table></div>
 {(f"<h4>Unresolved for this property</h4><ul class='flags'>{dead}</ul>") if dead else ''}
 </article>"""
@@ -1959,7 +1960,7 @@ def page_hotels():
 <label class="toggle"><input type="radio" name="walkf" value="onsite"> inside the poker-room property only</label>
 <span class="count" id="walk-count"></span>
 </div>
-<p class="mini-note">“Measured” holds a real walking time for every property: Google Maps walking directions (mode=walking) were retrieved 2026-11-17 for each hotel→Venetian poker-room pair and stored with the route distance, the “via” road, the exact directions URL and the retrieval date (see <a href="data/integrated/walks-google.json">data/integrated/walks-google.json</a>; flags <a href="flagged.html#F3">F3</a> / <a href="flagged.html#F18">F18</a> record the closure). Google's walking durations run optimistic, so the route distance in miles is shown beside each minute. Choosing “measured walk ≤ 30 min” filters to the properties that provably meet the rule.</p></section>
+<p class="mini-note">“Measured” holds a real walking time for every property: Google Maps walking directions (mode=walking) were retrieved {E(walk_measured_on)} for each hotel→Venetian poker-room pair and stored with the route distance, the “via” road, the exact directions URL and the retrieval date (see <a href="data/integrated/walks-google.json">data/integrated/walks-google.json</a>; flags <a href="flagged.html#F3">F3</a> / <a href="flagged.html#F18">F18</a> record the closure). Google's walking durations run optimistic, so the route distance in miles is shown beside each minute. Choosing “measured walk ≤ 30 min” filters to the properties that provably meet the rule.</p></section>
 {cards}
 <section class="callout"><h2>Reading a blank honestly</h2>
 <p>Where a property shows rates only inside its booking calendar, no number is copied onto this site — the booking link is given instead and the row is marked. Two official pages returned 404 in the 2026-11-17 check: Bellagio&#39;s /hotel/resort-fee.html page and the 2025 Caesars Palace daily flyer. Both were re-anchored to the operator&#39;s own live successor the same day — Bellagio&#39;s Hotel Reservation Terms page, which Bellagio&#39;s FAQ names as where the fee is documented (“A daily resort fee of $55.00 plus applicable tax will be applied to all reservations”), and the 2026 flyer on Caesars&#39; own content path — and the retired URLs stay logged on the Bellagio row and in <a href="data/url-checks.json">data/url-checks.json</a> rather than being silently swapped. <a href="flagged.html#F5">F5</a> and <a href="flagged.html#F6">F6</a> record what each replacement page yields; <a href="flagged.html#F25">F25</a> records that Caesars&#39; two official pages disagree on two of the four daily buy-ins. Nothing was replaced with a third-party mirror: the $50 and $56.69 ARIA/Bellagio figures that circulate on review sites are deliberately not used because the properties&#39; own terms pages print $55.00 plus applicable tax, and the earlier sentence on this page claiming “ARIA publishes $50 and $55 on two official pages” has been corrected — <a href="flagged.html#F5">F5</a> shows the $50 figure traces only to third-party sources. Walking minutes are now measured rather than warned about: every hotel→poker-room pair carries a Google Maps walking time with its route distance and retrieval date (flags <a href="flagged.html#F3">F3</a> / <a href="flagged.html#F18">F18</a>), which is what the ≤30-minute filter below uses. The remaining blanks are the ones no official source can settle — a dated like-for-like room quote needs your exact dates and occupancy, and <a href="flagged.html#F27">F27</a> records that the 13.38% room-tax figure is the county&#39;s Primary Gaming Corridor rate rather than a number each property prints on its own page.</p></section>
@@ -2100,8 +2101,8 @@ def page_flagged():
     nwalk = sum(1 for p in walks if p.get("minutes") is not None)
     nowalk = sum(1 for p in walks if p.get("minutes") is None)
     nfail = sum(1 for p in walks if str(p.get("meets_30_min", "")).lower().startswith("no "))
-    return shell("", "Flagged for review", f"""
-<section class="page-head"><h1>Flagged for review</h1>
+    return shell("", "Flagged for Review", f"""
+<section class="page-head"><h1>Flagged for Review</h1>
 <p class="lede">Every unresolved item, with the source that produced it. A flag is never cleared by re-wording a row — only when the official source states the value or an action closes the gap.</p>
 <div class="flagstats"><span class="stat">{len(CFG['flags'])} open flags</span>
 <span class="stat">{unconf} of {len(events)} rows without confirmed single-entry</span>
