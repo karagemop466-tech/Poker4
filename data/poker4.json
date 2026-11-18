@@ -1252,10 +1252,14 @@
    "id": "F1",
    "severity": "blocking-for-single-entry-claim",
    "item": "0 of 93 Venetian rows are confirmed single-entry",
-   "detail": "All 37 official structure sheets were read on 2026-11-17. None contains a clause confirming one entry, prohibiting re-entries, or prohibiting add-ons. Omission is not confirmation, so no row may be labelled single-entry and the toggle filter returns nothing. Re-checked 2026-11-18 by session 9a45e995 (data/9a45e995/entry-policy-check.json): sample of 2026 structure sheets plus earlier official sheets; verdict unchanged — NOT CONFIRMED. Silence is not confirmation; the 2026 sheets read there do not prohibit re-entry; earlier official Venetian sheets state re-entry is allowed.",
+   "detail": "All 37 official structure sheets were read on 2026-11-17. None contains a clause confirming one entry, prohibiting re-entries, or prohibiting add-ons. Omission is not confirmation, so no row may be labelled single-entry and the toggle filter returns nothing. Re-checked 2026-11-18 by session 9a45e995 (data/9a45e995/entry-policy-check.json): sample of 2026 structure sheets plus earlier official sheets; verdict unchanged — NOT CONFIRMED. Silence is not confirmation; the 2026 sheets read there do not prohibit re-entry; earlier official Venetian sheets state re-entry is allowed. Re-checked 2026-11-18 by session 75f8b185-poker4: sheet 21 (Event 47) and the DSE IV schedule PDF read live; search log in data/75f8b185/. Verdict unchanged.",
    "sources": [
     "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf",
-    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2024/structures/dse_apr_2024-structure_1.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2024/structures/dse_jan_2024-structure_4.pdf"
    ]
   },
   {
@@ -1517,11 +1521,12 @@
    "id": "F27",
    "severity": "unverified",
    "item": "Primary Gaming Corridor membership (13.38% vs 13.00%) not checked property by property",
-   "detail": "The Clark County letter of 15 Nov 2016 sets 13.38% for properties inside the Primary Gaming Corridor, 13.00% for stadium-district properties outside it, and only the 0.5% LVCVA increase outside both. It refers to the PGC map on the county website but does not reproduce it. The Venetian's own terms print 13.38% (read live 2026-11-17). Wynn's rate is now sourced to the county letter and Treasure Island's to its offer-terms page, but neither property's map membership has been checked. Action: open the county PGC map and confirm each property before its rate is treated as confirmed. The letter is dated 15 Nov 2016. The current Clark County code (CCC 4.08) was not read in this session; the 13.38% figure is corroborated by the Venetian's live 2026 terms page, not by a current county document.",
+   "detail": "The Clark County letter of 15 Nov 2016 sets 13.38% for properties inside the Primary Gaming Corridor, 13.00% for stadium-district properties outside it, and only the 0.5% LVCVA increase outside both. It refers to the PGC map on the county website but does not reproduce it. The Venetian's own terms print 13.38% (read live 2026-11-17). Wynn's rate is now sourced to the county letter and Treasure Island's to its offer-terms page, but neither property's map membership has been checked. Action: open the county PGC map and confirm each property before its rate is treated as confirmed. The letter is dated 15 Nov 2016. The current Clark County code (CCC 4.08) was not read in this session; the 13.38% figure is corroborated by the Venetian's live 2026 terms page, not by a current county document. Re-read 2026-11-18 (session arena/75f8b185-poker4): the county letter was fetched from clarkcountynv.gov and its text confirms 13.38% for the Primary Gaming Corridor and 13.00% for stadium-district properties outside it. The letter is still the 2016 adoption notice, and the per-property PGC map membership is still unchecked, so F27 stays open.",
    "sources": [
     "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:7436500e-cac4-420a-b23a-02d3fec69900/original/as/room-tax-increase-transient-lodging-letter-111616.pdf",
     "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
-    "https://treasureisland.com/deals-offers/buy-1-get-1-bogo-free-fine-print"
+    "https://treasureisland.com/deals-offers/buy-1-get-1-bogo-free-fine-print",
+    "https://github.com/karagemop466-tech/Poker4/blob/main/data/75f8b185/official-spotchecks-2026-11-18.json"
    ]
   },
   {
@@ -1599,6 +1604,39 @@
    "sources": [
     "https://www.venetianlasvegas.com/resort/casino/poker.html",
     "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html"
+   ]
+  },
+  {
+   "id": "F36",
+   "severity": "changed-value",
+   "item": "Walking minutes re-captured 2026-11-18: all 8 Google-measured hotel-to-Venetian pairs differ from the 2026-11-17 capture; no 30-minute hard-filter outcome changes",
+   "detail": "Re-run of the directions URLs (walking mode, same official addresses). 2026-11-17 to 2026-11-18 minutes: Wynn 13 to 10; Encore 19 to 13 (origin 3121, see F37); Bellagio 21 to 20; Caesars 12 to 14; ARIA 31 to 42 (still over 30); Treasure Island 6 to 3; Horseshoe 16 to 25 (still within 30, now closer to the limit); Harrah's 6 to 8. The site still shows the 2026-11-17 capture until the owner chooses which capture to publish. Full record: data/75f8b185/walk-recapture-2026-11-18.json. Google walking times are routing-engine values and vary between captures.",
+   "sources": [
+    "https://www.google.com/maps/dir/3131+Las+Vegas+Blvd+South,+Las+Vegas,+NV+89109/3355+Las+Vegas+Blvd+South,+Las+Vegas,+NV+89109/data=!4m2!4m1!3e2",
+    "https://www.google.com/maps/dir/3645+Las+Vegas+Blvd+South,+Las+Vegas,+NV+89109/3355+Las+Vegas+Blvd+South,+Las+Vegas,+NV+89109/data=!4m2!4m1!3e2",
+    "https://github.com/karagemop466-tech/Poker4/blob/main/data/75f8b185/walk-recapture-2026-11-18.json"
+   ]
+  },
+  {
+   "id": "F37",
+   "severity": "unverified",
+   "item": "Encore's walking origin is Wynn's shared address (3131 Las Vegas Blvd S); third-party listings give Encore as 3121",
+   "detail": "Wynn's official contact page lists 'WYNN LAS VEGAS AND ENCORE HOTEL, 3131 Las Vegas Blvd. South', so the stored Encore walk uses that address. Third-party listings (iinhotel.com; Google travel entity) give Encore at 3121 Las Vegas Blvd S. The 3121 origin re-captured 2026-11-18 is 13 min / 0.6 mi, against 19 min / 0.9 mi stored from 3131. Neither address is confirmed as Encore's own official address on an Encore-owned page, so the origin is flagged rather than changed.",
+   "sources": [
+    "https://www.wynnlasvegas.com/about-us/contact-information",
+    "https://www.iinhotel.com/1247415/en/contact.htm",
+    "https://www.google.com/maps/dir/3121+Las+Vegas+Blvd+South,+Las+Vegas,+NV+89109/3355+Las+Vegas+Blvd+South,+Las+Vegas,+NV+89109/data=!4m2!4m1!3e2"
+   ]
+  },
+  {
+   "id": "F38",
+   "severity": "unverified",
+   "item": "Wynn daily tournament schedule and structures PDFs print no revision date; CDN asset version implies a July 2025 upload",
+   "detail": "The live Wynn poker page (read 2026-11-18) links the same two daily PDFs the repo cites (poker-daily-tournament-poster.pdf and Poker-All_Daily_Structures.pdf) under 'View Schedule' and 'Structures', and its daily summary matches the captured poster (Mon-Thu $10,000 guarantee at 12 p.m.; nightly $10,000 at 6 p.m.; Friday $40,000 NLH Rebuy). That supports the links being current. Neither PDF prints an effective date, so the 2026 validity of the fees and times is supported by the live link, not by the document itself. Confirm at the room before paying.",
+   "sources": [
+    "https://wynnlasvegas.com/casino/poker",
+    "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf",
+    "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf"
    ]
   }
  ],

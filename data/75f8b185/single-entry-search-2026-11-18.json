@@ -1,0 +1,80 @@
+{
+ "meta": {
+  "session": "arena/75f8b185-poker4",
+  "retrieved": "2026-11-18",
+  "question": "Is any Strip poker event dated 2026-11-16..2026-12-23 confirmed single-entry / freezeout (no re-entry, no rebuy, no add-on) by an official source?"
+ },
+ "searches": [
+  {
+   "query": "Las Vegas Strip poker tournament single entry freezeout no re-entry December 2026",
+   "results_used": [
+    {
+     "url": "https://www.worldpokertour.com/event/main-tour-wpt-world-championship-at-wynn-las-vegas-season-2025/details",
+     "what": "WPT's own 2025-season WC page: 'One (1) Entry maximum (freezeout per starting flight)'. This is the 2025 season (Dec 2025) and is outside the trip window, so it is NOT used for any 2026 row. Recorded as a wording example only.",
+     "official": true
+    },
+    {
+     "url": "https://www.pokernews.com/tours/wsop/2026-wsop/2026-wsop-main-event.htm",
+     "what": "WSOP 2026 Main Event is freezeout, but WSOP 2026 runs May 26 to July 15, 2026 at Horseshoe/Paris, outside the window. Not a Strip event in the trip window; not used.",
+     "official": false
+    }
+   ]
+  },
+  {
+   "query": "Venetian Las Vegas poker room tournament schedule November December 2026 official",
+   "results_used": [
+    {
+     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+     "what": "Official DSE IV calendar page (Nov 16 to Dec 23, 2026). Matches the stored schedule rows checked.",
+     "official": true
+    }
+   ]
+  },
+  {
+   "query": "live official pages: wynnlasvegas.com/casino/poker",
+   "results_used": [
+    {
+     "url": "https://wynnlasvegas.com/casino/poker",
+     "what": "Live Wynn poker page: WPT World Championship Nov 27 to Dec 21, 2026; Daily Tournaments 'View Schedule' and 'Structures' link to the same CDN assets the repo cites (poker-daily-tournament-poster.pdf and Poker-All_Daily_Structures.pdf). Daily page wording: '$40,000 guaranteed NLH Rebuy on Friday' and '$10,000 guaranteed event every evening at 6 p.m.' Consistent with the captured poster (Mon-Thu $10k at 12 p.m.; nightly $10k at 6 p.m.).",
+     "official": true
+    }
+   ]
+  }
+ ],
+ "raw_capture_grep": {
+  "command": "grep -i -n -E 'freeze|single.entry|entries maximum|re-?entry|one entry' data/raw/*.txt",
+  "findings": [
+   {
+    "file": "data/raw/wynn-daily-structures.txt",
+    "line": 263,
+    "quote": "Re-entry is NOT allowed. All rebuys must be done immediately from the player's original seat.",
+    "event": "$240 NLH Rebuy & Add-on, Friday, $40,000 guarantee",
+    "classification": "spend-advantage (sells unlimited $200 rebuys and a $100 add-on) - kept OUT of the single-entry list"
+   },
+   {
+    "file": "data/raw/wynn-wpt-terms.txt",
+    "line": 2287,
+    "quote": "Four (4) Entries maximum. Players are allowed One (1) entry per starting flight + One (1) Day 2 Entry prior to the start of Day 2.",
+    "event": "WPT World Championship $10,400 (2026 sheet)",
+    "classification": "not single-entry (multi-entry cap)"
+   },
+   {
+    "file": "data/raw/wynn-wpt-terms.txt",
+    "lines": "many",
+    "quote": "Unlimited re-entry ... until the start of level 9 / 10",
+    "classification": "multi-entry"
+   },
+   {
+    "file": "data/raw/wynn-wpt-terms.txt",
+    "line": 1090,
+    "quote": "One (1) Entry and One (1) re-entry for each starting flight",
+    "classification": "multi-entry (one re-entry)"
+   }
+  ]
+ },
+ "verdict": {
+  "single_entry_confirmed_events": 0,
+  "changed_from_prior_snapshot": false,
+  "text": "No event in the 2026-11-16 to 2026-12-23 window is confirmed single-entry by an official source. The verdict in the data (0 of 253 rows) stands. Omission remains unverified, not a freezeout."
+ }
+}
