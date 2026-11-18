@@ -1658,3 +1658,9 @@ this PR.
 - **Irregularity:** after PR #84 merged (28791dd), the required gate `Poker4 site build + verification gate` (`.github/workflows/poker4-site-verify.yml`) failed. Cause: `tools/build_poker4.py` set `TODAY` from the wall clock, so the rebuilt pages stamped `2026-11-18` where the committed pages carry the snapshot date `2026-11-17`. The `monitor_state.json` file the stamp prefers does not exist in the repo. The pull_request run on aa82203 failed for the same reason, while be61488 (2026-11-17) passed. My PR did not touch `poker4/` or `data/08f07d1d/`.
 - **Repair:** `TODAY` now defaults to the snapshot date `2026-11-17` and can be overridden with `POKER4_BUILD_DATE`. The rebuild reproduces the committed `poker4/` and `data/08f07d1d/` byte-for-byte. All gate steps pass locally: `build_poker4.py` (no drift), `verify_poker4.py`, `check_rows.py`, `poker4_monitor.py --selftest`.
 - **Not changed:** no page content, no data value, no source row. Wall-clock-driven upcoming/past filters now use the snapshot date. Refresh that date deliberately when a new snapshot is taken.
+
+### Merge record — arena/1ea5710f-poker4 (2026-11-18)
+
+- PR [#85](https://github.com/karagemop466-tech/Poker4/pull/85) (log-only) merged to `main` as merge commit `96431b5`, after one conflict in `COORDINATION.md` (both sides' logs kept, nothing discarded; the other session's 27e8ed8e block is intact).
+- Checks on `main` after merge: `Poker4 site build + verification gate` = success; `Verify the published site` = success; `Deploy static dashboard to GitHub Pages` = success; `pages build and deployment` = success.
+- Live site `https://karagemop466-tech.github.io/Poker4/` re-read after deploy: loads with the same dated figures.
