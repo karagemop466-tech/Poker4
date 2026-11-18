@@ -1661,7 +1661,7 @@ this PR.
 - Live site `https://karagemop466-tech.github.io/Poker4/` re-read after deploy: loads with the same dated figures.
 
 
-## Session arena/a745c8f4-poker4 (current session) — integration + line-by-line verification (merged via PR #88)
+## Session arena/a745c8f4-poker4 (current session) — integration + line-by-line verification (PR #97)
 
 - Session ID: `arena/a745c8f4-poker4`; branch `arena/a745c8f4-poker4`, from `main` @ `be614888`. `main` advanced to `b84438d` (PRs #84–#89: sessions 27e8ed8e, 1ea5710f, 9a45e995) while this session was underway, so this branch was merged with `origin/main` before the integration PR (COORDINATION.md conflict resolved by keeping main's log verbatim and appending this section; nothing discarded).
 - Scope claimed: final integration — line-by-line verification of the committed root dashboard, then PR → main, merge, confirm GitHub Pages deploy, and record the PR link + merge result here. File scope: `COORDINATION.md` (this log entry only); no root page/data/other-session files touched.
@@ -1677,7 +1677,7 @@ this PR.
 
 ### PR + deploy result
 
-- **PR [#88](https://github.com/karagemop466-tech/Poker4/pull/88)** ("a745c8f4 integration: line-by-line verification + Pages deploy record") merged into `main` (this merge).
+- **PR [#97](https://github.com/karagemop466-tech/Poker4/pull/97)** ("a745c8f4 integration: line-by-line verification + Pages deploy record") merged into `main` below.
 - **Merge result:** `arena/a745c8f4-poker4` merged into `main` via this commit; COORDINATION.md now holds both this session's log and main's sessions 1ea5710f / 27e8ed8e / 9a45e995, nothing discarded.
 - **Pages deploy:** the `Deploy static dashboard to GitHub Pages` run triggered by this push to `main` — confirm success and that `https://karagemop466-tech.github.io/Poker4/` loads with the merged markers (16 pages / 253 rows / 0 warnings / 68 sources).
 - Session complete. No outstanding scope for `arena/a745c8f4-poker4`.
