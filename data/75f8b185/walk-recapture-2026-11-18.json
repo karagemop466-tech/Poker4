@@ -4,10 +4,11 @@
   "retrieved": "2026-11-18",
   "method": "fetch_page on Google Maps directions URLs (travel mode walking, data=!4m2!4m1!3e2), same official addresses as data/walks.json. Page locale is French for most captures and English for ARIA; the duration and distance printed in the route panel were copied verbatim.",
   "limit_minutes": 30,
-  "decision": "Recapture recorded and FLAGGED (F31). Displayed values stay the 2026-11-17 capture until the owner decides which capture the site should show; no hard-filter outcome changes between captures.",
+  "decision": "Recapture recorded and FLAGGED (F34). Displayed values stay the 2026-11-17 capture until the owner decides which capture the site should show; no hard-filter outcome changes between captures.",
   "not_recaptured": [
    "venetian (on-site, 0 min)",
-   "palazzo (same complex, 0 min)"
+   "palazzo (same complex, 0 min)",
+   "linq and flamingo (added to data/walks.json on main by session ebf43d3b; not re-captured in this session)"
   ],
   "caveat": "Google walking durations vary between captures and routes (alternatives listed). These are routing-engine measurements, not statements by any property."
  },

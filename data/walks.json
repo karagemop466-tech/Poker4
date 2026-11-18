@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generated_at": "2026-11-17T23:18:43Z",
+  "generated_at": "2026-11-18T03:21:13Z",
   "rule": "A hotel is usable for an 8 AM\u2013close day only if the walk from the lobby to the Venetian poker room can be completed inside 30 minutes.",
   "how_to_close": "CLOSED 2026-11-17. Measured via Google Maps walking directions for all 10 hotel\u2192Venetian pairs (data/integrated/walks-google.json). The \u226430-minute filter is now a hard filter driven by these measured values. Re-run each directions URL to refresh; a moved route is a change-monitor trigger.",
   "measurement_source": {
@@ -8,11 +8,12 @@
    "method": "Google Maps directions, travel mode = walking, departure 'leave now'. Each pair was opened as a directions URL built from the hotel's official address and the poker room's official address; the duration, the distance and the route summary printed by Google were copied verbatim into this file with the time of the request. Re-capture with: python3 tools/walk_capture.py",
    "why_measured_not_published": "No Strip operator publishes a door-to-door walking time to another property's poker room, so a minute count can only come from a routing engine. These are measurements with a timestamp and a source URL \u2014 they are labelled as such and never presented as an official statement.",
    "limit_minutes": 30,
-   "pairs": 8,
-   "within_limit": 7
+   "pairs": 10,
+   "within_limit": 9,
+   "extended_by": "2026-11-18, session arena/ebf43d3b-poker4: added linq and flamingo (official addresses printed on caesars.com; walks re-run on the same Google Maps walking URL format)"
   },
-  "measured_pairs": 10,
-  "within_30": 9
+  "measured_pairs": 12,
+  "within_30": 11
  },
  "pairs": [
   {
@@ -154,6 +155,34 @@
    "method": "Google Maps directions (web), travel mode = walking, departure = \u201cleave now\u201d",
    "retrieved": "2026-11-17T22:23:55Z",
    "source": "https://www.caesars.com/sportsbook-and-casino/nv/"
+  },
+  {
+   "hotel_id": "linq",
+   "hotel": "The LINQ Hotel & Casino (Caesars Rewards)",
+   "venue_id": "venetian",
+   "venue": "The Venetian Poker Room",
+   "minutes": 7,
+   "distance_mi": 0.3,
+   "via": "Las Vegas Blvd S",
+   "meets_30_min": "yes \u2014 measured 7 min (limit 30)",
+   "status": "Measured 2026-11-18 with Google Maps walking directions (Google Maps directions (web), travel mode = walking, departure = \u201cleave now\u201d) from 3535 Las Vegas Blvd South, Las Vegas, NV 89109 to 3355 Las Vegas Blvd. South, Las Vegas, NV 89109: 7 min / 0.3 mi via Las Vegas Blvd S. A routing-engine measurement with a timestamp and a reproducible link, not a statement by either property.",
+   "method": "Google Maps directions (web), travel mode = walking, departure = \u201cleave now\u201d",
+   "retrieved": "2026-11-18",
+   "source": "https://www.caesars.com/linq"
+  },
+  {
+   "hotel_id": "flamingo",
+   "hotel": "Flamingo Las Vegas (Caesars Rewards)",
+   "venue_id": "venetian",
+   "venue": "The Venetian Poker Room",
+   "minutes": 10,
+   "distance_mi": 0.5,
+   "via": "Las Vegas Blvd S",
+   "meets_30_min": "yes \u2014 measured 10 min (limit 30)",
+   "status": "Measured 2026-11-18 with Google Maps walking directions (Google Maps directions (web), travel mode = walking, departure = \u201cleave now\u201d) from 3555 Las Vegas Blvd South, Las Vegas, NV 89109 to 3355 Las Vegas Blvd. South, Las Vegas, NV 89109: 10 min / 0.5 mi via Las Vegas Blvd S. A routing-engine measurement with a timestamp and a reproducible link, not a statement by either property.",
+   "method": "Google Maps directions (web), travel mode = walking, departure = \u201cleave now\u201d",
+   "retrieved": "2026-11-18",
+   "source": "https://www.caesars.com/flamingo-las-vegas"
   }
  ]
 }
