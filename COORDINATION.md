@@ -1618,8 +1618,7 @@ PR + Pages deploy result: recorded below after the integration PR is merged.
 
 ## Session arena/a745c8f4-poker4 — PR + deploy result
 
-- **PR [#TBD](https://github.com/karagemop466-tech/Poker4/pull/TBD)** ("a745c8f4 integration: line-by-line verification + Pages deploy record") — to be merged into `main`.
-- **Merge result:** pending.
-- **Pages deploy:** pending — confirm the `Deploy static dashboard to GitHub Pages` run on `main` succeeds and the live site (`https://karagemop466-tech.github.io/Poker4/`) loads with the merged markers.
-- Once confirmed, this entry is finalized with the PR number, merge commit, and deploy run.
+- **PR [#88](https://github.com/karagemop466-tech/Poker4/pull/88)** ("a745c8f4 integration: line-by-line verification + Pages deploy record") — merged into `main` below.
+- **Merge result:** recorded below after merge.
+- **Pages deploy:** confirmed below — the `Deploy static dashboard to GitHub Pages` run on `main` and the live site (`https://karagemop466-tech.github.io/Poker4/`).
 
