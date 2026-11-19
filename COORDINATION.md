@@ -2173,3 +2173,45 @@ F1 entry-policy silence (0 of 253 confirmed single-entry) · F4 no dated checkou
   - **Post-merge runs on `main` (all success):** `Verify the published site` (44472816129) · `Poker4 site build + verification gate` (44472816230) · `Deploy static dashboard to GitHub Pages` (44472816148) · `Official source sync + change monitor` (44472816235, with the new audit step) · `pages build and deployment` (44472883639).
   - **Live site read after deploy** (https://karagemop466-tech.github.io/Poker4/): 253 events · 0 confirmed single-entry · 71 official sources · 135 dated rate-log lines · 12 measured walks · 13 suggestions · flagged page serving the merged flag set (F1–F46 with this round's F46). The 2026-11-19 re-check entries, the TI/ Venetian/ Wynn dated rate-log lines and the F46 (Wynn page self-contradiction) are all visible.
   - **Irregularities published on the Flagged for Review page (do not block):** F46 (Wynn self-contradiction), F4 re-checked (booking engines JS-only; blanks stand), F1 re-checked (0 confirmed single-entry), F24/F25/F38 re-checked (verdicts unchanged), WPT-08 fee split (pre-existing), S13 open decision (Wynn Signature Series Jan 2027 window).
+
+## Session arena/21df18f4-poker4 (branch `arena/21df18f4-poker4`, from `main` @ 2f9880c) — claim (2026-11-19)
+
+- Session ID: `arena/21df18f4-poker4`. No other session has an open claim (`gh pr list --state open` empty; `origin/main` == 2f9880c at claim time).
+- **Claim (written before task work, per protocol):** an audit-and-verify round on the live site. Scope: (a) re-run every existing gate on the base commit; (b) live re-read of a sample of the official URLs listed in `data/sources.json`/`data/tracked-sources.json` with the session's page fetcher, recorded in a dated TSV; (c) gap check of the brief's checklist against the live pages, with the gaps logged as questions/suggestions (not implemented unless the gate-verified data allows); (d) integration PR → main, Pages deploy check, record here.
+- File scope: `data/verify/21df18f4_*` (new), `COORDINATION.md` (log only), and only generated root pages if a gate requires regeneration. Does not touch other sessions' folders.
+
+| ID | Task | Status | Owner | File scope |
+|----|------|--------|-------|------------|
+| V1 | Baseline gates on 2f9880c (room_extract, integrate_data byte-stable, verify_root, verify, verify_markup, linkcheck, audit) | in progress | arena/21df18f4-poker4 | none (read-only) |
+| V2 | Live re-read of sampled official URLs; dated TSV of value-level results | unclaimed→in progress | arena/21df18f4-poker4 | data/verify/21df18f4_* |
+| V3 | Brief checklist gap audit → questions/suggestions log | unclaimed→in progress | arena/21df18f4-poker4 | COORDINATION.md |
+| V4 | Integration PR → main, merge, Pages deploy check, record | unclaimed | arena/21df18f4-poker4 | this branch, COORDINATION.md |
+
+### Results — arena/21df18f4-poker4 (2026-11-19)
+
+| ID | Status | Result |
+|----|--------|--------|
+| V1 | done | Gates on 2f9880c: `room_extract` OK (WPT-08 fee-split irregularity re-reported, already flagged); `integrate_data` byte-stable on re-run; `verify_root` 253 rows / 0 warnings; `verify` OK; `verify_markup` 39 pages / 0 problems; `linkcheck` 32 pages OK; `audit_values --strict` all OK. |
+| V2 | done | Six official pages read live: Venetian DSE IV series page (Nov 16–28 rows: date, time, event no., buy-in, GTD — all match `data/site-events.json`), Venetian resort fee ($55 + tax, match), Wynn poker page (WPT Nov 27–Dec 21, Super Gold Million $400/$3M, match; F46 still open), Wynn terms 850070 ($55 fee, parking, match; **new stale-offer paragraph**), Bellagio poker page (FRIDAYS $600 / SATURDAYS $1,000 / SUNDAYS $400 H.O.R.S.E., match), TI deluxe rooms ($49.95 + tax fee, match). Record: `data/verify/21df18f4_live_reread_2026-11-19.tsv`. |
+| V3 | done | Brief gap audit (below). |
+| V4 | in progress | Integration PR → main, merge, Pages check. |
+
+**Sources read live (2026-11-19):** venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html · venetianlasvegas.com/resort/resort-fee.html · wynnlasvegas.com/casino/poker · wynnlasvegas.com/terms-and-conditions/850070 · bellagio.mgmresorts.com/en/casino/poker.html · treasureisland.com/hotel/deluxe-rooms.
+
+**Irregularity (new, flag F47 on the Flagged page):** Wynn's standing terms page 850070 opens with an offer paragraph requiring completion "on or before September 30, 2025" — a date already passed. No row uses it. Resort fee/parking on the same page match the committed values.
+
+**Brief checklist gap audit (honest status, as of main 2f9880c):**
+- Trip cost calculator — present (`calculator.html`), uses only official $55/$49.95 fees + 13.38% tax.
+- Scheduled re-check of official URLs — present: `url-check.yml` cron 14:00 UTC daily; `source-recheck.yml` 14:00 UTC.
+- Structure sheets → remove "unverified" only where confirmed — 0 of 253 rows confirmed single-entry; the printed clauses found are re-entry *restrictions* only (no single-entry grant). **Blocked by source content, not by effort.**
+- Last checked per row — present (`last_checked` on all 253 rows).
+- Rates as a dated log — present (`data/rate-log.json`, 135 lines).
+- Per-venue pages — present (`venues/venetian.html`, `wynn.html`, `bellagio.html`, `caesars.html`, `aria.html`, `others.html`).
+- Search box / date filter / single-entry toggle — present on the tournaments table.
+- Live hotel rate lookup (dated checkout totals) — **not achieved**: official booking engines are JS-only; no dated checkout total can be retrieved by static read (see R2 of 1257a37f). Blanks stand.
+- Live daily-schedule scraper each morning — present only for the printed PDFs/pages; Strip-wide coverage limited to the sources in `data/tracked-sources.json`.
+- Walking-route ≤30 min filter — present for 10 Venetian pairs (`data/walks.json`, Google Maps directions, 17 Nov); other venues not measured.
+- Overlap check / Day-plan — present (`day-plan.json`), primary + conditional fallback; finish times are not printed on the official pages, so overlap is flagged as possible, not confirmed.
+- Guarantee ÷ entry-fee ratio — present, labelled descriptive, not a forecast; bounty/flight events separated.
+
+**Questions this audit leaves open (need a decision or a source, not inference):** (1) which official source would confirm single-entry for any row (no structure sheet in the snapshot states an entry limit); (2) whether Wynn's Super Gold Million $400 structure has an official structure sheet with entry rules; (3) whether the owner wants the Wynn Signature Series Jan 2027 window added (S13); (4) an official source for a dated Venetian checkout total (booking engine is JS-only).
