@@ -415,6 +415,21 @@ for row in SCHED["rows"]:
             entry["rules"]["re_entry"] = {"status": "indicated", "value": "sheet mentions subsequent buy-ins",
                                           "excerpt": sub, "source": sheet_url, "retrieved": sheet.get("retrieved")}
             entry["spend_advantage"] = True
+        # A printed Day-2 bagging clause is a real restriction on entering subsequent
+        # flights. Surface it in the re-entry field (2026-11-19 round) so the structured
+        # rule field carries the sheet's own sentence instead of a silent blank — while
+        # never treating it as a single-entry grant: it says nothing about re-entering a
+        # flight after busting, so single_entry stays unverified.
+        bag = sheet.get("bagging")
+        if bag and entry["rules"]["re_entry"].get("status") in (None, "not_stated_in_sheet"):
+            entry["rules"]["re_entry"] = {
+                "status": "restricted_once_bagged",
+                "value": "a player who bags for Day 2 may not play a subsequent flight (printed); "
+                         "nothing else about re-entry is printed on the sheet",
+                "excerpt": bag,
+                "source": sheet_url,
+                "retrieved": sheet.get("retrieved"),
+            }
         entry["spend_advantage_evidence"] = [
             reason for pat, reason in SPEND_ADVANTAGE_PATTERNS
             if re.search(pat, (sub or "") + " " + " ".join(flat_excerpts), re.I)
@@ -1414,7 +1429,8 @@ def short_name(name: str, limit: int = 70) -> str:
         cut = cut[:cut.rfind(". ") + 1]
     return cut.rstrip() + " …"
 STATUS_CLS = {"confirmed": "chip-ok", "not_stated_in_sheet": "chip-warn", "unverified": "chip-warn", "no": "chip-bad",
-              "conflict": "chip-bad", "confirmed_allowed": "chip-bad", "indicated": "chip-bad"}
+              "conflict": "chip-bad", "confirmed_allowed": "chip-bad", "indicated": "chip-bad",
+              "restricted_once_bagged": "chip-warn", "confirmed_not_single_entry": "chip-bad"}
 
 
 def rule_chips(ev):
@@ -2434,6 +2450,11 @@ VERIFY_NOTES = {
         ("Caesars Palace daily slate re-read from the property's own 2026 flyer (C1–C7); Bellagio and ARIA fee, occupancy, cancellation and "
          "parking re-read from their reservation-terms and rate-table pages (B1–B5, A1–A2); the standing walking-minute position (W1); and the "
          "Venetian's own date-carrying booking-link pattern (V1)", "2026-11-17"),
+    "1257a37f_source_recheck_2026-11-19.tsv":
+        ("Live re-read 2026-11-19 of the Venetian DSE IV series page, the poker suite-rate page, the Wynn poker page and fee terms 850257, "
+         "the Caesars explore article, the TI Deluxe Rooms page, the Bellagio and ARIA reservation terms, and structure sheets 21 and 12; "
+         "every committed value compared against the live sentence behind it, plus one new dated rate-log observation per source that printed "
+         "a price (TI offer, Venetian endpoints, Wynn player-rate channel) and flag F39 for the Wynn page's self-contradiction", "2026-11-19"),
 }
 
 

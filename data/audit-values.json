@@ -1,6 +1,6 @@
 {
  "meta": {
-  "as_of": "2026-11-19T06:01:43Z",
+  "as_of": "2026-11-19T06:18:43Z",
   "what_this_does": "Re-reads every official capture committed in data/raw/ and every committed verbatim transcription of the official structure sheets, then looks for the literal evidence behind each published number and each quoted rule sentence.",
   "evidence": {
    "hashed_captures": 56,
@@ -13,8 +13,8 @@
    ]
   },
   "event_rows": 253,
-  "values_checked": 1771,
-  "values_located": 1771,
+  "values_checked": 1807,
+  "values_located": 1807,
   "blocking_failures": 0
  },
  "fields": {
@@ -31,8 +31,8 @@
    "located": 252
   },
   "excerpt:re_entry": {
-   "checked": 160,
-   "located": 160
+   "checked": 196,
+   "located": 196
   },
   "excerpt:single_entry": {
    "checked": 4,

@@ -53,6 +53,30 @@
    "kind": "booking_snapshot"
   },
   {
+   "hotel_id": "venetian",
+   "property": "The Venetian Resort \u2014 Venetian tower",
+   "seq": 5,
+   "observed_on": "2026-11-19",
+   "label": "Advertised poker rate, starting endpoint A \u2014 re-read 2026-11-19",
+   "amount_usd": 119,
+   "kind": "advertised_rate",
+   "qualifier": "'as low as' starting endpoint re-read 2026-11-19 from the official poker suite-rate page; unchanged since 2026-11-16. Still an advertised starting point for a Luxury King Suite at The Venetian or The Palazzo under code EPOKR25, subject to qualifying poker play (six hours cash or a $300+ tournament buy-in per night) and availability; not a dated quote.",
+   "source": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
+   "quote_status": "advertised starting point \u2014 not a dated quote"
+  },
+  {
+   "hotel_id": "venetian",
+   "property": "The Venetian Resort \u2014 Venetian tower",
+   "seq": 6,
+   "observed_on": "2026-11-19",
+   "label": "Advertised poker rate, starting endpoint B \u2014 re-read 2026-11-19",
+   "amount_usd": 209,
+   "kind": "advertised_rate",
+   "qualifier": "second 'as low as' endpoint on the same official page, re-read 2026-11-19; unchanged since 2026-11-16. Same conditions as endpoint A. The $55 per night resort fee is stated on the same page.",
+   "source": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
+   "quote_status": "advertised starting point \u2014 not a dated quote"
+  },
+  {
    "hotel_id": "palazzo",
    "property": "The Palazzo (same resort, same poker-rate program)",
    "seq": 1,
@@ -63,6 +87,17 @@
    "source": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
    "quote_status": "unassigned",
    "kind": "not_published"
+  },
+  {
+   "hotel_id": "wynn",
+   "property": "Wynn Las Vegas",
+   "seq": 1,
+   "observed_on": "2026-11-19",
+   "label": "Poker player-rate channel (no rate printed)",
+   "amount_usd": null,
+   "qualifier": "official poker page FAQ (read 2026-11-19): 'Are preferred poker room rates available? Yes, please contact us at poker.reservations@wynnlasvegas.com for assistance.' The page prints no amount; a rate is quoted per stay by the room. The same page's 'Reserve your stay' links for the WPT series use the same poker.reservations mailbox.",
+   "source": "https://wynnlasvegas.com/casino/poker",
+   "quote_status": "channel only \u2014 no published rate"
   },
   {
    "hotel_id": "ti",
@@ -88,6 +123,18 @@
    "source": "https://treasureisland.com/hotel/deluxe-rooms",
    "quote_status": "advertised 'from' price \u2014 not a rate for specific dates; re-quote before booking",
    "excerpt": "Deluxe Rooms From $ 59"
+  },
+  {
+   "hotel_id": "ti",
+   "property": "Treasure Island",
+   "seq": 3,
+   "observed_on": "2026-11-19",
+   "label": "Official TV Ad Special offer price (no resort fee under this offer)",
+   "amount_usd": 69,
+   "qualifier": "'$69* NIGHT + NO RESORT FEE' offer printed on the official Deluxe Rooms page (read 2026-11-19, same page that prints the $49.95 + tax mandatory resort fee). Printed conditions: resort fees are optional only for My TI Guestbook members booking the exclusive TV Ad Special offer, or qualified Treasury Players Club casino members; bookings go to all.accor.com. Asterisked price \u2014 not a dated quote for a chosen stay, and the page warns fee price, tax and amenities can change without notice.",
+   "source": "https://treasureisland.com/hotel/deluxe-rooms",
+   "quote_status": "advertised offer price \u2014 conditions apply; not a dated quote",
+   "kind": "advertised_rate"
   },
   {
    "hotel_id": "venetian",

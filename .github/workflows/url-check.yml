@@ -48,6 +48,14 @@ jobs:
         # captures (capture header timestamps), so the hashes must be regenerated in the same run.
         run: python tools/room_extract.py
 
+      - name: Refresh the value-level audit for the new snapshot
+        # data/audit-values.json is keyed to the snapshot id (byte-stable per snapshot). Any
+        # sync that advances the snapshot must regenerate it in the same commit, or the
+        # "the audit result on the page must match the audit run" step of
+        # "Verify the published site" fails on the next push (this is what left main red
+        # after the 2026-11-19T06:02Z sync; repaired in the 1257a37f integration round).
+        run: python scripts/audit_values.py --strict
+
       - name: Rebuild the dashboard pages from the refreshed snapshots
         run: python scripts/integrate_data.py
 
