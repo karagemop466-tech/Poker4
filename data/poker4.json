@@ -399,30 +399,43 @@
    "venue_ids": [
     "wynn"
    ],
-   "official_page": "https://www.wynnlasvegas.com/casino/poker",
+   "official_page": "https://www.wynnlasvegas.com/terms-and-conditions/850070",
    "booking_link": "https://www.wynnlasvegas.com/",
    "resort_fee": {
-    "amount_usd": null,
-    "basis": null,
-    "source": "https://www.wynnlasvegas.com/casino/poker",
-    "status": "not confirmed on an official Encore page in this snapshot"
+    "amount_usd": 55,
+    "basis": "per room, per night, plus tax — the Wynn standing terms page (850070) lists Encore room types under the same $55 + tax fee as Wynn (Encore Resort King / Two Queens / Panoramic View + Encore Tower Suites)",
+    "source": "https://www.wynnlasvegas.com/terms-and-conditions/850070",
+    "status": "verified from official Wynn terms (re-read live 2026-11-19)",
+    "excerpt": "A daily resort fee of $55 plus tax will be added to your room account for each complimentary (if applicable) and purchased room night ... This resort fee is only applicable to reservations for the following room types: Wynn Resort King, Wynn Resort Two Queens, Wynn Panoramic View King, Wynn Panoramic View Two Queens, Wynn Panoramic Corner King, Encore Resort King, Encore Resort Two Queens, Encore Panoramic View King, Encore Panoramic View Two Queens.",
+    "retrieved": "2026-11-19"
    },
    "tax": {
-    "rate_pct": null,
-    "basis": null,
-    "source": null,
-    "status": "not confirmed"
+    "rate_pct": 13.38,
+    "basis": "Clark County room tax 13.38% per Clark County letter (15 Nov 2016), which sets 13.38% for the Primary Gaming Corridor. Encore shares the Wynn resort campus (3131/3121 S Las Vegas Blvd); Wynn's own pages say only 'plus tax'. This property's map membership is not yet checked (F27).",
+    "source": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:7436500e-cac4-420a-b23a-02d3fec69900/original/as/room-tax-increase-transient-lodging-letter-111616.pdf",
+    "status": "rate from official county letter; not printed on a Wynn page; PGC map membership unverified (F27)"
    },
    "parking": {
-    "self_usd_per_day": null,
-    "valet_usd_per_day": null,
-    "source": null,
-    "status": "not confirmed"
+    "self_usd_per_day": 0,
+    "valet_usd_per_day": 40,
+    "source": "https://www.wynnlasvegas.com/terms-and-conditions/850070",
+    "status": "verified 2026-11-19: self parking complimentary for all Wynn and Encore Resort and Tower Suite registered guests (also for Wynn Poker Room guests and select Wynn Rewards tiers); non-registered $25/day with first 3 hours free; valet $40/day up to 24h, complimentary for Tower Suites guests. Prices may be higher during special events.",
+    "excerpt": "Self parking at our resort is complimentary for all Wynn and Encore Resort and Tower Suite registered guests, subject to availability. For non-registered guests, the daily parking fee is $25 per day, with the first three (3) hours free. Valet parking is $40/day for up to 24 hours (no grace period).",
+    "retrieved": "2026-11-19"
    },
    "cancellation": {
-    "text": "not captured",
-    "status": "unverified",
-    "source": null
+    "text": "Cancellations must be received at least 48 hours prior to arrival date or deposit (if applicable) will be forfeited (Wynn terms 850070, which lists Encore room types). Offer-specific — read your own booking's terms; the opening offer paragraph on that page is stale (F47) and is not used.",
+    "status": "offer terms 850070 (covers Wynn + Encore room types) — not a general policy; read your own booking's terms",
+    "source": "https://www.wynnlasvegas.com/terms-and-conditions/850070",
+    "retrieved": "2026-11-19"
+   },
+   "occupancy_charge": {
+    "text": "There will be a $50 surcharge added for each guest exceeding two or four guests in a room, as applicable.",
+    "amount_usd": 50,
+    "basis": "per extra guest, per night — the number a third or fourth player adds to the room cost",
+    "source": "https://www.wynnlasvegas.com/terms-and-conditions/850070",
+    "status": "verified from official Wynn terms (re-read live 2026-11-19)",
+    "retrieved": "2026-11-19"
    },
    "walk": {
     "venue_id": "venetian",
@@ -442,10 +455,31 @@
     "alt_method_url": "https://maps.apple.com/?saddr=Encore+at+Wynn+Las+Vegas%2C+3121+S+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV+89109&daddr=The+Venetian+Resort+Las+Vegas%2C+3355+Las+Vegas+Blvd.+South%2C+Las+Vegas%2C+NV+89109&dirflg=w",
     "walk_url": "https://www.google.com/maps/dir/Encore%20at%20Wynn%20Las%20Vegas,3121%20S%20Las%20Vegas%20Blvd,Las%20Vegas,NV%2089109/The%20Venetian%20Resort%20Las%20Vegas,3355%20Las%20Vegas%20Blvd.%20South,Las%20Vegas,NV%2089109/data=!4m2!4m1!3e2?hl=en&gl=us"
    },
-   "rate_log": [],
+   "rate_log": [
+    {
+     "observed_on": "2026-11-19",
+     "label": "Mandatory resort fee, amount re-read on official Wynn terms",
+     "amount_usd": 55,
+     "qualifier": "Wynn standing terms 850070 (re-read live 2026-11-19): 'A daily resort fee of $55 plus tax' with Encore Resort King / Two Queens / Panoramic View and Encore Tower Suites listed under the fee. Fee observation only — not a room rate; Encore publishes room rates only inside its booking calendar, so no true cost per night can be computed.",
+     "source": "https://www.wynnlasvegas.com/terms-and-conditions/850070",
+     "quote_status": "verbatim sentence captured 2026-11-19",
+     "kind": "fee_only"
+    },
+    {
+     "observed_on": "2026-11-19",
+     "label": "Checkout total / nightly average for the actual stay",
+     "amount_usd": null,
+     "qualifier": "requires a dated booking session (dates, occupancy, rate class); deliberately left blank rather than estimated",
+     "source": "https://www.wynnlasvegas.com/",
+     "quote_status": "not obtainable from a static page",
+     "kind": "not_published"
+    }
+   ],
    "qualification": null,
    "qualification_source": null,
-   "source_keys": [],
+   "source_keys": [
+    "W_TERMS_GEN"
+   ],
    "dead_source_pages": []
   },
   {
@@ -700,10 +734,12 @@
     "status": "verified from official page"
    },
    "parking": {
-    "self_usd_per_day": null,
-    "valet_usd_per_day": null,
-    "source": "https://treasureisland.com/hotel/deluxe-rooms",
-    "status": "not printed on the fetched page"
+    "self_usd_per_day": 0,
+    "valet_usd_per_day": 0,
+    "source": "https://treasureisland.com/amenities/guest-services",
+    "status": "verified 2026-11-19: self-park garage and valet are free for hotel & casino guests (gratuity suggested for valet)",
+    "excerpt": "Always Free for Hotel & Casino Guests (self-park garage); Free (Gratuity Suggested) for Hotel & Casino Guests (valet). Corroborated on the Deluxe Rooms page: 'Always Free Valet Parking & Self Park Garage' (resort fee amenities).",
+    "retrieved": "2026-11-19"
    },
    "cancellation": {
     "text": "not captured",
