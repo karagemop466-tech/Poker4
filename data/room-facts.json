@@ -64,7 +64,7 @@
  },
  "wynn_wpt": {
   "file": "data/raw/wynn-wpt-terms.txt",
-  "sha256": "1a5749dc0ed5940516be258d8fb0e405419ac311236a4ff549f37dc3749d901e",
+  "sha256": "4e6d7c7809af31f2cbe78e06ef74d2f594474ffbdc3ce808851f9d311626bbde",
   "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
   "events": [
    {
@@ -90,7 +90,7 @@
       "purpose": "Poker Staff Service Charge"
      }
     ],
-    "fee_excerpt": "Entry Fee: Entry Fee: $600 Buy-in = $510 (Tournament Prize Pool) + $65 (Tournament Fee) + $25 (Poker Staff Service Charge) Registration:",
+    "fee_excerpt": "Entry Fee: $600 Buy-in = $510 (Tournament Prize Pool) + $65 (Tournament Fee) + $25 (Poker Staff Service Charge)",
     "fee_split_sums_to_buy_in": true,
     "discounted_entry_excerpt": null,
     "registration_excerpt": "Unlimited re-entry for each starting flight will be available until the start of level 9. A player who advances to Day 2 is prohibited from entering a subsequent starting flight. A player that has advanced to Day 2 who enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight.",
@@ -186,7 +186,7 @@
       "purpose": "Poker Staff Service Charge"
      }
     ],
-    "fee_excerpt": "Entry Fee: Entry Fee: $600 Buy-in = $510 (Tournament Prize Pool) + $65 (Tournament Fee) + $25 (Poker Staff Service Charge) Registration:",
+    "fee_excerpt": "Entry Fee: $600 Buy-in = $510 (Tournament Prize Pool) + $65 (Tournament Fee) + $25 (Poker Staff Service Charge)",
     "fee_split_sums_to_buy_in": true,
     "discounted_entry_excerpt": null,
     "registration_excerpt": "Unlimited re-entry will be available until the start of level 9",
@@ -246,7 +246,7 @@
       "purpose": "Poker Staff Service Charge"
      }
     ],
-    "fee_excerpt": "Entry Fee: Entry Fee: $400 Buy-in = $337 (Tournament Prize Pool) + $45 (Tournament Fee) + $18 (Poker Staff Service Charge) Registration:",
+    "fee_excerpt": "Entry Fee: $400 Buy-in = $337 (Tournament Prize Pool) + $45 (Tournament Fee) + $18 (Poker Staff Service Charge)",
     "fee_split_sums_to_buy_in": true,
     "discounted_entry_excerpt": null,
     "registration_excerpt": "Unlimited re-entry will be available until the start of level 9 (approximately 5:30 p.m.).",
@@ -306,7 +306,7 @@
       "purpose": "Poker Staff Service Charge"
      }
     ],
-    "fee_excerpt": "Entry Fee: Entry Fee: $600 Buy-in = $510 (Tournament Prize Pool) + $65 (Tournament Fee) + $25 (Poker Staff Service Charge) Registration:",
+    "fee_excerpt": "Entry Fee: $600 Buy-in = $510 (Tournament Prize Pool) + $65 (Tournament Fee) + $25 (Poker Staff Service Charge)",
     "fee_split_sums_to_buy_in": true,
     "discounted_entry_excerpt": null,
     "registration_excerpt": "Unlimited re-entry will be available until the start of level 9.",
@@ -372,7 +372,7 @@
       "purpose": "Poker Staff Service Charge"
      }
     ],
-    "fee_excerpt": "Entry Fee: Entry Fee: $800 Buy-in = $695 (Tournament Prize Pool) + $72 (Tournament Fee) + $33 (Poker Staff Service Charge) Registration:",
+    "fee_excerpt": "Entry Fee: $800 Buy-in = $695 (Tournament Prize Pool) + $72 (Tournament Fee) + $33 (Poker Staff Service Charge)",
     "fee_split_sums_to_buy_in": true,
     "discounted_entry_excerpt": null,
     "registration_excerpt": "Unlimited re-entry for each starting flight will be available until the start of level 9. A player who advances to Day 2 is prohibited from entering a subsequent starting flight. A player that has advanced to Day 2 who enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight.",
@@ -474,7 +474,7 @@
       "purpose": "Poker Staff Service Charge"
      }
     ],
-    "fee_excerpt": "Entry Fee: Entry Fee: $600 Buy-in = $510 (Tournament Prize Pool) + $65 (Tournament Fee) + $25 (Poker Staff Service Charge) Registration:",
+    "fee_excerpt": "Entry Fee: $600 Buy-in = $510 (Tournament Prize Pool) + $65 (Tournament Fee) + $25 (Poker Staff Service Charge)",
     "fee_split_sums_to_buy_in": true,
     "discounted_entry_excerpt": null,
     "registration_excerpt": "Unlimited re-entry will be available until the start of level 9",
@@ -534,7 +534,7 @@
       "purpose": "Poker Staff Service Charge"
      }
     ],
-    "fee_excerpt": "Entry Fee: Entry Fee: $600 Buy-in = $510 (Tournament Prize Pool) + $65 (Tournament Fee) + $25 (Poker Staff Service Charge) Registration:",
+    "fee_excerpt": "Entry Fee: $600 Buy-in = $510 (Tournament Prize Pool) + $65 (Tournament Fee) + $25 (Poker Staff Service Charge)",
     "fee_split_sums_to_buy_in": true,
     "discounted_entry_excerpt": null,
     "registration_excerpt": "Unlimited re-entry will be available until the start of level 9",
@@ -594,7 +594,7 @@
       "purpose": "Poker Staff Service Charge"
      }
     ],
-    "fee_excerpt": "Entry Fee: Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $45 (Poker Staff Service Charge) Registration:",
+    "fee_excerpt": "Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $45 (Poker Staff Service Charge)",
     "fee_split_sums_to_buy_in": false,
     "discounted_entry_excerpt": null,
     "registration_excerpt": "Unlimited re-entry will be available until the start of level 9 (approximately 5:30 p.m.).",
@@ -654,7 +654,7 @@
       "purpose": "Poker Staff Service Charge"
      }
     ],
-    "fee_excerpt": "Entry Fee: Entry Fee: $1,600 Buy-in = $1,430 (Tournament Prize Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge) Registration:",
+    "fee_excerpt": "Entry Fee: $1,600 Buy-in = $1,430 (Tournament Prize Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge)",
     "fee_split_sums_to_buy_in": true,
     "discounted_entry_excerpt": null,
     "registration_excerpt": "Unlimited re-entry for each starting flight will be available until the start of level 10. A player who advances to Day 2 is prohibited from entering a subsequent starting flight. A player that has advanced to Day 2 who enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight.",
@@ -726,7 +726,7 @@
       "purpose": "Poker Staff Service Charge"
      }
     ],
-    "fee_excerpt": "Entry Fee: Entry Fee: $600 Buy-in = $510 (Tournament Prize Pool) + $65 (Tournament Fee) + $25 (Poker Staff Service Charge) Registration:",
+    "fee_excerpt": "Entry Fee: $600 Buy-in = $510 (Tournament Prize Pool) + $65 (Tournament Fee) + $25 (Poker Staff Service Charge)",
     "fee_split_sums_to_buy_in": true,
     "discounted_entry_excerpt": null,
     "registration_excerpt": "Unlimited re-entry will be available until the start of level 9 (approximately 4:30 p.m.).",
@@ -786,7 +786,7 @@
       "purpose": "Poker Staff Service Charge"
      }
     ],
-    "fee_excerpt": "Entry Fee: Entry Fee: $1,100 Buy-in = $970 (Tournament Prize Pool) + $90 (Tournament Fee) + $40 (Poker Staff Service Charge) Registration:",
+    "fee_excerpt": "Entry Fee: $1,100 Buy-in = $970 (Tournament Prize Pool) + $90 (Tournament Fee) + $40 (Poker Staff Service Charge)",
     "fee_split_sums_to_buy_in": true,
     "discounted_entry_excerpt": null,
     "registration_excerpt": "One (1) Entry and One (1) re-entry for each starting flight will be available until the start of level 10 (approximately 6:45 p.m.). A player who advances to Day 2 is prohibited from entering a subsequent starting flight. A player that has advanced to Day 2 who enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight.",
@@ -888,7 +888,7 @@
       "purpose": "Poker Staff Service Charge"
      }
     ],
-    "fee_excerpt": "Entry Fee: Entry Fee: $600 Buy-in = $515 (Tournament Prize Pool) + $60 (Tournament Fee) + $25 (Poker Staff Service Charge) Registration:",
+    "fee_excerpt": "Entry Fee: $600 Buy-in = $515 (Tournament Prize Pool) + $60 (Tournament Fee) + $25 (Poker Staff Service Charge)",
     "fee_split_sums_to_buy_in": true,
     "discounted_entry_excerpt": null,
     "registration_excerpt": "Unlimited re-entry will be available until the start of level 9.",
@@ -994,7 +994,7 @@
       "purpose": "Poker Staff Service Charge"
      }
     ],
-    "fee_excerpt": "Entry Fee: Entry Fee: $1,600 Buy-in = $930 (Tournament Prize Pool) + $500 (Mystery Bounty Prize Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge) Registration:",
+    "fee_excerpt": "Entry Fee: $1,600 Buy-in = $930 (Tournament Prize Pool) + $500 (Mystery Bounty Prize Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge)",
     "fee_split_sums_to_buy_in": true,
     "discounted_entry_excerpt": null,
     "registration_excerpt": "Unlimited re-entry for each starting flight will be available until the start of level 10. A player who advances to Day 2 is prohibited from entering a subsequent starting flight. A player that has advanced to Day 2 who enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight.",
@@ -1066,7 +1066,7 @@
       "purpose": "Poker Staff Service Charge"
      }
     ],
-    "fee_excerpt": "Entry Fee: Entry Fee: $1,100 Buy-in = $965 (Tournament Prize Pool) + $90 (Tournament Fee) + $45 (Poker Staff Service Charge) Registration:",
+    "fee_excerpt": "Entry Fee: $1,100 Buy-in = $965 (Tournament Prize Pool) + $90 (Tournament Fee) + $45 (Poker Staff Service Charge)",
     "fee_split_sums_to_buy_in": true,
     "discounted_entry_excerpt": null,
     "registration_excerpt": "Unlimited re-entry will be available until the start of level 10 (approximately 6:30 p.m.).",
@@ -1136,7 +1136,7 @@
       "purpose": "Poker Staff Service Charge"
      }
     ],
-    "fee_excerpt": "Entry Fee: Entry Fee: $1,600 Buy-in = $940 (Tournament Prize Pool) + $500 (Bounty Prize Pool) + $115 (Tournament Fee) + $45 (Poker Staff Service Charge) Registration:",
+    "fee_excerpt": "Entry Fee: $1,600 Buy-in = $940 (Tournament Prize Pool) + $500 (Bounty Prize Pool) + $115 (Tournament Fee) + $45 (Poker Staff Service Charge)",
     "fee_split_sums_to_buy_in": true,
     "discounted_entry_excerpt": null,
     "registration_excerpt": "Unlimited re-entry will be available until the start of level 9 (approximately 5:30 p.m.).",
@@ -1196,7 +1196,7 @@
       "purpose": "Poker Staff Service Charge"
      }
     ],
-    "fee_excerpt": "Entry Fee: Entry Fee: $1,600 Buy-in = $1,430 (Tournament Prize Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge) Registration:",
+    "fee_excerpt": "Entry Fee: $1,600 Buy-in = $1,430 (Tournament Prize Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge)",
     "fee_split_sums_to_buy_in": true,
     "discounted_entry_excerpt": null,
     "registration_excerpt": "Unlimited re-entry for each starting flight will be available until the start of level 10.",
@@ -1266,7 +1266,7 @@
       "purpose": "Poker Staff Service Charge"
      }
     ],
-    "fee_excerpt": "Entry Fee: Entry Fee: $3,000 Buy-in = $1,730 (Tournament Prize Pool) + $1,000 (Bounty Prize Pool) + $200 (Tournament Fee) + $70 (Poker Staff Service Charge) Registration:",
+    "fee_excerpt": "Entry Fee: $3,000 Buy-in = $1,730 (Tournament Prize Pool) + $1,000 (Bounty Prize Pool) + $200 (Tournament Fee) + $70 (Poker Staff Service Charge)",
     "fee_split_sums_to_buy_in": true,
     "discounted_entry_excerpt": null,
     "registration_excerpt": "Unlimited re-entry will be available until the start of level 9 (approximately 5:30 p.m.).",
@@ -1326,7 +1326,7 @@
       "purpose": "Poker Staff Service Charge"
      }
     ],
-    "fee_excerpt": "Entry Fee: Entry Fee: $800 Buy-in = $695 (Tournament Prize Pool) + $72 (Tournament Fee) + $33 (Poker Staff Service Charge) Registration:",
+    "fee_excerpt": "Entry Fee: $800 Buy-in = $695 (Tournament Prize Pool) + $72 (Tournament Fee) + $33 (Poker Staff Service Charge)",
     "fee_split_sums_to_buy_in": true,
     "discounted_entry_excerpt": null,
     "registration_excerpt": "Unlimited re-entry will be available until the start of level 9.",
@@ -1386,7 +1386,7 @@
       "purpose": "Poker Staff Service Charge"
      }
     ],
-    "fee_excerpt": "Entry Fee: Entry Fee: $400 Buy-in = $333 (Tournament Prize Pool) + $45 (Tournament Fee) + $22 (Poker Staff Service Charge) $1,200,000 from the Tournament Prize Pool will fund the Mystery Bounty Prize Pool. Registration:",
+    "fee_excerpt": "Entry Fee: $400 Buy-in = $333 (Tournament Prize Pool) + $45 (Tournament Fee) + $22 (Poker Staff Service Charge) $1,200,000 from the Tournament Prize Pool will fund the Mystery Bounty Prize Pool.",
     "fee_split_sums_to_buy_in": true,
     "discounted_entry_excerpt": null,
     "registration_excerpt": "Unlimited re-entry for each starting flight will be available until the start of level 9. A player who advances to Day 2 is allowed to enter a subsequent starting flight. A player that has advanced to Day 2 from any of the subsequent starting flights will be permitted to play Day 2 with their largest Tournament chip stack from any of the original starting flights (Best stack forward). The player will receive the minimum Day 2 tournament payout ($700) for each additional Tournament chip stack which has advanced.",
@@ -1482,7 +1482,7 @@
       "purpose": "Poker Staff Service Charge"
      }
     ],
-    "fee_excerpt": "Entry Fee: Entry Fee: $800 Buy-in = $700 (Tournament Prize Pool) + $70 (Tournament Fee) + $30 (Poker Staff Service Charge) Registration:",
+    "fee_excerpt": "Entry Fee: $800 Buy-in = $700 (Tournament Prize Pool) + $70 (Tournament Fee) + $30 (Poker Staff Service Charge)",
     "fee_split_sums_to_buy_in": true,
     "discounted_entry_excerpt": null,
     "registration_excerpt": "Unlimited re-entry will be available until the start of level 9 (approximately 2:30 p.m.).",
@@ -1542,7 +1542,7 @@
       "purpose": "Poker Staff Service Charge"
      }
     ],
-    "fee_excerpt": "Entry Fee: Entry Fee: $3,000 Buy-in = $2,730 (Tournament Prize Pool) + $200 (Tournament Fee) + $70 (Poker Staff Service Charge) Registration:",
+    "fee_excerpt": "Entry Fee: $3,000 Buy-in = $2,730 (Tournament Prize Pool) + $200 (Tournament Fee) + $70 (Poker Staff Service Charge)",
     "fee_split_sums_to_buy_in": true,
     "discounted_entry_excerpt": null,
     "registration_excerpt": "Unlimited re-entry will be available until the start of level 9 (approximately 5:30 p.m.).",
@@ -1602,7 +1602,7 @@
       "purpose": "Poker Staff Service Charge"
      }
     ],
-    "fee_excerpt": "Entry Fee: Entry Fee: $10,400 Buy-in = $9,800 (Tournament Prize Pool) + $400 (Tournament Fee) + $200 (Poker Staff Service Charge) Registration:",
+    "fee_excerpt": "Entry Fee: $10,400 Buy-in = $9,800 (Tournament Prize Pool) + $400 (Tournament Fee) + $200 (Poker Staff Service Charge)",
     "fee_split_sums_to_buy_in": true,
     "discounted_entry_excerpt": null,
     "registration_excerpt": "Four (4) Entries maximum. Players are allowed One (1) entry per starting flight + One (1) Day 2 Entry prior to the start of Day 2. Registration is available until the start of level nine (9). A player who advances to Day 2 is prohibited from entering a subsequent starting flight. A player that has advanced to Day 2 who enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight.",
@@ -1704,7 +1704,7 @@
       "purpose": "Poker Staff Service Charge"
      }
     ],
-    "fee_excerpt": "Entry Fee: Entry Fee: $11,100 Buy-in = $10,965 (Tournament Prize Pool) + $90 (Tournament Fee) + $45 (Poker Staff Service Charge) *Discounted Ladies Entry Fee: $1,100 Buy-in = $965 (Tournament Prize Pool) + $90 (Tournament Fee) + $45 (Poker Staff Service Charge) Registration:",
+    "fee_excerpt": "Entry Fee: $11,100 Buy-in = $10,965 (Tournament Prize Pool) + $90 (Tournament Fee) + $45 (Poker Staff Service Charge) *Discounted Ladies Entry Fee: $1,100 Buy-in = $965 (Tournament Prize Pool) + $90 (Tournament Fee) + $45 (Poker Staff Service Charge)",
     "fee_split_sums_to_buy_in": true,
     "discounted_entry_excerpt": "Discounted Ladies Entry Fee: $1,100 Buy-in = $965 (Tournament Prize Pool) + $90 (Tournament Fee) + $45 (Poker Staff Service Charge)",
     "registration_excerpt": "Unlimited re-entry will be available until the start of level 10 (approximately 6:30 p.m.).",
@@ -1770,7 +1770,7 @@
       "purpose": "Poker Staff Service Charge"
      }
     ],
-    "fee_excerpt": "Entry Fee: Entry Fee: $1,100 Buy-in = $965 (Tournament Prize Pool) + $90 (Tournament Fee) + $45 (Poker Staff Service Charge) Registration:",
+    "fee_excerpt": "Entry Fee: $1,100 Buy-in = $965 (Tournament Prize Pool) + $90 (Tournament Fee) + $45 (Poker Staff Service Charge)",
     "fee_split_sums_to_buy_in": true,
     "discounted_entry_excerpt": null,
     "registration_excerpt": "Unlimited re-entry will be available until the start of level 10 (approximately 6:30 p.m.).",
@@ -1836,7 +1836,7 @@
       "purpose": "Poker Staff Service Charge"
      }
     ],
-    "fee_excerpt": "Entry Fee: Entry Fee: $800 Buy-in = $695 (Tournament Prize Pool) + $72 (Tournament Fee) + $33 (Poker Staff Service Charge) Registration:",
+    "fee_excerpt": "Entry Fee: $800 Buy-in = $695 (Tournament Prize Pool) + $72 (Tournament Fee) + $33 (Poker Staff Service Charge)",
     "fee_split_sums_to_buy_in": true,
     "discounted_entry_excerpt": null,
     "registration_excerpt": "Unlimited re-entry for each starting flight will be available until the start of level 10. A player who advances to Day 2 is prohibited from entering a subsequent starting flight. A player that has advanced to Day 2 who enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight.",
@@ -1908,7 +1908,7 @@
       "purpose": "Poker Staff Service Charge"
      }
     ],
-    "fee_excerpt": "Entry Fee: Entry Fee: $1,600 Buy-in = $1,430 (Tournament Prize Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge) Registration:",
+    "fee_excerpt": "Entry Fee: $1,600 Buy-in = $1,430 (Tournament Prize Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge)",
     "fee_split_sums_to_buy_in": true,
     "discounted_entry_excerpt": null,
     "registration_excerpt": "Unlimited re-entry for each starting flight will be available until the start of level 10. A player who advances to Day 2 is prohibited from entering a subsequent starting flight. A player that has advanced to Day 2 who enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight.",
@@ -1980,7 +1980,7 @@
       "purpose": "Poker Staff Service Charge"
      }
     ],
-    "fee_excerpt": "Entry Fee: Entry Fee: $1,100 Buy-in = $965 (Tournament Prize Pool) + $90 (Tournament Fee) + $45 (Poker Staff Service Charge) Registration:",
+    "fee_excerpt": "Entry Fee: $1,100 Buy-in = $965 (Tournament Prize Pool) + $90 (Tournament Fee) + $45 (Poker Staff Service Charge)",
     "fee_split_sums_to_buy_in": true,
     "discounted_entry_excerpt": null,
     "registration_excerpt": "Unlimited re-entry will be available until the start of level 10 (approximately 7:30 p.m.).",
@@ -2046,7 +2046,7 @@
       "purpose": "Poker Staff Service Charge"
      }
     ],
-    "fee_excerpt": "Entry Fee: Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge) Registration:",
+    "fee_excerpt": "Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge)",
     "fee_split_sums_to_buy_in": true,
     "discounted_entry_excerpt": null,
     "registration_excerpt": "Unlimited re-entry will be available until the start of level 9 (approximately 9 p.m.).",
@@ -2106,7 +2106,7 @@
       "purpose": "Poker Staff Service Charge"
      }
     ],
-    "fee_excerpt": "Entry Fee: Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge) Registration:",
+    "fee_excerpt": "Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge)",
     "fee_split_sums_to_buy_in": true,
     "discounted_entry_excerpt": null,
     "registration_excerpt": "Unlimited re-entry will be available until the start of level 9 (approximately 4:30 p.m.)",
@@ -2170,7 +2170,7 @@
       "purpose": "Poker Staff Service Charge"
      }
     ],
-    "fee_excerpt": "Entry Fee: Entry Fee: $3,000 Buy-in = $1,730 (Tournament Prize Pool) + $1,000 (Bounty Prize Pool) + $200 (Tournament Fee) + $70 (Poker Staff Service Charge) Registration:",
+    "fee_excerpt": "Entry Fee: $3,000 Buy-in = $1,730 (Tournament Prize Pool) + $1,000 (Bounty Prize Pool) + $200 (Tournament Fee) + $70 (Poker Staff Service Charge)",
     "fee_split_sums_to_buy_in": true,
     "discounted_entry_excerpt": null,
     "registration_excerpt": "Unlimited re-entry will be available until the start of level 9 (approximately 5:30 p.m.).",
@@ -2234,7 +2234,7 @@
       "purpose": "Poker Staff Service Charge"
      }
     ],
-    "fee_excerpt": "Entry Fee: Entry Fee: $1,600 Buy-in = $940 (Tournament Prize Pool) + $500 (Bounty Prize Pool) + $115 (Tournament Fee) + $45 (Poker Staff Service Charge) Registration:",
+    "fee_excerpt": "Entry Fee: $1,600 Buy-in = $940 (Tournament Prize Pool) + $500 (Bounty Prize Pool) + $115 (Tournament Fee) + $45 (Poker Staff Service Charge)",
     "fee_split_sums_to_buy_in": true,
     "discounted_entry_excerpt": null,
     "registration_excerpt": "Unlimited re-entry will be available until the start of level 9.",
@@ -2294,7 +2294,7 @@
       "purpose": "Poker Staff Service Charge"
      }
     ],
-    "fee_excerpt": "Entry Fee: Entry Fee: $1,100 Buy-in = $965 (Tournament Prize Pool) + $90 (Tournament Fee) + $45 (Poker Staff Service Charge) Registration:",
+    "fee_excerpt": "Entry Fee: $1,100 Buy-in = $965 (Tournament Prize Pool) + $90 (Tournament Fee) + $45 (Poker Staff Service Charge)",
     "fee_split_sums_to_buy_in": true,
     "discounted_entry_excerpt": null,
     "registration_excerpt": "Unlimited re-entry for each starting flight will be available until the start of level 10. A player who advances to Day 2 is prohibited from entering a subsequent starting flight. A player that has advanced to Day 2 who enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight.",
@@ -2366,7 +2366,7 @@
       "purpose": "Poker Staff Service Charge"
      }
     ],
-    "fee_excerpt": "Entry Fee: Entry Fee: $800 Buy-in = $700 (Tournament Prize Pool) + $70 (Tournament Fee) + $30 (Poker Staff Service Charge) Registration:",
+    "fee_excerpt": "Entry Fee: $800 Buy-in = $700 (Tournament Prize Pool) + $70 (Tournament Fee) + $30 (Poker Staff Service Charge)",
     "fee_split_sums_to_buy_in": true,
     "discounted_entry_excerpt": null,
     "registration_excerpt": "Unlimited re-entry will be available until the start of level 9 (approximately 4:30 p.m.).",
@@ -2426,7 +2426,7 @@
       "purpose": "Poker Staff Service Charge"
      }
     ],
-    "fee_excerpt": "Entry Fee: Entry Fee: $10,500 Buy-in = $10,000 (Tournament Prize Pool) + $420 (Tournament Fee) + $80 (Poker Staff Service Charge) Players registered prior to the start of the event will receive a $400 discount. Registration:",
+    "fee_excerpt": "Entry Fee: $10,500 Buy-in = $10,000 (Tournament Prize Pool) + $420 (Tournament Fee) + $80 (Poker Staff Service Charge) Players registered prior to the start of the event will receive a $400 discount.",
     "fee_split_sums_to_buy_in": true,
     "discounted_entry_excerpt": null,
     "registration_excerpt": "Unlimited re-entry will be available until the start of level 7 (approximately 4:30 p.m.).",
@@ -2486,7 +2486,7 @@
       "purpose": "Poker Staff Service Charge"
      }
     ],
-    "fee_excerpt": "Entry Fee: Entry Fee: $800 Buy-in = $695 (Tournament Prize Pool) + $72 (Tournament Fee) + $33 (Poker Staff Service Charge) Registration:",
+    "fee_excerpt": "Entry Fee: $800 Buy-in = $695 (Tournament Prize Pool) + $72 (Tournament Fee) + $33 (Poker Staff Service Charge)",
     "fee_split_sums_to_buy_in": true,
     "discounted_entry_excerpt": null,
     "registration_excerpt": "Unlimited re-entry will be available until the start of level 9 (approximately 5:30 p.m.).",
@@ -2546,7 +2546,7 @@
       "purpose": "Poker Staff Service Charge"
      }
     ],
-    "fee_excerpt": "Entry Fee: Entry Fee: $1,100 Buy-in = $965 (Tournament Prize Pool) + $90 (Tournament Fee) + $45 (Poker Staff Service Charge) Players must be 50 years of age or older to participate. Registration:",
+    "fee_excerpt": "Entry Fee: $1,100 Buy-in = $965 (Tournament Prize Pool) + $90 (Tournament Fee) + $45 (Poker Staff Service Charge) Players must be 50 years of age or older to participate.",
     "fee_split_sums_to_buy_in": true,
     "discounted_entry_excerpt": null,
     "registration_excerpt": "Unlimited re-entry will be available until the start of level 10 (approximately 6:30 p.m.).",
@@ -2618,7 +2618,7 @@
       "purpose": "Poker Staff Service Charge"
      }
     ],
-    "fee_excerpt": "Entry Fee: Entry Fee: $1,600 Buy-in = $1,430 (Tournament Prize Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge) Registration:",
+    "fee_excerpt": "Entry Fee: $1,600 Buy-in = $1,430 (Tournament Prize Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge)",
     "fee_split_sums_to_buy_in": true,
     "discounted_entry_excerpt": null,
     "registration_excerpt": "Unlimited re-entry will be available until the start of level 10 (approximately 6:30 p.m.).",
@@ -2684,7 +2684,7 @@
       "purpose": "Poker Staff Service Charge"
      }
     ],
-    "fee_excerpt": "Entry Fee: Entry Fee: $3,000 Buy-in = $2,720 (Tournament Prize Pool) + $205 (Tournament Fee) + $75 (Poker Staff Service Charge) Registration:",
+    "fee_excerpt": "Entry Fee: $3,000 Buy-in = $2,720 (Tournament Prize Pool) + $205 (Tournament Fee) + $75 (Poker Staff Service Charge)",
     "fee_split_sums_to_buy_in": true,
     "discounted_entry_excerpt": null,
     "registration_excerpt": "Unlimited re-entry will be available until the start of level 10 (approximately 7:30 p.m.).",
@@ -2762,7 +2762,7 @@
       "purpose": "Poker Staff Service Charge"
      }
     ],
-    "fee_excerpt": "Entry Fee: Entry Fee: $25,800 Buy-in = $25,000 (Tournament Prize Pool) + $700 (Tournament Fee) + $100 (Poker Staff Service Charge) Players registered prior to the start of the event will receive a $400 discount. Registration:",
+    "fee_excerpt": "Entry Fee: $25,800 Buy-in = $25,000 (Tournament Prize Pool) + $700 (Tournament Fee) + $100 (Poker Staff Service Charge) Players registered prior to the start of the event will receive a $400 discount.",
     "fee_split_sums_to_buy_in": true,
     "discounted_entry_excerpt": null,
     "registration_excerpt": "Unlimited re-entry will be available until the start of level 10 (approximately 8:30 p.m.)",
@@ -2828,7 +2828,7 @@
       "purpose": "Poker Staff Service Charge"
      }
     ],
-    "fee_excerpt": "Entry Fee: Entry Fee: $1,600 Buy-in = $1,430 (Tournament Prize Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge) Registration:",
+    "fee_excerpt": "Entry Fee: $1,600 Buy-in = $1,430 (Tournament Prize Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge)",
     "fee_split_sums_to_buy_in": true,
     "discounted_entry_excerpt": null,
     "registration_excerpt": "Unlimited re-entry will be available until the start of level 10 (approximately 7:30 p.m.).",
@@ -2894,7 +2894,7 @@
       "purpose": "Poker Staff Service Charge"
      }
     ],
-    "fee_excerpt": "Entry Fee: Entry Fee: $600 Buy-in = $515 (Tournament Prize Pool) + $60 (Tournament Fee) + $25 (Poker Staff Service Charge) Registration:",
+    "fee_excerpt": "Entry Fee: $600 Buy-in = $515 (Tournament Prize Pool) + $60 (Tournament Fee) + $25 (Poker Staff Service Charge)",
     "fee_split_sums_to_buy_in": true,
     "discounted_entry_excerpt": null,
     "registration_excerpt": "Unlimited re-entry will be available until the start of level 9 (approximately 4:30 p.m.).",
@@ -2954,7 +2954,7 @@
       "purpose": "Poker Staff Service Charge"
      }
     ],
-    "fee_excerpt": "Entry Fee: Entry Fee: $10,500 Buy-in = $10,000 (Tournament Prize Pool) + $420 (Tournament Fee) + $80 (Poker Staff Service Charge) Players registered prior to the start of the event will receive a $400 discount. Registration:",
+    "fee_excerpt": "Entry Fee: $10,500 Buy-in = $10,000 (Tournament Prize Pool) + $420 (Tournament Fee) + $80 (Poker Staff Service Charge) Players registered prior to the start of the event will receive a $400 discount.",
     "fee_split_sums_to_buy_in": true,
     "discounted_entry_excerpt": null,
     "registration_excerpt": "Unlimited re-entry will be available until the start of level 7 (approximately 4:30 p.m.).",
@@ -3014,7 +3014,7 @@
       "purpose": "Poker Staff Service Charge"
      }
     ],
-    "fee_excerpt": "Entry Fee: Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge) Registration:",
+    "fee_excerpt": "Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge)",
     "fee_split_sums_to_buy_in": true,
     "discounted_entry_excerpt": null,
     "registration_excerpt": "Unlimited re-entry will be available until the start of level 9.",
@@ -3074,7 +3074,7 @@
       "purpose": "Poker Staff Service Charge"
      }
     ],
-    "fee_excerpt": "Entry Fee: Entry Fee: $5,000 Buy-in = $4,650 (Tournament Prize Pool) + $ 250 (Tournament Fee) + $100 (Poker Staff Service Charge) Registration:",
+    "fee_excerpt": "Entry Fee: $5,000 Buy-in = $4,650 (Tournament Prize Pool) + $ 250 (Tournament Fee) + $100 (Poker Staff Service Charge)",
     "fee_split_sums_to_buy_in": true,
     "discounted_entry_excerpt": null,
     "registration_excerpt": "Unlimited re-entry will be available until the start of level 11 (approximately 1:15 p.m. on Day 2).",
@@ -3150,7 +3150,7 @@
       "purpose": "Poker Staff Service Charge"
      }
     ],
-    "fee_excerpt": "Entry Fee: Entry Fee: $1,600 Buy-in = $930 (Tournament Prize Pool) + $500 (Mystery Bounty Prize Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge) Registration:",
+    "fee_excerpt": "Entry Fee: $1,600 Buy-in = $930 (Tournament Prize Pool) + $500 (Mystery Bounty Prize Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge)",
     "fee_split_sums_to_buy_in": true,
     "discounted_entry_excerpt": null,
     "registration_excerpt": "Unlimited re-entry for will be available until the start of level 10.",
@@ -3234,7 +3234,7 @@
       "purpose": "Poker Staff Service Charge"
      }
     ],
-    "fee_excerpt": "Entry Fee: Entry Fee: $10,500 Buy-in = $10,000 (Tournament Prize Pool) + $420 (Tournament Fee) + $80 (Poker Staff Service Charge) Players registered prior to the start of the event will receive a $400 discount. Registration:",
+    "fee_excerpt": "Entry Fee: $10,500 Buy-in = $10,000 (Tournament Prize Pool) + $420 (Tournament Fee) + $80 (Poker Staff Service Charge) Players registered prior to the start of the event will receive a $400 discount.",
     "fee_split_sums_to_buy_in": true,
     "discounted_entry_excerpt": null,
     "registration_excerpt": "Unlimited re-entry will be available until the start of level 7 (approximately 4:30 p.m.).",
@@ -3294,7 +3294,7 @@
       "purpose": "Poker Staff Service Charge"
      }
     ],
-    "fee_excerpt": "Entry Fee: Entry Fee: $3,000 Buy-in = $2,730 (Tournament Prize Pool) + $200 (Tournament Fee) + $70 (Poker Staff Service Charge) Registration:",
+    "fee_excerpt": "Entry Fee: $3,000 Buy-in = $2,730 (Tournament Prize Pool) + $200 (Tournament Fee) + $70 (Poker Staff Service Charge)",
     "fee_split_sums_to_buy_in": true,
     "discounted_entry_excerpt": null,
     "registration_excerpt": "Unlimited re-entry will be available until the start of level 9 (approximately 5:30 p.m.).",
@@ -3354,7 +3354,7 @@
       "purpose": "Poker Staff Service Charge"
      }
     ],
-    "fee_excerpt": "Entry Fee: Entry Fee: $1,600 Buy-in = $1,430 (Tournament Prize Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge) Registration:",
+    "fee_excerpt": "Entry Fee: $1,600 Buy-in = $1,430 (Tournament Prize Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge)",
     "fee_split_sums_to_buy_in": true,
     "discounted_entry_excerpt": null,
     "registration_excerpt": "Unlimited re-entry will be available until the start of level 10 (approximately 7:30 p.m.).",
@@ -3420,7 +3420,7 @@
       "purpose": "Poker Staff Service Charge"
      }
     ],
-    "fee_excerpt": "Entry Fee: Entry Fee: $600 Buy-in = $515 (Tournament Prize Pool) + $60 (Tournament Fee) + $25 (Poker Staff Service Charge) Registration:",
+    "fee_excerpt": "Entry Fee: $600 Buy-in = $515 (Tournament Prize Pool) + $60 (Tournament Fee) + $25 (Poker Staff Service Charge)",
     "fee_split_sums_to_buy_in": true,
     "discounted_entry_excerpt": null,
     "registration_excerpt": "Unlimited re-entry will be available until the start of level 9.",
@@ -3480,7 +3480,7 @@
       "purpose": "Poker Staff Service Charge"
      }
     ],
-    "fee_excerpt": "Entry Fee: Entry Fee: $600 Buy-in = $515 (Tournament Prize Pool) + $60 (Tournament Fee) + $25 (Poker Staff Service Charge) Registration:",
+    "fee_excerpt": "Entry Fee: $600 Buy-in = $515 (Tournament Prize Pool) + $60 (Tournament Fee) + $25 (Poker Staff Service Charge)",
     "fee_split_sums_to_buy_in": true,
     "discounted_entry_excerpt": null,
     "registration_excerpt": "Unlimited re-entry will be available until the start of level 9.",
@@ -3540,7 +3540,7 @@
       "purpose": "Poker Staff Service Charge"
      }
     ],
-    "fee_excerpt": "Entry Fee: Entry Fee: $10,500 Buy-in = $10,000 (Tournament Prize Pool) + $420 (Tournament Fee) + $80 (Poker Staff Service Charge) Players registered prior to the start of the event will receive a $400 discount. Registration:",
+    "fee_excerpt": "Entry Fee: $10,500 Buy-in = $10,000 (Tournament Prize Pool) + $420 (Tournament Fee) + $80 (Poker Staff Service Charge) Players registered prior to the start of the event will receive a $400 discount.",
     "fee_split_sums_to_buy_in": true,
     "discounted_entry_excerpt": null,
     "registration_excerpt": "Unlimited re-entry will be available until the start of level 7 (approximately 4:30 p.m.).",
@@ -3600,7 +3600,7 @@
       "purpose": "Poker Staff Service Charge"
      }
     ],
-    "fee_excerpt": "Entry Fee: Entry Fee: $600 Buy-in = $515 (Tournament Prize Pool) + $60 (Tournament Fee) + $25 (Poker Staff Service Charge) Registration:",
+    "fee_excerpt": "Entry Fee: $600 Buy-in = $515 (Tournament Prize Pool) + $60 (Tournament Fee) + $25 (Poker Staff Service Charge)",
     "fee_split_sums_to_buy_in": true,
     "discounted_entry_excerpt": null,
     "registration_excerpt": "Unlimited re-entry will be available until the start of level 9 (approximately 9 p.m.).",
@@ -3660,7 +3660,7 @@
       "purpose": "Poker Staff Service Charge"
      }
     ],
-    "fee_excerpt": "Entry Fee: Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge) Registration:",
+    "fee_excerpt": "Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge)",
     "fee_split_sums_to_buy_in": true,
     "discounted_entry_excerpt": null,
     "registration_excerpt": "Unlimited re-entry will be available until the start of level 9.",
@@ -3720,7 +3720,7 @@
       "purpose": "Poker Staff Service Charge"
      }
     ],
-    "fee_excerpt": "Entry Fee: Entry Fee: $400 Buy-in = $337 (Tournament Prize Pool) + $45 (Tournament Fee) + $18 (Poker Staff Service Charge) Registration:",
+    "fee_excerpt": "Entry Fee: $400 Buy-in = $337 (Tournament Prize Pool) + $45 (Tournament Fee) + $18 (Poker Staff Service Charge)",
     "fee_split_sums_to_buy_in": true,
     "discounted_entry_excerpt": null,
     "registration_excerpt": "Unlimited re-entry will be available until the start of level 9.",
@@ -3792,7 +3792,7 @@
       "purpose": "Poker Staff Service Charge"
      }
     ],
-    "fee_excerpt": "Entry Fee: Entry Fee: $200 Buy-in = $165 (Tournament Prize Pool) + $20 (Tournament Fee) + $15 (Poker Staff Service Charge) Registration:",
+    "fee_excerpt": "Entry Fee: $200 Buy-in = $165 (Tournament Prize Pool) + $20 (Tournament Fee) + $15 (Poker Staff Service Charge)",
     "fee_split_sums_to_buy_in": true,
     "discounted_entry_excerpt": null,
     "registration_excerpt": ", winners will receive a seat assignment, and their chips will be put into play from the start of the event. Entry Fee: $200 Buy-in = $165 (Tournament Prize Pool) + $20 (Tournament Fee) + $15 (Poker Staff Service Charge) Registration: Unlimited re-entry will be available until the start of level 9.",
@@ -3852,7 +3852,7 @@
       "purpose": "Poker Staff Service Charge"
      }
     ],
-    "fee_excerpt": "Entry Fee: Entry Fee: $1,600 Buy-in = $1,440 (Tournament Prize Pool) + $115 (Tournament Fee) + $45 (Poker Staff Service Charge) Registration:",
+    "fee_excerpt": "Entry Fee: $1,600 Buy-in = $1,440 (Tournament Prize Pool) + $115 (Tournament Fee) + $45 (Poker Staff Service Charge)",
     "fee_split_sums_to_buy_in": true,
     "discounted_entry_excerpt": null,
     "registration_excerpt": ", winners will receive a seat assignment, and their chips will be put into play from the start the event(s). Entry Fee: $1,600 Buy-in = $1,440 (Tournament Prize Pool) + $115 (Tournament Fee) + $45 (Poker Staff Service Charge) Registration: Unlimited re-entry will be available until the start of level 9.",
@@ -3912,7 +3912,7 @@
       "purpose": "Poker Staff Service Charge"
      }
     ],
-    "fee_excerpt": "Entry Fee: Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge) Registration:",
+    "fee_excerpt": "Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge)",
     "fee_split_sums_to_buy_in": true,
     "discounted_entry_excerpt": null,
     "registration_excerpt": ", winners will receive a seat assignment, and their chips will be put into play from the start the event. Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge) Registration: Unlimited re-entry will be available until the start of level 9.",
@@ -3984,7 +3984,7 @@
       "purpose": "Poker Staff Service Charge"
      }
     ],
-    "fee_excerpt": "Entry Fee: Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge) Registration:",
+    "fee_excerpt": "Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge)",
     "fee_split_sums_to_buy_in": true,
     "discounted_entry_excerpt": null,
     "registration_excerpt": ", winners will receive a seat assignment for Day 1A/B, and their chips will be put into play from the start the event. Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge) Registration: Unlimited re-entry will be available until the start of level 9.",
@@ -4050,7 +4050,7 @@
       "purpose": "Poker Staff Service Charge"
      }
     ],
-    "fee_excerpt": "Entry Fee: Entry Fee: $200 Buy-in = $165 (Tournament Prize Pool) + $20 (Tournament Fee) + $15 (Poker Staff Service Charge) Registration:",
+    "fee_excerpt": "Entry Fee: $200 Buy-in = $165 (Tournament Prize Pool) + $20 (Tournament Fee) + $15 (Poker Staff Service Charge)",
     "fee_split_sums_to_buy_in": true,
     "discounted_entry_excerpt": null,
     "registration_excerpt": ", winners will receive a seat assignment and their chips will be put into play from the start the event. Entry Fee: $200 Buy-in = $165 (Tournament Prize Pool) + $20 (Tournament Fee) + $15 (Poker Staff Service Charge) Registration: Unlimited re-entry will be available until the start of level 9.",
@@ -4110,7 +4110,7 @@
       "purpose": "Poker Staff Service Charge"
      }
     ],
-    "fee_excerpt": "Entry Fee: Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge) Registration:",
+    "fee_excerpt": "Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge)",
     "fee_split_sums_to_buy_in": true,
     "discounted_entry_excerpt": null,
     "registration_excerpt": ", winners will receive a seat assignment for Day 1B, and their chips will be put into play from the start the event. Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge) Registration: Unlimited re-entry will be available until the start of level 9.",
@@ -4170,7 +4170,7 @@
       "purpose": "Poker Staff Service Charge"
      }
     ],
-    "fee_excerpt": "Entry Fee: Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge) Registration:",
+    "fee_excerpt": "Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge)",
     "fee_split_sums_to_buy_in": true,
     "discounted_entry_excerpt": null,
     "registration_excerpt": ", winners will receive a seat assignment for Day 1B/C, and their chips will be put into play from the start the event. Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge) Registration: Unlimited re-entry will be available until the start of level 9.",
@@ -4230,7 +4230,7 @@
       "purpose": "Poker Staff Service Charge"
      }
     ],
-    "fee_excerpt": "Entry Fee: Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge) Registration:",
+    "fee_excerpt": "Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge)",
     "fee_split_sums_to_buy_in": true,
     "discounted_entry_excerpt": null,
     "registration_excerpt": ", winners will receive a seat assignment for Day 1C, and their chips will be put into play from the start the event. Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge) Registration: Unlimited re-entry will be available until the start of level 9.",
@@ -4296,7 +4296,7 @@
       "purpose": "Poker Staff Service Charge"
      }
     ],
-    "fee_excerpt": "Entry Fee: Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge) Registration:",
+    "fee_excerpt": "Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge)",
     "fee_split_sums_to_buy_in": true,
     "discounted_entry_excerpt": null,
     "registration_excerpt": ", winners will receive a seat assignment for Day 1C/Day 2, and their chips will be put into play from the start the event. Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge) Registration: Unlimited re-entry will be available until the start of level 9.",
@@ -4356,7 +4356,7 @@
       "purpose": "Poker Staff Service Charge"
      }
     ],
-    "fee_excerpt": "Entry Fee: Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge) Registration:",
+    "fee_excerpt": "Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge)",
     "fee_split_sums_to_buy_in": true,
     "discounted_entry_excerpt": null,
     "registration_excerpt": ", winners will receive a seat assignment for Day 2, and their chips will be put into play from the start the event. Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge) Registration: Unlimited re-entry will be available until the start of level 9.",
@@ -4416,7 +4416,7 @@
       "purpose": "Poker Staff Service Charge"
      }
     ],
-    "fee_excerpt": "Entry Fee: Entry Fee: $3,000 Buy-in = $2,730 (Tournament Prize Pool) + $200 (Tournament Fee) + $70 (Poker Staff Service Charge) Players registered prior to the start of the event will receive a $100 discount. Registration:",
+    "fee_excerpt": "Entry Fee: $3,000 Buy-in = $2,730 (Tournament Prize Pool) + $200 (Tournament Fee) + $70 (Poker Staff Service Charge) Players registered prior to the start of the event will receive a $100 discount.",
     "fee_split_sums_to_buy_in": true,
     "discounted_entry_excerpt": null,
     "registration_excerpt": ", winners will receive a seat assignment, and their chips will be put into play from the start the event. Entry Fee: $3,000 Buy-in = $2,730 (Tournament Prize Pool) + $200 (Tournament Fee) + $70 (Poker Staff Service Charge) Players registered prior to the start of the event will receive a $100 discount. Registration: Unlimited re-entry will be available until the start of level 9.",
@@ -4476,7 +4476,7 @@
       "purpose": "Poker Staff Service Charge"
      }
     ],
-    "fee_excerpt": "Entry Fee: Entry Fee: $400 Buy-in = $337 (Tournament Prize Pool) + $45 (Tournament Fee) + $18 (Poker Staff Service Charge) Registration:",
+    "fee_excerpt": "Entry Fee: $400 Buy-in = $337 (Tournament Prize Pool) + $45 (Tournament Fee) + $18 (Poker Staff Service Charge)",
     "fee_split_sums_to_buy_in": true,
     "discounted_entry_excerpt": null,
     "registration_excerpt": ", winners will receive a seat assignment, and their chips will be put into play from the start the event. Entry Fee: $400 Buy-in = $337 (Tournament Prize Pool) + $45 (Tournament Fee) + $18 (Poker Staff Service Charge) Registration: Unlimited re-entry will be available until the start of level 9.",
@@ -4542,7 +4542,7 @@
       "purpose": "Poker Staff Service Charge"
      }
     ],
-    "fee_excerpt": "Entry Fee: Entry Fee: $400 Buy-in = $337 (Tournament Prize Pool) + $45 (Tournament Fee) + $18 (Poker Staff Service Charge) Registration:",
+    "fee_excerpt": "Entry Fee: $400 Buy-in = $337 (Tournament Prize Pool) + $45 (Tournament Fee) + $18 (Poker Staff Service Charge)",
     "fee_split_sums_to_buy_in": true,
     "discounted_entry_excerpt": null,
     "registration_excerpt": ", winners will receive a seat assignment, and their chips will be put into play from the start the event. Entry Fee: $400 Buy-in = $337 (Tournament Prize Pool) + $45 (Tournament Fee) + $18 (Poker Staff Service Charge) Registration: Unlimited re-entry will be available until the start of level 9.",
@@ -4602,7 +4602,7 @@
       "purpose": "Poker Staff Service Charge"
      }
     ],
-    "fee_excerpt": "Entry Fee: Entry Fee: $600 Buy-in = $515 (Tournament Prize Pool) + $60 (Tournament Fee) + $25 (Poker Staff Service Charge) Registration:",
+    "fee_excerpt": "Entry Fee: $600 Buy-in = $515 (Tournament Prize Pool) + $60 (Tournament Fee) + $25 (Poker Staff Service Charge)",
     "fee_split_sums_to_buy_in": true,
     "discounted_entry_excerpt": null,
     "registration_excerpt": ", winners will receive a seat assignment, and their chips will be put into play from the start of the event. Entry Fee: $600 Buy-in = $515 (Tournament Prize Pool) + $60 (Tournament Fee) + $25 (Poker Staff Service Charge) Registration: Unlimited re-entry will be available until the start of level 9 (approximately 5 p.m.).",
@@ -4662,7 +4662,7 @@
       "purpose": "Poker Staff Service Charge"
      }
     ],
-    "fee_excerpt": "Entry Fee: Entry Fee: $300 Buy-in = $250 (Tournament Prize Pool) + $34 (Tournament Fee) + $16 (Poker Staff Service Charge) Registration:",
+    "fee_excerpt": "Entry Fee: $300 Buy-in = $250 (Tournament Prize Pool) + $34 (Tournament Fee) + $16 (Poker Staff Service Charge)",
     "fee_split_sums_to_buy_in": true,
     "discounted_entry_excerpt": null,
     "registration_excerpt": ", winners will receive a seat assignment, and their chips will be put into play from the start of the event. Entry Fee: $300 Buy-in = $250 (Tournament Prize Pool) + $34 (Tournament Fee) + $16 (Poker Staff Service Charge) Registration: Unlimited re-entry will be available until the start of level 9.",
@@ -4710,7 +4710,7 @@
  },
  "wynn_daily": {
   "file": "data/raw/wynn-daily-structures.txt",
-  "sha256": "efcccdaa589009204304d1b5b5ef09650bd61fc3b0dac8b4ef371632b66acfc7",
+  "sha256": "393c7f95d0f4d10a06efebd80f8bde66f9e955f3e33fd782d17f5d51affe9da6",
   "url": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
   "poster_file": "data/raw/wynn-daily-poster.txt",
   "poster_url": "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf",
@@ -5061,7 +5061,7 @@
    "url": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
    "retrieved": "2026-11-17",
    "capture": "data/raw/caesars-daily-flyer-2026.txt",
-   "capture_sha256": "d40ee81c55facee65ece5978465995d48d64ca89b9edb28cfd53d37294953c0b",
+   "capture_sha256": "922d7b84ba02b8de839849ebc605b9b99aeda1770584fa2661c50f1be4fe8821",
    "title": null,
    "addon_excerpt": "All Tournaments feature a $50 add-on for 15,000 tournament chips that can only be taken at the first break.",
    "registration_excerpt": "Registration will close at the start of level seven.",

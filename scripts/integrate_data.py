@@ -366,6 +366,9 @@ for row in SCHED["rows"]:
             "excerpt": (f"On Day {suffix}, players who register before the start of the event "
                         f"({cutoff}) will receive a forty ($40) discount on house fees for a "
                         "total buy in of $1,060 instead of $1,100."),
+            # The figures are the sheet's; the sentence is the build's wording, so it is
+            # labelled as such until the sheet is re-read and the wording captured verbatim.
+            "excerpt_kind": "reconstructed",
             "source": sheet_url,
             "retrieved": (sheet or {}).get("retrieved"),
         }
@@ -432,17 +435,26 @@ for row in SCHED["rows"]:
             if re.search(pat, (sub or "") + " " + " ".join(flat_excerpts), re.I)
         ]
         if fee is not None and entry["buy_in_usd"]:
+            # Prefer the sentence the sheet itself prints.  `fee_sentence` is captured
+            # verbatim by tools/sync_official_sources.py; until a sheet has been re-read
+            # with that capture in place, the fallback below restates the printed
+            # figures in the room's standard wording, and the row says so.
+            verbatim = sheet.get("fee_sentence")
             entry["rules"]["fee"] = {
                 "status": "confirmed",
                 "value": f"${fee} of ${entry['buy_in_usd']} withheld; ${pool} per entry to the prize pool"
                          if pool is not None else f"${fee} of ${entry['buy_in_usd']} withheld",
-                "excerpt": f"$ {fee} of the $ {entry['buy_in_usd']} Buy-In is withheld for house fees (Rake + Staff)."
-                           + (f" The prize pool consists of $ {pool} of every $ {entry['buy_in_usd']} Buy In." if pool is not None else ""),
+                "excerpt": verbatim or (
+                    f"$ {fee} of the $ {entry['buy_in_usd']} Buy-In is withheld for house fees (Rake + Staff)."
+                    + (f" The prize pool consists of $ {pool} of every $ {entry['buy_in_usd']} Buy In."
+                       if pool is not None else "")),
+                "excerpt_kind": "verbatim" if verbatim else "reconstructed",
                 "source": sheet_url,
                 "retrieved": sheet.get("retrieved"),
             }
         else:
             entry["rules"]["fee"] = {"status": "unverified", "value": None, "excerpt": None,
+                                     "excerpt_kind": "verbatim",
                                      "source": sheet_url, "retrieved": sheet.get("retrieved")}
         if sheet.get("guarantee") and gtd is None:
             entry["guarantee_from_sheet_text"] = sheet["guarantee"]
@@ -1235,7 +1247,8 @@ def status_span(cls, t):
 # ============================================================== HTML =============
 SIBLINGS = {"palazzo": "venetian", "encore": "wynn", "caesars": "casino", "harrahs": "horseshoe"}
 KEY_URL = json.load(open(DATA / "source-keys.json", encoding="utf-8"))
-RAW_BY_URL = {s["url"]: s["save_text_to"] for s in load("tracked-sources.json")["sources"] if s.get("save_text_to")}
+RAW_BY_URL = {s["url"]: s["save_text_to"] for s in load("tracked-sources.json")["sources"]
+              if s.get("save_text_to") and (ROOT / s["save_text_to"]).exists()}
 REL = {"venue": "../"}
 
 
@@ -1332,8 +1345,10 @@ for h in CFG["hotels"]:
             h["fee_source_note"] = (f"sister property of {other['property']}: the mandatory fee and the room tax are published once for "
                                     f"the complex, so the same source links appear here. Published room rates are per hotel and stay separate.")
 
-NAV = [("index.html", "Overview"), ("tournaments.html", "Tournaments"), ("hotels.html", "Hotels"),
-       ("plan.html", "Day plan"), ("calculator.html", "Trip cost"), ("questions.html", "Open questions"),
+NAV = [("index.html", "Overview"), ("tournaments.html", "Tournaments"), ("compare.html", "Compare"),
+       ("hotels.html", "Hotels"),
+       ("plan.html", "Day plan"), ("calculator.html", "Trip cost"), ("before-you-pay.html", "Before you pay"),
+       ("questions.html", "Open questions"),
        ("suggestions.html", "Suggestions"), ("flagged.html", "Flagged"), ("review.html", "Review log")]
 
 
@@ -1384,6 +1399,18 @@ def chip(text, cls="chip"):
 
 
 RULE_LABELS = [("single_entry", "Single entry"), ("re_entry", "Re-entry"), ("add_on", "Add-on"), ("fee", "Fee withheld")]
+
+
+def short_name(name: str, limit: int = 70) -> str:
+    """An event name as printed can run for a paragraph (a Wynn satellite prints its
+    whole offer). A table cell wants the headline, not the paragraph."""
+    text = re.sub(r"\s+", " ", str(name or "")).strip()
+    if len(text) <= limit:
+        return text
+    cut = text[:limit]
+    if ". " in cut:
+        cut = cut[:cut.rfind(". ") + 1]
+    return cut.rstrip() + " …"
 STATUS_CLS = {"confirmed": "chip-ok", "not_stated_in_sheet": "chip-warn", "unverified": "chip-warn", "no": "chip-bad",
               "conflict": "chip-bad", "confirmed_allowed": "chip-bad", "indicated": "chip-bad",
               "restricted_once_bagged": "chip-warn", "confirmed_not_single_entry": "chip-bad"}
@@ -1434,7 +1461,16 @@ def event_detail(ev, base=""):
             head += f'<span class="retr">retrieved {E(r.get("retrieved"))}</span>'
         head += "</p>"
         if r.get("excerpt"):
-            head += f'<div class="excerpt"><blockquote>{E(r["excerpt"])}</blockquote></div>'
+            if r.get("excerpt_kind") == "reconstructed":
+                # the sentence restates the sheet's printed figures in the room's
+                # standard wording — it is not a copy of this sheet's own line, and
+                # the page must not present it as one.
+                head += ('<div class="excerpt"><p class="excerpt-kind">reworded from the printed '
+                         'figures — the sheet states the amounts below in this standard wording; '
+                         'it is not a copy of this sheet&rsquo;s own line</p>'
+                         f'<blockquote class="reconstructed">{E(r["excerpt"])}</blockquote></div>')
+            else:
+                head += f'<div class="excerpt"><blockquote>{E(r["excerpt"])}</blockquote></div>'
         else:
             head += ("<p class='unknown'>The official sheet contains no sentence about this. Silence is not "
                      "confirmation, so the field stays blank and flagged.</p>")
@@ -1458,7 +1494,10 @@ def event_detail(ev, base=""):
         extra.append("guarantee wording on the sheet: " + E(ev["guarantee_from_sheet_text"]))
     discount = ev.get("conditional_entry_fee")
     if discount:
-        extra.append("<strong>Conditional entry fee:</strong> " + E(discount["excerpt"]) +
+        lead = ("<strong>Conditional entry fee</strong> (figures as printed; wording reworded): "
+                if discount.get("excerpt_kind") == "reconstructed"
+                else "<strong>Conditional entry fee:</strong> ")
+        extra.append(lead + E(discount["excerpt"]) +
                      f' <a href="{E(discount["source"])}" target="_blank" rel="noopener">official structure sheet ↗</a>' +
                      f' (retrieved {E(discount["retrieved"] or "")})')
     for s in (ev.get("spend_advantage_evidence") or []):
@@ -1534,6 +1573,18 @@ FILTERS = """<div class="filters" id="filters">
 <label>venue <select id="f-venue"><option value="">all venues</option>__VENUE_OPTS__</select></label>
 <label class="toggle"><input type="checkbox" id="f-single"> single-entry confirmed only</label>
 <label class="toggle"><input type="checkbox" id="f-hide-unconfirmed"> hide rows with neither a confirmed fee nor a printed guarantee</label>
+<span class="count" id="f-count"></span>
+</div>"""
+
+# The comparison table has no tab panels and no unranked rows, so it carries the date
+# and venue selectors only — the same controls, the same code path.
+COMPARE_FILTERS = """<div class="filters" id="filters">
+<label>from <input type="date" id="f-from" min="2026-11-16" max="2026-12-31"></label>
+<label>to <input type="date" id="f-to" min="2026-11-16" max="2026-12-31"></label>
+<button class="btn-mini" data-preset="7" type="button">next 7 days</button>
+<button class="btn-mini" data-preset="30" type="button">next 30 days</button>
+<button class="btn-mini" data-preset="all" type="button">whole window</button>
+<label>venue <select id="f-venue"><option value="">all venues</option>__VENUE_OPTS__</select></label>
 <span class="count" id="f-count"></span>
 </div>"""
 
@@ -1751,10 +1802,10 @@ def page_index():
 <p class="mini-note">Guarantee ÷ total entry fee, descriptive only — it is not a forecast of expected value, and none of these rows is confirmed single-entry. Ranking needs the fee split and the guarantee both confirmed; rows without them are excluded here and say why.</p>
 <table class="compact"><thead><tr><th>Event</th><th>When</th><th class="num">Entry</th><th class="num">Pool/entry</th><th class="num">Guarantee</th><th class="num">Ratio</th></tr></thead><tbody>
 {"".join(f"<tr><td><a href='tournaments.html#{E(e['id'])}'>{E(e['name'])}</a></td><td>{E(e.get('date') or '')}<span class='time'>{E(e.get('time') or '')}</span></td><td class='num'>{money(e['buy_in_usd'])}</td><td class='num'>{money(e.get('pool_per_entry_usd'))}</td><td class='num'>{money(e['guarantee_usd'])}</td><td class='num'>{e['gtd_ratio']:,.0f}×</td></tr>" for e in top)}
-</tbody></table><p class="srcline"><a class="btn" href="tournaments.html">all {len(events)} rows</a> <a class="btn" href="plan.html">day plan</a></p></div>
+</tbody></table><p class="srcline"><a class="btn" href="tournaments.html">all {len(events)} rows</a> <a class="btn" href="compare.html">compare the shortlist</a> <a class="btn" href="plan.html">day plan</a></p></div>
 <div class="card"><h2>Open questions and missing information</h2>
 <ul class="ticks">{"".join(f"<li>{E(q['question'])}</li>" for q in CFG['questions'])}</ul>
-<p><a class="btn" href="questions.html">questions ({len(CFG['questions'])})</a> <a class="btn" href="suggestions.html">suggestions ({len(CFG['suggestions'])})</a> <a class="btn" href="flagged.html">flagged ({len(CFG['flags'])})</a></p></div>
+<p><a class="btn" href="questions.html">questions ({len(CFG['questions'])})</a> <a class="btn" href="suggestions.html">suggestions ({len(CFG['suggestions'])})</a> <a class="btn" href="before-you-pay.html">before you pay</a> <a class="btn" href="flagged.html">flagged ({len(CFG['flags'])})</a></p></div>
 </section>
 <section><h2>Rooms covered</h2>
 <table class="compact"><thead><tr><th>Venue</th><th class="num">Rows here</th><th>Machine-readable coverage</th><th>What that means</th><th class="num">Confirmed single-entry</th><th>Official sources</th></tr></thead><tbody>{v_rows}</tbody></table>
@@ -1763,7 +1814,8 @@ def page_index():
 <p class="mini-note">{len(_hotels_in_range)} of {len(CFG['hotels'])} properties on this site measure inside 30 minutes of the Venetian poker room; the other {_n_out} {_verb} on the <a href="hotels.html">hotels page</a>, listed and marked as failing the cut rather than quietly dropped. The minutes were measured with Google Maps walking directions on {E(walk_measured_on)} from each hotel's published address to 3355 Las Vegas Blvd. South; no operator publishes a walking time, so they are timestamped measurements with a link that re-runs the route, not official statements (<a href="flagged.html#F3">F3</a>). True cost/night = published room rate + mandatory resort fee, both taxed at {E(tax_label(CFG['hotels'][0]))}. “No dated rate” means the property publishes rates only inside its booking calendar, and we do not estimate them — see <a href="hotels.html">the hotel page</a> for the dated log and the source sentences.</p></section>
 <section class="how"><h2>How this stays current</h2>
 <p>All {len(source_rows)} official URLs are re-fetched on a schedule at 06:00 Las Vegas. The printed calendar PDF and every linked structure sheet are parsed field by field; a content hash detects cosmetic changes and only a <em>value</em> difference is written to the change log and flagged on the affected rows, so a re-render of the same page never looks like a schedule change. Each row carries its own “checked” date.</p>
-<p><a class="btn" href="review.html">run log</a> <a class="btn" href="data/sync-status.json">sync-status.json</a> <a class="btn" href="data/change-log.json">change-log.json</a> <a class="btn" href="data/site-events.json">site-events.json</a></p></section>
+<p>A second gate checks the other half: the <em>value-level audit</em> re-reads every official capture committed in <code>data/raw/</code> and every committed transcription of the structure sheets, then looks for the literal evidence behind each published figure and each sentence shown in a “source text” panel. A value it cannot find fails the build — it is never quietly corrected. For the current snapshot it places <strong>{E(str((load('audit-values.json', {}).get('meta') or {}).get('values_located') or '—'))} of {E(str((load('audit-values.json', {}).get('meta') or {}).get('values_checked') or '—'))}</strong> published values in their cited source with no blocking failure. <a href="review.html#audit">read the audit</a> · <a href="flagged.html#F43">F43</a>.</p>
+<p><a class="btn" href="review.html">run log</a> <a class="btn" href="data/sync-status.json">sync-status.json</a> <a class="btn" href="data/change-log.json">change-log.json</a> <a class="btn" href="data/audit-values.json">audit-values.json</a> <a class="btn" href="data/site-events.json">site-events.json</a></p></section>
 """, "index.html", needs_data=False)
 
 
@@ -1808,7 +1860,7 @@ def page_tournaments():
 {events_table(confirmed, "", "no event on any official Strip sheet states single-entry-only play, so nothing qualifies yet")}</section>
 <section class="tabpanel{' active' if not confirmed else ''}" data-panel="notconfirmed">
 <p class="panel-note">Sorted by guarantee ÷ total entry fee (screening only). “Pool per entry” is what the sheet says reaches the prize pool, so two events with different fee splits stay comparable. Rows flagged <em>⚑ structure sheet ambiguous</em> share an event number with another sheet (different starting flights) and are never ranked off a fee split they may not belong to.</p>
-<p class="panel-note">Sources behind these rows, by room: <strong>{len([e for e in events if e["venue"] == "venetian"])}</strong> Venetian series rows read from the DSE IV calendar and its {len([k for k in AUDIT["sheets"] if k.startswith("V_S")])} linked structure sheets; <strong>{len([e for e in events if e["venue"] == "wynn" and e.get("date")])}</strong> dated Wynn rows read from the venue's WPT structure booklet (one row per printed play day, fee split and re-entry rule beside it) and <strong>{len([e for e in events if e["venue"] == "wynn" and not e.get("date")])}</strong> undated Wynn rows from the daily poster; <strong>{len([e for e in events if e["venue"] == "bellagio"])}</strong> Bellagio rows and <strong>{len([e for e in events if e["venue"] == "caesars"])}</strong> Caesars Palace rows, all recurring slates whose documents print no calendar date, so none of them is dated on this page. Rows whose own sheet prices a re-entry or add-on sit in the third tab regardless of room, which is where most of the Bellagio and Caesars rows are; the counts here cover every tab. Anything the sheet does not print is blank, and the row says which field is missing.</p>
+<p class="panel-note">Sources behind these rows, by room: <strong>{len([e for e in events if e["venue"] == "venetian"])}</strong> Venetian series rows read from the DSE IV calendar and its {len([k for k in AUDIT["sheets"] if k.startswith("V_S")])} linked structure sheets; <strong>{len([e for e in events if e["venue"] == "wynn" and e.get("date")])}</strong> dated Wynn rows read from the venue's WPT structure booklet (one row per printed play day, fee split and re-entry rule beside it) and <strong>{len([e for e in events if e["venue"] == "wynn" and not e.get("date")])}</strong> undated Wynn rows from the daily poster; <strong>{len([e for e in events if e["venue"] == "bellagio"])}</strong> Bellagio rows and <strong>{len([e for e in events if e["venue"] == "caesars"])}</strong> Caesars Palace rows, all recurring slates whose documents print no calendar date, so none of them is dated on this page. Rows whose own sheet prices a re-entry or add-on sit in the third tab regardless of room, which is where most of the Bellagio and Caesars rows are; the counts here cover every tab. Anything the sheet does not print is blank, and the row says which field is missing. To put the events that passed the gates next to each other on guaranteed pool, entry cost, stack and blind length, payout and day fit, use <a href="compare.html">the comparison table</a>.</p>
 {events_table(sorted(other, key=lambda e: -(e.get('gtd_ratio') or 0)))}</section>
 <section class="tabpanel" data-panel="spend">
 <p class="panel-note">Re-entry, add-on, or a second buy-in priced on the sheet: out of the main list because spending more buys an advantage, whatever the guarantee says.</p>
@@ -2026,6 +2078,252 @@ promising that a second entry fits.</p>
 """, "plan.html", needs_data=False)
 
 
+# ---------------------------------------------------------------------- compare
+def page_compare():
+    """The side-by-side comparison the brief asks for: compare only the events that
+    survived, on guaranteed pool, buy-in, starting stack / blind duration, payout
+    structure and daily schedule fit.
+
+    "Survived" here means what actually survived the published gates, stated plainly:
+    an event whose fee split AND whose guarantee are both printed by the official
+    document, and which is an entry rather than a Day-2 continuation. No event in
+    this snapshot is confirmed single-entry, so the single-entry gate removes nothing
+    and the flag on every row says so.
+    """
+    day_by_date = {d["date"]: d for d in plan}
+    survivors = [e for e in events if e.get("rankable")]
+    rows = ""
+    for e in sorted(survivors, key=lambda x: (-(x.get("gtd_ratio") or 0), x["date"])):
+        d = day_by_date.get(e.get("date") or "")
+        fee_parts = []
+        if e.get("house_fee_usd"):
+            fee_parts.append(f"{money(e['house_fee_usd'])} house fee")
+        if e.get("pool_per_entry_usd"):
+            fee_parts.append(f"{money(e['pool_per_entry_usd'])} to the pool")
+        fee_txt = "; ".join(fee_parts) or unk("no fee split printed")
+        stack = (f"{e['starting_chips']:,} chips" if e.get("starting_chips") else unk("stack not printed"))
+        if e.get("level_duration"):
+            stack += note(f"{e['level_duration']}-min levels")
+        if e.get("levels_total"):
+            stack += note(f"{e['levels_total']} levels listed")
+        payout = (f"top {E(str(e['payout_pct_of_field']))}% of the field"
+                  if e.get("payout_pct_of_field") else unk("no payout percentage printed"))
+        # daily schedule fit: what else is on that day, and what the day plan picked
+        if d:
+            same_day = d.get("distinct_ranked_events", 0)
+            fit = (f"<strong>{same_day}</strong> ranked event(s) this day")
+            if d.get("primary"):
+                fit += note("plan's primary: " + short_name(d["primary"]["name"]))
+            if d.get("fallback"):
+                fit += note("reachable fallback: " + short_name(d["fallback"]["name"]))
+            else:
+                fit += note("no second entry is reachable on the printed deadlines")
+        else:
+            fit = unk("no dated entry on the day plan")
+        rule_txt = []
+        for key, label in RULE_LABELS:
+            r = e["rules"].get(key) or {}
+            st = r.get("status") or "unverified"
+            if st in ("confirmed", "confirmed_allowed", "confirmed_limited",
+                      "confirmed_not_single_entry", "indicated", "no"):
+                rule_txt.append(label + ": " + str(r.get("value") or st))
+            elif key == "fee":
+                rule_txt.append(label + ": " + str(r.get("value") or st))
+            else:
+                rule_txt.append(label + ": not stated in the sheet")
+        rules = "; ".join(rule_txt)
+        if not e.get("single_entry_confirmed"):
+            rules += note("single-entry unverified — silence is not confirmation")
+        rows += (f"<tr class='ev-row' id='cmp-{E(e['id'])}' data-id='{E(e['id'])}' data-date='{E(e.get('date') or '')}' "
+                 f"data-venue='{E(e.get('venue') or '')}' data-single='{1 if e.get('single_entry_confirmed') else 0}' "
+                 f"data-rankable='{1 if e.get('rankable') else 0}' data-days=''><td class='when'>{E(e.get('date') or '')}"
+                 f"<span class='time'>{E(e.get('weekday') or '')} · {E(e.get('time') or 'time not printed')}</span></td>"
+                 f"<td class='ev'><a href='tournaments.html#{E(e['id'])}'>{E(e.get('name') or '')}</a>"
+                 f"<span class='time'>{E(e.get('venue_name') or e.get('venue') or '')}</span></td>"
+                 f"<td class='num'>{money(e.get('buy_in_usd'))}</td>"
+                 f"<td class='num'>{fee_txt}</td>"
+                 f"<td class='num'>{money(e.get('guarantee_usd'))}</td>"
+                 f"<td class='num'>{E(str(e.get('gtd_ratio') if e.get('gtd_ratio') is not None else '—'))}×</td>"
+                 f"<td class='num'>{stack}</td>"
+                 f"<td class='num'>{payout}</td>"
+                 f"<td class='rules'>{rules}</td>"
+                 f"<td class='conflicts'>{fit}</td>"
+                 f"<td class='srccell'>{src_cell(e.get('sources'), e.get('last_checked'), e.get('source_changed'))}</td></tr>")
+    n_surv = len(survivors)
+    n_single = sum(1 for e in survivors if e.get("single_entry_confirmed"))
+    n_payout = sum(1 for e in survivors if e.get("payout_pct_of_field"))
+    n_stack = sum(1 for e in survivors if e.get("starting_chips"))
+    venue_opts = "".join(f"<option value='{E(v['id'])}'>{E(v['name'])}</option>" for v in CFG["venues"])
+    filters = COMPARE_FILTERS.replace("__VENUE_OPTS__", venue_opts)
+    return shell("", "Compare the shortlist", f"""
+<section class="page-head"><h1>Compare the surviving events, side by side</h1>
+<p class="lede">One row per event that passed the published gates, compared on the five things that decide a trip:
+the <strong>guaranteed pool</strong>, the <strong>entry cost</strong> (the printed buy-in and what the house keeps),
+the <strong>starting stack and blind duration</strong>, the <strong>payout structure</strong> and the
+<strong>daily schedule fit</strong>. Nothing is estimated: a figure the official document does not print is blank and says so.</p>
+{status_banner()}</section>
+{filters}
+<div class="flagstats"><span class="stat">{n_surv} events survived the gates</span>
+<span class="stat">{n_single} confirmed single-entry</span>
+<span class="stat">{n_stack} with a printed starting stack</span>
+<span class="stat">{n_payout} with a printed payout percentage</span>
+<span class="stat">{len(plan)} days on the plan</span></div>
+<div class="table-scroll"><table class="compact compare"><thead><tr>
+<th>Day</th><th>Event</th><th class="num">Entry (buy-in)</th><th class="num">Fee split</th>
+<th class="num">Guaranteed pool</th><th class="num">GTD ÷ entry</th><th class="num">Stack &amp; blinds</th>
+<th class="num">Payout</th><th>Entry rules</th><th>Daily schedule fit</th><th>Official source</th>
+</tr></thead><tbody>{rows}</tbody></table></div>
+<section class="callout"><h2>What “survived” means here, and what it does not</h2>
+<p>An event is on this page because the fee split <em>and</em> the guarantee are both printed by the official document, so
+the ratio beside it can be recomputed, and because it is an entry rather than a Day-2 continuation. Every row still carries
+its own entry rules.</p>
+<p><strong>No event in this snapshot is confirmed single-entry.</strong> That gate is not applied here because it removes
+nothing — 0 of {len(events)} rows carry a single-entry confirmation, and the reason is recorded on
+<a href="flagged.html#F1">flag F1</a> and in the <em>source text</em> panel of every row on
+<a href="tournaments.html">the tournaments page</a>. A sheet that prints nothing about entries is not a freezeout; it is
+an unverified sheet.</p>
+<p>The ratio is <strong>descriptive</strong>: guarantee ÷ total entry fee, both as printed. It is not an expected value, not a
+forecast, and not a recommendation — an event with a 625× ratio is not better to play than one with 250×, because the
+guarantee is a floor the field may exceed and the pool depends on how many players enter. Rows whose guarantee includes
+bounty money, and rows whose venue names more than one starting flight, are labelled on the
+<a href="tournaments.html">tournaments page</a> so a like-for-like comparison stays like-for-like.</p>
+<p class="srcline">Machine copy: <a href="data/site-events.json">site-events.json</a> · <a href="data/day-plan.json">day-plan.json</a> ·
+every figure checked against its source by <a href="review.html#audit">the value-level audit</a>.</p></section>
+""", "compare.html", needs_data=False)
+
+
+# --------------------------------------------------------------- before you pay
+def page_before_you_pay():
+    """The re-confirmation step the brief asks for: what to re-read, where, and what
+    is still unverified — immediately before a non-refundable payment.
+
+    Every link is the official document the site itself cites, and every "still
+    unverified" line is generated from the same data the tables are built from, so
+    this page cannot drift away from them.
+    """
+    # 1. the events: every official URL a planned entry depends on, with its check date
+    ev_rows = ""
+    for e in sorted([x for x in events if x.get("date") and x.get("rankable")],
+                    key=lambda x: (x["date"], x.get("time") or "")):
+        missing = []
+        if not e.get("single_entry_confirmed"):
+            missing.append("entry policy")
+        if not e.get("payout_pct_of_field"):
+            missing.append("payout percentage")
+        if not e.get("registration_closes"):
+            missing.append("registration deadline")
+        if not e.get("levels_total"):
+            missing.append("level count / implied finish time")
+        ev_rows += (f"<tr><td class='when'>{E(e['date'])}"
+                    f"<span class='time'>{E(e.get('weekday') or '')} · {E(e.get('time') or 'time not printed')}</span></td>"
+                    f"<td class='ev'><a href='tournaments.html#{E(e['id'])}'>{E(e.get('name') or '')}</a>"
+                    f"<span class='time'>{E(e.get('venue_name') or '')}</span></td>"
+                    f"<td class='num'>{money(e.get('buy_in_usd'))}</td>"
+                    f"<td class='num'>{money(e.get('guarantee_usd'))}</td>"
+                    f"<td class='rules'>{E(', '.join(missing)) if missing else '<span class=ok>nothing outstanding on this row</span>'}</td>"
+                    f"<td class='srccell'>{src_cell(e.get('sources'), e.get('last_checked'), e.get('source_changed'))}</td></tr>")
+
+    # 2. the hotel: the fee chain, the parking, the cancellation and whether a dated
+    #    checkout total exists at all
+    h_rows = ""
+    for h in CFG["hotels"]:
+        fee = h.get("resort_fee") or {}
+        tax = h.get("tax") or {}
+        park = h.get("parking") or {}
+        canc = h.get("cancellation") or {}
+        dated = [r for r in (h.get("rate_log") or []) if r.get("observed_on")]
+        # A checkout total exists only when a dated line actually carries an amount.
+        # A line that says a checkout total is "not obtainable from a static page"
+        # records the absence of a quote, not a quote.
+        checkout = [r for r in dated
+                    if r.get("amount_usd") and "checkout" in str(r.get("label", "")).lower()]
+        self_park = park.get("self_usd_per_day")
+        valet = park.get("valet_usd_per_day")
+        if self_park is None and valet is None:
+            park_cell = unk("parking not confirmed") + note(park.get("status") or "")
+        else:
+            bits = []
+            if self_park is not None:
+                bits.append("complimentary self parking" if self_park == 0
+                            else money(self_park) + " self")
+            if valet is not None:
+                bits.append(money(valet) + " valet")
+            park_cell = " · ".join(bits) + note(park.get("status") or "")
+        h_rows += (f"<tr><td class='ev'>{E(h.get('property') or h['id'])}"
+                   f"<span class='time'>{E(h.get('official_page') or '')}</span></td>"
+                   f"<td class='num'>{money(fee.get('amount_usd')) if fee.get('amount_usd') else unk('no fee confirmed')}"
+                   f"{note(fee.get('status') or '')}</td>"
+                   f"<td class='num'>{E(str(tax.get('rate_pct')) + '%') if tax.get('rate_pct') else unk('no tax rate confirmed')}</td>"
+                   f"<td class='num'>{park_cell}</td>"
+                   f"<td class='rules'>{E(str(canc.get('status') or 'no cancellation policy captured'))}</td>"
+                   f"<td class='num'>{E(str(len(dated)))} dated rate line(s)"
+                   f"{note('dated checkout total captured — re-quote before booking' if checkout else 'NO dated checkout total — ask for one before paying')}</td>"
+                   f"<td class='srccell'>{src_cell([h.get('official_page')] if h.get('official_page') else [], SNAPSHOT_AT[:10], label='official page ↗')}</td></tr>")
+
+    # 3. the questions only the room can answer
+    asks = ""
+    for v in CFG["venues"]:
+        vsrc = (v.get("schedule_sources") or [])[:1]
+        asks += (f"<li><strong>{E(v['name'])}</strong>"
+                 f"{note('ask: is one entry per player permitted in this event, and if not, what is the maximum number of entries and the price of each subsequent one?')}"
+                 f"{note('ask: what time does the event finish, and what happens to the start stack if it is not finished on the same day?')}"
+                 f"{note('ask: does the printed guarantee hold if fewer entries are sold than the guarantee assumes?')}"
+                 + (f"{note('official calendar: ')} {src_cell(vsrc, SNAPSHOT_AT[:10], label='official calendar ↗')}" if vsrc else "")
+                 + "</li>")
+
+    return shell("", "Before you pay", f"""
+<section class="page-head"><h1>Before you pay for anything</h1>
+<p class="lede">This snapshot is a point-in-time reading of what the rooms publish, not a booking quote. Before a
+non-refundable payment goes out, re-read the seven things below and close the gaps this site could not. Every link
+here is the operator's own document — the same one the tables cite — and every “still unverified” line is generated
+from the same data, so this page cannot drift away from the rest of the site.</p>
+{status_banner()}</section>
+
+<section class="callout"><h2>The seven things to re-check</h2>
+<ol class="checklist">
+<li><strong>The calendar for your dates.</strong> The schedule PDF is re-read every morning, but a printed series
+calendar is a snapshot of one series: check the room's own page for the day you travel.</li>
+<li><strong>The structure sheet for each event you intend to enter.</strong> The sheet carries the buy-in, the fee
+split, the stack, the levels and the late-registration deadline — and, for the rooms that publish it, the entry rule.
+Read the sheet, not the summary.</li>
+<li><strong>The entry policy, in writing.</strong> This is the single largest open item on the whole site: 0 of
+{len(events)} published rows are confirmed single-entry. Ask the room for the maximum number of entries per player
+and the price of each subsequent entry, in writing, before you commit to a plan that depends on it
+(<a href="flagged.html#F1">F1</a>, <a href="questions.html">Q1</a>).</li>
+<li><strong>The finish time.</strong> No official document on the Strip prints a finish time for these events, so the
+day plan sequences on registration deadlines only. Ask the room what time the event ends and what happens to your
+stack if it runs long (<a href="questions.html">Q4</a>).</li>
+<li><strong>A dated checkout total for the exact stay.</strong> Advertised “from” rates are not quotes. Ask for the
+checkout total, the nightly average, the resort fee, the 13.38% room tax, parking and the cancellation deadline for
+your exact nights and occupancy (<a href="questions.html">Q2</a>, <a href="flagged.html">the hotel flags</a>).</li>
+<li><strong>Whether the poker-rate qualification applies to you.</strong> The advertised poker rate is conditional; if
+you do not qualify, the rate you actually pay is different (<a href="questions.html">Q7</a>).</li>
+<li><strong>The walking route on the day.</strong> The walking times here are timestamped measurements from a routing
+engine, not statements by either property. Re-run the route on the morning you arrive
+(<a href="flagged.html#F3">F3</a>).</li>
+</ol></section>
+
+<h2>Your event list, with what is still outstanding on each row</h2>
+<p class="mini-note">Every event that passed the published gates, with the official documents behind it and the fields
+that are not confirmed. Anything in the fifth column is a question to ask before you enter.</p>
+<div class="table-scroll"><table class="compact"><thead><tr><th>Day</th><th>Event</th><th class="num">Entry</th>
+<th class="num">Guarantee</th><th>Still unverified on this row</th><th>Official source</th></tr></thead>
+<tbody>{ev_rows}</tbody></table></div>
+
+<h2>Your hotel line, with what is still outstanding</h2>
+<div class="table-scroll"><table class="compact"><thead><tr><th>Property</th><th class="num">Resort fee</th>
+<th class="num">Tax</th><th class="num">Parking</th><th>Cancellation</th><th class="num">Dated rate lines</th>
+<th>Official source</th></tr></thead><tbody>{h_rows}</tbody></table></div>
+
+<h2>The exact words to ask each room</h2>
+<ul class="flaglist">{asks}</ul>
+<p class="srcline">Generated from <a href="data/site-events.json">site-events.json</a> and
+<a href="data/poker4.json">poker4.json</a> · cross-checked by
+<a href="review.html#audit">the value-level audit</a> · open items listed on
+<a href="questions.html">the questions page</a>.</p>
+""", "before-you-pay.html", needs_data=False)
+
+
 # ------------------------------------------------------------------- calculator
 def page_calculator():
     hotel_opts = "".join(f"<option value='{E(h['id'])}'>{E(h['property'])}{'' if (h.get('resort_fee') or {}).get('amount_usd') else ' — fee unconfirmed'}</option>" for h in CFG["hotels"])
@@ -2175,6 +2473,55 @@ def page_review():
         verify_rows += (f"<tr><td><a href='data/verify/{E(fp.name)}'>{E(fp.name)}</a></td>"
                         f"<td class='qual'>{E(cov)}</td><td>{E(when)}</td></tr>")
     verify_rows = verify_rows or f"<tr><td colspan='3'>{unk('no per-value re-check records in data/verify yet')}</td></tr>"
+    audit = load("audit-values.json", {})
+    audit_meta = audit.get("meta") or {}
+    audit_fields = audit.get("fields") or {}
+    audit_failures = audit.get("failures") or []
+    audit_blocking = [f for f in audit_failures
+                      if f.get("kind") in ("value_not_found", "quote_not_verbatim",
+                                           "reconstruction_unverified", "arithmetic_mismatch")]
+    audit_cross = audit.get("cross_checks") or []
+    audit_reworded = audit.get("reworded_excerpts_verified") or []
+    if audit_meta:
+        field_rows = "".join(
+            f"<tr><td>{E(f.replace('excerpt:', 'quote · '))}</td>"
+            f"<td class='num'>{E(str(v.get('checked')))}</td>"
+            f"<td class='num'>{E(str(v.get('located')))}</td>"
+            f"<td>{'OK — every value found in its cited source' if v.get('checked') == v.get('located') else 'FAIL'}</td></tr>"
+            for f, v in audit_fields.items())
+        cross_parts = []
+        for c in audit_cross:
+            failed = c.get("failed")
+            verdict = "OK" if not failed else str(failed) + " failed"
+            cross_parts.append(
+                f"<tr><td>{E(c.get('check') or '')}</td>"
+                f"<td class='qual'>{E(c.get('description') or '')}</td>"
+                f"<td class='num'>{E(str(c.get('checked')))}</td>"
+                f"<td>{status_span('ok' if not failed else 'bad', verdict)}</td></tr>")
+        cross_rows = "".join(cross_parts)
+        audit_block = f"""
+<h2 id="audit">Value-level audit — every published number and every quoted sentence</h2>
+<p class="mini-note">The link check above proves a row <em>has</em> a source. This proves the value <em>came from</em> it:
+the tool re-reads every official capture committed in <code>data/raw/</code> and every committed verbatim transcription of the
+official structure sheets, then looks for the literal evidence behind each published figure and each sentence shown in a
+<em>source text</em> panel. A value it cannot find is reported, never corrected, and never quietly replaced.</p>
+<div class="flagstats"><span class="stat">{E(str(audit_meta.get('values_checked')))} values checked</span>
+<span class="stat">{E(str(audit_meta.get('values_located')))} found in the cited source</span>
+<span class="stat">{E(str(audit_meta.get('blocking_failures')))} blocking failures</span>
+<span class="stat">{E(str(len(audit_reworded)))} sentences shown as reworded rather than quoted</span>
+<span class="stat">{E(str((audit_meta.get('evidence') or {}).get('hashed_captures')))} hashed captures · {E(str((audit_meta.get('evidence') or {}).get('structure_sheets_transcribed')))} transcribed structure sheets</span></div>
+<div class="table-scroll"><table class="compact"><thead><tr><th>Field</th><th class="num">Checked</th><th class="num">Located</th><th>Verdict</th></tr></thead><tbody>{field_rows}</tbody></table></div>
+<h3>Cross-checks</h3>
+<div class="table-scroll"><table class="compact"><thead><tr><th>Check</th><th>What it proves</th><th class="num">Rows</th><th>Verdict</th></tr></thead><tbody>{cross_rows}</tbody></table></div>
+<p class="mini-note">Reproduce offline: <code>python3 scripts/audit_values.py --strict</code> · machine copy:
+<a href="data/audit-values.json">data/audit-values.json</a> · audit of the snapshot {E(str(audit_meta.get('as_of') or ''))}.</p>
+<p class="mini-note">{len(audit_reworded)} sentence(s) are shown on the site as <em>reworded from the printed figures</em> rather than
+as a copy of the sheet&rsquo;s own line: the figures are the sheet&rsquo;s, the sentence is the room&rsquo;s standard wording, verified verbatim on
+other sheets of the same series. The scheduled re-read captures each sheet&rsquo;s own sentence, after which the label drops away
+on its own.</p>"""
+    else:
+        audit_block = ("<h2>Value-level audit</h2><p class='unknown'>The value-level audit has not been run in this build. "
+                       "Run <code>python3 scripts/audit_values.py</code> to produce it.</p>")
     return shell("", "Review log", f"""
 <section class="page-head"><h1>Review log — what was checked, when, and what changed</h1>
 <p class="lede">The numbers the site was built from, plus the raw material: every tracked official URL with the date it was last read, whether its bytes or its values moved, how many rows the parser got out of it, and the captured text itself. Any row on any page can be traced to a captured sentence in one click.</p>
@@ -2200,6 +2547,7 @@ itself publishes a live successor for the same document (as the Caesars 2025→2
 <p class="mini-note">Each record is a machine-readable table of one published value against the official document that carries it: what the site
 said, what the document says, the verdict and the action taken. Read these before treating anything as settled.</p>
 <div class="table-scroll"><table class="compact"><thead><tr><th>Record</th><th>Coverage</th><th>Run date</th></tr></thead><tbody>{verify_rows}</tbody></table></div>
+{audit_block}
 <h2>All tracked sources ({len(source_rows)})</h2>
 {source_table(source_rows)}
 """, "review.html", needs_data=False)
@@ -2209,7 +2557,8 @@ said, what the document says, the verdict and the action taken. Read these befor
 VENUES_OUT.mkdir(exist_ok=True)
 pages = {"index.html": page_index(), "tournaments.html": page_tournaments(), "hotels.html": page_hotels(),
          "plan.html": page_plan(), "calculator.html": page_calculator(), "questions.html": page_questions(),
-         "suggestions.html": page_suggestions(), "flagged.html": page_flagged(), "review.html": page_review()}
+         "suggestions.html": page_suggestions(), "flagged.html": page_flagged(), "review.html": page_review(),
+         "compare.html": page_compare(), "before-you-pay.html": page_before_you_pay()}
 for v in CFG["venues"]:
     pages[f"venues/{v['id']}.html"] = page_venue(v)
 # Superseded pages are kept as explicit redirects rather than deleted, so a bookmarked
