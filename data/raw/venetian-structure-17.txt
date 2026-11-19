@@ -1,4 +1,4 @@
-<!-- captured 2026-11-19T06:31:59Z from https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_17.pdf (sha256 8acf20fe50bfa3bb4655501c470b800b5e28693bd07ae6f658fb56e7badeb0ac) -->
+<!-- captured 2026-11-19T06:43:02Z from https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_17.pdf (sha256 8acf20fe50bfa3bb4655501c470b800b5e28693bd07ae6f658fb56e7badeb0ac) -->
  
  
 $600 No Limit Hold’em Seniors (1Day) 

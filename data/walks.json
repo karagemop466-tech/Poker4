@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generated_at": "2026-11-19T06:31:48Z",
+  "generated_at": "2026-11-19T06:42:48Z",
   "rule": "A hotel is usable for an 8 AM\u2013close day only if the walk from the lobby to the Venetian poker room can be completed inside 30 minutes.",
   "how_to_close": "CLOSED 2026-11-17. Measured via Google Maps walking directions for all 10 hotel\u2192Venetian pairs (data/integrated/walks-google.json). The \u226430-minute filter is now a hard filter driven by these measured values. Re-run each directions URL to refresh; a moved route is a change-monitor trigger.",
   "measurement_source": {

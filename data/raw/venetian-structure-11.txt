@@ -1,4 +1,4 @@
-<!-- captured 2026-11-19T06:31:58Z from https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf (sha256 bc4d5f6f320ada80a042d5632cbdf58387772701fee57ed5157ba220cf439566) -->
+<!-- captured 2026-11-19T06:43:01Z from https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf (sha256 bc4d5f6f320ada80a042d5632cbdf58387772701fee57ed5157ba220cf439566) -->
  
  
 $600 No Limit Hold’em Bounty (1Day) 
