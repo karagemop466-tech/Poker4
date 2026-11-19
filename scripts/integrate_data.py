@@ -440,10 +440,20 @@ for row in SCHED["rows"]:
             # with that capture in place, the fallback below restates the printed
             # figures in the room's standard wording, and the row says so.
             verbatim = sheet.get("fee_sentence")
+            # The LIPS sheets (31/32/33) print a third component: a flat fee for
+            # Vegas Connected, INC, DBA Ladies International Poker Series (flag F45).
+            flat_fee = sheet.get("flat_fee_usd")
+            if flat_fee:
+                entry["flat_fee_usd"] = flat_fee
+                entry["flat_fee_note"] = (sheet.get("flat_fee_sentence")
+                                          or f"${flat_fee} of the buy-in withheld as a flat fee (printed on the sheet)")
             entry["rules"]["fee"] = {
                 "status": "confirmed",
-                "value": f"${fee} of ${entry['buy_in_usd']} withheld; ${pool} per entry to the prize pool"
-                         if pool is not None else f"${fee} of ${entry['buy_in_usd']} withheld",
+                "value": (f"${fee} house fees + ${flat_fee} flat fee of ${entry['buy_in_usd']} withheld; "
+                          f"${pool} per entry to the prize pool")
+                         if (pool is not None and flat_fee)
+                         else (f"${fee} of ${entry['buy_in_usd']} withheld; ${pool} per entry to the prize pool"
+                               if pool is not None else f"${fee} of ${entry['buy_in_usd']} withheld"),
                 "excerpt": verbatim or (
                     f"$ {fee} of the $ {entry['buy_in_usd']} Buy-In is withheld for house fees (Rake + Staff)."
                     + (f" The prize pool consists of $ {pool} of every $ {entry['buy_in_usd']} Buy In."
@@ -452,6 +462,11 @@ for row in SCHED["rows"]:
                 "source": sheet_url,
                 "retrieved": sheet.get("retrieved"),
             }
+            # Printed-split reconciliation: with every printed component counted
+            # (house fee + flat fee + prize-pool contribution) the split must equal
+            # the printed buy-in. A shortfall is recorded, never corrected (F45).
+            if pool is not None and fee + pool + (flat_fee or 0) != entry["buy_in_usd"]:
+                entry["rules"]["fee"]["sums_to_buy_in"] = False
         else:
             entry["rules"]["fee"] = {"status": "unverified", "value": None, "excerpt": None,
                                      "excerpt_kind": "verbatim",
@@ -479,6 +494,8 @@ for row in SCHED["rows"]:
         entry["flags"].append("spend-advantage format — excluded from the single-entry list")
     if entry.get("sheet_note"):
         entry["flags"].append("structure sheet ambiguous")
+    if entry["rules"]["fee"].get("sums_to_buy_in") is False:
+        entry["flags"].append("official sheet's own fee split does not add up — recorded verbatim, needs venue confirmation")
     if entry.get("rankable") is False and not entry.get("is_continuation"):
         entry["flags"].append("not ranked — entry fee or guarantee unconfirmed")
     events.append(entry)

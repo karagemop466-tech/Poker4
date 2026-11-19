@@ -1,6 +1,6 @@
 {
  "meta": {
-  "as_of": "2026-11-19T06:01:43Z",
+  "as_of": "2026-11-19T06:18:43Z",
   "what_this_does": "Re-reads every official capture committed in data/raw/ and every committed verbatim transcription of the official structure sheets, then looks for the literal evidence behind each published number and each quoted rule sentence.",
   "evidence": {
    "hashed_captures": 56,
@@ -83,43 +83,7 @@
    "description": "a row labelled single-entry confirmed always quotes the rule"
   }
  ],
- "reworded_excerpts_verified": [
-  {
-   "event_id": "V35-2026-12-09-10:10am",
-   "venue": "venetian",
-   "field": "excerpt:fee",
-   "value": "$ 80 of the $ 600 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $ 510 of every $ 600 Buy In.",
-   "note": "reworded from the sheet's printed figures; the wording is proven verbatim on other sheets of this series"
-  },
-  {
-   "event_id": "V39-2026-12-10-10:10am",
-   "venue": "venetian",
-   "field": "excerpt:fee",
-   "value": "$ 90 of the $ 800 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $ 690 of every $ 800 Buy In.",
-   "note": "reworded from the sheet's printed figures; the wording is proven verbatim on other sheets of this series"
-  },
-  {
-   "event_id": "V39-2026-12-11-10:00am",
-   "venue": "venetian",
-   "field": "excerpt:fee",
-   "value": "$ 90 of the $ 800 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $ 690 of every $ 800 Buy In.",
-   "note": "reworded from the sheet's printed figures; the wording is proven verbatim on other sheets of this series"
-  },
-  {
-   "event_id": "V43-2026-12-11-11:10am",
-   "venue": "venetian",
-   "field": "excerpt:fee",
-   "value": "$ 80 of the $ 600 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $ 510 of every $ 600 Buy In.",
-   "note": "reworded from the sheet's printed figures; the wording is proven verbatim on other sheets of this series"
-  },
-  {
-   "event_id": "V39-2026-12-11-7:00pm",
-   "venue": "venetian",
-   "field": "excerpt:fee",
-   "value": "$ 90 of the $ 800 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $ 690 of every $ 800 Buy In.",
-   "note": "reworded from the sheet's printed figures; the wording is proven verbatim on other sheets of this series"
-  }
- ],
+ "reworded_excerpts_verified": [],
  "failures": [],
  "rows_without_committed_evidence": []
 }

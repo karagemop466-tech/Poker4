@@ -5,9 +5,10 @@ Everything added here was read live on 2026-11-19 from the official pages cited 
 entry. Nothing is inferred: rate-log additions record only what a page printed; flag and
 question additions record only sentences that were actually on the page.
 
-Note (integration): the flag this script appended as F39 was renumbered **F44** when
-origin/main was merged in — parallel sessions had claimed F39–F43 in the meantime. The
-script is a one-shot record of the round's edits and is not re-run.
+Note (integration): the flag this script appended as F39 was renumbered **F46** when
+origin/main was merged in — parallel sessions had claimed F39–F43 (PR #103) and F44–F45
+(PR #110) in the meantime. The script is a one-shot record of the round's edits and is
+not re-run.
 """
 import json
 from pathlib import Path

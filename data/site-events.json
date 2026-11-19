@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generated_at": "2026-11-19T06:01:43Z",
+  "generated_at": "2026-11-19T06:18:43Z",
   "rows": 253,
   "verified_single_entry": 0,
   "rankable": 72,
@@ -7227,9 +7227,9 @@
     },
     "fee": {
      "status": "confirmed",
-     "value": "$80 of $600 withheld; $510 per entry to the prize pool",
-     "excerpt": "$ 80 of the $ 600 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $ 510 of every $ 600 Buy In.",
-     "excerpt_kind": "reconstructed",
+     "value": "$80 house fees + $10 flat fee of $600 withheld; $510 per entry to the prize pool",
+     "excerpt": "$80 of the $600 Buy-In is withheld for house fees (Rake + Staff). $10 of the $600 Buy In will be withheld as a flat fee for Vegas Connected, INC, DBA Ladies International Poker Series (LIPS). Prize pool consists of $510 of every $600 Buy In.",
+     "excerpt_kind": "verbatim",
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_31.pdf",
      "retrieved": "2026-11-19"
     }
@@ -7250,6 +7250,8 @@
    "levels_total": null,
    "breaks_listed": 6,
    "spend_advantage_evidence": [],
+   "flat_fee_usd": 10,
+   "flat_fee_note": "$10 of the $600 Buy In will be withheld as a flat fee for Vegas Connected, INC, DBA Ladies International Poker Series (LIPS).",
    "single_entry_confirmed": false,
    "rankable": true,
    "gtd_ratio": 16.67,
@@ -8126,9 +8128,9 @@
     },
     "fee": {
      "status": "confirmed",
-     "value": "$90 of $800 withheld; $690 per entry to the prize pool",
-     "excerpt": "$ 90 of the $ 800 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $ 690 of every $ 800 Buy In.",
-     "excerpt_kind": "reconstructed",
+     "value": "$90 house fees + $20 flat fee of $800 withheld; $690 per entry to the prize pool",
+     "excerpt": "$90 of the $800 Buy-In is withheld for house fees (Rake + Staff). $20 of the $800 Buy In will be withheld as a flat fee for Vegas Connected, INC, DBA Ladies International Poker Series (LIPS). Prize pool consists of $690 of every $800 Buy In.",
+     "excerpt_kind": "verbatim",
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_32.pdf",
      "retrieved": "2026-11-19"
     }
@@ -8149,6 +8151,8 @@
    "levels_total": null,
    "breaks_listed": 9,
    "spend_advantage_evidence": [],
+   "flat_fee_usd": 20,
+   "flat_fee_note": "$20 of the $800 Buy In will be withheld as a flat fee for Vegas Connected, INC, DBA Ladies International Poker Series (LIPS).",
    "single_entry_confirmed": false,
    "rankable": true,
    "gtd_ratio": 50.0,
@@ -8666,9 +8670,9 @@
     },
     "fee": {
      "status": "confirmed",
-     "value": "$90 of $800 withheld; $690 per entry to the prize pool",
-     "excerpt": "$ 90 of the $ 800 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $ 690 of every $ 800 Buy In.",
-     "excerpt_kind": "reconstructed",
+     "value": "$90 house fees + $20 flat fee of $800 withheld; $690 per entry to the prize pool",
+     "excerpt": "$90 of the $800 Buy-In is withheld for house fees (Rake + Staff). $20 of the $800 Buy In will be withheld as a flat fee for Vegas Connected, INC, DBA Ladies International Poker Series (LIPS). Prize pool consists of $690 of every $800 Buy In.",
+     "excerpt_kind": "verbatim",
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_32.pdf",
      "retrieved": "2026-11-19"
     }
@@ -8689,6 +8693,8 @@
    "levels_total": null,
    "breaks_listed": 9,
    "spend_advantage_evidence": [],
+   "flat_fee_usd": 20,
+   "flat_fee_note": "$20 of the $800 Buy In will be withheld as a flat fee for Vegas Connected, INC, DBA Ladies International Poker Series (LIPS).",
    "guarantee_from_sheet_text": "$40,000",
    "single_entry_confirmed": false,
    "rankable": false,
@@ -8818,9 +8824,9 @@
     },
     "fee": {
      "status": "confirmed",
-     "value": "$80 of $600 withheld; $510 per entry to the prize pool",
-     "excerpt": "$ 80 of the $ 600 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $ 510 of every $ 600 Buy In.",
-     "excerpt_kind": "reconstructed",
+     "value": "$80 house fees + $10 flat fee of $600 withheld; $510 per entry to the prize pool",
+     "excerpt": "$80 of the $600 Buy-In is withheld for house fees (Rake + Staff). $10 of the $600 Buy In will be withheld as a flat fee for Vegas Connected, INC, DBA Ladies International Poker Series (LIPS). Prize pool consists of $510 of every $600 Buy In.",
+     "excerpt_kind": "verbatim",
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_33.pdf",
      "retrieved": "2026-11-19"
     }
@@ -8841,6 +8847,8 @@
    "levels_total": null,
    "breaks_listed": 7,
    "spend_advantage_evidence": [],
+   "flat_fee_usd": 10,
+   "flat_fee_note": "$10 of the $600 Buy In will be withheld as a flat fee for Vegas Connected, INC, DBA Ladies International Poker Series (LIPS).",
    "single_entry_confirmed": false,
    "rankable": true,
    "gtd_ratio": 50.0,
@@ -9124,9 +9132,9 @@
     },
     "fee": {
      "status": "confirmed",
-     "value": "$90 of $800 withheld; $690 per entry to the prize pool",
-     "excerpt": "$ 90 of the $ 800 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $ 690 of every $ 800 Buy In.",
-     "excerpt_kind": "reconstructed",
+     "value": "$90 house fees + $20 flat fee of $800 withheld; $690 per entry to the prize pool",
+     "excerpt": "$90 of the $800 Buy-In is withheld for house fees (Rake + Staff). $20 of the $800 Buy In will be withheld as a flat fee for Vegas Connected, INC, DBA Ladies International Poker Series (LIPS). Prize pool consists of $690 of every $800 Buy In.",
+     "excerpt_kind": "verbatim",
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_32.pdf",
      "retrieved": "2026-11-19"
     }
@@ -9147,6 +9155,8 @@
    "levels_total": null,
    "breaks_listed": 9,
    "spend_advantage_evidence": [],
+   "flat_fee_usd": 20,
+   "flat_fee_note": "$20 of the $800 Buy In will be withheld as a flat fee for Vegas Connected, INC, DBA Ladies International Poker Series (LIPS).",
    "guarantee_from_sheet_text": "$40,000",
    "single_entry_confirmed": false,
    "rankable": false,

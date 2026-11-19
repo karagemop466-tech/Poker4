@@ -35,8 +35,8 @@ Per-value comparison table: [`1257a37f_source_recheck_2026-11-19.tsv`](1257a37f_
 - **Poker room page** — https://wynnlasvegas.com/casino/poker
   - "WPT WORLD CHAMPIONSHIP · November 27–December 21 … New for 2026, the Super Gold Million brings a $400 buy-in featuring a $3,000,000 guarantee!" → matches WPT-19 rows.
   - "WYNN SIGNATURE SERIES · January 11–24. 2027" with official PDFs (`Wynn_Signature_Series_Schedule.pdf`, `Wynn_Signature_Series_Structures.pdf`) → outside the current window; decision logged as suggestion S13.
-  - Contradiction on one page: daily section "offering a total of $200,000 in guaranteed prize pools weekly" vs FAQ "daily tournaments run each day and feature $95,000 per week in guaranteed prize pools" → new flag **F44**.
-  - Contradiction on days: FAQ "run each day" vs daily section "suspended during each Wynn Signature, Wynn Millions, and Classic tournament series" vs structures PDF "offered Monday-Thursday and may be suspended" → F44/F24.
+  - Contradiction on one page: daily section "offering a total of $200,000 in guaranteed prize pools weekly" vs FAQ "daily tournaments run each day and feature $95,000 per week in guaranteed prize pools" → new flag **F46**.
+  - Contradiction on days: FAQ "run each day" vs daily section "suspended during each Wynn Signature, Wynn Millions, and Classic tournament series" vs structures PDF "offered Monday-Thursday and may be suspended" → F46/F24.
   - FAQ: "Are preferred poker room rates available? Yes, please contact us at poker.reservations@wynnlasvegas.com for assistance." → dated rate-log entry (channel only, no rate printed).
   - FAQ: "Both cash and tournament play is held in the poker room located at the Encore." (consistent with F37).
   - FAQ parking: "$25 per day with the first three (3) hours complimentary. Guests of the Wynn Poker room will receive complimentary same-day parking." (consistent with the hotels table).
