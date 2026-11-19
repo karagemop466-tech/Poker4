@@ -1915,3 +1915,19 @@ Session `arena/75f8b185-poker4` (branch `arena/75f8b185-poker4`, branched from `
 - F1 (9a45e995 re-check) and F27 (2026-11-18 county-letter re-read) are kept, with the 75f8b185 sentence appended to main's text.
 - Request handled: #92 owner asked to renumber to the next free IDs and regenerate via `scripts/integrate_data.py` (done on this merge).
 
+## Session arena/2b51f463-poker4 — integration + line-by-line verification (PR pending)
+
+- Session ID: `arena/2b51f463-poker4`; branch `arena/2b51f463-poker4`, from `main` @ `0bf9a5c6f4b7118ffbe55a28c3a816abafff5f1e`. Status: active.
+- Scope claimed: final integration — line-by-line verification of the committed root dashboard, then PR → main, merge, confirm GitHub Pages deploy, and record the PR link + merge result here. File scope: `COORDINATION.md` (this log entry only); no root page/data/other-session files touched.
+- Verification performed (2026-11-19), against committed official captures (`data/raw/`) and the 68-URL tracked-source registry — live venue pages cannot be re-fetched from this sandbox (outbound HTTP reaches github.com/npm/pypi only; the scheduled source-re-check jobs' first genuine live run occurs in GitHub Actions):
+  - `python3 scripts/verify_root.py` → 16 pages · 253 event rows · 130 rate-log lines · 68 tracked sources · 0 warnings — OK (every row carries an official source or an explicit unverified marker)
+  - `python3 scripts/linkcheck.py` → 30 pages, all internal links resolve — OK
+  - GitHub Pages: status `built`, source `main:/`, URL https://karagemop466-tech.github.io/Poker4/
+- Irregularities: carried on the Flagged for Review page (38 flags F1–F38, incl. F1 entry-policy silence → 0 confirmed single-entry, F4 no dated hotel quote, F27 tax-rate provenance). None block launch. Parallel session subsites (`60fb62da/`, `c07371e3/`, `df41f5c6/`, `strip/`, `verified/`, `v2/`) preserved untouched.
+
+### PR + deploy result
+
+- **PR [#N](https://github.com/karagemop466-tech/Poker4/pull/N)** ("arena/2b51f463-poker4 integration: line-by-line verification + Pages deploy record") merged into `main` via `gh pr merge N --merge`, merge commit `<sha>`.
+- **Pages deploy:** `<status>` — Live site https://karagemop466-tech.github.io/Poker4/ is deployed from `main`.
+- Session complete.
+
