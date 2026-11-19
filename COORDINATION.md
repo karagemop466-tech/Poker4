@@ -1999,3 +1999,85 @@ Irregularities: none new; all known irregularities are published on the Flagged 
   The committed verbatim transcription of the same sheet reads
   `"PokerAtlas PRO players will receive a twenty ($20) rake discount on their initial $200 buy in only ... All subsequent buy in's after the initial buy in will be $200."`.
 - **V2c — the 37 Venetian structure sheets are audited but their raw text is not committed.** `data/structure-audit.json` records each sheet's PDF SHA-256 and the fields read from it, but `data/raw/` holds no copy of those 37 PDFs' text, so a quote taken from one of them cannot be re-verified inside this repository against a hashed capture. The committed verbatim transcriptions (`notes/structure_rules.md`, `data/75757cc1/structure_reads.tsv`, `data/08f07d1d/structure_rules.json`, `research/raw/venetian_dse_iv_structures.md`) cover 11 sheets in full sentence form and all 37 in condensed form. Recorded as a provenance irregularity; the daily `url-check` job now captures those sheets' text into `data/raw/` so the gap closes itself.
+- **V2c — the 37 Venetian structure sheets are audited but their raw text is not committed.** `data/structure-audit.json` records each sheet's PDF SHA-256 and the fields read from it, but `data/raw/` holds no copy of those 37 PDFs' text, so a quote taken from one of them cannot be re-verified inside this repository against a hashed capture. The committed verbatim transcriptions (`notes/structure_rules.md`, `data/75757cc1/structure_reads.tsv`, `data/08f07d1d/structure_rules.json`, `research/raw/venetian_dse_iv_structures.md`) cover 11 sheets in full sentence form and all 37 in condensed form. Recorded as a provenance irregularity; the daily `url-check` job now captures those sheets' text into `data/raw/` so the gap closes itself.
+
+### V1–V4 result — arena/8c99a4d7-poker4 (2026-11-19)
+
+**What the session added.** The repository already had a *structural* gate (`scripts/verify_root.py`): it proves a row
+carries an official source or an explicit unverified marker, that links resolve and that the data files parse. Nothing
+proved the opposite half — that the number or the sentence printed on the site actually came from that source. This
+session added that half and let it find real defects.
+
+**V1 — value-level audit (`scripts/audit_values.py`, new).** Re-reads every official capture committed in `data/raw/`
+(each headed by its URL and the SHA-256 of the response) plus the four committed verbatim transcriptions of the 37
+Venetian structure sheets, and looks for the literal evidence behind every published figure and every sentence shown
+in a "source text" panel. It also runs two independent cross-checks: every published Wynn `(date, time)` pair must be
+printed in the official WPT booklet, and every published guarantee ÷ entry-fee ratio must recompute from its own row.
+Result for the current snapshot: **1771 of 1771 values located, 0 blocking failures, 0 rows without committed
+evidence**; 148/148 Wynn date-time pairs printed; 166/166 ratios recompute. The result is committed to
+`data/audit-values.json` (keyed to the snapshot, so it is byte-stable) and summarised on `review.html#audit`.
+
+**V2 — three defects found and repaired.**
+1. **The Wynn WPT fee quote was misquoted on 151 rows.** The site printed `Entry Fee: Entry Fee: $600 Buy-in = …
+   Registration:`; the official booklet prints `Entry Fee: $600 Buy-in = …` once, with no `Registration:` inside the
+   fee sentence. Cause: `tools/room_extract.py` rebuilt the quote as `"Entry Fee: " + match` where the match already
+   began with `Entry Fee:`, and ran on to the next section heading. Fixed; the quote now matches the PDF word for word.
+2. **The Venetian Valuetown re-entry quote began and ended mid-word** on two rows (`V18-2026-11-28-5:10pm`,
+   `V58-2026-12-19-5:10pm`): `ker cage window and show confirmation … Ante will come from the Big Blind O`. Cause:
+   `tools/sync_official_sources.py` took a ±120 character window instead of the sentence. The extractor now returns
+   whole sentences (`sentence_excerpt`), and the committed audit record was repaired to the sentence the committed
+   transcription of that sheet already records: `All subsequent buy in's after the initial buy in will be $200.`
+3. **The Venetian house-fee sentence was assembled from the parsed numbers and presented as a quote** (73 rows). It is
+   now labelled *reworded from the printed figures* on the row, and the extractor captures each sheet's own sentence
+   (`fee_sentence`) so the label drops away by itself after the next scheduled re-read. The audit checks those
+   sentences by content instead: every dollar figure must be printed by the sheet, and the wording must be one the
+   operator is proven to use elsewhere in the same series.
+
+**V2c — provenance gap closed.** The 37 Venetian structure sheets were audited but their text was never committed, so a
+quote taken from one of them could not be re-checked inside the repository. All 37 now register `save_text_to` in
+`data/tracked-sources.json`, so the scheduled sync commits each sheet's extracted text under `data/raw/` with its URL
+and SHA-256, and `tools/sync_official_sources.py --from-raw` can re-derive the whole structure audit offline. The gap
+closes on the next live run; until then the audit checks those rows against the committed transcriptions.
+
+**V3 — published and gated.** `review.html` gained a *Value-level audit* section (per-field table, cross-checks, the
+reworded-sentence count); `index.html` states what the audit placed; `flagged.html` gained **F39–F43** recording the two
+corrections, the reworded sentences, the provenance gap and the audit result; `.github/workflows/site-verify.yml` now
+fails the deploy if the audit cannot locate a published value, and checks that the committed audit result is current.
+
+**Two new pages, both from the brief's own wording.**
+- `compare.html` — *compare only the surviving events on guaranteed pool, buy-in, starting stack/blind duration, payout
+  structure and daily schedule fit.* 72 rows (every event whose fee split **and** guarantee are printed), with the
+  day's ranked events, the plan's primary and whether a fallback is reachable. Reuses the date/venue selectors
+  (`app.js` now filters any table, not only the tabbed tournaments table). The page states plainly that 0 rows are
+  confirmed single-entry, so that gate removes nothing here.
+- `before-you-pay.html` — the brief's *reconfirm official schedules, rates and policies before nonrefundable payment*
+  step, built from the data rather than from prose: the seven things to re-check, the generated event table with each
+  planned entry's official documents and the fields still outstanding on that row, the generated hotel table with the
+  fee / tax / parking / cancellation chain and whether a dated checkout total exists at all, and the exact wording to
+  ask each room.
+
+**Verification performed this session.** Live venue pages cannot be re-fetched from this sandbox (outbound HTTP reaches
+github.com / npm / pypi only), so the audit runs against the committed official captures and transcriptions — which is
+exactly what it is for, and the scheduled job is the lane that re-reads the live pages.
+- `python3 scripts/audit_values.py --strict` → 1771/1771 located, 0 blocking failures · OK
+- `python3 tools/room_extract.py` → WPT 69 · Wynn daily 4 · Bellagio 3 · Caesars 4 · 0 unparsed blocks · OK
+- `python3 scripts/integrate_data.py` → 253 events · 38 days · 130 rate-log lines · 12 walks · 68 sources · OK
+- `python3 scripts/verify_root.py` → 16 pages · 253 rows · 0 warnings · OK
+- `python3 scripts/verify.py` · `verify_markup.py` (39 pages, 0 problems) · `linkcheck.py` (32 pages) · OK
+- `node --check app.js` · `site/app.js` → OK
+- `python3 tools/build_poker4.py` + drift check on `data/08f07d1d` and `poker4/` → 0 drift files · OK
+- `python3 tools/check_rows.py` → 93 official rows checked, 0 problems · OK
+- `python3 tools/verify_poker4.py` → OK · `python3 tools/poker4_monitor.py --selftest` → OK
+- `python3 scripts/validate_site.py` · `python3 tools/v2_verify.py` → OK; every `data/**/*.json` parses
+
+**Irregularities.** Carried on the Flagged for Review page as F39–F43. None blocks the merge. The largest open item on
+the site remains unchanged: **0 of 253 rows are confirmed single-entry** (F1) — the Venetian sheets print nothing about
+entries, and the rooms that do print something print re-entry. The second is that only one property has a dated checkout
+total (F4 / the before-you-pay page names the rest).
+
+**Files touched by this session.** `scripts/audit_values.py` (new), `data/audit-values.json` (new), `scripts/integrate_data.py`,
+`tools/room_extract.py`, `tools/sync_official_sources.py`, `data/tracked-sources.json`, `data/poker4.json` (flags F39–F43),
+`data/structure-audit.json` (V_S8 excerpt repaired), `data/room-facts.json`, `data/site-events.json`, `app.js`, `site.css`,
+`compare.html` (new), `before-you-pay.html` (new), the regenerated root pages and `venues/*.html`, `.github/workflows/site-verify.yml`,
+`README.md`, `COORDINATION.md`. The parallel subsites (`60fb62da/`, `c07371e3/`, `df41f5c6/`, `strip/`, `verified/`, `v2/`,
+`poker4/`, `planner/`, `site/`, `build/`) were not touched.
