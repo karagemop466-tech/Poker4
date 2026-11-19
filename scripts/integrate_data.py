@@ -1232,7 +1232,8 @@ def status_span(cls, t):
 # ============================================================== HTML =============
 SIBLINGS = {"palazzo": "venetian", "encore": "wynn", "caesars": "casino", "harrahs": "horseshoe"}
 KEY_URL = json.load(open(DATA / "source-keys.json", encoding="utf-8"))
-RAW_BY_URL = {s["url"]: s["save_text_to"] for s in load("tracked-sources.json")["sources"] if s.get("save_text_to")}
+RAW_BY_URL = {s["url"]: s["save_text_to"] for s in load("tracked-sources.json")["sources"]
+              if s.get("save_text_to") and (ROOT / s["save_text_to"]).exists()}
 REL = {"venue": "../"}
 
 
@@ -1771,7 +1772,8 @@ def page_index():
 <p class="mini-note">{len(_hotels_in_range)} of {len(CFG['hotels'])} properties on this site measure inside 30 minutes of the Venetian poker room; the other {_n_out} {_verb} on the <a href="hotels.html">hotels page</a>, listed and marked as failing the cut rather than quietly dropped. The minutes were measured with Google Maps walking directions on {E(walk_measured_on)} from each hotel's published address to 3355 Las Vegas Blvd. South; no operator publishes a walking time, so they are timestamped measurements with a link that re-runs the route, not official statements (<a href="flagged.html#F3">F3</a>). True cost/night = published room rate + mandatory resort fee, both taxed at {E(tax_label(CFG['hotels'][0]))}. “No dated rate” means the property publishes rates only inside its booking calendar, and we do not estimate them — see <a href="hotels.html">the hotel page</a> for the dated log and the source sentences.</p></section>
 <section class="how"><h2>How this stays current</h2>
 <p>All {len(source_rows)} official URLs are re-fetched on a schedule at 06:00 Las Vegas. The printed calendar PDF and every linked structure sheet are parsed field by field; a content hash detects cosmetic changes and only a <em>value</em> difference is written to the change log and flagged on the affected rows, so a re-render of the same page never looks like a schedule change. Each row carries its own “checked” date.</p>
-<p><a class="btn" href="review.html">run log</a> <a class="btn" href="data/sync-status.json">sync-status.json</a> <a class="btn" href="data/change-log.json">change-log.json</a> <a class="btn" href="data/site-events.json">site-events.json</a></p></section>
+<p>A second gate checks the other half: the <em>value-level audit</em> re-reads every official capture committed in <code>data/raw/</code> and every committed transcription of the structure sheets, then looks for the literal evidence behind each published figure and each sentence shown in a “source text” panel. A value it cannot find fails the build — it is never quietly corrected. For the current snapshot it places <strong>{E(str((load('audit-values.json', {}).get('meta') or {}).get('values_located') or '—'))} of {E(str((load('audit-values.json', {}).get('meta') or {}).get('values_checked') or '—'))}</strong> published values in their cited source with no blocking failure. <a href="review.html#audit">read the audit</a> · <a href="flagged.html#F43">F43</a>.</p>
+<p><a class="btn" href="review.html">run log</a> <a class="btn" href="data/sync-status.json">sync-status.json</a> <a class="btn" href="data/change-log.json">change-log.json</a> <a class="btn" href="data/audit-values.json">audit-values.json</a> <a class="btn" href="data/site-events.json">site-events.json</a></p></section>
 """, "index.html", needs_data=False)
 
 
@@ -2205,7 +2207,7 @@ def page_review():
                 f"<td>{status_span('ok' if not failed else 'bad', verdict)}</td></tr>")
         cross_rows = "".join(cross_parts)
         audit_block = f"""
-<h2>Value-level audit — every published number and every quoted sentence</h2>
+<h2 id="audit">Value-level audit — every published number and every quoted sentence</h2>
 <p class="mini-note">The link check above proves a row <em>has</em> a source. This proves the value <em>came from</em> it:
 the tool re-reads every official capture committed in <code>data/raw/</code> and every committed verbatim transcription of the
 official structure sheets, then looks for the literal evidence behind each published figure and each sentence shown in a
@@ -2219,7 +2221,7 @@ official structure sheets, then looks for the literal evidence behind each publi
 <h3>Cross-checks</h3>
 <div class="table-scroll"><table class="compact"><thead><tr><th>Check</th><th>What it proves</th><th class="num">Rows</th><th>Verdict</th></tr></thead><tbody>{cross_rows}</tbody></table></div>
 <p class="mini-note">Reproduce offline: <code>python3 scripts/audit_values.py --strict</code> · machine copy:
-<a href="data/audit-values.json">data/audit-values.json</a> · run at {E(str(audit_meta.get('generated_at') or ''))}.</p>
+<a href="data/audit-values.json">data/audit-values.json</a> · audit of the snapshot {E(str(audit_meta.get('as_of') or ''))}.</p>
 <p class="mini-note">{len(audit_reworded)} sentence(s) are shown on the site as <em>reworded from the printed figures</em> rather than
 as a copy of the sheet&rsquo;s own line: the figures are the sheet&rsquo;s, the sentence is the room&rsquo;s standard wording, verified verbatim on
 other sheets of the same series. The scheduled re-read captures each sheet&rsquo;s own sentence, after which the label drops away

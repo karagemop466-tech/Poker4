@@ -457,7 +457,9 @@ def main() -> int:
 
     report = {
         "meta": {
-            "generated_at": __import__("datetime").datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"),
+            # the snapshot the audit is about, not the moment the tool ran: the file
+            # stays byte-stable so CI can prove the committed result is current
+            "as_of": (site.get("meta") or {}).get("generated_at") or "",
             "what_this_does": (
                 "Re-reads every official capture committed in data/raw/ and every committed "
                 "verbatim transcription of the official structure sheets, then looks for the "
@@ -491,6 +493,8 @@ def main() -> int:
 
     print(f"evidence: {len(ev.captures)} hashed captures · "
           f"{len(ev.sheets_covered())} transcribed structure sheets")
+    print(f"audit of the snapshot {report['meta']['as_of'] or '(undated)'} · "
+          f"run at {__import__('datetime').datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')}")
     print(f"event rows: {len(events)} · values checked: {checked} · located: {located} · "
           f"blocking failures: {len(blocking)}")
     for f in sorted(per_field):
