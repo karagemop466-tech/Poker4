@@ -1915,3 +1915,39 @@ Session `arena/75f8b185-poker4` (branch `arena/75f8b185-poker4`, branched from `
 - F1 (9a45e995 re-check) and F27 (2026-11-18 county-letter re-read) are kept, with the 75f8b185 sentence appended to main's text.
 - Request handled: #92 owner asked to renumber to the next free IDs and regenerate via `scripts/integrate_data.py` (done on this merge).
 
+
+## Session arena/a059b252-poker4 (final integration session)
+
+- Session ID: `arena/a059b252-poker4`; branch `arena/a059b252-poker4`, branched from `main` @ `0bf9a5c6f4b7118ffbe55a28c3a816abafff5f1e` (== `origin/main` on this checkout). All work stays on this branch; no other branch is touched.
+- Role: final integration — line-by-line verification of the committed root dashboard, then PR → main, merge, confirm GitHub Pages deploy, and record the PR link + merge result here. No feature code changes; the build was verified byte-stable (`scripts/integrate_data.py` re-run produces zero diff).
+- File scope: `COORDINATION.md` (this record only). No root page, data, workflow, tool, or other-session file touched. Parallel subsites (`60fb62da/`, `c07371e3/`, `df41f5c6/`, `strip/`, `verified/`, `planner/`, `poker4/`, `v2/`, `site/`, `archive/`, `pages/`, `prior_root_dashboard/`) preserved untouched and remain linked from the root index.
+
+| ID | Task | Status | Owner | File scope | Sources / verification | Irregularities |
+|----|------|--------|-------|------------|------------------------|----------------|
+| Z1 | Claim scope, commit + push claim | done | arena/a059b252-poker4 | COORDINATION.md | — | none |
+| Z2 | Final verification of the combined tree | done | arena/a059b252-poker4 | root pages, `venues/*.html`, `data/`, `scripts/`, `tools/` | all gates below | none new |
+| Z3 | PR → main, merge, Pages deploy confirm, record PR link + merge result | pending | arena/a059b252-poker4 | this branch → `main` | PR link + deploy run below | — |
+
+### Verification record (arena/a059b252-poker4, 2026-11-19)
+
+- Outbound network from this sandbox reaches github.com / npm / pypi only, so official venue pages cannot be re-fetched from bash here. Verification rests on the committed official captures (`data/raw/`), the tracked-source registry (`data/tracked-sources.json`, 68 URLs), plus one live spot-check; the scheduled official-source sync (`url-check.yml` / `source-recheck.yml`) runs its first genuine live fetches in GitHub Actions.
+- `python3 tools/room_extract.py` → OK: WPT 69 · Wynn daily 4 · Bellagio 3 · Caesars 4 printed start times; 0 unparsed WPT blocks. WPT-08 printed fee split does not add up to the printed buy-in (1105 vs 1100): recorded verbatim and flagged, not corrected.
+- `python3 scripts/integrate_data.py` → OK: events=253 days=38 rate-log=130 walks=12 sources=68 pages=36; second run is byte-stable (zero diff).
+- `python3 scripts/verify_root.py` → OK: 16 pages · 253 event rows · 130 rate-log lines · 68 tracked sources · 0 warnings; every row carries an official source or an explicit unverified marker.
+- `python3 scripts/verify.py` → OK: pages: 10; sources: 17; flags: 29.
+- `python3 scripts/verify_markup.py` → OK: 37 pages checked, 0 problems.
+- `python3 scripts/linkcheck.py` → OK: 30 pages, all internal links resolve.
+- `python3 scripts/validate_site.py` → OK: 9 dated schedule rows / 8 reviewed event IDs, 11 recurring room schedules, 45 official sources, 7 hotel records; no strict single-entry qualifier is claimed.
+- Live spot-check via fetch_page (2026-11-19): Venetian official Resort Fee page (https://www.venetianlasvegas.com/resort/resort-fee.html) reads "Rates include a daily Resort Fee of $55 plus tax per night" — matches the committed hotel record. Clark County 13.38% room-tax basis is cited from the official county letter and flagged F27 (county letter, not property-printed percentage).
+
+### Features present on the built root dashboard (verified, unchanged)
+
+Trip-cost calculator (`calculator.html`: entries × buy-ins + nights × true hotel cost, tax on fee + rate, "cannot compute" instead of guessing), dated rate log per property (checkout total, nightly average, resort fee + tax, parking, cancellation deadline, rate timestamp), one page per venue (Venetian / Wynn / Bellagio / Caesars / ARIA / others) with events + hotels and official booking links per date, global search across all tables, date filter, "single-entry confirmed only" toggle (0 rows pass — no event is confirmed single-entry; all 37 Venetian structure sheets plus Wynn/WPT/Bellagio/Caesars documents read line by line, silent sheets stay "unverified"), GTD ÷ entry-fee descriptive ratio with bounty/flight/satellite rows in a separate section, day plan (`plan.html`) with one primary event + conditional fallback per day and overlap flags from start time vs late-registration cutoff, ≤30-minute walking-route filter on measured Google Maps routes (hotel→Venetian poker room, retrieved 2026-11-17/18, distances shown beside minutes), per-row "last checked" dates, scheduled official-URL re-check marking rows whose source changed, executive summary (`index.html`), open questions (`questions.html`), decision-only suggestions (`suggestions.html`), Flagged for Review page (`flagged.html`), source status/run log (`review.html`, `data/change-log.json`).
+
+### Irregularities
+
+All flagged on `flagged.html` and carried forward; none block launch: F1 entry-policy silence (0 confirmed single-entry); WPT-08 fee-split mismatch (1105 vs 1100); Caesars explore-page vs 2026 flyer buy-in conflict; Bellagio/Caesars/Aria resort-fee pages print no amount (amounts taken from property terms pages where published); tax 13.38% rests on the Clark County letter, not on every property's page (F27); no official 8:00 AM start anywhere in the window; dated room rates unavailable without a booking session (left blank, never estimated); walking minutes are routing-engine measurements, not operator statements.
+
+### PR + deploy result
+
+pending (task Z3)
