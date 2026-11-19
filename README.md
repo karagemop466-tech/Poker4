@@ -8,6 +8,7 @@ Static, source-first planning dashboard for live poker tournaments on the Las Ve
 - `plan.html` — day-by-day plan: one primary event and one conditional fallback per day, with the printed late-registration deadline as the only sequencing evidence and the printed Day-2 restart as the only end-of-day evidence
 - `hotels.html` — true cost per night (published rate + mandatory resort fee, both taxed at 13.38%), the dated rate log, parking, the ≤30-minute walk filter and per-row walking-route links
 - `calculator.html` — trip cost: entries × buy-ins + nights × true hotel cost
+- `before-you-pay.html` — the re-confirmation step: the seven things to re-check before a non-refundable payment, the official document behind every planned entry and every hotel line, what is still unverified on each row, and the exact words to ask each room
 - `venues/venetian.html`, `venues/wynn.html`, `venues/bellagio.html`, `venues/caesars.html` (plus `venues/aria.html`, `venues/others.html`) — one page per room with its events, hotels and sources
 - `questions.html` — what is known, what is missing, and how each gap gets closed
 - `suggestions.html` — decision-only proposals; nothing is adopted until chosen

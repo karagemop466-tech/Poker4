@@ -140,6 +140,10 @@ tr.hl{background:#fff7e0!important}
 .flaglist{list-style:none;padding:0;margin:.4em 0 1em}
 .flaglist li{background:#fff;border:1px solid var(--line);border-left:3px solid var(--warn);border-radius:0 10px 10px 0;padding:9px 12px;margin-bottom:7px;font-size:13.5px}
 .flaglist li em{color:var(--ink-3);font-style:normal;font-size:12.5px}
+/* the pre-payment checklist: numbered, tickable by eye */
+.checklist{margin:.4em 0 1em;padding-left:22px}
+.checklist li{background:#fff;border:1px solid var(--line);border-left:3px solid var(--ok);border-radius:0 10px 10px 0;padding:9px 12px;margin-bottom:7px;font-size:13.5px}
+.checklist li strong{color:var(--ink)}
 .flagstats{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
 .callout{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 18px;margin:22px 0}
 .callout h2{margin-top:0}

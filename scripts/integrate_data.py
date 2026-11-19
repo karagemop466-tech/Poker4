@@ -1332,7 +1332,8 @@ for h in CFG["hotels"]:
 
 NAV = [("index.html", "Overview"), ("tournaments.html", "Tournaments"), ("compare.html", "Compare"),
        ("hotels.html", "Hotels"),
-       ("plan.html", "Day plan"), ("calculator.html", "Trip cost"), ("questions.html", "Open questions"),
+       ("plan.html", "Day plan"), ("calculator.html", "Trip cost"), ("before-you-pay.html", "Before you pay"),
+       ("questions.html", "Open questions"),
        ("suggestions.html", "Suggestions"), ("flagged.html", "Flagged"), ("review.html", "Review log")]
 
 
@@ -1788,7 +1789,7 @@ def page_index():
 </tbody></table><p class="srcline"><a class="btn" href="tournaments.html">all {len(events)} rows</a> <a class="btn" href="compare.html">compare the shortlist</a> <a class="btn" href="plan.html">day plan</a></p></div>
 <div class="card"><h2>Open questions and missing information</h2>
 <ul class="ticks">{"".join(f"<li>{E(q['question'])}</li>" for q in CFG['questions'])}</ul>
-<p><a class="btn" href="questions.html">questions ({len(CFG['questions'])})</a> <a class="btn" href="suggestions.html">suggestions ({len(CFG['suggestions'])})</a> <a class="btn" href="flagged.html">flagged ({len(CFG['flags'])})</a></p></div>
+<p><a class="btn" href="questions.html">questions ({len(CFG['questions'])})</a> <a class="btn" href="suggestions.html">suggestions ({len(CFG['suggestions'])})</a> <a class="btn" href="before-you-pay.html">before you pay</a> <a class="btn" href="flagged.html">flagged ({len(CFG['flags'])})</a></p></div>
 </section>
 <section><h2>Rooms covered</h2>
 <table class="compact"><thead><tr><th>Venue</th><th class="num">Rows here</th><th>Machine-readable coverage</th><th>What that means</th><th class="num">Confirmed single-entry</th><th>Official sources</th></tr></thead><tbody>{v_rows}</tbody></table>
@@ -2175,6 +2176,138 @@ every figure checked against its source by <a href="review.html#audit">the value
 """, "compare.html", needs_data=False)
 
 
+# --------------------------------------------------------------- before you pay
+def page_before_you_pay():
+    """The re-confirmation step the brief asks for: what to re-read, where, and what
+    is still unverified — immediately before a non-refundable payment.
+
+    Every link is the official document the site itself cites, and every "still
+    unverified" line is generated from the same data the tables are built from, so
+    this page cannot drift away from them.
+    """
+    # 1. the events: every official URL a planned entry depends on, with its check date
+    ev_rows = ""
+    for e in sorted([x for x in events if x.get("date") and x.get("rankable")],
+                    key=lambda x: (x["date"], x.get("time") or "")):
+        missing = []
+        if not e.get("single_entry_confirmed"):
+            missing.append("entry policy")
+        if not e.get("payout_pct_of_field"):
+            missing.append("payout percentage")
+        if not e.get("registration_closes"):
+            missing.append("registration deadline")
+        if not e.get("levels_total"):
+            missing.append("level count / implied finish time")
+        ev_rows += (f"<tr><td class='when'>{E(e['date'])}"
+                    f"<span class='time'>{E(e.get('weekday') or '')} · {E(e.get('time') or 'time not printed')}</span></td>"
+                    f"<td class='ev'><a href='tournaments.html#{E(e['id'])}'>{E(e.get('name') or '')}</a>"
+                    f"<span class='time'>{E(e.get('venue_name') or '')}</span></td>"
+                    f"<td class='num'>{money(e.get('buy_in_usd'))}</td>"
+                    f"<td class='num'>{money(e.get('guarantee_usd'))}</td>"
+                    f"<td class='rules'>{E(', '.join(missing)) if missing else '<span class=ok>nothing outstanding on this row</span>'}</td>"
+                    f"<td class='srccell'>{src_cell(e.get('sources'), e.get('last_checked'), e.get('source_changed'))}</td></tr>")
+
+    # 2. the hotel: the fee chain, the parking, the cancellation and whether a dated
+    #    checkout total exists at all
+    h_rows = ""
+    for h in CFG["hotels"]:
+        fee = h.get("resort_fee") or {}
+        tax = h.get("tax") or {}
+        park = h.get("parking") or {}
+        canc = h.get("cancellation") or {}
+        dated = [r for r in (h.get("rate_log") or []) if r.get("observed_on")]
+        # A checkout total exists only when a dated line actually carries an amount.
+        # A line that says a checkout total is "not obtainable from a static page"
+        # records the absence of a quote, not a quote.
+        checkout = [r for r in dated
+                    if r.get("amount_usd") and "checkout" in str(r.get("label", "")).lower()]
+        self_park = park.get("self_usd_per_day")
+        valet = park.get("valet_usd_per_day")
+        if self_park is None and valet is None:
+            park_cell = unk("parking not confirmed") + note(park.get("status") or "")
+        else:
+            bits = []
+            if self_park is not None:
+                bits.append("complimentary self parking" if self_park == 0
+                            else money(self_park) + " self")
+            if valet is not None:
+                bits.append(money(valet) + " valet")
+            park_cell = " · ".join(bits) + note(park.get("status") or "")
+        h_rows += (f"<tr><td class='ev'>{E(h.get('property') or h['id'])}"
+                   f"<span class='time'>{E(h.get('official_page') or '')}</span></td>"
+                   f"<td class='num'>{money(fee.get('amount_usd')) if fee.get('amount_usd') else unk('no fee confirmed')}"
+                   f"{note(fee.get('status') or '')}</td>"
+                   f"<td class='num'>{E(str(tax.get('rate_pct')) + '%') if tax.get('rate_pct') else unk('no tax rate confirmed')}</td>"
+                   f"<td class='num'>{park_cell}</td>"
+                   f"<td class='rules'>{E(str(canc.get('status') or 'no cancellation policy captured'))}</td>"
+                   f"<td class='num'>{E(str(len(dated)))} dated rate line(s)"
+                   f"{note('dated checkout total captured — re-quote before booking' if checkout else 'NO dated checkout total — ask for one before paying')}</td>"
+                   f"<td class='srccell'>{src_cell([h.get('official_page')] if h.get('official_page') else [], SNAPSHOT_AT[:10], label='official page ↗')}</td></tr>")
+
+    # 3. the questions only the room can answer
+    asks = ""
+    for v in CFG["venues"]:
+        vsrc = (v.get("schedule_sources") or [])[:1]
+        asks += (f"<li><strong>{E(v['name'])}</strong>"
+                 f"{note('ask: is one entry per player permitted in this event, and if not, what is the maximum number of entries and the price of each subsequent one?')}"
+                 f"{note('ask: what time does the event finish, and what happens to the start stack if it is not finished on the same day?')}"
+                 f"{note('ask: does the printed guarantee hold if fewer entries are sold than the guarantee assumes?')}"
+                 + (f"{note('official calendar: ')} {src_cell(vsrc, SNAPSHOT_AT[:10], label='official calendar ↗')}" if vsrc else "")
+                 + "</li>")
+
+    return shell("", "Before you pay", f"""
+<section class="page-head"><h1>Before you pay for anything</h1>
+<p class="lede">This snapshot is a point-in-time reading of what the rooms publish, not a booking quote. Before a
+non-refundable payment goes out, re-read the seven things below and close the gaps this site could not. Every link
+here is the operator's own document — the same one the tables cite — and every “still unverified” line is generated
+from the same data, so this page cannot drift away from the rest of the site.</p>
+{status_banner()}</section>
+
+<section class="callout"><h2>The seven things to re-check</h2>
+<ol class="checklist">
+<li><strong>The calendar for your dates.</strong> The schedule PDF is re-read every morning, but a printed series
+calendar is a snapshot of one series: check the room's own page for the day you travel.</li>
+<li><strong>The structure sheet for each event you intend to enter.</strong> The sheet carries the buy-in, the fee
+split, the stack, the levels and the late-registration deadline — and, for the rooms that publish it, the entry rule.
+Read the sheet, not the summary.</li>
+<li><strong>The entry policy, in writing.</strong> This is the single largest open item on the whole site: 0 of
+{len(events)} published rows are confirmed single-entry. Ask the room for the maximum number of entries per player
+and the price of each subsequent entry, in writing, before you commit to a plan that depends on it
+(<a href="flagged.html#F1">F1</a>, <a href="questions.html">Q1</a>).</li>
+<li><strong>The finish time.</strong> No official document on the Strip prints a finish time for these events, so the
+day plan sequences on registration deadlines only. Ask the room what time the event ends and what happens to your
+stack if it runs long (<a href="questions.html">Q4</a>).</li>
+<li><strong>A dated checkout total for the exact stay.</strong> Advertised “from” rates are not quotes. Ask for the
+checkout total, the nightly average, the resort fee, the 13.38% room tax, parking and the cancellation deadline for
+your exact nights and occupancy (<a href="questions.html">Q2</a>, <a href="flagged.html">the hotel flags</a>).</li>
+<li><strong>Whether the poker-rate qualification applies to you.</strong> The advertised poker rate is conditional; if
+you do not qualify, the rate you actually pay is different (<a href="questions.html">Q7</a>).</li>
+<li><strong>The walking route on the day.</strong> The walking times here are timestamped measurements from a routing
+engine, not statements by either property. Re-run the route on the morning you arrive
+(<a href="flagged.html#F3">F3</a>).</li>
+</ol></section>
+
+<h2>Your event list, with what is still outstanding on each row</h2>
+<p class="mini-note">Every event that passed the published gates, with the official documents behind it and the fields
+that are not confirmed. Anything in the fifth column is a question to ask before you enter.</p>
+<div class="table-scroll"><table class="compact"><thead><tr><th>Day</th><th>Event</th><th class="num">Entry</th>
+<th class="num">Guarantee</th><th>Still unverified on this row</th><th>Official source</th></tr></thead>
+<tbody>{ev_rows}</tbody></table></div>
+
+<h2>Your hotel line, with what is still outstanding</h2>
+<div class="table-scroll"><table class="compact"><thead><tr><th>Property</th><th class="num">Resort fee</th>
+<th class="num">Tax</th><th class="num">Parking</th><th>Cancellation</th><th class="num">Dated rate lines</th>
+<th>Official source</th></tr></thead><tbody>{h_rows}</tbody></table></div>
+
+<h2>The exact words to ask each room</h2>
+<ul class="flaglist">{asks}</ul>
+<p class="srcline">Generated from <a href="data/site-events.json">site-events.json</a> and
+<a href="data/poker4.json">poker4.json</a> · cross-checked by
+<a href="review.html#audit">the value-level audit</a> · open items listed on
+<a href="questions.html">the questions page</a>.</p>
+""", "before-you-pay.html", needs_data=False)
+
+
 # ------------------------------------------------------------------- calculator
 def page_calculator():
     hotel_opts = "".join(f"<option value='{E(h['id'])}'>{E(h['property'])}{'' if (h.get('resort_fee') or {}).get('amount_usd') else ' — fee unconfirmed'}</option>" for h in CFG["hotels"])
@@ -2404,7 +2537,7 @@ VENUES_OUT.mkdir(exist_ok=True)
 pages = {"index.html": page_index(), "tournaments.html": page_tournaments(), "hotels.html": page_hotels(),
          "plan.html": page_plan(), "calculator.html": page_calculator(), "questions.html": page_questions(),
          "suggestions.html": page_suggestions(), "flagged.html": page_flagged(), "review.html": page_review(),
-         "compare.html": page_compare()}
+         "compare.html": page_compare(), "before-you-pay.html": page_before_you_pay()}
 for v in CFG["venues"]:
     pages[f"venues/{v['id']}.html"] = page_venue(v)
 # Superseded pages are kept as explicit redirects rather than deleted, so a bookmarked
