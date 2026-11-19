@@ -4,6 +4,7 @@ Static, source-first planning dashboard for live poker tournaments on the Las Ve
 
 - `index.html` — executive summary (every figure counted at build time), the ranked screening table, the hotels table, open questions/suggestions/flags entry points
 - `tournaments.html` — master event table: global search, date/venue filters, "single-entry confirmed only" toggle, and the four sections the brief asks for — single-entry/freezeout · not confirmed · more-money-buys-an-advantage · Day-2 restarts — with the descriptive guarantee ÷ entry-fee figure beside each row (never a forecast)
+- `compare.html` — the events that passed the gates, side by side: guaranteed pool, entry cost and fee split, starting stack and blind length, payout structure and daily schedule fit, with the date/venue selectors
 - `plan.html` — day-by-day plan: one primary event and one conditional fallback per day, with the printed late-registration deadline as the only sequencing evidence and the printed Day-2 restart as the only end-of-day evidence
 - `hotels.html` — true cost per night (published rate + mandatory resort fee, both taxed at 13.38%), the dated rate log, parking, the ≤30-minute walk filter and per-row walking-route links
 - `calculator.html` — trip cost: entries × buy-ins + nights × true hotel cost
@@ -11,7 +12,7 @@ Static, source-first planning dashboard for live poker tournaments on the Las Ve
 - `questions.html` — what is known, what is missing, and how each gap gets closed
 - `suggestions.html` — decision-only proposals; nothing is adopted until chosen
 - `flagged.html` — every irregularity and unverified value, with its source link
-- `review.html` — source status, run log, value-change log
+- `review.html` — source status, run log, value-change log, and the **value-level audit**
 
 ## Data & build pipeline (what actually produces the published pages)
 
@@ -42,12 +43,41 @@ Gates that must pass before a page is publishable (all run in CI and locally):
 ```
 python3 tools/room_extract.py        extraction integrity: every WPT sheet must yield a play day,
                                      a fee split and a registration clause; a failure stops the build
+python3 scripts/audit_values.py      value-level audit: every published figure and every quoted
+                                     rule sentence is matched, word for word, against the official
+                                     captures and transcriptions committed in the repository
 python3 scripts/integrate_data.py    rebuild; must be byte-stable on a second run
 python3 scripts/verify_root.py       links, per-row official source, data files parse
 python3 scripts/verify.py            policy: every table row links an official source, no invented value
 python3 scripts/verify_markup.py     every page parses as HTML
 python3 scripts/linkcheck.py         every internal link resolves
 ```
+
+## The value-level audit
+
+`scripts/verify_root.py` proves a row **has** a source. `scripts/audit_values.py` proves the value
+**came from** it. It re-reads every official capture committed in `data/raw/` (each file headed by
+the URL it came from and the SHA-256 of the response) and every committed verbatim transcription
+of the official structure sheets, then looks for the literal evidence behind each published
+buy-in, guarantee, starting stack, start time, registration deadline, house fee, prize-pool
+contribution and every sentence shown in a "source text" panel. A value it cannot find is
+reported, never corrected, and fails the deploy.
+
+Two independent cross-checks run with it: every published Wynn `(date, time)` pair must be printed
+in the official WPT structure booklet, and every published guarantee ÷ entry-fee ratio must
+recompute from its own row. The result is committed to `data/audit-values.json` and summarised on
+`review.html` (the *Value-level audit* section). The file is keyed to the snapshot rather than to
+the run, so it is byte-stable and CI can prove the committed result is current.
+
+A sentence the build assembled itself is never shown as a quote: it is labelled
+*reworded from the printed figures*, and the audit checks it by content instead — every dollar
+figure must be printed by the sheet, and the wording must be one the operator is proven to use
+elsewhere in the same series.
+
+On 2026-11-19 the audit found and this repository fixed three real defects: the Wynn WPT fee
+quote printed its label twice and swallowed the next section's heading; the Venetian Valuetown
+re-entry quote began and ended in the middle of a word; and the Venetian house-fee sentence was
+assembled from the parsed numbers and presented as a copy of the sheet's line.
 
 `data/feature/*` and `scripts/build_site2.py` / `verify_site2.py` remain in the tree as an earlier,
 still-auditable dataset and validator; they do not build the pages that are published today.
