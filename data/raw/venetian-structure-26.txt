@@ -1,4 +1,4 @@
-<!-- captured 2026-11-19T20:01:09Z from https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_26.pdf (sha256 5af709a896267db464e94bbc30293f12c573f22a15b6ee4b149c569654769b8c) -->
+<!-- captured 2026-11-19T20:08:56Z from https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_26.pdf (sha256 5af709a896267db464e94bbc30293f12c573f22a15b6ee4b149c569654769b8c) -->
  
  
 $400 Pot Limit Omaha Bounty (1Day) 

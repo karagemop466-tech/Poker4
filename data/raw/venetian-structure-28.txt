@@ -1,4 +1,4 @@
-<!-- captured 2026-11-19T20:01:09Z from https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_28.pdf (sha256 25e72b4e0878f0d493082bb6404aeb6660e2c2c60b242a62da5d1968b0d98fd7) -->
+<!-- captured 2026-11-19T20:08:56Z from https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_28.pdf (sha256 25e72b4e0878f0d493082bb6404aeb6660e2c2c60b242a62da5d1968b0d98fd7) -->
  
  
 $600 BIG O (1Day) 
