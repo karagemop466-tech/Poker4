@@ -1927,7 +1927,7 @@ Session `arena/75f8b185-poker4` (branch `arena/75f8b185-poker4`, branched from `
 
 ### PR + deploy result
 
-- **PR [#N](https://github.com/karagemop466-tech/Poker4/pull/N)** ("arena/2b51f463-poker4 integration: line-by-line verification + Pages deploy record") merged into `main` via `gh pr merge N --merge`, merge commit `<sha>`.
-- **Pages deploy:** `<status>` — Live site https://karagemop466-tech.github.io/Poker4/ is deployed from `main`.
-- Session complete.
+- **PR [#102](https://github.com/karagemop466-tech/Poker4/pull/102)** ("arena/2b51f463-poker4 integration: line-by-line verification + Pages deploy record") merged into `main` via `gh pr merge 102 --merge`, merge commit `8be8bd3e925be6c5e5fa16be7b44f05059f92355`. Head at merge contained `origin/main`.
+- **Pages deploy:** SUCCESS — `Deploy static dashboard to GitHub Pages` run 44467895371 on commit `8be8bd3e`, deploy job 135369994743, concluded `success` (2026-11-19). Live site `https://karagemop466-tech.github.io/Poker4/` is deployed from `main` and loads (overview + executive summary + all 253 event rows served).
+- Session complete. No outstanding scope for `arena/2b51f463-poker4`.
 
