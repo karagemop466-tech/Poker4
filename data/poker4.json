@@ -1782,8 +1782,18 @@
     "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_32.pdf",
     "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_33.pdf"
    ]
-  }
- ],
+  },
+{
+      "id": "F47",
+      "severity": "stale-official-document",
+      "item": "Wynn standing hotel terms page (850070) opens with an offer text that has already expired",
+      "detail": "Read live 2026-11-19 from https://www.wynnlasvegas.com/terms-and-conditions/850070. The first paragraph describes a promotional rate (a two-night minimum and a $100 dining credit) that 'must be completed on or before September 30, 2025' — a date that has passed. The rest of the same page (resort fee $55 + tax per room night; self-parking complimentary for Wynn Poker Room guests; non-registered parking $25/day with the first three hours free; valet $40/day) matches the committed values. Policy: the expired offer text is not used for any row, rate or fee; the stale paragraph is flagged for the venue to confirm or remove. Verification record: data/verify/21df18f4_live_reread_2026-11-19.tsv.",
+      "sources": [
+        "https://www.wynnlasvegas.com/terms-and-conditions/850070",
+        "https://wynnlasvegas.com/casino/poker"
+      ]
+    }
+  ],
  "trip_example": {
   "label": "Worked example — 4 nights at the host property, one cheap plain-NLH entry per day",
   "basis": "Illustrative arithmetic from the official starting endpoints and fee/tax figures. Not a quote, not a booking, and the entry count assumes one entry per event (unverified).",
