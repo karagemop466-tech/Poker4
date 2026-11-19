@@ -72,6 +72,15 @@ jobs:
           # plain push loses that race silently, which is what left "no changes to record"
           # runs behind while the site kept serving stale last-checked dates.
           git pull --rebase --autostash origin ${GITHUB_REF_NAME}
+          # Regenerate after the pull, not before: the autostash pop can restore an older
+          # data/audit-values.json (or pages) over the versions produced above when main
+          # moved mid-run — that mixed state is what failed the audit-freshness gate on
+          # 2026-11-19T06:32Z (new snapshot committed with the previous snapshot's audit).
+          # These three commands are idempotent and byte-stable, so re-running them here
+          # guarantees the committed state is internally consistent whatever the rebase did.
+          python tools/room_extract.py
+          python scripts/audit_values.py --strict
+          python scripts/integrate_data.py
           git add -A
           if git diff --cached --quiet; then
             echo "No source changes to record."
