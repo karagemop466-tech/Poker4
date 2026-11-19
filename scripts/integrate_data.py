@@ -1667,7 +1667,7 @@ def hotel_table(hotels, base=""):
                  + "<td class='num'>" + (money(rate) + note("advertised starting point, " + str((rn or {}).get("quote_status") or "")) if rate else unk("no dated official rate")) + "</td>"
                  + "<td class='num'>" + (money(fee) if fee else unk("unconfirmed")) + "</td>"
                  + "<td class='num'>" + (money(total) + note(tax_label(h) + " applied to both") if total else unk("cannot compute")) + "</td>"
-                 + "<td class='num'>" + (money(pk.get("self_usd_per_day")) + note("per day") if pk.get("self_usd_per_day") else chip("parking unconfirmed", "chip chip-warn")) + "</td>"
+                 + "<td class='num'>" + (money(pk.get("self_usd_per_day")) + note("per day") if pk.get("self_usd_per_day") is not None else chip("parking unconfirmed", "chip chip-warn")) + "</td>"
                  + "<td>" + E(walk.get("meets_30_min")) + (note(walk.get("status")) if walk.get("status") else "") + "</td>"
                  + "<td class='srccell'>" + src_cell([h.get("official_page"), h.get("booking_link")], SNAPSHOT_AT[:10]) + "</td></tr>")
     return ("<div class='table-scroll'><table class='compact hotels'><thead><tr><th>Property</th><th class='num'>Room rate</th>"
@@ -1776,7 +1776,7 @@ def page_index():
         h_rows += (f"<tr><td><a href='hotels.html#{E(h['id'])}'>{E(h['property'])}</a></td>"
                    + f"<td class='num'>{money(fee) if fee else unk('unconfirmed')}</td>"
                    + f"<td class='num'>{money(total) if total else unk('no dated rate')}</td>"
-                   + f"<td class='num'>{money((h.get('parking') or {}).get('self_usd_per_day')) if (h.get('parking') or {}).get('self_usd_per_day') else unk('unconfirmed')}</td>"
+                   + f"<td class='num'>{money((h.get('parking') or {}).get('self_usd_per_day')) if (h.get('parking') or {}).get('self_usd_per_day') is not None else unk('unconfirmed')}</td>"
                    + f"<td>{E((h.get('walk') or {}).get('meets_30_min'))}</td></tr>")
     v_rows = ""
     for v in CFG["venues"]:
@@ -1797,7 +1797,7 @@ def page_index():
         h_rows += (f"<tr><td><a href='hotels.html#{E(h['id'])}'>{E(h['property'])}</a></td>"
                    + f"<td class='num'>{money(fee) if fee else unk('unconfirmed')}</td>"
                    + f"<td class='num'>{money(total) if total else unk('no dated rate')}</td>"
-                   + f"<td class='num'>{money((h.get('parking') or {}).get('self_usd_per_day')) if (h.get('parking') or {}).get('self_usd_per_day') else unk('unconfirmed')}</td>"
+                   + f"<td class='num'>{money((h.get('parking') or {}).get('self_usd_per_day')) if (h.get('parking') or {}).get('self_usd_per_day') is not None else unk('unconfirmed')}</td>"
                    + f"<td>{E(str(_wm) + ' min walk to the Venetian poker room' if _wm else 'on-site')}</td></tr>")
     findings = (f"<strong>0 of {sum(1 for e in events if e['venue'] == 'venetian')} Venetian calendar rows</strong> can be labelled "
                 f"“single-entry confirmed”. The room's {len([k for k in AUDIT['sheets'] if k.startswith('V_S')])} published structure sheets state the buy-in, "
@@ -1970,7 +1970,7 @@ def page_hotels():
             floor_line = (f" What <em>is</em> fixed: the mandatory {money(fee)} resort fee taxed at {tax * 100:.2f}% = "
                           f"<strong>{money(floor)}</strong> per night, on top of whatever the room rate turns out to be"
                           + (f", plus {money((h.get('parking') or {}).get('self_usd_per_day'))} self-parking per day"
-                             if (h.get('parking') or {}).get('self_usd_per_day') else "")
+                             if (h.get('parking') or {}).get('self_usd_per_day') is not None else "")
                           + " — the tax basis and its caveat sit in the sentences below.") if floor else ""
             calc = (f"<p class='truecost blocked'>true cost per night cannot be computed: {E(' and '.join(missing))}. "
                     f"The blanks are kept rather than filled with an estimate.{floor_line}</p>")
