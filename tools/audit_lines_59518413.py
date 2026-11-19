@@ -112,17 +112,19 @@ for e in events:
         st = (rules.get("single_entry") or {}).get("status")
         if st != "confirmed":
             single_entry_claimed.append(f"{eid}: confirmed flag without a confirmed clause")
-    # fee split arithmetic (only where the row prints all three numbers). A
-    # mismatch with sums_to_buy_in=False and the verbatim flag is a RECORDED
-    # printed-source irregularity (flags F16/F22/F40) — reported as a note, not
-    # a data problem; a mismatch WITHOUT the marker is a real problem.
+    # fee split arithmetic (only where the row prints all three numbers). The
+    # LIPS sheets print a third component (flat_fee_usd, flag F45) that must be
+    # counted. A mismatch with sums_to_buy_in=False and the verbatim flag is a
+    # RECORDED printed-source irregularity (F16/F22) — reported as a note, not a
+    # data problem; a mismatch WITHOUT the marker is a real problem.
     bi, hf, pp = e.get("buy_in_usd"), e.get("house_fee_usd"), e.get("pool_per_entry_usd")
-    if bi and hf and pp and hf + pp != bi:
+    ff = e.get("flat_fee_usd") or 0
+    if bi and hf and pp and hf + pp + ff != bi:
         fr = rules.get("fee") or {}
         if fr.get("sums_to_buy_in") is False and any("does not add up" in f for f in (e.get("flags") or [])):
             fee_mismatch_known.append(f"{eid}: printed split {hf}+{pp} != {bi} (recorded verbatim, flagged)")
         else:
-            fee_mismatch.append(f"{eid}: house fee {hf} + pool {pp} != buy-in {bi} (no sums_to_buy_in marker/flag)")
+            fee_mismatch.append(f"{eid}: house fee {hf} + flat {ff} + pool {pp} != buy-in {bi} (no sums_to_buy_in marker/flag)")
     # descriptive ratio arithmetic
     gtd, ratio = e.get("guarantee_usd"), e.get("gtd_ratio")
     if e.get("rankable") and gtd and bi and ratio:
@@ -146,7 +148,11 @@ for label, items in [("weekday mismatches", bad_weekday), ("rows without sources
         notes.append(f"events: {label} — 0 across all {len(events)} rows")
 if fee_mismatch_known:
     notes.append("events: " + str(len(fee_mismatch_known)) + " printed fee splits that do not add up are recorded "
-                 "verbatim and flagged (F16/F22/F40), never corrected — e.g. " + fee_mismatch_known[0])
+                 "verbatim and flagged (F16/F22), never corrected — e.g. " + fee_mismatch_known[0])
+lips = [e["id"] for e in events if e.get("flat_fee_usd")]
+if lips:
+    notes.append(f"events: {len(lips)} LIPS rows carry the sheet's third printed fee component "
+                 f"(flat_fee_usd — the Vegas Connected / LIPS flat fee, flag F45): {', '.join(lips)}")
 
 # rule status census (the 'remove unverified where confirmed' requirement)
 census = {}
@@ -398,10 +404,10 @@ lines += ["", "## Method", "",
           "(single_entry / re_entry / add_on / fee, each with status + source + retrieved) were checked for all "
           f"{len(events)} rows; source URLs were required to appear in `data/tracked-sources.json` (the official "
           f"registry, now {len(tracked)} URLs — the three Bellagio structure PDFs were added to it by this session).",
-          "- Fee-split arithmetic: house fee + pool-per-entry must equal the printed buy-in wherever the sheet "
-          "prints all three. Printed inconsistencies (Wynn WPT-08, flag F22; the five Venetian rows on sheets "
-          "31/32/33, flag F40) are recorded verbatim and flagged, never corrected; this audit reports a problem "
-          "only where a mismatch carries no recorded marker.",
+          "- Fee-split arithmetic: house fee + flat fee (where printed) + pool-per-entry must equal the printed "
+          "buy-in wherever the sheet prints the components. Printed inconsistencies (Wynn WPT-08, flag F22) are "
+          "recorded verbatim and flagged, never corrected. The LIPS rows (sheets 31/32/33, flag F45) carry the "
+          "sheet's third component as flat_fee_usd so the printed split reconciles exactly.",
           "- Guarantee ÷ entry-fee and guarantee ÷ pool-per-entry were recomputed for every rankable row "
           "(descriptive ratios only).",
           "- Hotel rows: tax chain is 13.38% on rate + resort fee; true cost/night recomputed where a dated rate "

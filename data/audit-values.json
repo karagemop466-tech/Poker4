@@ -1,0 +1,89 @@
+{
+ "meta": {
+  "as_of": "2026-11-19T06:01:43Z",
+  "what_this_does": "Re-reads every official capture committed in data/raw/ and every committed verbatim transcription of the official structure sheets, then looks for the literal evidence behind each published number and each quoted rule sentence.",
+  "evidence": {
+   "hashed_captures": 56,
+   "structure_sheets_transcribed": 37,
+   "transcription_files": [
+    "research/raw/venetian_dse_iv_structures.md",
+    "notes/structure_rules.md",
+    "data/75757cc1/structure_reads.tsv",
+    "data/08f07d1d/structure_rules.json"
+   ]
+  },
+  "event_rows": 253,
+  "values_checked": 1771,
+  "values_located": 1771,
+  "blocking_failures": 0
+ },
+ "fields": {
+  "buy_in_usd": {
+   "checked": 252,
+   "located": 252
+  },
+  "excerpt:add_on": {
+   "checked": 7,
+   "located": 7
+  },
+  "excerpt:fee": {
+   "checked": 252,
+   "located": 252
+  },
+  "excerpt:re_entry": {
+   "checked": 160,
+   "located": 160
+  },
+  "excerpt:single_entry": {
+   "checked": 4,
+   "located": 4
+  },
+  "guarantee_usd": {
+   "checked": 167,
+   "located": 167
+  },
+  "house_fee_usd": {
+   "checked": 98,
+   "located": 98
+  },
+  "pool_per_entry_usd": {
+   "checked": 249,
+   "located": 249
+  },
+  "registration_closes": {
+   "checked": 87,
+   "located": 87
+  },
+  "starting_chips": {
+   "checked": 242,
+   "located": 242
+  },
+  "time": {
+   "checked": 253,
+   "located": 253
+  }
+ },
+ "cross_checks": [
+  {
+   "check": "wynn_wpt_date_time_pairs",
+   "checked": 148,
+   "failed": 0,
+   "description": "every published Wynn (date, time) pair is printed in the official WPT structure booklet"
+  },
+  {
+   "check": "gtd_ratio_recomputes",
+   "checked": 166,
+   "failed": 0,
+   "description": "every published guarantee ÷ entry fee recomputes from its own row"
+  },
+  {
+   "check": "single_entry_rows_carry_a_quote",
+   "checked": 0,
+   "failed": 0,
+   "description": "a row labelled single-entry confirmed always quotes the rule"
+  }
+ ],
+ "reworded_excerpts_verified": [],
+ "failures": [],
+ "rows_without_committed_evidence": []
+}

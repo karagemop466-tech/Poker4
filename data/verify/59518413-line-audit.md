@@ -1,6 +1,6 @@
 # Line-by-line audit — session arena/59518413-poker4
 
-Run: 2026-11-19 06:04 UTC · script: `tools/audit_lines_59518413.py`
+Run: 2026-11-19 06:14 UTC · script: `tools/audit_lines_59518413.py`
 
 Rows audited: 253 events · 12 hotels · 12 walk pairs · 131 rate-log entries · 38 plan days · 71 tracked official URLs.
 
@@ -19,7 +19,7 @@ Rows audited: 253 events · 12 hotels · 12 walk pairs · 131 rate-log entries �
 - events: gtd_ratio arithmetic mismatches — 0 across all 253 rows
 - events: gtd_over_pool mismatches — 0 across all 253 rows
 - events: single-entry claims without a clause — 0 across all 253 rows
-- events: 5 printed fee splits that do not add up are recorded verbatim and flagged (F16/F22/F40), never corrected — e.g. V35-2026-12-09-10:10am: printed split 80+510 != 600 (recorded verbatim, flagged)
+- events: 5 LIPS rows carry the sheet's third printed fee component (flat_fee_usd — the Vegas Connected / LIPS flat fee, flag F45): V35-2026-12-09-10:10am, V39-2026-12-10-10:10am, V39-2026-12-11-10:00am, V43-2026-12-11-11:10am, V39-2026-12-11-7:00pm
 - hotels: tax-rate conflicts — 0 across all 12 rows
 - hotels: fee rows without source — 0 across all 12 rows
 - hotels: hotels without a booking link — 0 across all 12 rows
@@ -51,7 +51,7 @@ Rows audited: 253 events · 12 hotels · 12 walk pairs · 131 rate-log entries �
 ## Method
 
 - Every event id, date/weekday, source URL, `last_checked`, and the four structured rule fields (single_entry / re_entry / add_on / fee, each with status + source + retrieved) were checked for all 253 rows; source URLs were required to appear in `data/tracked-sources.json` (the official registry, now 71 URLs — the three Bellagio structure PDFs were added to it by this session).
-- Fee-split arithmetic: house fee + pool-per-entry must equal the printed buy-in wherever the sheet prints all three. Printed inconsistencies (Wynn WPT-08, flag F22; the five Venetian rows on sheets 31/32/33, flag F40) are recorded verbatim and flagged, never corrected; this audit reports a problem only where a mismatch carries no recorded marker.
+- Fee-split arithmetic: house fee + flat fee (where printed) + pool-per-entry must equal the printed buy-in wherever the sheet prints the components. Printed inconsistencies (Wynn WPT-08, flag F22) are recorded verbatim and flagged, never corrected. The LIPS rows (sheets 31/32/33, flag F45) carry the sheet's third component as flat_fee_usd so the printed split reconciles exactly.
 - Guarantee ÷ entry-fee and guarantee ÷ pool-per-entry were recomputed for every rankable row (descriptive ratios only).
 - Hotel rows: tax chain is 13.38% on rate + resort fee; true cost/night recomputed where a dated rate exists; every row needs an official source URL and a booking link; no room-rate slot may be fed by a fee observation, and every priced rate-log entry carries an explicit kind tag.
 - Walk pairs: `meets_30_min` re-derived from the measured minutes (30-minute hard filter).

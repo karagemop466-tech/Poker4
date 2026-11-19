@@ -1657,19 +1657,68 @@
   },
   {
    "id": "F39",
+   "severity": "corrected-2026-11-19",
+   "item": "the Wynn WPT fee quote was printed with its label twice and with the next section's heading glued to it",
+   "detail": "Found by the value-level audit on 2026-11-19 (scripts/audit_values.py). The site printed 'Entry Fee: Entry Fee: $600 Buy-in = $510 (Tournament Prize Pool) + $65 (Tournament Fee) + $25 (Poker Staff Service Charge) Registration:'. The official booklet prints 'Entry Fee: $600 Buy-in = $510 (Tournament Prize Pool) + $65 (Tournament Fee) + $25 (Poker Staff Service Charge)' — the label once, and no 'Registration:' inside the fee sentence. The cause was the builder rebuilding the quote as 'Entry Fee: ' + a match that already began with 'Entry Fee:', and running the match on to the next 'Registration:' heading. The figures ($600 = $510 + $65 + $25) were correct; only the quotation was wrong. Fixed in tools/room_extract.py; the audit now matches the booklet word for word on all 148 Wynn WPT rows.",
+   "sources": [
+    "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf"
+   ]
+  },
+  {
+   "id": "F40",
+   "severity": "corrected-2026-11-19",
+   "item": "the Venetian Valuetown re-entry quote began and ended in the middle of a word",
+   "detail": "Found by the value-level audit on 2026-11-19. Two rows (Event 18 on 2026-11-28 and Event 58 on 2026-12-19) quoted 'ker cage window and show confirmation to The Venetian Poker Room cage team member when registering for the event. All subsequent buy in's after the initial buy in will be $200. 8. This event pays 12.5% of the field 9. Ante will come from the Big Blind O' — the first word and the last word were cut in half, because the extractor took a +/-120 character window around the match instead of the sentence. The sentence the sheet actually prints is 'All subsequent buy in's after the initial buy in will be $200.', which is what the committed transcription of that sheet already records. The extractor now returns whole sentences (tools/sync_official_sources.py, sentence_excerpt), and the committed audit record was repaired to the same sentence. The finding itself — that this sheet prices later buy-ins and is therefore not single-entry — is unchanged.",
+   "sources": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_8.pdf"
+   ]
+  },
+  {
+   "id": "F41",
+   "severity": "resolved-2026-11-19",
+   "item": "73 Venetian house-fee sentences are shown as 'reworded from the printed figures', not as a copy of the sheet's own line",
+   "detail": "The fee sentence on those rows was assembled by the builder from the parsed amounts and printed inside a quotation block, which made a rebuilt sentence look like a copy of the operator's wording. The figures are the sheet's and the wording is the Venetian's standard wording — checked verbatim on other sheets of the same series — but it is not this sheet's own line, so the site now says so on the row instead of dressing it up as a quote. The extractor captures each sheet's own sentence now (tools/sync_official_sources.py, fee_sentence); the next scheduled re-read replaces the reworded line with the sheet's verbatim sentence and the label drops away by itself. Until then the audit checks these sentences by content: every dollar figure must be printed by the sheet, and the wording must be one the operator is proven to use in this series. Resolved 2026-11-19 (session arena/59518413-poker4): the scheduled re-read of 2026-11-19T06:02Z committed the 37 sheets' raw text and populated fee_sentence (the LIPS sheets 31/32/33 needed the flat-fee-spanning fix in tools/sync_official_sources.py, recorded in F45). The rows now quote the sheets' own sentences, and scripts/audit_values.py locates all 73 former reconstructions word for word in the committed captures: 0 sentences remain shown as reworded.",
+   "sources": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf"
+   ]
+  },
+  {
+   "id": "F42",
+   "severity": "resolved-2026-11-19",
+   "item": "the 37 Venetian structure sheets were audited but their text was not committed, so a quote from one of them could not be re-checked inside the repository",
+   "detail": "data/structure-audit.json records each sheet's PDF SHA-256 and the fields read from it, but data/raw/ held no copy of those 37 sheets' text: only the condensed per-sheet transcription existed. A sentence quoted from one of those sheets therefore could not be matched word for word against a hashed capture in this repository. The 37 sheets are now registered for text capture (data/tracked-sources.json, save_text_to), so the scheduled source sync commits each sheet's extracted text under data/raw/ with its URL and SHA-256, and tools/sync_official_sources.py --from-raw can re-derive the whole structure audit offline from those captures. The gap closes on the next live run; until then the audit checks those rows against the committed transcriptions in research/raw/venetian_dse_iv_structures.md, notes/structure_rules.md, data/75757cc1/structure_reads.tsv and data/08f07d1d/structure_rules.json. Resolved 2026-11-19 (session arena/59518413-poker4): the daily url-check run of 2026-11-19T06:02Z committed all 37 sheets' extracted text under data/raw/venetian-structure-01..37.txt (each headed by its URL and response SHA-256), and tools/sync_official_sources.py --from-raw re-derives the structure audit offline from them. A quote taken from any sheet is now re-checkable inside this repository.",
+   "sources": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_37.pdf"
+   ]
+  },
+  {
+   "id": "F43",
+   "severity": "resolved-2026-11-19",
+   "item": "value-level audit: every published figure and every quoted sentence now checked against the committed official evidence",
+   "detail": "The link check proves a row has a source; it never proved the number came from it. scripts/audit_values.py now re-reads the official captures committed in data/raw/ and the committed transcriptions of the 37 structure sheets, then looks for the literal evidence behind each published figure (buy-in, guarantee, starting stack, start time, registration deadline, house fee, prize-pool contribution) and behind each sentence shown in a 'source text' panel. Result for the current snapshot: 1771 of 1771 values located, 0 blocking failures, 0 rows without committed evidence. Two independent cross-checks also pass: all 148 published Wynn (date, time) pairs are printed in the official WPT booklet, and all 166 published guarantee-divided-by-entry ratios recompute from their own row. The audit is a build gate (it fails the deploy if a value cannot be found) and its result is published on the review page and in data/audit-values.json.",
+   "sources": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+    "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+   ]
+  },
+  {
+   "id": "F44",
    "severity": "conflicting-official-values",
    "item": "Treasure Island's two official pages disagree on whether the $49.95 resort fee includes tax",
-   "detail": "The Tower Suites page prints 'Total Resort Fee Plus Tax $49.95' collected at check-out — the tax included in the $49.95 — while the Deluxe Rooms page prints 'The $49.95 + tax daily resort fee at TI Las Vegas' — the tax added on top. The Treasure Island row follows the Deluxe Rooms wording (fee $49.95 before tax, 13.38% applied to room rate and fee → $123.53 true cost/night from the advertised \"From $ 59\" price); under the Tower Suites wording the same night computes to $116.84 ($59 × 1.1338 + $49.95). Both readings are published here; the row is not silently switched. Confirm with the property before paying.",
+   "detail": "The Tower Suites page prints 'Total Resort Fee Plus Tax $49.95' collected at check-out — the tax included in the $49.95 — while the Deluxe Rooms page prints 'The $49.95 + tax daily resort fee at TI Las Vegas' — the tax added on top. The Treasure Island row follows the Deluxe Rooms wording (fee $49.95 before tax, 13.38% applied to room rate and fee → $123.53 true cost/night from the advertised \"From $ 59\" price); under the Tower Suites wording the same night computes to $116.84 ($59 × 1.1338 + $49.95). Both readings are published here; the row is not silently switched. Confirm with the property before paying. Found by the line-by-line audit (tools/audit_lines_59518413.py), which also caught that the row's dated rate log let the fee re-read double as a room rate (a '$49.95 room rate' TI never prints); the entry is now tagged fee_only and the printed 'From $ 59' price carries the rate.",
    "sources": [
     "https://treasureisland.com/hotel/tower-suite",
     "https://treasureisland.com/hotel/deluxe-rooms"
    ]
   },
   {
-   "id": "F40",
-   "severity": "official-source-arithmetic",
-   "item": "Five Venetian rows (sheets 31/32/33) print a fee split that falls short of the printed buy-in ($600 = $80 + $510; $800 = $90 + $690)",
-   "detail": "Structure sheet 31 (Event 35, $600, 9 Dec), sheet 32 (Event 39, $800, 10–11 Dec, three start times) and sheet 33 (Event 43, $600, 11 Dec) each print the same two-clause fee sentence — e.g. '$ 80 of the $ 600 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $ 510 of every $ 600 Buy In.' — which accounts for only $590 of the printed $600 (and $780 of the printed $800). The rows V35-2026-12-09-10:10am, V39-2026-12-10-10:10am, V39-2026-12-11-10:00am, V39-2026-12-11-7:00pm and V43-2026-12-11-11:10am copy the printed numbers verbatim and are marked 'sums_to_buy_in: false'; nothing is adjusted to make them add up. Distinction from F22: here the total entry fee itself is printed twice and unambiguous ($600 / $800), so the guarantee ÷ entry-fee ratio stays computable and those rows remain ranked on that ratio, while the pool-per-entry figure (and anything divided by it) is flagged as built on a split that does not reconcile. Same class as F22 (Wynn $1,100 PLO sheet) and the Bellagio Saturday sheet (F16). Confirm with the room before paying.",
+   "id": "F45",
+   "severity": "corrected-2026-11-19",
+   "item": "the extracted two-number fee split on the LIPS rows omitted the sheet's third printed component (a flat fee to Vegas Connected, INC, DBA LIPS)",
+   "detail": "Structure sheets 31 (Event 35, $600), 32 (Event 39, $800) and 33 (Event 43, $600) print THREE withholding clauses, e.g. sheet 31 rule 6: '$80 of the $600 Buy-In is withheld for house fees (Rake + Staff). $10 of the $600 Buy In will be withheld as a flat fee for Vegas Connected, INC, DBA Ladies International Poker Series (LIPS). Prize pool consists of $510 of every $600 Buy In.' — $80 + $10 + $510 = $600 exactly (sheet 32: $90 + $20 + $690 = $800). The extractor captured only the first and third clauses, so the five rows (V35-2026-12-09-10:10am, V39-2026-12-10-10:10am, V39-2026-12-11-10:00am, V39-2026-12-11-7:00pm, V43-2026-12-11-11:10am) published a split that fell $10–$20 short of the printed buy-in. An earlier draft of this flag called that a printed-source arithmetic irregularity (like F22); that reading is withdrawn — the sheets add up, the extraction did not. Found by the line-by-line audit (tools/audit_lines_59518413.py) and closed against the committed raw captures that session 8c99a4d7 registered (F42): the fee sentence is now captured whole, the rows carry flat_fee_usd beside house fee and pool contribution, and the quoted rule text is the sheet's own sentence rather than a reconstruction (F41).",
    "sources": [
     "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_31.pdf",
     "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_32.pdf",

@@ -1915,3 +1915,204 @@ Session `arena/75f8b185-poker4` (branch `arena/75f8b185-poker4`, branched from `
 - F1 (9a45e995 re-check) and F27 (2026-11-18 county-letter re-read) are kept, with the 75f8b185 sentence appended to main's text.
 - Request handled: #92 owner asked to renumber to the next free IDs and regenerate via `scripts/integrate_data.py` (done on this merge).
 
+## Session arena/2b51f463-poker4 — integration + line-by-line verification (PR pending)
+
+- Session ID: `arena/2b51f463-poker4`; branch `arena/2b51f463-poker4`, from `main` @ `0bf9a5c6f4b7118ffbe55a28c3a816abafff5f1e`. Status: active.
+- Scope claimed: final integration — line-by-line verification of the committed root dashboard, then PR → main, merge, confirm GitHub Pages deploy, and record the PR link + merge result here. File scope: `COORDINATION.md` (this log entry only); no root page/data/other-session files touched.
+- Verification performed (2026-11-19), against committed official captures (`data/raw/`) and the 68-URL tracked-source registry — live venue pages cannot be re-fetched from this sandbox (outbound HTTP reaches github.com/npm/pypi only; the scheduled source-re-check jobs' first genuine live run occurs in GitHub Actions):
+  - `python3 scripts/verify_root.py` → 16 pages · 253 event rows · 130 rate-log lines · 68 tracked sources · 0 warnings — OK (every row carries an official source or an explicit unverified marker)
+  - `python3 scripts/linkcheck.py` → 30 pages, all internal links resolve — OK
+  - GitHub Pages: status `built`, source `main:/`, URL https://karagemop466-tech.github.io/Poker4/
+- Irregularities: carried on the Flagged for Review page (38 flags F1–F38, incl. F1 entry-policy silence → 0 confirmed single-entry, F4 no dated hotel quote, F27 tax-rate provenance). None block launch. Parallel session subsites (`60fb62da/`, `c07371e3/`, `df41f5c6/`, `strip/`, `verified/`, `v2/`) preserved untouched.
+
+### PR + deploy result
+
+- **PR [#102](https://github.com/karagemop466-tech/Poker4/pull/102)** ("arena/2b51f463-poker4 integration: line-by-line verification + Pages deploy record") merged into `main` via `gh pr merge 102 --merge`, merge commit `8be8bd3e925be6c5e5fa16be7b44f05059f92355`. Head at merge contained `origin/main`.
+- **Pages deploy:** SUCCESS — `Deploy static dashboard to GitHub Pages` run 44467895371 on commit `8be8bd3e`, deploy job 135369994743, concluded `success` (2026-11-19). Live site `https://karagemop466-tech.github.io/Poker4/` is deployed from `main` and loads (overview + executive summary + all 253 event rows served).
+- Session complete. No outstanding scope for `arena/2b51f463-poker4`.
+
+## Session arena/744a4a3b-poker4 (current session) — final verification + integration
+
+Session ID: `arena/744a4a3b-poker4`; branch `arena/744a4a3b-poker4`, from `main` @ `0bf9a5c6`, rebased onto current `main` (`09cddc4`, PR #105 merge) before push. Works on this branch only; edits limited to `COORDINATION.md` (this log entry). No root page, data, workflow, or other-session file is touched by this session.
+
+Claimed: final line-by-line verification of the committed root dashboard, then integration — PR from this branch to `main`, merge, confirm GitHub Pages deploy, record the PR link and merge result here.
+
+Verification performed this session (2026-11-19), against committed official captures (`data/raw/`) and the 68-URL tracked-source registry — live venue pages cannot be re-fetched from this sandbox (outbound HTTP reaches github.com/npm/pypi only; the scheduled source-re-check jobs' first genuine live run occurs in GitHub Actions):
+
+- `python3 scripts/verify_root.py` → 16 pages · 253 event rows · 130 rate-log lines · 68 tracked sources · 0 warnings — OK (every row carries an official source or an explicit unverified marker)
+- `python3 scripts/linkcheck.py` → 30 pages, all internal links resolve — OK
+- `python3 scripts/verify_markup.py` → 37 pages checked, 0 problems — OK
+- `python3 scripts/verify.py` → pages: 10; sources: 17; flags: 29 — OK
+- All 253 events carry `sources` + `last_checked`; 0 events confirmed single-entry (honest, flagged F1); hotel true-cost rows are blank where no dated quote exists (flagged F4); zero values inferred from non-official sources.
+
+Irregularities: none new; all known irregularities are published on the Flagged for Review page (38 open flags, F1–F38) and do not block launch. Parallel session subsites (`60fb62da/`, `c07371e3/`, `df41f5c6/`, `strip/`, `verified/`, `v2/`) preserved untouched.
+
+### Task board (this session)
+
+| ID | Task | Status | Owner | File scope | Verification | Irregularities |
+|----|------|--------|-------|------------|--------------|----------------|
+| V1 | Repo review: line-by-line check of root dashboard (internal links, JSON data files, publish gates) | done | arena/744a4a3b-poker4 | COORDINATION.md (log); root HTML + `data/` | verify_root.py, linkcheck.py, verify_markup.py, verify.py all exit 0 | none new |
+| V2 | Integration: PR `arena/744a4a3b-poker4` → `main`, merge, Pages deploy check, record result | done | arena/744a4a3b-poker4 | this branch, `main`, COORDINATION.md | PR #104 created, base `main`; merge pending push of this branch with current `main` | — |
+
+### PR + deploy result
+
+- **PR [#104](https://github.com/karagemop466-tech/Poker4/pull/104)** ("744a4a3b integration: final verification + Pages deploy record") merged into `main` via `gh pr merge 104 --merge`, merge commit `8d56cb8ba02fa040cd2ce7c0b07578483dcb93e1`. Head at merge contained `origin/main`.
+- **Pages deploy:** SUCCESS — `Deploy static dashboard to GitHub Pages` run 44468543431 on commit `8d56cb8b`, concluded `success` (2026-11-19T05:56:24Z). Live site `https://karagemop466-tech.github.io/Poker4/` deployed from `main`; Pages status `built`, source `main:/`.
+- Session complete. No outstanding scope for `arena/744a4a3b-poker4`.
+
+
+
+---
+
+## Session `arena/8c99a4d7-poker4` (this session) — value-level audit + quote repair + integration
+
+- **Session ID:** `arena/8c99a4d7-poker4` · **Branch:** `arena/8c99a4d7-poker4` (from `main` @ `0bf9a5c`)
+- **Started:** 2026-11-19 UTC · **Role:** task session **and** final integration session — no other session holds an open claim (checked `gh pr list`: 0 open PRs; the last recorded session, `a745c8f4`, closed with PR #97).
+- **Scope claimed:**
+  1. **V1 — value-level audit tool** (`scripts/audit_values.py`, new): re-read every official capture committed in `data/raw/` plus the committed verbatim transcriptions of the Venetian structure sheets, and look for the literal evidence behind each published number and each quoted rule sentence. This is the check the structural gate (`scripts/verify_root.py`) cannot do — that one proves a row *has* a source, this one proves the value *came from* it.
+  2. **V2 — quote repair** (`tools/room_extract.py`, `tools/sync_official_sources.py`): fix the two misquotes the audit found (see below) and make the excerpt extractor emit whole sentences instead of character windows.
+  3. **V3 — audit gate + publication**: run the audit in CI, publish its result on the review page and on the Flagged for Review page.
+  4. **V4 — integration**: regenerate the shared outputs, re-run every gate, PR → `main`, merge, confirm the GitHub Pages deploy, record the result here.
+- **File scope:** `scripts/audit_values.py` (new), `scripts/verify_root.py`, `tools/room_extract.py`, `tools/sync_official_sources.py`, `scripts/integrate_data.py`, `data/audit-values.json` (new) + the regenerated `data/*.json`, the root pages (`index.html`, `tournaments.html`, `plan.html`, `hotels.html`, `calculator.html`, `review.html`, `flagged.html`, `questions.html`, `suggestions.html`, `venues/*.html`), `app.js`, `site.css`, `.github/workflows/site-verify.yml`, `README.md`, `COORDINATION.md` (log only). Parallel subsites (`60fb62da/`, `c07371e3/`, `df41f5c6/`, `strip/`, `verified/`, `v2/`, `poker4/`, `planner/`, `site/`, `build/`) are **not** touched.
+
+### Claim log
+| ID | Task | Status | Owner | File scope | Sources / verification | Irregularities |
+|----|------|--------|-------|------------|------------------------|----------------|
+| V1 | Value-level audit: every published number + quoted rule sentence matched against the committed official captures | in progress | arena/8c99a4d7-poker4 | `scripts/audit_values.py`, `data/audit-values.json` | `data/raw/*.txt` (19 hashed captures), `research/raw/venetian_dse_iv_structures.md`, `notes/structure_rules.md`, `data/75757cc1/structure_reads.tsv`, `data/08f07d1d/structure_rules.json` | see V2 |
+| V2 | Repair the misquotes the audit found; make excerpts sentence-bounded | in progress | arena/8c99a4d7-poker4 | `tools/room_extract.py`, `tools/sync_official_sources.py` | the committed captures named above | V2a, V2b (below) |
+| V3 | Publish the audit result on the site; add it as a CI gate | unclaimed | arena/8c99a4d7-poker4 | `review.html`, `flagged.html`, `scripts/verify_root.py`, `.github/workflows/site-verify.yml` | — | — |
+| V4 | Integration: regenerate, re-gate, PR → main, merge, Pages deploy, record result | unclaimed | arena/8c99a4d7-poker4 | whole branch | — | — |
+
+### Irregularities found by the value-level audit (2026-11-19)
+
+- **V2a — the Wynn WPT fee quote is misquoted (243 published rows).** The site prints
+  `Entry Fee: Entry Fee: $600 Buy-in = $510 (Tournament Prize Pool) + $65 (Tournament Fee) + $25 (Poker Staff Service Charge) Registration:`
+  The official PDF prints `Entry Fee: $600 Buy-in = $510 (Tournament Prize Pool) + $65 (Tournament Fee) + $25 (Poker Staff Service Charge)`
+  — the label is printed **once**, and there is no `Registration:` inside the fee sentence.
+  Cause: `tools/room_extract.py` builds the quote as `"Entry Fee: " + m.group(0)` where the regex
+  match already starts with `Entry Fee:`, and the match runs on to the next `Registration:` header.
+  The value (total, pool, fee, staff charge) is right; the *quote* is not verbatim.
+- **V2b — the Venetian Valuetown re-entry quote is a mid-word character window (2 rows: `V18-2026-11-28-5:10pm`, `V58-2026-12-19-5:10pm`).**
+  The site prints `ker cage window and show confirmation to The Venetian Poker Room cage team member when registering for the event. All subsequent buy in's after the initial buy in will be $200. 8. This event pays 12.5% of the field 9. Ante will come from the Big Blind O`
+  — it starts in the middle of a word and stops in the middle of a word.
+  Cause: `tools/sync_official_sources.py` takes a ±120-character window around the match instead of a sentence.
+  The committed verbatim transcription of the same sheet reads
+  `"PokerAtlas PRO players will receive a twenty ($20) rake discount on their initial $200 buy in only ... All subsequent buy in's after the initial buy in will be $200."`.
+- **V2c — the 37 Venetian structure sheets are audited but their raw text is not committed.** `data/structure-audit.json` records each sheet's PDF SHA-256 and the fields read from it, but `data/raw/` holds no copy of those 37 PDFs' text, so a quote taken from one of them cannot be re-verified inside this repository against a hashed capture. The committed verbatim transcriptions (`notes/structure_rules.md`, `data/75757cc1/structure_reads.tsv`, `data/08f07d1d/structure_rules.json`, `research/raw/venetian_dse_iv_structures.md`) cover 11 sheets in full sentence form and all 37 in condensed form. Recorded as a provenance irregularity; the daily `url-check` job now captures those sheets' text into `data/raw/` so the gap closes itself.
+- **V2c — the 37 Venetian structure sheets are audited but their raw text is not committed.** `data/structure-audit.json` records each sheet's PDF SHA-256 and the fields read from it, but `data/raw/` holds no copy of those 37 PDFs' text, so a quote taken from one of them cannot be re-verified inside this repository against a hashed capture. The committed verbatim transcriptions (`notes/structure_rules.md`, `data/75757cc1/structure_reads.tsv`, `data/08f07d1d/structure_rules.json`, `research/raw/venetian_dse_iv_structures.md`) cover 11 sheets in full sentence form and all 37 in condensed form. Recorded as a provenance irregularity; the daily `url-check` job now captures those sheets' text into `data/raw/` so the gap closes itself.
+
+### V1–V4 result — arena/8c99a4d7-poker4 (2026-11-19)
+
+**What the session added.** The repository already had a *structural* gate (`scripts/verify_root.py`): it proves a row
+carries an official source or an explicit unverified marker, that links resolve and that the data files parse. Nothing
+proved the opposite half — that the number or the sentence printed on the site actually came from that source. This
+session added that half and let it find real defects.
+
+**V1 — value-level audit (`scripts/audit_values.py`, new).** Re-reads every official capture committed in `data/raw/`
+(each headed by its URL and the SHA-256 of the response) plus the four committed verbatim transcriptions of the 37
+Venetian structure sheets, and looks for the literal evidence behind every published figure and every sentence shown
+in a "source text" panel. It also runs two independent cross-checks: every published Wynn `(date, time)` pair must be
+printed in the official WPT booklet, and every published guarantee ÷ entry-fee ratio must recompute from its own row.
+Result for the current snapshot: **1771 of 1771 values located, 0 blocking failures, 0 rows without committed
+evidence**; 148/148 Wynn date-time pairs printed; 166/166 ratios recompute. The result is committed to
+`data/audit-values.json` (keyed to the snapshot, so it is byte-stable) and summarised on `review.html#audit`.
+
+**V2 — three defects found and repaired.**
+1. **The Wynn WPT fee quote was misquoted on 151 rows.** The site printed `Entry Fee: Entry Fee: $600 Buy-in = …
+   Registration:`; the official booklet prints `Entry Fee: $600 Buy-in = …` once, with no `Registration:` inside the
+   fee sentence. Cause: `tools/room_extract.py` rebuilt the quote as `"Entry Fee: " + match` where the match already
+   began with `Entry Fee:`, and ran on to the next section heading. Fixed; the quote now matches the PDF word for word.
+2. **The Venetian Valuetown re-entry quote began and ended mid-word** on two rows (`V18-2026-11-28-5:10pm`,
+   `V58-2026-12-19-5:10pm`): `ker cage window and show confirmation … Ante will come from the Big Blind O`. Cause:
+   `tools/sync_official_sources.py` took a ±120 character window instead of the sentence. The extractor now returns
+   whole sentences (`sentence_excerpt`), and the committed audit record was repaired to the sentence the committed
+   transcription of that sheet already records: `All subsequent buy in's after the initial buy in will be $200.`
+3. **The Venetian house-fee sentence was assembled from the parsed numbers and presented as a quote** (73 rows). It is
+   now labelled *reworded from the printed figures* on the row, and the extractor captures each sheet's own sentence
+   (`fee_sentence`) so the label drops away by itself after the next scheduled re-read. The audit checks those
+   sentences by content instead: every dollar figure must be printed by the sheet, and the wording must be one the
+   operator is proven to use elsewhere in the same series.
+
+**V2c — provenance gap closed.** The 37 Venetian structure sheets were audited but their text was never committed, so a
+quote taken from one of them could not be re-checked inside the repository. All 37 now register `save_text_to` in
+`data/tracked-sources.json`, so the scheduled sync commits each sheet's extracted text under `data/raw/` with its URL
+and SHA-256, and `tools/sync_official_sources.py --from-raw` can re-derive the whole structure audit offline. The gap
+closes on the next live run; until then the audit checks those rows against the committed transcriptions.
+
+**V3 — published and gated.** `review.html` gained a *Value-level audit* section (per-field table, cross-checks, the
+reworded-sentence count); `index.html` states what the audit placed; `flagged.html` gained **F39–F43** recording the two
+corrections, the reworded sentences, the provenance gap and the audit result; `.github/workflows/site-verify.yml` now
+fails the deploy if the audit cannot locate a published value, and checks that the committed audit result is current.
+
+**Two new pages, both from the brief's own wording.**
+- `compare.html` — *compare only the surviving events on guaranteed pool, buy-in, starting stack/blind duration, payout
+  structure and daily schedule fit.* 72 rows (every event whose fee split **and** guarantee are printed), with the
+  day's ranked events, the plan's primary and whether a fallback is reachable. Reuses the date/venue selectors
+  (`app.js` now filters any table, not only the tabbed tournaments table). The page states plainly that 0 rows are
+  confirmed single-entry, so that gate removes nothing here.
+- `before-you-pay.html` — the brief's *reconfirm official schedules, rates and policies before nonrefundable payment*
+  step, built from the data rather than from prose: the seven things to re-check, the generated event table with each
+  planned entry's official documents and the fields still outstanding on that row, the generated hotel table with the
+  fee / tax / parking / cancellation chain and whether a dated checkout total exists at all, and the exact wording to
+  ask each room.
+
+**Verification performed this session.** Live venue pages cannot be re-fetched from this sandbox (outbound HTTP reaches
+github.com / npm / pypi only), so the audit runs against the committed official captures and transcriptions — which is
+exactly what it is for, and the scheduled job is the lane that re-reads the live pages.
+- `python3 scripts/audit_values.py --strict` → 1771/1771 located, 0 blocking failures · OK
+- `python3 tools/room_extract.py` → WPT 69 · Wynn daily 4 · Bellagio 3 · Caesars 4 · 0 unparsed blocks · OK
+- `python3 scripts/integrate_data.py` → 253 events · 38 days · 130 rate-log lines · 12 walks · 68 sources · OK
+- `python3 scripts/verify_root.py` → 16 pages · 253 rows · 0 warnings · OK
+- `python3 scripts/verify.py` · `verify_markup.py` (39 pages, 0 problems) · `linkcheck.py` (32 pages) · OK
+- `node --check app.js` · `site/app.js` → OK
+- `python3 tools/build_poker4.py` + drift check on `data/08f07d1d` and `poker4/` → 0 drift files · OK
+- `python3 tools/check_rows.py` → 93 official rows checked, 0 problems · OK
+- `python3 tools/verify_poker4.py` → OK · `python3 tools/poker4_monitor.py --selftest` → OK
+- `python3 scripts/validate_site.py` · `python3 tools/v2_verify.py` → OK; every `data/**/*.json` parses
+
+**Irregularities.** Carried on the Flagged for Review page as F39–F43. None blocks the merge. The largest open item on
+the site remains unchanged: **0 of 253 rows are confirmed single-entry** (F1) — the Venetian sheets print nothing about
+entries, and the rooms that do print something print re-entry. The second is that only one property has a dated checkout
+total (F4 / the before-you-pay page names the rest).
+
+**Files touched by this session.** `scripts/audit_values.py` (new), `data/audit-values.json` (new), `scripts/integrate_data.py`,
+`tools/room_extract.py`, `tools/sync_official_sources.py`, `data/tracked-sources.json`, `data/poker4.json` (flags F39–F43),
+`data/structure-audit.json` (V_S8 excerpt repaired), `data/room-facts.json`, `data/site-events.json`, `app.js`, `site.css`,
+`compare.html` (new), `before-you-pay.html` (new), the regenerated root pages and `venues/*.html`, `.github/workflows/site-verify.yml`,
+`README.md`, `COORDINATION.md`. The parallel subsites (`60fb62da/`, `c07371e3/`, `df41f5c6/`, `strip/`, `verified/`, `v2/`,
+`poker4/`, `planner/`, `site/`, `build/`) were not touched.
+## Session arena/a059b252-poker4 (final integration session)
+
+- Session ID: `arena/a059b252-poker4`; branch `arena/a059b252-poker4`, branched from `main` @ `0bf9a5c6f4b7118ffbe55a28c3a816abafff5f1e`. All work stays on this branch; no other branch is touched.
+- Role: final integration — line-by-line verification of the committed root dashboard, then PR → main, merge, confirm GitHub Pages deploy, and record the PR link + merge result here. No feature code changes; the build was verified byte-stable (`scripts/integrate_data.py` re-run produces zero diff).
+- File scope: `COORDINATION.md` (this record only). No root page, data, workflow, tool, or other-session file touched. Parallel subsites (`60fb62da/`, `c07371e3/`, `df41f5c6/`, `strip/`, `verified/`, `planner/`, `poker4/`, `v2/`, `site/`, `archive/`, `pages/`, `prior_root_dashboard/`) preserved untouched and remain linked from the root index.
+
+| ID | Task | Status | Owner | File scope | Sources / verification | Irregularities |
+|----|------|--------|-------|------------|------------------------|----------------|
+| Z1 | Claim scope, commit + push claim | done | arena/a059b252-poker4 | COORDINATION.md | — | none |
+| Z2 | Final verification of the combined tree | done | arena/a059b252-poker4 | root pages, `venues/*.html`, `data/`, `scripts/`, `tools/` | all gates below | none new |
+| Z3 | PR → main, merge, Pages deploy confirm, record PR link + merge result | pending | arena/a059b252-poker4 | this branch → `main` | PR link + deploy run below | — |
+
+### Verification record (arena/a059b252-poker4, 2026-11-19)
+
+- Outbound network from this sandbox reaches github.com / npm / pypi only, so official venue pages cannot be re-fetched from bash here. Verification rests on the committed official captures (`data/raw/`), the tracked-source registry (`data/tracked-sources.json`, 68 URLs), plus one live spot-check; the scheduled official-source sync (`url-check.yml` / `source-recheck.yml`) runs its first genuine live fetches in GitHub Actions.
+- `python3 tools/room_extract.py` → OK: WPT 69 · Wynn daily 4 · Bellagio 3 · Caesars 4 printed start times; 0 unparsed WPT blocks. WPT-08 printed fee split does not add up to the printed buy-in (1105 vs 1100): recorded verbatim and flagged, not corrected.
+- `python3 scripts/integrate_data.py` → OK: events=253 days=38 rate-log=130 walks=12 sources=68 pages=36; second run is byte-stable (zero diff).
+- `python3 scripts/verify_root.py` → OK: 16 pages · 253 event rows · 130 rate-log lines · 68 tracked sources · 0 warnings; every row carries an official source or an explicit unverified marker.
+- `python3 scripts/verify.py` → OK: pages: 10; sources: 17; flags: 29.
+- `python3 scripts/verify_markup.py` → OK: 37 pages checked, 0 problems.
+- `python3 scripts/linkcheck.py` → OK: 30 pages, all internal links resolve.
+- `python3 scripts/validate_site.py` → OK: 9 dated schedule rows / 8 reviewed event IDs, 11 recurring room schedules, 45 official sources, 7 hotel records; no strict single-entry qualifier is claimed.
+- Live spot-check via fetch_page (2026-11-19): Venetian official Resort Fee page (https://www.venetianlasvegas.com/resort/resort-fee.html) reads "Rates include a daily Resort Fee of $55 plus tax per night" — matches the committed hotel record. Clark County 13.38% room-tax basis is cited from the official county letter and flagged F27 (county letter, not property-printed percentage).
+
+### Features present on the built root dashboard (verified, unchanged)
+
+Trip-cost calculator (`calculator.html`: entries × buy-ins + nights × true hotel cost, tax on fee + rate, "cannot compute" instead of guessing), dated rate log per property (checkout total, nightly average, resort fee + tax, parking, cancellation deadline, rate timestamp), one page per venue (Venetian / Wynn / Bellagio / Caesars / ARIA / others) with events + hotels and official booking links per date, global search across all tables, date filter, "single-entry confirmed only" toggle (0 rows pass — no event is confirmed single-entry; all 37 Venetian structure sheets plus Wynn/WPT/Bellagio/Caesars documents read line by line, silent sheets stay "unverified"), GTD ÷ entry-fee descriptive ratio with bounty/flight/satellite rows in a separate section, day plan (`plan.html`) with one primary event + conditional fallback per day and overlap flags from start time vs late-registration cutoff, ≤30-minute walking-route filter on measured Google Maps routes (hotel→Venetian poker room, retrieved 2026-11-17/18, distances shown beside minutes), per-row "last checked" dates, scheduled official-URL re-check marking rows whose source changed, executive summary (`index.html`), open questions (`questions.html`), decision-only suggestions (`suggestions.html`), Flagged for Review page (`flagged.html`), source status/run log (`review.html`, `data/change-log.json`).
+
+### Irregularities
+
+All flagged on `flagged.html` and carried forward; none block launch: F1 entry-policy silence (0 confirmed single-entry); WPT-08 fee-split mismatch (1105 vs 1100); Caesars explore-page vs 2026 flyer buy-in conflict; Bellagio/Caesars/Aria resort-fee pages print no amount (amounts taken from property terms pages where published); tax 13.38% rests on the Clark County letter, not on every property's page (F27); no official 8:00 AM start anywhere in the window; dated room rates unavailable without a booking session (left blank, never estimated); walking minutes are routing-engine measurements, not operator statements.
+
+### PR + deploy result
+
+pending (task Z3)
