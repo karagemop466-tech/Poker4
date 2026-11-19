@@ -110,8 +110,15 @@ def section(block: str, start: str, end: str) -> str:
 
 
 def fee_split(text: str):
-    """'Entry Fee: $600 Buy-in = $510 (Tournament Prize Pool) + $65 (Tournament Fee) + ...'"""
-    m = re.search(r"Entry Fee:\s*\$([\d,]+)\s*Buy-?in\s*=\s*(.+?)(?:\s*Registration:|$)", text, re.S | re.I)
+    """'Entry Fee: $600 Buy-in = $510 (Tournament Prize Pool) + $65 (Tournament Fee) + ...'
+
+    The returned excerpt must be the sentence the sheet prints, word for word.  The
+    sheet writes "Entry Fee:" once, so the quote is the matched span itself — it used
+    to be rebuilt as ``"Entry Fee: " + match``, which printed the label twice and
+    swallowed the following "Registration:" header into the quote.
+    """
+    m = re.search(r"Entry Fee:\s*\$([\d,]+)\s*Buy-?in\s*=\s*(.+?)(?=\s*Registration\s*:|\Z)",
+                  text, re.S | re.I)
     if not m:
         return None, [], ""
     total = money(m.group(1))
@@ -125,7 +132,8 @@ def fee_split(text: str):
     if "Discounted" in body_all:
         dm = re.search(r"Discounted.{0,240}", body_all)
         discounted = flat(dm.group(0))[:240] if dm else ""
-    return total, components, flat("Entry Fee: " + m.group(0).strip()), discounted
+    # m.group(0) already starts with "Entry Fee:" — use it as printed.
+    return total, components, flat(m.group(0).strip()), discounted
 
 
 def entry_rule(reg_text: str):

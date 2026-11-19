@@ -366,6 +366,9 @@ for row in SCHED["rows"]:
             "excerpt": (f"On Day {suffix}, players who register before the start of the event "
                         f"({cutoff}) will receive a forty ($40) discount on house fees for a "
                         "total buy in of $1,060 instead of $1,100."),
+            # The figures are the sheet's; the sentence is the build's wording, so it is
+            # labelled as such until the sheet is re-read and the wording captured verbatim.
+            "excerpt_kind": "reconstructed",
             "source": sheet_url,
             "retrieved": (sheet or {}).get("retrieved"),
         }
@@ -417,17 +420,26 @@ for row in SCHED["rows"]:
             if re.search(pat, (sub or "") + " " + " ".join(flat_excerpts), re.I)
         ]
         if fee is not None and entry["buy_in_usd"]:
+            # Prefer the sentence the sheet itself prints.  `fee_sentence` is captured
+            # verbatim by tools/sync_official_sources.py; until a sheet has been re-read
+            # with that capture in place, the fallback below restates the printed
+            # figures in the room's standard wording, and the row says so.
+            verbatim = sheet.get("fee_sentence")
             entry["rules"]["fee"] = {
                 "status": "confirmed",
                 "value": f"${fee} of ${entry['buy_in_usd']} withheld; ${pool} per entry to the prize pool"
                          if pool is not None else f"${fee} of ${entry['buy_in_usd']} withheld",
-                "excerpt": f"$ {fee} of the $ {entry['buy_in_usd']} Buy-In is withheld for house fees (Rake + Staff)."
-                           + (f" The prize pool consists of $ {pool} of every $ {entry['buy_in_usd']} Buy In." if pool is not None else ""),
+                "excerpt": verbatim or (
+                    f"$ {fee} of the $ {entry['buy_in_usd']} Buy-In is withheld for house fees (Rake + Staff)."
+                    + (f" The prize pool consists of $ {pool} of every $ {entry['buy_in_usd']} Buy In."
+                       if pool is not None else "")),
+                "excerpt_kind": "verbatim" if verbatim else "reconstructed",
                 "source": sheet_url,
                 "retrieved": sheet.get("retrieved"),
             }
         else:
             entry["rules"]["fee"] = {"status": "unverified", "value": None, "excerpt": None,
+                                     "excerpt_kind": "verbatim",
                                      "source": sheet_url, "retrieved": sheet.get("retrieved")}
         if sheet.get("guarantee") and gtd is None:
             entry["guarantee_from_sheet_text"] = sheet["guarantee"]
@@ -1418,7 +1430,16 @@ def event_detail(ev, base=""):
             head += f'<span class="retr">retrieved {E(r.get("retrieved"))}</span>'
         head += "</p>"
         if r.get("excerpt"):
-            head += f'<div class="excerpt"><blockquote>{E(r["excerpt"])}</blockquote></div>'
+            if r.get("excerpt_kind") == "reconstructed":
+                # the sentence restates the sheet's printed figures in the room's
+                # standard wording — it is not a copy of this sheet's own line, and
+                # the page must not present it as one.
+                head += ('<div class="excerpt"><p class="excerpt-kind">reworded from the printed '
+                         'figures — the sheet states the amounts below in this standard wording; '
+                         'it is not a copy of this sheet&rsquo;s own line</p>'
+                         f'<blockquote class="reconstructed">{E(r["excerpt"])}</blockquote></div>')
+            else:
+                head += f'<div class="excerpt"><blockquote>{E(r["excerpt"])}</blockquote></div>'
         else:
             head += ("<p class='unknown'>The official sheet contains no sentence about this. Silence is not "
                      "confirmation, so the field stays blank and flagged.</p>")
@@ -1442,7 +1463,10 @@ def event_detail(ev, base=""):
         extra.append("guarantee wording on the sheet: " + E(ev["guarantee_from_sheet_text"]))
     discount = ev.get("conditional_entry_fee")
     if discount:
-        extra.append("<strong>Conditional entry fee:</strong> " + E(discount["excerpt"]) +
+        lead = ("<strong>Conditional entry fee</strong> (figures as printed; wording reworded): "
+                if discount.get("excerpt_kind") == "reconstructed"
+                else "<strong>Conditional entry fee:</strong> ")
+        extra.append(lead + E(discount["excerpt"]) +
                      f' <a href="{E(discount["source"])}" target="_blank" rel="noopener">official structure sheet ↗</a>' +
                      f' (retrieved {E(discount["retrieved"] or "")})')
     for s in (ev.get("spend_advantage_evidence") or []):
@@ -2154,6 +2178,55 @@ def page_review():
         verify_rows += (f"<tr><td><a href='data/verify/{E(fp.name)}'>{E(fp.name)}</a></td>"
                         f"<td class='qual'>{E(cov)}</td><td>{E(when)}</td></tr>")
     verify_rows = verify_rows or f"<tr><td colspan='3'>{unk('no per-value re-check records in data/verify yet')}</td></tr>"
+    audit = load("audit-values.json", {})
+    audit_meta = audit.get("meta") or {}
+    audit_fields = audit.get("fields") or {}
+    audit_failures = audit.get("failures") or []
+    audit_blocking = [f for f in audit_failures
+                      if f.get("kind") in ("value_not_found", "quote_not_verbatim",
+                                           "reconstruction_unverified", "arithmetic_mismatch")]
+    audit_cross = audit.get("cross_checks") or []
+    audit_reworded = audit.get("reworded_excerpts_verified") or []
+    if audit_meta:
+        field_rows = "".join(
+            f"<tr><td>{E(f.replace('excerpt:', 'quote · '))}</td>"
+            f"<td class='num'>{E(str(v.get('checked')))}</td>"
+            f"<td class='num'>{E(str(v.get('located')))}</td>"
+            f"<td>{'OK — every value found in its cited source' if v.get('checked') == v.get('located') else 'FAIL'}</td></tr>"
+            for f, v in audit_fields.items())
+        cross_parts = []
+        for c in audit_cross:
+            failed = c.get("failed")
+            verdict = "OK" if not failed else str(failed) + " failed"
+            cross_parts.append(
+                f"<tr><td>{E(c.get('check') or '')}</td>"
+                f"<td class='qual'>{E(c.get('description') or '')}</td>"
+                f"<td class='num'>{E(str(c.get('checked')))}</td>"
+                f"<td>{status_span('ok' if not failed else 'bad', verdict)}</td></tr>")
+        cross_rows = "".join(cross_parts)
+        audit_block = f"""
+<h2>Value-level audit — every published number and every quoted sentence</h2>
+<p class="mini-note">The link check above proves a row <em>has</em> a source. This proves the value <em>came from</em> it:
+the tool re-reads every official capture committed in <code>data/raw/</code> and every committed verbatim transcription of the
+official structure sheets, then looks for the literal evidence behind each published figure and each sentence shown in a
+<em>source text</em> panel. A value it cannot find is reported, never corrected, and never quietly replaced.</p>
+<div class="flagstats"><span class="stat">{E(str(audit_meta.get('values_checked')))} values checked</span>
+<span class="stat">{E(str(audit_meta.get('values_located')))} found in the cited source</span>
+<span class="stat">{E(str(audit_meta.get('blocking_failures')))} blocking failures</span>
+<span class="stat">{E(str(len(audit_reworded)))} sentences shown as reworded rather than quoted</span>
+<span class="stat">{E(str((audit_meta.get('evidence') or {}).get('hashed_captures')))} hashed captures · {E(str((audit_meta.get('evidence') or {}).get('structure_sheets_transcribed')))} transcribed structure sheets</span></div>
+<div class="table-scroll"><table class="compact"><thead><tr><th>Field</th><th class="num">Checked</th><th class="num">Located</th><th>Verdict</th></tr></thead><tbody>{field_rows}</tbody></table></div>
+<h3>Cross-checks</h3>
+<div class="table-scroll"><table class="compact"><thead><tr><th>Check</th><th>What it proves</th><th class="num">Rows</th><th>Verdict</th></tr></thead><tbody>{cross_rows}</tbody></table></div>
+<p class="mini-note">Reproduce offline: <code>python3 scripts/audit_values.py --strict</code> · machine copy:
+<a href="data/audit-values.json">data/audit-values.json</a> · run at {E(str(audit_meta.get('generated_at') or ''))}.</p>
+<p class="mini-note">{len(audit_reworded)} sentence(s) are shown on the site as <em>reworded from the printed figures</em> rather than
+as a copy of the sheet&rsquo;s own line: the figures are the sheet&rsquo;s, the sentence is the room&rsquo;s standard wording, verified verbatim on
+other sheets of the same series. The scheduled re-read captures each sheet&rsquo;s own sentence, after which the label drops away
+on its own.</p>"""
+    else:
+        audit_block = ("<h2>Value-level audit</h2><p class='unknown'>The value-level audit has not been run in this build. "
+                       "Run <code>python3 scripts/audit_values.py</code> to produce it.</p>")
     return shell("", "Review log", f"""
 <section class="page-head"><h1>Review log — what was checked, when, and what changed</h1>
 <p class="lede">The numbers the site was built from, plus the raw material: every tracked official URL with the date it was last read, whether its bytes or its values moved, how many rows the parser got out of it, and the captured text itself. Any row on any page can be traced to a captured sentence in one click.</p>
@@ -2179,6 +2252,7 @@ itself publishes a live successor for the same document (as the Caesars 2025→2
 <p class="mini-note">Each record is a machine-readable table of one published value against the official document that carries it: what the site
 said, what the document says, the verdict and the action taken. Read these before treating anything as settled.</p>
 <div class="table-scroll"><table class="compact"><thead><tr><th>Record</th><th>Coverage</th><th>Run date</th></tr></thead><tbody>{verify_rows}</tbody></table></div>
+{audit_block}
 <h2>All tracked sources ({len(source_rows)})</h2>
 {source_table(source_rows)}
 """, "review.html", needs_data=False)
