@@ -2217,3 +2217,19 @@ F1 entry-policy silence (0 of 253 confirmed single-entry) · F4 no dated checkou
 **Questions this audit leaves open (need a decision or a source, not inference):** (1) which official source would confirm single-entry for any row (no structure sheet in the snapshot states an entry limit); (2) whether Wynn's Super Gold Million $400 structure has an official structure sheet with entry rules; (3) whether the owner wants the Wynn Signature Series Jan 2027 window added (S13); (4) an official source for a dated Venetian checkout total (booking engine is JS-only).
 
 - **V4 done (2026-11-19):** PR [#112](https://github.com/karagemop466-tech/Poker4/pull/112) (`arena/21df18f4-poker4` → `main`) merged with `gh pr merge 112 --merge` (merge commit `444ab02`, 2026-11-19T19:46Z; mergeStateStatus CLEAN, no required checks pending). Post-merge runs on main: `Verify the published site` success, `Poker4 site build + verification gate` success, `pages build and deployment` success. Live read of https://karagemop466-tech.github.io/Poker4/flagged.html: "47 open flags", F47 present with its source links. This log entry follows the merge in a follow-up PR (log only; no site data touched).
+
+## Session arena/61daf94a-poker4 (branch `arena/61daf94a-poker4`, from `main` @ 676904f) — claim (2026-11-19)
+
+- Session ID: `arena/61daf94a-poker4`. Branch merged `origin/main` @ 676904f (PRs #112/#113 + sync 2026-11-19T19:47Z, flag F47) before claiming; no other session has an open claim (`gh pr list --state open` empty at claim time; prior round arena/21df18f4-poker4 is merged).
+- **Claim (written before any file edits, per protocol):** hotel curation round — confirm Encore resort fee/parking/tax/cancellation from Wynn terms 850070 (which lists Encore room types) and Treasure Island free parking from the official guest-services page, fix the `$0 parking renders as unconfirmed` falsy-zero bug in the compact hotel tables, record the 2026-11-19 live re-verification (tournament schedules, structure sheets, hotel terms, booking-engine attempt) in `data/verify/`, regenerate pages, then integration PR → main + Pages deploy check + record here.
+- File scope: `data/poker4.json` (Encore + TI hotel records only), `scripts/integrate_data.py` ($0-parking render fix only), `data/verify/61daf94a_*` (new), regenerated root pages + `venues/*.html` + `data/rate-log.json` + `data/search-index.json` via `scripts/integrate_data.py`, `COORDINATION.md` (log only). Does not touch `data/site-events.json` tournament rows, `data/url-checks.json` / `data/change-log.json` (hash chain owned by the CI sync), or any other session's folder.
+- Task board for this round:
+
+| ID | Task | Status | Owner | File scope |
+|----|------|--------|-------|------------|
+| T1 | Claim scope, merge main, commit + push claim | in progress | arena/61daf94a-poker4 | COORDINATION.md |
+| T2 | Live re-verification 2026-11-19 (schedules, sheets, hotel terms, booking attempt) → verify TSV | pending | arena/61daf94a-poker4 | data/verify/61daf94a_* |
+| T3 | Encore/TI curation + $0-parking fix + regenerate + gates | pending | arena/61daf94a-poker4 | data/poker4.json, scripts/integrate_data.py, regenerated pages |
+| T4 | Integration PR → main + Pages deploy check + record | pending | arena/61daf94a-poker4 | this branch, COORDINATION.md |
+
+- Log: 2026-11-19 — claim written after merging main; live fetches already performed read-only (no file edits yet) confirm every compared committed value unchanged except the two curation gaps above (Encore fee/parking, TI parking), whose evidence is already in `data/hotel-facts.json` and was re-read live today.
