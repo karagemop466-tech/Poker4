@@ -1,4 +1,4 @@
-<!-- captured 2026-11-19T20:08:55Z from https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_25.pdf (sha256 e45e2c857e213900b7db9f1fc1ac77abf7b0b62b4dc3aa8ca99a67adf9d65380) -->
+<!-- captured 2026-11-19T21:54:22Z from https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_25.pdf (sha256 e45e2c857e213900b7db9f1fc1ac77abf7b0b62b4dc3aa8ca99a67adf9d65380) -->
  
  
 $260 No Limit Hold’em Turbo (1Day) 

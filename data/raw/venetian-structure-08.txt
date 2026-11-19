@@ -1,4 +1,4 @@
-<!-- captured 2026-11-19T20:08:51Z from https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_8.pdf (sha256 01ce2d797601e06c78c3e7390df9faa2640c055aee1fe6c23e73e011d321ffbd) -->
+<!-- captured 2026-11-19T21:54:12Z from https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_8.pdf (sha256 01ce2d797601e06c78c3e7390df9faa2640c055aee1fe6c23e73e011d321ffbd) -->
  
  
 $200 No Limit Hold’em Valuetown™ Bounty (1Day) 
