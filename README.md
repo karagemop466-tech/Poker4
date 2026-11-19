@@ -7,8 +7,8 @@ This is a source-first planner for live poker tournaments and hotels on and arou
 ## Dashboard pages
 
 - [`index.html`](index.html) — executive summary, current findings, ranked screening ratios, and open decisions.
-- [`tournaments.html`](tournaments.html) — event table with global search, date and venue filters, and a strict single-entry-confirmed filter. It separates events with re-entry/add-on or other extra-spend formats, flights, satellites, and restarts.
-- [`compare.html`](compare.html) — side-by-side comparison of rows with confirmed entry fee and guarantee, including stack, blind length, payout details, and schedule fit.
+- [`tournaments.html`](tournaments.html) — event table with global search, date and venue filters, and a strict single-entry-confirmed filter. Date filters default to the upcoming part of the published window; “whole window” restores historical rows. The 7- and 30-day presets count inclusively. It separates events with re-entry/add-on or other extra-spend formats, flights, satellites, and restarts.
+- [`compare.html`](compare.html) — side-by-side comparison of rows with confirmed entry fee and guarantee, including stack, blind length, payout details, and schedule fit; its date controls use the same upcoming default and whole-window reset.
 - [`plan.html`](plan.html) — one primary event per day and a conditional fallback; it does not assume an unprinted finish time.
 - [`hotels.html`](hotels.html) — property fees, dated rate log, parking/cancellation fields, route evidence, official booking links, and true nightly-cost calculations where inputs are available.
 - [`calculator.html`](calculator.html) — entries × buy-ins + nights × true hotel cost; missing inputs are not filled with guesses.
