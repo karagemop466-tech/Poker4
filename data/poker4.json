@@ -207,6 +207,22 @@
      "qualifier": "Official booking page capture for Dec 18-20, 2026 (2 nights, Luxury King, 2 adults): $1,024.39 all-in incl. $55 fee + 13.38% tax = $512.20/night; recorded from an earlier session's dated capture (data carried this figure before integration) - re-quote before booking",
      "source": "https://www.venetianlasvegas.com/book",
      "quote_status": "dated snapshot - not a live quote; re-quote before booking"
+    },
+    {
+     "observed_on": "2026-11-19",
+     "label": "Advertised poker rate, starting endpoint A — re-read 2026-11-19",
+     "amount_usd": 119,
+     "qualifier": "'as low as' starting endpoint re-read 2026-11-19 from the official poker suite-rate page; unchanged since 2026-11-16. Still an advertised starting point for a Luxury King Suite at The Venetian or The Palazzo under code EPOKR25, subject to qualifying poker play (six hours cash or a $300+ tournament buy-in per night) and availability; not a dated quote.",
+     "source": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
+     "quote_status": "advertised starting point — not a dated quote"
+    },
+    {
+     "observed_on": "2026-11-19",
+     "label": "Advertised poker rate, starting endpoint B — re-read 2026-11-19",
+     "amount_usd": 209,
+     "qualifier": "second 'as low as' endpoint on the same official page, re-read 2026-11-19; unchanged since 2026-11-16. Same conditions as endpoint A. The $55 per night resort fee is stated on the same page.",
+     "source": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
+     "quote_status": "advertised starting point — not a dated quote"
     }
    ],
    "qualification": "Keeping the poker rate requires qualifying play every night (six hours of live cash, or a buy-in of $300 or more per night) — a $200 event does not qualify. Failing that, the rate adjusts to the prevailing rate.",
@@ -350,7 +366,16 @@
     "alt_method_url": "https://maps.apple.com/?saddr=Wynn+Las+Vegas%2C+3131+S+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV+89109&daddr=The+Venetian+Resort+Las+Vegas%2C+3355+Las+Vegas+Blvd.+South%2C+Las+Vegas%2C+NV+89109&dirflg=w",
     "walk_url": "https://www.google.com/maps/dir/Wynn%20Las%20Vegas,3131%20S%20Las%20Vegas%20Blvd,Las%20Vegas,NV%2089109/The%20Venetian%20Resort%20Las%20Vegas,3355%20Las%20Vegas%20Blvd.%20South,Las%20Vegas,NV%2089109/data=!4m2!4m1!3e2?hl=en&gl=us"
    },
-   "rate_log": [],
+   "rate_log": [
+    {
+     "observed_on": "2026-11-19",
+     "label": "Poker player-rate channel (no rate printed)",
+     "amount_usd": null,
+     "qualifier": "official poker page FAQ (read 2026-11-19): 'Are preferred poker room rates available? Yes, please contact us at poker.reservations@wynnlasvegas.com for assistance.' The page prints no amount; a rate is quoted per stay by the room. The same page's 'Reserve your stay' links for the WPT series use the same poker.reservations mailbox.",
+     "source": "https://wynnlasvegas.com/casino/poker",
+     "quote_status": "channel only — no published rate"
+    }
+   ],
    "qualification": null,
    "qualification_source": null,
    "source_keys": [
@@ -704,6 +729,14 @@
      "qualifier": "'Total Resort Fee Plus Tax $49.95' collected at check-out; free self & valet parking (tower-suite page re-read 2026-11-17; cross-checks the resort_fee already verified from the TI offers page)",
      "source": "https://treasureisland.com/hotel/tower-suite",
      "quote_status": "verbatim sentence captured 2026-11-17"
+    },
+    {
+     "observed_on": "2026-11-19",
+     "label": "Official TV Ad Special offer price (no resort fee under this offer)",
+     "amount_usd": 69,
+     "qualifier": "'$69* NIGHT + NO RESORT FEE' offer printed on the official Deluxe Rooms page (read 2026-11-19, same page that prints the $49.95 + tax mandatory resort fee). Printed conditions: resort fees are optional only for My TI Guestbook members booking the exclusive TV Ad Special offer, or qualified Treasury Players Club casino members; bookings go to all.accor.com. Asterisked price — not a dated quote for a chosen stay, and the page warns fee price, tax and amenities can change without notice.",
+     "source": "https://treasureisland.com/hotel/deluxe-rooms",
+     "quote_status": "advertised offer price — conditions apply; not a dated quote"
     }
    ],
    "qualification": null,
@@ -989,13 +1022,14 @@
    "id": "Q4",
    "question": "When does each event actually end?",
    "why_it_matters": "'Primary event + conditional fallback' only works if the earlier event can be finished or exited before the next registration deadline.",
-   "we_have": "Start time, the printed 'REG CLOSES' deadline for 80 of 93 rows, level count/length and the multi-flight Day-2 restart times from the official schedule and sheets.",
+   "we_have": "Start time, the printed 'REG CLOSES' deadline for 80 of 93 rows, level count/length and the multi-flight Day-2 restart times from the official schedule and sheets. Added 2026-11-19 (arena/1257a37f-poker4): the Caesars official explore article (caesars.com, article dated July 17, 2026) states 'Most sessions finish in four to six hours' — the only official generic duration statement found for the Caesars Palace / Horseshoe dailies. It is a marketing sentence about sessions in general, not a printed per-event finish time, so it supports the overlap check as a plausible-duration citation only.",
    "missing": "Announced finish times — the operator publishes none. Structures with 28 levels at 30 minutes plus six 15-minute breaks describe a 15-hour worst case, so a 5:10 PM entry after an 11:10 AM event is only realistic if you bust out before its own registration closes.",
    "how_to_close": "Decide the exit rule (e.g. 'evening event only if bust-out before 4:30 PM') and the schedule page will flag each pair automatically; the underlying math is already wired.",
    "owner": "you",
    "sources": [
     "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf"
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf",
+    "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
    ]
   },
   {
@@ -1201,6 +1235,16 @@
    "effort": "low for (b), medium for (a)",
    "decision_needed": "Yes — choose (a) or (b). Nothing was assumed here: the recurring rows stay unticked in the calculator and the plan lists them as options, not entries.",
    "status": "awaiting your choice"
+  },
+  {
+   "id": "S13",
+   "title": "Decide whether to extend the data window to the Wynn Signature Series (Jan 11–24, 2027)",
+   "problem": "The dashboard covers 2026-11-16 → 2026-12-23 (Venetian DSE IV + WPT World Championship). Wynn's official poker page (read 2026-11-19) announces the Wynn Signature Series for January 11–24, 2027, and links official schedule and structure PDFs for it (Wynn_Signature_Series_Schedule.pdf, Wynn_Signature_Series_Structures.pdf). The Wynn daily slate is suspended during that series, so January planning needs its rows, not the dailies.",
+   "proposal": "Extend the snapshot window to 2027-01-24, add the two Signature Series PDFs to the tracked-source registry so the scheduled re-check monitors them, ingest their rows with the same per-sheet verification, and widen the date filter. Alternative: keep the window fixed and publish the series as a pointer note on the Wynn venue page until the sheets settle.",
+   "impact": "A January trip becomes plannable in the same tool; the alternative keeps the current window's verification guarantees intact.",
+   "effort": "medium — two new tracked sources, one parser run, window constants and the date-filter bounds",
+   "decision_needed": "Extend the window through Jan 24, 2027, or keep Nov–Dec 2026 and link the series as a note?",
+   "status": "awaiting your choice"
   }
  ],
  "decision_workflow": [
@@ -1252,7 +1296,7 @@
    "id": "F1",
    "severity": "blocking-for-single-entry-claim",
    "item": "0 of 93 Venetian rows are confirmed single-entry",
-   "detail": "All 37 official structure sheets were read on 2026-11-17. None contains a clause confirming one entry, prohibiting re-entries, or prohibiting add-ons. Omission is not confirmation, so no row may be labelled single-entry and the toggle filter returns nothing. Re-checked 2026-11-18 by session 9a45e995 (data/9a45e995/entry-policy-check.json): sample of 2026 structure sheets plus earlier official sheets; verdict unchanged — NOT CONFIRMED. Silence is not confirmation; the 2026 sheets read there do not prohibit re-entry; earlier official Venetian sheets state re-entry is allowed. Re-checked 2026-11-18 by session 75f8b185-poker4: sheet 21 (Event 47) and the DSE IV schedule PDF read live; search log in data/75f8b185/. Verdict unchanged.",
+   "detail": "All 37 official structure sheets were read on 2026-11-17. None contains a clause confirming one entry, prohibiting re-entries, or prohibiting add-ons. Omission is not confirmation, so no row may be labelled single-entry and the toggle filter returns nothing. Re-checked 2026-11-18 by session 9a45e995 (data/9a45e995/entry-policy-check.json): sample of 2026 structure sheets plus earlier official sheets; verdict unchanged — NOT CONFIRMED. Silence is not confirmation; the 2026 sheets read there do not prohibit re-entry; earlier official Venetian sheets state re-entry is allowed. Re-checked 2026-11-18 by session 75f8b185-poker4: sheet 21 (Event 47) and the DSE IV schedule PDF read live; search log in data/75f8b185/. Verdict unchanged. Re-checked 2026-11-19 (arena/1257a37f-poker4): structure sheets 21 ($2,200 PokerAtlas Championship, Event 47) and 12 ($800, Event 26) re-read live from the official PDFs — fee splits ($225/$1,975 and $110/$690), chips, level length and the Day-2 bagging clause match the audit exactly; still no entry-count, re-entry or add-on clause on either sheet. Verdict unchanged: NOT CONFIRMED. The printed clause 'Any player who bags chips for Day 2 may not play a subsequent flight' is now surfaced in the re-entry field of the rows built from those sheets — a printed restriction on subsequent flights after bagging, not a single-entry grant.",
    "sources": [
     "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf",
     "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
@@ -1287,7 +1331,7 @@
    "id": "F4",
    "severity": "missing-data",
    "item": "No dated hotel quote (checkout total, nightly average, cancellation deadline)",
-   "detail": "Dated pricing needs a booking session with specific dates and occupancy. Left blank by policy; only non-dated mandatory fee/tax/parking figures are shown as verified.",
+   "detail": "Dated pricing needs a booking session with specific dates and occupancy. Left blank by policy; only non-dated mandatory fee/tax/parking figures are shown as verified. Re-attempted 2026-11-19 (arena/1257a37f-poker4): the Venetian official booking endpoint with fixed dates 2026-12-10 → 2026-12-15 (2 adults) returns only the booking shell — rates render in JavaScript and no checkout total is retrievable by static fetch. Wynn, Caesars, MGM (Bellagio/ARIA) and TI route to interactive booking engines the same way (TI hands off to all.accor.com). Dated quotes therefore stay blank by policy. What the same day's reads did produce is logged in the dated rate log instead: TI's '$69 night + no resort fee' offer (conditions printed) and the Venetian poker-rate endpoints re-read unchanged.",
    "sources": [
     "https://www.venetianlasvegas.com/book",
     "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html"
@@ -1434,7 +1478,7 @@
    "id": "F19",
    "severity": "caveat",
    "item": "Wynn $55 resort fee now confirmed on two current official pages; Wynn still publishes fee terms only inside terms/offer pages",
-   "detail": "Re-checked 2026-11-17 (sessions 03d073d2 + b808eea0). The $55 + tax daily resort fee (resort rooms and Tower Suites) is printed on two current official pages read live: offer terms DK26WLV2 (select dates Oct 2, 2026 – Mar 31, 2027 — covers the planned travel window; call-centre booking only) and the standing Resort Fee / Tower Suites Resort Fee / PARKING INFORMATION sections of terms page 850070. The earlier expired-promo source (850257, Concours Sip and Savor, travel Oct 27 – Nov 1, 2026) is kept as a third concordant citation. Remaining caveat: wynnlasvegas.com has no dedicated standing resort-fee page — /hotel/resort-fee, /hotel/resort-fees-and-parking and /hotel/policies all return 404 (checked 2026-11-17) — so the fee text lives inside offer terms and must be re-read on the booking page before paying. Parking (self free for registered guests and Wynn Poker Room guests, $25/day non-registered, $40/day valet) and the deposit/cancellation terms are captured from the same pages (see the hotels table).",
+   "detail": "Re-checked 2026-11-17 (sessions 03d073d2 + b808eea0). The $55 + tax daily resort fee (resort rooms and Tower Suites) is printed on two current official pages read live: offer terms DK26WLV2 (select dates Oct 2, 2026 – Mar 31, 2027 — covers the planned travel window; call-centre booking only) and the standing Resort Fee / Tower Suites Resort Fee / PARKING INFORMATION sections of terms page 850070. The earlier expired-promo source (850257, Concours Sip and Savor, travel Oct 27 – Nov 1, 2026) is kept as a third concordant citation. Remaining caveat: wynnlasvegas.com has no dedicated standing resort-fee page — /hotel/resort-fee, /hotel/resort-fees-and-parking and /hotel/policies all return 404 (checked 2026-11-17) — so the fee text lives inside offer terms and must be re-read on the booking page before paying. Parking (self free for registered guests and Wynn Poker Room guests, $25/day non-registered, $40/day valet) and the deposit/cancellation terms are captured from the same pages (see the hotels table). Re-read 2026-11-19 (arena/1257a37f-poker4) on offer terms 850257: 'A daily resort fee of $55 plus tax will be added to your room account for each room night' for resort rooms and, in a separate Tower Suites section, the same $55 plus tax. The offer's own cancellation terms are stricter than DK26WLV2's (full deposit at booking; non-cancellable, non-refundable) — a reminder that Wynn prints deposit/cancellation terms only inside offer terms; no general Wynn cancellation policy has been captured on any official page. Verdict on the fee unchanged.",
    "sources": [
     "https://www.wynnlasvegas.com/terms-and-conditions/DK26WLV2",
     "https://www.wynnlasvegas.com/terms-and-conditions/850070",
@@ -1489,7 +1533,7 @@
    "id": "F24",
    "severity": "schedule-availability",
    "item": "Wynn's daily slate is printed as a standing offer with no calendar dates, and the sheet itself says it may be suspended during other series",
-   "detail": "'The Tournament will be offered Monday-Thursday and may be suspended during Seniors Events, Classic Events, or other Tournament Series.' Wynn runs its own WPT series from 2026-11-27 to 2026-12-21, so whether the $200/$240/$160 dailies run on any given trip date is not established by either document. Those rows carry no date and are never placed in the day plan.",
+   "detail": "'The Tournament will be offered Monday-Thursday and may be suspended during Seniors Events, Classic Events, or other Tournament Series.' Wynn runs its own WPT series from 2026-11-27 to 2026-12-21, so whether the $200/$240/$160 dailies run on any given trip date is not established by either document. Those rows carry no date and are never placed in the day plan. Re-read 2026-11-19 (arena/1257a37f-poker4): the live page now prints an FAQ answer — 'With the exception of during a published tournament series, such as the Wynn Classic, daily tournaments run each day and feature $95,000 per week in guaranteed prize pools' — which conflicts both with the same page's '$200,000 in guaranteed prize pools weekly' and with the structures PDF's 'Monday-Thursday … may be suspended'. See F39.",
    "sources": [
     "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
     "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
@@ -1500,7 +1544,7 @@
    "id": "F25",
    "severity": "conflicting-official-values",
    "item": "Caesars Palace's two official pages disagree on the daily buy-in: the explore page says every event carries $100, the 2026 daily flyer prints $160 at 2 PM and 9 PM",
-   "detail": "The Caesars explore page states four daily NLH tournaments at 10 a.m., 2 p.m., 6 p.m. and 9 p.m., 'every event carries a $100 buy-in', 20,000 chips, a $1,000 guarantee, 20-minute levels and a $50 add-on. The dedicated 2026 daily flyer PDF (re-checked live 2026-11-17 after the 2025 flyer was retired and 404ing) prints per-slot buy-ins — $100 at 10 a.m. and 6 p.m., $160 at 2 p.m. and 9 p.m. — plus the fee splits ($70/$30 and $115/$45), the add-on split ($45/$5), registration closing at the start of level 7, and rule 3: 'Participants may only register themselves, but may re-enter, by paying the entry fee, upon elimination within the first break of play.' The rows follow the dedicated, dated flyer (document of record for the schedule) and carry its excerpts; the explore page's blanket $100 sentence stays quoted on the row as the conflicting official statement. Single-entry status remains unverified on both sources — the printed re-entry rule is evidence of the opposite, so the rows stay in the spend-advantage section. Rows stay unranked because the slate prints no calendar dates.",
+   "detail": "The Caesars explore page states four daily NLH tournaments at 10 a.m., 2 p.m., 6 p.m. and 9 p.m., 'every event carries a $100 buy-in', 20,000 chips, a $1,000 guarantee, 20-minute levels and a $50 add-on. The dedicated 2026 daily flyer PDF (re-checked live 2026-11-17 after the 2025 flyer was retired and 404ing) prints per-slot buy-ins — $100 at 10 a.m. and 6 p.m., $160 at 2 p.m. and 9 p.m. — plus the fee splits ($70/$30 and $115/$45), the add-on split ($45/$5), registration closing at the start of level 7, and rule 3: 'Participants may only register themselves, but may re-enter, by paying the entry fee, upon elimination within the first break of play.' The rows follow the dedicated, dated flyer (document of record for the schedule) and carry its excerpts; the explore page's blanket $100 sentence stays quoted on the row as the conflicting official statement. Single-entry status remains unverified on both sources — the printed re-entry rule is evidence of the opposite, so the rows stay in the spend-advantage section. Rows stay unranked because the slate prints no calendar dates. Re-read 2026-11-19 (arena/1257a37f-poker4): both sentences unchanged — the explore article still prints 'Every event carries a $100 buy-in, starts you with 20,000 chips, and features a $1,000 guaranteed prize pool … a $50 add-on at the first break gives you an extra 15,000 chips', and the 2026 flyer still prints $160 at 2 p.m. and 9 p.m. The article also states 'Most sessions finish in four to six hours' — cited on Q4 as the only official duration statement found for these slates. Verdict unchanged: rows follow the flyer, conflict stands.",
    "sources": [
     "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
     "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
@@ -1632,7 +1676,18 @@
    "id": "F38",
    "severity": "unverified",
    "item": "Wynn daily tournament schedule and structures PDFs print no revision date; CDN asset version implies a July 2025 upload",
-   "detail": "The live Wynn poker page (read 2026-11-18) links the same two daily PDFs the repo cites (poker-daily-tournament-poster.pdf and Poker-All_Daily_Structures.pdf) under 'View Schedule' and 'Structures', and its daily summary matches the captured poster (Mon-Thu $10,000 guarantee at 12 p.m.; nightly $10,000 at 6 p.m.; Friday $40,000 NLH Rebuy). That supports the links being current. Neither PDF prints an effective date, so the 2026 validity of the fees and times is supported by the live link, not by the document itself. Confirm at the room before paying.",
+   "detail": "The live Wynn poker page (read 2026-11-18) links the same two daily PDFs the repo cites (poker-daily-tournament-poster.pdf and Poker-All_Daily_Structures.pdf) under 'View Schedule' and 'Structures', and its daily summary matches the captured poster (Mon-Thu $10,000 guarantee at 12 p.m.; nightly $10,000 at 6 p.m.; Friday $40,000 NLH Rebuy). That supports the links being current. Neither PDF prints an effective date, so the 2026 validity of the fees and times is supported by the live link, not by the document itself. Confirm at the room before paying. Re-read 2026-11-19 (arena/1257a37f-poker4): the live page links the same two daily PDFs at the same CDN asset versions (v1752011166 poster / v1752011191 structures); neither PDF prints a revision date. Verdict unchanged.",
+   "sources": [
+    "https://wynnlasvegas.com/casino/poker",
+    "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf",
+    "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf"
+   ]
+  },
+  {
+   "id": "F39",
+   "severity": "conflicting-official-values",
+   "item": "Wynn's own poker page contradicts itself: weekly guarantee totals and which days the dailies run",
+   "detail": "Read live 2026-11-19 from https://wynnlasvegas.com/casino/poker. (1) Weekly guarantee: the daily section says the twice-daily slate offers 'a total of $200,000 in guaranteed prize pools weekly' — which matches the poster's arithmetic (Mon–Thu $10K + Fri $40K rebuy + Sat $25K + Sun $25K + nightly $10K × 7 = $200K) — while the FAQ on the same page says the dailies 'feature $95,000 per week in guaranteed prize pools'. (2) Days run: the FAQ says 'daily tournaments run each day'; the official structures PDF says the noon event 'will be offered Monday-Thursday and may be suspended'; the daily section says the schedule 'will be suspended during each Wynn Signature, Wynn Millions, and Classic tournament series'. Three inconsistent statements on one official page. Policy: the rows follow the poster PDF (the schedule document of record) and show its arithmetic only; the FAQ figures are not used as values. Whether the dailies run at all during the WPT World Championship (2026-11-27 – 2026-12-21) remains unestablished (F24).",
    "sources": [
     "https://wynnlasvegas.com/casino/poker",
     "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf",
