@@ -1961,3 +1961,41 @@ Irregularities: none new; all known irregularities are published on the Flagged 
 - Session complete. No outstanding scope for `arena/744a4a3b-poker4`.
 
 
+
+---
+
+## Session `arena/8c99a4d7-poker4` (this session) — value-level audit + quote repair + integration
+
+- **Session ID:** `arena/8c99a4d7-poker4` · **Branch:** `arena/8c99a4d7-poker4` (from `main` @ `0bf9a5c`)
+- **Started:** 2026-11-19 UTC · **Role:** task session **and** final integration session — no other session holds an open claim (checked `gh pr list`: 0 open PRs; the last recorded session, `a745c8f4`, closed with PR #97).
+- **Scope claimed:**
+  1. **V1 — value-level audit tool** (`scripts/audit_values.py`, new): re-read every official capture committed in `data/raw/` plus the committed verbatim transcriptions of the Venetian structure sheets, and look for the literal evidence behind each published number and each quoted rule sentence. This is the check the structural gate (`scripts/verify_root.py`) cannot do — that one proves a row *has* a source, this one proves the value *came from* it.
+  2. **V2 — quote repair** (`tools/room_extract.py`, `tools/sync_official_sources.py`): fix the two misquotes the audit found (see below) and make the excerpt extractor emit whole sentences instead of character windows.
+  3. **V3 — audit gate + publication**: run the audit in CI, publish its result on the review page and on the Flagged for Review page.
+  4. **V4 — integration**: regenerate the shared outputs, re-run every gate, PR → `main`, merge, confirm the GitHub Pages deploy, record the result here.
+- **File scope:** `scripts/audit_values.py` (new), `scripts/verify_root.py`, `tools/room_extract.py`, `tools/sync_official_sources.py`, `scripts/integrate_data.py`, `data/audit-values.json` (new) + the regenerated `data/*.json`, the root pages (`index.html`, `tournaments.html`, `plan.html`, `hotels.html`, `calculator.html`, `review.html`, `flagged.html`, `questions.html`, `suggestions.html`, `venues/*.html`), `app.js`, `site.css`, `.github/workflows/site-verify.yml`, `README.md`, `COORDINATION.md` (log only). Parallel subsites (`60fb62da/`, `c07371e3/`, `df41f5c6/`, `strip/`, `verified/`, `v2/`, `poker4/`, `planner/`, `site/`, `build/`) are **not** touched.
+
+### Claim log
+| ID | Task | Status | Owner | File scope | Sources / verification | Irregularities |
+|----|------|--------|-------|------------|------------------------|----------------|
+| V1 | Value-level audit: every published number + quoted rule sentence matched against the committed official captures | in progress | arena/8c99a4d7-poker4 | `scripts/audit_values.py`, `data/audit-values.json` | `data/raw/*.txt` (19 hashed captures), `research/raw/venetian_dse_iv_structures.md`, `notes/structure_rules.md`, `data/75757cc1/structure_reads.tsv`, `data/08f07d1d/structure_rules.json` | see V2 |
+| V2 | Repair the misquotes the audit found; make excerpts sentence-bounded | in progress | arena/8c99a4d7-poker4 | `tools/room_extract.py`, `tools/sync_official_sources.py` | the committed captures named above | V2a, V2b (below) |
+| V3 | Publish the audit result on the site; add it as a CI gate | unclaimed | arena/8c99a4d7-poker4 | `review.html`, `flagged.html`, `scripts/verify_root.py`, `.github/workflows/site-verify.yml` | — | — |
+| V4 | Integration: regenerate, re-gate, PR → main, merge, Pages deploy, record result | unclaimed | arena/8c99a4d7-poker4 | whole branch | — | — |
+
+### Irregularities found by the value-level audit (2026-11-19)
+
+- **V2a — the Wynn WPT fee quote is misquoted (243 published rows).** The site prints
+  `Entry Fee: Entry Fee: $600 Buy-in = $510 (Tournament Prize Pool) + $65 (Tournament Fee) + $25 (Poker Staff Service Charge) Registration:`
+  The official PDF prints `Entry Fee: $600 Buy-in = $510 (Tournament Prize Pool) + $65 (Tournament Fee) + $25 (Poker Staff Service Charge)`
+  — the label is printed **once**, and there is no `Registration:` inside the fee sentence.
+  Cause: `tools/room_extract.py` builds the quote as `"Entry Fee: " + m.group(0)` where the regex
+  match already starts with `Entry Fee:`, and the match runs on to the next `Registration:` header.
+  The value (total, pool, fee, staff charge) is right; the *quote* is not verbatim.
+- **V2b — the Venetian Valuetown re-entry quote is a mid-word character window (2 rows: `V18-2026-11-28-5:10pm`, `V58-2026-12-19-5:10pm`).**
+  The site prints `ker cage window and show confirmation to The Venetian Poker Room cage team member when registering for the event. All subsequent buy in's after the initial buy in will be $200. 8. This event pays 12.5% of the field 9. Ante will come from the Big Blind O`
+  — it starts in the middle of a word and stops in the middle of a word.
+  Cause: `tools/sync_official_sources.py` takes a ±120-character window around the match instead of a sentence.
+  The committed verbatim transcription of the same sheet reads
+  `"PokerAtlas PRO players will receive a twenty ($20) rake discount on their initial $200 buy in only ... All subsequent buy in's after the initial buy in will be $200."`.
+- **V2c — the 37 Venetian structure sheets are audited but their raw text is not committed.** `data/structure-audit.json` records each sheet's PDF SHA-256 and the fields read from it, but `data/raw/` holds no copy of those 37 PDFs' text, so a quote taken from one of them cannot be re-verified inside this repository against a hashed capture. The committed verbatim transcriptions (`notes/structure_rules.md`, `data/75757cc1/structure_reads.tsv`, `data/08f07d1d/structure_rules.json`, `research/raw/venetian_dse_iv_structures.md`) cover 11 sheets in full sentence form and all 37 in condensed form. Recorded as a provenance irregularity; the daily `url-check` job now captures those sheets' text into `data/raw/` so the gap closes itself.
