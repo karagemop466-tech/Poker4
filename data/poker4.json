@@ -788,6 +788,10 @@
      "observed_on": "2026-11-19",
      "label": "Official TV Ad Special offer price (no resort fee under this offer)",
      "amount_usd": 69,
+     "resort_fee_override_usd": 0,
+     "resort_fee_override_excerpt": "$69* NIGHT + NO RESORT FEE",
+     "resort_fee_override_source": "https://treasureisland.com/hotel/deluxe-rooms",
+     "resort_fee_override_note": "Only for My TI Guestbook members booking the exclusive TV Ad Special offer, or qualified Treasury Players Club casino members; confirm eligibility and rate-specific terms in the booking engine.",
      "qualifier": "'$69* NIGHT + NO RESORT FEE' offer printed on the official Deluxe Rooms page (read 2026-11-19, same page that prints the $49.95 + tax mandatory resort fee). Printed conditions: resort fees are optional only for My TI Guestbook members booking the exclusive TV Ad Special offer, or qualified Treasury Players Club casino members; bookings go to all.accor.com. Asterisked price — not a dated quote for a chosen stay, and the page warns fee price, tax and amenities can change without notice.",
      "source": "https://treasureisland.com/hotel/deluxe-rooms",
      "quote_status": "advertised offer price — conditions apply; not a dated quote",
@@ -1802,7 +1806,7 @@
    "id": "F44",
    "severity": "conflicting-official-values",
    "item": "Treasure Island's two official pages disagree on whether the $49.95 resort fee includes tax",
-   "detail": "The Tower Suites page prints 'Total Resort Fee Plus Tax $49.95' collected at check-out — the tax included in the $49.95 — while the Deluxe Rooms page prints 'The $49.95 + tax daily resort fee at TI Las Vegas' — the tax added on top. The Treasure Island row follows the Deluxe Rooms wording (fee $49.95 before tax, 13.38% applied to room rate and fee → $123.53 true cost/night from the advertised \"From $ 59\" price); under the Tower Suites wording the same night computes to $116.84 ($59 × 1.1338 + $49.95). Both readings are published here; the row is not silently switched. Confirm with the property before paying. Found by the line-by-line audit (tools/audit_lines_59518413.py), which also caught that the row's dated rate log let the fee re-read double as a room rate (a '$49.95 room rate' TI never prints); the entry is now tagged fee_only and the printed 'From $ 59' price carries the rate.",
+   "detail": "The Tower Suites page prints 'Total Resort Fee Plus Tax $49.95' collected at check-out — the tax included in the $49.95 — while the Deluxe Rooms page prints 'The $49.95 + tax daily resort fee at TI Las Vegas' — the tax added on top. The Treasure Island row follows the Deluxe Rooms wording (fee $49.95 before tax, 13.38% applied to room rate and fee → $123.53 from the advertised \"From $ 59\" price); under the Tower Suites wording the same night computes to $116.84 ($59 × 1.1338 + $49.95). The official Deluxe Rooms page also prints a separate 2026-11-19 offer, \"$69* NIGHT + NO RESORT FEE,\" for qualifying My TI Guestbook / Treasury Players Club members. That is a conditional advertised offer, not a dated quote; the $123.53 figure describes only the regular $59-from-rate scenario, not that fee-waived offer or an actual stay total. The calculator now honors the offer's explicit $0 resort fee and shows its eligibility note. Both fee-tax readings remain published; confirm a like-for-like checkout total with the property before paying. Found by the line-by-line audit (tools/audit_lines_59518413.py), which also caught that the row's dated rate log let the fee re-read double as a room rate (a '$49.95 room rate' TI never prints); the entry is now tagged fee_only and the printed 'From $ 59' price carries the rate.",
    "sources": [
     "https://treasureisland.com/hotel/tower-suite",
     "https://treasureisland.com/hotel/deluxe-rooms"
