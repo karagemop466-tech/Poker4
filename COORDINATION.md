@@ -1956,9 +1956,8 @@ Irregularities: none new; all known irregularities are published on the Flagged 
 
 ### PR + deploy result
 
-- **PR [#104](https://github.com/karagemop466-tech/Poker4/pull/104)** ("744a4a3b integration: final verification + Pages deploy record") — created from `arena/744a4a3b-poker4`, base `main`; branch rebased onto current `main` and pushed so the PR is mergeable.
-- **Merge result:** pending `gh pr merge 104 --merge`.
-- **Pages deploy:** pending — `Deploy static dashboard to GitHub Pages` run on the merge commit; live site `https://karagemop466-tech.github.io/Poker4/` deployed from `main`.
-- Session complete once PR #104 is merged and Pages redeploys. No outstanding scope for `arena/744a4a3b-poker4` beyond recording the result below.
+- **PR [#104](https://github.com/karagemop466-tech/Poker4/pull/104)** ("744a4a3b integration: final verification + Pages deploy record") merged into `main` via `gh pr merge 104 --merge`, merge commit `8d56cb8ba02fa040cd2ce7c0b07578483dcb93e1`. Head at merge contained `origin/main`.
+- **Pages deploy:** SUCCESS — `Deploy static dashboard to GitHub Pages` run 44468543431 on commit `8d56cb8b`, concluded `success` (2026-11-19T05:56:24Z). Live site `https://karagemop466-tech.github.io/Poker4/` deployed from `main`; Pages status `built`, source `main:/`.
+- Session complete. No outstanding scope for `arena/744a4a3b-poker4`.
 
 
