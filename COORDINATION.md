@@ -2310,3 +2310,13 @@ F1 entry-policy silence (0 of 253 confirmed single-entry) · F4 no dated checkou
 ### Rebase conflict resolution (fifth) — arena/d6e0b78b-poker4 (2026-11-19)
 
 - After PR #117 merged, `origin/main` advanced from `acf5fc8` to `a60cdb9`, then to `93621ce` via the scheduled official-source sync. The feature branch was fast-forwarded to that latest main before recording completion, and all local gates were rerun against the new snapshot. No additional conflicts or source-data edits were made.
+
+## Session `arena/8e5df9fb-poker4` — claim (2026-11-19)
+
+- Branch: `arena/8e5df9fb-poker4`, active; branch base and current `main` snapshot at claim: `2f9880c4d168ee59ffe2016ff3d0a5ab12d1fb6f`.
+- Board review at the initial checkout showed the completed `arena/1257a37f-poker4` round. During the required rebase, `origin/main` advanced to `caa06b6` with PRs #112–#114; in particular, the completed `arena/61daf94a-poker4` round touched `data/poker4.json` (Encore/TI hotel fields) and `scripts/integrate_data.py` ($0 parking only). Those upstream changes were kept intact; this session’s narrower scope is the rate-specific calculator fee behavior. Work stays on this Arena-managed branch; no other branch or worktree is created.
+- **Claim C1 (in progress):** make the trip-cost calculator bind resort fees to the selected property's official fee terms and honor explicit rate-specific fee waivers; surface the offer/source conditions and add a verifier so future rate entries cannot silently calculate with the wrong fee.
+- File scope: `COORDINATION.md` (this record), `data/poker4.json` (structured fee-override provenance on the 2026-11-19 TI offer already in the dated log), `scripts/integrate_data.py` (generated calculator form/fee options), `app.js` (fee binding + calculation), `scripts/verify_root.py` (contract check), and generated `calculator.html` / `hotels.html` if regenerated output changes. No other session-owned site/data folder is in scope.
+- Initial irregularity observed in committed material: the TI rate log records the official `$69* NIGHT + NO RESORT FEE` TV Ad Special and its eligibility conditions (2026-11-19, `https://treasureisland.com/hotel/deluxe-rooms`), while the calculator's fee selector can still add the general `$49.95` fee to any selected rate; `app.js` does not model an offer-specific fee. The $69 is an advertised offer, not a dated booking quote; no trip-specific total will be claimed.
+
+- Conflict-resolution log (2026-11-19): `git pull --rebase origin main` advanced from `2f9880c` to `caa06b6` and conflicted only at the appended `COORDINATION.md` tail. Resolution retains the complete upstream #112–#114 records and this session’s claim; no upstream text or file changes were discarded.
