@@ -2115,11 +2115,13 @@ All flagged on `flagged.html` and carried forward; none block launch: F1 entry-p
 
 ### PR + deploy result
 
-pending (task Z3)
+- **PR [#103](https://github.com/karagemop466-tech/Poker4/pull/103)** ("arena/a059b252-poker4 integration: line-by-line verification + Pages deploy record") merged into `main` via `gh pr merge 103 --merge`, merge commit `327d2ca2bee4512206829200fa6c6aab2024bcec`. Head at merge contained `origin/main`.
+- **Pages deploy:** SUCCESS — `Deploy static dashboard to GitHub Pages` run 44469486920 on commit `327d2ca`, concluded `success` (2026-11-19T06:04:15Z). Pages status `built`, source `main:/`, live site `https://karagemop466-tech.github.io/Poker4/` deployed from `main`.
+- Session complete. No outstanding scope for `arena/a059b252-poker4`.
 
 ## Session arena/59518413-poker4 — line-by-line review, data repairs, integration (2026-11-19)
 
-- Session ID: `arena/59518413-poker4`; branch `arena/59518413-poker4`, branched from `main` @ `0bf9a5c6`. All work on this branch only. `main` advanced during the session (PRs #103 `arena/a059b252-poker4` and #107 `arena/8c99a4d7-poker4`, plus the scheduled sync `eeb5dc8` 2026-11-19T06:02Z); `origin/main` was merged in (commit below) with every session's COORDINATION.md sections kept verbatim and nothing discarded. Note for the board: a059b252's task **Z3 is in fact done** — its PR is https://github.com/karagemop466-tech/Poker4/pull/103 (merged `327d2ca`, 2026-11-19); its "pending" line above predates that merge.
+- Session ID: `arena/59518413-poker4`; branch `arena/59518413-poker4`, branched from `main` @ `0bf9a5c6`. All work on this branch only. `main` advanced during the session (PRs #103 `arena/a059b252-poker4` and #107 `arena/8c99a4d7-poker4`, plus the scheduled sync `eeb5dc8` 2026-11-19T06:02Z); `origin/main` was merged in (commit below) with every session's COORDINATION.md sections kept verbatim and nothing discarded. The board record for a059b252's Z3 (PR #103 merged `327d2ca`, Pages deploy success) sits directly above.
 - Role claimed: full brief sweep — repo review line by line, verification against the committed official captures, defect repair, and final integration (PR → main, merge, Pages deploy confirm, record below). File scope: `data/poker4.json`, `data/tracked-sources.json`, `data/structure-audit.json` (three sheets only), `scripts/integrate_data.py` (fee-rule block), `tools/sync_official_sources.py` (fee extraction), `tools/audit_lines_59518413.py` + `data/verify/59518413-line-audit.md` (new), regenerated root pages / `venues/*.html` / `data/site-events.json` / `data/audit-values.json`, and this board. Parallel subsites (`60fb62da/`, `c07371e3/`, `df41f5c6/`, `strip/`, `verified/`, `v2/`, `poker4/`, `planner/`, `site/`, `build/`, `archive/`) untouched.
 
 | ID | Task | Status | Owner | Findings / result |
