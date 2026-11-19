@@ -1,4 +1,4 @@
-<!-- captured 2026-11-19T06:01:57Z from https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_32.pdf (sha256 3187c282dab371da436172d0d43fea84e151f8426a91b470cec63ab57eeb4b99) -->
+<!-- captured 2026-11-19T06:18:57Z from https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_32.pdf (sha256 3187c282dab371da436172d0d43fea84e151f8426a91b470cec63ab57eeb4b99) -->
  
  
 $800 NLH LIPS Ladies (2Day) 
