@@ -46,8 +46,11 @@
   }
 
   function activePanelRows() {
+    /* The tournaments page stacks its event tables in tabs, so only the active
+       tab's rows are filterable there. A page with a single table (the comparison
+       table) has no tab panel, and all of its rows are filterable. */
     var panel = $(".tabpanel.active");
-    return $$(panel ? "tr.ev-row" : ".nope", panel || document);
+    return $$("tr.ev-row", panel || document);
   }
 
   var WD = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
