@@ -321,28 +321,81 @@
       return hotels[0];
     }
     function fillRates(h) {
-      var keep = rSel.value;
-      rSel.innerHTML = "<option value=''>no official dated rate for this property</option>";
-      // a rate-log line is only offered as a room rate if it IS one: a resort-fee
-      // re-read (kind "fee_only") or a "value not published" line is an observation,
-      // and pricing a stay off it would invent a rate the property never printed.
+      // A property change must not carry a same-priced rate/offer across hotels.
+      // Start empty so only an explicitly selected observation can activate its fee terms.
+      rSel.innerHTML = "<option value=''>select a rate-log observation</option>";
+      // A rate-log observation may be an advertised endpoint rather than a dated quote.
+      // A fee-only re-read or a missing value is never offered as a room rate.
       var RATE_KINDS = { advertised_rate: 1, dated_rate: 1, quoted_rate: 1, all_in_per_night: 1 };
-      (h.rate_log || []).forEach(function (e, i) {
+      (h.rate_log || []).forEach(function (e) {
         if (!e.amount_usd) return;
         var kind = e.kind || "advertised_rate";
         if (!RATE_KINDS[kind]) return;
         var allIn = kind === "all_in_per_night";
         var o = document.createElement("option");
         o.value = String(e.amount_usd);
-        o.textContent = e.amount_usd + " USD · " + (e.observed_on || "date not stated") + " · " +
+        o.textContent = e.amount_usd + " USD · observed " + (e.observed_on || "date not stated") + " · " +
           (allIn ? "ALL-IN per night (fee + tax already inside) · " : "") +
           String(e.label || e.qualifier || "").slice(0, 58);
         o.setAttribute("data-note", String(e.qualifier || ""));
         o.setAttribute("data-src", e.source || "");
         if (allIn) o.setAttribute("data-allin", "1");
+        if (e.resort_fee_override_usd !== undefined && e.resort_fee_override_usd !== null) {
+          o.setAttribute("data-fee-override", String(e.resort_fee_override_usd));
+          o.setAttribute("data-fee-override-label", e.resort_fee_override_usd === 0
+            ? "Selected official offer: resort fee waived ($0)" : "Selected official offer: resort fee " + e.resort_fee_override_usd + " USD");
+          o.setAttribute("data-fee-override-note", e.resort_fee_override_note || "Rate-specific resort fee applies.");
+          o.setAttribute("data-fee-override-excerpt", e.resort_fee_override_excerpt || "");
+          o.setAttribute("data-fee-override-source", e.resort_fee_override_source || e.source || "");
+        }
         rSel.appendChild(o);
       });
-      rSel.value = keep && rSel.querySelector("option[value='" + keep + "']") ? keep : "";
+      rSel.value = "";
+    }
+
+    function syncFee(h) {
+      var note = $("#calc-fee-note");
+      var generated = fSel.querySelector("option[data-rate-fee-override='1']");
+      if (generated) generated.parentNode.removeChild(generated);
+      var rateOption = rSel.options[rSel.selectedIndex];
+      if (rateOption && rateOption.hasAttribute("data-fee-override")) {
+        var amount = rateOption.getAttribute("data-fee-override");
+        var special = document.createElement("option");
+        special.value = "__rate_fee_override__";
+        special.setAttribute("data-fee", amount);
+        special.setAttribute("data-source", rateOption.getAttribute("data-fee-override-source") || "");
+        special.setAttribute("data-rate-fee-override", "1");
+        special.textContent = rateOption.getAttribute("data-fee-override-label") || ("Rate-specific resort fee: " + amount + " USD");
+        fSel.appendChild(special);
+        fSel.value = special.value;
+        fSel.disabled = true;
+        if (note) {
+          var condition = rateOption.getAttribute("data-fee-override-note") || "Rate-specific fee terms apply.";
+          var excerpt = rateOption.getAttribute("data-fee-override-excerpt") || "";
+          var source = special.getAttribute("data-source");
+          note.innerHTML = esc(condition + (excerpt ? " Official offer wording: “" + excerpt + "”." : "")) +
+            (source ? " <a href='" + esc(source) + "' target='_blank' rel='noopener'>official offer ↗</a>" : "");
+        }
+        return;
+      }
+      var matchingFee = null;
+      for (var i = 0; i < fSel.options.length; i++) {
+        if (fSel.options[i].getAttribute("data-hotel-id") === h.id) {
+          matchingFee = fSel.options[i];
+          break;
+        }
+      }
+      fSel.value = matchingFee ? matchingFee.value : "";
+      fSel.disabled = true;
+      if (note) {
+        if (matchingFee) {
+          var feeSource = matchingFee.getAttribute("data-source");
+          note.innerHTML = "Using this property's published resort fee." +
+            (feeSource ? " <a href='" + esc(feeSource) + "' target='_blank' rel='noopener'>official fee terms ↗</a>." : "");
+        } else {
+          note.textContent = "No mandatory resort-fee amount is confirmed for this property; its hotel total remains incomplete.";
+        }
+      }
     }
     function fillParking(h) {
       var pk = h.parking || {};
@@ -365,7 +418,13 @@
 
     function recalc() {
       var h = hotelFor(hSel.value);
-      var rate = num(rSel.value), fee = num(fSel.options[fSel.selectedIndex] ? fSel.options[fSel.selectedIndex].getAttribute("data-fee") : "");
+      var rOpt = rSel.options[rSel.selectedIndex];
+      var feeOpt = fSel.options[fSel.selectedIndex];
+      var rate = num(rSel.value);
+      var rateFeeOverride = rOpt && rOpt.hasAttribute("data-fee-override")
+        ? num(rOpt.getAttribute("data-fee-override")) : null;
+      var fee = rateFeeOverride !== null
+        ? rateFeeOverride : num(feeOpt ? feeOpt.getAttribute("data-fee") : "");
       var park = num(pSel.value), nights = num(nIn.value) || 0, rooms = num(rIn.value) || 1;
       var guests = num(gIn && gIn.value) || 2;
       var entries = 0, count = 0;
@@ -373,7 +432,6 @@
         if (c.checked) { entries += num(c.getAttribute("data-cost")) || 0; count++; }
       });
       $("#t-entries").textContent = count ? money(entries) + " (" + count + " entr" + (count === 1 ? "y" : "ies") + ")" : "no events selected";
-      var rOpt = rSel.options[rSel.selectedIndex];
       var allIn = !!(rOpt && rOpt.getAttribute("data-allin") === "1");
       var night = allIn && rate != null ? rate
         : (rate != null && fee != null) ? Math.round((rate + fee) * (1 + TAX) * 100) / 100 : null;
@@ -383,9 +441,12 @@
         if (rate == null) notes.push("the property publishes room rates only inside its booking calendar for specific dates — pick a dated rate or use the booking link");
         if (fee == null) notes.push("the mandatory resort fee is not confirmed for this property (its official fee page is unreachable or contradicts itself)");
       } else {
+        var feeDescription = rateFeeOverride !== null
+          ? (rateFeeOverride === 0 ? "$0 resort fee (waived under this offer)" : money(rateFeeOverride) + " rate-specific resort fee")
+          : money(fee) + " resort fee";
         $("#t-night").textContent = allIn
           ? money(night) + " (all-in per night from the dated booking-engine capture — resort fee and room tax are already inside it)"
-          : money(night) + " (" + money(rate) + " rate + " + money(fee) + " fee, ×1.1338 room tax)";
+          : money(night) + " (" + money(rate) + " rate + " + feeDescription + ", ×1.1338 room tax)";
       }
       var occ = h.occupancy_charge && h.occupancy_charge.amount_usd;
       var occNight = (guests > 2 && occ) ? (guests - 2) * occ * (1 + TAX) : 0;
@@ -427,11 +488,15 @@
       var book = $("#calc-book");
       if (book && h.booking_link) { book.href = h.booking_link; book.target = "_blank"; book.rel = "noopener"; }
     }
-    hSel.addEventListener("change", function () { var h = hotelFor(hSel.value); fillRates(h); fillParking(h); recalc(); });
+    hSel.addEventListener("change", function () {
+      var h = hotelFor(hSel.value);
+      fillRates(h); fillParking(h); syncFee(h); recalc();
+    });
+    rSel.addEventListener("change", function () { syncFee(hotelFor(hSel.value)); });
     [rSel, fSel, pSel, nIn, rIn, aIn, gIn].forEach(function (el) {
       if (el) { el.addEventListener("input", recalc); el.addEventListener("change", recalc); }
     });
     document.addEventListener("change", function (e) { if (e.target.classList.contains("ev-pick")) recalc(); });
-    fillRates(hotelFor(hSel.value)); fillParking(hotelFor(hSel.value)); recalc();
+    fillRates(hotelFor(hSel.value)); fillParking(hotelFor(hSel.value)); syncFee(hotelFor(hSel.value)); recalc();
   }
 })();

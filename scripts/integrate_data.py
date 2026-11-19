@@ -2372,21 +2372,22 @@ that are not confirmed. Anything in the fifth column is a question to ask before
 # ------------------------------------------------------------------- calculator
 def page_calculator():
     hotel_opts = "".join(f"<option value='{E(h['id'])}'>{E(h['property'])}{'' if (h.get('resort_fee') or {}).get('amount_usd') else ' — fee unconfirmed'}</option>" for h in CFG["hotels"])
-    fee_opts = "<option value=''>not confirmed — do not include</option>" + "".join(
-        f"<option value='{E(h['id'])}' data-fee='{(h.get('resort_fee') or {}).get('amount_usd') or ''}'>{E(h['property'])}: {money((h.get('resort_fee') or {}).get('amount_usd'))}</option>"
-        for h in CFG["hotels"] if (h.get("resort_fee") or {}).get("amount_usd"))
+    fee_opts = "<option value=''>not confirmed — hotel cost stays incomplete</option>" + "".join(
+        f"<option value='{E(h['id'])}' data-hotel-id='{E(h['id'])}' data-fee='{(h.get('resort_fee') or {}).get('amount_usd') if (h.get('resort_fee') or {}).get('amount_usd') is not None else ''}' data-source='{E((h.get('resort_fee') or {}).get('source') or '')}'>{E(h['property'])}: {money((h.get('resort_fee') or {}).get('amount_usd'))}</option>"
+        for h in CFG["hotels"] if (h.get("resort_fee") or {}).get("amount_usd") is not None)
     picks = "".join(
         f"<label class='pick'><input type='checkbox' class='ev-pick' data-cost='{e.get('buy_in_usd') or 0}' data-id='{E(e['id'])}'>"
         f"<span>{E(e['name'])}</span><em>{E(e.get('date') or e.get('printed_date') or 'date not printed')} · {money(e.get('buy_in_usd'))}</em></label>"
         for e in events if e.get("buy_in_usd") and not e.get("is_continuation"))
     return shell("", "Trip cost", f"""
 <section class="page-head"><h1>Estimated trip cost</h1>
-<p class="lede">Entries × total buy-in, plus nights × the true hotel cost. Every input carries a source link and a date, and the calculator will not add a number the property did not publish: leave a field on “not confirmed” and the hotel total reads <em>cannot compute</em> instead of guessing.</p></section>
+<p class="lede">Entries × total buy-in, plus nights × hotel cost per night. The fee is bound to the selected hotel's official terms, or to an explicit rate-specific waiver when the selected offer says so. A rate-log observation date is not a stay date: unless its quote status says otherwise, the math is an advertised-rate scenario, not a dated booking quote.</p></section>
 <section class="calc" id="calc"><div class="calc-grid">
 <div><h3>Hotel</h3>
 <label>Property <select id="calc-hotel">{hotel_opts}</select></label>
-<label>Dated room rate <select id="calc-rate"><option value="">no official dated rate for this property</option></select></label>
-<label>Mandatory resort fee <select id="calc-fee">{fee_opts}</select></label>
+<label>Published rate / offer <select id="calc-rate"><option value="">select a rate-log observation</option></select></label>
+<label>Mandatory resort fee (auto-selected) <select id="calc-fee" disabled>{fee_opts}</select></label>
+<p class="mini-note" id="calc-fee-note">The fee will follow the selected property's official terms and any explicit rate-specific waiver.</p>
 <label>Parking per night <select id="calc-park"><option value="">not confirmed</option></select></label>
 <label>Nights <input type="number" id="calc-nights" value="4" min="1" max="21"></label>
 <label>Rooms <input type="number" id="calc-rooms" value="1" min="1" max="6"></label>
@@ -2399,7 +2400,7 @@ def page_calculator():
 <div class="calc-out"><h3>Totals</h3>
 <dl id="calc-total"><dt>Entries</dt><dd id="t-entries">—</dd><dt>Hotel per night</dt><dd id="t-night">—</dd><dt>Hotel total</dt><dd id="t-hotel">—</dd><dt class="grand">Trip total</dt><dd class="grand" id="t-grand">—</dd></dl>
 <p id="calc-note" class="warn"></p>
-<p class="mini-note">Rates move constantly and the properties publish them only inside the booking calendar for specific dates, so a rate is never stored here — pick the dates and the calculator hands the query back to the property's own engine (only where that property publishes the link pattern). <a href="hotels.html" id="calc-book">The hotel's card lists its official booking link</a>.</p>
+<p class="mini-note">Official booking calendars are the authority for a dated checkout total. The rate log also preserves advertised endpoints and conditional offers; selecting one calculates only a transparent scenario, not a quote for your chosen dates. Enter an arrival date and occupancy to open the property's own calendar where a date-carrying official link is available. <a href="hotels.html" id="calc-book">The hotel's card lists its official booking link</a>.</p>
 <p class="mini-note">Worked example kept from the snapshot: {E(CFG['trip_example']['label'])} — {E(CFG['trip_example']['basis'])}</p>
 </div></div></section>
 """, "calculator.html", needs_data="calc")

@@ -182,6 +182,53 @@ for e in rate:
     if e.get("amount_usd") and not e.get("observed_on"):
         errors.append(f"rate-log: dated amount with no observation date: {e.get('label')}")
 
+# A rate-specific resort-fee override must be explicit, sourced, and carried through
+# to the calculator. This prevents a qualifying no-fee offer from silently inheriting
+# the property's usual resort fee (or an unconfirmed value from another hotel).
+poker4 = json.load(open(os.path.join(ROOT, "data/poker4.json"), encoding="utf-8"))
+fee_overrides = []
+for hotel in poker4.get("hotels", []):
+    for observation in hotel.get("rate_log", []):
+        offer_text = " ".join(str(observation.get(key) or "") for key in ("label", "qualifier", "quote_status"))
+        waiver_claim = re.search(
+            r"\bno resort fee\b|\bresort fees? (?:are )?(?:waived|optional)\b|\bwaived resort fees?\b",
+            offer_text, re.IGNORECASE)
+        if waiver_claim and "resort_fee_override_usd" not in observation:
+            errors.append(f"{hotel.get('id')}: rate-log offer claims no/waived resort fee but has no explicit fee override")
+        if "resort_fee_override_usd" not in observation:
+            continue
+        fee_overrides.append((hotel, observation))
+        override = observation.get("resort_fee_override_usd")
+        excerpt = observation.get("resort_fee_override_excerpt") or ""
+        source = observation.get("resort_fee_override_source") or observation.get("source")
+        printed = (observation.get("label") or "") + " " + (observation.get("qualifier") or "")
+        if not isinstance(override, (int, float)) or override < 0:
+            errors.append(f"{hotel.get('id')}: invalid rate-specific resort-fee override {override!r}")
+        if not excerpt or excerpt not in printed:
+            errors.append(f"{hotel.get('id')}: rate-specific fee override lacks its printed excerpt")
+        if source not in official_urls:
+            errors.append(f"{hotel.get('id')}: rate-specific fee override source is not in the official registry: {source}")
+        if not observation.get("amount_usd") or not observation.get("observed_on"):
+            errors.append(f"{hotel.get('id')}: rate-specific fee override is not attached to a dated, priced log entry")
+if fee_overrides:
+    app_js = open(os.path.join(ROOT, "app.js"), encoding="utf-8").read()
+    calc_html = open(os.path.join(ROOT, "calculator.html"), encoding="utf-8").read()
+    for contract in ("data-fee-override", "rateFeeOverride !== null", "syncFee",
+                     'fSel.options[i].getAttribute("data-hotel-id") === h.id', 'rSel.value = ""',
+                     "Math.round((rate + fee) * (1 + TAX) * 100) / 100"):
+        if contract not in app_js:
+            errors.append(f"calculator: rate-specific resort-fee contract missing from app.js: {contract}")
+    if 'data-hotel-id=' not in calc_html:
+        errors.append("calculator: published resort-fee options are not bound to hotel IDs")
+    if 'id="calc-fee-note"' not in calc_html:
+        errors.append("calculator: rate-specific fee/source note is missing")
+    if 'id="calc-fee" disabled' not in calc_html:
+        errors.append("calculator: resort fee is not locked to the selected hotel/rate")
+    for hotel, observation in fee_overrides:
+        embedded_override = '"resort_fee_override_usd":' + json.dumps(observation["resort_fee_override_usd"])
+        if embedded_override not in calc_html:
+            errors.append(f"{hotel.get('id')}: rate-specific fee override is missing from calculator data")
+
 for ev in site["events"]:
     if ev.get("single_entry_confirmed"):
         r = ev["rules"]["single_entry"]
