@@ -2173,3 +2173,16 @@ F1 entry-policy silence (0 of 253 confirmed single-entry) · F4 no dated checkou
   - **Post-merge runs on `main` (all success):** `Verify the published site` (44472816129) · `Poker4 site build + verification gate` (44472816230) · `Deploy static dashboard to GitHub Pages` (44472816148) · `Official source sync + change monitor` (44472816235, with the new audit step) · `pages build and deployment` (44472883639).
   - **Live site read after deploy** (https://karagemop466-tech.github.io/Poker4/): 253 events · 0 confirmed single-entry · 71 official sources · 135 dated rate-log lines · 12 measured walks · 13 suggestions · flagged page serving the merged flag set (F1–F46 with this round's F46). The 2026-11-19 re-check entries, the TI/ Venetian/ Wynn dated rate-log lines and the F46 (Wynn page self-contradiction) are all visible.
   - **Irregularities published on the Flagged for Review page (do not block):** F46 (Wynn self-contradiction), F4 re-checked (booking engines JS-only; blanks stand), F1 re-checked (0 confirmed single-entry), F24/F25/F38 re-checked (verdicts unchanged), WPT-08 fee split (pre-existing), S13 open decision (Wynn Signature Series Jan 2027 window).
+
+## Session arena/21df18f4-poker4 (branch `arena/21df18f4-poker4`, from `main` @ 2f9880c) — claim (2026-11-19)
+
+- Session ID: `arena/21df18f4-poker4`. No other session has an open claim (`gh pr list --state open` empty; `origin/main` == 2f9880c at claim time).
+- **Claim (written before task work, per protocol):** an audit-and-verify round on the live site. Scope: (a) re-run every existing gate on the base commit; (b) live re-read of a sample of the official URLs listed in `data/sources.json`/`data/tracked-sources.json` with the session's page fetcher, recorded in a dated TSV; (c) gap check of the brief's checklist against the live pages, with the gaps logged as questions/suggestions (not implemented unless the gate-verified data allows); (d) integration PR → main, Pages deploy check, record here.
+- File scope: `data/verify/21df18f4_*` (new), `COORDINATION.md` (log only), and only generated root pages if a gate requires regeneration. Does not touch other sessions' folders.
+
+| ID | Task | Status | Owner | File scope |
+|----|------|--------|-------|------------|
+| V1 | Baseline gates on 2f9880c (room_extract, integrate_data byte-stable, verify_root, verify, verify_markup, linkcheck, audit) | in progress | arena/21df18f4-poker4 | none (read-only) |
+| V2 | Live re-read of sampled official URLs; dated TSV of value-level results | unclaimed→in progress | arena/21df18f4-poker4 | data/verify/21df18f4_* |
+| V3 | Brief checklist gap audit → questions/suggestions log | unclaimed→in progress | arena/21df18f4-poker4 | COORDINATION.md |
+| V4 | Integration PR → main, merge, Pages deploy check, record | unclaimed | arena/21df18f4-poker4 | this branch, COORDINATION.md |
