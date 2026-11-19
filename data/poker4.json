@@ -182,7 +182,8 @@
      "amount_usd": 119,
      "qualifier": "'as low as' starting price for a suite at The Venetian or The Palazzo under the poker-rate offer; not assigned to one tower, not a dated quote",
      "source": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
-     "quote_status": "advertised starting point — not a rate for specific dates"
+     "quote_status": "advertised starting point — not a rate for specific dates",
+     "kind": "advertised_rate"
     },
     {
      "observed_on": "2026-11-16",
@@ -190,7 +191,8 @@
      "amount_usd": 209,
      "qualifier": "second 'as low as' endpoint on the same official page; same caveats",
      "source": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
-     "quote_status": "advertised starting point — not a rate for specific dates"
+     "quote_status": "advertised starting point — not a rate for specific dates",
+     "kind": "advertised_rate"
     },
     {
      "observed_on": "2026-11-17",
@@ -198,7 +200,8 @@
      "amount_usd": null,
      "qualifier": "requires a dated booking session (dates, occupancy, rate class); deliberately left blank rather than estimated",
      "source": "https://www.venetianlasvegas.com/book",
-     "quote_status": "not obtainable from a static page"
+     "quote_status": "not obtainable from a static page",
+     "kind": "not_published"
     },
     {
      "observed_on": "2026-11-16",
@@ -206,7 +209,8 @@
      "amount_usd": 512.2,
      "qualifier": "Official booking page capture for Dec 18-20, 2026 (2 nights, Luxury King, 2 adults): $1,024.39 all-in incl. $55 fee + 13.38% tax = $512.20/night; recorded from an earlier session's dated capture (data carried this figure before integration) - re-quote before booking",
      "source": "https://www.venetianlasvegas.com/book",
-     "quote_status": "dated snapshot - not a live quote; re-quote before booking"
+     "quote_status": "dated snapshot - not a live quote; re-quote before booking",
+     "kind": "booking_snapshot"
     }
    ],
    "qualification": "Keeping the poker rate requires qualifying play every night (six hours of live cash, or a buy-in of $300 or more per night) — a $200 event does not qualify. Failing that, the rate adjusts to the prevailing rate.",
@@ -283,7 +287,8 @@
      "amount_usd": null,
      "qualifier": "the official copy quotes $119 and $209 without assigning either endpoint to a named tower, so no Palazzo-specific rate is recorded",
      "source": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
-     "quote_status": "unassigned"
+     "quote_status": "unassigned",
+     "kind": "not_published"
     }
    ],
    "qualification": "Same play requirement as the Venetian tower.",
@@ -703,7 +708,18 @@
      "amount_usd": 49.95,
      "qualifier": "'Total Resort Fee Plus Tax $49.95' collected at check-out; free self & valet parking (tower-suite page re-read 2026-11-17; cross-checks the resort_fee already verified from the TI offers page)",
      "source": "https://treasureisland.com/hotel/tower-suite",
-     "quote_status": "verbatim sentence captured 2026-11-17"
+     "quote_status": "verbatim sentence captured 2026-11-17",
+     "kind": "fee_only"
+    },
+    {
+     "observed_on": "2026-11-18",
+     "label": "Advertised Deluxe Rooms \"From $ 59\" price",
+     "amount_usd": 59,
+     "kind": "advertised_rate",
+     "qualifier": "\"Deluxe Rooms From $ 59\" printed on the official Deluxe Rooms page (verbatim in the captured text); advertised starting price, not assigned to dates, room type details or occupancy",
+     "source": "https://treasureisland.com/hotel/deluxe-rooms",
+     "quote_status": "advertised 'from' price — not a rate for specific dates; re-quote before booking",
+     "excerpt": "Deluxe Rooms From $ 59"
     }
    ],
    "qualification": null,
@@ -1637,6 +1653,27 @@
     "https://wynnlasvegas.com/casino/poker",
     "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf",
     "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf"
+   ]
+  },
+  {
+   "id": "F39",
+   "severity": "conflicting-official-values",
+   "item": "Treasure Island's two official pages disagree on whether the $49.95 resort fee includes tax",
+   "detail": "The Tower Suites page prints 'Total Resort Fee Plus Tax $49.95' collected at check-out — the tax included in the $49.95 — while the Deluxe Rooms page prints 'The $49.95 + tax daily resort fee at TI Las Vegas' — the tax added on top. The Treasure Island row follows the Deluxe Rooms wording (fee $49.95 before tax, 13.38% applied to room rate and fee → $123.53 true cost/night from the advertised \"From $ 59\" price); under the Tower Suites wording the same night computes to $116.84 ($59 × 1.1338 + $49.95). Both readings are published here; the row is not silently switched. Confirm with the property before paying.",
+   "sources": [
+    "https://treasureisland.com/hotel/tower-suite",
+    "https://treasureisland.com/hotel/deluxe-rooms"
+   ]
+  },
+  {
+   "id": "F40",
+   "severity": "official-source-arithmetic",
+   "item": "Five Venetian rows (sheets 31/32/33) print a fee split that falls short of the printed buy-in ($600 = $80 + $510; $800 = $90 + $690)",
+   "detail": "Structure sheet 31 (Event 35, $600, 9 Dec), sheet 32 (Event 39, $800, 10–11 Dec, three start times) and sheet 33 (Event 43, $600, 11 Dec) each print the same two-clause fee sentence — e.g. '$ 80 of the $ 600 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $ 510 of every $ 600 Buy In.' — which accounts for only $590 of the printed $600 (and $780 of the printed $800). The rows V35-2026-12-09-10:10am, V39-2026-12-10-10:10am, V39-2026-12-11-10:00am, V39-2026-12-11-7:00pm and V43-2026-12-11-11:10am copy the printed numbers verbatim and are marked 'sums_to_buy_in: false'; nothing is adjusted to make them add up. Distinction from F22: here the total entry fee itself is printed twice and unambiguous ($600 / $800), so the guarantee ÷ entry-fee ratio stays computable and those rows remain ranked on that ratio, while the pool-per-entry figure (and anything divided by it) is flagged as built on a split that does not reconcile. Same class as F22 (Wynn $1,100 PLO sheet) and the Bellagio Saturday sheet (F16). Confirm with the room before paying.",
+   "sources": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_31.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_32.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_33.pdf"
    ]
   }
  ],

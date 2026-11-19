@@ -13,7 +13,8 @@
    "amount_usd": 119,
    "qualifier": "'as low as' starting price for a suite at The Venetian or The Palazzo under the poker-rate offer; not assigned to one tower, not a dated quote",
    "source": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
-   "quote_status": "advertised starting point \u2014 not a rate for specific dates"
+   "quote_status": "advertised starting point \u2014 not a rate for specific dates",
+   "kind": "advertised_rate"
   },
   {
    "hotel_id": "venetian",
@@ -24,7 +25,8 @@
    "amount_usd": 209,
    "qualifier": "second 'as low as' endpoint on the same official page; same caveats",
    "source": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
-   "quote_status": "advertised starting point \u2014 not a rate for specific dates"
+   "quote_status": "advertised starting point \u2014 not a rate for specific dates",
+   "kind": "advertised_rate"
   },
   {
    "hotel_id": "venetian",
@@ -35,7 +37,8 @@
    "amount_usd": null,
    "qualifier": "requires a dated booking session (dates, occupancy, rate class); deliberately left blank rather than estimated",
    "source": "https://www.venetianlasvegas.com/book",
-   "quote_status": "not obtainable from a static page"
+   "quote_status": "not obtainable from a static page",
+   "kind": "not_published"
   },
   {
    "hotel_id": "venetian",
@@ -46,7 +49,8 @@
    "amount_usd": 512.2,
    "qualifier": "Official booking page capture for Dec 18-20, 2026 (2 nights, Luxury King, 2 adults): $1,024.39 all-in incl. $55 fee + 13.38% tax = $512.20/night; recorded from an earlier session's dated capture (data carried this figure before integration) - re-quote before booking",
    "source": "https://www.venetianlasvegas.com/book",
-   "quote_status": "dated snapshot - not a live quote; re-quote before booking"
+   "quote_status": "dated snapshot - not a live quote; re-quote before booking",
+   "kind": "booking_snapshot"
   },
   {
    "hotel_id": "palazzo",
@@ -57,7 +61,8 @@
    "amount_usd": null,
    "qualifier": "the official copy quotes $119 and $209 without assigning either endpoint to a named tower, so no Palazzo-specific rate is recorded",
    "source": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
-   "quote_status": "unassigned"
+   "quote_status": "unassigned",
+   "kind": "not_published"
   },
   {
    "hotel_id": "ti",
@@ -68,7 +73,21 @@
    "amount_usd": 49.95,
    "qualifier": "'Total Resort Fee Plus Tax $49.95' collected at check-out; free self & valet parking (tower-suite page re-read 2026-11-17; cross-checks the resort_fee already verified from the TI offers page)",
    "source": "https://treasureisland.com/hotel/tower-suite",
-   "quote_status": "verbatim sentence captured 2026-11-17"
+   "quote_status": "verbatim sentence captured 2026-11-17",
+   "kind": "fee_only"
+  },
+  {
+   "hotel_id": "ti",
+   "property": "Treasure Island",
+   "seq": 2,
+   "observed_on": "2026-11-18",
+   "label": "Advertised Deluxe Rooms \"From $ 59\" price",
+   "amount_usd": 59,
+   "kind": "advertised_rate",
+   "qualifier": "\"Deluxe Rooms From $ 59\" printed on the official Deluxe Rooms page (verbatim in the captured text); advertised starting price, not assigned to dates, room type details or occupancy",
+   "source": "https://treasureisland.com/hotel/deluxe-rooms",
+   "quote_status": "advertised 'from' price \u2014 not a rate for specific dates; re-quote before booking",
+   "excerpt": "Deluxe Rooms From $ 59"
   },
   {
    "hotel_id": "venetian",

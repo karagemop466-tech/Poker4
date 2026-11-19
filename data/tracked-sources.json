@@ -551,6 +551,30 @@
    "key": "MGM_PARKING",
    "save_text_to": "data/raw/mgm-parking.txt",
    "extract_facts": true
+  },
+  {
+   "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt9cf95b0e60ec253e/6af491a3a9851d75c40be840/mgm-bellagio-poker-fridays-$600-nlh.pdf",
+   "label": "Bellagio structure sheet — Fridays $600 NLH (official PDF)",
+   "kind": "pdf",
+   "venue": "Bellagio",
+   "key": "B_SHEET_FRI",
+   "note": "Added 2026-11-19 by session arena/59518413-poker4 so the sheet behind the BELLAGIO-FRI row is re-checked on the daily schedule (it was cited by rows but missing from this registry). Host is MGM Resorts' own asset CDN (assets.contentstack.io), linked from bellagio.mgmresorts.com."
+  },
+  {
+   "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt6d47974bf5a7d9b6/6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf",
+   "label": "Bellagio structure sheet — Saturdays $1000 NLH (official PDF)",
+   "kind": "pdf",
+   "venue": "Bellagio",
+   "key": "B_SHEET_SAT",
+   "note": "Added 2026-11-19 by session arena/59518413-poker4 so the sheet behind the BELLAGIO-SAT row is re-checked on the daily schedule (it was cited by rows but missing from this registry)."
+  },
+  {
+   "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt07fcf1244a6da661/6af491a339e2b4f6b76a86ad/mgm-bellagio-poker-sundays-$400-horse.pdf",
+   "label": "Bellagio structure sheet — Sundays $400 HORSE (official PDF)",
+   "kind": "pdf",
+   "venue": "Bellagio",
+   "key": "B_SHEET_SUN",
+   "note": "Added 2026-11-19 by session arena/59518413-poker4 so the sheet behind the BELLAGIO-SUN row is re-checked on the daily schedule (it was cited by rows but missing from this registry)."
   }
  ]
 }

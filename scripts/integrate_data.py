@@ -426,6 +426,11 @@ for row in SCHED["rows"]:
                 "source": sheet_url,
                 "retrieved": sheet.get("retrieved"),
             }
+            # Printed-split reconciliation: some official sheets (31/32/33) print
+            # fee + pool that falls short of the printed buy-in. Record that the
+            # printed split does not add up (flag F40); never adjust either number.
+            if pool is not None and fee + pool != entry["buy_in_usd"]:
+                entry["rules"]["fee"]["sums_to_buy_in"] = False
         else:
             entry["rules"]["fee"] = {"status": "unverified", "value": None, "excerpt": None,
                                      "source": sheet_url, "retrieved": sheet.get("retrieved")}
@@ -452,6 +457,8 @@ for row in SCHED["rows"]:
         entry["flags"].append("spend-advantage format — excluded from the single-entry list")
     if entry.get("sheet_note"):
         entry["flags"].append("structure sheet ambiguous")
+    if entry["rules"]["fee"].get("sums_to_buy_in") is False:
+        entry["flags"].append("official sheet's own fee split does not add up — recorded verbatim, needs venue confirmation")
     if entry.get("rankable") is False and not entry.get("is_continuation"):
         entry["flags"].append("not ranked — entry fee or guarantee unconfirmed")
     events.append(entry)

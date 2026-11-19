@@ -7181,7 +7181,8 @@
      "value": "$80 of $600 withheld; $510 per entry to the prize pool",
      "excerpt": "$ 80 of the $ 600 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $ 510 of every $ 600 Buy In.",
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_31.pdf",
-     "retrieved": "2026-11-18"
+     "retrieved": "2026-11-18",
+     "sums_to_buy_in": false
     }
    },
    "sources": [
@@ -7207,7 +7208,8 @@
    "last_checked": "2026-11-18",
    "source_changed": false,
    "flags": [
-    "single-entry unverified"
+    "single-entry unverified",
+    "official sheet's own fee split does not add up \u2014 recorded verbatim, needs venue confirmation"
    ]
   },
   {
@@ -8076,7 +8078,8 @@
      "value": "$90 of $800 withheld; $690 per entry to the prize pool",
      "excerpt": "$ 90 of the $ 800 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $ 690 of every $ 800 Buy In.",
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_32.pdf",
-     "retrieved": "2026-11-18"
+     "retrieved": "2026-11-18",
+     "sums_to_buy_in": false
     }
    },
    "sources": [
@@ -8102,7 +8105,8 @@
    "last_checked": "2026-11-18",
    "source_changed": false,
    "flags": [
-    "single-entry unverified"
+    "single-entry unverified",
+    "official sheet's own fee split does not add up \u2014 recorded verbatim, needs venue confirmation"
    ]
   },
   {
@@ -8612,7 +8616,8 @@
      "value": "$90 of $800 withheld; $690 per entry to the prize pool",
      "excerpt": "$ 90 of the $ 800 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $ 690 of every $ 800 Buy In.",
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_32.pdf",
-     "retrieved": "2026-11-18"
+     "retrieved": "2026-11-18",
+     "sums_to_buy_in": false
     }
    },
    "sources": [
@@ -8637,7 +8642,8 @@
    "last_checked": "2026-11-18",
    "source_changed": false,
    "flags": [
-    "single-entry unverified"
+    "single-entry unverified",
+    "official sheet's own fee split does not add up \u2014 recorded verbatim, needs venue confirmation"
    ]
   },
   {
@@ -8763,7 +8769,8 @@
      "value": "$80 of $600 withheld; $510 per entry to the prize pool",
      "excerpt": "$ 80 of the $ 600 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $ 510 of every $ 600 Buy In.",
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_33.pdf",
-     "retrieved": "2026-11-18"
+     "retrieved": "2026-11-18",
+     "sums_to_buy_in": false
     }
    },
    "sources": [
@@ -8789,7 +8796,8 @@
    "last_checked": "2026-11-18",
    "source_changed": false,
    "flags": [
-    "single-entry unverified"
+    "single-entry unverified",
+    "official sheet's own fee split does not add up \u2014 recorded verbatim, needs venue confirmation"
    ]
   },
   {
@@ -9067,7 +9075,8 @@
      "value": "$90 of $800 withheld; $690 per entry to the prize pool",
      "excerpt": "$ 90 of the $ 800 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $ 690 of every $ 800 Buy In.",
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_32.pdf",
-     "retrieved": "2026-11-18"
+     "retrieved": "2026-11-18",
+     "sums_to_buy_in": false
     }
    },
    "sources": [
@@ -9092,7 +9101,8 @@
    "last_checked": "2026-11-18",
    "source_changed": false,
    "flags": [
-    "single-entry unverified"
+    "single-entry unverified",
+    "official sheet's own fee split does not add up \u2014 recorded verbatim, needs venue confirmation"
    ]
   },
   {
