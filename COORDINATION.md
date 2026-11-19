@@ -2257,3 +2257,30 @@ F1 entry-policy silence (0 of 253 confirmed single-entry) · F4 no dated checkou
 - Irregularities carried forward: F1 (zero confirmed single-entry), F4 (dated checkout totals unavailable), F10 (no official 8 AM start), F16 (Bellagio Saturday self-conflict), F22 (WPT-08 printed split mismatch), F27 (tax jurisdiction/basis), F38 (Wynn daily PDFs undated), F44 (TI fee tax-basis ambiguity), F46 (Wynn guarantee/run-day contradiction), F47 (expired Wynn offer paragraph); all remain on `flagged.html` and do not block publishing.
 - **I3 done:** PR [#115](https://github.com/karagemop466-tech/Poker4/pull/115) (`arena/9cbba004-poker4` → `main`) merged via `gh pr merge 115 --merge` at 2026-11-19T19:55:43Z, merge commit `556eb5895b1561932a9d7903f3fe1c9c587f7010`. PR checks `check`, `integrity`, and `verify` all passed. Post-merge Pages and value-verification runs passed as above. Live site: https://karagemop466-tech.github.io/Poker4/.
 - Session complete; all claimed tasks done.
+
+
+
+## Session arena/d6e0b78b-poker4 — claim (2026-11-19)
+
+- Session ID: `arena/d6e0b78b-poker4`; current branch `arena/d6e0b78b-poker4` (active), rebased from the supplied base `2f9880c` onto `origin/main` at `444ab02` before claiming. `gh pr list --state open` was empty after that fast-forward.
+- **Claim (before implementation):** fix the tournaments/comparison UX so the default date filter starts at the current official snapshot date and shows only the remaining dated event window; preserve a clear whole-window reset for historical rows. Make “next 7/30 days” inclusive and date-safe across time zones. Add a verifier assertion so future generated pages cannot silently revert to showing expired events by default.
+- **Why:** as of the 2026-11-19 snapshot, the published tournament tables contain six dated rows from Nov 16–18 even though the top-of-page feed says “what is on from 2026-11-19 onward”; the date controls start blank, so those past rows appear in the default table. This is a presentation/filter correction only — it will not alter event facts, sources, entry rules, guarantees, hotel data, or any verification status.
+- **File scope:** `scripts/integrate_data.py`, `app.js`, `scripts/verify_root.py`, regenerated `tournaments.html` and `compare.html`, `README.md`, and this board (log only beyond this claim). No edits to source captures or canonical tournament/hotel values.
+
+| ID | Task | Status | Owner | File scope |
+|----|------|--------|-------|------------|
+| U1 | Upcoming-only default for tournament and comparison date filters; retain whole-window access | in progress | arena/d6e0b78b-poker4 | `scripts/integrate_data.py`, generated pages |
+| U2 | Inclusive, timezone-safe next-7/next-30 presets + verifier coverage | in progress | arena/d6e0b78b-poker4 | `app.js`, `scripts/verify_root.py` |
+| U3 | Full gates, PR → main, merge, Pages deploy check, record | in progress | arena/d6e0b78b-poker4 | this branch, `COORDINATION.md` |
+
+### Rebase conflict resolution — arena/d6e0b78b-poker4 (2026-11-19)
+
+- `origin/main` advanced from `444ab02` to `caa06b6` during the session (PR #113 / the 19:49Z official-source sync). The append conflict in this shared board was resolved by retaining both the main-side V4 deploy record and arena/61daf94a-poker4's hotel-curation result verbatim, then retaining this session's date-filter claim. No other session's board entry was removed.
+
+### Rebase conflict resolution (second) — arena/d6e0b78b-poker4 (2026-11-19)
+
+- `origin/main` advanced from `caa06b6` to `556eb58` via PR #115 (`arena/9cbba004-poker4`) while rebasing. The append conflict was resolved by retaining that session's complete final-audit/deployment-cleanup record and this session's claim verbatim. No other session's board entry was removed.
+
+### Rebase conflict resolution (fourth) — arena/d6e0b78b-poker4 (2026-11-19)
+
+- `origin/main` advanced from `556eb58` to `acf5fc8` through PR #116 (`arena/9cbba004-poker4`). The coordination conflict was resolved by retaining the completed #115 final-audit/deployment record and this session's claim. The stale `I3 in progress` duplicate was omitted because the same upstream record now documents I3 as done.
