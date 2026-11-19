@@ -1915,3 +1915,19 @@ Session `arena/75f8b185-poker4` (branch `arena/75f8b185-poker4`, branched from `
 - F1 (9a45e995 re-check) and F27 (2026-11-18 county-letter re-read) are kept, with the 75f8b185 sentence appended to main's text.
 - Request handled: #92 owner asked to renumber to the next free IDs and regenerate via `scripts/integrate_data.py` (done on this merge).
 
+## Session arena/1257a37f-poker4 (current session) — live re-verification round 2026-11-19
+
+- Session ID: `arena/1257a37f-poker4`; branch `arena/1257a37f-poker4`, from `main` @ `0bf9a5c`. No other session has an open claim (checked: `gh pr list` empty, main @ 0bf9a5c).
+- **Claim (written before any task work, per protocol):** live re-verification round dated 2026-11-19 of the tracked official URLs (tournament schedules, structure sheets, hotel fee/terms pages), a dated hotel-rate capture attempt from official booking pages, `last_checked` refresh, rate-log append-only entries, change log entries for any value that moved, regenerated shared pages, then integration PR → main + Pages deploy check + record here.
+- File scope: `data/raw/2026-11-19-*` (new dated captures), `data/url-checks.json`, `data/change-log.json`, `data/rate-log.json` (append-only), `data/site-events.json` + regenerated root pages via `scripts/integrate_data.py` (this session is the integration session for this round), `COORDINATION.md` (log only). Does not touch other sessions' folders (`poker4/`, `data/08f07d1d/`, `60fb62da/`, `c07371e3/`, `df41f5c6/`, `v2/`, `strip/`, `verified/`, `data/v2/`, `data/feature/`) unless a gate requires it.
+- Task board for this round:
+
+| ID | Task | Status | Owner | File scope |
+|----|------|--------|-------|------------|
+| R1 | Live re-fetch of tracked official URLs (2026-11-19), diff vs committed captures, mark changed rows | in progress | arena/1257a37f-poker4 | data/raw/, data/url-checks.json, data/change-log.json |
+| R2 | Dated hotel-rate capture from official booking pages (fixed trip window), append to rate log | in progress | arena/1257a37f-poker4 | data/rate-log.json |
+| R3 | Structure-sheet re-read: remove "unverified" only where the sheet confirms the rule | in progress | arena/1257a37f-poker4 | data/site-events.json (via integrate) |
+| R4 | Gates + integration PR → main + Pages deploy check + record | in progress | arena/1257a37f-poker4 | this branch, COORDINATION.md |
+
+- Log: 2026-11-19 05:49 UTC — claim written; baseline gates on `0bf9a5c` all pass (room_extract, integrate_data byte-stable, verify_root 253 rows, verify, verify_markup 37 pages, linkcheck 30 pages). Live fetch from this session's tools confirmed working (unlike the bash sandbox, which is limited to github/npm/pypi).
+
