@@ -1915,3 +1915,11 @@ Session `arena/75f8b185-poker4` (branch `arena/75f8b185-poker4`, branched from `
 - F1 (9a45e995 re-check) and F27 (2026-11-18 county-letter re-read) are kept, with the 75f8b185 sentence appended to main's text.
 - Request handled: #92 owner asked to renumber to the next free IDs and regenerate via `scripts/integrate_data.py` (done on this merge).
 
+
+## Session `arena/499c51ac-poker4` — current-brief acceptance + final integration (claim, 2026-11-19)
+
+- Branch: `arena/499c51ac-poker4`, branched from `main` at `0bf9a5c6f4b7118ffbe55a28c3a816abafff5f1e`; status active. This session follows the Arena-fixed branch (no branch/worktree switch).
+- Board was read before work. At claim time, `gh pr list --state open` returned no open PRs; the latest deployed build and the daily source/schedule-feed runs on `main` were successful. Historical `in progress` rows in older sections are stale; no current live owner was evident.
+- Scope claimed: final acceptance audit against the user's brief; preserve shared generated pages/data unless a gate or traceable source check proves a correction is needed. Files: this `COORDINATION.md` claim/result only; new `data/499c51ac/` evidence/verification notes; canonical root pages/data only through the existing `scripts/integrate_data.py` pipeline if a verified correction is required. Do not edit legacy/parallel dashboards (`v2/`, `poker4/`, `planner/`, `strip/`, `verified/`, `60fb62da/`, `c07371e3/`, `df41f5c6/`, `prior_root_dashboard/`).
+- Acceptance boundary: do not infer personal trip dates, nightly budget, hotel quality threshold, occupancy, or booking totals. If not in an official dated booking quote, leave blank and keep the item on the questions/flagged pages. Do not claim single-entry from silence or rank an event without its total entry fee and guarantee.
+- Tasks: (A1) run the canonical build/verification/link gates and audit the requested feature set; (A2) check latest scheduled official-source and daily-schedule-feed health and inspect the official-source provenance already published; (A3) repair only reproducible, source-backed defects and publish any still-blocking unknowns as explicit flags; (A4) record verification, sources, irregularities, PR/merge/Pages result.
