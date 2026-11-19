@@ -2269,17 +2269,32 @@ F1 entry-policy silence (0 of 253 confirmed single-entry) · F4 no dated checkou
 
 | ID | Task | Status | Owner | File scope |
 |----|------|--------|-------|------------|
-| U1 | Upcoming-only default for tournament and comparison date filters; retain whole-window access | in progress | arena/d6e0b78b-poker4 | `scripts/integrate_data.py`, generated pages |
-| U2 | Inclusive, timezone-safe next-7/next-30 presets + verifier coverage | in progress | arena/d6e0b78b-poker4 | `app.js`, `scripts/verify_root.py` |
+| U1 | Upcoming-only default for tournament and comparison date filters; retain whole-window access | done | arena/d6e0b78b-poker4 | `scripts/integrate_data.py`, generated pages |
+| U2 | Inclusive, timezone-safe next-7/next-30 presets + verifier coverage | done | arena/d6e0b78b-poker4 | `app.js`, `scripts/verify_root.py` |
 | U3 | Full gates, PR → main, merge, Pages deploy check, record | in progress | arena/d6e0b78b-poker4 | this branch, `COORDINATION.md` |
 
-### Rebase conflict resolution — arena/d6e0b78b-poker4 (2026-11-19)
+### U1/U2 implementation and verification — arena/d6e0b78b-poker4 (2026-11-19)
 
 - `origin/main` advanced from `444ab02` to `caa06b6` during the session (PR #113 / the 19:49Z official-source sync). The append conflict in this shared board was resolved by retaining both the main-side V4 deploy record and arena/61daf94a-poker4's hotel-curation result verbatim, then retaining this session's date-filter claim. No other session's board entry was removed.
 
 ### Rebase conflict resolution (second) — arena/d6e0b78b-poker4 (2026-11-19)
 
 - `origin/main` advanced from `caa06b6` to `556eb58` via PR #115 (`arena/9cbba004-poker4`) while rebasing. The append conflict was resolved by retaining that session's complete final-audit/deployment-cleanup record and this session's claim verbatim. No other session's board entry was removed.
+
+- **U1/U2 done.** The date-filter window is derived from dated event rows in `data/site-events.json` (current window 2026-11-16 through 2026-12-23; current official snapshot 2026-11-19T19:48:43Z). Tournament and comparison pages now open with the later of the snapshot date and the visitor's local date through the final dated event; the explicit “whole window” button restores historical rows. The default therefore hides the six dated rows on Nov 16–18 without deleting them. Undated recurring slates still match only their printed weekdays.
+- “Next 7 days” and “next 30 days” now use inclusive ranges (today + 6 / +29), local calendar dates rather than UTC ISO conversion, and DST-safe date arithmetic. Event search/deep links clear the default date restriction and activate the event's tab so past or spend-advantage rows remain reachable.
+- No tournament, hotel, source, rule, guarantee, or rate value was edited. Official-date data remains source-linked and the value audit still checks committed official captures (56 hashed captures + 37 transcribed structure sheets).
+- Verification on the rebased/current snapshot: `tools/room_extract.py` OK (69 WPT · 4 Wynn daily · 3 Bellagio · 4 Caesars; WPT-08 fee arithmetic irregularity remains verbatim/flagged); `scripts/integrate_data.py` regenerated 253 events / 38 days / 147 rate-log lines / 12 walks / 71 sources and was byte-stable on repeat; `scripts/audit_values.py --strict` 1,807/1,807 located, 0 blocking failures; `scripts/verify_root.py` 16 pages / 253 rows / 0 warnings; `scripts/verify.py` 10 pages / 17 sources / 29 flags; `scripts/verify_markup.py` 39 pages / 0 problems; `scripts/linkcheck.py` 32 pages / all internal links resolve; `scripts/validate_site.py`, `tools/check_rows.py` (93 official calendar rows / 0 problems), `node --check app.js`, and `git diff --check` all pass. A Node VM smoke test also passed for upcoming-only defaults, inclusive next-7, whole-window reset, and a historical deep link to an inactive tab.
+- **Conflict handling:** `origin/main` advanced from `444ab02` to `caa06b6` during the session through PRs #113/#114 and the 19:49:29Z scheduled source sync. The shared-board append conflict was resolved by retaining the main-side PR #112 deploy record and arena/61daf94a-poker4's hotel-curation result verbatim, then retaining this session's claim. A generated `compare.html` conflict was resolved by keeping main's newer 19:48:43Z snapshot and re-running the merged generator; no other session's data or board entry was discarded.
+
+### U1/U2 sources, verification, and irregularities
+
+- Date-window bounds are calculated from `data/site-events.json`, which is built from the official schedule/schedule sheets; the related value-level evidence is checked by `scripts/audit_values.py --strict`. The current live spot-check record for official source values is `data/verify/21df18f4_live_reread_2026-11-19.tsv` (six official pages, no event value changed); the broader same-day reread is `data/verify/1257a37f_source_recheck_2026-11-19.tsv`.
+- **Resolved UX irregularity:** six dated event rows earlier than the 2026-11-19 snapshot had appeared in the unfiltered “upcoming” table. They remain reviewable through the date picker/whole-window reset and direct search links, but no longer appear in the default forward-looking view. Remaining data irregularities stay on `flagged.html`, including F1 (no confirmed single-entry events), F47 (Wynn stale-offer paragraph not used), and the WPT-08 printed fee split (1105 vs 1100).
+
+### Rebase conflict resolution (third) — arena/d6e0b78b-poker4 (2026-11-19)
+
+- While replaying the completion record, the board append conflicted with arena/9cbba004-poker4's final audit section; both records were retained. The README hunk from the earlier snapshot was dropped in favor of the newer live-link/methodology copy from that session. No source data or other session files were discarded.
 
 ### Rebase conflict resolution (fourth) — arena/d6e0b78b-poker4 (2026-11-19)
 

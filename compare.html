@@ -18,14 +18,15 @@ the <strong>guaranteed pool</strong>, the <strong>entry cost</strong> (the print
 the <strong>starting stack and blind duration</strong>, the <strong>payout structure</strong> and the
 <strong>daily schedule fit</strong>. Nothing is estimated: a figure the official document does not print is blank and says so.</p>
 <div class="statusline"><span class="stat">94 calendar rows parsed</span><span class="stat">37 Venetian structure sheets audited + 9 other official documents</span><span class="stat">253 events on this site</span><span class="stat">0 confirmed single-entry</span><span class="stat">0 official URLs unreachable</span><span class="stat">0 sources with value changes</span><span class="stat">official-source run: 2026-11-19T19:48:43Z · 06:00 Las Vegas daily</span></div></section>
-<div class="filters" id="filters">
-<label>from <input type="date" id="f-from" min="2026-11-16" max="2026-12-31"></label>
-<label>to <input type="date" id="f-to" min="2026-11-16" max="2026-12-31"></label>
+<div class="filters" id="filters" data-window-start="2026-11-16" data-window-end="2026-12-23" data-snapshot-day="2026-11-19">
+<label>from <input type="date" id="f-from" min="2026-11-16" max="2026-12-23" value="2026-11-19"></label>
+<label>to <input type="date" id="f-to" min="2026-11-16" max="2026-12-23" value="2026-12-23"></label>
 <button class="btn-mini" data-preset="7" type="button">next 7 days</button>
 <button class="btn-mini" data-preset="30" type="button">next 30 days</button>
 <button class="btn-mini" data-preset="all" type="button">whole window</button>
 <label>venue <select id="f-venue"><option value="">all venues</option><option value='venetian'>The Venetian Poker Room</option><option value='wynn'>Wynn Las Vegas Poker</option><option value='bellagio'>Bellagio Poker Room</option><option value='caesars'>Caesars Palace Poker Room</option><option value='aria'>ARIA Poker Room</option><option value='others'>Other rooms on and around the Strip</option></select></label>
 <span class="count" id="f-count"></span>
+<span class="filter-hint">Defaults to upcoming dates from the later of the snapshot and today; “whole window” includes earlier dates. Undated schedules match only their printed weekdays.</span>
 </div>
 <div class="flagstats"><span class="stat">72 events survived the gates</span>
 <span class="stat">0 confirmed single-entry</span>
