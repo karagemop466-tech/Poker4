@@ -1,6 +1,6 @@
 {
  "meta": {
-  "as_of": "2026-11-19T19:48:43Z",
+  "as_of": "2026-11-19T20:00:56Z",
   "what_this_does": "Re-reads every official capture committed in data/raw/ and every committed verbatim transcription of the official structure sheets, then looks for the literal evidence behind each published number and each quoted rule sentence.",
   "evidence": {
    "hashed_captures": 56,

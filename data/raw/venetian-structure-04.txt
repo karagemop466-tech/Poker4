@@ -1,4 +1,4 @@
-<!-- captured 2026-11-19T19:48:59Z from https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf (sha256 8cd8c57d75648a9ade4d774e723a214824b61d3e85302ede0944cdadd1b0896f) -->
+<!-- captured 2026-11-19T20:01:07Z from https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf (sha256 8cd8c57d75648a9ade4d774e723a214824b61d3e85302ede0944cdadd1b0896f) -->
  
  
 $600 No Limit Hold’em  
