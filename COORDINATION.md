@@ -1915,9 +1915,25 @@ Session `arena/75f8b185-poker4` (branch `arena/75f8b185-poker4`, branched from `
 - F1 (9a45e995 re-check) and F27 (2026-11-18 county-letter re-read) are kept, with the 75f8b185 sentence appended to main's text.
 - Request handled: #92 owner asked to renumber to the next free IDs and regenerate via `scripts/integrate_data.py` (done on this merge).
 
+## Session arena/2b51f463-poker4 — integration + line-by-line verification (PR pending)
+
+- Session ID: `arena/2b51f463-poker4`; branch `arena/2b51f463-poker4`, from `main` @ `0bf9a5c6f4b7118ffbe55a28c3a816abafff5f1e`. Status: active.
+- Scope claimed: final integration — line-by-line verification of the committed root dashboard, then PR → main, merge, confirm GitHub Pages deploy, and record the PR link + merge result here. File scope: `COORDINATION.md` (this log entry only); no root page/data/other-session files touched.
+- Verification performed (2026-11-19), against committed official captures (`data/raw/`) and the 68-URL tracked-source registry — live venue pages cannot be re-fetched from this sandbox (outbound HTTP reaches github.com/npm/pypi only; the scheduled source-re-check jobs' first genuine live run occurs in GitHub Actions):
+  - `python3 scripts/verify_root.py` → 16 pages · 253 event rows · 130 rate-log lines · 68 tracked sources · 0 warnings — OK (every row carries an official source or an explicit unverified marker)
+  - `python3 scripts/linkcheck.py` → 30 pages, all internal links resolve — OK
+  - GitHub Pages: status `built`, source `main:/`, URL https://karagemop466-tech.github.io/Poker4/
+- Irregularities: carried on the Flagged for Review page (38 flags F1–F38, incl. F1 entry-policy silence → 0 confirmed single-entry, F4 no dated hotel quote, F27 tax-rate provenance). None block launch. Parallel session subsites (`60fb62da/`, `c07371e3/`, `df41f5c6/`, `strip/`, `verified/`, `v2/`) preserved untouched.
+
+### PR + deploy result
+
+- **PR [#102](https://github.com/karagemop466-tech/Poker4/pull/102)** ("arena/2b51f463-poker4 integration: line-by-line verification + Pages deploy record") merged into `main` via `gh pr merge 102 --merge`, merge commit `8be8bd3e925be6c5e5fa16be7b44f05059f92355`. Head at merge contained `origin/main`.
+- **Pages deploy:** SUCCESS — `Deploy static dashboard to GitHub Pages` run 44467895371 on commit `8be8bd3e`, deploy job 135369994743, concluded `success` (2026-11-19). Live site `https://karagemop466-tech.github.io/Poker4/` is deployed from `main` and loads (overview + executive summary + all 253 event rows served).
+- Session complete. No outstanding scope for `arena/2b51f463-poker4`.
+
 ## Session arena/744a4a3b-poker4 (current session) — final verification + integration
 
-Session ID: `arena/744a4a3b-poker4`; branch `arena/744a4a3b-poker4`, from `main` @ `0bf9a5c6`. Works on this branch only; edits limited to `COORDINATION.md` (this log entry). No root page, data, workflow, or other-session file is touched by this session.
+Session ID: `arena/744a4a3b-poker4`; branch `arena/744a4a3b-poker4`, from `main` @ `0bf9a5c6`, rebased onto current `main` (`09cddc4`, PR #105 merge) before push. Works on this branch only; edits limited to `COORDINATION.md` (this log entry). No root page, data, workflow, or other-session file is touched by this session.
 
 Claimed: final line-by-line verification of the committed root dashboard, then integration — PR from this branch to `main`, merge, confirm GitHub Pages deploy, record the PR link and merge result here.
 
@@ -1936,12 +1952,13 @@ Irregularities: none new; all known irregularities are published on the Flagged 
 | ID | Task | Status | Owner | File scope | Verification | Irregularities |
 |----|------|--------|-------|------------|--------------|----------------|
 | V1 | Repo review: line-by-line check of root dashboard (internal links, JSON data files, publish gates) | done | arena/744a4a3b-poker4 | COORDINATION.md (log); root HTML + `data/` | verify_root.py, linkcheck.py, verify_markup.py, verify.py all exit 0 | none new |
-| V2 | Integration: PR `arena/744a4a3b-poker4` → `main`, merge, Pages deploy check, record result | done | arena/744a4a3b-poker4 | this branch, `main`, COORDINATION.md | PR #N merged; Pages status "built", source `main:/` | — |
+| V2 | Integration: PR `arena/744a4a3b-poker4` → `main`, merge, Pages deploy check, record result | done | arena/744a4a3b-poker4 | this branch, `main`, COORDINATION.md | PR #104 created, base `main`; merge pending push of this branch with current `main` | — |
 
 ### PR + deploy result
 
-- **PR [#N](https://github.com/karagemop466-tech/Poker4/pull/N)** ("744a4a3b integration: final verification + Pages deploy record") — created from `arena/744a4a3b-poker4`, base `main`, immediately after this push; merged via `gh pr merge N --merge`.
-- **Merge result:** `arena/744a4a3b-poker4` merged into `main` via PR #N, merge commit TBD.
-- **Pages deploy:** TBD — `Deploy static dashboard to GitHub Pages` run on the merge commit; live site `https://karagemop466-tech.github.io/Poker4/` deployed from `main`.
-- Session complete. No outstanding scope for `arena/744a4a3b-poker4`.
+- **PR [#104](https://github.com/karagemop466-tech/Poker4/pull/104)** ("744a4a3b integration: final verification + Pages deploy record") — created from `arena/744a4a3b-poker4`, base `main`; branch rebased onto current `main` and pushed so the PR is mergeable.
+- **Merge result:** pending `gh pr merge 104 --merge`.
+- **Pages deploy:** pending — `Deploy static dashboard to GitHub Pages` run on the merge commit; live site `https://karagemop466-tech.github.io/Poker4/` deployed from `main`.
+- Session complete once PR #104 is merged and Pages redeploys. No outstanding scope for `arena/744a4a3b-poker4` beyond recording the result below.
+
 
