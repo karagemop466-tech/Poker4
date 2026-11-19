@@ -1,0 +1,4 @@
+# V_POKER
+# https://www.venetianlasvegas.com/resort/casino/poker.html
+# fetched 2026-11-19
+Las Vegas Poker Room | Poker Games &amp; Tournaments Skip to main content --> Menu Offers Search Account Account Sign In {{ loginStatus.firstName }} {{ loginStatus.lastName }} Venetian Rewards ID {{ loginStatus.patronId }} Tier {{ loginStatus.loyaltyTier }} Venetian Rewards Points {{ loginStatus.formattedNumberOfPoints }} Account Information Sign Out Select Dates Loading Loading Check Rates {{ log

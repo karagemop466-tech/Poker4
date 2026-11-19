@@ -135,6 +135,87 @@
    "field": "source-content",
    "change": "Official document content changed since 2026-11-17T00:00:00Z (hash 77ecfdf8134c → 0a21a8875930). Compare the excerpt in data/source_snapshots.json and update affected rows deliberately; rows sourced here are marked SOURCE CHANGED.",
    "severity": "changed"
+  },
+  {
+   "date": "2026-11-19",
+   "source_id": "V_PAGE",
+   "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "row_ref": "rows sourced from V_PAGE",
+   "field": "source-content",
+   "change": "Official document content changed since 2026-11-18T00:00:00Z (hash 77cc74d0ff96 → d12dfad591a3). Compare the excerpt in data/source_snapshots.json and update affected rows deliberately; rows sourced here are marked SOURCE CHANGED.",
+   "severity": "changed"
+  },
+  {
+   "date": "2026-11-19",
+   "source_id": "V_FEE",
+   "url": "https://www.venetianlasvegas.com/resort/resort-fee.html",
+   "row_ref": "rows sourced from V_FEE",
+   "field": "source-content",
+   "change": "Official document content changed since 2026-11-18T00:00:00Z (hash 49ce27f3fa79 → f2a8e1488707). Compare the excerpt in data/source_snapshots.json and update affected rows deliberately; rows sourced here are marked SOURCE CHANGED.",
+   "severity": "changed"
+  },
+  {
+   "date": "2026-11-19",
+   "source_id": "V_TERMS",
+   "url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+   "row_ref": "rows sourced from V_TERMS",
+   "field": "source-content",
+   "change": "Official document content changed since 2026-11-18T00:00:00Z (hash b8cc8ad0ea31 → 41e03ffe4a53). Compare the excerpt in data/source_snapshots.json and update affected rows deliberately; rows sourced here are marked SOURCE CHANGED.",
+   "severity": "changed"
+  },
+  {
+   "date": "2026-11-19",
+   "source_id": "V_POKER_RATE",
+   "url": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
+   "row_ref": "rows sourced from V_POKER_RATE",
+   "field": "source-content",
+   "change": "Official document content changed since 2026-11-18T00:00:00Z (hash 53f62be5dac1 → 190868482069). Compare the excerpt in data/source_snapshots.json and update affected rows deliberately; rows sourced here are marked SOURCE CHANGED.",
+   "severity": "changed"
+  },
+  {
+   "date": "2026-11-19",
+   "source_id": "V_POKER",
+   "url": "https://www.venetianlasvegas.com/resort/casino/poker.html",
+   "row_ref": "rows sourced from V_POKER",
+   "field": "source-content",
+   "change": "Official document content changed since 2026-11-18T00:00:00Z (hash 910f0de67226 → 3f577c58e30d). Compare the excerpt in data/source_snapshots.json and update affected rows deliberately; rows sourced here are marked SOURCE CHANGED.",
+   "severity": "changed"
+  },
+  {
+   "date": "2026-11-19",
+   "source_id": "W_PAGE",
+   "url": "https://www.wynnlasvegas.com/casino/poker",
+   "row_ref": "rows sourced from W_PAGE",
+   "field": "source-content",
+   "change": "Official document content changed since 2026-11-18T00:00:00Z (hash 0611648dc262 → 33dd658d1a21). Compare the excerpt in data/source_snapshots.json and update affected rows deliberately; rows sourced here are marked SOURCE CHANGED.",
+   "severity": "changed"
+  },
+  {
+   "date": "2026-11-19",
+   "source_id": "W_TERMS",
+   "url": "https://www.wynnlasvegas.com/terms-and-conditions/850257",
+   "row_ref": "rows sourced from W_TERMS",
+   "field": "source-content",
+   "change": "Official document content changed since 2026-11-18T00:00:00Z (hash 559c3af5790b → 393ac8ee27b5). Compare the excerpt in data/source_snapshots.json and update affected rows deliberately; rows sourced here are marked SOURCE CHANGED.",
+   "severity": "changed"
+  },
+  {
+   "date": "2026-11-19",
+   "source_id": "TI_ROOMS",
+   "url": "https://treasureisland.com/hotel/deluxe-rooms",
+   "row_ref": "rows sourced from TI_ROOMS",
+   "field": "source-content",
+   "change": "Official document content changed since 2026-11-18T00:00:00Z (hash f2305b386155 → 5c71d4d406ed). Compare the excerpt in data/source_snapshots.json and update affected rows deliberately; rows sourced here are marked SOURCE CHANGED.",
+   "severity": "changed"
+  },
+  {
+   "date": "2026-11-19",
+   "source_id": "TI_OFFERS",
+   "url": "https://treasureisland.com/deals-offers/buy-1-get-1-bogo-free-fine-print",
+   "row_ref": "rows sourced from TI_OFFERS",
+   "field": "source-content",
+   "change": "Official document content changed since 2026-11-18T00:00:00Z (hash 0a21a8875930 → 51c33971056e). Compare the excerpt in data/source_snapshots.json and update affected rows deliberately; rows sourced here are marked SOURCE CHANGED.",
+   "severity": "changed"
   }
  ]
 }
