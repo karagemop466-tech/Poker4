@@ -118,6 +118,48 @@ tourn = open(os.path.join(ROOT, "tournaments.html"), encoding="utf-8").read()
 n_rows = tourn.count('<tr class="ev-row"')
 if n_rows != len(site["events"]):
     errors.append(f"tournaments.html renders {n_rows} rows but data/site-events.json holds {len(site['events'])}")
+
+# Date controls must default to upcoming rows while retaining an explicit whole-window reset.
+dated = sorted({str(e.get("date")) for e in site["events"]
+                if e.get("date") and re.fullmatch(r"\d{4}-\d{2}-\d{2}", str(e.get("date")))})
+snapshot_day = str((site.get("meta") or {}).get("generated_at") or "")[:10]
+window_start = dated[0] if dated else snapshot_day
+window_end = dated[-1] if dated else snapshot_day
+expected_from = max(snapshot_day, window_start) if snapshot_day and window_start else (snapshot_day or window_start)
+expected_to = max(window_end, expected_from) if expected_from else window_end
+
+
+def tag_attrs(pattern, document):
+    match = re.search(pattern, document)
+    return dict(re.findall(r'([a-zA-Z][\w:-]*)="([^"]*)"', match.group(1))) if match else {}
+
+
+for page in ("tournaments.html", "compare.html"):
+    doc = open(os.path.join(ROOT, page), encoding="utf-8").read()
+    root_attrs = tag_attrs(r'<div class="filters" id="filters"([^>]*)>', doc)
+    from_attrs = tag_attrs(r'<input type="date" id="f-from"([^>]*)>', doc)
+    to_attrs = tag_attrs(r'<input type="date" id="f-to"([^>]*)>', doc)
+    if not root_attrs or not from_attrs or not to_attrs:
+        errors.append(f"{page}: missing date-filter controls")
+        continue
+    expected_root = {"data-window-start": window_start, "data-window-end": window_end,
+                     "data-snapshot-day": snapshot_day}
+    for key, value in expected_root.items():
+        if root_attrs.get(key) != value:
+            errors.append(f"{page}: {key}={root_attrs.get(key)!r}, expected {value!r} from event snapshot")
+    for label, attrs, expected_value in (("from", from_attrs, expected_from), ("to", to_attrs, expected_to)):
+        if attrs.get("value") != expected_value:
+            errors.append(f"{page}: default {label} date {attrs.get('value')!r}, expected {expected_value!r}")
+        if attrs.get("min") != window_start or attrs.get("max") != expected_to:
+            errors.append(f"{page}: {label} date bounds do not match the printed event window")
+    if 'data-preset="all"' not in doc:
+        errors.append(f"{page}: no whole-window reset is available for historical rows")
+
+app_js = open(os.path.join(ROOT, "app.js"), encoding="utf-8").read()
+for required in ("function initializeUpcomingRange()", "function prepareDeepLink()",
+                 "function addDaysISO(value, days)", "Math.max(0, span - 1)"):
+    if required not in app_js:
+        errors.append(f"app.js: upcoming date-filter behavior is missing {required!r}")
 for key in ("data/schedule-snapshot.json", "data/structure-audit.json", "data/hotel-facts.json",
             "data/url-checks.json", "data/source-status.json", "data/rate-log.json", "data/walks.json",
             "data/day-plan.json", "data/search-index.json", "data/change-log.json", "data/sync-status.json"):

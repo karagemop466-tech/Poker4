@@ -995,6 +995,16 @@ for _ev in events:
     else:
         _seen[_base] = 1
 
+# The date filter's whole-window bounds come only from dates printed on event rows.
+# Its default starts on the later of this source snapshot and the first dated event;
+# the browser advances that start again as days pass, without changing any source fact.
+_EVENT_DATES = sorted({str(ev["date"]) for ev in events
+                       if ev.get("date") and re.fullmatch(r"\d{4}-\d{2}-\d{2}", str(ev["date"]))})
+FILTER_WINDOW_START = _EVENT_DATES[0] if _EVENT_DATES else TODAY
+FILTER_WINDOW_END = _EVENT_DATES[-1] if _EVENT_DATES else TODAY
+FILTER_DEFAULT_FROM = max(TODAY, FILTER_WINDOW_START)
+FILTER_DEFAULT_TO = max(FILTER_WINDOW_END, FILTER_DEFAULT_FROM)
+
 # ------------------------------------------------------------------ hotel sources
 # Which tracked official pages carry the fee / tax / parking / cancellation wording that
 # applies to each property.  The sync job writes facts keyed by URL, so the join lives here
@@ -1581,9 +1591,9 @@ TABLE_HEAD = ("<thead><tr><th>When</th><th>Event</th><th class='num'>Total entry
               "<th class='num'>Guarantee</th><th class='num'>GTD ÷ entry</th><th>Entry rules (each read from the official sheet)</th>"
               "<th>Official source</th><th></th></tr></thead>")
 
-FILTERS = """<div class="filters" id="filters">
-<label>from <input type="date" id="f-from" min="2026-11-16" max="2026-12-31"></label>
-<label>to <input type="date" id="f-to" min="2026-11-16" max="2026-12-31"></label>
+FILTERS = """<div class="filters" id="filters" data-window-start="__WINDOW_START__" data-window-end="__WINDOW_END__" data-snapshot-day="__SNAPSHOT_DAY__">
+<label>from <input type="date" id="f-from" min="__WINDOW_START__" max="__FILTER_MAX__" value="__DEFAULT_FROM__"></label>
+<label>to <input type="date" id="f-to" min="__WINDOW_START__" max="__FILTER_MAX__" value="__DEFAULT_TO__"></label>
 <button class="btn-mini" data-preset="7" type="button">next 7 days</button>
 <button class="btn-mini" data-preset="30" type="button">next 30 days</button>
 <button class="btn-mini" data-preset="all" type="button">whole window</button>
@@ -1591,19 +1601,37 @@ FILTERS = """<div class="filters" id="filters">
 <label class="toggle"><input type="checkbox" id="f-single"> single-entry confirmed only</label>
 <label class="toggle"><input type="checkbox" id="f-hide-unconfirmed"> hide rows with neither a confirmed fee nor a printed guarantee</label>
 <span class="count" id="f-count"></span>
+<span class="filter-hint">Defaults to upcoming dates from the later of the snapshot and today; “whole window” includes earlier dates. Undated schedules match only their printed weekdays.</span>
 </div>"""
 
 # The comparison table has no tab panels and no unranked rows, so it carries the date
 # and venue selectors only — the same controls, the same code path.
-COMPARE_FILTERS = """<div class="filters" id="filters">
-<label>from <input type="date" id="f-from" min="2026-11-16" max="2026-12-31"></label>
-<label>to <input type="date" id="f-to" min="2026-11-16" max="2026-12-31"></label>
+COMPARE_FILTERS = """<div class="filters" id="filters" data-window-start="__WINDOW_START__" data-window-end="__WINDOW_END__" data-snapshot-day="__SNAPSHOT_DAY__">
+<label>from <input type="date" id="f-from" min="__WINDOW_START__" max="__FILTER_MAX__" value="__DEFAULT_FROM__"></label>
+<label>to <input type="date" id="f-to" min="__WINDOW_START__" max="__FILTER_MAX__" value="__DEFAULT_TO__"></label>
 <button class="btn-mini" data-preset="7" type="button">next 7 days</button>
 <button class="btn-mini" data-preset="30" type="button">next 30 days</button>
 <button class="btn-mini" data-preset="all" type="button">whole window</button>
 <label>venue <select id="f-venue"><option value="">all venues</option>__VENUE_OPTS__</select></label>
 <span class="count" id="f-count"></span>
+<span class="filter-hint">Defaults to upcoming dates from the later of the snapshot and today; “whole window” includes earlier dates. Undated schedules match only their printed weekdays.</span>
 </div>"""
+
+
+def with_filter_window(markup: str, venue_options: str) -> str:
+    """Fill the date bounds with dates present in the source-linked event rows."""
+    values = {
+        "__VENUE_OPTS__": venue_options,
+        "__WINDOW_START__": FILTER_WINDOW_START,
+        "__WINDOW_END__": FILTER_WINDOW_END,
+        "__SNAPSHOT_DAY__": TODAY,
+        "__DEFAULT_FROM__": FILTER_DEFAULT_FROM,
+        "__DEFAULT_TO__": FILTER_DEFAULT_TO,
+        "__FILTER_MAX__": FILTER_DEFAULT_TO,
+    }
+    for token, value in values.items():
+        markup = markup.replace(token, value if token == "__VENUE_OPTS__" else E(value))
+    return markup
 
 
 def events_table(rows, base="", empty="no rows match these filters"):
@@ -1845,7 +1873,7 @@ def page_tournaments():
              and not e.get("is_continuation")]
     cont = [e for e in events if e.get("is_continuation")]
     opts = "".join(f"<option value='{E(v['id'])}'>{E(v['name'])}</option>" for v in CFG["venues"])
-    filters = FILTERS.replace("__VENUE_OPTS__", opts)
+    filters = with_filter_window(FILTERS, opts)
     snap_day = (SNAPSHOT_AT or TODAY)[:10]
     board = [e for e in events if e.get("date") and e["date"] >= snap_day and not e.get("is_continuation")][:9]
     board_rows = "".join(
@@ -2171,7 +2199,7 @@ def page_compare():
     n_payout = sum(1 for e in survivors if e.get("payout_pct_of_field"))
     n_stack = sum(1 for e in survivors if e.get("starting_chips"))
     venue_opts = "".join(f"<option value='{E(v['id'])}'>{E(v['name'])}</option>" for v in CFG["venues"])
-    filters = COMPARE_FILTERS.replace("__VENUE_OPTS__", venue_opts)
+    filters = with_filter_window(COMPARE_FILTERS, venue_opts)
     return shell("", "Compare the shortlist", f"""
 <section class="page-head"><h1>Compare the surviving events, side by side</h1>
 <p class="lede">One row per event that passed the published gates, compared on the five things that decide a trip:

@@ -73,6 +73,57 @@
   function val(id) { var el = $("#" + id); return el ? el.value : ""; }
   function chk(id) { var el = $("#" + id); return el ? el.checked : false; }
 
+  function later(a, b) {
+    if (!a) return b || "";
+    if (!b) return a;
+    return a > b ? a : b;
+  }
+  function iso(d) {
+    var month = String(d.getMonth() + 1), day = String(d.getDate());
+    if (month.length < 2) month = "0" + month;
+    if (day.length < 2) day = "0" + day;
+    return d.getFullYear() + "-" + month + "-" + day;
+  }
+  function addDaysISO(value, days) {
+    var parts = value.split("-");
+    var d = new Date(Number(parts[0]), Number(parts[1]) - 1, Number(parts[2]), 12, 0, 0, 0);
+    d.setDate(d.getDate() + days);
+    return iso(d);
+  }
+  function hashId() {
+    try { return decodeURIComponent(location.hash.slice(1)); }
+    catch (_) { return location.hash.slice(1); }
+  }
+  function initializeUpcomingRange() {
+    var root = $("#filters"), from = $("#f-from"), to = $("#f-to");
+    if (!root || !from || !to) return;
+    var windowStart = root.getAttribute("data-window-start") || from.min || "";
+    var windowEnd = root.getAttribute("data-window-end") || to.max || "";
+    var snapshotDay = root.getAttribute("data-snapshot-day") || "";
+    var start = later(windowStart, later(snapshotDay, iso(new Date())));
+    var end = windowEnd && windowEnd >= start ? windowEnd : start;
+    if (windowStart) { from.min = windowStart; to.min = windowStart; }
+    from.max = end;
+    to.max = end;
+    from.value = start;
+    to.value = end;
+  }
+  function prepareDeepLink() {
+    var row = document.getElementById(hashId());
+    if (!row || !row.classList || !row.classList.contains("ev-row")) return;
+    var panel = row.closest ? row.closest(".tabpanel") : null;
+    if (panel) {
+      var name = panel.getAttribute("data-panel");
+      $$(".tabpanel").forEach(function (p) { p.classList.toggle("active", p === panel); });
+      $$(".tab").forEach(function (t) { t.classList.toggle("active", t.getAttribute("data-tab") === name); });
+    }
+    // A search result or venue link is an explicit request for this row. Do not let
+    // the upcoming-only default hide a historical or recurring event target.
+    var from = $("#f-from"), to = $("#f-to");
+    if (from) from.value = "";
+    if (to) to.value = "";
+  }
+
   function applyFilters() {
     var from = val("f-from"), to = val("f-to"), venue = val("f-venue");
     var singleOnly = chk("f-single"), hideUnconf = chk("f-hide-unconfirmed");
@@ -121,23 +172,31 @@
   });
   $$(".btn-mini[data-preset]").forEach(function (b) {
     b.addEventListener("click", function () {
-      var from = new Date(), to;
+      var root = $("#filters"), from, to;
+      var windowStart = root && root.getAttribute("data-window-start");
+      var windowEnd = root && root.getAttribute("data-window-end");
+      var snapshotDay = root && root.getAttribute("data-snapshot-day");
       if (b.getAttribute("data-preset") === "all") {
-        setDates("2026-11-16", "2026-12-23"); return;
+        setDates(windowStart || $("#f-from").min, windowEnd || $("#f-to").max);
+        return;
       }
       var span = parseInt(b.getAttribute("data-preset"), 10);
-      from.setHours(0, 0, 0, 0);
-      to = new Date(from.getTime() + span * 864e5);
-      setDates(iso(from), iso(to));
+      from = later(windowStart || "", later(snapshotDay || "", iso(new Date())));
+      var endCap = windowEnd && windowEnd >= from ? windowEnd : from;
+      to = addDaysISO(from, Math.max(0, span - 1));
+      if (to > endCap) to = endCap;
+      setDates(from, to);
     });
   });
-  function iso(d) { return d.toISOString().slice(0, 10); }
   function setDates(a, b) {
-    var f = $("#f-from"), t = $("#f-to");
-    if (f) f.value = a;
-    if (t) t.value = b;
+    var f = $("#f-from"), t = $("#f-to"), root = $("#filters");
+    var maxDate = root ? later(root.getAttribute("data-window-end") || "", b || "") : b;
+    if (f) { if (maxDate) f.max = maxDate; f.value = a; }
+    if (t) { if (maxDate) t.max = maxDate; t.value = b; }
     applyFilters();
   }
+  initializeUpcomingRange();
+  prepareDeepLink();
   if ($(".filters")) applyFilters();
 
   /* --------------------------------------------------------------- search */
@@ -236,7 +295,7 @@
 
   /* -------------------------------------------------------- deep-link rows */
   if (location.hash) {
-    var row = $("tr[data-id='" + CSS.escape(location.hash.slice(1)) + "']");
+    var row = document.getElementById(hashId());
     if (row) {
       row.classList.add("hl");
       var det = row.nextElementSibling;
