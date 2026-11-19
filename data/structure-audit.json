@@ -2702,11 +2702,13 @@
     "addon_forbidden": []
    },
    "subsequent_entry_excerpt": null,
-   "fee_sentence": null,
+   "fee_sentence": "$80 of the $600 Buy-In is withheld for house fees (Rake + Staff). $10 of the $600 Buy In will be withheld as a flat fee for Vegas Connected, INC, DBA Ladies International Poker Series (LIPS). Prize pool consists of $510 of every $600 Buy In.",
    "entry_policy": "not_stated_in_sheet",
    "levels_listed": null,
    "breaks_listed": 6,
-   "pdf_sha256": "9223f61d108c40e2bb11a261620689ff0aea3591178314709051fe38adbf2bd2"
+   "pdf_sha256": "9223f61d108c40e2bb11a261620689ff0aea3591178314709051fe38adbf2bd2",
+   "flat_fee_usd": 10,
+   "flat_fee_sentence": "$10 of the $600 Buy In will be withheld as a flat fee for Vegas Connected, INC, DBA Ladies International Poker Series (LIPS)."
   },
   "V_S32": {
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_32.pdf",
@@ -2734,11 +2736,13 @@
     "addon_forbidden": []
    },
    "subsequent_entry_excerpt": null,
-   "fee_sentence": null,
+   "fee_sentence": "$90 of the $800 Buy-In is withheld for house fees (Rake + Staff). $20 of the $800 Buy In will be withheld as a flat fee for Vegas Connected, INC, DBA Ladies International Poker Series (LIPS). Prize pool consists of $690 of every $800 Buy In.",
    "entry_policy": "not_stated_in_sheet",
    "levels_listed": null,
    "breaks_listed": 9,
-   "pdf_sha256": "3187c282dab371da436172d0d43fea84e151f8426a91b470cec63ab57eeb4b99"
+   "pdf_sha256": "3187c282dab371da436172d0d43fea84e151f8426a91b470cec63ab57eeb4b99",
+   "flat_fee_usd": 20,
+   "flat_fee_sentence": "$20 of the $800 Buy In will be withheld as a flat fee for Vegas Connected, INC, DBA Ladies International Poker Series (LIPS)."
   },
   "V_S33": {
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_33.pdf",
@@ -2766,11 +2770,13 @@
     "addon_forbidden": []
    },
    "subsequent_entry_excerpt": null,
-   "fee_sentence": null,
+   "fee_sentence": "$80 of the $600 Buy-In is withheld for house fees (Rake + Staff). $10 of the $600 Buy In will be withheld as a flat fee for Vegas Connected, INC, DBA Ladies International Poker Series (LIPS). Prize pool consists of $510 of every $600 Buy In.",
    "entry_policy": "not_stated_in_sheet",
    "levels_listed": null,
    "breaks_listed": 7,
-   "pdf_sha256": "735f978d1acd82fe06333a289c6eac7c0047c97446817d6a6904b42c65d20ab4"
+   "pdf_sha256": "735f978d1acd82fe06333a289c6eac7c0047c97446817d6a6904b42c65d20ab4",
+   "flat_fee_usd": 10,
+   "flat_fee_sentence": "$10 of the $600 Buy In will be withheld as a flat fee for Vegas Connected, INC, DBA Ladies International Poker Series (LIPS)."
   },
   "V_S34": {
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_34.pdf",

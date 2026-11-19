@@ -722,10 +722,16 @@ SUBSEQUENT_ENTRY_RE = re.compile(
 
 # The house-fee sentence the Venetian sheets print, and the prize-pool sentence that
 # follows it.  Both are captured verbatim so the site quotes the sheet instead of
-# rebuilding the sentence from the parsed numbers.
+# rebuilding the sentence from the parsed numbers.  Some sheets (31/32/33, the LIPS
+# events) print an extra middle clause withholding a flat fee for Vegas Connected,
+# INC, DBA Ladies International Poker Series; the pattern spans all three clauses.
 FEE_SENTENCE_RE = re.compile(
-    r"\$\s?[\d,]+\s+of\s+the\s+\$\s?[\d,]+\s+Buy[-'\s]?In\s+is\s+withheld[^.]*\.[^.]*"
+    r"\$\s?[\d,]+\s+of\s+the\s+\$\s?[\d,]+\s+Buy[-'\s]?In\s+is\s+withheld[\s\S]{0,320}?"
     r"prize\s+pool\s+consists\s+of[^.]*\.", re.I)
+# The middle clause itself: '$10 of the $600 Buy In will be withheld as a flat fee
+# for Vegas Connected, INC, DBA Ladies International Poker Series (LIPS).'
+FLAT_FEE_RE = re.compile(
+    r"\$\s?([\d,]+)\s+of\s+the\s+\$\s?[\d,]+\s+Buy\s*In\s+will\s+be\s+withheld\s+as\s+a\s+flat\s+fee", re.I)
 RULE_NUMBER_PREFIX_RE = re.compile(r"\d{1,2}\.\s$")
 
 
@@ -805,6 +811,11 @@ def audit_structure(text: str, url: str) -> dict:
     # rebuilding it from the parsed numbers
     fs = FEE_SENTENCE_RE.search(flat)
     out["fee_sentence"] = re.sub(r"\s+", " ", fs.group(0)).strip() if fs else None
+    # the LIPS flat-fee clause (sheets 31/32/33): a printed third component that
+    # house_fee_usd + pool_per_entry_usd alone do not account for (flag F45)
+    ff = FLAT_FEE_RE.search(flat)
+    out["flat_fee_usd"] = int(ff.group(1).replace(",", "")) if ff else None
+    out["flat_fee_sentence"] = sentence_excerpt(flat, ff.start(), ff.end()) if ff else None
 
     confirm = clauses["single_entry_confirmed"] + clauses["entry_forbidden"] + clauses["addon_forbidden"]
     allow = clauses["reentry_allowed"] + clauses["addon_allowed"]
