@@ -1,4 +1,4 @@
-<!-- captured 2026-11-19T21:54:21Z from https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_23.pdf (sha256 b4be72a2fb76b04d68f1b4ab9b73afe690d6352d6eb76fcab6ca8aed8037d00a) -->
+<!-- captured 2026-11-20T21:36:13Z from https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_23.pdf (sha256 b4be72a2fb76b04d68f1b4ab9b73afe690d6352d6eb76fcab6ca8aed8037d00a) -->
  
 $600 Pot Limit Omaha  
 Double Board Bomb Pot (1Day)     

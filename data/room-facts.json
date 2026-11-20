@@ -64,7 +64,7 @@
  },
  "wynn_wpt": {
   "file": "data/raw/wynn-wpt-terms.txt",
-  "sha256": "756e7af32a07df3ee103b9a12b0d59e030faf9253a19561df576e14d7a76cdbe",
+  "sha256": "8b7bbb28ebca766966db7b21a38739609f33dcffc648e0e7c9ab2b93c5c17e04",
   "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
   "events": [
    {
@@ -4710,7 +4710,7 @@
  },
  "wynn_daily": {
   "file": "data/raw/wynn-daily-structures.txt",
-  "sha256": "66ca462c286dbb88dce248aa45bcffd6aba777189d411e4c04ff4d39d8e2f651",
+  "sha256": "9ceb0fc85ff5cc9fb3f33c27c9b236eb431d659b6da1ef4cc2957abe58aec5a4",
   "url": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
   "poster_file": "data/raw/wynn-daily-poster.txt",
   "poster_url": "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf",
@@ -5061,7 +5061,7 @@
    "url": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
    "retrieved": "2026-11-17",
    "capture": "data/raw/caesars-daily-flyer-2026.txt",
-   "capture_sha256": "8cb8f71a5f07df8dcef831818a23b8689b3557726305dc9977d86210dd9be3f3",
+   "capture_sha256": "f57ed8918bc513864cea3ae8513423e22033d153e005440282d78be0c463ba58",
    "title": null,
    "addon_excerpt": "All Tournaments feature a $50 add-on for 15,000 tournament chips that can only be taken at the first break.",
    "registration_excerpt": "Registration will close at the start of level seven.",

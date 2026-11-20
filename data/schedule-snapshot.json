@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generated_at": "2026-11-19T21:54:40Z",
+  "generated_at": "2026-11-20T21:36:25Z",
   "rows": 94,
   "note": "Rows read from the official schedule page at run time; blank fields were not printed on the page."
  },
@@ -19,7 +19,7 @@
    "starting_chips": 30000,
    "level_duration": "40",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -35,7 +35,7 @@
    "starting_chips": 30000,
    "level_duration": "30",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -51,7 +51,7 @@
    "starting_chips": 30000,
    "level_duration": "40",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -67,7 +67,7 @@
    "starting_chips": 30000,
    "level_duration": "30",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -83,7 +83,7 @@
    "starting_chips": 40000,
    "level_duration": "30",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -99,7 +99,7 @@
    "starting_chips": null,
    "level_duration": "40",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -115,7 +115,7 @@
    "starting_chips": 30000,
    "level_duration": "20/15",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -131,7 +131,7 @@
    "starting_chips": 30000,
    "level_duration": "20/15",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -147,7 +147,7 @@
    "starting_chips": 30000,
    "level_duration": "20/15",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -163,7 +163,7 @@
    "starting_chips": 30000,
    "level_duration": "30",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -179,7 +179,7 @@
    "starting_chips": 40000,
    "level_duration": "40",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -195,7 +195,7 @@
    "starting_chips": 25000,
    "level_duration": "30",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -211,7 +211,7 @@
    "starting_chips": 40000,
    "level_duration": "40",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -227,7 +227,7 @@
    "starting_chips": 25000,
    "level_duration": "30",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -243,7 +243,7 @@
    "starting_chips": null,
    "level_duration": null,
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -259,7 +259,7 @@
    "starting_chips": 40000,
    "level_duration": "30",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -275,7 +275,7 @@
    "starting_chips": 25000,
    "level_duration": "30",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -291,7 +291,7 @@
    "starting_chips": 40000,
    "level_duration": "30",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -307,7 +307,7 @@
    "starting_chips": 25000,
    "level_duration": "30",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -323,7 +323,7 @@
    "starting_chips": 40000,
    "level_duration": "30",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -339,7 +339,7 @@
    "starting_chips": 25000,
    "level_duration": "30",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -355,7 +355,7 @@
    "starting_chips": 40000,
    "level_duration": "30",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -371,7 +371,7 @@
    "starting_chips": 30000,
    "level_duration": "30",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -387,7 +387,7 @@
    "starting_chips": 25000,
    "level_duration": "30",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -403,7 +403,7 @@
    "starting_chips": 40000,
    "level_duration": "40",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -419,7 +419,7 @@
    "starting_chips": 30000,
    "level_duration": "30",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -435,7 +435,7 @@
    "starting_chips": 25000,
    "level_duration": "30",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -451,7 +451,7 @@
    "starting_chips": 40000,
    "level_duration": "40",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -467,7 +467,7 @@
    "starting_chips": 25000,
    "level_duration": "30",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -483,7 +483,7 @@
    "starting_chips": 40000,
    "level_duration": "40",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -499,7 +499,7 @@
    "starting_chips": 25000,
    "level_duration": "30",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -515,7 +515,7 @@
    "starting_chips": 40000,
    "level_duration": "30",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -531,7 +531,7 @@
    "starting_chips": null,
    "level_duration": null,
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -547,7 +547,7 @@
    "starting_chips": 25000,
    "level_duration": "30",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -563,7 +563,7 @@
    "starting_chips": 40000,
    "level_duration": "40",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -579,7 +579,7 @@
    "starting_chips": 30000,
    "level_duration": "30",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -595,7 +595,7 @@
    "starting_chips": 40000,
    "level_duration": "30",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -611,7 +611,7 @@
    "starting_chips": 40000,
    "level_duration": "40",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -627,7 +627,7 @@
    "starting_chips": 40000,
    "level_duration": "30",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -643,7 +643,7 @@
    "starting_chips": 40000,
    "level_duration": "40",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -659,7 +659,7 @@
    "starting_chips": 40000,
    "level_duration": "20",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -675,7 +675,7 @@
    "starting_chips": 40000,
    "level_duration": "30",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -691,7 +691,7 @@
    "starting_chips": null,
    "level_duration": null,
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -707,7 +707,7 @@
    "starting_chips": 25000,
    "level_duration": "30",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -723,7 +723,7 @@
    "starting_chips": 40000,
    "level_duration": "30",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -739,7 +739,7 @@
    "starting_chips": 25000,
    "level_duration": "30",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -755,7 +755,7 @@
    "starting_chips": 40000,
    "level_duration": "30",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -771,7 +771,7 @@
    "starting_chips": 20000,
    "level_duration": "20",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -787,7 +787,7 @@
    "starting_chips": 25000,
    "level_duration": "30",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -803,7 +803,7 @@
    "starting_chips": 40000,
    "level_duration": "30",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -819,7 +819,7 @@
    "starting_chips": 40000,
    "level_duration": "30",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -835,7 +835,7 @@
    "starting_chips": 20000,
    "level_duration": "20",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -851,7 +851,7 @@
    "starting_chips": 25000,
    "level_duration": "30",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -867,7 +867,7 @@
    "starting_chips": 40000,
    "level_duration": "40",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -883,7 +883,7 @@
    "starting_chips": 30000,
    "level_duration": "30",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -899,7 +899,7 @@
    "starting_chips": 20000,
    "level_duration": "20",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -915,7 +915,7 @@
    "starting_chips": 25000,
    "level_duration": "30",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -931,7 +931,7 @@
    "starting_chips": null,
    "level_duration": null,
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -947,7 +947,7 @@
    "starting_chips": 40000,
    "level_duration": "30",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -963,7 +963,7 @@
    "starting_chips": 20000,
    "level_duration": "20",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -979,7 +979,7 @@
    "starting_chips": null,
    "level_duration": null,
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -995,7 +995,7 @@
    "starting_chips": 20000,
    "level_duration": "15",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -1011,7 +1011,7 @@
    "starting_chips": 40000,
    "level_duration": "40",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -1027,7 +1027,7 @@
    "starting_chips": 20000,
    "level_duration": "15",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -1043,7 +1043,7 @@
    "starting_chips": 40000,
    "level_duration": "30",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -1059,7 +1059,7 @@
    "starting_chips": 20000,
    "level_duration": "15",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -1075,7 +1075,7 @@
    "starting_chips": 40000,
    "level_duration": "40",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -1091,7 +1091,7 @@
    "starting_chips": null,
    "level_duration": null,
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -1107,7 +1107,7 @@
    "starting_chips": 25000,
    "level_duration": "30",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -1123,7 +1123,7 @@
    "starting_chips": 40000,
    "level_duration": "40",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -1139,7 +1139,7 @@
    "starting_chips": null,
    "level_duration": null,
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -1155,7 +1155,7 @@
    "starting_chips": 25000,
    "level_duration": "30",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -1171,7 +1171,7 @@
    "starting_chips": null,
    "level_duration": null,
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -1187,7 +1187,7 @@
    "starting_chips": 40000,
    "level_duration": "30",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -1203,7 +1203,7 @@
    "starting_chips": 25000,
    "level_duration": "30",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -1219,7 +1219,7 @@
    "starting_chips": 40000,
    "level_duration": "30",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -1235,7 +1235,7 @@
    "starting_chips": 25000,
    "level_duration": "30",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": [
@@ -1253,7 +1253,7 @@
    "starting_chips": 40000,
    "level_duration": "40",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19",
+   "retrieved": "2026-11-20",
    "conditional_entry_fee": {
     "standard_usd": 1100,
     "early_usd": 1060,
@@ -1278,7 +1278,7 @@
    "starting_chips": 30000,
    "level_duration": "30",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": [
@@ -1296,7 +1296,7 @@
    "starting_chips": 40000,
    "level_duration": "30",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19",
+   "retrieved": "2026-11-20",
    "conditional_entry_fee": {
     "standard_usd": 1100,
     "early_usd": 1060,
@@ -1321,7 +1321,7 @@
    "starting_chips": 40000,
    "level_duration": "40",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -1337,7 +1337,7 @@
    "starting_chips": 40000,
    "level_duration": "30",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -1353,7 +1353,7 @@
    "starting_chips": 40000,
    "level_duration": "40",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -1369,7 +1369,7 @@
    "starting_chips": 25000,
    "level_duration": "30",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -1385,7 +1385,7 @@
    "starting_chips": null,
    "level_duration": null,
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": [
@@ -1403,7 +1403,7 @@
    "starting_chips": 40000,
    "level_duration": "40",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19",
+   "retrieved": "2026-11-20",
    "conditional_entry_fee": {
     "standard_usd": 600,
     "early_usd": 580,
@@ -1428,7 +1428,7 @@
    "starting_chips": 25000,
    "level_duration": "30",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -1444,7 +1444,7 @@
    "starting_chips": 40000,
    "level_duration": "40",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -1460,7 +1460,7 @@
    "starting_chips": 25000,
    "level_duration": "30",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -1476,7 +1476,7 @@
    "starting_chips": 40000,
    "level_duration": "40",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -1492,7 +1492,7 @@
    "starting_chips": 25000,
    "level_duration": "30",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -1508,7 +1508,7 @@
    "starting_chips": null,
    "level_duration": null,
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -1524,7 +1524,7 @@
    "starting_chips": 40000,
    "level_duration": "30",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   },
   {
    "parse_notes": null,
@@ -1540,7 +1540,7 @@
    "starting_chips": 25000,
    "level_duration": "30",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "retrieved": "2026-11-19"
+   "retrieved": "2026-11-20"
   }
  ]
 }
