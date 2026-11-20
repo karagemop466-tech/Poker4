@@ -4,8 +4,8 @@
   "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html": {
    "source_id": "V_PAGE",
    "label": "Venetian DeepStack Extravaganza IV official series page",
-   "fetched_at": "2026-11-19T00:00:00Z",
-   "sha256": "d12dfad591a384669213d1bbbad463176998a4ff423715324291eadf329d8c34",
+   "fetched_at": "2026-11-20T00:00:00Z",
+   "sha256": "68fb4b27ef646e8ae503e47442f9e9feec612f2a89774ae83bfe93422db872ce",
    "excerpt": "DeepStack Extravaganza - November 16 – December 23, 2026 | Poker Tournament | The Venetian Resort Las Vegas Skip to main content --> Menu Offers Search Account Account Sign In {{ loginStatus.firstName }} {{ loginStatus.lastName }} Venetian Rewards ID {{ loginStatus.patronId }} Tier {{ loginStatus.loyaltyTier }} Venetian Rewards Points {{ loginStatus.formattedNumberOfPoints }} Account Information S",
    "note": "baseline manifest created by this research pass; hash filled by first monitor run",
    "content_type": "text/html;charset=utf-8",
@@ -14,7 +14,7 @@
   "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf": {
    "source_id": "V_SCHED",
    "label": "Venetian DSE IV schedule (PDF)",
-   "fetched_at": "2026-11-19T00:00:00Z",
+   "fetched_at": "2026-11-20T00:00:00Z",
    "sha256": "e9799cea0b250bd38795f382f432fa0053edf5139f81ac7cf929692fcbcbde71",
    "excerpt": "%PDF-1.4 %���� 36 0 obj > endobj xref 36 36 0000000016 00000 n 0000001319 00000 n 0000001430 00000 n 0000003168 00000 n 0000003696 00000 n 0000003809 00000 n 0000003923 00000 n 0000004480 00000 n 0000005039 00000 n 0000006052 00000 n 0000006547 00000 n 0000006879 00000 n 0000007244 00000 n 0000007630 00000 n 0000008137 00000 n 0000009233 00000 n 0000010226 00000 n 0000011202 00000 n 0000012273 000",
    "note": "baseline manifest created by this research pass; hash filled by first monitor run",
@@ -24,8 +24,8 @@
   "https://www.venetianlasvegas.com/resort/resort-fee.html": {
    "source_id": "V_FEE",
    "label": "Venetian resort fee page",
-   "fetched_at": "2026-11-19T00:00:00Z",
-   "sha256": "f2a8e14887077c3967f811b6125ecd7400ffb0c84fe501d8847a65ae994203a5",
+   "fetched_at": "2026-11-20T00:00:00Z",
+   "sha256": "52fa33b9d7fc044847ebd7f479855b8b9406e02cd830412c1768ac16840b7d48",
    "excerpt": "Resort Fee | Resort Fee Inclusions | The Venetian Resort Las Vegas Skip to main content --> Menu Offers Search Account Account Sign In {{ loginStatus.firstName }} {{ loginStatus.lastName }} Venetian Rewards ID {{ loginStatus.patronId }} Tier {{ loginStatus.loyaltyTier }} Venetian Rewards Points {{ loginStatus.formattedNumberOfPoints }} Account Information Sign Out Select Dates Loading Loading Chec",
    "note": "baseline manifest created by this research pass; hash filled by first monitor run",
    "content_type": "text/html;charset=utf-8",
@@ -34,8 +34,8 @@
   "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html": {
    "source_id": "V_TERMS",
    "label": "Venetian hotel terms and conditions (tax 13.38%, parking, cancellation)",
-   "fetched_at": "2026-11-19T00:00:00Z",
-   "sha256": "41e03ffe4a53132e1e6e97f5e0f3dc5d3fc31293f9306ec6658905cd462beaa6",
+   "fetched_at": "2026-11-20T00:00:00Z",
+   "sha256": "a32931a610c5347376f22e9be8d546ce4a97099eda48c0b5224021ca93424cd2",
    "excerpt": "Hotel Terms &amp; Conditions | The Venetian Resort Las Vegas Skip to main content --> Menu Offers Search Account Account Sign In {{ loginStatus.firstName }} {{ loginStatus.lastName }} Venetian Rewards ID {{ loginStatus.patronId }} Tier {{ loginStatus.loyaltyTier }} Venetian Rewards Points {{ loginStatus.formattedNumberOfPoints }} Account Information Sign Out Select Dates Loading Loading Check Rate",
    "note": "baseline manifest created by this research pass; hash filled by first monitor run",
    "content_type": "text/html;charset=utf-8",
@@ -44,8 +44,8 @@
   "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html": {
    "source_id": "V_POKER_RATE",
    "label": "Venetian 2026 poker suite rates and play requirements",
-   "fetched_at": "2026-11-19T00:00:00Z",
-   "sha256": "190868482069f62a0003eb453b5886003cb483578270f05df10fcf1eec020a68",
+   "fetched_at": "2026-11-20T00:00:00Z",
+   "sha256": "4e2ad9655a40578c4fa0f06a9560918b7db59f035922aeda8fa132288717d3aa",
    "excerpt": "2026 Poker Room Rates &amp; Play Requirements | The Venetian Resort Las Vegas Skip to main content --> Menu Offers Search Account Account Sign In {{ loginStatus.firstName }} {{ loginStatus.lastName }} Venetian Rewards ID {{ loginStatus.patronId }} Tier {{ loginStatus.loyaltyTier }} Venetian Rewards Points {{ loginStatus.formattedNumberOfPoints }} Account Information Sign Out Select Dates Loading L",
    "note": "baseline manifest created by this research pass; hash filled by first monitor run",
    "content_type": "text/html;charset=utf-8",
@@ -54,8 +54,8 @@
   "https://www.venetianlasvegas.com/resort/casino/poker.html": {
    "source_id": "V_POKER",
    "label": "Venetian poker room page (room location)",
-   "fetched_at": "2026-11-19T00:00:00Z",
-   "sha256": "3f577c58e30db0a271d05c305780d95dafc56b6ea1ea4bd6ed259f803e11e08f",
+   "fetched_at": "2026-11-20T00:00:00Z",
+   "sha256": "ec2e5a7f16d371ce7b65f2dfe6549a66cfe95c792d83e92cf736f295318431e4",
    "excerpt": "Las Vegas Poker Room | Poker Games &amp; Tournaments Skip to main content --> Menu Offers Search Account Account Sign In {{ loginStatus.firstName }} {{ loginStatus.lastName }} Venetian Rewards ID {{ loginStatus.patronId }} Tier {{ loginStatus.loyaltyTier }} Venetian Rewards Points {{ loginStatus.formattedNumberOfPoints }} Account Information Sign Out Select Dates Loading Loading Check Rates {{ log",
    "note": "baseline manifest created by this research pass; hash filled by first monitor run",
    "content_type": "text/html;charset=utf-8",
@@ -64,9 +64,9 @@
   "https://www.wynnlasvegas.com/casino/poker": {
    "source_id": "W_PAGE",
    "label": "Wynn Las Vegas poker room page",
-   "fetched_at": "2026-11-19T00:00:00Z",
-   "sha256": "33dd658d1a21034ca030e972bf67d055ac93514ee9afeb03dd6e2d5f8c479593",
-   "excerpt": "Las Vegas Poker Room | Poker Tournaments &amp; Cash Games | Wynn Las Vegas Skip to main content Click to view our Accessibility Policy or contact us with accessibility related questions Check In 11/19/2026 - Check Out 11/22/2026 Rooms 1 Guests Per Room 2 Promo Code Check Availability 11/19/2026 - 11/22/2026 Check Availability Rooms &amp; Suites Offers Wynn Rewards Dining Casino Entertainment Night",
+   "fetched_at": "2026-11-20T00:00:00Z",
+   "sha256": "ff1df415014cd232447550a03523f16475b8f062fe1116bb5890320345a7236c",
+   "excerpt": "Las Vegas Poker Room | Poker Tournaments &amp; Cash Games | Wynn Las Vegas Skip to main content Click to view our Accessibility Policy or contact us with accessibility related questions Check In 11/20/2026 - Check Out 11/23/2026 Rooms 1 Guests Per Room 2 Promo Code Check Availability 11/20/2026 - 11/23/2026 Check Availability Rooms &amp; Suites Offers Wynn Rewards Dining Casino Entertainment Night",
    "note": "baseline manifest created by this research pass; hash filled by first monitor run",
    "content_type": "text/html; charset=utf-8",
    "last_error": null
@@ -74,7 +74,7 @@
   "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf": {
    "source_id": "W_DAILY",
    "label": "Wynn daily tournament structures / terms (PDF)",
-   "fetched_at": "2026-11-19T00:00:00Z",
+   "fetched_at": "2026-11-20T00:00:00Z",
    "sha256": "95c63a1317edfc86f733d81d96c726c55efe663f872eaa9541a7d21b51ef87cf",
    "excerpt": "%PDF-1.7 %���� 1 0 obj >/Metadata 2918 0 R/ViewerPreferences 2919 0 R>> endobj 2 0 obj > endobj 3 0 obj >/ExtGState >/ProcSet[/PDF/Text/ImageB/ImageC/ImageI] >>/Annots[ 18 0 R 19 0 R] /MediaBox[ 0 0 612 1008] /Contents 4 0 R/Group >/Tabs/S/StructParents 0>> endobj 4 0 obj > stream x��][o�H�~\u000f���� �5�i^����@�\\Ћ��l��y��\u0003-Ѷ61�\u0016%�5�~뜺�U2G.6���%�d����w.\u0015\\|��m����_�z D\u0017?��}pִ����� ��_\u0007��~\u0015�\u0011�W�I\u0010\u00059�\u001bG",
    "note": "baseline manifest created by this research pass; hash filled by first monitor run",
@@ -84,7 +84,7 @@
   "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf": {
    "source_id": "W_WPT_TC",
    "label": "Wynn WPT World Championship structures / terms (PDF)",
-   "fetched_at": "2026-11-19T00:00:00Z",
+   "fetched_at": "2026-11-20T00:00:00Z",
    "sha256": "40522ad679c5d7a290b69a6a740dfd6f5f44ca883b3fee64c708249ae0540693",
    "excerpt": "%PDF-1.7 %���� 1 0 obj >/Metadata 39433 0 R/ViewerPreferences 39434 0 R>> endobj 2 0 obj > endobj 3 0 obj >/Font >/ProcSet[/PDF/Text/ImageB/ImageC/ImageI] >>/Annots[ 21 0 R 22 0 R] /MediaBox[ 0 0 612 1008] /Contents 4 0 R/Group >/Tabs/S/StructParents 0>> endobj 4 0 obj > stream x��][o�Ȓ~\u000f����]�t\u00103l޹\u0018\u0018�3�`\u0016� �&>'\u000fg���h�\u0013�Ԉ�\u0013ϯ߮���M�c�� \u0010Y⭫����Uu������MY�{\u0017{����U�\u0005~���,�\u0012/e�ǂ �\u000e��W���5�_���S�m�ׯ��}�",
    "note": "baseline manifest created by this research pass; hash filled by first monitor run",
@@ -94,7 +94,7 @@
   "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf": {
    "source_id": "W_WPT_SCHED",
    "label": "Wynn WPT World Championship schedule (PDF)",
-   "fetched_at": "2026-11-19T00:00:00Z",
+   "fetched_at": "2026-11-20T00:00:00Z",
    "sha256": "9291f60e5263033d9bd884849a56e36cb8180d91e6bee24aa319267d8634b3e0",
    "excerpt": "%PDF-1.4 %���� 1536 0 obj > endobj xref 1536 1594 0000000016 00000 n 0000033204 00000 n 0000033273 00000 n 0000046284 00000 n 0000046323 00000 n 0000046372 00000 n 0000046521 00000 n 0000046620 00000 n 0000046735 00000 n 0000046850 00000 n 0000047172 00000 n 0000047229 00000 n 0000047348 00000 n 0000047473 00000 n 0000050248 00000 n 0000053294 00000 n 0000056119 00000 n 0000056244 00000 n 00000563",
    "note": "baseline manifest created by this research pass; hash filled by first monitor run",
@@ -104,9 +104,9 @@
   "https://www.wynnlasvegas.com/terms-and-conditions/850257": {
    "source_id": "W_TERMS",
    "label": "Wynn Las Vegas terms and conditions (resort fee $55 + tax)",
-   "fetched_at": "2026-11-19T00:00:00Z",
-   "sha256": "393ac8ee27b594cf846b328a6b134f5c8ee02bf6b92fa76ef95a8defc22d091b",
-   "excerpt": "Wynn Las Vegas - Terms Skip to main content Click to view our Accessibility Policy or contact us with accessibility related questions Check In 11/19/2026 - Check Out 11/22/2026 Rooms 1 Guests Per Room 2 Promo Code Check Availability 11/19/2026 - 11/22/2026 Check Availability Rooms &amp; Suites Offers Wynn Rewards Dining Casino Entertainment Nightlife Experiences Shops Meetings &amp; Events Terms &",
+   "fetched_at": "2026-11-20T00:00:00Z",
+   "sha256": "fae9ed8206b479a9bbeb1dabb28fcf1c9440109f4f85bd1c8994018988a9c99b",
+   "excerpt": "Wynn Las Vegas - Terms Skip to main content Click to view our Accessibility Policy or contact us with accessibility related questions Check In 11/20/2026 - Check Out 11/23/2026 Rooms 1 Guests Per Room 2 Promo Code Check Availability 11/20/2026 - 11/23/2026 Check Availability Rooms &amp; Suites Offers Wynn Rewards Dining Casino Entertainment Nightlife Experiences Shops Meetings &amp; Events Terms &",
    "note": "baseline manifest created by this research pass; hash filled by first monitor run",
    "content_type": "text/html; charset=utf-8",
    "last_error": null
@@ -118,12 +118,12 @@
    "sha256": null,
    "excerpt": null,
    "note": "baseline manifest created by this research pass; hash filled by first monitor run",
-   "last_error": "2026-11-19: The read operation timed out"
+   "last_error": "2026-11-20: The read operation timed out"
   },
   "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt9cf95b0e60ec253e/6af491a3a9851d75c40be840/mgm-bellagio-poker-fridays-$600-nlh.pdf": {
    "source_id": "B_FRI",
    "label": "Bellagio Friday $600 NLH structure (PDF)",
-   "fetched_at": "2026-11-19T00:00:00Z",
+   "fetched_at": "2026-11-20T00:00:00Z",
    "sha256": "5789e88e243d2655d3bef9731d80324e9d56cd1bdc4dbde3ffeb23ab3876b91d",
    "excerpt": "%PDF-1.4 %���� 381 0 obj > endobj xref 381 34 0000000016 00000 n 0000001389 00000 n 0000001564 00000 n 0000001608 00000 n 0000004446 00000 n 0000005468 00000 n 0000005819 00000 n 0000006310 00000 n 0000007501 00000 n 0000009339 00000 n 0000011653 00000 n 0000014357 00000 n 0000017381 00000 n 0000020537 00000 n 0000023506 00000 n 0000023620 00000 n 0000023746 00000 n 0000023861 00000 n 0000046847 0",
    "note": "baseline manifest created by this research pass; hash filled by first monitor run",
@@ -133,7 +133,7 @@
   "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt6d47974bf5a7d9b6/6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf": {
    "source_id": "B_SAT",
    "label": "Bellagio Saturday NLH structure (PDF, undated; buy-in conflict in sheet)",
-   "fetched_at": "2026-11-19T00:00:00Z",
+   "fetched_at": "2026-11-20T00:00:00Z",
    "sha256": "e1fdbc3fef7fa03891f2c7082e1fb0a925d40752f9b53906b74a38c3ea3cc176",
    "excerpt": "%PDF-1.4 %���� 391 0 obj > endobj xref 391 34 0000000016 00000 n 0000001408 00000 n 0000001601 00000 n 0000001645 00000 n 0000004231 00000 n 0000005268 00000 n 0000005619 00000 n 0000006168 00000 n 0000007389 00000 n 0000009426 00000 n 0000011717 00000 n 0000014502 00000 n 0000017573 00000 n 0000020803 00000 n 0000023783 00000 n 0000023897 00000 n 0000024023 00000 n 0000024138 00000 n 0000047003 0",
    "note": "baseline manifest created by this research pass; hash filled by first monitor run",
@@ -143,7 +143,7 @@
   "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt07fcf1244a6da661/6af491a339e2b4f6b76a86ad/mgm-bellagio-poker-sundays-$400-horse.pdf": {
    "source_id": "B_SUN",
    "label": "Bellagio Sunday $400 H.O.R.S.E. structure (PDF)",
-   "fetched_at": "2026-11-19T00:00:00Z",
+   "fetched_at": "2026-11-20T00:00:00Z",
    "sha256": "70a3ceb4b3d2128da8f043a799b3bf3d59c1547cd9aa8ec9cd7bc8f7ba501442",
    "excerpt": "%PDF-1.4 %���� 375 0 obj > endobj xref 375 41 0000000016 00000 n 0000001567 00000 n 0000001760 00000 n 0000001804 00000 n 0000004929 00000 n 0000005071 00000 n 0000005632 00000 n 0000008886 00000 n 0000009241 00000 n 0000011562 00000 n 0000012931 00000 n 0000014881 00000 n 0000016460 00000 n 0000020172 00000 n 0000024933 00000 n 0000029775 00000 n 0000029889 00000 n 0000030015 00000 n 0000030085 0",
    "note": "baseline manifest created by this research pass; hash filled by first monitor run",
@@ -157,7 +157,7 @@
    "sha256": null,
    "excerpt": null,
    "note": "baseline manifest created by this research pass; hash filled by first monitor run",
-   "last_error": "2026-11-19: The read operation timed out"
+   "last_error": "2026-11-20: The read operation timed out"
   },
   "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf": {
    "source_id": "C_FLYER",
@@ -166,7 +166,7 @@
    "sha256": null,
    "excerpt": null,
    "note": "baseline manifest created by this research pass; hash filled by first monitor run",
-   "last_error": "2026-11-19: HTTP Error 403: Forbidden"
+   "last_error": "2026-11-20: HTTP Error 403: Forbidden"
   },
   "https://www.caesars.com/caesars-palace/casino": {
    "source_id": "C_PAGE",
@@ -175,7 +175,7 @@
    "sha256": null,
    "excerpt": null,
    "note": "baseline manifest created by this research pass; hash filled by first monitor run",
-   "last_error": "2026-11-19: HTTP Error 302: The HTTP server returned a redirect error that would lead to an infinite loop.\nThe last 30x error message was:\nFound"
+   "last_error": "2026-11-20: HTTP Error 403: Forbidden"
   },
   "https://www.caesars.com/caesars-palace": {
    "source_id": "C_HOME",
@@ -184,7 +184,7 @@
    "sha256": null,
    "excerpt": null,
    "note": "baseline manifest created by this research pass; hash filled by first monitor run",
-   "last_error": "2026-11-19: HTTP Error 302: The HTTP server returned a redirect error that would lead to an infinite loop.\nThe last 30x error message was:\nFound"
+   "last_error": "2026-11-20: HTTP Error 302: The HTTP server returned a redirect error that would lead to an infinite loop.\nThe last 30x error message was:\nFound"
   },
   "https://aria.mgmresorts.com/en/terms-and-conditions.html": {
    "source_id": "A_TERMS",
@@ -193,7 +193,7 @@
    "sha256": null,
    "excerpt": null,
    "note": "baseline manifest created by this research pass; hash filled by first monitor run",
-   "last_error": "2026-11-19: The read operation timed out"
+   "last_error": "2026-11-20: The read operation timed out"
   },
   "https://aria.mgmresorts.com/en/casino/poker.html": {
    "source_id": "A_PAGE",
@@ -202,7 +202,7 @@
    "sha256": null,
    "excerpt": null,
    "note": "baseline manifest created by this research pass; hash filled by first monitor run",
-   "last_error": "2026-11-19: The read operation timed out"
+   "last_error": "2026-11-20: The read operation timed out"
   },
   "https://www.mgmresorts.com/en/things-to-do/parking.html": {
    "source_id": "MGM_PARK",
@@ -211,13 +211,13 @@
    "sha256": null,
    "excerpt": null,
    "note": "baseline manifest created by this research pass; hash filled by first monitor run",
-   "last_error": "2026-11-19: The read operation timed out"
+   "last_error": "2026-11-20: The read operation timed out"
   },
   "https://treasureisland.com/hotel/deluxe-rooms": {
    "source_id": "TI_ROOMS",
    "label": "Treasure Island deluxe rooms page (resort fee $49.95 + tax, free parking)",
-   "fetched_at": "2026-11-19T00:00:00Z",
-   "sha256": "5c71d4d406edd8ad528a460957a45999fe645c9e6191278502e66913ab5eec4b",
+   "fetched_at": "2026-11-20T00:00:00Z",
+   "sha256": "a1b55b82b463e0a3ccae4dec6575c56c0ca94e02a723071ccd26e334e468a7ba",
    "excerpt": "Deluxe Rooms - Treasure Island Select Country United States China France Germany Italy Japan Mexico Russia Casino Members Reservations HOTEL SHOWS DINING Join ALL Accor Search Close Deals &amp; Offers Hotel Rooms &amp; Suites Deluxe Rooms Deluxe Spa Room Petite Suite Tower Suite Executive Suite Luxury Suite Premier Suite Penthouse Suite Hotel FAQs Best rate guarantee Early check in / late check ou",
    "note": "baseline manifest created by this research pass; hash filled by first monitor run",
    "content_type": "text/html; charset=UTF-8",
@@ -226,8 +226,8 @@
   "https://treasureisland.com/deals-offers/buy-1-get-1-bogo-free-fine-print": {
    "source_id": "TI_OFFERS",
    "label": "Treasure Island offer terms",
-   "fetched_at": "2026-11-19T00:00:00Z",
-   "sha256": "51c33971056e9964ca45d542bfc893c591799c8955d454cdc8446ef59ed7dc27",
+   "fetched_at": "2026-11-20T00:00:00Z",
+   "sha256": "c746f1e3e1a1b1d4114da6ecaa99f8c0595c5e8aebba4edb8965304b411830a0",
    "excerpt": "Buy 1 Get 1 [BOGO] Free* ☛ Fine Print - Treasure Island Select Country United States China France Germany Italy Japan Mexico Russia Casino Members Reservations HOTEL SHOWS DINING Join ALL Accor Search Close Deals &amp; Offers Hotel Rooms &amp; Suites Deluxe Rooms Deluxe Spa Room Petite Suite Tower Suite Executive Suite Luxury Suite Premier Suite Penthouse Suite Hotel FAQs Best rate guarantee Early",
    "note": "baseline manifest created by this research pass; hash filled by first monitor run",
    "content_type": "text/html; charset=UTF-8",
@@ -240,7 +240,7 @@
    "sha256": null,
    "excerpt": null,
    "note": "baseline manifest created by this research pass; hash filled by first monitor run",
-   "last_error": "2026-11-19: HTTP Error 302: The HTTP server returned a redirect error that would lead to an infinite loop.\nThe last 30x error message was:\nFound"
+   "last_error": "2026-11-20: HTTP Error 302: The HTTP server returned a redirect error that would lead to an infinite loop.\nThe last 30x error message was:\nFound"
   },
   "https://www.caesars.com/horseshoe-las-vegas": {
    "source_id": "HS_PAGE",
@@ -249,7 +249,7 @@
    "sha256": null,
    "excerpt": null,
    "note": "baseline manifest created by this research pass; hash filled by first monitor run",
-   "last_error": "2026-11-19: HTTP Error 302: The HTTP server returned a redirect error that would lead to an infinite loop.\nThe last 30x error message was:\nFound"
+   "last_error": "2026-11-20: HTTP Error 302: The HTTP server returned a redirect error that would lead to an infinite loop.\nThe last 30x error message was:\nFound"
   }
  }
 }

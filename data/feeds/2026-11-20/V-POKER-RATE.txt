@@ -1,0 +1,4 @@
+# V_POKER_RATE
+# https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html
+# fetched 2026-11-20
+2026 Poker Room Rates &amp; Play Requirements | The Venetian Resort Las Vegas Skip to main content --> Menu Offers Search Account Account Sign In {{ loginStatus.firstName }} {{ loginStatus.lastName }} Venetian Rewards ID {{ loginStatus.patronId }} Tier {{ loginStatus.loyaltyTier }} Venetian Rewards Points {{ loginStatus.formattedNumberOfPoints }} Account Information Sign Out Select Dates Loading L
